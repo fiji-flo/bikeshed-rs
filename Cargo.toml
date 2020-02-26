@@ -1,0 +1,13 @@
+[package]
+name = "bikeshed-rs"
+version = "0.0.1"
+authors = ["Florian Merz <fmerz@mozilla.com>"]
+edition = "2018"
+license = " CC0-1.0"
+repository = "https://github.com/fiji-flo/bikeshed-rs"
+documentation = "https://docs.rs/crate/bikeshed-rs"
+keywords = ["w3c", "spec", "preprocessor"]
+categories = ["template-engine"]
+readme = "README.md"
+
+[dependencies]
