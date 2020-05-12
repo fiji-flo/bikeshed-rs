@@ -12,7 +12,7 @@ pub type Date = NaiveDate;
 
 #[derive(Debug, Default, Clone)]
 pub struct Metadata {
-    pub has_metadata: bool,
+    pub has_keys: bool,
     pub abs: Option<Vec<String>>,
     pub canonical_url: Option<String>,
     pub date: Option<Date>,
@@ -94,7 +94,7 @@ impl Metadata {
             _ => die!("Unknown metadata key \"{}\".", key; line_num),
         }
 
-        self.has_metadata = true;
+        self.has_keys = true;
     }
 
     pub fn fill_macros(&self, doc: &mut Spec) {
@@ -135,7 +135,7 @@ impl Metadata {
     }
 
     pub fn validate(&self) {
-        if !self.has_metadata {
+        if !self.has_keys {
             die!("No metadata provided.");
         }
     }
@@ -166,7 +166,7 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
         if !in_metadata && BEGIN_TAG_REG.is_match(&line.text) {
             // handle begin tag
             in_metadata = true;
-            md.has_metadata = true;
+            md.has_keys = true;
             if line.text.starts_with("<pre") {
                 end_tag_reg = Some(&PRE_END_TAG);
             } else {

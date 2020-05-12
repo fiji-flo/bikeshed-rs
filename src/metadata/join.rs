@@ -34,8 +34,8 @@ impl Joinable<Option<Date>> for Option<Date> {
 
 impl Joinable<Metadata> for Metadata {
     fn join(&mut self, other: Metadata) {
-        if other.has_metadata {
-            self.has_metadata = true;
+        if other.has_keys {
+            self.has_keys = true;
             self.abs.join(other.abs);
             self.canonical_url.join(other.canonical_url);
             self.date.join(other.date);
