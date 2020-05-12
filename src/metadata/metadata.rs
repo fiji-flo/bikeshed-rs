@@ -27,10 +27,7 @@ pub struct Metadata {
 
 impl Metadata {
     pub fn new() -> Metadata {
-        Metadata {
-            has_metadata: false,
-            ..Default::default()
-        }
+        Self::default()
     }
 
     pub fn join_all(sources: &[&Metadata]) -> Metadata {
