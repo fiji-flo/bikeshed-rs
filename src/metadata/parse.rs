@@ -15,9 +15,7 @@ pub fn parse_date(val: &str) -> ParseResult<Date> {
 
 pub fn parse_editor(val: &str) -> Vec<String> {
     // TODO: parse editor
-    let mut vec = Vec::new();
-    vec.push(String::from("TODO: parse editor") + " " + val);
-    vec
+    vec![String::from("TODO: parse editor") + " " + val]
 }
 
 pub fn parse_level(val: &str) -> String {
@@ -29,7 +27,5 @@ pub fn parse_level(val: &str) -> String {
 }
 
 pub fn parse_vec(val: &str) -> Vec<String> {
-    let mut vec = Vec::new();
-    vec.push(val.to_owned());
-    vec
+    vec![val.to_owned()]
 }
