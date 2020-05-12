@@ -116,8 +116,8 @@ impl<'a> Spec<'a> {
     }
 
     fn handle_outfile(&self, outfile: Option<&str>) -> String {
-        if outfile.is_some() {
-            outfile.unwrap().to_string()
+        if let Some(outfile) = outfile {
+            outfile.to_owned()
         } else {
             for extension in SOURCE_FILE_EXTENSIONS.iter() {
                 if self.infile.ends_with(extension) {
