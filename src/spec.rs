@@ -31,7 +31,7 @@ impl<'a> Spec<'a> {
         let lines = Spec::read_lines_from_source(infile);
 
         let mut md_baseline = Metadata::new();
-        md_baseline.add_data("Date", &String::from("now"), None);
+        md_baseline.add_data("Date", "now", None);
 
         let extra_styles = btreemap! {
             "md-lists" => include_str!("style/md-lists.css"),
@@ -77,11 +77,8 @@ impl<'a> Spec<'a> {
         self.md_document = md_document;
         self.lines = lines;
 
-        let mut md = Metadata::join_all(&[
-            &self.md_baseline,
-            &self.md_document,
-            &self.md_command_line,
-        ]);
+        let mut md =
+            Metadata::join_all(&[&self.md_baseline, &self.md_document, &self.md_command_line]);
         md.compute_implicit_metadata();
         md.fill_macros(self);
         md.validate();

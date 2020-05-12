@@ -148,7 +148,7 @@ pub fn parse_metadata(lines: &Vec<Line>) -> (Metadata, Vec<Line>) {
     let mut md = Metadata::new();
     let mut new_lines: Vec<Line> = Vec::new();
     let mut in_metadata = false;
-    let mut last_key: Option<String> = None;
+    let mut last_key: Option<&str> = None;
 
     let title_reg = Regex::new(r"\s*<h1[^>]*>(.*?)</h1>").unwrap();
     let begin_tag_reg = Regex::new(r"<(pre|xmp) [^>]*class=[^>]*metadata[^>]*>").unwrap();
@@ -171,17 +171,13 @@ pub fn parse_metadata(lines: &Vec<Line>) -> (Metadata, Vec<Line>) {
         } else if in_metadata {
             if last_key.is_some() && line.text.trim().is_empty() {
                 // if the line is empty, continue the previous key
-                md.add_data(last_key.as_mut().unwrap(), &line.text, Some(line.index));
+                md.add_data(last_key.unwrap(), &line.text, Some(line.index));
             } else if pair_reg.is_match(&line.text) {
                 // handle key-val pair
                 let caps = pair_reg.captures(&line.text).unwrap();
-                let key = caps
-                    .get(1)
-                    .map_or(String::new(), |k| k.as_str().to_string());
-                let val = caps
-                    .get(2)
-                    .map_or(String::new(), |v| v.as_str().to_string());
-                md.add_data(&key, &val, Some(line.index));
+                let key = caps.get(1).map_or("", |k| k.as_str());
+                let val = caps.get(2).map_or("", |v| v.as_str());
+                md.add_data(key, val, Some(line.index));
                 last_key = Some(key);
             } else {
                 // wrong key-val pair
@@ -191,10 +187,8 @@ pub fn parse_metadata(lines: &Vec<Line>) -> (Metadata, Vec<Line>) {
             // handle title
             if md.title.is_none() {
                 let caps = title_reg.captures(&line.text).unwrap();
-                let title = caps
-                    .get(1)
-                    .map_or(String::new(), |m| m.as_str().to_string());
-                md.add_data(&String::from("Title"), &title, Some(line.index));
+                let title = caps.get(1).map_or("", |m| m.as_str());
+                md.add_data("Title", title, Some(line.index));
             }
             new_lines.push(line.clone());
         } else {
