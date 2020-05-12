@@ -141,6 +141,7 @@ impl Metadata {
     }
 }
 
+// TODO(#3): Figure out if we can get rid of this html-parsing-with-regexes.
 pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
     lazy_static! {
         // title reg
