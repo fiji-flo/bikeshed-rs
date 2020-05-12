@@ -41,13 +41,13 @@ impl<'a> Spec<'a> {
         };
 
         Spec {
-            infile: infile,
-            lines: lines,
+            infile,
+            lines,
             md: Metadata::new(),
-            md_baseline: md_baseline,
+            md_baseline,
             md_document: Metadata::new(),
             md_command_line: Metadata::new(),
-            extra_styles: extra_styles,
+            extra_styles,
             ..Default::default()
         }
     }
