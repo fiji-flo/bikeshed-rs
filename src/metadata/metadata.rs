@@ -136,7 +136,7 @@ impl Metadata {
 
     pub fn validate(&self) {
         if !self.has_metadata {
-            die!("The document requires at least one <pre class=metadata> block.");
+            die!("No metadata provided.");
         }
     }
 }
