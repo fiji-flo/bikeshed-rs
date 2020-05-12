@@ -35,7 +35,7 @@ pub fn run() {
                 .index(2),
         );
 
-    let matches = App::new("Bikeshed.rs Demo")
+    let matches = App::new("bikeshed-rs")
         .version("1.0")
         .author("whichxjy")
         .subcommand(spec_subcommand)
