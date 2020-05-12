@@ -13,11 +13,11 @@ pub type Date = NaiveDate;
 #[derive(Debug, Default, Clone)]
 pub struct Metadata {
     pub has_keys: bool,
-    pub abs: Option<Vec<String>>,
+    pub abs: Vec<String>,
     pub canonical_url: Option<String>,
     pub date: Option<Date>,
     pub ed: Option<String>,
-    pub editors: Option<Vec<String>>,
+    pub editors: Vec<String>,
     pub group: Option<String>,
     pub level: Option<String>,
     pub shortname: Option<String>,
@@ -33,7 +33,7 @@ impl Metadata {
     pub fn join_all(sources: &[&Metadata]) -> Metadata {
         let mut md = Metadata::new();
         for source in sources {
-            md.join((*source).clone());
+            md.join(source);
         }
         md
     }
@@ -48,11 +48,11 @@ impl Metadata {
         match key.as_str() {
             "Abstract" => {
                 let val = parse::parse_vec(val);
-                self.abs.join(Some(val));
+                self.abs.join(&val);
             }
             "Canonical Url" => {
                 let val = val.to_owned();
-                self.canonical_url.join(Some(val));
+                self.canonical_url.join(&Some(val));
             }
             "Date" => {
                 let val = match parse::parse_date(val) {
@@ -61,35 +61,35 @@ impl Metadata {
                         die!("The \"Date\" field must be in the format YYYY-MM-DD."; line_num)
                     }
                 };
-                self.date.join(Some(val));
+                self.date.join(&Some(val));
             }
             "ED" => {
                 let val = val.to_owned();
-                self.ed.join(Some(val));
+                self.ed.join(&Some(val));
             }
             "Editor" => {
                 let val = parse::parse_editor(val);
-                self.editors.join(Some(val));
+                self.editors.join(&val);
             }
             "Group" => {
                 let val = val.to_owned();
-                self.group.join(Some(val));
+                self.group.join(&Some(val));
             }
             "Level" => {
                 let val = parse::parse_level(val);
-                self.level.join(Some(val));
+                self.level.join(&Some(val));
             }
             "Shortname" => {
                 let val = val.to_owned();
-                self.shortname.join(Some(val))
+                self.shortname.join(&Some(val))
             }
             "Status" => {
                 let val = val.to_owned();
-                self.raw_status.join(Some(val));
+                self.raw_status.join(&Some(val));
             }
             "Title" => {
                 let val = val.to_owned();
-                self.title.join(Some(val));
+                self.title.join(&Some(val));
             }
             _ => die!("Unknown metadata key \"{}\".", key; line_num),
         }
