@@ -132,7 +132,7 @@ impl Metadata {
     }
 
     pub fn compute_implicit_metadata(&mut self) {
-        if self.canonical_url.is_none() || self.canonical_url.as_ref().unwrap() == "ED" {
+        if self.canonical_url.as_ref().map_or(true, |url| url == "ED") {
             self.canonical_url = self.ed.clone();
         }
     }
