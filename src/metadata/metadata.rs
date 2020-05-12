@@ -34,11 +34,11 @@ impl Metadata {
     }
 
     pub fn join_all(sources: &[&Metadata]) -> Metadata {
-        let mut mm = Metadata::new();
+        let mut md = Metadata::new();
         for source in sources {
-            mm.join((*source).clone());
+            md.join((*source).clone());
         }
-        mm
+        md
     }
 
     pub fn add_data(&mut self, key: &str, val: &String, line_num: Option<u32>) {
@@ -145,7 +145,7 @@ impl Metadata {
 }
 
 pub fn parse_metadata(lines: &Vec<Line>) -> (Metadata, Vec<Line>) {
-    let mut mm = Metadata::new();
+    let mut md = Metadata::new();
     let mut new_lines: Vec<Line> = Vec::new();
     let mut in_metadata = false;
     let mut last_key: Option<String> = None;
@@ -159,7 +159,7 @@ pub fn parse_metadata(lines: &Vec<Line>) -> (Metadata, Vec<Line>) {
         if !in_metadata && begin_tag_reg.is_match(&line.text) {
             // handle begin tag
             in_metadata = true;
-            mm.has_metadata = true;
+            md.has_metadata = true;
             if line.text.starts_with("<pre") {
                 end_tag_reg = Some(Regex::new(r"</pre>\s*").unwrap());
             } else {
@@ -171,7 +171,7 @@ pub fn parse_metadata(lines: &Vec<Line>) -> (Metadata, Vec<Line>) {
         } else if in_metadata {
             if last_key.is_some() && line.text.trim().is_empty() {
                 // if the line is empty, continue the previous key
-                mm.add_data(last_key.as_mut().unwrap(), &line.text, Some(line.index));
+                md.add_data(last_key.as_mut().unwrap(), &line.text, Some(line.index));
             } else if pair_reg.is_match(&line.text) {
                 // handle key-val pair
                 let caps = pair_reg.captures(&line.text).unwrap();
@@ -181,7 +181,7 @@ pub fn parse_metadata(lines: &Vec<Line>) -> (Metadata, Vec<Line>) {
                 let val = caps
                     .get(2)
                     .map_or(String::new(), |v| v.as_str().to_string());
-                mm.add_data(&key, &val, Some(line.index));
+                md.add_data(&key, &val, Some(line.index));
                 last_key = Some(key);
             } else {
                 // wrong key-val pair
@@ -189,12 +189,12 @@ pub fn parse_metadata(lines: &Vec<Line>) -> (Metadata, Vec<Line>) {
             }
         } else if title_reg.is_match(&line.text) {
             // handle title
-            if mm.title.is_none() {
+            if md.title.is_none() {
                 let caps = title_reg.captures(&line.text).unwrap();
                 let title = caps
                     .get(1)
                     .map_or(String::new(), |m| m.as_str().to_string());
-                mm.add_data(&String::from("Title"), &title, Some(line.index));
+                md.add_data(&String::from("Title"), &title, Some(line.index));
             }
             new_lines.push(line.clone());
         } else {
@@ -203,5 +203,5 @@ pub fn parse_metadata(lines: &Vec<Line>) -> (Metadata, Vec<Line>) {
         }
     }
 
-    (mm, new_lines)
+    (md, new_lines)
 }

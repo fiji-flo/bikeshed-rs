@@ -14,10 +14,10 @@ use crate::util::reader;
 pub struct Spec<'a> {
     infile: &'a str,
     lines: Vec<Line>,
-    pub mm: Metadata,
-    mm_baseline: Metadata,
-    mm_document: Metadata,
-    mm_command_line: Metadata,
+    pub md: Metadata,
+    md_baseline: Metadata,
+    md_document: Metadata,
+    md_command_line: Metadata,
     pub macros: HashMap<&'static str, String>,
     html: String,
     pub document: Option<NodeRef>,
@@ -30,8 +30,8 @@ impl<'a> Spec<'a> {
     pub fn new(infile: &str) -> Spec {
         let lines = Spec::read_lines_from_source(infile);
 
-        let mut mm_baseline = Metadata::new();
-        mm_baseline.add_data("Date", &String::from("now"), None);
+        let mut md_baseline = Metadata::new();
+        md_baseline.add_data("Date", &String::from("now"), None);
 
         let extra_styles = btreemap! {
             "md-lists" => include_str!("style/md-lists.css"),
@@ -43,10 +43,10 @@ impl<'a> Spec<'a> {
         Spec {
             infile: infile,
             lines: lines,
-            mm: Metadata::new(),
-            mm_baseline: mm_baseline,
-            mm_document: Metadata::new(),
-            mm_command_line: Metadata::new(),
+            md: Metadata::new(),
+            md_baseline: md_baseline,
+            md_document: Metadata::new(),
+            md_command_line: Metadata::new(),
             extra_styles: extra_styles,
             ..Default::default()
         }
@@ -73,19 +73,19 @@ impl<'a> Spec<'a> {
     }
 
     fn assemble_document(&mut self) {
-        let (mm_document, lines) = metadata::parse_metadata(&self.lines);
-        self.mm_document = mm_document;
+        let (md_document, lines) = metadata::parse_metadata(&self.lines);
+        self.md_document = md_document;
         self.lines = lines;
 
-        let mut mm = Metadata::join_all(&[
-            &self.mm_baseline,
-            &self.mm_document,
-            &self.mm_command_line,
+        let mut md = Metadata::join_all(&[
+            &self.md_baseline,
+            &self.md_document,
+            &self.md_command_line,
         ]);
-        mm.compute_implicit_metadata();
-        mm.fill_macros(self);
-        mm.validate();
-        self.mm = mm;
+        md.compute_implicit_metadata();
+        md.fill_macros(self);
+        md.validate();
+        self.md = md;
 
         self.html = self
             .lines
