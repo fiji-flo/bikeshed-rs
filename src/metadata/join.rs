@@ -1,4 +1,4 @@
-use super::metadata::{Date, MetadataManager};
+use super::metadata::{Date, Metadata};
 
 pub trait Joinable<T> {
     fn join(&mut self, other: T);
@@ -32,8 +32,8 @@ impl Joinable<Option<Date>> for Option<Date> {
     }
 }
 
-impl Joinable<MetadataManager> for MetadataManager {
-    fn join(&mut self, other: MetadataManager) {
+impl Joinable<Metadata> for Metadata {
+    fn join(&mut self, other: Metadata) {
         if other.has_metadata {
             self.has_metadata = true;
             self.abs.join(other.abs);

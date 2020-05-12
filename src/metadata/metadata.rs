@@ -11,7 +11,7 @@ use crate::spec::Spec;
 pub type Date = NaiveDate;
 
 #[derive(Debug, Default, Clone)]
-pub struct MetadataManager {
+pub struct Metadata {
     pub has_metadata: bool,
     pub abs: Option<Vec<String>>,
     pub canonical_url: Option<String>,
@@ -25,16 +25,16 @@ pub struct MetadataManager {
     pub title: Option<String>,
 }
 
-impl MetadataManager {
-    pub fn new() -> MetadataManager {
-        MetadataManager {
+impl Metadata {
+    pub fn new() -> Metadata {
+        Metadata {
             has_metadata: false,
             ..Default::default()
         }
     }
 
-    pub fn join_all(sources: &[&MetadataManager]) -> MetadataManager {
-        let mut mm = MetadataManager::new();
+    pub fn join_all(sources: &[&Metadata]) -> Metadata {
+        let mut mm = Metadata::new();
         for source in sources {
             mm.join((*source).clone());
         }
@@ -144,8 +144,8 @@ impl MetadataManager {
     }
 }
 
-pub fn parse_metadata(lines: &Vec<Line>) -> (MetadataManager, Vec<Line>) {
-    let mut mm = MetadataManager::new();
+pub fn parse_metadata(lines: &Vec<Line>) -> (Metadata, Vec<Line>) {
+    let mut mm = Metadata::new();
     let mut new_lines: Vec<Line> = Vec::new();
     let mut in_metadata = false;
     let mut last_key: Option<String> = None;
