@@ -41,7 +41,7 @@ impl Metadata {
         md
     }
 
-    pub fn add_data(&mut self, key: &str, val: &String, line_num: Option<u32>) {
+    pub fn add_data(&mut self, key: &str, val: &str, line_num: Option<u32>) {
         let mut key = key.trim().to_string();
 
         if key != "ED" && key != "TR" && key != "URL" {
@@ -54,7 +54,7 @@ impl Metadata {
                 self.abs.join(Some(val));
             }
             "Canonical Url" => {
-                let val = val.clone();
+                let val = val.to_owned();
                 self.canonical_url.join(Some(val));
             }
             "Date" => {
@@ -67,7 +67,7 @@ impl Metadata {
                 self.date.join(Some(val));
             }
             "ED" => {
-                let val = val.clone();
+                let val = val.to_owned();
                 self.ed.join(Some(val));
             }
             "Editor" => {
@@ -75,7 +75,7 @@ impl Metadata {
                 self.editors.join(Some(val));
             }
             "Group" => {
-                let val = val.clone();
+                let val = val.to_owned();
                 self.group.join(Some(val));
             }
             "Level" => {
@@ -83,15 +83,15 @@ impl Metadata {
                 self.level.join(Some(val));
             }
             "Shortname" => {
-                let val = val.clone();
+                let val = val.to_owned();
                 self.shortname.join(Some(val))
             }
             "Status" => {
-                let val = val.clone();
+                let val = val.to_owned();
                 self.raw_status.join(Some(val));
             }
             "Title" => {
-                let val = val.clone();
+                let val = val.to_owned();
                 self.title.join(Some(val));
             }
             _ => die!("Unknown metadata key \"{}\".", key; line_num),

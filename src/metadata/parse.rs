@@ -2,7 +2,7 @@ use chrono::format::ParseResult;
 
 use super::metadata::Date;
 
-pub fn parse_date(val: &String) -> ParseResult<Date> {
+pub fn parse_date(val: &str) -> ParseResult<Date> {
     if val == "now" {
         Ok(chrono::offset::Utc::now().naive_utc().date())
     } else {
@@ -13,23 +13,23 @@ pub fn parse_date(val: &String) -> ParseResult<Date> {
     }
 }
 
-pub fn parse_editor(val: &String) -> Vec<String> {
+pub fn parse_editor(val: &str) -> Vec<String> {
     // TODO: parse editor
     let mut vec = Vec::new();
     vec.push(String::from("TODO: parse editor") + " " + val);
     vec
 }
 
-pub fn parse_level(val: &String) -> String {
+pub fn parse_level(val: &str) -> String {
     if val == "none" {
         String::new()
     } else {
-        val.clone()
+        val.to_owned()
     }
 }
 
-pub fn parse_vec(val: &String) -> Vec<String> {
+pub fn parse_vec(val: &str) -> Vec<String> {
     let mut vec = Vec::new();
-    vec.push(val.clone());
+    vec.push(val.to_owned());
     vec
 }
