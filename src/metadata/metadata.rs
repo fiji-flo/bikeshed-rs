@@ -100,20 +100,20 @@ impl Metadata {
     pub fn fill_macros(&self, doc: &mut Spec) {
         let macros = &mut doc.macros;
 
-        if let Some(date) = self.date.as_ref() {
+        if let Some(ref date) = self.date {
             macros.insert(
                 "date",
                 date.format(&format!("{} %B %Y", date.day())).to_string(),
             );
             macros.insert("isodate", date.to_string());
         }
-        if let Some(level) = self.level.as_ref() {
+        if let Some(ref level) = self.level {
             macros.insert("level", level.clone());
         }
-        if let Some(shortname) = self.shortname.as_ref() {
+        if let Some(ref shortname) = self.shortname {
             macros.insert("shortname", shortname.clone());
         }
-        if let Some(raw_status) = self.raw_status.as_ref() {
+        if let Some(ref raw_status) = self.raw_status {
             macros.insert(
                 "longstatus",
                 SHORT_TO_LONG_STATUS
@@ -122,7 +122,7 @@ impl Metadata {
                     .to_string(),
             );
         }
-        if let Some(title) = self.title.as_ref() {
+        if let Some(ref title) = self.title {
             macros.insert("title", title.clone());
             macros.insert("spectitle", title.clone());
         }
