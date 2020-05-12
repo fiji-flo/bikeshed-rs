@@ -142,36 +142,45 @@ impl Metadata {
 }
 
 pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
+    lazy_static! {
+        // title reg
+        static ref TITLE_REG: Regex = Regex::new(r"\s*<h1[^>]*>(.*?)</h1>").unwrap();
+        // begin tag reg
+        static ref BEGIN_TAG_REG: Regex = Regex::new(r"<(pre|xmp) [^>]*class=[^>]*metadata[^>]*>").unwrap();
+        // </pre> end tag
+        static ref PRE_END_TAG: Regex = Regex::new(r"</pre>\s*").unwrap();
+        // </xmp> end tag
+        static ref XMP_END_TAG: Regex = Regex::new(r"</xmp>\s*").unwrap();
+        // pair reg
+        static ref PAIR_REG: Regex = Regex::new(r"([^:]+):\s*(.*)").unwrap();
+    }
+
     let mut md = Metadata::new();
     let mut new_lines: Vec<Line> = Vec::new();
     let mut in_metadata = false;
     let mut last_key: Option<&str> = None;
-
-    let title_reg = Regex::new(r"\s*<h1[^>]*>(.*?)</h1>").unwrap();
-    let begin_tag_reg = Regex::new(r"<(pre|xmp) [^>]*class=[^>]*metadata[^>]*>").unwrap();
-    let mut end_tag_reg: Option<Regex> = None;
-    let pair_reg = Regex::new(r"([^:]+):\s*(.*)").unwrap();
+    let mut end_tag_reg: Option<&Regex> = None;
 
     for line in lines {
-        if !in_metadata && begin_tag_reg.is_match(&line.text) {
+        if !in_metadata && BEGIN_TAG_REG.is_match(&line.text) {
             // handle begin tag
             in_metadata = true;
             md.has_metadata = true;
             if line.text.starts_with("<pre") {
-                end_tag_reg = Some(Regex::new(r"</pre>\s*").unwrap());
+                end_tag_reg = Some(&PRE_END_TAG);
             } else {
-                end_tag_reg = Some(Regex::new(r"</xmp>\s*").unwrap());
+                end_tag_reg = Some(&XMP_END_TAG);
             }
-        } else if in_metadata && end_tag_reg.as_mut().unwrap().is_match(&line.text) {
+        } else if in_metadata && end_tag_reg.unwrap().is_match(&line.text) {
             // handle end tag
             in_metadata = false;
         } else if in_metadata {
             if last_key.is_some() && line.text.trim().is_empty() {
                 // if the line is empty, continue the previous key
                 md.add_data(last_key.unwrap(), &line.text, Some(line.index));
-            } else if pair_reg.is_match(&line.text) {
+            } else if PAIR_REG.is_match(&line.text) {
                 // handle key-val pair
-                let caps = pair_reg.captures(&line.text).unwrap();
+                let caps = PAIR_REG.captures(&line.text).unwrap();
                 let key = caps.get(1).map_or("", |k| k.as_str());
                 let val = caps.get(2).map_or("", |v| v.as_str());
                 md.add_data(key, val, Some(line.index));
@@ -180,10 +189,10 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
                 // wrong key-val pair
                 die!("Incorrectly formatted metadata"; Some(line.index));
             }
-        } else if title_reg.is_match(&line.text) {
+        } else if TITLE_REG.is_match(&line.text) {
             // handle title
             if md.title.is_none() {
-                let caps = title_reg.captures(&line.text).unwrap();
+                let caps = TITLE_REG.captures(&line.text).unwrap();
                 let title = caps.get(1).map_or("", |m| m.as_str());
                 md.add_data("Title", title, Some(line.index));
             }
