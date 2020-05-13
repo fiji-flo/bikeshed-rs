@@ -15,6 +15,7 @@ pub struct Spec<'a> {
     infile: &'a str,
     lines: Vec<Line>,
     pub md: Metadata,
+    pub md_cli: Metadata,
     pub macros: HashMap<&'static str, String>,
     html: String,
     pub document: Option<NodeRef>,
@@ -37,7 +38,7 @@ impl<'a> Spec<'a> {
         Spec {
             infile,
             lines,
-            md: md_cli,
+            md_cli,
             extra_styles,
             ..Default::default()
         }
@@ -67,7 +68,8 @@ impl<'a> Spec<'a> {
         let (md_document, lines) = metadata::parse_metadata(&self.lines);
         self.lines = lines;
 
-        let mut md = Metadata::new();
+        // TODO: avoid cloning metadata here
+        let mut md = self.md_cli.clone();
         md.join(md_document);
         md.compute_implicit_metadata();
         md.fill_macros(self);
