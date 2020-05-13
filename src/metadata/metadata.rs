@@ -48,11 +48,11 @@ impl Metadata {
         match key.as_str() {
             "Abstract" => {
                 let val = parse::parse_vec(val);
-                self.abs.join(&val);
+                self.abs.extend(val);
             }
             "Canonical Url" => {
                 let val = val.to_owned();
-                self.canonical_url.join(&Some(val));
+                self.canonical_url = Some(val);
             }
             "Date" => {
                 let val = match parse::parse_date(val) {
@@ -61,35 +61,35 @@ impl Metadata {
                         die!("The \"Date\" field must be in the format YYYY-MM-DD."; line_num)
                     }
                 };
-                self.date.join(&Some(val));
+                self.date = Some(val);
             }
             "ED" => {
                 let val = val.to_owned();
-                self.ed.join(&Some(val));
+                self.ed = Some(val);
             }
             "Editor" => {
                 let val = parse::parse_editor(val);
-                self.editors.join(&val);
+                self.editors.extend(val);
             }
             "Group" => {
                 let val = val.to_owned();
-                self.group.join(&Some(val));
+                self.group = Some(val);
             }
             "Level" => {
                 let val = parse::parse_level(val);
-                self.level.join(&Some(val));
+                self.level = Some(val);
             }
             "Shortname" => {
                 let val = val.to_owned();
-                self.shortname.join(&Some(val))
+                self.shortname = Some(val);
             }
             "Status" => {
                 let val = val.to_owned();
-                self.raw_status.join(&Some(val));
+                self.raw_status = Some(val);
             }
             "Title" => {
                 let val = val.to_owned();
-                self.title.join(&Some(val));
+                self.title = Some(val);
             }
             _ => die!("Unknown metadata key \"{}\".", key; line_num),
         }
