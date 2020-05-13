@@ -65,12 +65,10 @@ impl<'a> Spec<'a> {
     }
 
     fn assemble_document(&mut self) {
-        let (md_document, lines) = metadata::parse_metadata(&self.lines);
+        let (mut md, lines) = metadata::parse_metadata(&self.lines);
         self.lines = lines;
 
-        // TODO: avoid cloning metadata here
-        let mut md = self.md_cli.clone();
-        md.join(md_document);
+        md.join(self.md_cli.clone());
         md.compute_implicit_metadata();
         md.fill_macros(self);
         md.validate();
