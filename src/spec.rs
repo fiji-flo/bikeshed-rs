@@ -15,7 +15,6 @@ pub struct Spec<'a> {
     infile: &'a str,
     lines: Vec<Line>,
     pub md: Metadata,
-    md_baseline: Metadata,
     md_document: Metadata,
     md_command_line: Metadata,
     pub macros: HashMap<&'static str, String>,
@@ -30,9 +29,6 @@ impl<'a> Spec<'a> {
     pub fn new(infile: &str) -> Spec {
         let lines = Spec::read_lines_from_source(infile);
 
-        let mut md_baseline = Metadata::new();
-        md_baseline.add_data("Date", "now", None);
-
         let extra_styles = btreemap! {
             "md-lists" => include_str!("style/md-lists.css"),
             "autolinks" =>  include_str!("style/autolinks.css"),
@@ -44,7 +40,6 @@ impl<'a> Spec<'a> {
             infile,
             lines,
             md: Metadata::new(),
-            md_baseline,
             md_document: Metadata::new(),
             md_command_line: Metadata::new(),
             extra_styles,
@@ -77,8 +72,7 @@ impl<'a> Spec<'a> {
         self.md_document = md_document;
         self.lines = lines;
 
-        let mut md =
-            Metadata::join_all(&[&self.md_baseline, &self.md_document, &self.md_command_line]);
+        let mut md = Metadata::join_all(&[&self.md_document, &self.md_command_line]);
         md.compute_implicit_metadata();
         md.fill_macros(self);
         md.validate();
