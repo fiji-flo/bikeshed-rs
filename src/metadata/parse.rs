@@ -1,10 +1,8 @@
-use chrono::format::ParseResult;
+use crate::util::date::{Date, ParseResult};
 
-use super::metadata::Date;
-
-pub fn parse_date(val: &str) -> ParseResult<Date> {
+pub fn parse_date(val: &str) -> ParseResult {
     if val == "now" {
-        Ok(chrono::offset::Utc::now().naive_utc().date())
+        Ok(Date::now())
     } else {
         match Date::parse_from_str(val, "%Y-%m-%d") {
             Ok(date) => Ok(date),

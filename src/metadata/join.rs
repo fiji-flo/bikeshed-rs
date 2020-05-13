@@ -1,4 +1,5 @@
 use super::metadata::Metadata;
+use crate::util::date::Date;
 
 pub trait Joinable {
     fn join(&mut self, other: &Self);
@@ -21,6 +22,12 @@ where
 {
     fn join(&mut self, other: &Self) {
         self.extend(other.iter().cloned());
+    }
+}
+
+impl Joinable for Date {
+    fn join(&mut self, other: &Self) {
+        self.date = other.date;
     }
 }
 

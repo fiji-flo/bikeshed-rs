@@ -1,4 +1,3 @@
-use chrono::{Datelike, NaiveDate};
 use regex::Regex;
 use titlecase::titlecase;
 
@@ -7,15 +6,14 @@ use super::parse;
 use crate::config::SHORT_TO_LONG_STATUS;
 use crate::line::Line;
 use crate::spec::Spec;
+use crate::util::date::Date;
 
-pub type Date = NaiveDate;
-
-#[derive(Debug, Default, Clone)]
+#[derive(Debug, Clone, Default)]
 pub struct Metadata {
     pub has_keys: bool,
     pub abs: Vec<String>,
     pub canonical_url: Option<String>,
-    pub date: Option<Date>,
+    pub date: Date,
     pub ed: Option<String>,
     pub editors: Vec<String>,
     pub group: Option<String>,
@@ -61,7 +59,7 @@ impl Metadata {
                         die!("The \"Date\" field must be in the format YYYY-MM-DD."; line_num)
                     }
                 };
-                self.date = Some(val);
+                self.date = val;
             }
             "ED" => {
                 let val = val.to_owned();
@@ -100,13 +98,14 @@ impl Metadata {
     pub fn fill_macros(&self, doc: &mut Spec) {
         let macros = &mut doc.macros;
 
-        if let Some(ref date) = self.date {
-            macros.insert(
-                "date",
-                date.format(&format!("{} %B %Y", date.day())).to_string(),
-            );
-            macros.insert("isodate", date.to_string());
-        }
+        macros.insert(
+            "date",
+            self.date
+                .format(&format!("{} %B %Y", self.date.day()))
+                .to_string(),
+        );
+        macros.insert("isodate", self.date.to_string());
+
         if let Some(ref level) = self.level {
             macros.insert("level", level.clone());
         }
