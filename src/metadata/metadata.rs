@@ -1,7 +1,6 @@
 use regex::Regex;
 use titlecase::titlecase;
 
-use super::join::Joinable;
 use super::parse;
 use crate::config::SHORT_TO_LONG_STATUS;
 use crate::line::Line;
@@ -26,14 +25,6 @@ pub struct Metadata {
 impl Metadata {
     pub fn new() -> Metadata {
         Self::default()
-    }
-
-    pub fn join_all(sources: &[&Metadata]) -> Metadata {
-        let mut md = Metadata::new();
-        for source in sources {
-            md.join(source);
-        }
-        md
     }
 
     pub fn add_data(&mut self, key: &str, val: &str, line_num: Option<u32>) {
@@ -93,6 +84,49 @@ impl Metadata {
         }
 
         self.has_keys = true;
+    }
+
+    pub fn join(&mut self, other: Self) {
+        if other.has_keys {
+            self.has_keys = true;
+        } else {
+            return;
+        }
+
+        // Abstract
+        self.abs.extend(other.abs.into_iter());
+        // Canonical Url
+        if other.canonical_url.is_some() {
+            self.canonical_url = other.canonical_url;
+        }
+        // Date
+        self.date = other.date;
+        // ED
+        if other.ed.is_some() {
+            self.ed = other.ed;
+        }
+        // Editor
+        self.editors.extend(other.editors.into_iter());
+        // Group
+        if other.group.is_some() {
+            self.group = other.group;
+        }
+        // Level
+        if other.level.is_some() {
+            self.level = other.level;
+        }
+        // Shortname
+        if other.shortname.is_some() {
+            self.shortname = other.shortname;
+        }
+        // Status
+        if other.raw_status.is_some() {
+            self.raw_status = other.raw_status;
+        }
+        // Title
+        if other.title.is_some() {
+            self.title = other.title;
+        }
     }
 
     pub fn fill_macros(&self, doc: &mut Spec) {

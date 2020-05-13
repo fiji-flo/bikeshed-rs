@@ -1,5 +1,6 @@
 use clap::{App, Arg, ArgMatches, SubCommand};
 
+use crate::metadata::metadata::Metadata;
 use crate::spec::Spec;
 
 fn handle_spec(matches: ArgMatches) {
@@ -13,7 +14,9 @@ fn handle_spec(matches: ArgMatches) {
         .unwrap()
         .value_of("outfile");
 
-    let mut doc = Spec::new(infile);
+    let md_cli = Metadata::new();
+
+    let mut doc = Spec::new(infile, md_cli);
     doc.preprocess();
     doc.finish(outfile);
 }

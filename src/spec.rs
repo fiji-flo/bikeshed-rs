@@ -15,8 +15,6 @@ pub struct Spec<'a> {
     infile: &'a str,
     lines: Vec<Line>,
     pub md: Metadata,
-    md_document: Metadata,
-    md_command_line: Metadata,
     pub macros: HashMap<&'static str, String>,
     html: String,
     pub document: Option<NodeRef>,
@@ -26,7 +24,7 @@ pub struct Spec<'a> {
 }
 
 impl<'a> Spec<'a> {
-    pub fn new(infile: &str) -> Spec {
+    pub fn new(infile: &str, md_cli: Metadata) -> Spec {
         let lines = Spec::read_lines_from_source(infile);
 
         let extra_styles = btreemap! {
@@ -39,9 +37,7 @@ impl<'a> Spec<'a> {
         Spec {
             infile,
             lines,
-            md: Metadata::new(),
-            md_document: Metadata::new(),
-            md_command_line: Metadata::new(),
+            md: md_cli,
             extra_styles,
             ..Default::default()
         }
@@ -69,10 +65,10 @@ impl<'a> Spec<'a> {
 
     fn assemble_document(&mut self) {
         let (md_document, lines) = metadata::parse_metadata(&self.lines);
-        self.md_document = md_document;
         self.lines = lines;
 
-        let mut md = Metadata::join_all(&[&self.md_document, &self.md_command_line]);
+        let mut md = Metadata::new();
+        md.join(md_document);
         md.compute_implicit_metadata();
         md.fill_macros(self);
         md.validate();
