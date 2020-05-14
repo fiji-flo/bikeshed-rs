@@ -77,7 +77,7 @@ impl Metadata {
                         die!("\"Editor\" format is \"<name>, <affiliation>?, <email-or-contact-page>?\". Got: {}.", val; line_num)
                     }
                 };
-                self.editors.extend(val);
+                self.editors.push(val);
             }
             "Group" => {
                 let val = val.to_owned();

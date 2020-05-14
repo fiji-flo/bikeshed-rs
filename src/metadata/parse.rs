@@ -32,7 +32,7 @@ impl Editor {
     }
 }
 
-pub fn parse_editor(val: &str) -> Result<Vec<Editor>, &'static str> {
+pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
     // <editor> := <editor-name> <option>
     // <option> := [<affiliation-name>] [<email> | <link> | (<email> <link>) | (<link> <email>)]
 
@@ -114,7 +114,7 @@ pub fn parse_editor(val: &str) -> Result<Vec<Editor>, &'static str> {
             editor.link = Some(pieces[1].to_owned());
         }
     } else if pieces.len() == 1 {
-        // [org], [email], or [url]
+        // [org], [email], or [link]
         if is_emailish(pieces[0]) {
             editor.email = Some(pieces[0].to_owned());
         } else if is_linkish(pieces[0]) {
@@ -143,7 +143,7 @@ pub fn parse_editor(val: &str) -> Result<Vec<Editor>, &'static str> {
         }
     }
 
-    Ok(vec![editor])
+    Ok(editor)
 }
 
 pub fn parse_level(val: &str) -> String {
