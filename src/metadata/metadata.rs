@@ -10,15 +10,17 @@ use crate::util::date::Date;
 #[derive(Debug, Clone, Default)]
 pub struct Metadata {
     pub has_keys: bool,
+    // required metadata
     pub abs: Vec<String>,
-    pub canonical_url: Option<String>,
-    pub date: Date,
     pub ed: Option<String>,
-    pub editors: Vec<String>,
-    pub group: Option<String>,
     pub level: Option<String>,
     pub shortname: Option<String>,
     pub raw_status: Option<String>,
+    // optional metadata
+    pub canonical_url: Option<String>,
+    pub date: Date,
+    pub editors: Vec<String>,
+    pub group: Option<String>,
     pub title: Option<String>,
 }
 
@@ -39,6 +41,22 @@ impl Metadata {
                 let val = parse::parse_vec(val);
                 self.abs.extend(val);
             }
+            "ED" => {
+                let val = val.to_owned();
+                self.ed = Some(val);
+            }
+            "Level" => {
+                let val = parse::parse_level(val);
+                self.level = Some(val);
+            }
+            "Shortname" => {
+                let val = val.to_owned();
+                self.shortname = Some(val);
+            }
+            "Status" => {
+                let val = val.to_owned();
+                self.raw_status = Some(val);
+            }
             "Canonical Url" => {
                 let val = val.to_owned();
                 self.canonical_url = Some(val);
@@ -52,10 +70,6 @@ impl Metadata {
                 };
                 self.date = val;
             }
-            "ED" => {
-                let val = val.to_owned();
-                self.ed = Some(val);
-            }
             "Editor" => {
                 let val = parse::parse_editor(val);
                 self.editors.extend(val);
@@ -63,18 +77,6 @@ impl Metadata {
             "Group" => {
                 let val = val.to_owned();
                 self.group = Some(val);
-            }
-            "Level" => {
-                let val = parse::parse_level(val);
-                self.level = Some(val);
-            }
-            "Shortname" => {
-                let val = val.to_owned();
-                self.shortname = Some(val);
-            }
-            "Status" => {
-                let val = val.to_owned();
-                self.raw_status = Some(val);
             }
             "Title" => {
                 let val = val.to_owned();
@@ -95,21 +97,9 @@ impl Metadata {
 
         // Abstract
         self.abs.extend(other.abs.into_iter());
-        // Canonical Url
-        if other.canonical_url.is_some() {
-            self.canonical_url = other.canonical_url;
-        }
-        // Date
-        self.date = other.date;
         // ED
         if other.ed.is_some() {
             self.ed = other.ed;
-        }
-        // Editor
-        self.editors.extend(other.editors.into_iter());
-        // Group
-        if other.group.is_some() {
-            self.group = other.group;
         }
         // Level
         if other.level.is_some() {
@@ -123,6 +113,18 @@ impl Metadata {
         if other.raw_status.is_some() {
             self.raw_status = other.raw_status;
         }
+        // Canonical Url
+        if other.canonical_url.is_some() {
+            self.canonical_url = other.canonical_url;
+        }
+        // Date
+        self.date = other.date;
+        // Editor
+        self.editors.extend(other.editors.into_iter());
+        // Group
+        if other.group.is_some() {
+            self.group = other.group;
+        }
         // Title
         if other.title.is_some() {
             self.title = other.title;
@@ -132,20 +134,15 @@ impl Metadata {
     pub fn fill_macros(&self, doc: &mut Spec) {
         let macros = &mut doc.macros;
 
-        macros.insert(
-            "date",
-            self.date
-                .format(&format!("{} %B %Y", self.date.day()))
-                .to_string(),
-        );
-        macros.insert("isodate", self.date.to_string());
-
+        // level
         if let Some(ref level) = self.level {
             macros.insert("level", level.clone());
         }
+        // shortname
         if let Some(ref shortname) = self.shortname {
             macros.insert("shortname", shortname.clone());
         }
+        // longstatus
         if let Some(ref raw_status) = self.raw_status {
             macros.insert(
                 "longstatus",
@@ -155,6 +152,16 @@ impl Metadata {
                     .to_string(),
             );
         }
+        // date
+        macros.insert(
+            "date",
+            self.date
+                .format(&format!("{} %B %Y", self.date.day()))
+                .to_string(),
+        );
+        // isodate
+        macros.insert("isodate", self.date.to_string());
+        // title & spectitle
         if let Some(ref title) = self.title {
             macros.insert("title", title.clone());
             macros.insert("spectitle", title.clone());
