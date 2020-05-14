@@ -1,7 +1,7 @@
 use regex::Regex;
 use titlecase::titlecase;
 
-use super::parse;
+use super::parse::{self, Editor};
 use crate::config::SHORT_TO_LONG_STATUS;
 use crate::line::Line;
 use crate::spec::Spec;
@@ -19,13 +19,13 @@ pub struct Metadata {
     // optional metadata
     pub canonical_url: Option<String>,
     pub date: Date,
-    pub editors: Vec<String>,
+    pub editors: Vec<Editor>,
     pub group: Option<String>,
     pub title: Option<String>,
 }
 
 impl Metadata {
-    pub fn new() -> Metadata {
+    pub fn new() -> Self {
         Self::default()
     }
 

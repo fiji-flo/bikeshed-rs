@@ -11,9 +11,22 @@ pub fn parse_date(val: &str) -> ParseResult {
     }
 }
 
-pub fn parse_editor(val: &str) -> Vec<String> {
-    // TODO: parse editor
-    vec![String::from("TODO: parse editor") + " " + val]
+#[derive(Debug, Clone, Default)]
+pub struct Editor {
+    pub name: String,
+}
+
+impl Editor {
+    pub fn new(name: String) -> Self {
+        Editor { name }
+    }
+}
+
+pub fn parse_editor(val: &str) -> Vec<Editor> {
+    // Editor: <editor-name> [<w3c-id> | <affiliation> | <email> | <homepage>]*
+    let pieces = val.split(",").collect::<Vec<&str>>();
+    let editor = Editor::new(String::from(pieces[0]));
+    vec![editor]
 }
 
 pub fn parse_level(val: &str) -> String {
