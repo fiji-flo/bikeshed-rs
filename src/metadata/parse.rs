@@ -18,6 +18,7 @@ pub struct Editor {
     pub name: String,
     pub w3c_id: Option<String>,
     pub org: Option<String>,
+    pub org_link: Option<String>,
     pub link: Option<String>,
     pub email: Option<String>,
 }
@@ -39,7 +40,7 @@ pub fn parse_editor(val: &str) -> Result<Vec<Editor>, &'static str> {
         // w3c id reg
         static ref W3C_ID_REG: Regex = Regex::new(r"w3cid \d+$").unwrap();
         // link reg
-        static ref LINK_REG: Regex = Regex::new(r"\w+:").unwrap();
+        static ref LINK_REG: Regex = Regex::new(r"^\w+:").unwrap();
         // email reg
         static ref EMAIL_REG: Regex = Regex::new(r".+@.+\..+").unwrap();
     }
@@ -123,6 +124,23 @@ pub fn parse_editor(val: &str) -> Result<Vec<Editor>, &'static str> {
         }
     } else if pieces.len() != 0 {
         return Err("wrong format");
+    }
+
+    // check if the org ends with an email or a link
+    if let Some(org) = editor.org.clone() {
+        if org.contains(" ") {
+            let org_pieces = org
+                .split(" ")
+                .map(|org_piece| org_piece.trim())
+                .collect::<Vec<_>>();
+
+            let last_org_piece = org_pieces.last().unwrap();
+
+            if is_emailish(last_org_piece) || is_linkish(last_org_piece) {
+                editor.org = Some(org_pieces[..org_pieces.len() - 1].join(" "));
+                editor.org_link = Some(last_org_piece.to_string());
+            }
+        }
     }
 
     Ok(vec![editor])
