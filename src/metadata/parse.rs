@@ -1,3 +1,5 @@
+use regex::Regex;
+
 use crate::util::date::{Date, ParseResult};
 
 pub fn parse_date(val: &str) -> ParseResult {
@@ -14,18 +16,45 @@ pub fn parse_date(val: &str) -> ParseResult {
 #[derive(Debug, Clone, Default)]
 pub struct Editor {
     pub name: String,
+    pub w3c_id: Option<String>,
 }
 
 impl Editor {
     pub fn new(name: String) -> Self {
-        Editor { name }
+        Editor {
+            name,
+            ..Default::default()
+        }
     }
 }
 
 pub fn parse_editor(val: &str) -> Vec<Editor> {
     // Editor: <editor-name> [<w3c-id> | <affiliation> | <email> | <homepage>]*
-    let pieces = val.split(",").collect::<Vec<&str>>();
-    let editor = Editor::new(String::from(pieces[0]));
+
+    lazy_static! {
+        // w3c id
+        static ref W3C_ID_REG: Regex = Regex::new(r"w3cid \d+$").unwrap();
+    }
+
+    let mut pieces = val
+        .split(",")
+        .map(|piece| piece.trim())
+        .collect::<Vec<&str>>();
+    let mut editor = Editor::new(String::from(pieces[0]));
+
+    pieces = pieces[1..]
+        .iter()
+        .cloned()
+        .filter(|piece| {
+            if W3C_ID_REG.is_match(piece) && editor.w3c_id.is_none() {
+                editor.w3c_id = Some(String::from(&piece[6..]));
+                false
+            } else {
+                true
+            }
+        })
+        .collect::<Vec<&str>>();
+
     vec![editor]
 }
 
