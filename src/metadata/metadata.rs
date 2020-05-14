@@ -71,7 +71,12 @@ impl Metadata {
                 self.date = val;
             }
             "Editor" => {
-                let val = parse::parse_editor(val);
+                let val = match parse::parse_editor(val) {
+                    Ok(val) => val,
+                    Err(_) => {
+                        die!("\"Editor\" format is \"<name>, <affiliation>?, <email-or-contact-page>?\". Got: {}.", val; line_num)
+                    }
+                };
                 self.editors.extend(val);
             }
             "Group" => {
@@ -181,7 +186,7 @@ impl Metadata {
     }
 }
 
-// TODO(#3): Figure out if we can get rid of this html-parsing-with-regexes.
+// TODO(#3): figure out if we can get rid of this html-parsing-with-regexes
 pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
     lazy_static! {
         // title reg
@@ -228,7 +233,7 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
                 last_key = Some(key);
             } else {
                 // wrong key-val pair
-                die!("Incorrectly formatted metadata"; Some(line.index));
+                die!("Incorrectly formatted metadata."; Some(line.index));
             }
         } else if TITLE_REG.is_match(&line.text) {
             // handle title
