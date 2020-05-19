@@ -79,13 +79,15 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
         })
         .collect::<Vec<&str>>();
 
+    let mut org: Option<String> = None;
+
     // handle ambiguous pieces
     if pieces.len() == 3
         && ((is_emailish(pieces[1]) && is_linkish(pieces[2]))
             || (is_linkish(pieces[1]) && is_emailish(pieces[2])))
     {
         // [org, email, link] or [org, link, email]
-        editor.org = Some(pieces[0].to_owned());
+        org = Some(pieces[0].to_owned());
         if is_emailish(pieces[1]) {
             editor.email = Some(pieces[1].to_owned());
             editor.link = Some(pieces[2].to_owned());
@@ -107,7 +109,7 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
         }
     } else if pieces.len() == 2 && (is_emailish(pieces[1]) || is_linkish(pieces[1])) {
         // [org, email] or [org, link]
-        editor.org = Some(pieces[0].to_owned());
+        org = Some(pieces[0].to_owned());
         if is_emailish(pieces[1]) {
             editor.email = Some(pieces[1].to_owned());
         } else {
@@ -120,14 +122,14 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
         } else if is_linkish(pieces[0]) {
             editor.link = Some(pieces[0].to_owned());
         } else {
-            editor.org = Some(pieces[0].to_owned());
+            org = Some(pieces[0].to_owned());
         }
     } else if pieces.len() != 0 {
         return Err("wrong format");
     }
 
     // check if the org ends with an email or a link
-    if let Some(org) = editor.org.clone() {
+    if let Some(org) = org {
         if org.contains(" ") {
             let org_pieces = org
                 .split(" ")
@@ -140,6 +142,8 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
                 editor.org = Some(org_pieces[..org_pieces.len() - 1].join(" "));
                 editor.org_link = Some(last_org_piece.to_string());
             }
+        } else {
+            editor.org = Some(org);
         }
     }
 
