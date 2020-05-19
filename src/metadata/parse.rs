@@ -131,18 +131,15 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
     // check if the org ends with an email or a link
     if let Some(org) = org {
         if org.contains(" ") {
-            let org_pieces = org
-                .split(" ")
-                .map(|org_piece| org_piece.trim())
-                .collect::<Vec<_>>();
+            let org_pieces = org.rsplitn(2, ' ').collect::<Vec<&str>>();
+            let left_part = org_pieces[1];
+            let last_piece = org_pieces[0];
 
-            let last_org_piece = org_pieces.last().unwrap();
-
-            if is_emailish(last_org_piece) || is_linkish(last_org_piece) {
-                editor.org = Some(org_pieces[..org_pieces.len() - 1].join(" "));
-                editor.org_link = Some(last_org_piece.to_string());
+            if is_emailish(last_piece) || is_linkish(last_piece) {
+                editor.org = Some(left_part.to_owned());
+                editor.org_link = Some(last_piece.to_owned());
             } else {
-                editor.org = Some(org_pieces.join(" "));
+                editor.org = Some([left_part, last_piece].join(" "));
             }
         } else {
             editor.org = Some(org);
