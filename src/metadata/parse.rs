@@ -13,14 +13,14 @@ pub fn parse_date(val: &str) -> ParseResult {
     }
 }
 
-#[derive(Debug, Clone, Default)]
+#[derive(Debug, Clone, Default, PartialEq)]
 pub struct Editor {
     pub name: String,
     pub w3c_id: Option<String>,
     pub org: Option<String>,
     pub org_link: Option<String>,
-    pub link: Option<String>,
     pub email: Option<String>,
+    pub link: Option<String>,
 }
 
 impl Editor {
@@ -42,7 +42,7 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
         // link reg
         static ref LINK_REG: Regex = Regex::new(r"^\w+:").unwrap();
         // email reg
-        static ref EMAIL_REG: Regex = Regex::new(r".+@.+\..+").unwrap();
+        static ref EMAIL_REG: Regex = Regex::new(r"^\w+@.+\..+").unwrap();
     }
 
     fn is_linkish(piece: &str) -> bool {
@@ -53,15 +53,15 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
         EMAIL_REG.is_match(piece)
     }
 
+    if val.is_empty() {
+        return Err("invalid editor");
+    }
+
     // TODO: unescape pieces
     let mut pieces = val
         .split(",")
         .map(|piece| piece.trim())
         .collect::<Vec<&str>>();
-
-    if pieces.is_empty() {
-        return Err("invalid editor");
-    }
 
     let mut editor = Editor::new(pieces[0].to_owned());
 
@@ -156,4 +156,147 @@ pub fn parse_level(val: &str) -> String {
 
 pub fn parse_vec(val: &str) -> Vec<String> {
     vec![val.to_owned()]
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{parse_editor, Editor};
+    use std::collections::BTreeMap;
+
+    #[test]
+    fn test_parse_editor() {
+        let cases: BTreeMap<&'static str, Result<Editor, &'static str>> = btreemap! {
+            // empty value
+            "" => Err("invalid editor"),
+            // name
+            "Mario" => Ok(Editor::new("Mario".to_owned())),
+            // name, w3cid
+            "Mario, w3cid 12345" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                ..Default::default()
+            }),
+            // [org]
+            "Mario, w3cid 12345, Nintendo" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                org: Some("Nintendo".to_owned()),
+                ..Default::default()
+            }),
+            // [email]
+            "Mario, w3cid 12345, hi@mario.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                email: Some("hi@mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // [link]
+            "Mario, w3cid 12345, https://mario.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                link: Some("https://mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // [email, link]
+            "Mario, w3cid 12345, hi@mario.com, https://mario.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                email: Some("hi@mario.com".to_owned()),
+                link: Some("https://mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // [link, email]
+            "Mario, w3cid 12345, https://mario.com, hi@mario.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                email: Some("hi@mario.com".to_owned()),
+                link: Some("https://mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // [org, email]
+            "Mario, w3cid 12345, Nintendo, hi@mario.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                org: Some("Nintendo".to_owned()),
+                email: Some("hi@mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // [org, link]
+            "Mario, w3cid 12345, Nintendo, https://mario.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                org: Some("Nintendo".to_owned()),
+                link: Some("https://mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // [org, email, link]
+            "Mario, w3cid 12345, Nintendo, hi@mario.com, https://mario.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                org: Some("Nintendo".to_owned()),
+                email: Some("hi@mario.com".to_owned()),
+                link: Some("https://mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // [org, link, email]
+            "Mario, w3cid 12345, Nintendo, https://mario.com, hi@mario.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                org: Some("Nintendo".to_owned()),
+                email: Some("hi@mario.com".to_owned()),
+                link: Some("https://mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // w3cid @ index 2
+            "Mario, Nintendo, w3cid 12345, https://mario.com, hi@mario.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                org: Some("Nintendo".to_owned()),
+                email: Some("hi@mario.com".to_owned()),
+                link: Some("https://mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // w3cid @ index 3
+            "Mario, Nintendo, https://mario.com, w3cid 12345, hi@mario.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                org: Some("Nintendo".to_owned()),
+                email: Some("hi@mario.com".to_owned()),
+                link: Some("https://mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // w3cid @ index 4
+            "Mario, Nintendo, https://mario.com, hi@mario.com, w3cid 12345" => Ok(Editor {
+                name: "Mario".to_owned(),
+                w3c_id: Some("12345".to_owned()),
+                org: Some("Nintendo".to_owned()),
+                email: Some("hi@mario.com".to_owned()),
+                link: Some("https://mario.com".to_owned()),
+                ..Default::default()
+            }),
+            // org ends with an email
+            "Mario, Nintendo hi@nintendo.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                org: Some("Nintendo".to_owned()),
+                org_link: Some("hi@nintendo.com".to_owned()),
+                ..Default::default()
+            }),
+            // org ends with a link
+            "Mario, Nintendo https://nintendo.com" => Ok(Editor {
+                name: "Mario".to_owned(),
+                org: Some("Nintendo".to_owned()),
+                org_link: Some("https://nintendo.com".to_owned()),
+                ..Default::default()
+            }),
+            // wrong format
+            "Mario, Nintendo, error, https://mario.com, hi@mario.com" => Err("wrong format"),
+            "Mario, Nintendo, https://mario.com, error, hi@mario.com" => Err("wrong format"),
+            "Mario, Nintendo, https://mario.com, hi@mario.com, error" => Err("wrong format"),
+        };
+
+        for (val, target) in cases {
+            let result = parse_editor(val).map_err(|e| e);
+            assert_eq!(result, target);
+        }
+    }
 }
