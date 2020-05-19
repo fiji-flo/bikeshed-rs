@@ -24,7 +24,7 @@ pub struct Editor {
 }
 
 impl Editor {
-    pub fn new(name: String) -> Self {
+    fn new(name: String) -> Self {
         Editor {
             name,
             ..Default::default()
