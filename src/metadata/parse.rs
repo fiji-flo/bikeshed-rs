@@ -141,6 +141,8 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
             if is_emailish(last_org_piece) || is_linkish(last_org_piece) {
                 editor.org = Some(org_pieces[..org_pieces.len() - 1].join(" "));
                 editor.org_link = Some(last_org_piece.to_string());
+            } else {
+                editor.org = Some(org_pieces.join(" "));
             }
         } else {
             editor.org = Some(org);
@@ -290,6 +292,12 @@ mod tests {
                 name: "Mario".to_owned(),
                 org: Some("Nintendo".to_owned()),
                 org_link: Some("https://nintendo.com".to_owned()),
+                ..Default::default()
+            }),
+            // org ends without an email or a link
+            "Tommy Vercetti, Rockstar Games" => Ok(Editor {
+                name: "Tommy Vercetti".to_owned(),
+                org: Some("Rockstar Games".to_owned()),
                 ..Default::default()
             }),
             // wrong format
