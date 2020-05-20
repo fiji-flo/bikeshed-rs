@@ -149,6 +149,37 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
     Ok(editor)
 }
 
+#[derive(Debug, Clone, PartialEq)]
+pub struct EditorTerm {
+    pub singular: String,
+    pub plural: String,
+}
+
+impl EditorTerm {
+    fn new(singular: String, plural: String) -> Self {
+        EditorTerm { singular, plural }
+    }
+}
+
+impl Default for EditorTerm {
+    fn default() -> Self {
+        EditorTerm::new("Editor".to_owned(), "Editors".to_owned())
+    }
+}
+
+pub fn parse_editor_term(val: &str) -> Result<EditorTerm, &'static str> {
+    let pieces = val
+        .split(",")
+        .map(|piece| piece.trim())
+        .collect::<Vec<&str>>();
+
+    if pieces.len() == 2 {
+        Ok(EditorTerm::new(pieces[0].to_owned(), pieces[1].to_owned()))
+    } else {
+        Err("wrong format")
+    }
+}
+
 pub fn parse_level(val: &str) -> String {
     if val == "none" {
         String::new()
@@ -163,7 +194,7 @@ pub fn parse_vec(val: &str) -> Vec<String> {
 
 #[cfg(test)]
 mod tests {
-    use super::{parse_editor, Editor};
+    use super::{parse_editor, parse_editor_term, Editor, EditorTerm};
     use std::collections::BTreeMap;
 
     #[test]
@@ -305,6 +336,20 @@ mod tests {
 
         for (val, target) in cases {
             let result = parse_editor(val);
+            assert_eq!(result, target);
+        }
+    }
+
+    #[test]
+    fn test_parse_editor_term() {
+        let cases: BTreeMap<&'static str, Result<EditorTerm, &'static str>> = btreemap! {
+            "x" => Err("wrong format"),
+            "x, xs" => Ok(EditorTerm::new("x".to_owned(), "xs".to_owned())),
+            "x, xs, xss" => Err("wrong format"),
+        };
+
+        for (val, target) in cases {
+            let result = parse_editor_term(val);
             assert_eq!(result, target);
         }
     }
