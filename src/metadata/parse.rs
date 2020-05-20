@@ -168,6 +168,8 @@ impl Default for EditorTerm {
 }
 
 pub fn parse_editor_term(val: &str) -> Result<EditorTerm, &'static str> {
+    // <editor-term> := <singular-term> "," <plural-term>
+
     let pieces = val
         .split(",")
         .map(|piece| piece.trim())
