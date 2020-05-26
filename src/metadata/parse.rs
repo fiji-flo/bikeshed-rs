@@ -331,9 +331,9 @@ mod tests {
                 ..Default::default()
             }),
             // wrong format
-            "Super Mario, Nintendo, error, https://mario.com, hi@mario.com" => Err("wrong format"),
-            "Super Mario, Nintendo, https://mario.com, error, hi@mario.com" => Err("wrong format"),
-            "Super Mario, Nintendo, https://mario.com, hi@mario.com, error" => Err("wrong format"),
+            "Super Mario, Nintendo, error, https://mario.com, hi@mario.com" => Err("wrong editor format"),
+            "Super Mario, Nintendo, https://mario.com, error, hi@mario.com" => Err("wrong editor format"),
+            "Super Mario, Nintendo, https://mario.com, hi@mario.com, error" => Err("wrong editor format"),
         };
 
         for (val, target) in cases {
@@ -345,9 +345,9 @@ mod tests {
     #[test]
     fn test_parse_editor_term() {
         let cases: BTreeMap<&'static str, Result<EditorTerm, &'static str>> = btreemap! {
-            "x" => Err("wrong format"),
+            "x" => Err("wrong editor term format"),
             "x, xs" => Ok(EditorTerm::new("x".to_owned(), "xs".to_owned())),
-            "x, xs, xss" => Err("wrong format"),
+            "x, xs, xss" => Err("wrong editor term format"),
         };
 
         for (val, target) in cases {
