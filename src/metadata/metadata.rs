@@ -66,8 +66,9 @@ impl Metadata {
             "Boilerplate" => {
                 let val = match parse::parse_boilerplate(val) {
                     Ok(val) => val,
-                    Err("wrong boolish format") => die!(""; line_num),
-                    Err(_) => die!(""; line_num),
+                    Err(_) => {
+                        die!("Boilerplate metadata pieces are a boilerplate label and a boolean. Got: {}.", val; line_num)
+                    }
                 };
                 self.boilerplate.update(&val);
             }
