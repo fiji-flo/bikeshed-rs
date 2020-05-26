@@ -74,5 +74,18 @@ mod tests {
             assert_eq!(bs.get(&"a"), true);
             assert_eq!(bs.get(&"b"), false);
         }
+        {
+            let mut bs = BoolSet::<&str>::new_with_default(false);
+            bs.insert("a", true);
+            assert_eq!(bs.get(&"a"), true);
+            assert_eq!(bs.get(&"b"), false);
+
+            let mut other = BoolSet::<&str>::new_with_default(true);
+            other.insert("a", false);
+            other.insert("b", true);
+            bs.update(&other);
+            assert_eq!(bs.get(&"a"), false);
+            assert_eq!(bs.get(&"b"), true);
+        }
     }
 }
