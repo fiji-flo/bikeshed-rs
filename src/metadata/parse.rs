@@ -243,8 +243,8 @@ mod tests {
             let result = parse_boilerplate("omit logo");
             assert!(result.is_ok());
             if let Ok(result) = result {
-                assert_eq!(result.get(&"logo".to_owned()), false);
-                assert_eq!(result.get(&"copyright".to_owned()), true);
+                assert_eq!(result.get("logo"), false);
+                assert_eq!(result.get("copyright"), true);
             }
         }
         {
@@ -255,17 +255,17 @@ mod tests {
             let result = parse_boilerplate("omit logo, omit copyright");
             assert!(result.is_ok());
             if let Ok(result) = result {
-                assert_eq!(result.get(&"logo".to_owned()), false);
-                assert_eq!(result.get(&"copyright".to_owned()), false);
-                assert_eq!(result.get(&"warning".to_owned()), true);
+                assert_eq!(result.get("logo"), false);
+                assert_eq!(result.get("copyright"), false);
+                assert_eq!(result.get("warning"), true);
             }
         }
         {
             let result = parse_boilerplate("logo no");
             assert!(result.is_ok());
             if let Ok(result) = result {
-                assert_eq!(result.get(&"logo".to_owned()), false);
-                assert_eq!(result.get(&"copyright".to_owned()), true);
+                assert_eq!(result.get("logo"), false);
+                assert_eq!(result.get("copyright"), true);
             }
         }
         {
@@ -280,9 +280,9 @@ mod tests {
             let result = parse_boilerplate("logo yes, omit copyright, warning no");
             assert!(result.is_ok());
             if let Ok(result) = result {
-                assert_eq!(result.get(&"logo".to_owned()), true);
-                assert_eq!(result.get(&"copyright".to_owned()), false);
-                assert_eq!(result.get(&"warning".to_owned()), false);
+                assert_eq!(result.get("logo"), true);
+                assert_eq!(result.get("copyright"), false);
+                assert_eq!(result.get("warning"), false);
             }
         }
     }
