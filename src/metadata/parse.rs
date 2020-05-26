@@ -5,7 +5,8 @@ use crate::util::boolset::BoolSet;
 use crate::util::date::{Date, ParseResult};
 
 pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
-    // <boilerplate> := [<pair>] ("," <pair>)*
+    // <boilerplate> := <pair> ("," <pair>)*
+    // <pair> := ("omit" <section>) | (<section> <boolish>)
 
     let mut boilerplate = BoolSet::<String>::new_with_default(true);
 
@@ -21,7 +22,7 @@ pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
             // "omit" <section>
             boilerplate.insert(pieces[1].clone(), false);
         } else {
-            // <section> <on-off>
+            // <section> <boolish>
             if let Some(on_off) = boolish_to_bool(&pieces[1]) {
                 boilerplate.insert(pieces[0].clone(), on_off);
             } else {
