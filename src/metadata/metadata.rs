@@ -1,7 +1,7 @@
 use regex::Regex;
 use titlecase::titlecase;
 
-use super::parse::{self, Editor};
+use super::parse::{self, Editor, EditorTerm};
 use crate::config::SHORT_TO_LONG_STATUS;
 use crate::line::Line;
 use crate::spec::Spec;
@@ -20,6 +20,7 @@ pub struct Metadata {
     pub canonical_url: Option<String>,
     pub date: Date,
     pub editors: Vec<Editor>,
+    pub editor_term: Option<EditorTerm>,
     pub group: Option<String>,
     pub title: Option<String>,
 }
@@ -79,6 +80,15 @@ impl Metadata {
                 };
                 self.editors.push(val);
             }
+            "Editor Term" => {
+                let val = match parse::parse_editor_term(val) {
+                    Ok(val) => val,
+                    Err(_) => {
+                        die!("\"Editor Term\" format is \"<singular-term>, <plural-term>\". Got: {}.", val; line_num)
+                    }
+                };
+                self.editor_term = Some(val);
+            }
             "Group" => {
                 let val = val.to_owned();
                 self.group = Some(val);
@@ -126,6 +136,10 @@ impl Metadata {
         self.date = other.date;
         // Editor
         self.editors.extend(other.editors.into_iter());
+        // Editor Term
+        if other.editor_term.is_some() {
+            self.editor_term = other.editor_term;
+        }
         // Group
         if other.group.is_some() {
             self.group = other.group;
@@ -176,6 +190,9 @@ impl Metadata {
     pub fn compute_implicit_metadata(&mut self) {
         if self.canonical_url.as_ref().map_or(true, |url| url == "ED") {
             self.canonical_url = self.ed.clone();
+        }
+        if self.editor_term.is_none() {
+            self.editor_term = Some(EditorTerm::default());
         }
     }
 
