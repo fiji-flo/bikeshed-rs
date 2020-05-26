@@ -125,7 +125,7 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
             org = Some(pieces[0].to_owned());
         }
     } else if pieces.len() != 0 {
-        return Err("wrong format");
+        return Err("wrong editor format");
     }
 
     // check if the org ends with an email or a link
@@ -178,7 +178,7 @@ pub fn parse_editor_term(val: &str) -> Result<EditorTerm, &'static str> {
     if pieces.len() == 2 {
         Ok(EditorTerm::new(pieces[0].to_owned(), pieces[1].to_owned()))
     } else {
-        Err("wrong format")
+        Err("wrong editor term format")
     }
 }
 
