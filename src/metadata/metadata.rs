@@ -20,7 +20,7 @@ pub struct Metadata {
     pub canonical_url: Option<String>,
     pub date: Date,
     pub editors: Vec<Editor>,
-    pub editor_term: EditorTerm,
+    pub editor_term: Option<EditorTerm>,
     pub group: Option<String>,
     pub title: Option<String>,
 }
@@ -87,7 +87,7 @@ impl Metadata {
                         die!("\"Editor Term\" format is \"<singular-term>, <plural-term>\". Got: {}.", val; line_num)
                     }
                 };
-                self.editor_term = val;
+                self.editor_term = Some(val);
             }
             "Group" => {
                 let val = val.to_owned();
@@ -137,7 +137,9 @@ impl Metadata {
         // Editor
         self.editors.extend(other.editors.into_iter());
         // Editor Term
-        self.editor_term = other.editor_term;
+        if other.editor_term.is_some() {
+            self.editor_term = other.editor_term;
+        }
         // Group
         if other.group.is_some() {
             self.group = other.group;
@@ -188,6 +190,9 @@ impl Metadata {
     pub fn compute_implicit_metadata(&mut self) {
         if self.canonical_url.as_ref().map_or(true, |url| url == "ED") {
             self.canonical_url = self.ed.clone();
+        }
+        if self.editor_term.is_none() {
+            self.editor_term = Some(EditorTerm::default());
         }
     }
 
