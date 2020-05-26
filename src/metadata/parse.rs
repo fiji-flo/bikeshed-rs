@@ -18,7 +18,9 @@ pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
 
         if pieces.len() != 2 {
             return Err("wrong boilerplate piece format");
-        } else if pieces[0] == "omit" {
+        }
+
+        if pieces[0] == "omit" {
             // "omit" <section>
             boilerplate.insert(pieces[1].clone(), false);
         } else {
