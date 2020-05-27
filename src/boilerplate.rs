@@ -3,13 +3,21 @@ use std::fs;
 use crate::html;
 use crate::spec::Spec;
 
-pub fn add_header_footer(data: &mut String) {
+pub fn add_header_footer(doc: &mut Spec) {
     // TODO: handle group and status
-    let header_path = "boilerplate/header.include";
-    let footer_path = "boilerplate/footer.include";
+    let header_path = if doc.md.boilerplate.get("header") {
+        "boilerplate/header.include"
+    } else {
+        ""
+    };
+    let footer_path = if doc.md.boilerplate.get("footer") {
+        "boilerplate/footer.include"
+    } else {
+        ""
+    };
     let header = fs::read_to_string(header_path).expect("Fail to open header file");
     let footer = fs::read_to_string(footer_path).expect("Fail to open footer file");
-    *data = [header, data.clone(), footer].join("\n");
+    doc.html = [header, doc.html.clone(), footer].join("\n");
 }
 
 pub fn add_bikeshed_boilerplate(doc: &mut Spec) {

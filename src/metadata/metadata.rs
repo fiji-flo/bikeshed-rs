@@ -5,6 +5,7 @@ use super::parse::{self, Editor, EditorTerm};
 use crate::config::SHORT_TO_LONG_STATUS;
 use crate::line::Line;
 use crate::spec::Spec;
+use crate::util::boolset::BoolSet;
 use crate::util::date::Date;
 
 #[derive(Debug, Clone, Default)]
@@ -17,6 +18,7 @@ pub struct Metadata {
     pub shortname: Option<String>,
     pub raw_status: Option<String>,
     // optional metadata
+    pub boilerplate: BoolSet<String>,
     pub canonical_url: Option<String>,
     pub date: Date,
     pub editors: Vec<Editor>,
@@ -27,7 +29,10 @@ pub struct Metadata {
 
 impl Metadata {
     pub fn new() -> Self {
-        Self::default()
+        Metadata {
+            boilerplate: BoolSet::new_with_default(true),
+            ..Default::default()
+        }
     }
 
     pub fn add_data(&mut self, key: &str, val: &str, line_num: Option<u32>) {
@@ -57,6 +62,15 @@ impl Metadata {
             "Status" => {
                 let val = val.to_owned();
                 self.raw_status = Some(val);
+            }
+            "Boilerplate" => {
+                let val = match parse::parse_boilerplate(val) {
+                    Ok(val) => val,
+                    Err(_) => {
+                        die!("Boilerplate metadata pieces are a boilerplate label and a boolean. Got: {}.", val; line_num)
+                    }
+                };
+                self.boilerplate.update(&val);
             }
             "Canonical Url" => {
                 let val = val.to_owned();
@@ -128,6 +142,8 @@ impl Metadata {
         if other.raw_status.is_some() {
             self.raw_status = other.raw_status;
         }
+        // Boilerplate
+        self.boilerplate.update(&other.boilerplate);
         // Canonical Url
         if other.canonical_url.is_some() {
             self.canonical_url = other.canonical_url;

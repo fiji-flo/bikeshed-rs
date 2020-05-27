@@ -1,6 +1,40 @@
 use regex::Regex;
 
+use crate::util::boolish::boolish_to_bool;
+use crate::util::boolset::BoolSet;
 use crate::util::date::{Date, ParseResult};
+
+pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
+    // <boilerplate> := <pair> ("," <pair>)*
+    // <pair> := ("omit" <section>) | (<section> <boolish>)
+
+    let mut boilerplate = BoolSet::<String>::new_with_default(true);
+
+    for item in val.split(",").map(|item| item.trim()) {
+        let pieces = item
+            .split(" ")
+            .map(|piece| piece.trim().to_lowercase())
+            .collect::<Vec<String>>();
+
+        if pieces.len() != 2 {
+            return Err("wrong boilerplate piece format");
+        }
+
+        if pieces[0] == "omit" {
+            // "omit" <section>
+            boilerplate.insert(pieces[1].clone(), false);
+        } else {
+            // <section> <boolish>
+            if let Some(on_off) = boolish_to_bool(&pieces[1]) {
+                boilerplate.insert(pieces[0].clone(), on_off);
+            } else {
+                return Err("wrong boolish format");
+            }
+        }
+    }
+
+    Ok(boilerplate)
+}
 
 pub fn parse_date(val: &str) -> ParseResult {
     if val == "now" {
@@ -196,8 +230,62 @@ pub fn parse_vec(val: &str) -> Vec<String> {
 
 #[cfg(test)]
 mod tests {
-    use super::{parse_editor, parse_editor_term, Editor, EditorTerm};
+    use super::{parse_boilerplate, parse_editor, parse_editor_term, Editor, EditorTerm};
     use std::collections::BTreeMap;
+
+    #[test]
+    fn test_parse_boilerplate() {
+        {
+            let result = parse_boilerplate("");
+            assert_eq!(result, Err("wrong boilerplate piece format"));
+        }
+        {
+            let result = parse_boilerplate("omit logo");
+            assert!(result.is_ok());
+            if let Ok(result) = result {
+                assert_eq!(result.get("logo"), false);
+                assert_eq!(result.get("copyright"), true);
+            }
+        }
+        {
+            let result = parse_boilerplate("logo omit");
+            assert_eq!(result, Err("wrong boolish format"));
+        }
+        {
+            let result = parse_boilerplate("omit logo, omit copyright");
+            assert!(result.is_ok());
+            if let Ok(result) = result {
+                assert_eq!(result.get("logo"), false);
+                assert_eq!(result.get("copyright"), false);
+                assert_eq!(result.get("warning"), true);
+            }
+        }
+        {
+            let result = parse_boilerplate("logo no");
+            assert!(result.is_ok());
+            if let Ok(result) = result {
+                assert_eq!(result.get("logo"), false);
+                assert_eq!(result.get("copyright"), true);
+            }
+        }
+        {
+            let result = parse_boilerplate("logo logo");
+            assert_eq!(result, Err("wrong boolish format"));
+        }
+        {
+            let result = parse_boilerplate("logo no logo");
+            assert_eq!(result, Err("wrong boilerplate piece format"));
+        }
+        {
+            let result = parse_boilerplate("logo yes, omit copyright, warning no");
+            assert!(result.is_ok());
+            if let Ok(result) = result {
+                assert_eq!(result.get("logo"), true);
+                assert_eq!(result.get("copyright"), false);
+                assert_eq!(result.get("warning"), false);
+            }
+        }
+    }
 
     #[test]
     fn test_parse_editor() {

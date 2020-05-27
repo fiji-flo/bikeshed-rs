@@ -17,7 +17,7 @@ pub struct Spec<'a> {
     pub md: Metadata,
     pub md_cli: Metadata,
     pub macros: HashMap<&'static str, String>,
-    html: String,
+    pub html: String,
     pub document: Option<NodeRef>,
     pub head: Option<NodeRef>,
     pub body: Option<NodeRef>,
@@ -80,7 +80,7 @@ impl<'a> Spec<'a> {
             .map(|l| l.text.clone())
             .collect::<Vec<String>>()
             .join("\n");
-        boilerplate::add_header_footer(&mut self.html);
+        boilerplate::add_header_footer(self);
         self.html = html::helper::replace_macros(&self.html, &self.macros);
 
         self.document = Some(kuchiki::parse_html().one(self.html.clone()));
@@ -115,7 +115,7 @@ impl<'a> Spec<'a> {
                         + ".html";
                 }
             }
-            String::from("-")
+            "-".to_owned()
         }
     }
 }
