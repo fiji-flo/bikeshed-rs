@@ -44,8 +44,11 @@ where
     }
 
     pub fn update(&mut self, other: &Self) {
+        assert_eq!(
+            self.default_val, other.default_val,
+            "Can't merge BoolSet with different default values"
+        );
         self.map.extend(other.map.clone());
-        self.default_val = other.default_val;
     }
 }
 
@@ -81,12 +84,20 @@ mod tests {
             assert_eq!(bs.get("a"), true);
             assert_eq!(bs.get("b"), false);
 
-            let mut other = BoolSet::<&str>::new_with_default(true);
+            let mut other = BoolSet::<&str>::new_with_default(false);
             other.insert("a", false);
             other.insert("b", true);
             bs.update(&other);
             assert_eq!(bs.get("a"), false);
             assert_eq!(bs.get("b"), true);
         }
+    }
+
+    #[test]
+    #[should_panic(expected = "Can't merge BoolSet with different default values")]
+    fn test_bool_set_panic() {
+        let mut bs = BoolSet::<&str>::new_with_default(true);
+        let other = BoolSet::<&str>::new_with_default(false);
+        bs.update(&other);
     }
 }
