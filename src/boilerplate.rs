@@ -5,12 +5,12 @@ use crate::spec::Spec;
 
 pub fn add_header_footer(doc: &mut Spec) {
     // TODO: handle group and status
-    let header_path = if doc.md.boilerplate.get(&"header".to_owned()) {
+    let header_path = if doc.md.boilerplate.get("header") {
         "boilerplate/header.include"
     } else {
         ""
     };
-    let footer_path = if doc.md.boilerplate.get(&"footer".to_owned()) {
+    let footer_path = if doc.md.boilerplate.get("footer") {
         "boilerplate/footer.include"
     } else {
         ""
