@@ -5,16 +5,16 @@ use crate::html;
 use crate::spec::Spec;
 
 // Retrieve boilerplate file with doc (metadata).
-fn retrieve_boilerplate(doc: &mut Spec, name: &str) -> String {
-    retrieve_boilerplate_with_info(name, doc.md.group.clone(), doc.md.raw_status.clone())
+fn retrieve_boilerplate(doc: &Spec, name: &str) -> String {
+    if doc.md.boilerplate.get(name) {
+        retrieve_boilerplate_with_info(name, doc.md.group.as_deref(), doc.md.raw_status.as_deref())
+    } else {
+        String::new()
+    }
 }
 
 // Retrieve boilerplate file with group and status.
-fn retrieve_boilerplate_with_info(
-    name: &str,
-    group: Option<String>,
-    status: Option<String>,
-) -> String {
+fn retrieve_boilerplate_with_info(name: &str, group: Option<&str>, status: Option<&str>) -> String {
     // File Priorities:
     // 1. [status file with group]
     // 2. [generic file with group]
@@ -31,7 +31,7 @@ fn retrieve_boilerplate_with_info(
 
     if let Some(ref status_filename) = status_filename {
         // status file with group
-        if let Some(group) = group.clone() {
+        if let Some(group) = group {
             paths_to_try.push(Path::new("boilerplate").join(group).join(status_filename));
         }
     }
@@ -40,11 +40,7 @@ fn retrieve_boilerplate_with_info(
 
     if let Some(group) = group {
         // generic file with group
-        paths_to_try.push(
-            Path::new("boilerplate")
-                .join(group)
-                .join(generic_filename.clone()),
-        );
+        paths_to_try.push(Path::new("boilerplate").join(group).join(&generic_filename));
     }
 
     if let Some(ref status_filename) = status_filename {
@@ -53,16 +49,11 @@ fn retrieve_boilerplate_with_info(
     }
 
     // generic file without group
-    paths_to_try.push(Path::new("boilerplate").join(generic_filename));
+    paths_to_try.push(Path::new("boilerplate").join(&generic_filename));
 
     for path in paths_to_try {
-        if path.is_file() {
-            match fs::read_to_string(path) {
-                Ok(data) => {
-                    return data;
-                }
-                Err(_) => die!("Can't read data from the include file for {}.", name),
-            }
+        if let Ok(data) = fs::read_to_string(path) {
+            return data;
         }
     }
 
@@ -70,18 +61,8 @@ fn retrieve_boilerplate_with_info(
 }
 
 pub fn add_header_footer(doc: &mut Spec) {
-    let header = if doc.md.boilerplate.get("header") {
-        retrieve_boilerplate(doc, "header")
-    } else {
-        String::new()
-    };
-
-    let footer = if doc.md.boilerplate.get("footer") {
-        retrieve_boilerplate(doc, "footer")
-    } else {
-        String::new()
-    };
-
+    let header = retrieve_boilerplate(doc, "header");
+    let footer = retrieve_boilerplate(doc, "footer");
     doc.html = [header, doc.html.clone(), footer].join("\n");
 }
 
