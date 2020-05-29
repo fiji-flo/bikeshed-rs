@@ -22,5 +22,9 @@
 <div class="p-summary" data-fill-with="abstract"></div>
 <div data-fill-with="at-risk"></div>
 
+<h2 class='no-num no-toc no-ref' id='status'>Status of this document</h2>
+<div data-fill-with="status"></div>
+<div data-fill-with="at-risk"></div>
+
 <nav data-fill-with="table-of-contents" id="toc"></nav>
 <main>
