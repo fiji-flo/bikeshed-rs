@@ -222,15 +222,15 @@ impl Metadata {
 // TODO(#3): figure out if we can get rid of this html-parsing-with-regexes
 pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
     lazy_static! {
-        // title reg
+        // title regex
         static ref TITLE_REG: Regex = Regex::new(r"\s*<h1[^>]*>(.*?)</h1>").unwrap();
-        // begin tag reg
+        // begin tag regex
         static ref BEGIN_TAG_REG: Regex = Regex::new(r"<(pre|xmp) [^>]*class=[^>]*metadata[^>]*>").unwrap();
-        // </pre> end tag
-        static ref PRE_END_TAG: Regex = Regex::new(r"</pre>\s*").unwrap();
-        // </xmp> end tag
-        static ref XMP_END_TAG: Regex = Regex::new(r"</xmp>\s*").unwrap();
-        // pair reg
+        // </pre> end tag regex
+        static ref PRE_END_TAG_REG: Regex = Regex::new(r"</pre>\s*").unwrap();
+        // </xmp> end tag regex
+        static ref XMP_END_TAG_REG: Regex = Regex::new(r"</xmp>\s*").unwrap();
+        // pair regex
         static ref PAIR_REG: Regex = Regex::new(r"([^:]+):\s*(.*)").unwrap();
     }
 
@@ -246,9 +246,9 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
             in_metadata = true;
             md.has_keys = true;
             if line.text.starts_with("<pre") {
-                end_tag_reg = Some(&PRE_END_TAG);
+                end_tag_reg = Some(&PRE_END_TAG_REG);
             } else {
-                end_tag_reg = Some(&XMP_END_TAG);
+                end_tag_reg = Some(&XMP_END_TAG_REG);
             }
         } else if in_metadata && end_tag_reg.unwrap().is_match(&line.text) {
             // handle end tag
