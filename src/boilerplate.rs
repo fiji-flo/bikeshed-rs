@@ -14,7 +14,11 @@ fn retrieve_boilerplate(doc: &Spec, name: &str) -> String {
 }
 
 // Retrieve boilerplate file with group and status.
-fn retrieve_boilerplate_with_info(name: &str, group: Option<&str>, status: Option<&str>) -> String {
+pub fn retrieve_boilerplate_with_info(
+    name: &str,
+    group: Option<&str>,
+    status: Option<&str>,
+) -> String {
     // File Priorities:
     // 1. [status file with group]
     // 2. [generic file with group]

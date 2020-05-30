@@ -3,7 +3,7 @@ use kuchiki::NodeRef;
 use std::collections::{BTreeMap, HashMap};
 use std::fs;
 
-use crate::boilerplate;
+use crate::boilerplate::{self, retrieve_boilerplate_with_info};
 use crate::config::SOURCE_FILE_EXTENSIONS;
 use crate::html;
 use crate::line::Line;
@@ -65,10 +65,20 @@ impl<'a> Spec<'a> {
     }
 
     fn assemble_document(&mut self) {
-        let (mut md, lines) = metadata::parse_metadata(&self.lines);
+        let (md_doc, lines) = metadata::parse_metadata(&self.lines);
         self.lines = lines;
 
+        // [default metadata] < [document metadata] < [command-line metadata]
+        let mut md = {
+            let group = metadata::extract_group(&[&md_doc, &self.md_cli]);
+            let status = metadata::extract_status(&[&md_doc, &self.md_cli]);
+            let data =
+                retrieve_boilerplate_with_info("defaults", group.as_deref(), status.as_deref());
+            Metadata::from_json(data)
+        };
+        md.join(md_doc);
         md.join(self.md_cli.clone());
+
         md.compute_implicit_metadata();
         md.fill_macros(self);
         md.validate();

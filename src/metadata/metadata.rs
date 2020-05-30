@@ -1,4 +1,6 @@
 use regex::Regex;
+use serde_json::map::Map;
+use serde_json::{self, Value};
 use titlecase::titlecase;
 
 use super::parse::{self, Editor, EditorTerm};
@@ -33,6 +35,31 @@ impl Metadata {
             boilerplate: BoolSet::new_with_default(true),
             ..Default::default()
         }
+    }
+
+    pub fn from_json(data: String) -> Self {
+        let mut md = Metadata::new();
+        let obj: Map<String, Value> = match serde_json::from_str(&data) {
+            Ok(Value::Object(obj)) => obj,
+            _ => die!("Fail to load JSON:\n{}", data),
+        };
+
+        for (key, val) in obj.iter() {
+            match val {
+                Value::String(str_val) => md.add_data(key, str_val, None),
+                Value::Array(arr_val) => {
+                    for indiv_val in arr_val {
+                        match indiv_val {
+                            Value::String(str_val) => md.add_data(key, str_val, None),
+                            _ => die!("JSON metadata values must be strings or arrays of strings. \"{0}\" is something else.", key)
+                        }
+                    }
+                }
+                _ => die!("JSON metadata values must be strings or arrays of strings. \"{0}\" is something else.", key)
+            }
+        }
+
+        md
     }
 
     pub fn add_data(&mut self, key: &str, val: &str, line_num: Option<u32>) {
@@ -217,6 +244,26 @@ impl Metadata {
             die!("No metadata provided.");
         }
     }
+}
+
+// Join all "group" field of metadata
+pub fn extract_group(mds: &[&Metadata]) -> Option<String> {
+    for md in mds.iter().rev() {
+        if md.group.is_some() {
+            return md.group.clone();
+        }
+    }
+    None
+}
+
+// Join all "raw status" field of metadata
+pub fn extract_status(mds: &[&Metadata]) -> Option<String> {
+    for md in mds.iter().rev() {
+        if md.raw_status.is_some() {
+            return md.raw_status.clone();
+        }
+    }
+    None
 }
 
 // TODO(#3): figure out if we can get rid of this html-parsing-with-regexes
