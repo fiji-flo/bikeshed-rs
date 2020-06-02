@@ -6,6 +6,7 @@ use std::fs;
 use crate::boilerplate::{self, retrieve_boilerplate_with_info};
 use crate::clean;
 use crate::config::SOURCE_FILE_EXTENSIONS;
+use crate::heading;
 use crate::html;
 use crate::line::Line;
 use crate::metadata::metadata::{self, Metadata};
@@ -107,6 +108,7 @@ impl<'a> Spec<'a> {
     fn process_document(&mut self) {
         boilerplate::add_canonical_url(self);
         boilerplate::add_bikeshed_boilerplate(self);
+        heading::process_headings(self);
     }
 
     pub fn finish(&self, outfile: Option<&str>) {
