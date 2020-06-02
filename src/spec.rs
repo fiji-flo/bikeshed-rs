@@ -20,7 +20,7 @@ pub struct Spec<'a> {
     pub md_cli: Metadata,
     pub macros: HashMap<&'static str, String>,
     pub html: String,
-    pub document: Option<NodeRef>,
+    pub dom: Option<NodeRef>,
     pub head: Option<NodeRef>,
     pub body: Option<NodeRef>,
     pub extra_styles: BTreeMap<&'static str, &'static str>,
@@ -95,14 +95,14 @@ impl<'a> Spec<'a> {
         boilerplate::add_header_footer(self);
         self.html = html::helper::replace_macros(&self.html, &self.macros);
 
-        self.document = Some(kuchiki::parse_html().one(self.html.clone()));
-        if let Ok(head) = self.document.as_ref().unwrap().select_first("head") {
+        self.dom = Some(kuchiki::parse_html().one(self.html.clone()));
+        if let Ok(head) = self.dom.as_ref().unwrap().select_first("head") {
             self.head = Some(head.as_node().clone());
         }
-        if let Ok(body) = self.document.as_ref().unwrap().select_first("body") {
+        if let Ok(body) = self.dom.as_ref().unwrap().select_first("body") {
             self.body = Some(body.as_node().clone());
         }
-        clean::correct_h1(self.document.as_mut().unwrap());
+        clean::correct_h1(self.dom.as_mut().unwrap());
     }
 
     fn process_document(&mut self) {
@@ -112,9 +112,9 @@ impl<'a> Spec<'a> {
     }
 
     pub fn finish(&self, outfile: Option<&str>) {
-        if let Some(document) = &self.document {
+        if let Some(ref dom) = self.dom {
             let outfile = self.handle_outfile(outfile);
-            let rendered = document.to_string();
+            let rendered = dom.to_string();
             fs::write(outfile, rendered).expect("unable to write file");
         }
     }
