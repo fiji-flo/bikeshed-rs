@@ -4,6 +4,7 @@ use std::collections::{BTreeMap, HashMap};
 use std::fs;
 
 use crate::boilerplate::{self, retrieve_boilerplate_with_info};
+use crate::clean;
 use crate::config::SOURCE_FILE_EXTENSIONS;
 use crate::html;
 use crate::line::Line;
@@ -100,6 +101,7 @@ impl<'a> Spec<'a> {
         if let Ok(body) = self.document.as_ref().unwrap().select_first("body") {
             self.body = Some(body.as_node().clone());
         }
+        clean::correct_h1(self.document.as_mut().unwrap());
     }
 
     fn process_document(&mut self) {

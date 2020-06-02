@@ -23,3 +23,8 @@ pub fn new_style(text: &str) -> NodeRef {
     el.append(NodeRef::new_text(text));
     el
 }
+
+pub fn replace_node(old_node: &NodeRef, new_node: &NodeRef) {
+    old_node.insert_before(new_node.clone());
+    old_node.detach();
+}

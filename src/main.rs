@@ -8,6 +8,7 @@ extern crate maplit;
 #[macro_use]
 mod util;
 mod boilerplate;
+mod clean;
 mod client;
 mod config;
 mod html;
