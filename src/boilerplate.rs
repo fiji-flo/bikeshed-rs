@@ -191,3 +191,19 @@ pub fn add_abstract(doc: &mut Spec) {
         }
     }
 }
+
+pub fn add_contents_table(doc: &mut Spec) {
+    if let Some(ref mut dom) = doc.dom {
+        if let Ok(ref container) = dom.select_first("nav[data-fill-with=table-of-contents]") {
+            let h2_el = html::node::new_element(
+                "h2",
+                btreemap! {
+                    "class" => "no-num no-toc no-ref".to_owned(),
+                    "id" => "contents".to_owned(),
+                },
+            );
+            h2_el.append(html::node::new_text("Table of Contents"));
+            container.as_node().append(h2_el);
+        }
+    }
+}
