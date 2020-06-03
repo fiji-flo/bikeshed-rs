@@ -106,13 +106,13 @@ impl<'a> Spec<'a> {
     }
 
     fn process_document(&mut self) {
-        heading::process_headings(self);
         boilerplate::add_canonical_url(self);
         boilerplate::add_spec_metadata_section(self);
         boilerplate::add_copyright_section(self);
         boilerplate::add_abstract_section(self);
         boilerplate::add_toc_section(self);
         boilerplate::add_bikeshed_boilerplate(self);
+        heading::process_headings(self);
     }
 
     pub fn finish(&self, outfile: Option<&str>) {
