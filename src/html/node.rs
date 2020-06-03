@@ -24,9 +24,8 @@ pub fn new_style(text: &str) -> NodeRef {
     el
 }
 
-pub fn replace_node(old_node: &NodeRef, new_node: &NodeRef) {
-    old_node.insert_before(new_node.clone());
-    old_node.detach();
+pub fn replace_node(old_el: &NodeRef, new_el: &NodeRef) {
+    old_el.insert_before(new_el.clone());
 }
 
 pub fn add_class(el: &NodeRef, class: &str) {
