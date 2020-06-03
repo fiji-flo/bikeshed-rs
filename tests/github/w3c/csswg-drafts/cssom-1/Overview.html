@@ -15,91 +15,6 @@
   </style>
   <link href="https://www.w3.org/TR/cssom-1/" rel="canonical">
 <script defer src="https://test.csswg.org/harness/annotate.js#!cssom-1_dev/cssom-1" type="text/javascript"></script>
-<style>/* style-md-lists */
-
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
-}
-[data-md] > :last-child {
-    margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
-
-.heading, .issue, .note, .example, li, dt {
-    position: relative;
-}
-a.self-link {
-    position: absolute;
-    top: 0;
-    left: calc(-1 * (3.5rem - 26px));
-    width: calc(3.5rem - 26px);
-    height: 2em;
-    text-align: center;
-    border: none;
-    transition: opacity .2s;
-    opacity: .5;
-}
-a.self-link:hover {
-    opacity: 1;
-}
-.heading > a.self-link {
-    font-size: 83%;
-}
-li > a.self-link {
-    left: calc(-1 * (3.5rem - 26px) - 2em);
-}
-dfn > a.self-link {
-    top: auto;
-    left: auto;
-    opacity: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: gray;
-    color: white;
-    font-style: normal;
-    transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-    opacity: 1;
-}
-dfn > a.self-link:hover {
-    color: black;
-}
-
-a.self-link::before            { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-counters */
-
-body {
-    counter-reset: example figure issue;
-}
-.issue {
-    counter-increment: issue;
-}
-.issue:not(.no-marker)::before {
-    content: "Issue " counter(issue);
-}
-
-.example {
-    counter-increment: example;
-}
-.example:not(.no-marker)::before {
-    content: "Example " counter(example);
-}
-.invalid.example:not(.no-marker)::before,
-.illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
-}
-
-figcaption {
-    counter-increment: figure;
-}
-figcaption:not(.no-marker)::before {
-    content: "Figure " counter(figure) " ";
-}</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -162,6 +77,35 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
 <style>/* style-dfn-panel */
 
 .dfn-panel {
@@ -199,6 +143,62 @@ pre .property::before, pre .property::after {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: black;
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }</style>
 <style>/* style-syntax-highlighting */
 pre.idl.highlight { color: #708090; }
 .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
@@ -284,10 +284,10 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:simonp@opera.com">Simon Pieters</a> (<a class="p-org org" href="http://www.opera.com">Opera Software AS</a>)
       <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="http://www.w3.org/wiki/User:Gadams">Glenn Adams</a> (<a class="p-org org" href="http://www.cox.com">Cox Communications, Inc.</a>) <a class="u-email email" href="mailto:glenn.adams@cos.com">glenn.adams@cos.com</a>
       <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="https://annevankesteren.nl/">Anne van Kesteren</a> (<a class="p-org org" href="http://www.opera.com">Opera Software ASA</a>) <a class="u-email email" href="mailto:annevk@annevk.nl">annevk@annevk.nl</a>
-      <dt>Suggest an Edit for this Spec:
-      <dd><a href="https://github.com/w3c/csswg-drafts/blob/master/cssom-1/Overview.bs">GitHub Editor</a>
       <dt>Issue Tracking:
       <dd><a href="https://github.com/w3c/csswg-drafts/labels/cssom-1">GitHub Issues</a>
+      <dt>Suggest an Edit for this Spec:
+      <dd><a href="https://github.com/w3c/csswg-drafts/blob/master/cssom-1/Overview.bs">GitHub Editor</a>
       <dt>Legacy issues list:
       <dd><a href="https://www.w3.org/Bugs/Public/buglist.cgi?product=CSS&amp;component=CSSOM&amp;resolution=---">Bugzilla</a>
      </dl>
@@ -2032,11 +2032,11 @@ Return the result.</p>
    <dl class="switch">
     <dt>keyword 
     <dd>The keyword <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ascii-lowercase" id="ref-for-ascii-lowercase⑦">converted to ASCII lowercase</a>. 
-    <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value" title="Expands to: turn | rad | grad | deg">&lt;angle></a> 
+    <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value" title="Expands to: deg | grad | rad | turn">&lt;angle></a> 
     <dd>
       The &lt;number> component serialized as per &lt;number> followed by the unit in canonical form as defined in its respective specification. 
      <p class="issue" id="issue-5f483407"><a class="self-link" href="#issue-5f483407"></a> Probably should distinguish between specified and computed / resolved values.</p>
-    <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color" title="Expands to: indigo | gold | firebrick | indianred | yellow | darkolivegreen | darkseagreen | slategrey | darkslategrey | mediumvioletred | mediumorchid | transparent | chartreuse | mediumslateblue | black | springgreen | crimson | lightsalmon | brown | turquoise | olivedrab | cyan | silver | skyblue | gray | darkturquoise | goldenrod | darkgreen | darkviolet | darkgray | lightpink | teal | darkmagenta | lightgoldenrodyellow | lavender | yellowgreen | thistle | violet | navy | dimgrey | orchid | blue | ghostwhite | honeydew | cornflowerblue | darkblue | darkkhaki | mediumpurple | cornsilk | red | bisque | slategray | darkcyan | khaki | wheat | deepskyblue | rebeccapurple | darkred | steelblue | aliceblue | lightslategrey | gainsboro | mediumturquoise | floralwhite | coral | purple | lightgrey | lightcyan | darksalmon | beige | azure | lightsteelblue | oldlace | greenyellow | royalblue | lightseagreen | mistyrose | sienna | lightcoral | orangered | navajowhite | lime | palegreen | burlywood | seashell | mediumspringgreen | fuchsia | papayawhip | blanchedalmond | peru | aquamarine | white | darkslategray | tomato | ivory | dodgerblue | currentcolor | lemonchiffon | chocolate | orange | forestgreen | darkgrey | olive | mintcream | antiquewhite | darkorange | cadetblue | moccasin | limegreen | saddlebrown | grey | darkslateblue | lightskyblue | deeppink | plum | aqua | darkgoldenrod | maroon | sandybrown | magenta | tan | rosybrown | pink | lightblue | palevioletred | mediumseagreen | slateblue | dimgray | powderblue | seagreen | snow | mediumblue | midnightblue | paleturquoise | palegoldenrod | whitesmoke | darkorchid | salmon | lightslategray | lawngreen | lightgreen | lightgray | hotpink | lightyellow | lavenderblush | linen | mediumaquamarine | green | blueviolet | peachpuff">&lt;color></a> 
+    <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color" title="Expands to: aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | currentcolor | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | transparent | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen">&lt;color></a> 
     <dd>
       If &lt;color> is a component of a resolved or computed value, then
  return the color using the <code>rgb()</code> or <code>rgba()</code> functional
@@ -2068,7 +2068,7 @@ Return the result.</p>
       <li>The string "<code>)</code>". 
      </ol>
      <p>In the above rules, the string "<code>, </code>" denotes a COMMA (U+002C) followed by a single SPACE (U+0020).</p>
-     <p>If <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color①" title="Expands to: indigo | gold | firebrick | indianred | yellow | darkolivegreen | darkseagreen | slategrey | darkslategrey | mediumvioletred | mediumorchid | transparent | chartreuse | mediumslateblue | black | springgreen | crimson | lightsalmon | brown | turquoise | olivedrab | cyan | silver | skyblue | gray | darkturquoise | goldenrod | darkgreen | darkviolet | darkgray | lightpink | teal | darkmagenta | lightgoldenrodyellow | lavender | yellowgreen | thistle | violet | navy | dimgrey | orchid | blue | ghostwhite | honeydew | cornflowerblue | darkblue | darkkhaki | mediumpurple | cornsilk | red | bisque | slategray | darkcyan | khaki | wheat | deepskyblue | rebeccapurple | darkred | steelblue | aliceblue | lightslategrey | gainsboro | mediumturquoise | floralwhite | coral | purple | lightgrey | lightcyan | darksalmon | beige | azure | lightsteelblue | oldlace | greenyellow | royalblue | lightseagreen | mistyrose | sienna | lightcoral | orangered | navajowhite | lime | palegreen | burlywood | seashell | mediumspringgreen | fuchsia | papayawhip | blanchedalmond | peru | aquamarine | white | darkslategray | tomato | ivory | dodgerblue | currentcolor | lemonchiffon | chocolate | orange | forestgreen | darkgrey | olive | mintcream | antiquewhite | darkorange | cadetblue | moccasin | limegreen | saddlebrown | grey | darkslateblue | lightskyblue | deeppink | plum | aqua | darkgoldenrod | maroon | sandybrown | magenta | tan | rosybrown | pink | lightblue | palevioletred | mediumseagreen | slateblue | dimgray | powderblue | seagreen | snow | mediumblue | midnightblue | paleturquoise | palegoldenrod | whitesmoke | darkorchid | salmon | lightslategray | lawngreen | lightgreen | lightgray | hotpink | lightyellow | lavenderblush | linen | mediumaquamarine | green | blueviolet | peachpuff">&lt;color></a> is a component of a specified value, then
+     <p>If <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color①" title="Expands to: aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | currentcolor | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | transparent | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen">&lt;color></a> is a component of a specified value, then
  return the color as follows:</p>
      <ol>
       <li>If the color was explicitly specified by the author, then return the original, author specified color value. 
@@ -2114,7 +2114,7 @@ Return the result.</p>
     <dd>A base-ten integer using digits 0-9 (U+0030 to U+0039) in the
  shortest form possible, preceded by "<code>-</code>" (U+002D) if it is
  negative. 
-    <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> 
+    <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> 
     <dd>
       The &lt;number> component serialized as per &lt;number> followed by the unit in its canonical form as defined in its respective specification. 
      <p class="issue" id="issue-5f483407②"><a class="self-link" href="#issue-5f483407②"></a> Probably should distinguish between specified and computed / resolved values.</p>
@@ -2128,7 +2128,7 @@ Return the result.</p>
     <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value">&lt;percentage></a> 
     <dd>The &lt;number> component serialized as per &lt;number> followed
  by the literal string "<code>%</code>" (U+0025). 
-    <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value" title="Expands to: dppx | x | dpcm | dpi">&lt;resolution></a> 
+    <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a> 
     <dd>The resolution in dots per <a class="css" data-link-type="value" href="https://drafts.csswg.org/css-values-4/#px" id="ref-for-px">CSS pixel</a> serialized as per
  &lt;number> followed by the literal string "<code>dppx</code>". 
     <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/mediaqueries-4/#typedef-ratio" id="ref-for-typedef-ratio">&lt;ratio></a> 
@@ -2150,7 +2150,7 @@ Return the result.</p>
     <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-fonts-4/#family-name-value" id="ref-for-family-name-value">&lt;family-name></a> 
     <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css2/aural.html#value-def-specific-voice" id="ref-for-value-def-specific-voice">&lt;specific-voice></a> 
     <dd>The string <a data-link-type="dfn" href="#serialize-a-string" id="ref-for-serialize-a-string⑤">serialized as a string</a>. 
-    <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#time-value" id="ref-for-time-value" title="Expands to: s | ms">&lt;time></a> 
+    <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#time-value" id="ref-for-time-value" title="Expands to: ms | s">&lt;time></a> 
     <dd>The time in seconds serialized as per &lt;number> followed by
  the literal string "<code>s</code>". 
     <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#url-value" id="ref-for-url-value">&lt;url></a> 
@@ -2424,7 +2424,7 @@ removed.</p>
     <li data-md>
      <p>Serialization of :lang() is changed.</p>
     <li data-md>
-     <p>Serialization of <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color②" title="Expands to: indigo | gold | firebrick | indianred | yellow | darkolivegreen | darkseagreen | slategrey | darkslategrey | mediumvioletred | mediumorchid | transparent | chartreuse | mediumslateblue | black | springgreen | crimson | lightsalmon | brown | turquoise | olivedrab | cyan | silver | skyblue | gray | darkturquoise | goldenrod | darkgreen | darkviolet | darkgray | lightpink | teal | darkmagenta | lightgoldenrodyellow | lavender | yellowgreen | thistle | violet | navy | dimgrey | orchid | blue | ghostwhite | honeydew | cornflowerblue | darkblue | darkkhaki | mediumpurple | cornsilk | red | bisque | slategray | darkcyan | khaki | wheat | deepskyblue | rebeccapurple | darkred | steelblue | aliceblue | lightslategrey | gainsboro | mediumturquoise | floralwhite | coral | purple | lightgrey | lightcyan | darksalmon | beige | azure | lightsteelblue | oldlace | greenyellow | royalblue | lightseagreen | mistyrose | sienna | lightcoral | orangered | navajowhite | lime | palegreen | burlywood | seashell | mediumspringgreen | fuchsia | papayawhip | blanchedalmond | peru | aquamarine | white | darkslategray | tomato | ivory | dodgerblue | currentcolor | lemonchiffon | chocolate | orange | forestgreen | darkgrey | olive | mintcream | antiquewhite | darkorange | cadetblue | moccasin | limegreen | saddlebrown | grey | darkslateblue | lightskyblue | deeppink | plum | aqua | darkgoldenrod | maroon | sandybrown | magenta | tan | rosybrown | pink | lightblue | palevioletred | mediumseagreen | slateblue | dimgray | powderblue | seagreen | snow | mediumblue | midnightblue | paleturquoise | palegoldenrod | whitesmoke | darkorchid | salmon | lightslategray | lawngreen | lightgreen | lightgray | hotpink | lightyellow | lavenderblush | linen | mediumaquamarine | green | blueviolet | peachpuff">&lt;color></a> and <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①">&lt;number></a> is changed.</p>
+     <p>Serialization of <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color②" title="Expands to: aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | currentcolor | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | transparent | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen">&lt;color></a> and <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①">&lt;number></a> is changed.</p>
     <li data-md>
      <p><code class="idl"><a data-link-type="idl" href="#dom-cssstyledeclaration-setproperty" id="ref-for-dom-cssstyledeclaration-setproperty⑤">setProperty()</a></code> on <code class="idl"><a data-link-type="idl" href="#cssstyledeclaration" id="ref-for-cssstyledeclaration①⓪">CSSStyleDeclaration</a></code> is changed.</p>
     <li data-md>
@@ -2587,8 +2587,8 @@ initial version of the alternative style sheets API and canonicalization
    <li><a href="#concept-css-style-sheet-alternate-flag">alternate flag</a><span>, in §6.1</span>
    <li><a href="#dom-medialist-appendmedium">appendMedium(medium)</a><span>, in §4.4</span>
    <li><a href="#associated-css-style-sheet">associated CSS style sheet</a><span>, in §6.3.2</span>
-   <li><a href="#dom-cssstyledeclaration-camel_cased_attribute">camel_cased_attribute</a><span>, in §6.6.1</span>
    <li><a href="#dom-cssstyledeclaration-camel-cased-attribute">camel-cased attribute</a><span>, in §6.6.1</span>
+   <li><a href="#dom-cssstyledeclaration-camel_cased_attribute">camel_cased_attribute</a><span>, in §6.6.1</span>
    <li><a href="#css-declaration-case-sensitive-flag">case-sensitive flag</a><span>, in §6.5</span>
    <li><a href="#change-the-preferred-css-style-sheet-set-name">change the preferred CSS style sheet set name</a><span>, in §6.2</span>
    <li><a href="#dom-cssrule-charset_rule">CHARSET_RULE</a><span>, in §6.4.2</span>
@@ -2611,13 +2611,13 @@ initial version of the alternative style sheets API and canonicalization
    <li><a href="#css-rule">CSS rule</a><span>, in §6.4</span>
    <li><a href="#cssrule">CSSRule</a><span>, in §6.4.2</span>
    <li><a href="#cssrulelist">CSSRuleList</a><span>, in §6.4.1</span>
+   <li><a href="#concept-css-style-sheet-css-rules">CSS rules</a><span>, in §6.1</span>
    <li>
     cssRules
     <ul>
      <li><a href="#dom-cssgroupingrule-cssrules">attribute for CSSGroupingRule</a><span>, in §6.4.5</span>
      <li><a href="#dom-cssstylesheet-cssrules">attribute for CSSStyleSheet</a><span>, in §6.1.2</span>
     </ul>
-   <li><a href="#concept-css-style-sheet-css-rules">CSS rules</a><span>, in §6.1</span>
    <li><a href="#cssstyledeclaration">CSSStyleDeclaration</a><span>, in §6.6.1</span>
    <li><a href="#cssstylerule">CSSStyleRule</a><span>, in §6.4.3</span>
    <li><a href="#css-style-sheet">CSS style sheet</a><span>, in §6.1</span>
@@ -2630,8 +2630,8 @@ initial version of the alternative style sheets API and canonicalization
      <li><a href="#dom-cssrule-csstext">attribute for CSSRule</a><span>, in §6.4.2</span>
      <li><a href="#dom-cssstyledeclaration-csstext">attribute for CSSStyleDeclaration</a><span>, in §6.6.1</span>
     </ul>
-   <li><a href="#dom-cssstyledeclaration-dashed_attribute">dashed_attribute</a><span>, in §6.6.1</span>
    <li><a href="#dom-cssstyledeclaration-dashed-attribute">dashed attribute</a><span>, in §6.6.1</span>
+   <li><a href="#dom-cssstyledeclaration-dashed_attribute">dashed_attribute</a><span>, in §6.6.1</span>
    <li><a href="#cssstyledeclaration-declarations">declarations</a><span>, in §6.6</span>
    <li><a href="#dom-medialist-deletemedium">deleteMedium(medium)</a><span>, in §4.4</span>
    <li>
@@ -2815,8 +2815,8 @@ initial version of the alternative style sheets API and canonicalization
      <li><a href="#dom-elementcssinlinestyle-style">attribute for ElementCSSInlineStyle</a><span>, in §7.1</span>
     </ul>
    <li><a href="#dom-cssrule-style_rule">STYLE_RULE</a><span>, in §6.4.2</span>
-   <li><a href="#dom-cssimportrule-stylesheet">styleSheet</a><span>, in §6.4.4</span>
    <li><a href="#stylesheet">StyleSheet</a><span>, in §6.1.1</span>
+   <li><a href="#dom-cssimportrule-stylesheet">styleSheet</a><span>, in §6.4.4</span>
    <li><a href="#stylesheetlist">StyleSheetList</a><span>, in §6.2.2</span>
    <li><a href="#dom-documentorshadowroot-stylesheets">styleSheets</a><span>, in §6.2.3</span>
    <li><a href="#supported-css-property">supported CSS property</a><span>, in §2</span>
@@ -4402,145 +4402,145 @@ The ElementCSSInlineStyle Mixin</a>
    <dd>Erik Dahlström; et al. <a href="https://www.w3.org/TR/SVG11/">Scalable Vector Graphics (SVG) 1.1 (Second Edition)</a>. 16 August 2011. REC. URL: <a href="https://www.w3.org/TR/SVG11/">https://www.w3.org/TR/SVG11/</a>
   </dl>
   <h2 class="no-num no-ref heading settled" id="idl-index"><span class="content">IDL Index</span><a class="self-link" href="#idl-index"></a></h2>
-<pre class="idl highlight def">[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①④"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<pre class="idl highlight def">[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <a href="#medialist"><code><c- g>MediaList</c-></code></a> {
-  <a href="#MediaList-stringification-behavior"><c- b>stringifier</c-></a> <c- b>attribute</c-> [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#TreatNullAs" id="ref-for-TreatNullAs⑦"><c- g>TreatNullAs</c-></a>=<a class="n" data-link-type="idl-name"><c- n>EmptyString</c-></a>] <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring③②"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-type="[TreatNullAs=EmptyString] CSSOMString" href="#dom-medialist-mediatext" id="ref-for-dom-medialist-mediatext⑦"><c- g>mediaText</c-></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long①⑥"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="unsigned long" href="#dom-medialist-length" id="ref-for-dom-medialist-length①"><c- g>length</c-></a>;
-  <c- b>getter</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①①⓪"><c- n>CSSOMString</c-></a>? <a class="idl-code" data-link-type="method" href="#dom-medialist-item" id="ref-for-dom-medialist-item①"><c- g>item</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long①⑦"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-medialist-item-index-index"><code><c- g>index</c-></code></a>);
-  <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-medialist-appendmedium" id="ref-for-dom-medialist-appendmedium①"><c- g>appendMedium</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring②①⓪"><c- n>CSSOMString</c-></a> <a href="#dom-medialist-appendmedium-medium-medium"><code><c- g>medium</c-></code></a>);
-  <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-medialist-deletemedium" id="ref-for-dom-medialist-deletemedium①"><c- g>deleteMedium</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring③①"><c- n>CSSOMString</c-></a> <a href="#dom-medialist-deletemedium-medium-medium"><code><c- g>medium</c-></code></a>);
+  <a href="#MediaList-stringification-behavior"><c- b>stringifier</c-></a> <c- b>attribute</c-> [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#TreatNullAs"><c- g>TreatNullAs</c-></a>=<a class="n" data-link-type="idl-name"><c- n>EmptyString</c-></a>] <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-type="[TreatNullAs=EmptyString] CSSOMString" href="#dom-medialist-mediatext"><c- g>mediaText</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="unsigned long" href="#dom-medialist-length"><c- g>length</c-></a>;
+  <c- b>getter</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a>? <a class="idl-code" data-link-type="method" href="#dom-medialist-item"><c- g>item</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-medialist-item-index-index"><code><c- g>index</c-></code></a>);
+  <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-medialist-appendmedium"><c- g>appendMedium</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-medialist-appendmedium-medium-medium"><code><c- g>medium</c-></code></a>);
+  <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-medialist-deletemedium"><c- g>deleteMedium</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-medialist-deletemedium-medium-medium"><code><c- g>medium</c-></code></a>);
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①⑤"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <a href="#stylesheet"><code><c- g>StyleSheet</c-></code></a> {
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring④①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSOMString" href="#dom-stylesheet-type" id="ref-for-dom-stylesheet-type①"><c- g>type</c-></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-USVString" id="ref-for-idl-USVString③①"><c- b>USVString</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="USVString?" href="#dom-stylesheet-href" id="ref-for-dom-stylesheet-href②"><c- g>href</c-></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> (<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element⑥"><c- n>Element</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#processinginstruction" id="ref-for-processinginstruction②"><c- n>ProcessingInstruction</c-></a>)? <a class="idl-code" data-link-type="attribute" data-readonly data-type="(Element or ProcessingInstruction)?" href="#dom-stylesheet-ownernode" id="ref-for-dom-stylesheet-ownernode①"><c- g>ownerNode</c-></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstylesheet" id="ref-for-cssstylesheet①①"><c- n>CSSStyleSheet</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleSheet?" href="#dom-stylesheet-parentstylesheet" id="ref-for-dom-stylesheet-parentstylesheet①"><c- g>parentStyleSheet</c-></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString②①"><c- b>DOMString</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="DOMString?" href="#dom-stylesheet-title" id="ref-for-dom-stylesheet-title①"><c- g>title</c-></a>;
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject①②"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards" id="ref-for-PutForwards⑥"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-medialist-mediatext" id="ref-for-dom-medialist-mediatext⑤①"><c- n>mediaText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#medialist" id="ref-for-medialist②①"><c- n>MediaList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="MediaList" href="#dom-stylesheet-media" id="ref-for-dom-stylesheet-media②"><c- g>media</c-></a>;
-  <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-boolean" id="ref-for-idl-boolean①"><c- b>boolean</c-></a> <a class="idl-code" data-link-type="attribute" data-type="boolean" href="#dom-stylesheet-disabled" id="ref-for-dom-stylesheet-disabled②"><c- g>disabled</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSOMString" href="#dom-stylesheet-type"><c- g>type</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-USVString"><c- b>USVString</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="USVString?" href="#dom-stylesheet-href"><c- g>href</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> (<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element"><c- n>Element</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#processinginstruction"><c- n>ProcessingInstruction</c-></a>)? <a class="idl-code" data-link-type="attribute" data-readonly data-type="(Element or ProcessingInstruction)?" href="#dom-stylesheet-ownernode"><c- g>ownerNode</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstylesheet"><c- n>CSSStyleSheet</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleSheet?" href="#dom-stylesheet-parentstylesheet"><c- g>parentStyleSheet</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="DOMString?" href="#dom-stylesheet-title"><c- g>title</c-></a>;
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-medialist-mediatext"><c- n>mediaText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#medialist"><c- n>MediaList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="MediaList" href="#dom-stylesheet-media"><c- g>media</c-></a>;
+  <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-boolean"><c- b>boolean</c-></a> <a class="idl-code" data-link-type="attribute" data-type="boolean" href="#dom-stylesheet-disabled"><c- g>disabled</c-></a>;
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed②①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#cssstylesheet"><code><c- g>CSSStyleSheet</c-></code></a> : <a class="n" data-link-type="idl-name" href="#stylesheet" id="ref-for-stylesheet②①"><c- n>StyleSheet</c-></a> {
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrule" id="ref-for-cssrule①⑦"><c- n>CSSRule</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRule?" href="#dom-cssstylesheet-ownerrule" id="ref-for-dom-cssstylesheet-ownerrule①"><c- g>ownerRule</c-></a>;
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject①①"><c- g>SameObject</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrulelist" id="ref-for-cssrulelist⑦"><c- n>CSSRuleList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRuleList" href="#dom-cssstylesheet-cssrules" id="ref-for-dom-cssstylesheet-cssrules③"><c- g>cssRules</c-></a>;
-  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long②①"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstylesheet-insertrule" id="ref-for-dom-cssstylesheet-insertrule④"><c- g>insertRule</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring⑤①"><c- n>CSSOMString</c-></a> <a href="#dom-cssstylesheet-insertrule-rule-index-rule"><code><c- g>rule</c-></code></a>, <c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long③①"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssstylesheet-insertrule-rule-index-index"><code><c- g>index</c-></code></a> = 0);
-  <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-cssstylesheet-deleterule" id="ref-for-dom-cssstylesheet-deleterule③"><c- g>deleteRule</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long④①"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssstylesheet-deleterule-index-index"><code><c- g>index</c-></code></a>);
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#cssstylesheet"><code><c- g>CSSStyleSheet</c-></code></a> : <a class="n" data-link-type="idl-name" href="#stylesheet"><c- n>StyleSheet</c-></a> {
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrule"><c- n>CSSRule</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRule?" href="#dom-cssstylesheet-ownerrule"><c- g>ownerRule</c-></a>;
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrulelist"><c- n>CSSRuleList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRuleList" href="#dom-cssstylesheet-cssrules"><c- g>cssRules</c-></a>;
+  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstylesheet-insertrule"><c- g>insertRule</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-cssstylesheet-insertrule-rule-index-rule"><code><c- g>rule</c-></code></a>, <c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssstylesheet-insertrule-rule-index-index"><code><c- g>index</c-></code></a> = 0);
+  <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-cssstylesheet-deleterule"><c- g>deleteRule</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssstylesheet-deleterule-index-index"><code><c- g>index</c-></code></a>);
 };
 
-<c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="#cssstylesheet" id="ref-for-cssstylesheet④①"><c- g>CSSStyleSheet</c-></a> {
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject②①"><c- g>SameObject</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrulelist" id="ref-for-cssrulelist③①"><c- n>CSSRuleList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRuleList" href="#dom-cssstylesheet-rules" id="ref-for-dom-cssstylesheet-rules①"><c- g>rules</c-></a>;
-  <a class="idl-code" data-link-type="interface" href="http://heycam.github.io/webidl/#idl-long" id="ref-for-idl-long①"><c- b>long</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstylesheet-addrule" id="ref-for-dom-cssstylesheet-addrule①"><c- g>addRule</c-></a>(<c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString③①"><c- b>DOMString</c-></a> <a href="#dom-cssstylesheet-addrule-selector-style-index-selector"><code><c- g>selector</c-></code></a> = "undefined", <c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString④①"><c- b>DOMString</c-></a> <a href="#dom-cssstylesheet-addrule-selector-style-index-style"><code><c- g>style</c-></code></a> = "undefined", <c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤①"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssstylesheet-addrule-selector-style-index-index"><code><c- g>index</c-></code></a>);
-  <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-cssstylesheet-removerule" id="ref-for-dom-cssstylesheet-removerule①"><c- g>removeRule</c-></a>(<c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑥①"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssstylesheet-removerule-index-index"><code><c- g>index</c-></code></a> = 0);
+<c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="#cssstylesheet"><c- g>CSSStyleSheet</c-></a> {
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrulelist"><c- n>CSSRuleList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRuleList" href="#dom-cssstylesheet-rules"><c- g>rules</c-></a>;
+  <a class="idl-code" data-link-type="interface" href="http://heycam.github.io/webidl/#idl-long"><c- b>long</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstylesheet-addrule"><c- g>addRule</c-></a>(<c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a> <a href="#dom-cssstylesheet-addrule-selector-style-index-selector"><code><c- g>selector</c-></code></a> = "undefined", <c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a> <a href="#dom-cssstylesheet-addrule-selector-style-index-style"><code><c- g>style</c-></code></a> = "undefined", <c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssstylesheet-addrule-selector-style-index-index"><code><c- g>index</c-></code></a>);
+  <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-cssstylesheet-removerule"><c- g>removeRule</c-></a>(<c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssstylesheet-removerule-index-index"><code><c- g>index</c-></code></a> = 0);
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed③①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <a href="#stylesheetlist"><code><c- g>StyleSheetList</c-></code></a> {
-  <c- b>getter</c-> <a class="n" data-link-type="idl-name" href="#cssstylesheet" id="ref-for-cssstylesheet⑥①"><c- n>CSSStyleSheet</c-></a>? <a class="idl-code" data-link-type="method" href="#dom-stylesheetlist-item" id="ref-for-dom-stylesheetlist-item①"><c- g>item</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑦①"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-stylesheetlist-item-index-index"><code><c- g>index</c-></code></a>);
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑧①"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="unsigned long" href="#dom-stylesheetlist-length" id="ref-for-dom-stylesheetlist-length①"><c- g>length</c-></a>;
+  <c- b>getter</c-> <a class="n" data-link-type="idl-name" href="#cssstylesheet"><c- n>CSSStyleSheet</c-></a>? <a class="idl-code" data-link-type="method" href="#dom-stylesheetlist-item"><c- g>item</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-stylesheetlist-item-index-index"><code><c- g>index</c-></code></a>);
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="unsigned long" href="#dom-stylesheetlist-length"><c- g>length</c-></a>;
 };
 
-<c- b>partial</c-> <c- b>interface</c-> <c- b>mixin</c-> <a class="idl-code" data-link-type="interface" href="https://dom.spec.whatwg.org/#documentorshadowroot" id="ref-for-documentorshadowroot④①"><c- g>DocumentOrShadowRoot</c-></a> {
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject③①"><c- g>SameObject</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#stylesheetlist" id="ref-for-stylesheetlist②①"><c- n>StyleSheetList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="StyleSheetList" href="#dom-documentorshadowroot-stylesheets" id="ref-for-dom-documentorshadowroot-stylesheets①"><c- g>styleSheets</c-></a>;
+<c- b>partial</c-> <c- b>interface</c-> <c- b>mixin</c-> <a class="idl-code" data-link-type="interface" href="https://dom.spec.whatwg.org/#documentorshadowroot"><c- g>DocumentOrShadowRoot</c-></a> {
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#stylesheetlist"><c- n>StyleSheetList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="StyleSheetList" href="#dom-documentorshadowroot-stylesheets"><c- g>styleSheets</c-></a>;
 };
 
 <c- b>interface</c-> <c- b>mixin</c-> <a href="#linkstyle"><code><c- g>LinkStyle</c-></code></a> {
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstylesheet" id="ref-for-cssstylesheet⑦①"><c- n>CSSStyleSheet</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleSheet?" href="#dom-linkstyle-sheet" id="ref-for-dom-linkstyle-sheet③"><c- g>sheet</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstylesheet"><c- n>CSSStyleSheet</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleSheet?" href="#dom-linkstyle-sheet"><c- g>sheet</c-></a>;
 };
 
-<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#processinginstruction" id="ref-for-processinginstruction①①"><c- n>ProcessingInstruction</c-></a> <c- b>includes</c-> <a class="n" data-link-type="idl-name" href="#linkstyle" id="ref-for-linkstyle③①"><c- n>LinkStyle</c-></a>;
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed④①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#processinginstruction"><c- n>ProcessingInstruction</c-></a> <c- b>includes</c-> <a class="n" data-link-type="idl-name" href="#linkstyle"><c- n>LinkStyle</c-></a>;
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <a href="#cssrulelist"><code><c- g>CSSRuleList</c-></code></a> {
-  <c- b>getter</c-> <a class="n" data-link-type="idl-name" href="#cssrule" id="ref-for-cssrule②①"><c- n>CSSRule</c-></a>? <a class="idl-code" data-link-type="method" href="#dom-cssrulelist-item" id="ref-for-dom-cssrulelist-item①"><c- g>item</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑨①"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssrulelist-item-index-index"><code><c- g>index</c-></code></a>);
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long①⓪①"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="unsigned long" href="#dom-cssrulelist-length" id="ref-for-dom-cssrulelist-length①"><c- g>length</c-></a>;
+  <c- b>getter</c-> <a class="n" data-link-type="idl-name" href="#cssrule"><c- n>CSSRule</c-></a>? <a class="idl-code" data-link-type="method" href="#dom-cssrulelist-item"><c- g>item</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssrulelist-item-index-index"><code><c- g>index</c-></code></a>);
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="unsigned long" href="#dom-cssrulelist-length"><c- g>length</c-></a>;
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed⑤①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <a href="#cssrule"><code><c- g>CSSRule</c-></code></a> {
-  <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring⑥①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-type="CSSOMString" href="#dom-cssrule-csstext" id="ref-for-dom-cssrule-csstext③"><c- g>cssText</c-></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrule" id="ref-for-cssrule⑨①"><c- n>CSSRule</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRule?" href="#dom-cssrule-parentrule" id="ref-for-dom-cssrule-parentrule③"><c- g>parentRule</c-></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstylesheet" id="ref-for-cssstylesheet⑧①"><c- n>CSSStyleSheet</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleSheet?" href="#dom-cssrule-parentstylesheet" id="ref-for-dom-cssrule-parentstylesheet①"><c- g>parentStyleSheet</c-></a>;
+  <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-type="CSSOMString" href="#dom-cssrule-csstext"><c- g>cssText</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrule"><c- n>CSSRule</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRule?" href="#dom-cssrule-parentrule"><c- g>parentRule</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstylesheet"><c- n>CSSStyleSheet</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleSheet?" href="#dom-cssrule-parentstylesheet"><c- g>parentStyleSheet</c-></a>;
 
   // the following attribute and constants are historial
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short" id="ref-for-idl-unsigned-short⑨"><c- b>unsigned</c-> <c- b>short</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="unsigned short" href="#dom-cssrule-type" id="ref-for-dom-cssrule-type①"><c- g>type</c-></a>;
-  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short" id="ref-for-idl-unsigned-short①①"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-style_rule"><code><c- g>STYLE_RULE</c-></code></a> = 1;
-  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short" id="ref-for-idl-unsigned-short②①"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-charset_rule"><code><c- g>CHARSET_RULE</c-></code></a> = 2;
-  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short" id="ref-for-idl-unsigned-short③①"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-import_rule"><code><c- g>IMPORT_RULE</c-></code></a> = 3;
-  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short" id="ref-for-idl-unsigned-short④①"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-media_rule"><code><c- g>MEDIA_RULE</c-></code></a> = 4;
-  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short" id="ref-for-idl-unsigned-short⑤①"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-font_face_rule"><code><c- g>FONT_FACE_RULE</c-></code></a> = 5;
-  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short" id="ref-for-idl-unsigned-short⑥①"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-page_rule"><code><c- g>PAGE_RULE</c-></code></a> = 6;
-  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short" id="ref-for-idl-unsigned-short⑦①"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-margin_rule"><code><c- g>MARGIN_RULE</c-></code></a> = 9;
-  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short" id="ref-for-idl-unsigned-short⑧①"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-namespace_rule"><code><c- g>NAMESPACE_RULE</c-></code></a> = 10;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short"><c- b>unsigned</c-> <c- b>short</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="unsigned short" href="#dom-cssrule-type"><c- g>type</c-></a>;
+  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-style_rule"><code><c- g>STYLE_RULE</c-></code></a> = 1;
+  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-charset_rule"><code><c- g>CHARSET_RULE</c-></code></a> = 2;
+  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-import_rule"><code><c- g>IMPORT_RULE</c-></code></a> = 3;
+  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-media_rule"><code><c- g>MEDIA_RULE</c-></code></a> = 4;
+  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-font_face_rule"><code><c- g>FONT_FACE_RULE</c-></code></a> = 5;
+  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-page_rule"><code><c- g>PAGE_RULE</c-></code></a> = 6;
+  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-margin_rule"><code><c- g>MARGIN_RULE</c-></code></a> = 9;
+  <c- b>const</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-short"><c- b>unsigned</c-> <c- b>short</c-></a> <a href="#dom-cssrule-namespace_rule"><code><c- g>NAMESPACE_RULE</c-></code></a> = 10;
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed⑥①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#cssstylerule"><code><c- g>CSSStyleRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssrule" id="ref-for-cssrule①⓪①"><c- n>CSSRule</c-></a> {
-  <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring⑦①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-type="CSSOMString" href="#dom-cssstylerule-selectortext" id="ref-for-dom-cssstylerule-selectortext②"><c- g>selectorText</c-></a>;
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject④①"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards" id="ref-for-PutForwards①①"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-cssstyledeclaration-csstext" id="ref-for-dom-cssstyledeclaration-csstext⑥"><c- n>cssText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstyledeclaration" id="ref-for-cssstyledeclaration①④"><c- n>CSSStyleDeclaration</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleDeclaration" href="#dom-cssstylerule-style" id="ref-for-dom-cssstylerule-style①"><c- g>style</c-></a>;
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#cssstylerule"><code><c- g>CSSStyleRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssrule"><c- n>CSSRule</c-></a> {
+  <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-type="CSSOMString" href="#dom-cssstylerule-selectortext"><c- g>selectorText</c-></a>;
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-cssstyledeclaration-csstext"><c- n>cssText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstyledeclaration"><c- n>CSSStyleDeclaration</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleDeclaration" href="#dom-cssstylerule-style"><c- g>style</c-></a>;
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed⑦①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#cssimportrule"><code><c- g>CSSImportRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssrule" id="ref-for-cssrule①①①"><c- n>CSSRule</c-></a> {
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-USVString" id="ref-for-idl-USVString④①"><c- b>USVString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="USVString" href="#dom-cssimportrule-href" id="ref-for-dom-cssimportrule-href①"><c- g>href</c-></a>;
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject⑤①"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards" id="ref-for-PutForwards②①"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-medialist-mediatext" id="ref-for-dom-medialist-mediatext⑥①"><c- n>mediaText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#medialist" id="ref-for-medialist③①"><c- n>MediaList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="MediaList" href="#dom-cssimportrule-media" id="ref-for-dom-cssimportrule-media①"><c- g>media</c-></a>;
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject⑥①"><c- g>SameObject</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstylesheet" id="ref-for-cssstylesheet⑨①"><c- n>CSSStyleSheet</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleSheet" href="#dom-cssimportrule-stylesheet" id="ref-for-dom-cssimportrule-stylesheet①"><c- g>styleSheet</c-></a>;
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#cssimportrule"><code><c- g>CSSImportRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssrule"><c- n>CSSRule</c-></a> {
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-USVString"><c- b>USVString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="USVString" href="#dom-cssimportrule-href"><c- g>href</c-></a>;
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-medialist-mediatext"><c- n>mediaText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#medialist"><c- n>MediaList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="MediaList" href="#dom-cssimportrule-media"><c- g>media</c-></a>;
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstylesheet"><c- n>CSSStyleSheet</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleSheet" href="#dom-cssimportrule-stylesheet"><c- g>styleSheet</c-></a>;
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed⑧①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#cssgroupingrule"><code><c- g>CSSGroupingRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssrule" id="ref-for-cssrule①②①"><c- n>CSSRule</c-></a> {
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject⑦①"><c- g>SameObject</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrulelist" id="ref-for-cssrulelist⑥①"><c- n>CSSRuleList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRuleList" href="#dom-cssgroupingrule-cssrules" id="ref-for-dom-cssgroupingrule-cssrules①"><c- g>cssRules</c-></a>;
-  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long①①①"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssgroupingrule-insertrule" id="ref-for-dom-cssgroupingrule-insertrule①"><c- g>insertRule</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring⑧①"><c- n>CSSOMString</c-></a> <a href="#dom-cssgroupingrule-insertrule-rule-index-rule"><code><c- g>rule</c-></code></a>, <c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long①②①"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssgroupingrule-insertrule-rule-index-index"><code><c- g>index</c-></code></a> = 0);
-  <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-cssgroupingrule-deleterule" id="ref-for-dom-cssgroupingrule-deleterule①"><c- g>deleteRule</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long①③①"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssgroupingrule-deleterule-index-index"><code><c- g>index</c-></code></a>);
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#cssgroupingrule"><code><c- g>CSSGroupingRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssrule"><c- n>CSSRule</c-></a> {
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrulelist"><c- n>CSSRuleList</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRuleList" href="#dom-cssgroupingrule-cssrules"><c- g>cssRules</c-></a>;
+  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssgroupingrule-insertrule"><c- g>insertRule</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-cssgroupingrule-insertrule-rule-index-rule"><code><c- g>rule</c-></code></a>, <c- b>optional</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssgroupingrule-insertrule-rule-index-index"><code><c- g>index</c-></code></a> = 0);
+  <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-cssgroupingrule-deleterule"><c- g>deleteRule</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssgroupingrule-deleterule-index-index"><code><c- g>index</c-></code></a>);
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed⑨①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#csspagerule"><code><c- g>CSSPageRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssgroupingrule" id="ref-for-cssgroupingrule②①"><c- n>CSSGroupingRule</c-></a> {
-           <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring⑨①"><c- n>CSSOMString</c-></a> <a data-type="CSSOMString" href="#dom-csspagerule-selectortext"><code><c- g>selectorText</c-></code></a>;
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject⑧①"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards" id="ref-for-PutForwards③①"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-cssstyledeclaration-csstext" id="ref-for-dom-cssstyledeclaration-csstext①①"><c- n>cssText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstyledeclaration" id="ref-for-cssstyledeclaration①③"><c- n>CSSStyleDeclaration</c-></a> <a data-readonly data-type="CSSStyleDeclaration" href="#dom-csspagerule-style"><code><c- g>style</c-></code></a>;
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#csspagerule"><code><c- g>CSSPageRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssgroupingrule"><c- n>CSSGroupingRule</c-></a> {
+           <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a data-type="CSSOMString" href="#dom-csspagerule-selectortext"><code><c- g>selectorText</c-></code></a>;
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-cssstyledeclaration-csstext"><c- n>cssText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstyledeclaration"><c- n>CSSStyleDeclaration</c-></a> <a data-readonly data-type="CSSStyleDeclaration" href="#dom-csspagerule-style"><code><c- g>style</c-></code></a>;
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①⓪①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#cssmarginrule"><code><c- g>CSSMarginRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssrule" id="ref-for-cssrule①③①"><c- n>CSSRule</c-></a> {
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①⓪①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSOMString" href="#dom-cssmarginrule-name" id="ref-for-dom-cssmarginrule-name①"><c- g>name</c-></a>;
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject⑨①"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards" id="ref-for-PutForwards④①"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-cssstyledeclaration-csstext" id="ref-for-dom-cssstyledeclaration-csstext②①"><c- n>cssText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstyledeclaration" id="ref-for-cssstyledeclaration②①"><c- n>CSSStyleDeclaration</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleDeclaration" href="#dom-cssmarginrule-style" id="ref-for-dom-cssmarginrule-style①"><c- g>style</c-></a>;
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#cssmarginrule"><code><c- g>CSSMarginRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssrule"><c- n>CSSRule</c-></a> {
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSOMString" href="#dom-cssmarginrule-name"><c- g>name</c-></a>;
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-cssstyledeclaration-csstext"><c- n>cssText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstyledeclaration"><c- n>CSSStyleDeclaration</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleDeclaration" href="#dom-cssmarginrule-style"><c- g>style</c-></a>;
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①①①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#cssnamespacerule"><code><c- g>CSSNamespaceRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssrule" id="ref-for-cssrule①④①"><c- n>CSSRule</c-></a> {
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①①①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSOMString" href="#dom-cssnamespacerule-namespaceuri" id="ref-for-dom-cssnamespacerule-namespaceuri①①"><c- g>namespaceURI</c-></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①②①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSOMString" href="#dom-cssnamespacerule-prefix" id="ref-for-dom-cssnamespacerule-prefix①①"><c- g>prefix</c-></a>;
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#cssnamespacerule"><code><c- g>CSSNamespaceRule</c-></code></a> : <a class="n" data-link-type="idl-name" href="#cssrule"><c- n>CSSRule</c-></a> {
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSOMString" href="#dom-cssnamespacerule-namespaceuri"><c- g>namespaceURI</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSOMString" href="#dom-cssnamespacerule-prefix"><c- g>prefix</c-></a>;
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①②①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <a href="#cssstyledeclaration"><code><c- g>CSSStyleDeclaration</c-></code></a> {
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://html.spec.whatwg.org/multipage/custom-elements.html#cereactions" id="ref-for-cereactions⑦"><c- g>CEReactions</c-></a>] <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①③①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-type="CSSOMString" href="#dom-cssstyledeclaration-csstext" id="ref-for-dom-cssstyledeclaration-csstext③①"><c- g>cssText</c-></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long①④①"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="unsigned long" href="#dom-cssstyledeclaration-length" id="ref-for-dom-cssstyledeclaration-length①"><c- g>length</c-></a>;
-  <c- b>getter</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①④①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstyledeclaration-item" id="ref-for-dom-cssstyledeclaration-item①"><c- g>item</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long①⑤①"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssstyledeclaration-item-index-index"><code><c- g>index</c-></code></a>);
-  <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①⑤①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstyledeclaration-getpropertyvalue" id="ref-for-dom-cssstyledeclaration-getpropertyvalue⑦"><c- g>getPropertyValue</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①⑥①"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-getpropertyvalue-property-property"><code><c- g>property</c-></code></a>);
-  <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①⑦①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstyledeclaration-getpropertypriority" id="ref-for-dom-cssstyledeclaration-getpropertypriority②"><c- g>getPropertyPriority</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①⑧①"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-getpropertypriority-property-property"><code><c- g>property</c-></code></a>);
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://html.spec.whatwg.org/multipage/custom-elements.html#cereactions" id="ref-for-cereactions①①"><c- g>CEReactions</c-></a>] <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-cssstyledeclaration-setproperty" id="ref-for-dom-cssstyledeclaration-setproperty⑦"><c- g>setProperty</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring①⑨①"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-setproperty-property-value-priority-property"><code><c- g>property</c-></code></a>, [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#TreatNullAs" id="ref-for-TreatNullAs①①"><c- g>TreatNullAs</c-></a>=<a class="n" data-link-type="idl-name"><c- n>EmptyString</c-></a>] <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring②⓪①"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-setproperty-property-value-priority-value"><code><c- g>value</c-></code></a>, <c- b>optional</c-> [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#TreatNullAs" id="ref-for-TreatNullAs②①"><c- g>TreatNullAs</c-></a>=<a class="n" data-link-type="idl-name"><c- n>EmptyString</c-></a>] <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring②①①"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-setproperty-property-value-priority-priority"><code><c- g>priority</c-></code></a> = "");
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://html.spec.whatwg.org/multipage/custom-elements.html#cereactions" id="ref-for-cereactions②①"><c- g>CEReactions</c-></a>] <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring②②①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstyledeclaration-removeproperty" id="ref-for-dom-cssstyledeclaration-removeproperty②"><c- g>removeProperty</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring②③①"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-removeproperty-property-property"><code><c- g>property</c-></code></a>);
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrule" id="ref-for-cssrule①⑤①"><c- n>CSSRule</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRule?" href="#dom-cssstyledeclaration-parentrule" id="ref-for-dom-cssstyledeclaration-parentrule①"><c- g>parentRule</c-></a>;
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://html.spec.whatwg.org/multipage/custom-elements.html#cereactions" id="ref-for-cereactions③①"><c- g>CEReactions</c-></a>] <c- b>attribute</c-> [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#TreatNullAs" id="ref-for-TreatNullAs③①"><c- g>TreatNullAs</c-></a>=<a class="n" data-link-type="idl-name"><c- n>EmptyString</c-></a>] <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring②④①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-type="[TreatNullAs=EmptyString] CSSOMString" href="#dom-cssstyledeclaration-cssfloat" id="ref-for-dom-cssstyledeclaration-cssfloat①"><c- g>cssFloat</c-></a>;
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://html.spec.whatwg.org/multipage/custom-elements.html#cereactions"><c- g>CEReactions</c-></a>] <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-type="CSSOMString" href="#dom-cssstyledeclaration-csstext"><c- g>cssText</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="unsigned long" href="#dom-cssstyledeclaration-length"><c- g>length</c-></a>;
+  <c- b>getter</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstyledeclaration-item"><c- g>item</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long"><c- b>unsigned</c-> <c- b>long</c-></a> <a href="#dom-cssstyledeclaration-item-index-index"><code><c- g>index</c-></code></a>);
+  <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstyledeclaration-getpropertyvalue"><c- g>getPropertyValue</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-getpropertyvalue-property-property"><code><c- g>property</c-></code></a>);
+  <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstyledeclaration-getpropertypriority"><c- g>getPropertyPriority</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-getpropertypriority-property-property"><code><c- g>property</c-></code></a>);
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://html.spec.whatwg.org/multipage/custom-elements.html#cereactions"><c- g>CEReactions</c-></a>] <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-cssstyledeclaration-setproperty"><c- g>setProperty</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-setproperty-property-value-priority-property"><code><c- g>property</c-></code></a>, [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#TreatNullAs"><c- g>TreatNullAs</c-></a>=<a class="n" data-link-type="idl-name"><c- n>EmptyString</c-></a>] <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-setproperty-property-value-priority-value"><code><c- g>value</c-></code></a>, <c- b>optional</c-> [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#TreatNullAs"><c- g>TreatNullAs</c-></a>=<a class="n" data-link-type="idl-name"><c- n>EmptyString</c-></a>] <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-setproperty-property-value-priority-priority"><code><c- g>priority</c-></code></a> = "");
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://html.spec.whatwg.org/multipage/custom-elements.html#cereactions"><c- g>CEReactions</c-></a>] <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="method" href="#dom-cssstyledeclaration-removeproperty"><c- g>removeProperty</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-cssstyledeclaration-removeproperty-property-property"><code><c- g>property</c-></code></a>);
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssrule"><c- n>CSSRule</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSRule?" href="#dom-cssstyledeclaration-parentrule"><c- g>parentRule</c-></a>;
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://html.spec.whatwg.org/multipage/custom-elements.html#cereactions"><c- g>CEReactions</c-></a>] <c- b>attribute</c-> [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#TreatNullAs"><c- g>TreatNullAs</c-></a>=<a class="n" data-link-type="idl-name"><c- n>EmptyString</c-></a>] <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-type="[TreatNullAs=EmptyString] CSSOMString" href="#dom-cssstyledeclaration-cssfloat"><c- g>cssFloat</c-></a>;
 };
 
 <c- b>interface</c-> <c- b>mixin</c-> <a href="#elementcssinlinestyle"><code><c- g>ElementCSSInlineStyle</c-></code></a> {
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject" id="ref-for-SameObject①⓪①"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards" id="ref-for-PutForwards⑤①"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-cssstyledeclaration-csstext" id="ref-for-dom-cssstyledeclaration-csstext⑤①"><c- n>cssText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstyledeclaration" id="ref-for-cssstyledeclaration⑦①"><c- n>CSSStyleDeclaration</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleDeclaration" href="#dom-elementcssinlinestyle-style" id="ref-for-dom-elementcssinlinestyle-style①"><c- g>style</c-></a>;
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SameObject"><c- g>SameObject</c-></a>, <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#PutForwards"><c- g>PutForwards</c-></a>=<a class="idl-code" data-link-type="attribute" href="#dom-cssstyledeclaration-csstext"><c- n>cssText</c-></a>] <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#cssstyledeclaration"><c- n>CSSStyleDeclaration</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSStyleDeclaration" href="#dom-elementcssinlinestyle-style"><c- g>style</c-></a>;
 };
 
-<a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/dom.html#htmlelement" id="ref-for-htmlelement①"><c- n>HTMLElement</c-></a> <c- b>includes</c-> <a class="n" data-link-type="idl-name" href="#elementcssinlinestyle" id="ref-for-elementcssinlinestyle①①"><c- n>ElementCSSInlineStyle</c-></a>;
+<a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/dom.html#htmlelement"><c- n>HTMLElement</c-></a> <c- b>includes</c-> <a class="n" data-link-type="idl-name" href="#elementcssinlinestyle"><c- n>ElementCSSInlineStyle</c-></a>;
 
-<a class="n" data-link-type="idl-name" href="https://svgwg.org/svg2-draft/types.html#InterfaceSVGElement" id="ref-for-InterfaceSVGElement①"><c- n>SVGElement</c-></a> <c- b>includes</c-> <a class="n" data-link-type="idl-name" href="#elementcssinlinestyle" id="ref-for-elementcssinlinestyle②①"><c- n>ElementCSSInlineStyle</c-></a>;
+<a class="n" data-link-type="idl-name" href="https://svgwg.org/svg2-draft/types.html#InterfaceSVGElement"><c- n>SVGElement</c-></a> <c- b>includes</c-> <a class="n" data-link-type="idl-name" href="#elementcssinlinestyle"><c- n>ElementCSSInlineStyle</c-></a>;
 
-<c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window①①"><c- g>Window</c-></a> {
-  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#NewObject" id="ref-for-NewObject①"><c- g>NewObject</c-></a>] <a class="n" data-link-type="idl-name" href="#cssstyledeclaration" id="ref-for-cssstyledeclaration⑧①"><c- n>CSSStyleDeclaration</c-></a> <a class="idl-code" data-link-type="method" href="#dom-window-getcomputedstyle" id="ref-for-dom-window-getcomputedstyle④"><c- g>getComputedStyle</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element③①"><c- n>Element</c-></a> <a href="#dom-window-getcomputedstyle-elt-pseudoelt-elt"><code><c- g>elt</c-></code></a>, <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring②⑧①"><c- n>CSSOMString</c-></a>? <a href="#dom-window-getcomputedstyle-elt-pseudoelt-pseudoelt"><code><c- g>pseudoElt</c-></code></a>);
+<c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="https://html.spec.whatwg.org/multipage/window-object.html#window"><c- g>Window</c-></a> {
+  [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#NewObject"><c- g>NewObject</c-></a>] <a class="n" data-link-type="idl-name" href="#cssstyledeclaration"><c- n>CSSStyleDeclaration</c-></a> <a class="idl-code" data-link-type="method" href="#dom-window-getcomputedstyle"><c- g>getComputedStyle</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element"><c- n>Element</c-></a> <a href="#dom-window-getcomputedstyle-elt-pseudoelt-elt"><code><c- g>elt</c-></code></a>, <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a>? <a href="#dom-window-getcomputedstyle-elt-pseudoelt-pseudoelt"><code><c- g>pseudoElt</c-></code></a>);
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①③①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>namespace</c-> <a href="#namespacedef-css"><code><c- g>CSS</c-></code></a> {
-  <a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring②⑨①"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="method" href="#dom-css-escape" id="ref-for-dom-css-escape④"><c- g>escape</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring" id="ref-for-cssomstring③⓪①"><c- n>CSSOMString</c-></a> <a href="#dom-css-escape-ident-ident"><code><c- g>ident</c-></code></a>);
+  <a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="method" href="#dom-css-escape"><c- g>escape</c-></a>(<a class="n" data-link-type="idl-name" href="#cssomstring"><c- n>CSSOMString</c-></a> <a href="#dom-css-escape-ident-ident"><code><c- g>ident</c-></code></a>);
 };
 
 </pre>

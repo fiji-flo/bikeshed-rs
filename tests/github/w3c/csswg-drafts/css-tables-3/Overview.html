@@ -93,91 +93,6 @@
 	/* END OF COMMENT */
 
 </style>
-<style>/* style-md-lists */
-
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
-}
-[data-md] > :last-child {
-    margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
-
-.heading, .issue, .note, .example, li, dt {
-    position: relative;
-}
-a.self-link {
-    position: absolute;
-    top: 0;
-    left: calc(-1 * (3.5rem - 26px));
-    width: calc(3.5rem - 26px);
-    height: 2em;
-    text-align: center;
-    border: none;
-    transition: opacity .2s;
-    opacity: .5;
-}
-a.self-link:hover {
-    opacity: 1;
-}
-.heading > a.self-link {
-    font-size: 83%;
-}
-li > a.self-link {
-    left: calc(-1 * (3.5rem - 26px) - 2em);
-}
-dfn > a.self-link {
-    top: auto;
-    left: auto;
-    opacity: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: gray;
-    color: white;
-    font-style: normal;
-    transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-    opacity: 1;
-}
-dfn > a.self-link:hover {
-    color: black;
-}
-
-a.self-link::before            { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-counters */
-
-body {
-    counter-reset: example figure issue;
-}
-.issue {
-    counter-increment: issue;
-}
-.issue:not(.no-marker)::before {
-    content: "Issue " counter(issue);
-}
-
-.example {
-    counter-increment: example;
-}
-.example:not(.no-marker)::before {
-    content: "Example " counter(example);
-}
-.invalid.example:not(.no-marker)::before,
-.illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
-}
-
-figcaption {
-    counter-increment: figure;
-}
-figcaption:not(.no-marker)::before {
-    content: "Figure " counter(figure) " ";
-}</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -240,6 +155,35 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
 <style>/* style-dfn-panel */
 
 .dfn-panel {
@@ -277,6 +221,62 @@ pre .property::before, pre .property::after {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: black;
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }</style>
 <style>/* style-syntax-highlighting */
 
 .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
@@ -359,10 +359,10 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <dd class="editor p-author h-card vcard" data-editor-id="15393"><a class="p-name fn u-url url" href="https://dbaron.org/">L. David Baron</a> (<a class="p-org org" href="https://www.mozilla.org/">Mozilla</a>)
       <dd class="editor p-author h-card vcard"><span class="p-name fn">Markus Mielke</span> (<span class="p-org org">Microsoft</span>)
       <dd class="editor p-author h-card vcard"><span class="p-name fn">Saloni Mira Rai</span> (<span class="p-org org">Microsoft</span>)
-      <dt>Suggest an Edit for this Spec:
-      <dd><a href="https://github.com/w3c/csswg-drafts/blob/master/css-tables-3/Overview.bs">GitHub Editor</a>
       <dt>Issue Tracking:
       <dd><a href="https://github.com/w3c/csswg-drafts/labels/css-tables-3">GitHub Issues</a>
+      <dt>Suggest an Edit for this Spec:
+      <dd><a href="https://github.com/w3c/csswg-drafts/blob/master/css-tables-3/Overview.bs">GitHub Editor</a>
      </dl>
     </div>
    </details>
@@ -1061,28 +1061,28 @@ on screen, on paper, etc.
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-table-layout">table-layout</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> fixed 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>auto 
      <tr>
       <th>Applies to:
       <td><a data-link-type="dfn" href="#table-grid-box" id="ref-for-table-grid-box">table grid boxes</a> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>specified keyword 
      <tr>
       <th>Canonical order:
       <td>per grammar 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>discrete 
    </table>
    <p>A table-root is said to be laid out <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="in-fixed-mode">in fixed mode</dfn> whenever the computed value of the <a class="property" data-link-type="propdesc" href="#propdef-table-layout" id="ref-for-propdef-table-layout①">table-layout</a> property is equal to <code>fixed</code>,
@@ -1105,28 +1105,28 @@ on screen, on paper, etc.
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-border-collapse">border-collapse</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">separate <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> collapse 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>separate 
      <tr>
       <th>Applies to:
       <td><a data-link-type="dfn" href="#table-grid-box" id="ref-for-table-grid-box①">table grid boxes</a> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>yes 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>specified keyword 
      <tr>
       <th>Canonical order:
       <td>per grammar 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>discrete 
    </table>
    <p>When the <a class="property" data-link-type="propdesc" href="#propdef-border-collapse" id="ref-for-propdef-border-collapse②">border-collapse</a> property has <code>collapse</code> as its value,
@@ -1142,28 +1142,28 @@ on screen, on paper, etc.
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-border-spacing">border-spacing</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">&lt;​length​><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num-range" id="ref-for-mult-num-range">{1,2}</a> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>0px 0px 
      <tr>
       <th>Applies to:
       <td><a data-link-type="dfn" href="#table-grid-box" id="ref-for-table-grid-box②">table grid boxes</a> when <a class="property" data-link-type="propdesc" href="#propdef-border-collapse" id="ref-for-propdef-border-collapse③">border-collapse</a> is <span class="css">separate</span> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>yes 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>two absolute lengths 
      <tr>
       <th>Canonical order:
       <td>per grammar 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>by computed value 
    </table>
    <p>The lengths specify the distance that separates adjoining cell borders <a data-link-type="dfn" href="#in-separated-borders-mode" id="ref-for-in-separated-borders-mode">in separated-borders mode</a>,
@@ -1178,28 +1178,28 @@ on screen, on paper, etc.
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-caption-side">caption-side</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">top <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> bottom 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>top 
      <tr>
       <th>Applies to:
       <td><a data-link-type="dfn" href="#table-caption" id="ref-for-table-caption③">table-caption</a> boxes 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>yes 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>specified keyword 
      <tr>
       <th>Canonical order:
       <td>per grammar 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>discrete 
    </table>
    <p>This property specifies the position of the caption box with respect to the table grid box.
@@ -1403,7 +1403,7 @@ on screen, on paper, etc.
 			is
 				the table’s padding for that side,
 				plus the relevant border spacing distance (if any).</p>
-     <div class="example" id="example-8cf3f310"><a class="self-link" href="#example-8cf3f310"></a> For example, on the right hand side, the distance is padding-right + horizontal border-spacing. </div>
+     <div class="example" id="example-cd69817f"><a class="self-link" href="#example-cd69817f"></a> For example, on the right hand side, the distance is padding-right + horizontal border-spacing. </div>
      <h4 class="heading settled" data-level="3.8.2" id="computing-cell-measures"><span class="secno">3.8.2. </span><span class="content">Computing Cell Measures</span><a class="self-link" href="#computing-cell-measures"></a></h4>
      <p>The following terms are parameters of tables or table cells.
 			These parameters encapsulate the differences
@@ -2177,8 +2177,8 @@ img[title] { float: none; }
 				if the computed height of the cell is a length, or 
 				if the computed height of its table-root ancestor is a length or percentage,
 				regardless of whether that percentage does <a data-link-type="dfn" href="https://drafts.csswg.org/css-sizing-3/#behave-as-auto" id="ref-for-behave-as-auto">behave as auto</a> or not.</p>
-     <div class="example" id="example-6e93bb0b">
-      <a class="self-link" href="#example-6e93bb0b"></a> To clarify the preceding statements, here is a table of the resulting "A" div height based on the value being used: 
+     <div class="example" id="example-a3b7459d">
+      <a class="self-link" href="#example-a3b7459d"></a> To clarify the preceding statements, here is a table of the resulting "A" div height based on the value being used: 
 <pre>&lt;section style="height: var(--wrapper-height)">
   &lt;table style="height: var(--table-height)">
     &lt;tr>
@@ -2381,28 +2381,28 @@ img[title] { float: none; }
         <th>Name:
         <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-empty-cells">empty-cells</dfn>
        <tr class="value">
-        <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+        <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
         <td class="prod">show <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> hide 
        <tr>
-        <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+        <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
         <td>show 
        <tr>
         <th>Applies to:
         <td><a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①⑧">table-cell</a> boxes 
        <tr>
-        <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+        <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
         <td>yes 
        <tr>
-        <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+        <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
         <td>n/a 
        <tr>
-        <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+        <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
         <td>specified keyword 
        <tr>
         <th>Canonical order:
         <td>per grammar 
        <tr>
-        <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+        <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
         <td>discrete 
      </table>
      <p><a data-link-type="dfn" href="#in-collapsed-borders-mode" id="ref-for-in-collapsed-borders-mode⑤">In collapsed-borders mode</a>,
@@ -3060,8 +3060,8 @@ img[title] { float: none; }
    <li><a href="#table-track">table-track</a><span>, in §2.1.1</span>
    <li><a href="#table-track-group-element">table-track-group</a><span>, in §2.1.1</span>
    <li><a href="#table-wrapper-box">table-wrapper</a><span>, in §2.1.1</span>
-   <li><a href="#table-wrapper-box">table-wrapper box</a><span>, in §2.1.1</span>
    <li><a href="#table-wrapper-box">table wrapper box</a><span>, in §2.1.1</span>
+   <li><a href="#table-wrapper-box">table-wrapper box</a><span>, in §2.1.1</span>
    <li><a href="#tabular-container">tabular container</a><span>, in §2.1.1</span>
    <li><a href="#caption-side-top">top</a><span>, in §3.5.3</span>
    <li><a href="#total-horizontal-border-spacing">total horizontal border spacing</a><span>, in §3.8.2</span>

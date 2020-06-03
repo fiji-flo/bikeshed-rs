@@ -31,91 +31,6 @@
     border: 1px solid black;
   }
 </style>
-<style>/* style-md-lists */
-
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
-}
-[data-md] > :last-child {
-    margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
-
-.heading, .issue, .note, .example, li, dt {
-    position: relative;
-}
-a.self-link {
-    position: absolute;
-    top: 0;
-    left: calc(-1 * (3.5rem - 26px));
-    width: calc(3.5rem - 26px);
-    height: 2em;
-    text-align: center;
-    border: none;
-    transition: opacity .2s;
-    opacity: .5;
-}
-a.self-link:hover {
-    opacity: 1;
-}
-.heading > a.self-link {
-    font-size: 83%;
-}
-li > a.self-link {
-    left: calc(-1 * (3.5rem - 26px) - 2em);
-}
-dfn > a.self-link {
-    top: auto;
-    left: auto;
-    opacity: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: gray;
-    color: white;
-    font-style: normal;
-    transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-    opacity: 1;
-}
-dfn > a.self-link:hover {
-    color: black;
-}
-
-a.self-link::before            { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-counters */
-
-body {
-    counter-reset: example figure issue;
-}
-.issue {
-    counter-increment: issue;
-}
-.issue:not(.no-marker)::before {
-    content: "Issue " counter(issue);
-}
-
-.example {
-    counter-increment: example;
-}
-.example:not(.no-marker)::before {
-    content: "Example " counter(example);
-}
-.invalid.example:not(.no-marker)::before,
-.illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
-}
-
-figcaption {
-    counter-increment: figure;
-}
-figcaption:not(.no-marker)::before {
-    content: "Figure " counter(figure) " ";
-}</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -178,6 +93,35 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
 <style>/* style-dfn-panel */
 
 .dfn-panel {
@@ -215,6 +159,62 @@ pre .property::before, pre .property::after {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: black;
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }</style>
 <style>/* style-syntax-highlighting */
 pre.idl.highlight { color: #708090; }
 .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
@@ -624,15 +624,15 @@ the <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/css
    <div class="issue" id="issue-25ee9f1c">
     <a class="self-link" href="#issue-25ee9f1c"></a> 
     <p>This interface needs a constructor. Perhaps something like the following,</p>
-<pre class="idl highlight def">[<dfn class="idl-code" data-dfn-for="CSSTransition" data-dfn-type="constructor" data-export data-lt="CSSTransition(target, transitionProperty, transitionValue, options)|CSSTransition(target, transitionProperty, transitionValue)" id="dom-csstransition-csstransition"><code><c- g>Constructor</c-></code><a class="self-link" href="#dom-csstransition-csstransition"></a></dfn> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable" id="ref-for-animatable"><c- n>Animatable</c-></a>? <dfn class="idl-code" data-dfn-for="CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options)" data-dfn-type="argument" data-export id="dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-target"><code><c- g>target</c-></code><a class="self-link" href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-target"></a></dfn>,
-              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring②"><c- n>CSSOMString</c-></a> <dfn class="idl-code" data-dfn-for="CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options)" data-dfn-type="argument" data-export id="dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-transitionproperty"><code><c- g>transitionProperty</c-></code><a class="self-link" href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-transitionproperty"></a></dfn>,
-              <c- b>any</c-> <dfn class="idl-code" data-dfn-for="CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options)" data-dfn-type="argument" data-export id="dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-transitionvalue"><code><c- g>transitionValue</c-></code><a class="self-link" href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-transitionvalue"></a></dfn>,
-              <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <dfn class="idl-code" data-dfn-for="CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options)" data-dfn-type="argument" data-export id="dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-options"><code><c- g>options</c-></code><a class="self-link" href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-options"></a></dfn>),
- <dfn class="idl-code" data-dfn-for="CSSTransition" data-dfn-type="constructor" data-export data-lt="CSSTransition(target, transitionProperty, transitionValue, options, timeline)" id="dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline"><code><c- g>Constructor</c-></code><a class="self-link" href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline"></a></dfn> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable" id="ref-for-animatable①"><c- n>Animatable</c-></a>? <dfn class="idl-code" data-dfn-for="CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options, timeline)" data-dfn-type="argument" data-export id="dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-target"><code><c- g>target</c-></code><a class="self-link" href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-target"></a></dfn>,
-              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring③"><c- n>CSSOMString</c-></a> <dfn class="idl-code" data-dfn-for="CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options, timeline)" data-dfn-type="argument" data-export id="dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-transitionproperty"><code><c- g>transitionProperty</c-></code><a class="self-link" href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-transitionproperty"></a></dfn>,
-              <c- b>any</c-> <dfn class="idl-code" data-dfn-for="CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options, timeline)" data-dfn-type="argument" data-export id="dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-transitionvalue"><code><c- g>transitionValue</c-></code><a class="self-link" href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-transitionvalue"></a></dfn>,
-              (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions①"><c- n>KeyframeEffectOptions</c-></a>) <dfn class="idl-code" data-dfn-for="CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options, timeline)" data-dfn-type="argument" data-export id="dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-options"><code><c- g>options</c-></code><a class="self-link" href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-options"></a></dfn>,
-              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animationtimeline" id="ref-for-animationtimeline"><c- n>AnimationTimeline</c-></a>? <dfn class="idl-code" data-dfn-for="CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options, timeline)" data-dfn-type="argument" data-export id="dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-timeline"><code><c- g>timeline</c-></code><a class="self-link" href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-timeline"></a></dfn>)]
+<pre class="idl highlight def">[<c- g>Constructor</c-> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable" id="ref-for-animatable"><c- n>Animatable</c-></a>? <c- g>target</c->,
+              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring②"><c- n>CSSOMString</c-></a> <c- g>transitionProperty</c->,
+              <c- b>any</c-> <c- g>transitionValue</c->,
+              <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <c- g>options</c->),
+ <c- g>Constructor</c-> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable" id="ref-for-animatable①"><c- n>Animatable</c-></a>? <c- g>target</c->,
+              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring③"><c- n>CSSOMString</c-></a> <c- g>transitionProperty</c->,
+              <c- b>any</c-> <c- g>transitionValue</c->,
+              (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions①"><c- n>KeyframeEffectOptions</c-></a>) <c- g>options</c->,
+              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animationtimeline" id="ref-for-animationtimeline"><c- n>AnimationTimeline</c-></a>? <c- g>timeline</c->)]
 <c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="#csstransition" id="ref-for-csstransition③"><c- g>CSSTransition</c-></a> { };
 </pre>
     <p>Using <code>any</code> as the type for <code>transitionValue</code> would allow
@@ -813,9 +813,6 @@ elem<c- p>.</c->getAnimations<c- p>()[</c-><c- mi>0</c-><c- p>].</c->transitionP
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
    <li><a href="#csstransition">CSSTransition</a><span>, in §4.1</span>
-   <li><a href="#dom-csstransition-csstransition">CSSTransition(target, transitionProperty, transitionValue)</a><span>, in §4.1</span>
-   <li><a href="#dom-csstransition-csstransition">CSSTransition(target, transitionProperty, transitionValue, options)</a><span>, in §4.1</span>
-   <li><a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline">CSSTransition(target, transitionProperty, transitionValue, options, timeline)</a><span>, in §4.1</span>
    <li><a href="#current-transition-generation">current transition generation</a><span>, in §2</span>
    <li><a href="#elapsed-time">Elapsed time</a><span>, in §3.1</span>
    <li><a href="#expanded-transition-property-name">expanded transition property name</a><span>, in §2.1</span>
@@ -1205,21 +1202,21 @@ elem<c- p>.</c->getAnimations<c- p>()[</c-><c- mi>0</c-><c- p>].</c->transitionP
    <dd>Tab Atkins Jr.; Chris Lilley. <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a>. 5 March 2019. WD. URL: <a href="https://www.w3.org/TR/css-color-4/">https://www.w3.org/TR/css-color-4/</a>
   </dl>
   <h2 class="no-num no-ref heading settled" id="idl-index"><span class="content">IDL Index</span><a class="self-link" href="#idl-index"></a></h2>
-<pre class="idl highlight def">[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#csstransition"><code><c- g>CSSTransition</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://w3c.github.io/web-animations/#animation" id="ref-for-animation①①"><c- n>Animation</c-></a> {
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring④"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSOMString" href="#dom-csstransition-transitionproperty" id="ref-for-dom-csstransition-transitionproperty①"><c- g>transitionProperty</c-></a>;
+<pre class="idl highlight def">[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#csstransition"><code><c- g>CSSTransition</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://w3c.github.io/web-animations/#animation"><c- n>Animation</c-></a> {
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring"><c- n>CSSOMString</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="CSSOMString" href="#dom-csstransition-transitionproperty"><c- g>transitionProperty</c-></a>;
 };
 
-[<a href="#dom-csstransition-csstransition"><code><c- g>Constructor</c-></code></a> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable" id="ref-for-animatable②"><c- n>Animatable</c-></a>? <a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-target"><code><c- g>target</c-></code></a>,
-              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring②①"><c- n>CSSOMString</c-></a> <a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-transitionproperty"><code><c- g>transitionProperty</c-></code></a>,
-              <c- b>any</c-> <a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-transitionvalue"><code><c- g>transitionValue</c-></code></a>,
-              <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double②"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions②"><c- n>KeyframeEffectOptions</c-></a>) <a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-options"><code><c- g>options</c-></code></a>),
- <a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline"><code><c- g>Constructor</c-></code></a> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable" id="ref-for-animatable①①"><c- n>Animatable</c-></a>? <a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-target"><code><c- g>target</c-></code></a>,
-              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring③①"><c- n>CSSOMString</c-></a> <a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-transitionproperty"><code><c- g>transitionProperty</c-></code></a>,
-              <c- b>any</c-> <a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-transitionvalue"><code><c- g>transitionValue</c-></code></a>,
-              (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①①"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions①①"><c- n>KeyframeEffectOptions</c-></a>) <a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-options"><code><c- g>options</c-></code></a>,
-              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animationtimeline" id="ref-for-animationtimeline①"><c- n>AnimationTimeline</c-></a>? <a href="#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-timeline"><code><c- g>timeline</c-></code></a>)]
-<c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="#csstransition" id="ref-for-csstransition③①"><c- g>CSSTransition</c-></a> { };
+[<c- g>Constructor</c-> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable"><c- n>Animatable</c-></a>? <c- g>target</c->,
+              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring"><c- n>CSSOMString</c-></a> <c- g>transitionProperty</c->,
+              <c- b>any</c-> <c- g>transitionValue</c->,
+              <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <c- g>options</c->),
+ <c- g>Constructor</c-> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable"><c- n>Animatable</c-></a>? <c- g>target</c->,
+              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring"><c- n>CSSOMString</c-></a> <c- g>transitionProperty</c->,
+              <c- b>any</c-> <c- g>transitionValue</c->,
+              (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <c- g>options</c->,
+              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animationtimeline"><c- n>AnimationTimeline</c-></a>? <c- g>timeline</c->)]
+<c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="#csstransition"><c- g>CSSTransition</c-></a> { };
 
 </pre>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
@@ -1229,15 +1226,15 @@ in terms of Web Animations concepts (specifically when we spell out when we
 cancel an animation).<a href="#issue-e8892835"> ↵ </a></div>
    <div class="issue">
     <p>This interface needs a constructor. Perhaps something like the following,</p>
-<pre class="idl highlight def">[<span><code><c- g>Constructor</c-></code></span> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable"><c- n>Animatable</c-></a>? <span><code><c- g>target</c-></code></span>,
-              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring"><c- n>CSSOMString</c-></a> <span><code><c- g>transitionProperty</c-></code></span>,
-              <c- b>any</c-> <span><code><c- g>transitionValue</c-></code></span>,
-              <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <span><code><c- g>options</c-></code></span>),
- <span><code><c- g>Constructor</c-></code></span> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable"><c- n>Animatable</c-></a>? <span><code><c- g>target</c-></code></span>,
-              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring"><c- n>CSSOMString</c-></a> <span><code><c- g>transitionProperty</c-></code></span>,
-              <c- b>any</c-> <span><code><c- g>transitionValue</c-></code></span>,
-              (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <span><code><c- g>options</c-></code></span>,
-              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animationtimeline"><c- n>AnimationTimeline</c-></a>? <span><code><c- g>timeline</c-></code></span>)]
+<pre class="idl highlight def">[<c- g>Constructor</c-> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable"><c- n>Animatable</c-></a>? <c- g>target</c->,
+              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring"><c- n>CSSOMString</c-></a> <c- g>transitionProperty</c->,
+              <c- b>any</c-> <c- g>transitionValue</c->,
+              <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <c- g>options</c->),
+ <c- g>Constructor</c-> (<a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animatable"><c- n>Animatable</c-></a>? <c- g>target</c->,
+              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring"><c- n>CSSOMString</c-></a> <c- g>transitionProperty</c->,
+              <c- b>any</c-> <c- g>transitionValue</c->,
+              (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <c- g>options</c->,
+              <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/web-animations-1/#animationtimeline"><c- n>AnimationTimeline</c-></a>? <c- g>timeline</c->)]
 <c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="#csstransition"><c- g>CSSTransition</c-></a> { };
 </pre>
     <p>Using <code>any</code> as the type for <code>transitionValue</code> would allow

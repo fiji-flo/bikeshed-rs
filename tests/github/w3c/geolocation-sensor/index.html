@@ -1176,7 +1176,7 @@ Possible extra rowspan handling
 		   1. When table < content column, centers table in column.
 		   2. When content < table < available, left-aligns.
 		   3. When table > available, fills available + scroll bar.
-		*/ 
+		*/
 		display: grid;
 		grid-template-columns: minmax(0, 50em);
 	}
@@ -1229,102 +1229,6 @@ Possible extra rowspan handling
     }
   </style>
   <link href="https://www.w3.org/TR/geolocation-sensor/" rel="canonical">
-<style>/* style-md-lists */
-
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
-}
-[data-md] > :last-child {
-    margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
-
-.heading, .issue, .note, .example, li, dt {
-    position: relative;
-}
-a.self-link {
-    position: absolute;
-    top: 0;
-    left: calc(-1 * (3.5rem - 26px));
-    width: calc(3.5rem - 26px);
-    height: 2em;
-    text-align: center;
-    border: none;
-    transition: opacity .2s;
-    opacity: .5;
-}
-a.self-link:hover {
-    opacity: 1;
-}
-.heading > a.self-link {
-    font-size: 83%;
-}
-li > a.self-link {
-    left: calc(-1 * (3.5rem - 26px) - 2em);
-}
-dfn > a.self-link {
-    top: auto;
-    left: auto;
-    opacity: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: gray;
-    color: white;
-    font-style: normal;
-    transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-    opacity: 1;
-}
-dfn > a.self-link:hover {
-    color: black;
-}
-
-a.self-link::before            { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-counters */
-
-body {
-    counter-reset: example figure issue;
-}
-.issue {
-    counter-increment: issue;
-}
-.issue:not(.no-marker)::before {
-    content: "Issue " counter(issue);
-}
-
-.example {
-    counter-increment: example;
-}
-.example:not(.no-marker)::before {
-    content: "Example " counter(example);
-}
-.invalid.example:not(.no-marker)::before,
-.illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
-}
-
-figcaption {
-    counter-increment: figure;
-}
-figcaption:not(.no-marker)::before {
-    content: "Figure " counter(figure) " ";
-}</style>
-<style>/* style-var-click-highlighting */
-
-    var { cursor: pointer; }
-    var.selected0 { background-color: #F4D200; box-shadow: 0 0 0 2px #F4D200; }
-    var.selected1 { background-color: #FF87A2; box-shadow: 0 0 0 2px #FF87A2; }
-    var.selected2 { background-color: #96E885; box-shadow: 0 0 0 2px #96E885; }
-    var.selected3 { background-color: #3EEED2; box-shadow: 0 0 0 2px #3EEED2; }
-    var.selected4 { background-color: #EACFB6; box-shadow: 0 0 0 2px #EACFB6; }
-    var.selected5 { background-color: #82DDFF; box-shadow: 0 0 0 2px #82DDFF; }
-    var.selected6 { background-color: #FFBCF2; box-shadow: 0 0 0 2px #FFBCF2; }
-    </style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1387,6 +1291,35 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
 <style>/* style-dfn-panel */
 
 .dfn-panel {
@@ -1424,6 +1357,62 @@ pre .property::before, pre .property::after {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: black;
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }</style>
 <style>/* style-syntax-highlighting */
 pre.idl.highlight { color: #708090; }
 .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
@@ -1482,6 +1471,17 @@ c-[vg] { color: #0077aa } /* Name.Variable.Global */
 c-[vi] { color: #0077aa } /* Name.Variable.Instance */
 c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </style>
+<style>/* style-var-click-highlighting */
+
+    var { cursor: pointer; }
+    var.selected0 { background-color: #F4D200; box-shadow: 0 0 0 2px #F4D200; }
+    var.selected1 { background-color: #FF87A2; box-shadow: 0 0 0 2px #FF87A2; }
+    var.selected2 { background-color: #96E885; box-shadow: 0 0 0 2px #96E885; }
+    var.selected3 { background-color: #3EEED2; box-shadow: 0 0 0 2px #3EEED2; }
+    var.selected4 { background-color: #EACFB6; box-shadow: 0 0 0 2px #EACFB6; }
+    var.selected5 { background-color: #82DDFF; box-shadow: 0 0 0 2px #82DDFF; }
+    var.selected6 { background-color: #FFBCF2; box-shadow: 0 0 0 2px #FFBCF2; }
+    </style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
@@ -1668,7 +1668,7 @@ and whose <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#map-value
    <p class="note" role="note"><span>Note:</span> Consider adding a visual of the standard coordinate system for the Earth.</p>
    <h2 class="heading settled" data-level="5" id="api"><span class="secno">5. </span><span class="content">API</span><a class="self-link" href="#api"></a></h2>
    <h3 class="heading settled" data-level="5.1" id="geolocationsensor-interface"><span class="secno">5.1. </span><span class="content">The GeolocationSensor Interface</span><a class="self-link" href="#geolocationsensor-interface"></a></h3>
-<pre class="idl highlight def">[<dfn class="idl-code" data-dfn-for="GeolocationSensor" data-dfn-type="constructor" data-export data-lt="GeolocationSensor(options)|GeolocationSensor()" id="dom-geolocationsensor-geolocationsensor"><code><c- g>Constructor</c-></code><a class="self-link" href="#dom-geolocationsensor-geolocationsensor"></a></dfn>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-geolocationsensoroptions" id="ref-for-dictdef-geolocationsensoroptions"><c- n>GeolocationSensorOptions</c-></a> <dfn class="idl-code" data-dfn-for="GeolocationSensor/GeolocationSensor(options)" data-dfn-type="argument" data-export id="dom-geolocationsensor-geolocationsensor-options-options"><code><c- g>options</c-></code><a class="self-link" href="#dom-geolocationsensor-geolocationsensor-options-options"></a></dfn> = {}),
+<pre class="idl highlight def">[<c- g>Constructor</c->(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-geolocationsensoroptions" id="ref-for-dictdef-geolocationsensoroptions"><c- n>GeolocationSensorOptions</c-></a> <c- g>options</c-> = {}),
  <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SecureContext" id="ref-for-SecureContext"><c- g>SecureContext</c-></a>,
  <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed"><c- g>Exposed</c-></a>=(<c- n>DedicatedWorker</c->, <c- n>Window</c->)]
 <c- b>interface</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="interface" data-export id="geolocationsensor"><code><c- g>GeolocationSensor</c-></code></dfn> : <a class="n" data-link-type="idl-name" href="https://w3c.github.io/sensors/#sensor" id="ref-for-sensor③"><c- n>Sensor</c-></a> {
@@ -1988,10 +1988,8 @@ from 2008 until 2017.</p>
    <li><a href="#construct-a-geolocation-sensor-object">Construct a geolocation sensor object</a><span>, in §6</span>
    <li><a href="#geolocation">geolocation</a><span>, in §4</span>
    <li><a href="#dictdef-geolocationreadingvalues">GeolocationReadingValues</a><span>, in §7.1</span>
-   <li><a href="#dom-geolocationsensor-geolocationsensor">GeolocationSensor()</a><span>, in §5.1</span>
    <li><a href="#geolocation-sensor">Geolocation Sensor</a><span>, in §4</span>
    <li><a href="#geolocationsensor">GeolocationSensor</a><span>, in §5.1</span>
-   <li><a href="#dom-geolocationsensor-geolocationsensor">GeolocationSensor(options)</a><span>, in §5.1</span>
    <li><a href="#dictdef-geolocationsensoroptions">GeolocationSensorOptions</a><span>, in §5.1</span>
    <li><a href="#dictdef-geolocationsensorreading">GeolocationSensorReading</a><span>, in §5.1</span>
    <li>
@@ -2358,48 +2356,48 @@ from 2008 until 2017.</p>
    <dd>Andrei Popescu. <a href="http://dev.w3.org/geo/api/spec-source.html">Geolocation API Specification 2nd Edition</a>. URL: <a href="http://dev.w3.org/geo/api/spec-source.html">http://dev.w3.org/geo/api/spec-source.html</a>
   </dl>
   <h2 class="no-num no-ref heading settled" id="idl-index"><span class="content">IDL Index</span><a class="self-link" href="#idl-index"></a></h2>
-<pre class="idl highlight def">[<a href="#dom-geolocationsensor-geolocationsensor"><code><c- g>Constructor</c-></code></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-geolocationsensoroptions" id="ref-for-dictdef-geolocationsensoroptions③"><c- n>GeolocationSensorOptions</c-></a> <a href="#dom-geolocationsensor-geolocationsensor-options-options"><code><c- g>options</c-></code></a> = {}),
- <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SecureContext" id="ref-for-SecureContext①"><c- g>SecureContext</c-></a>,
- <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①"><c- g>Exposed</c-></a>=(<c- n>DedicatedWorker</c->, <c- n>Window</c->)]
-<c- b>interface</c-> <a href="#geolocationsensor"><code><c- g>GeolocationSensor</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://w3c.github.io/sensors/#sensor" id="ref-for-sensor③①"><c- n>Sensor</c-></a> {
-  <c- b>static</c-> <c- b>Promise</c->&lt;<a class="n" data-link-type="idl-name" href="#dictdef-geolocationsensorreading" id="ref-for-dictdef-geolocationsensorreading②"><c- n>GeolocationSensorReading</c-></a>> <a href="#dom-geolocationsensor-read"><code><c- g>read</c-></code></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-readoptions" id="ref-for-dictdef-readoptions②"><c- n>ReadOptions</c-></a> <a href="#dom-geolocationsensor-read-readoptions-readoptions"><code><c- g>readOptions</c-></code></a> = {});
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double⑦"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-latitude"><code><c- g>latitude</c-></code></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①①"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-longitude"><code><c- g>longitude</c-></code></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double②①"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-altitude"><code><c- g>altitude</c-></code></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double③①"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-accuracy"><code><c- g>accuracy</c-></code></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double④①"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-altitudeaccuracy"><code><c- g>altitudeAccuracy</c-></code></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double⑤①"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-heading"><code><c- g>heading</c-></code></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double⑥①"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-speed"><code><c- g>speed</c-></code></a>;
+<pre class="idl highlight def">[<c- g>Constructor</c->(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-geolocationsensoroptions"><c- n>GeolocationSensorOptions</c-></a> <c- g>options</c-> = {}),
+ <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SecureContext"><c- g>SecureContext</c-></a>,
+ <a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=(<c- n>DedicatedWorker</c->, <c- n>Window</c->)]
+<c- b>interface</c-> <a href="#geolocationsensor"><code><c- g>GeolocationSensor</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://w3c.github.io/sensors/#sensor"><c- n>Sensor</c-></a> {
+  <c- b>static</c-> <c- b>Promise</c->&lt;<a class="n" data-link-type="idl-name" href="#dictdef-geolocationsensorreading"><c- n>GeolocationSensorReading</c-></a>> <a href="#dom-geolocationsensor-read"><code><c- g>read</c-></code></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-readoptions"><c- n>ReadOptions</c-></a> <a href="#dom-geolocationsensor-read-readoptions-readoptions"><code><c- g>readOptions</c-></code></a> = {});
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-latitude"><code><c- g>latitude</c-></code></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-longitude"><code><c- g>longitude</c-></code></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-altitude"><code><c- g>altitude</c-></code></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-accuracy"><code><c- g>accuracy</c-></code></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-altitudeaccuracy"><code><c- g>altitudeAccuracy</c-></code></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-heading"><code><c- g>heading</c-></code></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a data-readonly data-type="unrestricted double?" href="#dom-geolocationsensor-speed"><code><c- g>speed</c-></code></a>;
 };
 
-<c- b>dictionary</c-> <a href="#dictdef-geolocationsensoroptions"><code><c- g>GeolocationSensorOptions</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://w3c.github.io/sensors/#dictdef-sensoroptions" id="ref-for-dictdef-sensoroptions①"><c- n>SensorOptions</c-></a> {
+<c- b>dictionary</c-> <a href="#dictdef-geolocationsensoroptions"><code><c- g>GeolocationSensorOptions</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://w3c.github.io/sensors/#dictdef-sensoroptions"><c- n>SensorOptions</c-></a> {
   // placeholder for GeolocationSensor-specific options
 };
 
-<c- b>dictionary</c-> <a href="#dictdef-readoptions"><code><c- g>ReadOptions</c-></code></a> : <a class="n" data-link-type="idl-name" href="#dictdef-geolocationsensoroptions" id="ref-for-dictdef-geolocationsensoroptions①①"><c- n>GeolocationSensorOptions</c-></a> {
-  <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#abortsignal" id="ref-for-abortsignal①"><c- n>AbortSignal</c-></a>? <a data-type="AbortSignal? " href="#dom-readoptions-signal"><code><c- g>signal</c-></code></a>;
+<c- b>dictionary</c-> <a href="#dictdef-readoptions"><code><c- g>ReadOptions</c-></code></a> : <a class="n" data-link-type="idl-name" href="#dictdef-geolocationsensoroptions"><c- n>GeolocationSensorOptions</c-></a> {
+  <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#abortsignal"><c- n>AbortSignal</c-></a>? <a data-type="AbortSignal? " href="#dom-readoptions-signal"><code><c- g>signal</c-></code></a>;
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-geolocationsensorreading"><code><c- g>GeolocationSensorReading</c-></code></a> {
-  <a class="n" data-link-type="idl-name" href="http://w3c.github.io/hr-time/#dom-domhighrestimestamp" id="ref-for-dom-domhighrestimestamp①"><c- n>DOMHighResTimeStamp</c-></a>? <a data-type="DOMHighResTimeStamp? " href="#dom-geolocationsensorreading-timestamp"><code><c- g>timestamp</c-></code></a>;
-  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①⑤"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-latitude"><code><c- g>latitude</c-></code></a>;
-  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①④"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-longitude"><code><c- g>longitude</c-></code></a>;
-  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-altitude"><code><c- g>altitude</c-></code></a>;
-  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-accuracy"><code><c- g>accuracy</c-></code></a>;
-  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-altitudeaccuracy"><code><c- g>altitudeAccuracy</c-></code></a>;
-  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double⑤①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-heading"><code><c- g>heading</c-></code></a>;
-  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double⑥①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-speed"><code><c- g>speed</c-></code></a>;
+  <a class="n" data-link-type="idl-name" href="http://w3c.github.io/hr-time/#dom-domhighrestimestamp"><c- n>DOMHighResTimeStamp</c-></a>? <a data-type="DOMHighResTimeStamp? " href="#dom-geolocationsensorreading-timestamp"><code><c- g>timestamp</c-></code></a>;
+  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-latitude"><code><c- g>latitude</c-></code></a>;
+  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-longitude"><code><c- g>longitude</c-></code></a>;
+  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-altitude"><code><c- g>altitude</c-></code></a>;
+  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-accuracy"><code><c- g>accuracy</c-></code></a>;
+  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-altitudeaccuracy"><code><c- g>altitudeAccuracy</c-></code></a>;
+  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-heading"><code><c- g>heading</c-></code></a>;
+  <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationsensorreading-speed"><code><c- g>speed</c-></code></a>;
 };
 
 
 <c- b>dictionary</c-> <a href="#dictdef-geolocationreadingvalues"><code><c- g>GeolocationReadingValues</c-></code></a> {
-  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double⑦①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-latitude"><code><c- g>latitude</c-></code></a>;
-  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double⑧①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-longitude"><code><c- g>longitude</c-></code></a>;
-  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double⑨①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-altitude"><code><c- g>altitude</c-></code></a>;
-  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①⓪①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-accuracy"><code><c- g>accuracy</c-></code></a>;
-  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①①①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-altitudeaccuracy"><code><c- g>altitudeAccuracy</c-></code></a>;
-  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①②①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-heading"><code><c- g>heading</c-></code></a>;
-  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①③①"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-speed"><code><c- g>speed</c-></code></a>;
+  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-latitude"><code><c- g>latitude</c-></code></a>;
+  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-longitude"><code><c- g>longitude</c-></code></a>;
+  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-altitude"><code><c- g>altitude</c-></code></a>;
+  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-accuracy"><code><c- g>accuracy</c-></code></a>;
+  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-altitudeaccuracy"><code><c- g>altitudeAccuracy</c-></code></a>;
+  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-heading"><code><c- g>heading</c-></code></a>;
+  <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a data-type="double? " href="#dom-geolocationreadingvalues-speed"><code><c- g>speed</c-></code></a>;
 };
 
 </pre>
@@ -2526,6 +2524,62 @@ from 2008 until 2017.</p>
     <li><a href="#ref-for-construct-a-geolocation-sensor-object①">5.1.1. GeolocationSensor.read()</a>
    </ul>
   </aside>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
+</script>
 <script>/* script-var-click-highlighting */
 
     document.addEventListener("click", e=>{
@@ -2610,59 +2664,3 @@ from 2008 until 2017.</p>
         }
     }
     </script>
-<script>/* script-dfn-panel */
-
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
-    }
-
-});
-</script>

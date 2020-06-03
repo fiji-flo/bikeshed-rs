@@ -14,15 +14,67 @@
   }
   </style>
   <link href="https://www.w3.org/TR/css-box-3/" rel="canonical">
-<style>/* style-md-lists */
+<style>/* style-autolinks */
 
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
+.css.css, .property.property, .descriptor.descriptor {
+    color: #005a9c;
+    font-size: inherit;
+    font-family: inherit;
 }
-[data-md] > :last-child {
-    margin-bottom: 0;
+.css::before, .property::before, .descriptor::before {
+    content: "‘";
+}
+.css::after, .property::after, .descriptor::after {
+    content: "’";
+}
+.property, .descriptor {
+    /* Don't wrap property and descriptor names */
+    white-space: nowrap;
+}
+.type { /* CSS value <type> */
+    font-style: italic;
+}
+pre .property::before, pre .property::after {
+    content: "";
+}
+[data-link-type="property"]::before,
+[data-link-type="propdesc"]::before,
+[data-link-type="descriptor"]::before,
+[data-link-type="value"]::before,
+[data-link-type="function"]::before,
+[data-link-type="at-rule"]::before,
+[data-link-type="selector"]::before,
+[data-link-type="maybe"]::before {
+    content: "‘";
+}
+[data-link-type="property"]::after,
+[data-link-type="propdesc"]::after,
+[data-link-type="descriptor"]::after,
+[data-link-type="value"]::after,
+[data-link-type="function"]::after,
+[data-link-type="at-rule"]::after,
+[data-link-type="selector"]::after,
+[data-link-type="maybe"]::after {
+    content: "’";
+}
+
+[data-link-type].production::before,
+[data-link-type].production::after,
+.prod [data-link-type]::before,
+.prod [data-link-type]::after {
+    content: "";
+}
+
+[data-link-type=element],
+[data-link-type=element-attr] {
+    font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    font-size: .9em;
+}
+[data-link-type=element]::before { content: "<" }
+[data-link-type=element]::after  { content: ">" }
+
+[data-link-type=biblio] {
+    white-space: pre;
 }</style>
 <style>/* style-counters */
 
@@ -90,6 +142,16 @@ figcaption:not(.no-marker)::before {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
 <style>/* style-selflinks */
 
 .heading, .issue, .note, .example, li, dt {
@@ -136,68 +198,6 @@ dfn > a.self-link:hover {
 a.self-link::before            { content: "¶"; }
 .heading > a.self-link::before { content: "§"; }
 dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-autolinks */
-
-.css.css, .property.property, .descriptor.descriptor {
-    color: #005a9c;
-    font-size: inherit;
-    font-family: inherit;
-}
-.css::before, .property::before, .descriptor::before {
-    content: "‘";
-}
-.css::after, .property::after, .descriptor::after {
-    content: "’";
-}
-.property, .descriptor {
-    /* Don't wrap property and descriptor names */
-    white-space: nowrap;
-}
-.type { /* CSS value <type> */
-    font-style: italic;
-}
-pre .property::before, pre .property::after {
-    content: "";
-}
-[data-link-type="property"]::before,
-[data-link-type="propdesc"]::before,
-[data-link-type="descriptor"]::before,
-[data-link-type="value"]::before,
-[data-link-type="function"]::before,
-[data-link-type="at-rule"]::before,
-[data-link-type="selector"]::before,
-[data-link-type="maybe"]::before {
-    content: "‘";
-}
-[data-link-type="property"]::after,
-[data-link-type="propdesc"]::after,
-[data-link-type="descriptor"]::after,
-[data-link-type="value"]::after,
-[data-link-type="function"]::after,
-[data-link-type="at-rule"]::after,
-[data-link-type="selector"]::after,
-[data-link-type="maybe"]::after {
-    content: "’";
-}
-
-[data-link-type].production::before,
-[data-link-type].production::after,
-.prod [data-link-type]::before,
-.prod [data-link-type]::after {
-    content: "";
-}
-
-[data-link-type=element],
-[data-link-type=element-attr] {
-    font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
-    font-size: .9em;
-}
-[data-link-type=element]::before { content: "<" }
-[data-link-type=element]::after  { content: ">" }
-
-[data-link-type=biblio] {
-    white-space: pre;
-}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
@@ -215,10 +215,10 @@ pre .property::before, pre .property::after {
       <dd><a href="https://www.w3.org/TR/2018/WD-css-box-3-20180802/" rel="prev">https://www.w3.org/TR/2018/WD-css-box-3-20180802/</a>
       <dt class="editor">Editor:
       <dd class="editor p-author h-card vcard" data-editor-id="35400"><a class="p-name fn u-url url" href="http://fantasai.inkedblade.net/contact">Elika J. Etemad / fantasai</a> (<span class="p-org org">Invited Expert</span>)
-      <dt>Suggest an Edit for this Spec:
-      <dd><a href="https://github.com/w3c/csswg-drafts/blob/master/css-box-3/Overview.bs">GitHub Editor</a>
       <dt>Issue Tracking:
       <dd><a href="https://github.com/w3c/csswg-drafts/labels/css-box-3">GitHub Issues</a>
+      <dt>Suggest an Edit for this Spec:
+      <dd><a href="https://github.com/w3c/csswg-drafts/blob/master/css-box-3/Overview.bs">GitHub Editor</a>
      </dl>
     </div>
    </details>
@@ -487,28 +487,28 @@ on screen, on paper, etc.
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-margin-top">margin-top</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-margin-right">margin-right</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-margin-bottom">margin-bottom</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-margin-left">margin-left</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage">&lt;length-percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> auto 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>0 
      <tr>
       <th>Applies to:
       <td>all elements except <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#internal-table-element" id="ref-for-internal-table-element">internal table elements</a> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>refer to <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#logical-width" id="ref-for-logical-width">logical width</a> of containing block 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>the keyword <span class="css">auto</span> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①">&lt;length-percentage></a> value 
      <tr>
       <th>Canonical order:
       <td>per grammar 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>by computed value type 
    </table>
    <p>These properties set the top, right, bottom, and left <a data-link-type="dfn" href="#margin" id="ref-for-margin">margin</a> of a <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#box" id="ref-for-box③">box</a>, respectively.</p>
@@ -521,28 +521,28 @@ on screen, on paper, etc.
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-margin">margin</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod"><a class="production" data-link-type="propdesc" href="#propdef-margin-top" id="ref-for-propdef-margin-top①">&lt;'margin-top'></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num-range" id="ref-for-mult-num-range">{1,4}</a> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>0 
      <tr>
       <th>Applies to:
       <td>all elements except <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#internal-table-element" id="ref-for-internal-table-element①">internal table elements</a> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>refer to <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#logical-width" id="ref-for-logical-width①">logical width</a> of containing block 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>see individual properties 
      <tr>
       <th>Canonical order:
       <td>per grammar 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>by computed value type 
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-margin" id="ref-for-propdef-margin⑤">margin</a> property is a shorthand property for setting <a class="property" data-link-type="propdesc" href="#propdef-margin-top" id="ref-for-propdef-margin-top②">margin-top</a>, <a class="property" data-link-type="propdesc" href="#propdef-margin-right" id="ref-for-propdef-margin-right①">margin-right</a>, <a class="property" data-link-type="propdesc" href="#propdef-margin-bottom" id="ref-for-propdef-margin-bottom①">margin-bottom</a>, and <a class="property" data-link-type="propdesc" href="#propdef-margin-left" id="ref-for-propdef-margin-left①">margin-left</a> in a single declaration.</p>
@@ -579,28 +579,28 @@ body { margin: 1em 2em 3em } /* top=1em, right=2em, bottom=3em, left=2em */
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-margin-trim">margin-trim</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> in-flow <span id="ref-for-comb-one②">|</span> all 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>none 
      <tr>
       <th>Applies to:
       <td><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-container" id="ref-for-block-container">block containers</a>, <a data-link-type="dfn" href="https://drafts.csswg.org/css-multicol-1/#multi-column-container" id="ref-for-multi-column-container">multi-column containers</a> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>N/A 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>keyword as specified 
      <tr>
       <th>Canonical order:
       <td>per grammar 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>discrete 
    </table>
    <p>Oftentimes, margins are desired between siblings,
@@ -682,28 +682,28 @@ body { margin: 1em 2em 3em } /* top=1em, right=2em, bottom=3em, left=2em */
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-padding-top">padding-top</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-padding-right">padding-right</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-padding-bottom">padding-bottom</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-padding-left">padding-left</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage②">&lt;length-percentage></a> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>0 
      <tr>
       <th>Applies to:
       <td>all elements except: <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#internal-table-element" id="ref-for-internal-table-element②">internal table elements</a> other than table cells 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>refer to <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#logical-width" id="ref-for-logical-width②">logical width</a> of containing block 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage③">&lt;length-percentage></a> value 
      <tr>
       <th>Canonical order:
       <td>per grammar 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>by computed value type 
    </table>
    <p>These properties set the top, right, bottom, and left <a data-link-type="dfn" href="#padding" id="ref-for-padding">padding</a> of a <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#box" id="ref-for-box④">box</a>, respectively.</p>
@@ -715,28 +715,28 @@ body { margin: 1em 2em 3em } /* top=1em, right=2em, bottom=3em, left=2em */
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-padding">padding</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod"><a class="production" data-link-type="propdesc" href="#propdef-padding-top" id="ref-for-propdef-padding-top①">&lt;'padding-top'></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num-range" id="ref-for-mult-num-range①">{1,4}</a> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>0 
      <tr>
       <th>Applies to:
       <td>all elements except: <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#internal-table-element" id="ref-for-internal-table-element③">internal table elements</a> other than table cells 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>refer to <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#logical-width" id="ref-for-logical-width③">logical width</a> of containing block 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>see individual properties 
      <tr>
       <th>Canonical order:
       <td>per grammar 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>by computed value type 
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-padding" id="ref-for-propdef-padding⑤">padding</a> property is a shorthand property for setting <a class="property" data-link-type="propdesc" href="#propdef-padding-top" id="ref-for-propdef-padding-top②">padding-top</a>, <a class="property" data-link-type="propdesc" href="#propdef-padding-right" id="ref-for-propdef-padding-right①">padding-right</a>, <a class="property" data-link-type="propdesc" href="#propdef-padding-bottom" id="ref-for-propdef-padding-bottom①">padding-bottom</a>, and <a class="property" data-link-type="propdesc" href="#propdef-padding-left" id="ref-for-propdef-padding-left①">padding-left</a> in a single declaration.</p>
@@ -881,8 +881,8 @@ body { padding: 1em 2em 3em } /* top=1em, right=2em, bottom=3em, left=2em */
    <li><a href="#valdef-margin-trim-all">all</a><span>, in §3.3</span>
    <li><a href="#border">border</a><span>, in §5</span>
    <li><a href="#border-area">border area</a><span>, in §2</span>
-   <li><a href="#valdef-box-border-box">border-box</a><span>, in §2.1</span>
    <li><a href="#border-box">border box</a><span>, in §2</span>
+   <li><a href="#valdef-box-border-box">border-box</a><span>, in §2.1</span>
    <li><a href="#border-edge">border edge</a><span>, in §2</span>
    <li><a href="#border-properties">border properties</a><span>, in §5</span>
    <li><a href="#content-area">content area</a><span>, in §2</span>
@@ -916,8 +916,8 @@ body { padding: 1em 2em 3em } /* top=1em, right=2em, bottom=3em, left=2em */
    <li><a href="#propdef-padding">padding</a><span>, in §4.2</span>
    <li><a href="#padding-area">padding area</a><span>, in §2</span>
    <li><a href="#propdef-padding-bottom">padding-bottom</a><span>, in §4.1</span>
-   <li><a href="#valdef-box-padding-box">padding-box</a><span>, in §2.1</span>
    <li><a href="#padding-box">padding box</a><span>, in §2</span>
+   <li><a href="#valdef-box-padding-box">padding-box</a><span>, in §2.1</span>
    <li><a href="#padding-edge">padding edge</a><span>, in §2</span>
    <li><a href="#propdef-padding-left">padding-left</a><span>, in §4.1</span>
    <li><a href="#padding-properties">padding properties</a><span>, in §4</span>
