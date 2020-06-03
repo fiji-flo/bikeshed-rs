@@ -16,6 +16,8 @@ mod html;
 mod line;
 mod metadata;
 mod spec;
+#[cfg(test)]
+mod test;
 
 fn main() {
     client::run();

@@ -77,7 +77,7 @@ pub fn add_bikeshed_boilerplate(doc: &mut Spec) {
     // TODO: insert <style> nodes to body and move them to head later
     for (key, val) in doc.extra_styles.iter() {
         doc.head.as_ref().unwrap().append(html::node::new_style(
-            format!("/* style-{} */\n{}", key, val).as_str(),
+            format!("/* style-{} */\n\n{}", key, val).as_str(),
         ));
     }
 }
