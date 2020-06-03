@@ -223,6 +223,10 @@ impl Metadata {
         );
         // isodate
         macros.insert("isodate", self.date.to_string());
+        // version
+        if let Some(ref ed) = self.ed {
+            macros.insert("version", ed.clone());
+        }
         // title & spectitle
         if let Some(ref title) = self.title {
             macros.insert("title", title.clone());

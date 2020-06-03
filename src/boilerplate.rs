@@ -90,3 +90,35 @@ pub fn add_canonical_url(doc: &mut Spec) {
         ))
     }
 }
+
+pub fn add_spec_metadata_section(doc: &mut Spec) {
+    let macros = &doc.macros;
+
+    if let Some(ref mut dom) = doc.dom {
+        if let Ok(ref container) = dom.select_first("div[data-fill-with=spec-metadata]") {
+            let dl_el = html::node::new_element("dl", None);
+
+            // insert version
+            if let Some(version) = macros.get("version") {
+                let dt_el = html::node::new_element("dt", None);
+                dt_el.append(html::node::new_text("This version:"));
+
+                let a_el = html::node::new_element(
+                    "a",
+                    btreemap! {
+                        "class" => "u-url".to_owned(),
+                        "href" => version.to_owned(),
+                    },
+                );
+                a_el.append(html::node::new_text(version));
+                let dd_el = html::node::new_element("dd", None);
+                dd_el.append(a_el);
+
+                dl_el.append(dt_el);
+                dl_el.append(dd_el);
+            }
+
+            container.as_node().append(dl_el);
+        }
+    }
+}

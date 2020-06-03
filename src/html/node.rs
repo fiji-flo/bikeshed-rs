@@ -18,6 +18,10 @@ where
     )
 }
 
+pub fn new_text(text: &str) -> NodeRef {
+    kuchiki::NodeRef::new_text(text)
+}
+
 pub fn new_style(text: &str) -> NodeRef {
     let el = new_element("style", None);
     el.append(NodeRef::new_text(text));
