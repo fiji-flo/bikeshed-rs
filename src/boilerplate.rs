@@ -1,3 +1,4 @@
+use kuchiki::traits::*;
 use kuchiki::NodeRef;
 use std::fs;
 use std::path::Path;
@@ -156,6 +157,21 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
             }
 
             container.as_node().append(dl_el);
+        }
+    }
+}
+
+pub fn add_copyright(doc: &mut Spec) {
+    if let Some(ref mut dom) = doc.dom {
+        if let Ok(ref container) = dom.select_first("p[data-fill-with=copyright]") {
+            let copyright = retrieve_boilerplate(doc, "copyright");
+            let copyright_dom = kuchiki::parse_html().one(copyright);
+
+            if let Ok(body) = copyright_dom.select_first("body") {
+                for child in body.as_node().children() {
+                    container.as_node().append(child);
+                }
+            }
         }
     }
 }
