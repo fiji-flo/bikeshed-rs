@@ -1,7 +1,9 @@
+use kuchiki::NodeRef;
 use std::fs;
 use std::path::Path;
 
 use crate::html;
+use crate::metadata::parse::Editor;
 use crate::spec::Spec;
 
 // Retrieve boilerplate file with doc (metadata).
@@ -91,6 +93,26 @@ pub fn add_canonical_url(doc: &mut Spec) {
     }
 }
 
+fn editor_to_dd_node(editor: &Editor) -> NodeRef {
+    let dd_el = html::node::new_element(
+        "dd",
+        btreemap! {
+            "class" => "editor p-author h-card vcard".to_owned(),
+        },
+    );
+    if editor.email.is_none() {
+        let span_el = html::node::new_element(
+            "span",
+            btreemap! {
+                "class" => "p-name fn".to_owned(),
+            },
+        );
+        span_el.append(html::node::new_text(&editor.name));
+        dd_el.append(span_el);
+    }
+    dd_el
+}
+
 pub fn add_spec_metadata_section(doc: &mut Spec) {
     let macros = &doc.macros;
 
@@ -102,6 +124,7 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
             if let Some(version) = macros.get("version") {
                 let dt_el = html::node::new_element("dt", None);
                 dt_el.append(html::node::new_text("This version:"));
+                dl_el.append(dt_el);
 
                 let a_el = html::node::new_element(
                     "a",
@@ -113,9 +136,23 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
                 a_el.append(html::node::new_text(version));
                 let dd_el = html::node::new_element("dd", None);
                 dd_el.append(a_el);
-
-                dl_el.append(dt_el);
                 dl_el.append(dd_el);
+            }
+
+            // insert editors
+            if !doc.md.editors.is_empty() {
+                let dt_el = html::node::new_element(
+                    "dt",
+                    btreemap! {
+                        "class" => "editor".to_owned()
+                    },
+                );
+                dt_el.append(html::node::new_text("Editor:"));
+                dl_el.append(dt_el);
+
+                for dd_el in doc.md.editors.iter().map(editor_to_dd_node) {
+                    dl_el.append(dd_el);
+                }
             }
 
             container.as_node().append(dl_el);

@@ -18,11 +18,11 @@ where
     )
 }
 
-pub fn new_text(text: &str) -> NodeRef {
+pub fn new_text<T: Into<String>>(text: T) -> NodeRef {
     kuchiki::NodeRef::new_text(text)
 }
 
-pub fn new_style(text: &str) -> NodeRef {
+pub fn new_style<T: Into<String>>(text: T) -> NodeRef {
     let el = new_element("style", None);
     el.append(NodeRef::new_text(text));
     el
@@ -30,6 +30,7 @@ pub fn new_style(text: &str) -> NodeRef {
 
 pub fn replace_node(old_el: &NodeRef, new_el: &NodeRef) {
     old_el.insert_before(new_el.clone());
+    old_el.detach();
 }
 
 pub fn add_class(el: &NodeRef, class: &str) {
