@@ -109,9 +109,9 @@ impl<'a> Spec<'a> {
         heading::process_headings(self);
         boilerplate::add_canonical_url(self);
         boilerplate::add_spec_metadata_section(self);
-        boilerplate::add_copyright(self);
-        boilerplate::add_abstract(self);
-        boilerplate::add_contents_table(self);
+        boilerplate::add_copyright_section(self);
+        boilerplate::add_abstract_section(self);
+        boilerplate::add_toc_section(self);
         boilerplate::add_bikeshed_boilerplate(self);
     }
 

@@ -161,7 +161,7 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
     }
 }
 
-pub fn add_copyright(doc: &mut Spec) {
+pub fn add_copyright_section(doc: &mut Spec) {
     if let Some(ref mut dom) = doc.dom {
         if let Ok(ref container) = dom.select_first("p[data-fill-with=copyright]") {
             let copyright = retrieve_boilerplate(doc, "copyright");
@@ -176,7 +176,7 @@ pub fn add_copyright(doc: &mut Spec) {
     }
 }
 
-pub fn add_abstract(doc: &mut Spec) {
+pub fn add_abstract_section(doc: &mut Spec) {
     if let Some(ref mut dom) = doc.dom {
         if let Ok(ref container) = dom.select_first("div[data-fill-with=abstract]") {
             let mut abs = retrieve_boilerplate(doc, "abstract");
@@ -192,7 +192,7 @@ pub fn add_abstract(doc: &mut Spec) {
     }
 }
 
-pub fn add_contents_table(doc: &mut Spec) {
+pub fn add_toc_section(doc: &mut Spec) {
     if let Some(ref mut dom) = doc.dom {
         if let Ok(ref container) = dom.select_first("nav[data-fill-with=table-of-contents]") {
             let h2_el = html::node::new_element(
