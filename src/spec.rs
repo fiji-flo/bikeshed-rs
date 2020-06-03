@@ -24,6 +24,7 @@ pub struct Spec<'a> {
     pub head: Option<NodeRef>,
     pub body: Option<NodeRef>,
     pub extra_styles: BTreeMap<&'static str, &'static str>,
+    pub rendered: String,
 }
 
 impl<'a> Spec<'a> {
@@ -115,12 +116,20 @@ impl<'a> Spec<'a> {
         heading::process_headings(self);
     }
 
-    pub fn finish(&self, outfile: Option<&str>) {
+    pub fn render(&mut self) {
         if let Some(ref dom) = self.dom {
-            let outfile = self.handle_outfile(outfile);
-            let rendered = dom.to_string();
-            fs::write(outfile, rendered).expect("unable to write file");
+            // TODO: Optionize the html-cleaner.
+            match clean::clean_html(dom.to_string()) {
+                Ok(rendered) => self.rendered = rendered,
+                Err(_) => die!("Fail to render DOM tree."),
+            }
         }
+    }
+
+    pub fn finish(&mut self, outfile: Option<&str>) {
+        let outfile = self.handle_outfile(outfile);
+        self.render();
+        fs::write(outfile, &self.rendered).expect("unable to write file");
     }
 
     fn handle_outfile(&self, outfile: Option<&str>) -> String {
