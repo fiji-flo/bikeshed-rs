@@ -175,3 +175,19 @@ pub fn add_copyright(doc: &mut Spec) {
         }
     }
 }
+
+pub fn add_abstract(doc: &mut Spec) {
+    if let Some(ref mut dom) = doc.dom {
+        if let Ok(ref container) = dom.select_first("div[data-fill-with=abstract]") {
+            let mut abs = retrieve_boilerplate(doc, "abstract");
+            abs = html::helper::replace_macros(&abs, &doc.macros);
+            let abs_dom = kuchiki::parse_html().one(abs);
+
+            if let Ok(body) = abs_dom.select_first("body") {
+                for child in body.as_node().children() {
+                    container.as_node().append(child);
+                }
+            }
+        }
+    }
+}
