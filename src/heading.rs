@@ -39,12 +39,12 @@ pub fn process_headings(doc: &mut Spec) {
     for heading in headings {
         html::node::add_class(heading.as_node(), "heading");
         html::node::add_class(heading.as_node(), "settled");
-        reset_heading(heading.as_node());
+        wrap_heading_contents(heading.as_node());
     }
 }
 
 // Insert the content of heading into a <span class='content'> element.
-fn reset_heading(heading_el: &NodeRef) {
+fn wrap_heading_contents(heading_el: &NodeRef) {
     let content_el = html::node::new_element(
         "span",
         btreemap! {
