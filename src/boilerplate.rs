@@ -115,12 +115,7 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
 }
 
 pub fn add_spec_metadata_section(doc: &mut Spec) {
-    let dom = match doc.dom {
-        Some(ref dom) => dom,
-        None => return,
-    };
-
-    let container = match dom.select_first("div[data-fill-with=spec-metadata]") {
+    let container = match doc.dom().select_first("div[data-fill-with=spec-metadata]") {
         Ok(container) => container,
         Err(_) => return,
     };
@@ -168,12 +163,7 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
 }
 
 pub fn add_copyright_section(doc: &mut Spec) {
-    let dom = match doc.dom {
-        Some(ref mut dom) => dom,
-        None => return,
-    };
-
-    let container = match dom.select_first("p[data-fill-with=copyright]") {
+    let container = match doc.dom().select_first("p[data-fill-with=copyright]") {
         Ok(container) => container,
         Err(_) => return,
     };
@@ -189,12 +179,7 @@ pub fn add_copyright_section(doc: &mut Spec) {
 }
 
 pub fn add_abstract_section(doc: &mut Spec) {
-    let dom = match doc.dom {
-        Some(ref mut dom) => dom,
-        None => return,
-    };
-
-    let container = match dom.select_first("div[data-fill-with=abstract]") {
+    let container = match doc.dom().select_first("div[data-fill-with=abstract]") {
         Ok(container) => container,
         Err(_) => return,
     };
@@ -211,12 +196,10 @@ pub fn add_abstract_section(doc: &mut Spec) {
 }
 
 pub fn add_toc_section(doc: &mut Spec) {
-    let dom = match doc.dom {
-        Some(ref mut dom) => dom,
-        None => return,
-    };
-
-    let container = match dom.select_first("nav[data-fill-with=table-of-contents]") {
+    let container = match doc
+        .dom()
+        .select_first("nav[data-fill-with=table-of-contents]")
+    {
         Ok(container) => container,
         Err(_) => return,
     };

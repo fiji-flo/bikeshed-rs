@@ -20,7 +20,7 @@ pub struct Spec<'a> {
     pub md_cli: Metadata,
     pub macros: HashMap<&'static str, String>,
     pub html: String,
-    pub dom: Option<NodeRef>,
+    dom: Option<NodeRef>,
     pub head: Option<NodeRef>,
     pub body: Option<NodeRef>,
     pub extra_styles: BTreeMap<&'static str, &'static str>,
@@ -144,5 +144,9 @@ impl<'a> Spec<'a> {
             }
             "-".to_owned()
         }
+    }
+
+    pub fn dom(&mut self) -> &mut NodeRef {
+        self.dom.as_mut().unwrap()
     }
 }

@@ -8,12 +8,7 @@ pub fn process_headings(doc: &mut Spec) {
     // TODO:
     // 1. [all] or [doc-only]?
     // 2. [settled] or not?
-    let dom = match doc.dom {
-        Some(ref dom) => dom,
-        None => return,
-    };
-
-    let headings = match dom.select("h2, h3, h4, h5, h6") {
+    let headings = match doc.dom().select("h2, h3, h4, h5, h6") {
         Ok(headings) => {
             // TODO: Find a better way to filter headings.
             headings
