@@ -115,95 +115,119 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
 }
 
 pub fn add_spec_metadata_section(doc: &mut Spec) {
+    let dom = match doc.dom {
+        Some(ref dom) => dom,
+        None => return,
+    };
+
+    let container = match dom.select_first("div[data-fill-with=spec-metadata]") {
+        Ok(container) => container,
+        Err(_) => return,
+    };
+
     let macros = &doc.macros;
 
-    if let Some(ref mut dom) = doc.dom {
-        if let Ok(ref container) = dom.select_first("div[data-fill-with=spec-metadata]") {
-            let dl_el = html::node::new_element("dl", None);
+    let dl_el = html::node::new_element("dl", None);
 
-            // insert version
-            if let Some(version) = macros.get("version") {
-                let dt_el = html::node::new_element("dt", None);
-                dt_el.append(html::node::new_text("This version:"));
-                dl_el.append(dt_el);
+    // insert version
+    if let Some(version) = macros.get("version") {
+        let dt_el = html::node::new_element("dt", None);
+        dt_el.append(html::node::new_text("This version:"));
+        dl_el.append(dt_el);
 
-                let a_el = html::node::new_element(
-                    "a",
-                    btreemap! {
-                        "class" => "u-url".to_owned(),
-                        "href" => version.to_owned(),
-                    },
-                );
-                a_el.append(html::node::new_text(version));
-                let dd_el = html::node::new_element("dd", None);
-                dd_el.append(a_el);
-                dl_el.append(dd_el);
-            }
+        let a_el = html::node::new_element(
+            "a",
+            btreemap! {
+                "class" => "u-url".to_owned(),
+                "href" => version.to_owned(),
+            },
+        );
+        a_el.append(html::node::new_text(version));
+        let dd_el = html::node::new_element("dd", None);
+        dd_el.append(a_el);
+        dl_el.append(dd_el);
+    }
 
-            // insert editors
-            if !doc.md.editors.is_empty() {
-                let dt_el = html::node::new_element(
-                    "dt",
-                    btreemap! {
-                        "class" => "editor".to_owned()
-                    },
-                );
-                dt_el.append(html::node::new_text("Editor:"));
-                dl_el.append(dt_el);
+    // insert editors
+    if !doc.md.editors.is_empty() {
+        let dt_el = html::node::new_element(
+            "dt",
+            btreemap! {
+                "class" => "editor".to_owned()
+            },
+        );
+        dt_el.append(html::node::new_text("Editor:"));
+        dl_el.append(dt_el);
 
-                for dd_el in doc.md.editors.iter().map(editor_to_dd_node) {
-                    dl_el.append(dd_el);
-                }
-            }
-
-            container.as_node().append(dl_el);
+        for dd_el in doc.md.editors.iter().map(editor_to_dd_node) {
+            dl_el.append(dd_el);
         }
     }
+
+    container.as_node().append(dl_el);
 }
 
 pub fn add_copyright_section(doc: &mut Spec) {
-    if let Some(ref mut dom) = doc.dom {
-        if let Ok(ref container) = dom.select_first("p[data-fill-with=copyright]") {
-            let copyright = retrieve_boilerplate(doc, "copyright");
-            let copyright_dom = kuchiki::parse_html().one(copyright);
+    let dom = match doc.dom {
+        Some(ref mut dom) => dom,
+        None => return,
+    };
 
-            if let Ok(body) = copyright_dom.select_first("body") {
-                for child in body.as_node().children() {
-                    container.as_node().append(child);
-                }
-            }
+    let container = match dom.select_first("p[data-fill-with=copyright]") {
+        Ok(container) => container,
+        Err(_) => return,
+    };
+
+    let copyright = retrieve_boilerplate(doc, "copyright");
+    let copyright_dom = kuchiki::parse_html().one(copyright);
+
+    if let Ok(body) = copyright_dom.select_first("body") {
+        for child in body.as_node().children() {
+            container.as_node().append(child);
         }
     }
 }
 
 pub fn add_abstract_section(doc: &mut Spec) {
-    if let Some(ref mut dom) = doc.dom {
-        if let Ok(ref container) = dom.select_first("div[data-fill-with=abstract]") {
-            let mut abs = retrieve_boilerplate(doc, "abstract");
-            abs = html::helper::replace_macros(&abs, &doc.macros);
-            let abs_dom = kuchiki::parse_html().one(abs);
+    let dom = match doc.dom {
+        Some(ref mut dom) => dom,
+        None => return,
+    };
 
-            if let Ok(body) = abs_dom.select_first("body") {
-                for child in body.as_node().children() {
-                    container.as_node().append(child);
-                }
-            }
+    let container = match dom.select_first("div[data-fill-with=abstract]") {
+        Ok(container) => container,
+        Err(_) => return,
+    };
+
+    let mut abs = retrieve_boilerplate(doc, "abstract");
+    abs = html::helper::replace_macros(&abs, &doc.macros);
+    let abs_dom = kuchiki::parse_html().one(abs);
+
+    if let Ok(body) = abs_dom.select_first("body") {
+        for child in body.as_node().children() {
+            container.as_node().append(child);
         }
     }
 }
 
 pub fn add_toc_section(doc: &mut Spec) {
-    if let Some(ref mut dom) = doc.dom {
-        if let Ok(ref container) = dom.select_first("nav[data-fill-with=table-of-contents]") {
-            let h2_el = html::node::new_element(
-                "h2",
-                btreemap! {
-                    "class" => "no-num no-toc no-ref".to_owned(),
-                    "id" => "contents".to_owned(),
-                },
-            );
-            h2_el.append(html::node::new_text("Table of Contents"));
-            container.as_node().append(h2_el);
-        }
-    }
+    let dom = match doc.dom {
+        Some(ref mut dom) => dom,
+        None => return,
+    };
+
+    let container = match dom.select_first("nav[data-fill-with=table-of-contents]") {
+        Ok(container) => container,
+        Err(_) => return,
+    };
+
+    let h2_el = html::node::new_element(
+        "h2",
+        btreemap! {
+            "class" => "no-num no-toc no-ref".to_owned(),
+            "id" => "contents".to_owned(),
+        },
+    );
+    h2_el.append(html::node::new_text("Table of Contents"));
+    container.as_node().append(h2_el);
 }

@@ -8,10 +8,15 @@ pub fn process_headings(doc: &mut Spec) {
     // TODO:
     // 1. [all] or [doc-only]?
     // 2. [settled] or not?
-    if let Some(ref dom) = doc.dom {
-        if let Ok(headings) = dom.select("h2, h3, h4, h5, h6") {
+    let dom = match doc.dom {
+        Some(ref dom) => dom,
+        None => return,
+    };
+
+    let headings = match dom.select("h2, h3, h4, h5, h6") {
+        Ok(headings) => {
             // TODO: Find a better way to filter headings.
-            let headings = headings
+            headings
                 .filter(|h| {
                     // [ignore headings in boilerplate]
                     // [just for testing]
@@ -26,14 +31,15 @@ pub fn process_headings(doc: &mut Spec) {
                     }
                     true
                 })
-                .collect::<Vec<NodeDataRef<_>>>();
-
-            for heading in headings {
-                html::node::add_class(heading.as_node(), "heading");
-                html::node::add_class(heading.as_node(), "settled");
-                reset_heading(heading.as_node());
-            }
+                .collect::<Vec<NodeDataRef<_>>>()
         }
+        Err(_) => return,
+    };
+
+    for heading in headings {
+        html::node::add_class(heading.as_node(), "heading");
+        html::node::add_class(heading.as_node(), "settled");
+        reset_heading(heading.as_node());
     }
 }
 
