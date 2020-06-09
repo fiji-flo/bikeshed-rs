@@ -12,6 +12,7 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> bool {
         return false;
     }
 
+    // TODO: Do it more accurately.
     // remove text nodes
     let lhs_children = lhs
         .children()
