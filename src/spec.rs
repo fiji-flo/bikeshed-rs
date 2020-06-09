@@ -118,11 +118,7 @@ impl<'a> Spec<'a> {
 
     pub fn render(&mut self) {
         if let Some(ref dom) = self.dom {
-            // TODO: Optionize the html-cleaner.
-            match clean::clean_html(dom.to_string()) {
-                Ok(rendered) => self.rendered = rendered,
-                Err(_) => die!("Fail to render DOM tree."),
-            }
+            self.rendered = dom.to_string();
         }
     }
 
