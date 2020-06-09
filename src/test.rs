@@ -1,25 +1,38 @@
 use kuchiki::traits::*;
-use reqwest;
-use serde_json::{self, Value};
+use kuchiki::NodeRef;
 use std::fs;
 use std::path::Path;
 
 use crate::metadata::metadata::Metadata;
 use crate::spec::Spec;
 
-pub fn clean_html(code: String) -> Result<String, Box<dyn std::error::Error>> {
-    let client = reqwest::blocking::Client::new();
+// Compare DOM trees recursively.
+fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> bool {
+    if lhs.data() != rhs.data() {
+        return false;
+    }
 
-    let res = client
-        .post("https://www.10bestdesign.com/dirtymarkup/api/html")
-        .form(&[("code", code), ("indent", "2".to_owned())])
-        .send()?
-        .text()?;
+    // remove text nodes
+    let lhs_children = lhs
+        .children()
+        .filter(|lc| lc.as_text().is_none())
+        .collect::<Vec<NodeRef>>();
+    let rhs_children = rhs
+        .children()
+        .filter(|rc| rc.as_text().is_none())
+        .collect::<Vec<NodeRef>>();
 
-    let val: Value = serde_json::from_str(&res)?;
-    let cleaned = val["clean"].as_str().unwrap();
+    if lhs_children.len() != rhs_children.len() {
+        return false;
+    }
 
-    Ok(cleaned.to_owned())
+    for (lc, rc) in lhs_children.iter().zip(rhs_children.iter()) {
+        if !is_equal(lc, rc) {
+            return false;
+        }
+    }
+
+    true
 }
 
 #[test]
@@ -29,24 +42,11 @@ fn test_spec() {
 
     let mut spec = Spec::new(src_path.to_str().unwrap(), Metadata::new());
     spec.preprocess();
-    spec.render();
-
-    let spec_html = match clean_html(spec.rendered) {
-        Ok(expect_html) => expect_html,
-        _ => die!("Fail to clean HTML of spec."),
-    };
 
     match fs::read_to_string(target_path.to_str().unwrap()) {
         Ok(html) => {
             let expect_dom = kuchiki::parse_html().one(html);
-
-            let expect_html = match clean_html(expect_dom.to_string()) {
-                Ok(expect_html) => expect_html,
-                _ => die!("Fail to clean expected HTML."),
-            };
-
-            // TODO: Print the first line that doesn't match.
-            assert_eq!(spec_html, expect_html)
+            assert!(is_equal(spec.dom(), &expect_dom));
         }
         _ => die!("Fail to read expect file"),
     }
