@@ -70,32 +70,41 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> Result<(), CompareError> {
 
 #[test]
 fn test_spec() {
-    let src_path = Path::new("tests").join("metadata001.bs");
-    let target_path = Path::new("tests").join("metadata001.html");
+    // TODO: Use all files.
+    let names = hashset! {
+        "metadata001"
+    };
 
-    let mut spec = Spec::new(src_path.to_str().unwrap(), Metadata::new());
-    spec.preprocess();
+    for name in names {
+        let src_path = Path::new("tests").join(format!("{}.bs", name));
+        let target_path = Path::new("tests").join(format!("{}.html", name));
 
-    match fs::read_to_string(target_path.to_str().unwrap()) {
-        Ok(html) => {
-            let expect_dom = kuchiki::parse_html().one(html);
+        let mut spec = Spec::new(src_path.to_str().unwrap(), Metadata::new());
+        spec.preprocess();
 
-            if let Err(err) = is_equal(spec.dom(), &expect_dom) {
-                match err {
-                    CompareError::Data(pair) => eprintln!(
-                        "[Wrong Data]\nExpect:\n{}\n\nFound:\n{}",
-                        pair.expect.to_string(),
-                        pair.result.to_string()
-                    ),
-                    CompareError::Number(pair) => eprintln!(
-                        "[Wrong Children Number]\nExpect:\n{}\n\nFound:\n{}",
-                        pair.expect.to_string(),
-                        pair.result.to_string()
-                    ),
+        match fs::read_to_string(target_path.to_str().unwrap()) {
+            Ok(html) => {
+                let expect_dom = kuchiki::parse_html().one(html);
+
+                if let Err(err) = is_equal(spec.dom(), &expect_dom) {
+                    match err {
+                        CompareError::Data(pair) => eprintln!(
+                            "[{}] [Wrong Data]\nExpect:\n{}\n\nFound:\n{}",
+                            name,
+                            pair.expect.to_string(),
+                            pair.result.to_string()
+                        ),
+                        CompareError::Number(pair) => eprintln!(
+                            "[{}] [Wrong Children Number]\nExpect:\n{}\n\nFound:\n{}",
+                            name,
+                            pair.expect.to_string(),
+                            pair.result.to_string()
+                        ),
+                    }
+                    panic!();
                 }
-                panic!();
             }
+            _ => die!("Fail to read expect file"),
         }
-        _ => die!("Fail to read expect file"),
     }
 }
