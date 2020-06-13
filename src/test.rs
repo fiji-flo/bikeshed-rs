@@ -21,10 +21,23 @@ fn is_valid_node(el: &NodeRef) -> bool {
     }
 }
 
+enum CompareError {
+    Data(NodePair),
+    Number(NodePair),
+}
+
+struct NodePair {
+    result: NodeRef,
+    expect: NodeRef,
+}
+
 // Compare DOM trees recursively.
-fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> bool {
+fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> Result<(), CompareError> {
     if lhs.data() != rhs.data() {
-        return false;
+        return Err(CompareError::Data(NodePair {
+            result: lhs.clone(),
+            expect: rhs.clone(),
+        }));
     }
 
     // handle empty text nodes
@@ -40,16 +53,19 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> bool {
         .collect::<Vec<NodeRef>>();
 
     if lhs_children.len() != rhs_children.len() {
-        return false;
+        return Err(CompareError::Number(NodePair {
+            result: lhs.clone(),
+            expect: rhs.clone(),
+        }));
     }
 
     for (lc, rc) in lhs_children.iter().zip(rhs_children.iter()) {
-        if !is_equal(lc, rc) {
-            return false;
+        if let Err(err) = is_equal(lc, rc) {
+            return Err(err);
         }
     }
 
-    true
+    Ok(())
 }
 
 #[test]
@@ -63,7 +79,22 @@ fn test_spec() {
     match fs::read_to_string(target_path.to_str().unwrap()) {
         Ok(html) => {
             let expect_dom = kuchiki::parse_html().one(html);
-            assert!(is_equal(spec.dom(), &expect_dom));
+
+            if let Err(err) = is_equal(spec.dom(), &expect_dom) {
+                match err {
+                    CompareError::Data(pair) => eprintln!(
+                        "[Wrong Data]\nExpect:\n{}\n\nFound:\n{}",
+                        pair.expect.to_string(),
+                        pair.result.to_string()
+                    ),
+                    CompareError::Number(pair) => eprintln!(
+                        "[Wrong Children Number]\nExpect:\n{}\n\nFound:\n{}",
+                        pair.expect.to_string(),
+                        pair.result.to_string()
+                    ),
+                }
+                panic!();
+            }
         }
         _ => die!("Fail to read expect file"),
     }
