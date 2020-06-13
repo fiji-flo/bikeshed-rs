@@ -3,8 +3,23 @@ use kuchiki::NodeRef;
 use std::fs;
 use std::path::Path;
 
+use crate::html;
 use crate::metadata::metadata::Metadata;
 use crate::spec::Spec;
+
+fn trim_text_node(el: NodeRef) -> NodeRef {
+    match el.as_text() {
+        Some(text) => html::node::new_text(text.clone().into_inner().trim()),
+        None => el.clone(),
+    }
+}
+
+fn is_valid_node(el: &NodeRef) -> bool {
+    match el.as_text() {
+        Some(text) => !text.borrow().is_empty(),
+        None => true,
+    }
+}
 
 // Compare DOM trees recursively.
 fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> bool {
@@ -12,15 +27,16 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> bool {
         return false;
     }
 
-    // TODO: Do it more accurately.
-    // remove text nodes
+    // handle empty text nodes
     let lhs_children = lhs
         .children()
-        .filter(|lc| lc.as_text().is_none())
+        .map(trim_text_node)
+        .filter(is_valid_node)
         .collect::<Vec<NodeRef>>();
     let rhs_children = rhs
         .children()
-        .filter(|rc| rc.as_text().is_none())
+        .map(trim_text_node)
+        .filter(is_valid_node)
         .collect::<Vec<NodeRef>>();
 
     if lhs_children.len() != rhs_children.len() {
