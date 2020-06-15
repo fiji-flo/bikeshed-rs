@@ -71,11 +71,9 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> Result<(), CompareError> {
 #[test]
 fn test_spec() {
     // TODO: Use all files.
-    let names = hashset! {
-        "metadata001"
-    };
+    let names = ["metadata001"];
 
-    for name in names {
+    for name in names.iter() {
         let src_path = Path::new("tests").join(format!("{}.bs", name));
         let target_path = Path::new("tests").join(format!("{}.html", name));
 
