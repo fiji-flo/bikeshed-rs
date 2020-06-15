@@ -197,6 +197,7 @@ impl Metadata {
         let macros = &mut doc.macros;
 
         // abstract
+        // TODO(#13): Use the markdown-parser here.
         macros.insert("abstract", self.abs.join("\n"));
         // level
         if let Some(ref level) = self.level {
