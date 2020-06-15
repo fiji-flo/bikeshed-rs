@@ -1175,7 +1175,7 @@ Possible extra rowspan handling
 		   1. When table < content column, centers table in column.
 		   2. When content < table < available, left-aligns.
 		   3. When table > available, fills available + scroll bar.
-		*/ 
+		*/
 		display: grid;
 		grid-template-columns: minmax(0, 50em);
 	}
@@ -1278,91 +1278,6 @@ Possible extra rowspan handling
     word-break: normal;
   }
 </style>
-<style>/* style-md-lists */
-
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
-}
-[data-md] > :last-child {
-    margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
-
-.heading, .issue, .note, .example, li, dt {
-    position: relative;
-}
-a.self-link {
-    position: absolute;
-    top: 0;
-    left: calc(-1 * (3.5rem - 26px));
-    width: calc(3.5rem - 26px);
-    height: 2em;
-    text-align: center;
-    border: none;
-    transition: opacity .2s;
-    opacity: .5;
-}
-a.self-link:hover {
-    opacity: 1;
-}
-.heading > a.self-link {
-    font-size: 83%;
-}
-li > a.self-link {
-    left: calc(-1 * (3.5rem - 26px) - 2em);
-}
-dfn > a.self-link {
-    top: auto;
-    left: auto;
-    opacity: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: gray;
-    color: white;
-    font-style: normal;
-    transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-    opacity: 1;
-}
-dfn > a.self-link:hover {
-    color: black;
-}
-
-a.self-link::before            { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-counters */
-
-body {
-    counter-reset: example figure issue;
-}
-.issue {
-    counter-increment: issue;
-}
-.issue:not(.no-marker)::before {
-    content: "Issue " counter(issue);
-}
-
-.example {
-    counter-increment: example;
-}
-.example:not(.no-marker)::before {
-    content: "Example " counter(example);
-}
-.invalid.example:not(.no-marker)::before,
-.illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
-}
-
-figcaption {
-    counter-increment: figure;
-}
-figcaption:not(.no-marker)::before {
-    content: "Figure " counter(figure) " ";
-}</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1425,6 +1340,35 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
 <style>/* style-dfn-panel */
 
 .dfn-panel {
@@ -1462,6 +1406,62 @@ pre .property::before, pre .property::after {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: black;
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }</style>
 <style>/* style-syntax-highlighting */
 pre.idl.highlight { color: #708090; }
 .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
@@ -1817,37 +1817,37 @@ A UA MUST ask permission from the user during session creation before meshing da
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-xrworldmeshfeature"><code><c- g>XRWorldMeshFeature</c-></code></a>: <a class="n" data-link-type="idl-name"><c- n>XRFeatureInit</c-></a> {
-    <a class="n" data-link-type="idl-name" href="#enumdef-xrmeshquality" id="ref-for-enumdef-xrmeshquality①①"><c- n>XRMeshQuality</c-></a> <a data-default="&quot;medium&quot;" data-type="XRMeshQuality " href="#dom-xrworldmeshfeature-quality"><code><c- g>quality</c-></code></a> = "medium";
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③"><c- b>double</c-></a> <a data-default="10.0" data-type="double " href="#dom-xrworldmeshfeature-width"><code><c- g>width</c-></code></a> = 10.0;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①①"><c- b>double</c-></a> <a data-default="10.0" data-type="double " href="#dom-xrworldmeshfeature-height"><code><c- g>height</c-></code></a> = 10.0;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②①"><c- b>double</c-></a> <a data-default="10.0" data-type="double " href="#dom-xrworldmeshfeature-breadth"><code><c- g>breadth</c-></code></a> = 10.0;
+    <a class="n" data-link-type="idl-name" href="#enumdef-xrmeshquality"><c- n>XRMeshQuality</c-></a> <a data-default="&quot;medium&quot;" data-type="XRMeshQuality " href="#dom-xrworldmeshfeature-quality"><code><c- g>quality</c-></code></a> = "medium";
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a> <a data-default="10.0" data-type="double " href="#dom-xrworldmeshfeature-width"><code><c- g>width</c-></code></a> = 10.0;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a> <a data-default="10.0" data-type="double " href="#dom-xrworldmeshfeature-height"><code><c- g>height</c-></code></a> = 10.0;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a> <a data-default="10.0" data-type="double " href="#dom-xrworldmeshfeature-breadth"><code><c- g>breadth</c-></code></a> = 10.0;
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-xrnearmeshfeature"><code><c- g>XRNearMeshFeature</c-></code></a>: <a class="n" data-link-type="idl-name"><c- n>XRFeatureInit</c-></a> {
-    <a class="n" data-link-type="idl-name" href="#enumdef-xrmeshquality" id="ref-for-enumdef-xrmeshquality②①"><c- n>XRMeshQuality</c-></a> <a data-default="&quot;medium&quot;" data-type="XRMeshQuality " href="#dom-xrnearmeshfeature-quality"><code><c- g>quality</c-></code></a> = "medium";
+    <a class="n" data-link-type="idl-name" href="#enumdef-xrmeshquality"><c- n>XRMeshQuality</c-></a> <a data-default="&quot;medium&quot;" data-type="XRMeshQuality " href="#dom-xrnearmeshfeature-quality"><code><c- g>quality</c-></code></a> = "medium";
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-xrmeshblock"><code><c- g>XRMeshBlock</c-></code></a> {
-    <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-Float32Array" id="ref-for-idl-Float32Array②"><c- b>Float32Array</c-></a> <a data-type="Float32Array " href="#dom-xrmeshblock-vertices"><code><c- g>vertices</c-></code></a>;
-    <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-Uint16Array" id="ref-for-idl-Uint16Array①"><c- b>Uint16Array</c-></a> <a data-type="Uint16Array " href="#dom-xrmeshblock-indices"><code><c- g>indices</c-></code></a>;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-Float32Array" id="ref-for-idl-Float32Array①①"><c- b>Float32Array</c-></a> <a data-type="Float32Array " href="#dom-xrmeshblock-normals"><code><c- g>normals</c-></code></a>;
+    <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-Float32Array"><c- b>Float32Array</c-></a> <a data-type="Float32Array " href="#dom-xrmeshblock-vertices"><code><c- g>vertices</c-></code></a>;
+    <c- b>required</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-Uint16Array"><c- b>Uint16Array</c-></a> <a data-type="Uint16Array " href="#dom-xrmeshblock-indices"><code><c- g>indices</c-></code></a>;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-Float32Array"><c- b>Float32Array</c-></a> <a data-type="Float32Array " href="#dom-xrmeshblock-normals"><code><c- g>normals</c-></code></a>;
 };
 
 <c- b>interface</c-> <a href="#xrnearmesh"><code><c- g>XRNearMesh</c-></code></a> {
-    <c- b>readonly</c-> <c- b>setlike</c->&lt;<a class="n" data-link-type="idl-name" href="#dictdef-xrmeshblock" id="ref-for-dictdef-xrmeshblock②①"><c- n>XRMeshBlock</c-></a>>;
+    <c- b>readonly</c-> <c- b>setlike</c->&lt;<a class="n" data-link-type="idl-name" href="#dictdef-xrmeshblock"><c- n>XRMeshBlock</c-></a>>;
 };
 
 <c- b>interface</c-> <a href="#xrworldmesh"><code><c- g>XRWorldMesh</c-></code></a> {
-    <c- b>readonly</c-> <c- b>maplike</c->&lt;<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString①"><c- b>DOMString</c-></a>, <a class="n" data-link-type="idl-name" href="#dictdef-xrmeshblock" id="ref-for-dictdef-xrmeshblock③①"><c- n>XRMeshBlock</c-></a>>;
+    <c- b>readonly</c-> <c- b>maplike</c->&lt;<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a>, <a class="n" data-link-type="idl-name" href="#dictdef-xrmeshblock"><c- n>XRMeshBlock</c-></a>>;
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-xrmetadata"><code><c- g>XRMetadata</c-></code></a> {
-    <a class="n" data-link-type="idl-name" href="#xrworldmesh" id="ref-for-xrworldmesh①"><c- n>XRWorldMesh</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="XRWorldMesh " href="#dom-xrmetadata-worldmesh" id="ref-for-dom-xrmetadata-worldmesh①"><c- g>worldMesh</c-></a>;
-    <a class="n" data-link-type="idl-name" href="#xrnearmesh" id="ref-for-xrnearmesh①"><c- n>XRNearMesh</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="XRNearMesh " href="#dom-xrmetadata-nearmesh" id="ref-for-dom-xrmetadata-nearmesh①"><c- g>nearMesh</c-></a>;
+    <a class="n" data-link-type="idl-name" href="#xrworldmesh"><c- n>XRWorldMesh</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="XRWorldMesh " href="#dom-xrmetadata-worldmesh"><c- g>worldMesh</c-></a>;
+    <a class="n" data-link-type="idl-name" href="#xrnearmesh"><c- n>XRNearMesh</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="XRNearMesh " href="#dom-xrmetadata-nearmesh"><c- g>nearMesh</c-></a>;
 };
 
 <c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface"><c- g>XRFrame</c-></a> {
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#dictdef-xrmetadata" id="ref-for-dictdef-xrmetadata①"><c- n>XRMetadata</c-></a> <a data-readonly data-type="XRMetadata" href="#dom-xrframe-metadata"><code><c- g>metaData</c-></code></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#dictdef-xrmetadata"><c- n>XRMetadata</c-></a> <a data-readonly data-type="XRMetadata" href="#dom-xrframe-metadata"><code><c- g>metaData</c-></code></a>;
 };
 
 </pre>

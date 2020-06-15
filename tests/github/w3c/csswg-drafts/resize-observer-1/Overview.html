@@ -14,91 +14,6 @@
   }
   </style>
   <link href="https://drafts.csswg.org/resize-observer/" rel="canonical">
-<style>/* style-md-lists */
-
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
-}
-[data-md] > :last-child {
-    margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
-
-.heading, .issue, .note, .example, li, dt {
-    position: relative;
-}
-a.self-link {
-    position: absolute;
-    top: 0;
-    left: calc(-1 * (3.5rem - 26px));
-    width: calc(3.5rem - 26px);
-    height: 2em;
-    text-align: center;
-    border: none;
-    transition: opacity .2s;
-    opacity: .5;
-}
-a.self-link:hover {
-    opacity: 1;
-}
-.heading > a.self-link {
-    font-size: 83%;
-}
-li > a.self-link {
-    left: calc(-1 * (3.5rem - 26px) - 2em);
-}
-dfn > a.self-link {
-    top: auto;
-    left: auto;
-    opacity: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: gray;
-    color: white;
-    font-style: normal;
-    transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-    opacity: 1;
-}
-dfn > a.self-link:hover {
-    color: black;
-}
-
-a.self-link::before            { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-counters */
-
-body {
-    counter-reset: example figure issue;
-}
-.issue {
-    counter-increment: issue;
-}
-.issue:not(.no-marker)::before {
-    content: "Issue " counter(issue);
-}
-
-.example {
-    counter-increment: example;
-}
-.example:not(.no-marker)::before {
-    content: "Example " counter(example);
-}
-.invalid.example:not(.no-marker)::before,
-.illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
-}
-
-figcaption {
-    counter-increment: figure;
-}
-figcaption:not(.no-marker)::before {
-    content: "Figure " counter(figure) " ";
-}</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -161,6 +76,35 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
 <style>/* style-dfn-panel */
 
 .dfn-panel {
@@ -198,6 +142,62 @@ pre .property::before, pre .property::after {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: black;
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }</style>
 <style>/* style-syntax-highlighting */
 pre.idl.highlight { color: #708090; }
 .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
@@ -270,10 +270,10 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <dt class="editor">Editors:
       <dd class="editor p-author h-card vcard" data-editor-id="92454"><a class="p-name fn u-email email" href="mailto:atotic@google.com">Aleks Totic</a> (<span class="p-org org">Google</span>)
       <dd class="editor p-author h-card vcard" data-editor-id="69511"><a class="p-name fn u-email email" href="mailto:gwhit@microsoft.com">Greg Whitworth</a> (<span class="p-org org">Microsoft</span>)
-      <dt>Suggest an Edit for this Spec:
-      <dd><a href="https://github.com/w3c/csswg-drafts/blob/master/resize-observer-1/Overview.bs">GitHub Editor</a>
       <dt>Issue Tracking:
       <dd><a href="https://github.com/w3c/csswg-drafts/labels/resize-observer-1">GitHub Issues</a>
+      <dt>Suggest an Edit for this Spec:
+      <dd><a href="https://github.com/w3c/csswg-drafts/blob/master/resize-observer-1/Overview.bs">GitHub Editor</a>
      </dl>
     </div>
    </details>
@@ -500,7 +500,7 @@ ro1<c- p>.</c->observe<c- p>(</c->document<c- p>.</c->querySelector<c- p>(</c-><
    <p class="note" role="note">This does not have any impact on which box dimensions are returned to the defined callback when the event is fired,
                 it solely defines which box the author wishes to observe layout changes on.</p>
 <pre class="idl highlight def">[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed"><c- g>Exposed</c-></a>=(<c- n>Window</c->),
- <a class="idl-code" data-link-type="constructor" href="#dom-resizeobserver-resizeobserver" id="ref-for-dom-resizeobserver-resizeobserver"><c- g>Constructor</c-></a>(<a class="n" data-link-type="idl-name" href="#callbackdef-resizeobservercallback" id="ref-for-callbackdef-resizeobservercallback"><c- n>ResizeObserverCallback</c-></a> <dfn class="idl-code" data-dfn-for="ResizeObserver/ResizeObserver(callback)" data-dfn-type="argument" data-export id="dom-resizeobserver-resizeobserver-callback-callback"><code><c- g>callback</c-></code><a class="self-link" href="#dom-resizeobserver-resizeobserver-callback-callback"></a></dfn>)]
+ <c- g>Constructor</c->(<a class="n" data-link-type="idl-name" href="#callbackdef-resizeobservercallback" id="ref-for-callbackdef-resizeobservercallback"><c- n>ResizeObserverCallback</c-></a> <c- g>callback</c->)]
 <c- b>interface</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="interface" data-export id="resizeobserver"><code><c- g>ResizeObserver</c-></code></dfn> {
     <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-resizeobserver-observe" id="ref-for-dom-resizeobserver-observe"><c- g>observe</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element⑥"><c- n>Element</c-></a> <dfn class="idl-code" data-dfn-for="ResizeObserver/observe(target, options), ResizeObserver/observe(target)" data-dfn-type="argument" data-export id="dom-resizeobserver-observe-target-options-target"><code><c- g>target</c-></code><a class="self-link" href="#dom-resizeobserver-observe-target-options-target"></a></dfn>, <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-resizeobserveroptions" id="ref-for-dictdef-resizeobserveroptions"><c- n>ResizeObserverOptions</c-></a> <dfn class="idl-code" data-dfn-for="ResizeObserver/observe(target, options), ResizeObserver/observe(target)" data-dfn-type="argument" data-export id="dom-resizeobserver-observe-target-options-options"><code><c- g>options</c-></code><a class="self-link" href="#dom-resizeobserver-observe-target-options-options"></a></dfn>);
     <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-resizeobserver-unobserve" id="ref-for-dom-resizeobserver-unobserve"><c- g>unobserve</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element⑦"><c- n>Element</c-></a> <dfn class="idl-code" data-dfn-for="ResizeObserver/unobserve(target)" data-dfn-type="argument" data-export id="dom-resizeobserver-unobserve-target-target"><code><c- g>target</c-></code><a class="self-link" href="#dom-resizeobserver-unobserve-target-target"></a></dfn>);
@@ -509,7 +509,7 @@ ro1<c- p>.</c->observe<c- p>(</c->document<c- p>.</c->querySelector<c- p>(</c-><
 </pre>
    <div>
     <dl>
-     <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="ResizeObserver" data-dfn-type="constructor" data-export data-lt="ResizeObserver(callback)" id="dom-resizeobserver-resizeobserver"><code>new ResizeObserver(callback)</code></dfn>
+     <dt data-md><dfn class="idl-code" data-dfn-for="ResizeObserver" data-dfn-type="constructor" data-export data-lt="ResizeObserver(callback)" id="dom-resizeobserver-resizeobserver"><code>new ResizeObserver(callback)</code><a class="self-link" href="#dom-resizeobserver-resizeobserver"></a></dfn>
      <dd data-md>
       <ol>
        <li data-md>
@@ -603,7 +603,7 @@ A future version of this spec will extend the returned sequences to contain the 
    <p class="note" role="note">This section is not normative. ResizeObservation is an example struct that can be used in implementation of Resize Observer. It is being
 included here in order to help provide clarity during the processing model. It effectively holds observation information for a single <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element①⑤">Element</a></code>. This
 interface is not visible to Javascript.</p>
-<pre class="idl highlight def">[<dfn class="idl-code" data-dfn-for="ResizeObservation" data-dfn-type="constructor" data-export data-lt="ResizeObservation(target)" id="dom-resizeobservation-resizeobservation"><code><c- g>Constructor</c-></code><a class="self-link" href="#dom-resizeobservation-resizeobservation"></a></dfn>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element①⑥"><c- n>Element</c-></a> <dfn class="idl-code" data-dfn-for="ResizeObservation/ResizeObservation(target)" data-dfn-type="argument" data-export id="dom-resizeobservation-resizeobservation-target-target"><code><c- g>target</c-></code><a class="self-link" href="#dom-resizeobservation-resizeobservation-target-target"></a></dfn>)
+<pre class="idl highlight def">[<c- g>Constructor</c->(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element①⑥"><c- n>Element</c-></a> <c- g>target</c->)
 ]
 <c- b>interface</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="interface" data-export id="resizeobservation"><code><c- g>ResizeObservation</c-></code></dfn> {
     <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element①⑦"><c- n>Element</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="Element" href="#dom-resizeobservation-target" id="ref-for-dom-resizeobservation-target"><c- g>target</c-></a>;
@@ -626,7 +626,7 @@ interface is not visible to Javascript.</p>
    </div>
    <div>
     <dl>
-     <dt data-md><dfn class="idl-code" data-dfn-for="ResizeObservation" data-dfn-type="constructor" data-export data-lt="ResizeObservation(target, options)" id="dom-resizeobservation-resizeobservation-target-options"><code>new ResizeObservation(target, observedBox)</code><a class="self-link" href="#dom-resizeobservation-resizeobservation-target-options"></a></dfn>
+     <dt data-md><dfn class="idl-code" data-dfn-for="ResizeObservation" data-dfn-type="constructor" data-export data-lt="ResizeObservation(target, options)" id="dom-resizeobservation-resizeobservation"><code>new ResizeObservation(target, observedBox)</code><a class="self-link" href="#dom-resizeobservation-resizeobservation"></a></dfn>
      <dd data-md>
       <ol>
        <li data-md>
@@ -1070,8 +1070,7 @@ will be considered for delivery in the next loop.</p>
    <li><a href="#dom-resizeobserver-observe">observe(target)</a><span>, in §2.1</span>
    <li><a href="#dom-resizeobserver-observe">observe(target, options)</a><span>, in §2.1</span>
    <li><a href="#resizeobservation">ResizeObservation</a><span>, in §3.1</span>
-   <li><a href="#dom-resizeobservation-resizeobservation">ResizeObservation(target)</a><span>, in §3.1</span>
-   <li><a href="#dom-resizeobservation-resizeobservation-target-options">ResizeObservation(target, options)</a><span>, in §3.1</span>
+   <li><a href="#dom-resizeobservation-resizeobservation">ResizeObservation(target, options)</a><span>, in §3.1</span>
    <li><a href="#resizeobserver">ResizeObserver</a><span>, in §2.1</span>
    <li><a href="#enumdef-resizeobserverboxoptions">ResizeObserverBoxOptions</a><span>, in §2.1</span>
    <li><a href="#dom-resizeobserver-resizeobserver">ResizeObserver(callback)</a><span>, in §2.1</span>
@@ -1239,39 +1238,39 @@ will be considered for delivery in the next loop.</p>
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-resizeobserveroptions"><code><c- g>ResizeObserverOptions</c-></code></a> {
-    <a class="n" data-link-type="idl-name" href="#enumdef-resizeobserverboxoptions" id="ref-for-enumdef-resizeobserverboxoptions④"><c- n>ResizeObserverBoxOptions</c-></a> <a data-default="&quot;content-box&quot;" data-type="ResizeObserverBoxOptions " href="#dom-resizeobserveroptions-box"><code><c- g>box</c-></code></a> = "content-box";
+    <a class="n" data-link-type="idl-name" href="#enumdef-resizeobserverboxoptions"><c- n>ResizeObserverBoxOptions</c-></a> <a data-default="&quot;content-box&quot;" data-type="ResizeObserverBoxOptions " href="#dom-resizeobserveroptions-box"><code><c- g>box</c-></code></a> = "content-box";
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed②"><c- g>Exposed</c-></a>=(<c- n>Window</c->),
- <a class="idl-code" data-link-type="constructor" href="#dom-resizeobserver-resizeobserver" id="ref-for-dom-resizeobserver-resizeobserver①"><c- g>Constructor</c-></a>(<a class="n" data-link-type="idl-name" href="#callbackdef-resizeobservercallback" id="ref-for-callbackdef-resizeobservercallback⑤"><c- n>ResizeObserverCallback</c-></a> <a href="#dom-resizeobserver-resizeobserver-callback-callback"><code><c- g>callback</c-></code></a>)]
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=(<c- n>Window</c->),
+ <c- g>Constructor</c->(<a class="n" data-link-type="idl-name" href="#callbackdef-resizeobservercallback"><c- n>ResizeObserverCallback</c-></a> <c- g>callback</c->)]
 <c- b>interface</c-> <a href="#resizeobserver"><code><c- g>ResizeObserver</c-></code></a> {
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-resizeobserver-observe" id="ref-for-dom-resizeobserver-observe①"><c- g>observe</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element⑥①"><c- n>Element</c-></a> <a href="#dom-resizeobserver-observe-target-options-target"><code><c- g>target</c-></code></a>, <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-resizeobserveroptions" id="ref-for-dictdef-resizeobserveroptions①"><c- n>ResizeObserverOptions</c-></a> <a href="#dom-resizeobserver-observe-target-options-options"><code><c- g>options</c-></code></a>);
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-resizeobserver-unobserve" id="ref-for-dom-resizeobserver-unobserve①"><c- g>unobserve</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element⑦①"><c- n>Element</c-></a> <a href="#dom-resizeobserver-unobserve-target-target"><code><c- g>target</c-></code></a>);
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-resizeobserver-disconnect" id="ref-for-dom-resizeobserver-disconnect①"><c- g>disconnect</c-></a>();
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-resizeobserver-observe"><c- g>observe</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element"><c- n>Element</c-></a> <a href="#dom-resizeobserver-observe-target-options-target"><code><c- g>target</c-></code></a>, <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-resizeobserveroptions"><c- n>ResizeObserverOptions</c-></a> <a href="#dom-resizeobserver-observe-target-options-options"><code><c- g>options</c-></code></a>);
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-resizeobserver-unobserve"><c- g>unobserve</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element"><c- n>Element</c-></a> <a href="#dom-resizeobserver-unobserve-target-target"><code><c- g>target</c-></code></a>);
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-resizeobserver-disconnect"><c- g>disconnect</c-></a>();
 };
 
-<c- b>callback</c-> <a href="#callbackdef-resizeobservercallback"><code><c- g>ResizeObserverCallback</c-></code></a> = <c- b>void</c-> (<c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#resizeobserverentry" id="ref-for-resizeobserverentry④"><c- n>ResizeObserverEntry</c-></a>> <a href="#dom-resizeobservercallback-entries"><code><c- g>entries</c-></code></a>, <a class="n" data-link-type="idl-name" href="#resizeobserver" id="ref-for-resizeobserver①②"><c- n>ResizeObserver</c-></a> <a href="#dom-resizeobservercallback-observer"><code><c- g>observer</c-></code></a>);
+<c- b>callback</c-> <a href="#callbackdef-resizeobservercallback"><code><c- g>ResizeObserverCallback</c-></code></a> = <c- b>void</c-> (<c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#resizeobserverentry"><c- n>ResizeObserverEntry</c-></a>> <a href="#dom-resizeobservercallback-entries"><code><c- g>entries</c-></code></a>, <a class="n" data-link-type="idl-name" href="#resizeobserver"><c- n>ResizeObserver</c-></a> <a href="#dom-resizeobservercallback-observer"><code><c- g>observer</c-></code></a>);
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <a href="#resizeobserverentry"><code><c- g>ResizeObserverEntry</c-></code></a> {
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element⑧①"><c- n>Element</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="Element" href="#dom-resizeobserverentry-target" id="ref-for-dom-resizeobserverentry-target②"><c- g>target</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://drafts.fxtf.org/geometry-1/#domrectreadonly" id="ref-for-domrectreadonly②"><c- n>DOMRectReadOnly</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="DOMRectReadOnly" href="#dom-resizeobserverentry-contentrect" id="ref-for-dom-resizeobserverentry-contentrect②"><c- g>contentRect</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#resizeobserversize" id="ref-for-resizeobserversize⑧"><c- n>ResizeObserverSize</c-></a>> <a class="idl-code" data-link-type="attribute" data-readonly data-type="sequence<ResizeObserverSize>" href="#dom-resizeobserverentry-borderboxsize" id="ref-for-dom-resizeobserverentry-borderboxsize③"><c- g>borderBoxSize</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#resizeobserversize" id="ref-for-resizeobserversize①①"><c- n>ResizeObserverSize</c-></a>> <a class="idl-code" data-link-type="attribute" data-readonly data-type="sequence<ResizeObserverSize>" href="#dom-resizeobserverentry-contentboxsize" id="ref-for-dom-resizeobserverentry-contentboxsize④"><c- g>contentBoxSize</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#resizeobserversize" id="ref-for-resizeobserversize②①"><c- n>ResizeObserverSize</c-></a>> <a class="idl-code" data-link-type="attribute" data-readonly data-type="sequence<ResizeObserverSize>" href="#dom-resizeobserverentry-devicepixelcontentboxsize" id="ref-for-dom-resizeobserverentry-devicepixelcontentboxsize③"><c- g>devicePixelContentBoxSize</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element"><c- n>Element</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="Element" href="#dom-resizeobserverentry-target"><c- g>target</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://drafts.fxtf.org/geometry-1/#domrectreadonly"><c- n>DOMRectReadOnly</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="DOMRectReadOnly" href="#dom-resizeobserverentry-contentrect"><c- g>contentRect</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#resizeobserversize"><c- n>ResizeObserverSize</c-></a>> <a class="idl-code" data-link-type="attribute" data-readonly data-type="sequence<ResizeObserverSize>" href="#dom-resizeobserverentry-borderboxsize"><c- g>borderBoxSize</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#resizeobserversize"><c- n>ResizeObserverSize</c-></a>> <a class="idl-code" data-link-type="attribute" data-readonly data-type="sequence<ResizeObserverSize>" href="#dom-resizeobserverentry-contentboxsize"><c- g>contentBoxSize</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#resizeobserversize"><c- n>ResizeObserverSize</c-></a>> <a class="idl-code" data-link-type="attribute" data-readonly data-type="sequence<ResizeObserverSize>" href="#dom-resizeobserverentry-devicepixelcontentboxsize"><c- g>devicePixelContentBoxSize</c-></a>;
 };
 
 <c- b>interface</c-> <a href="#resizeobserversize"><code><c- g>ResizeObserverSize</c-></code></a> {
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double②"><c- b>unrestricted</c-> <c- b>double</c-></a> <a data-readonly data-type="unrestricted double" href="#dom-resizeobserversize-inlinesize"><code><c- g>inlineSize</c-></code></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①①"><c- b>unrestricted</c-> <c- b>double</c-></a> <a data-readonly data-type="unrestricted double" href="#dom-resizeobserversize-blocksize"><code><c- g>blockSize</c-></code></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <a data-readonly data-type="unrestricted double" href="#dom-resizeobserversize-inlinesize"><code><c- g>inlineSize</c-></code></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <a data-readonly data-type="unrestricted double" href="#dom-resizeobserversize-blocksize"><code><c- g>blockSize</c-></code></a>;
 };
 
-[<a href="#dom-resizeobservation-resizeobservation"><code><c- g>Constructor</c-></code></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element①⑥①"><c- n>Element</c-></a> <a href="#dom-resizeobservation-resizeobservation-target-target"><code><c- g>target</c-></code></a>)
+[<c- g>Constructor</c->(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element"><c- n>Element</c-></a> <c- g>target</c->)
 ]
 <c- b>interface</c-> <a href="#resizeobservation"><code><c- g>ResizeObservation</c-></code></a> {
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element①⑦①"><c- n>Element</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="Element" href="#dom-resizeobservation-target" id="ref-for-dom-resizeobservation-target⑤"><c- g>target</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-resizeobserverboxoptions" id="ref-for-enumdef-resizeobserverboxoptions①①"><c- n>ResizeObserverBoxOptions</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="ResizeObserverBoxOptions" href="#dom-resizeobservation-observedbox" id="ref-for-dom-resizeobservation-observedbox⑤"><c- g>observedBox</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#resizeobserversize" id="ref-for-resizeobserversize⑥①"><c- n>ResizeObserverSize</c-></a>> <a class="idl-code" data-link-type="attribute" data-readonly data-type="sequence<ResizeObserverSize>" href="#dom-resizeobservation-lastreportedsizes" id="ref-for-dom-resizeobservation-lastreportedsizes④"><c- g>lastReportedSizes</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element"><c- n>Element</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="Element" href="#dom-resizeobservation-target"><c- g>target</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-resizeobserverboxoptions"><c- n>ResizeObserverBoxOptions</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="ResizeObserverBoxOptions" href="#dom-resizeobservation-observedbox"><c- g>observedBox</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#resizeobserversize"><c- n>ResizeObserverSize</c-></a>> <a class="idl-code" data-link-type="attribute" data-readonly data-type="sequence<ResizeObserverSize>" href="#dom-resizeobservation-lastreportedsizes"><c- g>lastReportedSizes</c-></a>;
 };
 
 </pre>
@@ -1316,12 +1315,6 @@ will be considered for delivery in the next loop.</p>
     <li><a href="#ref-for-resizeobserver④">3.2.2. ResizeObserver</a> <a href="#ref-for-resizeobserver⑤">(2)</a> <a href="#ref-for-resizeobserver⑥">(3)</a> <a href="#ref-for-resizeobserver⑦">(4)</a>
     <li><a href="#ref-for-resizeobserver⑧">3.5. ResizeObserver Lifetime</a>
     <li><a href="#ref-for-resizeobserver⑨">3.6.1.  HTML Processing Model: Event Loop</a> <a href="#ref-for-resizeobserver①⓪">(2)</a> <a href="#ref-for-resizeobserver①①">(3)</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="dom-resizeobserver-resizeobserver">
-   <b><a href="#dom-resizeobserver-resizeobserver">#dom-resizeobserver-resizeobserver</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dom-resizeobserver-resizeobserver">2.1. ResizeObserver interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-resizeobserver-observe">

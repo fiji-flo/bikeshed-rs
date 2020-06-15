@@ -4,7 +4,9 @@ use std::collections::{BTreeMap, HashMap};
 use std::fs;
 
 use crate::boilerplate::{self, retrieve_boilerplate_with_info};
+use crate::clean;
 use crate::config::SOURCE_FILE_EXTENSIONS;
+use crate::heading;
 use crate::html;
 use crate::line::Line;
 use crate::metadata::metadata::{self, Metadata};
@@ -18,7 +20,7 @@ pub struct Spec<'a> {
     pub md_cli: Metadata,
     pub macros: HashMap<&'static str, String>,
     pub html: String,
-    pub document: Option<NodeRef>,
+    dom: Option<NodeRef>,
     pub head: Option<NodeRef>,
     pub body: Option<NodeRef>,
     pub extra_styles: BTreeMap<&'static str, &'static str>,
@@ -93,26 +95,30 @@ impl<'a> Spec<'a> {
         boilerplate::add_header_footer(self);
         self.html = html::helper::replace_macros(&self.html, &self.macros);
 
-        self.document = Some(kuchiki::parse_html().one(self.html.clone()));
-        if let Ok(head) = self.document.as_ref().unwrap().select_first("head") {
+        self.dom = Some(kuchiki::parse_html().one(self.html.clone()));
+        if let Ok(head) = self.dom.as_ref().unwrap().select_first("head") {
             self.head = Some(head.as_node().clone());
         }
-        if let Ok(body) = self.document.as_ref().unwrap().select_first("body") {
+        if let Ok(body) = self.dom.as_ref().unwrap().select_first("body") {
             self.body = Some(body.as_node().clone());
         }
+        clean::correct_h1(self.dom.as_mut().unwrap());
     }
 
     fn process_document(&mut self) {
         boilerplate::add_canonical_url(self);
+        boilerplate::add_spec_metadata_section(self);
+        boilerplate::add_copyright_section(self);
+        boilerplate::add_abstract_section(self);
+        boilerplate::add_toc_section(self);
         boilerplate::add_bikeshed_boilerplate(self);
+        heading::process_headings(self);
     }
 
-    pub fn finish(&self, outfile: Option<&str>) {
-        if let Some(document) = &self.document {
-            let outfile = self.handle_outfile(outfile);
-            let rendered = document.to_string();
-            fs::write(outfile, rendered).expect("unable to write file");
-        }
+    pub fn finish(&mut self, outfile: Option<&str>) {
+        let outfile = self.handle_outfile(outfile);
+        let rendered = self.dom().to_string();
+        fs::write(outfile, rendered).expect("unable to write file");
     }
 
     fn handle_outfile(&self, outfile: Option<&str>) -> String {
@@ -127,5 +133,9 @@ impl<'a> Spec<'a> {
             }
             "-".to_owned()
         }
+    }
+
+    pub fn dom(&mut self) -> &mut NodeRef {
+        self.dom.as_mut().unwrap()
     }
 }

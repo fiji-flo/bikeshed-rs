@@ -26,15 +26,67 @@ table.attrdef td:first-child + td + td { width: 6em }
 table.attrdef th:first-child + th + th + th,
 table.attrdef td:first-child + td + td + td { width: 6em; padding-right: 0 !important }
 </style>
-<style>/* style-md-lists */
+<style>/* style-autolinks */
 
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
+.css.css, .property.property, .descriptor.descriptor {
+    color: #005a9c;
+    font-size: inherit;
+    font-family: inherit;
 }
-[data-md] > :last-child {
-    margin-bottom: 0;
+.css::before, .property::before, .descriptor::before {
+    content: "‘";
+}
+.css::after, .property::after, .descriptor::after {
+    content: "’";
+}
+.property, .descriptor {
+    /* Don't wrap property and descriptor names */
+    white-space: nowrap;
+}
+.type { /* CSS value <type> */
+    font-style: italic;
+}
+pre .property::before, pre .property::after {
+    content: "";
+}
+[data-link-type="property"]::before,
+[data-link-type="propdesc"]::before,
+[data-link-type="descriptor"]::before,
+[data-link-type="value"]::before,
+[data-link-type="function"]::before,
+[data-link-type="at-rule"]::before,
+[data-link-type="selector"]::before,
+[data-link-type="maybe"]::before {
+    content: "‘";
+}
+[data-link-type="property"]::after,
+[data-link-type="propdesc"]::after,
+[data-link-type="descriptor"]::after,
+[data-link-type="value"]::after,
+[data-link-type="function"]::after,
+[data-link-type="at-rule"]::after,
+[data-link-type="selector"]::after,
+[data-link-type="maybe"]::after {
+    content: "’";
+}
+
+[data-link-type].production::before,
+[data-link-type].production::after,
+.prod [data-link-type]::before,
+.prod [data-link-type]::after {
+    content: "";
+}
+
+[data-link-type=element],
+[data-link-type=element-attr] {
+    font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    font-size: .9em;
+}
+[data-link-type=element]::before { content: "<" }
+[data-link-type=element]::after  { content: ">" }
+
+[data-link-type=biblio] {
+    white-space: pre;
 }</style>
 <style>/* style-counters */
 
@@ -102,6 +154,16 @@ figcaption:not(.no-marker)::before {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
 <style>/* style-selflinks */
 
 .heading, .issue, .note, .example, li, dt {
@@ -148,68 +210,6 @@ dfn > a.self-link:hover {
 a.self-link::before            { content: "¶"; }
 .heading > a.self-link::before { content: "§"; }
 dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-autolinks */
-
-.css.css, .property.property, .descriptor.descriptor {
-    color: #005a9c;
-    font-size: inherit;
-    font-family: inherit;
-}
-.css::before, .property::before, .descriptor::before {
-    content: "‘";
-}
-.css::after, .property::after, .descriptor::after {
-    content: "’";
-}
-.property, .descriptor {
-    /* Don't wrap property and descriptor names */
-    white-space: nowrap;
-}
-.type { /* CSS value <type> */
-    font-style: italic;
-}
-pre .property::before, pre .property::after {
-    content: "";
-}
-[data-link-type="property"]::before,
-[data-link-type="propdesc"]::before,
-[data-link-type="descriptor"]::before,
-[data-link-type="value"]::before,
-[data-link-type="function"]::before,
-[data-link-type="at-rule"]::before,
-[data-link-type="selector"]::before,
-[data-link-type="maybe"]::before {
-    content: "‘";
-}
-[data-link-type="property"]::after,
-[data-link-type="propdesc"]::after,
-[data-link-type="descriptor"]::after,
-[data-link-type="value"]::after,
-[data-link-type="function"]::after,
-[data-link-type="at-rule"]::after,
-[data-link-type="selector"]::after,
-[data-link-type="maybe"]::after {
-    content: "’";
-}
-
-[data-link-type].production::before,
-[data-link-type].production::after,
-.prod [data-link-type]::before,
-.prod [data-link-type]::after {
-    content: "";
-}
-
-[data-link-type=element],
-[data-link-type=element-attr] {
-    font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
-    font-size: .9em;
-}
-[data-link-type=element]::before { content: "<" }
-[data-link-type=element]::after  { content: ">" }
-
-[data-link-type=biblio] {
-    white-space: pre;
-}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
@@ -247,10 +247,10 @@ pre .property::before, pre .property::after {
    <p> This document has been produced by the <a href="http://www.w3.org/Graphics/SVG/WG">SVG Working Group</a> as part of the <a href="http://www.w3.org/Graphics/Activity">Graphics Activity</a> within the <a href="http://www.w3.org/Interaction/">W3C Interaction Domain</a>. The goals of the W3C SVG Working Group are discussed in the <a href="http://www.w3.org/2007/11/SVG_rechartering/SVG-WG-charter.html">W3C SVG Charter</a>. The W3C SVG Working Group maintains a
 	public Web page, <a href="http://www.w3.org/Graphics/SVG/">http://www.w3.org/Graphics/SVG/</a>, that contains further
 	background information. The authors of this document are the SVG Working Group participants. </p>
-   <p> This document was produced by a group operating under 
-	the <a href="http://www.w3.org/Consortium/Patent-Policy/">W3C Patent Policy</a>. 
-	W3C maintains a <a href="http://www.w3.org/2004/01/pp-impl/19480/status" rel="disclosure">public list of any patent disclosures</a> made in connection with the deliverables of each group; 
-	these pages also includes instructions for disclosing a patent. 
+   <p> This document was produced by a group operating under
+	the <a href="http://www.w3.org/Consortium/Patent-Policy/">W3C Patent Policy</a>.
+	W3C maintains a <a href="http://www.w3.org/2004/01/pp-impl/19480/status" rel="disclosure">public list of any patent disclosures</a> made in connection with the deliverables of each group;
+	these pages also includes instructions for disclosing a patent.
 	An individual who has actual knowledge of a patent which the individual believes contains <a href="http://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the W3C Patent Policy</a>. </p>
    <p> A list of current W3C Recommendations and other technical documents can be found at <a href="http://www.w3.org/TR/">http://www.w3.org/TR/</a>. W3C publications may be updated, replaced, or
 	obsoleted by other documents at any time. </p>
@@ -408,7 +408,7 @@ be used for drawing markers on a <a data-link-type="dfn" href="#markable-element
       <dd><a data-link-type="element-attr" href="#element-attrdef-marker-markerwidth" id="ref-for-element-attrdef-marker-markerwidth②">markerWidth</a>, <a data-link-type="element-attr" href="#element-attrdef-marker-markerheight" id="ref-for-element-attrdef-marker-markerheight②">markerHeight</a> and the contents
     of the <a data-link-type="element" href="#elementdef-marker" id="ref-for-elementdef-marker⑧">marker</a> represent values in a coordinate system
     which has a single unit equal the size in user units of the
-    current stroke width (see the <a class="property" data-link-type="propdesc" href="https://svgwg.org/svg2-draft/painting.html#StrokeWidthProperty" id="ref-for-StrokeWidthProperty">stroke-width</a> property) in
+    current stroke width (see the <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-width" id="ref-for-propdef-stroke-width">stroke-width</a> property) in
     place for the graphic object referencing the marker.
       <dt><dfn class="dfn-paneled css" data-dfn-for="markerUnits" data-dfn-type="value" data-export id="valdef-markerunits-userspaceonuse">userSpaceOnUse</dfn>
       <dd><a data-link-type="element-attr" href="#element-attrdef-marker-markerwidth" id="ref-for-element-attrdef-marker-markerwidth③">markerWidth</a>, <a data-link-type="element-attr" href="#element-attrdef-marker-markerheight" id="ref-for-element-attrdef-marker-markerheight③">markerHeight</a> and the contents
@@ -427,7 +427,7 @@ be used for drawing markers on a <a data-link-type="dfn" href="#markable-element
         <th>Animatable
        <tr>
         <td><dfn class="dfn-paneled" data-dfn-for="marker" data-dfn-type="element-attr" data-export id="element-attrdef-marker-markerwidth"><code>markerWidth</code></dfn>, <dfn class="dfn-paneled" data-dfn-for="marker" data-dfn-type="element-attr" data-export id="element-attrdef-marker-markerheight"><code>markerHeight</code></dfn>
-        <td><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value">&lt;number></a>
+        <td><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value">&lt;number></a>
         <td>3
         <td>yes
      </table>
@@ -446,12 +446,12 @@ be used for drawing markers on a <a data-link-type="dfn" href="#markable-element
         <th>Animatable
        <tr>
         <td><dfn class="dfn-paneled" data-dfn-for="marker" data-dfn-type="element-attr" data-export id="element-attrdef-marker-refx"><code>refX</code></dfn>
-        <td><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①">&lt;number></a> | left | center | right
+        <td><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①">&lt;number></a> | left | center | right
         <td>0
         <td>yes
        <tr>
         <td><dfn class="dfn-paneled" data-dfn-for="marker" data-dfn-type="element-attr" data-export id="element-attrdef-marker-refy"><code>refY</code></dfn>
-        <td><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value②" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value②">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value②">&lt;number></a> | top | center | bottom
+        <td><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value②">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value②">&lt;number></a> | top | center | bottom
         <td>0
         <td>yes
      </table>
@@ -473,7 +473,7 @@ be used for drawing markers on a <a data-link-type="dfn" href="#markable-element
         <th>Animatable
        <tr>
         <td><dfn class="dfn-paneled" data-dfn-for="marker" data-dfn-type="element-attr" data-export id="element-attrdef-marker-orient"><code>orient</code></dfn>
-        <td>auto | auto-start-reverse | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value" title="Expands to: turn | rad | grad | deg">&lt;angle></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value③">&lt;number></a>
+        <td>auto | auto-start-reverse | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value" title="Expands to: deg | grad | rad | turn">&lt;angle></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value③">&lt;number></a>
         <td>0
         <td>yes (non-additive)
      </table>
@@ -525,10 +525,10 @@ be used for drawing markers on a <a data-link-type="dfn" href="#markable-element
       directions.</p>
      </dl>
      <dl>
-      <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①" title="Expands to: turn | rad | grad | deg">&lt;angle></a>
+      <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①" title="Expands to: deg | grad | rad | turn">&lt;angle></a>
       <dt><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value④">&lt;number></a>
       <dd>
-       <p>An <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value②" title="Expands to: turn | rad | grad | deg">&lt;angle></a> value represents the angle the marker’s
+       <p>An <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value②" title="Expands to: deg | grad | rad | turn">&lt;angle></a> value represents the angle the marker’s
       positive x-axis makes with the positive x-axis in the user space
       of the <a data-link-type="dfn" href="#markable-elements" id="ref-for-markable-elements③">markable element</a>, and a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value⑤">&lt;number></a> value
       with no unit represents an angle in degrees.  For example, if a value of <span class="css">0</span> is given, then the marker will be drawn
@@ -550,7 +550,7 @@ be used for drawing markers on a <a data-link-type="dfn" href="#markable-element
         <th>Animatable
        <tr>
         <td><dfn class="dfn-paneled" data-dfn-for="marker" data-dfn-type="element-attr" data-export id="element-attrdef-marker-position"><code>position</code></dfn>
-        <td><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value③" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value③">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value⑥">&lt;number></a>
+        <td><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value③" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value③">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value⑥">&lt;number></a>
         <td>as if not specified
         <td>yes
      </table>
@@ -635,7 +635,7 @@ the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org
 path to be created at the bounds of marker’s viewport.  Unless the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow①">overflow</a> property is overridden, any graphics within the marker which
 goes outside of the marker’s viewport will be clipped.</p>
    <p><a href="styling.html#SVGStylingProperties">Properties</a> inherit into the <a data-link-type="element" href="#elementdef-marker" id="ref-for-elementdef-marker②①">marker</a> element from its ancestors; properties do <em>not</em> inherit from the element referencing the <a data-link-type="element" href="#elementdef-marker" id="ref-for-elementdef-marker②②">marker</a> element.</p>
-   <p class="note" role="note"><span>Note:</span> By using the <span class="css">context-stroke</span> value for the <a class="property" data-link-type="propdesc" href="https://svgwg.org/svg2-draft/painting.html#FillProperty" id="ref-for-FillProperty">fill</a> or <a class="property" data-link-type="propdesc" href="https://svgwg.org/svg2-draft/painting.html#StrokeProperty" id="ref-for-StrokeProperty">stroke</a> on elements in its definition, a single marker can be designed to match the
+   <p class="note" role="note"><span>Note:</span> By using the <span class="css">context-stroke</span> value for the <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-fill" id="ref-for-propdef-fill">fill</a> or <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke" id="ref-for-propdef-stroke">stroke</a> on elements in its definition, a single marker can be designed to match the
 style of the element referencing the marker.</p>
    <p><a data-link-type="element" href="#elementdef-marker" id="ref-for-elementdef-marker②③">marker</a> elements are only rendered directly
 when they are used as children of a <a data-link-type="dfn" href="#markable-elements" id="ref-for-markable-elements⑦">markable element</a> and have a <a data-link-type="element-attr" href="#element-attrdef-marker-position" id="ref-for-element-attrdef-marker-position②">position</a> attribute specified.  This causes the
@@ -725,22 +725,22 @@ processed.</p>
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-marker-start">marker-start</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-marker-mid">marker-mid</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-marker-end">marker-end</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef①">&lt;marker-ref></a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>none
      <tr>
       <th>Applies to:
       <td><a data-link-type="dfn" href="#markable-elements" id="ref-for-markable-elements⑧">markable elements</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>yes
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>as specified, but with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#url-value" id="ref-for-url-value③">&lt;url></a> values (that are part of a <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef②">&lt;marker-ref></a>) made absolute
      <tr>
       <th>Canonical order:
@@ -749,7 +749,7 @@ processed.</p>
       <th>Media:
       <td>visual
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animatable:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
       <td>yes
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-marker-start" id="ref-for-propdef-marker-start⑥">marker-start</a> and <a class="property" data-link-type="propdesc" href="#propdef-marker-end" id="ref-for-propdef-marker-end④">marker-end</a> properties are used
@@ -808,22 +808,22 @@ will be rendered on that final vertex.</p>
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-marker-segment">marker-segment</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef④">&lt;marker-ref></a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>none
      <tr>
       <th>Applies to:
       <td><a data-link-type="dfn" href="#markable-elements" id="ref-for-markable-elements①⓪">markable elements</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>yes
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>as specified, but with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#url-value" id="ref-for-url-value④">&lt;url></a> values (that are part of a <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef⑤">&lt;marker-ref></a>) made absolute
      <tr>
       <th>Canonical order:
@@ -832,7 +832,7 @@ will be rendered on that final vertex.</p>
       <th>Media:
       <td>visual
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animatable:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
       <td>yes
    </table>
    <p class="note" role="note"><span>Note:</span> New in SVG 2. Added to allow automatically placing marker symbols
@@ -892,22 +892,22 @@ are:</p>
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-marker-pattern">marker-pattern</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod"><a class="production css" data-link-type="type" href="#typedef-marker-gap" id="ref-for-typedef-marker-gap">&lt;marker-gap></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt">?</a> <a class="production css" data-link-type="type" href="#typedef-marker-ref-group" id="ref-for-typedef-marker-ref-group">&lt;marker-ref-group></a> [ <a class="production css" data-link-type="type" href="#typedef-marker-gap" id="ref-for-typedef-marker-gap①">&lt;marker-gap></a> <a class="production css" data-link-type="type" href="#typedef-marker-gap" id="ref-for-typedef-marker-gap②">&lt;marker-gap></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-zero-plus" id="ref-for-mult-zero-plus">*</a> <a class="production css" data-link-type="type" href="#typedef-marker-gap" id="ref-for-typedef-marker-gap③">&lt;marker-gap></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt①">?</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>none
      <tr>
       <th>Applies to:
       <td><a data-link-type="dfn" href="#markable-elements" id="ref-for-markable-elements①①">markable elements</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>yes
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>as specified, but with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#url-value" id="ref-for-url-value⑤">&lt;url></a> values (that are part of a <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef⑦">&lt;marker-ref></a>) made absolute
      <tr>
       <th>Canonical order:
@@ -916,11 +916,11 @@ are:</p>
       <th>Media:
       <td>visual
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animatable:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
       <td>yes
    </table>
    <p>where:</p>
-<pre class="prod"><dfn class="dfn-paneled" data-dfn-type="type" data-export id="typedef-marker-gap">&lt;marker-gap></dfn> = <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value④" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value④">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value⑦">&lt;number></a></pre>
+<pre class="prod"><dfn class="dfn-paneled" data-dfn-type="type" data-export id="typedef-marker-gap">&lt;marker-gap></dfn> = <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value④" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value④">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value⑦">&lt;number></a></pre>
 <pre class="prod"><dfn class="dfn-paneled" data-dfn-type="type" data-export id="typedef-marker-ref-group">&lt;marker-ref-group></dfn> = <a class="css" data-link-type="maybe" href="#valdef-marker-pattern-none" id="ref-for-valdef-marker-pattern-none">none</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one④">|</a> <a class="production" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef⑧">&lt;marker-ref></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-one-plus" id="ref-for-mult-one-plus">+</a></pre>
    <p class="note" role="note"><span>Note:</span> New in SVG 2. Added to allow markers to be placed along a path
 at positions unrelated to the segments used to form the path.</p>
@@ -940,7 +940,7 @@ Values have the following meanings:</p>
   marker for that <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef①⓪">&lt;marker-ref></a> will be painted.
    </dl>
    <p>If a value other than <a class="css" data-link-type="maybe" href="#valdef-marker-pattern-none" id="ref-for-valdef-marker-pattern-none①">none</a> is given,
-and the sum of the <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑤" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a>s, <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑤">&lt;percentage></a>s
+and the sum of the <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑤" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>s, <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑤">&lt;percentage></a>s
 and <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value⑧">&lt;number></a>s is not positive, then it is an <a href="http://www.w3.org/TR/SVG2/intro.html#TermInvalidValue">invalid value</a>.</p>
    <p></p>
    <p>Unlike <a data-link-type="dfn" href="#vertex-markers" id="ref-for-vertex-markers②">vertex markers</a>, the orientation of an ''orient="auto"'' <a data-link-type="dfn" href="#repeating-markers" id="ref-for-repeating-markers②">repeating marker</a> that happens to lie on a vertex does not take into
@@ -984,24 +984,24 @@ at its position.</p>
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-marker">marker</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">
        <div>[ none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑤">|</a> <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef①①">&lt;marker-ref></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num-range" id="ref-for-mult-num-range">{1,4}</a> [ / <a class="property" data-link-type="propdesc" href="#propdef-marker-pattern" id="ref-for-propdef-marker-pattern⑦">marker-pattern</a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt②">?</a> </div>
-       <div style="margin-left: 2em"> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef①②">&lt;marker-ref></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num-range" id="ref-for-mult-num-range①">{0,4}</a> [ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑥" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑦">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑥">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value⑨">&lt;number></a> ] [ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑦" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑨">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑦">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⓪">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⓪">&lt;number></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①①">|</a> <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef①③">&lt;marker-ref></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-zero-plus" id="ref-for-mult-zero-plus①">*</a></div>
+       <div style="margin-left: 2em"> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef①②">&lt;marker-ref></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num-range" id="ref-for-mult-num-range①">{0,4}</a> [ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑥" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑦">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑥">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value⑨">&lt;number></a> ] [ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑦" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑨">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑦">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⓪">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⓪">&lt;number></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①①">|</a> <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef①③">&lt;marker-ref></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-zero-plus" id="ref-for-mult-zero-plus①">*</a></div>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>none
      <tr>
       <th>Applies to:
       <td><a data-link-type="dfn" href="#markable-elements" id="ref-for-markable-elements①③">markable elements</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>see individual properties
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>see individual properties
      <tr>
       <th>Canonical order:
@@ -1010,7 +1010,7 @@ at its position.</p>
       <th>Media:
       <td>visual
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animatable:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
       <td>see individual properties
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-marker" id="ref-for-propdef-marker②">marker</a> property sets values for the <a class="property" data-link-type="propdesc" href="#propdef-marker-start" id="ref-for-propdef-marker-start⑨">marker-start</a>, <a class="property" data-link-type="propdesc" href="#propdef-marker-mid" id="ref-for-propdef-marker-mid⑥">marker-mid</a>, <a class="property" data-link-type="propdesc" href="#propdef-marker-end" id="ref-for-propdef-marker-end⑧">marker-end</a>, <a class="property" data-link-type="propdesc" href="#propdef-marker-segment" id="ref-for-propdef-marker-segment⑤">marker-segment</a> and <a class="property" data-link-type="propdesc" href="#propdef-marker-pattern" id="ref-for-propdef-marker-pattern⑧">marker-pattern</a> properties.
@@ -1045,22 +1045,22 @@ knockout shapes is welcome.</p>
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-marker-knockout-left">marker-knockout-left</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-marker-knockout-right">marker-knockout-right</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod"><a class="production css" data-link-type="type" href="#typedef-knockout-offset" id="ref-for-typedef-knockout-offset">&lt;knockout-offset></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①②">|</a> <a class="production css" data-link-type="type" href="#typedef-knockout-shape" id="ref-for-typedef-knockout-shape">&lt;knockout-shape></a> [ at <a class="production css" data-link-type="type" href="#typedef-knockout-offset" id="ref-for-typedef-knockout-offset①">&lt;knockout-offset></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt③">?</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>0
      <tr>
       <th>Applies to:
       <td><a data-link-type="element" href="#elementdef-marker" id="ref-for-elementdef-marker④③">marker</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>see prose
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>as specified
      <tr>
       <th>Canonical order:
@@ -1069,14 +1069,14 @@ knockout shapes is welcome.</p>
       <th>Media:
       <td>visual
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animatable:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
       <td>yes
    </table>
    <p>where:</p>
-<pre class="prod"><dfn class="dfn-paneled" data-dfn-type="type" data-export id="typedef-knockout-offset">&lt;knockout-offset></dfn> = <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑧" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑧">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①④">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①①">&lt;number></a></pre>
-<pre class="prod"><dfn class="dfn-paneled" data-dfn-type="type" data-export id="typedef-knockout-shape">&lt;knockout-shape></dfn> =[ <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑨" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑤">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑨">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑥">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①②">&lt;number></a> ] inverted<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt④">?</a> circle <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑦">|</a>
-[ <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①⓪" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑧">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①⓪">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑨">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①③">&lt;number></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num" id="ref-for-mult-num">{2}</a> inverted<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt⑤">?</a> ellipse <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②⓪">|</a>
-[ <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①①" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②①">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①①">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②②">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①④">&lt;number></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num-range" id="ref-for-mult-num-range②">{1,2}</a> inverted<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt⑥">?</a> [ rectangle <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②③">|</a> triangle ]
+<pre class="prod"><dfn class="dfn-paneled" data-dfn-type="type" data-export id="typedef-knockout-offset">&lt;knockout-offset></dfn> = <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑧" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑧">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①④">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①①">&lt;number></a></pre>
+<pre class="prod"><dfn class="dfn-paneled" data-dfn-type="type" data-export id="typedef-knockout-shape">&lt;knockout-shape></dfn> =[ <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑨" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑤">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑨">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑥">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①②">&lt;number></a> ] inverted<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt④">?</a> circle <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑦">|</a>
+[ <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①⓪" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑧">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①⓪">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑨">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①③">&lt;number></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num" id="ref-for-mult-num">{2}</a> inverted<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt⑤">?</a> ellipse <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②⓪">|</a>
+[ <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①①" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②①">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①①">&lt;percentage></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②②">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①④">&lt;number></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num-range" id="ref-for-mult-num-range②">{1,2}</a> inverted<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt⑥">?</a> [ rectangle <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②③">|</a> triangle ]
 </pre>
    <p class="note" role="note"><span>Note:</span> New in SVG 2.  Added to allow authors to specify
 parts of a stroke that should be clipped away when a marker is
@@ -1099,7 +1099,7 @@ contents viewport.</p>
 is the left or right side of the knockout shape. Values have the
 following meanings:</p>
    <dl>
-    <dt>[ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①②" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①②">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⑤">&lt;number></a> ]{2} inverted? ellipse
+    <dt>[ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①②">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⑤">&lt;number></a> ]{2} inverted? ellipse
     <dd>
      <p>The knockout shape side is an arc.  The lengths or percentages specified
     are the x-radius and y-radius of the ellipse from which the arc is taken.
@@ -1130,13 +1130,13 @@ following meanings:</p>
     by half of the stroke width, from the tangent to the marker orientation.
     The resulting arc with its side and end points on these two lines
     is the final knockout shape side.</p>
-    <dt>[ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①③" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①③">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⑥">&lt;number></a> ] inverted? circle
+    <dt>[ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①③" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①③">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⑥">&lt;number></a> ] inverted? circle
     <dd>
      <p>The knockout shape side is an arc.  The shape is computed in the same
     way as the <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-images-3/#valdef-ending-shape-ellipse" id="ref-for-valdef-ending-shape-ellipse">ellipse</a> shape, but with
     both radii of the ellipse being the specified length or percentage,
     and with a percentage referring to the size of the marker contents viewport.</p>
-    <dt>[ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①④" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①④">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⑦">&lt;number></a> ]{1,2} inverted? rectangle
+    <dt>[ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①④" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①④">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⑦">&lt;number></a> ]{1,2} inverted? rectangle
     <dd>
      <p>The knockout shape side comprises one or two rectangles.  These
     rectangles are aligned such that their top and bottom edges are
@@ -1169,7 +1169,7 @@ following meanings:</p>
     The extent of the widths of the rectangles is in the direction
     of the start of the path, if this is the left knockout shape side,
     or the end of the path if this is the right knockout shape side.</p>
-    <dt>[ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①⑤" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①⑤">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⑧">&lt;number></a> ]{1,2} inverted? [ rectangle | triangle ]
+    <dt>[ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①⑤" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①⑤">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⑧">&lt;number></a> ]{1,2} inverted? [ rectangle | triangle ]
     <dd>
      <p>The knockout shape side comprises one or two rectangles.  These
     rectangles are aligned such that their top and bottom edges are
@@ -1202,7 +1202,7 @@ following meanings:</p>
     The extent of the widths of the rectangles is in the direction
     of the start of the path, if this is the left knockout shape side,
     or the end of the path if this is the right knockout shape side.</p>
-    <dt>[ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①⑥" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①⑥">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⑨">&lt;number></a> ]{1,2} inverted? triangle
+    <dt>[ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①⑥" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①⑥">&lt;percentage></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①⑨">&lt;number></a> ]{1,2} inverted? triangle
     <dd>
      <p class="issue" id="issue-2f43b42f"><a class="self-link" href="#issue-2f43b42f"></a>...</p>
    </dl>
@@ -1265,7 +1265,7 @@ correctly, as follows:</p>
   assumed to be zero.)
     <li>A temporary new coordinate system is established by attribute <a data-link-type="element-attr" href="#element-attrdef-marker-markerunits" id="ref-for-element-attrdef-marker-markerunits④">markerUnits</a>. If <a data-link-type="element-attr" href="#element-attrdef-marker-markerunits" id="ref-for-element-attrdef-marker-markerunits⑤">markerUnits</a> equals <a class="css" data-link-type="maybe" href="#valdef-markerunits-strokewidth" id="ref-for-valdef-markerunits-strokewidth">strokeWidth</a>, then the temporary new
   user coordinate system is the result of scaling the current
-  user coordinate system by the current value of property <a class="property" data-link-type="propdesc" href="https://svgwg.org/svg2-draft/painting.html#StrokeWidthProperty" id="ref-for-StrokeWidthProperty①">stroke-width</a>. If <a data-link-type="element-attr" href="#element-attrdef-marker-markerunits" id="ref-for-element-attrdef-marker-markerunits⑥">markerUnits</a> equals <a class="css" data-link-type="maybe" href="#valdef-markerunits-userspaceonuse" id="ref-for-valdef-markerunits-userspaceonuse">userSpaceOnUse</a>, then no extra scale transformation is applied.
+  user coordinate system by the current value of property <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-width" id="ref-for-propdef-stroke-width①">stroke-width</a>. If <a data-link-type="element-attr" href="#element-attrdef-marker-markerunits" id="ref-for-element-attrdef-marker-markerunits⑥">markerUnits</a> equals <a class="css" data-link-type="maybe" href="#valdef-markerunits-userspaceonuse" id="ref-for-valdef-markerunits-userspaceonuse">userSpaceOnUse</a>, then no extra scale transformation is applied.
     <li>An additional set of transformations might occur if the <a data-link-type="element" href="#elementdef-marker" id="ref-for-elementdef-marker④⑥">marker</a> element includes a <a data-link-type="element-attr" href="#element-attrdef-marker-viewbox" id="ref-for-element-attrdef-marker-viewbox⑨">viewBox</a> attribute, in
   which case additional transformations are set up to produce the necessary
   result due to attributes <a data-link-type="element-attr" href="#element-attrdef-marker-viewbox" id="ref-for-element-attrdef-marker-viewbox①⓪">viewBox</a> and <a data-link-type="element-attr">preserveAspectRatio</a>.
@@ -1671,6 +1671,25 @@ marker-mid and marker-end properties</a>
     <li><a href="#ref-for-valdef-svg-paint-child">3. Referencing marker elements</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="term-for-propdef-fill">
+   <a href="https://drafts.fxtf.org/fill-stroke-3/#propdef-fill">https://drafts.fxtf.org/fill-stroke-3/#propdef-fill</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propdef-fill">2. The marker element</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propdef-stroke">
+   <a href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke">https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propdef-stroke">2. The marker element</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propdef-stroke-width">
+   <a href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-width">https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-width</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propdef-stroke-width">2. The marker element</a>
+    <li><a href="#ref-for-propdef-stroke-width①">9. Details on how markers are rendered</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="term-for-elementdef-filter">
    <a href="https://drafts.fxtf.org/filter-effects-1/#elementdef-filter">https://drafts.fxtf.org/filter-effects-1/#elementdef-filter</a><b>Referenced in:</b>
    <ul>
@@ -1713,12 +1732,6 @@ marker-mid and marker-end properties</a>
     <li><a href="#ref-for-TermDescriptiveElement">2. The marker element</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-FillProperty">
-   <a href="https://svgwg.org/svg2-draft/painting.html#FillProperty">https://svgwg.org/svg2-draft/painting.html#FillProperty</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-FillProperty">2. The marker element</a>
-   </ul>
-  </aside>
   <aside class="dfn-panel" data-for="term-for-elementdef-foreignObject">
    <a href="https://svgwg.org/svg2-draft/embedded.html#elementdef-foreignObject">https://svgwg.org/svg2-draft/embedded.html#elementdef-foreignObject</a><b>Referenced in:</b>
    <ul>
@@ -1734,6 +1747,7 @@ marker-mid and marker-end properties</a>
   <aside class="dfn-panel" data-for="term-for-elementdef-line">
    <a href="https://svgwg.org/svg2-draft/shapes.html#elementdef-line">https://svgwg.org/svg2-draft/shapes.html#elementdef-line</a><b>Referenced in:</b>
    <ul>
+    <li><a href="#ref-for-elementdef-line">Unnumbered Section</a>
     <li><a href="#ref-for-elementdef-line①">1. Introduction</a>
    </ul>
   </aside>
@@ -1746,6 +1760,7 @@ marker-mid and marker-end properties</a>
   <aside class="dfn-panel" data-for="term-for-elementdef-path">
    <a href="https://svgwg.org/svg2-draft/paths.html#elementdef-path">https://svgwg.org/svg2-draft/paths.html#elementdef-path</a><b>Referenced in:</b>
    <ul>
+    <li><a href="#ref-for-elementdef-path">Unnumbered Section</a>
     <li><a href="#ref-for-elementdef-path①">1. Introduction</a>
     <li><a href="#ref-for-elementdef-path②">4. Vertex markers: the marker-start,
 marker-mid and marker-end properties</a> <a href="#ref-for-elementdef-path③">(2)</a>
@@ -1754,6 +1769,7 @@ marker-mid and marker-end properties</a> <a href="#ref-for-elementdef-path③">(
   <aside class="dfn-panel" data-for="term-for-elementdef-polygon">
    <a href="https://svgwg.org/svg2-draft/shapes.html#elementdef-polygon">https://svgwg.org/svg2-draft/shapes.html#elementdef-polygon</a><b>Referenced in:</b>
    <ul>
+    <li><a href="#ref-for-elementdef-polygon">Unnumbered Section</a>
     <li><a href="#ref-for-elementdef-polygon①">1. Introduction</a>
     <li><a href="#ref-for-elementdef-polygon②">4. Vertex markers: the marker-start,
 marker-mid and marker-end properties</a>
@@ -1762,6 +1778,7 @@ marker-mid and marker-end properties</a>
   <aside class="dfn-panel" data-for="term-for-elementdef-polyline">
    <a href="https://svgwg.org/svg2-draft/shapes.html#elementdef-polyline">https://svgwg.org/svg2-draft/shapes.html#elementdef-polyline</a><b>Referenced in:</b>
    <ul>
+    <li><a href="#ref-for-elementdef-polyline">Unnumbered Section</a>
     <li><a href="#ref-for-elementdef-polyline①">1. Introduction</a>
    </ul>
   </aside>
@@ -1781,19 +1798,6 @@ marker-mid and marker-end properties</a>
    <a href="https://svgwg.org/svg2-draft/shapes.html#TermShapeElement">https://svgwg.org/svg2-draft/shapes.html#TermShapeElement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-TermShapeElement">2. The marker element</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-StrokeProperty">
-   <a href="https://svgwg.org/svg2-draft/painting.html#StrokeProperty">https://svgwg.org/svg2-draft/painting.html#StrokeProperty</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-StrokeProperty">2. The marker element</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-StrokeWidthProperty">
-   <a href="https://svgwg.org/svg2-draft/painting.html#StrokeWidthProperty">https://svgwg.org/svg2-draft/painting.html#StrokeWidthProperty</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-StrokeWidthProperty">2. The marker element</a>
-    <li><a href="#ref-for-StrokeWidthProperty①">9. Details on how markers are rendered</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-TermStructuralElement">
@@ -1891,6 +1895,9 @@ marker-mid and marker-end properties</a>
     <a data-link-type="biblio">[fill-stroke-3]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-valdef-svg-paint-child" style="color:initial">child</span>
+     <li><span class="dfn-paneled" id="term-for-propdef-fill" style="color:initial">fill</span>
+     <li><span class="dfn-paneled" id="term-for-propdef-stroke" style="color:initial">stroke</span>
+     <li><span class="dfn-paneled" id="term-for-propdef-stroke-width" style="color:initial">stroke-width</span>
     </ul>
    <li>
     <a data-link-type="biblio">[filter-effects-1]</a> defines the following terms:
@@ -1914,7 +1921,6 @@ marker-mid and marker-end properties</a>
      <li><span class="dfn-paneled" id="term-for-elementdef-a" style="color:initial">a</span>
      <li><span class="dfn-paneled" id="term-for-container-element" style="color:initial">container element</span>
      <li><span class="dfn-paneled" id="term-for-TermDescriptiveElement" style="color:initial">descriptive element</span>
-     <li><span class="dfn-paneled" id="term-for-FillProperty" style="color:initial">fill</span>
      <li><span class="dfn-paneled" id="term-for-elementdef-foreignObject" style="color:initial">foreignobject</span>
      <li><span class="dfn-paneled" id="term-for-elementdef-image" style="color:initial">image</span>
      <li><span class="dfn-paneled" id="term-for-elementdef-line" style="color:initial">line</span>
@@ -1925,8 +1931,6 @@ marker-mid and marker-end properties</a>
      <li><span class="dfn-paneled" id="term-for-TermPresentationAttribute" style="color:initial">presentation attributes</span>
      <li><span class="dfn-paneled" id="term-for-elementdef-script" style="color:initial">script</span>
      <li><span class="dfn-paneled" id="term-for-TermShapeElement" style="color:initial">shape elements</span>
-     <li><span class="dfn-paneled" id="term-for-StrokeProperty" style="color:initial">stroke</span>
-     <li><span class="dfn-paneled" id="term-for-StrokeWidthProperty" style="color:initial">stroke-width</span>
      <li><span class="dfn-paneled" id="term-for-TermStructuralElement" style="color:initial">structural element</span>
      <li><span class="dfn-paneled" id="term-for-elementdef-style" style="color:initial">style</span>
      <li><span class="dfn-paneled" id="term-for-elementdef-switch" style="color:initial">switch</span>

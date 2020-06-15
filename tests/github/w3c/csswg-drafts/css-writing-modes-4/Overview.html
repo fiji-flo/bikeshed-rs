@@ -34,91 +34,6 @@ div.figure table {
   margin: 1em auto;
 }
 </style>
-<style>/* style-md-lists */
-
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
-}
-[data-md] > :last-child {
-    margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
-
-.heading, .issue, .note, .example, li, dt {
-    position: relative;
-}
-a.self-link {
-    position: absolute;
-    top: 0;
-    left: calc(-1 * (3.5rem - 26px));
-    width: calc(3.5rem - 26px);
-    height: 2em;
-    text-align: center;
-    border: none;
-    transition: opacity .2s;
-    opacity: .5;
-}
-a.self-link:hover {
-    opacity: 1;
-}
-.heading > a.self-link {
-    font-size: 83%;
-}
-li > a.self-link {
-    left: calc(-1 * (3.5rem - 26px) - 2em);
-}
-dfn > a.self-link {
-    top: auto;
-    left: auto;
-    opacity: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: gray;
-    color: white;
-    font-style: normal;
-    transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-    opacity: 1;
-}
-dfn > a.self-link:hover {
-    color: black;
-}
-
-a.self-link::before            { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-counters */
-
-body {
-    counter-reset: example figure issue;
-}
-.issue {
-    counter-increment: issue;
-}
-.issue:not(.no-marker)::before {
-    content: "Issue " counter(issue);
-}
-
-.example {
-    counter-increment: example;
-}
-.example:not(.no-marker)::before {
-    content: "Example " counter(example);
-}
-.invalid.example:not(.no-marker)::before,
-.illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
-}
-
-figcaption {
-    counter-increment: figure;
-}
-figcaption:not(.no-marker)::before {
-    content: "Figure " counter(figure) " ";
-}</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -181,6 +96,35 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
 <style>/* style-dfn-panel */
 
 .dfn-panel {
@@ -218,6 +162,62 @@ pre .property::before, pre .property::after {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: black;
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }</style>
 <style>/* style-syntax-highlighting */
 
 .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
@@ -612,28 +612,28 @@ Vertical Scripts in Unicode</span></a>
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-direction">direction</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">ltr <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> rtl 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>ltr 
      <tr>
       <th>Applies to:
-      <td><a href="https://drafts.csswg.org/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>yes 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>specified value 
      <tr>
       <th>Canonical order:
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>not animatable 
    </table>
    <p class="advisement">Because HTML UAs can turn off CSS styling, <strong>we recommend HTML authors to use the HTML <code>dir</code> attribute and &lt;bdo> element</strong> to ensure correct bidirectional layout in the absence of a style sheet. <strong>Authors <em>should not</em> use <a class="property" data-link-type="propdesc" href="#propdef-direction" id="ref-for-propdef-direction⑦">direction</a> in HTML documents.</strong> </p>
@@ -668,28 +668,28 @@ Vertical Scripts in Unicode</span></a>
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-unicode-bidi">unicode-bidi</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">normal <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> embed <span id="ref-for-comb-one②">|</span> isolate <span id="ref-for-comb-one③">|</span> bidi-override <span id="ref-for-comb-one④">|</span> isolate-override <span id="ref-for-comb-one⑤">|</span> plaintext 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>normal 
      <tr>
       <th>Applies to:
       <td>all elements, but see prose 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>specified value 
      <tr>
       <th>Canonical order:
       <td>per grammar 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>not animatable 
    </table>
    <p class="advisement">Because HTML UAs can turn off CSS styling, <strong>we recommend HTML authors to use the HTML <code>dir</code> attribute, &lt;bdo> element,
@@ -1133,28 +1133,28 @@ TXET.
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-writing-mode">writing-mode</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">horizontal-tb <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> vertical-rl <span id="ref-for-comb-one⑦">|</span> vertical-lr <span id="ref-for-comb-one⑧">|</span> sideways-rl <span id="ref-for-comb-one⑨">|</span> sideways-lr 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>horizontal-tb 
      <tr>
       <th>Applies to:
       <td>All elements except table row groups, table column groups, table rows, table columns, ruby base container, ruby annotation container 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>yes 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>specified value 
      <tr>
       <th>Canonical order:
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>not animatable 
    </table>
    <p>This property specifies whether lines of text are laid out horizontally
@@ -1207,8 +1207,8 @@ TXET.
     <p><img alt="Diagram of left-to-right vertical layout: blocks 1, 2,
                   and 3 are arranged side by side from left to right" height="191" src="images/vertical-lr.png" width="300"></p>
    </div>
-   <div class="example" id="example-fb72ee40">
-    <a class="self-link" href="#example-fb72ee40"></a> 
+   <div class="example" id="example-04885d8e">
+    <a class="self-link" href="#example-04885d8e"></a> 
     <p>In the following example, some form controls are rendered inside
       a block with <a class="css" data-link-type="maybe" href="#valdef-writing-mode-vertical-rl" id="ref-for-valdef-writing-mode-vertical-rl">vertical-rl</a> writing mode. The form controls are
       rendered to match the writing mode. </p>
@@ -1485,28 +1485,28 @@ TXET.
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-text-orientation">text-orientation</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">mixed <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⓪">|</a> upright <span id="ref-for-comb-one①①">|</span> sideways 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>mixed 
      <tr>
       <th>Applies to:
       <td>all elements except table row groups, rows, column groups, and columns 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>yes 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>specified value 
      <tr>
       <th>Canonical order:
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>not animatable 
    </table>
    <p>This property specifies the orientation of text within a line.
@@ -1638,34 +1638,34 @@ TXET.
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-glyph-orientation-vertical">glyph-orientation-vertical</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①②">|</a> 0deg <span id="ref-for-comb-one①③">|</span> 90deg <span id="ref-for-comb-one①④">|</span> 0 <span id="ref-for-comb-one①⑤">|</span> 90 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>n/a 
      <tr>
       <th>Applies to:
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>n/a 
      <tr>
       <th>Canonical order:
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animatable:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
       <td>n/a 
    </table>
    <p>Some SVG user agents will need to process documents containing
   the obsolete SVG <a class="property" data-link-type="propdesc" href="#propdef-glyph-orientation-vertical" id="ref-for-propdef-glyph-orientation-vertical①">glyph-orientation-vertical</a> property,
   which was defined to accept an <span class="css">auto</span> keyword
-  as well as <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value" title="Expands to: turn | rad | grad | deg">&lt;angle></a> and <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value">&lt;integer></a> values representing multiples of 90°.
+  as well as <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value" title="Expands to: deg | grad | rad | turn">&lt;angle></a> and <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value">&lt;integer></a> values representing multiples of 90°.
   While supporting this property is <em>optional</em>,
   UAs that do so must alias <span class="property" id="ref-for-propdef-glyph-orientation-vertical②">glyph-orientation-vertical</span> as a shorthand of <a class="property" data-link-type="propdesc" href="#propdef-text-orientation" id="ref-for-propdef-text-orientation⑨">text-orientation</a> as follows:</p>
    <table class="data">
@@ -2179,7 +2179,7 @@ TXET.
        </div>
       <li>If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-count" id="ref-for-propdef-column-count①">column-count</a> is not <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-multicol-1/#valdef-column-count-auto" id="ref-for-valdef-column-count-auto">auto</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-width" id="ref-for-propdef-column-width③">column-width</a> is <span class="css" id="ref-for-valdef-column-count-auto①">auto</span>,
       calculate the used <span class="property" id="ref-for-propdef-column-width④">column-width</span> with the same formula,
-      except replace <var>constraint</var> with <var>constraint</var> − (<span class="property" id="ref-for-propdef-column-count②">column-count</span> − 1) × <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-gap" id="ref-for-propdef-column-gap">column-gap</a>. 
+      except replace <var>constraint</var> with <var>constraint</var> − (<span class="property" id="ref-for-propdef-column-count②">column-count</span> − 1) × <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-align-3/#propdef-column-gap" id="ref-for-propdef-column-gap">column-gap</a>. 
       <li>If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-count" id="ref-for-propdef-column-count③">column-count</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-width" id="ref-for-propdef-column-width⑤">column-width</a> are both non-<a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-multicol-1/#valdef-column-count-auto" id="ref-for-valdef-column-count-auto②">auto</a>,
       the used <span class="property" id="ref-for-propdef-column-width⑥">column-width</span> is the computed <span class="property" id="ref-for-propdef-column-width⑦">column-width</span>.
       (This is not recommended as it can cause overflow;
@@ -2204,7 +2204,7 @@ TXET.
         then the used <a data-link-type="dfn" href="#inline-size" id="ref-for-inline-size①⑤">inline size</a> is the <a data-link-type="dfn" href="https://drafts.csswg.org/css-sizing-3/#max-content-inline-size" id="ref-for-max-content-inline-size①">max-content inline size</a> of the box’s contents.
         This criteria gives the shrink-to-fit behavior for short orthogonal flow contents
         without making a large blank space. 
-    <li>Otherwise it is calculated from the used <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-width" id="ref-for-propdef-column-width①⓪">column-width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-count" id="ref-for-propdef-column-count⑧">column-count</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-gap" id="ref-for-propdef-column-gap①">column-gap</a>. 
+    <li>Otherwise it is calculated from the used <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-width" id="ref-for-propdef-column-width①⓪">column-width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-count" id="ref-for-propdef-column-count⑧">column-count</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-align-3/#propdef-column-gap" id="ref-for-propdef-column-gap①">column-gap</a>. 
    </ol>
    <p> The used <a data-link-type="dfn" href="#block-size" id="ref-for-block-size①⓪">block size</a> of the box is either the used column length
     (if multiple columns were used)
@@ -2390,28 +2390,28 @@ TXET.
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-text-combine-upright">text-combine-upright</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑥">|</a> all <span id="ref-for-comb-one①⑦">|</span> [ digits &lt;integer><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt">?</a> ] 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>none 
      <tr>
       <th>Applies to:
       <td>non-replaced inline elements 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>yes 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>specified keyword, plus integer if <span class="css">digits</span> 
      <tr>
       <th>Canonical order:
       <td>n/a 
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>not animatable 
    </table>
    <p>This property specifies the combination of multiple <a data-link-type="dfn" href="https://drafts.csswg.org/css-text-3/#typographic-character-unit" id="ref-for-typographic-character-unit⑧">typographic character units</a> into the space of a single <span id="ref-for-typographic-character-unit⑨">typographic character unit</span>.
@@ -2860,11 +2860,11 @@ Vertical Scripts in Unicode</span><a class="self-link" href="#script-orientation
    <li><a href="#bidirectionality">bidirectionality</a><span>, in §2</span>
    <li><a href="#bi-orientational">bi-orientational</a><span>, in §5</span>
    <li><a href="#bi-orientational-transform">bi-orientational transform</a><span>, in §5</span>
-   <li><a href="#block-axis">block-axis</a><span>, in §6.1</span>
    <li><a href="#block-axis">block axis</a><span>, in §6.1</span>
+   <li><a href="#block-axis">block-axis</a><span>, in §6.1</span>
    <li><a href="#block-dimension">block dimension</a><span>, in §6.1</span>
-   <li><a href="#block-end">block-end</a><span>, in §6.2</span>
    <li><a href="#block-end">block end</a><span>, in §6.2</span>
+   <li><a href="#block-end">block-end</a><span>, in §6.2</span>
    <li><a href="#block-flow-direction">block flow direction</a><span>, in §1</span>
    <li><a href="#block-size">block size</a><span>, in §6.1</span>
    <li><a href="#block-size">block-size</a><span>, in §6.1</span>
@@ -2960,6 +2960,13 @@ Vertical Scripts in Unicode</span><a class="self-link" href="#script-orientation
    <li><a href="#x-axis">x-axis</a><span>, in §6</span>
    <li><a href="#y-axis">y-axis</a><span>, in §6</span>
   </ul>
+  <aside class="dfn-panel" data-for="term-for-propdef-column-gap">
+   <a href="https://drafts.csswg.org/css-align-3/#propdef-column-gap">https://drafts.csswg.org/css-align-3/#propdef-column-gap</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propdef-column-gap">7.3.2. 
+Auto-sizing Block Containers in Orthogonal Flows</a> <a href="#ref-for-propdef-column-gap①">(2)</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-margin-bottom">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-margin-bottom">https://drafts.csswg.org/css-box-3/#propdef-margin-bottom</a><b>Referenced in:</b>
    <ul>
@@ -3673,13 +3680,6 @@ Auto-sizing Block Containers in Orthogonal Flows</a> <a href="#ref-for-valdef-co
 Auto-sizing Block Containers in Orthogonal Flows</a> <a href="#ref-for-propdef-column-count①">(2)</a> <a href="#ref-for-propdef-column-count②">(3)</a> <a href="#ref-for-propdef-column-count③">(4)</a> <a href="#ref-for-propdef-column-count④">(5)</a> <a href="#ref-for-propdef-column-count⑤">(6)</a> <a href="#ref-for-propdef-column-count⑥">(7)</a> <a href="#ref-for-propdef-column-count⑦">(8)</a> <a href="#ref-for-propdef-column-count⑧">(9)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propdef-column-gap">
-   <a href="https://drafts.csswg.org/css-multicol-1/#propdef-column-gap">https://drafts.csswg.org/css-multicol-1/#propdef-column-gap</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-propdef-column-gap">7.3.2. 
-Auto-sizing Block Containers in Orthogonal Flows</a> <a href="#ref-for-propdef-column-gap①">(2)</a>
-   </ul>
-  </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-column-width">
    <a href="https://drafts.csswg.org/css-multicol-1/#propdef-column-width">https://drafts.csswg.org/css-multicol-1/#propdef-column-width</a><b>Referenced in:</b>
    <ul>
@@ -3705,6 +3705,11 @@ The Principal Writing Mode</a>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
+   <li>
+    <a data-link-type="biblio">[css-align-3]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-propdef-column-gap" style="color:initial">column-gap</span>
+    </ul>
    <li>
     <a data-link-type="biblio">[css-box-3]</a> defines the following terms:
     <ul>
@@ -3871,7 +3876,6 @@ The Principal Writing Mode</a>
     <ul>
      <li><span class="dfn-paneled" id="term-for-valdef-column-width-auto" style="color:initial">auto <small>(for column-width)</small></span>
      <li><span class="dfn-paneled" id="term-for-propdef-column-count" style="color:initial">column-count</span>
-     <li><span class="dfn-paneled" id="term-for-propdef-column-gap" style="color:initial">column-gap</span>
      <li><span class="dfn-paneled" id="term-for-propdef-column-width" style="color:initial">column-width</span>
     </ul>
    <li>
@@ -3888,6 +3892,8 @@ The Principal Writing Mode</a>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
+   <dt id="biblio-css-align-3">[CSS-ALIGN-3]
+   <dd>Elika Etemad; Tab Atkins Jr.. <a href="https://www.w3.org/TR/css-align-3/">CSS Box Alignment Module Level 3</a>. 6 December 2018. WD. URL: <a href="https://www.w3.org/TR/css-align-3/">https://www.w3.org/TR/css-align-3/</a>
    <dt id="biblio-css-box-3">[CSS-BOX-3]
    <dd>Elika Etemad. <a href="https://www.w3.org/TR/css-box-3/">CSS Box Model Module Level 3</a>. 18 December 2018. WD. URL: <a href="https://www.w3.org/TR/css-box-3/">https://www.w3.org/TR/css-box-3/</a>
    <dt id="biblio-css-break-3">[CSS-BREAK-3]

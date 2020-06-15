@@ -83,91 +83,6 @@ div.switch > dl > dt:before {
   margin: .5em 2em;
 }
 </style>
-<style>/* style-md-lists */
-
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
-}
-[data-md] > :last-child {
-    margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
-
-.heading, .issue, .note, .example, li, dt {
-    position: relative;
-}
-a.self-link {
-    position: absolute;
-    top: 0;
-    left: calc(-1 * (3.5rem - 26px));
-    width: calc(3.5rem - 26px);
-    height: 2em;
-    text-align: center;
-    border: none;
-    transition: opacity .2s;
-    opacity: .5;
-}
-a.self-link:hover {
-    opacity: 1;
-}
-.heading > a.self-link {
-    font-size: 83%;
-}
-li > a.self-link {
-    left: calc(-1 * (3.5rem - 26px) - 2em);
-}
-dfn > a.self-link {
-    top: auto;
-    left: auto;
-    opacity: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: gray;
-    color: white;
-    font-style: normal;
-    transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-    opacity: 1;
-}
-dfn > a.self-link:hover {
-    color: black;
-}
-
-a.self-link::before            { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-counters */
-
-body {
-    counter-reset: example figure issue;
-}
-.issue {
-    counter-increment: issue;
-}
-.issue:not(.no-marker)::before {
-    content: "Issue " counter(issue);
-}
-
-.example {
-    counter-increment: example;
-}
-.example:not(.no-marker)::before {
-    content: "Example " counter(example);
-}
-.invalid.example:not(.no-marker)::before,
-.illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
-}
-
-figcaption {
-    counter-increment: figure;
-}
-figcaption:not(.no-marker)::before {
-    content: "Figure " counter(figure) " ";
-}</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -230,6 +145,35 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
 <style>/* style-dfn-panel */
 
 .dfn-panel {
@@ -267,6 +211,62 @@ pre .property::before, pre .property::after {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: black;
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }</style>
 <style>/* style-syntax-highlighting */
 pre.idl.highlight { color: #708090; }
 .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
@@ -356,11 +356,11 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:dstockwell@google.com">Douglas Stockwell</a> (<span class="p-org org">Google Inc</span>)
       <dd class="editor p-author h-card vcard" data-editor-id="31960"><a class="p-name fn u-email email" href="mailto:adanilo@google.com">Alex Danilo</a> (<span class="p-org org">Google Inc</span>)
       <dd class="editor p-author h-card vcard" data-editor-id="42199"><a class="p-name fn u-email email" href="mailto:jackalmage@gmail.com">Tab Atkins</a> (<span class="p-org org">Google Inc</span>)
-      <dt>Suggest an Edit for this Spec:
-      <dd><a href="https://github.com/w3c/csswg-drafts/blob/master/web-animations-1/Overview.bs">GitHub Editor</a>
       <dt>Issue Tracking:
       <dd><a href="https://github.com/w3c/csswg-drafts/labels/web-animations-1">GitHub Issues</a>
       <dd><a href="https://github.com/w3c/csswg-drafts/labels/web-animations-1">GitHub</a>
+      <dt>Suggest an Edit for this Spec:
+      <dd><a href="https://github.com/w3c/csswg-drafts/blob/master/web-animations-1/Overview.bs">GitHub Editor</a>
       <dt>Participate:
       <dd><a href="https://github.com/w3c/csswg-drafts/tree/master/web-animations-1">Fix the text through GitHub</a>
       <dd>Join the ‘waapi’ channel on the <a href="https://damp-lake-50659.herokuapp.com/">Animation at Work</a> slack
@@ -3596,7 +3596,7 @@ timeline</a>, are represented in the Web Animations API by the <code class="idl"
 
 [<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="interface" data-export id="documenttimeline"><code><c- g>DocumentTimeline</c-></code></dfn> : <a class="n" data-link-type="idl-name" href="#animationtimeline" id="ref-for-animationtimeline①"><c- n>AnimationTimeline</c-></a> {
-  <a class="idl-code" data-link-type="constructor" href="#dom-documenttimeline-documenttimeline" id="ref-for-dom-documenttimeline-documenttimeline"><c- g>constructor</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-documenttimelineoptions" id="ref-for-dictdef-documenttimelineoptions"><c- n>DocumentTimelineOptions</c-></a> <dfn class="idl-code" data-dfn-for="DocumentTimeline/constructor(options), DocumentTimeline/constructor()" data-dfn-type="argument" data-export id="dom-documenttimeline-constructor-options-options"><code><c- g>options</c-></code><a class="self-link" href="#dom-documenttimeline-constructor-options-options"></a></dfn> = {});
+  <a class="idl-code" data-link-type="constructor" href="#dom-documenttimeline-documenttimeline" id="ref-for-dom-documenttimeline-documenttimeline"><c- g>constructor</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-documenttimelineoptions" id="ref-for-dictdef-documenttimelineoptions"><c- n>DocumentTimelineOptions</c-></a> <a class="idl-code" data-link-type="argument" href="#dom-documenttimeline-documenttimeline-options-options" id="ref-for-dom-documenttimeline-documenttimeline-options-options"><c- g>options</c-></a> = {});
 };
 </pre>
    <div class="members">
@@ -3615,7 +3615,7 @@ milliseconds relative to the <a data-link-type="dfn" href="https://w3c.github.io
 The <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/#document" id="ref-for-document⑦">Document</a></code> with which the timeline is associated is the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/#document" id="ref-for-document⑧">Document</a></code> <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#concept-document-window" id="ref-for-concept-document-window">associated</a> with the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window">Window</a></code> that is the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-global-object" id="ref-for-current-global-object②">current global object</a>.</p>
       <div class="parameters">
        <dl>
-        <dt data-md><dfn class="idl-code" data-dfn-for="DocumentTimeline/DocumentTimeline(options)" data-dfn-type="argument" data-export id="dom-documenttimeline-documenttimeline-options-options"><code>options</code><a class="self-link" href="#dom-documenttimeline-documenttimeline-options-options"></a></dfn>
+        <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="DocumentTimeline/DocumentTimeline(options)" data-dfn-type="argument" data-export id="dom-documenttimeline-documenttimeline-options-options"><code>options</code></dfn>
         <dd data-md>
          <p>Configuration parameters for the newly-created timeline.
 This specification defines only the <code class="idl"><a data-link-type="idl" href="#dom-documenttimelineoptions-origintime" id="ref-for-dom-documenttimelineoptions-origintime①">originTime</a></code> member but other specifications
@@ -3629,8 +3629,8 @@ may extend this set.</p>
 API by the <code class="idl"><a data-link-type="idl" href="#animation" id="ref-for-animation">Animation</a></code> interface.</p>
 <pre class="idl highlight def">[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed②"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="interface" data-export id="animation"><code><c- g>Animation</c-></code></dfn> : <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#eventtarget" id="ref-for-eventtarget"><c- n>EventTarget</c-></a> {
-    <a class="idl-code" data-link-type="constructor" href="#dom-animation-animation" id="ref-for-dom-animation-animation"><c- g>constructor</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#animationeffect" id="ref-for-animationeffect"><c- n>AnimationEffect</c-></a>? <dfn class="idl-code" data-dfn-for="Animation/constructor(effect, timeline), Animation/constructor(effect), Animation/constructor()" data-dfn-type="argument" data-export id="dom-animation-constructor-effect-timeline-effect"><code><c- g>effect</c-></code><a class="self-link" href="#dom-animation-constructor-effect-timeline-effect"></a></dfn> = <c- b>null</c->,
-                <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#animationtimeline" id="ref-for-animationtimeline②"><c- n>AnimationTimeline</c-></a>? <dfn class="idl-code" data-dfn-for="Animation/constructor(effect, timeline), Animation/constructor(effect), Animation/constructor()" data-dfn-type="argument" data-export id="dom-animation-constructor-effect-timeline-timeline"><code><c- g>timeline</c-></code><a class="self-link" href="#dom-animation-constructor-effect-timeline-timeline"></a></dfn>);
+    <a class="idl-code" data-link-type="constructor" href="#dom-animation-animation" id="ref-for-dom-animation-animation"><c- g>constructor</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#animationeffect" id="ref-for-animationeffect"><c- n>AnimationEffect</c-></a>? <a class="idl-code" data-link-type="argument" href="#dom-animation-animation-effect-timeline-effect" id="ref-for-dom-animation-animation-effect-timeline-effect"><c- g>effect</c-></a> = <c- b>null</c->,
+                <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#animationtimeline" id="ref-for-animationtimeline②"><c- n>AnimationTimeline</c-></a>? <a class="idl-code" data-link-type="argument" href="#dom-animation-animation-effect-timeline-timeline" id="ref-for-dom-animation-animation-effect-timeline-timeline"><c- g>timeline</c-></a>);
              <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString"><c- b>DOMString</c-></a>                <a class="idl-code" data-link-type="attribute" data-type="DOMString" href="#dom-animation-id" id="ref-for-dom-animation-id"><c- g>id</c-></a>;
              <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#animationeffect" id="ref-for-animationeffect①"><c- n>AnimationEffect</c-></a>?         <a class="idl-code" data-link-type="attribute" data-type="AnimationEffect?" href="#dom-animation-effect" id="ref-for-dom-animation-effect"><c- g>effect</c-></a>;
     <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#animationtimeline" id="ref-for-animationtimeline③"><c- n>AnimationTimeline</c-></a>?       <a class="idl-code" data-link-type="attribute" data-readonly data-type="AnimationTimeline?" href="#dom-animation-timeline" id="ref-for-dom-animation-timeline"><c- g>timeline</c-></a>;
@@ -3673,11 +3673,11 @@ effect</var>.</p>
       </ol>
       <div class="parameters">
        <dl>
-        <dt data-md><dfn class="idl-code" data-dfn-for="Animation/Animation(effect, timeline)" data-dfn-type="argument" data-export id="dom-animation-animation-effect-timeline-effect"><code>effect</code><a class="self-link" href="#dom-animation-animation-effect-timeline-effect"></a></dfn>
+        <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="Animation/Animation(effect, timeline)" data-dfn-type="argument" data-export id="dom-animation-animation-effect-timeline-effect"><code>effect</code></dfn>
         <dd data-md>
          <p>An optional value which, if not null, specifies the <a data-link-type="dfn" href="#associated-effect" id="ref-for-associated-effect②⑦">associated
 effect</a> to assign to the newly created <a data-link-type="dfn" href="#concept-animation" id="ref-for-concept-animation⑥⑥">animation</a>.</p>
-        <dt data-md><dfn class="idl-code" data-dfn-for="Animation/Animation(effect, timeline)" data-dfn-type="argument" data-export id="dom-animation-animation-effect-timeline-timeline"><code>timeline</code><a class="self-link" href="#dom-animation-animation-effect-timeline-timeline"></a></dfn>
+        <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="Animation/Animation(effect, timeline)" data-dfn-type="argument" data-export id="dom-animation-animation-effect-timeline-timeline"><code>timeline</code></dfn>
         <dd data-md>
          <p>An optional value which, if present, specifies the <a data-link-type="dfn" href="#timeline" id="ref-for-timeline⑤②">timeline</a> with which to associate the newly-created <a data-link-type="dfn" href="#concept-animation" id="ref-for-concept-animation⑥⑦">animation</a>.
 If missing, the <a data-link-type="dfn" href="#default-document-timeline" id="ref-for-default-document-timeline⑥">default document timeline</a> of the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/#document" id="ref-for-document①⓪">Document</a></code> <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#concept-document-window" id="ref-for-concept-document-window②">associated</a> with the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window②">Window</a></code> that is the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-global-object" id="ref-for-current-global-object④">current global object</a> is used.</p>
@@ -4202,10 +4202,10 @@ represented by a <span class="esvalue">null</span> value.</p>
    <p><a data-link-type="dfn" href="#keyframe-effect" id="ref-for-keyframe-effect③⓪">Keyframe effects</a> are represented by the <code class="idl"><a data-link-type="idl" href="#keyframeeffect" id="ref-for-keyframeeffect">KeyframeEffect</a></code> interface.</p>
 <pre class="idl highlight def">[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed④"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="interface" data-export id="keyframeeffect"><code><c- g>KeyframeEffect</c-></code></dfn> : <a class="n" data-link-type="idl-name" href="#animationeffect" id="ref-for-animationeffect⑥"><c- n>AnimationEffect</c-></a> {
-    <a class="idl-code" data-link-type="constructor" href="#dom-keyframeeffect-keyframeeffect" id="ref-for-dom-keyframeeffect-keyframeeffect"><c- g>constructor</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element②"><c- n>Element</c-></a>? <dfn class="idl-code" data-dfn-for="KeyframeEffect/constructor(target, keyframes, options), KeyframeEffect/constructor(target, keyframes)" data-dfn-type="argument" data-export id="dom-keyframeeffect-constructor-target-keyframes-options-target"><code><c- g>target</c-></code><a class="self-link" href="#dom-keyframeeffect-constructor-target-keyframes-options-target"></a></dfn>,
-                <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-object" id="ref-for-idl-object"><c- b>object</c-></a>? <dfn class="idl-code" data-dfn-for="KeyframeEffect/constructor(target, keyframes, options), KeyframeEffect/constructor(target, keyframes)" data-dfn-type="argument" data-export id="dom-keyframeeffect-constructor-target-keyframes-options-keyframes"><code><c- g>keyframes</c-></code><a class="self-link" href="#dom-keyframeeffect-constructor-target-keyframes-options-keyframes"></a></dfn>,
-                <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①①"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <dfn class="idl-code" data-dfn-for="KeyframeEffect/constructor(target, keyframes, options), KeyframeEffect/constructor(target, keyframes)" data-dfn-type="argument" data-export id="dom-keyframeeffect-constructor-target-keyframes-options-options"><code><c- g>options</c-></code><a class="self-link" href="#dom-keyframeeffect-constructor-target-keyframes-options-options"></a></dfn> = {});
-    <a class="idl-code" data-link-type="constructor" href="#dom-keyframeeffect-keyframeeffect-source" id="ref-for-dom-keyframeeffect-keyframeeffect-source"><c- g>constructor</c-></a>(<a class="n" data-link-type="idl-name" href="#keyframeeffect" id="ref-for-keyframeeffect①"><c- n>KeyframeEffect</c-></a> <dfn class="dfn-paneled idl-code" data-dfn-for="KeyframeEffect/constructor(source)" data-dfn-type="argument" data-export id="dom-keyframeeffect-constructor-source-source"><code><c- g>source</c-></code></dfn>);
+    <a class="idl-code" data-link-type="constructor" href="#dom-keyframeeffect-keyframeeffect" id="ref-for-dom-keyframeeffect-keyframeeffect"><c- g>constructor</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element②"><c- n>Element</c-></a>? <a class="idl-code" data-link-type="argument" href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-target" id="ref-for-dom-keyframeeffect-keyframeeffect-target-keyframes-options-target"><c- g>target</c-></a>,
+                <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-object" id="ref-for-idl-object"><c- b>object</c-></a>? <a class="idl-code" data-link-type="argument" href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-keyframes" id="ref-for-dom-keyframeeffect-keyframeeffect-target-keyframes-options-keyframes"><c- g>keyframes</c-></a>,
+                <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①①"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <a class="idl-code" data-link-type="argument" href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-options" id="ref-for-dom-keyframeeffect-keyframeeffect-target-keyframes-options-options"><c- g>options</c-></a> = {});
+    <a class="idl-code" data-link-type="constructor" href="#dom-keyframeeffect-keyframeeffect-source" id="ref-for-dom-keyframeeffect-keyframeeffect-source"><c- g>constructor</c-></a>(<a class="n" data-link-type="idl-name" href="#keyframeeffect" id="ref-for-keyframeeffect①"><c- n>KeyframeEffect</c-></a> <a class="idl-code" data-link-type="argument" href="#dom-keyframeeffect-keyframeeffect-source-source" id="ref-for-dom-keyframeeffect-keyframeeffect-source-source"><c- g>source</c-></a>);
     <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element③"><c- n>Element</c-></a>? <a class="idl-code" data-link-type="attribute" data-type="Element?" href="#dom-keyframeeffect-target" id="ref-for-dom-keyframeeffect-target"><c- g>target</c-></a>;
     <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring"><c- n>CSSOMString</c-></a>? <a class="idl-code" data-link-type="attribute" data-type="CSSOMString?" href="#dom-keyframeeffect-pseudoelement" id="ref-for-dom-keyframeeffect-pseudoelement"><c- g>pseudoElement</c-></a>;
     <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-compositeoperation" id="ref-for-enumdef-compositeoperation"><c- n>CompositeOperation</c-></a>             <a class="idl-code" data-link-type="attribute" data-type="CompositeOperation" href="#dom-keyframeeffect-composite" id="ref-for-dom-keyframeeffect-composite"><c- g>composite</c-></a>;
@@ -4255,17 +4255,17 @@ defined for <code class="idl"><a data-link-type="idl" href="#dom-keyframeeffect-
       </ol>
       <div class="parameters">
        <dl>
-        <dt data-md><dfn class="idl-code" data-dfn-for="KeyframeEffect/KeyframeEffect(target, keyframes, options)" data-dfn-type="argument" data-export data-lt="target" id="dom-keyframeeffect-keyframeeffect-target-keyframes-options-target"><code><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element④">Element</a></code>? target</code><a class="self-link" href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-target"></a></dfn>
+        <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="KeyframeEffect/KeyframeEffect(target, keyframes, options)" data-dfn-type="argument" data-export data-lt="target" id="dom-keyframeeffect-keyframeeffect-target-keyframes-options-target"><code><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element④">Element</a></code>? target</code></dfn>
         <dd data-md>
          <p>The <a data-link-type="dfn" href="#target-element" id="ref-for-target-element③">target element</a>.
 This may be <code>null</code> for animations that do not target
 a specific element.</p>
-        <dt data-md><dfn class="idl-code" data-dfn-for="KeyframeEffect/KeyframeEffect(target, keyframes, options)" data-dfn-type="argument" data-export data-lt="keyframes" id="dom-keyframeeffect-keyframeeffect-target-keyframes-options-keyframes"><code>object? keyframes</code><a class="self-link" href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-keyframes"></a></dfn>
+        <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="KeyframeEffect/KeyframeEffect(target, keyframes, options)" data-dfn-type="argument" data-export data-lt="keyframes" id="dom-keyframeeffect-keyframeeffect-target-keyframes-options-keyframes"><code>object? keyframes</code></dfn>
         <dd data-md>
          <p>The set of <a data-link-type="dfn" href="#keyframe" id="ref-for-keyframe④④">keyframes</a> to use.
 The format and processing of this argument is defined in <a href="#processing-a-keyframes-argument">§ 6.6.3 Processing a keyframes
 argument</a>.</p>
-        <dt data-md><dfn class="idl-code" data-dfn-for="KeyframeEffect/KeyframeEffect(target, keyframes, options)" data-dfn-type="argument" data-export data-lt="options" id="dom-keyframeeffect-keyframeeffect-target-keyframes-options-options"><code>optional <code class="idl"><a data-link-type="idl" href="#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions③">KeyframeEffectOptions</a></code> options</code><a class="self-link" href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-options"></a></dfn>
+        <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="KeyframeEffect/KeyframeEffect(target, keyframes, options)" data-dfn-type="argument" data-export data-lt="options" id="dom-keyframeeffect-keyframeeffect-target-keyframes-options-options"><code>optional <code class="idl"><a data-link-type="idl" href="#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions③">KeyframeEffectOptions</a></code> options</code></dfn>
         <dd data-md>
          <p>Either a number specifying the <a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-duration①⑥">iteration duration</a> of the effect,
 or a collection of properties specifying the timing and behavior of
@@ -4276,7 +4276,7 @@ the effect.</p>
      <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="KeyframeEffect" data-dfn-type="constructor" data-export data-lt="KeyframeEffect(source)|constructor(source)" id="dom-keyframeeffect-keyframeeffect-source"><code>KeyframeEffect (source)</code></dfn>
      <dd data-md>
       <p>Creates a new <code class="idl"><a data-link-type="idl" href="#keyframeeffect" id="ref-for-keyframeeffect⑤">KeyframeEffect</a></code> object with the same properties
-as <code class="idl"><a data-link-type="idl" href="#dom-keyframeeffect-constructor-source-source" id="ref-for-dom-keyframeeffect-constructor-source-source">source</a></code> using the following procedure:</p>
+as <code class="idl"><a data-link-type="idl">source</a></code> using the following procedure:</p>
       <ol>
        <li data-md>
         <p>Create a new <code class="idl"><a data-link-type="idl" href="#keyframeeffect" id="ref-for-keyframeeffect⑥">KeyframeEffect</a></code> object, <var>effect</var>.</p>
@@ -4317,7 +4317,7 @@ specified on <var>source</var> can be assumed to be valid.</p>
       </ol>
       <div class="parameters">
        <dl>
-        <dt data-md><dfn class="idl-code" data-dfn-for="KeyframeEffect/KeyframeEffect(source)" data-dfn-type="argument" data-export data-lt="source" id="dom-keyframeeffect-keyframeeffect-source-source"><code><code class="idl"><a data-link-type="idl" href="#keyframeeffect" id="ref-for-keyframeeffect⑦">KeyframeEffect</a></code> source</code><a class="self-link" href="#dom-keyframeeffect-keyframeeffect-source-source"></a></dfn>
+        <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="KeyframeEffect/KeyframeEffect(source)" data-dfn-type="argument" data-export data-lt="source" id="dom-keyframeeffect-keyframeeffect-source-source"><code><code class="idl"><a data-link-type="idl" href="#keyframeeffect" id="ref-for-keyframeeffect⑦">KeyframeEffect</a></code> source</code></dfn>
         <dd data-md>
          <p>The <a data-link-type="dfn" href="#keyframe-effect" id="ref-for-keyframe-effect③①">keyframe effect</a> from which to copy the properties
 that define the new <span id="ref-for-keyframe-effect③②">keyframe effect</span>.</p>
@@ -4936,7 +4936,7 @@ of length one containing the single value “linear”, i.e.
           <p>If <var>easings</var> has fewer items than <var>processed
 keyframes</var>, repeat the elements in <var>easings</var> successively starting from the beginning of the list until <var>easings</var> has as many items as <var>processed
 keyframes</var>.</p>
-          <div class="example" id="example-3d1abc15"><a class="self-link" href="#example-3d1abc15"></a> For example, if <var>processed keyframes</var> has
+          <div class="example" id="example-649bc6e3"><a class="self-link" href="#example-649bc6e3"></a> For example, if <var>processed keyframes</var> has
 five items, and <var>easings</var> is the sequence
 « "ease-in", "ease-out" », <var>easings</var> would be repeated to become
 « "ease-in", "ease-out", "ease-in", "ease-out",
@@ -5235,7 +5235,7 @@ the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/
    <p><a data-link-type="dfn" href="#animation-playback-events" id="ref-for-animation-playback-events②">Animation playback events</a> are represented using the <code class="idl"><a data-link-type="idl" href="#animationplaybackevent" id="ref-for-animationplaybackevent③">AnimationPlaybackEvent</a></code> interface.</p>
 <pre class="idl highlight def">[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed⑤"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="interface" data-export id="animationplaybackevent"><code><c- g>AnimationPlaybackEvent</c-></code></dfn> : <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#event" id="ref-for-event"><c- n>Event</c-></a> {
-    <a class="idl-code" data-link-type="constructor" href="#dom-animationplaybackevent-animationplaybackevent" id="ref-for-dom-animationplaybackevent-animationplaybackevent"><c- g>constructor</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString①③"><c- b>DOMString</c-></a> <dfn class="idl-code" data-dfn-for="AnimationPlaybackEvent/constructor(type, eventInitDict), AnimationPlaybackEvent/constructor(type)" data-dfn-type="argument" data-export id="dom-animationplaybackevent-constructor-type-eventinitdict-type"><code><c- g>type</c-></code><a class="self-link" href="#dom-animationplaybackevent-constructor-type-eventinitdict-type"></a></dfn>, <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-animationplaybackeventinit" id="ref-for-dictdef-animationplaybackeventinit"><c- n>AnimationPlaybackEventInit</c-></a> <dfn class="idl-code" data-dfn-for="AnimationPlaybackEvent/constructor(type, eventInitDict), AnimationPlaybackEvent/constructor(type)" data-dfn-type="argument" data-export id="dom-animationplaybackevent-constructor-type-eventinitdict-eventinitdict"><code><c- g>eventInitDict</c-></code><a class="self-link" href="#dom-animationplaybackevent-constructor-type-eventinitdict-eventinitdict"></a></dfn> = {});
+    <a class="idl-code" data-link-type="constructor" href="#dom-animationplaybackevent-animationplaybackevent" id="ref-for-dom-animationplaybackevent-animationplaybackevent"><c- g>constructor</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString①③"><c- b>DOMString</c-></a> <dfn class="idl-code" data-dfn-for="AnimationPlaybackEvent/AnimationPlaybackEvent(type, eventInitDict), AnimationPlaybackEvent/constructor(type, eventInitDict), AnimationPlaybackEvent/AnimationPlaybackEvent(type), AnimationPlaybackEvent/constructor(type)" data-dfn-type="argument" data-export id="dom-animationplaybackevent-animationplaybackevent-type-eventinitdict-type"><code><c- g>type</c-></code><a class="self-link" href="#dom-animationplaybackevent-animationplaybackevent-type-eventinitdict-type"></a></dfn>, <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-animationplaybackeventinit" id="ref-for-dictdef-animationplaybackeventinit"><c- n>AnimationPlaybackEventInit</c-></a> <dfn class="idl-code" data-dfn-for="AnimationPlaybackEvent/AnimationPlaybackEvent(type, eventInitDict), AnimationPlaybackEvent/constructor(type, eventInitDict), AnimationPlaybackEvent/AnimationPlaybackEvent(type), AnimationPlaybackEvent/constructor(type)" data-dfn-type="argument" data-export id="dom-animationplaybackevent-animationplaybackevent-type-eventinitdict-eventinitdict"><code><c- g>eventInitDict</c-></code><a class="self-link" href="#dom-animationplaybackevent-animationplaybackevent-type-eventinitdict-eventinitdict"></a></dfn> = {});
     <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②⑦"><c- b>double</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="double?" href="#dom-animationplaybackevent-currenttime" id="ref-for-dom-animationplaybackevent-currenttime③"><c- g>currentTime</c-></a>;
     <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②⑧"><c- b>double</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="double?" href="#dom-animationplaybackevent-timelinetime" id="ref-for-dom-animationplaybackevent-timelinetime④"><c- g>timelineTime</c-></a>;
 };
@@ -5613,8 +5613,8 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#dom-compositeoperation-accumulate">accumulate</a><span>, in §6.7</span>
    <li><a href="#dom-compositeoperation-accumulate">"accumulate"</a><span>, in §6.7</span>
+   <li><a href="#dom-compositeoperation-accumulate">accumulate</a><span>, in §6.7</span>
    <li><a href="#dom-animationreplacestate-active">"active"</a><span>, in §6.4.2</span>
    <li><a href="#active-after-boundary-time">active-after boundary time</a><span>, in §4.5.5</span>
    <li><a href="#active-duration">active duration</a><span>, in §4.8.2</span>
@@ -5623,24 +5623,24 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
    <li><a href="#active-phase">active phase</a><span>, in §4.5.5</span>
    <li><a href="#active-replace-state">active replace state</a><span>, in §5.5.1</span>
    <li><a href="#active-time">active time</a><span>, in §4.8.3.1</span>
-   <li><a href="#dom-compositeoperation-add">add</a><span>, in §6.7</span>
    <li><a href="#dom-compositeoperation-add">"add"</a><span>, in §6.7</span>
+   <li><a href="#dom-compositeoperation-add">add</a><span>, in §6.7</span>
    <li><a href="#after-phase">after phase</a><span>, in §4.5.5</span>
    <li><a href="#dom-playbackdirection-alternate">"alternate"</a><span>, in §6.5.3</span>
    <li><a href="#dom-playbackdirection-alternate-reverse">"alternate-reverse"</a><span>, in §6.5.3</span>
-   <li><a href="#concept-animatable">animatable</a><span>, in §5.2</span>
    <li><a href="#animatable">Animatable</a><span>, in §6.8</span>
+   <li><a href="#concept-animatable">animatable</a><span>, in §5.2</span>
    <li><a href="#dom-animatable-animate">animate(keyframes)</a><span>, in §6.8</span>
    <li><a href="#dom-animatable-animate">animate(keyframes, options)</a><span>, in §6.8</span>
+   <li><a href="#animation">Animation</a><span>, in §6.4</span>
    <li><a href="#concept-animation">animation</a><span>, in §4.4</span>
    <li><a href="#dom-animation-animation">Animation()</a><span>, in §6.4</span>
-   <li><a href="#animation">Animation</a><span>, in §6.4</span>
    <li><a href="#animation-class">animation class</a><span>, in §5.4.1</span>
    <li><a href="#animation-composite-order">animation composite order</a><span>, in §5.4.2</span>
    <li><a href="#animation-direction">animation direction</a><span>, in §4.5.5</span>
-   <li><a href="#animationeffect">AnimationEffect</a><span>, in §6.5</span>
-   <li><a href="#dom-animation-animation">Animation(effect)</a><span>, in §6.4</span>
    <li><a href="#animation-effect">animation effect</a><span>, in §4.5</span>
+   <li><a href="#dom-animation-animation">Animation(effect)</a><span>, in §6.4</span>
+   <li><a href="#animationeffect">AnimationEffect</a><span>, in §6.5</span>
    <li><a href="#dom-animation-animation">Animation(effect, timeline)</a><span>, in §6.4</span>
    <li><a href="#animation-events">Animation events</a><span>, in §4.4.19</span>
    <li><a href="#animation-frame">animation frame</a><span>, in §4.3</span>
@@ -5695,13 +5695,13 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
      <li><a href="#dom-keyframeeffectoptions-composite">dict-member for KeyframeEffectOptions</a><span>, in §6.6.4</span>
     </ul>
    <li><a href="#composited-value">composited value</a><span>, in §5.4.3</span>
+   <li><a href="#composite-operation">composite operation</a><span>, in §5.4.4</span>
    <li>
     CompositeOperation
     <ul>
      <li><a href="#enumdef-compositeoperation">(enum)</a><span>, in §6.7</span>
      <li><a href="#compositeoperation">definition of</a><span>, in §6.7</span>
     </ul>
-   <li><a href="#composite-operation">composite operation</a><span>, in §5.4.4</span>
    <li><a href="#composite-operation-accumulate">composite operation accumulate</a><span>, in §5.4.4</span>
    <li><a href="#composite-operation-add">composite operation add</a><span>, in §5.4.4</span>
    <li><a href="#enumdef-compositeoperationorauto">CompositeOperationOrAuto</a><span>, in §6.7</span>
@@ -5759,10 +5759,10 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
    <li><a href="#discrete">discrete</a><span>, in §5.2</span>
    <li><a href="#document-for-timing">document for timing</a><span>, in §4.4</span>
    <li><a href="#document-timeline">document timeline</a><span>, in §4.3.1</span>
-   <li><a href="#dom-documenttimeline-documenttimeline">DocumentTimeline()</a><span>, in §6.3</span>
    <li><a href="#documenttimeline">DocumentTimeline</a><span>, in §6.3</span>
-   <li><a href="#dictdef-documenttimelineoptions">DocumentTimelineOptions</a><span>, in §6.3</span>
+   <li><a href="#dom-documenttimeline-documenttimeline">DocumentTimeline()</a><span>, in §6.3</span>
    <li><a href="#dom-documenttimeline-documenttimeline">DocumentTimeline(options)</a><span>, in §6.3</span>
+   <li><a href="#dictdef-documenttimelineoptions">DocumentTimelineOptions</a><span>, in §6.3</span>
    <li>
     duration
     <ul>
@@ -5791,8 +5791,8 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
      <li><a href="#dom-effecttiming-enddelay">dict-member for EffectTiming</a><span>, in §6.5.1</span>
      <li><a href="#dom-optionaleffecttiming-enddelay">dict-member for OptionalEffectTiming</a><span>, in §6.5.1</span>
     </ul>
-   <li><a href="#dom-computedeffecttiming-endtime">endTime</a><span>, in §6.5.5</span>
    <li><a href="#end-time">end time</a><span>, in §4.5.3</span>
+   <li><a href="#dom-computedeffecttiming-endtime">endTime</a><span>, in §6.5.5</span>
    <li>
     fill
     <ul>
@@ -5803,8 +5803,8 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
    <li><a href="#enumdef-fillmode">FillMode</a><span>, in §6.5.2</span>
    <li><a href="#dom-animation-finish">finish()</a><span>, in §6.4</span>
    <li><a href="#finish-an-animation">finish an animation</a><span>, in §4.4.14</span>
-   <li><a href="#dom-animation-finished">finished</a><span>, in §6.4</span>
    <li><a href="#dom-animationplaystate-finished">"finished"</a><span>, in §6.4.1</span>
+   <li><a href="#dom-animation-finished">finished</a><span>, in §6.4</span>
    <li><a href="#finished-play-state">finished play state</a><span>, in §4.4.18</span>
    <li><a href="#finish-event">finish event</a><span>, in §4.4.19.3</span>
    <li><a href="#finish-notification-steps">finish notification steps</a><span>, in §4.4.13</span>
@@ -5845,25 +5845,25 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
      <li><a href="#dom-effecttiming-iterations">dict-member for EffectTiming</a><span>, in §6.5.1</span>
      <li><a href="#dom-optionaleffecttiming-iterations">dict-member for OptionalEffectTiming</a><span>, in §6.5.1</span>
     </ul>
+   <li><a href="#iteration-start">iteration start</a><span>, in §4.7.2</span>
    <li>
     iterationStart
     <ul>
      <li><a href="#dom-effecttiming-iterationstart">dict-member for EffectTiming</a><span>, in §6.5.1</span>
      <li><a href="#dom-optionaleffecttiming-iterationstart">dict-member for OptionalEffectTiming</a><span>, in §6.5.1</span>
     </ul>
-   <li><a href="#iteration-start">iteration start</a><span>, in §4.7.2</span>
    <li><a href="#keyframe">keyframe</a><span>, in §5.3.1</span>
    <li><a href="#dictdef-keyframeanimationoptions">KeyframeAnimationOptions</a><span>, in §6.8</span>
-   <li><a href="#keyframeeffect">KeyframeEffect</a><span>, in §6.6</span>
    <li><a href="#keyframe-effect">keyframe effect</a><span>, in §5.3</span>
+   <li><a href="#keyframeeffect">KeyframeEffect</a><span>, in §6.6</span>
    <li><a href="#dictdef-keyframeeffectoptions">KeyframeEffectOptions</a><span>, in §6.6.4</span>
    <li><a href="#dom-keyframeeffect-keyframeeffect-source">KeyframeEffect(source)</a><span>, in §6.6</span>
    <li><a href="#dom-keyframeeffect-keyframeeffect">KeyframeEffect(target, keyframes)</a><span>, in §6.6</span>
    <li><a href="#dom-keyframeeffect-keyframeeffect">KeyframeEffect(target, keyframes, options)</a><span>, in §6.6</span>
    <li><a href="#keyframe-offset">keyframe offset</a><span>, in §5.3.1</span>
    <li><a href="#keyframe-specific-composite-operation">keyframe-specific composite operation</a><span>, in §5.3.1</span>
-   <li><a href="#dom-computedeffecttiming-localtime">localTime</a><span>, in §6.5.5</span>
    <li><a href="#local-time">local time</a><span>, in §4.5.4</span>
+   <li><a href="#dom-computedeffecttiming-localtime">localTime</a><span>, in §6.5.5</span>
    <li><a href="#loosely-sorted-by-offset">loosely sorted by offset</a><span>, in §5.3.1</span>
    <li><a href="#monotonically-increasing-timeline">monotonically increasing</a><span>, in §4.3</span>
    <li><a href="#monotonically-increasing-timeline">monotonically increasing timeline</a><span>, in §4.3</span>
@@ -5883,8 +5883,8 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
    <li><a href="#dom-animation-onfinish">onfinish</a><span>, in §6.4</span>
    <li><a href="#dom-animation-onremove">onremove</a><span>, in §6.4</span>
    <li><a href="#dictdef-optionaleffecttiming">OptionalEffectTiming</a><span>, in §6.5.1</span>
-   <li><a href="#dom-documenttimelineoptions-origintime">originTime</a><span>, in §6.3</span>
    <li><a href="#origin-time">origin time</a><span>, in §4.3.1</span>
+   <li><a href="#dom-documenttimelineoptions-origintime">originTime</a><span>, in §6.3</span>
    <li><a href="#overall-progress">overall progress</a><span>, in §4.8.3.2</span>
    <li><a href="#dom-animation-pause">pause()</a><span>, in §6.4</span>
    <li><a href="#pause-an-animation">pause an animation</a><span>, in §4.4.10</span>
@@ -5902,10 +5902,10 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
    <li><a href="#play-an-animation">play an animation</a><span>, in §4.4.9</span>
    <li><a href="#playback-direction">playback direction</a><span>, in §4.9</span>
    <li><a href="#enumdef-playbackdirection">PlaybackDirection</a><span>, in §6.5.3</span>
-   <li><a href="#dom-animation-playbackrate">playbackRate</a><span>, in §6.4</span>
    <li><a href="#playback-rate">playback rate</a><span>, in §4.4.16</span>
-   <li><a href="#dom-animation-playstate">playState</a><span>, in §6.4</span>
+   <li><a href="#dom-animation-playbackrate">playbackRate</a><span>, in §6.4</span>
    <li><a href="#play-state">play state</a><span>, in §4.4.18</span>
+   <li><a href="#dom-animation-playstate">playState</a><span>, in §6.4</span>
    <li><a href="#previous-current-time">previous current time</a><span>, in §4.4.13</span>
    <li><a href="#process-a-keyframe-like-object">process a keyframe-like object</a><span>, in §6.6.3</span>
    <li><a href="#process-a-keyframes-argument">process a keyframes argument</a><span>, in §6.6.3</span>
@@ -5929,15 +5929,15 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
    <li><a href="#remove-event">remove event</a><span>, in §4.4.19.3</span>
    <li><a href="#remove-replaced-animations">remove replaced animations</a><span>, in §5.5.2</span>
    <li><a href="#repeatable-list">repeatable list</a><span>, in §5.2</span>
-   <li><a href="#dom-compositeoperation-replace">replace</a><span>, in §6.7</span>
    <li><a href="#dom-compositeoperation-replace">"replace"</a><span>, in §6.7</span>
+   <li><a href="#dom-compositeoperation-replace">replace</a><span>, in §6.7</span>
    <li><a href="#replaceable-animation">replaceable</a><span>, in §5.5.2</span>
    <li><a href="#replaceable-animation">replaceable animation</a><span>, in §5.5.2</span>
    <li><a href="#replace-state">replace state</a><span>, in §5.5.1</span>
    <li><a href="#dom-animation-replacestate">replaceState</a><span>, in §6.4</span>
    <li><a href="#reset-an-animations-pending-tasks">reset an animation’s pending tasks</a><span>, in §4.4.3</span>
-   <li><a href="#dom-animation-reverse">reverse()</a><span>, in §6.4</span>
    <li><a href="#dom-playbackdirection-reverse">"reverse"</a><span>, in §6.5.3</span>
+   <li><a href="#dom-animation-reverse">reverse()</a><span>, in §6.4</span>
    <li><a href="#reverse-an-animation">reverse an animation</a><span>, in §4.4.17</span>
    <li><a href="#dom-animationplaystate-running">"running"</a><span>, in §6.4.1</span>
    <li><a href="#running-play-state">running play state</a><span>, in §4.4.18</span>
@@ -5953,8 +5953,8 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
    <li><a href="#silently-set-the-current-time">silently set the current time</a><span>, in §4.4.5</span>
    <li><a href="#simple-iteration-progress">simple iteration progress</a><span>, in §4.8.3.3</span>
    <li><a href="#start-delay">start delay</a><span>, in §4.5.3</span>
-   <li><a href="#dom-animation-starttime">startTime</a><span>, in §6.4</span>
    <li><a href="#start-time">start time</a><span>, in §4.4</span>
+   <li><a href="#dom-animation-starttime">startTime</a><span>, in §6.4</span>
    <li><a href="#dom-getanimationsoptions-subtree">subtree</a><span>, in §6.8</span>
    <li><a href="#dom-keyframeeffect-target">target</a><span>, in §6.6</span>
    <li><a href="#target-element">target element</a><span>, in §5.3</span>
@@ -7335,167 +7335,167 @@ argument</a> <a href="#ref-for-dfn-throw①③">(2)</a> <a href="#ref-for-dfn-th
    <dd>Patrick Schmitz; Aaron Cohen. <a href="https://www.w3.org/TR/smil-animation/">SMIL Animation</a>. 4 September 2001. REC. URL: <a href="https://www.w3.org/TR/smil-animation/">https://www.w3.org/TR/smil-animation/</a>
   </dl>
   <h2 class="no-num no-ref heading settled" id="idl-index"><span class="content">IDL Index</span><a class="self-link" href="#idl-index"></a></h2>
-<pre class="idl highlight def">[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed⑥"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<pre class="idl highlight def">[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <a href="#animationtimeline"><code><c- g>AnimationTimeline</c-></code></a> {
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⑥"><c- b>double</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="double?" href="#dom-animationtimeline-currenttime" id="ref-for-dom-animationtimeline-currenttime①"><c- g>currentTime</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="double?" href="#dom-animationtimeline-currenttime"><c- g>currentTime</c-></a>;
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-documenttimelineoptions"><code><c- g>DocumentTimelineOptions</c-></code></a> {
-  <a class="n" data-link-type="idl-name" href="https://w3c.github.io/hr-time/#domhighrestimestamp" id="ref-for-domhighrestimestamp②"><c- n>DOMHighResTimeStamp</c-></a> <a class="idl-code" data-default="0" data-link-type="dict-member" data-type="DOMHighResTimeStamp " href="#dom-documenttimelineoptions-origintime" id="ref-for-dom-documenttimelineoptions-origintime②"><c- g>originTime</c-></a> = 0;
+  <a class="n" data-link-type="idl-name" href="https://w3c.github.io/hr-time/#domhighrestimestamp"><c- n>DOMHighResTimeStamp</c-></a> <a class="idl-code" data-default="0" data-link-type="dict-member" data-type="DOMHighResTimeStamp " href="#dom-documenttimelineoptions-origintime"><c- g>originTime</c-></a> = 0;
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#documenttimeline"><code><c- g>DocumentTimeline</c-></code></a> : <a class="n" data-link-type="idl-name" href="#animationtimeline" id="ref-for-animationtimeline①①"><c- n>AnimationTimeline</c-></a> {
-  <a class="idl-code" data-link-type="constructor" href="#dom-documenttimeline-documenttimeline" id="ref-for-dom-documenttimeline-documenttimeline①"><c- g>constructor</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-documenttimelineoptions" id="ref-for-dictdef-documenttimelineoptions①"><c- n>DocumentTimelineOptions</c-></a> <a href="#dom-documenttimeline-constructor-options-options"><code><c- g>options</c-></code></a> = {});
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#documenttimeline"><code><c- g>DocumentTimeline</c-></code></a> : <a class="n" data-link-type="idl-name" href="#animationtimeline"><c- n>AnimationTimeline</c-></a> {
+  <a class="idl-code" data-link-type="constructor" href="#dom-documenttimeline-documenttimeline"><c- g>constructor</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-documenttimelineoptions"><c- n>DocumentTimelineOptions</c-></a> <a class="idl-code" data-link-type="argument" href="#dom-documenttimeline-documenttimeline-options-options"><c- g>options</c-></a> = {});
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed②①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#animation"><code><c- g>Animation</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#eventtarget" id="ref-for-eventtarget①"><c- n>EventTarget</c-></a> {
-    <a class="idl-code" data-link-type="constructor" href="#dom-animation-animation" id="ref-for-dom-animation-animation②"><c- g>constructor</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#animationeffect" id="ref-for-animationeffect⑦"><c- n>AnimationEffect</c-></a>? <a href="#dom-animation-constructor-effect-timeline-effect"><code><c- g>effect</c-></code></a> = <c- b>null</c->,
-                <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#animationtimeline" id="ref-for-animationtimeline②①"><c- n>AnimationTimeline</c-></a>? <a href="#dom-animation-constructor-effect-timeline-timeline"><code><c- g>timeline</c-></code></a>);
-             <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString①④"><c- b>DOMString</c-></a>                <a class="idl-code" data-link-type="attribute" data-type="DOMString" href="#dom-animation-id" id="ref-for-dom-animation-id③"><c- g>id</c-></a>;
-             <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#animationeffect" id="ref-for-animationeffect①①"><c- n>AnimationEffect</c-></a>?         <a class="idl-code" data-link-type="attribute" data-type="AnimationEffect?" href="#dom-animation-effect" id="ref-for-dom-animation-effect①"><c- g>effect</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#animationtimeline" id="ref-for-animationtimeline③①"><c- n>AnimationTimeline</c-></a>?       <a class="idl-code" data-link-type="attribute" data-readonly data-type="AnimationTimeline?" href="#dom-animation-timeline" id="ref-for-dom-animation-timeline①"><c- g>timeline</c-></a>;
-             <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②①⓪"><c- b>double</c-></a>?                  <a class="idl-code" data-link-type="attribute" data-type="double?" href="#dom-animation-starttime" id="ref-for-dom-animation-starttime①"><c- g>startTime</c-></a>;
-             <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⑤"><c- b>double</c-></a>?                  <a class="idl-code" data-link-type="attribute" data-type="double?" href="#dom-animation-currenttime" id="ref-for-dom-animation-currenttime①"><c- g>currentTime</c-></a>;
-             <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④①"><c- b>double</c-></a>                   <a class="idl-code" data-link-type="attribute" data-type="double" href="#dom-animation-playbackrate" id="ref-for-dom-animation-playbackrate②"><c- g>playbackRate</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-animationplaystate" id="ref-for-enumdef-animationplaystate②"><c- n>AnimationPlayState</c-></a>       <a class="idl-code" data-link-type="attribute" data-readonly data-type="AnimationPlayState" href="#dom-animation-playstate" id="ref-for-dom-animation-playstate①"><c- g>playState</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-animationreplacestate" id="ref-for-enumdef-animationreplacestate②"><c- n>AnimationReplaceState</c-></a>    <a class="idl-code" data-link-type="attribute" data-readonly data-type="AnimationReplaceState" href="#dom-animation-replacestate" id="ref-for-dom-animation-replacestate②"><c- g>replaceState</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-boolean" id="ref-for-idl-boolean④"><c- b>boolean</c-></a>                  <a class="idl-code" data-link-type="attribute" data-readonly data-type="boolean" href="#dom-animation-pending" id="ref-for-dom-animation-pending①"><c- g>pending</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>Promise</c->&lt;<a class="n" data-link-type="idl-name" href="#animation" id="ref-for-animation①⑨"><c- n>Animation</c-></a>>       <a class="idl-code" data-link-type="attribute" data-readonly data-type="Promise<Animation>" href="#dom-animation-ready" id="ref-for-dom-animation-ready①"><c- g>ready</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>Promise</c->&lt;<a class="n" data-link-type="idl-name" href="#animation" id="ref-for-animation②①"><c- n>Animation</c-></a>>       <a class="idl-code" data-link-type="attribute" data-readonly data-type="Promise<Animation>" href="#dom-animation-finished" id="ref-for-dom-animation-finished①"><c- g>finished</c-></a>;
-             <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler" id="ref-for-eventhandler⑥"><c- n>EventHandler</c-></a>             <a class="idl-code" data-link-type="attribute" data-type="EventHandler" href="#dom-animation-onfinish" id="ref-for-dom-animation-onfinish①"><c- g>onfinish</c-></a>;
-             <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler" id="ref-for-eventhandler①①"><c- n>EventHandler</c-></a>             <a class="idl-code" data-link-type="attribute" data-type="EventHandler" href="#dom-animation-oncancel" id="ref-for-dom-animation-oncancel①"><c- g>oncancel</c-></a>;
-             <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler" id="ref-for-eventhandler②①"><c- n>EventHandler</c-></a>             <a class="idl-code" data-link-type="attribute" data-type="EventHandler" href="#dom-animation-onremove" id="ref-for-dom-animation-onremove②"><c- g>onremove</c-></a>;
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-cancel" id="ref-for-dom-animation-cancel①"><c- g>cancel</c-></a>();
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-finish" id="ref-for-dom-animation-finish①①"><c- g>finish</c-></a>();
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-play" id="ref-for-dom-animation-play②"><c- g>play</c-></a>();
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-pause" id="ref-for-dom-animation-pause①"><c- g>pause</c-></a>();
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-updateplaybackrate" id="ref-for-dom-animation-updateplaybackrate②"><c- g>updatePlaybackRate</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double⑤①"><c- b>double</c-></a> <a class="idl-code" data-link-type="argument" href="#dom-animation-updateplaybackrate-playbackrate-playbackrate" id="ref-for-dom-animation-updateplaybackrate-playbackrate-playbackrate②"><c- g>playbackRate</c-></a>);
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-reverse" id="ref-for-dom-animation-reverse①"><c- g>reverse</c-></a>();
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-persist" id="ref-for-dom-animation-persist③"><c- g>persist</c-></a>();
-    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-commitstyles" id="ref-for-dom-animation-commitstyles②"><c- g>commitStyles</c-></a>();
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#animation"><code><c- g>Animation</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#eventtarget"><c- n>EventTarget</c-></a> {
+    <a class="idl-code" data-link-type="constructor" href="#dom-animation-animation"><c- g>constructor</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#animationeffect"><c- n>AnimationEffect</c-></a>? <a class="idl-code" data-link-type="argument" href="#dom-animation-animation-effect-timeline-effect"><c- g>effect</c-></a> = <c- b>null</c->,
+                <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#animationtimeline"><c- n>AnimationTimeline</c-></a>? <a class="idl-code" data-link-type="argument" href="#dom-animation-animation-effect-timeline-timeline"><c- g>timeline</c-></a>);
+             <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a>                <a class="idl-code" data-link-type="attribute" data-type="DOMString" href="#dom-animation-id"><c- g>id</c-></a>;
+             <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#animationeffect"><c- n>AnimationEffect</c-></a>?         <a class="idl-code" data-link-type="attribute" data-type="AnimationEffect?" href="#dom-animation-effect"><c- g>effect</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#animationtimeline"><c- n>AnimationTimeline</c-></a>?       <a class="idl-code" data-link-type="attribute" data-readonly data-type="AnimationTimeline?" href="#dom-animation-timeline"><c- g>timeline</c-></a>;
+             <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>?                  <a class="idl-code" data-link-type="attribute" data-type="double?" href="#dom-animation-starttime"><c- g>startTime</c-></a>;
+             <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>?                  <a class="idl-code" data-link-type="attribute" data-type="double?" href="#dom-animation-currenttime"><c- g>currentTime</c-></a>;
+             <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>                   <a class="idl-code" data-link-type="attribute" data-type="double" href="#dom-animation-playbackrate"><c- g>playbackRate</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-animationplaystate"><c- n>AnimationPlayState</c-></a>       <a class="idl-code" data-link-type="attribute" data-readonly data-type="AnimationPlayState" href="#dom-animation-playstate"><c- g>playState</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-animationreplacestate"><c- n>AnimationReplaceState</c-></a>    <a class="idl-code" data-link-type="attribute" data-readonly data-type="AnimationReplaceState" href="#dom-animation-replacestate"><c- g>replaceState</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-boolean"><c- b>boolean</c-></a>                  <a class="idl-code" data-link-type="attribute" data-readonly data-type="boolean" href="#dom-animation-pending"><c- g>pending</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>Promise</c->&lt;<a class="n" data-link-type="idl-name" href="#animation"><c- n>Animation</c-></a>>       <a class="idl-code" data-link-type="attribute" data-readonly data-type="Promise<Animation>" href="#dom-animation-ready"><c- g>ready</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <c- b>Promise</c->&lt;<a class="n" data-link-type="idl-name" href="#animation"><c- n>Animation</c-></a>>       <a class="idl-code" data-link-type="attribute" data-readonly data-type="Promise<Animation>" href="#dom-animation-finished"><c- g>finished</c-></a>;
+             <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler"><c- n>EventHandler</c-></a>             <a class="idl-code" data-link-type="attribute" data-type="EventHandler" href="#dom-animation-onfinish"><c- g>onfinish</c-></a>;
+             <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler"><c- n>EventHandler</c-></a>             <a class="idl-code" data-link-type="attribute" data-type="EventHandler" href="#dom-animation-oncancel"><c- g>oncancel</c-></a>;
+             <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler"><c- n>EventHandler</c-></a>             <a class="idl-code" data-link-type="attribute" data-type="EventHandler" href="#dom-animation-onremove"><c- g>onremove</c-></a>;
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-cancel"><c- g>cancel</c-></a>();
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-finish"><c- g>finish</c-></a>();
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-play"><c- g>play</c-></a>();
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-pause"><c- g>pause</c-></a>();
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-updateplaybackrate"><c- g>updatePlaybackRate</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a> <a class="idl-code" data-link-type="argument" href="#dom-animation-updateplaybackrate-playbackrate-playbackrate"><c- g>playbackRate</c-></a>);
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-reverse"><c- g>reverse</c-></a>();
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-persist"><c- g>persist</c-></a>();
+    <c- b>void</c-> <a class="idl-code" data-link-type="method" href="#dom-animation-commitstyles"><c- g>commitStyles</c-></a>();
 };
 
 <c- b>enum</c-> <a href="#enumdef-animationplaystate"><code><c- g>AnimationPlayState</c-></code></a> { <a href="#dom-animationplaystate-idle"><code><c- s>"idle"</c-></code></a>, <a href="#dom-animationplaystate-running"><code><c- s>"running"</c-></code></a>, <a href="#dom-animationplaystate-paused"><code><c- s>"paused"</c-></code></a>, <a href="#dom-animationplaystate-finished"><code><c- s>"finished"</c-></code></a> };
 
 <c- b>enum</c-> <a href="#enumdef-animationreplacestate"><code><c- g>AnimationReplaceState</c-></code></a> { <a href="#dom-animationreplacestate-active"><code><c- s>"active"</c-></code></a>, <a href="#dom-animationreplacestate-removed"><code><c- s>"removed"</c-></code></a>, <a href="#dom-animationreplacestate-persisted"><code><c- s>"persisted"</c-></code></a> };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed③①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
 <c- b>interface</c-> <a href="#animationeffect"><code><c- g>AnimationEffect</c-></code></a> {
-    <a class="n" data-link-type="idl-name" href="#dictdef-effecttiming" id="ref-for-dictdef-effecttiming①⑤"><c- n>EffectTiming</c-></a>         <a class="idl-code" data-link-type="method" href="#dom-animationeffect-gettiming" id="ref-for-dom-animationeffect-gettiming⑥"><c- g>getTiming</c-></a>();
-    <a class="n" data-link-type="idl-name" href="#dictdef-computedeffecttiming" id="ref-for-dictdef-computedeffecttiming③"><c- n>ComputedEffectTiming</c-></a> <a class="idl-code" data-link-type="method" href="#dom-animationeffect-getcomputedtiming" id="ref-for-dom-animationeffect-getcomputedtiming⑦"><c- g>getComputedTiming</c-></a>();
-    <c- b>void</c->                 <a class="idl-code" data-link-type="method" href="#dom-animationeffect-updatetiming" id="ref-for-dom-animationeffect-updatetiming②"><c- g>updateTiming</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-optionaleffecttiming" id="ref-for-dictdef-optionaleffecttiming④"><c- n>OptionalEffectTiming</c-></a> <a class="idl-code" data-link-type="argument" href="#dom-animationeffect-updatetiming-timing-timing" id="ref-for-dom-animationeffect-updatetiming-timing-timing③"><c- g>timing</c-></a> = {});
+    <a class="n" data-link-type="idl-name" href="#dictdef-effecttiming"><c- n>EffectTiming</c-></a>         <a class="idl-code" data-link-type="method" href="#dom-animationeffect-gettiming"><c- g>getTiming</c-></a>();
+    <a class="n" data-link-type="idl-name" href="#dictdef-computedeffecttiming"><c- n>ComputedEffectTiming</c-></a> <a class="idl-code" data-link-type="method" href="#dom-animationeffect-getcomputedtiming"><c- g>getComputedTiming</c-></a>();
+    <c- b>void</c->                 <a class="idl-code" data-link-type="method" href="#dom-animationeffect-updatetiming"><c- g>updateTiming</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-optionaleffecttiming"><c- n>OptionalEffectTiming</c-></a> <a class="idl-code" data-link-type="argument" href="#dom-animationeffect-updatetiming-timing-timing"><c- g>timing</c-></a> = {});
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-effecttiming"><code><c- g>EffectTiming</c-></code></a> {
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double⑨①"><c- b>double</c-></a>                             <a class="idl-code" data-default="0" data-link-type="dict-member" data-type="double                             " href="#dom-effecttiming-delay" id="ref-for-dom-effecttiming-delay②"><c- g>delay</c-></a> = 0;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①⓪①"><c- b>double</c-></a>                             <a class="idl-code" data-default="0" data-link-type="dict-member" data-type="double                             " href="#dom-effecttiming-enddelay" id="ref-for-dom-effecttiming-enddelay②"><c- g>endDelay</c-></a> = 0;
-    <a class="n" data-link-type="idl-name" href="#enumdef-fillmode" id="ref-for-enumdef-fillmode②①"><c- n>FillMode</c-></a>                           <a class="idl-code" data-default="&quot;auto&quot;" data-link-type="dict-member" data-type="FillMode                           " href="#dom-effecttiming-fill" id="ref-for-dom-effecttiming-fill②①"><c- g>fill</c-></a> = "auto";
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①①①"><c- b>double</c-></a>                             <a class="idl-code" data-default="0.0" data-link-type="dict-member" data-type="double                             " href="#dom-effecttiming-iterationstart" id="ref-for-dom-effecttiming-iterationstart⑥"><c- g>iterationStart</c-></a> = 0.0;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①③"><c- b>unrestricted</c-> <c- b>double</c-></a>                <a class="idl-code" data-default="1.0" data-link-type="dict-member" data-type="unrestricted double                " href="#dom-effecttiming-iterations" id="ref-for-dom-effecttiming-iterations⑤"><c- g>iterations</c-></a> = 1.0;
-    (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①④"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString②①"><c- b>DOMString</c-></a>) <a class="idl-code" data-default="&quot;auto&quot;" data-link-type="dict-member" data-type="(unrestricted double or DOMString) " href="#dom-effecttiming-duration" id="ref-for-dom-effecttiming-duration②①"><c- g>duration</c-></a> = "auto";
-    <a class="n" data-link-type="idl-name" href="#enumdef-playbackdirection" id="ref-for-enumdef-playbackdirection③"><c- n>PlaybackDirection</c-></a>                  <a class="idl-code" data-default="&quot;normal&quot;" data-link-type="dict-member" data-type="PlaybackDirection                  " href="#dom-effecttiming-direction" id="ref-for-dom-effecttiming-direction②"><c- g>direction</c-></a> = "normal";
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString③①"><c- b>DOMString</c-></a>                          <a class="idl-code" data-default="&quot;linear&quot;" data-link-type="dict-member" data-type="DOMString                          " href="#dom-effecttiming-easing" id="ref-for-dom-effecttiming-easing⑥"><c- g>easing</c-></a> = "linear";
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>                             <a class="idl-code" data-default="0" data-link-type="dict-member" data-type="double                             " href="#dom-effecttiming-delay"><c- g>delay</c-></a> = 0;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>                             <a class="idl-code" data-default="0" data-link-type="dict-member" data-type="double                             " href="#dom-effecttiming-enddelay"><c- g>endDelay</c-></a> = 0;
+    <a class="n" data-link-type="idl-name" href="#enumdef-fillmode"><c- n>FillMode</c-></a>                           <a class="idl-code" data-default="&quot;auto&quot;" data-link-type="dict-member" data-type="FillMode                           " href="#dom-effecttiming-fill"><c- g>fill</c-></a> = "auto";
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>                             <a class="idl-code" data-default="0.0" data-link-type="dict-member" data-type="double                             " href="#dom-effecttiming-iterationstart"><c- g>iterationStart</c-></a> = 0.0;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>                <a class="idl-code" data-default="1.0" data-link-type="dict-member" data-type="unrestricted double                " href="#dom-effecttiming-iterations"><c- g>iterations</c-></a> = 1.0;
+    (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a>) <a class="idl-code" data-default="&quot;auto&quot;" data-link-type="dict-member" data-type="(unrestricted double or DOMString) " href="#dom-effecttiming-duration"><c- g>duration</c-></a> = "auto";
+    <a class="n" data-link-type="idl-name" href="#enumdef-playbackdirection"><c- n>PlaybackDirection</c-></a>                  <a class="idl-code" data-default="&quot;normal&quot;" data-link-type="dict-member" data-type="PlaybackDirection                  " href="#dom-effecttiming-direction"><c- g>direction</c-></a> = "normal";
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a>                          <a class="idl-code" data-default="&quot;linear&quot;" data-link-type="dict-member" data-type="DOMString                          " href="#dom-effecttiming-easing"><c- g>easing</c-></a> = "linear";
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-optionaleffecttiming"><code><c- g>OptionalEffectTiming</c-></code></a> {
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①②①"><c- b>double</c-></a>                             <a class="idl-code" data-link-type="dict-member" data-type="double                             " href="#dom-optionaleffecttiming-delay" id="ref-for-dom-optionaleffecttiming-delay①"><c- g>delay</c-></a>;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①③①"><c- b>double</c-></a>                             <a class="idl-code" data-link-type="dict-member" data-type="double                             " href="#dom-optionaleffecttiming-enddelay" id="ref-for-dom-optionaleffecttiming-enddelay①"><c- g>endDelay</c-></a>;
-    <a class="n" data-link-type="idl-name" href="#enumdef-fillmode" id="ref-for-enumdef-fillmode③①"><c- n>FillMode</c-></a>                           <a class="idl-code" data-link-type="dict-member" data-type="FillMode                           " href="#dom-optionaleffecttiming-fill" id="ref-for-dom-optionaleffecttiming-fill①"><c- g>fill</c-></a>;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①④①"><c- b>double</c-></a>                             <a class="idl-code" data-link-type="dict-member" data-type="double                             " href="#dom-optionaleffecttiming-iterationstart" id="ref-for-dom-optionaleffecttiming-iterationstart①"><c- g>iterationStart</c-></a>;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double②①"><c- b>unrestricted</c-> <c- b>double</c-></a>                <a class="idl-code" data-link-type="dict-member" data-type="unrestricted double                " href="#dom-optionaleffecttiming-iterations" id="ref-for-dom-optionaleffecttiming-iterations①"><c- g>iterations</c-></a>;
-    (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double③①"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString④①"><c- b>DOMString</c-></a>) <a class="idl-code" data-link-type="dict-member" data-type="(unrestricted double or DOMString) " href="#dom-optionaleffecttiming-duration" id="ref-for-dom-optionaleffecttiming-duration①"><c- g>duration</c-></a>;
-    <a class="n" data-link-type="idl-name" href="#enumdef-playbackdirection" id="ref-for-enumdef-playbackdirection①①"><c- n>PlaybackDirection</c-></a>                  <a class="idl-code" data-link-type="dict-member" data-type="PlaybackDirection                  " href="#dom-optionaleffecttiming-direction" id="ref-for-dom-optionaleffecttiming-direction①"><c- g>direction</c-></a>;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString⑤①"><c- b>DOMString</c-></a>                          <a class="idl-code" data-link-type="dict-member" data-type="DOMString                          " href="#dom-optionaleffecttiming-easing" id="ref-for-dom-optionaleffecttiming-easing①"><c- g>easing</c-></a>;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>                             <a class="idl-code" data-link-type="dict-member" data-type="double                             " href="#dom-optionaleffecttiming-delay"><c- g>delay</c-></a>;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>                             <a class="idl-code" data-link-type="dict-member" data-type="double                             " href="#dom-optionaleffecttiming-enddelay"><c- g>endDelay</c-></a>;
+    <a class="n" data-link-type="idl-name" href="#enumdef-fillmode"><c- n>FillMode</c-></a>                           <a class="idl-code" data-link-type="dict-member" data-type="FillMode                           " href="#dom-optionaleffecttiming-fill"><c- g>fill</c-></a>;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>                             <a class="idl-code" data-link-type="dict-member" data-type="double                             " href="#dom-optionaleffecttiming-iterationstart"><c- g>iterationStart</c-></a>;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>                <a class="idl-code" data-link-type="dict-member" data-type="unrestricted double                " href="#dom-optionaleffecttiming-iterations"><c- g>iterations</c-></a>;
+    (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a>) <a class="idl-code" data-link-type="dict-member" data-type="(unrestricted double or DOMString) " href="#dom-optionaleffecttiming-duration"><c- g>duration</c-></a>;
+    <a class="n" data-link-type="idl-name" href="#enumdef-playbackdirection"><c- n>PlaybackDirection</c-></a>                  <a class="idl-code" data-link-type="dict-member" data-type="PlaybackDirection                  " href="#dom-optionaleffecttiming-direction"><c- g>direction</c-></a>;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a>                          <a class="idl-code" data-link-type="dict-member" data-type="DOMString                          " href="#dom-optionaleffecttiming-easing"><c- g>easing</c-></a>;
 };
 
 <c- b>enum</c-> <a href="#enumdef-fillmode"><code><c- g>FillMode</c-></code></a> { <a href="#dom-fillmode-none"><code><c- s>"none"</c-></code></a>, <a href="#dom-fillmode-forwards"><code><c- s>"forwards"</c-></code></a>, <a href="#dom-fillmode-backwards"><code><c- s>"backwards"</c-></code></a>, <a href="#dom-fillmode-both"><code><c- s>"both"</c-></code></a>, <a href="#dom-fillmode-auto"><code><c- s>"auto"</c-></code></a> };
 
 <c- b>enum</c-> <a href="#enumdef-playbackdirection"><code><c- g>PlaybackDirection</c-></code></a> { <a href="#dom-playbackdirection-normal"><code><c- s>"normal"</c-></code></a>, <a href="#dom-playbackdirection-reverse"><code><c- s>"reverse"</c-></code></a>, <a href="#dom-playbackdirection-alternate"><code><c- s>"alternate"</c-></code></a>, <a href="#dom-playbackdirection-alternate-reverse"><code><c- s>"alternate-reverse"</c-></code></a> };
 
-<c- b>dictionary</c-> <a href="#dictdef-computedeffecttiming"><code><c- g>ComputedEffectTiming</c-></code></a> : <a class="n" data-link-type="idl-name" href="#dictdef-effecttiming" id="ref-for-dictdef-effecttiming⑧①"><c- n>EffectTiming</c-></a> {
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double⑤①"><c- b>unrestricted</c-> <c- b>double</c-></a>  <a class="idl-code" data-link-type="dict-member" data-type="unrestricted double  " href="#dom-computedeffecttiming-endtime" id="ref-for-dom-computedeffecttiming-endtime①"><c- g>endTime</c-></a>;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double⑥①"><c- b>unrestricted</c-> <c- b>double</c-></a>  <a class="idl-code" data-link-type="dict-member" data-type="unrestricted double  " href="#dom-computedeffecttiming-activeduration" id="ref-for-dom-computedeffecttiming-activeduration①"><c- g>activeDuration</c-></a>;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①⑧①"><c- b>double</c-></a>?              <a class="idl-code" data-link-type="dict-member" data-type="double?              " href="#dom-computedeffecttiming-localtime" id="ref-for-dom-computedeffecttiming-localtime①"><c- g>localTime</c-></a>;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①⑨①"><c- b>double</c-></a>?              <a class="idl-code" data-link-type="dict-member" data-type="double?              " href="#dom-computedeffecttiming-progress" id="ref-for-dom-computedeffecttiming-progress①"><c- g>progress</c-></a>;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double⑦①"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a class="idl-code" data-link-type="dict-member" data-type="unrestricted double? " href="#dom-computedeffecttiming-currentiteration" id="ref-for-dom-computedeffecttiming-currentiteration①"><c- g>currentIteration</c-></a>;
+<c- b>dictionary</c-> <a href="#dictdef-computedeffecttiming"><code><c- g>ComputedEffectTiming</c-></code></a> : <a class="n" data-link-type="idl-name" href="#dictdef-effecttiming"><c- n>EffectTiming</c-></a> {
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>  <a class="idl-code" data-link-type="dict-member" data-type="unrestricted double  " href="#dom-computedeffecttiming-endtime"><c- g>endTime</c-></a>;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>  <a class="idl-code" data-link-type="dict-member" data-type="unrestricted double  " href="#dom-computedeffecttiming-activeduration"><c- g>activeDuration</c-></a>;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>?              <a class="idl-code" data-link-type="dict-member" data-type="double?              " href="#dom-computedeffecttiming-localtime"><c- g>localTime</c-></a>;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>?              <a class="idl-code" data-link-type="dict-member" data-type="double?              " href="#dom-computedeffecttiming-progress"><c- g>progress</c-></a>;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a>? <a class="idl-code" data-link-type="dict-member" data-type="unrestricted double? " href="#dom-computedeffecttiming-currentiteration"><c- g>currentIteration</c-></a>;
 };
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed④①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#keyframeeffect"><code><c- g>KeyframeEffect</c-></code></a> : <a class="n" data-link-type="idl-name" href="#animationeffect" id="ref-for-animationeffect⑥①"><c- n>AnimationEffect</c-></a> {
-    <a class="idl-code" data-link-type="constructor" href="#dom-keyframeeffect-keyframeeffect" id="ref-for-dom-keyframeeffect-keyframeeffect⑧"><c- g>constructor</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element②①"><c- n>Element</c-></a>? <a href="#dom-keyframeeffect-constructor-target-keyframes-options-target"><code><c- g>target</c-></code></a>,
-                <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-object" id="ref-for-idl-object④"><c- b>object</c-></a>? <a href="#dom-keyframeeffect-constructor-target-keyframes-options-keyframes"><code><c- g>keyframes</c-></code></a>,
-                <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①①①"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions⑦"><c- n>KeyframeEffectOptions</c-></a>) <a href="#dom-keyframeeffect-constructor-target-keyframes-options-options"><code><c- g>options</c-></code></a> = {});
-    <a class="idl-code" data-link-type="constructor" href="#dom-keyframeeffect-keyframeeffect-source" id="ref-for-dom-keyframeeffect-keyframeeffect-source①"><c- g>constructor</c-></a>(<a class="n" data-link-type="idl-name" href="#keyframeeffect" id="ref-for-keyframeeffect①⑥"><c- n>KeyframeEffect</c-></a> <a href="#dom-keyframeeffect-constructor-source-source"><code><c- g>source</c-></code></a>);
-    <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element③①"><c- n>Element</c-></a>? <a class="idl-code" data-link-type="attribute" data-type="Element?" href="#dom-keyframeeffect-target" id="ref-for-dom-keyframeeffect-target①"><c- g>target</c-></a>;
-    <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring④"><c- n>CSSOMString</c-></a>? <a class="idl-code" data-link-type="attribute" data-type="CSSOMString?" href="#dom-keyframeeffect-pseudoelement" id="ref-for-dom-keyframeeffect-pseudoelement①"><c- g>pseudoElement</c-></a>;
-    <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-compositeoperation" id="ref-for-enumdef-compositeoperation⑤"><c- n>CompositeOperation</c-></a>             <a class="idl-code" data-link-type="attribute" data-type="CompositeOperation" href="#dom-keyframeeffect-composite" id="ref-for-dom-keyframeeffect-composite②"><c- g>composite</c-></a>;
-    <c- b>sequence</c->&lt;<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-object" id="ref-for-idl-object①①"><c- b>object</c-></a>> <a class="idl-code" data-link-type="method" href="#dom-keyframeeffect-getkeyframes" id="ref-for-dom-keyframeeffect-getkeyframes②"><c- g>getKeyframes</c-></a>();
-    <c- b>void</c->             <a class="idl-code" data-link-type="method" href="#dom-keyframeeffect-setkeyframes" id="ref-for-dom-keyframeeffect-setkeyframes③"><c- g>setKeyframes</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-object" id="ref-for-idl-object②①"><c- b>object</c-></a>? <a href="#dom-keyframeeffect-setkeyframes-keyframes-keyframes"><code><c- g>keyframes</c-></code></a>);
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#keyframeeffect"><code><c- g>KeyframeEffect</c-></code></a> : <a class="n" data-link-type="idl-name" href="#animationeffect"><c- n>AnimationEffect</c-></a> {
+    <a class="idl-code" data-link-type="constructor" href="#dom-keyframeeffect-keyframeeffect"><c- g>constructor</c-></a>(<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element"><c- n>Element</c-></a>? <a class="idl-code" data-link-type="argument" href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-target"><c- g>target</c-></a>,
+                <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-object"><c- b>object</c-></a>? <a class="idl-code" data-link-type="argument" href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-keyframes"><c- g>keyframes</c-></a>,
+                <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="#dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a>) <a class="idl-code" data-link-type="argument" href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-options"><c- g>options</c-></a> = {});
+    <a class="idl-code" data-link-type="constructor" href="#dom-keyframeeffect-keyframeeffect-source"><c- g>constructor</c-></a>(<a class="n" data-link-type="idl-name" href="#keyframeeffect"><c- n>KeyframeEffect</c-></a> <a class="idl-code" data-link-type="argument" href="#dom-keyframeeffect-keyframeeffect-source-source"><c- g>source</c-></a>);
+    <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element"><c- n>Element</c-></a>? <a class="idl-code" data-link-type="attribute" data-type="Element?" href="#dom-keyframeeffect-target"><c- g>target</c-></a>;
+    <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring"><c- n>CSSOMString</c-></a>? <a class="idl-code" data-link-type="attribute" data-type="CSSOMString?" href="#dom-keyframeeffect-pseudoelement"><c- g>pseudoElement</c-></a>;
+    <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-compositeoperation"><c- n>CompositeOperation</c-></a>             <a class="idl-code" data-link-type="attribute" data-type="CompositeOperation" href="#dom-keyframeeffect-composite"><c- g>composite</c-></a>;
+    <c- b>sequence</c->&lt;<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-object"><c- b>object</c-></a>> <a class="idl-code" data-link-type="method" href="#dom-keyframeeffect-getkeyframes"><c- g>getKeyframes</c-></a>();
+    <c- b>void</c->             <a class="idl-code" data-link-type="method" href="#dom-keyframeeffect-setkeyframes"><c- g>setKeyframes</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-object"><c- b>object</c-></a>? <a href="#dom-keyframeeffect-setkeyframes-keyframes-keyframes"><code><c- g>keyframes</c-></code></a>);
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-basecomputedkeyframe"><code><c- g>BaseComputedKeyframe</c-></code></a> {
-     <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②②①"><c- b>double</c-></a>?                  <a data-default="null" data-type="double?                  " href="#dom-basecomputedkeyframe-offset"><code><c- g>offset</c-></code></a> = <c- b>null</c->;
-     <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②③①"><c- b>double</c-></a>                   <a data-type="double                   " href="#dom-basecomputedkeyframe-computedoffset"><code><c- g>computedOffset</c-></code></a>;
-     <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString⑦①"><c- b>DOMString</c-></a>                <a data-default="&quot;linear&quot;" data-type="DOMString                " href="#dom-basecomputedkeyframe-easing"><code><c- g>easing</c-></code></a> = "linear";
-     <a class="n" data-link-type="idl-name" href="#enumdef-compositeoperationorauto" id="ref-for-enumdef-compositeoperationorauto⑥"><c- n>CompositeOperationOrAuto</c-></a> <a data-default="&quot;auto&quot;" data-type="CompositeOperationOrAuto " href="#dom-basecomputedkeyframe-composite"><code><c- g>composite</c-></code></a> = "auto";
+     <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>?                  <a data-default="null" data-type="double?                  " href="#dom-basecomputedkeyframe-offset"><code><c- g>offset</c-></code></a> = <c- b>null</c->;
+     <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>                   <a data-type="double                   " href="#dom-basecomputedkeyframe-computedoffset"><code><c- g>computedOffset</c-></code></a>;
+     <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a>                <a data-default="&quot;linear&quot;" data-type="DOMString                " href="#dom-basecomputedkeyframe-easing"><code><c- g>easing</c-></code></a> = "linear";
+     <a class="n" data-link-type="idl-name" href="#enumdef-compositeoperationorauto"><c- n>CompositeOperationOrAuto</c-></a> <a data-default="&quot;auto&quot;" data-type="CompositeOperationOrAuto " href="#dom-basecomputedkeyframe-composite"><code><c- g>composite</c-></code></a> = "auto";
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-basepropertyindexedkeyframe"><code><c- g>BasePropertyIndexedKeyframe</c-></code></a> {
-    (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②④①"><c- b>double</c-></a>? <c- b>or</c-> <c- b>sequence</c->&lt;<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②⑤①"><c- b>double</c-></a>?>)                         <a data-default="[]" data-type="(double? or sequence<double?>)                         " href="#dom-basepropertyindexedkeyframe-offset"><code><c- g>offset</c-></code></a> = [];
-    (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString⑧①"><c- b>DOMString</c-></a> <c- b>or</c-> <c- b>sequence</c->&lt;<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString⑨①"><c- b>DOMString</c-></a>>)                     <a data-default="[]" data-type="(DOMString or sequence<DOMString>)                     " href="#dom-basepropertyindexedkeyframe-easing"><code><c- g>easing</c-></code></a> = [];
-    (<a class="n" data-link-type="idl-name" href="#enumdef-compositeoperationorauto" id="ref-for-enumdef-compositeoperationorauto①①"><c- n>CompositeOperationOrAuto</c-></a> <c- b>or</c-> <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#enumdef-compositeoperationorauto" id="ref-for-enumdef-compositeoperationorauto②①"><c- n>CompositeOperationOrAuto</c-></a>>) <a data-default="[]" data-type="(CompositeOperationOrAuto or sequence<CompositeOperationOrAuto>) " href="#dom-basepropertyindexedkeyframe-composite"><code><c- g>composite</c-></code></a> = [];
+    (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <c- b>or</c-> <c- b>sequence</c->&lt;<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>?>)                         <a data-default="[]" data-type="(double? or sequence<double?>)                         " href="#dom-basepropertyindexedkeyframe-offset"><code><c- g>offset</c-></code></a> = [];
+    (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a> <c- b>or</c-> <c- b>sequence</c->&lt;<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a>>)                     <a data-default="[]" data-type="(DOMString or sequence<DOMString>)                     " href="#dom-basepropertyindexedkeyframe-easing"><code><c- g>easing</c-></code></a> = [];
+    (<a class="n" data-link-type="idl-name" href="#enumdef-compositeoperationorauto"><c- n>CompositeOperationOrAuto</c-></a> <c- b>or</c-> <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#enumdef-compositeoperationorauto"><c- n>CompositeOperationOrAuto</c-></a>>) <a data-default="[]" data-type="(CompositeOperationOrAuto or sequence<CompositeOperationOrAuto>) " href="#dom-basepropertyindexedkeyframe-composite"><code><c- g>composite</c-></code></a> = [];
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-basekeyframe"><code><c- g>BaseKeyframe</c-></code></a> {
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②⑥①"><c- b>double</c-></a>?                  <a data-default="null" data-type="double?                  " href="#dom-basekeyframe-offset"><code><c- g>offset</c-></code></a> = <c- b>null</c->;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString①⓪①"><c- b>DOMString</c-></a>                <a data-default="&quot;linear&quot;" data-type="DOMString                " href="#dom-basekeyframe-easing"><code><c- g>easing</c-></code></a> = "linear";
-    <a class="n" data-link-type="idl-name" href="#enumdef-compositeoperationorauto" id="ref-for-enumdef-compositeoperationorauto③①"><c- n>CompositeOperationOrAuto</c-></a> <a data-default="&quot;auto&quot;" data-type="CompositeOperationOrAuto " href="#dom-basekeyframe-composite"><code><c- g>composite</c-></code></a> = "auto";
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>?                  <a data-default="null" data-type="double?                  " href="#dom-basekeyframe-offset"><code><c- g>offset</c-></code></a> = <c- b>null</c->;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a>                <a data-default="&quot;linear&quot;" data-type="DOMString                " href="#dom-basekeyframe-easing"><code><c- g>easing</c-></code></a> = "linear";
+    <a class="n" data-link-type="idl-name" href="#enumdef-compositeoperationorauto"><c- n>CompositeOperationOrAuto</c-></a> <a data-default="&quot;auto&quot;" data-type="CompositeOperationOrAuto " href="#dom-basekeyframe-composite"><code><c- g>composite</c-></code></a> = "auto";
 };
 
-<c- b>dictionary</c-> <a href="#dictdef-keyframeeffectoptions"><code><c- g>KeyframeEffectOptions</c-></code></a> : <a class="n" data-link-type="idl-name" href="#dictdef-effecttiming" id="ref-for-dictdef-effecttiming①④①"><c- n>EffectTiming</c-></a> {
-    <a class="n" data-link-type="idl-name" href="#enumdef-compositeoperation" id="ref-for-enumdef-compositeoperation②①"><c- n>CompositeOperation</c-></a> <a class="idl-code" data-default="&quot;replace&quot;" data-link-type="dict-member" data-type="CompositeOperation " href="#dom-keyframeeffectoptions-composite" id="ref-for-dom-keyframeeffectoptions-composite①"><c- g>composite</c-></a> = "replace";
-    <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring②①"><c- n>CSSOMString</c-></a>?       <a class="idl-code" data-default="null" data-link-type="dict-member" data-type="CSSOMString?       " href="#dom-keyframeeffectoptions-pseudoelement" id="ref-for-dom-keyframeeffectoptions-pseudoelement①"><c- g>pseudoElement</c-></a> = <c- b>null</c->;
+<c- b>dictionary</c-> <a href="#dictdef-keyframeeffectoptions"><code><c- g>KeyframeEffectOptions</c-></code></a> : <a class="n" data-link-type="idl-name" href="#dictdef-effecttiming"><c- n>EffectTiming</c-></a> {
+    <a class="n" data-link-type="idl-name" href="#enumdef-compositeoperation"><c- n>CompositeOperation</c-></a> <a class="idl-code" data-default="&quot;replace&quot;" data-link-type="dict-member" data-type="CompositeOperation " href="#dom-keyframeeffectoptions-composite"><c- g>composite</c-></a> = "replace";
+    <a class="n" data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring"><c- n>CSSOMString</c-></a>?       <a class="idl-code" data-default="null" data-link-type="dict-member" data-type="CSSOMString?       " href="#dom-keyframeeffectoptions-pseudoelement"><c- g>pseudoElement</c-></a> = <c- b>null</c->;
 };
 
-<c- b>enum</c-> <a href="#enumdef-compositeoperation"><code><c- g>CompositeOperation</c-></code></a> { <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-replace" id="ref-for-dom-compositeoperation-replace②"><c- s>"replace"</c-></a>, <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-add" id="ref-for-dom-compositeoperation-add②"><c- s>"add"</c-></a>, <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-accumulate" id="ref-for-dom-compositeoperation-accumulate②"><c- s>"accumulate"</c-></a> };
+<c- b>enum</c-> <a href="#enumdef-compositeoperation"><code><c- g>CompositeOperation</c-></code></a> { <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-replace"><c- s>"replace"</c-></a>, <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-add"><c- s>"add"</c-></a>, <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-accumulate"><c- s>"accumulate"</c-></a> };
 
-<c- b>enum</c-> <a href="#enumdef-compositeoperationorauto"><code><c- g>CompositeOperationOrAuto</c-></code></a> { <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-replace" id="ref-for-dom-compositeoperation-replace①①"><c- s>"replace"</c-></a>, <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-add" id="ref-for-dom-compositeoperation-add①①"><c- s>"add"</c-></a>, <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-accumulate" id="ref-for-dom-compositeoperation-accumulate①①"><c- s>"accumulate"</c-></a>, <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperationorauto-auto" id="ref-for-dom-compositeoperationorauto-auto⑤①"><c- s>"auto"</c-></a> };
+<c- b>enum</c-> <a href="#enumdef-compositeoperationorauto"><code><c- g>CompositeOperationOrAuto</c-></code></a> { <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-replace"><c- s>"replace"</c-></a>, <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-add"><c- s>"add"</c-></a>, <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperation-accumulate"><c- s>"accumulate"</c-></a>, <a class="idl-code" data-link-type="enum-value" href="#dom-compositeoperationorauto-auto"><c- s>"auto"</c-></a> };
 
 <c- b>interface</c-> <c- b>mixin</c-> <a href="#animatable"><code><c- g>Animatable</c-></code></a> {
-    <a class="n" data-link-type="idl-name" href="#animation" id="ref-for-animation⑧①"><c- n>Animation</c-></a>           <a class="idl-code" data-link-type="method" href="#dom-animatable-animate" id="ref-for-dom-animatable-animate②①"><c- g>animate</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-object" id="ref-for-idl-object③①"><c- b>object</c-></a>? <a class="idl-code" data-link-type="argument" href="#dom-animatable-animate-keyframes-options-keyframes" id="ref-for-dom-animatable-animate-keyframes-options-keyframes①"><c- g>keyframes</c-></a>,
-                                <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="ref-for-idl-unrestricted-double①②①"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="#dictdef-keyframeanimationoptions" id="ref-for-dictdef-keyframeanimationoptions①①"><c- n>KeyframeAnimationOptions</c-></a>) <a class="idl-code" data-link-type="argument" href="#dom-animatable-animate-keyframes-options-options" id="ref-for-dom-animatable-animate-keyframes-options-options①"><c- g>options</c-></a> = {});
-    <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#animation" id="ref-for-animation⑨①"><c- n>Animation</c-></a>> <a class="idl-code" data-link-type="method" href="#dom-animatable-getanimations" id="ref-for-dom-animatable-getanimations④"><c- g>getAnimations</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-getanimationsoptions" id="ref-for-dictdef-getanimationsoptions①"><c- n>GetAnimationsOptions</c-></a> <a class="idl-code" data-link-type="argument" href="#dom-animatable-getanimations-options-options" id="ref-for-dom-animatable-getanimations-options-options③"><c- g>options</c-></a> = {});
+    <a class="n" data-link-type="idl-name" href="#animation"><c- n>Animation</c-></a>           <a class="idl-code" data-link-type="method" href="#dom-animatable-animate"><c- g>animate</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-object"><c- b>object</c-></a>? <a class="idl-code" data-link-type="argument" href="#dom-animatable-animate-keyframes-options-keyframes"><c- g>keyframes</c-></a>,
+                                <c- b>optional</c-> (<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unrestricted-double"><c- b>unrestricted</c-> <c- b>double</c-></a> <c- b>or</c-> <a class="n" data-link-type="idl-name" href="#dictdef-keyframeanimationoptions"><c- n>KeyframeAnimationOptions</c-></a>) <a class="idl-code" data-link-type="argument" href="#dom-animatable-animate-keyframes-options-options"><c- g>options</c-></a> = {});
+    <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#animation"><c- n>Animation</c-></a>> <a class="idl-code" data-link-type="method" href="#dom-animatable-getanimations"><c- g>getAnimations</c-></a>(<c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-getanimationsoptions"><c- n>GetAnimationsOptions</c-></a> <a class="idl-code" data-link-type="argument" href="#dom-animatable-getanimations-options-options"><c- g>options</c-></a> = {});
 };
 
-<c- b>dictionary</c-> <a href="#dictdef-keyframeanimationoptions"><code><c- g>KeyframeAnimationOptions</c-></code></a> : <a class="n" data-link-type="idl-name" href="#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions⑥①"><c- n>KeyframeEffectOptions</c-></a> {
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString①①①"><c- b>DOMString</c-></a> <a class="idl-code" data-default="&quot;&quot;" data-link-type="dict-member" data-type="DOMString " href="#dom-keyframeanimationoptions-id" id="ref-for-dom-keyframeanimationoptions-id①"><c- g>id</c-></a> = "";
+<c- b>dictionary</c-> <a href="#dictdef-keyframeanimationoptions"><code><c- g>KeyframeAnimationOptions</c-></code></a> : <a class="n" data-link-type="idl-name" href="#dictdef-keyframeeffectoptions"><c- n>KeyframeEffectOptions</c-></a> {
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a> <a class="idl-code" data-default="&quot;&quot;" data-link-type="dict-member" data-type="DOMString " href="#dom-keyframeanimationoptions-id"><c- g>id</c-></a> = "";
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-getanimationsoptions"><code><c- g>GetAnimationsOptions</c-></code></a> {
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-boolean" id="ref-for-idl-boolean②①"><c- b>boolean</c-></a> <a class="idl-code" data-default="false" data-link-type="dict-member" data-type="boolean " href="#dom-getanimationsoptions-subtree" id="ref-for-dom-getanimationsoptions-subtree②"><c- g>subtree</c-></a> = <c- b>false</c->;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-boolean"><c- b>boolean</c-></a> <a class="idl-code" data-default="false" data-link-type="dict-member" data-type="boolean " href="#dom-getanimationsoptions-subtree"><c- g>subtree</c-></a> = <c- b>false</c->;
 };
 
-<c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="https://html.spec.whatwg.org/#document" id="ref-for-document①②①"><c- g>Document</c-></a> {
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#documenttimeline" id="ref-for-documenttimeline②①"><c- n>DocumentTimeline</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="DocumentTimeline" href="#dom-document-timeline" id="ref-for-dom-document-timeline①"><c- g>timeline</c-></a>;
+<c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="https://html.spec.whatwg.org/#document"><c- g>Document</c-></a> {
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#documenttimeline"><c- n>DocumentTimeline</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="DocumentTimeline" href="#dom-document-timeline"><c- g>timeline</c-></a>;
 };
 
-<c- b>partial</c-> <c- b>interface</c-> <c- b>mixin</c-> <a class="idl-code" data-link-type="interface" href="https://dom.spec.whatwg.org/#documentorshadowroot" id="ref-for-documentorshadowroot①①"><c- g>DocumentOrShadowRoot</c-></a> {
-    <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#animation" id="ref-for-animation①③①"><c- n>Animation</c-></a>> <a class="idl-code" data-link-type="method" href="#dom-documentorshadowroot-getanimations" id="ref-for-dom-documentorshadowroot-getanimations②"><c- g>getAnimations</c-></a>();
+<c- b>partial</c-> <c- b>interface</c-> <c- b>mixin</c-> <a class="idl-code" data-link-type="interface" href="https://dom.spec.whatwg.org/#documentorshadowroot"><c- g>DocumentOrShadowRoot</c-></a> {
+    <c- b>sequence</c->&lt;<a class="n" data-link-type="idl-name" href="#animation"><c- n>Animation</c-></a>> <a class="idl-code" data-link-type="method" href="#dom-documentorshadowroot-getanimations"><c- g>getAnimations</c-></a>();
 };
 
-<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element" id="ref-for-element⑨①"><c- n>Element</c-></a> <c- b>includes</c-> <a class="n" data-link-type="idl-name" href="#animatable" id="ref-for-animatable③①"><c- n>Animatable</c-></a>;
+<a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#element"><c- n>Element</c-></a> <c- b>includes</c-> <a class="n" data-link-type="idl-name" href="#animatable"><c- n>Animatable</c-></a>;
 
-[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed⑤①"><c- g>Exposed</c-></a>=<c- n>Window</c->]
-<c- b>interface</c-> <a href="#animationplaybackevent"><code><c- g>AnimationPlaybackEvent</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#event" id="ref-for-event①"><c- n>Event</c-></a> {
-    <a class="idl-code" data-link-type="constructor" href="#dom-animationplaybackevent-animationplaybackevent" id="ref-for-dom-animationplaybackevent-animationplaybackevent①"><c- g>constructor</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString①③①"><c- b>DOMString</c-></a> <a href="#dom-animationplaybackevent-constructor-type-eventinitdict-type"><code><c- g>type</c-></code></a>, <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-animationplaybackeventinit" id="ref-for-dictdef-animationplaybackeventinit①"><c- n>AnimationPlaybackEventInit</c-></a> <a href="#dom-animationplaybackevent-constructor-type-eventinitdict-eventinitdict"><code><c- g>eventInitDict</c-></code></a> = {});
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②⑦①"><c- b>double</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="double?" href="#dom-animationplaybackevent-currenttime" id="ref-for-dom-animationplaybackevent-currenttime③①"><c- g>currentTime</c-></a>;
-    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②⑧①"><c- b>double</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="double?" href="#dom-animationplaybackevent-timelinetime" id="ref-for-dom-animationplaybackevent-timelinetime④①"><c- g>timelineTime</c-></a>;
+[<a class="idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed"><c- g>Exposed</c-></a>=<c- n>Window</c->]
+<c- b>interface</c-> <a href="#animationplaybackevent"><code><c- g>AnimationPlaybackEvent</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#event"><c- n>Event</c-></a> {
+    <a class="idl-code" data-link-type="constructor" href="#dom-animationplaybackevent-animationplaybackevent"><c- g>constructor</c-></a>(<a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString"><c- b>DOMString</c-></a> <a href="#dom-animationplaybackevent-animationplaybackevent-type-eventinitdict-type"><code><c- g>type</c-></code></a>, <c- b>optional</c-> <a class="n" data-link-type="idl-name" href="#dictdef-animationplaybackeventinit"><c- n>AnimationPlaybackEventInit</c-></a> <a href="#dom-animationplaybackevent-animationplaybackevent-type-eventinitdict-eventinitdict"><code><c- g>eventInitDict</c-></code></a> = {});
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="double?" href="#dom-animationplaybackevent-currenttime"><c- g>currentTime</c-></a>;
+    <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="double?" href="#dom-animationplaybackevent-timelinetime"><c- g>timelineTime</c-></a>;
 };
-<c- b>dictionary</c-> <a href="#dictdef-animationplaybackeventinit"><code><c- g>AnimationPlaybackEventInit</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#dictdef-eventinit" id="ref-for-dictdef-eventinit①"><c- n>EventInit</c-></a> {
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②⑨①"><c- b>double</c-></a>? <a class="idl-code" data-default="null" data-link-type="dict-member" data-type="double? " href="#dom-animationplaybackeventinit-currenttime" id="ref-for-dom-animationplaybackeventinit-currenttime①"><c- g>currentTime</c-></a> = <c- b>null</c->;
-    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⓪①"><c- b>double</c-></a>? <a class="idl-code" data-default="null" data-link-type="dict-member" data-type="double? " href="#dom-animationplaybackeventinit-timelinetime" id="ref-for-dom-animationplaybackeventinit-timelinetime①"><c- g>timelineTime</c-></a> = <c- b>null</c->;
+<c- b>dictionary</c-> <a href="#dictdef-animationplaybackeventinit"><code><c- g>AnimationPlaybackEventInit</c-></code></a> : <a class="n" data-link-type="idl-name" href="https://dom.spec.whatwg.org/#dictdef-eventinit"><c- n>EventInit</c-></a> {
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a class="idl-code" data-default="null" data-link-type="dict-member" data-type="double? " href="#dom-animationplaybackeventinit-currenttime"><c- g>currentTime</c-></a> = <c- b>null</c->;
+    <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double"><c- b>double</c-></a>? <a class="idl-code" data-default="null" data-link-type="dict-member" data-type="double? " href="#dom-animationplaybackeventinit-timelinetime"><c- g>timelineTime</c-></a> = <c- b>null</c->;
 };
 
 </pre>
@@ -9050,6 +9050,12 @@ argument</a>
     <li><a href="#ref-for-dom-documenttimeline-documenttimeline">6.3. The DocumentTimeline interface</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="dom-documenttimeline-documenttimeline-options-options">
+   <b><a href="#dom-documenttimeline-documenttimeline-options-options">#dom-documenttimeline-documenttimeline-options-options</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-documenttimeline-documenttimeline-options-options">6.3. The DocumentTimeline interface</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="animation">
    <b><a href="#animation">#animation</a></b><b>Referenced in:</b>
    <ul>
@@ -9066,6 +9072,18 @@ argument</a>
    <ul>
     <li><a href="#ref-for-dom-animation-animation">6.4. The Animation interface</a>
     <li><a href="#ref-for-dom-animation-animation①">6.8. The Animatable interface mixin</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-animation-animation-effect-timeline-effect">
+   <b><a href="#dom-animation-animation-effect-timeline-effect">#dom-animation-animation-effect-timeline-effect</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-animation-animation-effect-timeline-effect">6.4. The Animation interface</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-animation-animation-effect-timeline-timeline">
+   <b><a href="#dom-animation-animation-effect-timeline-timeline">#dom-animation-animation-effect-timeline-timeline</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-animation-animation-effect-timeline-timeline">6.4. The Animation interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-animation-id">
@@ -9465,12 +9483,6 @@ argument</a>
     <li><a href="#ref-for-keyframeeffect①⑤">6.13. Model liveness</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="dom-keyframeeffect-constructor-source-source">
-   <b><a href="#dom-keyframeeffect-constructor-source-source">#dom-keyframeeffect-constructor-source-source</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dom-keyframeeffect-constructor-source-source">6.6. The KeyframeEffect interface</a>
-   </ul>
-  </aside>
   <aside class="dfn-panel" data-for="dom-keyframeeffect-keyframeeffect">
    <b><a href="#dom-keyframeeffect-keyframeeffect">#dom-keyframeeffect-keyframeeffect</a></b><b>Referenced in:</b>
    <ul>
@@ -9482,10 +9494,34 @@ argument</a>
     <li><a href="#ref-for-dom-keyframeeffect-keyframeeffect⑤">6.8. The Animatable interface mixin</a> <a href="#ref-for-dom-keyframeeffect-keyframeeffect⑥">(2)</a> <a href="#ref-for-dom-keyframeeffect-keyframeeffect⑦">(3)</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="dom-keyframeeffect-keyframeeffect-target-keyframes-options-target">
+   <b><a href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-target">#dom-keyframeeffect-keyframeeffect-target-keyframes-options-target</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-keyframeeffect-keyframeeffect-target-keyframes-options-target">6.6. The KeyframeEffect interface</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-keyframeeffect-keyframeeffect-target-keyframes-options-keyframes">
+   <b><a href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-keyframes">#dom-keyframeeffect-keyframeeffect-target-keyframes-options-keyframes</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-keyframeeffect-keyframeeffect-target-keyframes-options-keyframes">6.6. The KeyframeEffect interface</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-keyframeeffect-keyframeeffect-target-keyframes-options-options">
+   <b><a href="#dom-keyframeeffect-keyframeeffect-target-keyframes-options-options">#dom-keyframeeffect-keyframeeffect-target-keyframes-options-options</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-keyframeeffect-keyframeeffect-target-keyframes-options-options">6.6. The KeyframeEffect interface</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="dom-keyframeeffect-keyframeeffect-source">
    <b><a href="#dom-keyframeeffect-keyframeeffect-source">#dom-keyframeeffect-keyframeeffect-source</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-dom-keyframeeffect-keyframeeffect-source">6.6. The KeyframeEffect interface</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-keyframeeffect-keyframeeffect-source-source">
+   <b><a href="#dom-keyframeeffect-keyframeeffect-source-source">#dom-keyframeeffect-keyframeeffect-source-source</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-keyframeeffect-keyframeeffect-source-source">6.6. The KeyframeEffect interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-keyframeeffect-target">

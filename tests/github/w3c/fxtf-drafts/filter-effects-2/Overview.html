@@ -10,91 +10,6 @@
   <link href="../csslogo.ico" rel="shortcut icon" type="image/x-icon">
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED" rel="stylesheet" type="text/css">
   <link href="https://www.w3.org/TR/filter-effects-2/" rel="canonical">
-<style>/* style-md-lists */
-
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
-}
-[data-md] > :last-child {
-    margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
-
-.heading, .issue, .note, .example, li, dt {
-    position: relative;
-}
-a.self-link {
-    position: absolute;
-    top: 0;
-    left: calc(-1 * (3.5rem - 26px));
-    width: calc(3.5rem - 26px);
-    height: 2em;
-    text-align: center;
-    border: none;
-    transition: opacity .2s;
-    opacity: .5;
-}
-a.self-link:hover {
-    opacity: 1;
-}
-.heading > a.self-link {
-    font-size: 83%;
-}
-li > a.self-link {
-    left: calc(-1 * (3.5rem - 26px) - 2em);
-}
-dfn > a.self-link {
-    top: auto;
-    left: auto;
-    opacity: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: gray;
-    color: white;
-    font-style: normal;
-    transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-    opacity: 1;
-}
-dfn > a.self-link:hover {
-    color: black;
-}
-
-a.self-link::before            { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-counters */
-
-body {
-    counter-reset: example figure issue;
-}
-.issue {
-    counter-increment: issue;
-}
-.issue:not(.no-marker)::before {
-    content: "Issue " counter(issue);
-}
-
-.example {
-    counter-increment: example;
-}
-.example:not(.no-marker)::before {
-    content: "Example " counter(example);
-}
-.invalid.example:not(.no-marker)::before,
-.illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
-}
-
-figcaption {
-    counter-increment: figure;
-}
-figcaption:not(.no-marker)::before {
-    content: "Figure " counter(figure) " ";
-}</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -157,6 +72,35 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
 <style>/* style-dfn-panel */
 
 .dfn-panel {
@@ -194,6 +138,62 @@ pre .property::before, pre .property::after {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: black;
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }</style>
 <style>/* style-syntax-highlighting */
 
 .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
@@ -270,10 +270,10 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <dd class="editor p-author h-card vcard" data-editor-id="90243"><a class="p-name fn u-email email" href="mailto:chrishtr@chromium.org">Chris Harrelson</a> (<a class="p-org org" href="http://www.google.com/">Google Inc.</a>)
      <dt class="editor">Former Editor:
      <dd class="editor p-author h-card vcard" data-editor-id="51803"><a class="p-name fn u-email email" href="mailto:dschulze@adobe.com">Dirk Schulze</a> (<span class="p-org org">Adobe Inc.</span>)
-     <dt>Suggest an Edit for this Spec:
-     <dd><a href="https://github.com/w3c/fxtf-drafts/blob/master/filter-effects-2/Overview.bs">GitHub Editor</a>
      <dt>Issue Tracking:
      <dd><a href="https://github.com/w3c/fxtf-drafts/labels/filter-effects-2">GitHub Issues</a>
+     <dt>Suggest an Edit for this Spec:
+     <dd><a href="https://github.com/w3c/fxtf-drafts/blob/master/filter-effects-2/Overview.bs">GitHub Editor</a>
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -375,22 +375,22 @@ See <a href="https://github.com/w3c/fxtf-drafts/issues/53">discussion in issue 5
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-backdrop-filter">backdrop-filter</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="https://drafts.fxtf.org/filter-effects-1/#typedef-filter-value-list" id="ref-for-typedef-filter-value-list">&lt;filter-value-list></a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>none
      <tr>
       <th>Applies to:
       <td>All elements. In SVG, it applies to <a data-link-type="dfn" href="https://svgwg.org/svg2-draft/struct.html#container-element" id="ref-for-container-element">container elements</a> without the defs element and all graphics elements
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>as specified
      <tr>
       <th>Canonical order:
@@ -399,7 +399,7 @@ See <a href="https://github.com/w3c/fxtf-drafts/issues/53">discussion in issue 5
       <th>Media:
       <td>visual
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animatable:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
       <td>yes
    </table>
    <p>If the value of the <a class="property" data-link-type="propdesc" href="#propdef-backdrop-filter" id="ref-for-propdef-backdrop-filter②">backdrop-filter</a> property is <span class="css">none</span> then there is no
@@ -610,8 +610,8 @@ performance breakdown. Clearly, this is not a scalable approach.</p>
     effects is expected or intuitive.</p>
     </div>
    </div>
-   <div class="example" id="example-dbba084f">
-    <a class="self-link" href="#example-dbba084f"></a> 
+   <div class="example" id="example-5dfcdb97">
+    <a class="self-link" href="#example-5dfcdb97"></a> 
     <p>Opacity poses much the same problem that filter does. Using the example
   above, but with the <code>filter: invert(1);</code> style replaced with <code>opacity: 0.5;</code> the results are similarly unintuitive. <b>Important note:</b> the left image below does <b>not</b> represent how the
   Backdrop Root is defined - this example is intended to illustrate why a
@@ -628,8 +628,8 @@ performance breakdown. Clearly, this is not a scalable approach.</p>
   expected.</p>
     </div>
    </div>
-   <div class="example" id="example-42ce43fb">
-    <a class="self-link" href="#example-42ce43fb"></a> 
+   <div class="example" id="example-5be62f4f">
+    <a class="self-link" href="#example-5be62f4f"></a> 
     <p>Because masks effectively change the opacity of parts of the elements they
   are masking, the behavior for mask operations is quite similar to that for
   elements with opacity applied. Using the same example as above, but replacing

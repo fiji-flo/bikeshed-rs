@@ -46,91 +46,6 @@ editors
         line-height: 0.5em;
     }
 </style>
-<style>/* style-md-lists */
-
-/* This is a weird hack for me not yet following the commonmark spec
-   regarding paragraph and lists. */
-[data-md] > :first-child {
-    margin-top: 0;
-}
-[data-md] > :last-child {
-    margin-bottom: 0;
-}</style>
-<style>/* style-selflinks */
-
-.heading, .issue, .note, .example, li, dt {
-    position: relative;
-}
-a.self-link {
-    position: absolute;
-    top: 0;
-    left: calc(-1 * (3.5rem - 26px));
-    width: calc(3.5rem - 26px);
-    height: 2em;
-    text-align: center;
-    border: none;
-    transition: opacity .2s;
-    opacity: .5;
-}
-a.self-link:hover {
-    opacity: 1;
-}
-.heading > a.self-link {
-    font-size: 83%;
-}
-li > a.self-link {
-    left: calc(-1 * (3.5rem - 26px) - 2em);
-}
-dfn > a.self-link {
-    top: auto;
-    left: auto;
-    opacity: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: gray;
-    color: white;
-    font-style: normal;
-    transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-    opacity: 1;
-}
-dfn > a.self-link:hover {
-    color: black;
-}
-
-a.self-link::before            { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
-<style>/* style-counters */
-
-body {
-    counter-reset: example figure issue;
-}
-.issue {
-    counter-increment: issue;
-}
-.issue:not(.no-marker)::before {
-    content: "Issue " counter(issue);
-}
-
-.example {
-    counter-increment: example;
-}
-.example:not(.no-marker)::before {
-    content: "Example " counter(example);
-}
-.invalid.example:not(.no-marker)::before,
-.illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
-}
-
-figcaption {
-    counter-increment: figure;
-}
-figcaption:not(.no-marker)::before {
-    content: "Figure " counter(figure) " ";
-}</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -193,6 +108,35 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
 <style>/* style-dfn-panel */
 
 .dfn-panel {
@@ -230,6 +174,62 @@ pre .property::before, pre .property::after {
 
 .dfn-paneled { cursor: pointer; }
 </style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: black;
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }</style>
 <style>/* style-syntax-highlighting */
 
 .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
@@ -309,10 +309,10 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <dd class="editor p-author h-card vcard" data-editor-id="47691"><a class="p-name fn u-email email" href="mailto:shanestephens@google.com">Shane Stephens</a> (<span class="p-org org">Google</span>)
      <dd class="editor p-author h-card vcard" data-editor-id="79168"><a class="p-name fn u-email email" href="mailto:jh.hong@lge.com">Jihye Hong</a> (<span class="p-org org">LG Electronics</span>)
      <dd class="editor p-author h-card vcard" data-editor-id="67534"><a class="p-name fn u-email email" href="mailto:ericwilligers@google.com">Eric Willigers</a> (<span class="p-org org">Google</span>)
-     <dt>Suggest an Edit for this Spec:
-     <dd><a href="https://github.com/w3c/fxtf-drafts/blob/master/motion-1/Overview.bs">GitHub Editor</a>
      <dt>Issue Tracking:
      <dd><a href="https://github.com/w3c/fxtf-drafts/labels/motion-1">GitHub Issues</a>
+     <dt>Suggest an Edit for this Spec:
+     <dd><a href="https://github.com/w3c/fxtf-drafts/blob/master/motion-1/Overview.bs">GitHub Editor</a>
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -434,28 +434,28 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-offset-path">offset-path</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="css" data-link-type="maybe" href="#valdef-offset-path-ray" id="ref-for-valdef-offset-path-ray">ray()</a> <span id="ref-for-comb-one①">|</span> <a href="#offsetpath-pathfunc" id="ref-for-offsetpath-pathfunc">path()</a> <span id="ref-for-comb-one②">|</span> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#url-value" id="ref-for-url-value">&lt;url></a> <span id="ref-for-comb-one③">|</span> [ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-shapes-2/#typedef-basic-shape" id="ref-for-typedef-basic-shape">&lt;basic-shape></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-all" id="ref-for-comb-all">&amp;&amp;</a> <a class="production css" data-link-type="type">&lt;coord-box></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt">?</a> ] <span id="ref-for-comb-one④">|</span> <span class="production">&lt;coord-box></span>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>none
      <tr>
       <th>Applies to:
       <td><a href="https://drafts.csswg.org/css-transforms-1/#transformable-element">transformable elements</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>as specified
      <tr>
       <th>Canonical order:
       <td>per grammar
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>by computed value
      <tr>
       <th>Media:
@@ -467,15 +467,15 @@ the <dfn class="dfn-paneled" data-dfn-for="offset path" data-dfn-type="dfn" data
 and the <dfn data-dfn-for="offset path" data-dfn-type="dfn" data-export id="offset-path-initial-direction">initial direction<a class="self-link" href="#offset-path-initial-direction"></a></dfn> (the initial orientation of the box (per <a class="property" data-link-type="propdesc" href="#propdef-offset-rotate" id="ref-for-propdef-offset-rotate①">offset-rotate</a>) at the <a data-link-type="dfn" href="#offset-path-initial-position" id="ref-for-offset-path-initial-position">initial position</a>).</p>
    <p>Values have the following meanings:</p>
    <dl>
-    <dt data-md><dfn class="dfn-paneled css" data-dfn-for="offset-path" data-dfn-type="value" data-export id="valdef-offset-path-ray">ray()</dfn> = ray( [ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value" title="Expands to: turn | rad | grad | deg">&lt;angle></a> &amp;&amp; <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-images-3/#typedef-size" id="ref-for-typedef-size" title="Expands to: farthest-side | closest-corner | <length-percentage>{2} | <length> | closest-side | farthest-corner | sides">&lt;size></a> &amp;&amp; contain? ] )
+    <dt data-md><dfn class="dfn-paneled css" data-dfn-for="offset-path" data-dfn-type="value" data-export id="valdef-offset-path-ray">ray()</dfn> = ray( [ <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value" title="Expands to: deg | grad | rad | turn">&lt;angle></a> &amp;&amp; <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-images-3/#typedef-size" id="ref-for-typedef-size" title="Expands to: <length-percentage>{2} | <length> | closest-corner | closest-side | farthest-corner | farthest-side | sides">&lt;size></a> &amp;&amp; contain? ] )
     <dd data-md>
      <dl>
-      <dt data-md><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①" title="Expands to: turn | rad | grad | deg">&lt;angle></a>
+      <dt data-md><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①" title="Expands to: deg | grad | rad | turn">&lt;angle></a>
       <dd data-md>
-       <p>The <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path①">offset path</a> is a line segment that starts from the position of the box and proceeds in the direction defined by the specified <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value②" title="Expands to: turn | rad | grad | deg">&lt;angle></a>. As with <a href="https://www.w3.org/TR/css3-images/#gradients">CSS gradients</a>, <span class="production" id="ref-for-angle-value③" title="Expands to: turn | rad | grad | deg">&lt;angle></span> values are interpreted as bearing angles, with <span class="css">0deg</span> pointing up and positive angles representing clockwise rotation.</p>
+       <p>The <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path①">offset path</a> is a line segment that starts from the position of the box and proceeds in the direction defined by the specified <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value②" title="Expands to: deg | grad | rad | turn">&lt;angle></a>. As with <a href="https://www.w3.org/TR/css3-images/#gradients">CSS gradients</a>, <span class="production" id="ref-for-angle-value③" title="Expands to: deg | grad | rad | turn">&lt;angle></span> values are interpreted as bearing angles, with <span class="css">0deg</span> pointing up and positive angles representing clockwise rotation.</p>
       <dt data-md><dfn class="css" data-dfn-for="offsetpath" data-dfn-type="value" data-export id="valdef-offsetpath-size">&lt;size><a class="self-link" href="#valdef-offsetpath-size"></a></dfn>
       <dd data-md>
-       <p>Decides the path length used when <a class="property" data-link-type="propdesc" href="#propdef-offset-distance" id="ref-for-propdef-offset-distance②">offset-distance</a> is expressed as a percentage, using the distance to the containing box. For <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-images-3/#typedef-size" id="ref-for-typedef-size①" title="Expands to: farthest-side | closest-corner | <length-percentage>{2} | <length> | closest-side | farthest-corner | sides">&lt;size></a> values other than <a href="#size-sides" id="ref-for-size-sides">sides</a>, the path length is independent of <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value④" title="Expands to: turn | rad | grad | deg">&lt;angle></a>.</p>
+       <p>Decides the path length used when <a class="property" data-link-type="propdesc" href="#propdef-offset-distance" id="ref-for-propdef-offset-distance②">offset-distance</a> is expressed as a percentage, using the distance to the containing box. For <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-images-3/#typedef-size" id="ref-for-typedef-size①" title="Expands to: <length-percentage>{2} | <length> | closest-corner | closest-side | farthest-corner | farthest-side | sides">&lt;size></a> values other than <a href="#size-sides" id="ref-for-size-sides">sides</a>, the path length is independent of <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value④" title="Expands to: deg | grad | rad | turn">&lt;angle></a>.</p>
        <p>It is defined as:</p>
        <p> <b>&lt;size></b> = [ closest-side | closest-corner | farthest-side | farthest-corner | sides ]</p>
        <dl>
@@ -521,7 +521,7 @@ and the <dfn data-dfn-for="offset path" data-dfn-type="dfn" data-export id="offs
        <p>The <a class="css" data-link-type="maybe" href="https://drafts.fxtf.org/motion-1/#valdef-offsetpath-initial-direction" id="ref-for-valdef-offsetpath-initial-direction">initial direction</a> is defined by the vector connecting.</p>
        <p>the <a class="css" data-link-type="maybe" href="https://drafts.fxtf.org/motion-1/#valdef-offsetpath-initial-position" id="ref-for-valdef-offsetpath-initial-position⑤">initial position</a> with the next following coordinate pair that isn’t equal to the <span class="css" id="ref-for-valdef-offsetpath-initial-position⑥">initial position</span>.</p>
      </dl>
-     <p>The <a class="production css" data-link-type="type">&lt;coord-box></a> specified in combination with a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-shapes-2/#typedef-basic-shape" id="ref-for-typedef-basic-shape②">&lt;basic-shape></a> provides the reference box for the <span class="production" id="ref-for-typedef-basic-shape③">&lt;basic-shape></span>. If no reference box is specified, it defaults to <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-shapes-1/#valdef-shape-box-border-box" id="ref-for-valdef-shape-box-border-box">border-box</a>.</p>
+     <p>The <a class="production css" data-link-type="type">&lt;coord-box></a> specified in combination with a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-shapes-2/#typedef-basic-shape" id="ref-for-typedef-basic-shape②">&lt;basic-shape></a> provides the reference box for the <span class="production" id="ref-for-typedef-basic-shape③">&lt;basic-shape></span>. If no reference box is specified, it defaults to <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-backgrounds-3/#valdef-background-clip-border-box" id="ref-for-valdef-background-clip-border-box">border-box</a>.</p>
      <p>Apart from polygons with non-zero length, the <a class="css" data-link-type="maybe" href="https://drafts.fxtf.org/motion-1/#valdef-offsetpath-initial-direction" id="ref-for-valdef-offsetpath-initial-direction①">initial direction</a> is 90 degrees (i.e. to the right).</p>
      <p class="note" role="note"><span>Note:</span> This gives <span class="css">0deg</span> rotation when <a class="property" data-link-type="propdesc" href="#propdef-offset-rotate" id="ref-for-propdef-offset-rotate②">offset-rotate</a> is <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-auto" id="ref-for-valdef-offset-rotate-auto">auto</a>.</p>
     <dt data-md><a class="production css" data-link-type="type">&lt;coord-box></a>
@@ -744,28 +744,28 @@ See SVG 1.1 for more information about the <a class="css" data-link-type="maybe"
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-offset-distance">offset-distance</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage">&lt;length-percentage></a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>0
      <tr>
       <th>Applies to:
       <td><a href="https://drafts.csswg.org/css-transforms-1/#transformable-element">transformable elements</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>refer to the total path length
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①">&lt;length-percentage></a> value
      <tr>
       <th>Canonical order:
       <td>per grammar
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>by computed value
      <tr>
       <th>Media:
@@ -782,9 +782,9 @@ See SVG 1.1 for more information about the <a class="css" data-link-type="maybe"
    <p>Processing the distance along an <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path①②">offset path</a> operates differently depending upon the nature of the <span id="ref-for-offset-path①③">offset path</span>:</p>
    <ul>
     <li data-md>
-     <p>References to <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value⑤" title="Expands to: turn | rad | grad | deg">&lt;angle></a> <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path①④">offset path</a>s with contain are unclosed intervals.</p>
+     <p>References to <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value⑤" title="Expands to: deg | grad | rad | turn">&lt;angle></a> <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path①④">offset path</a>s with contain are unclosed intervals.</p>
     <li data-md>
-     <p>References to <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value⑥" title="Expands to: turn | rad | grad | deg">&lt;angle></a> <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path①⑤">offset path</a>s without contain are unbounded rays.</p>
+     <p>References to <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value⑥" title="Expands to: deg | grad | rad | turn">&lt;angle></a> <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path①⑤">offset path</a>s without contain are unbounded rays.</p>
     <li data-md>
      <p>All basic CSS shapes are closed loops.</p>
     <li data-md>
@@ -805,7 +805,7 @@ See SVG 1.1 for more information about the <a class="css" data-link-type="maybe"
       <dt data-md>If <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path①⑨">offset path</a> is an unbounded ray:
       <dd data-md>
        <p>Let <a data-link-type="dfn" href="#used-offset-distance" id="ref-for-used-offset-distance①">used offset distance</a> be equal to <a data-link-type="dfn" href="#offset-distance" id="ref-for-offset-distance①">offset distance</a>.</p>
-      <dt data-md>Otherwise if <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path②⓪">offset path</a> is an <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value⑦" title="Expands to: turn | rad | grad | deg">&lt;angle></a> path with contain:
+      <dt data-md>Otherwise if <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path②⓪">offset path</a> is an <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value⑦" title="Expands to: deg | grad | rad | turn">&lt;angle></a> path with contain:
       <dd data-md>
        <p>Let <a data-link-type="dfn" href="#used-offset-distance" id="ref-for-used-offset-distance②">used offset distance</a> be equal to <a data-link-type="dfn" href="#offset-distance" id="ref-for-offset-distance②">offset distance</a>, clamped so that the box lies entirely within the path.</p>
       <dt data-md>If <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path②①">offset path</a> is any other unclosed interval:
@@ -924,28 +924,28 @@ where the output is always non-negative.</p>
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-offset-position">offset-position</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑤">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-position" id="ref-for-typedef-position">&lt;position></a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>auto
      <tr>
       <th>Applies to:
       <td><a href="https://drafts.csswg.org/css-transforms-1/#transformable-element">transformable elements</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>Refer to the size of containing block
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
-      <td>For <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> the absolute value, otherwise a percentage.
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
+      <td>For <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> the absolute value, otherwise a percentage.
      <tr>
       <th>Canonical order:
       <td>per grammar
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>by computed value
      <tr>
       <th>Media:
@@ -1160,28 +1160,28 @@ where the output is always non-negative.</p>
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-offset-anchor">offset-anchor</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-position" id="ref-for-typedef-position②">&lt;position></a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>auto
      <tr>
       <th>Applies to:
       <td><a href="https://drafts.csswg.org/css-transforms-1/#transformable-element">transformable elements</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>Relative to the width and the height of a box
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
-      <td>For <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a> the absolute value, otherwise a percentage.
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
+      <td>For <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> the absolute value, otherwise a percentage.
      <tr>
       <th>Canonical order:
       <td>per grammar
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>by computed value
      <tr>
       <th>Media:
@@ -1199,7 +1199,7 @@ where the output is always non-negative.</p>
       <dt data-md><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value">&lt;percentage></a>
       <dd data-md>
        <p>A percentage for the horizontal offset is relative to width of content area. A percentage for the vertical offset is relative to the height of the content area. For example, with a value pair of '100%, 0%', an <a data-link-type="dfn" href="#anchor-point" id="ref-for-anchor-point③">anchor point</a> is on the upper right corner of the box.</p>
-      <dt data-md><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value②" title="Expands to: em | vb | ch | cm | vh | vi | in | ex | vw | ic | pt | px | lh | pc | rem | rlh | vmax | advance measure | vmin | mm | cap | q">&lt;length></a>
+      <dt data-md><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>
       <dd data-md>
        <p>A length value gives a length offset from the upper left corner of the box’s content area.</p>
      </dl>
@@ -1360,28 +1360,28 @@ where the output is always non-negative.</p>
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-offset-rotate">offset-rotate</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
-      <td class="prod">[ auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑦">|</a> reverse ] <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value⑧" title="Expands to: turn | rad | grad | deg">&lt;angle></a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
+      <td class="prod">[ auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑦">|</a> reverse ] <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value⑧" title="Expands to: deg | grad | rad | turn">&lt;angle></a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>auto
      <tr>
       <th>Applies to:
       <td><a href="https://drafts.csswg.org/css-transforms-1/#transformable-element">transformable elements</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>n/a
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
-      <td>computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value⑨" title="Expands to: turn | rad | grad | deg">&lt;angle></a> value, optionally preceded by auto
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
+      <td>computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value⑨" title="Expands to: deg | grad | rad | turn">&lt;angle></a> value, optionally preceded by auto
      <tr>
       <th>Canonical order:
       <td>per grammar
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>by computed value
      <tr>
       <th>Media:
@@ -1392,13 +1392,13 @@ where the output is always non-negative.</p>
    <dl>
     <dt data-md><dfn class="dfn-paneled css" data-dfn-for="offset-rotate" data-dfn-type="value" data-export id="valdef-offset-rotate-auto">auto</dfn>
     <dd data-md>
-     <p>Indicates that the object is rotated (over time if <a class="property" data-link-type="propdesc" href="#propdef-offset-distance" id="ref-for-propdef-offset-distance①⓪">offset-distance</a> is animated) by the angle of the direction (i.e., directional tangent vector) of the <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path②⑦">offset path</a>, relative to the positive x-axis. If specified in combination with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①⓪" title="Expands to: turn | rad | grad | deg">&lt;angle></a>, the computed value of <span class="production" id="ref-for-angle-value①①" title="Expands to: turn | rad | grad | deg">&lt;angle></span> is added to the computed value of <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-auto" id="ref-for-valdef-offset-rotate-auto⑥">auto</a>.</p>
-     <p class="note" role="note"><span>Note:</span> For ray paths, the rotation implied by <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-auto" id="ref-for-valdef-offset-rotate-auto⑦">auto</a> is 90 degrees less than the ray’s bearing <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①②" title="Expands to: turn | rad | grad | deg">&lt;angle></a>.</p>
+     <p>Indicates that the object is rotated (over time if <a class="property" data-link-type="propdesc" href="#propdef-offset-distance" id="ref-for-propdef-offset-distance①⓪">offset-distance</a> is animated) by the angle of the direction (i.e., directional tangent vector) of the <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path②⑦">offset path</a>, relative to the positive x-axis. If specified in combination with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①⓪" title="Expands to: deg | grad | rad | turn">&lt;angle></a>, the computed value of <span class="production" id="ref-for-angle-value①①" title="Expands to: deg | grad | rad | turn">&lt;angle></span> is added to the computed value of <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-auto" id="ref-for-valdef-offset-rotate-auto⑥">auto</a>.</p>
+     <p class="note" role="note"><span>Note:</span> For ray paths, the rotation implied by <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-auto" id="ref-for-valdef-offset-rotate-auto⑦">auto</a> is 90 degrees less than the ray’s bearing <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①②" title="Expands to: deg | grad | rad | turn">&lt;angle></a>.</p>
     <dt data-md><dfn class="dfn-paneled css" data-dfn-for="offset-rotate" data-dfn-type="value" data-export id="valdef-offset-rotate-reverse">reverse</dfn>
     <dd data-md>
-     <p>Indicates that the object is rotated (over time if <a class="property" data-link-type="propdesc" href="#propdef-offset-distance" id="ref-for-propdef-offset-distance①①">offset-distance</a> is animated) by the angle of the direction (i.e., directional tangent vector) of the <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path②⑧">offset path</a>, relative to the positive x-axis, plus 180 degrees. If specified in combination with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①③" title="Expands to: turn | rad | grad | deg">&lt;angle></a>, the computed value of <span class="production" id="ref-for-angle-value①④" title="Expands to: turn | rad | grad | deg">&lt;angle></span> is added to the computed value of <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-reverse" id="ref-for-valdef-offset-rotate-reverse">reverse</a>.</p>
+     <p>Indicates that the object is rotated (over time if <a class="property" data-link-type="propdesc" href="#propdef-offset-distance" id="ref-for-propdef-offset-distance①①">offset-distance</a> is animated) by the angle of the direction (i.e., directional tangent vector) of the <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path②⑧">offset path</a>, relative to the positive x-axis, plus 180 degrees. If specified in combination with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①③" title="Expands to: deg | grad | rad | turn">&lt;angle></a>, the computed value of <span class="production" id="ref-for-angle-value①④" title="Expands to: deg | grad | rad | turn">&lt;angle></span> is added to the computed value of <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-reverse" id="ref-for-valdef-offset-rotate-reverse">reverse</a>.</p>
      <p class="note" role="note"><span>Note:</span> This is the same as specifying <span class="css">auto 180deg</span>.</p>
-    <dt data-md><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①⑤" title="Expands to: turn | rad | grad | deg">&lt;angle></a>
+    <dt data-md><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①⑤" title="Expands to: deg | grad | rad | turn">&lt;angle></a>
     <dd data-md>
      <p>Indicates that the box has a constant clockwise rotation transformation applied to it by the specified rotation angle. See definitions of <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-auto" id="ref-for-valdef-offset-rotate-auto⑧">auto</a> or <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-reverse" id="ref-for-valdef-offset-rotate-reverse①">reverse</a> if specified in combination with either one of the keywords.</p>
    </dl>
@@ -1439,8 +1439,8 @@ where the output is always non-negative.</p>
    </div>
    <div class="example" id="example-552ec5f4">
     <a class="self-link" href="#example-552ec5f4"></a> This example shows how <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-auto" id="ref-for-valdef-offset-rotate-auto①⓪">auto</a> or <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-reverse" id="ref-for-valdef-offset-rotate-reverse③">reverse</a> work when specified in combination
-with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①⑥" title="Expands to: turn | rad | grad | deg">&lt;angle></a>.
-The computed value of <span class="production" id="ref-for-angle-value①⑦" title="Expands to: turn | rad | grad | deg">&lt;angle></span> is added to the computed value of <span class="css" id="ref-for-valdef-offset-rotate-auto①①">auto</span> or <span class="css" id="ref-for-valdef-offset-rotate-reverse④">reverse</span>. 
+with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①⑥" title="Expands to: deg | grad | rad | turn">&lt;angle></a>.
+The computed value of <span class="production" id="ref-for-angle-value①⑦" title="Expands to: deg | grad | rad | turn">&lt;angle></span> is added to the computed value of <span class="css" id="ref-for-valdef-offset-rotate-auto①①">auto</span> or <span class="css" id="ref-for-valdef-offset-rotate-reverse④">reverse</span>. 
 <pre><code class="highlight"><c- p>&lt;</c-><c- f>style</c-><c- p>></c->
     <c- f>body</c-> <c- p>{</c->
         <c- k>width</c-><c- p>:</c-> <c- mi>300</c-><c- b>px</c-><c- p>;</c->
@@ -1527,28 +1527,28 @@ The computed value of <span class="production" id="ref-for-angle-value①⑦" ti
       <th>Name:
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-offset">offset</dfn>
      <tr class="value">
-      <th><a href="https://drafts.csswg.org/css-values/#value-defs">Value:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
       <td class="prod">[ <a class="property" data-link-type="propdesc" href="#propdef-offset-position" id="ref-for-propdef-offset-position②⓪">offset-position</a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt①">?</a> [ <a class="property" data-link-type="propdesc" href="#propdef-offset-path" id="ref-for-propdef-offset-path①④">offset-path</a> [ <a class="property" data-link-type="propdesc" href="#propdef-offset-distance" id="ref-for-propdef-offset-distance①②">offset-distance</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any①">||</a> <a class="property" data-link-type="propdesc" href="#propdef-offset-rotate" id="ref-for-propdef-offset-rotate①①">offset-rotate</a> ]<span id="ref-for-mult-opt②">?</span> ]<span id="ref-for-mult-opt③">?</span> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-req" id="ref-for-mult-req">!</a> <br> [ / <a class="property" data-link-type="propdesc" href="#propdef-offset-anchor" id="ref-for-propdef-offset-anchor④">offset-anchor</a> ]<span id="ref-for-mult-opt④">?</span>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#initial-values">Initial:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
       <td>see individual properties
      <tr>
       <th>Applies to:
       <td><a href="https://drafts.csswg.org/css-transforms-1/#transformable-element">transformable elements</a>
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#inherited-property">Inherited:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
       <td>no
      <tr>
-      <th><a href="https://drafts.csswg.org/css-values/#percentages">Percentages:</a>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
       <td>see individual properties
      <tr>
-      <th><a href="https://drafts.csswg.org/css-cascade/#computed">Computed value:</a>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>see individual properties
      <tr>
       <th>Canonical order:
       <td>per grammar
      <tr>
-      <th><a href="https://drafts.csswg.org/web-animations/#animation-type">Animation type:</a>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>see individual properties
      <tr>
       <th>Media:
@@ -1565,9 +1565,9 @@ The computed value of <span class="production" id="ref-for-angle-value①⑦" ti
      <p>Renamed <a href="https://www.w3.org/TR/2015/WD-motion-1-20150409/#motion-path-property">motion-path</a> to <a class="property" data-link-type="propdesc" href="#propdef-offset-path" id="ref-for-propdef-offset-path①⑥">offset-path</a> for integrating with <a href="https://www.w3.org/TR/2016/WD-css-round-display-1-20160301/#polar-angle-property">polar-angle</a>.</p>
      <ul>
       <li data-md>
-       <p>Added the <a class="css" data-link-type="maybe" href="#valdef-offset-path-ray" id="ref-for-valdef-offset-path-ray②">ray()</a> to define an <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path③③">offset path</a> as a line segment which direction is specified by <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①⑧" title="Expands to: turn | rad | grad | deg">&lt;angle></a>.</p>
+       <p>Added the <a class="css" data-link-type="maybe" href="#valdef-offset-path-ray" id="ref-for-valdef-offset-path-ray②">ray()</a> to define an <a data-link-type="dfn" href="#offset-path" id="ref-for-offset-path③③">offset path</a> as a line segment which direction is specified by <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①⑧" title="Expands to: deg | grad | rad | turn">&lt;angle></a>.</p>
       <li data-md>
-       <p>Added <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-images-3/#typedef-size" id="ref-for-typedef-size②" title="Expands to: farthest-side | closest-corner | <length-percentage>{2} | <length> | closest-side | farthest-corner | sides">&lt;size></a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-contain-1/#propdef-contain" id="ref-for-propdef-contain③">contain</a> value for the <a class="css" data-link-type="maybe" href="#valdef-offset-path-ray" id="ref-for-valdef-offset-path-ray③">ray()</a>.</p>
+       <p>Added <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-images-3/#typedef-size" id="ref-for-typedef-size②" title="Expands to: <length-percentage>{2} | <length> | closest-corner | closest-side | farthest-corner | farthest-side | sides">&lt;size></a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-contain-1/#propdef-contain" id="ref-for-propdef-contain③">contain</a> value for the <a class="css" data-link-type="maybe" href="#valdef-offset-path-ray" id="ref-for-valdef-offset-path-ray③">ray()</a>.</p>
      </ul>
     <li data-md>
      <p>Renamed <a href="https://www.w3.org/TR/2015/WD-motion-1-20150409/#propdef-motion-offset">motion-offset</a> to <a class="property" data-link-type="propdesc" href="#propdef-offset-distance" id="ref-for-propdef-offset-distance①④">offset-distance</a> for integrating with <a href="https://www.w3.org/TR/2016/WD-css-round-display-1-20160301/#polar-distance-property">polar-distance</a>.</p>
@@ -1580,7 +1580,7 @@ The computed value of <span class="production" id="ref-for-angle-value①⑦" ti
     <li data-md>
      <p>Renamed the shorthand property <a href="https://www.w3.org/TR/2015/WD-motion-1-20150409/#propdef-motion">motion</a> to <a class="property" data-link-type="propdesc" href="#propdef-offset" id="ref-for-propdef-offset①">offset</a>.</p>
     <li data-md>
-     <p>Made <a class="property" data-link-type="propdesc" href="#propdef-offset-rotate" id="ref-for-propdef-offset-rotate①④">offset-rotate</a> specify the rotation transformation by <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-auto" id="ref-for-valdef-offset-rotate-auto①③">auto</a> or <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-reverse" id="ref-for-valdef-offset-rotate-reverse⑤">reverse</a> in combination with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①⑨" title="Expands to: turn | rad | grad | deg">&lt;angle></a>.</p>
+     <p>Made <a class="property" data-link-type="propdesc" href="#propdef-offset-rotate" id="ref-for-propdef-offset-rotate①④">offset-rotate</a> specify the rotation transformation by <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-auto" id="ref-for-valdef-offset-rotate-auto①③">auto</a> or <a class="css" data-link-type="maybe" href="#valdef-offset-rotate-reverse" id="ref-for-valdef-offset-rotate-reverse⑤">reverse</a> in combination with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value①⑨" title="Expands to: deg | grad | rad | turn">&lt;angle></a>.</p>
    </ul>
    <h2 class="no-num heading settled" id="acknowledgments"><span class="content">Acknowledgments</span><a class="self-link" href="#acknowledgments"></a></h2>
    <p>Thanks to
@@ -1694,10 +1694,10 @@ for their reviews, comments, and corrections.</p>
    <li><a href="#offsetpath-none">none</a><span>, in §4.1</span>
    <li><a href="#propdef-offset">offset</a><span>, in §4.6</span>
    <li><a href="#propdef-offset-anchor">offset-anchor</a><span>, in §4.4</span>
-   <li><a href="#propdef-offset-distance">offset-distance</a><span>, in §4.2</span>
    <li><a href="#offset-distance">offset distance</a><span>, in §4.2.1</span>
-   <li><a href="#propdef-offset-path">offset-path</a><span>, in §4.1</span>
+   <li><a href="#propdef-offset-distance">offset-distance</a><span>, in §4.2</span>
    <li><a href="#offset-path">offset path</a><span>, in §4.1</span>
+   <li><a href="#propdef-offset-path">offset-path</a><span>, in §4.1</span>
    <li><a href="#propdef-offset-position">offset-position</a><span>, in §4.3</span>
    <li><a href="#propdef-offset-rotate">offset-rotate</a><span>, in §4.5</span>
    <li><a href="#p">P</a><span>, in §4.5.1</span>
@@ -1715,6 +1715,12 @@ for their reviews, comments, and corrections.</p>
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-position">https://drafts.csswg.org/css-backgrounds-3/#propdef-background-position</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-background-position">4.4. Define an anchor point: The offset-anchor property</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-valdef-background-clip-border-box">
+   <a href="https://drafts.csswg.org/css-backgrounds-3/#valdef-background-clip-border-box">https://drafts.csswg.org/css-backgrounds-3/#valdef-background-clip-border-box</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-valdef-background-clip-border-box">4.1. Define a path: The offset-path property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-border-radius">
@@ -1815,12 +1821,6 @@ for their reviews, comments, and corrections.</p>
    <a href="https://drafts.csswg.org/css-position-3/#propdef-top">https://drafts.csswg.org/css-position-3/#propdef-top</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-top">4.3. Define the starting point of the path: The offset-position property</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-valdef-shape-box-border-box">
-   <a href="https://drafts.csswg.org/css-shapes-1/#valdef-shape-box-border-box">https://drafts.csswg.org/css-shapes-1/#valdef-shape-box-border-box</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-valdef-shape-box-border-box">4.1. Define a path: The offset-path property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-funcdef-circle">
@@ -2008,6 +2008,7 @@ for their reviews, comments, and corrections.</p>
     <a data-link-type="biblio">[css-backgrounds-3]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-propdef-background-position" style="color:initial">background-position</span>
+     <li><span class="dfn-paneled" id="term-for-valdef-background-clip-border-box" style="color:initial">border-box</span>
      <li><span class="dfn-paneled" id="term-for-propdef-border-radius" style="color:initial">border-radius</span>
     </ul>
    <li>
@@ -2044,7 +2045,6 @@ for their reviews, comments, and corrections.</p>
    <li>
     <a data-link-type="biblio">[CSS-SHAPES]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-valdef-shape-box-border-box" style="color:initial">border-box</span>
      <li><span class="dfn-paneled" id="term-for-funcdef-circle" style="color:initial">circle()</span>
      <li><span class="dfn-paneled" id="term-for-funcdef-ellipse" style="color:initial">ellipse()</span>
      <li><span class="dfn-paneled" id="term-for-funcdef-inset" style="color:initial">inset()</span>

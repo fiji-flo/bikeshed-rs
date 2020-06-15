@@ -196,6 +196,9 @@ impl Metadata {
     pub fn fill_macros(&self, doc: &mut Spec) {
         let macros = &mut doc.macros;
 
+        // abstract
+        // TODO(#13): Use the markdown-parser here.
+        macros.insert("abstract", self.abs.join("\n"));
         // level
         if let Some(ref level) = self.level {
             macros.insert("level", level.clone());
@@ -223,6 +226,10 @@ impl Metadata {
         );
         // isodate
         macros.insert("isodate", self.date.to_string());
+        // version
+        if let Some(ref ed) = self.ed {
+            macros.insert("version", ed.clone());
+        }
         // title & spectitle
         if let Some(ref title) = self.title {
             macros.insert("title", title.clone());
@@ -246,7 +253,7 @@ impl Metadata {
     }
 }
 
-// Join all "group" field of metadata
+// Join all "group" field of metadata.
 pub fn extract_group(mds: &[&Metadata]) -> Option<String> {
     for md in mds.iter().rev() {
         if md.group.is_some() {
@@ -256,7 +263,7 @@ pub fn extract_group(mds: &[&Metadata]) -> Option<String> {
     None
 }
 
-// Join all "raw status" field of metadata
+// Join all "raw status" field of metadata.
 pub fn extract_status(mds: &[&Metadata]) -> Option<String> {
     for md in mds.iter().rev() {
         if md.raw_status.is_some() {
@@ -266,7 +273,7 @@ pub fn extract_status(mds: &[&Metadata]) -> Option<String> {
     None
 }
 
-// TODO(#3): figure out if we can get rid of this html-parsing-with-regexes
+// TODO(#3): Figure out if we can get rid of this html-parsing-with-regexes.
 pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
     lazy_static! {
         // title regex
