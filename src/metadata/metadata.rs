@@ -6,6 +6,7 @@ use titlecase::titlecase;
 use super::parse::{self, Editor, EditorTerm};
 use crate::config::SHORT_TO_LONG_STATUS;
 use crate::line::Line;
+use crate::markdown;
 use crate::spec::Spec;
 use crate::util::boolset::BoolSet;
 use crate::util::date::Date;
@@ -197,8 +198,7 @@ impl Metadata {
         let macros = &mut doc.macros;
 
         // abstract
-        // TODO(#13): Use the markdown-parser here.
-        macros.insert("abstract", self.abs.join("\n"));
+        macros.insert("abstract", markdown::parse(&self.abs).join("\n"));
         // level
         if let Some(ref level) = self.level {
             macros.insert("level", level.clone());

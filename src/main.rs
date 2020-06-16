@@ -14,6 +14,7 @@ mod config;
 mod heading;
 mod html;
 mod line;
+mod markdown;
 mod metadata;
 mod spec;
 #[cfg(test)]
