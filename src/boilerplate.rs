@@ -111,6 +111,29 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
         span_el.append(html::node::new_text(&editor.name));
         dd_el.append(span_el);
     }
+    if let Some(ref org) = editor.org {
+        let el = if let Some(ref org_link) = editor.org_link {
+            html::node::new_a(
+                btreemap! {
+                    "class" => "p-org org".to_owned(),
+                    "href" => org_link.to_owned(),
+                },
+                org_link,
+            )
+        } else {
+            let span_el = html::node::new_element(
+                "span",
+                btreemap! {
+                    "class" => "p-org org".to_owned(),
+                },
+            );
+            span_el.append(html::node::new_text(org.to_owned()));
+            span_el
+        };
+        dd_el.append(html::node::new_text(" ("));
+        dd_el.append(el);
+        dd_el.append(html::node::new_text(")"));
+    }
     dd_el
 }
 
@@ -130,14 +153,13 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
         dt_el.append(html::node::new_text("This version:"));
         dl_el.append(dt_el);
 
-        let a_el = html::node::new_element(
-            "a",
+        let a_el = html::node::new_a(
             btreemap! {
                 "class" => "u-url".to_owned(),
                 "href" => version.to_owned(),
             },
+            version,
         );
-        a_el.append(html::node::new_text(version));
         let dd_el = html::node::new_element("dd", None);
         dd_el.append(a_el);
         dl_el.append(dd_el);
