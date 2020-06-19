@@ -83,6 +83,7 @@ fn test_spec() {
         "metadata009",
         "metadata010",
         "metadata011",
+        "metadata012",
     ];
 
     for name in names.iter() {

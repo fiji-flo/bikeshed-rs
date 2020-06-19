@@ -224,10 +224,6 @@ pub fn parse_level(val: &str) -> String {
     }
 }
 
-pub fn parse_vec(val: &str) -> Vec<String> {
-    vec![val.to_owned()]
-}
-
 #[cfg(test)]
 mod tests {
     use super::{parse_boilerplate, parse_editor, parse_editor_term, Editor, EditorTerm};

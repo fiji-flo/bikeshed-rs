@@ -72,8 +72,8 @@ impl Metadata {
 
         match key.as_str() {
             "Abstract" => {
-                let val = parse::parse_vec(val);
-                self.abs.extend(val);
+                let val = val.to_owned();
+                self.abs.push(val);
             }
             "ED" => {
                 let val = val.to_owned();
@@ -276,15 +276,17 @@ pub fn extract_status(mds: &[&Metadata]) -> Option<String> {
 // TODO(#3): Figure out if we can get rid of this html-parsing-with-regexes.
 pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
     lazy_static! {
-        // title regex
+        // regex for title
         static ref TITLE_REG: Regex = Regex::new(r"\s*<h1[^>]*>(.*?)</h1>").unwrap();
-        // begin tag regex
+        // regex for begin tag
         static ref BEGIN_TAG_REG: Regex = Regex::new(r"<(pre|xmp) [^>]*class=[^>]*metadata[^>]*>").unwrap();
-        // </pre> end tag regex
+        // regex for </pre> end tag
         static ref PRE_END_TAG_REG: Regex = Regex::new(r"</pre>\s*").unwrap();
-        // </xmp> end tag regex
+        // regex for </xmp> end tag
         static ref XMP_END_TAG_REG: Regex = Regex::new(r"</xmp>\s*").unwrap();
-        // pair regex
+        // regex for line that starts with spaces
+        static ref START_WITH_SPACES_REG: Regex = Regex::new(r"^\s+").unwrap();
+        // regex for key-value pair
         static ref PAIR_REG: Regex = Regex::new(r"([^:]+):\s*(.*)").unwrap();
     }
 
@@ -308,8 +310,10 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
             // handle end tag
             in_metadata = false;
         } else if in_metadata {
-            if last_key.is_some() && line.text.trim().is_empty() {
-                // if the line is empty, continue the previous key
+            if last_key.is_some()
+                && (line.text.trim().is_empty() || START_WITH_SPACES_REG.is_match(&line.text))
+            {
+                // if the line is empty or start with 1+ spaces, continue the previous key
                 md.add_data(last_key.unwrap(), &line.text, Some(line.index));
             } else if PAIR_REG.is_match(&line.text) {
                 // handle key-val pair
