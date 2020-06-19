@@ -95,6 +95,7 @@ pub fn add_canonical_url(doc: &mut Spec) {
     }
 }
 
+// Convert an editor to a <dd> node.
 fn editor_to_dd_node(editor: &Editor) -> NodeRef {
     let dd_el = html::node::new_element(
         "dd",
@@ -217,6 +218,19 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
         dl_el.append(dt_el);
 
         for dd_el in doc.md.editors.iter().map(editor_to_dd_node) {
+            dl_el.append(dd_el);
+        }
+    }
+
+    // insert custom metadata
+    for (key, vals) in &doc.md.custom_md {
+        let dt_el = html::node::new_element("dt", None);
+        dt_el.append(html::node::new_text(format!("{}:", key)));
+        dl_el.append(dt_el);
+
+        for val in vals {
+            let dd_el = html::node::new_element("dd", None);
+            dd_el.append(html::node::new_text(val));
             dl_el.append(dd_el);
         }
     }

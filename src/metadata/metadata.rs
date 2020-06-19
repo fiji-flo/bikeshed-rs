@@ -1,3 +1,4 @@
+use indexmap::map::IndexMap;
 use regex::Regex;
 use serde_json::map::Map;
 use serde_json::{self, Value};
@@ -28,6 +29,8 @@ pub struct Metadata {
     pub editor_term: Option<EditorTerm>,
     pub group: Option<String>,
     pub title: Option<String>,
+    // custom metadata
+    pub custom_md: IndexMap<String, Vec<String>>,
 }
 
 impl Metadata {
@@ -68,6 +71,15 @@ impl Metadata {
 
         if key != "ED" && key != "TR" && key != "URL" {
             key = titlecase(&key);
+        }
+
+        if key.starts_with("!") {
+            let key = &key[1..];
+            self.custom_md
+                .entry(key.to_owned())
+                .or_insert(Vec::new())
+                .push(val.to_owned());
+            return;
         }
 
         match key.as_str() {
@@ -192,6 +204,8 @@ impl Metadata {
         if other.title.is_some() {
             self.title = other.title;
         }
+        // Custom Metadata
+        self.custom_md.extend(other.custom_md);
     }
 
     pub fn fill_macros(&self, doc: &mut Spec) {
