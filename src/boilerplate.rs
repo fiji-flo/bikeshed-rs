@@ -101,7 +101,24 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
             "class" => "editor p-author h-card vcard".to_owned(),
         },
     );
-    if editor.email.is_none() {
+
+    if let Some(ref link) = editor.link {
+        dd_el.append(html::node::new_a(
+            btreemap! {
+                "class" => "p-name fn u-url url".to_owned(),
+                "href" => link.to_owned(),
+            },
+            &editor.name,
+        ))
+    } else if let Some(ref email) = editor.email {
+        dd_el.append(html::node::new_a(
+            btreemap! {
+                "class" => "p-name fn u-email email".to_owned(),
+                "href" => format!("mailto:{}", email),
+            },
+            &editor.name,
+        ))
+    } else {
         let span_el = html::node::new_element(
             "span",
             btreemap! {
@@ -111,6 +128,7 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
         span_el.append(html::node::new_text(&editor.name));
         dd_el.append(span_el);
     }
+
     if let Some(ref org) = editor.org {
         let el = if let Some(ref org_link) = editor.org_link {
             html::node::new_a(
@@ -134,6 +152,20 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
         dd_el.append(el);
         dd_el.append(html::node::new_text(")"));
     }
+
+    if editor.link.is_some() {
+        if let Some(ref email) = editor.email {
+            dd_el.append(html::node::new_text(" "));
+            dd_el.append(html::node::new_a(
+                btreemap! {
+                    "class" => "u-email email".to_owned(),
+                    "href" => format!("mailto:{}", email),
+                },
+                email,
+            ));
+        }
+    }
+
     dd_el
 }
 

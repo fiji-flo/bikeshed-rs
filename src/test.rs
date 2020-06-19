@@ -71,7 +71,19 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> Result<(), CompareError> {
 #[test]
 fn test_spec() {
     // TODO: Use all files.
-    let names = ["metadata001", "metadata002"];
+    let names = [
+        "metadata001",
+        "metadata002",
+        "metadata003",
+        "metadata004",
+        "metadata005",
+        "metadata006",
+        "metadata007",
+        "metadata008",
+        "metadata009",
+        "metadata010",
+        "metadata011",
+    ];
 
     for name in names.iter() {
         let src_path = Path::new("tests").join(format!("{}.bs", name));
