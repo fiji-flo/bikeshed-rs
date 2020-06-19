@@ -71,12 +71,14 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
     // <option> := [<affiliation-name>] [<email> | <link> | (<email> <link>) | (<link> <email>)]
 
     lazy_static! {
-        // w3c id reg
+        // regex for w3c id
         static ref W3C_ID_REG: Regex = Regex::new(r"w3cid \d+$").unwrap();
-        // link reg
+        // regex for link
         static ref LINK_REG: Regex = Regex::new(r"^\w+:").unwrap();
-        // email reg
+        // regex for email
         static ref EMAIL_REG: Regex = Regex::new(r"^\w+@.+\..+").unwrap();
+        // regex for name with id
+        static ref NAME_WITH_ID_REG: Regex = Regex::new(r"\s\d+$").unwrap();
     }
 
     fn is_linkish(piece: &str) -> bool {
@@ -178,6 +180,14 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
         } else {
             editor.org = Some(org);
         }
+    }
+
+    // check if the name ends with an w3c id
+    if NAME_WITH_ID_REG.is_match(&editor.name) {
+        let old_name = editor.name;
+        let name_pieces = old_name.rsplitn(2, ' ').collect::<Vec<&str>>();
+        editor.name = name_pieces[1].to_owned();
+        editor.w3c_id = Some(name_pieces[0].to_owned());
     }
 
     Ok(editor)

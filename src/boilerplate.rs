@@ -1,5 +1,6 @@
 use kuchiki::traits::*;
-use kuchiki::NodeRef;
+use kuchiki::{NodeData, NodeRef};
+use markup5ever::LocalName;
 use std::fs;
 use std::path::Path;
 
@@ -101,6 +102,13 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
             "class" => "editor p-author h-card vcard".to_owned(),
         },
     );
+
+    if let Some(ref w3c_id) = editor.w3c_id {
+        if let NodeData::Element(dd_el_data) = dd_el.data() {
+            let ref mut attributes = dd_el_data.attributes.borrow_mut();
+            attributes.insert(LocalName::from("data-editor-id"), w3c_id.to_owned());
+        }
+    }
 
     if let Some(ref link) = editor.link {
         dd_el.append(html::node::new_a(
