@@ -1,5 +1,4 @@
 use kuchiki::{NodeData, NodeDataRef, NodeRef};
-use markup5ever::LocalName;
 
 use crate::html;
 use crate::spec::Spec;
@@ -18,7 +17,7 @@ pub fn process_headings(doc: &mut Spec) {
                     if let NodeData::Element(h_data) = h.as_node().data() {
                         let ref mut attributes = h_data.attributes.borrow();
 
-                        if let Some(id) = attributes.get(LocalName::from("id")) {
+                        if let Some(id) = attributes.get(local_name!("id")) {
                             if id == "contents" {
                                 return false;
                             }

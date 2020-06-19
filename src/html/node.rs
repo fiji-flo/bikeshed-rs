@@ -37,12 +37,12 @@ pub fn add_class(el: &NodeRef, class: &str) {
     if let NodeData::Element(el_data) = el.data() {
         let ref mut attributes = el_data.attributes.borrow_mut();
 
-        let new_class = if let Some(old_class) = attributes.get(LocalName::from("class")) {
+        let new_class = if let Some(old_class) = attributes.get(local_name!("class")) {
             old_class.to_owned() + " " + class
         } else {
             class.to_owned()
         };
 
-        attributes.insert(LocalName::from("class"), new_class);
+        attributes.insert(local_name!("class"), new_class);
     }
 }
