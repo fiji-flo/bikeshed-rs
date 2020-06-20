@@ -123,7 +123,7 @@ impl Metadata {
                 };
                 self.boilerplate.update(&val);
             }
-            "Canonical Url" => {
+            "Canonical URL" => {
                 let val = val.to_owned();
                 self.canonical_url = Some(val);
             }
