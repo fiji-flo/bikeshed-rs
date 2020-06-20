@@ -74,7 +74,7 @@ pub fn add_header_footer(doc: &mut Spec) {
     doc.html = [header, doc.html.clone(), footer].join("\n");
 }
 
-pub fn add_bikeshed_boilerplate(doc: &mut Spec) {
+pub fn add_styles(doc: &mut Spec) {
     // TODO: insert <style> nodes to body and move them to head later
     for (key, val) in doc.extra_styles.iter() {
         doc.head().append(html::node::new_style(format!(
@@ -179,7 +179,7 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
     dd_el
 }
 
-pub fn add_spec_metadata_section(doc: &mut Spec) {
+pub fn fill_spec_metadata_section(doc: &mut Spec) {
     let container = match doc.dom().select_first("[data-fill-with=spec-metadata]") {
         Ok(container) => container,
         Err(_) => return,
@@ -261,7 +261,7 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
     container.as_node().append(dl_el);
 }
 
-pub fn add_copyright_section(doc: &mut Spec) {
+pub fn fill_copyright_section(doc: &mut Spec) {
     let container = match doc.dom().select_first("[data-fill-with=copyright]") {
         Ok(container) => container,
         Err(_) => return,
@@ -277,7 +277,7 @@ pub fn add_copyright_section(doc: &mut Spec) {
     }
 }
 
-pub fn add_abstract_section(doc: &mut Spec) {
+pub fn fill_abstract_section(doc: &mut Spec) {
     let container = match doc.dom().select_first("[data-fill-with=abstract]") {
         Ok(container) => container,
         Err(_) => return,
@@ -294,11 +294,8 @@ pub fn add_abstract_section(doc: &mut Spec) {
     }
 }
 
-pub fn add_toc_section(doc: &mut Spec) {
-    let container = match doc
-        .dom()
-        .select_first("[data-fill-with=table-of-contents]")
-    {
+pub fn fill_toc_section(doc: &mut Spec) {
+    let container = match doc.dom().select_first("[data-fill-with=table-of-contents]") {
         Ok(container) => container,
         Err(_) => return,
     };

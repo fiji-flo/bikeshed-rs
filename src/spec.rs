@@ -111,11 +111,11 @@ impl<'a> Spec<'a> {
 
     fn process_document(&mut self) {
         boilerplate::add_canonical_url(self);
-        boilerplate::add_spec_metadata_section(self);
-        boilerplate::add_copyright_section(self);
-        boilerplate::add_abstract_section(self);
-        boilerplate::add_toc_section(self);
-        boilerplate::add_bikeshed_boilerplate(self);
+        boilerplate::fill_spec_metadata_section(self);
+        boilerplate::fill_copyright_section(self);
+        boilerplate::fill_abstract_section(self);
+        boilerplate::fill_toc_section(self);
+        boilerplate::add_styles(self);
         heading::process_headings(self);
     }
 
