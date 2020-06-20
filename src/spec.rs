@@ -22,8 +22,8 @@ pub struct Spec<'a> {
     pub macros: HashMap<&'static str, String>,
     pub html: String,
     dom: Option<NodeRef>,
-    pub head: Option<NodeRef>,
-    pub body: Option<NodeRef>,
+    head: Option<NodeRef>,
+    body: Option<NodeRef>,
     pub extra_styles: BTreeMap<&'static str, &'static str>,
 }
 
@@ -139,7 +139,11 @@ impl<'a> Spec<'a> {
         }
     }
 
-    pub fn dom(&mut self) -> &mut NodeRef {
-        self.dom.as_mut().unwrap()
+    pub fn dom(&self) -> &NodeRef {
+        self.dom.as_ref().unwrap()
+    }
+
+    pub fn head(&self) -> &NodeRef {
+        self.head.as_ref().unwrap()
     }
 }

@@ -77,19 +77,16 @@ pub fn add_header_footer(doc: &mut Spec) {
 pub fn add_bikeshed_boilerplate(doc: &mut Spec) {
     // TODO: insert <style> nodes to body and move them to head later
     for (key, val) in doc.extra_styles.iter() {
-        doc.head
-            .as_ref()
-            .unwrap()
-            .append(html::node::new_style(format!(
-                "/* style-{} */\n\n{}",
-                key, val
-            )));
+        doc.head().append(html::node::new_style(format!(
+            "/* style-{} */\n\n{}",
+            key, val
+        )));
     }
 }
 
 pub fn add_canonical_url(doc: &mut Spec) {
-    if let Some(canonical_url) = &doc.md.canonical_url {
-        doc.head.as_ref().unwrap().append(html::node::new_element(
+    if let Some(ref canonical_url) = doc.md.canonical_url {
+        doc.head().append(html::node::new_element(
             "link",
             btreemap! {
                 "rel" => "canonical",
