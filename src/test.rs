@@ -72,6 +72,7 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> Result<(), CompareError> {
 fn test_spec() {
     // TODO: Use all files.
     let names = [
+        // metadata
         "metadata001",
         "metadata002",
         "metadata003",
@@ -88,7 +89,6 @@ fn test_spec() {
         "metadata014",
         "metadata015",
         "metadata016",
-        "metadata017",
     ];
 
     for name in names.iter() {
