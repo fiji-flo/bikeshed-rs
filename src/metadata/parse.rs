@@ -4,6 +4,10 @@ use crate::util::boolish::boolish_to_bool;
 use crate::util::boolset::BoolSet;
 use crate::util::date::{Date, ParseResult};
 
+pub fn parse_bool(val: &str) -> Result<bool, &'static str> {
+    boolish_to_bool(val)
+}
+
 pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
     // <boilerplate> := <pair> ("," <pair>)*
     // <pair> := ("omit" <section>) | (<section> <boolish>)
@@ -25,7 +29,7 @@ pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
             boilerplate.insert(pieces[1].clone(), false);
         } else {
             // <section> <boolish>
-            if let Some(on_off) = boolish_to_bool(&pieces[1]) {
+            if let Ok(on_off) = boolish_to_bool(&pieces[1]) {
                 boilerplate.insert(pieces[0].clone(), on_off);
             } else {
                 return Err("wrong boolish format");

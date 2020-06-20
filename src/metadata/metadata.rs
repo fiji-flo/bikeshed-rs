@@ -28,6 +28,7 @@ pub struct Metadata {
     pub editors: Vec<Editor>,
     pub editor_term: Option<EditorTerm>,
     pub group: Option<String>,
+    pub infer_css_dfns: bool,
     pub title: Option<String>,
     pub tr: Option<String>,
     pub work_status: Option<String>,
@@ -158,6 +159,15 @@ impl Metadata {
                 let val = val.to_owned();
                 self.group = Some(val);
             }
+            "Infer CSS Dfns" => {
+                let val = match parse::parse_bool(val) {
+                    Ok(val) => val,
+                    Err(_) => {
+                        die!("The \"Infer Css Dfns\" field must be boolish. Got: {}.", val; line_num)
+                    }
+                };
+                self.infer_css_dfns = val;
+            }
             "Title" => {
                 let val = val.to_owned();
                 self.title = Some(val);
@@ -225,6 +235,8 @@ impl Metadata {
         if other.group.is_some() {
             self.group = other.group;
         }
+        // Infer CSS Dfns
+        self.infer_css_dfns = other.infer_css_dfns;
         // Title
         if other.title.is_some() {
             self.title = other.title;
