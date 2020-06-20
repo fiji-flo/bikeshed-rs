@@ -217,9 +217,16 @@ impl Metadata {
         if let Some(ref level) = self.level {
             macros.insert("level", level.clone());
         }
-        // shortname
+        // shortname & vshortname
         if let Some(ref shortname) = self.shortname {
             macros.insert("shortname", shortname.clone());
+
+            let vshortname = if let Some(ref level) = self.level {
+                format!("{}-{}", shortname, level)
+            } else {
+                shortname.clone()
+            };
+            macros.insert("vshortname", vshortname);
         }
         // longstatus
         if let Some(ref raw_status) = self.raw_status {
