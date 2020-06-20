@@ -29,6 +29,7 @@ pub struct Metadata {
     pub editor_term: Option<EditorTerm>,
     pub group: Option<String>,
     pub infer_css_dfns: bool,
+    pub remove_multiple_links: bool,
     pub title: Option<String>,
     pub tr: Option<String>,
     pub work_status: Option<String>,
@@ -168,6 +169,15 @@ impl Metadata {
                 };
                 self.infer_css_dfns = val;
             }
+            "Remove Multiple Links" => {
+                let val = match parse::parse_bool(val) {
+                    Ok(val) => val,
+                    Err(_) => {
+                        die!("The \"Remove Multiple Links\" field must be boolish. Got: {}.", val; line_num)
+                    }
+                };
+                self.remove_multiple_links = val;
+            }
             "Title" => {
                 let val = val.to_owned();
                 self.title = Some(val);
@@ -237,6 +247,8 @@ impl Metadata {
         }
         // Infer CSS Dfns
         self.infer_css_dfns = other.infer_css_dfns;
+        // Remove Multiple Links
+        self.remove_multiple_links = other.remove_multiple_links;
         // Title
         if other.title.is_some() {
             self.title = other.title;
