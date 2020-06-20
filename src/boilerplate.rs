@@ -4,7 +4,7 @@ use markup5ever::LocalName;
 use std::fs;
 use std::path::Path;
 
-use crate::html;
+use crate::html::{self, node::Attr};
 use crate::metadata::parse::Editor;
 use crate::spec::Spec;
 
@@ -77,9 +77,13 @@ pub fn add_header_footer(doc: &mut Spec) {
 pub fn add_bikeshed_boilerplate(doc: &mut Spec) {
     // TODO: insert <style> nodes to body and move them to head later
     for (key, val) in doc.extra_styles.iter() {
-        doc.head.as_ref().unwrap().append(html::node::new_style(
-            format!("/* style-{} */\n\n{}", key, val).as_str(),
-        ));
+        doc.head
+            .as_ref()
+            .unwrap()
+            .append(html::node::new_style(format!(
+                "/* style-{} */\n\n{}",
+                key, val
+            )));
     }
 }
 
@@ -88,8 +92,8 @@ pub fn add_canonical_url(doc: &mut Spec) {
         doc.head.as_ref().unwrap().append(html::node::new_element(
             "link",
             btreemap! {
-                "rel" => "canonical".to_string(),
-                "href" => canonical_url.to_string(),
+                "rel" => "canonical",
+                "href" => canonical_url,
             },
         ))
     }
@@ -100,7 +104,7 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
     let dd_el = html::node::new_element(
         "dd",
         btreemap! {
-            "class" => "editor p-author h-card vcard".to_owned(),
+            "class" => "editor p-author h-card vcard",
         },
     );
 
@@ -114,8 +118,8 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
     if let Some(ref link) = editor.link {
         dd_el.append(html::node::new_a(
             btreemap! {
-                "class" => "p-name fn u-url url".to_owned(),
-                "href" => link.to_owned(),
+                "class" => "p-name fn u-url url",
+                "href" => link,
             },
             &editor.name,
         ))
@@ -131,7 +135,7 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
         let span_el = html::node::new_element(
             "span",
             btreemap! {
-                "class" => "p-name fn".to_owned(),
+                "class" => "p-name fn",
             },
         );
         span_el.append(html::node::new_text(&editor.name));
@@ -142,8 +146,8 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
         let el = if let Some(ref org_link) = editor.org_link {
             html::node::new_a(
                 btreemap! {
-                    "class" => "p-org org".to_owned(),
-                    "href" => org_link.to_owned(),
+                    "class" => "p-org org",
+                    "href" => org_link,
                 },
                 org_link,
             )
@@ -151,7 +155,7 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
             let span_el = html::node::new_element(
                 "span",
                 btreemap! {
-                    "class" => "p-org org".to_owned(),
+                    "class" => "p-org org",
                 },
             );
             span_el.append(html::node::new_text(org.to_owned()));
@@ -189,17 +193,17 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
             "Editor" => html::node::new_element(
                 "dt",
                 btreemap! {
-                    "class" => "editor".to_owned()
+                    "class" => "editor"
                 },
             ),
-            _ => html::node::new_element("dt", None),
+            _ => html::node::new_element("dt", None::<Attr>),
         };
         dt_el.append(html::node::new_text(format!("{}:", key)));
         dt_el
     }
 
     fn wrap_in_dd_node(el: NodeRef) -> NodeRef {
-        let dd_el = html::node::new_element("dd", None);
+        let dd_el = html::node::new_element("dd", None::<Attr>);
         dd_el.append(el);
         dd_el
     }
@@ -215,8 +219,8 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
             key_to_dt_node("This version"),
             wrap_in_dd_node(html::node::new_a(
                 btreemap! {
-                    "class" => "u-url".to_owned(),
-                    "href" => version.to_owned(),
+                    "class" => "u-url",
+                    "href" => version,
                 },
                 version,
             )),
@@ -229,7 +233,7 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
             key_to_dt_node("Latest published version"),
             wrap_in_dd_node(html::node::new_a(
                 btreemap! {
-                    "href" => tr.to_owned()
+                    "href" => tr
                 },
                 tr,
             )),
@@ -251,7 +255,7 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
         );
     }
 
-    let dl_el = html::node::new_element("dl", None);
+    let dl_el = html::node::new_element("dl", None::<Attr>);
 
     for item in md_list {
         dl_el.append(item)
@@ -305,8 +309,8 @@ pub fn add_toc_section(doc: &mut Spec) {
     let h2_el = html::node::new_element(
         "h2",
         btreemap! {
-            "class" => "no-num no-toc no-ref".to_owned(),
-            "id" => "contents".to_owned(),
+            "class" => "no-num no-toc no-ref",
+            "id" => "contents",
         },
     );
     h2_el.append(html::node::new_text("Table of Contents"));

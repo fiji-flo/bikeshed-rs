@@ -42,7 +42,7 @@ fn wrap_heading_contents(heading_el: &NodeRef) {
     let content_el = html::node::new_element(
         "span",
         btreemap! {
-            "class" => "content".to_owned(),
+            "class" => "content",
         },
     );
 

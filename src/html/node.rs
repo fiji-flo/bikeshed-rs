@@ -1,9 +1,12 @@
 use kuchiki::{Attribute, ExpandedName, NodeData, NodeRef};
 use markup5ever::{LocalName, QualName};
 
-pub fn new_element<I>(name: &str, attributes: I) -> NodeRef
+pub type Attr = (&'static str, &'static str);
+
+pub fn new_element<'a, I, T>(name: &str, attributes: I) -> NodeRef
 where
-    I: IntoIterator<Item = (&'static str, String)>,
+    I: IntoIterator<Item = (&'a str, T)>,
+    T: Into<String>,
 {
     NodeRef::new_element(
         QualName::new(None, ns!(html), LocalName::from(name)),
@@ -11,7 +14,7 @@ where
             let expanded_name = ExpandedName::new(ns!(), LocalName::from(key));
             let attribute = Attribute {
                 prefix: None,
-                value: val,
+                value: val.into(),
             };
             (expanded_name, attribute)
         }),
@@ -23,15 +26,16 @@ pub fn new_text<T: Into<String>>(text: T) -> NodeRef {
 }
 
 pub fn new_style<T: Into<String>>(text: T) -> NodeRef {
-    let el = new_element("style", None);
+    let el = new_element("style", None::<Attr>);
     el.append(NodeRef::new_text(text));
     el
 }
 
-pub fn new_a<I, T>(attributes: I, text: T) -> NodeRef
+pub fn new_a<'a, I, T, K>(attributes: I, text: K) -> NodeRef
 where
-    I: IntoIterator<Item = (&'static str, String)>,
+    I: IntoIterator<Item = (&'a str, T)>,
     T: Into<String>,
+    K: Into<String>,
 {
     let el = new_element("a", attributes);
     el.append(NodeRef::new_text(text));
