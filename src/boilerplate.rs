@@ -206,43 +206,39 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
 
     let macros = &doc.macros;
 
-    let dl_el = html::node::new_element("dl", None);
+    // <dt> and <dd> nodes that would be appended to <dl> node
+    let mut md_list = Vec::new();
 
     // insert version
     if let Some(version) = macros.get("version") {
-        let dt_el = key_to_dt_node("This version");
-        dl_el.append(dt_el);
-
-        let a_el = html::node::new_a(
-            btreemap! {
-                "class" => "u-url".to_owned(),
-                "href" => version.to_owned(),
-            },
-            version,
-        );
-        let dd_el = wrap_in_dd_node(a_el);
-        dl_el.append(dd_el);
+        md_list.extend(vec![
+            key_to_dt_node("This version"),
+            wrap_in_dd_node(html::node::new_a(
+                btreemap! {
+                    "class" => "u-url".to_owned(),
+                    "href" => version.to_owned(),
+                },
+                version,
+            )),
+        ]);
     }
 
     // insert editors
     if !doc.md.editors.is_empty() {
-        let dt_el = key_to_dt_node("Editor");
-        dl_el.append(dt_el);
-
-        for dd_el in doc.md.editors.iter().map(editor_to_dd_node) {
-            dl_el.append(dd_el);
-        }
+        md_list.push(key_to_dt_node("Editor"));
+        md_list.extend(doc.md.editors.iter().map(editor_to_dd_node));
     }
 
     // insert custom metadata
     for (key, vals) in &doc.md.custom_md {
-        let dt_el = key_to_dt_node(key);
-        dl_el.append(dt_el);
+        md_list.push(key_to_dt_node(key));
+        md_list.extend(vals.iter().map(|val| wrap_in_dd_node(html::node::new_text(val))));
+    }
 
-        for val in vals {
-            let dd_el = wrap_in_dd_node(html::node::new_text(val));
-            dl_el.append(dd_el);
-        }
+    let dl_el = html::node::new_element("dl", None);
+
+    for item in md_list {
+        dl_el.append(item)
     }
 
     container.as_node().append(dl_el);
