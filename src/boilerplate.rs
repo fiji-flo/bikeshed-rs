@@ -223,6 +223,19 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
         ]);
     }
 
+    // insert latest published version
+    if let Some(ref tr) = doc.md.tr {
+        md_list.extend(vec![
+            key_to_dt_node("Latest published version"),
+            wrap_in_dd_node(html::node::new_a(
+                btreemap! {
+                    "href" => tr.to_owned()
+                },
+                tr,
+            )),
+        ]);
+    }
+
     // insert editors
     if !doc.md.editors.is_empty() {
         md_list.push(key_to_dt_node("Editor"));
@@ -232,7 +245,10 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
     // insert custom metadata
     for (key, vals) in &doc.md.custom_md {
         md_list.push(key_to_dt_node(key));
-        md_list.extend(vals.iter().map(|val| wrap_in_dd_node(html::node::new_text(val))));
+        md_list.extend(
+            vals.iter()
+                .map(|val| wrap_in_dd_node(html::node::new_text(val))),
+        );
     }
 
     let dl_el = html::node::new_element("dl", None);

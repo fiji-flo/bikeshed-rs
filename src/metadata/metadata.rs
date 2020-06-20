@@ -29,6 +29,7 @@ pub struct Metadata {
     pub editor_term: Option<EditorTerm>,
     pub group: Option<String>,
     pub title: Option<String>,
+    pub tr: Option<String>,
     // custom metadata
     pub custom_md: IndexMap<String, Vec<String>>,
 }
@@ -151,6 +152,10 @@ impl Metadata {
                 let val = val.to_owned();
                 self.title = Some(val);
             }
+            "TR" => {
+                let val = val.to_owned();
+                self.tr = Some(val);
+            }
             _ => die!("Unknown metadata key \"{}\".", key; line_num),
         }
 
@@ -203,6 +208,10 @@ impl Metadata {
         // Title
         if other.title.is_some() {
             self.title = other.title;
+        }
+        // TR
+        if other.tr.is_some() {
+            self.tr = other.tr;
         }
         // Custom Metadata
         self.custom_md.extend(other.custom_md);
@@ -259,7 +268,9 @@ impl Metadata {
     }
 
     pub fn compute_implicit_metadata(&mut self) {
-        if self.canonical_url.as_ref().map_or(true, |url| url == "ED") {
+        if self.canonical_url.as_ref().map_or(true, |url| url == "TR") && self.tr.is_some() {
+            self.canonical_url = self.tr.clone();
+        } else if self.canonical_url.as_ref().map_or(true, |url| url == "ED") && self.ed.is_some() {
             self.canonical_url = self.ed.clone();
         }
         if self.editor_term.is_none() {
