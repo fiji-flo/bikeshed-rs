@@ -234,6 +234,16 @@ pub fn parse_level(val: &str) -> String {
     }
 }
 
+pub fn parse_work_status(val: &str) -> Result<String, &'static str> {
+    let val = val.to_lowercase();
+
+    match val.as_str() {
+        "completed" | "stable" | "testing" | "refining" | "revising" | "exploring"
+        | "rewriting" | "abandoned" => Ok(val),
+        _ => Err("no such work status"),
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::{parse_boilerplate, parse_editor, parse_editor_term, Editor, EditorTerm};

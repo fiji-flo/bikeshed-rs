@@ -30,6 +30,7 @@ pub struct Metadata {
     pub group: Option<String>,
     pub title: Option<String>,
     pub tr: Option<String>,
+    pub work_status: Option<String>,
     // custom metadata
     pub custom_md: IndexMap<String, Vec<String>>,
 }
@@ -56,11 +57,19 @@ impl Metadata {
                     for indiv_val in arr_val {
                         match indiv_val {
                             Value::String(str_val) => md.add_data(key, str_val, None),
-                            _ => die!("JSON metadata values must be strings or arrays of strings. \"{0}\" is something else.", key)
+                            _ => die!(
+                                "JSON metadata values must be strings or arrays of strings. \
+                                    \"{0}\" is something else.",
+                                key
+                            ),
                         }
                     }
                 }
-                _ => die!("JSON metadata values must be strings or arrays of strings. \"{0}\" is something else.", key)
+                _ => die!(
+                    "JSON metadata values must be strings or arrays of strings. \
+                        \"{0}\" is something else.",
+                    key
+                ),
             }
         }
 
@@ -108,7 +117,8 @@ impl Metadata {
                 let val = match parse::parse_boilerplate(val) {
                     Ok(val) => val,
                     Err(_) => {
-                        die!("Boilerplate metadata pieces are a boilerplate label and a boolean. Got: {}.", val; line_num)
+                        die!("Boilerplate metadata pieces are a boilerplate label and a boolean. \
+                            Got: {}.", val; line_num)
                     }
                 };
                 self.boilerplate.update(&val);
@@ -130,7 +140,8 @@ impl Metadata {
                 let val = match parse::parse_editor(val) {
                     Ok(val) => val,
                     Err(_) => {
-                        die!("\"Editor\" format is \"<name>, <affiliation>?, <email-or-contact-page>?\". Got: {}.", val; line_num)
+                        die!("\"Editor\" format is \"<name>, <affiliation>?, <email-or-contact-page>?\". \
+                            Got: {}.", val; line_num)
                     }
                 };
                 self.editors.push(val);
@@ -138,9 +149,8 @@ impl Metadata {
             "Editor Term" => {
                 let val = match parse::parse_editor_term(val) {
                     Ok(val) => val,
-                    Err(_) => {
-                        die!("\"Editor Term\" format is \"<singular-term>, <plural-term>\". Got: {}.", val; line_num)
-                    }
+                    Err(_) => die!("\"Editor Term\" format is \"<singular-term>, <plural-term>\". \
+                                    Got: {}.", val; line_num),
                 };
                 self.editor_term = Some(val);
             }
@@ -155,6 +165,16 @@ impl Metadata {
             "TR" => {
                 let val = val.to_owned();
                 self.tr = Some(val);
+            }
+            "Work Status" => {
+                let val = match parse::parse_work_status(val) {
+                    Ok(val) => val,
+                    Err(_) => {
+                        die!("Work Status must be one of (completed, stable, testing, refining, \
+                            revising, exploring, rewriting, abandoned). Got: {}.", val; line_num)
+                    }
+                };
+                self.work_status = Some(val);
             }
             _ => die!("Unknown metadata key \"{}\".", key; line_num),
         }
@@ -213,6 +233,10 @@ impl Metadata {
         if other.tr.is_some() {
             self.tr = other.tr;
         }
+        // Work Status
+        if other.work_status.is_some() {
+            self.work_status = other.work_status;
+        }
         // Custom Metadata
         self.custom_md.extend(other.custom_md);
     }
@@ -264,6 +288,10 @@ impl Metadata {
         if let Some(ref title) = self.title {
             macros.insert("title", title.clone());
             macros.insert("spectitle", title.clone());
+        }
+        // work status
+        if let Some(ref work_status) = self.work_status {
+            macros.insert("workstatus", work_status.clone());
         }
     }
 
