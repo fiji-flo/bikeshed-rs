@@ -1,22 +1,33 @@
+use regex::Regex;
+
 // Get HTML lines.
 pub fn parse(lines: &[String]) -> Vec<String> {
-    let tokens = tokenize(lines);
+    let tokens = tokenize_lines(lines);
     parse_tokens(&tokens)
 }
 
-#[derive(PartialEq, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 enum Token {
     Blank,
+    Block(String),
     Text(String),
+    End,
 }
 
 // Turn lines of text into block tokens, which'll be turned into MD blocks later.
-fn tokenize(lines: &[String]) -> Vec<Token> {
+fn tokenize_lines(lines: &[String]) -> Vec<Token> {
+    lazy_static! {
+        // regex for html block
+        static ref HTML_BLOCK_REG: Regex = Regex::new(r"<").unwrap();
+    }
+
     let mut tokens = Vec::new();
 
     for line in lines.iter() {
         if line.is_empty() {
             tokens.push(Token::Blank);
+        } else if HTML_BLOCK_REG.is_match(line) {
+            tokens.push(Token::Block(line.clone()));
         } else {
             tokens.push(Token::Text(line.clone()));
         }
@@ -38,12 +49,22 @@ fn parse_tokens(tokens: &[Token]) -> Vec<String> {
             break;
         };
 
-        if let Token::Text(text) = curr {
-            if prev == Token::Blank {
-                lines.extend(parse_paragraph(text, &mut stream, &mut prev));
+        match curr {
+            Token::Blank => {
+                prev = curr.clone();
             }
-        } else {
-            prev = curr.clone();
+            Token::Block(line) => {
+                lines.push(line.clone());
+                prev = curr.clone();
+            }
+            Token::Text(line) => {
+                if prev == Token::Blank {
+                    lines.extend(parse_paragraph(line, &mut stream, &mut prev));
+                } else {
+                    prev = curr.clone();
+                }
+            }
+            _ => {}
         }
     }
 
@@ -60,16 +81,17 @@ where
         let curr = if let Some(token) = stream.next() {
             token
         } else {
-            break;
+            &Token::End
         };
 
         if let Token::Text(ref text) = curr {
             lines.push(text.clone());
         } else {
             *prev = curr.clone();
+            // append the end tag to the last line
             let last_index = lines.len() - 1;
             let last_line = lines.get_mut(last_index).unwrap();
-            *last_line += "</p>\n";
+            *last_line = format!("{}</p>\n", last_line.trim_end());
             break;
         }
     }

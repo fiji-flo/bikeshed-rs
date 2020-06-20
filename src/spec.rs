@@ -9,6 +9,7 @@ use crate::config::SOURCE_FILE_EXTENSIONS;
 use crate::heading;
 use crate::html;
 use crate::line::Line;
+use crate::markdown;
 use crate::metadata::metadata::{self, Metadata};
 use crate::util::reader;
 
@@ -86,12 +87,15 @@ impl<'a> Spec<'a> {
         md.validate();
         self.md = md;
 
-        self.html = self
-            .lines
-            .iter()
-            .map(|l| l.text.clone())
-            .collect::<Vec<String>>()
-            .join("\n");
+        let lines = markdown::parse(
+            &self
+                .lines
+                .iter()
+                .map(|l| l.text.clone())
+                .collect::<Vec<String>>(),
+        );
+
+        self.html = lines.join("");
         boilerplate::add_header_footer(self);
         self.html = html::helper::replace_macros(&self.html, &self.macros);
 
