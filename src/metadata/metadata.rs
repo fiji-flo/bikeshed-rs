@@ -164,7 +164,7 @@ impl Metadata {
                 let val = match parse::parse_bool(val) {
                     Ok(val) => val,
                     Err(_) => {
-                        die!("The \"Infer Css Dfns\" field must be boolish. Got: {}.", val; line_num)
+                        die!("The \"Infer CSS Dfns\" field must be boolish. Got: {}.", val; line_num)
                     }
                 };
                 self.infer_css_dfns = val;
