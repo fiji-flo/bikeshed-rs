@@ -184,14 +184,27 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
         Err(_) => return,
     };
 
+    fn key_to_dt_node(key: &str) -> NodeRef {
+        let dt_el = match key {
+            "Editor" => html::node::new_element(
+                "dt",
+                btreemap! {
+                    "class" => "editor".to_owned()
+                },
+            ),
+            _ => html::node::new_element("dt", None),
+        };
+        dt_el.append(html::node::new_text(format!("{}:", key)));
+        dt_el
+    }
+
     let macros = &doc.macros;
 
     let dl_el = html::node::new_element("dl", None);
 
     // insert version
     if let Some(version) = macros.get("version") {
-        let dt_el = html::node::new_element("dt", None);
-        dt_el.append(html::node::new_text("This version:"));
+        let dt_el = key_to_dt_node("This version");
         dl_el.append(dt_el);
 
         let a_el = html::node::new_a(
@@ -208,13 +221,7 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
 
     // insert editors
     if !doc.md.editors.is_empty() {
-        let dt_el = html::node::new_element(
-            "dt",
-            btreemap! {
-                "class" => "editor".to_owned()
-            },
-        );
-        dt_el.append(html::node::new_text("Editor:"));
+        let dt_el = key_to_dt_node("Editor");
         dl_el.append(dt_el);
 
         for dd_el in doc.md.editors.iter().map(editor_to_dd_node) {
@@ -224,8 +231,7 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
 
     // insert custom metadata
     for (key, vals) in &doc.md.custom_md {
-        let dt_el = html::node::new_element("dt", None);
-        dt_el.append(html::node::new_text(format!("{}:", key)));
+        let dt_el = key_to_dt_node(key);
         dl_el.append(dt_el);
 
         for val in vals {
