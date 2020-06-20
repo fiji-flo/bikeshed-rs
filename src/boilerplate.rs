@@ -198,6 +198,12 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
         dt_el
     }
 
+    fn wrap_in_dd_node(el: NodeRef) -> NodeRef {
+        let dd_el = html::node::new_element("dd", None);
+        dd_el.append(el);
+        dd_el
+    }
+
     let macros = &doc.macros;
 
     let dl_el = html::node::new_element("dl", None);
@@ -214,8 +220,7 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
             },
             version,
         );
-        let dd_el = html::node::new_element("dd", None);
-        dd_el.append(a_el);
+        let dd_el = wrap_in_dd_node(a_el);
         dl_el.append(dd_el);
     }
 
@@ -235,8 +240,7 @@ pub fn add_spec_metadata_section(doc: &mut Spec) {
         dl_el.append(dt_el);
 
         for val in vals {
-            let dd_el = html::node::new_element("dd", None);
-            dd_el.append(html::node::new_text(val));
+            let dd_el = wrap_in_dd_node(html::node::new_text(val));
             dl_el.append(dd_el);
         }
     }
