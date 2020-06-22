@@ -80,7 +80,6 @@ impl<'a> TokenStream<'a> {
         }
     }
 
-    #[allow(dead_code)]
     fn next(&self) -> &Token {
         if self.curr >= self.tokens.len() - 1 {
             &self.after
@@ -136,7 +135,9 @@ fn parse_tokens(tokens: &[Token]) -> Vec<String> {
                 lines.push(stream.curr().line.clone());
             }
             TokenKind::Text => {
-                if stream.prev().kind == TokenKind::Blank {
+                if stream.next().kind == TokenKind::EqualsLine {
+                    lines.push(parse_multi_line_heading(&mut stream));
+                } else if stream.prev().kind == TokenKind::Blank {
                     lines.extend(parse_paragraph(&mut stream));
                 }
             }
@@ -149,13 +150,51 @@ fn parse_tokens(tokens: &[Token]) -> Vec<String> {
     lines
 }
 
+// NOTE: When a particular section-parsing function is over, the current token
+// in the stream should be "end" token or the last token of the section.
+
+fn parse_multi_line_heading(stream: &mut TokenStream) -> String {
+    lazy_static! {
+        // regex for text with id
+        static ref TEXT_WITH_ID_REG: Regex = Regex::new(r"(?P<text>.*)\s*\{\s*#(?P<id>[^}]+)\s*\}\s*$").unwrap();
+    }
+
+    let level = match stream.next().kind {
+        TokenKind::EqualsLine => 2,
+        _ => die!(
+            "[Markdown] Fail to parse a multi-line heading from:\n{}\n{}",
+            stream.curr().line,
+            stream.next().line
+        ),
+    };
+
+    let (text, id_attr) = if let Some(caps) = TEXT_WITH_ID_REG.captures(&stream.curr().line) {
+        (
+            caps.name("text").unwrap().as_str(),
+            format!("id = {}", caps.name("id").unwrap().as_str()),
+        )
+    } else {
+        (stream.curr().line.as_str(), String::new())
+    };
+
+    let heading = format!(
+        "<h{level} {id_attr}>{text}</h{level}>\n",
+        level = level,
+        id_attr = id_attr,
+        text = text
+    );
+
+    stream.move_to_next();
+
+    heading
+}
+
 fn parse_paragraph(stream: &mut TokenStream) -> Vec<String> {
     let mut lines = vec![format!("<p>{}\n", stream.curr().line)];
 
     loop {
-        stream.move_to_next();
-
-        if stream.curr().kind == TokenKind::Text {
+        if stream.next().kind == TokenKind::Text {
+            stream.move_to_next();
             lines.push(stream.curr().line.clone());
         } else {
             // append the end tag to the last line
