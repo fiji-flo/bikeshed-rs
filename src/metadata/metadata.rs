@@ -397,7 +397,7 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
             if last_key.is_some()
                 && (line.text.trim().is_empty() || START_WITH_SPACES_REG.is_match(&line.text))
             {
-                // if the line is empty or start with 1+ spaces, continue the previous key
+                // if the line is empty or starts with 1+ spaces, continue the previous key
                 md.add_data(last_key.unwrap(), &line.text, Some(line.index));
             } else if PAIR_REG.is_match(&line.text) {
                 // handle key-val pair
