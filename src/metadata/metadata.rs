@@ -361,7 +361,7 @@ pub fn extract_status(mds: &[&Metadata]) -> Option<String> {
 pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
     lazy_static! {
         // regex for title
-        static ref TITLE_REG: Regex = Regex::new(r"\s*<h1[^>]*>(.*?)</h1>").unwrap();
+        static ref TITLE_REG: Regex = Regex::new(r"\s*<h1[^>]*>(?P<title>.*?)</h1>").unwrap();
         // regex for begin tag
         static ref BEGIN_TAG_REG: Regex = Regex::new(r"<(pre|xmp) [^>]*class=[^>]*metadata[^>]*>").unwrap();
         // regex for </pre> end tag
@@ -371,7 +371,7 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
         // regex for line that starts with spaces
         static ref START_WITH_SPACES_REG: Regex = Regex::new(r"^\s+").unwrap();
         // regex for key-value pair
-        static ref PAIR_REG: Regex = Regex::new(r"(?P<key>[^:]+):\s*(?P<value>.*)").unwrap();
+        static ref PAIR_REG: Regex = Regex::new(r"(?P<key>[^:]+):\s*(?P<val>.*)").unwrap();
     }
 
     let mut md = Metadata::new();
@@ -401,19 +401,18 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
                 md.add_data(last_key.unwrap(), &line.text, Some(line.index));
             } else if let Some(caps) = PAIR_REG.captures(&line.text) {
                 // handle key-val pair
-                let key = caps.name("key").map_or("", |k| k.as_str());
-                let val = caps.name("value").map_or("", |v| v.as_str());
+                let key = caps.name("key").unwrap().as_str();
+                let val = caps.name("val").unwrap().as_str();
                 md.add_data(key, val, Some(line.index));
                 last_key = Some(key);
             } else {
                 // wrong key-val pair
                 die!("Incorrectly formatted metadata."; Some(line.index));
             }
-        } else if TITLE_REG.is_match(&line.text) {
+        } else if let Some(caps) = TITLE_REG.captures(&line.text) {
             // handle title
             if md.title.is_none() {
-                let caps = TITLE_REG.captures(&line.text).unwrap();
-                let title = caps.get(1).map_or("", |m| m.as_str());
+                let title = caps.name("title").unwrap().as_str();
                 md.add_data("Title", title, Some(line.index));
             }
             new_lines.push(line.clone());
