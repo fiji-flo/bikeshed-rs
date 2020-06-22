@@ -38,6 +38,58 @@ impl Token {
     }
 }
 
+#[derive(Debug)]
+struct TokenStream<'a> {
+    tokens: &'a [Token],
+    curr: usize,
+    // the token before all given tokens
+    before: Token,
+    // the token after all given tokens
+    after: Token,
+}
+
+impl<'a> TokenStream<'a> {
+    fn new(tokens: &'a [Token]) -> Self {
+        TokenStream {
+            tokens,
+            curr: 0,
+            before: Token::new_blank(),
+            after: Token::new_end(),
+        }
+    }
+
+    fn move_to_next(&mut self) {
+        if self.curr < self.tokens.len() {
+            self.curr += 1;
+        }
+    }
+
+    fn curr(&self) -> &Token {
+        if self.curr >= self.tokens.len() {
+            &self.after
+        } else {
+            &self.tokens[self.curr]
+        }
+    }
+
+    fn prev(&self) -> &Token {
+        if self.curr == 0 {
+            &self.before
+        } else {
+            &self.tokens[self.curr - 1]
+        }
+    }
+
+    #[allow(dead_code)]
+    fn next(&self) -> &Token {
+        if self.curr >= self.tokens.len() - 1 {
+            &self.after
+        } else {
+            &self.tokens[self.curr + 1]
+        }
+    }
+}
+
 // Turn lines of text into block tokens, which'll be turned into MD blocks later.
 fn tokenize_lines(lines: &[String]) -> Vec<Token> {
     lazy_static! {
@@ -71,61 +123,41 @@ fn tokenize_lines(lines: &[String]) -> Vec<Token> {
 }
 
 fn parse_tokens(tokens: &[Token]) -> Vec<String> {
+    let mut stream = TokenStream::new(tokens);
     let mut lines = Vec::new();
 
-    let mut prev_token = Token::new_blank();
-    let mut stream = tokens.into_iter();
-
     loop {
-        let curr_token = if let Some(token) = stream.next() {
-            token
-        } else {
+        if stream.curr().kind == TokenKind::End {
             break;
-        };
+        }
 
-        match curr_token.kind {
-            TokenKind::Blank => {
-                prev_token = curr_token.clone();
-            }
+        match stream.curr().kind {
             TokenKind::Block => {
-                lines.push(curr_token.line.clone());
-                prev_token = curr_token.clone();
+                lines.push(stream.curr().line.clone());
             }
             TokenKind::Text => {
-                if prev_token.kind == TokenKind::Blank {
-                    lines.extend(parse_paragraph(
-                        &curr_token.line,
-                        &mut stream,
-                        &mut prev_token,
-                    ));
-                } else {
-                    prev_token = curr_token.clone();
+                if stream.prev().kind == TokenKind::Blank {
+                    lines.extend(parse_paragraph(&mut stream));
                 }
             }
             _ => {}
         }
+
+        stream.move_to_next();
     }
 
     lines
 }
 
-fn parse_paragraph<'a, I>(text: &str, stream: &mut I, prev_token: &mut Token) -> Vec<String>
-where
-    I: Iterator<Item = &'a Token>,
-{
-    let mut lines = vec![format!("<p>{}\n", text)];
+fn parse_paragraph(stream: &mut TokenStream) -> Vec<String> {
+    let mut lines = vec![format!("<p>{}\n", stream.curr().line)];
 
     loop {
-        let curr_token = if let Some(token) = stream.next() {
-            token.to_owned()
-        } else {
-            Token::new_end()
-        };
+        stream.move_to_next();
 
-        if curr_token.kind == TokenKind::Text {
-            lines.push(curr_token.line);
+        if stream.curr().kind == TokenKind::Text {
+            lines.push(stream.curr().line.clone());
         } else {
-            *prev_token = curr_token.clone();
             // append the end tag to the last line
             let last_index = lines.len() - 1;
             let last_line = lines.get_mut(last_index).unwrap();
