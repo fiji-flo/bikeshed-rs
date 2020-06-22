@@ -7,11 +7,34 @@ pub fn parse(lines: &[String]) -> Vec<String> {
 }
 
 #[derive(Debug, Clone, PartialEq)]
-enum Token {
+enum TokenKind {
     Blank,
-    Block(String),
-    Text(String),
+    Block,
+    Text,
     End,
+}
+
+#[derive(Debug, Clone)]
+struct Token {
+    kind: TokenKind,
+    line: String,
+}
+
+impl Token {
+    fn new<T: Into<String>>(kind: TokenKind, line: T) -> Self {
+        Token {
+            kind,
+            line: line.into(),
+        }
+    }
+
+    fn new_blank() -> Self {
+        Self::new(TokenKind::Blank, "")
+    }
+
+    fn new_end() -> Self {
+        Self::new(TokenKind::End, "")
+    }
 }
 
 // Turn lines of text into block tokens, which'll be turned into MD blocks later.
@@ -25,11 +48,11 @@ fn tokenize_lines(lines: &[String]) -> Vec<Token> {
 
     for line in lines.iter() {
         if line.is_empty() {
-            tokens.push(Token::Blank);
+            tokens.push(Token::new(TokenKind::Blank, line));
         } else if HTML_BLOCK_REG.is_match(line) {
-            tokens.push(Token::Block(line.clone()));
+            tokens.push(Token::new(TokenKind::Block, line));
         } else {
-            tokens.push(Token::Text(line.clone()));
+            tokens.push(Token::new(TokenKind::Text, line));
         }
     }
 
@@ -39,29 +62,33 @@ fn tokenize_lines(lines: &[String]) -> Vec<Token> {
 fn parse_tokens(tokens: &[Token]) -> Vec<String> {
     let mut lines = Vec::new();
 
-    let mut prev = Token::Blank;
+    let mut prev_token = Token::new_blank();
     let mut stream = tokens.into_iter();
 
     loop {
-        let curr = if let Some(token) = stream.next() {
+        let curr_token = if let Some(token) = stream.next() {
             token
         } else {
             break;
         };
 
-        match curr {
-            Token::Blank => {
-                prev = curr.clone();
+        match curr_token.kind {
+            TokenKind::Blank => {
+                prev_token = curr_token.clone();
             }
-            Token::Block(line) => {
-                lines.push(line.clone());
-                prev = curr.clone();
+            TokenKind::Block => {
+                lines.push(curr_token.line.clone());
+                prev_token = curr_token.clone();
             }
-            Token::Text(line) => {
-                if prev == Token::Blank {
-                    lines.extend(parse_paragraph(line, &mut stream, &mut prev));
+            TokenKind::Text => {
+                if prev_token.kind == TokenKind::Blank {
+                    lines.extend(parse_paragraph(
+                        &curr_token.line,
+                        &mut stream,
+                        &mut prev_token,
+                    ));
                 } else {
-                    prev = curr.clone();
+                    prev_token = curr_token.clone();
                 }
             }
             _ => {}
@@ -71,23 +98,23 @@ fn parse_tokens(tokens: &[Token]) -> Vec<String> {
     lines
 }
 
-fn parse_paragraph<'a, I>(text: &str, stream: &mut I, prev: &mut Token) -> Vec<String>
+fn parse_paragraph<'a, I>(text: &str, stream: &mut I, prev_token: &mut Token) -> Vec<String>
 where
     I: Iterator<Item = &'a Token>,
 {
     let mut lines = vec![format!("<p>{}\n", text)];
 
     loop {
-        let curr = if let Some(token) = stream.next() {
-            token
+        let curr_token = if let Some(token) = stream.next() {
+            token.to_owned()
         } else {
-            &Token::End
+            Token::new_end()
         };
 
-        if let Token::Text(ref text) = curr {
-            lines.push(text.clone());
+        if curr_token.kind == TokenKind::Text {
+            lines.push(curr_token.line);
         } else {
-            *prev = curr.clone();
+            *prev_token = curr_token.clone();
             // append the end tag to the last line
             let last_index = lines.len() - 1;
             let last_line = lines.get_mut(last_index).unwrap();
