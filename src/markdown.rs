@@ -9,6 +9,7 @@ pub fn parse(lines: &[String]) -> Vec<String> {
 #[derive(Debug, Clone, PartialEq)]
 enum TokenKind {
     Blank,
+    EqualsLine,
     Block,
     Text,
     End,
@@ -40,6 +41,8 @@ impl Token {
 // Turn lines of text into block tokens, which'll be turned into MD blocks later.
 fn tokenize_lines(lines: &[String]) -> Vec<Token> {
     lazy_static! {
+        // regex for equals line
+        static ref EQUALS_LINE_REG: Regex = Regex::new(r"={3,}\s*$").unwrap();
         // regex for html block
         static ref HTML_BLOCK_REG: Regex = Regex::new(r"<").unwrap();
     }
@@ -47,13 +50,21 @@ fn tokenize_lines(lines: &[String]) -> Vec<Token> {
     let mut tokens = Vec::new();
 
     for line in lines.iter() {
-        if line.is_empty() {
-            tokens.push(Token::new(TokenKind::Blank, line));
+        let token = if line.is_empty() {
+            // blank
+            Token::new(TokenKind::Blank, line)
+        } else if EQUALS_LINE_REG.is_match(line) {
+            // equals line
+            Token::new(TokenKind::EqualsLine, line)
         } else if HTML_BLOCK_REG.is_match(line) {
-            tokens.push(Token::new(TokenKind::Block, line));
+            // block
+            Token::new(TokenKind::Block, line)
         } else {
-            tokens.push(Token::new(TokenKind::Text, line));
-        }
+            // text
+            Token::new(TokenKind::Text, line)
+        };
+
+        tokens.push(token);
     }
 
     tokens
