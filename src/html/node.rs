@@ -3,10 +3,10 @@ use markup5ever::{LocalName, QualName};
 
 pub type Attr = (&'static str, &'static str);
 
-pub fn new_element<'a, I, T>(name: &str, attributes: I) -> NodeRef
+pub fn new_element<'a, I, V>(name: &str, attributes: I) -> NodeRef
 where
-    I: IntoIterator<Item = (&'a str, T)>,
-    T: Into<String>,
+    I: IntoIterator<Item = (&'a str, V)>,
+    V: Into<String>,
 {
     NodeRef::new_element(
         QualName::new(None, ns!(html), LocalName::from(name)),
@@ -31,11 +31,11 @@ pub fn new_style<T: Into<String>>(text: T) -> NodeRef {
     el
 }
 
-pub fn new_a<'a, I, T, K>(attributes: I, text: K) -> NodeRef
+pub fn new_a<'a, I, V, T>(attributes: I, text: T) -> NodeRef
 where
-    I: IntoIterator<Item = (&'a str, T)>,
+    I: IntoIterator<Item = (&'a str, V)>,
+    V: Into<String>,
     T: Into<String>,
-    K: Into<String>,
 {
     let el = new_element("a", attributes);
     el.append(NodeRef::new_text(text));
