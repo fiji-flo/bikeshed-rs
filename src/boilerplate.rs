@@ -255,7 +255,7 @@ pub fn fill_spec_metadata_section(doc: &mut Spec) {
     let dl_el = html::node::new_element("dl", None::<Attr>);
 
     for item in md_list {
-        dl_el.append(item)
+        dl_el.append(item);
     }
 
     container.as_node().append(dl_el);
