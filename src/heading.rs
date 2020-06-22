@@ -1,4 +1,4 @@
-use kuchiki::{NodeData, NodeDataRef, NodeRef};
+use kuchiki::NodeRef;
 
 use crate::html;
 use crate::spec::Spec;
@@ -7,33 +7,13 @@ pub fn process_headings(doc: &mut Spec) {
     // TODO:
     // 1. [all] or [doc-only]?
     // 2. [settled] or not?
-    let headings = match doc.dom().select("h2, h3, h4, h5, h6") {
-        Ok(headings) => {
-            // TODO: Find a better way to filter headings.
-            headings
-                .filter(|h| {
-                    // [ignore headings in boilerplate]
-                    // [just for testing]
-                    if let NodeData::Element(h_data) = h.as_node().data() {
-                        let ref mut attributes = h_data.attributes.borrow();
 
-                        if let Some(id) = attributes.get(local_name!("id")) {
-                            if id == "contents" {
-                                return false;
-                            }
-                        }
-                    }
-                    true
-                })
-                .collect::<Vec<NodeDataRef<_>>>()
+    if let Ok(els) = doc.dom().select("h2, h3, h4, h5, h6") {
+        for el in els {
+            html::node::add_class(el.as_node(), "heading");
+            html::node::add_class(el.as_node(), "settled");
+            wrap_heading_contents(el.as_node());
         }
-        Err(_) => return,
-    };
-
-    for heading in headings {
-        html::node::add_class(heading.as_node(), "heading");
-        html::node::add_class(heading.as_node(), "settled");
-        wrap_heading_contents(heading.as_node());
     }
 }
 

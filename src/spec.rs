@@ -114,9 +114,9 @@ impl<'a> Spec<'a> {
         boilerplate::fill_spec_metadata_section(self);
         boilerplate::fill_copyright_section(self);
         boilerplate::fill_abstract_section(self);
-        boilerplate::fill_toc_section(self);
         boilerplate::add_styles(self);
         heading::process_headings(self);
+        boilerplate::fill_toc_section(self);
     }
 
     pub fn finish(&mut self, outfile: Option<&str>) {
