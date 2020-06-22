@@ -371,7 +371,7 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
         // regex for line that starts with spaces
         static ref START_WITH_SPACES_REG: Regex = Regex::new(r"^\s+").unwrap();
         // regex for key-value pair
-        static ref PAIR_REG: Regex = Regex::new(r"([^:]+):\s*(.*)").unwrap();
+        static ref PAIR_REG: Regex = Regex::new(r"(?P<key>[^:]+):\s*(?P<value>.*)").unwrap();
     }
 
     let mut md = Metadata::new();
@@ -399,11 +399,10 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
             {
                 // if the line is empty or starts with 1+ spaces, continue the previous key
                 md.add_data(last_key.unwrap(), &line.text, Some(line.index));
-            } else if PAIR_REG.is_match(&line.text) {
+            } else if let Some(caps) = PAIR_REG.captures(&line.text) {
                 // handle key-val pair
-                let caps = PAIR_REG.captures(&line.text).unwrap();
-                let key = caps.get(1).map_or("", |k| k.as_str());
-                let val = caps.get(2).map_or("", |v| v.as_str());
+                let key = caps.name("key").map_or("", |k| k.as_str());
+                let val = caps.name("value").map_or("", |v| v.as_str());
                 md.add_data(key, val, Some(line.index));
                 last_key = Some(key);
             } else {
