@@ -1,4 +1,24 @@
+use regex::{Captures, Regex};
 use std::collections::{HashMap, HashSet};
+
+use crate::util;
+
+pub fn generate_name(text: &str) -> String {
+    lazy_static! {
+        // regex for parenthesis pair
+        static ref PAR_PAIR_REG: Regex = Regex::new(r"\(\)").unwrap();
+        // regex for dashable chars
+        static ref DASHABLE_REG: Regex = Regex::new(r"[\s/(,]+").unwrap();
+        // regex for useless chars
+        static ref USELESS_REG: Regex = Regex::new(r"[^a-z0-9_-]+").unwrap();
+    }
+
+    let mut text = text.to_lowercase();
+    text = util::regex::replace_all(&PAR_PAIR_REG, &text, |_: &Captures| "".to_owned());
+    text = util::regex::replace_all(&DASHABLE_REG, &text, |_: &Captures| "-".to_owned());
+    text = util::regex::replace_all(&USELESS_REG, &text, |_: &Captures| "".to_owned());
+    text
+}
 
 lazy_static! {
     pub static ref SOURCE_FILE_EXTENSIONS: HashSet<&'static str> = {

@@ -1,6 +1,7 @@
 use kuchiki::NodeRef;
 use std::cmp;
 
+use crate::config;
 use crate::html;
 use crate::spec::Spec;
 
@@ -19,6 +20,7 @@ pub fn process_headings(doc: &mut Spec) {
         }
 
         add_level(&heading_els);
+        add_default_id(&heading_els);
         add_secno_and_self_link(&heading_els);
     }
 }
@@ -82,6 +84,21 @@ fn add_level(heading_els: &[NodeRef]) {
 
         increment_level(&mut heading_levels, level as usize);
         html::node::insert_attr(heading_el, "data-level", levels_to_string(&heading_levels));
+    }
+}
+
+// Insert default "id" attribute into each heading element if necessary.
+fn add_default_id(heading_els: &[NodeRef]) {
+    for heading_el in heading_els {
+        if html::node::has_attr(heading_el, "id") {
+            continue;
+        }
+
+        // generate id from content
+        if let Ok(content_el) = heading_el.select_first(".content") {
+            let content = html::node::get_text_content(content_el.as_node());
+            html::node::insert_attr(heading_el, "id", config::generate_name(&content))
+        }
     }
 }
 

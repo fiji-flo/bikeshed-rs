@@ -54,7 +54,7 @@ pub fn get_tag(el: &NodeRef) -> Option<String> {
     }
 }
 
-pub fn has_class(el: &NodeRef, class: &str) -> bool {
+pub fn has_attr(el: &NodeRef, attr_name: &str) -> bool {
     let data = match el.data() {
         NodeData::Element(data) => data,
         _ => return false,
@@ -62,21 +62,7 @@ pub fn has_class(el: &NodeRef, class: &str) -> bool {
 
     let attributes = data.attributes.borrow();
 
-    if let Some(class_attr) = attributes.get(local_name!("class")) {
-        class_attr.split_whitespace().any(|piece| piece == class)
-    } else {
-        false
-    }
-}
-
-pub fn insert_attr<T: Into<String>>(el: &NodeRef, attr_name: &str, attr_val: T) {
-    let data = match el.data() {
-        NodeData::Element(data) => data,
-        _ => return,
-    };
-
-    let mut attributes = data.attributes.borrow_mut();
-    attributes.insert(LocalName::from(attr_name), attr_val.into());
+    attributes.get(LocalName::from(attr_name)).is_some()
 }
 
 pub fn get_attr(el: &NodeRef, attr_name: &str) -> Option<String> {
@@ -90,6 +76,31 @@ pub fn get_attr(el: &NodeRef, attr_name: &str) -> Option<String> {
     match attributes.get(LocalName::from(attr_name)) {
         Some(attr) => Some(attr.to_owned()),
         None => None,
+    }
+}
+
+pub fn insert_attr<T: Into<String>>(el: &NodeRef, attr_name: &str, attr_val: T) {
+    let data = match el.data() {
+        NodeData::Element(data) => data,
+        _ => return,
+    };
+
+    let mut attributes = data.attributes.borrow_mut();
+    attributes.insert(LocalName::from(attr_name), attr_val.into());
+}
+
+pub fn has_class(el: &NodeRef, class: &str) -> bool {
+    let data = match el.data() {
+        NodeData::Element(data) => data,
+        _ => return false,
+    };
+
+    let attributes = data.attributes.borrow();
+
+    if let Some(class_attr) = attributes.get(local_name!("class")) {
+        class_attr.split_whitespace().any(|piece| piece == class)
+    } else {
+        false
     }
 }
 
@@ -115,4 +126,18 @@ pub fn add_class(el: &NodeRef, class: &str) {
     };
 
     attributes.insert(local_name!("class"), new_class_attr);
+}
+
+// Get the content of the text node wrapped by the given node.
+pub fn get_text_content(el: &NodeRef) -> String {
+    for child in el.children() {
+        if let Some(content) = child.as_text() {
+            let content = content.borrow().trim().to_owned();
+
+            if !content.is_empty() {
+                return content;
+            }
+        }
+    }
+    "".to_owned()
 }
