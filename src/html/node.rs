@@ -79,6 +79,20 @@ pub fn insert_attr<T: Into<String>>(el: &NodeRef, attr_name: &str, attr_val: T) 
     attributes.insert(LocalName::from(attr_name), attr_val.into());
 }
 
+pub fn get_attr(el: &NodeRef, attr_name: &str) -> Option<String> {
+    let data = match el.data() {
+        NodeData::Element(data) => data,
+        _ => return None,
+    };
+
+    let attributes = data.attributes.borrow();
+
+    match attributes.get(LocalName::from(attr_name)) {
+        Some(attr) => Some(attr.to_owned()),
+        None => None,
+    }
+}
+
 pub fn add_class(el: &NodeRef, class: &str) {
     let data = match el.data() {
         NodeData::Element(data) => data,

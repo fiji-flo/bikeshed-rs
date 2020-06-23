@@ -18,11 +18,12 @@ pub fn process_headings(doc: &mut Spec) {
             wrap_heading_contents(heading_el);
         }
 
-        add_heading_level(&heading_els);
+        add_level(&heading_els);
+        add_secno(&heading_els);
     }
 }
 
-// Insert the content of heading into a <span class='content'> element.
+// Wrap the content of heading into a <span class="content"> element.
 fn wrap_heading_contents(heading_el: &NodeRef) {
     let content_el = html::node::new_element(
         "span",
@@ -38,8 +39,8 @@ fn wrap_heading_contents(heading_el: &NodeRef) {
     heading_el.append(content_el);
 }
 
-// Insert "data-level" attribute into heading nodes.
-fn add_heading_level(heading_els: &[NodeRef]) {
+// Insert "data-level" attribute into each heading element.
+fn add_level(heading_els: &[NodeRef]) {
     fn increment_level(heading_levels: &mut [u32], level: usize) {
         heading_levels[level - 2] += 1;
 
@@ -81,5 +82,22 @@ fn add_heading_level(heading_els: &[NodeRef]) {
 
         increment_level(&mut heading_levels, level as usize);
         html::node::insert_attr(heading_el, "data-level", levels_to_string(&heading_levels));
+    }
+}
+
+// Prepend a <span class="secno"> element to each heading element.
+fn add_secno(heading_els: &[NodeRef]) {
+    for heading_el in heading_els {
+        if let Some(data_level) = html::node::get_attr(heading_el, "data-level") {
+            let span_el = html::node::new_element(
+                "span",
+                btreemap! {
+                    "class" => "secno",
+                },
+            );
+            span_el.append(html::node::new_text(format!("{}. ", data_level)));
+
+            heading_el.prepend(span_el);
+        }
     }
 }
