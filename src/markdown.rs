@@ -10,6 +10,7 @@ pub fn parse(lines: &[String]) -> Vec<String> {
 enum TokenKind {
     Blank,
     EqualsLine,
+    DashLine,
     Block,
     Text,
     End,
@@ -94,6 +95,8 @@ fn tokenize_lines(lines: &[String]) -> Vec<Token> {
     lazy_static! {
         // regex for equals line
         static ref EQUALS_LINE_REG: Regex = Regex::new(r"={3,}\s*$").unwrap();
+        // regex for dash line
+        static ref DASH_LINE_REG: Regex = Regex::new(r"-{3,}\s*$").unwrap();
         // regex for html block
         static ref HTML_BLOCK_REG: Regex = Regex::new(r"<").unwrap();
     }
@@ -107,6 +110,9 @@ fn tokenize_lines(lines: &[String]) -> Vec<Token> {
         } else if EQUALS_LINE_REG.is_match(line) {
             // equals line
             Token::new(TokenKind::EqualsLine, line)
+        } else if DASH_LINE_REG.is_match(line) {
+            // dash line
+            Token::new(TokenKind::DashLine, line)
         } else if HTML_BLOCK_REG.is_match(line) {
             // block
             Token::new(TokenKind::Block, line)
@@ -135,7 +141,9 @@ fn parse_tokens(tokens: &[Token]) -> Vec<String> {
                 lines.push(stream.curr().line.clone());
             }
             TokenKind::Text => {
-                if stream.next().kind == TokenKind::EqualsLine {
+                if stream.next().kind == TokenKind::EqualsLine
+                    || stream.next().kind == TokenKind::DashLine
+                {
                     lines.push(parse_multi_line_heading(&mut stream));
                 } else if stream.prev().kind == TokenKind::Blank {
                     lines.extend(parse_paragraph(&mut stream));
@@ -151,7 +159,7 @@ fn parse_tokens(tokens: &[Token]) -> Vec<String> {
 }
 
 // NOTE: When a particular section-parsing function is over, the current token
-// in the stream should be "end" token or the last token of the section.
+// in the stream should be the last token of the section.
 
 fn parse_multi_line_heading(stream: &mut TokenStream) -> String {
     lazy_static! {
@@ -161,6 +169,7 @@ fn parse_multi_line_heading(stream: &mut TokenStream) -> String {
 
     let level = match stream.next().kind {
         TokenKind::EqualsLine => 2,
+        TokenKind::DashLine => 3,
         _ => die!(
             "[Markdown] Fail to parse a multi-line heading from:\n{}\n{}",
             stream.curr().line,
