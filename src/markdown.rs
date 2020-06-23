@@ -11,6 +11,7 @@ enum TokenKind {
     Blank,
     EqualsLine,
     DashLine,
+    Head,
     Block,
     Text,
     End,
@@ -90,6 +91,24 @@ impl<'a> TokenStream<'a> {
     }
 }
 
+fn is_single_line_heading(line: &str) -> bool {
+    lazy_static! {
+        // regex for heading
+        static ref HEADING_REG: Regex = Regex::new(r"^(?P<left_prefix>#{1,5})\s+[^#]+((?P<right_prefix>#{1,5})\s*\{#[^}]+\})?\s*$").unwrap();
+    }
+
+    if let Some(caps) = HEADING_REG.captures(line) {
+        if let Some(right_prefix) = caps.name("right_prefix") {
+            let left_prefix = caps.name("left_prefix").unwrap();
+            left_prefix.as_str().len() == right_prefix.as_str().len()
+        } else {
+            true
+        }
+    } else {
+        false
+    }
+}
+
 // Turn lines of text into block tokens, which'll be turned into MD blocks later.
 fn tokenize_lines(lines: &[String]) -> Vec<Token> {
     lazy_static! {
@@ -113,6 +132,9 @@ fn tokenize_lines(lines: &[String]) -> Vec<Token> {
         } else if DASH_LINE_REG.is_match(line) {
             // dash line
             Token::new(TokenKind::DashLine, line)
+        } else if is_single_line_heading(line) {
+            // single line head
+            Token::new(TokenKind::Head, line)
         } else if HTML_BLOCK_REG.is_match(line) {
             // block
             Token::new(TokenKind::Block, line)
@@ -140,6 +162,9 @@ fn parse_tokens(tokens: &[Token]) -> Vec<String> {
             TokenKind::Block => {
                 lines.push(stream.curr().line.clone());
             }
+            TokenKind::Head => {
+                lines.push(parse_single_line_heading(&mut stream));
+            }
             TokenKind::Text => {
                 if stream.next().kind == TokenKind::EqualsLine
                     || stream.next().kind == TokenKind::DashLine
@@ -161,6 +186,33 @@ fn parse_tokens(tokens: &[Token]) -> Vec<String> {
 // NOTE: When a particular section-parsing function is over, the current token
 // in the stream should be the last token of the section.
 
+fn parse_single_line_heading(stream: &mut TokenStream) -> String {
+    lazy_static! {
+        // regex for heading
+        static ref HEADING_REG: Regex = Regex::new(r"^(?P<prefix>#{1,5})\s+(?P<text>[^#]+)(#{1,5}\s*\{#(?P<id>[^}]+)\})?\s*$").unwrap();
+    }
+
+    let caps = HEADING_REG.captures(&stream.curr().line).unwrap();
+
+    let prefix = caps.name("prefix").unwrap().as_str();
+    let level = prefix.len() + 1;
+
+    let text = caps.name("text").unwrap().as_str().trim();
+
+    let id_attr = if let Some(id) = caps.name("id") {
+        format!("id = {}", id.as_str())
+    } else {
+        String::new()
+    };
+
+    format!(
+        "<h{level} {id_attr}>{text}</h{level}>\n",
+        level = level,
+        id_attr = id_attr,
+        text = text
+    )
+}
+
 fn parse_multi_line_heading(stream: &mut TokenStream) -> String {
     lazy_static! {
         // regex for text with id
@@ -179,11 +231,11 @@ fn parse_multi_line_heading(stream: &mut TokenStream) -> String {
 
     let (text, id_attr) = if let Some(caps) = TEXT_WITH_ID_REG.captures(&stream.curr().line) {
         (
-            caps.name("text").unwrap().as_str(),
+            caps.name("text").unwrap().as_str().trim(),
             format!("id = {}", caps.name("id").unwrap().as_str()),
         )
     } else {
-        (stream.curr().line.as_str(), String::new())
+        (stream.curr().line.as_str().trim(), String::new())
     };
 
     let heading = format!(
