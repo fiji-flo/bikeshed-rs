@@ -1,8 +1,8 @@
 use regex::Regex;
 
 // Get HTML lines.
-pub fn parse(lines: &[String]) -> Vec<String> {
-    let tokens = tokenize_lines(lines);
+pub fn parse(lines: &[String], tab_size: u32) -> Vec<String> {
+    let tokens = tokenize_lines(lines, tab_size);
     parse_tokens(&tokens)
 }
 
@@ -21,6 +21,7 @@ enum TokenKind {
 struct Token {
     kind: TokenKind,
     line: String,
+    tab_num: u32,
 }
 
 impl Token {
@@ -28,6 +29,7 @@ impl Token {
         Token {
             kind,
             line: line.into(),
+            tab_num: 0,
         }
     }
 
@@ -38,6 +40,32 @@ impl Token {
     fn new_end() -> Self {
         Self::new(TokenKind::End, "")
     }
+}
+
+fn get_tab_num(text: &str, tab_size: u32) -> u32 {
+    let tab_size = tab_size as usize;
+    let mut tab_num = 0;
+    let mut curr: usize = 0;
+
+    loop {
+        if curr >= text.len() {
+            break;
+        }
+
+        if &text[curr..curr + 1] == "\t" {
+            tab_num += 1;
+            curr += 1;
+        } else if curr + tab_size <= text.len()
+            && &text[curr..curr + tab_size] == " ".repeat(tab_size)
+        {
+            tab_num += 1;
+            curr += tab_size;
+        } else {
+            break;
+        }
+    }
+
+    tab_num
 }
 
 #[derive(Debug)]
@@ -110,7 +138,7 @@ fn is_single_line_heading(line: &str) -> bool {
 }
 
 // Turn lines of text into block tokens, which'll be turned into MD blocks later.
-fn tokenize_lines(lines: &[String]) -> Vec<Token> {
+fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
     lazy_static! {
         // regex for equals line
         static ref EQUALS_LINE_REG: Regex = Regex::new(r"={3,}\s*$").unwrap();
@@ -123,7 +151,7 @@ fn tokenize_lines(lines: &[String]) -> Vec<Token> {
     let mut tokens = Vec::new();
 
     for line in lines.iter() {
-        let token = if line.is_empty() {
+        let mut token = if line.is_empty() {
             // blank
             Token::new(TokenKind::Blank, line)
         } else if EQUALS_LINE_REG.is_match(line) {
@@ -133,7 +161,7 @@ fn tokenize_lines(lines: &[String]) -> Vec<Token> {
             // dash line
             Token::new(TokenKind::DashLine, line)
         } else if is_single_line_heading(line) {
-            // single line head
+            // single line heading
             Token::new(TokenKind::Head, line)
         } else if HTML_BLOCK_REG.is_match(line) {
             // block
@@ -142,6 +170,8 @@ fn tokenize_lines(lines: &[String]) -> Vec<Token> {
             // text
             Token::new(TokenKind::Text, line)
         };
+
+        token.tab_num = get_tab_num(&token.line, tab_size);
 
         tokens.push(token);
     }

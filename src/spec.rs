@@ -93,6 +93,7 @@ impl<'a> Spec<'a> {
                 .iter()
                 .map(|l| l.text.clone())
                 .collect::<Vec<String>>(),
+            self.md.tab_size,
         );
 
         self.html = lines.join("");

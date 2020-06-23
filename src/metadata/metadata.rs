@@ -28,6 +28,7 @@ pub struct Metadata {
     pub editors: Vec<Editor>,
     pub editor_term: Option<EditorTerm>,
     pub group: Option<String>,
+    pub tab_size: u32,
     pub infer_css_dfns: bool,
     pub remove_multiple_links: bool,
     pub title: Option<String>,
@@ -41,6 +42,7 @@ impl Metadata {
     pub fn new() -> Self {
         Metadata {
             boilerplate: BoolSet::new_with_default(true),
+            tab_size: 4,
             ..Default::default()
         }
     }
@@ -269,7 +271,7 @@ impl Metadata {
         let macros = &mut doc.macros;
 
         // abstract
-        macros.insert("abstract", markdown::parse(&self.abs).join("\n"));
+        macros.insert("abstract", markdown::parse(&self.abs, self.tab_size).join("\n"));
         // level
         if let Some(ref level) = self.level {
             macros.insert("level", level.clone());
