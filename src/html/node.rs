@@ -47,20 +47,58 @@ pub fn replace_node(old_el: &NodeRef, new_el: &NodeRef) {
     old_el.detach();
 }
 
-pub fn add_class(el: &NodeRef, class: &str) {
-    if let NodeData::Element(el_data) = el.data() {
-        let ref mut attributes = el_data.attributes.borrow_mut();
-
-        let new_class: String = if let Some(old_class) = attributes.get(local_name!("class")) {
-            if old_class.split_whitespace().any(|piece| piece == class) {
-                old_class.to_owned()
-            } else {
-                old_class.to_owned() + " " + class
-            }
-        } else {
-            class.to_owned()
-        };
-
-        attributes.insert(local_name!("class"), new_class);
+pub fn get_tag(el: &NodeRef) -> Option<String> {
+    match el.data() {
+        NodeData::Element(data) => Some(data.name.local.to_string()),
+        _ => None,
     }
+}
+
+pub fn has_class(el: &NodeRef, class: &str) -> bool {
+    let data = match el.data() {
+        NodeData::Element(data) => data,
+        _ => return false,
+    };
+
+    let attributes = data.attributes.borrow();
+
+    if let Some(class_attr) = attributes.get(local_name!("class")) {
+        class_attr.split_whitespace().any(|piece| piece == class)
+    } else {
+        false
+    }
+}
+
+pub fn insert_attr<T: Into<String>>(el: &NodeRef, attr_name: &str, attr_val: T) {
+    let data = match el.data() {
+        NodeData::Element(data) => data,
+        _ => return,
+    };
+
+    let mut attributes = data.attributes.borrow_mut();
+    attributes.insert(LocalName::from(attr_name), attr_val.into());
+}
+
+pub fn add_class(el: &NodeRef, class: &str) {
+    let data = match el.data() {
+        NodeData::Element(data) => data,
+        _ => return,
+    };
+
+    let mut attributes = data.attributes.borrow_mut();
+
+    let new_class_attr = if let Some(old_class_attr) = attributes.get(local_name!("class")) {
+        if old_class_attr
+            .split_whitespace()
+            .any(|piece| piece == class)
+        {
+            old_class_attr.to_owned()
+        } else {
+            old_class_attr.to_owned() + " " + class
+        }
+    } else {
+        class.to_owned()
+    };
+
+    attributes.insert(local_name!("class"), new_class_attr);
 }
