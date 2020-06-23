@@ -19,7 +19,7 @@ pub fn process_headings(doc: &mut Spec) {
         }
 
         add_level(&heading_els);
-        add_secno(&heading_els);
+        add_secno_and_self_link(&heading_els);
     }
 }
 
@@ -85,10 +85,12 @@ fn add_level(heading_els: &[NodeRef]) {
     }
 }
 
-// Prepend a <span class="secno"> element to each heading element.
-fn add_secno(heading_els: &[NodeRef]) {
+// Prepend a <span class="secno"> element to each heading element,
+// and append an <a class="self-link"> element to each heading element.
+fn add_secno_and_self_link(heading_els: &[NodeRef]) {
     for heading_el in heading_els {
         if let Some(data_level) = html::node::get_attr(heading_el, "data-level") {
+            // prepend secno
             let span_el = html::node::new_element(
                 "span",
                 btreemap! {
@@ -96,8 +98,19 @@ fn add_secno(heading_els: &[NodeRef]) {
                 },
             );
             span_el.append(html::node::new_text(format!("{}. ", data_level)));
-
             heading_el.prepend(span_el);
+
+            // append self-link
+            if let Some(id) = html::node::get_attr(heading_el, "id") {
+                let a_el = html::node::new_a(
+                    btreemap! {
+                        "class" => "self-link".to_owned(),
+                        "href" => format!("#{}", id),
+                    },
+                    "",
+                );
+                heading_el.append(a_el);
+            }
         }
     }
 }
