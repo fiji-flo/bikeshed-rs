@@ -3,7 +3,7 @@ use regex::Regex;
 // Get HTML lines.
 pub fn parse(lines: &[String], tab_size: u32) -> Vec<String> {
     let tokens = tokenize_lines(lines, tab_size);
-    parse_tokens(&tokens)
+    parse_tokens(&tokens, tab_size)
 }
 
 #[derive(Debug, Clone, PartialEq)]
@@ -12,6 +12,7 @@ enum TokenKind {
     EqualsLine,
     DashLine,
     Head,
+    Bulleted,
     Block,
     Text,
     End,
@@ -21,7 +22,7 @@ enum TokenKind {
 struct Token {
     kind: TokenKind,
     line: String,
-    tab_num: u32,
+    indent_level: u32,
 }
 
 impl Token {
@@ -29,7 +30,7 @@ impl Token {
         Token {
             kind,
             line: line.into(),
-            tab_num: 0,
+            indent_level: 0,
         }
     }
 
@@ -42,9 +43,9 @@ impl Token {
     }
 }
 
-fn get_tab_num(text: &str, tab_size: u32) -> u32 {
+fn get_indent_level(text: &str, tab_size: u32) -> u32 {
     let tab_size = tab_size as usize;
-    let mut tab_num = 0;
+    let mut indent_level = 0;
     let mut curr: usize = 0;
 
     loop {
@@ -53,25 +54,50 @@ fn get_tab_num(text: &str, tab_size: u32) -> u32 {
         }
 
         if &text[curr..curr + 1] == "\t" {
-            tab_num += 1;
+            indent_level += 1;
             curr += 1;
         } else if curr + tab_size <= text.len()
             && &text[curr..curr + tab_size] == " ".repeat(tab_size)
         {
-            tab_num += 1;
+            indent_level += 1;
             curr += tab_size;
         } else {
             break;
         }
     }
 
-    tab_num
+    indent_level
+}
+
+fn trim_indentation(text: &str, indent_level: u32, tab_size: u32) -> String {
+    // allow empty line
+    if text.trim().is_empty() {
+        return text.to_owned();
+    }
+
+    let tab_size = tab_size as usize;
+    let mut offset: usize = 0;
+
+    for _ in 0..indent_level {
+        if &text[offset..offset + 1] == "\t" {
+            offset += 1;
+        } else if offset + tab_size <= text.len()
+            && &text[offset..offset + tab_size] == " ".repeat(tab_size)
+        {
+            offset += tab_size;
+        } else {
+            die!("[Markdown] \"{}\" isn't indented enough.", text);
+        }
+    }
+
+    text[offset..].to_owned()
 }
 
 #[derive(Debug)]
 struct TokenStream<'a> {
     tokens: &'a [Token],
     curr: usize,
+    tab_size: u32,
     // the token before all given tokens
     before: Token,
     // the token after all given tokens
@@ -79,10 +105,11 @@ struct TokenStream<'a> {
 }
 
 impl<'a> TokenStream<'a> {
-    fn new(tokens: &'a [Token]) -> Self {
+    fn new(tokens: &'a [Token], tab_size: u32) -> Self {
         TokenStream {
             tokens,
             curr: 0,
+            tab_size,
             before: Token::new_blank(),
             after: Token::new_end(),
         }
@@ -94,28 +121,32 @@ impl<'a> TokenStream<'a> {
         }
     }
 
-    fn curr(&self) -> &Token {
-        if self.curr >= self.tokens.len() {
+    fn nth(&self, index: usize) -> &Token {
+        if index >= self.tokens.len() {
             &self.after
         } else {
-            &self.tokens[self.curr]
+            &self.tokens[index]
         }
+    }
+
+    fn curr(&self) -> &Token {
+        self.nth(self.curr)
     }
 
     fn prev(&self) -> &Token {
         if self.curr == 0 {
             &self.before
         } else {
-            &self.tokens[self.curr - 1]
+            &self.nth(self.curr - 1)
         }
     }
 
     fn next(&self) -> &Token {
-        if self.curr >= self.tokens.len() - 1 {
-            &self.after
-        } else {
-            &self.tokens[self.curr + 1]
-        }
+        &self.nth(self.curr + 1)
+    }
+
+    fn next_next(&self) -> &Token {
+        &self.nth(self.curr + 2)
     }
 }
 
@@ -141,9 +172,11 @@ fn is_single_line_heading(line: &str) -> bool {
 fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
     lazy_static! {
         // regex for equals line
-        static ref EQUALS_LINE_REG: Regex = Regex::new(r"={3,}\s*$").unwrap();
+        static ref EQUALS_LINE_REG: Regex = Regex::new(r"^={3,}\s*$").unwrap();
         // regex for dash line
-        static ref DASH_LINE_REG: Regex = Regex::new(r"-{3,}\s*$").unwrap();
+        static ref DASH_LINE_REG: Regex = Regex::new(r"^-{3,}\s*$").unwrap();
+        // regex for bulleted item
+        static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-]\s*").unwrap();
         // regex for html block
         static ref HTML_BLOCK_REG: Regex = Regex::new(r"<").unwrap();
     }
@@ -151,6 +184,7 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
     let mut tokens = Vec::new();
 
     for line in lines.iter() {
+        // TODO: Implement token-factory.
         let mut token = if line.is_empty() {
             // blank
             Token::new(TokenKind::Blank, line)
@@ -163,6 +197,9 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
         } else if is_single_line_heading(line) {
             // single line heading
             Token::new(TokenKind::Head, line)
+        } else if BULLETED_REG.is_match(line) {
+            // bulleted item
+            Token::new(TokenKind::Bulleted, line)
         } else if HTML_BLOCK_REG.is_match(line) {
             // block
             Token::new(TokenKind::Block, line)
@@ -171,7 +208,7 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
             Token::new(TokenKind::Text, line)
         };
 
-        token.tab_num = get_tab_num(&token.line, tab_size);
+        token.indent_level = get_indent_level(&token.line, tab_size);
 
         tokens.push(token);
     }
@@ -179,8 +216,8 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
     tokens
 }
 
-fn parse_tokens(tokens: &[Token]) -> Vec<String> {
-    let mut stream = TokenStream::new(tokens);
+fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
+    let mut stream = TokenStream::new(tokens, tab_size);
     let mut lines = Vec::new();
 
     loop {
@@ -203,6 +240,9 @@ fn parse_tokens(tokens: &[Token]) -> Vec<String> {
                 } else if stream.prev().kind == TokenKind::Blank {
                     lines.extend(parse_paragraph(&mut stream));
                 }
+            }
+            TokenKind::Bulleted => {
+                lines.extend(parse_bulleted(&mut stream));
             }
             _ => {}
         }
@@ -295,6 +335,86 @@ fn parse_paragraph(stream: &mut TokenStream) -> Vec<String> {
             break;
         }
     }
+
+    lines
+}
+
+fn parse_bulleted(stream: &mut TokenStream) -> Vec<String> {
+    lazy_static! {
+        // regex for bulleted item
+        static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-]\s+(?P<text>.*)").unwrap();
+    }
+
+    let top_indent_level = stream.curr().indent_level;
+
+    let parse_item = |stream: &mut TokenStream| -> Vec<String> {
+        // current token must be bulleted item
+
+        let mut lines = Vec::new();
+
+        if let Some(caps) = BULLETED_REG.captures(&stream.curr().line) {
+            let text = caps.name("text").map_or("", |t| t.as_str());
+            lines.push(text.to_owned());
+        }
+
+        loop {
+            if stream.next().kind == TokenKind::End {
+                break;
+            }
+            if stream.next().kind == TokenKind::Bulleted
+                && stream.next().indent_level == top_indent_level
+            {
+                break;
+            }
+            if stream.next().indent_level < top_indent_level {
+                break;
+            }
+            if stream.next().kind == TokenKind::Blank
+                && stream.next_next().kind != TokenKind::Bulleted
+                && stream.next_next().indent_level <= top_indent_level
+            {
+                break;
+            }
+
+            stream.move_to_next();
+
+            lines.push(trim_indentation(
+                &stream.curr().line,
+                top_indent_level + 1,
+                stream.tab_size,
+            ));
+        }
+
+        lines
+    };
+
+    let mut lines = vec!["<ul data-md>".to_owned()];
+
+    loop {
+        lines.push("<li data-md>".to_owned());
+
+        let item_lines = parse_item(stream);
+        lines.extend(parse(&item_lines, stream.tab_size));
+
+        lines.push("</li>".to_owned());
+
+        if stream.next().kind == TokenKind::End {
+            break;
+        }
+        if stream.next().indent_level < top_indent_level {
+            break;
+        }
+        if stream.next().kind == TokenKind::Blank
+            && stream.next_next().kind != TokenKind::Bulleted
+            && stream.next_next().indent_level <= top_indent_level
+        {
+            break;
+        }
+
+        stream.move_to_next();
+    }
+
+    lines.push("</ul>".to_owned());
 
     lines
 }
