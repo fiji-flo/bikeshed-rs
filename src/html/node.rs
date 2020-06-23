@@ -51,8 +51,12 @@ pub fn add_class(el: &NodeRef, class: &str) {
     if let NodeData::Element(el_data) = el.data() {
         let ref mut attributes = el_data.attributes.borrow_mut();
 
-        let new_class = if let Some(old_class) = attributes.get(local_name!("class")) {
-            old_class.to_owned() + " " + class
+        let new_class: String = if let Some(old_class) = attributes.get(local_name!("class")) {
+            if old_class.split_whitespace().any(|piece| piece == class) {
+                old_class.to_owned()
+            } else {
+                old_class.to_owned() + " " + class
+            }
         } else {
             class.to_owned()
         };
