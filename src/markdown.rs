@@ -6,7 +6,7 @@ pub fn parse(lines: &[String], tab_size: u32) -> Vec<String> {
     parse_tokens(&tokens, tab_size)
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, PartialOrd)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 enum TokenKind {
     Blank,
     EqualsLine,
@@ -94,6 +94,28 @@ fn trim_indentation(text: &str, indent_level: u32, tab_size: u32) -> String {
     }
 
     text[offset..].to_owned()
+}
+
+#[derive(Debug)]
+struct TokenFactory {
+    tab_size: u32,
+}
+
+impl TokenFactory {
+    fn new(tab_size: u32) -> Self {
+        TokenFactory { tab_size }
+    }
+
+    fn make<T: Into<String>>(&self, kind: TokenKind, line: T) -> Token {
+        let line = line.into();
+        let indent_level = get_indent_level(&line, self.tab_size);
+
+        Token {
+            kind,
+            line,
+            indent_level,
+        }
+    }
 }
 
 #[derive(Debug)]
@@ -204,40 +226,39 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
         static ref HTML_BLOCK_REG: Regex = Regex::new(r"<").unwrap();
     }
 
+    let token_factory = TokenFactory::new(tab_size);
+
     let mut tokens = Vec::new();
 
     for line in lines.iter() {
-        // TODO: Implement token-factory.
-        let mut token = if line.is_empty() {
+        let token = if line.is_empty() {
             // blank
-            Token::new(TokenKind::Blank, line)
+            token_factory.make(TokenKind::Blank, line)
         } else if EQUALS_LINE_REG.is_match(line) {
             // equals line
-            Token::new(TokenKind::EqualsLine, line)
+            token_factory.make(TokenKind::EqualsLine, line)
         } else if DASH_LINE_REG.is_match(line) {
             // dash line
-            Token::new(TokenKind::DashLine, line)
+            token_factory.make(TokenKind::DashLine, line)
         } else if is_single_line_heading(line) {
             // single line heading
-            Token::new(TokenKind::Head, line)
+            token_factory.make(TokenKind::Head, line)
         } else if NUMBERED_REG.is_match(line) {
             // numbered item
-            Token::new(TokenKind::Numbered, line)
+            token_factory.make(TokenKind::Numbered, line)
         } else if BULLETED_REG.is_match(line) {
             // bulleted item
-            Token::new(TokenKind::Bulleted, line)
+            token_factory.make(TokenKind::Bulleted, line)
         } else if let Some(token_kind) = extract_def_token_kind(line) {
             // definition item
-            Token::new(token_kind, line)
+            token_factory.make(token_kind, line)
         } else if HTML_BLOCK_REG.is_match(line) {
             // block
-            Token::new(TokenKind::Block, line)
+            token_factory.make(TokenKind::Block, line)
         } else {
             // text
-            Token::new(TokenKind::Text, line)
+            token_factory.make(TokenKind::Text, line)
         };
-
-        token.indent_level = get_indent_level(&token.line, tab_size);
 
         tokens.push(token);
     }
