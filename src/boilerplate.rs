@@ -1,5 +1,5 @@
 use kuchiki::traits::*;
-use kuchiki::{NodeData, NodeRef};
+use kuchiki::{NodeData, NodeDataRef, NodeRef};
 use markup5ever::LocalName;
 use std::fs;
 use std::path::Path;
@@ -309,4 +309,118 @@ pub fn fill_toc_section(doc: &mut Spec) {
     );
     h2_el.append(html::node::new_text("Table of Contents"));
     container.as_node().append(h2_el);
+
+    // Each cell stores the reference to <ol> of a particular heading level.
+    // Relation: <h[level]> => ol_cells[level - 2], where 2 <= level <= 6.
+    let mut ol_cells: Vec<Option<NodeRef>> = vec![None; 6];
+
+    // Append a directory node (<ol> node) to table of contents, and then
+    // store it to ol_cells[0].
+    let dir_ol_el = html::node::new_element(
+        "ol",
+        btreemap! {
+            "class" => "toc",
+            "role"=> "directory",
+        },
+    );
+    container.as_node().append(dir_ol_el.clone());
+    ol_cells[0] = Some(dir_ol_el);
+
+    let mut previous_level = 1;
+
+    if let Ok(heading_els) = doc.dom().select("h2, h3, h4, h5, h6") {
+        let heading_els = heading_els
+            .map(|el| el.as_node().clone())
+            .collect::<Vec<NodeRef>>();
+
+        for heading_el in heading_els {
+            let heading_tag = html::node::get_tag(&heading_el).unwrap();
+            let curr_level = heading_tag.chars().last().unwrap().to_digit(10).unwrap() as usize;
+
+            if curr_level > previous_level + 1 {
+                die!(
+                    "Heading level jumps more than one level, from h{} to h{}",
+                    previous_level,
+                    curr_level
+                )
+            }
+
+            let curr_ol_el = if let Some(ref curr_ol_el) = ol_cells[curr_level - 2] {
+                curr_ol_el
+            } else {
+                die!(
+                    "Saw an <h{}> without seeing an <h{}> first. Please order your headings properly.",
+                    curr_level,
+                    curr_level - 1
+                )
+            };
+
+            if html::node::has_class(&heading_el, "no-toc") {
+                ol_cells[curr_level - 1] = None;
+            } else {
+                // Add a <li> node to current <ol> node.
+                let a_el = {
+                    let a_el = html::node::new_a(
+                        btreemap! {
+                            "href" => format!("#{}", html::node::get_attr(&heading_el, "id").unwrap())
+                        },
+                        "",
+                    );
+
+                    let span_el = html::node::new_element(
+                        "span",
+                        btreemap! {
+                            "class"=>"secno"
+                        },
+                    );
+                    span_el.append(html::node::new_text(
+                        html::node::get_attr(&heading_el, "data-level").unwrap(),
+                    ));
+                    a_el.append(span_el);
+
+                    a_el.append(html::node::new_text(" "));
+
+                    if let Ok(content_el) = heading_el.select_first(".content") {
+                        a_el.append(html::node::deep_clone(content_el.as_node()));
+                    }
+
+                    a_el
+                };
+
+                let li_el = html::node::new_element("li", None::<Attr>);
+                li_el.append(a_el);
+
+                let inner_ol_el = html::node::new_element(
+                    "ol",
+                    btreemap! {
+                        "class" => "toc",
+                    },
+                );
+                li_el.append(inner_ol_el.clone());
+
+                curr_ol_el.append(li_el);
+
+                ol_cells[curr_level - 1] = Some(inner_ol_el);
+            }
+
+            previous_level = curr_level;
+        }
+    }
+
+    // Remove empty <ol> nodes.
+    loop {
+        if let Ok(ol_els) = container.as_node().select("ol:empty") {
+            let ol_els = ol_els.collect::<Vec<NodeDataRef<_>>>();
+
+            if ol_els.len() == 0 {
+                break;
+            }
+
+            for ol_el in ol_els {
+                ol_el.as_node().detach();
+            }
+        } else {
+            break;
+        }
+    }
 }
