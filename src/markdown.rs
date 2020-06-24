@@ -12,6 +12,7 @@ enum TokenKind {
     EqualsLine,
     DashLine,
     Head,
+    Numbered,
     Bulleted,
     Block,
     Text,
@@ -175,6 +176,8 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
         static ref EQUALS_LINE_REG: Regex = Regex::new(r"^={3,}\s*$").unwrap();
         // regex for dash line
         static ref DASH_LINE_REG: Regex = Regex::new(r"^-{3,}\s*$").unwrap();
+        // regex for numbered item
+        static ref NUMBERED_REG: Regex = Regex::new(r"^\s*[0-9]+\.\s*").unwrap();
         // regex for bulleted item
         static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-]\s*").unwrap();
         // regex for html block
@@ -197,6 +200,9 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
         } else if is_single_line_heading(line) {
             // single line heading
             Token::new(TokenKind::Head, line)
+        } else if NUMBERED_REG.is_match(line) {
+            // numbered item
+            Token::new(TokenKind::Numbered, line)
         } else if BULLETED_REG.is_match(line) {
             // bulleted item
             Token::new(TokenKind::Bulleted, line)
@@ -240,6 +246,9 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
                 } else if stream.prev().kind == TokenKind::Blank {
                     lines.extend(parse_paragraph(&mut stream));
                 }
+            }
+            TokenKind::Numbered => {
+                lines.extend(parse_numbered(&mut stream));
             }
             TokenKind::Bulleted => {
                 lines.extend(parse_bulleted(&mut stream));
@@ -339,6 +348,89 @@ fn parse_paragraph(stream: &mut TokenStream) -> Vec<String> {
     lines
 }
 
+fn parse_numbered(stream: &mut TokenStream) -> Vec<String> {
+    lazy_static! {
+        // regex for numbered item
+        static ref NUMBERED_REG: Regex = Regex::new(r"^\s*(?P<id>[0-9]+)\.\s+(?P<text>.*)").unwrap();
+    }
+
+    let top_indent_level = stream.curr().indent_level;
+
+    let parse_item = |stream: &mut TokenStream| -> Vec<String> {
+        // current token must be numbered item
+
+        let mut lines = Vec::new();
+
+        if let Some(caps) = NUMBERED_REG.captures(&stream.curr().line) {
+            let text = caps.name("text").map_or("", |t| t.as_str());
+            lines.push(text.to_owned());
+        }
+
+        loop {
+            // break the loop if we reach the end of this numbered item
+            if stream.next().kind == TokenKind::End {
+                break;
+            }
+            if stream.next().kind == TokenKind::Numbered
+                && stream.next().indent_level == top_indent_level
+            {
+                break;
+            }
+            if stream.next().indent_level < top_indent_level {
+                break;
+            }
+            if stream.next().kind == TokenKind::Blank
+                && stream.next_next().kind != TokenKind::Numbered
+                && stream.next_next().indent_level <= top_indent_level
+            {
+                break;
+            }
+
+            stream.move_to_next();
+
+            lines.push(trim_indentation(
+                &stream.curr().line,
+                top_indent_level + 1,
+                stream.tab_size,
+            ));
+        }
+
+        lines
+    };
+
+    let mut lines = vec!["<ol>".to_owned()];
+
+    loop {
+        // generate a <li> item
+        lines.push("<li data-md>".to_owned());
+
+        let item_lines = parse_item(stream);
+        lines.extend(parse(&item_lines, stream.tab_size));
+
+        lines.push("</li>".to_owned());
+
+        // break the loop if we reach the end of this numbered list
+        if stream.next().kind == TokenKind::End {
+            break;
+        }
+        if stream.next().indent_level < top_indent_level {
+            break;
+        }
+        if stream.next().kind == TokenKind::Blank
+            && stream.next_next().kind != TokenKind::Numbered
+            && stream.next_next().indent_level <= top_indent_level
+        {
+            break;
+        }
+
+        stream.move_to_next();
+    }
+
+    lines.push("</ol>".to_owned());
+
+    lines
+}
+
 fn parse_bulleted(stream: &mut TokenStream) -> Vec<String> {
     lazy_static! {
         // regex for bulleted item
@@ -358,6 +450,7 @@ fn parse_bulleted(stream: &mut TokenStream) -> Vec<String> {
         }
 
         loop {
+            // break the loop if we reach the end of this bulleted item
             if stream.next().kind == TokenKind::End {
                 break;
             }
@@ -391,6 +484,7 @@ fn parse_bulleted(stream: &mut TokenStream) -> Vec<String> {
     let mut lines = vec!["<ul>".to_owned()];
 
     loop {
+        // generate a <li> item
         lines.push("<li data-md>".to_owned());
 
         let item_lines = parse_item(stream);
@@ -398,6 +492,7 @@ fn parse_bulleted(stream: &mut TokenStream) -> Vec<String> {
 
         lines.push("</li>".to_owned());
 
+        // break the loop if we reach the end of this bulleted list
         if stream.next().kind == TokenKind::End {
             break;
         }
