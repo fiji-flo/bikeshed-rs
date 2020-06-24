@@ -169,3 +169,23 @@ pub fn copy_content(from_el: &NodeRef, to_el: &NodeRef) {
         to_el.append(from_el_child.clone());
     }
 }
+
+pub fn deep_clone(el: &NodeRef) -> NodeRef {
+    let data = match el.data() {
+        NodeData::Element(data) => NodeData::Element(data.clone()),
+        NodeData::Text(data) => NodeData::Text(data.clone()),
+        NodeData::Comment(data) => NodeData::Comment(data.clone()),
+        NodeData::ProcessingInstruction(data) => NodeData::ProcessingInstruction(data.clone()),
+        NodeData::Doctype(data) => NodeData::Doctype(data.clone()),
+        NodeData::Document(data) => NodeData::Document(data.clone()),
+        NodeData::DocumentFragment => NodeData::DocumentFragment,
+    };
+
+    let curr = NodeRef::new(data);
+
+    for child in el.children() {
+        curr.append(deep_clone(&child));
+    }
+
+    curr
+}
