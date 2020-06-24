@@ -10,19 +10,20 @@ pub fn process_headings(doc: &mut Spec) {
     // 1. [all] or [doc-only]?
     // 2. [settled] or not?
 
-    if let Ok(els) = doc.dom().select("h2, h3, h4, h5, h6") {
-        let heading_els = els.map(|el| el.as_node().clone()).collect::<Vec<NodeRef>>();
+    let heading_els = match doc.dom().select("h2, h3, h4, h5, h6") {
+        Ok(els) => els.map(|el| el.as_node().clone()).collect::<Vec<NodeRef>>(),
+        _ => return,
+    };
 
-        for heading_el in &heading_els {
-            html::node::add_class(heading_el, "heading");
-            html::node::add_class(heading_el, "settled");
-            wrap_heading_contents(heading_el);
-        }
-
-        add_level(&heading_els);
-        add_default_id(&heading_els);
-        add_secno_and_self_link(&heading_els);
+    for heading_el in &heading_els {
+        html::node::add_class(heading_el, "heading");
+        html::node::add_class(heading_el, "settled");
+        wrap_heading_contents(heading_el);
     }
+
+    add_level(&heading_els);
+    add_default_id(&heading_els);
+    add_secno_and_self_link(&heading_els);
 }
 
 // Wrap the content of heading into a <span class="content"> element.
@@ -66,7 +67,6 @@ fn add_level(heading_els: &[NodeRef]) {
 
     for heading_el in heading_els {
         let heading_tag = html::node::get_tag(heading_el).unwrap();
-        // heading number
         let level = heading_tag.chars().last().unwrap().to_digit(10).unwrap();
 
         if html::node::has_class(heading_el, "no-num") {
