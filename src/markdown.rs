@@ -388,7 +388,7 @@ fn parse_bulleted(stream: &mut TokenStream) -> Vec<String> {
         lines
     };
 
-    let mut lines = vec!["<ul data-md>".to_owned()];
+    let mut lines = vec!["<ul>".to_owned()];
 
     loop {
         lines.push("<li data-md>".to_owned());
