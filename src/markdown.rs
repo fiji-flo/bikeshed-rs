@@ -6,7 +6,7 @@ pub fn parse(lines: &[String], tab_size: u32) -> Vec<String> {
     parse_tokens(&tokens, tab_size)
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 enum TokenKind {
     Blank,
     EqualsLine,
@@ -14,6 +14,8 @@ enum TokenKind {
     Head,
     Numbered,
     Bulleted,
+    Dt,
+    Dd,
     Block,
     Text,
     End,
@@ -169,8 +171,26 @@ fn is_single_line_heading(line: &str) -> bool {
     }
 }
 
+fn extract_def_token_kind(line: &str) -> Option<TokenKind> {
+    lazy_static! {
+        // regex for definition item
+        static ref DEF_REG: Regex = Regex::new(r"^(?P<prefix>:{1,2})").unwrap();
+    }
+
+    if let Some(caps) = DEF_REG.captures(line) {
+        if caps.name("prefix").unwrap().as_str().len() == 1 {
+            Some(TokenKind::Dt)
+        } else {
+            Some(TokenKind::Dd)
+        }
+    } else {
+        None
+    }
+}
+
 // Turn lines of text into block tokens, which'll be turned into MD blocks later.
 fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
+    // TODO: Globalize these regexes.
     lazy_static! {
         // regex for equals line
         static ref EQUALS_LINE_REG: Regex = Regex::new(r"^={3,}\s*$").unwrap();
@@ -206,6 +226,9 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
         } else if BULLETED_REG.is_match(line) {
             // bulleted item
             Token::new(TokenKind::Bulleted, line)
+        } else if let Some(token_kind) = extract_def_token_kind(line) {
+            // definition item
+            Token::new(token_kind, line)
         } else if HTML_BLOCK_REG.is_match(line) {
             // block
             Token::new(TokenKind::Block, line)
@@ -248,10 +271,13 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
                 }
             }
             TokenKind::Numbered => {
-                lines.extend(parse_numbered(&mut stream));
+                lines.extend(parse_numbered_list(&mut stream));
             }
             TokenKind::Bulleted => {
-                lines.extend(parse_bulleted(&mut stream));
+                lines.extend(parse_bulleted_list(&mut stream));
+            }
+            TokenKind::Dt | TokenKind::Dd => {
+                lines.extend(parse_def_list(&mut stream));
             }
             _ => {}
         }
@@ -348,7 +374,9 @@ fn parse_paragraph(stream: &mut TokenStream) -> Vec<String> {
     lines
 }
 
-fn parse_numbered(stream: &mut TokenStream) -> Vec<String> {
+// TODO: Write a generic list-parsing function.
+
+fn parse_numbered_list(stream: &mut TokenStream) -> Vec<String> {
     lazy_static! {
         // regex for numbered item
         static ref NUMBERED_REG: Regex = Regex::new(r"^\s*(?P<id>[0-9]+)\.\s+(?P<text>.*)").unwrap();
@@ -402,11 +430,10 @@ fn parse_numbered(stream: &mut TokenStream) -> Vec<String> {
 
     loop {
         // generate a <li> item
-        lines.push("<li data-md>".to_owned());
-
         let item_lines = parse_item(stream);
-        lines.extend(parse(&item_lines, stream.tab_size));
 
+        lines.push("<li data-md>".to_owned());
+        lines.extend(parse(&item_lines, stream.tab_size));
         lines.push("</li>".to_owned());
 
         // break the loop if we reach the end of this numbered list
@@ -431,7 +458,7 @@ fn parse_numbered(stream: &mut TokenStream) -> Vec<String> {
     lines
 }
 
-fn parse_bulleted(stream: &mut TokenStream) -> Vec<String> {
+fn parse_bulleted_list(stream: &mut TokenStream) -> Vec<String> {
     lazy_static! {
         // regex for bulleted item
         static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-]\s+(?P<text>.*)").unwrap();
@@ -485,11 +512,10 @@ fn parse_bulleted(stream: &mut TokenStream) -> Vec<String> {
 
     loop {
         // generate a <li> item
-        lines.push("<li data-md>".to_owned());
-
         let item_lines = parse_item(stream);
-        lines.extend(parse(&item_lines, stream.tab_size));
 
+        lines.push("<li data-md>".to_owned());
+        lines.extend(parse(&item_lines, stream.tab_size));
         lines.push("</li>".to_owned());
 
         // break the loop if we reach the end of this bulleted list
@@ -510,6 +536,101 @@ fn parse_bulleted(stream: &mut TokenStream) -> Vec<String> {
     }
 
     lines.push("</ul>".to_owned());
+
+    lines
+}
+
+fn parse_def_list(stream: &mut TokenStream) -> Vec<String> {
+    lazy_static! {
+        // regex for definition item
+        static ref DEF_REG: Regex = Regex::new(r"^:{1,2}\s+(?P<text>.*)").unwrap();
+    }
+
+    fn is_def_item_token(token_kind: &TokenKind) -> bool {
+        match token_kind {
+            TokenKind::Dt | TokenKind::Dd => true,
+            _ => false,
+        }
+    }
+
+    let top_indent_level = stream.curr().indent_level;
+
+    let parse_item = |stream: &mut TokenStream| -> (TokenKind, Vec<String>) {
+        // current token must be definition item
+
+        let mut lines = Vec::new();
+
+        let token_kind = stream.curr().kind;
+
+        if let Some(caps) = DEF_REG.captures(&stream.curr().line) {
+            let text = caps.name("text").map_or("", |t| t.as_str());
+            lines.push(text.to_owned());
+        }
+
+        loop {
+            // break the loop if we reach the end of this definition item
+            if stream.next().kind == TokenKind::End {
+                break;
+            }
+            if is_def_item_token(&stream.next().kind)
+                && stream.next().indent_level == top_indent_level
+            {
+                break;
+            }
+            if stream.next().indent_level < top_indent_level {
+                break;
+            }
+            if stream.next().kind == TokenKind::Blank
+                && !is_def_item_token(&stream.next_next().kind)
+                && stream.next_next().indent_level <= top_indent_level
+            {
+                break;
+            }
+
+            stream.move_to_next();
+
+            lines.push(trim_indentation(
+                &stream.curr().line,
+                top_indent_level + 1,
+                stream.tab_size,
+            ));
+        }
+
+        (token_kind, lines)
+    };
+
+    let mut lines = vec!["<dl>".to_owned()];
+
+    loop {
+        let (token_kind, item_lines) = parse_item(stream);
+        let tag = match token_kind {
+            TokenKind::Dt => "dt",
+            _ => "dd",
+        };
+
+        // generate a def item
+        lines.push(format!("<{} data-md>", tag));
+        lines.extend(parse(&item_lines, stream.tab_size));
+        lines.push(format!("</{}>", tag));
+
+        // break the loop if we reach the end of this bulleted list
+        if stream.next().kind == TokenKind::End {
+            break;
+        }
+        if stream.next().indent_level < top_indent_level {
+            break;
+        }
+        if stream.next().kind == TokenKind::Blank
+            && !is_def_item_token(&stream.next_next().kind)
+            && stream.next_next().indent_level <= top_indent_level
+        {
+            break;
+        }
+
+        stream.move_to_next();
+    }
+
+    lines.push("</dl>".to_owned());
 
     lines
 }
