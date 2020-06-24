@@ -268,6 +268,8 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
                     lines.push(parse_multi_line_heading(&mut stream));
                 } else if stream.prev().kind == TokenKind::Blank {
                     lines.extend(parse_paragraph(&mut stream));
+                } else {
+                    lines.push(stream.curr().line.clone());
                 }
             }
             TokenKind::Numbered => {
@@ -279,7 +281,9 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
             TokenKind::Dt | TokenKind::Dd => {
                 lines.extend(parse_def_list(&mut stream));
             }
-            _ => {}
+            _ => {
+                lines.push(stream.curr().line.clone());
+            }
         }
 
         stream.move_to_next();
