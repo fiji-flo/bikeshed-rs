@@ -118,6 +118,7 @@ impl<'a> Spec<'a> {
         boilerplate::add_styles(self);
         heading::process_headings(self);
         boilerplate::fill_toc_section(self);
+        clean::clean_dom(self.dom());
     }
 
     pub fn finish(&mut self, outfile: Option<&str>) {

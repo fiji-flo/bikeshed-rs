@@ -141,3 +141,31 @@ pub fn get_text_content(el: &NodeRef) -> String {
     }
     "".to_owned()
 }
+
+fn is_valid(el: &NodeRef) -> bool {
+    match el.as_text() {
+        Some(text) => !text.borrow().trim().is_empty(),
+        None => true,
+    }
+}
+
+// If the node only has one child, extract it.
+pub fn get_only_child(el: &NodeRef) -> Option<NodeRef> {
+    let children = el
+        .children()
+        .filter(|el| is_valid(el))
+        .collect::<Vec<NodeRef>>();
+
+    if children.len() == 1 {
+        Some(children[0].clone())
+    } else {
+        None
+    }
+}
+
+// Copy the content of a node to another node.
+pub fn copy_content(from_el: &NodeRef, to_el: &NodeRef) {
+    for from_el_child in from_el.children().filter(|el| is_valid(el)) {
+        to_el.append(from_el_child.clone());
+    }
+}
