@@ -271,7 +271,10 @@ impl Metadata {
         let macros = &mut doc.macros;
 
         // abstract
-        macros.insert("abstract", markdown::parse(&self.abs, self.tab_size).join("\n"));
+        macros.insert(
+            "abstract",
+            markdown::parse(&self.abs, self.tab_size).join("\n"),
+        );
         // level
         if let Some(ref level) = self.level {
             macros.insert("level", level.clone());

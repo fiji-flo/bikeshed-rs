@@ -96,7 +96,7 @@ impl<'a> Spec<'a> {
             self.md.tab_size,
         );
 
-        self.html = lines.join("");
+        self.html = lines.join("\n");
         boilerplate::add_header_footer(self);
         self.html = html::helper::replace_macros(&self.html, &self.macros);
 

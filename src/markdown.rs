@@ -321,7 +321,7 @@ fn parse_multi_line_heading(stream: &mut TokenStream) -> String {
 }
 
 fn parse_paragraph(stream: &mut TokenStream) -> Vec<String> {
-    let mut lines = vec![format!("<p>{}\n", stream.curr().line)];
+    let mut lines = vec![format!("<p>{}", stream.curr().line)];
 
     loop {
         if stream.next().kind == TokenKind::Text {
