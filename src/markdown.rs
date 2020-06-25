@@ -175,16 +175,30 @@ impl<'a> TokenStream<'a> {
     }
 }
 
-fn is_single_line_heading(line: &str) -> bool {
-    lazy_static! {
-        // regex for heading
-        static ref HEADING_REG: Regex = Regex::new(r"^(?P<left_prefix>#{1,5})\s+[^#]+((?P<right_prefix>#{1,5})\s*\{#[^}]+\})?\s*$").unwrap();
-    }
+lazy_static! {
+    // regex for equals line
+    static ref EQUALS_LINE_REG: Regex = Regex::new(r"^={3,}\s*$").unwrap();
+    // regex for dash line
+    static ref DASH_LINE_REG: Regex = Regex::new(r"^-{3,}\s*$").unwrap();
+    // regex for heading
+    static ref HEADING_REG: Regex = Regex::new(r"^(?P<prefix>#{1,5})\s+(?P<text>[^#]+)((?P<another_prefix>#{1,5})\s*\{#(?P<id>[^}]+)\})?\s*$").unwrap();
+    // regex for heading
+    static ref _HEADING_REG: Regex = Regex::new(r"^(?P<prefix>#{1,5})\s+(?P<text>[^#]+)(#{1,5}\s*\{#(?P<id>[^}]+)\})?\s*$").unwrap();
+    // regex for numbered item
+    static ref NUMBERED_REG: Regex = Regex::new(r"^\s*(?P<id>[0-9]+)\.\s*(?P<text>.*)").unwrap();
+    // regex for bulleted item
+    static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-]\s*(?P<text>.*)").unwrap();
+    // regex for definition item
+    static ref DEF_REG: Regex = Regex::new(r"^(?P<prefix>:{1,2})\s*(?P<text>.*)").unwrap();
+    // regex for html block
+    static ref HTML_BLOCK_REG: Regex = Regex::new(r"<").unwrap();
+}
 
+fn is_single_line_heading(line: &str) -> bool {
     if let Some(caps) = HEADING_REG.captures(line) {
-        if let Some(right_prefix) = caps.name("right_prefix") {
-            let left_prefix = caps.name("left_prefix").unwrap();
-            left_prefix.as_str().len() == right_prefix.as_str().len()
+        if let Some(another_prefix) = caps.name("another_prefix") {
+            let left_prefix = caps.name("prefix").unwrap();
+            left_prefix.as_str().len() == another_prefix.as_str().len()
         } else {
             true
         }
@@ -194,11 +208,6 @@ fn is_single_line_heading(line: &str) -> bool {
 }
 
 fn extract_def_token_kind(line: &str) -> Option<TokenKind> {
-    lazy_static! {
-        // regex for definition item
-        static ref DEF_REG: Regex = Regex::new(r"^(?P<prefix>:{1,2})").unwrap();
-    }
-
     if let Some(caps) = DEF_REG.captures(line) {
         if caps.name("prefix").unwrap().as_str().len() == 1 {
             Some(TokenKind::Dt)
@@ -212,20 +221,6 @@ fn extract_def_token_kind(line: &str) -> Option<TokenKind> {
 
 // Turn lines of text into block tokens, which'll be turned into MD blocks later.
 fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
-    // TODO: Globalize these regexes.
-    lazy_static! {
-        // regex for equals line
-        static ref EQUALS_LINE_REG: Regex = Regex::new(r"^={3,}\s*$").unwrap();
-        // regex for dash line
-        static ref DASH_LINE_REG: Regex = Regex::new(r"^-{3,}\s*$").unwrap();
-        // regex for numbered item
-        static ref NUMBERED_REG: Regex = Regex::new(r"^\s*[0-9]+\.\s*").unwrap();
-        // regex for bulleted item
-        static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-]\s*").unwrap();
-        // regex for html block
-        static ref HTML_BLOCK_REG: Regex = Regex::new(r"<").unwrap();
-    }
-
     let token_factory = TokenFactory::new(tab_size);
 
     let mut tokens = Vec::new();
@@ -271,11 +266,8 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
     let mut lines = Vec::new();
 
     loop {
-        if stream.curr().kind == TokenKind::End {
-            break;
-        }
-
         match stream.curr().kind {
+            TokenKind::End => break,
             TokenKind::Block => {
                 lines.push(stream.curr().line.clone());
             }
@@ -311,11 +303,6 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
 // in the stream should be the last token of the section.
 
 fn parse_single_line_heading(stream: &mut TokenStream) -> String {
-    lazy_static! {
-        // regex for heading
-        static ref HEADING_REG: Regex = Regex::new(r"^(?P<prefix>#{1,5})\s+(?P<text>[^#]+)(#{1,5}\s*\{#(?P<id>[^}]+)\})?\s*$").unwrap();
-    }
-
     let caps = HEADING_REG.captures(&stream.curr().line).unwrap();
 
     let prefix = caps.name("prefix").unwrap().as_str();
@@ -382,7 +369,7 @@ fn parse_paragraph(stream: &mut TokenStream) -> Vec<String> {
             stream.move_to_next();
             lines.push(stream.curr().line.clone());
         } else {
-            // append the end tag to the last line
+            // Append the end tag to the last line.
             let last_index = lines.len() - 1;
             let last_line = lines.get_mut(last_index).unwrap();
             *last_line = format!("{}</p>\n", last_line.trim_end());
@@ -394,15 +381,6 @@ fn parse_paragraph(stream: &mut TokenStream) -> Vec<String> {
 }
 
 fn parse_list(stream: &mut TokenStream) -> Vec<String> {
-    lazy_static! {
-        // regex for numbered item
-        static ref NUMBERED_REG: Regex = Regex::new(r"^\s*(?P<id>[0-9]+)\.\s+(?P<text>.*)").unwrap();
-        // regex for bulleted item
-        static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-]\s+(?P<text>.*)").unwrap();
-        // regex for definition item
-        static ref DEF_REG: Regex = Regex::new(r"^:{1,2}\s+(?P<text>.*)").unwrap();
-    }
-
     let (target_tokens, reg, outer_tag): (Vec<TokenKind>, &Regex, &str) = match stream.curr().kind {
         TokenKind::Numbered => (vec![TokenKind::Numbered], &NUMBERED_REG, "ol"),
         TokenKind::Bulleted => (vec![TokenKind::Bulleted], &BULLETED_REG, "ul"),
@@ -413,8 +391,6 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
     let top_indent_level = stream.curr().indent_level;
 
     let parse_item = |stream: &mut TokenStream| -> (TokenKind, Vec<String>) {
-        // current token must be definition item
-
         let mut lines = Vec::new();
 
         let token_kind = stream.curr().kind;
