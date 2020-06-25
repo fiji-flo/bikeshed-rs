@@ -10,7 +10,7 @@ use crate::fix;
 use crate::heading;
 use crate::line::Line;
 use crate::markdown;
-use crate::metadata::metadata::{self, Metadata};
+use crate::metadata::{self, Metadata};
 use crate::util::reader;
 
 #[derive(Debug, Default)]

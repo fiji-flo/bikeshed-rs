@@ -1,6 +1,6 @@
 use clap::{App, Arg, ArgMatches, SubCommand};
 
-use crate::metadata::metadata::Metadata;
+use crate::metadata::Metadata;
 use crate::spec::Spec;
 
 fn handle_spec(matches: ArgMatches) {
