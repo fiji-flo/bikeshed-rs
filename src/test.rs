@@ -4,12 +4,12 @@ use std::fs;
 use std::path::Path;
 
 use crate::html;
-use crate::metadata::metadata::Metadata;
+use crate::metadata::Metadata;
 use crate::spec::Spec;
 
 fn trim_text_node(el: NodeRef) -> NodeRef {
     match el.as_text() {
-        Some(text) => html::node::new_text(text.clone().into_inner().trim()),
+        Some(text) => html::new_text(text.clone().into_inner().trim()),
         None => el.clone(),
     }
 }
@@ -93,6 +93,7 @@ fn test_spec() {
         "markdown001",
         "markdown002",
         "markdown003",
+        "markdown004",
     ];
 
     for name in names.iter() {

@@ -29,20 +29,20 @@ struct Token {
 }
 
 impl Token {
-    fn new<T: Into<String>>(kind: TokenKind, line: T) -> Self {
+    fn new<T: Into<String>>(kind: TokenKind, line: T, indent_level: u32) -> Self {
         Token {
             kind,
             line: line.into(),
-            indent_level: 0,
+            indent_level,
         }
     }
 
     fn new_blank() -> Self {
-        Self::new(TokenKind::Blank, "")
+        Token::new(TokenKind::Blank, "", u32::max_value())
     }
 
     fn new_end() -> Self {
-        Self::new(TokenKind::End, "")
+        Token::new(TokenKind::End, "", u32::max_value())
     }
 }
 
@@ -108,13 +108,13 @@ impl TokenFactory {
 
     fn make<T: Into<String>>(&self, kind: TokenKind, line: T) -> Token {
         let line = line.into();
-        let indent_level = get_indent_level(&line, self.tab_size);
 
-        Token {
-            kind,
-            line,
-            indent_level,
-        }
+        let indent_level = match kind {
+            TokenKind::Blank | TokenKind::End => u32::max_value(),
+            _ => get_indent_level(&line, self.tab_size),
+        };
+
+        Token::new(kind, line, indent_level)
     }
 }
 
@@ -187,7 +187,7 @@ lazy_static! {
     // regex for bulleted item
     static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-]\s*(?P<text>.*)").unwrap();
     // regex for definition item
-    static ref DEF_REG: Regex = Regex::new(r"^(?P<prefix>:{1,2})\s*(?P<text>.*)").unwrap();
+    static ref DEF_REG: Regex = Regex::new(r"^\s*(?P<prefix>:{1,2})\s*(?P<text>.*)").unwrap();
     // regex for html block
     static ref HTML_BLOCK_REG: Regex = Regex::new(r"<").unwrap();
 }
@@ -457,6 +457,10 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
             && stream.next_next().indent_level <= top_indent_level
         {
             break;
+        }
+
+        if stream.next().kind == TokenKind::Blank {
+            stream.move_to_next();
         }
 
         stream.move_to_next();
