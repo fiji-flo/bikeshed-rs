@@ -4,7 +4,7 @@ use markup5ever::LocalName;
 use std::fs;
 use std::path::Path;
 
-use crate::html::{self, node::Attr};
+use crate::html::{self, Attr};
 use crate::metadata::parse::Editor;
 use crate::spec::Spec;
 
@@ -77,16 +77,14 @@ pub fn add_header_footer(doc: &mut Spec) {
 pub fn add_styles(doc: &mut Spec) {
     // TODO: insert <style> nodes to body and move them to head later
     for (key, val) in doc.extra_styles.iter() {
-        doc.head().append(html::node::new_style(format!(
-            "/* style-{} */\n\n{}",
-            key, val
-        )));
+        doc.head()
+            .append(html::new_style(format!("/* style-{} */\n\n{}", key, val)));
     }
 }
 
 pub fn add_canonical_url(doc: &mut Spec) {
     if let Some(ref canonical_url) = doc.md.canonical_url {
-        doc.head().append(html::node::new_element(
+        doc.head().append(html::new_element(
             "link",
             btreemap! {
                 "rel" => "canonical",
@@ -98,7 +96,7 @@ pub fn add_canonical_url(doc: &mut Spec) {
 
 // Convert an editor to a <dd> node.
 fn editor_to_dd_node(editor: &Editor) -> NodeRef {
-    let dd_el = html::node::new_element(
+    let dd_el = html::new_element(
         "dd",
         btreemap! {
             "class" => "editor p-author h-card vcard",
@@ -113,7 +111,7 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
     }
 
     if let Some(ref link) = editor.link {
-        dd_el.append(html::node::new_a(
+        dd_el.append(html::new_a(
             btreemap! {
                 "class" => "p-name fn u-url url",
                 "href" => link,
@@ -121,7 +119,7 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
             &editor.name,
         ))
     } else if let Some(ref email) = editor.email {
-        dd_el.append(html::node::new_a(
+        dd_el.append(html::new_a(
             btreemap! {
                 "class" => "p-name fn u-email email".to_owned(),
                 "href" => format!("mailto:{}", email),
@@ -129,19 +127,19 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
             &editor.name,
         ))
     } else {
-        let span_el = html::node::new_element(
+        let span_el = html::new_element(
             "span",
             btreemap! {
                 "class" => "p-name fn",
             },
         );
-        span_el.append(html::node::new_text(&editor.name));
+        span_el.append(html::new_text(&editor.name));
         dd_el.append(span_el);
     }
 
     if let Some(ref org) = editor.org {
         let el = if let Some(ref org_link) = editor.org_link {
-            html::node::new_a(
+            html::new_a(
                 btreemap! {
                     "class" => "p-org org",
                     "href" => org_link,
@@ -149,24 +147,24 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
                 org_link,
             )
         } else {
-            let span_el = html::node::new_element(
+            let span_el = html::new_element(
                 "span",
                 btreemap! {
                     "class" => "p-org org",
                 },
             );
-            span_el.append(html::node::new_text(org.to_owned()));
+            span_el.append(html::new_text(org.to_owned()));
             span_el
         };
-        dd_el.append(html::node::new_text(" ("));
+        dd_el.append(html::new_text(" ("));
         dd_el.append(el);
-        dd_el.append(html::node::new_text(")"));
+        dd_el.append(html::new_text(")"));
     }
 
     if editor.link.is_some() {
         if let Some(ref email) = editor.email {
-            dd_el.append(html::node::new_text(" "));
-            dd_el.append(html::node::new_a(
+            dd_el.append(html::new_text(" "));
+            dd_el.append(html::new_a(
                 btreemap! {
                     "class" => "u-email email".to_owned(),
                     "href" => format!("mailto:{}", email),
@@ -187,20 +185,20 @@ pub fn fill_spec_metadata_section(doc: &mut Spec) {
 
     fn key_to_dt_node(key: &str) -> NodeRef {
         let dt_el = match key {
-            "Editor" => html::node::new_element(
+            "Editor" => html::new_element(
                 "dt",
                 btreemap! {
                     "class" => "editor"
                 },
             ),
-            _ => html::node::new_element("dt", None::<Attr>),
+            _ => html::new_element("dt", None::<Attr>),
         };
-        dt_el.append(html::node::new_text(format!("{}:", key)));
+        dt_el.append(html::new_text(format!("{}:", key)));
         dt_el
     }
 
     fn wrap_in_dd_node(el: NodeRef) -> NodeRef {
-        let dd_el = html::node::new_element("dd", None::<Attr>);
+        let dd_el = html::new_element("dd", None::<Attr>);
         dd_el.append(el);
         dd_el
     }
@@ -214,7 +212,7 @@ pub fn fill_spec_metadata_section(doc: &mut Spec) {
     if let Some(version) = macros.get("version") {
         md_list.extend(vec![
             key_to_dt_node("This version"),
-            wrap_in_dd_node(html::node::new_a(
+            wrap_in_dd_node(html::new_a(
                 btreemap! {
                     "class" => "u-url",
                     "href" => version,
@@ -228,7 +226,7 @@ pub fn fill_spec_metadata_section(doc: &mut Spec) {
     if let Some(ref tr) = doc.md.tr {
         md_list.extend(vec![
             key_to_dt_node("Latest published version"),
-            wrap_in_dd_node(html::node::new_a(
+            wrap_in_dd_node(html::new_a(
                 btreemap! {
                     "href" => tr
                 },
@@ -246,13 +244,10 @@ pub fn fill_spec_metadata_section(doc: &mut Spec) {
     // insert custom metadata
     for (key, vals) in &doc.md.custom_md {
         md_list.push(key_to_dt_node(key));
-        md_list.extend(
-            vals.iter()
-                .map(|val| wrap_in_dd_node(html::node::new_text(val))),
-        );
+        md_list.extend(vals.iter().map(|val| wrap_in_dd_node(html::new_text(val))));
     }
 
-    let dl_el = html::node::new_element("dl", None::<Attr>);
+    let dl_el = html::new_element("dl", None::<Attr>);
 
     for item in md_list {
         dl_el.append(item);
@@ -301,14 +296,14 @@ pub fn fill_toc_section(doc: &mut Spec) {
         Err(_) => return,
     };
 
-    let h2_el = html::node::new_element(
+    let h2_el = html::new_element(
         "h2",
         btreemap! {
             "class" => "no-num no-toc no-ref",
             "id" => "contents",
         },
     );
-    h2_el.append(html::node::new_text("Table of Contents"));
+    h2_el.append(html::new_text("Table of Contents"));
     container.as_node().append(h2_el);
 
     // Each cell stores the reference to <ol> of a particular heading level.
@@ -317,7 +312,7 @@ pub fn fill_toc_section(doc: &mut Spec) {
 
     // Append a directory node (<ol> node) to table of contents, and then
     // store it to ol_cells[0].
-    let dir_ol_el = html::node::new_element(
+    let dir_ol_el = html::new_element(
         "ol",
         btreemap! {
             "class" => "toc",
@@ -335,7 +330,7 @@ pub fn fill_toc_section(doc: &mut Spec) {
             .collect::<Vec<NodeRef>>();
 
         for heading_el in heading_els {
-            let heading_tag = html::node::get_tag(&heading_el).unwrap();
+            let heading_tag = html::get_tag(&heading_el).unwrap();
             let curr_level = heading_tag.chars().last().unwrap().to_digit(10).unwrap() as usize;
 
             if curr_level > previous_level + 1 {
@@ -356,42 +351,42 @@ pub fn fill_toc_section(doc: &mut Spec) {
                 )
             };
 
-            if html::node::has_class(&heading_el, "no-toc") {
+            if html::has_class(&heading_el, "no-toc") {
                 ol_cells[curr_level - 1] = None;
             } else {
                 // Add a <li> node to current <ol> node.
                 let a_el = {
-                    let a_el = html::node::new_a(
+                    let a_el = html::new_a(
                         btreemap! {
-                            "href" => format!("#{}", html::node::get_attr(&heading_el, "id").unwrap())
+                            "href" => format!("#{}", html::get_attr(&heading_el, "id").unwrap())
                         },
                         "",
                     );
 
-                    let span_el = html::node::new_element(
+                    let span_el = html::new_element(
                         "span",
                         btreemap! {
                             "class"=>"secno"
                         },
                     );
-                    span_el.append(html::node::new_text(
-                        html::node::get_attr(&heading_el, "data-level").unwrap(),
+                    span_el.append(html::new_text(
+                        html::get_attr(&heading_el, "data-level").unwrap(),
                     ));
                     a_el.append(span_el);
 
-                    a_el.append(html::node::new_text(" "));
+                    a_el.append(html::new_text(" "));
 
                     if let Ok(content_el) = heading_el.select_first(".content") {
-                        a_el.append(html::node::deep_clone(content_el.as_node()));
+                        a_el.append(html::deep_clone(content_el.as_node()));
                     }
 
                     a_el
                 };
 
-                let li_el = html::node::new_element("li", None::<Attr>);
+                let li_el = html::new_element("li", None::<Attr>);
                 li_el.append(a_el);
 
-                let inner_ol_el = html::node::new_element(
+                let inner_ol_el = html::new_element(
                     "ol",
                     btreemap! {
                         "class" => "toc",

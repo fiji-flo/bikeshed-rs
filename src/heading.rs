@@ -16,8 +16,8 @@ pub fn process_headings(doc: &mut Spec) {
     };
 
     for heading_el in &heading_els {
-        html::node::add_class(heading_el, "heading");
-        html::node::add_class(heading_el, "settled");
+        html::add_class(heading_el, "heading");
+        html::add_class(heading_el, "settled");
         wrap_heading_contents(heading_el);
     }
 
@@ -28,7 +28,7 @@ pub fn process_headings(doc: &mut Spec) {
 
 // Wrap the content of heading into a <span class="content"> element.
 fn wrap_heading_contents(heading_el: &NodeRef) {
-    let content_el = html::node::new_element(
+    let content_el = html::new_element(
         "span",
         btreemap! {
             "class" => "content",
@@ -66,10 +66,10 @@ fn add_level(heading_els: &[NodeRef]) {
     let mut skip_level = u32::max_value();
 
     for heading_el in heading_els {
-        let heading_tag = html::node::get_tag(heading_el).unwrap();
+        let heading_tag = html::get_tag(heading_el).unwrap();
         let level = heading_tag.chars().last().unwrap().to_digit(10).unwrap();
 
-        if html::node::has_class(heading_el, "no-num") {
+        if html::has_class(heading_el, "no-num") {
             // ignore headings with "no-num" class
             skip_level = cmp::min(skip_level, level);
             continue;
@@ -83,21 +83,21 @@ fn add_level(heading_els: &[NodeRef]) {
         skip_level = u32::max_value();
 
         increment_level(&mut heading_levels, level as usize);
-        html::node::insert_attr(heading_el, "data-level", levels_to_string(&heading_levels));
+        html::insert_attr(heading_el, "data-level", levels_to_string(&heading_levels));
     }
 }
 
 // Insert default "id" attribute into each heading element if necessary.
 fn add_default_id(heading_els: &[NodeRef]) {
     for heading_el in heading_els {
-        if html::node::has_attr(heading_el, "id") {
+        if html::has_attr(heading_el, "id") {
             continue;
         }
 
         // generate id from content
         if let Ok(content_el) = heading_el.select_first(".content") {
-            let content = html::node::get_text_content(content_el.as_node());
-            html::node::insert_attr(heading_el, "id", config::generate_name(&content))
+            let content = html::get_text_content(content_el.as_node());
+            html::insert_attr(heading_el, "id", config::generate_name(&content))
         }
     }
 }
@@ -106,20 +106,20 @@ fn add_default_id(heading_els: &[NodeRef]) {
 // and append an <a class="self-link"> element to each heading element.
 fn add_secno_and_self_link(heading_els: &[NodeRef]) {
     for heading_el in heading_els {
-        if let Some(data_level) = html::node::get_attr(heading_el, "data-level") {
+        if let Some(data_level) = html::get_attr(heading_el, "data-level") {
             // prepend secno
-            let span_el = html::node::new_element(
+            let span_el = html::new_element(
                 "span",
                 btreemap! {
                     "class" => "secno",
                 },
             );
-            span_el.append(html::node::new_text(format!("{}. ", data_level)));
+            span_el.append(html::new_text(format!("{}. ", data_level)));
             heading_el.prepend(span_el);
 
             // append self-link
-            if let Some(id) = html::node::get_attr(heading_el, "id") {
-                let a_el = html::node::new_a(
+            if let Some(id) = html::get_attr(heading_el, "id") {
+                let a_el = html::new_a(
                     btreemap! {
                         "class" => "self-link".to_owned(),
                         "href" => format!("#{}", id),
