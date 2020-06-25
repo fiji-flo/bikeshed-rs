@@ -92,6 +92,7 @@ fn test_spec() {
         // markdown
         "markdown001",
         "markdown002",
+        "markdown003",
     ];
 
     for name in names.iter() {

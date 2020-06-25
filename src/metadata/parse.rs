@@ -8,6 +8,19 @@ pub fn parse_bool(val: &str) -> Result<bool, &'static str> {
     boolish_to_bool(val)
 }
 
+pub fn parse_natural_number(val: &str) -> Result<u32, &'static str> {
+    match val.parse::<u32>() {
+        Ok(number) => {
+            if number > 0 {
+                Ok(number)
+            } else {
+                Err("not a natural number")
+            }
+        }
+        Err(_) => Err("not a natural number"),
+    }
+}
+
 pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
     // <boilerplate> := <pair> ("," <pair>)*
     // <pair> := ("omit" <section>) | (<section> <boolish>)

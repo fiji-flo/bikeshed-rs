@@ -28,9 +28,9 @@ pub struct Metadata {
     pub editors: Vec<Editor>,
     pub editor_term: Option<EditorTerm>,
     pub group: Option<String>,
-    pub tab_size: u32,
-    pub infer_css_dfns: bool,
-    pub remove_multiple_links: bool,
+    pub indent: Option<u32>,
+    pub infer_css_dfns: Option<bool>,
+    pub remove_multiple_links: Option<bool>,
     pub title: Option<String>,
     pub tr: Option<String>,
     pub work_status: Option<String>,
@@ -42,7 +42,6 @@ impl Metadata {
     pub fn new() -> Self {
         Metadata {
             boilerplate: BoolSet::new_with_default(true),
-            tab_size: 4,
             ..Default::default()
         }
     }
@@ -162,6 +161,15 @@ impl Metadata {
                 let val = val.to_owned();
                 self.group = Some(val);
             }
+            "Indent" => {
+                let val = match parse::parse_natural_number(val) {
+                    Ok(val) => val,
+                    Err(_) => {
+                        die!("\"Indent\" field must be natural number. Got: {}", val; line_num)
+                    }
+                };
+                self.indent = Some(val);
+            }
             "Infer CSS Dfns" => {
                 let val = match parse::parse_bool(val) {
                     Ok(val) => val,
@@ -169,7 +177,7 @@ impl Metadata {
                         die!("The \"Infer CSS Dfns\" field must be boolish. Got: {}.", val; line_num)
                     }
                 };
-                self.infer_css_dfns = val;
+                self.infer_css_dfns = Some(val);
             }
             "Remove Multiple Links" => {
                 let val = match parse::parse_bool(val) {
@@ -178,7 +186,7 @@ impl Metadata {
                         die!("The \"Remove Multiple Links\" field must be boolish. Got: {}.", val; line_num)
                     }
                 };
-                self.remove_multiple_links = val;
+                self.remove_multiple_links = Some(val);
             }
             "Title" => {
                 let val = val.to_owned();
@@ -247,10 +255,18 @@ impl Metadata {
         if other.group.is_some() {
             self.group = other.group;
         }
+        // Indent
+        if other.indent.is_some() {
+            self.indent = other.indent;
+        }
         // Infer CSS Dfns
-        self.infer_css_dfns = other.infer_css_dfns;
+        if other.infer_css_dfns.is_some() {
+            self.infer_css_dfns = other.infer_css_dfns;
+        }
         // Remove Multiple Links
-        self.remove_multiple_links = other.remove_multiple_links;
+        if other.remove_multiple_links.is_some() {
+            self.remove_multiple_links = other.remove_multiple_links;
+        }
         // Title
         if other.title.is_some() {
             self.title = other.title;
@@ -273,7 +289,7 @@ impl Metadata {
         // abstract
         macros.insert(
             "abstract",
-            markdown::parse(&self.abs, self.tab_size).join("\n"),
+            markdown::parse(&self.abs, self.indent()).join("\n"),
         );
         // level
         if let Some(ref level) = self.level {
@@ -339,6 +355,10 @@ impl Metadata {
         if !self.has_keys {
             die!("No metadata provided.");
         }
+    }
+
+    pub fn indent(&self) -> u32 {
+        self.indent.unwrap_or(4)
     }
 }
 
