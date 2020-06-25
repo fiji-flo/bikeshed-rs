@@ -182,8 +182,6 @@ lazy_static! {
     static ref DASH_LINE_REG: Regex = Regex::new(r"^-{3,}\s*$").unwrap();
     // regex for heading
     static ref HEADING_REG: Regex = Regex::new(r"^(?P<prefix>#{1,5})\s+(?P<text>[^#]+)((?P<another_prefix>#{1,5})\s*\{#(?P<id>[^}]+)\})?\s*$").unwrap();
-    // regex for heading
-    static ref _HEADING_REG: Regex = Regex::new(r"^(?P<prefix>#{1,5})\s+(?P<text>[^#]+)(#{1,5}\s*\{#(?P<id>[^}]+)\})?\s*$").unwrap();
     // regex for numbered item
     static ref NUMBERED_REG: Regex = Regex::new(r"^\s*(?P<id>[0-9]+)\.\s*(?P<text>.*)").unwrap();
     // regex for bulleted item
