@@ -267,7 +267,8 @@ pub fn fill_copyright_section(doc: &mut Spec) {
         Err(_) => return,
     };
 
-    let copyright = retrieve_boilerplate(doc, "copyright");
+    let mut copyright = retrieve_boilerplate(doc, "copyright");
+    copyright = doc.fix_text(&copyright);
     let copyright_dom = kuchiki::parse_html().one(copyright);
 
     if let Ok(body) = copyright_dom.select_first("body") {
@@ -284,7 +285,7 @@ pub fn fill_abstract_section(doc: &mut Spec) {
     };
 
     let mut abs = retrieve_boilerplate(doc, "abstract");
-    abs = html::helper::replace_macros(&abs, &doc.macros);
+    abs = doc.fix_text(&abs);
     let abs_dom = kuchiki::parse_html().one(abs);
 
     if let Ok(body) = abs_dom.select_first("body") {

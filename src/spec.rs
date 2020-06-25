@@ -6,8 +6,8 @@ use std::fs;
 use crate::boilerplate::{self, retrieve_boilerplate_with_info};
 use crate::clean;
 use crate::config::SOURCE_FILE_EXTENSIONS;
+use crate::fix;
 use crate::heading;
-use crate::html;
 use crate::line::Line;
 use crate::markdown;
 use crate::metadata::metadata::{self, Metadata};
@@ -98,7 +98,7 @@ impl<'a> Spec<'a> {
 
         self.html = lines.join("\n");
         boilerplate::add_header_footer(self);
-        self.html = html::helper::replace_macros(&self.html, &self.macros);
+        self.html = self.fix_text(&self.html);
 
         self.dom = Some(kuchiki::parse_html().one(self.html.clone()));
         if let Ok(head) = self.dom.as_ref().unwrap().select_first("head") {
@@ -125,6 +125,13 @@ impl<'a> Spec<'a> {
         let outfile = self.handle_outfile(outfile);
         let rendered = self.dom().to_string();
         fs::write(outfile, rendered).expect("unable to write file");
+    }
+
+    // Do several textual replacements with this spec.
+    pub fn fix_text(&self, text: &str) -> String {
+        let mut text = fix::replace_macros(text, &self.macros);
+        text = fix::fix_typography(&text);
+        text
     }
 
     fn handle_outfile(&self, outfile: Option<&str>) -> String {

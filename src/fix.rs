@@ -21,3 +21,17 @@ pub fn replace_macros<'a>(text: &str, macros: &HashMap<&'a str, String>) -> Stri
 
     util::regex::replace_all(&REG, text, replacer)
 }
+
+pub fn fix_typography(text: &str) -> String {
+    lazy_static! {
+        static ref REG: Regex = Regex::new(r"(?P<left>\w)'(?P<right>\w)").unwrap();
+    }
+
+    let replacer = |caps: &Captures| -> String {
+        let left = caps.name("left").unwrap().as_str();
+        let right = caps.name("right").unwrap().as_str();
+        format!("{}’{}", left, right)
+    };
+
+    util::regex::replace_all(&REG, text, replacer)
+}
