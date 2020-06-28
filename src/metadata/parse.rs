@@ -251,6 +251,37 @@ pub fn parse_level(val: &str) -> String {
     }
 }
 
+pub fn parse_markup_shorthands(val: &str) -> Result<BoolSet<String>, &'static str> {
+    // <markup-shorthands> := <pair> ("," <pair>)*
+    // <pair> := <markup-category> <boolish>
+
+    let mut markup_shorthands = BoolSet::<String>::new_with_default(false);
+
+    for item in val.split(",").map(|item| item.trim()) {
+        let pieces = item
+            .split(" ")
+            .map(|piece| piece.trim().to_lowercase())
+            .collect::<Vec<String>>();
+
+        if pieces.len() != 2 {
+            return Err("wrong markup shorthand piece format");
+        }
+
+        match pieces[0].as_str() {
+            "algorithm" | "biblio" | "css" | "dfn" | "idl" | "markdown" | "markup" => {
+                if let Ok(on_off) = boolish_to_bool(&pieces[1]) {
+                    markup_shorthands.insert(pieces[0].clone(), on_off);
+                } else {
+                    return Err("wrong boolish format");
+                }
+            }
+            _ => return Err("no such markup shorthand category"),
+        }
+    }
+
+    Ok(markup_shorthands)
+}
+
 pub fn parse_work_status(val: &str) -> Result<String, &'static str> {
     let val = val.to_lowercase();
 

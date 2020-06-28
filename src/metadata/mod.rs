@@ -32,6 +32,7 @@ pub struct Metadata {
     pub group: Option<String>,
     pub indent: Option<u32>,
     pub infer_css_dfns: Option<bool>,
+    pub markup_shorthands: BoolSet<String>,
     pub remove_multiple_links: Option<bool>,
     pub title: Option<String>,
     pub tr: Option<String>,
@@ -44,6 +45,7 @@ impl Metadata {
     pub fn new() -> Self {
         Metadata {
             boilerplate: BoolSet::new_with_default(true),
+            markup_shorthands: BoolSet::new_with_default(false),
             ..Default::default()
         }
     }
@@ -172,6 +174,16 @@ impl Metadata {
                 };
                 self.indent = Some(val);
             }
+            "Markup Shorthands" => {
+                let val = match parse::parse_markup_shorthands(val) {
+                    Ok(val) => val,
+                    Err(_) => {
+                        die!("Markup shorthands metadata pieces are a markup markup shorthand category and a boolean. \
+                            Got: {}.", val; line_num)
+                    }
+                };
+                self.markup_shorthands.update(&val);
+            }
             "Infer CSS Dfns" => {
                 let val = match parse::parse_bool(val) {
                     Ok(val) => val,
@@ -240,7 +252,9 @@ impl Metadata {
             self.raw_status = other.raw_status;
         }
         // Boilerplate
-        self.boilerplate.update(&other.boilerplate);
+        if !other.boilerplate.is_default {
+            self.boilerplate.update(&other.boilerplate);
+        }
         // Canonical Url
         if other.canonical_url.is_some() {
             self.canonical_url = other.canonical_url;
@@ -264,6 +278,10 @@ impl Metadata {
         // Infer CSS Dfns
         if other.infer_css_dfns.is_some() {
             self.infer_css_dfns = other.infer_css_dfns;
+        }
+        // Markup Shorthands
+        if !other.markup_shorthands.is_default {
+            self.markup_shorthands.update(&other.markup_shorthands);
         }
         // Remove Multiple Links
         if other.remove_multiple_links.is_some() {
