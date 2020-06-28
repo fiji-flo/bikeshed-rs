@@ -19,12 +19,13 @@ pub struct Spec<'a> {
     lines: Vec<Line>,
     pub md: Metadata,
     pub md_cli: Metadata,
-    pub macros: HashMap<&'static str, String>,
+    pub macros: HashMap<&'a str, String>,
     pub html: String,
     dom: Option<NodeRef>,
     head: Option<NodeRef>,
     body: Option<NodeRef>,
-    pub extra_styles: BTreeMap<&'static str, &'static str>,
+    pub extra_styles: BTreeMap<&'a str, &'a str>,
+    pub containers: BTreeMap<String, NodeRef>,
 }
 
 impl<'a> Spec<'a> {
@@ -111,6 +112,7 @@ impl<'a> Spec<'a> {
     }
 
     fn process_document(&mut self) {
+        boilerplate::load_containers(self);
         boilerplate::add_canonical_url(self);
         boilerplate::fill_spec_metadata_section(self);
         boilerplate::fill_copyright_section(self);

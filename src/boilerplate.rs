@@ -68,6 +68,39 @@ pub fn retrieve_boilerplate_with_info(
     die!("Can't find an appropriate include file for {}.", name);
 }
 
+pub fn load_containers(doc: &mut Spec) {
+    if let Ok(container_els) = doc.dom().select("[data-fill-with]") {
+        for container_el in container_els {
+            doc.containers.insert(
+                html::get_attr(container_el.as_node(), "data-fill-with").unwrap(),
+                container_el.as_node().clone(),
+            );
+        }
+    }
+}
+
+fn get_container(doc: &Spec, tag: &str) -> Option<NodeRef> {
+    if !doc.md.boilerplate.get(tag) {
+        return None;
+    }
+
+    match doc.containers.get(tag) {
+        Some(container) => Some(container.clone()),
+        None => None,
+    }
+}
+
+fn get_container_or_head(doc: &Spec, tag: &str) -> Option<NodeRef> {
+    if !doc.md.boilerplate.get(tag) {
+        return None;
+    }
+
+    match doc.containers.get(tag) {
+        Some(container) => Some(container.clone()),
+        None => Some(doc.head().clone()),
+    }
+}
+
 pub fn add_header_footer(doc: &mut Spec) {
     let header = retrieve_boilerplate(doc, "header");
     let footer = retrieve_boilerplate(doc, "footer");
@@ -75,10 +108,16 @@ pub fn add_header_footer(doc: &mut Spec) {
 }
 
 pub fn add_styles(doc: &mut Spec) {
-    // TODO: insert <style> nodes to body and move them to head later
+    // TODO: Insert <style> nodes to body and move them to head later.
+    let container = match get_container_or_head(doc, "bs-styles") {
+        Some(container) => container,
+        None => return,
+    };
+
     for (key, val) in doc.extra_styles.iter() {
-        doc.head()
-            .append(html::new_style(format!("/* style-{} */\n\n{}", key, val)));
+        if doc.md.boilerplate.get(*key) {
+            container.append(html::new_style(format!("/* style-{} */\n\n{}", key, val)));
+        }
     }
 }
 
@@ -178,9 +217,9 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
 }
 
 pub fn fill_spec_metadata_section(doc: &mut Spec) {
-    let container = match doc.dom().select_first("[data-fill-with=spec-metadata]") {
-        Ok(container) => container,
-        Err(_) => return,
+    let container = match get_container(doc, "spec-metadata") {
+        Some(container) => container,
+        None => return,
     };
 
     fn key_to_dt_node(key: &str) -> NodeRef {
@@ -253,13 +292,13 @@ pub fn fill_spec_metadata_section(doc: &mut Spec) {
         dl_el.append(item);
     }
 
-    container.as_node().append(dl_el);
+    container.append(dl_el);
 }
 
 pub fn fill_copyright_section(doc: &mut Spec) {
-    let container = match doc.dom().select_first("[data-fill-with=copyright]") {
-        Ok(container) => container,
-        Err(_) => return,
+    let container = match get_container(doc, "copyright") {
+        Some(container) => container,
+        None => return,
     };
 
     let mut copyright = retrieve_boilerplate(doc, "copyright");
@@ -268,15 +307,15 @@ pub fn fill_copyright_section(doc: &mut Spec) {
 
     if let Ok(body) = copyright_dom.select_first("body") {
         for child in body.as_node().children() {
-            container.as_node().append(child);
+            container.append(child);
         }
     }
 }
 
 pub fn fill_abstract_section(doc: &mut Spec) {
-    let container = match doc.dom().select_first("[data-fill-with=abstract]") {
-        Ok(container) => container,
-        Err(_) => return,
+    let container = match get_container(doc, "abstract") {
+        Some(container) => container,
+        None => return,
     };
 
     let mut abs = retrieve_boilerplate(doc, "abstract");
@@ -285,15 +324,15 @@ pub fn fill_abstract_section(doc: &mut Spec) {
 
     if let Ok(body) = abs_dom.select_first("body") {
         for child in body.as_node().children() {
-            container.as_node().append(child);
+            container.append(child);
         }
     }
 }
 
 pub fn fill_toc_section(doc: &mut Spec) {
-    let container = match doc.dom().select_first("[data-fill-with=table-of-contents]") {
-        Ok(container) => container,
-        Err(_) => return,
+    let container = match get_container(doc, "table-of-contents") {
+        Some(container) => container,
+        None => return,
     };
 
     let h2_el = html::new_element(
@@ -304,7 +343,7 @@ pub fn fill_toc_section(doc: &mut Spec) {
         },
     );
     h2_el.append(html::new_text("Table of Contents"));
-    container.as_node().append(h2_el);
+    container.append(h2_el);
 
     // Each cell stores the reference to <ol> of a particular heading level.
     // Relation: <h[level]> => ol_cells[level - 2], where 2 <= level <= 6.
@@ -319,7 +358,7 @@ pub fn fill_toc_section(doc: &mut Spec) {
             "role"=> "directory",
         },
     );
-    container.as_node().append(dir_ol_el.clone());
+    container.append(dir_ol_el.clone());
     ol_cells[0] = Some(dir_ol_el);
 
     let mut previous_level = 1;
@@ -405,7 +444,7 @@ pub fn fill_toc_section(doc: &mut Spec) {
 
     // Remove empty <ol> nodes.
     loop {
-        if let Ok(ol_els) = container.as_node().select("ol:empty") {
+        if let Ok(ol_els) = container.select("ol:empty") {
             let ol_els = ol_els.collect::<Vec<NodeDataRef<_>>>();
 
             if ol_els.len() == 0 {
