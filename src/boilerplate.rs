@@ -249,29 +249,25 @@ pub fn fill_spec_metadata_section(doc: &mut Spec) {
 
     // insert version
     if let Some(version) = macros.get("version") {
-        md_list.extend(vec![
-            key_to_dt_node("This version"),
-            wrap_in_dd_node(html::new_a(
-                btreemap! {
-                    "class" => "u-url",
-                    "href" => version,
-                },
-                version,
-            )),
-        ]);
+        md_list.push(key_to_dt_node("This version"));
+        md_list.push(wrap_in_dd_node(html::new_a(
+            btreemap! {
+                "class" => "u-url",
+                "href" => version,
+            },
+            version,
+        )));
     }
 
     // insert latest published version
     if let Some(ref tr) = doc.md.tr {
-        md_list.extend(vec![
-            key_to_dt_node("Latest published version"),
-            wrap_in_dd_node(html::new_a(
-                btreemap! {
-                    "href" => tr
-                },
-                tr,
-            )),
-        ]);
+        md_list.push(key_to_dt_node("Latest published version"));
+        md_list.push(wrap_in_dd_node(html::new_a(
+            btreemap! {
+                "href" => tr
+            },
+            tr,
+        )));
     }
 
     // insert editors

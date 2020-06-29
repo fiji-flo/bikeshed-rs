@@ -171,16 +171,18 @@ lazy_static! {
 }
 
 fn is_single_line_heading(line: &str) -> bool {
-    if let Some(caps) = HEADING_REG.captures(line) {
-        if let Some(another_prefix) = caps.name("another_prefix") {
-            let left_prefix = caps.name("prefix").unwrap();
-            left_prefix.as_str().len() == another_prefix.as_str().len()
-        } else {
-            true
-        }
-    } else {
-        false
-    }
+    let caps = match HEADING_REG.captures(line) {
+        Some(caps) => caps,
+        None => return false,
+    };
+
+    let another_prefix = match caps.name("another_prefix") {
+        Some(another_prefix) => another_prefix,
+        None => return true,
+    };
+
+    let left_prefix = caps.name("prefix").unwrap();
+    left_prefix.as_str().len() == another_prefix.as_str().len()
 }
 
 fn extract_def_token_kind(line: &str) -> Option<TokenKind> {
