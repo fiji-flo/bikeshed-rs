@@ -97,28 +97,6 @@ fn trim_indentation(text: &str, indent_level: u32, tab_size: u32) -> String {
 }
 
 #[derive(Debug)]
-struct TokenFactory {
-    tab_size: u32,
-}
-
-impl TokenFactory {
-    fn new(tab_size: u32) -> Self {
-        TokenFactory { tab_size }
-    }
-
-    fn make<T: Into<String>>(&self, kind: TokenKind, line: T) -> Token {
-        let line = line.into();
-
-        let indent_level = match kind {
-            TokenKind::Blank | TokenKind::End => u32::max_value(),
-            _ => get_indent_level(&line, self.tab_size),
-        };
-
-        Token::new(kind, line, indent_level)
-    }
-}
-
-#[derive(Debug)]
 struct TokenStream<'a> {
     tokens: &'a [Token],
     curr: usize,
@@ -206,51 +184,58 @@ fn is_single_line_heading(line: &str) -> bool {
 }
 
 fn extract_def_token_kind(line: &str) -> Option<TokenKind> {
-    if let Some(caps) = DEF_REG.captures(line) {
-        if caps.name("prefix").unwrap().as_str().len() == 1 {
-            Some(TokenKind::Dt)
-        } else {
-            Some(TokenKind::Dd)
-        }
+    let caps = DEF_REG.captures(line)?;
+
+    if caps.name("prefix").unwrap().as_str().len() == 1 {
+        Some(TokenKind::Dt)
     } else {
-        None
+        Some(TokenKind::Dd)
     }
 }
 
 // Turn lines of text into block tokens, which'll be turned into MD blocks later.
 fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
-    let token_factory = TokenFactory::new(tab_size);
+    let make_token = |kind: TokenKind, line: &str| -> Token {
+        match kind {
+            TokenKind::Blank => Token::new_blank(),
+            TokenKind::End => Token::new_end(),
+            _ => {
+                let indent_level = get_indent_level(&line, tab_size);
+                Token::new(kind, line, indent_level)
+            }
+        }
+    };
 
     let mut tokens = Vec::new();
 
     for line in lines.iter() {
         let token = if line.is_empty() {
             // blank
-            token_factory.make(TokenKind::Blank, line)
+            make_token(TokenKind::Blank, line)
         } else if EQUALS_LINE_REG.is_match(line) {
             // equals line
-            token_factory.make(TokenKind::EqualsLine, line)
+            make_token(TokenKind::EqualsLine, line)
         } else if DASH_LINE_REG.is_match(line) {
             // dash line
-            token_factory.make(TokenKind::DashLine, line)
+            make_token(TokenKind::DashLine, line)
         } else if is_single_line_heading(line) {
             // single line heading
-            token_factory.make(TokenKind::Head, line)
+            make_token(TokenKind::Head, line)
         } else if NUMBERED_REG.is_match(line) {
             // numbered item
-            token_factory.make(TokenKind::Numbered, line)
+            make_token(TokenKind::Numbered, line)
         } else if BULLETED_REG.is_match(line) {
             // bulleted item
-            token_factory.make(TokenKind::Bulleted, line)
+            make_token(TokenKind::Bulleted, line)
         } else if let Some(token_kind) = extract_def_token_kind(line) {
             // definition item
-            token_factory.make(token_kind, line)
+            make_token(token_kind, line)
         } else if HTML_BLOCK_REG.is_match(line) {
             // block
-            token_factory.make(TokenKind::Block, line)
+            make_token(TokenKind::Block, line)
         } else {
             // text
-            token_factory.make(TokenKind::Text, line)
+            make_token(TokenKind::Text, line)
         };
 
         tokens.push(token);
