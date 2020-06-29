@@ -343,7 +343,7 @@ pub fn fill_toc_section(doc: &mut Spec) {
 
     // Each cell stores the reference to <ol> of a particular heading level.
     // Relation: <h[level]> => ol_cells[level - 2], where 2 <= level <= 6.
-    let mut ol_cells: Vec<Option<NodeRef>> = vec![None; 6];
+    let mut ol_cells: [Option<NodeRef>; 6] = Default::default();
 
     // Append a directory node (<ol> node) to table of contents, and then
     // store it to ol_cells[0].
