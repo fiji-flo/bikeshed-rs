@@ -42,11 +42,8 @@ pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
             boilerplate.insert(pieces[1].clone(), false);
         } else {
             // <section> <boolish>
-            if let Ok(on_off) = boolish_to_bool(&pieces[1]) {
-                boilerplate.insert(pieces[0].clone(), on_off);
-            } else {
-                return Err("wrong boolish format");
-            }
+            let on_off = boolish_to_bool(&pieces[1])?;
+            boilerplate.insert(pieces[0].clone(), on_off);
         }
     }
 
@@ -269,11 +266,8 @@ pub fn parse_markup_shorthands(val: &str) -> Result<BoolSet<String>, &'static st
 
         match pieces[0].as_str() {
             "algorithm" | "biblio" | "css" | "dfn" | "idl" | "markdown" | "markup" => {
-                if let Ok(on_off) = boolish_to_bool(&pieces[1]) {
-                    markup_shorthands.insert(pieces[0].clone(), on_off);
-                } else {
-                    return Err("wrong boolish format");
-                }
+                let on_off = boolish_to_bool(&pieces[1])?;
+                markup_shorthands.insert(pieces[0].clone(), on_off);
             }
             _ => return Err("no such markup shorthand category"),
         }
