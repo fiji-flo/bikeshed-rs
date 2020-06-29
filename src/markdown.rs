@@ -118,7 +118,7 @@ impl<'a> TokenStream<'a> {
         }
     }
 
-    fn move_to_next(&mut self) {
+    fn advance(&mut self) {
         if self.curr < self.tokens.len() {
             self.curr += 1;
         }
@@ -276,7 +276,7 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
             }
         }
 
-        stream.move_to_next();
+        stream.advance();
     }
 
     lines
@@ -339,7 +339,7 @@ fn parse_multi_line_heading(stream: &mut TokenStream) -> String {
         text = text
     );
 
-    stream.move_to_next();
+    stream.advance();
 
     heading
 }
@@ -349,7 +349,7 @@ fn parse_paragraph(stream: &mut TokenStream) -> Vec<String> {
 
     loop {
         if stream.next().kind == TokenKind::Text {
-            stream.move_to_next();
+            stream.advance();
             lines.push(stream.curr().line.clone());
         } else {
             // Append the end tag to the last line.
@@ -403,7 +403,7 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
                 break;
             }
 
-            stream.move_to_next();
+            stream.advance();
 
             lines.push(trim_indentation(
                 &stream.curr().line,
@@ -445,10 +445,10 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
         }
 
         if stream.next().kind == TokenKind::Blank {
-            stream.move_to_next();
+            stream.advance();
         }
 
-        stream.move_to_next();
+        stream.advance();
     }
 
     lines.push(format!("</{}>", outer_tag));
