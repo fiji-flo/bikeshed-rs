@@ -73,10 +73,9 @@ pub fn get_attr(el: &NodeRef, attr_name: &str) -> Option<String> {
 
     let attributes = data.attributes.borrow();
 
-    match attributes.get(LocalName::from(attr_name)) {
-        Some(attr) => Some(attr.to_owned()),
-        None => None,
-    }
+    attributes
+        .get(LocalName::from(attr_name))
+        .map(ToOwned::to_owned)
 }
 
 pub fn insert_attr<T: Into<String>>(el: &NodeRef, attr_name: &str, attr_val: T) {
@@ -86,6 +85,7 @@ pub fn insert_attr<T: Into<String>>(el: &NodeRef, attr_name: &str, attr_val: T) 
     };
 
     let mut attributes = data.attributes.borrow_mut();
+
     attributes.insert(LocalName::from(attr_name), attr_val.into());
 }
 
@@ -171,21 +171,11 @@ pub fn copy_content(from_el: &NodeRef, to_el: &NodeRef) {
 }
 
 pub fn deep_clone(el: &NodeRef) -> NodeRef {
-    let data = match el.data() {
-        NodeData::Element(data) => NodeData::Element(data.clone()),
-        NodeData::Text(data) => NodeData::Text(data.clone()),
-        NodeData::Comment(data) => NodeData::Comment(data.clone()),
-        NodeData::ProcessingInstruction(data) => NodeData::ProcessingInstruction(data.clone()),
-        NodeData::Doctype(data) => NodeData::Doctype(data.clone()),
-        NodeData::Document(data) => NodeData::Document(data.clone()),
-        NodeData::DocumentFragment => NodeData::DocumentFragment,
-    };
-
-    let curr = NodeRef::new(data);
+    let root = NodeRef::new(el.data().clone());
 
     for child in el.children() {
-        curr.append(deep_clone(&child));
+        root.append(deep_clone(&child));
     }
 
-    curr
+    root
 }
