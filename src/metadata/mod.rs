@@ -65,16 +65,20 @@ impl Metadata {
                         match indiv_val {
                             Value::String(str_val) => md.add_data(key, str_val, None),
                             _ => die!(
-                                "JSON metadata values must be strings or arrays of strings. \
-                                    \"{0}\" is something else.",
+                                concat!(
+                                    "JSON metadata values must be strings or arrays of strings. ",
+                                    "\"{0}\" is something else."
+                                ),
                                 key
                             ),
                         }
                     }
                 }
                 _ => die!(
-                    "JSON metadata values must be strings or arrays of strings. \
-                        \"{0}\" is something else.",
+                    concat!(
+                        "JSON metadata values must be strings or arrays of strings. ",
+                        "\"{0}\" is something else."
+                    ),
                     key
                 ),
             }
@@ -123,10 +127,13 @@ impl Metadata {
             "Boilerplate" => {
                 let val = match parse::parse_boilerplate(val) {
                     Ok(val) => val,
-                    Err(_) => {
-                        die!("Boilerplate metadata pieces are a boilerplate label and a boolean. \
-                            Got: {}.", val; line_num)
-                    }
+                    Err(_) => die!(
+                        concat!(
+                            "Boilerplate metadata pieces are a boilerplate label and a boolean. ",
+                            "Got: {}."
+                        ),
+                        val; line_num
+                    ),
                 };
                 self.boilerplate.update(&val);
             }
@@ -146,18 +153,26 @@ impl Metadata {
             "Editor" => {
                 let val = match parse::parse_editor(val) {
                     Ok(val) => val,
-                    Err(_) => {
-                        die!("\"Editor\" format is \"<name>, <affiliation>?, <email-or-contact-page>?\". \
-                            Got: {}.", val; line_num)
-                    }
+                    Err(_) => die!(
+                        concat!(
+                            "\"Editor\" format is \"<name>, <affiliation>?, <email-or-contact-page>?\". ",
+                            "Got: {}."
+                        ),
+                        val; line_num
+                    ),
                 };
                 self.editors.push(val);
             }
             "Editor Term" => {
                 let val = match parse::parse_editor_term(val) {
                     Ok(val) => val,
-                    Err(_) => die!("\"Editor Term\" format is \"<singular-term>, <plural-term>\". \
-                                    Got: {}.", val; line_num),
+                    Err(_) => die!(
+                        concat!(
+                            "\"Editor Term\" format is \"<singular-term>, <plural-term>\". ",
+                            "Got: {}."
+                        ),
+                        val; line_num
+                    ),
                 };
                 self.editor_term = Some(val);
             }
@@ -177,10 +192,13 @@ impl Metadata {
             "Markup Shorthands" => {
                 let val = match parse::parse_markup_shorthands(val) {
                     Ok(val) => val,
-                    Err(_) => {
-                        die!("Markup shorthands metadata pieces are a markup markup shorthand category and a boolean. \
-                            Got: {}.", val; line_num)
-                    }
+                    Err(_) => die!(
+                        concat!(
+                            "Markup shorthands metadata pieces are a markup markup shorthand category ",
+                            "and a boolean. Got: {}."
+                        ),
+                        val; line_num
+                    ),
                 };
                 self.markup_shorthands.update(&val);
             }
@@ -213,10 +231,13 @@ impl Metadata {
             "Work Status" => {
                 let val = match parse::parse_work_status(val) {
                     Ok(val) => val,
-                    Err(_) => {
-                        die!("Work Status must be one of (completed, stable, testing, refining, \
-                            revising, exploring, rewriting, abandoned). Got: {}.", val; line_num)
-                    }
+                    Err(_) => die!(
+                        concat!(
+                            "Work Status must be one of (completed, stable, testing, refining, ",
+                            "revising, exploring, rewriting, abandoned). Got: {}."
+                        ),
+                        val; line_num
+                    ),
                 };
                 self.work_status = Some(val);
             }
