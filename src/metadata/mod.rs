@@ -252,9 +252,7 @@ impl Metadata {
             self.raw_status = other.raw_status;
         }
         // Boilerplate
-        if !other.boilerplate.is_default {
-            self.boilerplate.update(&other.boilerplate);
-        }
+        self.boilerplate.update(&other.boilerplate);
         // Canonical Url
         if other.canonical_url.is_some() {
             self.canonical_url = other.canonical_url;
@@ -280,9 +278,7 @@ impl Metadata {
             self.infer_css_dfns = other.infer_css_dfns;
         }
         // Markup Shorthands
-        if !other.markup_shorthands.is_default {
-            self.markup_shorthands.update(&other.markup_shorthands);
-        }
+        self.markup_shorthands.update(&other.markup_shorthands);
         // Remove Multiple Links
         if other.remove_multiple_links.is_some() {
             self.remove_multiple_links = other.remove_multiple_links;

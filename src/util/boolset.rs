@@ -15,7 +15,6 @@ where
 {
     map: HashMap<K, bool>,
     default_val: bool,
-    pub is_default: bool,
 }
 
 impl<K> BoolSet<K>
@@ -26,14 +25,12 @@ where
         BoolSet {
             map: HashMap::new(),
             default_val,
-            is_default: true,
         }
     }
 
     // Maps the key to the value in bool set, overwriting any existing mapping for the key.
     pub fn insert(&mut self, key: K, val: bool) {
         self.map.insert(key, val);
-        self.is_default = false;
     }
 
     // Returns the value for the key in bool set.
@@ -52,7 +49,6 @@ where
             "Can't merge BoolSet with different default values"
         );
         self.map.extend(other.map.clone());
-        self.is_default = false;
     }
 }
 
@@ -64,46 +60,34 @@ mod tests {
     fn test_bool_set() {
         {
             let bs = BoolSet::<&str>::new_with_default(true);
-            assert!(bs.is_default);
             assert_eq!(bs.get("a"), true);
-            assert!(bs.is_default);
         }
         {
             let bs = BoolSet::<&str>::new_with_default(false);
-            assert!(bs.is_default);
             assert_eq!(bs.get("a"), false);
-            assert!(bs.is_default);
         }
         {
             let mut bs = BoolSet::<&str>::new_with_default(true);
-            assert!(bs.is_default);
             bs.insert("a", true);
-            assert!(!bs.is_default);
             assert_eq!(bs.get("a"), true);
             assert_eq!(bs.get("b"), true);
         }
         {
             let mut bs = BoolSet::<&str>::new_with_default(false);
-            assert!(bs.is_default);
             bs.insert("a", true);
-            assert!(!bs.is_default);
             assert_eq!(bs.get("a"), true);
             assert_eq!(bs.get("b"), false);
         }
         {
             let mut bs = BoolSet::<&str>::new_with_default(false);
-            assert!(bs.is_default);
             bs.insert("a", true);
-            assert!(!bs.is_default);
             assert_eq!(bs.get("a"), true);
             assert_eq!(bs.get("b"), false);
 
             let mut other = BoolSet::<&str>::new_with_default(false);
-            assert!(other.is_default);
             other.insert("a", false);
             other.insert("b", true);
             bs.update(&other);
-            assert!(!other.is_default);
             assert_eq!(bs.get("a"), false);
             assert_eq!(bs.get("b"), true);
         }
