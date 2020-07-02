@@ -84,10 +84,7 @@ fn get_container(doc: &Spec, tag: &str) -> Option<NodeRef> {
         return None;
     }
 
-    match doc.containers.get(tag) {
-        Some(container) => Some(container.clone()),
-        None => None,
-    }
+    doc.containers.get(tag).cloned()
 }
 
 fn get_container_or_head(doc: &Spec, tag: &str) -> Option<NodeRef> {
@@ -95,10 +92,10 @@ fn get_container_or_head(doc: &Spec, tag: &str) -> Option<NodeRef> {
         return None;
     }
 
-    match doc.containers.get(tag) {
-        Some(container) => Some(container.clone()),
-        None => Some(doc.head().clone()),
-    }
+    doc.containers
+        .get(tag)
+        .cloned()
+        .or(Some(doc.head().clone()))
 }
 
 pub fn add_header_footer(doc: &mut Spec) {
