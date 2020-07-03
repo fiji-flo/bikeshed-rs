@@ -11,9 +11,11 @@ mod boilerplate;
 mod clean;
 mod client;
 mod config;
+mod fix;
 mod heading;
 mod html;
 mod line;
+mod markdown;
 mod metadata;
 mod spec;
 #[cfg(test)]

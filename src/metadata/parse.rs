@@ -4,6 +4,23 @@ use crate::util::boolish::boolish_to_bool;
 use crate::util::boolset::BoolSet;
 use crate::util::date::{Date, ParseResult};
 
+pub fn parse_bool(val: &str) -> Result<bool, &'static str> {
+    boolish_to_bool(val)
+}
+
+pub fn parse_natural_number(val: &str) -> Result<u32, &'static str> {
+    match val.parse::<u32>() {
+        Ok(number) => {
+            if number > 0 {
+                Ok(number)
+            } else {
+                Err("not a natural number")
+            }
+        }
+        Err(_) => Err("not a natural number"),
+    }
+}
+
 pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
     // <boilerplate> := <pair> ("," <pair>)*
     // <pair> := ("omit" <section>) | (<section> <boolish>)
@@ -25,11 +42,8 @@ pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
             boilerplate.insert(pieces[1].clone(), false);
         } else {
             // <section> <boolish>
-            if let Some(on_off) = boolish_to_bool(&pieces[1]) {
-                boilerplate.insert(pieces[0].clone(), on_off);
-            } else {
-                return Err("wrong boolish format");
-            }
+            let on_off = boolish_to_bool(&pieces[1])?;
+            boilerplate.insert(pieces[0].clone(), on_off);
         }
     }
 
@@ -71,12 +85,14 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
     // <option> := [<affiliation-name>] [<email> | <link> | (<email> <link>) | (<link> <email>)]
 
     lazy_static! {
-        // w3c id reg
+        // regex for w3c id
         static ref W3C_ID_REG: Regex = Regex::new(r"w3cid \d+$").unwrap();
-        // link reg
+        // regex for link
         static ref LINK_REG: Regex = Regex::new(r"^\w+:").unwrap();
-        // email reg
+        // regex for email
         static ref EMAIL_REG: Regex = Regex::new(r"^\w+@.+\..+").unwrap();
+        // regex for name with id
+        static ref NAME_WITH_ID_REG: Regex = Regex::new(r"\s\d+$").unwrap();
     }
 
     fn is_linkish(piece: &str) -> bool {
@@ -180,6 +196,14 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
         }
     }
 
+    // check if the name ends with an w3c id
+    if NAME_WITH_ID_REG.is_match(&editor.name) {
+        let old_name = editor.name;
+        let name_pieces = old_name.rsplitn(2, ' ').collect::<Vec<&str>>();
+        editor.name = name_pieces[1].to_owned();
+        editor.w3c_id = Some(name_pieces[0].to_owned());
+    }
+
     Ok(editor)
 }
 
@@ -224,8 +248,42 @@ pub fn parse_level(val: &str) -> String {
     }
 }
 
-pub fn parse_vec(val: &str) -> Vec<String> {
-    vec![val.to_owned()]
+pub fn parse_markup_shorthands(val: &str) -> Result<BoolSet<String>, &'static str> {
+    // <markup-shorthands> := <pair> ("," <pair>)*
+    // <pair> := <markup-category> <boolish>
+
+    let mut markup_shorthands = BoolSet::<String>::new_with_default(false);
+
+    for item in val.split(",").map(|item| item.trim()) {
+        let pieces = item
+            .split(" ")
+            .map(|piece| piece.trim().to_lowercase())
+            .collect::<Vec<String>>();
+
+        if pieces.len() != 2 {
+            return Err("wrong markup shorthand piece format");
+        }
+
+        match pieces[0].as_str() {
+            "algorithm" | "biblio" | "css" | "dfn" | "idl" | "markdown" | "markup" => {
+                let on_off = boolish_to_bool(&pieces[1])?;
+                markup_shorthands.insert(pieces[0].clone(), on_off);
+            }
+            _ => return Err("no such markup shorthand category"),
+        }
+    }
+
+    Ok(markup_shorthands)
+}
+
+pub fn parse_work_status(val: &str) -> Result<String, &'static str> {
+    let val = val.to_lowercase();
+
+    match val.as_str() {
+        "completed" | "stable" | "testing" | "refining" | "revising" | "exploring"
+        | "rewriting" | "abandoned" => Ok(val),
+        _ => Err("no such work status"),
+    }
 }
 
 #[cfg(test)]

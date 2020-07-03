@@ -6,10 +6,11 @@ use std::fs;
 use crate::boilerplate::{self, retrieve_boilerplate_with_info};
 use crate::clean;
 use crate::config::SOURCE_FILE_EXTENSIONS;
+use crate::fix;
 use crate::heading;
-use crate::html;
 use crate::line::Line;
-use crate::metadata::metadata::{self, Metadata};
+use crate::markdown;
+use crate::metadata::{self, Metadata};
 use crate::util::reader;
 
 #[derive(Debug, Default)]
@@ -18,12 +19,13 @@ pub struct Spec<'a> {
     lines: Vec<Line>,
     pub md: Metadata,
     pub md_cli: Metadata,
-    pub macros: HashMap<&'static str, String>,
+    pub macros: HashMap<&'a str, String>,
     pub html: String,
     dom: Option<NodeRef>,
-    pub head: Option<NodeRef>,
-    pub body: Option<NodeRef>,
-    pub extra_styles: BTreeMap<&'static str, &'static str>,
+    head: Option<NodeRef>,
+    body: Option<NodeRef>,
+    pub extra_styles: BTreeMap<&'a str, &'a str>,
+    pub containers: BTreeMap<String, NodeRef>,
 }
 
 impl<'a> Spec<'a> {
@@ -86,14 +88,18 @@ impl<'a> Spec<'a> {
         md.validate();
         self.md = md;
 
-        self.html = self
-            .lines
-            .iter()
-            .map(|l| l.text.clone())
-            .collect::<Vec<String>>()
-            .join("\n");
+        let lines = markdown::parse(
+            &self
+                .lines
+                .iter()
+                .map(|l| l.text.clone())
+                .collect::<Vec<String>>(),
+            self.md.indent(),
+        );
+
+        self.html = lines.join("\n");
         boilerplate::add_header_footer(self);
-        self.html = html::helper::replace_macros(&self.html, &self.macros);
+        self.html = self.fix_text(&self.html);
 
         self.dom = Some(kuchiki::parse_html().one(self.html.clone()));
         if let Ok(head) = self.dom.as_ref().unwrap().select_first("head") {
@@ -106,19 +112,28 @@ impl<'a> Spec<'a> {
     }
 
     fn process_document(&mut self) {
+        boilerplate::load_containers(self);
         boilerplate::add_canonical_url(self);
-        boilerplate::add_spec_metadata_section(self);
-        boilerplate::add_copyright_section(self);
-        boilerplate::add_abstract_section(self);
-        boilerplate::add_toc_section(self);
-        boilerplate::add_bikeshed_boilerplate(self);
+        boilerplate::fill_spec_metadata_section(self);
+        boilerplate::fill_copyright_section(self);
+        boilerplate::fill_abstract_section(self);
+        boilerplate::add_styles(self);
         heading::process_headings(self);
+        boilerplate::fill_toc_section(self);
+        clean::clean_dom(self.dom());
     }
 
     pub fn finish(&mut self, outfile: Option<&str>) {
         let outfile = self.handle_outfile(outfile);
         let rendered = self.dom().to_string();
         fs::write(outfile, rendered).expect("unable to write file");
+    }
+
+    // Do several textual replacements with this spec.
+    pub fn fix_text(&self, text: &str) -> String {
+        let mut text = fix::replace_macros(text, &self.macros);
+        text = fix::fix_typography(&text);
+        text
     }
 
     fn handle_outfile(&self, outfile: Option<&str>) -> String {
@@ -135,7 +150,11 @@ impl<'a> Spec<'a> {
         }
     }
 
-    pub fn dom(&mut self) -> &mut NodeRef {
-        self.dom.as_mut().unwrap()
+    pub fn dom(&self) -> &NodeRef {
+        self.dom.as_ref().unwrap()
+    }
+
+    pub fn head(&self) -> &NodeRef {
+        self.head.as_ref().unwrap()
     }
 }
