@@ -170,7 +170,7 @@ lazy_static! {
     // regex for heading
     static ref HEADING_REG: Regex = Regex::new(r"^(?P<prefix>#{1,5})\s+(?P<text>[^#]+)((?P<another_prefix>#{1,5})\s*\{#(?P<id>[^}]+)\})?\s*$").unwrap();
     // regex for numbered item
-    static ref NUMBERED_REG: Regex = Regex::new(r"^\s*(?P<id>[0-9]+)\.\s*(?P<text>.*)").unwrap();
+    static ref NUMBERED_REG: Regex = Regex::new(r"^\s*(?P<num>-?[0-9]+)\.\s*(?P<text>.*)").unwrap();
     // regex for bulleted item
     static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-]\s*(?P<text>.*)").unwrap();
     // regex for definition item
@@ -237,7 +237,7 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
                 in_pre_block = false;
             } else {
                 // text in fenced block
-                tokens.push(Token::new_raw(html::escape_html(line)));
+                tokens.push(Token::new_raw(line));
             }
             continue;
         }
@@ -410,6 +410,20 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
         _ => die!("[Markdown] Try to parse a line that isn't a list."),
     };
 
+    let outer_el_attr = match stream.curr().kind {
+        TokenKind::Numbered => {
+            let caps = reg.captures(&stream.curr().line).unwrap();
+            let start_num = caps["num"].parse::<i32>().unwrap();
+
+            if start_num == 1 {
+                "".to_owned()
+            } else {
+                format!("start={}", start_num)
+            }
+        }
+        _ => "".to_owned(),
+    };
+
     let top_indent_level = stream.curr().indent_level;
 
     let parse_item = |stream: &mut TokenStream| -> (TokenKind, Vec<String>) {
@@ -454,7 +468,7 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
         (token_kind, lines)
     };
 
-    let mut lines = vec![format!("<{}>", outer_tag)];
+    let mut lines = vec![format!("<{} {}>", outer_tag, outer_el_attr)];
 
     loop {
         let (token_kind, item_lines) = parse_item(stream);
