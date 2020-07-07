@@ -30,16 +30,14 @@ Boilerplate: omit document-revision
 This is a code block.
 ```
 
-"tilda code block"
+"tilde code block"
 ~~~
-this code block has tildas,
+this code block has tildes,
 ```
 and isn't closed by backticks
+TODO(#17): Move fix_text() into the Markdown handler, so it doesn't operate on raw lines.
 ```
-TODO: move fixText() into the markdown handler, so it doesn't operate on raw lines;
-TODO: right now it'll make replacements in scripts, which is obviously bad :(
 ~~~
-
 
 foo
 
