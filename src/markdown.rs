@@ -1,5 +1,7 @@
 use regex::Regex;
 
+use crate::html;
+
 // Get HTML lines.
 pub fn parse(lines: &[String], tab_size: u32) -> Vec<String> {
     let tokens = tokenize_lines(lines, tab_size);
@@ -16,6 +18,7 @@ enum TokenKind {
     Bulleted,
     Dt,
     Dd,
+    Raw,
     Block,
     Text,
     End,
@@ -43,6 +46,10 @@ impl Token {
 
     fn new_end() -> Self {
         Token::new(TokenKind::End, "", u32::max_value())
+    }
+
+    fn new_raw<T: Into<String>>(line: T) -> Self {
+        Token::new(TokenKind::Raw, line, u32::max_value())
     }
 }
 
@@ -73,7 +80,7 @@ fn get_indent_level(text: &str, tab_size: u32) -> u32 {
 }
 
 fn trim_indentation(text: &str, indent_level: u32, tab_size: u32) -> String {
-    // allow empty line
+    // Allow empty line.
     if text.trim().is_empty() {
         return text.to_owned();
     }
@@ -154,6 +161,8 @@ impl<'a> TokenStream<'a> {
 }
 
 lazy_static! {
+    // regex for fenced line
+    static ref FENCED_LINE_REG: Regex = Regex::new(r"^(\s*)(?P<tag>`{3,}|~{3,})([^`]*)$").unwrap();
     // regex for equals line
     static ref EQUALS_LINE_REG: Regex = Regex::new(r"^={3,}\s*$").unwrap();
     // regex for dash line
@@ -167,7 +176,7 @@ lazy_static! {
     // regex for definition item
     static ref DEF_REG: Regex = Regex::new(r"^\s*(?P<prefix>:{1,2})\s*(?P<text>.*)").unwrap();
     // regex for html block
-    static ref HTML_BLOCK_REG: Regex = Regex::new(r"<").unwrap();
+    static ref HTML_BLOCK_REG: Regex = Regex::new(r"^\s*</?([\w-]+)").unwrap();
 }
 
 fn is_single_line_heading(line: &str) -> bool {
@@ -209,35 +218,63 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
     };
 
     let mut tokens = Vec::new();
+    let mut frenced_tag_stack: Vec<String> = Vec::new();
+    let mut in_pre_block = false;
 
     for line in lines.iter() {
+        let line = if in_pre_block {
+            html::escape_html(line)
+        } else {
+            line.to_owned()
+        };
+
+        if let Some(top) = frenced_tag_stack.last() {
+            if FENCED_LINE_REG.is_match(&line) && line[0..1] == top[0..1] && line.len() >= top.len()
+            {
+                // end fenced line
+                frenced_tag_stack.pop();
+                tokens.push(Token::new_raw("</pre>"));
+                in_pre_block = false;
+            } else {
+                // text in fenced block
+                tokens.push(Token::new_raw(html::escape_html(line)));
+            }
+            continue;
+        }
+
         let token = if line.is_empty() {
             // blank
-            make_token(TokenKind::Blank, line)
-        } else if EQUALS_LINE_REG.is_match(line) {
+            make_token(TokenKind::Blank, &line)
+        } else if let Some(caps) = FENCED_LINE_REG.captures(&line) {
+            // start fenced line
+            let frenced_tag = caps["tag"].to_owned();
+            frenced_tag_stack.push(frenced_tag);
+            in_pre_block = true;
+            make_token(TokenKind::Raw, "<pre>")
+        } else if EQUALS_LINE_REG.is_match(&line) {
             // equals line
-            make_token(TokenKind::EqualsLine, line)
-        } else if DASH_LINE_REG.is_match(line) {
+            make_token(TokenKind::EqualsLine, &line)
+        } else if DASH_LINE_REG.is_match(&line) {
             // dash line
-            make_token(TokenKind::DashLine, line)
-        } else if is_single_line_heading(line) {
+            make_token(TokenKind::DashLine, &line)
+        } else if is_single_line_heading(&line) {
             // single line heading
-            make_token(TokenKind::Head, line)
-        } else if NUMBERED_REG.is_match(line) {
+            make_token(TokenKind::Head, &line)
+        } else if NUMBERED_REG.is_match(&line) {
             // numbered item
-            make_token(TokenKind::Numbered, line)
-        } else if BULLETED_REG.is_match(line) {
+            make_token(TokenKind::Numbered, &line)
+        } else if BULLETED_REG.is_match(&line) {
             // bulleted item
-            make_token(TokenKind::Bulleted, line)
-        } else if let Some(token_kind) = extract_def_token_kind(line) {
+            make_token(TokenKind::Bulleted, &line)
+        } else if let Some(token_kind) = extract_def_token_kind(&line) {
             // definition item
-            make_token(token_kind, line)
-        } else if HTML_BLOCK_REG.is_match(line) {
+            make_token(token_kind, &line)
+        } else if HTML_BLOCK_REG.is_match(&line) {
             // block
-            make_token(TokenKind::Block, line)
+            make_token(TokenKind::Block, &line)
         } else {
             // text
-            make_token(TokenKind::Text, line)
+            make_token(TokenKind::Text, &line)
         };
 
         tokens.push(token);
@@ -253,7 +290,7 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
     loop {
         match stream.curr().kind {
             TokenKind::End => break,
-            TokenKind::Block => {
+            TokenKind::Raw | TokenKind::Block => {
                 lines.push(stream.curr().line.clone());
             }
             TokenKind::Head => {

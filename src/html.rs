@@ -179,3 +179,7 @@ pub fn deep_clone(el: &NodeRef) -> NodeRef {
 
     root
 }
+
+pub fn escape_html<T: Into<String>>(text: T) -> String {
+    text.into().replace("&", "&amp;").replace("<", "&lt;")
+}

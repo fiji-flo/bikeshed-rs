@@ -6,7 +6,7 @@ use std::fs;
 use crate::boilerplate::{self, retrieve_boilerplate_with_info};
 use crate::clean;
 use crate::config::SOURCE_FILE_EXTENSIONS;
-use crate::fix;
+use crate::fix::{self, CodeSpanManager};
 use crate::heading;
 use crate::line::Line;
 use crate::markdown;
@@ -131,9 +131,16 @@ impl<'a> Spec<'a> {
 
     // Do several textual replacements with this spec.
     pub fn fix_text(&self, text: &str) -> String {
-        let mut text = fix::replace_macros(text, &self.macros);
-        text = fix::fix_typography(&text);
-        text
+        if self.md.markup_shorthands.get("markdown") {
+            let mut code_span_manager = CodeSpanManager::new(text.to_owned());
+            code_span_manager.map_text_pieces(|text: &str| fix::replace_macros(text, &self.macros));
+            code_span_manager.map_text_pieces(fix::fix_typography);
+            code_span_manager.extract()
+        } else {
+            let mut text = fix::replace_macros(text, &self.macros);
+            text = fix::fix_typography(&text);
+            text
+        }
     }
 
     fn handle_outfile(&self, outfile: Option<&str>) -> String {
