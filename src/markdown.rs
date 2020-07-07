@@ -13,6 +13,7 @@ enum TokenKind {
     Blank,
     EqualsLine,
     DashLine,
+    HorizontalRule,
     Head,
     Numbered,
     Bulleted,
@@ -167,6 +168,8 @@ lazy_static! {
     static ref EQUALS_LINE_REG: Regex = Regex::new(r"^={3,}\s*$").unwrap();
     // regex for dash line
     static ref DASH_LINE_REG: Regex = Regex::new(r"^-{3,}\s*$").unwrap();
+    // regex for horizontal rule
+    static ref HORIZONTAL_RULE_REG: Regex = Regex::new(r"^((\*\s*){3,})$|^((-\s*){3,})$|^((_\s*){3,})$").unwrap();
     // regex for heading
     static ref HEADING_REG: Regex = Regex::new(r"^(?P<prefix>#{1,5})\s+(?P<text>[^#]+)((?P<another_prefix>#{1,5})\s*\{#(?P<id>[^}]+)\})?\s*$").unwrap();
     // regex for numbered item
@@ -257,6 +260,9 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
         } else if DASH_LINE_REG.is_match(&line) {
             // dash line
             make_token(TokenKind::DashLine, &line)
+        } else if HORIZONTAL_RULE_REG.is_match(&line) {
+            // horizontal rule
+            make_token(TokenKind::HorizontalRule, &line)
         } else if is_single_line_heading(&line) {
             // single line heading
             make_token(TokenKind::Head, &line)
@@ -307,6 +313,9 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
                     lines.push(stream.curr().line.clone());
                 }
             }
+            TokenKind::HorizontalRule | TokenKind::DashLine => {
+                lines.push(make_horizontal_rule());
+            }
             TokenKind::Numbered | TokenKind::Bulleted | TokenKind::Dt | TokenKind::Dd => {
                 lines.extend(parse_list(&mut stream));
             }
@@ -319,6 +328,11 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
     }
 
     lines
+}
+
+#[inline]
+fn make_horizontal_rule() -> String {
+    "<hr>".to_owned()
 }
 
 // NOTE: When a particular section-parsing function is over, the current token
