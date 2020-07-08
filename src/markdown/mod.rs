@@ -283,12 +283,12 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
             let start_num = caps["num"].parse::<i32>().unwrap();
 
             if start_num == 1 {
-                "".to_owned()
+                "data-md".to_owned()
             } else {
-                format!("start={}", start_num)
+                format!("data-md start={}", start_num)
             }
         }
-        _ => "".to_owned(),
+        _ => "data-md".to_owned(),
     };
 
     let top_indent_level = stream.curr().indent_level;
