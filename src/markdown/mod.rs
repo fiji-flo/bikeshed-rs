@@ -1,3 +1,4 @@
+pub mod comment;
 mod indent;
 mod token;
 
