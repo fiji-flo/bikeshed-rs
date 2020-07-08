@@ -89,6 +89,17 @@ pub fn insert_attr<T: Into<String>>(el: &NodeRef, attr_name: &str, attr_val: T) 
     attributes.insert(LocalName::from(attr_name), attr_val.into());
 }
 
+pub fn remove_attr(el: &NodeRef, attr_name: &str) {
+    let data = match el.data() {
+        NodeData::Element(data) => data,
+        _ => return,
+    };
+
+    let mut attributes = data.attributes.borrow_mut();
+
+    attributes.remove(LocalName::from(attr_name));
+}
+
 pub fn has_class(el: &NodeRef, class: &str) -> bool {
     let data = match el.data() {
         NodeData::Element(data) => data,
