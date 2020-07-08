@@ -69,6 +69,8 @@ impl<'a> Spec<'a> {
     }
 
     fn assemble_document(&mut self) {
+        self.lines = markdown::comment::remove_comments(&self.lines);
+
         let (md_doc, lines) = metadata::parse_metadata(&self.lines);
         self.lines = lines;
 
