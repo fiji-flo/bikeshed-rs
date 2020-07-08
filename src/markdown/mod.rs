@@ -1,164 +1,16 @@
+mod indent;
+mod token;
+
 use regex::Regex;
 
 use crate::html;
+use indent::*;
+use token::*;
 
 // Get HTML lines.
 pub fn parse(lines: &[String], tab_size: u32) -> Vec<String> {
     let tokens = tokenize_lines(lines, tab_size);
     parse_tokens(&tokens, tab_size)
-}
-
-#[derive(Debug, Clone, Copy, PartialEq)]
-enum TokenKind {
-    Blank,
-    EqualsLine,
-    DashLine,
-    HorizontalRule,
-    Head,
-    Numbered,
-    Bulleted,
-    Dt,
-    Dd,
-    Raw,
-    Block,
-    Text,
-    End,
-}
-
-#[derive(Debug, Clone)]
-struct Token {
-    kind: TokenKind,
-    line: String,
-    indent_level: u32,
-}
-
-impl Token {
-    fn new<T: Into<String>>(kind: TokenKind, line: T, indent_level: u32) -> Self {
-        Token {
-            kind,
-            line: line.into(),
-            indent_level,
-        }
-    }
-
-    fn new_blank() -> Self {
-        Token::new(TokenKind::Blank, "", u32::max_value())
-    }
-
-    fn new_end() -> Self {
-        Token::new(TokenKind::End, "", u32::max_value())
-    }
-
-    fn new_raw<T: Into<String>>(line: T) -> Self {
-        Token::new(TokenKind::Raw, line, u32::max_value())
-    }
-}
-
-fn get_indent_level(text: &str, tab_size: u32) -> u32 {
-    let tab_size = tab_size as usize;
-    let mut indent_level = 0;
-    let mut curr: usize = 0;
-
-    loop {
-        if curr >= text.len() {
-            break;
-        }
-
-        if &text[curr..curr + 1] == "\t" {
-            indent_level += 1;
-            curr += 1;
-        } else if curr + tab_size <= text.len()
-            && &text[curr..curr + tab_size] == " ".repeat(tab_size)
-        {
-            indent_level += 1;
-            curr += tab_size;
-        } else {
-            break;
-        }
-    }
-
-    indent_level
-}
-
-fn trim_indentation(text: &str, indent_level: u32, tab_size: u32) -> String {
-    // Allow empty line.
-    if text.trim().is_empty() {
-        return text.to_owned();
-    }
-
-    let tab_size = tab_size as usize;
-    let mut offset: usize = 0;
-
-    for _ in 0..indent_level {
-        if &text[offset..offset + 1] == "\t" {
-            offset += 1;
-        } else if offset + tab_size <= text.len()
-            && &text[offset..offset + tab_size] == " ".repeat(tab_size)
-        {
-            offset += tab_size;
-        } else {
-            die!("[Markdown] \"{}\" isn't indented enough.", text);
-        }
-    }
-
-    text[offset..].to_owned()
-}
-
-#[derive(Debug)]
-struct TokenStream<'a> {
-    tokens: &'a [Token],
-    curr: usize,
-    tab_size: u32,
-    // the token before all given tokens
-    before: Token,
-    // the token after all given tokens
-    after: Token,
-}
-
-impl<'a> TokenStream<'a> {
-    fn new(tokens: &'a [Token], tab_size: u32) -> Self {
-        TokenStream {
-            tokens,
-            curr: 0,
-            tab_size,
-            before: Token::new_blank(),
-            after: Token::new_end(),
-        }
-    }
-
-    fn advance(&mut self) {
-        if self.curr < self.tokens.len() {
-            self.curr += 1;
-        }
-    }
-
-    fn nth(&self, index: usize) -> &Token {
-        if index >= self.tokens.len() {
-            &self.after
-        } else {
-            &self.tokens[index]
-        }
-    }
-
-    fn curr(&self) -> &Token {
-        self.nth(self.curr)
-    }
-
-    fn prev(&self) -> &Token {
-        if self.curr == 0 {
-            &self.before
-        } else {
-            &self.nth(self.curr - 1)
-        }
-    }
-
-    fn next(&self) -> &Token {
-        &self.nth(self.curr + 1)
-    }
-
-    fn next_next(&self) -> &Token {
-        &self.nth(self.curr + 2)
-    }
 }
 
 lazy_static! {
@@ -472,10 +324,10 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
 
             stream.advance();
 
-            lines.push(trim_indentation(
+            lines.push(trim_indent(
                 &stream.curr().line,
                 top_indent_level + 1,
-                stream.tab_size,
+                stream.tab_size(),
             ));
         }
 
@@ -494,7 +346,7 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
 
         // Generate an item.
         lines.push(format!("<{} data-md>", tag));
-        lines.extend(parse(&item_lines, stream.tab_size));
+        lines.extend(parse(&item_lines, stream.tab_size()));
         lines.push(format!("</{}>", tag));
 
         // Break the loop if we reach the end of this list.
