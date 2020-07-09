@@ -76,8 +76,10 @@ lazy_static! {
         (\s+(?P<text>.*)|$)"
     )
     .unwrap();
-    // regex for html block
-    static ref HTML_BLOCK_REG: Regex = Regex::new(r"^\s*</?([\w-]+)").unwrap();
+    // regex for quote block
+    static ref QUOTE_BLOCK_REG: Regex = Regex::new(r"^\s*>\s?(?P<text>.*)").unwrap();
+    // regex for markup block
+    static ref MARKUP_BLOCK_REG: Regex = Regex::new(r"^\s*</?([\w-]+)").unwrap();
 }
 
 fn is_single_line_heading(line: &str) -> bool {
@@ -173,9 +175,12 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
         } else if let Some(token_kind) = extract_def_token_kind(&line) {
             // definition item
             make_token(token_kind, &line)
-        } else if HTML_BLOCK_REG.is_match(&line) {
-            // block
-            make_token(TokenKind::Block, &line)
+        } else if QUOTE_BLOCK_REG.is_match(&line) {
+            // quote block
+            make_token(TokenKind::QuoteBlock, &line)
+        } else if MARKUP_BLOCK_REG.is_match(&line) {
+            // markup block
+            make_token(TokenKind::MarkupBlock, &line)
         } else {
             // text
             make_token(TokenKind::Text, &line)
@@ -194,7 +199,7 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
     loop {
         match stream.curr().kind {
             TokenKind::End => break,
-            TokenKind::Raw | TokenKind::Block => {
+            TokenKind::Raw | TokenKind::MarkupBlock => {
                 lines.push(stream.curr().line.clone());
             }
             TokenKind::Head => {
@@ -216,6 +221,9 @@ fn parse_tokens(tokens: &[Token], tab_size: u32) -> Vec<String> {
             }
             TokenKind::Numbered | TokenKind::Bulleted | TokenKind::Dt | TokenKind::Dd => {
                 lines.extend(parse_list(&mut stream));
+            }
+            TokenKind::QuoteBlock => {
+                lines.extend(parse_quote_block(&mut stream));
             }
             _ => {
                 lines.push(stream.curr().line.clone());
@@ -426,6 +434,54 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
     }
 
     lines.push(format!("</{}>", outer_tag));
+
+    lines
+}
+
+fn parse_quote_block(stream: &mut TokenStream) -> Vec<String> {
+    let extract_text_from_quote_block = |line: &str| -> Option<String> {
+        let caps = QUOTE_BLOCK_REG.captures(line).unwrap();
+
+        if let Some(text) = caps.name("text") {
+            Some(text.as_str().to_owned())
+        } else {
+            None
+        }
+    };
+
+    let mut inner_lines = Vec::new();
+
+    if let Some(text) = extract_text_from_quote_block(&stream.curr().line) {
+        inner_lines.push(text);
+    }
+
+    let top_indent_level = stream.curr().indent_level;
+
+    loop {
+        if stream.next().indent_level < top_indent_level {
+            break;
+        }
+
+        match stream.next().kind {
+            TokenKind::QuoteBlock => {
+                stream.advance();
+                if let Some(text) = extract_text_from_quote_block(&stream.curr().line) {
+                    inner_lines.push(text);
+                }
+            }
+            TokenKind::Text => {
+                stream.advance();
+                inner_lines.push(stream.curr().line.to_owned());
+            }
+            _ => break,
+        }
+    }
+
+    let mut lines = Vec::new();
+
+    lines.push("<blockquote>".to_owned());
+    lines.extend(parse(&inner_lines, stream.tab_size()));
+    lines.push("</blockquote>".to_owned());
 
     lines
 }
