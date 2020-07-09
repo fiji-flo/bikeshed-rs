@@ -3,22 +3,23 @@ use regex::{Captures, Regex};
 
 use crate::html::{self, Attr};
 use crate::spec::Spec;
+use crate::util::boolset::BoolSet;
 
 pub fn transform_shortcuts(doc: &Spec) {
-    transform_node(doc.body());
+    transform_node(doc.body(), &doc.md.markup_shorthands);
 }
 
-fn transform_node(el: &NodeRef) {
+fn transform_node(el: &NodeRef, markup_shorthands: &BoolSet<String>) {
     let mut new_children = Vec::new();
 
     for child in el.children() {
         if html::is_text_node(&child) {
-            let new_nodes = transform_text_node(&child);
+            let new_nodes = transform_text_node(&child, markup_shorthands);
             child.detach();
             new_children.extend(new_nodes);
         } else {
             if html::get_tag(&child).unwrap() != "code" {
-                transform_node(&child);
+                transform_node(&child, markup_shorthands);
             }
             new_children.push(child);
         }
@@ -93,11 +94,15 @@ fn escaped_asterisk_replacer(_: &Captures) -> Vec<NodeRef> {
     vec![html::new_text("*")]
 }
 
-fn transform_text_node(text_el: &NodeRef) -> Vec<NodeRef> {
+fn transform_text_node(text_el: &NodeRef, markup_shorthands: &BoolSet<String>) -> Vec<NodeRef> {
     let mut text_els = vec![text_el.clone()];
-    text_els = process_text_nodes(&text_els, &STRONG_REG, strong_replacer);
-    text_els = process_text_nodes(&text_els, &EMPHASIS_REG, emphasis_replacer);
-    text_els = process_text_nodes(&text_els, &ESCAPED_ASTERISK_REG, escaped_asterisk_replacer);
+
+    if markup_shorthands.get("markdown") {
+        text_els = process_text_nodes(&text_els, &STRONG_REG, strong_replacer);
+        text_els = process_text_nodes(&text_els, &EMPHASIS_REG, emphasis_replacer);
+        text_els = process_text_nodes(&text_els, &ESCAPED_ASTERISK_REG, escaped_asterisk_replacer);
+    }
+
     text_els
 }
 
