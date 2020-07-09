@@ -150,8 +150,8 @@ pub fn fix_typography(text: &str) -> String {
     }
 
     let replacer = |caps: &Captures| -> String {
-        let left = caps.name("left").unwrap().as_str();
-        let right = caps.name("right").unwrap().as_str();
+        let left = &caps["left"];
+        let right = &caps["right"];
         format!("{}’{}", left, right)
     };
 

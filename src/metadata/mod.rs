@@ -439,7 +439,7 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
     let mut md = Metadata::new();
     let mut new_lines: Vec<Line> = Vec::new();
     let mut in_metadata = false;
-    let mut last_key: Option<&str> = None;
+    let mut last_key: Option<String> = None;
     let mut end_tag_reg: Option<&Regex> = None;
 
     for line in lines {
@@ -460,13 +460,13 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
                 && (line.text.trim().is_empty() || START_WITH_SPACES_REG.is_match(&line.text))
             {
                 // if the line is empty or starts with 1+ spaces, continue the previous key
-                md.add_data(last_key.unwrap(), &line.text, Some(line.index));
+                md.add_data(last_key.as_deref().unwrap(), &line.text, Some(line.index));
             } else if let Some(caps) = PAIR_REG.captures(&line.text) {
                 // handle key-val pair
-                let key = caps.name("key").unwrap().as_str();
-                let val = caps.name("val").unwrap().as_str();
-                md.add_data(key, val, Some(line.index));
-                last_key = Some(key);
+                let key = &caps["key"];
+                let val = &caps["val"];
+                md.add_data(&key, val, Some(line.index));
+                last_key = Some(key.to_owned());
             } else {
                 // wrong key-val pair
                 die!("Incorrectly formatted metadata."; Some(line.index));
@@ -474,7 +474,7 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
         } else if let Some(caps) = TITLE_REG.captures(&line.text) {
             // handle title
             if md.title.is_none() {
-                let title = caps.name("title").unwrap().as_str();
+                let title = &caps["title"];
                 md.add_data("Title", title, Some(line.index));
             }
             new_lines.push(line.clone());
