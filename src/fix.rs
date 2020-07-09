@@ -15,8 +15,12 @@ pub struct CodeSpanManager {
 impl CodeSpanManager {
     pub fn new(text: String) -> Self {
         lazy_static! {
-            static ref REG: Regex =
-                Regex::new(r"(?P<escape>\\`)|(?P<inner_text>[\w-]*)(?P<backticks>`+)").unwrap();
+            static ref REG: Regex = Regex::new(
+                r"(?x)
+                (?P<escape>\\`)
+                |(?P<inner_text>[\w-]*)(?P<backticks>`+)"
+            )
+            .unwrap();
         }
 
         enum Mode {
@@ -118,7 +122,13 @@ impl CodeSpanManager {
 // Replace macros with text.
 pub fn replace_macros<'a>(text: &str, macros: &HashMap<&'a str, String>) -> String {
     lazy_static! {
-        static ref REG: Regex = Regex::new(r"\[(?P<inner_text>[A-Z0-9-]+)\]").unwrap();
+        static ref REG: Regex = Regex::new(
+            r"(?x)
+            \[
+            (?P<inner_text>[A-Z0-9-]+)
+            \]"
+        )
+        .unwrap();
     }
 
     let replacer = |caps: &Captures| -> String {
