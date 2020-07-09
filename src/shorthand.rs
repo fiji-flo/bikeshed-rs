@@ -60,7 +60,7 @@ fn strong_replacer(caps: &Captures) -> Vec<NodeRef> {
 
     let strong_el = {
         let strong_el = html::new_element("strong", None::<Attr>);
-        let inner_text = caps["inner_text"].to_owned();
+        let inner_text = &caps["inner_text"];
         strong_el.append(html::new_text(inner_text));
         strong_el
     };
@@ -78,7 +78,7 @@ fn emphasis_replacer(caps: &Captures) -> Vec<NodeRef> {
 
     let em_el = {
         let em_el = html::new_element("em", None::<Attr>);
-        let inner_text = caps["inner_text"].to_owned();
+        let inner_text = &caps["inner_text"];
         em_el.append(html::new_text(inner_text));
         em_el
     };

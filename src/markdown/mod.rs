@@ -91,14 +91,14 @@ fn is_single_line_heading(line: &str) -> bool {
         None => return true,
     };
 
-    let left_prefix = caps.name("prefix").unwrap();
-    left_prefix.as_str().len() == another_prefix.as_str().len()
+    let left_prefix = &caps["prefix"];
+    left_prefix.len() == another_prefix.as_str().len()
 }
 
 fn extract_def_token_kind(line: &str) -> Option<TokenKind> {
     let caps = DEF_REG.captures(line)?;
 
-    if caps.name("prefix").unwrap().as_str().len() == 1 {
+    if caps["prefix"].len() == 1 {
         Some(TokenKind::Dt)
     } else {
         Some(TokenKind::Dd)
@@ -239,10 +239,10 @@ fn make_horizontal_rule() -> String {
 fn parse_single_line_heading(stream: &mut TokenStream) -> String {
     let caps = HEADING_REG.captures(&stream.curr().line).unwrap();
 
-    let prefix = caps.name("prefix").unwrap().as_str();
+    let prefix = &caps["prefix"];
     let level = prefix.len() + 1;
 
-    let text = caps.name("text").unwrap().as_str().trim();
+    let text = &caps["text"].trim();
 
     let id_attr = if let Some(id) = caps.name("id") {
         format!("id = {}", id.as_str())
@@ -285,11 +285,11 @@ fn parse_multi_line_heading(stream: &mut TokenStream) -> String {
 
     let (text, id_attr) = if let Some(caps) = TEXT_WITH_ID_REG.captures(&stream.curr().line) {
         (
-            caps.name("text").unwrap().as_str().trim(),
-            format!("id = {}", caps.name("id").unwrap().as_str()),
+            caps["text"].trim().to_owned(),
+            format!("id = {}", &caps["id"]),
         )
     } else {
-        (stream.curr().line.as_str().trim(), String::new())
+        (stream.curr().line.trim().to_owned(), String::new())
     };
 
     let heading = format!(
@@ -353,7 +353,7 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
         let token_kind = stream.curr().kind;
 
         if let Some(caps) = reg.captures(&stream.curr().line) {
-            let text = caps.name("text").map_or("", |t| t.as_str());
+            let text = caps.name("text").map_or("", |m| m.as_str());
             lines.push(text.to_owned());
         }
 
