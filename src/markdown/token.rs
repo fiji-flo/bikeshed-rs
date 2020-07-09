@@ -10,7 +10,8 @@ pub enum TokenKind {
     Dt,
     Dd,
     Raw,
-    Block,
+    QuoteBlock,
+    MarkupBlock,
     Text,
     End,
 }
