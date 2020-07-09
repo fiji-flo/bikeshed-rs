@@ -38,7 +38,8 @@ lazy_static! {
         \*\*
         (?P<inner_text>[^\s][^*]*[^\s][^\\])
         \*\*"
-    ).unwrap();
+    )
+    .unwrap();
     // regex for emphasis
     static ref EMPHASIS_REG: Regex = Regex::new(
         r"(?x)
@@ -46,7 +47,8 @@ lazy_static! {
         \*
         (?P<inner_text>[^\s][^*]*[^\s][^\\*])
         \*"
-    ).unwrap();
+    )
+    .unwrap();
     // regex for escaped asterisk
     static ref ESCAPED_ASTERISK_REG: Regex = Regex::new(r"\\\*").unwrap();
 }
