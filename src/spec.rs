@@ -104,14 +104,18 @@ impl<'a> Spec<'a> {
         boilerplate::add_header_footer(self);
         self.html = self.fix_text(&self.html);
 
-        self.dom = Some(kuchiki::parse_html().one(self.html.clone()));
-        if let Ok(head) = self.dom.as_ref().unwrap().select_first("head") {
+        let dom = kuchiki::parse_html().one(self.html.clone());
+
+        if let Ok(head) = dom.select_first("head") {
             self.head = Some(head.as_node().clone());
         }
-        if let Ok(body) = self.dom.as_ref().unwrap().select_first("body") {
+        if let Ok(body) = dom.select_first("body") {
             self.body = Some(body.as_node().clone());
         }
-        clean::correct_h1(self.dom.as_mut().unwrap());
+
+        clean::correct_h1(&dom);
+
+        self.dom = Some(dom);
     }
 
     fn process_document(&mut self) {
