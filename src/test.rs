@@ -7,7 +7,43 @@ use crate::html;
 use crate::metadata::Metadata;
 use crate::spec::Spec;
 
-fn trim_text_node(el: NodeRef) -> NodeRef {
+fn merge_text_nodes(text_els: &[NodeRef]) -> NodeRef {
+    let mut texts = Vec::new();
+
+    for text_el in text_els {
+        let text = html::unwrap_text_node(text_el);
+        texts.push(text);
+    }
+
+    html::new_text(texts.join(""))
+}
+
+fn preprocess_text_nodes(els: &[NodeRef]) -> Vec<NodeRef> {
+    let mut new_els = Vec::new();
+    let mut curr = 0;
+
+    while curr < els.len() {
+        if !html::is_text_node(&els[curr]) {
+            new_els.push(els[curr].clone());
+            curr += 1;
+            continue;
+        }
+
+        let mut text_els = vec![els[curr].clone()];
+
+        while curr + 1 < els.len() && html::is_text_node(&els[curr + 1]) {
+            curr += 1;
+            text_els.push(els[curr].clone());
+        }
+
+        new_els.push(merge_text_nodes(&text_els));
+        curr += 1;
+    }
+
+    new_els
+}
+
+fn trim_text_node(el: &NodeRef) -> NodeRef {
     match el.as_text() {
         Some(text) => html::new_text(text.clone().into_inner().trim()),
         None => el.clone(),
@@ -40,14 +76,18 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> Result<(), CompareError> {
         }));
     }
 
-    // handle empty text nodes
-    let lhs_children = lhs
-        .children()
+    let mut lhs_children = lhs.children().collect::<Vec<NodeRef>>();
+    lhs_children = preprocess_text_nodes(&lhs_children);
+    lhs_children = lhs_children
+        .iter()
         .map(trim_text_node)
         .filter(is_valid_node)
         .collect::<Vec<NodeRef>>();
-    let rhs_children = rhs
-        .children()
+
+    let mut rhs_children = rhs.children().collect::<Vec<NodeRef>>();
+    rhs_children = preprocess_text_nodes(&rhs_children);
+    rhs_children = rhs_children
+        .iter()
         .map(trim_text_node)
         .filter(is_valid_node)
         .collect::<Vec<NodeRef>>();
@@ -99,6 +139,7 @@ fn test_spec() {
         "markdown008",
         "markdown009",
         "markdown010",
+        "markdown011",
     ];
 
     for name in names.iter() {

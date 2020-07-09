@@ -26,11 +26,11 @@ lazy_static! {
     // regex for heading
     static ref HEADING_REG: Regex = Regex::new(r"^(?P<prefix>#{1,5})\s+(?P<text>[^#]+)((?P<another_prefix>#{1,5})\s*\{#(?P<id>[^}]+)\})?\s*$").unwrap();
     // regex for numbered item
-    static ref NUMBERED_REG: Regex = Regex::new(r"^\s*(?P<num>-?[0-9]+)\.\s*(?P<text>.*)").unwrap();
+    static ref NUMBERED_REG: Regex = Regex::new(r"^\s*(?P<num>-?[0-9]+)\.(\s+(?P<text>.*)|$)").unwrap();
     // regex for bulleted item
-    static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-]\s*(?P<text>.*)").unwrap();
+    static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-](\s+(?P<text>.*)|$)").unwrap();
     // regex for definition item
-    static ref DEF_REG: Regex = Regex::new(r"^\s*(?P<prefix>:{1,2})\s*(?P<text>.*)").unwrap();
+    static ref DEF_REG: Regex = Regex::new(r"^\s*(?P<prefix>:{1,2})(\s+(?P<text>.*)|$)").unwrap();
     // regex for html block
     static ref HTML_BLOCK_REG: Regex = Regex::new(r"^\s*</?([\w-]+)").unwrap();
 }
