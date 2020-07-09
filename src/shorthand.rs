@@ -32,6 +32,21 @@ fn transform_node(el: &NodeRef, markup_shorthands: &BoolSet<String>) {
 
 // Life would be easier if the look-around syntax was supported by the regex library.
 lazy_static! {
+    // regex for inline link
+    static ref INLINE_LINK_REG: Regex = Regex::new(concat!(
+        r"(?x)
+            (\\)?
+            \[
+            (?P<text>[^\]]*)
+            \]
+            \(\s*
+            (?P<href>[^\s)]+)",
+        r#"\s*("
+            (?P<title>[^"]*)
+            ")?\s*"#,
+        r"\)"
+    ))
+    .unwrap();
     // regex for strong
     static ref STRONG_REG: Regex = Regex::new(
         r"(?x)
@@ -52,6 +67,25 @@ lazy_static! {
     .unwrap();
     // regex for escaped asterisk
     static ref ESCAPED_ASTERISK_REG: Regex = Regex::new(r"\\\*").unwrap();
+}
+
+fn inline_link_replacer(caps: &Captures) -> Vec<NodeRef> {
+    let href = &caps["href"];
+
+    let attrs = match caps.name("title") {
+        Some(title) => btreemap! {
+            "href" => href,
+            "title" => title.as_str(),
+        },
+        None => btreemap! {
+            "href" => href
+        },
+    };
+
+    let text = &caps["text"];
+    let a_el = html::new_a(attrs, text);
+
+    vec![a_el]
 }
 
 fn strong_replacer(caps: &Captures) -> Vec<NodeRef> {
@@ -98,6 +132,7 @@ fn transform_text_node(text_el: &NodeRef, markup_shorthands: &BoolSet<String>) -
     let mut text_els = vec![text_el.clone()];
 
     if markup_shorthands.get("markdown") {
+        text_els = process_text_nodes(&text_els, &INLINE_LINK_REG, inline_link_replacer);
         text_els = process_text_nodes(&text_els, &STRONG_REG, strong_replacer);
         text_els = process_text_nodes(&text_els, &EMPHASIS_REG, emphasis_replacer);
         text_els = process_text_nodes(&text_els, &ESCAPED_ASTERISK_REG, escaped_asterisk_replacer);
