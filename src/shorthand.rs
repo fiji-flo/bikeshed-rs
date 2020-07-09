@@ -32,9 +32,21 @@ fn transform_node(el: &NodeRef) {
 // Life would be easier if the look-around syntax was supported by the regex library.
 lazy_static! {
     // regex for strong
-    static ref STRONG_REG: Regex = Regex::new(r"((?P<left>[^\\])|^)\*\*(?P<inner_text>[^\s][^*]*[^\s][^\\])\*\*").unwrap();
+    static ref STRONG_REG: Regex = Regex::new(
+        r"(?x)
+        ((?P<left>[^\\])|^)
+        \*\*
+        (?P<inner_text>[^\s][^*]*[^\s][^\\])
+        \*\*"
+    ).unwrap();
     // regex for emphasis
-    static ref EMPHASIS_REG: Regex = Regex::new(r"((?P<left>[^\\*])|^)\*(?P<inner_text>[^\s][^*]*[^\s][^\\*])\*").unwrap();
+    static ref EMPHASIS_REG: Regex = Regex::new(
+        r"(?x)
+        ((?P<left>[^\\*])|^)
+        \*
+        (?P<inner_text>[^\s][^*]*[^\s][^\\*])
+        \*"
+    ).unwrap();
     // regex for escaped asterisk
     static ref ESCAPED_ASTERISK_REG: Regex = Regex::new(r"\\\*").unwrap();
 }

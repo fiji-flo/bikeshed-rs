@@ -16,21 +16,66 @@ pub fn parse(lines: &[String], tab_size: u32) -> Vec<String> {
 
 lazy_static! {
     // regex for fenced line
-    static ref FENCED_LINE_REG: Regex = Regex::new(r"^(\s*)(?P<tag>`{3,}|~{3,})([^`]*)$").unwrap();
+    static ref FENCED_LINE_REG: Regex = Regex::new(
+        r"(?x)
+        ^(\s*)
+        (?P<tag>`{3,}|~{3,})
+        ([^`]*)$"
+    )
+    .unwrap();
     // regex for equals line
     static ref EQUALS_LINE_REG: Regex = Regex::new(r"^={3,}\s*$").unwrap();
     // regex for dash line
     static ref DASH_LINE_REG: Regex = Regex::new(r"^-{3,}\s*$").unwrap();
     // regex for horizontal rule
-    static ref HORIZONTAL_RULE_REG: Regex = Regex::new(r"^((\*\s*){3,})$|^((-\s*){3,})$|^((_\s*){3,})$").unwrap();
+    static ref HORIZONTAL_RULE_REG: Regex = Regex::new(
+        r"(?x)
+        ^((\*\s*){3,})$
+        |^((-\s*){3,})$
+        |^((_\s*){3,})$"
+    )
+    .unwrap();
     // regex for heading
-    static ref HEADING_REG: Regex = Regex::new(r"^(?P<prefix>#{1,5})\s+(?P<text>[^#]+)((?P<another_prefix>#{1,5})\s*\{#(?P<id>[^}]+)\})?\s*$").unwrap();
+    static ref HEADING_REG: Regex = Regex::new(
+        r"(?x)
+        ^(?P<prefix>\#{1,5})
+        \s+
+        (?P<text>[^\#]+)
+        (
+            (?P<another_prefix>\#{1,5})
+            \s*
+            \{\#
+            (?P<id>[^}]+)
+            \}
+        )?
+        \s*$"
+    )
+    .unwrap();
     // regex for numbered item
-    static ref NUMBERED_REG: Regex = Regex::new(r"^\s*(?P<num>-?[0-9]+)\.(\s+(?P<text>.*)|$)").unwrap();
+    static ref NUMBERED_REG: Regex = Regex::new(
+        r"(?x)
+        ^\s*
+        (?P<num>-?[0-9]+)
+        \.
+        (\s+(?P<text>.*)|$)"
+    )
+    .unwrap();
     // regex for bulleted item
-    static ref BULLETED_REG: Regex = Regex::new(r"^\s*[*+-](\s+(?P<text>.*)|$)").unwrap();
+    static ref BULLETED_REG: Regex = Regex::new(
+        r"(?x)
+        ^\s*
+        [*+-]
+        (\s+(?P<text>.*)|$)"
+    )
+    .unwrap();
     // regex for definition item
-    static ref DEF_REG: Regex = Regex::new(r"^\s*(?P<prefix>:{1,2})(\s+(?P<text>.*)|$)").unwrap();
+    static ref DEF_REG: Regex = Regex::new(
+        r"(?x)
+        ^\s*
+        (?P<prefix>:{1,2})
+        (\s+(?P<text>.*)|$)"
+    )
+    .unwrap();
     // regex for html block
     static ref HTML_BLOCK_REG: Regex = Regex::new(r"^\s*</?([\w-]+)").unwrap();
 }
@@ -216,7 +261,16 @@ fn parse_single_line_heading(stream: &mut TokenStream) -> String {
 fn parse_multi_line_heading(stream: &mut TokenStream) -> String {
     lazy_static! {
         // regex for text with id
-        static ref TEXT_WITH_ID_REG: Regex = Regex::new(r"(?P<text>.*)\s*\{\s*#(?P<id>[^}]+)\s*\}\s*$").unwrap();
+        static ref TEXT_WITH_ID_REG: Regex = Regex::new(
+            r"(?x)
+            (?P<text>.*)
+            \s*
+            \{\s*\#
+            (?P<id>[^}]+)
+            \s*\}
+            \s*$"
+        )
+        .unwrap();
     }
 
     let level = match stream.next().kind {
