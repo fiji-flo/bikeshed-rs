@@ -95,7 +95,7 @@ fn get_container_or_head(doc: &Spec, tag: &str) -> Option<NodeRef> {
     doc.containers
         .get(tag)
         .cloned()
-        .or(Some(doc.head().clone()))
+        .or_else(|| Some(doc.head().clone()))
 }
 
 pub fn add_header_footer(doc: &mut Spec) {

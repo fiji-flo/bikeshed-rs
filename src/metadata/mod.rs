@@ -460,7 +460,7 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
                 && (line.text.trim().is_empty() || START_WITH_SPACES_REG.is_match(&line.text))
             {
                 // if the line is empty or starts with 1+ spaces, continue the previous key
-                md.add_data(last_key.as_deref().unwrap(), &line.text, Some(line.index));
+                md.add_data(last_key.as_ref().unwrap(), &line.text, Some(line.index));
             } else if let Some(caps) = PAIR_REG.captures(&line.text) {
                 // handle key-val pair
                 let key = &caps["key"];
