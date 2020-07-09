@@ -42,6 +42,14 @@ where
     el
 }
 
+pub fn is_text_node(el: &NodeRef) -> bool {
+    el.as_text().is_some()
+}
+
+pub fn unwrap_text_node(el: &NodeRef) -> String {
+    el.as_text().unwrap().borrow().clone()
+}
+
 pub fn replace_node(old_el: &NodeRef, new_el: &NodeRef) {
     old_el.insert_before(new_el.clone());
     old_el.detach();

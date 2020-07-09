@@ -17,6 +17,7 @@ mod html;
 mod line;
 mod markdown;
 mod metadata;
+mod shorthand;
 mod spec;
 #[cfg(test)]
 mod test;

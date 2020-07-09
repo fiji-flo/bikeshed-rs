@@ -11,6 +11,7 @@ use crate::heading;
 use crate::line::Line;
 use crate::markdown;
 use crate::metadata::{self, Metadata};
+use crate::shorthand;
 use crate::util::reader;
 
 #[derive(Debug, Default)]
@@ -119,6 +120,7 @@ impl<'a> Spec<'a> {
         boilerplate::fill_spec_metadata_section(self);
         boilerplate::fill_copyright_section(self);
         boilerplate::fill_abstract_section(self);
+        shorthand::transform_shortcuts(self);
         boilerplate::add_styles(self);
         heading::process_headings(self);
         boilerplate::fill_toc_section(self);
@@ -165,5 +167,9 @@ impl<'a> Spec<'a> {
 
     pub fn head(&self) -> &NodeRef {
         self.head.as_ref().unwrap()
+    }
+
+    pub fn body(&self) -> &NodeRef {
+        self.body.as_ref().unwrap()
     }
 }
