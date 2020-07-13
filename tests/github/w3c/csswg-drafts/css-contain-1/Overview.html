@@ -325,7 +325,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This CSS module describes the <a class="property" data-link-type="propdesc" href="#propdef-contain" id="ref-for-propdef-contain">contain</a> property, which indicates that the element’s subtree is independent of the rest of the page. This enables heavy optimizations by user agents when used well.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -422,28 +422,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-contain">contain</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> strict <span id="ref-for-comb-one①">|</span> content <span id="ref-for-comb-one②">|</span> [ size <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> layout <span id="ref-for-comb-any①">||</span> paint ] 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> strict <span id="ref-for-comb-one①">|</span> content <span id="ref-for-comb-one②">|</span> [ size <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> layout <span id="ref-for-comb-any①">||</span> paint ]
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td>See <a href="#contain-applies">below</a> 
+      <td>See <a href="#contain-applies">below</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword(s) 
+      <td>specified keyword(s)
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <p class="all-media">User Agents are expected to support this property on all media, including non-visual ones.</p>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-contain" id="ref-for-propdef-contain③">contain</a> property allows an author to indicate that an element and its contents are,
@@ -452,17 +452,17 @@ on screen, on paper, etc.
 	and allows authors to be confident that their page won’t accidentally fall into a slow code path
 	due to an innocuous change.</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-none">none<a class="self-link" href="#valdef-contain-none"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-none">none<a class="self-link" href="#valdef-contain-none"></a></dfn>
     <dd> This value indicates that the property has no effect.
 			The element renders as normal,
-			with no containment effects applied. 
-    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-strict">strict<a class="self-link" href="#valdef-contain-strict"></a></dfn> 
+			with no containment effects applied.
+    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-strict">strict<a class="self-link" href="#valdef-contain-strict"></a></dfn>
     <dd> This value turns on all forms of <a data-link-type="dfn" href="#containment" id="ref-for-containment">containment</a> for the element.
-			In other words, it behaves the same as <a class="css" data-link-type="propdesc" href="#propdef-contain" id="ref-for-propdef-contain⑤">contain: size layout paint;</a>. 
-    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-content">content<a class="self-link" href="#valdef-contain-content"></a></dfn> 
+			In other words, it behaves the same as <a class="css" data-link-type="propdesc" href="#propdef-contain" id="ref-for-propdef-contain⑤">contain: size layout paint;</a>.
+    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-content">content<a class="self-link" href="#valdef-contain-content"></a></dfn>
     <dd>
       This value turns on all forms of <a data-link-type="dfn" href="#containment" id="ref-for-containment①">containment</a> <em>except</em> <a data-link-type="dfn" href="#size-containment" id="ref-for-size-containment">size containment</a> for the element.
-			In other words, it behaves the same as <a class="css" data-link-type="propdesc" href="#propdef-contain" id="ref-for-propdef-contain⑥">contain: layout paint;</a>. 
+			In other words, it behaves the same as <a class="css" data-link-type="propdesc" href="#propdef-contain" id="ref-for-propdef-contain⑥">contain: layout paint;</a>.
      <p class="note" role="note"><span>Note:</span> <a class="css" data-link-type="propdesc" href="#propdef-contain" id="ref-for-propdef-contain⑦">contain: content</a> is reasonably "safe" to apply widely;
 			its effects are fairly minor in practice,
 			and most content won’t run afoul of its restrictions.
@@ -471,20 +471,20 @@ on screen, on paper, etc.
 			which can cause layout-invalidation to percolate further up the tree than desired.
 			Use <span class="css" id="ref-for-propdef-contain⑧">contain: strict</span> when possible,
 			to gain as much containment as you can.</p>
-    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-size">size<a class="self-link" href="#valdef-contain-size"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-size">size<a class="self-link" href="#valdef-contain-size"></a></dfn>
     <dd> The value turns on <a data-link-type="dfn" href="#size-containment" id="ref-for-size-containment②">size containment</a> for the element.
 			This ensures that the containing box can be laid out
-			without needing to examine its descendants. 
-    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-layout">layout<a class="self-link" href="#valdef-contain-layout"></a></dfn> 
+			without needing to examine its descendants.
+    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-layout">layout<a class="self-link" href="#valdef-contain-layout"></a></dfn>
     <dd> This value turns on <a data-link-type="dfn" href="#layout-containment" id="ref-for-layout-containment">layout containment</a> for the element.
 			This ensures that the containing box is <em>totally opaque</em> for layout purposes;
 			nothing outside can affect its internal layout,
-			and vice versa. 
-    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-paint">paint<a class="self-link" href="#valdef-contain-paint"></a></dfn> 
+			and vice versa.
+    <dt><dfn class="css" data-dfn-for="contain" data-dfn-type="value" data-export id="valdef-contain-paint">paint<a class="self-link" href="#valdef-contain-paint"></a></dfn>
     <dd> This value turns on <a data-link-type="dfn" href="#paint-containment" id="ref-for-paint-containment">paint containment</a> for the element.
 			This ensures that the descendants of the containing box don’t display outside its bounds,
 			so if an element is off-screen or otherwise not visible,
-			its descendants are also guaranteed to be not visible. 
+			its descendants are also guaranteed to be not visible.
    </dl>
    <p><span id="contain-applies">This property generally applies to all elements (including <a href="https://www.w3.org/TR/css-pseudo-4/#generated-content">CSS Pseudo-Elements 4 §4.1 Generated Content Pseudo-elements: ::before and ::after</a>)</span>,
 	although some types of containment have no effect on some elements,
@@ -493,7 +493,7 @@ on screen, on paper, etc.
 	the <a class="property" data-link-type="propdesc" href="#propdef-contain" id="ref-for-propdef-contain⑨">contain</a> property only applies to <code><a data-link-type="element" href="https://svgwg.org/svg2-draft/struct.html#elementdef-svg" id="ref-for-elementdef-svg">svg</a></code> elements that have an associated CSS layout box.</p>
    <div class="example" id="example-ace3db03">
     <a class="self-link" href="#example-ace3db03"></a> <a class="property" data-link-type="propdesc" href="#propdef-contain" id="ref-for-propdef-contain①⓪">contain</a> is useful when used widely on a page,
-		particularly when a page contains a lot of "widgets" which are all independent. 
+		particularly when a page contains a lot of "widgets" which are all independent.
     <p>For example, assume a micropost social network had markup something like this:</p>
 <pre><code class="highlight"><c- p>&lt;</c-><c- f>body</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>aside</c-><c- p>></c->...<c- p>&lt;/</c-><c- f>aside</c-><c- p>></c->
@@ -618,7 +618,7 @@ and the guarantees that layout containment is intended to offer would not be rea
 if such mechanisms did not abide by this rule. <span>[CSS-REGIONS-1]</span> has details over how <a data-link-type="dfn" href="#layout-containment" id="ref-for-layout-containment⑧">layout containment</a> affects
 regions.</p>
      <div class="example" id="example-328aa2be">
-      <a class="self-link" href="#example-328aa2be"></a> 
+      <a class="self-link" href="#example-328aa2be"></a>
 <pre><code class="highlight"><c- p>&lt;</c-><c- f>article</c-><c- p>></c->Lorem ipsum…<c- p>&lt;/</c-><c- f>article</c-><c- p>></c->
 <c- p>&lt;</c-><c- f>div</c-> <c- e>id</c-><c- o>=</c-><c- s>a</c-><c- p>>&lt;/</c-><c- f>div</c-><c- p>></c->
 <c- p>&lt;</c-><c- f>aside</c-><c- p>></c->
@@ -702,7 +702,7 @@ nor does it inhibit the creation of any such mechanism through other properties,
      <p>The <a data-link-type="dfn" href="#paint-containment-containing-box" id="ref-for-paint-containment-containing-box③">containing box</a> <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#establish-an-independent-formatting-context" id="ref-for-establish-an-independent-formatting-context①">establishes an independent formatting context</a>.</p>
    </ol>
    <div class="informative">
-     Possible optimizations that can be enabled by <a data-link-type="dfn" href="#paint-containment" id="ref-for-paint-containment②">paint containment</a> include (but are not limited to): 
+     Possible optimizations that can be enabled by <a data-link-type="dfn" href="#paint-containment" id="ref-for-paint-containment②">paint containment</a> include (but are not limited to):
     <ol>
      <li data-md>
       <p>If the containing box is off-screen or obscured,
@@ -731,48 +731,48 @@ and that isn’t inherent to the act of formatting the document.</p>
    <p>The <a href="http://www.w3.org/2001/tag/">TAG</a> has developed a <a href="https://www.w3.org/TR/security-privacy-questionnaire/">self-review questionnaire</a> to help editors and Working Groups evaluate the risks introduced by their specifications.
 Answers are provided below.</p>
    <dl>
-    <dt>Does this specification deal with personally-identifiable information? 
-    <dd>No. 
-    <dt>Does this specification deal with high-value data? 
-    <dd>No. 
-    <dt>Does this specification introduce new state for an origin that persists across browsing sessions? 
-    <dd>No. 
-    <dt>Does this specification expose persistent, cross-origin state to the web? 
-    <dd>No. 
-    <dt>Does this specification expose any other data to an origin that it doesn’t currently have access to? 
-    <dd>No. 
-    <dt>Does this specification enable new script execution/loading mechanisms? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to a user’s location? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to sensors on a user’s device? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to aspects of a user’s local computing environment? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to other devices? 
-    <dd>No. 
-    <dt>Does this specification allow an origin some measure of control over a user agent’s native UI? 
-    <dd>No. 
-    <dt>Does this specification expose temporary identifiers to the web? 
-    <dd>No. 
-    <dt>Does this specification distinguish between behavior in first-party and third-party contexts? 
-    <dd>No. 
-    <dt>How should this specification work in the context of a user agent’s "incognito" mode? 
-    <dd>No difference in behavior is needed. 
-    <dt>Does this specification persist data to a user’s local device? 
-    <dd>No. 
-    <dt>Does this specification have a "Security Considerations" and "Privacy Considerations" section? 
-    <dd>Yes, this is the section you are currently reading. 
-    <dt>Does this specification allow downgrading default security characteristics? 
-    <dd>No. 
+    <dt>Does this specification deal with personally-identifiable information?
+    <dd>No.
+    <dt>Does this specification deal with high-value data?
+    <dd>No.
+    <dt>Does this specification introduce new state for an origin that persists across browsing sessions?
+    <dd>No.
+    <dt>Does this specification expose persistent, cross-origin state to the web?
+    <dd>No.
+    <dt>Does this specification expose any other data to an origin that it doesn’t currently have access to?
+    <dd>No.
+    <dt>Does this specification enable new script execution/loading mechanisms?
+    <dd>No.
+    <dt>Does this specification allow an origin access to a user’s location?
+    <dd>No.
+    <dt>Does this specification allow an origin access to sensors on a user’s device?
+    <dd>No.
+    <dt>Does this specification allow an origin access to aspects of a user’s local computing environment?
+    <dd>No.
+    <dt>Does this specification allow an origin access to other devices?
+    <dd>No.
+    <dt>Does this specification allow an origin some measure of control over a user agent’s native UI?
+    <dd>No.
+    <dt>Does this specification expose temporary identifiers to the web?
+    <dd>No.
+    <dt>Does this specification distinguish between behavior in first-party and third-party contexts?
+    <dd>No.
+    <dt>How should this specification work in the context of a user agent’s "incognito" mode?
+    <dd>No difference in behavior is needed.
+    <dt>Does this specification persist data to a user’s local device?
+    <dd>No.
+    <dt>Does this specification have a "Security Considerations" and "Privacy Considerations" section?
+    <dd>Yes, this is the section you are currently reading.
+    <dt>Does this specification allow downgrading default security characteristics?
+    <dd>No.
    </dl>
    <h2 class="no-num non-normative heading settled" id="changes"><span class="content">Appendix A. Changes</span><a class="self-link" href="#changes"></a></h2>
    <p>This appendix is <em>informative</em>.</p>
    <h3 class="heading settled" id="2019-04-30-changes"><span class="content">Changes from the <a href="https://www.w3.org/TR/2019/CR-css-contain-1-20190430/">Candidate Recommendation of 30 April 2019</a></span><a class="self-link" href="#2019-04-30-changes"></a></h3>
    <ul>
-    <li> Editorial tweaks 
+    <li> Editorial tweaks
     <li>
-      <span id="valdef-contain-style"></span> <span id="containment-style"></span> <span id="style-containment"></span> <span id="property-scoped"></span> <span id="property-scoped-to-an-element"></span> <span id="property-scoped-to-a-sub-tree"></span> Drop the at-risk “style containment” feature from this specification, move it <a href="https://drafts.csswg.org/css-contain-2/">Level 2</a> 
+      <span id="valdef-contain-style"></span> <span id="containment-style"></span> <span id="style-containment"></span> <span id="property-scoped"></span> <span id="property-scoped-to-an-element"></span> <span id="property-scoped-to-a-sub-tree"></span> Drop the at-risk “style containment” feature from this specification, move it <a href="https://drafts.csswg.org/css-contain-2/">Level 2</a>
      <h3 class="heading settled" id="2018-11-08-changes"><span class="content">Changes from the <a href="https://www.w3.org/TR/2018/CR-css-contain-1-20181108/">Candidate Recommendation of 08 November 2018</a></span><a class="self-link" href="#2018-11-08-changes"></a></h3>
      <p>A full <a href="https://drafts.csswg.org/css-contain-1/issues-2018-11-cr.html">Disposition of Comments</a> is available. </p>
      <ul>
@@ -804,31 +804,31 @@ Answers are provided below.</p>
      <h3 class="heading settled" id="2017-08-08-changes"><span class="content">Changes from the <a href="https://www.w3.org/TR/2017/CR-css-contain-1-20170808/">Candidate Recommendation of 8 August 2017</a></span><a class="self-link" href="#2017-08-08-changes"></a></h3>
      <p>A full <a href="https://drafts.csswg.org/css-contain-1/issues-2017-cr.html">Disposition of Comments</a> is available. </p>
      <ul>
-      <li>Clarify to which box paint containment clips (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/5b92ee3c170e3be239937a3ae069f37655ff6671">see tests</a>). 
-      <li>Move the interaction between containment and the <code>bookmark-*</code> and <code>string-set</code> properties to <a data-link-type="biblio" href="#biblio-css-content-3">[CSS-CONTENT-3]</a> (additional tests not needed, no change in behavior). 
-      <li>Remove the effects of style containment on the "break-*" properties (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/d6a4f606a0501fe6ca526483a7a379ba2e9eaa1c">see tests</a>). 
-      <li>Move the description of the effects of containment on regions from this specification to <a data-link-type="biblio" href="#biblio-css-regions-1">[CSS-REGIONS-1]</a> (additional tests not needed, no change in behavior). 
-      <li>Clarify the effects of style scoping on counter-set and counter-increment (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/d7fbc4794403dfeb55f13310d4c1cb51813e2d6e">see tests</a>) 
-      <li>Size layout and paint containment don’t apply to internal ruby elements (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/ba5a04e3d65f9f39c2d6431a9ece5eb15d22116b">see tests</a>) 
-      <li>Layout, Paint, and size containments do not apply to non-atomic inlines (see <a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/402a19bde8981a402d9dba73083f84d96e4aeeb9">tests here</a> and <a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/69b5681ee7aa5a028eb694b2c93bfd48c1ef08e4">one more test here</a>) 
-      <li>Align paint containment’s behavior with overflow:clip (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/e2f844700a4a165f7ab6a0f021bbe1bf4d921cc0">see test</a>) 
-      <li>Elements with size containment are monolithic (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/536f74e4137196b34d63752f5a9217e23c4fb899#diff-bd8852c889db6d2b471bae58105f9374">see test</a>) 
-      <li>Forced breaks area allowed in elements with layout containments, but do not propagate (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/536f74e4137196b34d63752f5a9217e23c4fb899">see tests</a>) 
-      <li>Clarify the effects of scoping to a subtree (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/7aad64ade18bce9db257c34d72c6dad126a9e9cd">see test</a>) 
-      <li>Clarify the effects of scoping on open/close quotes (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/f6efd2ff775bea39e34b1b260959de618908046b">see tests</a>) 
-      <li>Editorial clarification: replace "Becoming a formatting context" (aka "Becoming a formatting context root") with "Establish a FC" (additional tests not needed, no change in behavior) 
+      <li>Clarify to which box paint containment clips (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/5b92ee3c170e3be239937a3ae069f37655ff6671">see tests</a>).
+      <li>Move the interaction between containment and the <code>bookmark-*</code> and <code>string-set</code> properties to <a data-link-type="biblio" href="#biblio-css-content-3">[CSS-CONTENT-3]</a> (additional tests not needed, no change in behavior).
+      <li>Remove the effects of style containment on the "break-*" properties (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/d6a4f606a0501fe6ca526483a7a379ba2e9eaa1c">see tests</a>).
+      <li>Move the description of the effects of containment on regions from this specification to <a data-link-type="biblio" href="#biblio-css-regions-1">[CSS-REGIONS-1]</a> (additional tests not needed, no change in behavior).
+      <li>Clarify the effects of style scoping on counter-set and counter-increment (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/d7fbc4794403dfeb55f13310d4c1cb51813e2d6e">see tests</a>)
+      <li>Size layout and paint containment don’t apply to internal ruby elements (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/ba5a04e3d65f9f39c2d6431a9ece5eb15d22116b">see tests</a>)
+      <li>Layout, Paint, and size containments do not apply to non-atomic inlines (see <a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/402a19bde8981a402d9dba73083f84d96e4aeeb9">tests here</a> and <a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/69b5681ee7aa5a028eb694b2c93bfd48c1ef08e4">one more test here</a>)
+      <li>Align paint containment’s behavior with overflow:clip (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/e2f844700a4a165f7ab6a0f021bbe1bf4d921cc0">see test</a>)
+      <li>Elements with size containment are monolithic (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/536f74e4137196b34d63752f5a9217e23c4fb899#diff-bd8852c889db6d2b471bae58105f9374">see test</a>)
+      <li>Forced breaks area allowed in elements with layout containments, but do not propagate (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/536f74e4137196b34d63752f5a9217e23c4fb899">see tests</a>)
+      <li>Clarify the effects of scoping to a subtree (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/7aad64ade18bce9db257c34d72c6dad126a9e9cd">see test</a>)
+      <li>Clarify the effects of scoping on open/close quotes (<a href="https://github.com/web-platform-tests/wpt/pull/10549/commits/f6efd2ff775bea39e34b1b260959de618908046b">see tests</a>)
+      <li>Editorial clarification: replace "Becoming a formatting context" (aka "Becoming a formatting context root") with "Establish a FC" (additional tests not needed, no change in behavior)
      </ul>
      <h3 class="heading settled" id="2017-04-19-changes"><span class="content">Changes from the <a href="https://www.w3.org/TR/2017/WD-css-contain-1-20170419/">Working Draft of 19 April 2017</a></span><a class="self-link" href="#2017-04-19-changes"></a></h3>
      <p>A <a href="https://drafts.csswg.org/css-contain-1/issues-2017.html">Disposition of Comments</a> covering this draft and the previous one together is available. </p>
      <ul>
-      <li>Clarify the interaction with display: contents 
-      <li>Clarify how containment works on table parts 
-      <li>Move the interaction between containment and fragmentation of overflow from this specification to CSS-OVERFLOW-4 
+      <li>Clarify the interaction with display: contents
+      <li>Clarify how containment works on table parts
+      <li>Move the interaction between containment and fragmentation of overflow from this specification to CSS-OVERFLOW-4
      </ul>
      <h3 class="heading settled" id="fpwd-changes"><span class="content">Changes from the <a href="https://www.w3.org/TR/2017/WD-css-contain-1-20170221/">First Public Working Draft of 21 February 2017</a></span><a class="self-link" href="#fpwd-changes"></a></h3>
      <ul>
-      <li>Specify handling of replaced elements for size containment 
-      <li>Layout containment makes element act as a containing block for absolutely positioned and fixed positioned descendants. 
+      <li>Specify handling of replaced elements for size containment
+      <li>Layout containment makes element act as a containing block for absolutely positioned and fixed positioned descendants.
      </ul>
    </ul>
   </main>
@@ -847,7 +847,7 @@ Answers are provided below.</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -860,14 +860,14 @@ Answers are provided below.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -918,7 +918,7 @@ Answers are provided below.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -946,309 +946,309 @@ Answers are provided below.</p>
   <aside class="dfn-panel" data-for="term-for-corner-clipping">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#corner-clipping">https://drafts.csswg.org/css-backgrounds-3/#corner-clipping</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-corner-clipping">3.3. 
+    <li><a href="#ref-for-corner-clipping">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-forced-break">
    <a href="https://drafts.csswg.org/css-break-3/#forced-break">https://drafts.csswg.org/css-break-3/#forced-break</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-forced-break">3.2. 
+    <li><a href="#ref-for-forced-break">3.2.
 Layout Containment</a> <a href="#ref-for-forced-break①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-fragmentation">
    <a href="https://drafts.csswg.org/css-break-3/#fragmentation">https://drafts.csswg.org/css-break-3/#fragmentation</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation">3.2. 
+    <li><a href="#ref-for-fragmentation">3.2.
 Layout Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-fragmentation-container">
    <a href="https://drafts.csswg.org/css-break-3/#fragmentation-container">https://drafts.csswg.org/css-break-3/#fragmentation-container</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation-container">3.2. 
+    <li><a href="#ref-for-fragmentation-container">3.2.
 Layout Containment</a> <a href="#ref-for-fragmentation-container①">(2)</a> <a href="#ref-for-fragmentation-container②">(3)</a> <a href="#ref-for-fragmentation-container③">(4)</a> <a href="#ref-for-fragmentation-container④">(5)</a> <a href="#ref-for-fragmentation-container⑤">(6)</a> <a href="#ref-for-fragmentation-container⑥">(7)</a> <a href="#ref-for-fragmentation-container⑦">(8)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-fragmentation-context">
    <a href="https://drafts.csswg.org/css-break-3/#fragmentation-context">https://drafts.csswg.org/css-break-3/#fragmentation-context</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation-context">3.2. 
+    <li><a href="#ref-for-fragmentation-context">3.2.
 Layout Containment</a> <a href="#ref-for-fragmentation-context①">(2)</a> <a href="#ref-for-fragmentation-context②">(3)</a> <a href="#ref-for-fragmentation-context③">(4)</a> <a href="#ref-for-fragmentation-context④">(5)</a> <a href="#ref-for-fragmentation-context⑤">(6)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-fragmented-flow">
    <a href="https://drafts.csswg.org/css-break-3/#fragmented-flow">https://drafts.csswg.org/css-break-3/#fragmented-flow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmented-flow">3.2. 
+    <li><a href="#ref-for-fragmented-flow">3.2.
 Layout Containment</a> <a href="#ref-for-fragmented-flow①">(2)</a> <a href="#ref-for-fragmented-flow②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-monolithic">
    <a href="https://drafts.csswg.org/css-break-3/#monolithic">https://drafts.csswg.org/css-break-3/#monolithic</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-monolithic">3.1. 
+    <li><a href="#ref-for-monolithic">3.1.
 Size Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-atomic-inline">
    <a href="https://drafts.csswg.org/css-display-3/#atomic-inline">https://drafts.csswg.org/css-display-3/#atomic-inline</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-atomic-inline">3.1. 
+    <li><a href="#ref-for-atomic-inline">3.1.
 Size Containment</a>
-    <li><a href="#ref-for-atomic-inline①">3.2. 
+    <li><a href="#ref-for-atomic-inline①">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-atomic-inline②">3.3. 
+    <li><a href="#ref-for-atomic-inline②">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-contents">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-contents">https://drafts.csswg.org/css-display-3/#valdef-display-contents</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-contents">3.2. 
+    <li><a href="#ref-for-valdef-display-contents">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-valdef-display-contents①">3.3. 
+    <li><a href="#ref-for-valdef-display-contents①">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-display">
    <a href="https://drafts.csswg.org/css-display-3/#propdef-display">https://drafts.csswg.org/css-display-3/#propdef-display</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-display">3.1. 
+    <li><a href="#ref-for-propdef-display">3.1.
 Size Containment</a> <a href="#ref-for-propdef-display①">(2)</a>
-    <li><a href="#ref-for-propdef-display②">3.2. 
+    <li><a href="#ref-for-propdef-display②">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-propdef-display③">3.3. 
+    <li><a href="#ref-for-propdef-display③">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-establish-an-independent-formatting-context">
    <a href="https://drafts.csswg.org/css-display-3/#establish-an-independent-formatting-context">https://drafts.csswg.org/css-display-3/#establish-an-independent-formatting-context</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-establish-an-independent-formatting-context">3.2. 
+    <li><a href="#ref-for-establish-an-independent-formatting-context">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-establish-an-independent-formatting-context①">3.3. 
+    <li><a href="#ref-for-establish-an-independent-formatting-context①">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-level">
    <a href="https://drafts.csswg.org/css-display-3/#inline-level">https://drafts.csswg.org/css-display-3/#inline-level</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-level">3.1. 
+    <li><a href="#ref-for-inline-level">3.1.
 Size Containment</a>
-    <li><a href="#ref-for-inline-level①">3.2. 
+    <li><a href="#ref-for-inline-level①">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-inline-level②">3.3. 
+    <li><a href="#ref-for-inline-level②">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inner-display-type">
    <a href="https://drafts.csswg.org/css-display-3/#inner-display-type">https://drafts.csswg.org/css-display-3/#inner-display-type</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inner-display-type">3.1. 
+    <li><a href="#ref-for-inner-display-type">3.1.
 Size Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-internal-ruby-box">
    <a href="https://drafts.csswg.org/css-display-3/#internal-ruby-box">https://drafts.csswg.org/css-display-3/#internal-ruby-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-internal-ruby-box">3.1. 
+    <li><a href="#ref-for-internal-ruby-box">3.1.
 Size Containment</a>
-    <li><a href="#ref-for-internal-ruby-box①">3.2. 
+    <li><a href="#ref-for-internal-ruby-box①">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-internal-ruby-box②">3.3. 
+    <li><a href="#ref-for-internal-ruby-box②">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-internal-table-box">
    <a href="https://drafts.csswg.org/css-display-3/#internal-table-box">https://drafts.csswg.org/css-display-3/#internal-table-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-internal-table-box">3.1. 
+    <li><a href="#ref-for-internal-table-box">3.1.
 Size Containment</a>
-    <li><a href="#ref-for-internal-table-box①">3.2. 
+    <li><a href="#ref-for-internal-table-box①">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-internal-table-box②">3.3. 
+    <li><a href="#ref-for-internal-table-box②">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-none">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-none">https://drafts.csswg.org/css-display-3/#valdef-display-none</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-none">3.2. 
+    <li><a href="#ref-for-valdef-display-none">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-valdef-display-none①">3.3. 
+    <li><a href="#ref-for-valdef-display-none①">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-principal-box">
    <a href="https://drafts.csswg.org/css-display-3/#principal-box">https://drafts.csswg.org/css-display-3/#principal-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-principal-box">3.1. 
+    <li><a href="#ref-for-principal-box">3.1.
 Size Containment</a> <a href="#ref-for-principal-box①">(2)</a>
-    <li><a href="#ref-for-principal-box②">3.2. 
+    <li><a href="#ref-for-principal-box②">3.2.
 Layout Containment</a> <a href="#ref-for-principal-box③">(2)</a> <a href="#ref-for-principal-box④">(3)</a>
-    <li><a href="#ref-for-principal-box⑤">3.3. 
+    <li><a href="#ref-for-principal-box⑤">3.3.
 Paint Containment</a> <a href="#ref-for-principal-box⑥">(2)</a> <a href="#ref-for-principal-box⑦">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-replaced-element">
    <a href="https://drafts.csswg.org/css-display-3/#replaced-element">https://drafts.csswg.org/css-display-3/#replaced-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-replaced-element">3.1. 
+    <li><a href="#ref-for-replaced-element">3.1.
 Size Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-table">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-table">https://drafts.csswg.org/css-display-3/#valdef-display-table</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-table">3.1. 
+    <li><a href="#ref-for-valdef-display-table">3.1.
 Size Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-table-cell">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-table-cell">https://drafts.csswg.org/css-display-3/#valdef-display-table-cell</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-table-cell">3.2. 
+    <li><a href="#ref-for-valdef-display-table-cell">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-valdef-display-table-cell①">3.3. 
+    <li><a href="#ref-for-valdef-display-table-cell①">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-grid">
    <a href="https://drafts.csswg.org/css-grid-1/#propdef-grid">https://drafts.csswg.org/css-grid-1/#propdef-grid</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-grid">3.1. 
+    <li><a href="#ref-for-propdef-grid">3.1.
 Size Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-columns">
    <a href="https://drafts.csswg.org/css-multicol-1/#propdef-columns">https://drafts.csswg.org/css-multicol-1/#propdef-columns</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-columns">3.1. 
+    <li><a href="#ref-for-propdef-columns">3.1.
 Size Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-overflow-clip">
    <a href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-clip">https://drafts.csswg.org/css-overflow-3/#valdef-overflow-clip</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-overflow-clip">3.2. 
+    <li><a href="#ref-for-valdef-overflow-clip">3.2.
 Layout Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ink-overflow">
    <a href="https://drafts.csswg.org/css-overflow-3/#ink-overflow">https://drafts.csswg.org/css-overflow-3/#ink-overflow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ink-overflow">3.2. 
+    <li><a href="#ref-for-ink-overflow">3.2.
 Layout Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-overflow">
    <a href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow">https://drafts.csswg.org/css-overflow-3/#propdef-overflow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-overflow">3.2. 
+    <li><a href="#ref-for-propdef-overflow">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-propdef-overflow①">3.3. 
+    <li><a href="#ref-for-propdef-overflow①">3.3.
 Paint Containment</a> <a href="#ref-for-propdef-overflow②">(2)</a> <a href="#ref-for-propdef-overflow③">(3)</a> <a href="#ref-for-propdef-overflow④">(4)</a> <a href="#ref-for-propdef-overflow⑤">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-overflow-visible">
    <a href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-visible">https://drafts.csswg.org/css-overflow-3/#valdef-overflow-visible</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-overflow-visible">3.2. 
+    <li><a href="#ref-for-valdef-overflow-visible">3.2.
 Layout Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-selectordef-nth-fragment">
    <a href="https://drafts.csswg.org/css-overflow-4/#selectordef-nth-fragment">https://drafts.csswg.org/css-overflow-4/#selectordef-nth-fragment</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-nth-fragment">3.2. 
+    <li><a href="#ref-for-selectordef-nth-fragment">3.2.
 Layout Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-width-auto">
    <a href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto">https://drafts.csswg.org/css-sizing-3/#valdef-width-auto</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-width-auto">3.1. 
+    <li><a href="#ref-for-valdef-width-auto">3.1.
 Size Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-sizing-property">
    <a href="https://drafts.csswg.org/css-sizing-3/#sizing-property">https://drafts.csswg.org/css-sizing-3/#sizing-property</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-sizing-property">3.1. 
+    <li><a href="#ref-for-sizing-property">3.1.
 Size Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-text-overflow">
    <a href="https://drafts.csswg.org/css-ui-3/#propdef-text-overflow">https://drafts.csswg.org/css-ui-3/#propdef-text-overflow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-overflow">3.3. 
+    <li><a href="#ref-for-propdef-text-overflow">3.3.
 Paint Containment</a> <a href="#ref-for-propdef-text-overflow①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-resize">
    <a href="https://drafts.csswg.org/css-ui-4/#propdef-resize">https://drafts.csswg.org/css-ui-4/#propdef-resize</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-resize">3.3. 
+    <li><a href="#ref-for-propdef-resize">3.3.
 Paint Containment</a> <a href="#ref-for-propdef-resize①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">2. 
+    <li><a href="#ref-for-comb-one">2.
 Strong Containment: the contain property</a> <a href="#ref-for-comb-one①">(2)</a> <a href="#ref-for-comb-one②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-any">
    <a href="https://drafts.csswg.org/css-values-4/#comb-any">https://drafts.csswg.org/css-values-4/#comb-any</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-any">2. 
+    <li><a href="#ref-for-comb-any">2.
 Strong Containment: the contain property</a> <a href="#ref-for-comb-any①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-height">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-height">https://drafts.csswg.org/css2/visudet.html#propdef-height</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-height">3.1. 
+    <li><a href="#ref-for-propdef-height">3.1.
 Size Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-padding-edge">
    <a href="https://www.w3.org/TR/CSS2/box.html#padding-edge">https://www.w3.org/TR/CSS2/box.html#padding-edge</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-padding-edge">3.3. 
+    <li><a href="#ref-for-padding-edge">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-x43">
    <a href="https://drafts.csswg.org/css2/visuren.html#x43">https://drafts.csswg.org/css2/visuren.html#x43</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-x43">3.2. 
+    <li><a href="#ref-for-x43">3.2.
 Layout Containment</a>
-    <li><a href="#ref-for-x43①">3.3. 
+    <li><a href="#ref-for-x43①">3.3.
 Paint Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-vertical-align">
    <a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-vertical-align">https://www.w3.org/TR/CSS2/visudet.html#propdef-vertical-align</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-vertical-align">3.2. 
+    <li><a href="#ref-for-propdef-vertical-align">3.2.
 Layout Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-width">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-width">https://drafts.csswg.org/css2/visudet.html#propdef-width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-width">3.1. 
+    <li><a href="#ref-for-propdef-width">3.1.
 Size Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-elementdef-svg">
    <a href="https://svgwg.org/svg2-draft/struct.html#elementdef-svg">https://svgwg.org/svg2-draft/struct.html#elementdef-svg</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-elementdef-svg">2. 
+    <li><a href="#ref-for-elementdef-svg">2.
 Strong Containment: the contain property</a>
    </ul>
   </aside>
@@ -1417,9 +1417,9 @@ Strong Containment: the contain property</a>
   <aside class="dfn-panel" data-for="propdef-contain">
    <b><a href="#propdef-contain">#propdef-contain</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-contain①">1. 
+    <li><a href="#ref-for-propdef-contain①">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-contain②">2. 
+    <li><a href="#ref-for-propdef-contain②">2.
 Strong Containment: the contain property</a> <a href="#ref-for-propdef-contain③">(2)</a> <a href="#ref-for-propdef-contain④">(3)</a> <a href="#ref-for-propdef-contain⑤">(4)</a> <a href="#ref-for-propdef-contain⑥">(5)</a> <a href="#ref-for-propdef-contain⑦">(6)</a> <a href="#ref-for-propdef-contain⑧">(7)</a> <a href="#ref-for-propdef-contain⑨">(8)</a> <a href="#ref-for-propdef-contain①⓪">(9)</a> <a href="#ref-for-propdef-contain①①">(10)</a> <a href="#ref-for-propdef-contain①②">(11)</a>
     <li><a href="#ref-for-propdef-contain①③">Changes from the
 Candidate Recommendation of 08 November 2018</a> <a href="#ref-for-propdef-contain①④">(2)</a>
@@ -1428,117 +1428,125 @@ Candidate Recommendation of 08 November 2018</a> <a href="#ref-for-propdef-conta
   <aside class="dfn-panel" data-for="containment">
    <b><a href="#containment">#containment</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-containment">2. 
+    <li><a href="#ref-for-containment">2.
 Strong Containment: the contain property</a> <a href="#ref-for-containment①">(2)</a>
-    <li><a href="#ref-for-containment②">3. 
+    <li><a href="#ref-for-containment②">3.
 Types of Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="size-containment">
    <b><a href="#size-containment">#size-containment</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-size-containment">2. 
+    <li><a href="#ref-for-size-containment">2.
 Strong Containment: the contain property</a> <a href="#ref-for-size-containment①">(2)</a> <a href="#ref-for-size-containment②">(3)</a>
-    <li><a href="#ref-for-size-containment③">3.1. 
+    <li><a href="#ref-for-size-containment③">3.1.
 Size Containment</a> <a href="#ref-for-size-containment④">(2)</a> <a href="#ref-for-size-containment⑤">(3)</a> <a href="#ref-for-size-containment⑥">(4)</a>
-    <li><a href="#ref-for-size-containment⑦">3.2. 
+    <li><a href="#ref-for-size-containment⑦">3.2.
 Layout Containment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="size-containment-containing-box">
    <b><a href="#size-containment-containing-box">#size-containment-containing-box</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-size-containment-containing-box">3.1. 
+    <li><a href="#ref-for-size-containment-containing-box">3.1.
 Size Containment</a> <a href="#ref-for-size-containment-containing-box①">(2)</a> <a href="#ref-for-size-containment-containing-box②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="layout-containment">
    <b><a href="#layout-containment">#layout-containment</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-layout-containment">2. 
+    <li><a href="#ref-for-layout-containment">2.
 Strong Containment: the contain property</a>
-    <li><a href="#ref-for-layout-containment①">3.1. 
+    <li><a href="#ref-for-layout-containment①">3.1.
 Size Containment</a> <a href="#ref-for-layout-containment②">(2)</a>
-    <li><a href="#ref-for-layout-containment③">3.2. 
+    <li><a href="#ref-for-layout-containment③">3.2.
 Layout Containment</a> <a href="#ref-for-layout-containment④">(2)</a> <a href="#ref-for-layout-containment⑤">(3)</a> <a href="#ref-for-layout-containment⑥">(4)</a> <a href="#ref-for-layout-containment⑦">(5)</a> <a href="#ref-for-layout-containment⑧">(6)</a> <a href="#ref-for-layout-containment⑨">(7)</a> <a href="#ref-for-layout-containment①⓪">(8)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="layout-containment-containing-box">
    <b><a href="#layout-containment-containing-box">#layout-containment-containing-box</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-layout-containment-containing-box">3.2. 
+    <li><a href="#ref-for-layout-containment-containing-box">3.2.
 Layout Containment</a> <a href="#ref-for-layout-containment-containing-box①">(2)</a> <a href="#ref-for-layout-containment-containing-box②">(3)</a> <a href="#ref-for-layout-containment-containing-box③">(4)</a> <a href="#ref-for-layout-containment-containing-box④">(5)</a> <a href="#ref-for-layout-containment-containing-box⑤">(6)</a> <a href="#ref-for-layout-containment-containing-box⑥">(7)</a> <a href="#ref-for-layout-containment-containing-box⑦">(8)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="paint-containment">
    <b><a href="#paint-containment">#paint-containment</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-paint-containment">2. 
+    <li><a href="#ref-for-paint-containment">2.
 Strong Containment: the contain property</a>
-    <li><a href="#ref-for-paint-containment①">3.3. 
+    <li><a href="#ref-for-paint-containment①">3.3.
 Paint Containment</a> <a href="#ref-for-paint-containment②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="paint-containment-containing-box">
    <b><a href="#paint-containment-containing-box">#paint-containment-containing-box</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-paint-containment-containing-box">3.3. 
+    <li><a href="#ref-for-paint-containment-containing-box">3.3.
 Paint Containment</a> <a href="#ref-for-paint-containment-containing-box①">(2)</a> <a href="#ref-for-paint-containment-containing-box②">(3)</a> <a href="#ref-for-paint-containment-containing-box③">(4)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

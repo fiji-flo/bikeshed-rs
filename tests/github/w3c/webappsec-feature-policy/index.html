@@ -1659,7 +1659,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <section>
     <h2 class="heading settled" data-level="2" id="examples"><span class="secno">2. </span><span class="content">Examples</span><a class="self-link" href="#examples"></a></h2>
     <div class="example" id="example-7234b046">
-     <a class="self-link" href="#example-7234b046"></a> 
+     <a class="self-link" href="#example-7234b046"></a>
      <p>SecureCorp Inc. wants to disable use of Fullscreen and Geolocation APIs
     within their application. It can do so by delivering the following HTTP
     response header to define a feature policy:</p>
@@ -1669,7 +1669,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     their origin.</p>
     </div>
     <div class="example" id="example-0976fd18">
-     <a class="self-link" href="#example-0976fd18"></a> 
+     <a class="self-link" href="#example-0976fd18"></a>
      <p>SecureCorp Inc. wants to disable use of Geolocation API within all
     browsing contexts except for its own origin and those whose origin is
     "<code>https://example.com</code>". It can do so by delivering the
@@ -1680,7 +1680,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     and any third-party origin.</p>
     </div>
     <div class="example" id="example-652f9c6b">
-     <a class="self-link" href="#example-652f9c6b"></a> 
+     <a class="self-link" href="#example-652f9c6b"></a>
      <p>SecureCorp Inc. is hosting an application on
     "<code>https://example.com</code>" and wants to disable camera and
     microphone input on its own origin but enable it for a specific embedee
@@ -1692,7 +1692,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     origins.</p>
     </div>
     <div class="example" id="example-1db1f085">
-     <a class="self-link" href="#example-1db1f085"></a> 
+     <a class="self-link" href="#example-1db1f085"></a>
      <p>Geolocation is disabled by default in all cross-origin frames. FastCorp
     Inc. has a specific cross-origin iframe on their site for which it wants to
     enable geolocation. It can do so by including an "<code>allow</code>"
@@ -1762,8 +1762,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <h3 class="heading settled" data-level="4.2" id="policies"><span class="secno">4.2. </span><span class="content">Policies</span><a class="self-link" href="#policies"></a></h3>
      <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="feature-policy">feature policy</dfn> is a struct with the following items:</p>
      <ul>
-      <li>An <a data-link-type="dfn" href="#inherited-policy" id="ref-for-inherited-policy">inherited policy</a>. 
-      <li>A <a data-link-type="dfn" href="#declared-policy" id="ref-for-declared-policy">declared policy</a>. 
+      <li>An <a data-link-type="dfn" href="#inherited-policy" id="ref-for-inherited-policy">inherited policy</a>.
+      <li>A <a data-link-type="dfn" href="#declared-policy" id="ref-for-declared-policy">declared policy</a>.
      </ul>
      <p>An <dfn data-dfn-type="dfn" data-export id="empty-feature-policy">empty feature policy<a class="self-link" href="#empty-feature-policy"></a></dfn> is a <a data-link-type="dfn" href="#feature-policy" id="ref-for-feature-policy①">feature policy</a> that
     has an <a data-link-type="dfn" href="#inherited-policy" id="ref-for-inherited-policy①">inherited policy</a> which contains "<code>Enabled</code>" for
@@ -1840,7 +1840,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <li>If the <a data-link-type="dfn" href="#allowlist" id="ref-for-allowlist⑤">allowlist</a> is <a data-link-type="dfn" href="#the-special-value" id="ref-for-the-special-value">the special value <code>*</code></a>,
       then return true.
       <li>
-       Otherwise, for each <var>item</var> in the <a data-link-type="dfn" href="#allowlist" id="ref-for-allowlist⑥">allowlist</a>: 
+       Otherwise, for each <var>item</var> in the <a data-link-type="dfn" href="#allowlist" id="ref-for-allowlist⑥">allowlist</a>:
        <ol>
         <li>If <var>item</var> is <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#same-origin-domain" id="ref-for-same-origin-domain">same origin-domain</a> with <var>origin</var>, then return true.
        </ol>
@@ -1985,7 +1985,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      </ul>
      <p></p>
      <div class="example" id="example-75033745">
-      <a class="self-link" href="#example-75033745"></a> 
+      <a class="self-link" href="#example-75033745"></a>
 <pre>&lt;!doctype html>
 &lt;script>
  const policy = document.featurePolicy;
@@ -2025,7 +2025,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   effective policy in the iframe element’s nested browsing context in that case
   could leak information about the behaviour of a cross-origin document.</p>
      <div class="example" id="example-2621b41f">
-      <a class="self-link" href="#example-2621b41f"></a> 
+      <a class="self-link" href="#example-2621b41f"></a>
 <pre>&lt;!doctype html>
 &lt;iframe id="frame" allow="fullscreen; vr">&lt;/iframe>
 &lt;script>
@@ -2043,7 +2043,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   actual content loaded into the frame (to avoid cross-origin information
   leakage,) or even whether it is in a document tree.</p>
      <div class="example" id="example-e121f006">
-      <a class="self-link" href="#example-e121f006"></a> 
+      <a class="self-link" href="#example-e121f006"></a>
 <pre>&lt;!doctype html>
 &lt;!-- this frame should not be allowed to use fullscreen when the document
     in its src attribute is loaded in it -->
@@ -2088,12 +2088,12 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <li data-md>
        <p>If the <code class="idl"><a data-link-type="idl" href="#featurepolicy" id="ref-for-featurepolicy⑧">FeaturePolicy</a></code> object’s <a data-link-type="dfn" href="#associated-node" id="ref-for-associated-node②">associated node</a> is a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document③">Document</a></code>, then its <a data-link-type="dfn" href="#default-origin" id="ref-for-default-origin">default origin</a> is the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document④">Document</a></code>'s</p>
      </ul>
-      <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin③">origin</a>. 
+      <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin③">origin</a>.
      <ul>
       <li data-md>
        <p>If the <code class="idl"><a data-link-type="idl" href="#featurepolicy" id="ref-for-featurepolicy⑨">FeaturePolicy</a></code> object’s <a data-link-type="dfn" href="#associated-node" id="ref-for-associated-node③">associated node</a> is an <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element">Element</a></code>, then its <a data-link-type="dfn" href="#default-origin" id="ref-for-default-origin①">default origin</a> is the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element①">Element</a></code>'s</p>
      </ul>
-      <a data-link-type="dfn" href="#declared-origin" id="ref-for-declared-origin">declared origin</a>. 
+      <a data-link-type="dfn" href="#declared-origin" id="ref-for-declared-origin">declared origin</a>.
      <p>Each <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑤">Document</a></code> has a <dfn class="dfn-paneled" data-dfn-for="Document" data-dfn-type="dfn" data-noexport id="document-policy-object">policy object</dfn>, which is
     a <code class="idl"><a data-link-type="idl" href="#featurepolicy" id="ref-for-featurepolicy①⓪">FeaturePolicy</a></code> instance whose <a data-link-type="dfn" href="#associated-node" id="ref-for-associated-node④">associated node</a> is that <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑥">Document</a></code>.</p>
      <p>A <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑦">Document</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-document-featurepolicy" id="ref-for-dom-document-featurepolicy">featurePolicy</a></code> IDL attribute, on getting,
@@ -2277,12 +2277,12 @@ set to "enforce".</p>
      <p>Given a <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-response-response" id="ref-for-concept-response-response①">response</a> (<var>response</var>) and an <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin④">origin</a> (<var>origin</var>), this algorithm returns a <a data-link-type="dfn" href="#declared-policy" id="ref-for-declared-policy④">declared feature
     policy</a>.</p>
      <ol>
-      <li>Abort these steps if the <var>response</var>’s <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-response-header-list" id="ref-for-concept-response-header-list">header list</a> does not contain a <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-header" id="ref-for-concept-header">header</a> whose <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-header-name" id="ref-for-concept-header-name">name</a> is "<code>Feature-Policy</code>". 
+      <li>Abort these steps if the <var>response</var>’s <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-response-header-list" id="ref-for-concept-response-header-list">header list</a> does not contain a <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-header" id="ref-for-concept-header">header</a> whose <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-header-name" id="ref-for-concept-header-name">name</a> is "<code>Feature-Policy</code>".
       <li>Let <var>header</var> be the concatenation of the <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-header-value" id="ref-for-concept-header-value">value</a>s of all <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-header" id="ref-for-concept-header①">header</a> fields in <var>response</var>’s <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-response-header-list" id="ref-for-concept-response-header-list①">header list</a> whose name is
       "<code>Feature-Policy</code>", separated by U+002C (,) (according to
       [RFC7230, 3.2.2]).
       <li>Let <var>feature policy</var> be the result of executing <a data-link-type="dfn" href="#parse-header-from-value-and-origin" id="ref-for-parse-header-from-value-and-origin">Parse
-        header from value and origin</a> on <var>header</var> and <var>origin</var>. 
+        header from value and origin</a> on <var>header</var> and <var>origin</var>.
       <li>Return <var>feature policy</var>.
      </ol>
     </section>
@@ -2293,10 +2293,10 @@ set to "enforce".</p>
      <ol>
       <li>Let <var>policy</var> be an empty ordered map.
       <li>
-       For each <var>element</var> returned by <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#split-on-commas" id="ref-for-split-on-commas">splitting <var>value</var> on commas</a>: 
+       For each <var>element</var> returned by <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#split-on-commas" id="ref-for-split-on-commas">splitting <var>value</var> on commas</a>:
        <ol>
-        <li>Let <var>directive</var> be the result of executing <a href="#algo-parse-policy-directive">§ 9.3 Parse policy directive</a> on <var>element</var> with <var>container origin</var> set to <var>origin</var>. 
-        <li>Run <a data-link-type="dfn" href="#merge-directive-with-declared-policy" id="ref-for-merge-directive-with-declared-policy">Merge directive with declared policy</a> on <var> directive</var> and <var>policy</var>. 
+        <li>Let <var>directive</var> be the result of executing <a href="#algo-parse-policy-directive">§ 9.3 Parse policy directive</a> on <var>element</var> with <var>container origin</var> set to <var>origin</var>.
+        <li>Run <a data-link-type="dfn" href="#merge-directive-with-declared-policy" id="ref-for-merge-directive-with-declared-policy">Merge directive with declared policy</a> on <var> directive</var> and <var>policy</var>.
        </ol>
       <li>Return <var>policy</var>.
      </ol>
@@ -2310,24 +2310,24 @@ set to "enforce".</p>
       <li>Let <var>directive</var> be an empty ordered map.
       <li>
        For each <var>serialized-declaration</var> returned by <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#strictly-split" id="ref-for-strictly-split">strictly splitting <var>value</var> on the delimiter
-      U+003B (;)</a>: 
+      U+003B (;)</a>:
        <ol>
         <li>Let <var>tokens</var> be the result of <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#split-on-ascii-whitespace" id="ref-for-split-on-ascii-whitespace">splitting <var>serialized-declaration</var> on ASCII whitespace.</a>
         <li>If <var>tokens</var> is an empty list, then continue.
         <li>Let <var>feature-name</var> be the first element of <var>tokens</var>.
         <li>If <var>feature-name</var> does not identify any recognized <a data-link-type="dfn" href="#policy-controlled-feature" id="ref-for-policy-controlled-feature①⑤">policy-controlled feature</a>, then continue.
         <li>Let <var>feature</var> be the <a data-link-type="dfn" href="#policy-controlled-feature" id="ref-for-policy-controlled-feature①⑥">policy-controlled feature</a> identified by <var>feature-name</var>.
-        <li>Let <var>targetlist</var> be the remaining elements, if any, of <var>tokens</var>. 
-        <li>Let <var>allowlist</var> be a new <a data-link-type="dfn" href="#allowlist" id="ref-for-allowlist①⓪">allowlist</a>. 
+        <li>Let <var>targetlist</var> be the remaining elements, if any, of <var>tokens</var>.
+        <li>Let <var>allowlist</var> be a new <a data-link-type="dfn" href="#allowlist" id="ref-for-allowlist①⓪">allowlist</a>.
         <li>If any element of <var>targetlist</var> is the string
           "<code>*</code>", set <var>allowlist</var> to <a data-link-type="dfn" href="#the-special-value" id="ref-for-the-special-value①">the special value <code>*</code></a>.
         <li>
-         Otherwise: 
+         Otherwise:
          <ol>
           <li>Set <var>allowlist</var> to an new <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ordered-set" id="ref-for-ordered-set①">ordered set</a>.
-          <li>If <var>targetlist</var> is empty and <var>target origin</var> is given, append <var>target origin</var> to <var>allowlist</var>. 
+          <li>If <var>targetlist</var> is empty and <var>target origin</var> is given, append <var>target origin</var> to <var>allowlist</var>.
           <li>
-           For each <var>element</var> in <var>targetlist</var>: 
+           For each <var>element</var> in <var>targetlist</var>:
            <ol>
             <li>If <var>element</var> is an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ascii-case-insensitive" id="ref-for-ascii-case-insensitive">ASCII case-insensitive</a> match for "<code>'self'</code>", let result be <var>container
                   origin</var>.
@@ -2337,7 +2337,7 @@ set to "enforce".</p>
             <li>Otherwise, let <var>result</var> be the result of
                   executing the <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-parser" id="ref-for-concept-url-parser">URL parser</a> on <var>element</var>.
             <li>
-             If <var>result</var> is not failure: 
+             If <var>result</var> is not failure:
              <ol>
               <li>Let <var>target</var> be the origin of <var>result</var>.
               <li>If <var>target</var> is not an opaque origin, append <var>target</var> to <var>allowlist</var>.
@@ -2357,7 +2357,7 @@ set to "enforce".</p>
     account for the new directive.</p>
      <ol>
       <li>
-       For each <var>feature</var> → <var>allowlist</var> of <var>directive</var>: 
+       For each <var>feature</var> → <var>allowlist</var> of <var>directive</var>:
        <ol>
         <li>If <var>policy</var> does not contain an allowlist for <var>feature</var>, then set <var>policy</var>[<var>feature</var>] to <var>allowlist</var>.
        </ol>
@@ -2368,31 +2368,31 @@ set to "enforce".</p>
     attributes</dfn></span><a class="self-link" href="#algo-process-feature-policy-attributes"></a></h3>
      <p>Given an element (<var>element</var>), this algorithm returns a <a data-link-type="dfn" href="#container-policy" id="ref-for-container-policy⑧">container policy</a>, which may be empty.</p>
      <ol>
-      <li>Let <var>policy</var> be a new <a data-link-type="dfn" href="#policy-directive" id="ref-for-policy-directive⑦">policy directive</a>. 
+      <li>Let <var>policy</var> be a new <a data-link-type="dfn" href="#policy-directive" id="ref-for-policy-directive⑦">policy directive</a>.
       <li>Let <var>container policy</var> be the result of running <a data-link-type="dfn" href="#parse-policy-directive" id="ref-for-parse-policy-directive">Parse
       policy directive</a> on the value of <var>element</var>’s <code>allow</code> attribute, with <var>container
         origin</var> set to the origin of <var>element</var>’s node document,
         and <var>target origin</var> set to <var>element</var>’s <a data-link-type="dfn" href="#declared-origin" id="ref-for-declared-origin③">declared
-        origin</a>. 
+        origin</a>.
       <li>
-       If <var>element</var> is an <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element" id="ref-for-the-iframe-element⑧">iframe</a></code> element: 
+       If <var>element</var> is an <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element" id="ref-for-the-iframe-element⑧">iframe</a></code> element:
        <ol>
         <li>
          If <var>element</var>’s <code>allowfullscreen</code> attribute is
           specified, and <var>container policy</var> does not contain an
-          allowlist for <code>fullscreen</code>, 
+          allowlist for <code>fullscreen</code>,
          <ol>
           <li>Construct a new declaration for <code>fullscreen</code>, whose
               allowlist is <a data-link-type="dfn" href="#the-special-value" id="ref-for-the-special-value②">the special value <code>*</code></a>.
-          <li>Add <var>declaration</var> to <var>container policy</var>. 
+          <li>Add <var>declaration</var> to <var>container policy</var>.
          </ol>
         <li>
          If <var>element</var>’s <code>allowpaymentrequest</code> attribute is specified, and <var>container policy</var> does not
-          contain an allowlist for <code>payment</code>, 
+          contain an allowlist for <code>payment</code>,
          <ol>
           <li>Construct a new declaration for <code>payment</code>, whose
               allowlist is <a data-link-type="dfn" href="#the-special-value" id="ref-for-the-special-value③">the special value <code>*</code></a>.
-          <li>Add <var>declaration</var> to <var>container policy</var>. 
+          <li>Add <var>declaration</var> to <var>container policy</var>.
          </ol>
        </ol>
       <li>Return <var>container policy</var>.
@@ -2406,15 +2406,15 @@ set to "enforce".</p>
       <li>Let <var>inherited policy</var> be a new ordered map.
       <li>Let <var>declared policy</var> be a new ordered map.
       <li>
-       For each <var>feature</var> supported, 
+       For each <var>feature</var> supported,
        <ol>
         <li>Let <var>isInherited</var> be the result of running <a href="#define-inherited-policy" id="ref-for-define-inherited-policy">Define an inherited policy for feature in browsing
-          context</a> on <var>feature</var>, <var>origin</var> and <var>browsingContext</var>. 
+          context</a> on <var>feature</var>, <var>origin</var> and <var>browsingContext</var>.
         <li>Set <var>inherited policy</var>[<var>feature</var>] to <var>isInherited</var>.
        </ol>
       <li>Let <var>policy</var> be a new <a data-link-type="dfn" href="#feature-policy" id="ref-for-feature-policy⑧">feature policy</a>, with inherited
       policy <var>inherited policy</var> and declared policy <var>declared
-      policy</var>. 
+      policy</var>.
       <li>Return <var>policy</var>.
      </ol>
     </section>
@@ -2427,7 +2427,7 @@ set to "enforce".</p>
       context</a> given <var>browsingContext</var>, and <var>origin</var>.
       <li>Let <var>d</var> be the result of running <a href="#process-response-policy" id="ref-for-process-response-policy">Process response policy</a> on <var>response</var> and <var>origin</var>.
       <li>
-       For each <var>feature</var> → <var>allowlist</var> of <var>d</var>: 
+       For each <var>feature</var> → <var>allowlist</var> of <var>d</var>:
        <ol>
         <li>If <var>policy</var>’s <a data-link-type="dfn" href="#inherited-policy" id="ref-for-inherited-policy⑤">inherited policy</a>[<var>feature</var>] is true, then
           set <var>policy</var>’s <a data-link-type="dfn" href="#declared-policy" id="ref-for-declared-policy⑥">declared policy</a>[<var>feature</var>] to <var>allowlist</var>.
@@ -2456,18 +2456,18 @@ set to "enforce".</p>
      <ol>
       <li>Let <var>parent</var> be <var>container</var>’s <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-node-document" id="ref-for-concept-node-document④">node
         document</a>.
-      <li>Let <var>container policy</var> be the result of running <a data-link-type="dfn" href="#process-feature-policy-attributes" id="ref-for-process-feature-policy-attributes">Process feature policy attributes</a> on <var>container</var>. 
+      <li>Let <var>container policy</var> be the result of running <a data-link-type="dfn" href="#process-feature-policy-attributes" id="ref-for-process-feature-policy-attributes">Process feature policy attributes</a> on <var>container</var>.
       <li>
-       If <var>feature</var> is a key in <var>container policy</var>: 
+       If <var>feature</var> is a key in <var>container policy</var>:
        <ol>
         <li>If the <a data-link-type="dfn" href="#allowlist" id="ref-for-allowlist①①">allowlist</a> for <var>feature</var> in <var>container policy</var> does not <a data-link-type="dfn" href="#matches" id="ref-for-matches">match</a> <var>origin</var>,
-          return "<code>Disabled</code>". 
+          return "<code>Disabled</code>".
         <li>If <a href="#is-feature-enabled" id="ref-for-is-feature-enabled"><var>feature</var> is enabled in <var>parent</var> for <var>parent</var>’s <var>origin</var></a>,
-          return "<code>Enabled</code>". 
+          return "<code>Enabled</code>".
        </ol>
       <li>If <a href="#is-feature-enabled" id="ref-for-is-feature-enabled①"><var>feature</var> is
       enabled in <var>parent</var> for <var>origin</var></a>, return
-      "<code>Enabled</code>". 
+      "<code>Enabled</code>".
       <li>Otherwise return "<code>Disabled</code>".
      </ol>
     </section>
@@ -2478,17 +2478,17 @@ set to "enforce".</p>
     returns "<code>Disabled</code>" if <var>feature</var> should be considered
     disabled, and "<code>Enabled</code>" otherwise.</p>
      <ol>
-      <li>Let <var>policy</var> be <var>document</var>’s <a data-link-type="dfn" href="#feature-policy" id="ref-for-feature-policy①⓪">Feature Policy</a> 
+      <li>Let <var>policy</var> be <var>document</var>’s <a data-link-type="dfn" href="#feature-policy" id="ref-for-feature-policy①⓪">Feature Policy</a>
       <li>If <var>policy</var>’s <a data-link-type="dfn" href="#inherited-policy" id="ref-for-inherited-policy⑧">inherited policy</a> for <var>feature</var> is Disabled, return "<code>Disabled</code>".
       <li>
        If <var>feature</var> is present in <var>policy</var>’s <a data-link-type="dfn" href="#declared-policy" id="ref-for-declared-policy⑦">declared
-      policy</a>: 
+      policy</a>:
        <ol>
-        <li>If the <a data-link-type="dfn" href="#allowlist" id="ref-for-allowlist①②">allowlist</a> for <var>feature</var> in <var>policy</var>’s <a data-link-type="dfn" href="#declared-policy" id="ref-for-declared-policy⑧">declared policy</a> <a data-link-type="dfn" href="#matches" id="ref-for-matches①">matches</a> <var>origin</var>, then return "<code>Enabled</code>". 
+        <li>If the <a data-link-type="dfn" href="#allowlist" id="ref-for-allowlist①②">allowlist</a> for <var>feature</var> in <var>policy</var>’s <a data-link-type="dfn" href="#declared-policy" id="ref-for-declared-policy⑧">declared policy</a> <a data-link-type="dfn" href="#matches" id="ref-for-matches①">matches</a> <var>origin</var>, then return "<code>Enabled</code>".
         <li>Otherwise return "<code>Disabled</code>".
        </ol>
-      <li>If <var>feature</var>’s <a data-link-type="dfn" href="#default-allowlist" id="ref-for-default-allowlist③">default allowlist</a> is <code>*</code>, return "<code>Enabled</code>". 
-      <li>If <var>feature</var>’s <a data-link-type="dfn" href="#default-allowlist" id="ref-for-default-allowlist④">default allowlist</a> is <code>'self'</code>, and <var>origin</var> is <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#same-origin" id="ref-for-same-origin">same origin</a> with <var>document</var>’s origin, return "<code>Enabled</code>". 
+      <li>If <var>feature</var>’s <a data-link-type="dfn" href="#default-allowlist" id="ref-for-default-allowlist③">default allowlist</a> is <code>*</code>, return "<code>Enabled</code>".
+      <li>If <var>feature</var>’s <a data-link-type="dfn" href="#default-allowlist" id="ref-for-default-allowlist④">default allowlist</a> is <code>'self'</code>, and <var>origin</var> is <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#same-origin" id="ref-for-same-origin">same origin</a> with <var>document</var>’s origin, return "<code>Enabled</code>".
       <li>Return "<code>Disabled</code>".
      </ol>
     </section>
@@ -2535,12 +2535,12 @@ set to "enforce".</p>
      <ol>
       <li>Set <var>window</var> to <var>request</var>’s <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-request-window" id="ref-for-concept-request-window">window</a>.
       <li>
-       If <var>window</var> is not a <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window">Window</a></code>, return <code>false</code>. 
+       If <var>window</var> is not a <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window">Window</a></code>, return <code>false</code>.
        <div class="issue" id="issue-79a5ddf0"><a class="self-link" href="#issue-79a5ddf0"></a>Feature Policy within non-Window contexts (<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope" id="ref-for-workerglobalscope">WorkerGlobalScope</a></code> or <code class="idl"><a data-link-type="idl" href="https://drafts.css-houdini.org/worklets/#workletglobalscope" id="ref-for-workletglobalscope">WorkletGlobalScope</a></code>) is being figured out in <a href="https://github.com/WICG/feature-policy/issues/207">issue #207</a>. After that’s resolved, update this algorithm to allow fetches initiated within these contexts to use policy-controlled features. <em>Until</em> that’s resolved, disallow all policy-controlled features (e.g., sending Client Hints to third parties) in these contexts.</div>
       <li>Set <var>document</var> to <var>window</var>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/window-object.html#concept-document-window" id="ref-for-concept-document-window">associated <code>Document</code></a>.
       <li>Let <var>origin</var> be <var>request</var>’s <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-request-origin" id="ref-for-concept-request-origin">origin</a>.
       <li>Let <var>result</var> be the result of executing <a href="#is-feature-enabled" id="ref-for-is-feature-enabled②">Is feature enabled in document for
-        origin?</a> on <var>feature</var>, <var>document</var>, and <var>origin</var>. 
+        origin?</a> on <var>feature</var>, <var>document</var>, and <var>origin</var>.
       <li>If <var>result</var> is "<code>Enabled</code>", return <code>true</code>.
       <li>Otherwise, return <code>false</code>.
      </ol>
@@ -2560,7 +2560,7 @@ set to "enforce".</p>
      <dt>Author/Change controller
      <dd>W3C
      <dt>Specification document
-     <dd> <a href>Feature Policy API</a> 
+     <dd> <a href>Feature Policy API</a>
     </dl>
    </section>
    <section class="informative" id="privacy">
@@ -2604,7 +2604,7 @@ set to "enforce".</p>
   this may mean that existing published content on the web was not written with
   the expectation that a particular API could fail.</p>
     <div class="example" id="example-660fabbf">
-     <a class="self-link" href="#example-660fabbf"></a> 
+     <a class="self-link" href="#example-660fabbf"></a>
      <p>As a practical (though contrived) example, consider a document which uses
     synchronous XMLHttpRequest to determine whether a user has sufficient
     privileges to access the page:</p>
@@ -2673,7 +2673,7 @@ set to "enforce".</p>
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example.</p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -3775,57 +3775,65 @@ set to "enforce".</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

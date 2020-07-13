@@ -23,14 +23,14 @@
       .new { color : blue } /* added during 11/4 pwg review */
       .tableNotes { font-size: 75%;font-style: italic;  margin-bottom: 0in; padding-bottom: 0}
       .aTableNote { font-size: 75%;  margin:0; margin-left: .125in; padding: 0;}
-      .editorial { display: block; font-family:  arial, helvetica, sans-serif; 
+      .editorial { display: block; font-family:  arial, helvetica, sans-serif;
                    font-size: 80%;
                    margin-left: .5in; margin-right: 1in ; padding: 0.125in;
                    background: #FFFFDD ;
                  }
-     
+
       .editorial:after { content: "Ed."}
-    div.editorial pre {padding: 0; margin: 0 0 0 0;color:maroon; 
+    div.editorial pre {padding: 0; margin: 0 0 0 0;color:maroon;
                        font-family: helvetica, sans-serif; font-size:90%;}
     table.keys td { vertical-align:top; margin-top: 5px;}
     .RFC2119 { text-transform: lowercase; font-style: italic }
@@ -265,7 +265,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
   specifications that make up CSS.</strong></p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -324,7 +324,7 @@ as a W3C Recommendation.</em></p>
       <li><a href="#section-images"><span class="secno">4.1</span> <span class="content">Image Rendering Properties</span></a>
      </ol>
     <li><a href="#section-syntax"><span class="secno">5</span> <span class="content">5. CSS Syntax</span></a>
-    <li><a href="#section-assigning"><span class="secno">6</span> <span class="content">6. Assigning Property Values, Cascading, and 
+    <li><a href="#section-assigning"><span class="secno">6</span> <span class="content">6. Assigning Property Values, Cascading, and
 Inheritance</span></a>
     <li><a href="#section-mediatypes"><span class="secno">7</span> <span class="content">7. Media Types</span></a>
     <li>
@@ -375,24 +375,24 @@ Inheritance</span></a>
    <p>This document specifies a profile of the <cite>Cascading Style Sheets,
 level 2, revision 1</cite> (CSS 2.1) specification <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> along with
 the <cite>CSS Paged Media Level 3</cite> <a data-link-type="biblio" href="#biblio-css3page">[CSS3PAGE]</a> and <cite>CSS Images Level 3</cite> <a data-link-type="biblio" href="#biblio-css3-images">[CSS3-IMAGES]</a> </p>
-   <p>CSS 2.1 specifies how developers can author style sheets for 
-presenting documents across multiple devices and media types. While this is very 
-important, it is also important that authors have an understanding of what 
-features are supported on these different devices. Likewise, it is important 
-that similar devices operate in a similar manner. Otherwise, authors could need 
-to develop style sheets for each version of each device -- raising the cost of 
+   <p>CSS 2.1 specifies how developers can author style sheets for
+presenting documents across multiple devices and media types. While this is very
+important, it is also important that authors have an understanding of what
+features are supported on these different devices. Likewise, it is important
+that similar devices operate in a similar manner. Otherwise, authors could need
+to develop style sheets for each version of each device -- raising the cost of
 content development and decreasing interoperability.</p>
-   <p> The CSS Print Profile specifies a conformance profile for 
-printing in environments where it is not feasible or desirable to use a 
-printer-specific driver. An example of such an environment is printing to 
+   <p> The CSS Print Profile specifies a conformance profile for
+printing in environments where it is not feasible or desirable to use a
+printer-specific driver. An example of such an environment is printing to
 low-cost printers from mobile phones.  The profile identifies a minimum set of properties, values, selectors,
 and cascading rules to support these use scenarios.   This profile was designed in
-conjunction with <cite>XHTML-Print</cite> <a data-link-type="biblio" href="#biblio-xhtml-print">[XHTML-PRINT]</a>) 
+conjunction with <cite>XHTML-Print</cite> <a data-link-type="biblio" href="#biblio-xhtml-print">[XHTML-PRINT]</a>)
 for low cost printers that may not have a full-page buffer and that
 generally print from top-to-bottom.</p>
    <p> This profile also contains an enhanced layout
-extension set which supports more exacting page layouts and orientations. These 
-features provide sufficient richness to print, for example, photo album pages 
+extension set which supports more exacting page layouts and orientations. These
+features provide sufficient richness to print, for example, photo album pages
 from a digital still camera or print-targeted television content.</p>
    <p>Conformance to this profile means that a user agent
 supports, at a minimum, the features defined in this specification.
@@ -404,55 +404,55 @@ Conformance</a> below.</p>
 document are to be interpreted as described in RFC 2119 (see <a data-link-type="biblio" href="#biblio-rfc2119">[RFC2119]</a>). However, for readability, these
 words do not appear in all uppercase letters in this
 specification.</p>
-   <p>The primary role of a profile is to define a subset of features that provides 
-a minimal guarantee of interoperability. In the case of the CSS Print Profile, 
-this guarantee is that a conforming user agent will support the features defined 
-in this specification following the CSS 2.1 conformance clause (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> Section 3.2), recast 
+   <p>The primary role of a profile is to define a subset of features that provides
+a minimal guarantee of interoperability. In the case of the CSS Print Profile,
+this guarantee is that a conforming user agent will support the features defined
+in this specification following the CSS 2.1 conformance clause (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> Section 3.2), recast
 and summarized below:</p>
    <ol>
-    <li>A CSS Print Profile conforming user agent (PP-UA or more simply "printer") <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the <em>all</em> and <em>print</em> CSS 2.1 media types. A printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support other 
-CSS 2.1 media types, as well. 
+    <li>A CSS Print Profile conforming user agent (PP-UA or more simply "printer") <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the <em>all</em> and <em>print</em> CSS 2.1 media types. A printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support other
+CSS 2.1 media types, as well.
     <li>For each source document, a printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> attempt to retrieve all associated
-style sheets that are appropriate for the supported media types. 
+style sheets that are appropriate for the supported media types.
 A failure to retrieve a style sheet due to problems such as
-a loss of network connection <em class="RFC2119" title="SHOULD NOT in the RFC 2119 context">SHOULD NOT</em> stop the printer from processing the document. 
-    <li>A printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> parse the style sheets according to this specification. In 
-particular, 
-the printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> recognize all CSS Print Profile at-rules, blocks, 
-declarations, and selectors. If a printer encounters a property that applies for 
-a supported media type, the printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> parse the value according to the 
-property definition. This means that the printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> accept all valid values 
-and <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> ignore declarations with invalid values. A printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> ignore rules that 
-apply to unsupported media types. 
-    <li>For each element in a document tree, the printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> assign a value for 
-every applicable property according to the property’s definition and the rules 
-of cascading and inheritance. 
-    <li>If the source document comes with alternate style sheets (such as with the 
-"alternate" keyword in HTML 4.01 <a data-link-type="biblio" href="#biblio-html401">[HTML401]</a>), the printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> ignore the style sheet or treat it in some implementation dependent manner. 
+a loss of network connection <em class="RFC2119" title="SHOULD NOT in the RFC 2119 context">SHOULD NOT</em> stop the printer from processing the document.
+    <li>A printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> parse the style sheets according to this specification. In
+particular,
+the printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> recognize all CSS Print Profile at-rules, blocks,
+declarations, and selectors. If a printer encounters a property that applies for
+a supported media type, the printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> parse the value according to the
+property definition. This means that the printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> accept all valid values
+and <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> ignore declarations with invalid values. A printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> ignore rules that
+apply to unsupported media types.
+    <li>For each element in a document tree, the printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> assign a value for
+every applicable property according to the property’s definition and the rules
+of cascading and inheritance.
+    <li>If the source document comes with alternate style sheets (such as with the
+"alternate" keyword in HTML 4.01 <a data-link-type="biblio" href="#biblio-html401">[HTML401]</a>), the printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> ignore the style sheet or treat it in some implementation dependent manner.
    </ol>
    <p>As with CSS 2.1, there are qualifications to this conformance clause:</p>
    <ol>
     <li>Values <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> be approximated when <em class="RFC2119" title="REQUIRED in the RFC 2119 context">REQUIRED</em> by the printer.
-    <li>The inability of a printer to implement part of this specification due to 
-the limitations of a particular device (e.g., a printer cannot render colors on 
-a monochrome page) <em class="RFC2119" title="SHALL NOT in the RFC 2119 context">SHALL NOT</em> imply non-conformance. 
+    <li>The inability of a printer to implement part of this specification due to
+the limitations of a particular device (e.g., a printer cannot render colors on
+a monochrome page) <em class="RFC2119" title="SHALL NOT in the RFC 2119 context">SHALL NOT</em> imply non-conformance.
    </ol>
-   <p>It is <em class="RFC2119" title="RECOMMENDED in the RFC 2119 context">RECOMMENDED</em> that authors use this conformance profile to take advantage 
-of forward compatibility. Authors <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> use style properties with 
-an understanding that the cascading rules are processed correctly and that 
+   <p>It is <em class="RFC2119" title="RECOMMENDED in the RFC 2119 context">RECOMMENDED</em> that authors use this conformance profile to take advantage
+of forward compatibility. Authors <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> use style properties with
+an understanding that the cascading rules are processed correctly and that
 unknown properties and values are ignored. For example:</p>
    <div class="code-example">
 <pre>  body {
     background-position: center center;
-    background-position: 45% 55%; 
+    background-position: 45% 55%;
   }
  </pre>
    </div>
-   <p>A printer that can accept percentage values for the 
-background-position property will process the first background-position 
-declaration and then replace that value with the second 
-background-position declaration. A printer that cannot accept percentage values will process the first 
-background-position declaration and ignore the second background-position 
+   <p>A printer that can accept percentage values for the
+background-position property will process the first background-position
+declaration and then replace that value with the second
+background-position declaration. A printer that cannot accept percentage values will process the first
+background-position declaration and ignore the second background-position
 declaration.</p>
    <h3 class="heading settled" data-level="2.1" id="s2.1"><span class="secno">2.1. </span><span class="content">2.1. Enhanced Layout Extension Conformance</span><a class="self-link" href="#s2.1"></a></h3>
    <p>Some print applications require a
@@ -462,24 +462,24 @@ a digital TV).
 The Enhanced Layout Extension increases the number
 of properties that a conforming printer <em class="RFC2119" title="MUST in the RFC 2119 context">MUST</em> support and thereby the
 requirements of its memory and performance capabilities. These
-added CSS constructs 
-are indicated with a "<em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>" or 
+added CSS constructs
+are indicated with a "<em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>" or
 an increased range of values, in the CSS
 Print-Enhanced columns below.</p>
    <p> Printers supporting the Enhanced Layout
 Extension <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> also
-support an <em class="RFC2119" title="OPTIONAL in the RFC 2119 context">OPTIONAL</em>, discoverable (via some means outside the scope of 
+support an <em class="RFC2119" title="OPTIONAL in the RFC 2119 context">OPTIONAL</em>, discoverable (via some means outside the scope of
 this document) Enhanced Layout Extension indicator.</p>
    <h2 class="heading settled" data-level="3" id="section-selectors"><span class="secno">3. </span><span class="content">3. Selectors</span><a class="self-link" href="#section-selectors"></a></h2>
-   <p>In CSS 2.1, pattern matching rules determine which style rules apply to elements 
+   <p>In CSS 2.1, pattern matching rules determine which style rules apply to elements
 in the document tree <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>.</p>
-   <p> Consideration is given to low-cost printers  that might not be able 
-to store all the attributes of each element, but only keep the few that are necessary.  
-Therefore, only Enhanced Layout Extension conforming 
+   <p> Consideration is given to low-cost printers  that might not be able
+to store all the attributes of each element, but only keep the few that are necessary.
+Therefore, only Enhanced Layout Extension conforming
 printers <em class="RFC2119" title="MUST in the RFC 2119 context">MUST</em> support attribute selectors. </p>
-   <p> The following table summarizes CSS Print Profile selector syntax. In 
-addition to the selectors marked "<em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>" 
-in the CSS Print or CSS Print-Enhanced columns, the CSS Print 
+   <p> The following table summarizes CSS Print Profile selector syntax. In
+addition to the selectors marked "<em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>"
+in the CSS Print or CSS Print-Enhanced columns, the CSS Print
 Profile includes the CSS 2.1 grouping mechanism (See <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> Section 5.2.1). </p>
    <table border="1" summary="List of all selectors indicating which ones are supported" width="80%">
     <tbody>
@@ -515,21 +515,21 @@ Profile includes the CSS 2.1 grouping mechanism (See <a data-link-type="biblio" 
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
      <tr class="enh">
       <td>E[foo]
-      <td>Matches any E element with the "foo" attribute set (whatever the 
+      <td>Matches any E element with the "foo" attribute set (whatever the
 value).
       <td>Attribute selectors
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
      <tr class="enh">
       <td>E[foo="warning"]
-      <td>Matches any E element whose "foo" attribute value is exactly equal to 
+      <td>Matches any E element whose "foo" attribute value is exactly equal to
 "warning".
       <td>Attribute selectors
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
      <tr class="enh">
       <td>E[foo~="warning"]
-      <td>Matches any E element whose "foo" attribute value is a list of 
+      <td>Matches any E element whose "foo" attribute value is a list of
 space-separated values, one of which is exactly equal to "warning".
       <td>Attribute selectors
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
@@ -574,7 +574,7 @@ space-separated values, one of which is exactly equal to "warning".
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
      <tr class="yes">
       <td>@media
-      <td>Groups a set of style rules to apply only to one or more particular 
+      <td>Groups a set of style rules to apply only to one or more particular
 media.
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
@@ -597,7 +597,7 @@ media.
    <h2 class="heading settled" data-level="4" id="section-properties"><span class="secno">4. </span><span class="content">4. Properties</span><a class="self-link" href="#section-properties"></a></h2>
    <p> As with selectors, the properties a printer <em class="RFC2119" title="MUST in the RFC 2119 context">MUST</em> support are similar to those that a mobile device <em class="RFC2119" title="MUST in the RFC 2119 context">MUST</em> support (<a data-link-type="biblio" href="#biblio-css-mobile">[CSS-MOBILE]</a>, <a href="http://www.w3.org/TR/css-mobile#properties"> Properties</a>) with the exception of those that don’t apply to the
 page or are specifically targeted at media other than the page. </p>
-   <p> In some cases the allowable values for a printer are a subset of the full range of 
+   <p> In some cases the allowable values for a printer are a subset of the full range of
 values to match the reduced memory and performance capabilities of a low-cost printer. </p>
    <p>The following table summarizes CSS Print Profile properties and property values.
 Refer to <cite>CSS Paged Media Level 3</cite> <a data-link-type="biblio" href="#biblio-css3page">[CSS3PAGE]</a> for the definition of the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-page-3/#descdef-page-size" id="ref-for-descdef-page-size">size</a> properties, <cite>CSS Image Values and Replaced Content Level 3</cite> <a data-link-type="biblio" href="#biblio-css3-images">[CSS3-IMAGES]</a> for the definition of the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-images-3/#propdef-image-orientation" id="ref-for-propdef-image-orientation">image-orientation</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-images-4/#propdef-object-fit" id="ref-for-propdef-object-fit②">object-fit</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-images-3/#propdef-object-position" id="ref-for-propdef-object-position②">object-position</a> properties,
@@ -634,7 +634,7 @@ and CSS 2.1 <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> for the 
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-position" id="ref-for-propdef-background-position②">background-position</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
-      <td>[ [ &lt;percentage> | &lt;length> ]{1,2} | [ [top | center | 
+      <td>[ [ &lt;percentage> | &lt;length> ]{1,2} | [ [top | center |
 bottom] || [left | center | right] ] ] | inherit
       <td>0% 0%
      <tr class="enh">
@@ -647,7 +647,7 @@ bottom] || [left | center | right] ] ] | inherit
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border" id="ref-for-propdef-border">border</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
-      <td>[ &lt;border-width> || &lt;border-style> || [&lt;color> | 
+      <td>[ &lt;border-width> || &lt;border-style> || [&lt;color> |
 transparent] ] | inherit
       <td>see individual properties
      <tr class="enh">
@@ -671,14 +671,14 @@ transparent] ] | inherit
      <tr class="enh">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-style" id="ref-for-propdef-border-style">border-style</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
-      <td> none, solid 
+      <td> none, solid
       <td>&lt;border-style>{1,4} | inherit
       <td>see individual properties
      <tr class="enh">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-top" id="ref-for-propdef-border-top">border-top</a> <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-right" id="ref-for-propdef-border-right">border-right</a> <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-bottom" id="ref-for-propdef-border-bottom">border-bottom</a> <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-left" id="ref-for-propdef-border-left">border-left</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
-      <td>[ &lt;border-width> || &lt;border-style> || [&lt;color> | 
+      <td>[ &lt;border-width> || &lt;border-style> || [&lt;color> |
 transparent] ] | inherit
       <td>see individual properties
      <tr class="enh">
@@ -739,7 +739,7 @@ transparent] ] | inherit
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-content-3/#propdef-content" id="ref-for-propdef-content">content</a>
       <td>inherit | [&lt;string> | counter(pages<a href="#table_note_0">†</a>)]+
       <td>inherit | [&lt;string> | counter(pages<a href="#table_note_0">†</a>)]+
-      <td>[ &lt;string> | &lt;uri> | &lt;counter> | attr(X) | 
+      <td>[ &lt;string> | &lt;uri> | &lt;counter> | attr(X) |
 open-quote | close-quote | no-open-quote | no-close-quote ]+ | inherit
       <td>empty string
      <tr class="yes">
@@ -759,14 +759,14 @@ open-quote | close-quote | no-open-quote | no-close-quote ]+ | inherit
       <td><a class="property" data-link-type="propdesc" href="https://www.w3.org/TR/2011/REC-CSS2-20110607/colors.html#propdef-display" id="ref-for-propdef-display">display</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td>inline | block | list-item | none |inherit
-      <td>inline | block | list-item | run-in | compact | marker | table | 
-inline-table | table-row-group | table-header-group | table-footer-group | 
-table-row | table-column-group | table-column | table-cell | table-caption 
+      <td>inline | block | list-item | run-in | compact | marker | table |
+inline-table | table-row-group | table-header-group | table-footer-group |
+table-row | table-column-group | table-column | table-cell | table-caption
 | none | inherit
       <td>inline
      <tr class="enh">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-images-4/#propdef-object-fit" id="ref-for-propdef-object-fit③">object-fit</a>
-      <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em> 
+      <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
       <td>fill | none | cover | contain
       <td>fill
@@ -774,21 +774,21 @@ table-row | table-column-group | table-column | table-cell | table-caption
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font" id="ref-for-propdef-font">font</a>
       <td> [ [ <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-style" id="ref-for-propdef-font-style">font-style</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-weight" id="ref-for-propdef-font-weight">font-weight</a> ]? <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size" id="ref-for-propdef-font-size">font-size</a> [ / <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-line-height" id="ref-for-propdef-line-height">line-height</a> ]? <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-family" id="ref-for-propdef-font-family">font-family</a> ] | inherit
       <td> [ [ <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-style" id="ref-for-propdef-font-style①">font-style</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant" id="ref-for-propdef-font-variant">font-variant</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-weight" id="ref-for-propdef-font-weight①">font-weight</a> ]? <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size" id="ref-for-propdef-font-size①">font-size</a> [ / <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-line-height" id="ref-for-propdef-line-height①">line-height</a> ]? <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-family" id="ref-for-propdef-font-family①">font-family</a> ] | inherit
-      <td> [ [ <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-style" id="ref-for-propdef-font-style②">font-style</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant" id="ref-for-propdef-font-variant①">font-variant</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-weight" id="ref-for-propdef-font-weight②">font-weight</a> ]? <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size" id="ref-for-propdef-font-size②">font-size</a> [ / <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-line-height" id="ref-for-propdef-line-height②">line-height</a> ]? <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-family" id="ref-for-propdef-font-family②">font-family</a> ] | caption | icon | menu | message-box | 
+      <td> [ [ <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-style" id="ref-for-propdef-font-style②">font-style</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant" id="ref-for-propdef-font-variant①">font-variant</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-weight" id="ref-for-propdef-font-weight②">font-weight</a> ]? <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size" id="ref-for-propdef-font-size②">font-size</a> [ / <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-line-height" id="ref-for-propdef-line-height②">line-height</a> ]? <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-family" id="ref-for-propdef-font-family②">font-family</a> ] | caption | icon | menu | message-box |
 small-caption | status-bar | inherit
       <td>see individual properties
      <tr class="yes">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-family" id="ref-for-propdef-font-family③">font-family</a>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em><a href="#table_note_1">*</a>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em><a href="#table_note_1">*</a>
-      <td>[[ &lt;family-name> | &lt;generic-family> ],]* [ 
+      <td>[[ &lt;family-name> | &lt;generic-family> ],]* [
 &lt;family-name> | &lt;generic-family> ] | inherit
       <td>depends on user agent
      <tr class="yes">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size" id="ref-for-propdef-font-size③">font-size</a>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> <a href="#table_note_2">**</a>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> <a href="#table_note_2">**</a>
-      <td>&lt;absolute-size> | &lt;relative-size> | &lt;length> | 
+      <td>&lt;absolute-size> | &lt;relative-size> | &lt;length> |
 &lt;percentage> | inherit
       <td>medium
      <tr class="yes">
@@ -807,13 +807,13 @@ small-caption | status-bar | inherit
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-weight" id="ref-for-propdef-font-weight③">font-weight</a>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> <a href="#table_note_2">**</a>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> <a href="#table_note_2">**</a>
-      <td>normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 
+      <td>normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 |
 700 | 800 | 900 | inherit
       <td>normal
      <tr class="yes">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height">height</a>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
-      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> 
+      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
       <td>&lt;length> | &lt;percentage> | auto | inherit
       <td>auto
      <tr class="enh">
@@ -825,7 +825,7 @@ small-caption | status-bar | inherit
      <tr class="enh">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-left" id="ref-for-propdef-left">left</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
-      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> 
+      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
       <td>&lt;length> | &lt;percentage> | auto | inherit
       <td>auto
      <tr class="enh">
@@ -838,14 +838,14 @@ small-caption | status-bar | inherit
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-line-height" id="ref-for-propdef-line-height③">line-height</a>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
-      <td>normal | &lt;number> | &lt;length> | &lt;percentage> | 
+      <td>normal | &lt;number> | &lt;length> | &lt;percentage> |
  inherit
       <td>normal
      <tr class="enh">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-lists-3/#propdef-list-style" id="ref-for-propdef-list-style">list-style</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
-      <td>[ <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-lists-3/#propdef-list-style-type" id="ref-for-propdef-list-style-type">list-style-type</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-lists-3/#propdef-list-style-position" id="ref-for-propdef-list-style-position">list-style-position</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-lists-3/#propdef-list-style-image" id="ref-for-propdef-list-style-image">list-style-image</a> ] | 
+      <td>[ <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-lists-3/#propdef-list-style-type" id="ref-for-propdef-list-style-type">list-style-type</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-lists-3/#propdef-list-style-position" id="ref-for-propdef-list-style-position">list-style-position</a> || <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-lists-3/#propdef-list-style-image" id="ref-for-propdef-list-style-image">list-style-image</a> ] |
 inherit
       <td>see individual properties
      <tr class="enh">
@@ -857,17 +857,17 @@ inherit
      <tr class="yes">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-lists-3/#propdef-list-style-position" id="ref-for-propdef-list-style-position①">list-style-position</a>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
-      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> 
+      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
       <td>inside | outside | inherit
       <td>outside
      <tr class="yes">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-lists-3/#propdef-list-style-type" id="ref-for-propdef-list-style-type①">list-style-type</a>
       <td>disc,  decimal,  lower-alpha, upper-alpha, none and inherit
-      <td>disc,  decimal,  lower-alpha, 
+      <td>disc,  decimal,  lower-alpha,
 upper-alpha, none and inherit
-      <td>disc | circle | square | decimal | decimal-leading-zero | lower-roman 
-| upper-roman | lower-greek | lower-alpha | lower-latin | upper-alpha | 
-upper-latin | hebrew | armenian | georgian | cjk-ideographic | hiragana | 
+      <td>disc | circle | square | decimal | decimal-leading-zero | lower-roman
+| upper-roman | lower-greek | lower-alpha | lower-latin | upper-alpha |
+upper-latin | hebrew | armenian | georgian | cjk-ideographic | hiragana |
 katakana | hiragana-iroha | katakana-iroha | none | inherit
       <td>disc
      <tr class="yes">
@@ -884,14 +884,14 @@ katakana | hiragana-iroha | katakana-iroha | none | inherit
       <td>0
      <tr class="enh">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-images-3/#propdef-object-position" id="ref-for-propdef-object-position③">object-position</a>
-      <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em> 
+      <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
-      <td>[ [&lt;percentage> | &lt;length> ]{1,2} | [ [top | center | 
+      <td>[ [&lt;percentage> | &lt;length> ]{1,2} | [ [top | center |
 bottom] || [left | center | right] ] ]
       <td>50% 50%
      <tr class="enh">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-float" id="ref-for-propdef-float">float</a>
-      <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em> 
+      <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
       <td>left | right | none | inherit
       <td>none
@@ -904,7 +904,7 @@ bottom] || [left | center | right] ] ]
      <tr class="enh">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow">overflow</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
-      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> 
+      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
       <td>visible | hidden | scroll | auto | inherit
       <td>visible
      <tr class="enh">
@@ -927,14 +927,14 @@ bottom] || [left | center | right] ] ]
       <td>auto
      <tr class="yes">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/page.html#propdef-page-break-after" id="ref-for-propdef-page-break-after">page-break-after</a>
-      <td> auto | always | inherit 
-      <td>auto | always | inherit 
+      <td> auto | always | inherit
+      <td>auto | always | inherit
       <td>auto | always | avoid | left | right | inherit
       <td>auto
      <tr class="yes">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/page.html#propdef-page-break-before" id="ref-for-propdef-page-break-before">page-break-before</a>
-      <td> auto | always | inherit 
-      <td>auto | always | inherit 
+      <td> auto | always | inherit
+      <td>auto | always | inherit
       <td>auto | always | avoid | left | right | inherit
       <td>auto
      <tr class="yes">
@@ -946,7 +946,7 @@ bottom] || [left | center | right] ] ]
      <tr class="enh">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-position" id="ref-for-propdef-position">position</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
-      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> <a href="#table_note_pos">‡</a> 
+      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> <a href="#table_note_pos">‡</a>
       <td>static | relative | absolute | fixed | inherit
       <td>static
      <tr class="enh">
@@ -958,9 +958,9 @@ bottom] || [left | center | right] ] ]
      <tr class="yes">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-page-3/#descdef-page-size" id="ref-for-descdef-page-size①">size</a>
       <td>[&lt;length>{1,2}| letter | legal | ledger | A4 | A5 | A3 | B4 | B5 ] | auto | portrait | inherit
-      <td>[&lt;length>{1,2} | letter | legal 
-| ledger | A4 | A5 | A3 | B4 | B5 ] | auto | portrait | landscape | inherit 
-      <td>[&lt;length>{1,2} |  letter | legal | ledger | A4 | A5 | 
+      <td>[&lt;length>{1,2} | letter | legal
+| ledger | A4 | A5 | A3 | B4 | B5 ] | auto | portrait | landscape | inherit
+      <td>[&lt;length>{1,2} |  letter | legal | ledger | A4 | A5 |
 A3 | B4 | B5 ] | auto | portrait | landscape | inherit
       <td>auto
      <tr class="enh">
@@ -1003,7 +1003,7 @@ A3 | B4 | B5 ] | auto | portrait | landscape | inherit
       <td><a class="property" data-link-type="propdesc" href="https://www.w3.org/TR/2011/REC-CSS2-20110607/colors.html#propdef-vertical-align" id="ref-for-propdef-vertical-align">vertical-align</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em><sup><a href="#table_note_vert_align">1</a></sup>
-      <td>baseline | sub | super | top | text-top | middle | bottom | 
+      <td>baseline | sub | super | top | text-top | middle | bottom |
 text-bottom | &lt;percentage> | &lt;length> | inherit
       <td>baseline
      <tr class="enh">
@@ -1015,13 +1015,13 @@ text-bottom | &lt;percentage> | &lt;length> | inherit
      <tr class="yes">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-4/#propdef-white-space" id="ref-for-propdef-white-space">white-space</a>
       <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
-      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> 
+      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
       <td>normal | pre | nowrap | inherit
       <td>normal
      <tr class="enh">
       <td><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-4/#propdef-widows" id="ref-for-propdef-widows">widows</a>
       <td><em class="RFC2119" title="MAY In The RFC 2119 Context">MAY</em>
-      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em> 
+      <td><em class="RFC2119" title="MUST In The RFC 2119 Context">MUST</em>
       <td>&lt;integer> | inherit
       <td>2
      <tr class="yes">
@@ -1032,13 +1032,13 @@ text-bottom | &lt;percentage> | &lt;length> | inherit
       <td>auto
    </table>
    <p class="tableNotes"> Table Note:</p>
-   <p class="aTableNote" id="table_note_0">† Only the single 
+   <p class="aTableNote" id="table_note_0">† Only the single
 identifier "pages" that represents the current page number is <em class="RFC2119" title="REQUIRED in the RFC 2119 context">REQUIRED</em>.</p>
    <p class="aTableNote" id="table_note_1">* It is <em class="RFC2119" title="RECOMMENDED in the RFC 2119 context">RECOMMENDED</em> that a printer minimally support
  "serif," "sans-serif," and "monospace" font families. </p>
    <p class="aTableNote" id="table_note_2"> ** The supported values <em class="RFC2119" title="SHOULD in the RFC 2119 context">SHOULD</em> be appropriate to
 the fonts available to the printer.</p>
-   <p class="aTableNote" id="table_note_pos"> ‡ 
+   <p class="aTableNote" id="table_note_pos"> ‡
 The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> ignore positioned elements that are placed on the page before the position of the current element in the normal flow. </p>
    <p class="aTableNote" id="table_note_vert_align"> <sup>1</sup> Vertical alignment is undefined across page boundaries. </p>
    <h3 class="heading settled" data-level="4.1" id="section-images"><span class="secno">4.1. </span><span class="content">Image Rendering Properties</span><a class="self-link" href="#section-images"></a></h3>
@@ -1078,21 +1078,21 @@ if that is required for compatibility with existing content.
 Similarly, if inheritance is required,
 then that may also be indicated by UA style sheet rule.</p>
    <div class="example" id="example-88093c3b">
-    <a class="self-link" href="#example-88093c3b"></a> 
+    <a class="self-link" href="#example-88093c3b"></a>
     <p>The following rule positions all images with <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-images-4/#propdef-object-fit" id="ref-for-propdef-object-fit⑥">object-fit</a> values other than <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-images-3/#valdef-object-fit-fill" id="ref-for-valdef-object-fit-fill">fill</a> to be top-left aligned:</p>
 <pre>* { object-position: top left; }</pre>
     <p>The following rules also cause <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-images-3/#propdef-object-position" id="ref-for-propdef-object-position⑦">object-position</a> to inherit.</p>
 <pre>* { object-position: inherit; }:root { object-position: top left; }</pre>
    </div>
    <h2 class="heading settled" data-level="5" id="section-syntax"><span class="secno">5. </span><span class="content">5. CSS Syntax</span><a class="self-link" href="#section-syntax"></a></h2>
-   <p>The CSS Print Profile uses the same syntax as specified in <cite>Cascading Style Sheets, Level 2, revision 1</cite> (CSS 2.1) <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>. The CSS Print 
+   <p>The CSS Print Profile uses the same syntax as specified in <cite>Cascading Style Sheets, Level 2, revision 1</cite> (CSS 2.1) <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>. The CSS Print
 Profile uses a subset of the values used in CSS 2.1. Specifically:</p>
    <ol>
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support integer and real numbers 
-(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#q15">Section 4.3.1</a>). 
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support integer and real numbers
+(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#q15">Section 4.3.1</a>).
     <li>
-     The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the following lengths 
-(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#length-units">Section 4.3.2</a>): 
+     The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the following lengths
+(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#length-units">Section 4.3.2</a>):
      <ul>
       <li>px
       <li>em
@@ -1103,101 +1103,101 @@ Profile uses a subset of the values used in CSS 2.1. Specifically:</p>
       <li>pt
       <li>pc
      </ul>
-      The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support other lengths. 
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support percentage values 
-(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#percentage-units">Section 4.3.3</a>). 
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support URI values 
-(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#uri">Section 4.3.4</a>). 
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support 
-a "pages" counter value that tracks page numbers 
-(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#counter">Section 4.3.5</a>). 
+      The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support other lengths.
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support percentage values
+(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#percentage-units">Section 4.3.3</a>).
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support URI values
+(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#uri">Section 4.3.4</a>).
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support
+a "pages" counter value that tracks page numbers
+(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#counter">Section 4.3.5</a>).
     <li>
-     The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the following color values: 
+     The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the following color values:
      <ul>
-      <li>The 16 colors defined in HTML 4.01 <a data-link-type="biblio" href="#biblio-html401">[HTML401]</a> 
-      <li>A numerical RGB specification 
-(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#color-units">Section 4.3.6</a>) 
+      <li>The 16 colors defined in HTML 4.01 <a data-link-type="biblio" href="#biblio-html401">[HTML401]</a>
+      <li>A numerical RGB specification
+(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/syndata.html#color-units">Section 4.3.6</a>)
      </ul>
-      The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support other color values. The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support user preferences for colors 
+      The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support other color values. The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support user preferences for colors
 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/ui.html#system-colors">Section 18.2</a>).
-    <li>The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support user preferences for fonts 
+    <li>The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support user preferences for fonts
 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/ui.html#system-fonts">Section 18.3</a>).
    </ol>
-   <p>Similarly, the CSS Print Profile requires that conforming user agents 
+   <p>Similarly, the CSS Print Profile requires that conforming user agents
 support the character encoding mechanisms specified in CSS 2.1 <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>. Specifically:</p>
    <ol>
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support priorities specified in 
-CSS 2.1 <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> to determine a 
-document’s character encoding. 
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the 
-CSS 2.1 @charset rules. 
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support priorities specified in
+CSS 2.1 <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> to determine a
+document’s character encoding.
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the
+CSS 2.1 @charset rules.
 However, if the character set specified by the @charset
 rule of a external style sheet is not supported by the printer, the style sheet
-will be ignored. 
+will be ignored.
    </ol>
-   <h2 class="heading settled" data-level="6" id="section-assigning"><span class="secno">6. </span><span class="content">6. Assigning Property Values, Cascading, and 
+   <h2 class="heading settled" data-level="6" id="section-assigning"><span class="secno">6. </span><span class="content">6. Assigning Property Values, Cascading, and
 Inheritance</span><a class="self-link" href="#section-assigning"></a></h2>
-   <p>In general, the CSS Print Profile uses the same cascading rules as in CSS 2.1. 
+   <p>In general, the CSS Print Profile uses the same cascading rules as in CSS 2.1.
 Specifically:</p>
    <ol>
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> assign values as described in 
-CSS 2.1 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#q1">Section 6.1</a>). 
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support inheritance as described in 
-CSS 2.1 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#inheritance">Section 6.2</a>). 
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> assign values as described in
+CSS 2.1 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#q1">Section 6.1</a>).
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support inheritance as described in
+CSS 2.1 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#inheritance">Section 6.2</a>).
     <li>A
-printer supporting Enhanced Layout Extension conformance <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the 
-CSS 2.1 @import rules as specified in CSS 2.1 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#at-import">Section 6.3</a>). 
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support author style sheets. The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support user or user-agent style sheets 
-(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#cascade">Section 6.4</a>). 
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support all 
-CSS 2.1 cascading mechanisms 
-(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> Sections <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#cascading-order">6.4.1</a>-<a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#q13">6.4.4</a>). 
+printer supporting Enhanced Layout Extension conformance <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the
+CSS 2.1 @import rules as specified in CSS 2.1 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#at-import">Section 6.3</a>).
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support author style sheets. The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> support user or user-agent style sheets
+(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#cascade">Section 6.4</a>).
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support all
+CSS 2.1 cascading mechanisms
+(<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> Sections <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#cascading-order">6.4.1</a>-<a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/cascade.html#q13">6.4.4</a>).
    </ol>
    <h2 class="heading settled" data-level="7" id="section-mediatypes"><span class="secno">7. </span><span class="content">7. Media Types</span><a class="self-link" href="#section-mediatypes"></a></h2>
-   <p>A CSS Print Profile conforming user agent <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> be able to process 
-media-dependent style sheets as specified in CSS 2.1 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/media.html">Section 7</a>). 
+   <p>A CSS Print Profile conforming user agent <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> be able to process
+media-dependent style sheets as specified in CSS 2.1 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/media.html">Section 7</a>).
 Specifically:</p>
    <ol>
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the 
-CSS 2.1 @media rules as specified in CSS 2.1 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/media.html">Section 7</a>). 
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> accept and process style sheets that target the <code>print</code> media type. 
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> accept and process style sheets that target the <code>all</code> media type. 
-    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> accept style sheets that contain other (non-print) 
-media-dependent style sheets. 
-    <li>The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> process other media types (such as <code>projection</code> or <code>handheld</code>). 
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> support the
+CSS 2.1 @media rules as specified in CSS 2.1 (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/media.html">Section 7</a>).
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> accept and process style sheets that target the <code>print</code> media type.
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> accept and process style sheets that target the <code>all</code> media type.
+    <li>The printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> accept style sheets that contain other (non-print)
+media-dependent style sheets.
+    <li>The printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> process other media types (such as <code>projection</code> or <code>handheld</code>).
    </ol>
    <h2 class="heading settled" data-level="8" id="section-interactions"><span class="secno">8. </span><span class="content">8. CSS Print Profile Properties and User Agent interactions</span><a class="self-link" href="#section-interactions"></a></h2>
    <p>The following sections relax or otherwise modify the conformance requirements.</p>
    <h3 class="heading settled" data-level="8.1" id="s.8.1"><span class="secno">8.1. </span><span class="content">8.1 Nested Floats, Divs, and Absolutely Positioned Boxes</span><a class="self-link" href="#s.8.1"></a></h3>
    <p> Authors are cautioned that the nesting of floats, divs, and absolutely positioned boxes within
-themselves, each other, and table cells should be used carefully, since the 
+themselves, each other, and table cells should be used carefully, since the
 nesting depth of these constructs is printer and implementation dependent.</p>
    <h3 class="heading settled" data-level="8.2" id="s.8.2"><span class="secno">8.2. </span><span class="content">8.2 Page Breaks</span><a class="self-link" href="#s.8.2"></a></h3>
-   <p>If <code>page-break-inside: avoid</code> is specified for a long element and 
-the printer is unable to buffer the entire element before committing it to 
-paper, it <em class="RFC2119" title="SHOULD in the RFC 2119 context">SHOULD</em> force a page break to occur before the long element and begin 
-the element starting at the top of the next page. If the long element starts at 
-the top of a page and exceeds the page length, the printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> print as much 
-as possible on the first page and then resume that element on the next and 
-subsequent pages as <em class="RFC2119" title="REQUIRED in the RFC 2119 context">REQUIRED</em> to preserve the content. A printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> perform scaling 
-to fit the long element on a single page; but this is not recommended unless the 
+   <p>If <code>page-break-inside: avoid</code> is specified for a long element and
+the printer is unable to buffer the entire element before committing it to
+paper, it <em class="RFC2119" title="SHOULD in the RFC 2119 context">SHOULD</em> force a page break to occur before the long element and begin
+the element starting at the top of the next page. If the long element starts at
+the top of a page and exceeds the page length, the printer <em class="RFC2119" title="SHALL in the RFC 2119 context">SHALL</em> print as much
+as possible on the first page and then resume that element on the next and
+subsequent pages as <em class="RFC2119" title="REQUIRED in the RFC 2119 context">REQUIRED</em> to preserve the content. A printer <em class="RFC2119" title="MAY in the RFC 2119 context">MAY</em> perform scaling
+to fit the long element on a single page; but this is not recommended unless the
 scaling required is minimal.</p>
    <h3 class="heading settled" data-level="8.3" id="s.8.3"><span class="secno">8.3. </span><span class="content">8.3 Page Size</span><a class="self-link" href="#s.8.3"></a></h3>
-   <p>Due to a printer’s mechanical limitations, the actual printable area of the 
+   <p>Due to a printer’s mechanical limitations, the actual printable area of the
 page is often less than the page size. 
-However, a printer <em class="RFC2119" title="SHOULD in the RFC 2119 context">SHOULD</em> be guided by  the page size value supplied by the CSS size property when 
+However, a printer <em class="RFC2119" title="SHOULD in the RFC 2119 context">SHOULD</em> be guided by  the page size value supplied by the CSS size property when
 choosing the media to print on.</p>
    <p>See <a href="http://www.w3.org/TR/css3-page/#renderingpages"> http://www.w3.org/TR/css3-page/#renderingpages</a> in <cite>CSS3
-Paged Media</cite> <a data-link-type="biblio" href="#biblio-css3page">[CSS3PAGE]</a> for a discussion of fitting contents to media 
+Paged Media</cite> <a data-link-type="biblio" href="#biblio-css3page">[CSS3PAGE]</a> for a discussion of fitting contents to media
 sheets.</p>
    <h3 class="heading settled" data-level="8.4" id="s.8.4"><span class="secno">8.4. </span><span class="content">8.4 Default Style Sheets </span><a class="self-link" href="#s.8.4"></a></h3>
    <p>This entire section is informative.</p>
    <p><a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/sample.html">Appendix D</a> of <cite>Cascading Style Sheets, Level 2, revision 1</cite> (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/sample.html">Appendix D</a>)
-provides a sample style sheet. 
+provides a sample style sheet.
 This sheet uses several properties that are not required of a conforming printer, even
 ones supporting the <a href="#s2.1">enhanced layout extensions</a> (section 2.1).</p>
    <h4 class="heading settled" data-level="8.4.1" id="s.8.5.1"><span class="secno">8.4.1. </span><span class="content">8.5.1 Default Style Sheet Guidelines for printers</span><a class="self-link" href="#s.8.5.1"></a></h4>
-   <p> Developers of printers that do not implement the enhanced layout facilities 
+   <p> Developers of printers that do not implement the enhanced layout facilities
 are encouraged but not required to adhere to the following implementation guidelines
 that address unsupported properties. These guidelines are presented to promote
 consistency between printer implementations. </p>
@@ -1205,21 +1205,21 @@ consistency between printer implementations. </p>
    <ol>
     <li> The <code> address, blockquote, body, dd, div, dl, dt, h1, h2, h3, h4, h5, h6,
 hr, object, ol, p, pre, </code> and <code> ul</code> elements
-should be treated as if their display property were set to <code>block</code>. 
-    <li>The <code>li</code> element should be treated as if its display property were set to <code>list-items</code>. 
-    <li> The table elements, <code>table, tr, td, th,</code> and <code>caption</code>, should have their 
-standard meaning and display treatments: <code>table, table-row, table-cell,</code> and <code>table-caption</code>. 
-    <li> The elements <code>base, br, html, head, link, meta, param, style </code> and <code> title</code> should be treated as if their display property were set to <code>none</code>. 
+should be treated as if their display property were set to <code>block</code>.
+    <li>The <code>li</code> element should be treated as if its display property were set to <code>list-items</code>.
+    <li> The table elements, <code>table, tr, td, th,</code> and <code>caption</code>, should have their
+standard meaning and display treatments: <code>table, table-row, table-cell,</code> and <code>table-caption</code>.
+    <li> The elements <code>base, br, html, head, link, meta, param, style </code> and <code> title</code> should be treated as if their display property were set to <code>none</code>.
     <li>
-     The remaining elements,<code> a, abbr, acronym, b, big, cite, code, dfn, em, form, i, img, 
-input, kbd, option, samp, small, select, strong, sub, sup, textarea, tt, </code> and <code> var</code>, 
-should be treated as if their display property were set to <code>inline</code>.  
-A display property of <code> inline </code> for the elements <code>img, input, select,</code> and <code> textarea </code> allows document authors a flexibility not available if their display property were <code>block</code>. 
+     The remaining elements,<code> a, abbr, acronym, b, big, cite, code, dfn, em, form, i, img,
+input, kbd, option, samp, small, select, strong, sub, sup, textarea, tt, </code> and <code> var</code>,
+should be treated as if their display property were set to <code>inline</code>.
+A display property of <code> inline </code> for the elements <code>img, input, select,</code> and <code> textarea </code> allows document authors a flexibility not available if their display property were <code>block</code>.
      <div class="editorial">
-       The above guidelines come from the following portion of the CSS 2.1 default style sheet: 
-<pre><code>ADDRESS, BLOCKQUOTE, BODY, DD, DIV, DL, DT, FIELDSET, FORM, 
-FRAME, FRAMESET, H1, H2, H3, H4, H5, H6, IFRAME, NOFRAMES, 
-OBJECT, OL, P, UL, APPLET, CENTER, DIR, HR, MENU, 
+       The above guidelines come from the following portion of the CSS 2.1 default style sheet:
+<pre><code>ADDRESS, BLOCKQUOTE, BODY, DD, DIV, DL, DT, FIELDSET, FORM,
+FRAME, FRAMESET, H1, H2, H3, H4, H5, H6, IFRAME, NOFRAMES,
+OBJECT, OL, P, UL, APPLET, CENTER, DIR, HR, MENU,
               { display: block }
 LI            { display: list-item }
 HEAD          { display: none }
@@ -1231,88 +1231,88 @@ TFOOT         { display: table-footer-group }
 COL           { display: table-column }
 COLGROUP      { display: table-column-group }
 TD, TH        { display: table-cell }
-CAPTION       { display: table-caption } 
+CAPTION       { display: table-caption }
 </code></pre>
      </div>
     <li>
-      The edges of the content of <code>body</code> element should have 0.1 inch wide inset from the 
-left, top, right, and bottom of the printable area of the page. 
-Margin calculations will start from these offsets. 
+      The edges of the content of <code>body</code> element should have 0.1 inch wide inset from the
+left, top, right, and bottom of the printable area of the page.
+Margin calculations will start from these offsets.
      <div class="editorial">
-       The .1 inch figure comes from the calculation that 8 px divided by 75px/inch ( a normal display resolution) is about .1 inches. 
-<pre><code>BODY          { padding: 8px; 
-                line-height: 1.33 } 
+       The .1 inch figure comes from the calculation that 8 px divided by 75px/inch ( a normal display resolution) is about .1 inches.
+<pre><code>BODY          { padding: 8px;
+                line-height: 1.33 }
 </code></pre>
      </div>
     <li>
      The content of the <code>sub</code> element should be treated as if its vertical-align property
 were set to <code>sub</code>. Similarly, the content of the <code>sup</code> element should be treated
-as if its vertical-align property were set to <code>sup</code>. 
+as if its vertical-align property were set to <code>sup</code>.
      <div class="editorial">
 <pre><code>SUB             { vertical-align: sub }
-SUP             { vertical-align: super } 
+SUP             { vertical-align: super }
 </code></pre>
      </div>
     <li>
-     The <code>hr</code> element should be treated as if its area, as defined by its height and width, were outlined 
-by a one pixel thick, solid line. 
-The default line should be one pixel 
-high and the width of the  containing box. 
+     The <code>hr</code> element should be treated as if its area, as defined by its height and width, were outlined
+by a one pixel thick, solid line.
+The default line should be one pixel
+high and the width of the  containing box.
      <div class="editorial">
-<pre><code>HR              { border: 1px inset } 
+<pre><code>HR              { border: 1px inset }
 </code></pre>
      </div>
     <li>
      The lower case letters of the content of the <code>abbr</code> and <code>acronym</code> elements should be rendered as scaled capital
-letters, at approximately 75% of their size at the current font size. Upper case letters will be unchanged. Printers may 
-also choose to simply render lower case letters as upper case letters without scaling. 
+letters, at approximately 75% of their size at the current font size. Upper case letters will be unchanged. Printers may
+also choose to simply render lower case letters as upper case letters without scaling.
      <div class="editorial">
        The 75% figure above is only one way to approximate small-caps.  The printer is free to use
-its own rendering of small-caps. 
-<pre><code>ABBR, ACRONYM   { font-variant: small-caps; 
-                  letter-spacing: 0.1em } 
+its own rendering of small-caps.
+<pre><code>ABBR, ACRONYM   { font-variant: small-caps;
+                  letter-spacing: 0.1em }
 </code></pre>
      </div>
     <li>
      Page break avoidance both inside and after is removed for the
 elements <code> h1, h2, h3, h4, h5,</code> and <code>h6</code>. Therefore, the printer is not
 required to move  the content of these elements from the bottom of
-one page to the top of the next. 
+one page to the top of the next.
      <div class="editorial">
 <pre><code>H1, H2, H3,
-H4, H5, H6    { page-break-after: avoid; 
+H4, H5, H6    { page-break-after: avoid;
                 page-break-inside: avoid }
 </code></pre>
      </div>
     <li>
      The printer
-need not avoid page breaks before the <code> ul, ol,</code> and <code>dl</code> elements. 
+need not avoid page breaks before the <code> ul, ol,</code> and <code>dl</code> elements.
      <div class="editorial">
-<pre><code>UL, OL, DL    { page-break-before: avoid } 
+<pre><code>UL, OL, DL    { page-break-before: avoid }
 </code></pre>
      </div>
     <li>The printer
 may choose its own, fixed value for the padding properties of
  elements where the <cite>Cascading Style Sheets,
- Level 2, revision 1</cite> <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/box.html">box model</a> (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/box.html">Section 8</a>) applies. 
+ Level 2, revision 1</cite> <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/box.html">box model</a> (<a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/box.html">Section 8</a>) applies.
     <li>The content
  of all elements, except <code>hr</code>, should be treated as if the
- element’s border-style property were set to <code>none</code>. 
+ element’s border-style property were set to <code>none</code>.
     <li>
       The content of all elements may be treated as if the element’s
  overflow property were set to <code>visible</code> and the clip
- property set to <code>auto</code>. 
+ property set to <code>auto</code>.
      <div class="editorial"> This guideline suggests consistent behavior among implementations. </div>
     <li>
      The content of all elements
- may be treated as if the element’s positioning property were set to <code>static</code>. 
+ may be treated as if the element’s positioning property were set to <code>static</code>.
      <div class="editorial"> Elements should be treated as if they are in the
  normal flow. </div>
     <li>
       Tables should be treated as if the
- table-layout property were set to <code>fixed</code>. 
+ table-layout property were set to <code>fixed</code>.
      <div class="editorial">
-       This guideline promotes consistency since 
+       This guideline promotes consistency since
       <ul>
        <li> the table-layout property is not mandated
        <li> There isn’t a CSS default style sheet rule for  this property
@@ -1351,40 +1351,40 @@ br       { content: "\A" }
 
 @media print {
   @page         { margin: 10% }
-  blockquote, 
+  blockquote,
   pre           { page-break-inside: avoid }
 }
 </pre>
    <h4 class="heading settled" data-level="8.4.2" id="s.8.5.2"><span class="secno">8.4.2. </span><span class="content">8.5.2 Default Style Sheet Guidelines for Enhanced Layout printers</span><a class="self-link" href="#s.8.5.2"></a></h4>
-   <p>Developers of printers 
+   <p>Developers of printers
 conforming to the <a href="#s2.1">enhanced
-layout extensions</a> (section 2.1) <em class="RFC2119" title="MUST in the RFC 2119 context">MUST</em> implement more of <cite>Cascading Style Sheets, Level 2, revision 1</cite> <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> than conforming 
+layout extensions</a> (section 2.1) <em class="RFC2119" title="MUST in the RFC 2119 context">MUST</em> implement more of <cite>Cascading Style Sheets, Level 2, revision 1</cite> <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> than conforming
 printers, although
-the set of properties and their values is still less than 
+the set of properties and their values is still less than
 complete. </p>
-   <p> Developers of printers 
+   <p> Developers of printers
 are encouraged but not required to adhere to
 the following implementation guidelines that address unsupported
 properties. </p>
    <ol>
     <li> The table elements, <code>table, tr, td, th,</code> and <code>caption</code>, should have their standard meaning and display
-treatments: <code>table, table-row, table-cell,</code> and <code>table-caption</code>. 
-    <li> The rendering of the hr element is implementation dependent since support of the <code>inset</code> value of the border-style property is not required. 
+treatments: <code>table, table-row, table-cell,</code> and <code>table-caption</code>.
+    <li> The rendering of the hr element is implementation dependent since support of the <code>inset</code> value of the border-style property is not required.
     <li>Page break avoidance both inside and after is removed for the
 elements <code> h1, h2, h3, h4, h5,</code> and <code>h6</code>. Therefore, the printer
 need not be concerned with moving the content
-of these elements from the bottom of one page to the top of the next. 
+of these elements from the bottom of one page to the top of the next.
     <li>The printer
-need not avoid page breaks before the <code> ul, ol,</code> and <code>dl</code> elements. 
+need not avoid page breaks before the <code> ul, ol,</code> and <code>dl</code> elements.
    </ol>
    <p>The following style sheet is a modification of the sample sheet in <a href="http://www.w3.org/TR/2004/CR-CSS21-20040225/sample.html">Appendix D</a> of <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> and depends on the above guidelines. </p>
-<pre style="margin-left: .25in;">address,blockquote, 
-body, dd, div, 
-dl, dt, 
+<pre style="margin-left: .25in;">address,blockquote,
+body, dd, div,
+dl, dt,
 form,
-h1, h2, h3, h4, 
-h5, h6, 
-object, ol, p, 
+h1, h2, h3, h4,
+h5, h6,
+object, ol, p,
 ul,
 hr, pr e        { display: block }
 li              { display: list-item }
@@ -1421,14 +1421,14 @@ br       { content: "\A" }
 
 @media print {
   @page         { margin: 10% }
-  blockquote, 
+  blockquote,
   pre           { page-break-inside: avoid }
 }
 </pre>
    <h2 class="heading settled" data-level="9" id="section-ack"><span class="secno">9. </span><span class="content">9. Acknowledgements</span><a class="self-link" href="#section-ack"></a></h2>
    <p>This section is informative.</p>
    <p>This specification was prepared by the W3C CSS Working Group.</p>
-   <p>This specification is based on the specification of 
+   <p>This specification is based on the specification of
 the same name, <cite>CSS Print Profile</cite> <a data-link-type="biblio" href="#biblio-csspp">[CSSPP]</a> from
 the <a href="http://www.pwg.org/">Printer Working Group</a>,  a
 program of and through the IEEE Industry Standards and Technology
@@ -1450,7 +1450,7 @@ to express her gratitude to all those who contributed to it.</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1463,14 +1463,14 @@ to express her gratitude to all those who contributed to it.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1521,7 +1521,7 @@ to express her gratitude to all those who contributed to it.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -2255,57 +2255,65 @@ to express her gratitude to all those who contributed to it.</p>
   </dl>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

@@ -1599,7 +1599,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
    <div id="navigator-idl">
     <div class="algorithm" data-algorithm="navigator-keyboard">
      <h4 class="heading settled" data-level="2.1.1" id="h-navigator-keyboard"><span class="secno">2.1.1. </span><span class="content"><dfn class="dfn-paneled" data-dfn-for="Navigator" data-dfn-type="dfn" data-noexport id="navigator-keyboard">keyboard</dfn></span><a class="self-link" href="#h-navigator-keyboard"></a></h4>
-      The <a data-link-type="dfn" href="#navigator-keyboard" id="ref-for-navigator-keyboard">keyboard</a> attribute must return the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#navigator" id="ref-for-navigator①">Navigator</a></code>'s <code class="idl"><a data-link-type="idl" href="#keyboard" id="ref-for-keyboard①">Keyboard</a></code> object. 
+      The <a data-link-type="dfn" href="#navigator-keyboard" id="ref-for-navigator-keyboard">keyboard</a> attribute must return the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#navigator" id="ref-for-navigator①">Navigator</a></code>'s <code class="idl"><a data-link-type="idl" href="#keyboard" id="ref-for-keyboard①">Keyboard</a></code> object.
     </div>
    </div>
    <p class="note" role="note"><span>Note:</span> The <a data-link-type="dfn" href="#navigator-keyboard" id="ref-for-navigator-keyboard①">keyboard</a> object is also defined in the <a href="https://w3c.github.io/keyboard-lock/#navigator-interface">Keyboard Lock</a> specification. These two definitions will be reconciled once we decide on a final
@@ -1672,7 +1672,7 @@ to the <a data-link-type="dfn" href="http://www.w3.org/TR/uievents/#dead-key" id
 			long as the cache is updated (or invalidated) whenever the keyboard layout
 			changes.</p>
      <div class="example" id="example-8462fa78">
-      <a class="self-link" href="#example-8462fa78"></a> To show instructions about which key to press in a game: 
+      <a class="self-link" href="#example-8462fa78"></a> To show instructions about which key to press in a game:
 <pre>navigator.keyboard.getLayoutMap().then(function(map) {
   var keyUp = map.get("KeyW");
   showUserDialog("Press " + keyUp + " to move up.");
@@ -1748,7 +1748,7 @@ requiring the use of any modifier keys.</p>
      <p>Modifying the set of available layouts does not trigger a <a data-link-type="dfn" href="#layoutchange" id="ref-for-layoutchange①">layoutchange</a> event, unless the modification changes the current layout.</p>
     <li data-md>
      <p>Adding or removing a physical keyboard does not trigger an event unless
-the system has functionality to change the current layout based on adding or 
+the system has functionality to change the current layout based on adding or
 removing a physical keyboard. But note that it is the layout change that
 triggers this event, not the act of adding or removing the physical keyboard.</p>
     <li data-md>
@@ -1759,7 +1759,7 @@ highest priority ASCII-capable layout remains the same.</p>
 		application, then the <a data-link-type="dfn" href="#layoutchange" id="ref-for-layoutchange②">layoutchange</a> event MUST fire when the user agent
 		regains focus.</p>
    <div class="example" id="example-659c10ea">
-    <a class="self-link" href="#example-659c10ea"></a> To handle this event: 
+    <a class="self-link" href="#example-659c10ea"></a> To handle this event:
 <pre>navigator.keyboard.addEventListener("layoutchange", function() {
   // Update user keyboard map settings
   updateGameControlSettingsPage();
@@ -2262,58 +2262,66 @@ See <a href="https://en.wikipedia.org/wiki/Scancode">https://en.wikipedia.org/wi
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

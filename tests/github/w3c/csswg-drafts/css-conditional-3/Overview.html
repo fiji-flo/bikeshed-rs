@@ -309,7 +309,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   conditional processing.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -434,7 +434,7 @@ CSS rules.  These different rules allow testing different types of
 conditions, but share common behavior for how their contents are used
 when the condition is true and when the condition is false.</p>
    <div class="example" id="example-25d00670">
-    <a class="self-link" href="#example-25d00670"></a> For example, this rule: 
+    <a class="self-link" href="#example-25d00670"></a> For example, this rule:
 <pre class="highlight"><c- n>@media</c-> print <c- p>{</c->
   <c- c>/* hide navigation controls when printing */</c->
   <c- f>#navigation </c-><c- p>{</c-> <c- k>display</c-><c- p>:</c-> none <c- p>}</c->
@@ -455,7 +455,7 @@ group rule.</p>
 a rule inside of both of them applies only when all of the rules'
 conditions are true.</p>
    <div class="example" id="example-cbc86bba">
-    <a class="self-link" href="#example-cbc86bba"></a>For example, with this set of nested rules: 
+    <a class="self-link" href="#example-cbc86bba"></a>For example, with this set of nested rules:
 <pre class="highlight"><c- n>@media</c-> print <c- p>{</c-> <c- c>/* rule (1) */</c->
   <c- c>/* hide navigation controls when printing */</c->
   <c- f>#navigation </c-><c- p>{</c-> <c- k>display</c-><c- p>:</c-> none <c- p>}</c->
@@ -507,7 +507,7 @@ Its syntax is:</p>
 followed by a block containing arbitrary rules.
 The condition of the rule is the result of the media query.</p>
    <div class="example" id="example-0eba231f">
-    <a class="self-link" href="#example-0eba231f"></a> This <a class="css" data-link-type="maybe" href="#at-ruledef-media" id="ref-for-at-ruledef-media⑦">@media</a> rule: 
+    <a class="self-link" href="#example-0eba231f"></a> This <a class="css" data-link-type="maybe" href="#at-ruledef-media" id="ref-for-at-ruledef-media⑦">@media</a> rule:
 <pre class="highlight"><c- n>@media</c-> screen and <c- p>(</c->min-width<c- f>: 35em),</c->
 <c- f>       print and (min-width: 40em) </c-><c- p>{</c->
   #section_navigation { float: left; width: 10em; }
@@ -612,7 +612,7 @@ so that new syntax additions do not invalidate too much of a <a class="productio
    <p>The condition of the <a class="css" data-link-type="maybe" href="#at-ruledef-supports" id="ref-for-at-ruledef-supports⑧">@supports</a> rule
 is the result of the <a class="production css" data-link-type="type" href="#typedef-supports-condition" id="ref-for-typedef-supports-condition⑤">&lt;supports-condition></a> in its prelude.</p>
    <div class="example" id="example-85c2765a">
-    <a class="self-link" href="#example-85c2765a"></a> For example, the following rule 
+    <a class="self-link" href="#example-85c2765a"></a> For example, the following rule
 <pre class="highlight"><c- n>@supports</c-> <c- p>(</c-> display<c- f>: flex ) </c-><c- p>{</c->
   body<c- p>,</c-> #navigation<c- p>,</c-> #content { display: flex; }
   #navigation { background: blue; color: white; }
@@ -624,7 +624,7 @@ is the result of the <a class="production css" data-link-type="type" href="#type
    <div class="example" id="example-affdf0ec">
     <a class="self-link" href="#example-affdf0ec"></a> The following example shows an additional <a class="css" data-link-type="maybe" href="#at-ruledef-supports" id="ref-for-at-ruledef-supports①⓪">@supports</a> rule that can
 be used to provide an alternative for when <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display①">display: flex</a> is not
-supported: 
+supported:
 <pre class="highlight"><c- n>@supports</c-> not <c- p>(</c-> display<c- f>: flex ) </c-><c- p>{</c->
   body { width: 100%; height: 100%; background: white; color: black; }
   #navigation { width: 25%; }
@@ -639,7 +639,7 @@ the non-flex styles.</p>
     <a class="self-link" href="#example-eff3ddab"></a> The following example checks for support for the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-box-shadow" id="ref-for-propdef-box-shadow">box-shadow</a> property, including checking for support for vendor-prefixed versions of
 it.  When the support is present, it specifies both <span class="property" id="ref-for-propdef-box-shadow①">box-shadow</span> (with
 the prefixed versions) and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border" id="ref-for-propdef-border">border</a> in a way what would cause the box to
-become invisible were <span class="property" id="ref-for-propdef-box-shadow②">box-shadow</span> not supported. 
+become invisible were <span class="property" id="ref-for-propdef-box-shadow②">box-shadow</span> not supported.
 <pre class="highlight"><c- f>.noticebox </c-><c- p>{</c->
   <c- k>border</c-><c- p>:</c-> <c- m>1</c-><c- l>px</c-> solid black<c- p>;</c->
   <c- k>padding</c-><c- p>:</c-> <c- m>1</c-><c- l>px</c-><c- p>;</c->
@@ -666,7 +666,7 @@ using commas or spaces for one of them).  Likewise, to avoid confusion
 caused by precedence rules, the syntax does not allow <span class="css">and</span>, <span class="css">or</span>,
 and <span class="css">not</span> operators to be mixed without a layer of parentheses.</p>
    <div class="example" id="example-9f817e66">
-    <a class="self-link" href="#example-9f817e66"></a> For example, the following rule is not valid: 
+    <a class="self-link" href="#example-9f817e66"></a> For example, the following rule is not valid:
 <pre class="illegal highlight"><c- n>@supports</c-> <c- p>(</c->transition-property<c- f>: color) or</c->
 <c- f>          (animation-name: foo) and</c->
 <c- f>          (transform: rotate(10deg)) </c-><c- p>{</c->
@@ -690,7 +690,7 @@ and <span class="css">not</span> operators to be mixed without a layer of parent
    <p>The declaration being tested must always occur within parentheses,
 when it is the only thing in the expression.</p>
    <div class="example" id="example-c0c9f2d4">
-    <a class="self-link" href="#example-c0c9f2d4"></a> For example, the following rule is not valid: 
+    <a class="self-link" href="#example-c0c9f2d4"></a> For example, the following rule is not valid:
 <pre class="illegal highlight"><c- n>@supports</c-> display<c- f>: flex </c-><c- p>{</c->
   <c- c>/* ... */</c->
 <c- p>}</c->
@@ -706,7 +706,7 @@ flexibility is sometimes useful for authors (for example, when
 commenting out parts of an expression) and may also be useful for
 authoring tools.</p>
    <div class="example" id="example-1ef03172">
-    <a class="self-link" href="#example-1ef03172"></a> For example, authors may write: 
+    <a class="self-link" href="#example-1ef03172"></a> For example, authors may write:
 <pre class="highlight"><c- n>@supports</c-> <c- p>((</c->display<c- f>: flex)) </c-><c- p>{</c->
   <c- c>/* ... */</c->
 <c- p>}</c->
@@ -715,7 +715,7 @@ authoring tools.</p>
    <p>A trailing <span class="css">!important</span> on a declaration being tested is allowed,
 though it won’t change the validity of the declaration.</p>
    <div class="example" id="example-afd082e5">
-    <a class="self-link" href="#example-afd082e5"></a> For example, the following rule is valid: 
+    <a class="self-link" href="#example-afd082e5"></a> For example, the following rule is valid:
 <pre class="highlight"><c- n>@supports</c-> <c- p>(</c->display<c- f>: flex !important) </c-><c- p>{</c->
   <c- c>/* ... */</c->
 <c- p>}</c->
@@ -771,7 +771,7 @@ all the “conditional” at-rules,
 };
 </pre>
    <dl class="idl-attributes">
-    <dt><code class="highlight">conditionText</code> of type <code class="highlight">CSSOMString</code> 
+    <dt><code class="highlight">conditionText</code> of type <code class="highlight">CSSOMString</code>
     <dd>
       The <code class="highlight">conditionText</code> attribute represents
     the condition of the rule.
@@ -781,17 +781,17 @@ all the “conditional” at-rules,
     may specify different behavior for this attribute
     (see, for example, <code class="highlight">CSSMediaRule</code> below).
     In the absence of such rule-specific behavior,
-    the following rules apply: 
+    the following rules apply:
      <p>The <code class="highlight">conditionText</code> attribute, on getting, must return
     the result of serializing the associated condition.</p>
      <p>On setting the <code class="highlight">conditionText</code> attribute these steps
       must be run:</p>
      <ol>
-      <li>Trim the given value of white space. 
+      <li>Trim the given value of white space.
       <li>If the given value matches the grammar of the
         appropriate condition production for the given rule,
-        replace the associated CSS condition with the given value. 
-      <li>Otherwise, do nothing. 
+        replace the associated CSS condition with the given value.
+      <li>Otherwise, do nothing.
      </ol>
    </dl>
    <h3 class="heading settled" data-level="7.3" id="the-cssmediarule-interface"><span class="secno">7.3. </span><span class="content"> The <code class="highlight">CSSMediaRule</code> interface</span><a class="self-link" href="#the-cssmediarule-interface"></a></h3>
@@ -802,13 +802,13 @@ all the “conditional” at-rules,
 };
 </pre>
    <dl class="idl-attributes">
-    <dt><code class="highlight">media</code> of type <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#medialist" id="ref-for-medialist①">MediaList</a></code>, readonly 
+    <dt><code class="highlight">media</code> of type <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#medialist" id="ref-for-medialist①">MediaList</a></code>, readonly
     <dd>The <code class="highlight">media</code> attribute must return a <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#medialist" id="ref-for-medialist②">MediaList</a></code> object
-    for the list of media queries specified with the <a class="css" data-link-type="maybe" href="#at-ruledef-media" id="ref-for-at-ruledef-media⑨">@media</a> at-rule. 
-    <dt><code class="highlight">conditionText</code> of type <code class="highlight">CSSOMString</code> (CSSMediaRule-specific definition for attribute on CSSConditionRule) 
+    for the list of media queries specified with the <a class="css" data-link-type="maybe" href="#at-ruledef-media" id="ref-for-at-ruledef-media⑨">@media</a> at-rule.
+    <dt><code class="highlight">conditionText</code> of type <code class="highlight">CSSOMString</code> (CSSMediaRule-specific definition for attribute on CSSConditionRule)
     <dd>
      The <code class="highlight">conditionText</code> attribute (defined on the <code class="highlight">CSSConditionRule</code> parent rule),
-    on getting, must return the value of <code class="highlight">media.mediaText</code> on the rule. 
+    on getting, must return the value of <code class="highlight">media.mediaText</code> on the rule.
      <p>Setting the <code class="highlight">conditionText</code> attribute
       must set the <code class="highlight">media.mediaText</code> attribute on the rule.</p>
    </dl>
@@ -819,7 +819,7 @@ all the “conditional” at-rules,
 };
 </pre>
    <dl class="idl-attributes">
-    <dt><code class="highlight">conditionText</code> of type <code class="highlight">CSSOMString</code> (CSSSupportsRule-specific definition for attribute on CSSConditionRule) 
+    <dt><code class="highlight">conditionText</code> of type <code class="highlight">CSSOMString</code> (CSSSupportsRule-specific definition for attribute on CSSConditionRule)
     <dd>The <code class="highlight">conditionText</code> attribute (defined on the <code class="highlight">CSSConditionRule</code> parent rule),
     on getting, must return the condition that was specified,
     without any logical simplifications,
@@ -833,7 +833,7 @@ all the “conditional” at-rules,
     (such as reducing whitespace to a single space
     or omitting it in cases where it is known to be optional),
     but logical simplifications (such as removal of unneeded parentheses,
-    or simplification based on evaluating results) are not allowed. 
+    or simplification based on evaluating results) are not allowed.
    </dl>
    <h3 class="heading settled" data-level="7.5" id="the-css-namespace"><span class="secno">7.5. </span><span class="content"> <span id="the-css-interface">The <code class="highlight">CSS</code> namespace, and the <code class="highlight" title>supports()</code> function</span></span><a class="self-link" href="#the-css-namespace"></a></h3>
    <p>The <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#namespacedef-css" id="ref-for-namespacedef-css">CSS</a></code> namespace holds useful CSS-related functions that do not belong elsewhere.</p>
@@ -843,11 +843,11 @@ all the “conditional” at-rules,
 };
 </pre>
    <dl class="idl-methods">
-    <dt><code class="highlight">supports(CSSOMString property, CSSOMString value)</code>, returns <code class="highlight">boolean</code> 
-    <dt><code class="highlight">supports(CSSOMString conditionText)</code>, returns <code class="highlight">boolean</code> 
+    <dt><code class="highlight">supports(CSSOMString property, CSSOMString value)</code>, returns <code class="highlight">boolean</code>
+    <dt><code class="highlight">supports(CSSOMString conditionText)</code>, returns <code class="highlight">boolean</code>
     <dd>
       When the <code class="idl"><a data-link-type="idl" href="#dom-css-supports" id="ref-for-dom-css-supports">supports(property, value)</a></code> method is invoked
-		with two arguments <var>property</var> and <var>value</var>: 
+		with two arguments <var>property</var> and <var>value</var>:
      <div class="algorithm" data-algorithm="supports(property, value)">
       <ol>
        <li data-md>
@@ -866,7 +866,7 @@ return <code class="highlight">true</code>.</p>
       as " width" isn’t the name of any property due to the leading space.</p>
      </div>
      <p>When the <code class="idl"><a data-link-type="idl" href="#dom-css-supports-conditiontext" id="ref-for-dom-css-supports-conditiontext">supports(conditionText)</a></code> method is invoked</p>
-      with a single <var>conditionText</var> argument: 
+      with a single <var>conditionText</var> argument:
      <div class="algorithm" data-algorithm="supports(conditionText)">
       <ol>
        <li data-md>
@@ -906,13 +906,13 @@ is exposed on the Web.</p>
       for consistency with <a href="http://www.w3.org/TR/css3-mediaqueries/">Media Queries</a> (which are themselves constrained by compatibility with the output of some CSS minimizers
       that rely on some of the more arcane aspects of CSS tokenization).
       Note that white space--or a comment--is still required <em>after</em> these keywords,
-      since without it they and the ensuing opening parenthesis will be tokenized as a function opening token. 
+      since without it they and the ensuing opening parenthesis will be tokenized as a function opening token.
     <li>Allow the <code class="highlight" title>supports()</code> method
       to imply parentheses for simple declarations,
-      for consistency with the <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-cascade-4/#at-ruledef-import" id="ref-for-at-ruledef-import③">@import</a> rule’s <span class="css">supports()</span> function. 
-    <li>Fixed missing semicolons in IDL code. 
-    <li>Updated links, terminology, and example code in response to changes to other modules. 
-    <li>Added section on privacy and security considerations. 
+      for consistency with the <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-cascade-4/#at-ruledef-import" id="ref-for-at-ruledef-import③">@import</a> rule’s <span class="css">supports()</span> function.
+    <li>Fixed missing semicolons in IDL code.
+    <li>Updated links, terminology, and example code in response to changes to other modules.
+    <li>Added section on privacy and security considerations.
    </ul>
    <h2 class="no-num heading settled" id="acknowledgments"><span class="content">Acknowledgments</span><a class="self-link" href="#acknowledgments"></a></h2>
    <p>Thanks to the ideas and feedback from
@@ -951,7 +951,7 @@ and all the rest of the <a href="http://lists.w3.org/Archives/Public/www-style/"
 	or are set apart from the normative text with <code class="highlight">class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -964,14 +964,14 @@ and all the rest of the <a href="http://lists.w3.org/Archives/Public/www-style/"
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1022,7 +1022,7 @@ and all the rest of the <a href="http://lists.w3.org/Archives/Public/www-style/"
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1067,11 +1067,11 @@ and all the rest of the <a href="http://lists.w3.org/Archives/Public/www-style/"
    <a href="https://drafts.csswg.org/css-cascade-4/#at-ruledef-import">https://drafts.csswg.org/css-cascade-4/#at-ruledef-import</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-at-ruledef-import">1.1. Background</a>
-    <li><a href="#ref-for-at-ruledef-import①">3. 
+    <li><a href="#ref-for-at-ruledef-import①">3.
 Contents of conditional group rules</a>
-    <li><a href="#ref-for-at-ruledef-import②">4. 
+    <li><a href="#ref-for-at-ruledef-import②">4.
 Placement of conditional group rules</a>
-    <li><a href="#ref-for-at-ruledef-import③">8. 
+    <li><a href="#ref-for-at-ruledef-import③">8.
 Changes</a>
    </ul>
   </aside>
@@ -1090,9 +1090,9 @@ Changes</a>
   <aside class="dfn-panel" data-for="term-for-typedef-stylesheet">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-stylesheet">https://drafts.csswg.org/css-syntax-3/#typedef-stylesheet</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-stylesheet">3. 
+    <li><a href="#ref-for-typedef-stylesheet">3.
 Contents of conditional group rules</a> <a href="#ref-for-typedef-stylesheet①">(2)</a>
-    <li><a href="#ref-for-typedef-stylesheet②">5. 
+    <li><a href="#ref-for-typedef-stylesheet②">5.
 Media-specific style sheets:  the @media rule</a>
     <li><a href="#ref-for-typedef-stylesheet③">6. Feature queries: the @supports rule</a>
    </ul>
@@ -1100,7 +1100,7 @@ Media-specific style sheets:  the @media rule</a>
   <aside class="dfn-panel" data-for="term-for-at-ruledef-charset">
    <a href="https://drafts.csswg.org/css-syntax-3/#at-ruledef-charset">https://drafts.csswg.org/css-syntax-3/#at-ruledef-charset</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-at-ruledef-charset">4. 
+    <li><a href="#ref-for-at-ruledef-charset">4.
 Placement of conditional group rules</a>
    </ul>
   </aside>
@@ -1113,14 +1113,14 @@ Placement of conditional group rules</a>
   <aside class="dfn-panel" data-for="term-for-css-parse-something-according-to-a-css-grammar">
    <a href="https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar">https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-parse-something-according-to-a-css-grammar">7.5. 
+    <li><a href="#ref-for-css-parse-something-according-to-a-css-grammar">7.5.
 The CSS namespace, and the supports() function</a> <a href="#ref-for-css-parse-something-according-to-a-css-grammar①">(2)</a> <a href="#ref-for-css-parse-something-according-to-a-css-grammar②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-custom-property-name-string">
    <a href="https://drafts.css-houdini.org/css-typed-om-1/#custom-property-name-string">https://drafts.css-houdini.org/css-typed-om-1/#custom-property-name-string</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-custom-property-name-string">7.5. 
+    <li><a href="#ref-for-custom-property-name-string">7.5.
 The CSS namespace, and the supports() function</a>
    </ul>
   </aside>
@@ -1145,37 +1145,37 @@ The CSS namespace, and the supports() function</a>
   <aside class="dfn-panel" data-for="term-for-namespacedef-css">
    <a href="https://drafts.csswg.org/cssom-1/#namespacedef-css">https://drafts.csswg.org/cssom-1/#namespacedef-css</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-namespacedef-css">7.5. 
+    <li><a href="#ref-for-namespacedef-css">7.5.
 The CSS namespace, and the supports() function</a> <a href="#ref-for-namespacedef-css①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssomstring">
    <a href="https://drafts.csswg.org/cssom-1/#cssomstring">https://drafts.csswg.org/cssom-1/#cssomstring</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssomstring">7.2. 
+    <li><a href="#ref-for-cssomstring">7.2.
 The CSSConditionRule interface</a>
-    <li><a href="#ref-for-cssomstring①">7.5. 
+    <li><a href="#ref-for-cssomstring①">7.5.
 The CSS namespace, and the supports() function</a> <a href="#ref-for-cssomstring②">(2)</a> <a href="#ref-for-cssomstring③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssrule">
    <a href="https://drafts.csswg.org/cssom-1/#cssrule">https://drafts.csswg.org/cssom-1/#cssrule</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssrule">7.1. 
+    <li><a href="#ref-for-cssrule">7.1.
 Extensions to the CSSRule interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-medialist">
    <a href="https://drafts.csswg.org/cssom-1/#medialist">https://drafts.csswg.org/cssom-1/#medialist</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-medialist">7.3. 
+    <li><a href="#ref-for-medialist">7.3.
 The CSSMediaRule interface</a> <a href="#ref-for-medialist①">(2)</a> <a href="#ref-for-medialist②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dom-medialist-mediatext">
    <a href="https://drafts.csswg.org/cssom-1/#dom-medialist-mediatext">https://drafts.csswg.org/cssom-1/#dom-medialist-mediatext</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-medialist-mediatext">7.3. 
+    <li><a href="#ref-for-dom-medialist-mediatext">7.3.
 The CSSMediaRule interface</a>
    </ul>
   </aside>
@@ -1188,7 +1188,7 @@ The CSSMediaRule interface</a>
   <aside class="dfn-panel" data-for="term-for-ascii-case-insensitive">
    <a href="https://infra.spec.whatwg.org/#ascii-case-insensitive">https://infra.spec.whatwg.org/#ascii-case-insensitive</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ascii-case-insensitive">7.5. 
+    <li><a href="#ref-for-ascii-case-insensitive">7.5.
 The CSS namespace, and the supports() function</a>
    </ul>
   </aside>
@@ -1196,7 +1196,7 @@ The CSS namespace, and the supports() function</a>
    <a href="https://drafts.csswg.org/mediaqueries-4/#typedef-general-enclosed">https://drafts.csswg.org/mediaqueries-4/#typedef-general-enclosed</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-typedef-general-enclosed">6. Feature queries: the @supports rule</a> <a href="#ref-for-typedef-general-enclosed①">(2)</a> <a href="#ref-for-typedef-general-enclosed②">(3)</a> <a href="#ref-for-typedef-general-enclosed③">(4)</a> <a href="#ref-for-typedef-general-enclosed④">(5)</a>
-    <li><a href="#ref-for-typedef-general-enclosed⑤">7.4. 
+    <li><a href="#ref-for-typedef-general-enclosed⑤">7.4.
 The CSSSupportsRule interface</a>
    </ul>
   </aside>
@@ -1209,53 +1209,53 @@ The CSSSupportsRule interface</a>
   <aside class="dfn-panel" data-for="term-for-typedef-media-query-list">
    <a href="https://drafts.csswg.org/mediaqueries-4/#typedef-media-query-list">https://drafts.csswg.org/mediaqueries-4/#typedef-media-query-list</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-query-list">5. 
+    <li><a href="#ref-for-typedef-media-query-list">5.
 Media-specific style sheets:  the @media rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-media-not">
    <a href="https://drafts.csswg.org/mediaqueries-4/#valdef-media-not">https://drafts.csswg.org/mediaqueries-4/#valdef-media-not</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-not">8. 
+    <li><a href="#ref-for-valdef-media-not">8.
 Changes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-Exposed">
    <a href="https://heycam.github.io/webidl/#Exposed">https://heycam.github.io/webidl/#Exposed</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-Exposed">7.2. 
+    <li><a href="#ref-for-Exposed">7.2.
 The CSSConditionRule interface</a>
-    <li><a href="#ref-for-Exposed①">7.3. 
+    <li><a href="#ref-for-Exposed①">7.3.
 The CSSMediaRule interface</a>
-    <li><a href="#ref-for-Exposed②">7.4. 
+    <li><a href="#ref-for-Exposed②">7.4.
 The CSSSupportsRule interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-PutForwards">
    <a href="https://heycam.github.io/webidl/#PutForwards">https://heycam.github.io/webidl/#PutForwards</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-PutForwards">7.3. 
+    <li><a href="#ref-for-PutForwards">7.3.
 The CSSMediaRule interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-SameObject">
    <a href="https://heycam.github.io/webidl/#SameObject">https://heycam.github.io/webidl/#SameObject</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-SameObject">7.3. 
+    <li><a href="#ref-for-SameObject">7.3.
 The CSSMediaRule interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-boolean">
    <a href="https://heycam.github.io/webidl/#idl-boolean">https://heycam.github.io/webidl/#idl-boolean</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-boolean">7.5. 
+    <li><a href="#ref-for-idl-boolean">7.5.
 The CSS namespace, and the supports() function</a> <a href="#ref-for-idl-boolean①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-unsigned-short">
    <a href="https://heycam.github.io/webidl/#idl-unsigned-short">https://heycam.github.io/webidl/#idl-unsigned-short</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-unsigned-short">7.1. 
+    <li><a href="#ref-for-idl-unsigned-short">7.1.
 Extensions to the CSSRule interface</a>
    </ul>
   </aside>
@@ -1415,9 +1415,9 @@ Extensions to the CSSRule interface</a>
    <ul>
     <li><a href="#ref-for-at-ruledef-media①">1.1. Background</a> <a href="#ref-for-at-ruledef-media②">(2)</a> <a href="#ref-for-at-ruledef-media③">(3)</a>
     <li><a href="#ref-for-at-ruledef-media④">1.2. Module Interactions</a>
-    <li><a href="#ref-for-at-ruledef-media⑤">5. 
+    <li><a href="#ref-for-at-ruledef-media⑤">5.
 Media-specific style sheets:  the @media rule</a> <a href="#ref-for-at-ruledef-media⑥">(2)</a> <a href="#ref-for-at-ruledef-media⑦">(3)</a>
-    <li><a href="#ref-for-at-ruledef-media⑧">7.3. 
+    <li><a href="#ref-for-at-ruledef-media⑧">7.3.
 The CSSMediaRule interface</a> <a href="#ref-for-at-ruledef-media⑨">(2)</a>
     <li><a href="#ref-for-at-ruledef-media①⓪">Privacy and Security Considerations</a>
    </ul>
@@ -1428,7 +1428,7 @@ The CSSMediaRule interface</a> <a href="#ref-for-at-ruledef-media⑨">(2)</a>
     <li><a href="#ref-for-at-ruledef-supports①">1.1. Background</a> <a href="#ref-for-at-ruledef-supports②">(2)</a>
     <li><a href="#ref-for-at-ruledef-supports③">6. Feature queries: the @supports rule</a> <a href="#ref-for-at-ruledef-supports④">(2)</a> <a href="#ref-for-at-ruledef-supports⑤">(3)</a> <a href="#ref-for-at-ruledef-supports⑥">(4)</a> <a href="#ref-for-at-ruledef-supports⑦">(5)</a> <a href="#ref-for-at-ruledef-supports⑧">(6)</a> <a href="#ref-for-at-ruledef-supports⑨">(7)</a> <a href="#ref-for-at-ruledef-supports①⓪">(8)</a>
     <li><a href="#ref-for-at-ruledef-supports①①">6.1. Definition of support</a> <a href="#ref-for-at-ruledef-supports①②">(2)</a>
-    <li><a href="#ref-for-at-ruledef-supports①③">7.4. 
+    <li><a href="#ref-for-at-ruledef-supports①③">7.4.
 The CSSSupportsRule interface</a>
     <li><a href="#ref-for-at-ruledef-supports①④">Privacy and Security Considerations</a> <a href="#ref-for-at-ruledef-supports①⑤">(2)</a>
    </ul>
@@ -1437,7 +1437,7 @@ The CSSSupportsRule interface</a>
    <b><a href="#typedef-supports-condition">#typedef-supports-condition</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-typedef-supports-condition">6. Feature queries: the @supports rule</a> <a href="#ref-for-typedef-supports-condition①">(2)</a> <a href="#ref-for-typedef-supports-condition②">(3)</a> <a href="#ref-for-typedef-supports-condition③">(4)</a> <a href="#ref-for-typedef-supports-condition④">(5)</a> <a href="#ref-for-typedef-supports-condition⑤">(6)</a>
-    <li><a href="#ref-for-typedef-supports-condition⑥">7.5. 
+    <li><a href="#ref-for-typedef-supports-condition⑥">7.5.
 The CSS namespace, and the supports() function</a> <a href="#ref-for-typedef-supports-condition⑦">(2)</a>
    </ul>
   </aside>
@@ -1468,96 +1468,104 @@ The CSS namespace, and the supports() function</a> <a href="#ref-for-typedef-sup
   <aside class="dfn-panel" data-for="cssconditionrule">
    <b><a href="#cssconditionrule">#cssconditionrule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssconditionrule">7.2. 
+    <li><a href="#ref-for-cssconditionrule">7.2.
 The CSSConditionRule interface</a>
-    <li><a href="#ref-for-cssconditionrule①">7.3. 
+    <li><a href="#ref-for-cssconditionrule①">7.3.
 The CSSMediaRule interface</a>
-    <li><a href="#ref-for-cssconditionrule②">7.4. 
+    <li><a href="#ref-for-cssconditionrule②">7.4.
 The CSSSupportsRule interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="cssmediarule">
    <b><a href="#cssmediarule">#cssmediarule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssmediarule">7.3. 
+    <li><a href="#ref-for-cssmediarule">7.3.
 The CSSMediaRule interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="csssupportsrule">
    <b><a href="#csssupportsrule">#csssupportsrule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-csssupportsrule">7.4. 
+    <li><a href="#ref-for-csssupportsrule">7.4.
 The CSSSupportsRule interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-css-supports">
    <b><a href="#dom-css-supports">#dom-css-supports</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-css-supports">7.5. 
+    <li><a href="#ref-for-dom-css-supports">7.5.
 The CSS namespace, and the supports() function</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-css-supports-conditiontext">
    <b><a href="#dom-css-supports-conditiontext">#dom-css-supports-conditiontext</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-css-supports-conditiontext">7.5. 
+    <li><a href="#ref-for-dom-css-supports-conditiontext">7.5.
 The CSS namespace, and the supports() function</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

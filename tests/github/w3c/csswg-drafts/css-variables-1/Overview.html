@@ -296,7 +296,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This module introduces cascading variables as a new primitive value type that is accepted by all CSS properties, and custom properties for defining them.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -413,28 +413,28 @@ on screen, on paper, etc.
       <td><dfn class="css" data-dfn-type="property" data-export id="propdef-">--*<a class="self-link" href="#propdef-"></a></dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-syntax-3/#typedef-declaration-value" id="ref-for-typedef-declaration-value">&lt;declaration-value></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt">?</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-syntax-3/#typedef-declaration-value" id="ref-for-typedef-declaration-value">&lt;declaration-value></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt">?</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>the <a data-link-type="dfn" href="#guaranteed-invalid-value" id="ref-for-guaranteed-invalid-value">guaranteed-invalid value</a> 
+      <td>the <a data-link-type="dfn" href="#guaranteed-invalid-value" id="ref-for-guaranteed-invalid-value">guaranteed-invalid value</a>
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified value with variables substituted, or the <a data-link-type="dfn" href="#guaranteed-invalid-value" id="ref-for-guaranteed-invalid-value①">guaranteed-invalid value</a> 
+      <td>specified value with variables substituted, or the <a data-link-type="dfn" href="#guaranteed-invalid-value" id="ref-for-guaranteed-invalid-value①">guaranteed-invalid value</a>
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
-      <td>no 
+      <td>no
    </table>
    <p class="all-media">User Agents are expected to support this property on all media, including non-visual ones.</p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="custom-property">custom property</dfn> is any property
@@ -451,7 +451,7 @@ on screen, on paper, etc.
 		which can be used for many purposes.
 		For example, a page that consistently uses a small set of colors in its design
 		can store the colors in custom properties
-		and use them with variables: 
+		and use them with variables:
 <pre class="highlight"><c- f>:root </c-><c- p>{</c->
   <c- k>--main-color</c-><c- p>:</c-> #06c<c- p>;</c->
   <c- k>--accent-color</c-><c- p>:</c-> #006<c- p>;</c->
@@ -498,7 +498,7 @@ on screen, on paper, etc.
 	becomes <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="animation-tainted">animation-tainted</dfn>,
 	which affects how it is treated when referred to via the <a class="css" data-link-type="maybe" href="#funcdef-var" id="ref-for-funcdef-var④">var()</a> function in an animation property.</p>
    <div class="example" id="example-d6247b0f">
-    <a class="self-link" href="#example-d6247b0f"></a> This style rule: 
+    <a class="self-link" href="#example-d6247b0f"></a> This style rule:
 <pre class="highlight"><c- f>:root </c-><c- p>{</c->
   <c- k>--header-color</c-><c- p>:</c-> #06c<c- p>;</c->
 <c- p>}</c->
@@ -518,7 +518,7 @@ on screen, on paper, etc.
    <div class="example" id="example-c3e4e8d9">
     <a class="self-link" href="#example-c3e4e8d9"></a> If a <a data-link-type="dfn" href="#custom-property" id="ref-for-custom-property⑦">custom property</a> is declared multiple times,
 		the standard cascade rules help resolve it.
-		Variables always draw from the computed value of the associated custom property on the same element: 
+		Variables always draw from the computed value of the associated custom property on the same element:
 <pre class="highlight"><c- f>:root </c-><c- p>{</c-> <c- k>--color</c-><c- p>:</c-> blue<c- p>;</c-> <c- p>}</c->
 <c- f>div </c-><c- p>{</c-> <c- k>--color</c-><c- p>:</c-> green<c- p>;</c-> <c- p>}</c->
 <c- f>#alert </c-><c- p>{</c-> <c- k>--color</c-><c- p>:</c-> red<c- p>;</c-> <c- p>}</c->
@@ -535,7 +535,7 @@ on screen, on paper, etc.
    <div class="example" id="example-658ebee9">
     <a class="self-link" href="#example-658ebee9"></a> A real-world example of <a data-link-type="dfn" href="#custom-property" id="ref-for-custom-property⑧">custom property</a> usage
 		is easily separating out strings from where they’re used,
-		to aid in maintenance of internationalization: 
+		to aid in maintenance of internationalization:
 <pre class="lang-css highlight"><c- f>:root,</c->
 <c- f>:root:lang(en) </c-><c- p>{</c-><c- k>--external-link</c-><c- p>:</c-> <c- s>"external link"</c-><c- p>;}</c->
 <c- f>:root:lang(de) </c-><c- p>{</c-><c- k>--external-link</c-><c- p>:</c-> <c- s>"externer Link"</c-><c- p>;}</c->
@@ -567,7 +567,7 @@ on screen, on paper, etc.
 	does not prevent <span class="css">!important</span> from being used,
 	as the <span class="css">!important</span> is removed before syntax checking happens.</p>
    <div class="example" id="example-fb41560d">
-    <a class="self-link" href="#example-fb41560d"></a> For example, the following is a valid custom property: 
+    <a class="self-link" href="#example-fb41560d"></a> For example, the following is a valid custom property:
 <pre class="highlight">--foo: if(x > 5) this.width = 10;
 </pre>
     <p>While this value is obviously useless as a <em>variable</em>,
@@ -616,7 +616,7 @@ on screen, on paper, etc.
 	(like <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size" id="ref-for-propdef-font-size">font-size</a> using <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#em" id="ref-for-em">em</a> values).
 	They do not computed to the <a data-link-type="dfn" href="#guaranteed-invalid-value" id="ref-for-guaranteed-invalid-value⑤">guaranteed-invalid value</a> like custom properties do.</p>
    <div class="example" id="example-75bf73fb">
-    <a class="self-link" href="#example-75bf73fb"></a> This example shows a custom property safely using a variable: 
+    <a class="self-link" href="#example-75bf73fb"></a> This example shows a custom property safely using a variable:
 <pre class="highlight"><c- f>:root </c-><c- p>{</c->
   <c- k>--main-color</c-><c- p>:</c-> #c06<c- p>;</c->
   <c- k>--accent-background</c-><c- p>:</c-> <c- nf>linear-gradient</c-><c- p>(</c->to top<c- p>,</c-> <c- nf>var</c-><c- p>(</c->--main-color<c- p>),</c-> white<c- p>);</c->
@@ -628,7 +628,7 @@ on screen, on paper, etc.
    </div>
    <div class="example invalid-example" id="example-606d24c9">
     <a class="self-link" href="#example-606d24c9"></a> On the other hand,
-		this example shows an invalid instance of variables depending on each other: 
+		this example shows an invalid instance of variables depending on each other:
 <pre class="highlight"><c- f>:root </c-><c- p>{</c->
   <c- k>--one</c-><c- p>:</c-> <c- nf>calc</c-><c- p>(</c-><c- nf>var</c-><c- p>(</c->--two<c- p>)</c-> + 20px);
   --two: calc(var(--one) - 20px);
@@ -646,7 +646,7 @@ on screen, on paper, etc.
     <a class="self-link" href="#example-beef67cd"></a> For example,
 		given the following structure,
 		these custom properties are <strong>not</strong> cyclic,
-		and all define valid variables: 
+		and all define valid variables:
 <pre class="highlight"><c- p>&lt;</c-><c- f>one</c-><c- p>>&lt;</c-><c- f>two</c-><c- p>>&lt;</c-><c- f>three</c-> <c- p>/>&lt;/</c-><c- f>two</c-><c- p>>&lt;/</c-><c- f>one</c-><c- p>></c->
 <c- p>&lt;</c-><c- f>style</c-><c- p>></c->
 <c- f>one</c->   <c- p>{</c-> --<c- n>foo</c-><c- p>:</c-> <c- mi>10</c-><c- b>px</c-><c- p>;</c-> <c- p>}</c->
@@ -681,7 +681,7 @@ on screen, on paper, etc.
 	(Doing so usually produces invalid syntax,
 	or else a value whose meaning has no connection to the variable.)</p>
    <div class="example" id="example-43a8c543">
-    <a class="self-link" href="#example-43a8c543"></a> For example, the following code incorrectly attempts to use a variable as a property name: 
+    <a class="self-link" href="#example-43a8c543"></a> For example, the following code incorrectly attempts to use a variable as a property name:
 <pre class="highlight"><c- f>.foo </c-><c- p>{</c->
   <c- k>--side</c-><c- p>:</c-> margin-top<c- p>;</c->
   <c- nf>var</c-><c- p>(</c->--side<c- p>)</c->: 20px;
@@ -705,7 +705,7 @@ on screen, on paper, etc.
 		intended to be included in a larger application,
 		and use variables to style it
 		so that it’s easy for the author of the larger application
-		to theme the component to match the rest of the app. 
+		to theme the component to match the rest of the app.
     <p>Without fallback,
 		the app author must supply a value for every variable that your component uses.
 		With fallback, the component author can supply defaults,
@@ -736,7 +736,7 @@ on screen, on paper, etc.
    <ol>
     <li>
       If the <a data-link-type="dfn" href="#custom-property" id="ref-for-custom-property②④">custom property</a> named by the first argument to the <a class="css" data-link-type="maybe" href="#funcdef-var" id="ref-for-funcdef-var②③">var()</a> function is <a data-link-type="dfn" href="#animation-tainted" id="ref-for-animation-tainted">animation-tainted</a>,
-			and the <span class="css" id="ref-for-funcdef-var②④">var()</span> function is being used in: 
+			and the <span class="css" id="ref-for-funcdef-var②④">var()</span> function is being used in:
      <ul>
       <li data-md>
        <p>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-animations-1/#propdef-animation" id="ref-for-propdef-animation">animation</a> property or one of its longhands,</p>
@@ -746,19 +746,19 @@ on screen, on paper, etc.
      <p>treat the <a data-link-type="dfn" href="#custom-property" id="ref-for-custom-property②⑤">custom property</a> as having its initial value for the rest of this algorithm.</p>
     <li> If the value of the <a data-link-type="dfn" href="#custom-property" id="ref-for-custom-property②⑥">custom property</a> named by the first argument to the <a class="css" data-link-type="maybe" href="#funcdef-var" id="ref-for-funcdef-var②⑤">var()</a> function
 			is anything but the initial value,
-			replace the <span class="css" id="ref-for-funcdef-var②⑥">var()</span> function by the value of the corresponding <span id="ref-for-custom-property②⑦">custom property</span>. 
+			replace the <span class="css" id="ref-for-funcdef-var②⑥">var()</span> function by the value of the corresponding <span id="ref-for-custom-property②⑦">custom property</span>.
     <li> Otherwise, if the <a class="css" data-link-type="maybe" href="#funcdef-var" id="ref-for-funcdef-var②⑦">var()</a> function has a fallback value as its second argument,
 			replace the <span class="css" id="ref-for-funcdef-var②⑧">var()</span> function by the fallback value.
-			If there are any <span class="css" id="ref-for-funcdef-var②⑨">var()</span> references in the fallback, <a data-link-type="dfn" href="#substitute-a-var" id="ref-for-substitute-a-var②">substitute</a> them as well. 
+			If there are any <span class="css" id="ref-for-funcdef-var②⑨">var()</span> references in the fallback, <a data-link-type="dfn" href="#substitute-a-var" id="ref-for-substitute-a-var②">substitute</a> them as well.
     <li>
       Otherwise,
-			the property containing the <a class="css" data-link-type="maybe" href="#funcdef-var" id="ref-for-funcdef-var③⓪">var()</a> function is <a data-link-type="dfn" href="#invalid-at-computed-value-time" id="ref-for-invalid-at-computed-value-time②">invalid at computed-value time</a>. 
+			the property containing the <a class="css" data-link-type="maybe" href="#funcdef-var" id="ref-for-funcdef-var③⓪">var()</a> function is <a data-link-type="dfn" href="#invalid-at-computed-value-time" id="ref-for-invalid-at-computed-value-time②">invalid at computed-value time</a>.
      <p class="note" role="note"><span>Note:</span> Other things can also make a property <a data-link-type="dfn" href="#invalid-at-computed-value-time" id="ref-for-invalid-at-computed-value-time③">invalid at computed-value time</a>.</p>
    </ol>
    <div class="note" role="note">
      Note that <a data-link-type="dfn" href="#substitute-a-var" id="ref-for-substitute-a-var③">var() substitution</a> takes place at the level of CSS tokens <a data-link-type="biblio" href="#biblio-css-syntax-3">[css-syntax-3]</a>,
 		not at a textual level;
-		you can’t build up a single token where part of it is provided by a variable: 
+		you can’t build up a single token where part of it is provided by a variable:
 <pre class="highlight"><c- f>.foo </c-><c- p>{</c->
   <c- k>--gap</c-><c- p>:</c-> <c- m>20</c-><c- p>;</c->
   <c- k>margin-top</c-><c- p>:</c-> <c- nf>var</c-><c- p>(</c->--gap<c- p>)</c->px<c- p>;</c->
@@ -782,7 +782,7 @@ on screen, on paper, etc.
    <div class="example" id="example-6ec8308f">
     <a class="self-link" href="#example-6ec8308f"></a> For example,
 		the following usage is fine from a syntax standpoint,
-		but results in nonsense when the variable is substituted in: 
+		but results in nonsense when the variable is substituted in:
 <pre class="highlight"><c- f>:root </c-><c- p>{</c-> <c- k>--looks-valid</c-><c- p>:</c-> <c- m>20</c-><c- l>px</c-><c- p>;</c-> <c- p>}</c->
 <c- f>p </c-><c- p>{</c-> <c- k>background-color</c-><c- p>:</c-> <c- nf>var</c-><c- p>(</c->--looks-valid<c- p>);</c-> <c- p>}</c->
 </pre>
@@ -812,7 +812,7 @@ on screen, on paper, etc.
 	depending on whether the property is inherited or not, respectively,
 	as if the property’s value had been specified as the <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-cascade-4/#valdef-all-unset" id="ref-for-valdef-all-unset">unset</a> keyword.</p>
    <div class="example" id="example-53e4f9d5">
-    <a class="self-link" href="#example-53e4f9d5"></a> For example, in the following code: 
+    <a class="self-link" href="#example-53e4f9d5"></a> For example, in the following code:
 <pre class="highlight"><c- f>:root </c-><c- p>{</c-> <c- k>--not-a-color</c-><c- p>:</c-> <c- m>20</c-><c- l>px</c-><c- p>;</c-> <c- p>}</c->
 <c- f>p </c-><c- p>{</c-> <c- k>background-color</c-><c- p>:</c-> red<c- p>;</c-> <c- p>}</c->
 <c- f>p </c-><c- p>{</c-> <c- k>background-color</c-><c- p>:</c-> <c- nf>var</c-><c- p>(</c->--not-a-color<c- p>);</c-> <c- p>}</c->
@@ -861,7 +861,7 @@ on screen, on paper, etc.
    <h3 class="heading settled" data-level="3.3" id="long-variables"><span class="secno">3.3. </span><span class="content"> Safely Handling Overly-Long Variables</span><a class="self-link" href="#long-variables"></a></h3>
    <p>Naively implemented, <a class="css" data-link-type="maybe" href="#funcdef-var" id="ref-for-funcdef-var④③">var()</a> functions can be used in a variation of the "billion laughs attack":</p>
    <div class="example" id="example-9c9258de">
-    <a class="self-link" href="#example-9c9258de"></a> 
+    <a class="self-link" href="#example-9c9258de"></a>
 <pre class="highlight" lang="css"><c- f>.foo </c-><c- p>{</c->
   <c- k>--prop1</c-><c- p>:</c-> lol<c- p>;</c->
   <c- k>--prop2</c-><c- p>:</c-> <c- nf>var</c-><c- p>(</c->--prop1<c- p>)</c-> <c- nf>var</c-><c- p>(</c->--prop1<c- p>);</c->
@@ -957,7 +957,7 @@ and mandates a defense against that attack.</p>
 	or are set apart from the normative text with <code class="highlight">class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -970,14 +970,14 @@ and mandates a defense against that attack.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1028,7 +1028,7 @@ and mandates a defense against that attack.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1049,273 +1049,273 @@ and mandates a defense against that attack.</p>
   <aside class="dfn-panel" data-for="term-for-at-ruledef-keyframes">
    <a href="https://drafts.csswg.org/css-animations-1/#at-ruledef-keyframes">https://drafts.csswg.org/css-animations-1/#at-ruledef-keyframes</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-at-ruledef-keyframes">2. 
+    <li><a href="#ref-for-at-ruledef-keyframes">2.
 Defining Custom Properties: the --* family of properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-animation">
    <a href="https://drafts.csswg.org/css-animations-1/#propdef-animation">https://drafts.csswg.org/css-animations-1/#propdef-animation</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-animation">3. 
+    <li><a href="#ref-for-propdef-animation">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-background-color">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-color">https://drafts.csswg.org/css-backgrounds-3/#propdef-background-color</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-background-color">2. 
+    <li><a href="#ref-for-propdef-background-color">2.
 Defining Custom Properties: the --* family of properties</a>
-    <li><a href="#ref-for-propdef-background-color①">3. 
+    <li><a href="#ref-for-propdef-background-color①">3.
 Using Cascading Variables: the var() notation</a> <a href="#ref-for-propdef-background-color②">(2)</a>
-    <li><a href="#ref-for-propdef-background-color③">3.1. 
+    <li><a href="#ref-for-propdef-background-color③">3.1.
 Invalid Variables</a> <a href="#ref-for-propdef-background-color④">(2)</a> <a href="#ref-for-propdef-background-color⑤">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-margin-top">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-margin-top">https://drafts.csswg.org/css-box-3/#propdef-margin-top</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-margin-top">3. 
+    <li><a href="#ref-for-propdef-margin-top">3.
 Using Cascading Variables: the var() notation</a> <a href="#ref-for-propdef-margin-top①">(2)</a> <a href="#ref-for-propdef-margin-top②">(3)</a> <a href="#ref-for-propdef-margin-top③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-all">
    <a href="https://drafts.csswg.org/css-cascade-4/#propdef-all">https://drafts.csswg.org/css-cascade-4/#propdef-all</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-all">2. 
+    <li><a href="#ref-for-propdef-all">2.
 Defining Custom Properties: the --* family of properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cascade">
    <a href="https://drafts.csswg.org/css-cascade-4/#cascade">https://drafts.csswg.org/css-cascade-4/#cascade</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cascade">3.2. 
+    <li><a href="#ref-for-cascade">3.2.
 Variables in Shorthand Properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-all-initial">
    <a href="https://drafts.csswg.org/css-cascade-4/#valdef-all-initial">https://drafts.csswg.org/css-cascade-4/#valdef-all-initial</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-all-initial">2.2. 
+    <li><a href="#ref-for-valdef-all-initial">2.2.
 Guaranteed-Invalid Values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-longhand">
    <a href="https://drafts.csswg.org/css-cascade-4/#longhand">https://drafts.csswg.org/css-cascade-4/#longhand</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-longhand">3.2. 
+    <li><a href="#ref-for-longhand">3.2.
 Variables in Shorthand Properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-shorthand-property">
    <a href="https://drafts.csswg.org/css-cascade-4/#shorthand-property">https://drafts.csswg.org/css-cascade-4/#shorthand-property</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-shorthand-property">3.2. 
+    <li><a href="#ref-for-shorthand-property">3.2.
 Variables in Shorthand Properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-all-unset">
    <a href="https://drafts.csswg.org/css-cascade-4/#valdef-all-unset">https://drafts.csswg.org/css-cascade-4/#valdef-all-unset</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-all-unset">3.1. 
+    <li><a href="#ref-for-valdef-all-unset">3.1.
 Invalid Variables</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-color">
    <a href="https://drafts.csswg.org/css-color-4/#propdef-color">https://drafts.csswg.org/css-color-4/#propdef-color</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-color">3. 
+    <li><a href="#ref-for-propdef-color">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-color-transparent">
    <a href="https://drafts.csswg.org/css-color-4/#valdef-color-transparent">https://drafts.csswg.org/css-color-4/#valdef-color-transparent</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-color-transparent">3. 
+    <li><a href="#ref-for-valdef-color-transparent">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-at-ruledef-media">
    <a href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media">https://drafts.csswg.org/css-conditional-3/#at-ruledef-media</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-at-ruledef-media">2. 
+    <li><a href="#ref-for-at-ruledef-media">2.
 Defining Custom Properties: the --* family of properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-contents">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-contents">https://drafts.csswg.org/css-display-3/#valdef-display-contents</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-contents">3. 
+    <li><a href="#ref-for-valdef-display-contents">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-display">
    <a href="https://drafts.csswg.org/css-display-3/#propdef-display">https://drafts.csswg.org/css-display-3/#propdef-display</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-display">3. 
+    <li><a href="#ref-for-propdef-display">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-none">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-none">https://drafts.csswg.org/css-display-3/#valdef-display-none</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-none">3. 
+    <li><a href="#ref-for-valdef-display-none">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-font-size">
    <a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size">https://drafts.csswg.org/css-fonts-3/#propdef-font-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-font-size">2.3. 
+    <li><a href="#ref-for-propdef-font-size">2.3.
 Resolving Dependency Cycles</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-tokendef-close-paren">
    <a href="https://drafts.csswg.org/css-syntax-3/#tokendef-close-paren">https://drafts.csswg.org/css-syntax-3/#tokendef-close-paren</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-tokendef-close-paren">2.1. 
+    <li><a href="#ref-for-tokendef-close-paren">2.1.
 Custom Property Value Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-tokendef-close-square">
    <a href="https://drafts.csswg.org/css-syntax-3/#tokendef-close-square">https://drafts.csswg.org/css-syntax-3/#tokendef-close-square</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-tokendef-close-square">2.1. 
+    <li><a href="#ref-for-tokendef-close-square">2.1.
 Custom Property Value Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-bad-string-token">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-bad-string-token">https://drafts.csswg.org/css-syntax-3/#typedef-bad-string-token</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-bad-string-token">2.1. 
+    <li><a href="#ref-for-typedef-bad-string-token">2.1.
 Custom Property Value Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-bad-url-token">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-bad-url-token">https://drafts.csswg.org/css-syntax-3/#typedef-bad-url-token</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-bad-url-token">2.1. 
+    <li><a href="#ref-for-typedef-bad-url-token">2.1.
 Custom Property Value Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-declaration-value">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-declaration-value">https://drafts.csswg.org/css-syntax-3/#typedef-declaration-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-declaration-value">2. 
+    <li><a href="#ref-for-typedef-declaration-value">2.
 Defining Custom Properties: the --* family of properties</a>
-    <li><a href="#ref-for-typedef-declaration-value①">2.1. 
+    <li><a href="#ref-for-typedef-declaration-value①">2.1.
 Custom Property Value Syntax</a>
-    <li><a href="#ref-for-typedef-declaration-value②">3. 
+    <li><a href="#ref-for-typedef-declaration-value②">3.
 Using Cascading Variables: the var() notation</a>
-    <li><a href="#ref-for-typedef-declaration-value③">5.1. 
+    <li><a href="#ref-for-typedef-declaration-value③">5.1.
 Changes Since the 03 December 2015 CR</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-delim-token">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-delim-token">https://drafts.csswg.org/css-syntax-3/#typedef-delim-token</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-delim-token">2.1. 
+    <li><a href="#ref-for-typedef-delim-token">2.1.
 Custom Property Value Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-semicolon-token">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-semicolon-token">https://drafts.csswg.org/css-syntax-3/#typedef-semicolon-token</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-semicolon-token">2.1. 
+    <li><a href="#ref-for-typedef-semicolon-token">2.1.
 Custom Property Value Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-tokendef-close-curly">
    <a href="https://drafts.csswg.org/css-syntax-3/#tokendef-close-curly">https://drafts.csswg.org/css-syntax-3/#tokendef-close-curly</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-tokendef-close-curly">2.1. 
+    <li><a href="#ref-for-tokendef-close-curly">2.1.
 Custom Property Value Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-identifier">
    <a href="https://drafts.csswg.org/css-syntax-3/#identifier">https://drafts.csswg.org/css-syntax-3/#identifier</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-identifier">2. 
+    <li><a href="#ref-for-identifier">2.
 Defining Custom Properties: the --* family of properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-comma">
    <a href="https://drafts.csswg.org/css-values-4/#comb-comma">https://drafts.csswg.org/css-values-4/#comb-comma</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-comma">3. 
+    <li><a href="#ref-for-comb-comma">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-opt">
    <a href="https://drafts.csswg.org/css-values-4/#mult-opt">https://drafts.csswg.org/css-values-4/#mult-opt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-opt">2. 
+    <li><a href="#ref-for-mult-opt">2.
 Defining Custom Properties: the --* family of properties</a>
-    <li><a href="#ref-for-mult-opt①">3. 
+    <li><a href="#ref-for-mult-opt①">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-funcdef-calc">
    <a href="https://drafts.csswg.org/css-values-4/#funcdef-calc">https://drafts.csswg.org/css-values-4/#funcdef-calc</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-calc">3. 
+    <li><a href="#ref-for-funcdef-calc">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-wide-keywords">
    <a href="https://drafts.csswg.org/css-values-4/#css-wide-keywords">https://drafts.csswg.org/css-values-4/#css-wide-keywords</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-wide-keywords">2. 
+    <li><a href="#ref-for-css-wide-keywords">2.
 Defining Custom Properties: the --* family of properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-em">
    <a href="https://drafts.csswg.org/css-values-4/#em">https://drafts.csswg.org/css-values-4/#em</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-em">2.3. 
+    <li><a href="#ref-for-em">2.3.
 Resolving Dependency Cycles</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-declaration-case-sensitive-flag">
    <a href="https://drafts.csswg.org/cssom-1/#css-declaration-case-sensitive-flag">https://drafts.csswg.org/cssom-1/#css-declaration-case-sensitive-flag</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-declaration-case-sensitive-flag">4. 
+    <li><a href="#ref-for-css-declaration-case-sensitive-flag">4.
 APIs</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssstyledeclaration-declarations">
    <a href="https://drafts.csswg.org/cssom-1/#cssstyledeclaration-declarations">https://drafts.csswg.org/cssom-1/#cssstyledeclaration-declarations</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssstyledeclaration-declarations">4. 
+    <li><a href="#ref-for-cssstyledeclaration-declarations">4.
 APIs</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dom-cssstyledeclaration-getpropertyvalue">
    <a href="https://drafts.csswg.org/cssom-1/#dom-cssstyledeclaration-getpropertyvalue">https://drafts.csswg.org/cssom-1/#dom-cssstyledeclaration-getpropertyvalue</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-cssstyledeclaration-getpropertyvalue">4. 
+    <li><a href="#ref-for-dom-cssstyledeclaration-getpropertyvalue">4.
 APIs</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-case-sensitive">
    <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#case-sensitive">https://html.spec.whatwg.org/multipage/infrastructure.html#case-sensitive</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-case-sensitive">2. 
+    <li><a href="#ref-for-case-sensitive">2.
 Defining Custom Properties: the --* family of properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ascii-case-insensitive">
    <a href="https://infra.spec.whatwg.org/#ascii-case-insensitive">https://infra.spec.whatwg.org/#ascii-case-insensitive</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ascii-case-insensitive">2.1. 
+    <li><a href="#ref-for-ascii-case-insensitive">2.1.
 Custom Property Value Syntax</a>
-    <li><a href="#ref-for-ascii-case-insensitive①">4.1. 
+    <li><a href="#ref-for-ascii-case-insensitive①">4.1.
 Serializing Custom Properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-lang-pseudo">
    <a href="https://drafts.csswg.org/selectors-4/#lang-pseudo">https://drafts.csswg.org/selectors-4/#lang-pseudo</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-lang-pseudo">5.2. 
+    <li><a href="#ref-for-lang-pseudo">5.2.
 Changes since the May 6 2014 Last Call Working Draft</a>
    </ul>
   </aside>
@@ -1484,82 +1484,82 @@ Changes since the May 6 2014 Last Call Working Draft</a>
   <aside class="dfn-panel" data-for="custom-property">
    <b><a href="#custom-property">#custom-property</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-custom-property">1. 
+    <li><a href="#ref-for-custom-property">1.
 Introduction</a> <a href="#ref-for-custom-property①">(2)</a>
-    <li><a href="#ref-for-custom-property②">2. 
+    <li><a href="#ref-for-custom-property②">2.
 Defining Custom Properties: the --* family of properties</a> <a href="#ref-for-custom-property③">(2)</a> <a href="#ref-for-custom-property④">(3)</a> <a href="#ref-for-custom-property⑤">(4)</a> <a href="#ref-for-custom-property⑥">(5)</a> <a href="#ref-for-custom-property⑦">(6)</a> <a href="#ref-for-custom-property⑧">(7)</a>
-    <li><a href="#ref-for-custom-property⑨">2.1. 
+    <li><a href="#ref-for-custom-property⑨">2.1.
 Custom Property Value Syntax</a> <a href="#ref-for-custom-property①⓪">(2)</a> <a href="#ref-for-custom-property①①">(3)</a>
-    <li><a href="#ref-for-custom-property①②">2.2. 
+    <li><a href="#ref-for-custom-property①②">2.2.
 Guaranteed-Invalid Values</a> <a href="#ref-for-custom-property①③">(2)</a>
-    <li><a href="#ref-for-custom-property①④">2.3. 
+    <li><a href="#ref-for-custom-property①④">2.3.
 Resolving Dependency Cycles</a> <a href="#ref-for-custom-property①⑤">(2)</a> <a href="#ref-for-custom-property①⑥">(3)</a> <a href="#ref-for-custom-property①⑦">(4)</a> <a href="#ref-for-custom-property①⑧">(5)</a> <a href="#ref-for-custom-property①⑨">(6)</a>
-    <li><a href="#ref-for-custom-property②⓪">3. 
+    <li><a href="#ref-for-custom-property②⓪">3.
 Using Cascading Variables: the var() notation</a> <a href="#ref-for-custom-property②①">(2)</a> <a href="#ref-for-custom-property②②">(3)</a> <a href="#ref-for-custom-property②③">(4)</a> <a href="#ref-for-custom-property②④">(5)</a> <a href="#ref-for-custom-property②⑤">(6)</a> <a href="#ref-for-custom-property②⑥">(7)</a> <a href="#ref-for-custom-property②⑦">(8)</a>
-    <li><a href="#ref-for-custom-property②⑧">3.1. 
+    <li><a href="#ref-for-custom-property②⑧">3.1.
 Invalid Variables</a> <a href="#ref-for-custom-property②⑨">(2)</a> <a href="#ref-for-custom-property③⓪">(3)</a> <a href="#ref-for-custom-property③①">(4)</a>
-    <li><a href="#ref-for-custom-property③②">4. 
+    <li><a href="#ref-for-custom-property③②">4.
 APIs</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-custom-property-name">
    <b><a href="#typedef-custom-property-name">#typedef-custom-property-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-custom-property-name">3. 
+    <li><a href="#ref-for-typedef-custom-property-name">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="animation-tainted">
    <b><a href="#animation-tainted">#animation-tainted</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-animation-tainted">3. 
+    <li><a href="#ref-for-animation-tainted">3.
 Using Cascading Variables: the var() notation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="guaranteed-invalid-value">
    <b><a href="#guaranteed-invalid-value">#guaranteed-invalid-value</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-guaranteed-invalid-value">2. 
+    <li><a href="#ref-for-guaranteed-invalid-value">2.
 Defining Custom Properties: the --* family of properties</a> <a href="#ref-for-guaranteed-invalid-value①">(2)</a>
-    <li><a href="#ref-for-guaranteed-invalid-value②">2.2. 
+    <li><a href="#ref-for-guaranteed-invalid-value②">2.2.
 Guaranteed-Invalid Values</a> <a href="#ref-for-guaranteed-invalid-value③">(2)</a>
-    <li><a href="#ref-for-guaranteed-invalid-value④">2.3. 
+    <li><a href="#ref-for-guaranteed-invalid-value④">2.3.
 Resolving Dependency Cycles</a> <a href="#ref-for-guaranteed-invalid-value⑤">(2)</a> <a href="#ref-for-guaranteed-invalid-value⑥">(3)</a>
-    <li><a href="#ref-for-guaranteed-invalid-value⑦">3. 
+    <li><a href="#ref-for-guaranteed-invalid-value⑦">3.
 Using Cascading Variables: the var() notation</a>
-    <li><a href="#ref-for-guaranteed-invalid-value⑧">3.1. 
+    <li><a href="#ref-for-guaranteed-invalid-value⑧">3.1.
 Invalid Variables</a> <a href="#ref-for-guaranteed-invalid-value⑨">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="cyclic-at-computed-value-time">
    <b><a href="#cyclic-at-computed-value-time">#cyclic-at-computed-value-time</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cyclic-at-computed-value-time">2.3. 
+    <li><a href="#ref-for-cyclic-at-computed-value-time">2.3.
 Resolving Dependency Cycles</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="funcdef-var">
    <b><a href="#funcdef-var">#funcdef-var</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-var">1. 
+    <li><a href="#ref-for-funcdef-var">1.
 Introduction</a>
-    <li><a href="#ref-for-funcdef-var①">2. 
+    <li><a href="#ref-for-funcdef-var①">2.
 Defining Custom Properties: the --* family of properties</a> <a href="#ref-for-funcdef-var②">(2)</a> <a href="#ref-for-funcdef-var③">(3)</a> <a href="#ref-for-funcdef-var④">(4)</a> <a href="#ref-for-funcdef-var⑤">(5)</a>
-    <li><a href="#ref-for-funcdef-var⑥">2.1. 
+    <li><a href="#ref-for-funcdef-var⑥">2.1.
 Custom Property Value Syntax</a> <a href="#ref-for-funcdef-var⑦">(2)</a> <a href="#ref-for-funcdef-var⑧">(3)</a> <a href="#ref-for-funcdef-var⑨">(4)</a>
-    <li><a href="#ref-for-funcdef-var①⓪">2.2. 
+    <li><a href="#ref-for-funcdef-var①⓪">2.2.
 Guaranteed-Invalid Values</a>
-    <li><a href="#ref-for-funcdef-var①①">2.3. 
+    <li><a href="#ref-for-funcdef-var①①">2.3.
 Resolving Dependency Cycles</a> <a href="#ref-for-funcdef-var①②">(2)</a> <a href="#ref-for-funcdef-var①③">(3)</a> <a href="#ref-for-funcdef-var①④">(4)</a> <a href="#ref-for-funcdef-var①⑤">(5)</a>
-    <li><a href="#ref-for-funcdef-var①⑥">3. 
+    <li><a href="#ref-for-funcdef-var①⑥">3.
 Using Cascading Variables: the var() notation</a> <a href="#ref-for-funcdef-var①⑦">(2)</a> <a href="#ref-for-funcdef-var①⑧">(3)</a> <a href="#ref-for-funcdef-var①⑨">(4)</a> <a href="#ref-for-funcdef-var②⓪">(5)</a> <a href="#ref-for-funcdef-var②①">(6)</a> <a href="#ref-for-funcdef-var②②">(7)</a> <a href="#ref-for-funcdef-var②③">(8)</a> <a href="#ref-for-funcdef-var②④">(9)</a> <a href="#ref-for-funcdef-var②⑤">(10)</a> <a href="#ref-for-funcdef-var②⑥">(11)</a> <a href="#ref-for-funcdef-var②⑦">(12)</a> <a href="#ref-for-funcdef-var②⑧">(13)</a> <a href="#ref-for-funcdef-var②⑨">(14)</a> <a href="#ref-for-funcdef-var③⓪">(15)</a> <a href="#ref-for-funcdef-var③①">(16)</a> <a href="#ref-for-funcdef-var③②">(17)</a>
-    <li><a href="#ref-for-funcdef-var③③">3.1. 
+    <li><a href="#ref-for-funcdef-var③③">3.1.
 Invalid Variables</a> <a href="#ref-for-funcdef-var③④">(2)</a> <a href="#ref-for-funcdef-var③⑤">(3)</a> <a href="#ref-for-funcdef-var③⑥">(4)</a>
-    <li><a href="#ref-for-funcdef-var③⑦">3.2. 
+    <li><a href="#ref-for-funcdef-var③⑦">3.2.
 Variables in Shorthand Properties</a> <a href="#ref-for-funcdef-var③⑧">(2)</a> <a href="#ref-for-funcdef-var③⑨">(3)</a> <a href="#ref-for-funcdef-var④⓪">(4)</a> <a href="#ref-for-funcdef-var④①">(5)</a> <a href="#ref-for-funcdef-var④②">(6)</a>
-    <li><a href="#ref-for-funcdef-var④③">3.3. 
+    <li><a href="#ref-for-funcdef-var④③">3.3.
 Safely Handling Overly-Long Variables</a> <a href="#ref-for-funcdef-var④④">(2)</a> <a href="#ref-for-funcdef-var④⑤">(3)</a>
-    <li><a href="#ref-for-funcdef-var④⑥">5.2. 
+    <li><a href="#ref-for-funcdef-var④⑥">5.2.
 Changes since the May 6 2014 Last Call Working Draft</a> <a href="#ref-for-funcdef-var④⑦">(2)</a>
     <li><a href="#ref-for-funcdef-var④⑧">7. Privacy and Security Considerations</a>
    </ul>
@@ -1567,87 +1567,95 @@ Changes since the May 6 2014 Last Call Working Draft</a> <a href="#ref-for-funcd
   <aside class="dfn-panel" data-for="substitute-a-var">
    <b><a href="#substitute-a-var">#substitute-a-var</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-substitute-a-var">2. 
+    <li><a href="#ref-for-substitute-a-var">2.
 Defining Custom Properties: the --* family of properties</a>
-    <li><a href="#ref-for-substitute-a-var①">3. 
+    <li><a href="#ref-for-substitute-a-var①">3.
 Using Cascading Variables: the var() notation</a> <a href="#ref-for-substitute-a-var②">(2)</a> <a href="#ref-for-substitute-a-var③">(3)</a> <a href="#ref-for-substitute-a-var④">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="invalid-at-computed-value-time">
    <b><a href="#invalid-at-computed-value-time">#invalid-at-computed-value-time</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-invalid-at-computed-value-time">2.2. 
+    <li><a href="#ref-for-invalid-at-computed-value-time">2.2.
 Guaranteed-Invalid Values</a>
-    <li><a href="#ref-for-invalid-at-computed-value-time①">2.3. 
+    <li><a href="#ref-for-invalid-at-computed-value-time①">2.3.
 Resolving Dependency Cycles</a>
-    <li><a href="#ref-for-invalid-at-computed-value-time②">3. 
+    <li><a href="#ref-for-invalid-at-computed-value-time②">3.
 Using Cascading Variables: the var() notation</a> <a href="#ref-for-invalid-at-computed-value-time③">(2)</a> <a href="#ref-for-invalid-at-computed-value-time④">(3)</a>
-    <li><a href="#ref-for-invalid-at-computed-value-time⑤">3.1. 
+    <li><a href="#ref-for-invalid-at-computed-value-time⑤">3.1.
 Invalid Variables</a> <a href="#ref-for-invalid-at-computed-value-time⑥">(2)</a>
-    <li><a href="#ref-for-invalid-at-computed-value-time⑦">3.3. 
+    <li><a href="#ref-for-invalid-at-computed-value-time⑦">3.3.
 Safely Handling Overly-Long Variables</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="pending-substitution-value">
    <b><a href="#pending-substitution-value">#pending-substitution-value</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-pending-substitution-value">3.2. 
+    <li><a href="#ref-for-pending-substitution-value">3.2.
 Variables in Shorthand Properties</a> <a href="#ref-for-pending-substitution-value①">(2)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

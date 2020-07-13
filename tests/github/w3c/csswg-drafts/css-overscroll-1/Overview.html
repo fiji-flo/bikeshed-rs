@@ -293,7 +293,7 @@ This allows content authors to hint that the <a data-link-type="dfn" href="#boun
 such as scroll chaining and overscroll, should not be triggered.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -390,7 +390,7 @@ shortcoming.</p>
     <a class="self-link" href="#example-d468490d"></a> A position fixed left navigation bar does not want to hand off scrolling to the document because a
 scroll gesture performed on the navigation bar is almost never meant to scroll the document. Note
 that using the native overscroll affordances are still desirable while scroll chaining is to be
-prevented. 
+prevented.
 <pre class="lang-css highlight"><c- f>#sidebar </c-><c- p>{</c->
   <c- k>overscroll-behavior</c-><c- p>:</c-> contain<c- p>;</c->
 <c- p>}</c->
@@ -400,7 +400,7 @@ prevent scrolling from being chained to the parent document element.</p>
    </div>
    <div class="example" id="example-64e64c20">
     <a class="self-link" href="#example-64e64c20"></a> A page wants to implement their own pull-to-refresh effect and thus needs to disable browser
-native overscroll action. 
+native overscroll action.
 <pre class="lang-css highlight"><c- f>html </c-><c- p>{</c->
   <c- c>/* only disable pull-to-refresh but allow swipe navigations */</c->
   <c- k>overscroll-behavior-y</c-><c- p>:</c-> contain<c- p>;</c->
@@ -411,7 +411,7 @@ defining element to prevent overscroll from triggering navigation actions.</p>
    </div>
    <div class="example" id="example-8ba16b56">
     <a class="self-link" href="#example-8ba16b56"></a> A infinite scrollers loads more content as user reaches the boundary and thus wants to disable the
-potentially confusing rubber banding effect in addition to scroll chaining. 
+potentially confusing rubber banding effect in addition to scroll chaining.
 <pre class="lang-css highlight"><c- f>#infinite_scroller </c-><c- p>{</c->
   <c- k>overscroll-behavior-y</c-><c- p>:</c-> none<c- p>;</c->
 <c- p>}</c->
@@ -485,17 +485,17 @@ use <span id="ref-for-dom-event-preventdefault⑤">preventDefault</span> instead
 the second value defaults to the same value.</p>
    <p>Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="overscroll-behavior, overscroll-behavior-x, overscroll-behavior-y, overscroll-behavior-inline, overscroll-behavior-block" data-dfn-type="value" data-export id="valdef-overscroll-behavior-contain">contain</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="overscroll-behavior, overscroll-behavior-x, overscroll-behavior-y, overscroll-behavior-inline, overscroll-behavior-block" data-dfn-type="value" data-export id="valdef-overscroll-behavior-contain">contain</dfn>
     <dd> This value indicates that the element must not perform <a data-link-type="dfn" href="#non-local-boundary-default-action" id="ref-for-non-local-boundary-default-action">non-local boundary default actions</a> such as scroll chaining or navigation. The user agent must not perform scroll chaining to any
     ancestors along the <a data-link-type="dfn" href="#scroll-chain" id="ref-for-scroll-chain②">scroll chain</a> regardless of whether the scroll originated at this
     element or one of its descendants. This value must not modify the behavior of how <a data-link-type="dfn" href="#local-boundary-default-action" id="ref-for-local-boundary-default-action">local
-    boundary default actions</a> should behave, such as showing any overscroll affordances. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="overscroll-behavior, overscroll-behavior-x, overscroll-behavior-y, overscroll-behavior-inline, overscroll-behavior-block" data-dfn-type="value" data-export id="valdef-overscroll-behavior-none">none</dfn> 
+    boundary default actions</a> should behave, such as showing any overscroll affordances.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="overscroll-behavior, overscroll-behavior-x, overscroll-behavior-y, overscroll-behavior-inline, overscroll-behavior-block" data-dfn-type="value" data-export id="valdef-overscroll-behavior-none">none</dfn>
     <dd> This value implies the same behavior as <a class="css" data-link-type="value" href="#valdef-overscroll-behavior-contain" id="ref-for-valdef-overscroll-behavior-contain②">contain</a> and in
     addition this element must also not perform <a data-link-type="dfn" href="#local-boundary-default-action" id="ref-for-local-boundary-default-action①">local boundary default actions</a> such as
-    showing any overscroll affordances. 
-    <dt><dfn class="css" data-dfn-for="overscroll-behavior, overscroll-behavior-x, overscroll-behavior-y, overscroll-behavior-inline, overscroll-behavior-block" data-dfn-type="value" data-export id="valdef-overscroll-behavior-auto">auto<a class="self-link" href="#valdef-overscroll-behavior-auto"></a></dfn> 
-    <dd> This value indicates that the user agent should perform the usual <a data-link-type="dfn" href="#boundary-default-action" id="ref-for-boundary-default-action⑤">boundary default action</a> with respect to <a data-link-type="dfn" href="#scroll-chaining" id="ref-for-scroll-chaining③">scroll chaining</a>, overscroll and navigation gestures. 
+    showing any overscroll affordances.
+    <dt><dfn class="css" data-dfn-for="overscroll-behavior, overscroll-behavior-x, overscroll-behavior-y, overscroll-behavior-inline, overscroll-behavior-block" data-dfn-type="value" data-export id="valdef-overscroll-behavior-auto">auto<a class="self-link" href="#valdef-overscroll-behavior-auto"></a></dfn>
+    <dd> This value indicates that the user agent should perform the usual <a data-link-type="dfn" href="#boundary-default-action" id="ref-for-boundary-default-action⑤">boundary default action</a> with respect to <a data-link-type="dfn" href="#scroll-chaining" id="ref-for-scroll-chaining③">scroll chaining</a>, overscroll and navigation gestures.
    </dl>
    <p class="note" role="note"><span>Note:</span> In the case where a user agent does not implement scroll chaining and overscroll affordances,
 these values will have no side effects for a compliant implementation.</p>
@@ -580,7 +580,7 @@ The mapping depends on the element’s <a class="property" data-link-type="propd
 certain native UI features such as overscroll affordances and overscroll navigations (e.g., pull-
 to-refresh, swipe navigations). However, this does not expose any additional abilities beyond what
 is already possible in the platform e.g., by preventing the default action of the event that would
-cause a scroll. 
+cause a scroll.
   </main>
   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
   <h3 class="heading settled" id="document-conventions"><span class="content"> Document conventions</span><a class="self-link" href="#document-conventions"></a></h3>
@@ -597,7 +597,7 @@ cause a scroll.
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -610,14 +610,14 @@ cause a scroll.
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -668,7 +668,7 @@ cause a scroll.
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -919,57 +919,65 @@ cause a scroll.
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

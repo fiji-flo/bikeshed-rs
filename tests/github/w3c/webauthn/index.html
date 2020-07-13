@@ -726,7 +726,7 @@ They should also carefully read <a href="#sctn-security-considerations-authentic
     combination of HTTPS, the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①②">Relying Party</a> <a data-link-type="dfn" href="#web-application" id="ref-for-web-application③">web application</a>, the <a href="#sctn-api">WebAuthn API</a>, and the platform-specific communications channel
     between the user agent and the <a data-link-type="dfn" href="#authenticator" id="ref-for-authenticator①③">authenticator</a>.
     The <a data-link-type="dfn" href="#authenticator" id="ref-for-authenticator①④">authenticator</a> replies with a digitally signed <a data-link-type="dfn" href="#authenticator-data" id="ref-for-authenticator-data">authenticator data</a> message and other output data, which is conveyed back to the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①③">Relying Party</a> server via the same path in reverse. Protocol details vary according to whether an <a data-link-type="dfn" href="#authentication" id="ref-for-authentication②">authentication</a> or <a data-link-type="dfn" href="#registration" id="ref-for-registration②">registration</a> operation is invoked by the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①④">Relying Party</a>.
-    See also <a href="#fig-registration">Figure 1</a> and <a href="#fig-authentication">Figure 2</a>. 
+    See also <a href="#fig-registration">Figure 1</a> and <a href="#fig-authentication">Figure 2</a>.
     <p><strong>It is important for Web Authentication deployments' end-to-end security</strong> that the role of each
     component—the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑤">Relying Party</a> server, the <a data-link-type="dfn" href="#client" id="ref-for-client">client</a>, and the <a data-link-type="dfn" href="#authenticator" id="ref-for-authenticator①⑤">authenticator</a>—
     as well as <a href="#sctn-security-considerations">§ 13 Security Considerations</a> and <a href="#sctn-privacy-considerations">§ 14 Privacy Considerations</a>, are understood <em>by all audiences</em>.</p>
@@ -1409,7 +1409,7 @@ possibly-<a data-link-type="dfn" href="#attestation" id="ref-for-attestation⑤"
     a statement and b) intended to be used multiple times. It’s impossible to achieve both criteria securely with a single
     piece of data in a public key system. <a data-link-type="biblio" href="#biblio-rfc4949">[RFC4949]</a> chooses to define a credential as the thing that can be used multiple
     times (the public key), while this specification gives "credential" the English term’s flexibility. This specification
-    uses more specific terms to identify the data related to an <a data-link-type="biblio" href="#biblio-rfc4949">[RFC4949]</a> credential: 
+    uses more specific terms to identify the data related to an <a data-link-type="biblio" href="#biblio-rfc4949">[RFC4949]</a> credential:
       <dl>
        <dt data-md>"Authentication information" (possibly including a private key)
        <dd data-md>
@@ -1449,7 +1449,7 @@ WebAuthn operation is set to the caller’s <a data-link-type="dfn" href="https:
 overridden by the caller, as long as the caller-specified <a data-link-type="dfn" href="#rp-id" id="ref-for-rp-id⑤">RP ID</a> value <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#is-a-registrable-domain-suffix-of-or-is-equal-to" id="ref-for-is-a-registrable-domain-suffix-of-or-is-equal-to①">is a registrable domain suffix of or is equal
 to</a> the caller’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-settings-object-origin" id="ref-for-concept-settings-object-origin①">origin</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin-effective-domain" id="ref-for-concept-origin-effective-domain①">effective domain</a>. See also <a href="#sctn-createCredential">§ 5.1.3 Create a New Credential - PublicKeyCredential’s [[Create]](origin, options, sameOriginWithAncestors) Method</a> and <a href="#sctn-getAssertion">§ 5.1.4 Use an Existing Credential to Make an Assertion - PublicKeyCredential’s [[Get]](options) Method</a>.</p>
      <div class="note" id="note-pkcredscope" role="note">
-      <a class="self-link" href="#note-pkcredscope"></a> Note: An <a data-link-type="dfn" href="#rp-id" id="ref-for-rp-id⑥">RP ID</a> is based on a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-host" id="ref-for-concept-url-host">host</a>'s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-domain" id="ref-for-concept-domain">domain</a> name. It does not itself include a <a data-link-type="dfn" href="https://url.spec.whatwg.org#concept-url-scheme" id="ref-for-concept-url-scheme">scheme</a> or <a data-link-type="dfn" href="https://url.spec.whatwg.org#concept-url-port" id="ref-for-concept-url-port">port</a>, as an <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin③">origin</a> does. The <a data-link-type="dfn" href="#rp-id" id="ref-for-rp-id⑦">RP ID</a> of a <a data-link-type="dfn" href="#public-key-credential" id="ref-for-public-key-credential①⑦">public key credential</a> determines its <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="scope">scope</dfn>. I.e., it <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="determines-the-set-of-origins-on-which-the-public-key-credential-may-be-exercised">determines the set of origins on which the public key credential may be exercised</dfn>, as follows: 
+      <a class="self-link" href="#note-pkcredscope"></a> Note: An <a data-link-type="dfn" href="#rp-id" id="ref-for-rp-id⑥">RP ID</a> is based on a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-host" id="ref-for-concept-url-host">host</a>'s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-domain" id="ref-for-concept-domain">domain</a> name. It does not itself include a <a data-link-type="dfn" href="https://url.spec.whatwg.org#concept-url-scheme" id="ref-for-concept-url-scheme">scheme</a> or <a data-link-type="dfn" href="https://url.spec.whatwg.org#concept-url-port" id="ref-for-concept-url-port">port</a>, as an <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin③">origin</a> does. The <a data-link-type="dfn" href="#rp-id" id="ref-for-rp-id⑦">RP ID</a> of a <a data-link-type="dfn" href="#public-key-credential" id="ref-for-public-key-credential①⑦">public key credential</a> determines its <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="scope">scope</dfn>. I.e., it <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="determines-the-set-of-origins-on-which-the-public-key-credential-may-be-exercised">determines the set of origins on which the public key credential may be exercised</dfn>, as follows:
       <ul>
        <li data-md>
         <p>The <a data-link-type="dfn" href="#rp-id" id="ref-for-rp-id⑧">RP ID</a> must be equal to the <a data-link-type="dfn" href="#determines-the-set-of-origins-on-which-the-public-key-credential-may-be-exercised" id="ref-for-determines-the-set-of-origins-on-which-the-public-key-credential-may-be-exercised">origin</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin-effective-domain" id="ref-for-concept-origin-effective-domain②">effective domain</a>, or a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#is-a-registrable-domain-suffix-of-or-is-equal-to" id="ref-for-is-a-registrable-domain-suffix-of-or-is-equal-to②">registrable domain suffix</a> of the <a data-link-type="dfn" href="#determines-the-set-of-origins-on-which-the-public-key-credential-may-be-exercised" id="ref-for-determines-the-set-of-origins-on-which-the-public-key-credential-may-be-exercised①">origin</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin-effective-domain" id="ref-for-concept-origin-effective-domain③">effective domain</a>.</p>
@@ -1507,7 +1507,7 @@ and thus access the same <a data-link-type="dfn" href="#relying-party" id="ref-f
 See also <a href="#sctn-uvi-extension">§ 10.7 User Verification Index Extension (uvi)</a>.</p>
      <div class="note" role="note">
        Note: Invocation of the <a data-link-type="dfn" href="#authenticatormakecredential" id="ref-for-authenticatormakecredential③">authenticatorMakeCredential</a> and <a data-link-type="dfn" href="#authenticatorgetassertion" id="ref-for-authenticatorgetassertion②">authenticatorGetAssertion</a> operations
-    implies use of key material managed by the authenticator. 
+    implies use of key material managed by the authenticator.
       <p>Also, for security, <a data-link-type="dfn" href="#user-verification" id="ref-for-user-verification⑨">user verification</a> and use of <a data-link-type="dfn" href="#credential-private-key" id="ref-for-credential-private-key⑥">credential private keys</a> must all occur within the logical security boundary defining the <a data-link-type="dfn" href="#authenticator" id="ref-for-authenticator⑤⑦">authenticator</a>.</p>
      </div>
      <p><a data-link-type="dfn" href="#user-verification" id="ref-for-user-verification①⓪">User verification</a> procedures MAY implement <a data-link-type="dfn" href="#rate-limiting" id="ref-for-rate-limiting①">rate limiting</a> as a protection against brute force attacks.</p>
@@ -1538,12 +1538,12 @@ but is otherwise beyond the scope of this specification.</p>
 idea is that the credentials belong to the user and are <a data-link-type="dfn" href="#public-key-credential-source-managing-authenticator" id="ref-for-public-key-credential-source-managing-authenticator④">managed</a> by a <a data-link-type="dfn" href="#webauthn-authenticator" id="ref-for-webauthn-authenticator③">WebAuthn Authenticator</a>, with which the <a data-link-type="dfn" href="#webauthn-relying-party" id="ref-for-webauthn-relying-party①⓪">WebAuthn Relying Party</a> interacts through the <a data-link-type="dfn" href="#client-platform" id="ref-for-client-platform①①">client platform</a>. <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party⑥①">Relying Party</a> scripts can (with the <a data-link-type="dfn" href="#user-consent" id="ref-for-user-consent⑤">user’s consent</a>) request the
 browser to create a new credential for future use by the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party⑥②">Relying Party</a>. See <a href="#fig-registration">Figure <span class="figure-num-following"></span></a>, below.</p>
    <figure id="fig-registration">
-     <img src="images/webauthn-registration-flow-01.svg"> 
+     <img src="images/webauthn-registration-flow-01.svg">
     <figcaption>Registration Flow</figcaption>
    </figure>
    <p>Scripts can also request the user’s permission to perform <a data-link-type="dfn" href="#authentication" id="ref-for-authentication⑨">authentication</a> operations with an existing credential. See <a href="#fig-authentication">Figure <span class="figure-num-following"></span></a>, below.</p>
    <figure id="fig-authentication">
-     <img src="images/webauthn-authentication-flow-01.svg"> 
+     <img src="images/webauthn-authentication-flow-01.svg">
     <figcaption>Authentication Flow</figcaption>
    </figure>
    <p>All such operations are performed in the authenticator and are mediated by
@@ -1638,7 +1638,7 @@ the <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webapp
    <div data-link-for-hint="PublicKeyCredential/[[Create]](origin, options, sameOriginWithAncestors)">
      <code class="idl"><a data-link-type="idl" href="#publickeycredential" id="ref-for-publickeycredential⑨">PublicKeyCredential</a></code>'s <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-interface-object" id="ref-for-dfn-interface-object③">interface object</a>'s implementation of the <dfn class="dfn-paneled idl-code" data-dfn-for="PublicKeyCredential" data-dfn-type="method" data-export data-lt="[[Create]](origin, options, sameOriginWithAncestors)" id="dom-publickeycredential-create-slot"><code>[[Create]](origin,
 options, sameOriginWithAncestors)</code></dfn> <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots" id="ref-for-sec-object-internal-methods-and-internal-slots⑥">internal method</a> <a data-link-type="biblio" href="#biblio-credential-management-1">[CREDENTIAL-MANAGEMENT-1]</a> allows <a data-link-type="dfn" href="#webauthn-relying-party" id="ref-for-webauthn-relying-party①①">WebAuthn Relying Party</a> scripts to call <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webappsec-credential-management/#dom-credentialscontainer-create" id="ref-for-dom-credentialscontainer-create④">navigator.credentials.create()</a></code> to request the creation of a new <a data-link-type="dfn" href="#public-key-credential-source" id="ref-for-public-key-credential-source②①">public key credential source</a>, <a data-link-type="dfn" href="#bound-credential" id="ref-for-bound-credential④">bound</a> to an <a data-link-type="dfn" href="#authenticator" id="ref-for-authenticator⑥③">authenticator</a>. This <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webappsec-credential-management/#dom-credentialscontainer-create" id="ref-for-dom-credentialscontainer-create⑤">navigator.credentials.create()</a></code> operation can be aborted by leveraging the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#abortcontroller" id="ref-for-abortcontroller">AbortController</a></code>;
-see <a href="https://dom.spec.whatwg.org/#abortcontroller-api-integration">DOM §3.3 Using AbortController and AbortSignal objects in APIs</a> for detailed instructions. 
+see <a href="https://dom.spec.whatwg.org/#abortcontroller-api-integration">DOM §3.3 Using AbortController and AbortSignal objects in APIs</a> for detailed instructions.
     <p>This <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots" id="ref-for-sec-object-internal-methods-and-internal-slots⑦">internal method</a> accepts three arguments:</p>
     <dl>
      <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="PublicKeyCredential/[[Create]](origin, options, sameOriginWithAncestors)" data-dfn-type="argument" data-export id="dom-publickeycredential-create-origin-options-sameoriginwithancestors-origin"><code>origin</code></dfn>
@@ -1695,7 +1695,7 @@ If <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.h
     is in recognition of various issues with using direct IP address identification in concert
     with PKI-based security.</p>
      <li id="CreateCred-DetermineRpId">
-      <a class="self-link" href="#CreateCred-DetermineRpId"></a> 
+      <a class="self-link" href="#CreateCred-DetermineRpId"></a>
       <p>If <code><var>options</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialcreationoptions-rp" id="ref-for-dom-publickeycredentialcreationoptions-rp">rp</a></code>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialrpentity-id" id="ref-for-dom-publickeycredentialrpentity-id">id</a></code></code></p>
       <dl class="switch">
        <dt data-md>Is <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-present" id="ref-for-dfn-present③">present</a>
@@ -1876,7 +1876,7 @@ mentioned in <code><var>C</var>.<code class="idl"><a data-link-type="idl" href="
             <p>Otherwise, <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-append" id="ref-for-list-append①">Append</a> <var>C</var> to <var>excludeCredentialDescriptorList</var>.</p>
           </ol>
          <li id="CreateCred-InvokeAuthnrMakeCred">
-          <a class="self-link" href="#CreateCred-InvokeAuthnrMakeCred"></a> 
+          <a class="self-link" href="#CreateCred-InvokeAuthnrMakeCred"></a>
           <p>Invoke the <a data-link-type="dfn" href="#authenticatormakecredential" id="ref-for-authenticatormakecredential④">authenticatorMakeCredential</a> operation on <var>authenticator</var> with <var>clientDataHash</var>, <code><var>options</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialcreationoptions-rp" id="ref-for-dom-publickeycredentialcreationoptions-rp⑤">rp</a></code></code>, <code><var>options</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialcreationoptions-user" id="ref-for-dom-publickeycredentialcreationoptions-user①">user</a></code></code>, <var>requireResidentKey</var>, <var>userVerification</var>, <var>credTypesAndPubKeyAlgs</var>, <var>excludeCredentialDescriptorList</var>,
 	    and <var>authenticatorExtensions</var> as parameters.</p>
          <li data-md>
@@ -2082,7 +2082,7 @@ If <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.h
     in recognition of various issues with using direct IP address identification in concert with
     PKI-based security.</p>
      <li id="GetAssn-DetermineRpId">
-      <a class="self-link" href="#GetAssn-DetermineRpId"></a> If <var>options</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialrequestoptions-rpid" id="ref-for-dom-publickeycredentialrequestoptions-rpid">rpId</a></code> is <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-present" id="ref-for-dfn-present①⑤">not present</a>, then set <var>rpId</var> to <var>effectiveDomain</var>. 
+      <a class="self-link" href="#GetAssn-DetermineRpId"></a> If <var>options</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialrequestoptions-rpid" id="ref-for-dom-publickeycredentialrequestoptions-rpid">rpId</a></code> is <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-present" id="ref-for-dfn-present①⑤">not present</a>, then set <var>rpId</var> to <var>effectiveDomain</var>.
       <p>Otherwise:</p>
       <ol>
        <li data-md>
@@ -2458,7 +2458,7 @@ over it.</p>
 };
 </pre>
    <div>
-     This dictionary is used to supply additional parameters when creating a new credential. 
+     This dictionary is used to supply additional parameters when creating a new credential.
     <dl>
      <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="PublicKeyCredentialParameters" data-dfn-type="dict-member" data-export id="dom-publickeycredentialparameters-type"><code>type</code></dfn>, <span> of type <a data-link-type="idl-name" href="#enumdef-publickeycredentialtype" id="ref-for-enumdef-publickeycredentialtype④">PublicKeyCredentialType</a></span>
      <dd data-md>
@@ -2892,7 +2892,7 @@ encoding</a> of the <a data-link-type="dfn" href="https://tools.ietf.org/html/rf
    <div>
      This enumeration defines the valid credential types. It is an extension point; values can be added to it in the future, as
     more credential types are defined. The values of this enumeration are used for versioning the Authentication Assertion and
-    attestation structures according to the type of the authenticator. 
+    attestation structures according to the type of the authenticator.
     <p>Currently one credential type is defined, namely "<dfn class="dfn-paneled idl-code" data-dfn-for="PublicKeyCredentialType" data-dfn-type="enum-value" data-export data-lt="&quot;public-key&quot;|public-key" id="dom-publickeycredentialtype-public-key"><code>public-key</code></dfn>".</p>
    </div>
    <h4 class="heading settled" data-level="5.8.3" id="dictionary-credential-descriptor"><span class="secno">5.8.3. </span><span class="content">Credential Descriptor (dictionary <dfn class="dfn-paneled idl-code" data-dfn-type="dictionary" data-export id="dictdef-publickeycredentialdescriptor"><code>PublicKeyCredentialDescriptor</code></dfn>)</span><a class="self-link" href="#dictionary-credential-descriptor"></a></h4>
@@ -2930,7 +2930,7 @@ The <code class="idl"><a data-link-type="idl" href="#dom-authenticatorattestatio
    <div>
      <a data-link-type="dfn" href="#authenticator" id="ref-for-authenticator⑨③">Authenticators</a> may implement various <a href="#enum-transport">transports</a> for communicating with <a data-link-type="dfn" href="#client" id="ref-for-client④①">clients</a>. This enumeration
     defines hints as to how clients might communicate with a particular authenticator in order to obtain an assertion for a
-    specific credential. Note that these hints represent the <a data-link-type="dfn" href="#webauthn-relying-party" id="ref-for-webauthn-relying-party②⓪">WebAuthn Relying Party</a>'s best belief as to how an authenticator may be reached. A <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①①⑦">Relying Party</a> will typically learn of the supported transports for a <a data-link-type="dfn" href="#public-key-credential" id="ref-for-public-key-credential③⑨">public key credential</a> via <code class="idl"><a data-link-type="idl" href="#dom-authenticatorattestationresponse-gettransports" id="ref-for-dom-authenticatorattestationresponse-gettransports②">getTransports()</a></code>. 
+    specific credential. Note that these hints represent the <a data-link-type="dfn" href="#webauthn-relying-party" id="ref-for-webauthn-relying-party②⓪">WebAuthn Relying Party</a>'s best belief as to how an authenticator may be reached. A <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①①⑦">Relying Party</a> will typically learn of the supported transports for a <a data-link-type="dfn" href="#public-key-credential" id="ref-for-public-key-credential③⑨">public key credential</a> via <code class="idl"><a data-link-type="idl" href="#dom-authenticatorattestationresponse-gettransports" id="ref-for-dom-authenticatorattestationresponse-gettransports②">getTransports()</a></code>.
     <p class="note" role="note"><span>Note:</span> The <code class="idl"><a data-link-type="idl" href="#enumdef-authenticatortransport" id="ref-for-enumdef-authenticatortransport④">AuthenticatorTransport</a></code> enumeration is not referenced by other parts of the Web IDL because that would preclude other values from being used without updating this specification and its implementations. It is important for backwards compatibility that <a data-link-type="dfn" href="#client-platform" id="ref-for-client-platform②⑧">client platforms</a> and <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①①⑧">Relying Parties</a> handle unknown values. Therefore it exists here for documentation and as a registry. Where transports are represented elsewhere, they are typed as <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString②①">DOMString</a></code>s, for example in <code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialdescriptor-transports" id="ref-for-dom-publickeycredentialdescriptor-transports⑦">transports</a></code>.</p>
     <dl>
      <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="AuthenticatorTransport" data-dfn-type="enum-value" data-export data-lt="&quot;usb&quot;|usb" id="dom-authenticatortransport-usb"><code>usb</code></dfn>
@@ -3079,12 +3079,12 @@ laid out as shown in <a href="#table-authData">Table <span class="table-ref-foll
       <tr>
        <td><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="rpidhash">rpIdHash</dfn>
        <td>32
-       <td> SHA-256 hash of the <a data-link-type="dfn" href="#rp-id" id="ref-for-rp-id②②">RP ID</a> the <a data-link-type="dfn" href="#public-key-credential" id="ref-for-public-key-credential④②">credential</a> is <a data-link-type="dfn" href="#scope" id="ref-for-scope①②">scoped</a> to. 
+       <td> SHA-256 hash of the <a data-link-type="dfn" href="#rp-id" id="ref-for-rp-id②②">RP ID</a> the <a data-link-type="dfn" href="#public-key-credential" id="ref-for-public-key-credential④②">credential</a> is <a data-link-type="dfn" href="#scope" id="ref-for-scope①②">scoped</a> to.
       <tr>
        <td><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="flags">flags</dfn>
        <td>1
        <td>
-         Flags (bit 0 is the least significant bit): 
+         Flags (bit 0 is the least significant bit):
         <ul>
          <li data-md>
           <p>Bit 0: <a data-link-type="dfn" href="#concept-user-present" id="ref-for-concept-user-present①">User Present</a> (<a data-link-type="dfn" href="#up" id="ref-for-up">UP</a>) result.</p>
@@ -3128,12 +3128,12 @@ laid out as shown in <a href="#table-authData">Table <span class="table-ref-foll
        <td>variable (if present)
        <td> <a data-link-type="dfn" href="#attested-credential-data" id="ref-for-attested-credential-data④">attested credential data</a> (if present). See <a href="#sctn-attested-credential-data">§ 6.5.1 Attested Credential Data</a> for details. Its length depends on
                 the <a data-link-type="dfn" href="#credentialidlength" id="ref-for-credentialidlength">length</a> of the <a data-link-type="dfn" href="#credentialid" id="ref-for-credentialid①">credential ID</a> and <a data-link-type="dfn" href="#credentialpublickey" id="ref-for-credentialpublickey">credential public
-                key</a> being attested. 
+                key</a> being attested.
       <tr>
        <td><dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="authDataExtensions" data-noexport id="authdataextensions">extensions</dfn>
        <td>variable (if present)
        <td> Extension-defined <a data-link-type="dfn" href="#authenticator-data" id="ref-for-authenticator-data①②">authenticator data</a>. This is a <a data-link-type="dfn" href="#cbor" id="ref-for-cbor⑤">CBOR</a> <a data-link-type="biblio" href="#biblio-rfc7049">[RFC7049]</a> map with <a data-link-type="dfn" href="#extension-identifier" id="ref-for-extension-identifier③">extension identifiers</a> as keys,
-                and <a data-link-type="dfn" href="#authenticator-extension-output" id="ref-for-authenticator-extension-output①">authenticator extension outputs</a> as values. See <a href="#sctn-extensions">§ 9 WebAuthn Extensions</a> for details. 
+                and <a data-link-type="dfn" href="#authenticator-extension-output" id="ref-for-authenticator-extension-output①">authenticator extension outputs</a> as values. See <a href="#sctn-extensions">§ 9 WebAuthn Extensions</a> for details.
     </table>
     <figcaption> <a data-link-type="dfn" href="#authenticator-data" id="ref-for-authenticator-data①③">Authenticator data</a> layout. The names in the Name column are only for reference within this document, and are not
         present in the actual representation of the <a data-link-type="dfn" href="#authenticator-data" id="ref-for-authenticator-data①④">authenticator data</a>. </figcaption>
@@ -3162,13 +3162,13 @@ For <a data-link-type="dfn" href="#assertion-signature" id="ref-for-assertion-si
    </ul>
    <p><a href="#fig-authData">Figure <span class="figure-num-following"></span></a> shows a visual representation of the <a data-link-type="dfn" href="#authenticator-data" id="ref-for-authenticator-data①⑥">authenticator data</a> structure.</p>
    <figure id="fig-authData">
-     <img src="images/fido-signature-formats-figure1.svg"> 
+     <img src="images/fido-signature-formats-figure1.svg">
     <figcaption><a data-link-type="dfn" href="#authenticator-data" id="ref-for-authenticator-data①⑦">Authenticator data</a> layout.</figcaption>
    </figure>
    <div class="note" role="note">
      Note: <a data-link-type="dfn" href="#authenticator-data" id="ref-for-authenticator-data①⑧">authenticator data</a> describes its own length: If the AT and ED <a data-link-type="dfn" href="#flags" id="ref-for-flags⑨">flags</a> are not set, it is always 37 bytes long.
     The <a data-link-type="dfn" href="#attested-credential-data" id="ref-for-attested-credential-data⑤">attested credential data</a> (which is only present if the AT <a data-link-type="dfn" href="#flags" id="ref-for-flags①⓪">flag</a> is set) describes its own length. If the ED <a data-link-type="dfn" href="#flags" id="ref-for-flags①①">flag</a> is set, then the total length is 37 bytes plus the length of the <a data-link-type="dfn" href="#attested-credential-data" id="ref-for-attested-credential-data⑥">attested credential data</a> (if the AT <a data-link-type="dfn" href="#flags" id="ref-for-flags①②">flag</a> is set), plus the length of the <a data-link-type="dfn" href="#authdataextensions" id="ref-for-authdataextensions③">extensions</a> output (a <a data-link-type="dfn" href="#cbor" id="ref-for-cbor⑥">CBOR</a> map) that
-    follows. 
+    follows.
     <p>Determining <a data-link-type="dfn" href="#attested-credential-data" id="ref-for-attested-credential-data⑦">attested credential data</a>'s length, which is variable, involves determining <code><a data-link-type="dfn" href="#credentialpublickey" id="ref-for-credentialpublickey①">credentialPublicKey</a></code>’s beginning location given the preceding <code><a data-link-type="dfn" href="#credentialid" id="ref-for-credentialid②">credentialId</a></code>’s <a data-link-type="dfn" href="#credentialidlength" id="ref-for-credentialidlength①">length</a>, and then determining the <code><a data-link-type="dfn" href="#credentialpublickey" id="ref-for-credentialpublickey②">credentialPublicKey</a></code>’s length (see also <a data-link-type="dfn" href="https://tools.ietf.org/html/rfc8152#section-7" id="ref-for-section-7">Section 7</a> of <a data-link-type="biblio" href="#biblio-rfc8152">[RFC8152]</a>).</p>
    </div>
    <h4 class="heading settled" data-level="6.1.1" id="sctn-sign-counter"><span class="secno">6.1.1. </span><span class="content"><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="signature-counter">Signature Counter</dfn> Considerations</span><a class="self-link" href="#sctn-sign-counter"></a></h4>
@@ -3228,31 +3228,31 @@ but <a href="#table-authenticatorTypes">Table <span class="table-ref-following">
     <table class="data">
      <thead>
       <tr>
-       <th> <a data-link-type="dfn" href="#authenticator-type" id="ref-for-authenticator-type②">Authenticator Type</a> 
-       <th> <a data-link-type="dfn" href="#authenticator-attachment-modality" id="ref-for-authenticator-attachment-modality⑥">Authenticator Attachment Modality</a> 
-       <th> <a data-link-type="dfn" href="#credential-storage-modality" id="ref-for-credential-storage-modality①">Credential Storage Modality</a> 
-       <th> <a data-link-type="dfn" href="#authentication-factor-capability" id="ref-for-authentication-factor-capability①">Authentication Factor Capability</a> 
+       <th> <a data-link-type="dfn" href="#authenticator-type" id="ref-for-authenticator-type②">Authenticator Type</a>
+       <th> <a data-link-type="dfn" href="#authenticator-attachment-modality" id="ref-for-authenticator-attachment-modality⑥">Authenticator Attachment Modality</a>
+       <th> <a data-link-type="dfn" href="#credential-storage-modality" id="ref-for-credential-storage-modality①">Credential Storage Modality</a>
+       <th> <a data-link-type="dfn" href="#authentication-factor-capability" id="ref-for-authentication-factor-capability①">Authentication Factor Capability</a>
      <tbody>
       <tr>
-       <th> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="second-factor-platform-authenticator">Second-factor platform authenticator</dfn> 
-       <td> <a data-link-type="dfn" href="#platform-attachment" id="ref-for-platform-attachment①">platform</a> 
-       <td> Either 
-       <td> <a data-link-type="dfn" href="#single-factor-capable" id="ref-for-single-factor-capable">Single-factor capable</a> 
+       <th> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="second-factor-platform-authenticator">Second-factor platform authenticator</dfn>
+       <td> <a data-link-type="dfn" href="#platform-attachment" id="ref-for-platform-attachment①">platform</a>
+       <td> Either
+       <td> <a data-link-type="dfn" href="#single-factor-capable" id="ref-for-single-factor-capable">Single-factor capable</a>
       <tr>
-       <th> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="user-verifying-platform-authenticator">User-verifying platform authenticator</dfn> 
-       <td> <a data-link-type="dfn" href="#platform-attachment" id="ref-for-platform-attachment②">platform</a> 
-       <td> Either 
-       <td> <a data-link-type="dfn" href="#multi-factor-capable" id="ref-for-multi-factor-capable">Multi-factor capable</a> 
+       <th> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="user-verifying-platform-authenticator">User-verifying platform authenticator</dfn>
+       <td> <a data-link-type="dfn" href="#platform-attachment" id="ref-for-platform-attachment②">platform</a>
+       <td> Either
+       <td> <a data-link-type="dfn" href="#multi-factor-capable" id="ref-for-multi-factor-capable">Multi-factor capable</a>
       <tr>
-       <th> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="second-factor-roaming-authenticator">Second-factor roaming authenticator</dfn> 
-       <td> <a data-link-type="dfn" href="#cross-platform-attachment" id="ref-for-cross-platform-attachment①">cross-platform</a> 
-       <td> <a data-link-type="dfn" href="#server-side-credential-storage-modality" id="ref-for-server-side-credential-storage-modality①">Server-side storage</a> 
-       <td> <a data-link-type="dfn" href="#single-factor-capable" id="ref-for-single-factor-capable①">Single-factor capable</a> 
+       <th> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="second-factor-roaming-authenticator">Second-factor roaming authenticator</dfn>
+       <td> <a data-link-type="dfn" href="#cross-platform-attachment" id="ref-for-cross-platform-attachment①">cross-platform</a>
+       <td> <a data-link-type="dfn" href="#server-side-credential-storage-modality" id="ref-for-server-side-credential-storage-modality①">Server-side storage</a>
+       <td> <a data-link-type="dfn" href="#single-factor-capable" id="ref-for-single-factor-capable①">Single-factor capable</a>
       <tr>
-       <th> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="first-factor-roaming-authenticator">First-factor roaming authenticator</dfn> 
-       <td> <a data-link-type="dfn" href="#cross-platform-attachment" id="ref-for-cross-platform-attachment②">cross-platform</a> 
-       <td> <a data-link-type="dfn" href="#client-side-credential-storage-modality" id="ref-for-client-side-credential-storage-modality③">Client-side storage</a> 
-       <td> <a data-link-type="dfn" href="#multi-factor-capable" id="ref-for-multi-factor-capable①">Multi-factor capable</a> 
+       <th> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="first-factor-roaming-authenticator">First-factor roaming authenticator</dfn>
+       <td> <a data-link-type="dfn" href="#cross-platform-attachment" id="ref-for-cross-platform-attachment②">cross-platform</a>
+       <td> <a data-link-type="dfn" href="#client-side-credential-storage-modality" id="ref-for-client-side-credential-storage-modality③">Client-side storage</a>
+       <td> <a data-link-type="dfn" href="#multi-factor-capable" id="ref-for-multi-factor-capable①">Multi-factor capable</a>
     </table>
     <figcaption> Definitions of names for some <a data-link-type="dfn" href="#authenticator-type" id="ref-for-authenticator-type③">authenticator types</a>. </figcaption>
    </figure>
@@ -3451,7 +3451,7 @@ equivalent to "<code class="idl"><a data-link-type="idl" href="https://heycam.gi
     <li id="op-makecred-step-user-consent">
      <a class="self-link" href="#op-makecred-step-user-consent"></a> Collect an <a data-link-type="dfn" href="#authorization-gesture" id="ref-for-authorization-gesture②⓪">authorization gesture</a> confirming <a data-link-type="dfn" href="#user-consent" id="ref-for-user-consent①⑦">user consent</a> for creating a new credential.
     The prompt for the <a data-link-type="dfn" href="#authorization-gesture" id="ref-for-authorization-gesture②①">authorization gesture</a> is shown by the
-    authenticator if it has its own output capability, or by the user agent otherwise. The prompt SHOULD display <code><var>rpEntity</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialrpentity-id" id="ref-for-dom-publickeycredentialrpentity-id⑧">id</a></code></code>, <code><var>rpEntity</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialentity-name" id="ref-for-dom-publickeycredentialentity-name①①">name</a></code></code>, <code><var>userEntity</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialentity-name" id="ref-for-dom-publickeycredentialentity-name①②">name</a></code></code> and <code><var>userEntity</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialuserentity-displayname" id="ref-for-dom-publickeycredentialuserentity-displayname①⓪">displayName</a></code></code>, if possible. 
+    authenticator if it has its own output capability, or by the user agent otherwise. The prompt SHOULD display <code><var>rpEntity</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialrpentity-id" id="ref-for-dom-publickeycredentialrpentity-id⑧">id</a></code></code>, <code><var>rpEntity</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialentity-name" id="ref-for-dom-publickeycredentialentity-name①①">name</a></code></code>, <code><var>userEntity</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialentity-name" id="ref-for-dom-publickeycredentialentity-name①②">name</a></code></code> and <code><var>userEntity</var>.<code class="idl"><a data-link-type="idl" href="#dom-publickeycredentialuserentity-displayname" id="ref-for-dom-publickeycredentialuserentity-displayname①⓪">displayName</a></code></code>, if possible.
      <p>If <var>requireUserVerification</var> is <code>true</code>, the <a data-link-type="dfn" href="#authorization-gesture" id="ref-for-authorization-gesture②②">authorization gesture</a> MUST include <a data-link-type="dfn" href="#user-verification" id="ref-for-user-verification③⑤">user verification</a>.</p>
      <p>If <var>requireUserPresence</var> is <code>true</code>, the <a data-link-type="dfn" href="#authorization-gesture" id="ref-for-authorization-gesture②③">authorization gesture</a> MUST include a <a data-link-type="dfn" href="#test-of-user-presence" id="ref-for-test-of-user-presence①⓪">test of user presence</a>.</p>
      <p>If the user does not <a data-link-type="dfn" href="#user-consent" id="ref-for-user-consent①⑧">consent</a> or if <a data-link-type="dfn" href="#user-verification" id="ref-for-user-verification③⑥">user verification</a> fails, return an error code equivalent to
@@ -3607,14 +3607,14 @@ undelimited
 concatenation is safe to use here because the <a data-link-type="dfn" href="#authenticator-data" id="ref-for-authenticator-data②⑤">authenticator data</a> describes its own length. The <a data-link-type="dfn" href="#collectedclientdata-hash-of-the-serialized-client-data" id="ref-for-collectedclientdata-hash-of-the-serialized-client-data⑨">hash of the serialized
 client data</a> (which potentially has a variable length) is always the last element.</p>
      <figure id="fig-signature">
-       <img src="images/fido-signature-formats-figure2.svg"> 
+       <img src="images/fido-signature-formats-figure2.svg">
       <figcaption>Generating an <a data-link-type="dfn" href="#assertion-signature" id="ref-for-assertion-signature⑨">assertion signature</a>.</figcaption>
      </figure>
     <li data-md>
      <p>If any error occurred while generating the <a data-link-type="dfn" href="#assertion-signature" id="ref-for-assertion-signature①⓪">assertion signature</a>, return an error code equivalent to "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#unknownerror" id="ref-for-unknownerror③">UnknownError</a></code>" and
 terminate the operation.</p>
     <li id="authenticatorGetAssertion-return-values">
-     <a class="self-link" href="#authenticatorGetAssertion-return-values"></a> Return to the user agent: 
+     <a class="self-link" href="#authenticatorGetAssertion-return-values"></a> Return to the user agent:
      <ul>
       <li data-md>
        <p><var>selectedCredential</var>.<a data-link-type="dfn" href="#public-key-credential-source-id" id="ref-for-public-key-credential-source-id③">id</a>, if either a list of credentials
@@ -3644,7 +3644,7 @@ client ignores any further responses from the authenticator for the canceled ope
    <p>If string value truncation is the chosen accommodation then authenticators MAY truncate in order to make the string fit within a length equal or greater than the specified minimum supported length. Such truncation MAY also respect UTF-8 sequence boundaries or <a data-link-type="dfn" href="https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries" id="ref-for-Grapheme_Cluster_Boundaries">grapheme cluster</a> boundaries <a data-link-type="biblio" href="#biblio-utr29">[UTR29]</a>. This defines the maximum truncation permitted and authenticators MUST NOT truncate further.</p>
    <p>For example, in <a href="#fig-stringTruncation">figure <span class="figure-num-following"></span></a> the string is 65 bytes long. If truncating to 64 bytes then the final 0x88 byte must be removed purely because of space reasons. Since that leaves a partial UTF-8 sequence the remainder of that sequence may also be removed. Since that leaves a partial <a data-link-type="dfn" href="https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries" id="ref-for-Grapheme_Cluster_Boundaries①">grapheme cluster</a> an authenticator may remove the remainder of that cluster.</p>
    <figure id="fig-stringTruncation">
-     <img src="images/string-truncation.svg"> 
+     <img src="images/string-truncation.svg">
     <figcaption>The end of a UTF-8 encoded string showing the positions of different truncation boundaries.</figcaption>
    </figure>
    <p><a data-link-type="dfn" href="#conforming-user-agent" id="ref-for-conforming-user-agent④">Conforming User Agents</a> are responsible for ensuring that the authenticator behaviour observed by <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①④⑨">Relying Parties</a> conforms to this specification with respect to string handling. For example, if an authenticator is known to behave incorrectly when asked to store large strings, the user agent SHOULD perform the truncation for it in order to maintain the model from the point of view of the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑤⓪">Relying Party</a>. User-agents that do this SHOULD truncate at <a data-link-type="dfn" href="https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries" id="ref-for-Grapheme_Cluster_Boundaries②">grapheme clusters</a>.</p>
@@ -3669,7 +3669,7 @@ information is returned by <a data-link-type="dfn" href="#authenticator" id="ref
 for the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑤②">Relying Party</a> to base a trust decision on.
 In these cases, the <a data-link-type="dfn" href="#authenticator" id="ref-for-authenticator①⑤⑨">authenticator</a> provides no guarantees about its operation to the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑤③">Relying Party</a>.</p>
    <figure id="fig-attStructs">
-     <img src="images/fido-attestation-structures.svg"> 
+     <img src="images/fido-attestation-structures.svg">
     <figcaption><a data-link-type="dfn" href="#attestation-object" id="ref-for-attestation-object①①">Attestation object</a> layout illustrating the included <a data-link-type="dfn" href="#authenticator-data" id="ref-for-authenticator-data②⑦">authenticator data</a> (containing <a data-link-type="dfn" href="#attested-credential-data" id="ref-for-attested-credential-data①⓪">attested credential
     data</a>) and the <a data-link-type="dfn" href="#attestation-statement" id="ref-for-attestation-statement①⑦">attestation statement</a>.</figcaption>
    </figure>
@@ -3737,7 +3737,7 @@ object</a> for a given credential. Its format is shown in <a href="#table-attest
                 The COSE_Key-encoded <a data-link-type="dfn" href="#credential-public-key" id="ref-for-credential-public-key①⑧">credential public key</a> MUST contain the "alg" parameter and MUST NOT
                 contain any other OPTIONAL parameters. The "alg" parameter MUST contain a <code class="idl"><a data-link-type="idl" href="#typedefdef-cosealgorithmidentifier" id="ref-for-typedefdef-cosealgorithmidentifier⑥">COSEAlgorithmIdentifier</a></code> value.
                 The encoded <a data-link-type="dfn" href="#credential-public-key" id="ref-for-credential-public-key①⑨">credential public key</a> MUST also contain any additional REQUIRED parameters stipulated by the
-                relevant key type specification, i.e., REQUIRED for the key type "kty" and algorithm "alg" (see Section 8 of <a data-link-type="biblio" href="#biblio-rfc8152">[RFC8152]</a>). 
+                relevant key type specification, i.e., REQUIRED for the key type "kty" and algorithm "alg" (see Section 8 of <a data-link-type="biblio" href="#biblio-rfc8152">[RFC8152]</a>).
     </table>
     <figcaption> <a data-link-type="dfn" href="#attested-credential-data" id="ref-for-attested-credential-data①①">Attested credential data</a> layout. The names in the Name column are only for reference within this document, and are not
         present in the actual representation of the <a data-link-type="dfn" href="#attested-credential-data" id="ref-for-attested-credential-data①②">attested credential data</a>. </figcaption>
@@ -4111,7 +4111,7 @@ the base64url encoding of <code><var>options</var>.<code class="idl"><a data-lin
     <li data-md>
      <p>Verify that the value of <code><var>C</var>.<code class="idl"><a data-link-type="idl" href="#dom-collectedclientdata-tokenbinding" id="ref-for-dom-collectedclientdata-tokenbinding⑤">tokenBinding</a></code>.<code class="idl"><a data-link-type="idl" href="#dom-tokenbinding-status" id="ref-for-dom-tokenbinding-status③">status</a></code></code> matches the state of <a data-link-type="dfn" href="https://tools.ietf.org/html/rfc8471#section-1" id="ref-for-section-1⑤">Token Binding</a> for the TLS connection over which the attestation was obtained. If <a data-link-type="dfn" href="https://tools.ietf.org/html/rfc8471#section-1" id="ref-for-section-1⑥">Token Binding</a> was used on that TLS connection, also verify that <code><var>C</var>.<code class="idl"><a data-link-type="idl" href="#dom-collectedclientdata-tokenbinding" id="ref-for-dom-collectedclientdata-tokenbinding⑥">tokenBinding</a></code>.<code class="idl"><a data-link-type="idl" href="#dom-tokenbinding-id" id="ref-for-dom-tokenbinding-id③">id</a></code></code> matches the <a data-link-type="dfn" href="#base64url-encoding" id="ref-for-base64url-encoding⑧">base64url encoding</a> of the <a data-link-type="dfn" href="https://tools.ietf.org/html/rfc8471#section-3.2" id="ref-for-section-3.2⑤">Token Binding ID</a> for the connection.</p>
     <li id="rp-op-verifying-assertion-step-rpid-hash">
-     <a class="self-link" href="#rp-op-verifying-assertion-step-rpid-hash"></a> Verify that the <code><a data-link-type="dfn" href="#rpidhash" id="ref-for-rpidhash③">rpIdHash</a></code> in <var>authData</var> is the SHA-256 hash of the <a data-link-type="dfn" href="#rp-id" id="ref-for-rp-id③①">RP ID</a> expected by the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑧⑥">Relying Party</a>. 
+     <a class="self-link" href="#rp-op-verifying-assertion-step-rpid-hash"></a> Verify that the <code><a data-link-type="dfn" href="#rpidhash" id="ref-for-rpidhash③">rpIdHash</a></code> in <var>authData</var> is the SHA-256 hash of the <a data-link-type="dfn" href="#rp-id" id="ref-for-rp-id③①">RP ID</a> expected by the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑧⑥">Relying Party</a>.
      <p class="note" role="note"><span>Note:</span> If using the <a data-link-type="dfn" href="#appid" id="ref-for-appid①">appid</a> extension, this step needs some special logic. See <a href="#sctn-appid-extension">§ 10.1 FIDO AppID Extension (appid)</a> for details.</p>
     <li data-md>
      <p>Verify that the <a data-link-type="dfn" href="#concept-user-present" id="ref-for-concept-user-present⑤">User Present</a> bit of the <code><a data-link-type="dfn" href="#flags" id="ref-for-flags①⑧">flags</a></code> in <var>authData</var> is set.</p>
@@ -4147,7 +4147,7 @@ then run the following sub-step:</p>
           the authenticator may be cloned, i.e. at least
           two copies of the <a data-link-type="dfn" href="#credential-private-key" id="ref-for-credential-private-key②⓪">credential private key</a> may exist and are
           being used in parallel. <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑨②">Relying Parties</a> should incorporate this information
-          into their risk scoring.  Whether the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑨③">Relying Party</a> updates <var>storedSignCount</var> in this case, or not, or fails the <a data-link-type="dfn" href="#authentication-ceremony" id="ref-for-authentication-ceremony①⓪">authentication ceremony</a> or not, is <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑨④">Relying Party</a>-specific. 
+          into their risk scoring.  Whether the <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑨③">Relying Party</a> updates <var>storedSignCount</var> in this case, or not, or fails the <a data-link-type="dfn" href="#authentication-ceremony" id="ref-for-authentication-ceremony①⓪">authentication ceremony</a> or not, is <a data-link-type="dfn" href="#relying-party" id="ref-for-relying-party①⑨④">Relying Party</a>-specific.
        </dl>
      </ul>
     <li data-md>
@@ -5289,7 +5289,7 @@ A1                                          -- extension: CBOR map of one elemen
     MUST ensure that no location information is made available through this API without the user’s
     express permission <a data-link-type="biblio" href="#biblio-permissions">[Permissions]</a>. Further, the security and privacy considerations
     given in <a data-link-type="biblio" href="#biblio-geolocation-api">[Geolocation-API]</a> are applicable here and MUST be adhered to.
-    See also <a href="#sctn-security-considerations-client">§ 13.3 Security considerations for clients</a>. 
+    See also <a href="#sctn-security-considerations-client">§ 13.3 Security considerations for clients</a>.
     <p>The location data returned by this extension is conveyed within the
     signed <a data-link-type="dfn" href="#authenticator-extension-output" id="ref-for-authenticator-extension-output①⑦">authenticator extension output</a>, thus it is not possible to remove it from the
     response message’s <a data-link-type="dfn" href="#authenticator-data" id="ref-for-authenticator-data③⑦">authenticator data</a>'s <a data-link-type="dfn" href="#authdataextensions" id="ref-for-authdataextensions①①">extensions</a> member
@@ -5690,7 +5690,7 @@ It is defined as follows:</p>
        <td>string
       <tr>
        <td><var>isResidentCredential</var>
-       <td> If set to <code>true</code>, a <a data-link-type="dfn" href="#resident-credential" id="ref-for-resident-credential①⑥">resident credential</a> is created. If set to <code>false</code>, a <a data-link-type="dfn" href="#non-resident-credential" id="ref-for-non-resident-credential⑧">non-resident credential</a> is created instead. 
+       <td> If set to <code>true</code>, a <a data-link-type="dfn" href="#resident-credential" id="ref-for-resident-credential①⑥">resident credential</a> is created. If set to <code>false</code>, a <a data-link-type="dfn" href="#non-resident-credential" id="ref-for-non-resident-credential⑧">non-resident credential</a> is created instead.
        <td>boolean
       <tr>
        <td><var>rpId</var>
@@ -5698,11 +5698,11 @@ It is defined as follows:</p>
        <td>string
       <tr>
        <td><var>privateKey</var>
-       <td> An asymmetric key package containing a single <a data-link-type="dfn" href="#public-key-credential-source-privatekey" id="ref-for-public-key-credential-source-privatekey②">private key</a> per <a data-link-type="biblio" href="#biblio-rfc5958">[RFC5958]</a>, encoded using <a data-link-type="dfn" href="#base64url-encoding" id="ref-for-base64url-encoding①②">Base64url Encoding</a>. 
+       <td> An asymmetric key package containing a single <a data-link-type="dfn" href="#public-key-credential-source-privatekey" id="ref-for-public-key-credential-source-privatekey②">private key</a> per <a data-link-type="biblio" href="#biblio-rfc5958">[RFC5958]</a>, encoded using <a data-link-type="dfn" href="#base64url-encoding" id="ref-for-base64url-encoding①②">Base64url Encoding</a>.
        <td>string
       <tr>
        <td><var>userHandle</var>
-       <td> The <a data-link-type="dfn" href="#public-key-credential-source-userhandle" id="ref-for-public-key-credential-source-userhandle④">userHandle</a> associated to the credential encoded using <a data-link-type="dfn" href="#base64url-encoding" id="ref-for-base64url-encoding①③">Base64url Encoding</a>. This property may not be defined. 
+       <td> The <a data-link-type="dfn" href="#public-key-credential-source-userhandle" id="ref-for-public-key-credential-source-userhandle④">userHandle</a> associated to the credential encoded using <a data-link-type="dfn" href="#base64url-encoding" id="ref-for-base64url-encoding①③">Base64url Encoding</a>. This property may not be defined.
        <td>string
       <tr>
        <td><var>signCount</var>
@@ -6408,7 +6408,7 @@ Nick Steele,
 Anne van Kesteren,
 Johan Verrept,
 and
-Boris Zbarsky. 
+Boris Zbarsky.
    <p>Thanks to Adam Powers for creating the overall <a data-link-type="dfn" href="#registration" id="ref-for-registration①⑨">registration</a> and <a data-link-type="dfn" href="#authentication" id="ref-for-authentication①⑦">authentication</a> flow diagrams
 (<a href="#fig-registration">Figure 1</a> and <a href="#fig-authentication">Figure 2</a>).</p>
    <p>We thank
@@ -11704,57 +11704,65 @@ for their contributions as our W3C Team Contacts.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

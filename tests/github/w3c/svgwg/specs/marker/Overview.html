@@ -344,14 +344,14 @@ bottom to top:</p>
       <td><dfn class="dfn-paneled" data-dfn-type="element" data-export id="elementdef-marker"><code>marker</code></dfn>
      <tr>
       <th>Categories:
-      <td> <a data-link-type="dfn" href="https://svgwg.org/svg2-draft/struct.html#container-element" id="ref-for-container-element">Container element</a> 
+      <td> <a data-link-type="dfn" href="https://svgwg.org/svg2-draft/struct.html#container-element" id="ref-for-container-element">Container element</a>
      <tr>
       <th>Contexts:
-      <td>none 
+      <td>none
      <tr>
       <th>Content model:
       <td>
-        Any number of the following statements, in order: 
+        Any number of the following statements, in order:
        <ul>
         <li><a data-link-type="dfn">animation elements</a>
         <li><a data-link-type="dfn" href="https://svgwg.org/svg2-draft/struct.html#TermDescriptiveElement" id="ref-for-TermDescriptiveElement">descriptive elements</a>
@@ -378,7 +378,7 @@ bottom to top:</p>
        </ul>
      <tr>
       <th>DOM Interfaces:
-      <td> <a class="idl-code" data-link-type="interface" href="https://svgwg.org/svg2-draft/painting.html#InterfaceSVGMarkerElement" id="ref-for-InterfaceSVGMarkerElement">SVGMarkerElement</a> 
+      <td> <a class="idl-code" data-link-type="interface" href="https://svgwg.org/svg2-draft/painting.html#InterfaceSVGMarkerElement" id="ref-for-InterfaceSVGMarkerElement">SVGMarkerElement</a>
    </table>
    <p>The <a data-link-type="element" href="#elementdef-marker" id="ref-for-elementdef-marker⑥">marker</a> element defines the graphics that are to
 be used for drawing markers on a <a data-link-type="dfn" href="#markable-elements" id="ref-for-markable-elements">markable element</a>.</p>
@@ -435,7 +435,7 @@ be used for drawing markers on a <a data-link-type="dfn" href="#markable-element
   represent the size of the viewport into which the marker is to
   be fitted according to the <a data-link-type="element-attr" href="#element-attrdef-marker-viewbox" id="ref-for-element-attrdef-marker-viewbox①">viewBox</a> and <a data-link-type="element-attr">preserveAspectRatio</a> attributes.  A value of zero for either
   attribute results in nothing being rendered for the marker.  A negative value
-  for either attribute is an error (see <a href="implnote.html#ErrorProcessing">Error processing</a>). 
+  for either attribute is an error (see <a href="implnote.html#ErrorProcessing">Error processing</a>).
     <dt>
      <table class="attrdef">
       <tbody>
@@ -651,7 +651,7 @@ only the rendering aspects of <a data-link-type="element" href="#elementdef-mark
 processed.</p>
    <p class="issue" id="issue-cbf39201"><a class="self-link" href="#issue-cbf39201"></a> Make interaction work on <a data-link-type="dfn" href="#positioned-markers" id="ref-for-positioned-markers⑤">positioned markers</a>.</p>
    <div class="example" id="example-57d2cf19">
-    <a class="self-link" href="#example-57d2cf19"></a> 
+    <a class="self-link" href="#example-57d2cf19"></a>
     <p>The following example shows the use of <a data-link-type="dfn" href="#positioned-markers" id="ref-for-positioned-markers⑥">positioned markers</a> to
   place symbols at particular distances along a path.</p>
 <pre><code class="html">&lt;svg xmlns="http://www.w3.org/2000/svg"
@@ -683,7 +683,7 @@ processed.</p>
 &lt;/svg>
 </code></pre>
     <div class="figure">
-      <img alt="Image showing the use of positioned markers." class="bordered" src="images/markers-positioned.svg"> 
+      <img alt="Image showing the use of positioned markers." class="bordered" src="images/markers-positioned.svg">
      <p class="caption">Child <a data-link-type="element" href="#elementdef-marker" id="ref-for-elementdef-marker③②">marker</a> elements are used to position
     two square and two circular markers.  The cross marker is defined inline
     and does not need an ID.</p>
@@ -692,12 +692,12 @@ processed.</p>
    <h2 class="heading settled" data-level="3" id="MarkerReferences"><span class="secno">3. </span><span class="content">Referencing <a data-link-type="element" href="#elementdef-marker" id="ref-for-elementdef-marker③③">marker</a> elements</span><a class="self-link" href="#MarkerReferences"></a></h2>
    <p>A number of marker properties allow specifying a <a data-link-type="element" href="#elementdef-marker" id="ref-for-elementdef-marker③④">marker</a> using a <a class="production css" data-link-type="type" href="#DataTypeMarkerRef" id="ref-for-DataTypeMarkerRef">&lt;marker-ref></a> value.</p>
    <div class="definition">
-     <dfn class="dfn-paneled css" data-dfn-type="type" data-export id="DataTypeMarkerRef">&lt;marker-ref></dfn> =<br> 
+     <dfn class="dfn-paneled css" data-dfn-type="type" data-export id="DataTypeMarkerRef">&lt;marker-ref></dfn> =<br>
     <div style="margin-left: 2em"> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#url-value" id="ref-for-url-value">&lt;url></a> |<br> child |<br> <a class="production css" data-link-type="type" href="#typedef-child-selector" id="ref-for-typedef-child-selector">&lt;child-selector></a> </div>
    </div>
    <p>where:</p>
    <div class="definition">
-     <dfn class="dfn-paneled css" data-dfn-type="type" data-export id="typedef-child-selector">&lt;child-selector></dfn> = 
+     <dfn class="dfn-paneled css" data-dfn-type="type" data-export id="typedef-child-selector">&lt;child-selector></dfn> =
     <div style="margin-left: 4em">select(<a href="http://www.w3.org/TR/selectors4/#compound">&lt;compound selector></a> #)</div>
    </div>
    <p>Values have the following meaning</p>
@@ -775,7 +775,7 @@ In this case, if the value of <a class="property" data-link-type="propdesc" href
 will be rendered on that final vertex.</p>
    <p class="note" role="note"><span>Note:</span> <a class="property" data-link-type="propdesc" href="#propdef-marker-start" id="ref-for-propdef-marker-start⑧">marker-start</a> and <a class="property" data-link-type="propdesc" href="#propdef-marker-end" id="ref-for-propdef-marker-end⑦">marker-end</a> refer to the first and last vertex of the entire path, not each subpath.</p>
    <div class="example" id="example-afed451f">
-    <a class="self-link" href="#example-afed451f"></a> 
+    <a class="self-link" href="#example-afed451f"></a>
     <p>The following example shows a triangular marker symbol used as a <a data-link-type="dfn" href="#vertex-markers" id="ref-for-vertex-markers">vertex marker</a> to form an arrowhead at the end of two paths.</p>
 <pre><code class="html">&lt;svg xmlns="http://www.w3.org/2000/svg"
      width="275" height="200" viewBox="0 0 275 200">
@@ -794,7 +794,7 @@ will be rendered on that final vertex.</p>
 &lt;/svg>
 </code></pre>
     <div class="figure">
-      <img alt="Image showing the use of an automatically oriented marker." class="bordered" src="images/marker-rendering.svg"> 
+      <img alt="Image showing the use of an automatically oriented marker." class="bordered" src="images/marker-rendering.svg">
      <p class="caption">The triangle is placed at the end of the path and
     oriented automatically so that it points in the right direction.
     The use of <span class="css">context-stroke</span> ensures
@@ -852,7 +852,7 @@ are:</p>
   segment centers.
    </dl>
    <div class="example" id="example-3a5dbc22">
-    <a class="self-link" href="#example-3a5dbc22"></a> 
+    <a class="self-link" href="#example-3a5dbc22"></a>
     <p>The following example shows the use of both <a data-link-type="dfn" href="#vertex-markers" id="ref-for-vertex-markers①">vertex markers</a> and <a data-link-type="dfn" href="#segment-markers" id="ref-for-segment-markers②">segment markers</a> to construct a line graph.</p>
 <pre><code class="html">&lt;svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
 
@@ -880,7 +880,7 @@ are:</p>
 &lt;/svg>
 </code></pre>
     <div class="figure">
-      <img alt="Image showing the use of segment markers." class="bordered" src="images/markers-segment.svg"> 
+      <img alt="Image showing the use of segment markers." class="bordered" src="images/markers-segment.svg">
      <p class="caption">Segment markers are used to place crosses at the center
     of each line segment in the line graph.</p>
     </div>
@@ -948,7 +948,7 @@ account the incoming and outgoing directions.  Instead, it is simply oriented
 such that its positive x-axis is aligned with the direction of the path
 at its position.</p>
    <div class="example" id="example-b321fc99">
-    <a class="self-link" href="#example-b321fc99"></a> 
+    <a class="self-link" href="#example-b321fc99"></a>
     <p>The following example shows the use of the <a class="property" data-link-type="propdesc" href="#propdef-marker-pattern" id="ref-for-propdef-marker-pattern⑤">marker-pattern</a> property
   to specify a repeating pattern of two different markers spaced along a
   path.</p>
@@ -971,7 +971,7 @@ at its position.</p>
 &lt;/svg>
 </code></pre>
     <div class="figure">
-      <img alt="Image showing the use of repeating markers." class="bordered" src="images/markers-repeating.svg"> 
+      <img alt="Image showing the use of repeating markers." class="bordered" src="images/markers-repeating.svg">
      <p class="caption">Markers specified with the <a class="property" data-link-type="propdesc" href="#propdef-marker-pattern" id="ref-for-propdef-marker-pattern⑥">marker-pattern</a> property
     are placed along the path at fixed distances, not relative to the path
     vertices.</p>
@@ -1222,14 +1222,14 @@ both properties would obviously cause an intersection, and so would not
 be allowed.</p>
    <p></p>
    <div class="figure">
-     <img alt="Image showing various marker knockout shapes." class="bordered" src="images/knockout-shapes.svg" style="max-width: none"> 
+     <img alt="Image showing various marker knockout shapes." class="bordered" src="images/knockout-shapes.svg" style="max-width: none">
     <p class="caption">An illustration of the use of inverted and non-inverted circle,
   rectangle and triangle knockout shapes, at both 0px and 10px offsets.
   The value beneath each pink stroke is used for both <a class="property" data-link-type="propdesc" href="#propdef-marker-knockout-left" id="ref-for-propdef-marker-knockout-left④">marker-knockout-left</a> and <a class="property" data-link-type="propdesc" href="#propdef-marker-knockout-right" id="ref-for-propdef-marker-knockout-right④">marker-knockout-right</a>.  (The marker itself here has no
   content and does not render anything.)</p>
    </div>
    <div class="issue" id="issue-cb08f5ff">
-    <a class="self-link" href="#issue-cb08f5ff"></a> 
+    <a class="self-link" href="#issue-cb08f5ff"></a>
     <p>While this is nice for straight line segments, if the
   path is curved at the marker position then it might be preferable to
   have the knockout shapes aligned with the tangent at the knockout shape
@@ -1287,7 +1287,7 @@ because they are part of the formal document structure. CSS 2.1 selectors
 cannot be applied to the (conceptually) cloned DOM tree because its
 contents are not part of the formal document structure.</p>
    <div class="example" id="example-df91dd43">
-    <a class="self-link" href="#example-df91dd43"></a> 
+    <a class="self-link" href="#example-df91dd43"></a>
     <p>For illustrative purposes, we’ll repeat the marker example shown earlier:</p>
 <pre><code class="html">&lt;?xml version="1.0" standalone="no"?>
 &lt;svg width="4in" height="2in"
@@ -1313,7 +1313,7 @@ contents are not part of the formal document structure.</p>
 </code></pre>
    </div>
    <div class="example" id="example-cf4c8f84">
-    <a class="self-link" href="#example-cf4c8f84"></a> 
+    <a class="self-link" href="#example-cf4c8f84"></a>
     <p>The rendering effect of the above file will be visually identical to
   the following:</p>
 <pre><code class="html">&lt;?xml version="1.0" standalone="no"?>
@@ -1404,7 +1404,7 @@ contents are not part of the formal document structure.</p>
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example.</p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1417,14 +1417,14 @@ contents are not part of the formal document structure.</p>
   <p>Conformance to this specification
     is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#style-sheet">CSS
-            style sheet</a>. 
-   <dt>renderer 
+            style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-            documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that writes a style sheet. 
+            documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
     if all of its statements that use syntax defined in this module are valid
@@ -1471,7 +1471,7 @@ contents are not part of the formal document structure.</p>
   <p>
    Further information on submitting testcases and implementation reports
     can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-    Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+    Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -2397,57 +2397,65 @@ marker-mid and marker-end properties</a>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

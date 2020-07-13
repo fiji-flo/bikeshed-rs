@@ -482,7 +482,7 @@ Additionally, an index is maintained on the "title" attribute of the
 objects stored in the object store. This index can be used to look up
 books by title, and enforces a uniqueness constraint. Another index is
 maintained on the "author" attribute of the objects, and can be used
-to look up books by author. 
+to look up books by author.
     <p>A connection to the database is opened. If the "library" database did
 not already exist, it is created and an event handler creates the
 object store and indexes. Finally, the opened connection is saved for
@@ -610,7 +610,7 @@ request<c- p>.</c->onsuccess <c- o>=</c-> <c- a>function</c-><c- p>()</c-> <c- p
     <a class="self-link" href="#handling-versionchange"></a> A single database can be used by multiple clients (pages and workers)
 simultaneously — transactions ensure they don’t clash while reading and writing.
 If a new client wants to upgrade the database (via the <a class="idl-code" data-link-type="event" href="#eventdef-request-upgradeneeded" id="ref-for-eventdef-request-upgradeneeded"><code>upgradeneeded</code></a> event), it cannot do so until all other clients close their connection to the
-current version of the database. 
+current version of the database.
     <p>To avoid blocking a new client from upgrading, clients can listen for the <a class="idl-code" data-link-type="event" href="#eventdef-connection-versionchange" id="ref-for-eventdef-connection-versionchange"><code>versionchange</code></a> event. This fires when another client is wanting to upgrade the
 database. To allow this to continue, react to the <a class="idl-code" data-link-type="event" href="#eventdef-connection-versionchange" id="ref-for-eventdef-connection-versionchange①"><code>versionchange</code></a> event by doing
 something that ultimately closes this client’s <a data-link-type="dfn" href="#connection" id="ref-for-connection">connection</a> to the database.</p>
@@ -688,7 +688,7 @@ opaque sequences of 16-bit code units.</p>
      As a result, <a data-link-type="dfn" href="#name" id="ref-for-name①">name</a> comparison is sensitive to variations in case
   as well as other minor variations such as normalization form, the
   inclusion or omission of controls, and other variations in Unicode
-  text. <a data-link-type="biblio" href="#biblio-charmod-norm">[Charmod-Norm]</a> 
+  text. <a data-link-type="biblio" href="#biblio-charmod-norm">[Charmod-Norm]</a>
     <p>If an implementation uses a storage mechanism which does not support
   arbitrary strings, the implementation can use an escaping mechanism
   or something similar to map the provided name to a string that it
@@ -701,7 +701,7 @@ opaque sequences of 16-bit code units.</p>
     string, producing a highly efficient, consistent, and deterministic
     sort order. The resulting list will not match any particular
     alphabet or lexicographical order, particularly for code points
-    represented by a surrogate pair. 
+    represented by a surrogate pair.
    </details>
    <h3 class="heading settled" data-level="2.1" id="database-construct"><span class="secno">2.1. </span><span class="content">Database</span><a class="self-link" href="#database-construct"></a></h3>
    <p>Each <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin">origin</a> has an associated set of <a data-link-type="dfn" href="#database" id="ref-for-database">databases</a>. A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="database">database</dfn> has zero or more <a data-link-type="dfn" href="#object-store" id="ref-for-object-store">object stores</a> which
@@ -826,7 +826,7 @@ or a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-
    <p>An ECMAScript <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a> value can be converted to a <a data-link-type="dfn" href="#key" id="ref-for-key⑤">key</a> by
 following the steps to <a data-link-type="dfn" href="#convert-a-value-to-a-key" id="ref-for-convert-a-value-to-a-key">convert a value to a key</a>.</p>
    <aside class="note">
-     The following ECMAScript types are valid keys: 
+     The following ECMAScript types are valid keys:
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-terms-and-definitions-number-type" id="ref-for-sec-terms-and-definitions-number-type">Number</a> primitive values, except NaN. This includes Infinity
@@ -1280,7 +1280,7 @@ the current <a data-link-type="dfn" href="#database-version" id="ref-for-databas
 handler.</p>
    <aside class="note">
      An <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction⑧">upgrade transaction</a> enables the creation, renaming, and
-  deletion of <a data-link-type="dfn" href="#object-store" id="ref-for-object-store②⑨">object stores</a> and <a data-link-type="dfn" href="#index-concept" id="ref-for-index-concept①⓪">indexes</a> in a <a data-link-type="dfn" href="#database" id="ref-for-database②②">database</a>. 
+  deletion of <a data-link-type="dfn" href="#object-store" id="ref-for-object-store②⑨">object stores</a> and <a data-link-type="dfn" href="#index-concept" id="ref-for-index-concept①⓪">indexes</a> in a <a data-link-type="dfn" href="#database" id="ref-for-database②②">database</a>.
     <p>An <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction⑨">upgrade transaction</a> is exclusive. The steps to <a data-link-type="dfn" href="#open-a-database" id="ref-for-open-a-database">open a
   database</a> ensure that only one <a data-link-type="dfn" href="#connection" id="ref-for-connection②②">connection</a> to the database is
   open when an <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction①⓪">upgrade transaction</a> is running.
@@ -1546,7 +1546,7 @@ be updated.</p>
      A key can be specified both for object stores which use <a data-link-type="dfn" href="#object-store-in-line-keys" id="ref-for-object-store-in-line-keys">in-line keys</a>, by setting the property on the stored value
   which the object store’s <a data-link-type="dfn" href="#object-store-key-path" id="ref-for-object-store-key-path①">key path</a> points to,
   and for object stores which use <a data-link-type="dfn" href="#object-store-out-of-line-keys" id="ref-for-object-store-out-of-line-keys">out-of-line keys</a>, by passing
-  a key argument to the call to store the <a data-link-type="dfn" href="#object-store-record" id="ref-for-object-store-record②②">record</a>. 
+  a key argument to the call to store the <a data-link-type="dfn" href="#object-store-record" id="ref-for-object-store-record②②">record</a>.
     <p>Only specified keys of <a data-link-type="dfn" href="#key-type" id="ref-for-key-type④">type</a> <em>number</em> can affect the <a data-link-type="dfn" href="#key-generator-current-number" id="ref-for-key-generator-current-number①③">current number</a> of the key generator. Keys of <a data-link-type="dfn" href="#key-type" id="ref-for-key-type⑤">type</a> <em>date</em>, <em>array</em> (regardless of the other keys they
   contain), <em>binary</em>, or <em>string</em> (regardless of whether
   they could be parsed as numbers) have no effect on the <a data-link-type="dfn" href="#key-generator-current-number" id="ref-for-key-generator-current-number①④">current
@@ -1561,7 +1561,7 @@ is to delete the object store and create a new one.</p>
    <aside class="note">
      This limit arises because integers greater than 9007199254740992
   cannot be uniquely represented as ECMAScript <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-terms-and-definitions-number-type" id="ref-for-sec-terms-and-definitions-number-type①">Numbers</a>.
-  As an example, <code>9007199254740992 + 1 === 9007199254740992</code> in ECMAScript. 
+  As an example, <code>9007199254740992 + 1 === 9007199254740992</code> in ECMAScript.
     <p>As long as key generators are used in a normal fashion this limit will
   not be a problem. If you generate a new key 1000 times per
   second day and night, you won’t run into this limit for over
@@ -1574,7 +1574,7 @@ integer higher than the highest numeric key in the store. The same key
 is never generated twice for the same object store unless a
 transaction is rolled back.</p>
    <aside class="example" id="example-key-generator">
-    <a class="self-link" href="#example-key-generator"></a> 
+    <a class="self-link" href="#example-key-generator"></a>
     <p>Each object store gets its own key generator:</p>
 <pre class="language-js highlight">store1 <c- o>=</c-> db<c- p>.</c->createObjectStore<c- p>(</c-><c- u>"store1"</c-><c- p>,</c-> <c- p>{</c-> autoIncrement<c- o>:</c-> <c- kc>true</c-> <c- p>});</c->
 store1<c- p>.</c->put<c- p>(</c-><c- u>"a"</c-><c- p>);</c-> <c- c1>// Will get key 1</c->
@@ -1640,7 +1640,7 @@ store_t2<c- p>.</c->put<c- p>(</c-><c- u>"d"</c-><c- p>);</c-> <c- c1>// Will ge
 </pre>
    </aside>
    <aside class="example" id="example-inline-keygen">
-    <a class="self-link" href="#example-inline-keygen"></a> 
+    <a class="self-link" href="#example-inline-keygen"></a>
     <p>The following examples illustrate the different behaviors when trying
 to use in-line <a data-link-type="dfn" href="#key" id="ref-for-key③⑦">keys</a> and <a data-link-type="dfn" href="#key-generator" id="ref-for-key-generator⑦">key generators</a> to save an object
 to an <a data-link-type="dfn" href="#object-store" id="ref-for-object-store④④">object store</a>.</p>
@@ -1741,11 +1741,11 @@ usage.</p>
      <tr>
       <td><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#constrainterror" id="ref-for-constrainterror①">ConstraintError</a></code>
       <td> A mutation operation in the transaction failed because a
-      constraint was not satisfied. 
+      constraint was not satisfied.
      <tr>
       <td><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#datacloneerror" id="ref-for-datacloneerror">DataCloneError</a></code>
       <td> The data being stored could not be cloned by the internal
-      structured cloning algorithm. 
+      structured cloning algorithm.
      <tr>
       <td><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dataerror" id="ref-for-dataerror②">DataError</a></code>
       <td>Data provided to an operation does not meet requirements.
@@ -1756,16 +1756,16 @@ usage.</p>
       <td><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror">InvalidStateError</a></code>
       <td> An operation was called on an object on which it is not allowed
       or at a time when it is not allowed, or if a request is made on
-      a source object that has been deleted or removed. 
+      a source object that has been deleted or removed.
      <tr>
       <td><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notfounderror" id="ref-for-notfounderror">NotFoundError</a></code>
       <td> The operation failed because the requested database object could
-      not be found. 
+      not be found.
      <tr>
       <td><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#quotaexceedederror" id="ref-for-quotaexceedederror">QuotaExceededError</a></code>
       <td> The operation failed because there was not enough remaining
       storage space, or the storage quota was reached and the user
-      declined to give more space to the database. 
+      declined to give more space to the database.
      <tr>
       <td><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#syntaxerror" id="ref-for-syntaxerror">SyntaxError</a></code>
       <td>The keyPath argument contains an invalid key path.
@@ -1775,15 +1775,15 @@ usage.</p>
      <tr>
       <td><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#transactioninactiveerror" id="ref-for-transactioninactiveerror">TransactionInactiveError</a></code>
       <td> A request was placed against a transaction which is currently
-      not active, or which is finished. 
+      not active, or which is finished.
      <tr>
       <td><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#unknownerror" id="ref-for-unknownerror">UnknownError</a></code>
       <td> The operation failed for reasons unrelated to the database
-      itself and not covered by any other errors. 
+      itself and not covered by any other errors.
      <tr>
       <td><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#versionerror" id="ref-for-versionerror">VersionError</a></code>
       <td> An attempt was made to open a database using a lower version
-      than the existing version. 
+      than the existing version.
    </table>
    <aside class="note"> Given that multiple Indexed DB operations can throw the same type of
   error, and that even a single operation can throw the same type of
@@ -1804,7 +1804,7 @@ asynchronous requests to <a data-link-type="dfn" href="#database" id="ref-for-da
 application through events. This design means that any number of
 requests can be active on any <a data-link-type="dfn" href="#database" id="ref-for-database③①">database</a> at a time.</p>
    <aside class="example" id="example-async-requests">
-    <a class="self-link" href="#example-async-requests"></a> 
+    <a class="self-link" href="#example-async-requests"></a>
     <p>In the following example, we open a <a data-link-type="dfn" href="#database" id="ref-for-database③②">database</a> asynchronously.
 Various event handlers are registered for responding to various
 situations.</p>
@@ -2003,7 +2003,7 @@ otherwise, and <var>request</var>.</p>
          <summary>What happens if <var>version</var> is not given?</summary>
           If <var>version</var> is not given and a <a data-link-type="dfn" href="#database" id="ref-for-database③⑦">database</a> with that name already exists, a connection will be opened
   without changing the <a data-link-type="dfn" href="#database-version" id="ref-for-database-version③">version</a>. If <var>version</var> is not given and no <a data-link-type="dfn" href="#database" id="ref-for-database③⑧">database</a> with
-  that name exists, a new <a data-link-type="dfn" href="#database" id="ref-for-database③⑨">database</a> will be created with <a data-link-type="dfn" href="#database-version" id="ref-for-database-version④">version</a> equal to 1. 
+  that name exists, a new <a data-link-type="dfn" href="#database" id="ref-for-database③⑨">database</a> will be created with <a data-link-type="dfn" href="#database-version" id="ref-for-database-version④">version</a> equal to 1.
         </details>
        <li data-md>
         <p><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-task" id="ref-for-queue-a-task①">Queue a task</a> to run these steps:</p>
@@ -2042,7 +2042,7 @@ otherwise, and <var>request</var>.</p>
             There is no transaction associated with the request (at
   this point), so those steps — which activate an
   associated transaction before dispatch and deactivate
-  the transaction after dispatch — do not apply. 
+  the transaction after dispatch — do not apply.
           </details>
         </ol>
       </ol>
@@ -2088,7 +2088,7 @@ null.</p>
             There is no transaction associated with the request, so
   those steps — which activate an associated
   transaction before dispatch and deactivate the
-  transaction after dispatch — do not apply. 
+  transaction after dispatch — do not apply.
            <p>Also, the <a class="idl-code" data-link-type="event" href="#eventdef-request-success" id="ref-for-eventdef-request-success⑤"><code>success</code></a> event here is a <code class="idl"><a data-link-type="idl" href="#idbversionchangeevent" id="ref-for-idbversionchangeevent①">IDBVersionChangeEvent</a></code> which includes the <code class="idl"><a data-link-type="idl" href="#dom-idbversionchangeevent-oldversion" id="ref-for-dom-idbversionchangeevent-oldversion②">oldVersion</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-idbversionchangeevent-newversion" id="ref-for-dom-idbversionchangeevent-newversion②">newVersion</a></code> details.</p>
           </details>
         </ol>
@@ -2217,7 +2217,7 @@ must return <strong>this</strong>'s <a data-link-type="dfn" href="#connection-ve
     <summary> Is this the same as the <a data-link-type="dfn" href="#database" id="ref-for-database④③">database</a>'s <a data-link-type="dfn" href="#database-version" id="ref-for-database-version⑦">version</a>? </summary>
      As long as the <a data-link-type="dfn" href="#connection" id="ref-for-connection③⑧">connection</a> is open, this is the same as the
   connected <a data-link-type="dfn" href="#database" id="ref-for-database④④">database</a>'s <a data-link-type="dfn" href="#database-version" id="ref-for-database-version⑧">version</a>. But once the <a data-link-type="dfn" href="#connection" id="ref-for-connection③⑨">connection</a> has <a data-link-type="dfn" href="#connection-closed" id="ref-for-connection-closed②">closed</a>, this attribute will not
-  reflect changes made with a later <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction①⑧">upgrade transaction</a>. 
+  reflect changes made with a later <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction①⑧">upgrade transaction</a>.
    </details>
    <dl class="domintro note">
     <dt data-md><var>connection</var> . <code class="idl"><a data-link-type="idl" href="#dom-idbdatabase-objectstorenames" id="ref-for-dom-idbdatabase-objectstorenames①">objectStoreNames</a></code>
@@ -2240,7 +2240,7 @@ the <a data-link-type="dfn" href="#object-store" id="ref-for-object-store⑤⑤"
      As long as the <a data-link-type="dfn" href="#connection" id="ref-for-connection④⓪">connection</a> is open, this is the same as the
   connected <a data-link-type="dfn" href="#database" id="ref-for-database④⑥">database</a>'s <a data-link-type="dfn" href="#object-store" id="ref-for-object-store⑤⑦">object store</a> <a data-link-type="dfn" href="#object-store-name" id="ref-for-object-store-name③">names</a>.
   But once the <a data-link-type="dfn" href="#connection" id="ref-for-connection④①">connection</a> has <a data-link-type="dfn" href="#connection-closed" id="ref-for-connection-closed③">closed</a>, this attribute
-  will not reflect changes made with a later <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction②①">upgrade transaction</a>. 
+  will not reflect changes made with a later <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction②①">upgrade transaction</a>.
    </details>
    <div class="algorithm">
     <p>The <dfn class="dfn-paneled idl-code" data-dfn-for="IDBDatabase" data-dfn-type="method" data-export data-lt="createObjectStore(name, options)|createObjectStore(name)" id="dom-idbdatabase-createobjectstore"><code>createObjectStore(<var>name</var>, <var>options</var>)</code></dfn> method, when invoked, must run these steps:</p>
@@ -2435,7 +2435,7 @@ must return <strong>this</strong>'s <a data-link-type="dfn" href="#object-store-
     <summary> Is this the same as the <a data-link-type="dfn" href="#object-store" id="ref-for-object-store⑦③">object store</a>'s <a data-link-type="dfn" href="#object-store-name" id="ref-for-object-store-name①②">name</a>? </summary>
      As long as the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept④②">transaction</a> has not <a data-link-type="dfn" href="#transaction-finished" id="ref-for-transaction-finished⑤">finished</a>,
   this is the same as the associated <a data-link-type="dfn" href="#object-store" id="ref-for-object-store⑦④">object store</a>'s <a data-link-type="dfn" href="#object-store-name" id="ref-for-object-store-name①③">name</a>. But once the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept④③">transaction</a> has <a data-link-type="dfn" href="#transaction-finished" id="ref-for-transaction-finished⑥">finished</a>, this attribute will not reflect changes made with a
-  later <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction②⑥">upgrade transaction</a>. 
+  later <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction②⑥">upgrade transaction</a>.
    </details>
    <div class="algorithm">
     <p>The <code class="idl"><a data-link-type="idl" href="#dom-idbobjectstore-name" id="ref-for-dom-idbobjectstore-name③">name</a></code> attribute’s setter must run these steps:</p>
@@ -2480,7 +2480,7 @@ getter must return a <code class="idl"><a data-link-type="idl" href="https://htm
      As long as the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept④④">transaction</a> has not <a data-link-type="dfn" href="#transaction-finished" id="ref-for-transaction-finished⑦">finished</a>,
   this is the same as the associated <a data-link-type="dfn" href="#object-store" id="ref-for-object-store⑦⑨">object store</a>'s list
   of <a data-link-type="dfn" href="#index-concept" id="ref-for-index-concept②①">index</a> <a data-link-type="dfn" href="#index-name" id="ref-for-index-name③">names</a>. But once the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept④⑤">transaction</a> has <a data-link-type="dfn" href="#transaction-finished" id="ref-for-transaction-finished⑧">finished</a>, this attribute will not
-  reflect changes made with a later <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction②⑧">upgrade transaction</a>. 
+  reflect changes made with a later <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction②⑧">upgrade transaction</a>.
    </details>
    <p>The <dfn class="dfn-paneled idl-code" data-dfn-for="IDBObjectStore" data-dfn-type="attribute" data-export id="dom-idbobjectstore-transaction"><code>transaction</code></dfn> attribute’s
 getter must return <strong>this</strong>'s <a data-link-type="dfn" href="#object-store-handle-transaction" id="ref-for-object-store-handle-transaction②">transaction</a>.</p>
@@ -2489,7 +2489,7 @@ getter must return true if <strong>this</strong>'s <a data-link-type="dfn" href=
 and false otherwise.</p>
    <div class="note" role="note">
      The following methods throw a "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#readonlyerror" id="ref-for-readonlyerror①">ReadOnlyError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException③⑧">DOMException</a></code> if called within a <a data-link-type="dfn" href="#transaction-read-only-transaction" id="ref-for-transaction-read-only-transaction⑧">read-only transaction</a>, and a "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#transactioninactiveerror" id="ref-for-transactioninactiveerror④">TransactionInactiveError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException③⑨">DOMException</a></code> if
-  called when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept④⑥">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active⑧">active</a>. 
+  called when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept④⑥">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active⑧">active</a>.
     <dl class="domintro">
      <dt data-md><var>request</var> = <var>store</var> . <code class="idl"><a data-link-type="idl" href="#dom-idbobjectstore-put" id="ref-for-dom-idbobjectstore-put①">put</a></code>(<var>value</var> [, <var>key</var>])
      <dt data-md><var>request</var> = <var>store</var> . <code class="idl"><a data-link-type="idl" href="#dom-idbobjectstore-add" id="ref-for-dom-idbobjectstore-add①">add</a></code>(<var>value</var> [, <var>key</var>])
@@ -2559,7 +2559,7 @@ Rethrow any exceptions.</p>
         The value is serialized when stored. Treating it as a copy
   here allows other algorithms in this specification to treat it as
   an ECMAScript value, but implementations can optimize this
-  if the difference in behavior is not observable. 
+  if the difference in behavior is not observable.
       </details>
      <li data-md>
       <p>If <var>store</var> uses <a data-link-type="dfn" href="#object-store-in-line-keys" id="ref-for-object-store-in-line-keys③">in-line keys</a>, then:</p>
@@ -2634,7 +2634,7 @@ then <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-throw" i
     </ol>
     <div class="note" role="note">
       The following methods throw a "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#transactioninactiveerror" id="ref-for-transactioninactiveerror⑧">TransactionInactiveError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException⑤⑦">DOMException</a></code> if called
-  when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept④⑦">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active①②">active</a>. 
+  when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept④⑦">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active①②">active</a>.
      <dl class="domintro">
       <dt data-md><var>request</var> = <var>store</var> . <code class="idl"><a data-link-type="idl" href="#dom-idbobjectstore-get" id="ref-for-dom-idbobjectstore-get①">get</a></code>(<var>query</var>)
       <dd data-md>
@@ -2793,7 +2793,7 @@ identifying the <a data-link-type="dfn" href="#object-store-record" id="ref-for-
 given, an <a data-link-type="dfn" href="#unbounded-key-range" id="ref-for-unbounded-key-range④">unbounded key range</a> is used.</p>
    <div class="note" role="note">
      The following methods throw a "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#transactioninactiveerror" id="ref-for-transactioninactiveerror①④">TransactionInactiveError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException⑥⑧">DOMException</a></code> if called
-  when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept④⑧">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active①⑧">active</a>. 
+  when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept④⑧">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active①⑧">active</a>.
     <dl class="domintro">
      <dt data-md><var>request</var> = <var>store</var> . <code class="idl"><a data-link-type="idl" href="#dom-idbobjectstore-opencursor" id="ref-for-dom-idbobjectstore-opencursor②">openCursor</a></code>([<var>query</var> [, <var>direction</var> = "next"]])
      <dd data-md>
@@ -2952,7 +2952,7 @@ if creating the <a data-link-type="dfn" href="#index-concept" id="ref-for-index-
 a "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#quotaexceedederror" id="ref-for-quotaexceedederror②">QuotaExceededError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException⑧②">DOMException</a></code> must be used as error and if the index can’t be
 created due to <a data-link-type="dfn" href="#index-unique-flag" id="ref-for-index-unique-flag③">unique flag</a> constraints, a "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#constrainterror" id="ref-for-constrainterror⑦">ConstraintError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException⑧③">DOMException</a></code> must be used as error.</p>
    <aside class="example" id="example-async-index-creation">
-    <a class="self-link" href="#example-async-index-creation"></a> 
+    <a class="self-link" href="#example-async-index-creation"></a>
     <p>The asynchronous creation of indexes is observable in the following example:</p>
 <pre class="language-js highlight">    <c- kr>const</c-> request1 <c- o>=</c-> objectStore<c- p>.</c->put<c- p>({</c->name<c- o>:</c-> <c- u>"betty"</c-><c- p>},</c-> <c- mi>1</c-><c- p>);</c->
     <c- kr>const</c-> request2 <c- o>=</c-> objectStore<c- p>.</c->put<c- p>({</c->name<c- o>:</c-> <c- u>"betty"</c-><c- p>},</c-> <c- mi>2</c-><c- p>);</c->
@@ -3075,7 +3075,7 @@ return <strong>this</strong>'s <a data-link-type="dfn" href="#index-name" id="re
     <summary> Is this the same as the <a data-link-type="dfn" href="#index-concept" id="ref-for-index-concept③②">index</a>'s <a data-link-type="dfn" href="#index-name" id="ref-for-index-name①①">name</a>? </summary>
      As long as the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑤⓪">transaction</a> has not <a data-link-type="dfn" href="#transaction-finished" id="ref-for-transaction-finished①⓪">finished</a>,
   this is the same as the associated <a data-link-type="dfn" href="#index-concept" id="ref-for-index-concept③③">index</a>'s <a data-link-type="dfn" href="#index-name" id="ref-for-index-name①②">name</a>. But once the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑤①">transaction</a> has <a data-link-type="dfn" href="#transaction-finished" id="ref-for-transaction-finished①①">finished</a>, this attribute will not reflect changes made with a
-  later <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction④⓪">upgrade transaction</a>. 
+  later <a data-link-type="dfn" href="#upgrade-transaction" id="ref-for-upgrade-transaction④⓪">upgrade transaction</a>.
    </details>
    <div class="algorithm">
     <p>The <code class="idl"><a data-link-type="idl" href="#dom-idbindex-name" id="ref-for-dom-idbindex-name③">name</a></code> attribute’s setter must run these steps:</p>
@@ -3120,7 +3120,7 @@ must return <strong>this</strong>'s <a data-link-type="dfn" href="#index-handle-
 return <strong>this</strong>'s <a data-link-type="dfn" href="#index-handle-index" id="ref-for-index-handle-index④">index</a>'s <a data-link-type="dfn" href="#index-unique-flag" id="ref-for-index-unique-flag⑥">unique flag</a>.</p>
    <div class="note" role="note">
      The following methods throw an "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#transactioninactiveerror" id="ref-for-transactioninactiveerror②⓪">TransactionInactiveError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException⑨⑥">DOMException</a></code> if called
-  when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑤②">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active②④">active</a>. 
+  when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑤②">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active②④">active</a>.
     <dl class="domintro">
      <dt data-md><var>request</var> = <var>index</var> . <code class="idl"><a data-link-type="idl" href="#dom-idbindex-get" id="ref-for-dom-idbindex-get①">get</a></code>(<var>query</var>)
      <dd data-md>
@@ -3275,7 +3275,7 @@ identifying the <a data-link-type="dfn" href="#object-store-record" id="ref-for-
 given, an <a data-link-type="dfn" href="#unbounded-key-range" id="ref-for-unbounded-key-range⑨">unbounded key range</a> is used.</p>
    <div class="note" role="note">
      The following methods throw an "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#transactioninactiveerror" id="ref-for-transactioninactiveerror②⑥">TransactionInactiveError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException①⓪⑦">DOMException</a></code> if called
-  when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑤③">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active③⓪">active</a>. 
+  when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑤③">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active③⓪">active</a>.
     <dl class="domintro">
      <dt data-md><var>request</var> = <var>index</var> . <code class="idl"><a data-link-type="idl" href="#dom-idbindex-opencursor" id="ref-for-dom-idbindex-opencursor②">openCursor</a></code>([<var>query</var> [, <var>direction</var> = "next"]])
      <dd data-md>
@@ -3570,7 +3570,7 @@ return <strong>this</strong>'s <a data-link-type="dfn" href="#cursor-request" id
      The following methods advance a <a data-link-type="dfn" href="#cursor" id="ref-for-cursor③⓪">cursor</a>. Once the cursor has
   advanced, a <a class="idl-code" data-link-type="event" href="#eventdef-request-success" id="ref-for-eventdef-request-success⑥"><code>success</code></a> event will be fired at the
   same <code class="idl"><a data-link-type="idl" href="#idbrequest" id="ref-for-idbrequest④②">IDBRequest</a></code> returned when the cursor was opened. The <code class="idl"><a data-link-type="idl" href="#dom-idbrequest-result" id="ref-for-dom-idbrequest-result②②">result</a></code> will be the same cursor if a <a data-link-type="dfn" href="#object-store-record" id="ref-for-object-store-record⑥⑨">record</a> was
-  in range, or <code>undefined</code> otherwise. 
+  in range, or <code>undefined</code> otherwise.
     <p>If called while the cursor is already advancing, an "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror④④">InvalidStateError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException①②①">DOMException</a></code> will be thrown.</p>
     <p>The following methods throw a "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#transactioninactiveerror" id="ref-for-transactioninactiveerror②⑨">TransactionInactiveError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException①②②">DOMException</a></code> if called
   when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑤⑤">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active③④">active</a>.</p>
@@ -3731,7 +3731,7 @@ using the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#current-
   flag</a> has been set to false. </aside>
    <div class="note" role="note">
      The following methods throw a "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#readonlyerror" id="ref-for-readonlyerror⑤">ReadOnlyError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException①④⑦">DOMException</a></code> if called within a <a data-link-type="dfn" href="#transaction-read-only-transaction" id="ref-for-transaction-read-only-transaction①②">read-only transaction</a>, and a "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#transactioninactiveerror" id="ref-for-transactioninactiveerror③③">TransactionInactiveError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException①④⑧">DOMException</a></code> if
-  called when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑤⑥">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active③⑧">active</a>. 
+  called when the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑤⑥">transaction</a> is not <a data-link-type="dfn" href="#transaction-active" id="ref-for-transaction-active③⑧">active</a>.
     <dl class="domintro">
      <dt data-md><var>request</var> = <var>cursor</var> . <code class="idl"><a data-link-type="idl" href="#dom-idbcursor-update" id="ref-for-dom-idbcursor-update①">update</a></code>(<var>value</var>)
      <dd data-md>
@@ -3775,7 +3775,7 @@ Rethrow any exceptions.</p>
         The value is serialized when stored. Treating it as a copy
   here allows other algorithms in this specification to treat it as
   an ECMAScript value, but implementations can optimize this
-  if the difference in behavior is not observable. 
+  if the difference in behavior is not observable.
       </details>
      <li data-md>
       <p>If <strong>this</strong>'s <a data-link-type="dfn" href="#cursor-effective-object-store" id="ref-for-cursor-effective-object-store⑥">effective object store</a> uses <a data-link-type="dfn" href="#object-store-in-line-keys" id="ref-for-object-store-in-line-keys⑤">in-line
@@ -4368,7 +4368,7 @@ reference its <a data-link-type="dfn" href="#object-store-handle-object-store" i
       <details class="note">
        <summary>How is this observable?</summary>
         Although script cannot access an <a data-link-type="dfn" href="#object-store" id="ref-for-object-store①⓪③">object store</a> by using the <code class="idl"><a data-link-type="idl" href="#dom-idbtransaction-objectstore" id="ref-for-dom-idbtransaction-objectstore②">objectStore()</a></code> method on an <code class="idl"><a data-link-type="idl" href="#idbtransaction" id="ref-for-idbtransaction⑨">IDBTransaction</a></code> instance after
-  the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑦②">transaction</a> is aborted, it can still have references to <code class="idl"><a data-link-type="idl" href="#idbobjectstore" id="ref-for-idbobjectstore②②">IDBObjectStore</a></code> instances where the <code class="idl"><a data-link-type="idl" href="#dom-idbobjectstore-name" id="ref-for-dom-idbobjectstore-name⑤">name</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-idbobjectstore-indexnames" id="ref-for-dom-idbobjectstore-indexnames⑤">indexNames</a></code> properties can be queried. 
+  the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑦②">transaction</a> is aborted, it can still have references to <code class="idl"><a data-link-type="idl" href="#idbobjectstore" id="ref-for-idbobjectstore②②">IDBObjectStore</a></code> instances where the <code class="idl"><a data-link-type="idl" href="#dom-idbobjectstore-name" id="ref-for-dom-idbobjectstore-name⑤">name</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-idbobjectstore-indexnames" id="ref-for-dom-idbobjectstore-indexnames⑤">indexNames</a></code> properties can be queried.
       </details>
      <li data-md>
       <p>For each <a data-link-type="dfn" href="#index-handle" id="ref-for-index-handle⑨">index handle</a> <var>handle</var> associated with <var>transaction</var>,
@@ -4384,7 +4384,7 @@ its <a data-link-type="dfn" href="#index-handle-index" id="ref-for-index-handle-
       <details class="note">
        <summary>How is this observable?</summary>
         Although script cannot access an <a data-link-type="dfn" href="#index-concept" id="ref-for-index-concept④⑤">index</a> by using the <code class="idl"><a data-link-type="idl" href="#dom-idbobjectstore-index" id="ref-for-dom-idbobjectstore-index①">index()</a></code> method on an <code class="idl"><a data-link-type="idl" href="#idbobjectstore" id="ref-for-idbobjectstore②③">IDBObjectStore</a></code> instance after the <a data-link-type="dfn" href="#transaction-concept" id="ref-for-transaction-concept⑦③">transaction</a> is aborted, it can still have references to <code class="idl"><a data-link-type="idl" href="#idbindex" id="ref-for-idbindex①⑥">IDBIndex</a></code> instances where the <code class="idl"><a data-link-type="idl" href="#dom-idbindex-name" id="ref-for-dom-idbindex-name⑤">name</a></code> property can
-  be queried. 
+  be queried.
       </details>
     </ol>
    </div>
@@ -5297,7 +5297,7 @@ Rethrow any exceptions.</p>
     </div>
     <aside class="note">
       These steps are similar to those to <a data-link-type="dfn" href="#convert-a-value-to-a-key" id="ref-for-convert-a-value-to-a-key①⑧">convert a value to a key</a> but if the top-level value is an <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-array-objects" id="ref-for-sec-array-objects①⑧">Array</a> then members which can
-  not be converted to keys are ignored, and duplicates are removed. 
+  not be converted to keys are ignored, and duplicates are removed.
      <p>For example, the value <code>[10, 20, null, 30, 20]</code> is
   converted to an <a data-link-type="dfn" href="#array-key" id="ref-for-array-key①③">array key</a> with <a data-link-type="dfn" href="#subkeys" id="ref-for-subkeys⑤">subkeys</a> 10, 20, 30.</p>
     </aside>
@@ -5562,7 +5562,7 @@ specification.</p>
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
    <div class="example" id="example-ae2b6bc0">
-    <a class="self-link" href="#example-ae2b6bc0"></a> 
+    <a class="self-link" href="#example-ae2b6bc0"></a>
     <p>This is an example of an informative example.</p>
    </div>
    <p>Informative notes begin with the word “Note” and are set apart from the
@@ -5580,7 +5580,7 @@ specification.</p>
     are encouraged to optimize.</p>
   </div>
   <p id="back-to-top" role="navigation"><a href="#toc"><abbr title="Back to top">↑</abbr></a></p>
-  . 
+  .
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
@@ -9644,57 +9644,65 @@ specification.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

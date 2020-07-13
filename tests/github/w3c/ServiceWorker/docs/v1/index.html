@@ -1920,7 +1920,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <section>
     <h2 class="heading settled" data-level="3" id="document-context"><span class="secno">3. </span><span class="content">Client Context</span><a class="self-link" href="#document-context"></a></h2>
     <div class="example" id="example-c7be5225">
-     <a class="self-link" href="#example-c7be5225"></a> Bootstrapping with a service worker: 
+     <a class="self-link" href="#example-c7be5225"></a> Bootstrapping with a service worker:
 <pre class="highlight"><c- c1>// scope defaults to the path the script sits in</c->
 <c- c1>// "/" in this example</c->
 navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/serviceworker.js"</c-><c- p>).</c->then<c- p>(</c->registration <c- p>=></c-> <c- p>{</c->
@@ -1960,7 +1960,7 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/servic
       <h4 class="heading settled" data-level="3.1.1" id="service-worker-creation"><span class="secno">3.1.1. </span><span class="content">Getting <code class="idl"><a data-link-type="idl" href="#serviceworker" id="ref-for-serviceworker⑦">ServiceWorker</a></code> instances</span><a class="self-link" href="#service-worker-creation"></a></h4>
       <p>An <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#environment-settings-object" id="ref-for-environment-settings-object②">environment settings object</a> has a <dfn class="dfn-paneled" data-dfn-for="environment settings object" data-dfn-type="dfn" data-noexport id="environment-settings-object-service-worker-object-map">service worker object map</dfn>, a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ordered-map" id="ref-for-ordered-map①">map</a> where the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#map-key" id="ref-for-map-key">keys</a> are <a data-link-type="dfn" href="#dfn-service-worker" id="ref-for-dfn-service-worker④④">service workers</a> and the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#map-value" id="ref-for-map-value">values</a> are <code class="idl"><a data-link-type="idl" href="#serviceworker" id="ref-for-serviceworker⑧">ServiceWorker</a></code> objects.</p>
       <section class="algorithm" data-algorithm="service-worker-creation-algorithm">
-        To <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="get the service worker object|getting the service worker object" data-noexport id="get-the-service-worker-object">get the service worker object</dfn> representing <var>serviceWorker</var> (a <a data-link-type="dfn" href="#dfn-service-worker" id="ref-for-dfn-service-worker④⑤">service worker</a>) in <var>environment</var> (an <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#environment-settings-object" id="ref-for-environment-settings-object③">environment settings object</a>), run these steps: 
+        To <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="get the service worker object|getting the service worker object" data-noexport id="get-the-service-worker-object">get the service worker object</dfn> representing <var>serviceWorker</var> (a <a data-link-type="dfn" href="#dfn-service-worker" id="ref-for-dfn-service-worker④⑤">service worker</a>) in <var>environment</var> (an <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#environment-settings-object" id="ref-for-environment-settings-object③">environment settings object</a>), run these steps:
        <ol>
         <li data-md>
          <p>Let <var>objectMap</var> be <var>environment</var>’s <a data-link-type="dfn" href="#environment-settings-object-service-worker-object-map" id="ref-for-environment-settings-object-service-worker-object-map">service worker object map</a>.</p>
@@ -1983,7 +1983,7 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/servic
       <h4 class="heading settled" data-level="3.1.2" id="service-worker-url"><span class="secno">3.1.2. </span><span class="content"><code class="idl"><a data-link-type="idl" href="#dom-serviceworker-scripturl" id="ref-for-dom-serviceworker-scripturl①">scriptURL</a></code></span><a class="self-link" href="#service-worker-url"></a></h4>
       <p>The <dfn class="dfn-paneled idl-code" data-dfn-for="ServiceWorker" data-dfn-type="attribute" data-export id="dom-serviceworker-scripturl"><code>scriptURL</code></dfn> attribute <em>must</em> return the <a data-link-type="dfn" href="#dfn-service-worker" id="ref-for-dfn-service-worker④⑥">service worker</a>'s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-serializer" id="ref-for-concept-url-serializer①">serialized</a> <a data-link-type="dfn" href="#dfn-script-url" id="ref-for-dfn-script-url">script url</a>.</p>
       <div class="example" id="example-afd15a33">
-       <a class="self-link" href="#example-afd15a33"></a> For example, consider a document created by a navigation to <code>https://example.com/app.html</code> which <a data-link-type="dfn" href="#match-service-worker-registration" id="ref-for-match-service-worker-registration②">matches</a> via the following registration call which has been previously executed: 
+       <a class="self-link" href="#example-afd15a33"></a> For example, consider a document created by a navigation to <code>https://example.com/app.html</code> which <a data-link-type="dfn" href="#match-service-worker-registration" id="ref-for-match-service-worker-registration②">matches</a> via the following registration call which has been previously executed:
 <pre class="highlight"><c- c1>// Script on the page https://example.com/app.html</c->
 navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/service_worker.js"</c-><c- p>);</c->
 </pre>
@@ -2024,7 +2024,7 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/servic
              <dt><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window①">Window</a></code>
              <dd>a new <code class="idl"><a data-link-type="idl" href="#windowclient" id="ref-for-windowclient">WindowClient</a></code> object that represents <var>incumbentGlobal</var>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#relevant-settings-object" id="ref-for-relevant-settings-object①">relevant settings object</a>.
              <dt>Otherwise
-             <dd>a new <code class="idl"><a data-link-type="idl" href="#client" id="ref-for-client">Client</a></code> object that represents <var>incumbentGlobal</var>’s associated worker 
+             <dd>a new <code class="idl"><a data-link-type="idl" href="#client" id="ref-for-client">Client</a></code> object that represents <var>incumbentGlobal</var>’s associated worker
             </dl>
            <li data-md>
             <p>Let <var>origin</var> be the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#ascii-serialisation-of-an-origin" id="ref-for-ascii-serialisation-of-an-origin">serialization</a> of <var>incumbentSettings</var>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-settings-object-origin" id="ref-for-concept-settings-object-origin①">origin</a>.</p>
@@ -2091,7 +2091,7 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/servic
       <h4 class="heading settled" data-level="3.2.1" id="service-worker-registration-creation"><span class="secno">3.2.1. </span><span class="content">Getting <code class="idl"><a data-link-type="idl" href="#serviceworkerregistration" id="ref-for-serviceworkerregistration③">ServiceWorkerRegistration</a></code> instances</span><a class="self-link" href="#service-worker-registration-creation"></a></h4>
       <p>An <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#environment-settings-object" id="ref-for-environment-settings-object④">environment settings object</a> has a <dfn class="dfn-paneled" data-dfn-for="environment settings object" data-dfn-type="dfn" data-noexport id="environment-settings-object-service-worker-registration-object-map">service worker registration object map</dfn>, a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ordered-map" id="ref-for-ordered-map②">map</a> where the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#map-key" id="ref-for-map-key①">keys</a> are <a data-link-type="dfn" href="#dfn-service-worker-registration" id="ref-for-dfn-service-worker-registration②⑥">service worker registrations</a> and the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#map-value" id="ref-for-map-value①">values</a> are <code class="idl"><a data-link-type="idl" href="#serviceworkerregistration" id="ref-for-serviceworkerregistration④">ServiceWorkerRegistration</a></code> objects.</p>
       <section class="algorithm" data-algorithm="service-worker-registration-creation-algorithm">
-        To <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="get the service worker registration object|getting the service worker registration object" data-noexport id="get-the-service-worker-registration-object">get the service worker registration object</dfn> representing <var>registration</var> (a <a data-link-type="dfn" href="#dfn-service-worker-registration" id="ref-for-dfn-service-worker-registration②⑦">service worker registration</a>) in <var>environment</var> (an <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#environment-settings-object" id="ref-for-environment-settings-object⑤">environment settings object</a>), run these steps: 
+        To <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="get the service worker registration object|getting the service worker registration object" data-noexport id="get-the-service-worker-registration-object">get the service worker registration object</dfn> representing <var>registration</var> (a <a data-link-type="dfn" href="#dfn-service-worker-registration" id="ref-for-dfn-service-worker-registration②⑦">service worker registration</a>) in <var>environment</var> (an <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#environment-settings-object" id="ref-for-environment-settings-object⑤">environment settings object</a>), run these steps:
        <ol>
         <li data-md>
          <p>Let <var>objectMap</var> be <var>environment</var>’s <a data-link-type="dfn" href="#environment-settings-object-service-worker-registration-object-map" id="ref-for-environment-settings-object-service-worker-registration-object-map">service worker registration object map</a>.</p>
@@ -2468,7 +2468,7 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/servic
    <section>
     <h2 class="heading settled" data-level="4" id="execution-context"><span class="secno">4. </span><span class="content">Execution Context</span><a class="self-link" href="#execution-context"></a></h2>
     <div class="example" id="example-7cd16f9a">
-     <a class="self-link" href="#example-7cd16f9a"></a> Serving Cached Resources: 
+     <a class="self-link" href="#example-7cd16f9a"></a> Serving Cached Resources:
 <pre class="highlight"><c- c1>// caching.js</c->
 self<c- p>.</c->addEventListener<c- p>(</c-><c- u>"install"</c-><c- p>,</c-> event <c- p>=></c-> <c- p>{</c->
   event<c- p>.</c->waitUntil<c- p>(</c->
@@ -3083,7 +3083,7 @@ self<c- p>.</c->addEventListener<c- p>(</c-><c- u>"fetch"</c-><c- p>,</c-> event
       </ol>
      </section>
      <section class="algorithm" data-algorithm="add-lifetime-promise">
-       To <dfn class="dfn-paneled" data-dfn-for="ExtendableEvent" data-dfn-type="dfn" data-export id="extendableevent-add-lifetime-promise">add lifetime promise</dfn> <var>promise</var> (a <a data-link-type="dfn" href="http://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects②⓪">promise</a>) to <var>event</var> (an <code class="idl"><a data-link-type="idl" href="#extendableevent" id="ref-for-extendableevent⑧">ExtendableEvent</a></code>), run these steps: 
+       To <dfn class="dfn-paneled" data-dfn-for="ExtendableEvent" data-dfn-type="dfn" data-export id="extendableevent-add-lifetime-promise">add lifetime promise</dfn> <var>promise</var> (a <a data-link-type="dfn" href="http://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects②⓪">promise</a>) to <var>event</var> (an <code class="idl"><a data-link-type="idl" href="#extendableevent" id="ref-for-extendableevent⑧">ExtendableEvent</a></code>), run these steps:
       <ol>
        <li data-md>
         <p>If <var>event</var>’s <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#dom-event-istrusted" id="ref-for-dom-event-istrusted">isTrusted</a></code> attribute is false, <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-throw" id="ref-for-dfn-throw②">throw</a> an "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror③">InvalidStateError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException⑥">DOMException</a></code>.</p>
@@ -4228,7 +4228,7 @@ self<c- p>.</c->addEventListener<c- p>(</c-><c- u>"fetch"</c-><c- p>,</c-> event
     <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="dfn-scope-to-registration-map">scope to registration map</dfn> is an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ordered-map" id="ref-for-ordered-map④">ordered map</a> where the keys are <a data-link-type="dfn" href="#dfn-scope-url" id="ref-for-dfn-scope-url①①">scope urls</a>, <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-serializer" id="ref-for-concept-url-serializer④">serialized</a>, and the values are <a data-link-type="dfn" href="#dfn-service-worker-registration" id="ref-for-dfn-service-worker-registration④③">service worker registrations</a>.</p>
     <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="dfn-job">job</dfn> is an abstraction of one of register, update, and unregister request for a <a data-link-type="dfn" href="#dfn-service-worker-registration" id="ref-for-dfn-service-worker-registration④④">service worker registration</a>.</p>
     <div>
-      A <a data-link-type="dfn" href="#dfn-job" id="ref-for-dfn-job">job</a> has a <dfn class="dfn-paneled" data-dfn-for="job" data-dfn-type="dfn" data-noexport id="dfn-job-type">job type</dfn>, which is one of <em>register</em>, <em>update</em>, and <em>unregister</em>. 
+      A <a data-link-type="dfn" href="#dfn-job" id="ref-for-dfn-job">job</a> has a <dfn class="dfn-paneled" data-dfn-for="job" data-dfn-type="dfn" data-noexport id="dfn-job-type">job type</dfn>, which is one of <em>register</em>, <em>update</em>, and <em>unregister</em>.
      <p>A <a data-link-type="dfn" href="#dfn-job" id="ref-for-dfn-job①">job</a> has a <dfn class="dfn-paneled" data-dfn-for="job" data-dfn-type="dfn" data-noexport id="dfn-job-scope-url">scope url</dfn> (a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url" id="ref-for-concept-url③">URL</a>).</p>
      <p>A <a data-link-type="dfn" href="#dfn-job" id="ref-for-dfn-job②">job</a> has a <dfn class="dfn-paneled" data-dfn-for="job" data-dfn-type="dfn" data-noexport id="dfn-job-script-url">script url</dfn> (a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url" id="ref-for-concept-url④">URL</a>).</p>
      <p>A <a data-link-type="dfn" href="#dfn-job" id="ref-for-dfn-job③">job</a> has a <dfn class="dfn-paneled" data-dfn-for="job" data-dfn-type="dfn" data-noexport id="dfn-job-worker-type">worker type</dfn> ("<code>classic</code>" or "<code>module</code>").</p>
@@ -5360,7 +5360,7 @@ self<c- p>.</c->addEventListener<c- p>(</c-><c- u>"fetch"</c-><c- p>,</c-> event
        <p>If <var>registration</var> is <a data-link-type="dfn" href="#service-worker-registration-stale" id="ref-for-service-worker-registration-stale⑥">stale</a>, then <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel③③">in parallel</a> run the <a data-link-type="dfn" href="#soft-update" id="ref-for-soft-update⑤">Soft Update</a> algorithm with <var>registration</var>.</p>
      </ol>
      <div class="example" id="example-cfaebd87">
-      <a class="self-link" href="#example-cfaebd87"></a> To fire an "<code>amazingthing</code>" event (which is of type <code>AmazingThingEvent</code>) on a particular <var>serviceWorkerRegistration</var>, and initialize the event object’s properties, the prose would be: 
+      <a class="self-link" href="#example-cfaebd87"></a> To fire an "<code>amazingthing</code>" event (which is of type <code>AmazingThingEvent</code>) on a particular <var>serviceWorkerRegistration</var>, and initialize the event object’s properties, the prose would be:
       <ol>
        <li data-md>
         <p><a data-link-type="dfn" href="#fire-functional-event" id="ref-for-fire-functional-event①">Fire Functional Event</a> "<code>amazingthing</code>" using <code>AmazingThingEvent</code> on <var>serviceWorkerRegistration</var> with the following properties:</p>
@@ -6176,7 +6176,7 @@ self<c- p>.</c->addEventListener<c- p>(</c-><c- u>"fetch"</c-><c- p>,</c-> event
        <p class="note" role="note"><span>Note:</span> The value is a URL. If a relative URL is given, it is parsed against the script’s URL.</p>
      </dl>
      <div class="example" id="example-3c0435b3">
-      <a class="self-link" href="#example-3c0435b3"></a> Default scope: 
+      <a class="self-link" href="#example-3c0435b3"></a> Default scope:
 <pre class="highlight"><c- c1>// Maximum allowed scope defaults to the path the script sits in</c->
 <c- c1>// "/js/" in this example</c->
 navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/js/sw.js"</c-><c- p>).</c->then<c- p>(()</c-> <c- p>=></c-> <c- p>{</c->
@@ -6185,7 +6185,7 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/js/sw.
 </pre>
      </div>
      <div class="example" id="example-7c01199a">
-      <a class="self-link" href="#example-7c01199a"></a> Upper path without Service-Worker-Allowed header: 
+      <a class="self-link" href="#example-7c01199a"></a> Upper path without Service-Worker-Allowed header:
 <pre class="highlight"><c- c1>// Set the scope to an upper path of the script location</c->
 <c- c1>// Response has no Service-Worker-Allowed header</c->
 navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/js/sw.js"</c-><c- p>,</c-> <c- p>{</c-> scope<c- o>:</c-> <c- u>"/"</c-> <c- p>}).</c-><c- k>catch</c-><c- p>(()</c-> <c- p>=></c-> <c- p>{</c->
@@ -6194,7 +6194,7 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/js/sw.
 </pre>
      </div>
      <div class="example" id="example-4ac10046">
-      <a class="self-link" href="#example-4ac10046"></a> Upper path with Service-Worker-Allowed header: 
+      <a class="self-link" href="#example-4ac10046"></a> Upper path with Service-Worker-Allowed header:
 <pre class="highlight"><c- c1>// Set the scope to an upper path of the script location</c->
 <c- c1>// Response included "Service-Worker-Allowed : /"</c->
 navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/js/sw.js"</c-><c- p>,</c-> <c- p>{</c-> scope<c- o>:</c-> <c- u>"/"</c-> <c- p>}).</c->then<c- p>(()</c-> <c- p>=></c-> <c- p>{</c->
@@ -6203,7 +6203,7 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/js/sw.
 </pre>
      </div>
      <div class="example" id="example-e39a8279">
-      <a class="self-link" href="#example-e39a8279"></a> A path restriction voliation even with Service-Worker-Allowed header: 
+      <a class="self-link" href="#example-e39a8279"></a> A path restriction voliation even with Service-Worker-Allowed header:
 <pre class="highlight"><c- c1>// Set the scope to an upper path of the script location</c->
 <c- c1>// Response included "Service-Worker-Allowed : /foo"</c->
 navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/foo/bar/sw.js"</c-><c- p>,</c-> <c- p>{</c-> scope<c- o>:</c-> <c- u>"/"</c-> <c- p>}).</c-><c- k>catch</c-><c- p>(()</c-> <c- p>=></c-> <c- p>{</c->
@@ -6246,7 +6246,7 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/foo/ba
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
    <div class="example" id="example-ae2b6bc0">
-    <a class="self-link" href="#example-ae2b6bc0"></a> 
+    <a class="self-link" href="#example-ae2b6bc0"></a>
     <p>This is an example of an informative example.</p>
    </div>
    <p>Informative notes begin with the word “Note” and are set apart from the
@@ -6264,7 +6264,7 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/foo/ba
     are encouraged to optimize.</p>
   </div>
   <p id="back-to-top" role="navigation"><a href="#toc"><abbr title="Back to top">↑</abbr></a></p>
-  . 
+  .
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
@@ -11718,58 +11718,66 @@ navigator<c- p>.</c->serviceWorker<c- p>.</c->register<c- p>(</c-><c- u>"/foo/ba
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

@@ -308,7 +308,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 	for styling arbitrary ranges of a document identified by script.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -415,7 +415,7 @@ on screen, on paper, etc.
      <a class="self-link" href="#intro-ex"></a> The following code uses the <a class="css" data-link-type="maybe" href="#selectordef-highlight-highlight-name" id="ref-for-selectordef-highlight-highlight-name①">::highlight()</a> pseudo-element
 		to apply a yellow background and blue foreground color to the text <q>One two</q>.
 		It does so by adding a <code class="idl"><a data-link-type="idl" href="#highlight" id="ref-for-highlight">Highlight</a></code> to the <code class="idl"><a data-link-type="idl" href="#highlightsregister" id="ref-for-highlightsregister">HighlightsRegister</a></code> (both of these are new concepts introduced by this specification).
-		The <code class="idl"><a data-link-type="idl" href="#highlight" id="ref-for-highlight①">Highlight</a></code> will contain a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#range" id="ref-for-range">Range</a></code> whose boundary points surround the text <q>One two</q>. 
+		The <code class="idl"><a data-link-type="idl" href="#highlight" id="ref-for-highlight①">Highlight</a></code> will contain a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#range" id="ref-for-range">Range</a></code> whose boundary points surround the text <q>One two</q>.
 <pre class="highlight"><c- p>&lt;</c-><c- f>style</c-><c- p>></c->
 <c- p>:</c-><c- nd>root</c-><c- p>::</c-><c- nd>highlight</c-><c- o>(</c-><c- f>example-highlight</c-><c- o>)</c-> <c- p>{</c->
   <c- k>background-color</c-><c- p>:</c-> <c- kc>yellow</c-><c- p>;</c->
@@ -474,19 +474,19 @@ CSS<c- p>.</c->highlights<c- p>.</c->add<c- p>(</c-><c- k>new</c-> Highlight<c- 
    <p>See <a href="#priorities">§ 4.2.4 Priority of Overlapping Highlights</a> for more information on the <code class="idl"><a data-link-type="idl" href="#dom-highlight-priority" id="ref-for-dom-highlight-priority">priority</a></code> attribute.</p>
    <div class="algorithm" data-algorithm="to create a custom highlight">
      When the <dfn class="dfn-paneled idl-code" data-dfn-for="Highlight" data-dfn-type="constructor" data-export data-lt="Highlight(name, ...initialRanges)|constructor(name, ...initialRanges)|Highlight(name)|constructor(name)" id="dom-highlight-highlight"><code>Highlight(CSSOMString name, AbstractRange... initialRanges)</code></dfn> constructor is invoked,
-		run the following steps: 
+		run the following steps:
     <ol>
-     <li> Let <var>highlight</var> be the new <code class="idl"><a data-link-type="idl" href="#highlight" id="ref-for-highlight③">Highlight</a></code> object. 
-     <li> If <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-highlight-highlight-name-initialranges-name" id="ref-for-dom-highlight-highlight-name-initialranges-name">name</a></code> does not <a data-link-type="dfn" href="https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar" id="ref-for-css-parse-something-according-to-a-css-grammar">parse</a> as an <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-syntax-3/#typedef-ident-token" id="ref-for-typedef-ident-token①">&lt;ident-token></a>, then <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-throw" id="ref-for-dfn-throw">throw</a> a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#syntaxerror" id="ref-for-syntaxerror">"SyntaxError"</a></code>. 
-     <li> Let <var>nameArg</var> be the result of <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value">converting</a> <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-highlight-highlight-name-initialranges-name" id="ref-for-dom-highlight-highlight-name-initialranges-name①">name</a></code> to an ECMAScript value. 
-     <li> Set <var>highlight</var>’s <code class="idl"><a data-link-type="idl" href="#dom-highlight-name" id="ref-for-dom-highlight-name①">name</a></code> to <var>nameArg</var> 
-     <li> Set <var>highlight</var>’s <code class="idl"><a data-link-type="idl" href="#dom-highlight-priority" id="ref-for-dom-highlight-priority①">priority</a></code> to <code>0</code>. 
+     <li> Let <var>highlight</var> be the new <code class="idl"><a data-link-type="idl" href="#highlight" id="ref-for-highlight③">Highlight</a></code> object.
+     <li> If <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-highlight-highlight-name-initialranges-name" id="ref-for-dom-highlight-highlight-name-initialranges-name">name</a></code> does not <a data-link-type="dfn" href="https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar" id="ref-for-css-parse-something-according-to-a-css-grammar">parse</a> as an <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-syntax-3/#typedef-ident-token" id="ref-for-typedef-ident-token①">&lt;ident-token></a>, then <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-throw" id="ref-for-dfn-throw">throw</a> a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#syntaxerror" id="ref-for-syntaxerror">"SyntaxError"</a></code>.
+     <li> Let <var>nameArg</var> be the result of <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value">converting</a> <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-highlight-highlight-name-initialranges-name" id="ref-for-dom-highlight-highlight-name-initialranges-name①">name</a></code> to an ECMAScript value.
+     <li> Set <var>highlight</var>’s <code class="idl"><a data-link-type="idl" href="#dom-highlight-name" id="ref-for-dom-highlight-name①">name</a></code> to <var>nameArg</var>
+     <li> Set <var>highlight</var>’s <code class="idl"><a data-link-type="idl" href="#dom-highlight-priority" id="ref-for-dom-highlight-priority①">priority</a></code> to <code>0</code>.
      <li> For each <var>range</var> of <code class="idl"><a data-link-type="idl" href="#dom-highlight-highlight-name-initialranges-initialranges" id="ref-for-dom-highlight-highlight-name-initialranges-initialranges">initialRanges</a></code>,
 				let <var>rangeArg</var> be the result of <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value①">converting</a> <var>range</var> to an ECMAScript value,
 				then run <a href="https://heycam.github.io/webidl/#es-add-delete">the steps for a built-in setlike add function</a>,
 				with <var>highlight</var> as the <code>this</code> value,
-				and <var>rangeArg</var> as the argument. 
-     <li> Return <var>highlight</var>. 
+				and <var>rangeArg</var> as the argument.
+     <li> Return <var>highlight</var>.
     </ol>
    </div>
    <h3 class="heading settled" data-level="3.2" id="registration"><span class="secno">3.2. </span><span class="content"> Registering Custom Highlights</span><a class="self-link" href="#registration"></a></h3>
@@ -509,7 +509,7 @@ CSS<c- p>.</c->highlights<c- p>.</c->add<c- p>(</c-><c- k>new</c-> Highlight<c- 
 </pre>
    <div class="algorithm" data-algorithm="to register a custom highlight">
      To <a data-link-type="dfn" href="#registered" id="ref-for-registered③">register</a> a <a data-link-type="dfn" href="#custom-highlight" id="ref-for-custom-highlight⑦">custom highlight</a>,
-		invoke the <code class="idl"><a data-link-type="idl" href="#dom-highlightsregister-add" id="ref-for-dom-highlightsregister-add①">add()</a></code> of the <a data-link-type="dfn" href="#highlights-register" id="ref-for-highlights-register②">highlights register</a> with the <span id="ref-for-custom-highlight⑧">custom highlight</span> as the argument. 
+		invoke the <code class="idl"><a data-link-type="idl" href="#dom-highlightsregister-add" id="ref-for-dom-highlightsregister-add①">add()</a></code> of the <a data-link-type="dfn" href="#highlights-register" id="ref-for-highlights-register②">highlights register</a> with the <span id="ref-for-custom-highlight⑧">custom highlight</span> as the argument.
     <p>When invoked,
 		the <dfn class="dfn-paneled idl-code" data-dfn-for="HighlightsRegister" data-dfn-type="method" data-export data-lt="add(value)" id="dom-highlightsregister-add"><code>add(Highlight value)</code></dfn> method must run these steps:</p>
     <ol>
@@ -549,14 +549,14 @@ and with <var>valueArg</var> as the argument.</p>
 	as specified in <a href="https://www.w3.org/TR/css-pseudo-4/#highlight-bounds">CSS Pseudo-Elements 4 §3.3 Area of a Highlight</a> and <a href="https://www.w3.org/TR/css-pseudo-4/#highlight-painting">CSS Pseudo-Elements 4 §3.5 Painting the Highlight</a>,
 	with the following clarifications:</p>
    <ul>
-    <li> <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#range-collapsed" id="ref-for-range-collapsed">Collapsed</a> <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-range" id="ref-for-concept-range⑤">ranges</a> are not rendered. 
+    <li> <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#range-collapsed" id="ref-for-range-collapsed">Collapsed</a> <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-range" id="ref-for-concept-range⑤">ranges</a> are not rendered.
     <li>
       Overlapping <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-range" id="ref-for-concept-range⑥">ranges</a> within a single <a data-link-type="dfn" href="#custom-highlight" id="ref-for-custom-highlight①①">custom highlight</a> are rendered
 			as if a single range representing the union of the overlapping ones
-			had been specified. 
+			had been specified.
      <div class="example" id="overlap-ranges-ex">
       <a class="self-link" href="#overlap-ranges-ex"></a> The following example renders in a single highlight with semi-transparent blue background,
-				not two overlapping ones which can be seen through each other. 
+				not two overlapping ones which can be seen through each other.
 <pre class="highlight"><c- p>&lt;</c-><c- f>style</c-><c- p>></c->
   <c- p>::</c-><c- nd>highlight</c-><c- o>(</c-><c- f>sample</c-><c- o>)</c-> <c- p>{</c-> <c- k>background-color</c-><c- p>:</c-> rgba<c- p>(</c-><c- mi>0</c-><c- p>,</c-> <c- mi>0</c-><c- p>,</c-> <c- mi>255</c-><c- p>,</c-> <c- mf>0.3</c-><c- p>);</c-> <c- p>}</c->
 <c- p>&lt;/</c-><c- f>style</c-><c- p>></c->
@@ -578,8 +578,8 @@ and with <var>valueArg</var> as the argument.</p>
       <p>However, this one would be incorrect:</p>
       <div class="sample-out"> L<span style="background-color: rgba(0, 0, 255, 0.3)">or<span style="background-color: rgba(0, 0, 255, 0.3)">em</span> I</span>psum. </div>
      </div>
-    <li> The <a data-link-type="dfn" href="https://drafts.csswg.org/css-pseudo-4/#highlight-overlay" id="ref-for-highlight-overlay">highlight overlays</a> of the <a data-link-type="dfn" href="#custom-highlight" id="ref-for-custom-highlight①②">custom highlights</a> are above those of the built-in <a data-link-type="dfn" href="https://drafts.csswg.org/css-pseudo-4/#highlight-pseudo-element" id="ref-for-highlight-pseudo-element⑤">highlight pseudo-elements</a> in the stacking order described in <a href="https://www.w3.org/TR/css-pseudo-4/#highlight-painting">CSS Pseudo-Elements 4 §3.5 Painting the Highlight</a>. 
-    <li> The relative stacking order of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-pseudo-4/#highlight-overlay" id="ref-for-highlight-overlay①">highlight overlays</a> of multiple <a data-link-type="dfn" href="#custom-highlight" id="ref-for-custom-highlight①③">custom highlights</a> is defined by their <a data-link-type="dfn" href="#priority" id="ref-for-priority">priority</a> (see <a href="#priorities">§ 4.2.4 Priority of Overlapping Highlights</a>). 
+    <li> The <a data-link-type="dfn" href="https://drafts.csswg.org/css-pseudo-4/#highlight-overlay" id="ref-for-highlight-overlay">highlight overlays</a> of the <a data-link-type="dfn" href="#custom-highlight" id="ref-for-custom-highlight①②">custom highlights</a> are above those of the built-in <a data-link-type="dfn" href="https://drafts.csswg.org/css-pseudo-4/#highlight-pseudo-element" id="ref-for-highlight-pseudo-element⑤">highlight pseudo-elements</a> in the stacking order described in <a href="https://www.w3.org/TR/css-pseudo-4/#highlight-painting">CSS Pseudo-Elements 4 §3.5 Painting the Highlight</a>.
+    <li> The relative stacking order of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-pseudo-4/#highlight-overlay" id="ref-for-highlight-overlay①">highlight overlays</a> of multiple <a data-link-type="dfn" href="#custom-highlight" id="ref-for-custom-highlight①③">custom highlights</a> is defined by their <a data-link-type="dfn" href="#priority" id="ref-for-priority">priority</a> (see <a href="#priorities">§ 4.2.4 Priority of Overlapping Highlights</a>).
    </ul>
    <h4 class="heading settled" data-level="4.2.4" id="priorities"><span class="secno">4.2.4. </span><span class="content"> Priority of Overlapping Highlights</span><a class="self-link" href="#priorities"></a></h4>
    <p>A <a data-link-type="dfn" href="#custom-highlight" id="ref-for-custom-highlight①④">custom highlight</a>'s <code class="idl"><a data-link-type="idl" href="#dom-highlight-priority" id="ref-for-dom-highlight-priority②">priority</a></code> attribute
@@ -605,7 +605,7 @@ and with <var>valueArg</var> as the argument.</p>
 	so that they too can be reordered,
 	and so that they can be interleaved with custom ones freely? <a href="https://github.com/w3c/csswg-drafts/issues/4594">&lt;https://github.com/w3c/csswg-drafts/issues/4594></a></p>
    <div class="example" id="overlap-highlight-ex">
-    <a class="self-link" href="#overlap-highlight-ex"></a> 
+    <a class="self-link" href="#overlap-highlight-ex"></a>
 <pre class="highlight"><c- p>&lt;</c-><c- f>style</c-><c- p>></c->
   <c- f>p</c-><c- p>::</c-><c- nd>highlight</c-><c- o>(</c-><c- f>foo</c-><c- o>)</c-> <c- p>{</c->
     <c- k>color</c-><c- p>:</c-><c- kc>blue</c-><c- p>;</c->
@@ -675,7 +675,7 @@ and with <var>valueArg</var> as the argument.</p>
 		has a significant performance cost.
 		Authors who intend to observe DOM changes and react to them
 		by adjusting or recreating the ranges in their <a data-link-type="dfn" href="#custom-highlight" id="ref-for-custom-highlight②①">custom highlights</a> are strongly encouraged to user <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#staticrange" id="ref-for-staticrange③">StaticRange</a></code>s
-		in order to avoid this costly but unnecessary step. 
+		in order to avoid this costly but unnecessary step.
     <p>Conversedly, authors who use <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#staticrange" id="ref-for-staticrange④">StaticRange</a></code>s
 		should observe and react to DOM changes,
 		by discarding stale <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-range" id="ref-for-concept-range⑧">ranges</a> or <a data-link-type="dfn" href="#custom-highlight" id="ref-for-custom-highlight②②">custom highlights</a> and recreating new ones.</p>
@@ -740,7 +740,7 @@ and with <var>valueArg</var> as the argument.</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -753,14 +753,14 @@ and with <var>valueArg</var> as the argument.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -811,7 +811,7 @@ and with <var>valueArg</var> as the argument.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -847,324 +847,324 @@ and with <var>valueArg</var> as the argument.</p>
   <aside class="dfn-panel" data-for="term-for-cascade">
    <a href="https://drafts.csswg.org/css-cascade-4/#cascade">https://drafts.csswg.org/css-cascade-4/#cascade</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cascade">4.2.2. 
+    <li><a href="#ref-for-cascade">4.2.2.
 Cascading and Inheritance</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inheritance">
    <a href="https://drafts.csswg.org/css-cascade-4/#inheritance">https://drafts.csswg.org/css-cascade-4/#inheritance</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inheritance">4.2.2. 
+    <li><a href="#ref-for-inheritance">4.2.2.
 Cascading and Inheritance</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-style-containment">
    <a href="https://drafts.csswg.org/css-contain-1/#style-containment">https://drafts.csswg.org/css-contain-1/#style-containment</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-style-containment">5.2. 
+    <li><a href="#ref-for-style-containment">5.2.
 Range Updating and Invalidation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-selectordef-inactive-selection">
    <a href="https://drafts.csswg.org/css-pseudo-4/#selectordef-inactive-selection">https://drafts.csswg.org/css-pseudo-4/#selectordef-inactive-selection</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-inactive-selection">1. 
+    <li><a href="#ref-for-selectordef-inactive-selection">1.
 Introduction</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-selectordef-selection">
    <a href="https://drafts.csswg.org/css-pseudo-4/#selectordef-selection">https://drafts.csswg.org/css-pseudo-4/#selectordef-selection</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-selection">1. 
+    <li><a href="#ref-for-selectordef-selection">1.
 Introduction</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-selectordef-spelling-error">
    <a href="https://drafts.csswg.org/css-pseudo-4/#selectordef-spelling-error">https://drafts.csswg.org/css-pseudo-4/#selectordef-spelling-error</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-spelling-error">1. 
+    <li><a href="#ref-for-selectordef-spelling-error">1.
 Introduction</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-highlight-overlay">
    <a href="https://drafts.csswg.org/css-pseudo-4/#highlight-overlay">https://drafts.csswg.org/css-pseudo-4/#highlight-overlay</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-highlight-overlay">4.2.3. 
+    <li><a href="#ref-for-highlight-overlay">4.2.3.
 Painting</a> <a href="#ref-for-highlight-overlay①">(2)</a>
-    <li><a href="#ref-for-highlight-overlay②">4.2.4. 
+    <li><a href="#ref-for-highlight-overlay②">4.2.4.
 Priority of Overlapping Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-highlight-pseudo-element">
    <a href="https://drafts.csswg.org/css-pseudo-4/#highlight-pseudo-element">https://drafts.csswg.org/css-pseudo-4/#highlight-pseudo-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-highlight-pseudo-element">1. 
+    <li><a href="#ref-for-highlight-pseudo-element">1.
 Introduction</a>
-    <li><a href="#ref-for-highlight-pseudo-element①">2. 
+    <li><a href="#ref-for-highlight-pseudo-element①">2.
 Module Interactions</a>
-    <li><a href="#ref-for-highlight-pseudo-element②">4.2.1. 
+    <li><a href="#ref-for-highlight-pseudo-element②">4.2.1.
 Applicable Properties</a>
-    <li><a href="#ref-for-highlight-pseudo-element③">4.2.2. 
+    <li><a href="#ref-for-highlight-pseudo-element③">4.2.2.
 Cascading and Inheritance</a>
-    <li><a href="#ref-for-highlight-pseudo-element④">4.2.3. 
+    <li><a href="#ref-for-highlight-pseudo-element④">4.2.3.
 Painting</a> <a href="#ref-for-highlight-pseudo-element⑤">(2)</a>
-    <li><a href="#ref-for-highlight-pseudo-element⑥">4.2.4. 
+    <li><a href="#ref-for-highlight-pseudo-element⑥">4.2.4.
 Priority of Overlapping Highlights</a> <a href="#ref-for-highlight-pseudo-element⑦">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-ident-token">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-ident-token">https://drafts.csswg.org/css-syntax-3/#typedef-ident-token</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-ident-token">3.1. 
+    <li><a href="#ref-for-typedef-ident-token">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-typedef-ident-token①">(2)</a>
-    <li><a href="#ref-for-typedef-ident-token②">4.1. 
+    <li><a href="#ref-for-typedef-ident-token②">4.1.
 The Custom Highlight Pseudo-element: ::highlight()</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-parse-something-according-to-a-css-grammar">
    <a href="https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar">https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-parse-something-according-to-a-css-grammar">3.1. 
+    <li><a href="#ref-for-css-parse-something-according-to-a-css-grammar">3.1.
 Creating Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-namespacedef-css">
    <a href="https://drafts.csswg.org/cssom-1/#namespacedef-css">https://drafts.csswg.org/cssom-1/#namespacedef-css</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-namespacedef-css">3.2. 
+    <li><a href="#ref-for-namespacedef-css">3.2.
 Registering Custom Highlights</a> <a href="#ref-for-namespacedef-css①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssomstring">
    <a href="https://drafts.csswg.org/cssom-1/#cssomstring">https://drafts.csswg.org/cssom-1/#cssomstring</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssomstring">3.1. 
+    <li><a href="#ref-for-cssomstring">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-cssomstring①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-abstractrange">
    <a href="https://dom.spec.whatwg.org/#abstractrange">https://dom.spec.whatwg.org/#abstractrange</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-abstractrange">3.1. 
+    <li><a href="#ref-for-abstractrange">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-abstractrange①">(2)</a> <a href="#ref-for-abstractrange②">(3)</a> <a href="#ref-for-abstractrange③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-node">
    <a href="https://dom.spec.whatwg.org/#node">https://dom.spec.whatwg.org/#node</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-node">5.2. 
+    <li><a href="#ref-for-node">5.2.
 Range Updating and Invalidation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-range">
    <a href="https://dom.spec.whatwg.org/#range">https://dom.spec.whatwg.org/#range</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-range">1. 
+    <li><a href="#ref-for-range">1.
 Introduction</a>
-    <li><a href="#ref-for-range①">3.1. 
+    <li><a href="#ref-for-range①">3.1.
 Creating Custom Highlights</a>
-    <li><a href="#ref-for-range②">5.1. 
+    <li><a href="#ref-for-range②">5.1.
 Repaints</a>
-    <li><a href="#ref-for-range③">5.2. 
+    <li><a href="#ref-for-range③">5.2.
 Range Updating and Invalidation</a> <a href="#ref-for-range④">(2)</a> <a href="#ref-for-range⑤">(3)</a> <a href="#ref-for-range⑥">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-staticrange">
    <a href="https://dom.spec.whatwg.org/#staticrange">https://dom.spec.whatwg.org/#staticrange</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-staticrange">3.1. 
+    <li><a href="#ref-for-staticrange">3.1.
 Creating Custom Highlights</a>
-    <li><a href="#ref-for-staticrange①">5.2. 
+    <li><a href="#ref-for-staticrange①">5.2.
 Range Updating and Invalidation</a> <a href="#ref-for-staticrange②">(2)</a> <a href="#ref-for-staticrange③">(3)</a> <a href="#ref-for-staticrange④">(4)</a> <a href="#ref-for-staticrange⑤">(5)</a> <a href="#ref-for-staticrange⑥">(6)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-range-bp">
    <a href="https://dom.spec.whatwg.org/#concept-range-bp">https://dom.spec.whatwg.org/#concept-range-bp</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-range-bp">5.1. 
+    <li><a href="#ref-for-concept-range-bp">5.1.
 Repaints</a>
-    <li><a href="#ref-for-concept-range-bp①">5.2. 
+    <li><a href="#ref-for-concept-range-bp①">5.2.
 Range Updating and Invalidation</a> <a href="#ref-for-concept-range-bp②">(2)</a> <a href="#ref-for-concept-range-bp③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-range-collapsed">
    <a href="https://dom.spec.whatwg.org/#range-collapsed">https://dom.spec.whatwg.org/#range-collapsed</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-range-collapsed">4.2.3. 
+    <li><a href="#ref-for-range-collapsed">4.2.3.
 Painting</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-contained">
    <a href="https://dom.spec.whatwg.org/#contained">https://dom.spec.whatwg.org/#contained</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-contained">4.1. 
+    <li><a href="#ref-for-contained">4.1.
 The Custom Highlight Pseudo-element: ::highlight()</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-context-object">
    <a href="https://dom.spec.whatwg.org/#context-object">https://dom.spec.whatwg.org/#context-object</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-context-object">3.2. 
+    <li><a href="#ref-for-context-object">3.2.
 Registering Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-range-end-node">
    <a href="https://dom.spec.whatwg.org/#concept-range-end-node">https://dom.spec.whatwg.org/#concept-range-end-node</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-range-end-node">5.2. 
+    <li><a href="#ref-for-concept-range-end-node">5.2.
 Range Updating and Invalidation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-range-end-offset">
    <a href="https://dom.spec.whatwg.org/#concept-range-end-offset">https://dom.spec.whatwg.org/#concept-range-end-offset</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-range-end-offset">5.2. 
+    <li><a href="#ref-for-concept-range-end-offset">5.2.
 Range Updating and Invalidation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-in-a-document-tree">
    <a href="https://dom.spec.whatwg.org/#in-a-document-tree">https://dom.spec.whatwg.org/#in-a-document-tree</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-in-a-document-tree">5.2. 
+    <li><a href="#ref-for-in-a-document-tree">5.2.
 Range Updating and Invalidation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-node-length">
    <a href="https://dom.spec.whatwg.org/#concept-node-length">https://dom.spec.whatwg.org/#concept-node-length</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-node-length">5.2. 
+    <li><a href="#ref-for-concept-node-length">5.2.
 Range Updating and Invalidation</a> <a href="#ref-for-concept-node-length①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-live-range">
    <a href="https://dom.spec.whatwg.org/#concept-live-range">https://dom.spec.whatwg.org/#concept-live-range</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-live-range">5.2. 
+    <li><a href="#ref-for-concept-live-range">5.2.
 Range Updating and Invalidation</a> <a href="#ref-for-concept-live-range①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-partially-contained">
    <a href="https://dom.spec.whatwg.org/#partially-contained">https://dom.spec.whatwg.org/#partially-contained</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-partially-contained">4.1. 
+    <li><a href="#ref-for-partially-contained">4.1.
 The Custom Highlight Pseudo-element: ::highlight()</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-range">
    <a href="https://dom.spec.whatwg.org/#concept-range">https://dom.spec.whatwg.org/#concept-range</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-range">1. 
+    <li><a href="#ref-for-concept-range">1.
 Introduction</a>
-    <li><a href="#ref-for-concept-range①">3.1. 
+    <li><a href="#ref-for-concept-range①">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-concept-range②">(2)</a> <a href="#ref-for-concept-range③">(3)</a>
-    <li><a href="#ref-for-concept-range④">4.1. 
+    <li><a href="#ref-for-concept-range④">4.1.
 The Custom Highlight Pseudo-element: ::highlight()</a>
-    <li><a href="#ref-for-concept-range⑤">4.2.3. 
+    <li><a href="#ref-for-concept-range⑤">4.2.3.
 Painting</a> <a href="#ref-for-concept-range⑥">(2)</a>
-    <li><a href="#ref-for-concept-range⑦">5.1. 
+    <li><a href="#ref-for-concept-range⑦">5.1.
 Repaints</a>
-    <li><a href="#ref-for-concept-range⑧">5.2. 
+    <li><a href="#ref-for-concept-range⑧">5.2.
 Range Updating and Invalidation</a> <a href="#ref-for-concept-range⑨">(2)</a> <a href="#ref-for-concept-range①⓪">(3)</a> <a href="#ref-for-concept-range①①">(4)</a> <a href="#ref-for-concept-range①②">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-range-start-node">
    <a href="https://dom.spec.whatwg.org/#concept-range-start-node">https://dom.spec.whatwg.org/#concept-range-start-node</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-range-start-node">5.2. 
+    <li><a href="#ref-for-concept-range-start-node">5.2.
 Range Updating and Invalidation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-range-start-offset">
    <a href="https://dom.spec.whatwg.org/#concept-range-start-offset">https://dom.spec.whatwg.org/#concept-range-start-offset</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-range-start-offset">5.2. 
+    <li><a href="#ref-for-concept-range-start-offset">5.2.
 Range Updating and Invalidation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-document-window">
    <a href="https://html.spec.whatwg.org/multipage/window-object.html#concept-document-window">https://html.spec.whatwg.org/multipage/window-object.html#concept-document-window</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-document-window">3.2. 
+    <li><a href="#ref-for-concept-document-window">3.2.
 Registering Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-current-global-object">
    <a href="https://html.spec.whatwg.org/multipage/webappapis.html#current-global-object">https://html.spec.whatwg.org/multipage/webappapis.html#current-global-object</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-current-global-object">3.2. 
+    <li><a href="#ref-for-current-global-object">3.2.
 Registering Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-pseudo-element">
    <a href="https://drafts.csswg.org/selectors-4/#pseudo-element">https://drafts.csswg.org/selectors-4/#pseudo-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-pseudo-element">2. 
+    <li><a href="#ref-for-pseudo-element">2.
 Module Interactions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-Exposed">
    <a href="https://heycam.github.io/webidl/#Exposed">https://heycam.github.io/webidl/#Exposed</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-Exposed">3.1. 
+    <li><a href="#ref-for-Exposed">3.1.
 Creating Custom Highlights</a>
-    <li><a href="#ref-for-Exposed①">3.2. 
+    <li><a href="#ref-for-Exposed①">3.2.
 Registering Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-operationerror">
    <a href="https://heycam.github.io/webidl/#operationerror">https://heycam.github.io/webidl/#operationerror</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-operationerror">3.2. 
+    <li><a href="#ref-for-operationerror">3.2.
 Registering Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-syntaxerror">
    <a href="https://heycam.github.io/webidl/#syntaxerror">https://heycam.github.io/webidl/#syntaxerror</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-syntaxerror">3.1. 
+    <li><a href="#ref-for-syntaxerror">3.1.
 Creating Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dfn-convert-idl-to-ecmascript-value">
    <a href="https://heycam.github.io/webidl/#dfn-convert-idl-to-ecmascript-value">https://heycam.github.io/webidl/#dfn-convert-idl-to-ecmascript-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value">3.1. 
+    <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-dfn-convert-idl-to-ecmascript-value①">(2)</a>
-    <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value②">3.2. 
+    <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value②">3.2.
 Registering Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-double">
    <a href="https://heycam.github.io/webidl/#idl-double">https://heycam.github.io/webidl/#idl-double</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-double">3.1. 
+    <li><a href="#ref-for-idl-double">3.1.
 Creating Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dfn-set-entries">
    <a href="https://heycam.github.io/webidl/#dfn-set-entries">https://heycam.github.io/webidl/#dfn-set-entries</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-set-entries">3.1. 
+    <li><a href="#ref-for-dfn-set-entries">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-dfn-set-entries①">(2)</a>
-    <li><a href="#ref-for-dfn-set-entries②">3.2. 
+    <li><a href="#ref-for-dfn-set-entries②">3.2.
 Registering Custom Highlights</a> <a href="#ref-for-dfn-set-entries③">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dfn-setlike">
    <a href="https://heycam.github.io/webidl/#dfn-setlike">https://heycam.github.io/webidl/#dfn-setlike</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-setlike">3.1. 
+    <li><a href="#ref-for-dfn-setlike">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-dfn-setlike①">(2)</a>
-    <li><a href="#ref-for-dfn-setlike②">3.2. 
+    <li><a href="#ref-for-dfn-setlike②">3.2.
 Registering Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dfn-throw">
    <a href="https://heycam.github.io/webidl/#dfn-throw">https://heycam.github.io/webidl/#dfn-throw</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-throw">3.1. 
+    <li><a href="#ref-for-dfn-throw">3.1.
 Creating Custom Highlights</a>
-    <li><a href="#ref-for-dfn-throw①">3.2. 
+    <li><a href="#ref-for-dfn-throw①">3.2.
 Registering Custom Highlights</a>
    </ul>
   </aside>
@@ -1344,225 +1344,233 @@ Registering Custom Highlights</a>
   <aside class="dfn-panel" data-for="custom-highlight">
    <b><a href="#custom-highlight">#custom-highlight</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-custom-highlight">3.1. 
+    <li><a href="#ref-for-custom-highlight">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-custom-highlight①">(2)</a> <a href="#ref-for-custom-highlight②">(3)</a> <a href="#ref-for-custom-highlight③">(4)</a>
-    <li><a href="#ref-for-custom-highlight④">3.2. 
+    <li><a href="#ref-for-custom-highlight④">3.2.
 Registering Custom Highlights</a> <a href="#ref-for-custom-highlight⑤">(2)</a> <a href="#ref-for-custom-highlight⑥">(3)</a> <a href="#ref-for-custom-highlight⑦">(4)</a> <a href="#ref-for-custom-highlight⑧">(5)</a>
-    <li><a href="#ref-for-custom-highlight⑨">4.1. 
+    <li><a href="#ref-for-custom-highlight⑨">4.1.
 The Custom Highlight Pseudo-element: ::highlight()</a>
-    <li><a href="#ref-for-custom-highlight①⓪">4.2.3. 
+    <li><a href="#ref-for-custom-highlight①⓪">4.2.3.
 Painting</a> <a href="#ref-for-custom-highlight①①">(2)</a> <a href="#ref-for-custom-highlight①②">(3)</a> <a href="#ref-for-custom-highlight①③">(4)</a>
-    <li><a href="#ref-for-custom-highlight①④">4.2.4. 
+    <li><a href="#ref-for-custom-highlight①④">4.2.4.
 Priority of Overlapping Highlights</a> <a href="#ref-for-custom-highlight①⑤">(2)</a>
-    <li><a href="#ref-for-custom-highlight①⑥">5.1. 
+    <li><a href="#ref-for-custom-highlight①⑥">5.1.
 Repaints</a> <a href="#ref-for-custom-highlight①⑦">(2)</a> <a href="#ref-for-custom-highlight①⑧">(3)</a>
-    <li><a href="#ref-for-custom-highlight①⑨">5.2. 
+    <li><a href="#ref-for-custom-highlight①⑨">5.2.
 Range Updating and Invalidation</a> <a href="#ref-for-custom-highlight②⓪">(2)</a> <a href="#ref-for-custom-highlight②①">(3)</a> <a href="#ref-for-custom-highlight②②">(4)</a> <a href="#ref-for-custom-highlight②③">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="highlight">
    <b><a href="#highlight">#highlight</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-highlight">1. 
+    <li><a href="#ref-for-highlight">1.
 Introduction</a> <a href="#ref-for-highlight①">(2)</a>
-    <li><a href="#ref-for-highlight②">3.1. 
+    <li><a href="#ref-for-highlight②">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-highlight③">(2)</a>
-    <li><a href="#ref-for-highlight④">3.2. 
+    <li><a href="#ref-for-highlight④">3.2.
 Registering Custom Highlights</a> <a href="#ref-for-highlight⑤">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="custom-highlight-name">
    <b><a href="#custom-highlight-name">#custom-highlight-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-custom-highlight-name">4.1. 
+    <li><a href="#ref-for-custom-highlight-name">4.1.
 The Custom Highlight Pseudo-element: ::highlight()</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-highlight-highlight-name-initialranges-name">
    <b><a href="#dom-highlight-highlight-name-initialranges-name">#dom-highlight-highlight-name-initialranges-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-highlight-highlight-name-initialranges-name">3.1. 
+    <li><a href="#ref-for-dom-highlight-highlight-name-initialranges-name">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-dom-highlight-highlight-name-initialranges-name①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-highlight-highlight-name-initialranges-initialranges">
    <b><a href="#dom-highlight-highlight-name-initialranges-initialranges">#dom-highlight-highlight-name-initialranges-initialranges</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-highlight-highlight-name-initialranges-initialranges">3.1. 
+    <li><a href="#ref-for-dom-highlight-highlight-name-initialranges-initialranges">3.1.
 Creating Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-highlight-priority">
    <b><a href="#dom-highlight-priority">#dom-highlight-priority</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-highlight-priority">3.1. 
+    <li><a href="#ref-for-dom-highlight-priority">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-dom-highlight-priority①">(2)</a>
-    <li><a href="#ref-for-dom-highlight-priority②">4.2.4. 
+    <li><a href="#ref-for-dom-highlight-priority②">4.2.4.
 Priority of Overlapping Highlights</a>
-    <li><a href="#ref-for-dom-highlight-priority③">5.1. 
+    <li><a href="#ref-for-dom-highlight-priority③">5.1.
 Repaints</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-highlight-name">
    <b><a href="#dom-highlight-name">#dom-highlight-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-highlight-name">3.1. 
+    <li><a href="#ref-for-dom-highlight-name">3.1.
 Creating Custom Highlights</a> <a href="#ref-for-dom-highlight-name①">(2)</a>
-    <li><a href="#ref-for-dom-highlight-name②">3.2. 
+    <li><a href="#ref-for-dom-highlight-name②">3.2.
 Registering Custom Highlights</a> <a href="#ref-for-dom-highlight-name③">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-highlight-highlight">
    <b><a href="#dom-highlight-highlight">#dom-highlight-highlight</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-highlight-highlight">3.1. 
+    <li><a href="#ref-for-dom-highlight-highlight">3.1.
 Creating Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="highlights-register">
    <b><a href="#highlights-register">#highlights-register</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-highlights-register">3.2. 
+    <li><a href="#ref-for-highlights-register">3.2.
 Registering Custom Highlights</a> <a href="#ref-for-highlights-register①">(2)</a> <a href="#ref-for-highlights-register②">(3)</a>
-    <li><a href="#ref-for-highlights-register③">4.2.4. 
+    <li><a href="#ref-for-highlights-register③">4.2.4.
 Priority of Overlapping Highlights</a>
-    <li><a href="#ref-for-highlights-register④">5.1. 
+    <li><a href="#ref-for-highlights-register④">5.1.
 Repaints</a>
-    <li><a href="#ref-for-highlights-register⑤">5.2. 
+    <li><a href="#ref-for-highlights-register⑤">5.2.
 Range Updating and Invalidation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="registered">
    <b><a href="#registered">#registered</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-registered">3.2. 
+    <li><a href="#ref-for-registered">3.2.
 Registering Custom Highlights</a> <a href="#ref-for-registered①">(2)</a> <a href="#ref-for-registered②">(3)</a> <a href="#ref-for-registered③">(4)</a>
-    <li><a href="#ref-for-registered④">4.1. 
+    <li><a href="#ref-for-registered④">4.1.
 The Custom Highlight Pseudo-element: ::highlight()</a>
-    <li><a href="#ref-for-registered⑤">4.2.4. 
+    <li><a href="#ref-for-registered⑤">4.2.4.
 Priority of Overlapping Highlights</a>
-    <li><a href="#ref-for-registered⑥">5.1. 
+    <li><a href="#ref-for-registered⑥">5.1.
 Repaints</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-css-highlights">
    <b><a href="#dom-css-highlights">#dom-css-highlights</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-css-highlights">3.2. 
+    <li><a href="#ref-for-dom-css-highlights">3.2.
 Registering Custom Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="highlightsregister">
    <b><a href="#highlightsregister">#highlightsregister</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-highlightsregister">1. 
+    <li><a href="#ref-for-highlightsregister">1.
 Introduction</a>
-    <li><a href="#ref-for-highlightsregister①">3.2. 
+    <li><a href="#ref-for-highlightsregister①">3.2.
 Registering Custom Highlights</a> <a href="#ref-for-highlightsregister②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-highlightsregister-add-value-value">
    <b><a href="#dom-highlightsregister-add-value-value">#dom-highlightsregister-add-value-value</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-highlightsregister-add-value-value">3.2. 
+    <li><a href="#ref-for-dom-highlightsregister-add-value-value">3.2.
 Registering Custom Highlights</a> <a href="#ref-for-dom-highlightsregister-add-value-value①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-highlightsregister-add">
    <b><a href="#dom-highlightsregister-add">#dom-highlightsregister-add</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-highlightsregister-add">3.2. 
+    <li><a href="#ref-for-dom-highlightsregister-add">3.2.
 Registering Custom Highlights</a> <a href="#ref-for-dom-highlightsregister-add①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="selectordef-highlight-highlight-name">
    <b><a href="#selectordef-highlight-highlight-name">#selectordef-highlight-highlight-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-highlight-highlight-name">1. 
+    <li><a href="#ref-for-selectordef-highlight-highlight-name">1.
 Introduction</a> <a href="#ref-for-selectordef-highlight-highlight-name①">(2)</a>
-    <li><a href="#ref-for-selectordef-highlight-highlight-name②">4.1. 
+    <li><a href="#ref-for-selectordef-highlight-highlight-name②">4.1.
 The Custom Highlight Pseudo-element: ::highlight()</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="custom-highlight-pseudo-element">
    <b><a href="#custom-highlight-pseudo-element">#custom-highlight-pseudo-element</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-custom-highlight-pseudo-element">4.2.1. 
+    <li><a href="#ref-for-custom-highlight-pseudo-element">4.2.1.
 Applicable Properties</a>
-    <li><a href="#ref-for-custom-highlight-pseudo-element①">4.2.2. 
+    <li><a href="#ref-for-custom-highlight-pseudo-element①">4.2.2.
 Cascading and Inheritance</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-highlight-name">
    <b><a href="#typedef-highlight-name">#typedef-highlight-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-highlight-name">4.1. 
+    <li><a href="#ref-for-typedef-highlight-name">4.1.
 The Custom Highlight Pseudo-element: ::highlight()</a> <a href="#ref-for-typedef-highlight-name①">(2)</a> <a href="#ref-for-typedef-highlight-name②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="priority">
    <b><a href="#priority">#priority</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-priority">4.2.3. 
+    <li><a href="#ref-for-priority">4.2.3.
 Painting</a>
-    <li><a href="#ref-for-priority①">4.2.4. 
+    <li><a href="#ref-for-priority①">4.2.4.
 Priority of Overlapping Highlights</a> <a href="#ref-for-priority②">(2)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

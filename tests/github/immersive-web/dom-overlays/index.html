@@ -1625,7 +1625,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This event and the actions taken by the event handler have no effect on DOM event processing, and are not synchronized with DOM event dispatch. The user’s action will separately generate appropriate DOM events such as `"pointerdown"`, and those DOM events can happen before or after the corresponding <a data-link-type="dfn" href="#beforexrselect" id="ref-for-beforexrselect②">beforexrselect</a> event. This happens regardless of whether the <a data-link-type="dfn" href="#beforexrselect" id="ref-for-beforexrselect③">beforexrselect</a> event was cancelled or not, and is independent of any further actions taken in XR input event handlers.</p>
    <p class="note" role="note"><span>Note:</span> This event provides a way for applications to suppress duplicate XR input events while the user is interacting with a DOM UI. Since this is a bubbling event, the application can register handlers on appropriate container elements, effectively marking regions of the DOM overlay as blocking XR input. This is independent of the visual opacity of DOM elements. It is possible to show noninteractive opaque or translucent DOM content such as text explanations that don’t block XR input events.</p>
    <div class="example" id="example-718ea324">
-    <a class="self-link" href="#example-718ea324"></a> The following code installs an event handler on an interactive part of the DOM overlay to selectively suppress XR events for that region, while continuing to generate XR events for other parts of the DOM overlay that are treated as transparent for interaction purposes. 
+    <a class="self-link" href="#example-718ea324"></a> The following code installs an event handler on an interactive part of the DOM overlay to selectively suppress XR events for that region, while continuing to generate XR events for other parts of the DOM overlay that are treated as transparent for interaction purposes.
 <pre class="highlight">document<c- p>.</c->getElementById<c- p>(</c-><c- t>'button-container'</c-><c- p>).</c->addEventListener<c- p>(</c->
   <c- t>'beforexrselect'</c-><c- p>,</c-> ev <c- p>=></c-> ev<c- p>.</c->preventDefault<c- p>());</c->
 </pre>
@@ -1690,7 +1690,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </pre>
    <p>The <dfn class="dfn-paneled idl-code" data-dfn-for="XRDOMOverlayInit" data-dfn-type="dict-member" data-export id="dom-xrdomoverlayinit-root"><code>root</code></dfn> attribute specifies the DOM element that will be displayed to the user as the content of the DOM overlay. This is a required attribute, there is no default.</p>
    <div class="example" id="example-0729bd83">
-    <a class="self-link" href="#example-0729bd83"></a> The following code requests DOM overlay as an optional feature. 
+    <a class="self-link" href="#example-0729bd83"></a> The following code requests DOM overlay as an optional feature.
 <pre class="highlight"><c- a>let</c-> uiElement <c- o>=</c-> document<c- p>.</c->getElementById<c- p>(</c-><c- t>'ui'</c-><c- p>);</c->
 navigator<c- p>.</c->xr<c- p>.</c->requestSession<c- p>(</c-><c- t>'immersive-ar'</c-><c- p>,</c-> <c- p>{</c->
     optionalFeatures<c- o>:</c-> <c- p>[</c-><c- t>'dom-overlay'</c-><c- p>],</c->
@@ -1710,7 +1710,7 @@ navigator<c- p>.</c->xr<c- p>.</c->requestSession<c- p>(</c-><c- t>'immersive-ar
 };
 
 <c- b>dictionary</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="dictionary" data-export id="dictdef-xrdomoverlaystate"><code><c- g>XRDOMOverlayState</c-></code></dfn> {
-  <a class="n" data-link-type="idl-name" href="#enumdef-xrdomoverlaytype" id="ref-for-enumdef-xrdomoverlaytype"><c- n>XRDOMOverlayType</c-></a> <dfn class="idl-code" data-dfn-for="XRDOMOverlayState" data-dfn-type="dict-member" data-export data-type="XRDOMOverlayType " id="dom-xrdomoverlaystate-type"><code><c- g>type</c-></code><a class="self-link" href="#dom-xrdomoverlaystate-type"></a></dfn>; 
+  <a class="n" data-link-type="idl-name" href="#enumdef-xrdomoverlaytype" id="ref-for-enumdef-xrdomoverlaytype"><c- n>XRDOMOverlayType</c-></a> <dfn class="idl-code" data-dfn-for="XRDOMOverlayState" data-dfn-type="dict-member" data-export data-type="XRDOMOverlayType " id="dom-xrdomoverlaystate-type"><code><c- g>type</c-></code><a class="self-link" href="#dom-xrdomoverlaystate-type"></a></dfn>;
 };
 </pre>
    <ul>
@@ -1915,7 +1915,7 @@ all.</p>
 };
 
 <c- b>dictionary</c-> <a href="#dictdef-xrdomoverlaystate"><code><c- g>XRDOMOverlayState</c-></code></a> {
-  <a class="n" data-link-type="idl-name" href="#enumdef-xrdomoverlaytype"><c- n>XRDOMOverlayType</c-></a> <a data-type="XRDOMOverlayType " href="#dom-xrdomoverlaystate-type"><code><c- g>type</c-></code></a>; 
+  <a class="n" data-link-type="idl-name" href="#enumdef-xrdomoverlaytype"><c- n>XRDOMOverlayType</c-></a> <a data-type="XRDOMOverlayType " href="#dom-xrdomoverlaystate-type"><code><c- g>type</c-></code></a>;
 };
 
 </pre>
@@ -1988,57 +1988,65 @@ all.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

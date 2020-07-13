@@ -308,7 +308,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This CSS module defines pseudo-elements, abstract elements that represent portions of the CSS render tree that can be selected and styled.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -433,7 +433,7 @@ on screen, on paper, etc.
   the <a data-link-type="dfn" href="#first-formatted-line" id="ref-for-first-formatted-line">first formatted line</a> of its <a data-link-type="dfn" href="https://drafts.csswg.org/selectors-4/#originating-element" id="ref-for-originating-element①">originating element</a>.</p>
    <div class="example" id="example-d4c3a3da">
     <a class="self-link" href="#example-d4c3a3da"></a> The rule below means
-    “change the letters of the first line of every <code class="highlight">p</code> element to uppercase”: 
+    “change the letters of the first line of every <code class="highlight">p</code> element to uppercase”:
 <pre class="highlight"><c- f>p::first-line </c-><c- p>{</c-> <c- k>text-transform</c-><c- p>:</c-> uppercase <c- p>}</c-></pre>
     <p>The selector <span class="css">p::first-line</span> does not match any real document element.
     It does match a pseudo-element that conforming user agents
@@ -442,7 +442,7 @@ on screen, on paper, etc.
    <p class="note" role="note"><span>Note:</span> Note that the length of the first line depends on a number of factors,
   including the width of the page, the font size, etc.</p>
    <div class="example" id="example-855461d4">
-    <a class="self-link" href="#example-855461d4"></a> For example, given an ordinary HTML <a data-link-type="biblio" href="#biblio-html5">[HTML5]</a> paragraph such as: 
+    <a class="self-link" href="#example-855461d4"></a> For example, given an ordinary HTML <a data-link-type="biblio" href="#biblio-html5">[HTML5]</a> paragraph such as:
 <pre class="highlight">&lt;P>This is a somewhat long HTML
 paragraph that will be broken into several
 lines. The first line will be identified
@@ -471,7 +471,7 @@ paragraph.&lt;/P>
    <p>If a pseudo-element breaks up a real element,
   the desired effect can often be described by a <a data-link-type="dfn" href="#fictional-tag-sequence" id="ref-for-fictional-tag-sequence①">fictional tag sequence</a> that closes and then re-opens the element.</p>
    <div class="example" id="example-d3e77da0">
-    <a class="self-link" href="#example-d3e77da0"></a> Thus, if we mark up the previous paragraph with a <code class="highlight">span</code> element encompassing the first sentence: 
+    <a class="self-link" href="#example-d3e77da0"></a> Thus, if we mark up the previous paragraph with a <code class="highlight">span</code> element encompassing the first sentence:
 <pre class="highlight">&lt;P><b>&lt;SPAN class="test"></b> This is a somewhat long HTML
 paragraph that will be broken into several
 lines.<b>&lt;/SPAN></b> The first line will be identified
@@ -503,7 +503,7 @@ paragraph.&lt;/P>
    <p>A user agent must act as if the fictional start tags of a <a class="css" data-link-type="maybe" href="#selectordef-first-line" id="ref-for-selectordef-first-line④">::first-line</a> pseudo-element
   were nested just inside the innermost enclosing block-level element.</p>
    <div class="example" id="example-85d977f9">
-    <a class="self-link" href="#example-85d977f9"></a> For example, the <a data-link-type="dfn" href="#fictional-tag-sequence" id="ref-for-fictional-tag-sequence③">fictional tag sequence</a> for 
+    <a class="self-link" href="#example-85d977f9"></a> For example, the <a data-link-type="dfn" href="#fictional-tag-sequence" id="ref-for-fictional-tag-sequence③">fictional tag sequence</a> for
 <pre class="highlight">&lt;DIV>
   &lt;P>First paragraph&lt;/P>
   &lt;P>Second paragraph&lt;/P>
@@ -521,16 +521,16 @@ paragraph.&lt;/P>
   behaves similar to that of an inline-level element, but with certain restrictions.
   The following CSS properties apply to a <span class="css" id="ref-for-selectordef-first-line⑥">::first-line</span> pseudo-element:</p>
    <ul>
-    <li>all font properties (see <a data-link-type="biblio" href="#biblio-css-fonts-3">[CSS-FONTS-3]</a>) 
-    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#color0" id="ref-for-color0">color</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-4/#propdef-opacity" id="ref-for-propdef-opacity">opacity</a> properties (see <a data-link-type="biblio" href="#biblio-css-color-3">[CSS-COLOR-3]</a>) 
-    <li>all background properties (see <a data-link-type="biblio" href="#biblio-css-backgrounds-3">[CSS-BACKGROUNDS-3]</a>) 
-    <li>any typesetting properties that apply to inline elements (see <a data-link-type="biblio" href="#biblio-css-text-3">[CSS-TEXT-3]</a>) 
-    <li>all text decoration properties (see <a data-link-type="biblio" href="#biblio-css-text-decor-3">[CSS-TEXT-DECOR-3]</a>) 
-    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-ruby-1/#propdef-ruby-position" id="ref-for-propdef-ruby-position">ruby-position</a> property (see <a data-link-type="biblio" href="#biblio-css-ruby-1">[CSS-RUBY-1]</a>) 
-    <li>any inline layout properties that apply to inline elements (see <a data-link-type="biblio" href="#biblio-css-inline-3">[CSS-INLINE-3]</a>) 
-    <li>any other properties defined to apply to <a class="css" data-link-type="maybe" href="#selectordef-first-line" id="ref-for-selectordef-first-line⑦">::first-line</a> by their respective specifications 
+    <li>all font properties (see <a data-link-type="biblio" href="#biblio-css-fonts-3">[CSS-FONTS-3]</a>)
+    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#color0" id="ref-for-color0">color</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-4/#propdef-opacity" id="ref-for-propdef-opacity">opacity</a> properties (see <a data-link-type="biblio" href="#biblio-css-color-3">[CSS-COLOR-3]</a>)
+    <li>all background properties (see <a data-link-type="biblio" href="#biblio-css-backgrounds-3">[CSS-BACKGROUNDS-3]</a>)
+    <li>any typesetting properties that apply to inline elements (see <a data-link-type="biblio" href="#biblio-css-text-3">[CSS-TEXT-3]</a>)
+    <li>all text decoration properties (see <a data-link-type="biblio" href="#biblio-css-text-decor-3">[CSS-TEXT-DECOR-3]</a>)
+    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-ruby-1/#propdef-ruby-position" id="ref-for-propdef-ruby-position">ruby-position</a> property (see <a data-link-type="biblio" href="#biblio-css-ruby-1">[CSS-RUBY-1]</a>)
+    <li>any inline layout properties that apply to inline elements (see <a data-link-type="biblio" href="#biblio-css-inline-3">[CSS-INLINE-3]</a>)
+    <li>any other properties defined to apply to <a class="css" data-link-type="maybe" href="#selectordef-first-line" id="ref-for-selectordef-first-line⑦">::first-line</a> by their respective specifications
    </ul>
-    User agents may apply other properties as well. 
+    User agents may apply other properties as well.
    <h4 class="heading settled" data-level="2.1.3" id="first-line-inheritance"><span class="secno">2.1.3. </span><span class="content"> Inheritance and the <a class="css" data-link-type="maybe" href="#selectordef-first-line" id="ref-for-selectordef-first-line⑧">::first-line</a> Pseudo-element</span><a class="self-link" href="#first-line-inheritance"></a></h4>
    <p>During CSS inheritance, the portion of a child element that occurs on the first line
   only inherits properties applicable to the <a class="css" data-link-type="maybe" href="#selectordef-first-line" id="ref-for-selectordef-first-line⑨">::first-line</a> pseudo-element
@@ -550,7 +550,7 @@ paragraph.&lt;/P>
    <div class="example" id="example-b4ed8f23">
     <a class="self-link" href="#example-b4ed8f23"></a> For example, the following rule creates a 2-line drop-letter
     on every paragraph following a level-2 header,
-    using the <a class="property" data-link-type="propdesc">initial-letter</a> property defined in <a data-link-type="biblio" href="#biblio-css-inline-3">[CSS-INLINE-3]</a>: 
+    using the <a class="property" data-link-type="propdesc">initial-letter</a> property defined in <a data-link-type="biblio" href="#biblio-css-inline-3">[CSS-INLINE-3]</a>:
 <pre class="highlight"><c- f>h2 + p::first-letter </c-><c- p>{</c-> <c- k>initial-letter</c-><c- p>:</c-> <c- m>2</c-><c- p>;</c-> <c- p>}</c->
 </pre>
    </div>
@@ -590,7 +590,7 @@ paragraph.&lt;/P>
   even if that first text is in a descendant.</p>
    <div class="example" id="example-ac59bbd6">
     <a class="self-link" href="#example-ac59bbd6"></a> Example:
-    The <a data-link-type="dfn" href="#fictional-tag-sequence" id="ref-for-fictional-tag-sequence④">fictional tag sequence</a> for this HTML fragment: 
+    The <a data-link-type="dfn" href="#fictional-tag-sequence" id="ref-for-fictional-tag-sequence④">fictional tag sequence</a> for this HTML fragment:
 <pre class="highlight">&lt;div>
 &lt;p>The first text.
 </pre>
@@ -617,15 +617,15 @@ paragraph.&lt;/P>
    <p>In CSS a ::first-letter pseudo-element is similar to an inline-level element.
   The following properties that apply to <a class="css" data-link-type="maybe" href="#selectordef-first-letter" id="ref-for-selectordef-first-letter①④">::first-letter</a> pseudo-elements:</p>
    <ul>
-    <li>all font properties (see <a data-link-type="biblio" href="#biblio-css-fonts-3">[CSS-FONTS-3]</a>) 
-    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#color0" id="ref-for-color0①">color</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-4/#propdef-opacity" id="ref-for-propdef-opacity①">opacity</a> properties (see <a data-link-type="biblio" href="#biblio-css-color-3">[CSS-COLOR-3]</a>) 
-    <li>all background properties (see <a data-link-type="biblio" href="#biblio-css-backgrounds-3">[CSS-BACKGROUNDS-3]</a>) 
-    <li>any typesetting properties that apply to inline elements (see <a data-link-type="biblio" href="#biblio-css-text-3">[CSS-TEXT-3]</a>) 
-    <li>all text decoration properties (see <a data-link-type="biblio" href="#biblio-css-text-decor-3">[CSS-TEXT-DECOR-3]</a>) 
-    <li>any inline layout properties that apply to inline elements (see <a data-link-type="biblio" href="#biblio-css-inline-3">[CSS-INLINE-3]</a>) 
-    <li>margin and padding properties (see <a data-link-type="biblio" href="#biblio-css2">[CSS2]</a>) 
-    <li>border properties and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-box-shadow" id="ref-for-propdef-box-shadow">box-shadow</a> (see <a data-link-type="biblio" href="#biblio-css-backgrounds-3">[CSS-BACKGROUNDS-3]</a>) 
-    <li>any other properties defined to apply to <a class="css" data-link-type="maybe" href="#selectordef-first-letter" id="ref-for-selectordef-first-letter①⑤">::first-letter</a> by their respective specifications 
+    <li>all font properties (see <a data-link-type="biblio" href="#biblio-css-fonts-3">[CSS-FONTS-3]</a>)
+    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#color0" id="ref-for-color0①">color</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-4/#propdef-opacity" id="ref-for-propdef-opacity①">opacity</a> properties (see <a data-link-type="biblio" href="#biblio-css-color-3">[CSS-COLOR-3]</a>)
+    <li>all background properties (see <a data-link-type="biblio" href="#biblio-css-backgrounds-3">[CSS-BACKGROUNDS-3]</a>)
+    <li>any typesetting properties that apply to inline elements (see <a data-link-type="biblio" href="#biblio-css-text-3">[CSS-TEXT-3]</a>)
+    <li>all text decoration properties (see <a data-link-type="biblio" href="#biblio-css-text-decor-3">[CSS-TEXT-DECOR-3]</a>)
+    <li>any inline layout properties that apply to inline elements (see <a data-link-type="biblio" href="#biblio-css-inline-3">[CSS-INLINE-3]</a>)
+    <li>margin and padding properties (see <a data-link-type="biblio" href="#biblio-css2">[CSS2]</a>)
+    <li>border properties and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-box-shadow" id="ref-for-propdef-box-shadow">box-shadow</a> (see <a data-link-type="biblio" href="#biblio-css-backgrounds-3">[CSS-BACKGROUNDS-3]</a>)
+    <li>any other properties defined to apply to <a class="css" data-link-type="maybe" href="#selectordef-first-letter" id="ref-for-selectordef-first-letter①⑤">::first-letter</a> by their respective specifications
    </ul>
    <p>User agents may apply other properties as well.</p>
    <p class="note" role="note"><span>Note:</span> In previous levels of CSS,
@@ -641,7 +641,7 @@ paragraph.&lt;/P>
     Note that the fictional start tag of the first letter
     is inside the <span>span</span>,
     and thus the font weight of the first letter is normal,
-    not bold as the <span>span</span>: 
+    not bold as the <span>span</span>:
 <pre class="highlight"><c- f>p </c-><c- p>{</c-> <c- k>line-height</c-><c- p>:</c-> <c- m>1.1</c-> <c- p>}</c->
 <c- f>p::first-letter </c-><c- p>{</c-> <c- k>font-size</c-><c- p>:</c-> <c- m>3</c-><c- l>em</c-><c- p>;</c-> <c- k>font-weight</c-><c- p>:</c-> normal <c- p>}</c->
 <c- f>span </c-><c- p>{</c-> <c- k>font-weight</c-><c- p>:</c-> bold <c- p>}</c->
@@ -654,7 +654,7 @@ En dagelix geschrey de bange stad ontzet.
     <div class="figure"> <img alt="Image illustrating the ::first-letter pseudo-element" src="images/initial-cap.png"> </div>
    </div>
    <div class="example" id="example-8f966c0e">
-    <a class="self-link" href="#example-8f966c0e"></a> The following CSS will make a drop cap initial letter span about two lines: 
+    <a class="self-link" href="#example-8f966c0e"></a> The following CSS will make a drop cap initial letter span about two lines:
 <pre class="highlight"><c- f>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"></c->
 <c- f>&lt;HTML></c->
 <c- f> &lt;HEAD></c->
@@ -699,23 +699,23 @@ En dagelix geschrey de bange stad ontzet.
   to indicate their selected status.
   The following <a data-link-type="dfn" href="#highlight-pseudo-element" id="ref-for-highlight-pseudo-element">highlight pseudo-elements</a> are defined:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-selection">::selection</dfn> 
-    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-inactive-selection">::inactive-selection</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-selection">::selection</dfn>
+    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-inactive-selection">::inactive-selection</dfn>
     <dd>
       The <a class="css" data-link-type="maybe" href="#selectordef-selection" id="ref-for-selectordef-selection①">::selection</a> and <a class="css" data-link-type="maybe" href="#selectordef-inactive-selection" id="ref-for-selectordef-inactive-selection①">::inactive-selection</a> pseudo-elements represent
       the portion of a document that has been selected
       as the target or object of some possible future user-agent operation(s).
       They apply, for example, to selected text within an editable text field,
-      which would be copied by a copy operation or replaced by a paste operation. 
+      which would be copied by a copy operation or replaced by a paste operation.
      <p><a class="css" data-link-type="maybe" href="#selectordef-selection" id="ref-for-selectordef-selection②">::selection</a> applies to active selections,
       whereas <a class="css" data-link-type="maybe" href="#selectordef-inactive-selection" id="ref-for-selectordef-inactive-selection②">::inactive-selection</a> applies to inactive selections
       (e.g. when the document window is inactive and therefore not receiving events).</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-spelling-error">::spelling-error</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-spelling-error">::spelling-error</dfn>
     <dd> The <a class="css" data-link-type="maybe" href="#selectordef-spelling-error" id="ref-for-selectordef-spelling-error①">::spelling-error</a> pseudo-element represents
-      a portion of text that has been flagged by the user agent as misspelled. 
-    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-grammar-error">::grammar-error</dfn> 
+      a portion of text that has been flagged by the user agent as misspelled.
+    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-grammar-error">::grammar-error</dfn>
     <dd> The <a class="css" data-link-type="maybe" href="#selectordef-grammar-error" id="ref-for-selectordef-grammar-error①">::grammar-error</a> pseudo-element represents
-      a portion of text that has been flagged by the user agent as grammatically incorrect. 
+      a portion of text that has been flagged by the user agent as grammatically incorrect.
    </dl>
    <p>The <a data-link-type="dfn" href="#highlight-pseudo-element" id="ref-for-highlight-pseudo-element①">highlight pseudo-elements</a> do not necessarily fit into the element tree,
   and can arbitrarily cross element boundaries without honoring its nesting structure.</p>
@@ -733,13 +733,13 @@ En dagelix geschrey de bange stad ontzet.
   by a limited set of properties that do not affect layout.
   The following properties apply to the <span id="ref-for-highlight-pseudo-element③">highlight pseudo-elements</span>:</p>
    <ul>
-    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#color0" id="ref-for-color0②">color</a> 
-    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-color" id="ref-for-propdef-background-color">background-color</a> 
-    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-ui-4/#propdef-cursor" id="ref-for-propdef-cursor">cursor</a> 
-    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-ui-4/#propdef-caret-color" id="ref-for-propdef-caret-color">caret-color</a> 
-    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-decoration" id="ref-for-propdef-text-decoration">text-decoration</a> and its associated properties 
-    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-shadow" id="ref-for-propdef-text-shadow">text-shadow</a> 
-    <li><a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-color" id="ref-for-propdef-stroke-color">stroke-color</a>, <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-fill-color" id="ref-for-propdef-fill-color">fill-color</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-width" id="ref-for-propdef-stroke-width">stroke-width</a> 
+    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#color0" id="ref-for-color0②">color</a>
+    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-color" id="ref-for-propdef-background-color">background-color</a>
+    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-ui-4/#propdef-cursor" id="ref-for-propdef-cursor">cursor</a>
+    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-ui-4/#propdef-caret-color" id="ref-for-propdef-caret-color">caret-color</a>
+    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-decoration" id="ref-for-propdef-text-decoration">text-decoration</a> and its associated properties
+    <li><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-shadow" id="ref-for-propdef-text-shadow">text-shadow</a>
+    <li><a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-color" id="ref-for-propdef-stroke-color">stroke-color</a>, <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-fill-color" id="ref-for-propdef-fill-color">fill-color</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-width" id="ref-for-propdef-stroke-width">stroke-width</a>
    </ul>
    <p class="issue" id="issue-6ca196f5"><a class="self-link" href="#issue-6ca196f5"></a> Are there any other properties that should be included here?</p>
    <p>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#color0" id="ref-for-color0③">color</a> property specifies the color of both the text
@@ -761,11 +761,11 @@ En dagelix geschrey de bange stad ontzet.
       and may extend further above/below the em box to the line box edges.
       Spacing between two characters may also be part of the overlay area,
       in which case it belongs to the innermost element that contains both characters
-      and is selected when both characters are selected. 
+      and is selected when both characters are selected.
     <li> For replaced content, the associated overlay must cover at least the entire replaced object,
-      and may extend outward to include the element’s entire content box. 
+      and may extend outward to include the element’s entire content box.
     <li> The overlay may also include other other areas within the border-box of an element;
-      in this case, those areas belong to the innermost such element that contains the area. 
+      in this case, those areas belong to the innermost such element that contains the area.
    </ul>
    <p class="issue" id="issue-13b80e20"><a class="self-link" href="#issue-13b80e20"></a> See <a href="http://lists.w3.org/Archives/Public/www-style/2008Nov/0022.html">F2F minutes</a>, <a href="http://lists.w3.org/Archives/Public/www-style/2008Oct/0268.html">dbaron’s message</a>, <a href="http://lists.w3.org/Archives/Public/www-style/2010May/0247.html">Daniel’s thread</a>, <a href="http://lists.w3.org/Archives/Public/www-style/2010May/0261.html">Gecko notes</a>, <a href="http://lists.w3.org/Archives/Public/www-style/2010May/0366.html">Opera notes</a>, <a href="http://lists.w3.org/Archives/Public/www-style/2010May/0280.html">Webkit notes</a></p>
    <p class="issue" id="issue-271a1b90"><a class="self-link" href="#issue-271a1b90"></a> Not sure if this is the correct way of describing the way things work.</p>
@@ -781,7 +781,7 @@ En dagelix geschrey de bange stad ontzet.
   the corresponding <span id="ref-for-highlight-pseudo-element⑥">highlight pseudo-element</span> of its <span id="ref-for-originating-element⑤">originating element</span>’s parent element
   (regardless of whether that property is an <a data-link-type="dfn" href="https://drafts.csswg.org/css-cascade-4/#inherited-property" id="ref-for-inherited-property">inherited property</a>).</p>
    <div class="example" id="example-c35bf49a">
-    <a class="self-link" href="#example-c35bf49a"></a> For example, if the following rules were applied: 
+    <a class="self-link" href="#example-c35bf49a"></a> For example, if the following rules were applied:
 <pre class="highlight"><c- f>p::selection      </c-><c- p>{</c-> <c- k>color</c-><c- p>:</c-> yellow<c- p>;</c-> <c- k>background</c-><c- p>:</c-> green<c- p>;</c-> <c- p>}</c->
 <c- f>p > em::selection </c-><c- p>{</c-> <c- k>color</c-><c- p>:</c-> orange<c- p>;</c-> <c- p>}</c->
 <c- f>em::selection     </c-><c- p>{</c-> <c- k>color</c-><c- p>:</c->    red<c- p>;</c-> <c- p>}</c->
@@ -797,7 +797,7 @@ En dagelix geschrey de bange stad ontzet.
   since this will allow clean overriding in descendants. <a class="css" data-link-type="maybe" href="#selectordef-selection" id="ref-for-selectordef-selection③">::selection</a> alone applies to every element in the tree,
   overriding the more specific styles of any ancestors. </p>
    <div class="example" id="example-97480f68">
-    <a class="self-link" href="#example-97480f68"></a> For example, if an author specified 
+    <a class="self-link" href="#example-97480f68"></a> For example, if an author specified
 <pre class="highlight"><c- f>::selection          </c-><c- p>{</c-> <c- k>background</c-><c- p>:</c-> blue<c- p>;</c-> <c- p>}</c->
 <c- f>p.warning::selection </c-><c- p>{</c-> <c- k>background</c-><c- p>:</c->  red<c- p>;</c-> <c- p>}</c->
 </pre>
@@ -869,17 +869,17 @@ En dagelix geschrey de bange stad ontzet.
   as if they were immediate children of their <a data-link-type="dfn" href="https://drafts.csswg.org/selectors-4/#originating-element" id="ref-for-originating-element⑧">originating element</a>,
   and can be styled exactly like any normal document-sourced element in the document tree.</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-before">::before</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-before">::before</dfn>
     <dd>Represents a styleable child pseudo-element
-    immediately before the <a data-link-type="dfn" href="https://drafts.csswg.org/selectors-4/#originating-element" id="ref-for-originating-element⑨">originating element</a>’s actual content. 
-    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-after">::after</dfn> 
+    immediately before the <a data-link-type="dfn" href="https://drafts.csswg.org/selectors-4/#originating-element" id="ref-for-originating-element⑨">originating element</a>’s actual content.
+    <dt><dfn class="dfn-paneled css" data-dfn-type="selector" data-export id="selectordef-after">::after</dfn>
     <dd>Represents a styleable child pseudo-element
-    immediately after the <a data-link-type="dfn" href="https://drafts.csswg.org/selectors-4/#originating-element" id="ref-for-originating-element①⓪">originating element</a>’s actual content. 
+    immediately after the <a data-link-type="dfn" href="https://drafts.csswg.org/selectors-4/#originating-element" id="ref-for-originating-element①⓪">originating element</a>’s actual content.
    </dl>
    <div class="example" id="example-1db24d2c">
     <a class="self-link" href="#example-1db24d2c"></a> For example, the following rule inserts the string “Note: ”
     before the content of every <code class="highlight">&lt;p></code> element
-    whose <code class="highlight">class</code> attribute has the value <code class="highlight">note</code>: 
+    whose <code class="highlight">class</code> attribute has the value <code class="highlight">note</code>:
 <pre class="highlight"><c- f>p.note::before </c-><c- p>{</c-> <c- k>content</c-><c- p>:</c-> <c- s>"Note: "</c-> <c- p>}</c-></pre>
     <p>Since the initial value of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display①">display</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-display-3/#valdef-display-inline" id="ref-for-valdef-display-inline">inline</a>,
     this will generate an inline box.
@@ -897,11 +897,11 @@ En dagelix geschrey de bange stad ontzet.
   (See <a data-link-type="biblio" href="#biblio-css-display-3">[CSS-DISPLAY-3]</a> and <a data-link-type="biblio" href="#biblio-css-lists-3">[CSS-LISTS-3]</a>.)</p>
    <p>The following CSS properties apply to a <a class="css" data-link-type="maybe" href="#selectordef-marker" id="ref-for-selectordef-marker①">::marker</a> pseudo-element:</p>
    <ul>
-    <li>all font properties (see <a data-link-type="biblio" href="#biblio-css-fonts-3">[CSS-FONTS-3]</a>) 
-    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-4/#propdef-white-space" id="ref-for-propdef-white-space">white-space</a> property (see <a data-link-type="biblio" href="#biblio-css-text-3">[CSS-TEXT-3]</a>) 
-    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#color0" id="ref-for-color0①②">color</a> property (see <a data-link-type="biblio" href="#biblio-css-color-3">[CSS-COLOR-3]</a>) 
-    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-4/#propdef-text-combine-upright" id="ref-for-propdef-text-combine-upright">text-combine-upright</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-unicode-bidi" id="ref-for-propdef-unicode-bidi">unicode-bidi</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction">direction</a> properties (see <a data-link-type="biblio" href="#biblio-css-writing-modes-3">[CSS-WRITING-MODES-3]</a>) 
-    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-content-3/#propdef-content" id="ref-for-propdef-content①">content</a> property (see <a data-link-type="biblio" href="#biblio-css-lists-3">[CSS-LISTS-3]</a>) 
+    <li>all font properties (see <a data-link-type="biblio" href="#biblio-css-fonts-3">[CSS-FONTS-3]</a>)
+    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-4/#propdef-white-space" id="ref-for-propdef-white-space">white-space</a> property (see <a data-link-type="biblio" href="#biblio-css-text-3">[CSS-TEXT-3]</a>)
+    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#color0" id="ref-for-color0①②">color</a> property (see <a data-link-type="biblio" href="#biblio-css-color-3">[CSS-COLOR-3]</a>)
+    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-4/#propdef-text-combine-upright" id="ref-for-propdef-text-combine-upright">text-combine-upright</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-unicode-bidi" id="ref-for-propdef-unicode-bidi">unicode-bidi</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction">direction</a> properties (see <a data-link-type="biblio" href="#biblio-css-writing-modes-3">[CSS-WRITING-MODES-3]</a>)
+    <li>the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-content-3/#propdef-content" id="ref-for-propdef-content①">content</a> property (see <a data-link-type="biblio" href="#biblio-css-lists-3">[CSS-LISTS-3]</a>)
    </ul>
    <p class="note" role="note"> It is expected that future specifications will extend this list of properties;
     however at the moment marker box layout is not fully defined,
@@ -946,14 +946,14 @@ En dagelix geschrey de bange stad ontzet.
   See <a href="https://github.com/w3c/csswg-drafts/issues/2517">Issue 2417</a>.</p>
    <h2 class="heading settled" data-level="5" id="interactions"><span class="secno">5. </span><span class="content"> Overlapping Pseudo-element Interactions</span><a class="self-link" href="#interactions"></a></h2>
    <div class="example" id="overlapping-example">
-    <a class="self-link" href="#overlapping-example"></a> Recall that 
+    <a class="self-link" href="#overlapping-example"></a> Recall that
     <ul>
      <li> the contents of <a class="css" data-link-type="maybe" href="#selectordef-before" id="ref-for-selectordef-before④">::before</a> and <a class="css" data-link-type="maybe" href="#selectordef-after" id="ref-for-selectordef-after③">::after</a> are selected
-        exactly as if they were normal elements in the document source tree 
+        exactly as if they were normal elements in the document source tree
      <li> the <a class="css" data-link-type="maybe" href="#selectordef-first-letter" id="ref-for-selectordef-first-letter①⑧">::first-letter</a> boundaries are tightly wrapped around the first letter text,
-        and <span class="css" id="ref-for-selectordef-first-letter①⑨">::first-letter</span> is constrained to exist solely on the first formatted line. 
+        and <span class="css" id="ref-for-selectordef-first-letter①⑨">::first-letter</span> is constrained to exist solely on the first formatted line.
      <li> the <a class="css" data-link-type="maybe" href="#selectordef-first-line" id="ref-for-selectordef-first-line①⑤">::first-line</a> start is inserted just inside the containing block’s element boundary,
-        and its end after the close of all content on the line 
+        and its end after the close of all content on the line
     </ul>
     <p>The following CSS and HTML example
     illustrates how overlapping pseudo-elements interact:</p>
@@ -995,12 +995,12 @@ En dagelix geschrey de bange stad ontzet.
   is a string representing the type of the pseudo-element.
   This can be one of the following values:</p>
    <dl>
-    <dt><code class="highlight">"::before"</code> 
-    <dd>Represents the <a class="css" data-link-type="maybe" href="#selectordef-before" id="ref-for-selectordef-before⑤">::before</a> pseudo-element. 
-    <dt><code class="highlight">"::after"</code> 
-    <dd>Represents the <a class="css" data-link-type="maybe" href="#selectordef-after" id="ref-for-selectordef-after④">::after</a> pseudo-element. 
-    <dt><code class="highlight">"::marker"</code> 
-    <dd>Represents the <a class="css" data-link-type="maybe" href="#selectordef-marker" id="ref-for-selectordef-marker④">::marker</a> pseudo-element. 
+    <dt><code class="highlight">"::before"</code>
+    <dd>Represents the <a class="css" data-link-type="maybe" href="#selectordef-before" id="ref-for-selectordef-before⑤">::before</a> pseudo-element.
+    <dt><code class="highlight">"::after"</code>
+    <dd>Represents the <a class="css" data-link-type="maybe" href="#selectordef-after" id="ref-for-selectordef-after④">::after</a> pseudo-element.
+    <dt><code class="highlight">"::marker"</code>
+    <dd>Represents the <a class="css" data-link-type="maybe" href="#selectordef-marker" id="ref-for-selectordef-marker④">::marker</a> pseudo-element.
    </dl>
    <p>The <dfn class="dfn-paneled idl-code" data-dfn-for="CSSPseudoElement" data-dfn-type="attribute" data-export id="dom-csspseudoelement-element"><code class="highlight">element</code></dfn> attribute is the <a data-link-type="dfn" href="https://drafts.csswg.org/selectors-4/#originating-element" id="ref-for-originating-element①③">originating element</a> of the pseudo-element.</p>
    <p class="note" role="note"><span>Note:</span> This interface may be extended in the future
@@ -1021,7 +1021,7 @@ En dagelix geschrey de bange stad ontzet.
     is used to retrieve the <code class="idl"><a data-link-type="idl" href="#csspseudoelement" id="ref-for-csspseudoelement③">CSSPseudoElement</a></code> instance
     of the type matching <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-element-pseudo-type-type" id="ref-for-dom-element-pseudo-type-type">type</a></code> associated with the element.
     When it is called,
-    execute the following steps: 
+    execute the following steps:
     <ol>
      <li data-md>
       <p><a data-link-type="dfn" href="https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar" id="ref-for-css-parse-something-according-to-a-css-grammar">Parse</a> the <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-element-pseudo-type-type" id="ref-for-dom-element-pseudo-type-type①">type</a></code> argument as a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/selectors-4/#typedef-pseudo-element-selector" id="ref-for-typedef-pseudo-element-selector">&lt;pseudo-element-selector></a>,
@@ -1051,24 +1051,24 @@ that would match the selector <var>type</var> with <a data-link-type="dfn" href=
    <h2 class="no-num heading settled" id="changes"><span class="content"> Changes</span><a class="self-link" href="#changes"></a></h2>
    <p>Changes since the <a href="https://www.w3.org/TR/2019/WD-css-pseudo-4-20190225/">25 February 2019 Working Draft</a> include:</p>
    <ul>
-    <li>Added <a class="css" data-link-type="maybe" href="#selectordef-marker" id="ref-for-selectordef-marker⑤">::marker</a> to types allowed for <code class="idl"><a data-link-type="idl" href="#csspseudoelement" id="ref-for-csspseudoelement⑥">CSSPseudoElement</a></code> interface. 
-    <li>Clarified return value of <code class="idl"><a data-link-type="idl" href="#dom-element-pseudo" id="ref-for-dom-element-pseudo③">pseudo()</a></code>. 
-    <li>Added <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-content-3/#propdef-content" id="ref-for-propdef-content②">content</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-unicode-bidi" id="ref-for-propdef-unicode-bidi①">unicode-bidi</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction①">direction</a> to properties allowed on <a class="css" data-link-type="maybe" href="#selectordef-marker" id="ref-for-selectordef-marker⑥">::marker</a>. 
+    <li>Added <a class="css" data-link-type="maybe" href="#selectordef-marker" id="ref-for-selectordef-marker⑤">::marker</a> to types allowed for <code class="idl"><a data-link-type="idl" href="#csspseudoelement" id="ref-for-csspseudoelement⑥">CSSPseudoElement</a></code> interface.
+    <li>Clarified return value of <code class="idl"><a data-link-type="idl" href="#dom-element-pseudo" id="ref-for-dom-element-pseudo③">pseudo()</a></code>.
+    <li>Added <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-content-3/#propdef-content" id="ref-for-propdef-content②">content</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-unicode-bidi" id="ref-for-propdef-unicode-bidi①">unicode-bidi</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction①">direction</a> to properties allowed on <a class="css" data-link-type="maybe" href="#selectordef-marker" id="ref-for-selectordef-marker⑥">::marker</a>.
     <li>Added <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-ruby-1/#propdef-ruby-position" id="ref-for-propdef-ruby-position①">ruby-position</a> to properties allowed on <a class="css" data-link-type="maybe" href="#selectordef-first-line" id="ref-for-selectordef-first-line①⑦">::first-line</a>,
     analogous with <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-emphasis-position" id="ref-for-propdef-text-emphasis-position">text-emphasis-position</a>.
-    (<a href="https://github.com/w3c/csswg-drafts/issues/2998">Issue 2998</a>) 
+    (<a href="https://github.com/w3c/csswg-drafts/issues/2998">Issue 2998</a>)
    </ul>
    <p>Changes since the <a href="https://www.w3.org/TR/2016/WD-css-pseudo-4-20160607/">7 June 2016 Working Draft</a> include:</p>
    <ul>
-    <li>Specified <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-text-decor-4/#valdef-text-tecoration-line-spelling-error" id="ref-for-valdef-text-tecoration-line-spelling-error">spelling-error</a> and <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-text-decor-4/#valdef-text-decoration-line-grammar-error" id="ref-for-valdef-text-decoration-line-grammar-error">grammar-error</a> with <a class="css" data-link-type="maybe" href="#selectordef-spelling-error" id="ref-for-selectordef-spelling-error④">::spelling-error</a> and <a class="css" data-link-type="maybe" href="#selectordef-grammar-error" id="ref-for-selectordef-grammar-error④">::grammar-error</a> in the UA stylesheet. 
-    <li>Redefined value propagation between parent/child highlight pseudo-elements to use inheritance rather than cascading. See discussion in and linked from <a href="https://github.com/w3c/csswg-drafts/issues/2474">Issue 2474</a>. 
-    <li>Refined list of supported properties for highlight pseudo-elements, e.g. adding <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-color" id="ref-for-propdef-stroke-color①">stroke-color</a>/<a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-fill-color" id="ref-for-propdef-fill-color①">fill-color</a>, removing <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-ui-4/#propdef-outline" id="ref-for-propdef-outline">outline</a>, etc. 
-    <li>Clarified how text and text decoration colors are painted for highlight pseudo-elements. 
-    <li>Added the <code class="idl"><a data-link-type="idl" href="#dom-csspseudoelement-element" id="ref-for-dom-csspseudoelement-element①">element</a></code> attribute to the <code class="idl"><a data-link-type="idl" href="#csspseudoelement" id="ref-for-csspseudoelement⑦">CSSPseudoElement</a></code> interface. 
-    <li>Changed the values of the <code class="idl"><a data-link-type="idl" href="#dom-csspseudoelement-type" id="ref-for-dom-csspseudoelement-type①">type</a></code> attribute on the <code class="idl"><a data-link-type="idl" href="#csspseudoelement" id="ref-for-csspseudoelement⑧">CSSPseudoElement</a></code> interface to match the corresponding pseudo-elements. 
-    <li>Reduced supported types of <code class="idl"><a data-link-type="idl" href="#csspseudoelement" id="ref-for-csspseudoelement⑨">CSSPseudoElement</a></code> and removed unimplemented <code class="highlight">style</code> attribute. 
-    <li>Changed <code class="highlight">window.getPseudoElements(elem,type)</code> to <code class="highlight">Element.pseudo(type)</code>. 
-    <li>Miscellaneous minor clarifications and fixes. 
+    <li>Specified <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-text-decor-4/#valdef-text-tecoration-line-spelling-error" id="ref-for-valdef-text-tecoration-line-spelling-error">spelling-error</a> and <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-text-decor-4/#valdef-text-decoration-line-grammar-error" id="ref-for-valdef-text-decoration-line-grammar-error">grammar-error</a> with <a class="css" data-link-type="maybe" href="#selectordef-spelling-error" id="ref-for-selectordef-spelling-error④">::spelling-error</a> and <a class="css" data-link-type="maybe" href="#selectordef-grammar-error" id="ref-for-selectordef-grammar-error④">::grammar-error</a> in the UA stylesheet.
+    <li>Redefined value propagation between parent/child highlight pseudo-elements to use inheritance rather than cascading. See discussion in and linked from <a href="https://github.com/w3c/csswg-drafts/issues/2474">Issue 2474</a>.
+    <li>Refined list of supported properties for highlight pseudo-elements, e.g. adding <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-color" id="ref-for-propdef-stroke-color①">stroke-color</a>/<a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-fill-color" id="ref-for-propdef-fill-color①">fill-color</a>, removing <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-ui-4/#propdef-outline" id="ref-for-propdef-outline">outline</a>, etc.
+    <li>Clarified how text and text decoration colors are painted for highlight pseudo-elements.
+    <li>Added the <code class="idl"><a data-link-type="idl" href="#dom-csspseudoelement-element" id="ref-for-dom-csspseudoelement-element①">element</a></code> attribute to the <code class="idl"><a data-link-type="idl" href="#csspseudoelement" id="ref-for-csspseudoelement⑦">CSSPseudoElement</a></code> interface.
+    <li>Changed the values of the <code class="idl"><a data-link-type="idl" href="#dom-csspseudoelement-type" id="ref-for-dom-csspseudoelement-type①">type</a></code> attribute on the <code class="idl"><a data-link-type="idl" href="#csspseudoelement" id="ref-for-csspseudoelement⑧">CSSPseudoElement</a></code> interface to match the corresponding pseudo-elements.
+    <li>Reduced supported types of <code class="idl"><a data-link-type="idl" href="#csspseudoelement" id="ref-for-csspseudoelement⑨">CSSPseudoElement</a></code> and removed unimplemented <code class="highlight">style</code> attribute.
+    <li>Changed <code class="highlight">window.getPseudoElements(elem,type)</code> to <code class="highlight">Element.pseudo(type)</code>.
+    <li>Miscellaneous minor clarifications and fixes.
    </ul>
    <h2 class="no-num heading settled" id="acknowledgements"><span class="content"> Acknowledgements</span><a class="self-link" href="#acknowledgements"></a></h2>
    <p>The editors would like to thank the following individuals for their
@@ -1096,7 +1096,7 @@ that would match the selector <var>type</var> with <a data-link-type="dfn" href=
 	or are set apart from the normative text with <code class="highlight">class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1109,14 +1109,14 @@ that would match the selector <var>type</var> with <a data-link-type="dfn" href=
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1167,7 +1167,7 @@ that would match the selector <var>type</var> with <a data-link-type="dfn" href=
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1197,95 +1197,95 @@ that would match the selector <var>type</var> with <a data-link-type="dfn" href=
   <aside class="dfn-panel" data-for="term-for-propdef-background-color">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-color">https://drafts.csswg.org/css-backgrounds-3/#propdef-background-color</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-background-color">3.2. 
+    <li><a href="#ref-for-propdef-background-color">3.2.
 Styling Highlights</a> <a href="#ref-for-propdef-background-color①">(2)</a>
-    <li><a href="#ref-for-propdef-background-color②">3.4. 
+    <li><a href="#ref-for-propdef-background-color②">3.4.
 Cascading and Per-Element Highlight Styles</a>
-    <li><a href="#ref-for-propdef-background-color③">3.5. 
+    <li><a href="#ref-for-propdef-background-color③">3.5.
 Painting the Highlight</a> <a href="#ref-for-propdef-background-color④">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-box-shadow">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-box-shadow">https://drafts.csswg.org/css-backgrounds-3/#propdef-box-shadow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-box-shadow">2.2.2. 
+    <li><a href="#ref-for-propdef-box-shadow">2.2.2.
 Styling the ::first-letter Pseudo-element</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inheritance">
    <a href="https://drafts.csswg.org/css-cascade-4/#inheritance">https://drafts.csswg.org/css-cascade-4/#inheritance</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inheritance">4. 
+    <li><a href="#ref-for-inheritance">4.
 Tree-Abiding Pseudo-elements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inherited-property">
    <a href="https://drafts.csswg.org/css-cascade-4/#inherited-property">https://drafts.csswg.org/css-cascade-4/#inherited-property</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inherited-property">3.4. 
+    <li><a href="#ref-for-inherited-property">3.4.
 Cascading and Per-Element Highlight Styles</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-initial-value">
    <a href="https://drafts.csswg.org/css-cascade-4/#initial-value">https://drafts.csswg.org/css-cascade-4/#initial-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-initial-value">4. 
+    <li><a href="#ref-for-initial-value">4.
 Tree-Abiding Pseudo-elements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cascade-origin-ua">
    <a href="https://drafts.csswg.org/css-cascade-4/#cascade-origin-ua">https://drafts.csswg.org/css-cascade-4/#cascade-origin-ua</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cascade-origin-ua">3.4. 
+    <li><a href="#ref-for-cascade-origin-ua">3.4.
 Cascading and Per-Element Highlight Styles</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-color0">
    <a href="https://drafts.csswg.org/css-color-3/#color0">https://drafts.csswg.org/css-color-3/#color0</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-color0">2.1.2. 
+    <li><a href="#ref-for-color0">2.1.2.
 Styling the First Line Pseudo-element</a>
-    <li><a href="#ref-for-color0①">2.2.2. 
+    <li><a href="#ref-for-color0①">2.2.2.
 Styling the ::first-letter Pseudo-element</a>
-    <li><a href="#ref-for-color0②">3.2. 
+    <li><a href="#ref-for-color0②">3.2.
 Styling Highlights</a> <a href="#ref-for-color0③">(2)</a> <a href="#ref-for-color0④">(3)</a>
-    <li><a href="#ref-for-color0⑤">3.4. 
+    <li><a href="#ref-for-color0⑤">3.4.
 Cascading and Per-Element Highlight Styles</a>
-    <li><a href="#ref-for-color0⑥">3.5. 
+    <li><a href="#ref-for-color0⑥">3.5.
 Painting the Highlight</a> <a href="#ref-for-color0⑦">(2)</a> <a href="#ref-for-color0⑧">(3)</a> <a href="#ref-for-color0⑨">(4)</a> <a href="#ref-for-color0①⓪">(5)</a> <a href="#ref-for-color0①①">(6)</a>
-    <li><a href="#ref-for-color0①②">4.2. 
+    <li><a href="#ref-for-color0①②">4.2.
 List Markers: the ::marker pseudo-element</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-currentcolor-def">
    <a href="https://www.w3.org/TR/css3-color/#currentcolor-def">https://www.w3.org/TR/css3-color/#currentcolor-def</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-currentcolor-def">3.5. 
+    <li><a href="#ref-for-currentcolor-def">3.5.
 Painting the Highlight</a> <a href="#ref-for-currentcolor-def①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-opacity">
    <a href="https://drafts.csswg.org/css-color-4/#propdef-opacity">https://drafts.csswg.org/css-color-4/#propdef-opacity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-opacity">2.1.2. 
+    <li><a href="#ref-for-propdef-opacity">2.1.2.
 Styling the First Line Pseudo-element</a>
-    <li><a href="#ref-for-propdef-opacity①">2.2.2. 
+    <li><a href="#ref-for-propdef-opacity①">2.2.2.
 Styling the ::first-letter Pseudo-element</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-color-transparent">
    <a href="https://drafts.csswg.org/css-color-4/#valdef-color-transparent">https://drafts.csswg.org/css-color-4/#valdef-color-transparent</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-color-transparent">3.5. 
+    <li><a href="#ref-for-valdef-color-transparent">3.5.
 Painting the Highlight</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-content">
    <a href="https://drafts.csswg.org/css-content-3/#propdef-content">https://drafts.csswg.org/css-content-3/#propdef-content</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-content">4.1. 
+    <li><a href="#ref-for-propdef-content">4.1.
 Generated Content Pseudo-elements: ::before and ::after</a>
-    <li><a href="#ref-for-propdef-content①">4.2. 
+    <li><a href="#ref-for-propdef-content①">4.2.
 List Markers: the ::marker pseudo-element</a>
     <li><a href="#ref-for-propdef-content②"> Changes</a>
    </ul>
@@ -1293,51 +1293,51 @@ List Markers: the ::marker pseudo-element</a>
   <aside class="dfn-panel" data-for="term-for-valdef-content-none">
    <a href="https://drafts.csswg.org/css-content-3/#valdef-content-none">https://drafts.csswg.org/css-content-3/#valdef-content-none</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-content-none">4.1. 
+    <li><a href="#ref-for-valdef-content-none">4.1.
 Generated Content Pseudo-elements: ::before and ::after</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-container">
    <a href="https://drafts.csswg.org/css-display-3/#block-container">https://drafts.csswg.org/css-display-3/#block-container</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-container">2.1.1. 
+    <li><a href="#ref-for-block-container">2.1.1.
 Finding the First Formatted Line</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-display">
    <a href="https://drafts.csswg.org/css-display-3/#propdef-display">https://drafts.csswg.org/css-display-3/#propdef-display</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-display">2.2.1. 
+    <li><a href="#ref-for-propdef-display">2.2.1.
 Finding the First Letter</a>
-    <li><a href="#ref-for-propdef-display①">4.1. 
+    <li><a href="#ref-for-propdef-display①">4.1.
 Generated Content Pseudo-elements: ::before and ::after</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-inline">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-inline">https://drafts.csswg.org/css-display-3/#valdef-display-inline</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-inline">4.1. 
+    <li><a href="#ref-for-valdef-display-inline">4.1.
 Generated Content Pseudo-elements: ::before and ::after</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-list-item">
    <a href="https://drafts.csswg.org/css-lists-3/#list-item">https://drafts.csswg.org/css-lists-3/#list-item</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-list-item">4.2. 
+    <li><a href="#ref-for-list-item">4.2.
 List Markers: the ::marker pseudo-element</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-list-style-position">
    <a href="https://drafts.csswg.org/css-lists-3/#propdef-list-style-position">https://drafts.csswg.org/css-lists-3/#propdef-list-style-position</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-list-style-position">2.2.1. 
+    <li><a href="#ref-for-propdef-list-style-position">2.2.1.
 Finding the First Letter</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-ruby-position">
    <a href="https://drafts.csswg.org/css-ruby-1/#propdef-ruby-position">https://drafts.csswg.org/css-ruby-1/#propdef-ruby-position</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-ruby-position">2.1.2. 
+    <li><a href="#ref-for-propdef-ruby-position">2.1.2.
 Styling the First Line Pseudo-element</a>
     <li><a href="#ref-for-propdef-ruby-position①"> Changes</a>
    </ul>
@@ -1345,49 +1345,49 @@ Styling the First Line Pseudo-element</a>
   <aside class="dfn-panel" data-for="term-for-css-parse-something-according-to-a-css-grammar">
    <a href="https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar">https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-parse-something-according-to-a-css-grammar">6.2. 
+    <li><a href="#ref-for-css-parse-something-according-to-a-css-grammar">6.2.
 pseudo() method of the Element interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-text-align">
    <a href="https://drafts.csswg.org/css-text-3/#propdef-text-align">https://drafts.csswg.org/css-text-3/#propdef-text-align</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-align">4.3. 
+    <li><a href="#ref-for-propdef-text-align">4.3.
 Placeholder Input: the ::placeholder pseudo-element</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typographic-letter-unit">
    <a href="https://drafts.csswg.org/css-text-3/#typographic-letter-unit">https://drafts.csswg.org/css-text-3/#typographic-letter-unit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typographic-letter-unit">2.2. 
+    <li><a href="#ref-for-typographic-letter-unit">2.2.
 The ::first-letter pseudo-element</a> <a href="#ref-for-typographic-letter-unit①">(2)</a> <a href="#ref-for-typographic-letter-unit②">(3)</a> <a href="#ref-for-typographic-letter-unit③">(4)</a> <a href="#ref-for-typographic-letter-unit④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unicode-general-category">
    <a href="https://drafts.csswg.org/css-text-3/#unicode-general-category">https://drafts.csswg.org/css-text-3/#unicode-general-category</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unicode-general-category">2.2. 
+    <li><a href="#ref-for-unicode-general-category">2.2.
 The ::first-letter pseudo-element</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-white-space">
    <a href="https://drafts.csswg.org/css-text-4/#propdef-white-space">https://drafts.csswg.org/css-text-4/#propdef-white-space</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-white-space">4.2. 
+    <li><a href="#ref-for-propdef-white-space">4.2.
 List Markers: the ::marker pseudo-element</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-text-decoration">
    <a href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-decoration">https://drafts.csswg.org/css-text-decor-3/#propdef-text-decoration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-decoration">3.2. 
+    <li><a href="#ref-for-propdef-text-decoration">3.2.
 Styling Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-text-emphasis">
    <a href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-emphasis">https://drafts.csswg.org/css-text-decor-3/#propdef-text-emphasis</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-emphasis">3.2. 
+    <li><a href="#ref-for-propdef-text-emphasis">3.2.
 Styling Highlights</a>
    </ul>
   </aside>
@@ -1400,7 +1400,7 @@ Styling Highlights</a>
   <aside class="dfn-panel" data-for="term-for-propdef-text-shadow">
    <a href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-shadow">https://drafts.csswg.org/css-text-decor-3/#propdef-text-shadow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-shadow">3.2. 
+    <li><a href="#ref-for-propdef-text-shadow">3.2.
 Styling Highlights</a>
    </ul>
   </aside>
@@ -1419,14 +1419,14 @@ Styling Highlights</a>
   <aside class="dfn-panel" data-for="term-for-propdef-caret-color">
    <a href="https://drafts.csswg.org/css-ui-4/#propdef-caret-color">https://drafts.csswg.org/css-ui-4/#propdef-caret-color</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-caret-color">3.2. 
+    <li><a href="#ref-for-propdef-caret-color">3.2.
 Styling Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-cursor">
    <a href="https://drafts.csswg.org/css-ui-4/#propdef-cursor">https://drafts.csswg.org/css-ui-4/#propdef-cursor</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-cursor">3.2. 
+    <li><a href="#ref-for-propdef-cursor">3.2.
 Styling Highlights</a>
    </ul>
   </aside>
@@ -1439,7 +1439,7 @@ Styling Highlights</a>
   <aside class="dfn-panel" data-for="term-for-propdef-direction">
    <a href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction">https://drafts.csswg.org/css-writing-modes-3/#propdef-direction</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-direction">4.2. 
+    <li><a href="#ref-for-propdef-direction">4.2.
 List Markers: the ::marker pseudo-element</a>
     <li><a href="#ref-for-propdef-direction①"> Changes</a>
    </ul>
@@ -1447,7 +1447,7 @@ List Markers: the ::marker pseudo-element</a>
   <aside class="dfn-panel" data-for="term-for-propdef-unicode-bidi">
    <a href="https://drafts.csswg.org/css-writing-modes-3/#propdef-unicode-bidi">https://drafts.csswg.org/css-writing-modes-3/#propdef-unicode-bidi</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-unicode-bidi">4.2. 
+    <li><a href="#ref-for-propdef-unicode-bidi">4.2.
 List Markers: the ::marker pseudo-element</a>
     <li><a href="#ref-for-propdef-unicode-bidi①"> Changes</a>
    </ul>
@@ -1455,46 +1455,46 @@ List Markers: the ::marker pseudo-element</a>
   <aside class="dfn-panel" data-for="term-for-propdef-text-combine-upright">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#propdef-text-combine-upright">https://drafts.csswg.org/css-writing-modes-4/#propdef-text-combine-upright</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-combine-upright">4.2. 
+    <li><a href="#ref-for-propdef-text-combine-upright">4.2.
 List Markers: the ::marker pseudo-element</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssomstring">
    <a href="https://drafts.csswg.org/cssom-1/#cssomstring">https://drafts.csswg.org/cssom-1/#cssomstring</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssomstring">6.1. 
+    <li><a href="#ref-for-cssomstring">6.1.
 CSSPseudoElement Interface</a>
-    <li><a href="#ref-for-cssomstring①">6.2. 
+    <li><a href="#ref-for-cssomstring①">6.2.
 pseudo() method of the Element interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssstyledeclaration">
    <a href="https://drafts.csswg.org/cssom-1/#cssstyledeclaration">https://drafts.csswg.org/cssom-1/#cssstyledeclaration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssstyledeclaration">6.1. 
+    <li><a href="#ref-for-cssstyledeclaration">6.1.
 CSSPseudoElement Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-element">
    <a href="https://dom.spec.whatwg.org/#element">https://dom.spec.whatwg.org/#element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-element">6.1. 
+    <li><a href="#ref-for-element">6.1.
 CSSPseudoElement Interface</a>
-    <li><a href="#ref-for-element①">6.2. 
+    <li><a href="#ref-for-element①">6.2.
 pseudo() method of the Element interface</a> <a href="#ref-for-element②">(2)</a> <a href="#ref-for-element③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-eventtarget">
    <a href="https://dom.spec.whatwg.org/#eventtarget">https://dom.spec.whatwg.org/#eventtarget</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventtarget">6.1. 
+    <li><a href="#ref-for-eventtarget">6.1.
 CSSPseudoElement Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-fill-color">
    <a href="https://drafts.fxtf.org/fill-stroke-3/#propdef-fill-color">https://drafts.fxtf.org/fill-stroke-3/#propdef-fill-color</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-fill-color">3.2. 
+    <li><a href="#ref-for-propdef-fill-color">3.2.
 Styling Highlights</a>
     <li><a href="#ref-for-propdef-fill-color①"> Changes</a>
    </ul>
@@ -1502,7 +1502,7 @@ Styling Highlights</a>
   <aside class="dfn-panel" data-for="term-for-propdef-stroke-color">
    <a href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-color">https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-color</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-stroke-color">3.2. 
+    <li><a href="#ref-for-propdef-stroke-color">3.2.
 Styling Highlights</a>
     <li><a href="#ref-for-propdef-stroke-color①"> Changes</a>
    </ul>
@@ -1510,35 +1510,35 @@ Styling Highlights</a>
   <aside class="dfn-panel" data-for="term-for-propdef-stroke-width">
    <a href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-width">https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke-width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-stroke-width">3.2. 
+    <li><a href="#ref-for-propdef-stroke-width">3.2.
 Styling Highlights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-x">
    <a href="https://drafts.csswg.org/selectors-3/#x">https://drafts.csswg.org/selectors-3/#x</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-x">3.4. 
+    <li><a href="#ref-for-x">3.4.
 Cascading and Per-Element Highlight Styles</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-placeholder-shown-pseudo">
    <a href="https://drafts.csswg.org/selectors-4/#placeholder-shown-pseudo">https://drafts.csswg.org/selectors-4/#placeholder-shown-pseudo</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-placeholder-shown-pseudo">4.3. 
+    <li><a href="#ref-for-placeholder-shown-pseudo">4.3.
 Placeholder Input: the ::placeholder pseudo-element</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-pseudo-element-selector">
    <a href="https://drafts.csswg.org/selectors-4/#typedef-pseudo-element-selector">https://drafts.csswg.org/selectors-4/#typedef-pseudo-element-selector</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-pseudo-element-selector">6.2. 
+    <li><a href="#ref-for-typedef-pseudo-element-selector">6.2.
 pseudo() method of the Element interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-compound">
    <a href="https://drafts.csswg.org/selectors-4/#compound">https://drafts.csswg.org/selectors-4/#compound</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-compound">4.2. 
+    <li><a href="#ref-for-compound">4.2.
 List Markers: the ::marker pseudo-element</a>
    </ul>
   </aside>
@@ -1546,25 +1546,25 @@ List Markers: the ::marker pseudo-element</a>
    <a href="https://drafts.csswg.org/selectors-4/#originating-element">https://drafts.csswg.org/selectors-4/#originating-element</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-originating-element">1. Introduction</a>
-    <li><a href="#ref-for-originating-element①">2.1. 
+    <li><a href="#ref-for-originating-element①">2.1.
 The ::first-line pseudo-element</a>
-    <li><a href="#ref-for-originating-element②">2.2. 
+    <li><a href="#ref-for-originating-element②">2.2.
 The ::first-letter pseudo-element</a>
-    <li><a href="#ref-for-originating-element③">3.2. 
+    <li><a href="#ref-for-originating-element③">3.2.
 Styling Highlights</a>
-    <li><a href="#ref-for-originating-element④">3.4. 
+    <li><a href="#ref-for-originating-element④">3.4.
 Cascading and Per-Element Highlight Styles</a> <a href="#ref-for-originating-element⑤">(2)</a>
-    <li><a href="#ref-for-originating-element⑥">3.5. 
+    <li><a href="#ref-for-originating-element⑥">3.5.
 Painting the Highlight</a>
-    <li><a href="#ref-for-originating-element⑦">4. 
+    <li><a href="#ref-for-originating-element⑦">4.
 Tree-Abiding Pseudo-elements</a>
-    <li><a href="#ref-for-originating-element⑧">4.1. 
+    <li><a href="#ref-for-originating-element⑧">4.1.
 Generated Content Pseudo-elements: ::before and ::after</a> <a href="#ref-for-originating-element⑨">(2)</a> <a href="#ref-for-originating-element①⓪">(3)</a> <a href="#ref-for-originating-element①①">(4)</a>
-    <li><a href="#ref-for-originating-element①②">4.2. 
+    <li><a href="#ref-for-originating-element①②">4.2.
 List Markers: the ::marker pseudo-element</a>
-    <li><a href="#ref-for-originating-element①③">6.1. 
+    <li><a href="#ref-for-originating-element①③">6.1.
 CSSPseudoElement Interface</a>
-    <li><a href="#ref-for-originating-element①④">6.2. 
+    <li><a href="#ref-for-originating-element①④">6.2.
 pseudo() method of the Element interface</a> <a href="#ref-for-originating-element①⑤">(2)</a>
    </ul>
   </aside>
@@ -1572,9 +1572,9 @@ pseudo() method of the Element interface</a> <a href="#ref-for-originating-eleme
    <a href="https://drafts.csswg.org/selectors-4/#pseudo-element">https://drafts.csswg.org/selectors-4/#pseudo-element</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-pseudo-element">1. Introduction</a>
-    <li><a href="#ref-for-pseudo-element①">4.2. 
+    <li><a href="#ref-for-pseudo-element①">4.2.
 List Markers: the ::marker pseudo-element</a>
-    <li><a href="#ref-for-pseudo-element②">6.2. 
+    <li><a href="#ref-for-pseudo-element②">6.2.
 pseudo() method of the Element interface</a>
    </ul>
   </aside>
@@ -1582,21 +1582,21 @@ pseudo() method of the Element interface</a>
    <a href="https://drafts.csswg.org/selectors-4/#selector">https://drafts.csswg.org/selectors-4/#selector</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-selector">1. Introduction</a>
-    <li><a href="#ref-for-selector①">4.2. 
+    <li><a href="#ref-for-selector①">4.2.
 List Markers: the ::marker pseudo-element</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-Exposed">
    <a href="https://heycam.github.io/webidl/#Exposed">https://heycam.github.io/webidl/#Exposed</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-Exposed">6.1. 
+    <li><a href="#ref-for-Exposed">6.1.
 CSSPseudoElement Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-this">
    <a href="https://heycam.github.io/webidl/#this">https://heycam.github.io/webidl/#this</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-this">6.2. 
+    <li><a href="#ref-for-this">6.2.
 pseudo() method of the Element interface</a>
    </ul>
   </aside>
@@ -1840,23 +1840,23 @@ pseudo() method of the Element interface</a>
    <b><a href="#selectordef-first-line">#selectordef-first-line</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-selectordef-first-line">1. Introduction</a>
-    <li><a href="#ref-for-selectordef-first-line①">2.1. 
+    <li><a href="#ref-for-selectordef-first-line①">2.1.
 The ::first-line pseudo-element</a> <a href="#ref-for-selectordef-first-line②">(2)</a>
-    <li><a href="#ref-for-selectordef-first-line③">2.1.1. 
+    <li><a href="#ref-for-selectordef-first-line③">2.1.1.
 Finding the First Formatted Line</a> <a href="#ref-for-selectordef-first-line④">(2)</a>
-    <li><a href="#ref-for-selectordef-first-line⑤">2.1.2. 
+    <li><a href="#ref-for-selectordef-first-line⑤">2.1.2.
 Styling the First Line Pseudo-element</a> <a href="#ref-for-selectordef-first-line⑥">(2)</a> <a href="#ref-for-selectordef-first-line⑦">(3)</a>
-    <li><a href="#ref-for-selectordef-first-line⑧">2.1.3. 
+    <li><a href="#ref-for-selectordef-first-line⑧">2.1.3.
 Inheritance and the ::first-line Pseudo-element</a> <a href="#ref-for-selectordef-first-line⑨">(2)</a> <a href="#ref-for-selectordef-first-line①⓪">(3)</a>
-    <li><a href="#ref-for-selectordef-first-line①①">2.2. 
+    <li><a href="#ref-for-selectordef-first-line①①">2.2.
 The ::first-letter pseudo-element</a> <a href="#ref-for-selectordef-first-line①②">(2)</a>
-    <li><a href="#ref-for-selectordef-first-line①③">4.1. 
+    <li><a href="#ref-for-selectordef-first-line①③">4.1.
 Generated Content Pseudo-elements: ::before and ::after</a>
-    <li><a href="#ref-for-selectordef-first-line①④">4.3. 
+    <li><a href="#ref-for-selectordef-first-line①④">4.3.
 Placeholder Input: the ::placeholder pseudo-element</a>
-    <li><a href="#ref-for-selectordef-first-line①⑤">5. 
+    <li><a href="#ref-for-selectordef-first-line①⑤">5.
 Overlapping Pseudo-element Interactions</a>
-    <li><a href="#ref-for-selectordef-first-line①⑥">7. 
+    <li><a href="#ref-for-selectordef-first-line①⑥">7.
 Compatibilitiy Syntax</a>
     <li><a href="#ref-for-selectordef-first-line①⑦"> Changes</a>
    </ul>
@@ -1864,87 +1864,87 @@ Compatibilitiy Syntax</a>
   <aside class="dfn-panel" data-for="fictional-tag-sequence">
    <b><a href="#fictional-tag-sequence">#fictional-tag-sequence</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fictional-tag-sequence">2.1. 
+    <li><a href="#ref-for-fictional-tag-sequence">2.1.
 The ::first-line pseudo-element</a> <a href="#ref-for-fictional-tag-sequence①">(2)</a> <a href="#ref-for-fictional-tag-sequence②">(3)</a>
-    <li><a href="#ref-for-fictional-tag-sequence③">2.1.1. 
+    <li><a href="#ref-for-fictional-tag-sequence③">2.1.1.
 Finding the First Formatted Line</a>
-    <li><a href="#ref-for-fictional-tag-sequence④">2.2.1. 
+    <li><a href="#ref-for-fictional-tag-sequence④">2.2.1.
 Finding the First Letter</a>
-    <li><a href="#ref-for-fictional-tag-sequence⑤">2.2.2. 
+    <li><a href="#ref-for-fictional-tag-sequence⑤">2.2.2.
 Styling the ::first-letter Pseudo-element</a>
-    <li><a href="#ref-for-fictional-tag-sequence⑥">5. 
+    <li><a href="#ref-for-fictional-tag-sequence⑥">5.
 Overlapping Pseudo-element Interactions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="first-formatted-line">
    <b><a href="#first-formatted-line">#first-formatted-line</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-first-formatted-line">2.1. 
+    <li><a href="#ref-for-first-formatted-line">2.1.
 The ::first-line pseudo-element</a>
-    <li><a href="#ref-for-first-formatted-line①">2.2. 
+    <li><a href="#ref-for-first-formatted-line①">2.2.
 The ::first-letter pseudo-element</a>
-    <li><a href="#ref-for-first-formatted-line②">2.2.1. 
+    <li><a href="#ref-for-first-formatted-line②">2.2.1.
 Finding the First Letter</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="selectordef-first-letter">
    <b><a href="#selectordef-first-letter">#selectordef-first-letter</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-first-letter">2.2. 
+    <li><a href="#ref-for-selectordef-first-letter">2.2.
 The ::first-letter pseudo-element</a> <a href="#ref-for-selectordef-first-letter①">(2)</a> <a href="#ref-for-selectordef-first-letter②">(3)</a> <a href="#ref-for-selectordef-first-letter③">(4)</a> <a href="#ref-for-selectordef-first-letter④">(5)</a> <a href="#ref-for-selectordef-first-letter⑤">(6)</a> <a href="#ref-for-selectordef-first-letter⑥">(7)</a>
-    <li><a href="#ref-for-selectordef-first-letter⑦">2.2.1. 
+    <li><a href="#ref-for-selectordef-first-letter⑦">2.2.1.
 Finding the First Letter</a> <a href="#ref-for-selectordef-first-letter⑧">(2)</a> <a href="#ref-for-selectordef-first-letter⑨">(3)</a> <a href="#ref-for-selectordef-first-letter①⓪">(4)</a> <a href="#ref-for-selectordef-first-letter①①">(5)</a> <a href="#ref-for-selectordef-first-letter①②">(6)</a>
-    <li><a href="#ref-for-selectordef-first-letter①③">2.2.2. 
+    <li><a href="#ref-for-selectordef-first-letter①③">2.2.2.
 Styling the ::first-letter Pseudo-element</a> <a href="#ref-for-selectordef-first-letter①④">(2)</a> <a href="#ref-for-selectordef-first-letter①⑤">(3)</a> <a href="#ref-for-selectordef-first-letter①⑥">(4)</a>
-    <li><a href="#ref-for-selectordef-first-letter①⑦">4.1. 
+    <li><a href="#ref-for-selectordef-first-letter①⑦">4.1.
 Generated Content Pseudo-elements: ::before and ::after</a>
-    <li><a href="#ref-for-selectordef-first-letter①⑧">5. 
+    <li><a href="#ref-for-selectordef-first-letter①⑧">5.
 Overlapping Pseudo-element Interactions</a> <a href="#ref-for-selectordef-first-letter①⑨">(2)</a>
-    <li><a href="#ref-for-selectordef-first-letter②⓪">7. 
+    <li><a href="#ref-for-selectordef-first-letter②⓪">7.
 Compatibilitiy Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="highlight-pseudo-element">
    <b><a href="#highlight-pseudo-element">#highlight-pseudo-element</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-highlight-pseudo-element">3.1. 
+    <li><a href="#ref-for-highlight-pseudo-element">3.1.
 Selecting Highlighted Content: the ::selection,  ::inactive-selection, ::spelling-error, and ::grammar-error pseudo-elements</a> <a href="#ref-for-highlight-pseudo-element①">(2)</a>
-    <li><a href="#ref-for-highlight-pseudo-element②">3.2. 
+    <li><a href="#ref-for-highlight-pseudo-element②">3.2.
 Styling Highlights</a> <a href="#ref-for-highlight-pseudo-element③">(2)</a>
-    <li><a href="#ref-for-highlight-pseudo-element④">3.3. 
+    <li><a href="#ref-for-highlight-pseudo-element④">3.3.
 Area of a Highlight</a>
-    <li><a href="#ref-for-highlight-pseudo-element⑤">3.4. 
+    <li><a href="#ref-for-highlight-pseudo-element⑤">3.4.
 Cascading and Per-Element Highlight Styles</a> <a href="#ref-for-highlight-pseudo-element⑥">(2)</a>
-    <li><a href="#ref-for-highlight-pseudo-element⑦">3.5. 
+    <li><a href="#ref-for-highlight-pseudo-element⑦">3.5.
 Painting the Highlight</a> <a href="#ref-for-highlight-pseudo-element⑧">(2)</a> <a href="#ref-for-highlight-pseudo-element⑨">(3)</a> <a href="#ref-for-highlight-pseudo-element①⓪">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="selectordef-selection">
    <b><a href="#selectordef-selection">#selectordef-selection</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-selection">3.1. 
+    <li><a href="#ref-for-selectordef-selection">3.1.
 Selecting Highlighted Content: the ::selection,  ::inactive-selection, ::spelling-error, and ::grammar-error pseudo-elements</a> <a href="#ref-for-selectordef-selection①">(2)</a> <a href="#ref-for-selectordef-selection②">(3)</a>
-    <li><a href="#ref-for-selectordef-selection③">3.4. 
+    <li><a href="#ref-for-selectordef-selection③">3.4.
 Cascading and Per-Element Highlight Styles</a> <a href="#ref-for-selectordef-selection④">(2)</a> <a href="#ref-for-selectordef-selection⑤">(3)</a>
-    <li><a href="#ref-for-selectordef-selection⑥">3.5. 
+    <li><a href="#ref-for-selectordef-selection⑥">3.5.
 Painting the Highlight</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="selectordef-inactive-selection">
    <b><a href="#selectordef-inactive-selection">#selectordef-inactive-selection</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-inactive-selection">3.1. 
+    <li><a href="#ref-for-selectordef-inactive-selection">3.1.
 Selecting Highlighted Content: the ::selection,  ::inactive-selection, ::spelling-error, and ::grammar-error pseudo-elements</a> <a href="#ref-for-selectordef-inactive-selection①">(2)</a> <a href="#ref-for-selectordef-inactive-selection②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="selectordef-spelling-error">
    <b><a href="#selectordef-spelling-error">#selectordef-spelling-error</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-spelling-error">3.1. 
+    <li><a href="#ref-for-selectordef-spelling-error">3.1.
 Selecting Highlighted Content: the ::selection,  ::inactive-selection, ::spelling-error, and ::grammar-error pseudo-elements</a> <a href="#ref-for-selectordef-spelling-error①">(2)</a>
-    <li><a href="#ref-for-selectordef-spelling-error②">3.5. 
+    <li><a href="#ref-for-selectordef-spelling-error②">3.5.
 Painting the Highlight</a>
-    <li><a href="#ref-for-selectordef-spelling-error③">3.6. 
+    <li><a href="#ref-for-selectordef-spelling-error③">3.6.
 Security and Privacy Considerations</a>
     <li><a href="#ref-for-selectordef-spelling-error④"> Changes</a>
    </ul>
@@ -1952,11 +1952,11 @@ Security and Privacy Considerations</a>
   <aside class="dfn-panel" data-for="selectordef-grammar-error">
    <b><a href="#selectordef-grammar-error">#selectordef-grammar-error</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-grammar-error">3.1. 
+    <li><a href="#ref-for-selectordef-grammar-error">3.1.
 Selecting Highlighted Content: the ::selection,  ::inactive-selection, ::spelling-error, and ::grammar-error pseudo-elements</a> <a href="#ref-for-selectordef-grammar-error①">(2)</a>
-    <li><a href="#ref-for-selectordef-grammar-error②">3.5. 
+    <li><a href="#ref-for-selectordef-grammar-error②">3.5.
 Painting the Highlight</a>
-    <li><a href="#ref-for-selectordef-grammar-error③">3.6. 
+    <li><a href="#ref-for-selectordef-grammar-error③">3.6.
 Security and Privacy Considerations</a>
     <li><a href="#ref-for-selectordef-grammar-error④"> Changes</a>
    </ul>
@@ -1964,52 +1964,52 @@ Security and Privacy Considerations</a>
   <aside class="dfn-panel" data-for="highlight-overlay">
    <b><a href="#highlight-overlay">#highlight-overlay</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-highlight-overlay">3.4. 
+    <li><a href="#ref-for-highlight-overlay">3.4.
 Cascading and Per-Element Highlight Styles</a>
-    <li><a href="#ref-for-highlight-overlay①">3.5. 
+    <li><a href="#ref-for-highlight-overlay①">3.5.
 Painting the Highlight</a> <a href="#ref-for-highlight-overlay②">(2)</a> <a href="#ref-for-highlight-overlay③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="selectordef-before">
    <b><a href="#selectordef-before">#selectordef-before</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-before">2.2.1. 
+    <li><a href="#ref-for-selectordef-before">2.2.1.
 Finding the First Letter</a>
-    <li><a href="#ref-for-selectordef-before①">4.1. 
+    <li><a href="#ref-for-selectordef-before①">4.1.
 Generated Content Pseudo-elements: ::before and ::after</a> <a href="#ref-for-selectordef-before②">(2)</a>
-    <li><a href="#ref-for-selectordef-before③">4.2. 
+    <li><a href="#ref-for-selectordef-before③">4.2.
 List Markers: the ::marker pseudo-element</a>
-    <li><a href="#ref-for-selectordef-before④">5. 
+    <li><a href="#ref-for-selectordef-before④">5.
 Overlapping Pseudo-element Interactions</a>
-    <li><a href="#ref-for-selectordef-before⑤">6.1. 
+    <li><a href="#ref-for-selectordef-before⑤">6.1.
 CSSPseudoElement Interface</a>
-    <li><a href="#ref-for-selectordef-before⑥">7. 
+    <li><a href="#ref-for-selectordef-before⑥">7.
 Compatibilitiy Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="selectordef-after">
    <b><a href="#selectordef-after">#selectordef-after</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-after">2.2.1. 
+    <li><a href="#ref-for-selectordef-after">2.2.1.
 Finding the First Letter</a>
-    <li><a href="#ref-for-selectordef-after①">4.1. 
+    <li><a href="#ref-for-selectordef-after①">4.1.
 Generated Content Pseudo-elements: ::before and ::after</a>
-    <li><a href="#ref-for-selectordef-after②">4.2. 
+    <li><a href="#ref-for-selectordef-after②">4.2.
 List Markers: the ::marker pseudo-element</a>
-    <li><a href="#ref-for-selectordef-after③">5. 
+    <li><a href="#ref-for-selectordef-after③">5.
 Overlapping Pseudo-element Interactions</a>
-    <li><a href="#ref-for-selectordef-after④">6.1. 
+    <li><a href="#ref-for-selectordef-after④">6.1.
 CSSPseudoElement Interface</a>
-    <li><a href="#ref-for-selectordef-after⑤">7. 
+    <li><a href="#ref-for-selectordef-after⑤">7.
 Compatibilitiy Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="selectordef-marker">
    <b><a href="#selectordef-marker">#selectordef-marker</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-marker">4.2. 
+    <li><a href="#ref-for-selectordef-marker">4.2.
 List Markers: the ::marker pseudo-element</a> <a href="#ref-for-selectordef-marker①">(2)</a> <a href="#ref-for-selectordef-marker②">(3)</a> <a href="#ref-for-selectordef-marker③">(4)</a>
-    <li><a href="#ref-for-selectordef-marker④">6.1. 
+    <li><a href="#ref-for-selectordef-marker④">6.1.
 CSSPseudoElement Interface</a>
     <li><a href="#ref-for-selectordef-marker⑤"> Changes</a> <a href="#ref-for-selectordef-marker⑥">(2)</a>
    </ul>
@@ -2017,16 +2017,16 @@ CSSPseudoElement Interface</a>
   <aside class="dfn-panel" data-for="selectordef-placeholder">
    <b><a href="#selectordef-placeholder">#selectordef-placeholder</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-placeholder">4.3. 
+    <li><a href="#ref-for-selectordef-placeholder">4.3.
 Placeholder Input: the ::placeholder pseudo-element</a> <a href="#ref-for-selectordef-placeholder①">(2)</a> <a href="#ref-for-selectordef-placeholder②">(3)</a> <a href="#ref-for-selectordef-placeholder③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="csspseudoelement">
    <b><a href="#csspseudoelement">#csspseudoelement</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-csspseudoelement">6.1. 
+    <li><a href="#ref-for-csspseudoelement">6.1.
 CSSPseudoElement Interface</a> <a href="#ref-for-csspseudoelement①">(2)</a>
-    <li><a href="#ref-for-csspseudoelement②">6.2. 
+    <li><a href="#ref-for-csspseudoelement②">6.2.
 pseudo() method of the Element interface</a> <a href="#ref-for-csspseudoelement③">(2)</a> <a href="#ref-for-csspseudoelement④">(3)</a> <a href="#ref-for-csspseudoelement⑤">(4)</a>
     <li><a href="#ref-for-csspseudoelement⑥"> Changes</a> <a href="#ref-for-csspseudoelement⑦">(2)</a> <a href="#ref-for-csspseudoelement⑧">(3)</a> <a href="#ref-for-csspseudoelement⑨">(4)</a>
    </ul>
@@ -2034,7 +2034,7 @@ pseudo() method of the Element interface</a> <a href="#ref-for-csspseudoelement�
   <aside class="dfn-panel" data-for="dom-csspseudoelement-type">
    <b><a href="#dom-csspseudoelement-type">#dom-csspseudoelement-type</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csspseudoelement-type">6.1. 
+    <li><a href="#ref-for-dom-csspseudoelement-type">6.1.
 CSSPseudoElement Interface</a>
     <li><a href="#ref-for-dom-csspseudoelement-type①"> Changes</a>
    </ul>
@@ -2042,7 +2042,7 @@ CSSPseudoElement Interface</a>
   <aside class="dfn-panel" data-for="dom-csspseudoelement-element">
    <b><a href="#dom-csspseudoelement-element">#dom-csspseudoelement-element</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csspseudoelement-element">6.1. 
+    <li><a href="#ref-for-dom-csspseudoelement-element">6.1.
 CSSPseudoElement Interface</a>
     <li><a href="#ref-for-dom-csspseudoelement-element①"> Changes</a>
    </ul>
@@ -2050,72 +2050,80 @@ CSSPseudoElement Interface</a>
   <aside class="dfn-panel" data-for="dom-element-pseudo-type-type">
    <b><a href="#dom-element-pseudo-type-type">#dom-element-pseudo-type-type</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-element-pseudo-type-type">6.2. 
+    <li><a href="#ref-for-dom-element-pseudo-type-type">6.2.
 pseudo() method of the Element interface</a> <a href="#ref-for-dom-element-pseudo-type-type①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-element-pseudo">
    <b><a href="#dom-element-pseudo">#dom-element-pseudo</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-element-pseudo">6.2. 
+    <li><a href="#ref-for-dom-element-pseudo">6.2.
 pseudo() method of the Element interface</a> <a href="#ref-for-dom-element-pseudo①">(2)</a> <a href="#ref-for-dom-element-pseudo②">(3)</a>
     <li><a href="#ref-for-dom-element-pseudo③"> Changes</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

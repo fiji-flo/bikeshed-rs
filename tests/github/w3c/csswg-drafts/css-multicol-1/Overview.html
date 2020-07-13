@@ -341,7 +341,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This specification describes multi-column layouts in CSS, a style sheet language for the web. Using functionality described in the specification, content can be flowed into multiple columns with a gap and a rule between them.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -450,24 +450,24 @@ on screen, on paper, etc.
    <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content"> Introduction</span><a class="self-link" href="#introduction"></a></h2>
    <p>(This section is not normative.)</p>
    <p>This module describes <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="multi-column-layout">multi-column layout</dfn> in CSS.
-	By using functionality described in this document, 
-	style sheets can declare that the content of an element 
+	By using functionality described in this document,
+	style sheets can declare that the content of an element
 	is to be laid out in multiple columns.</p>
    <p>Other layout methods in CSS,
-	when applied to a parent element, 
-	change the display properties of the direct children. 
-	For example if a three column grid layout is created, 
-	the direct children of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-grid-1/#grid-container" id="ref-for-grid-container">grid container</a> become <a data-link-type="dfn" href="https://drafts.csswg.org/css-grid-1/#grid-item" id="ref-for-grid-item">grid items</a> and are placed into the column tracks, 
+	when applied to a parent element,
+	change the display properties of the direct children.
+	For example if a three column grid layout is created,
+	the direct children of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-grid-1/#grid-container" id="ref-for-grid-container">grid container</a> become <a data-link-type="dfn" href="https://drafts.csswg.org/css-grid-1/#grid-item" id="ref-for-grid-item">grid items</a> and are placed into the column tracks,
 	one element per cell with additional rows created as needed.</p>
    <p>The child elements of a <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container">multi-column container</a> however continue in normal flow,
-	that flow is arranged into a number of columns. 
-	These columns have a flexible inline size, 
-	and therefore respond to available space 
+	that flow is arranged into a number of columns.
+	These columns have a flexible inline size,
+	and therefore respond to available space
 	by changing the size or number of columns displayed.</p>
    <p>Multi-column layouts are easy to describe in CSS.
 	Here is a simple example:</p>
    <div class="example" id="example-90f03bde">
-    <a class="self-link" href="#example-90f03bde"></a> 
+    <a class="self-link" href="#example-90f03bde"></a>
 <pre class="highlight"><c- f>body </c-><c- p>{</c-> <c- k>column-width</c-><c- p>:</c-> <c- m>12</c-><c- l>em</c-> <c- p>}</c-></pre>
     <p>In this example, the <code class="html">body</code> element is
 		set to have columns at least <span class="css">12em</span> wide. The exact number of
@@ -475,7 +475,7 @@ on screen, on paper, etc.
    </div>
    <p>The number of columns can also be set explicitly in the style sheet:</p>
    <div class="example" id="example-7e147b89">
-    <a class="self-link" href="#example-7e147b89"></a> 
+    <a class="self-link" href="#example-7e147b89"></a>
 <pre class="highlight"><c- f>body </c-><c- p>{</c-> <c- k>column-count</c-><c- p>:</c-> <c- m>2</c-> <c- p>}</c-></pre>
     <p>In this case, the number of columns is fixed
 		and the column widths will vary depending on the available width.</p>
@@ -484,7 +484,7 @@ on screen, on paper, etc.
 	or both, properties in one declaration.</p>
    <div class="example" id="example-6c6d6717">
     <a class="self-link" href="#example-6c6d6717"></a> In these examples, the number of columns, the width of columns, and
-		both the number and width are set, respectively: 
+		both the number and width are set, respectively:
 <pre class="highlight"><c- f>body </c-><c- p>{</c-> <c- k>columns</c-><c- p>:</c-> <c- m>2</c-> <c- p>}</c->
 <c- f>body </c-><c- p>{</c-> <c- k>columns</c-><c- p>:</c-> <c- m>12</c-><c- l>em</c-> <c- p>}</c->
 <c- f>body </c-><c- p>{</c-> <c- k>columns</c-><c- p>:</c-> <c- m>2</c-> <c- m>12</c-><c- l>em</c-> <c- p>}</c->
@@ -493,23 +493,23 @@ on screen, on paper, etc.
    <p>Another group of properties introduced in this module describe
 	gaps and rules between columns.</p>
    <div class="example" id="example-21b75f3b">
-    <a class="self-link" href="#example-21b75f3b"></a> 
+    <a class="self-link" href="#example-21b75f3b"></a>
 <pre class="highlight"><c- f>body </c-><c- p>{</c->
   <c- k>column-gap</c-><c- p>:</c-> <c- m>1</c-><c- l>em</c-><c- p>;</c->
   <c- k>column-rule</c-><c- p>:</c-> thin solid black<c- p>;</c->
 <c- p>}</c->
 </pre>
     <p>The first declaration in the example above sets the gap
-		between two adjacent columns to be 1em. 
+		between two adjacent columns to be 1em.
 		Column gaps are similar to padding areas.
-		In the middle of the gap there will be a rule 
+		In the middle of the gap there will be a rule
 		which is described by the <a class="property" data-link-type="propdesc" href="#propdef-column-rule" id="ref-for-propdef-column-rule">column-rule</a> property.</p>
    </div>
    <p>The values of the <a class="property" data-link-type="propdesc" href="#propdef-column-rule" id="ref-for-propdef-column-rule①">column-rule</a> property are similar to those of the CSS <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border" id="ref-for-propdef-border">border</a> properties.
 	Like <span class="property" id="ref-for-propdef-border①">border</span>, <span class="property" id="ref-for-propdef-column-rule②">column-rule</span> is a shorthand property.</p>
    <div class="example" id="example-968144c8">
     <a class="self-link" href="#example-968144c8"></a> In this example, the shorthand <a class="property" data-link-type="propdesc" href="#propdef-column-rule" id="ref-for-propdef-column-rule③">column-rule</a> declaration from the
-		above example has been expanded: 
+		above example has been expanded:
 <pre class="highlight"><c- f>body </c-><c- p>{</c->
   <c- k>column-gap</c-><c- p>:</c-> <c- m>1</c-><c- l>em</c-><c- p>;</c->
   <c- k>column-rule-width</c-><c- p>:</c-> thin<c- p>;</c->
@@ -521,9 +521,9 @@ on screen, on paper, etc.
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-column-fill" id="ref-for-propdef-column-fill">column-fill</a> and <a class="property" data-link-type="propdesc" href="#propdef-column-span" id="ref-for-propdef-column-span">column-span</a> properties
 	give style sheets a wider range of visual expressions in multi-column layouts.</p>
    <div class="example" id="example-8550a53a">
-    <a class="self-link" href="#example-8550a53a"></a> In this example, columns are set to be balanced, 
-		i.e., to have approximately the same length. 
-		Also, <code>h2</code> elements are set to span across all columns. 
+    <a class="self-link" href="#example-8550a53a"></a> In this example, columns are set to be balanced,
+		i.e., to have approximately the same length.
+		Also, <code>h2</code> elements are set to span across all columns.
 <pre class="highlight"><c- f>div </c-><c- p>{</c-> <c- k>column-fill</c-><c- p>:</c-> balance <c- p>}</c->
 <c- f>h2 </c-><c- p>{</c-> <c- k>column-span</c-><c- p>:</c-> all <c- p>}</c->
 </pre>
@@ -531,20 +531,20 @@ on screen, on paper, etc.
    <p>This specification introduces ten new properties,
 	all of which are used in the examples above.</p>
    <p>If all column properties have their initial value,
-	the layout of an element will be identical 
+	the layout of an element will be identical
 	to a multi-column layout with only one column.</p>
    <div class="example" id="example-47371199">
-    <a class="self-link" href="#example-47371199"></a> <a data-link-type="dfn" href="#column-gap" id="ref-for-column-gap">Column gaps</a> (diagonal hatching) and <a data-link-type="dfn" href="#column-rule" id="ref-for-column-rule">column rules</a> are shown in this sample rendition of a multi-column container 
-		with padding (cross hatching). 
-		The hatched areas are present for illustrational purposes only. 
-		In actual implementations these areas will be determined by the background, 
-		the second image shows a rendering of a <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container①">multi-column container</a> with column-rules. 
+    <a class="self-link" href="#example-47371199"></a> <a data-link-type="dfn" href="#column-gap" id="ref-for-column-gap">Column gaps</a> (diagonal hatching) and <a data-link-type="dfn" href="#column-rule" id="ref-for-column-rule">column rules</a> are shown in this sample rendition of a multi-column container
+		with padding (cross hatching).
+		The hatched areas are present for illustrational purposes only.
+		In actual implementations these areas will be determined by the background,
+		the second image shows a rendering of a <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container①">multi-column container</a> with column-rules.
     <figure>
-      <img alt="a diagram showing the various parts of multi-column layout" src="images/initial-example.svg"> <img alt="key to the conventions used to display invisible parts of diagram" src="images/invisible-elements.svg"> 
+      <img alt="a diagram showing the various parts of multi-column layout" src="images/initial-example.svg"> <img alt="key to the conventions used to display invisible parts of diagram" src="images/invisible-elements.svg">
      <figcaption>A multi-column layout with the non-visible column-span and padding inside the multicol container highlighted.</figcaption>
     </figure>
     <figure>
-      <img alt="a diagram showing the various parts of multi-column layout" src="images/initial-example-b.svg"> 
+      <img alt="a diagram showing the various parts of multi-column layout" src="images/initial-example-b.svg">
      <figcaption>The same layout as in the first image, as it would be displayed by an implementation.</figcaption>
     </figure>
    </div>
@@ -553,45 +553,45 @@ on screen, on paper, etc.
 	and therefore acts as a container for <a data-link-type="dfn" href="#multi-column-layout" id="ref-for-multi-column-layout">multi-column layout</a>.</p>
    <p>In the traditional CSS box model,
 	the content of an element is
-	flowed into the content box of the corresponding element. 
+	flowed into the content box of the corresponding element.
 	Multi-column layout introduces a <a data-link-type="dfn" href="https://drafts.csswg.org/css-break-4/#fragmentation-context" id="ref-for-fragmentation-context">fragmentation context</a> formed of <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#anonymous" id="ref-for-anonymous">anonymous</a> <a data-link-type="dfn" href="https://drafts.csswg.org/css-break-4/#fragmentation-container" id="ref-for-fragmentation-container">fragmentation containers</a> called <dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-local-lt="column" data-lt="column box" id="column-box">column boxes</dfn> (or <i>columns</i> for short).
 	These <a data-link-type="dfn" href="#column-box" id="ref-for-column-box">column boxes</a> establish
 	an independent <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-formatting-context" id="ref-for-block-formatting-context">block formatting context</a> into which the multi-column container’s content flows,
 	and form the <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block">containing block</a> for its non-positioned children.</p>
    <div class="example" id="example-5cbb5b6f">
-    <a class="self-link" href="#example-5cbb5b6f"></a> In this example, the width of the image is set with these rules: 
-<pre class="highlight"><c- f>img </c-><c- p>{</c-> 
-  <c- k>display</c-><c- p>:</c-> block<c- p>;</c-> 
-  <c- k>width</c-><c- p>:</c-> <c- m>100</c-><c- l>%</c-><c- p>;</c-> 
+    <a class="self-link" href="#example-5cbb5b6f"></a> In this example, the width of the image is set with these rules:
+<pre class="highlight"><c- f>img </c-><c- p>{</c->
+  <c- k>display</c-><c- p>:</c-> block<c- p>;</c->
+  <c- k>width</c-><c- p>:</c-> <c- m>100</c-><c- l>%</c-><c- p>;</c->
 <c- p>}</c->
 </pre>
     <p>Given that the column box creates a new <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-formatting-context" id="ref-for-block-formatting-context①">block formatting context</a>,
-		the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width">width</a> is calculated relative to the column box. 
+		the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width">width</a> is calculated relative to the column box.
 		Therefore the image will not overflow the column box:</p>
     <figure>
-      <img alt="an image contained inside a column box" src="images/image-inside-column.svg"> 
+      <img alt="an image contained inside a column box" src="images/image-inside-column.svg">
      <figcaption>The image is constrained by the column box that it is displayed in.</figcaption>
     </figure>
    </div>
    <div class="example" id="example-88e557c8">
-    <a class="self-link" href="#example-88e557c8"></a> Given that the column box creates a new <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-formatting-context" id="ref-for-block-formatting-context②">block formatting context</a>, a top margin set on the first child element of a multicol container will not collapse with the margins of the multicol container. 
+    <a class="self-link" href="#example-88e557c8"></a> Given that the column box creates a new <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-formatting-context" id="ref-for-block-formatting-context②">block formatting context</a>, a top margin set on the first child element of a multicol container will not collapse with the margins of the multicol container.
     <figure>
-      <img alt="The first paragraph has a &apos;margin-top&apos; of <fake-maybe-placeholder bs-autolink-syntax=&apos;&apos;&apos;1em&apos;&apos;&apos;>1em</fake-maybe-placeholder>, which appears before the text." src="images/margins-do-not-collapse.svg"> 
+      <img alt="The first paragraph has a &apos;margin-top&apos; of <fake-maybe-placeholder bs-autolink-syntax=&apos;&apos;&apos;1em&apos;&apos;&apos;>1em</fake-maybe-placeholder>, which appears before the text." src="images/margins-do-not-collapse.svg">
      <figcaption>The margin above the first paragraph has not collapsed, leaving a <span class="css">1em</span> margin above the first line in the multicol container.</figcaption>
     </figure>
    </div>
    <p>Floats that appear inside multi-column layouts are positioned with
 	regard to the <a data-link-type="dfn" href="#column-box" id="ref-for-column-box①">column box</a> where the float appears.</p>
    <div class="example" id="example-3dc32251">
-    <a class="self-link" href="#example-3dc32251"></a> In this example, this CSS fragment describes the presentation of the image: 
-<pre class="highlight"><c- f>img </c-><c- p>{</c-> 
-  <c- k>display</c-><c- p>:</c-> block<c- p>;</c-> 
+    <a class="self-link" href="#example-3dc32251"></a> In this example, this CSS fragment describes the presentation of the image:
+<pre class="highlight"><c- f>img </c-><c- p>{</c->
+  <c- k>display</c-><c- p>:</c-> block<c- p>;</c->
   <c- k>float</c-><c- p>:</c-> right<c- p>;</c->
 <c- p>}</c->
 </pre>
     <p>In the HTML, the image appears after the sentence ending, "the leg of a chicken".</p>
     <figure>
-      <img alt="an image floated and contained inside a column box" src="images/image-floated-in-column.svg"> 
+      <img alt="an image floated and contained inside a column box" src="images/image-floated-in-column.svg">
      <figcaption>The image is floated inside the column box it appears in.</figcaption>
     </figure>
    </div>
@@ -602,9 +602,9 @@ on screen, on paper, etc.
 	The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-position" id="ref-for-propdef-position">position</a> property, which establishes a containing block for such boxes,
 	applies to the <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container②">multicol container</a>, it being the <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#principal-box" id="ref-for-principal-box">principal box</a>.</p>
    <div class="example" id="example-aaa86638">
-    <a class="self-link" href="#example-aaa86638"></a> In this example, the <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container③">multi-column container</a> has <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-position" id="ref-for-propdef-position①">position: relative</a> thus becoming the containing block. 
-		The image is a direct child of the <span id="ref-for-multi-column-container④">multi-column container</span> and has <span class="css" id="ref-for-propdef-position②">position: absolute</span>. 
-		It takes positioning from the <span id="ref-for-multi-column-container⑤">multi-column container</span> and not from the <a data-link-type="dfn" href="#column-box" id="ref-for-column-box④">column box</a>. 
+    <a class="self-link" href="#example-aaa86638"></a> In this example, the <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container③">multi-column container</a> has <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-position" id="ref-for-propdef-position①">position: relative</a> thus becoming the containing block.
+		The image is a direct child of the <span id="ref-for-multi-column-container④">multi-column container</span> and has <span class="css" id="ref-for-propdef-position②">position: absolute</span>.
+		It takes positioning from the <span id="ref-for-multi-column-container⑤">multi-column container</span> and not from the <a data-link-type="dfn" href="#column-box" id="ref-for-column-box④">column box</a>.
 <pre class="highlight"><c- f>.container </c-><c- p>{</c->
   <c- k>position</c-><c- p>:</c-> relative<c- p>;</c->
   <c- k>column-count</c-><c- p>:</c-> <c- m>3</c-><c- p>;</c->
@@ -616,7 +616,7 @@ on screen, on paper, etc.
 <c- p>}</c->
 </pre>
     <figure>
-      <img alt="The absolutely positioned image is positioned by reference to the [=multi-column container=] not the [=column box=]." src="images/column-not-containing-block.svg"> 
+      <img alt="The absolutely positioned image is positioned by reference to the [=multi-column container=] not the [=column box=]." src="images/column-not-containing-block.svg">
      <figcaption>The figure demonstrates that the absolutely positioned image is positioned by reference to the multicol container and not the column box.</figcaption>
     </figure>
    </div>
@@ -645,9 +645,9 @@ on screen, on paper, etc.
 	balanced and shortened to fit their content. Content after the
 	spanning element then flows into a new, subsequent line of column boxes.</p>
    <div class="example" id="example-c2c3431f">
-    <a class="self-link" href="#example-c2c3431f"></a> 
+    <a class="self-link" href="#example-c2c3431f"></a>
     <figure>
-      <img alt="a diagram showing a spanning element causing the shortened columns above the element with text continuing in new columns below" src="images/simple-span-example.svg"> 
+      <img alt="a diagram showing a spanning element causing the shortened columns above the element with text continuing in new columns below" src="images/simple-span-example.svg">
      <figcaption>A demonstration of how the spanning element divides the multicol container.</figcaption>
     </figure>
    </div>
@@ -657,9 +657,9 @@ on screen, on paper, etc.
    <p>Nested multi-column containers are allowed,
 	but there may be implementation-specific limits.</p>
    <p class="note" role="note"><span>Note:</span> It is not possible to set properties/values on column boxes.
-	For example, the background of a certain column box cannot be set 
-	and a column box has no concept of padding, margin or borders. 
-	Future specifications may add additional functionality. 
+	For example, the background of a certain column box cannot be set
+	and a column box has no concept of padding, margin or borders.
+	Future specifications may add additional functionality.
 	For example, columns of different widths and different backgrounds may be supported.</p>
    <p class="note" role="note"><span>Note:</span> Multicol containers with column heights larger than the viewport may pose accessibility issues.</p>
    <h2 class="heading settled" data-level="3" id="the-number-and-width-of-columns"><span class="secno">3. </span><span class="content"> The Number and Width of Columns</span><a class="self-link" href="#the-number-and-width-of-columns"></a></h2>
@@ -681,43 +681,43 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-column-width">column-width</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-container" id="ref-for-block-container①">block containers</a> except <a data-link-type="dfn" href="https://drafts.csswg.org/css-tables-3/#table-wrapper-box" id="ref-for-table-wrapper-box">table wrapper boxes</a> 
+      <td><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-container" id="ref-for-block-container①">block containers</a> except <a data-link-type="dfn" href="https://drafts.csswg.org/css-tables-3/#table-wrapper-box" id="ref-for-table-wrapper-box">table wrapper boxes</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-column-width-auto" id="ref-for-valdef-column-width-auto①">auto</a> or an absolute length 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-column-width-auto" id="ref-for-valdef-column-width-auto①">auto</a> or an absolute length
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p>This property describes the width of columns in multicol containers.</p>
    <dl>
     <dt><dfn class="dfn-paneled css" data-dfn-for="column-width" data-dfn-type="value" data-export id="valdef-column-width-auto">auto</dfn>
     <dd> means that the column width will be determined by other properties
-			(e.g., <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count③">column-count</a>, if it has a non-auto value). 
+			(e.g., <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count③">column-count</a>, if it has a non-auto value).
     <dt><dfn class="css" data-dfn-for="column-width" data-dfn-type="value" data-export id="valdef-column-width-length"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a><a class="self-link" href="#valdef-column-width-length"></a></dfn>
-    <dd> describes the optimal column width. 
-			The actual column width may be wider (to fill the available space), 
-			or narrower (only if the available space is smaller than the specified column width). 
-			Negative values are not allowed. 
-			Used values will be clamped to a minimum of <span class="css">1px</span>. 
+    <dd> describes the optimal column width.
+			The actual column width may be wider (to fill the available space),
+			or narrower (only if the available space is smaller than the specified column width).
+			Negative values are not allowed.
+			Used values will be clamped to a minimum of <span class="css">1px</span>.
    </dl>
    <div class="example" id="example-f5259b18">
-    <a class="self-link" href="#example-f5259b18"></a> For example, consider this style sheet: 
+    <a class="self-link" href="#example-f5259b18"></a> For example, consider this style sheet:
 <pre class="highlight"><c- f>div </c-><c- p>{</c->
   <c- k>width</c-><c- p>:</c-> <c- m>100</c-><c- l>px</c-><c- p>;</c->
   <c- k>column-width</c-><c- p>:</c-> <c- m>45</c-><c- l>px</c-><c- p>;</c->
@@ -726,11 +726,11 @@ on screen, on paper, etc.
 <c- p>}</c->
 </pre>
     <p>There is room for two <span class="css">45px</span> wide columns inside the <span class="css">100px</span> wide element.
-		In order to fill the available space 
+		In order to fill the available space
 		the actual column width will be increased to <span class="css">50px</span>.</p>
    </div>
    <div class="example" id="example-ea5c2499">
-    <a class="self-link" href="#example-ea5c2499"></a> Also, consider this style sheet: 
+    <a class="self-link" href="#example-ea5c2499"></a> Also, consider this style sheet:
 <pre class="highlight"><c- f>div </c-><c- p>{</c->
   <c- k>width</c-><c- p>:</c-> <c- m>40</c-><c- l>px</c-><c- p>;</c->
   <c- k>column-width</c-><c- p>:</c-> <c- m>45</c-><c- l>px</c-><c- p>;</c->
@@ -744,9 +744,9 @@ on screen, on paper, etc.
    <p>To ensure that <a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width④">column-width</a> can be used with vertical text,
 	column width means the length of the line boxes inside the columns.</p>
    <p class="note" role="note"><span>Note:</span> The reason for making <a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width⑤">column-width</a> somewhat flexible
-	is to achieve scalable designs that can fit many screen sizes. 
-	To set an exact column width, 
-	the column gap and the width of the multicol container (assuming horizontal text) 
+	is to achieve scalable designs that can fit many screen sizes.
+	To set an exact column width,
+	the column gap and the width of the multicol container (assuming horizontal text)
 	must also be specified.</p>
    <h3 class="heading settled" data-level="3.2" id="cc"><span class="secno">3.2. </span><span class="content">The Number of Columns: the <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count④">column-count</a> property</span><a class="self-link" href="#cc"></a></h3>
    <table class="def propdef" data-link-for-hint="column-count">
@@ -756,43 +756,43 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-column-count">column-count</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value">&lt;integer></a> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value">&lt;integer></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-container" id="ref-for-block-container②">block containers</a> except <a data-link-type="dfn" href="https://drafts.csswg.org/css-tables-3/#table-wrapper-box" id="ref-for-table-wrapper-box①">table wrapper boxes</a> 
+      <td><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-container" id="ref-for-block-container②">block containers</a> except <a data-link-type="dfn" href="https://drafts.csswg.org/css-tables-3/#table-wrapper-box" id="ref-for-table-wrapper-box①">table wrapper boxes</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified value 
+      <td>specified value
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
-      <td>by computed value 
+      <td>by computed value
    </table>
    <p>This property describes the number of columns of a <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container⑧">multicol container</a>.</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="column-count" data-dfn-type="value" data-export id="valdef-column-count-auto">auto<a class="self-link" href="#valdef-column-count-auto"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="column-count" data-dfn-type="value" data-export id="valdef-column-count-auto">auto<a class="self-link" href="#valdef-column-count-auto"></a></dfn>
     <dd> means that the number of columns will be determined by other properties
-			(e.g., <a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width⑥">column-width</a>, 
-			if it has a non-auto value). 
+			(e.g., <a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width⑥">column-width</a>,
+			if it has a non-auto value).
     <dt><dfn class="css" data-dfn-for="column-count" data-dfn-type="value" data-export id="valdef-column-count-integer"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value①">&lt;integer></a><a class="self-link" href="#valdef-column-count-integer"></a></dfn>
-    <dd> describes the optimal number of columns into which the content of the element will be flowed. 
-			Values must be greater than 0. 
-			If both <a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width⑦">column-width</a> and <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count⑤">column-count</a> have non-auto values, 
-			the integer value describes the maximum number of columns. 
+    <dd> describes the optimal number of columns into which the content of the element will be flowed.
+			Values must be greater than 0.
+			If both <a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width⑦">column-width</a> and <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count⑤">column-count</a> have non-auto values,
+			the integer value describes the maximum number of columns.
    </dl>
    <div class="example" id="example-6acd2708">
-    <a class="self-link" href="#example-6acd2708"></a> Example: 
+    <a class="self-link" href="#example-6acd2708"></a> Example:
 <pre class="highlight"><c- f>body </c-><c- p>{</c-> <c- k>column-count</c-><c- p>:</c-> <c- m>3</c-> <c- p>}</c-></pre>
    </div>
    <h3 class="heading settled" data-level="3.3" id="columns"><span class="secno">3.3. </span><span class="content">The <a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width⑧">column-width</a> and <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count⑥">column-count</a> Shorthand: The <a class="property" data-link-type="propdesc" href="#propdef-columns" id="ref-for-propdef-columns②">columns</a> Property</span><a class="self-link" href="#columns"></a></h3>
@@ -803,33 +803,33 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-columns">columns</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width⑨">&lt;'column-width'></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> <a class="production" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count⑦">&lt;'column-count'></a> 
+      <td class="prod"><a class="production" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width⑨">&lt;'column-width'></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> <a class="production" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count⑦">&lt;'column-count'></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th>Applies to:
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
    </table>
    <p>This is a shorthand property for setting <a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width①⓪">column-width</a> and <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count⑧">column-count</a>.
 	Omitted values are set to their initial values.</p>
    <div class="example" id="example-628937c1">
-    <a class="self-link" href="#example-628937c1"></a> Here are some valid declarations using the <a class="property" data-link-type="propdesc" href="#propdef-columns" id="ref-for-propdef-columns③">columns</a> property: 
+    <a class="self-link" href="#example-628937c1"></a> Here are some valid declarations using the <a class="property" data-link-type="propdesc" href="#propdef-columns" id="ref-for-propdef-columns③">columns</a> property:
 <pre class="highlight">columns: 12em;      <c- c>/* column-width: 12em; column-count: auto */</c->
 columns: auto 12em; <c- c>/* column-width: 12em; column-count: auto */</c->
 columns: 2;         <c- c>/* column-width: auto; column-count: 2 */</c->
@@ -861,15 +861,15 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 <pre>(11)  W := max(0, ((U + column-gap)/N - column-gap))
 </pre>
    <p>For the purpose of finding the number of auto-repeated columns,
-	the UA must floor the column size to a UA-specified value to avoid division by zero. 
+	the UA must floor the column size to a UA-specified value to avoid division by zero.
 	It is suggested that this floor be 1px or less.</p>
    <p>In fragmented contexts such as in paged media,
 	user agents may perform this calculation on a per-fragment basis.</p>
    <p>The used value for <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count①①">column-count</a> is calculated without regard for explicit column breaks or constrained column heights,
 	while the actual value takes these into consideration.</p>
    <div class="example" id="example-855fb04e">
-    <a class="self-link" href="#example-855fb04e"></a> In this example, the actual column-count is higher than the used column-count 
-		due to explicit column breaks: 
+    <a class="self-link" href="#example-855fb04e"></a> In this example, the actual column-count is higher than the used column-count
+		due to explicit column breaks:
 <pre class="highlight"><c- f>div </c-><c- p>{</c->
   <c- k>width</c-><c- p>:</c-> <c- m>40</c-><c- l>em</c-><c- p>;</c->
   <c- k>columns</c-><c- p>:</c-> <c- m>20</c-><c- l>em</c-><c- p>;</c->
@@ -887,13 +887,13 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 <c- p>&lt;/</c-><c- f>div</c-><c- p>></c->
 </pre>
     <figure>
-      <img alt="Two columns drawn inside the container, one outside" src="images/column-count-higher-than-used-count.svg"> 
+      <img alt="Two columns drawn inside the container, one outside" src="images/column-count-higher-than-used-count.svg">
      <figcaption>The computed column-count is auto, the used column-count is 2 and the actual column-count is 3.</figcaption>
     </figure>
    </div>
    <div class="example" id="example-69e715d6">
-    <a class="self-link" href="#example-69e715d6"></a> The actual column-count may be lower than the used column-count. 
-		Consider this example: 
+    <a class="self-link" href="#example-69e715d6"></a> The actual column-count may be lower than the used column-count.
+		Consider this example:
 <pre class="highlight"><c- f>div </c-><c- p>{</c->
   <c- k>width</c-><c- p>:</c-> <c- m>80</c-><c- l>em</c-><c- p>;</c->
   <c- k>height</c-><c- p>:</c-> <c- m>10</c-><c- l>em</c-><c- p>;</c->
@@ -905,35 +905,35 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 <pre class="highlight"><c- p>&lt;</c-><c- f>div</c-><c- p>></c->foo<c- p>&lt;/</c-><c- f>div</c-><c- p>></c->
 </pre>
     <p>The computed column-count is auto,
-		the used column-count is 4, 
+		the used column-count is 4,
 		and the actual column-count is 1.</p>
    </div>
    <h3 class="heading settled" data-level="3.5" id="stacking-context"><span class="secno">3.5. </span><span class="content"> Stacking Context</span><a class="self-link" href="#stacking-context"></a></h3>
    <p>All column boxes in a multi-column container are in the same stacking context
-	and the drawing order of their contents is as specified in CSS 2.1. 
+	and the drawing order of their contents is as specified in CSS 2.1.
 	Column boxes do not establish new stacking contexts.</p>
    <h2 class="heading settled" data-level="4" id="column-gaps-and-rules"><span class="secno">4. </span><span class="content">Column Gaps and Rules</span><a class="self-link" href="#column-gaps-and-rules"></a></h2>
    <p>Column gaps and rules are placed between columns in the same <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container⑨">multicol container</a>.
-	The length of the column gaps and column rules is equal to the column height. 
-	Column gaps take up space. 
-	That is, column gaps will push apart content in adjacent columns 
+	The length of the column gaps and column rules is equal to the column height.
+	Column gaps take up space.
+	That is, column gaps will push apart content in adjacent columns
 	(within the same <span id="ref-for-multi-column-container①⓪">multicol container</span>).</p>
-   <p>A <a data-link-type="dfn" href="#column-rule" id="ref-for-column-rule①">column rule</a> is drawn in the middle of the <a data-link-type="dfn" href="#column-gap" id="ref-for-column-gap①">column gap</a> with the endpoints at opposing content edges of the <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container①①">multicol container</a>. 
-	Column rules do not take up space. 
-	That is, the presence or thickness of a <span id="ref-for-column-rule②">column rule</span> will not alter the placement of anything else. 
-	If a <span id="ref-for-column-rule③">column rule</span> is wider than its gap, 
-	the adjacent column boxes will overlap the rule, 
-	and the rule may possibly extend outside the box of the <span id="ref-for-multi-column-container①②">multicol container</span>. 
-	Column rules are painted just above the border of the <span id="ref-for-multi-column-container①③">multicol container</span>. 
-	For scrollable multicol containers, 
-	note that while the border and background of the <span id="ref-for-multi-column-container①④">multicol container</span> obviously aren’t scrolled, 
-	the rules need to scroll along with the columns. 
+   <p>A <a data-link-type="dfn" href="#column-rule" id="ref-for-column-rule①">column rule</a> is drawn in the middle of the <a data-link-type="dfn" href="#column-gap" id="ref-for-column-gap①">column gap</a> with the endpoints at opposing content edges of the <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container①①">multicol container</a>.
+	Column rules do not take up space.
+	That is, the presence or thickness of a <span id="ref-for-column-rule②">column rule</span> will not alter the placement of anything else.
+	If a <span id="ref-for-column-rule③">column rule</span> is wider than its gap,
+	the adjacent column boxes will overlap the rule,
+	and the rule may possibly extend outside the box of the <span id="ref-for-multi-column-container①②">multicol container</span>.
+	Column rules are painted just above the border of the <span id="ref-for-multi-column-container①③">multicol container</span>.
+	For scrollable multicol containers,
+	note that while the border and background of the <span id="ref-for-multi-column-container①④">multicol container</span> obviously aren’t scrolled,
+	the rules need to scroll along with the columns.
 	Column rules are only drawn between two columns that both have content.</p>
    <h3 class="heading settled" data-level="4.1" id="cg"><span class="secno">4.1. </span><span class="content">Gutters Between Columns: the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-align-3/#propdef-column-gap" id="ref-for-propdef-column-gap">column-gap</a> property</span><a class="self-link" href="#cg"></a></h3>
    <p>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-align-3/#propdef-column-gap" id="ref-for-propdef-column-gap①">column-gap</a> property is defined in <a data-link-type="biblio" href="#biblio-css3-align">[CSS3-ALIGN]</a>.</p>
-   <p>In a <a data-link-type="dfn" href="#multi-column-formatting-context" id="ref-for-multi-column-formatting-context">multi-column formatting context</a> the used value of <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-align-3/#valdef-row-gap-normal" id="ref-for-valdef-row-gap-normal">normal</a> for the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-align-3/#propdef-column-gap" id="ref-for-propdef-column-gap②">column-gap</a> property is <span class="css">1em</span>. 
+   <p>In a <a data-link-type="dfn" href="#multi-column-formatting-context" id="ref-for-multi-column-formatting-context">multi-column formatting context</a> the used value of <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-align-3/#valdef-row-gap-normal" id="ref-for-valdef-row-gap-normal">normal</a> for the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-align-3/#propdef-column-gap" id="ref-for-propdef-column-gap②">column-gap</a> property is <span class="css">1em</span>.
 	This ensures columns are readable when the initial values are used.
-	If there is a column rule between columns, 
+	If there is a column rule between columns,
 	it will appear in the middle of the gap.</p>
    <h3 class="heading settled" data-level="4.2" id="crc"><span class="secno">4.2. </span><span class="content">The Color of Column Rules: the <a class="property" data-link-type="propdesc" href="#propdef-column-rule-color" id="ref-for-propdef-column-rule-color">column-rule-color</a> property</span><a class="self-link" href="#crc"></a></h3>
    <table class="def propdef" data-link-for-hint="column-rule-color">
@@ -943,32 +943,32 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-column-rule-color">column-rule-color</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color" title="Expands to: aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | currentcolor | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | transparent | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen">&lt;color></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color" title="Expands to: aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | currentcolor | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | transparent | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen">&lt;color></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>currentcolor 
+      <td>currentcolor
      <tr>
       <th>Applies to:
-      <td>multicol containers 
+      <td>multicol containers
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>computed color 
+      <td>computed color
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <dl>
     <dt><dfn class="css" data-dfn-for="column-rule-color" data-dfn-type="value" data-export id="valdef-column-rule-color-color"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color①" title="Expands to: aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | currentcolor | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | transparent | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen">&lt;color></a><a class="self-link" href="#valdef-column-rule-color-color"></a></dfn>
-    <dd> Specifies the color of the <a data-link-type="dfn" href="#column-rule" id="ref-for-column-rule④">column rule</a>. 
+    <dd> Specifies the color of the <a data-link-type="dfn" href="#column-rule" id="ref-for-column-rule④">column rule</a>.
    </dl>
    <h3 class="heading settled" data-level="4.3" id="crs"><span class="secno">4.3. </span><span class="content">The Style Of Column Rules: the <a class="property" data-link-type="propdesc" href="#propdef-column-rule-style" id="ref-for-propdef-column-rule-style">column-rule-style</a> property</span><a class="self-link" href="#crs"></a></h3>
    <table class="def propdef" data-link-for-hint="column-rule-style">
@@ -978,28 +978,28 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-column-rule-style">column-rule-style</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-backgrounds-3/#typedef-line-style" id="ref-for-typedef-line-style" title="Expands to: dashed | dotted | double | groove | hidden | inset | none | outset | ridge | solid">&lt;line-style></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-backgrounds-3/#typedef-line-style" id="ref-for-typedef-line-style" title="Expands to: dashed | dotted | double | groove | hidden | inset | none | outset | ridge | solid">&lt;line-style></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td>multicol containers 
+      <td>multicol containers
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-column-rule-style" id="ref-for-propdef-column-rule-style①">column-rule-style</a> property sets the style of the rule between columns of an element.
 	The <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-backgrounds-3/#typedef-line-style" id="ref-for-typedef-line-style①" title="Expands to: dashed | dotted | double | groove | hidden | inset | none | outset | ridge | solid">&lt;line-style></a> values are interpreted as in the <a href="https://www.w3.org/TR/CSS2/tables.html#collapsing-borders">collapsing border model</a>.</p>
@@ -1012,28 +1012,28 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-column-rule-width">column-rule-width</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-backgrounds-3/#typedef-line-width" id="ref-for-typedef-line-width" title="Expands to: medium | thick | thin">&lt;line-width></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-backgrounds-3/#typedef-line-width" id="ref-for-typedef-line-width" title="Expands to: medium | thick | thin">&lt;line-width></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>medium 
+      <td>medium
      <tr>
       <th>Applies to:
-      <td>multicol containers 
+      <td>multicol containers
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>absolute length; <span class="css">0</span> if the column rule style is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-backgrounds-3/#valdef-line-style-none" id="ref-for-valdef-line-style-none①">none</a> or <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-backgrounds-3/#valdef-line-style-hidden" id="ref-for-valdef-line-style-hidden">hidden</a> 
+      <td>absolute length; <span class="css">0</span> if the column rule style is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-backgrounds-3/#valdef-line-style-none" id="ref-for-valdef-line-style-none①">none</a> or <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-backgrounds-3/#valdef-line-style-hidden" id="ref-for-valdef-line-style-hidden">hidden</a>
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p>This property sets the width of the rule between columns.
 	Negative values are not allowed.</p>
@@ -1045,34 +1045,34 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-column-rule">column-rule</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production" data-link-type="propdesc" href="#propdef-column-rule-width" id="ref-for-propdef-column-rule-width②">&lt;'column-rule-width'></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any①">||</a> <a class="production" data-link-type="propdesc" href="#propdef-column-rule-style" id="ref-for-propdef-column-rule-style②">&lt;'column-rule-style'></a> <span id="ref-for-comb-any②">||</span> <a class="production" data-link-type="propdesc" href="#propdef-column-rule-color" id="ref-for-propdef-column-rule-color①">&lt;'column-rule-color'></a> 
+      <td class="prod"><a class="production" data-link-type="propdesc" href="#propdef-column-rule-width" id="ref-for-propdef-column-rule-width②">&lt;'column-rule-width'></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any①">||</a> <a class="production" data-link-type="propdesc" href="#propdef-column-rule-style" id="ref-for-propdef-column-rule-style②">&lt;'column-rule-style'></a> <span id="ref-for-comb-any②">||</span> <a class="production" data-link-type="propdesc" href="#propdef-column-rule-color" id="ref-for-propdef-column-rule-color①">&lt;'column-rule-color'></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th>Applies to:
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
    </table>
-   <p>This property is a shorthand for setting <a class="property" data-link-type="propdesc" href="#propdef-column-rule-width" id="ref-for-propdef-column-rule-width③">column-rule-width</a>, <a class="property" data-link-type="propdesc" href="#propdef-column-rule-style" id="ref-for-propdef-column-rule-style③">column-rule-style</a>, and <a class="property" data-link-type="propdesc" href="#propdef-column-rule-color" id="ref-for-propdef-column-rule-color②">column-rule-color</a> at the same place in the style sheet. 
+   <p>This property is a shorthand for setting <a class="property" data-link-type="propdesc" href="#propdef-column-rule-width" id="ref-for-propdef-column-rule-width③">column-rule-width</a>, <a class="property" data-link-type="propdesc" href="#propdef-column-rule-style" id="ref-for-propdef-column-rule-style③">column-rule-style</a>, and <a class="property" data-link-type="propdesc" href="#propdef-column-rule-color" id="ref-for-propdef-column-rule-color②">column-rule-color</a> at the same place in the style sheet.
 	Omitted values are set to their initial values.</p>
    <div class="example" id="example-31902657">
-    <a class="self-link" href="#example-31902657"></a> In this example, the <a data-link-type="dfn" href="#column-rule" id="ref-for-column-rule⑤">column rule</a> and the <a data-link-type="dfn" href="#column-gap" id="ref-for-column-gap②">column gap</a> have the same width. 
-		Therefore, they will occupy exactly the same space. 
+    <a class="self-link" href="#example-31902657"></a> In this example, the <a data-link-type="dfn" href="#column-rule" id="ref-for-column-rule⑤">column rule</a> and the <a data-link-type="dfn" href="#column-gap" id="ref-for-column-gap②">column gap</a> have the same width.
+		Therefore, they will occupy exactly the same space.
 <pre class="highlight"><c- f>body </c-><c- p>{</c->
   <c- k>column-gap</c-><c- p>:</c-> <c- m>35</c-><c- l>px</c-><c- p>;</c->
   <c- k>column-rule-width</c-><c- p>:</c-> <c- m>35</c-><c- l>px</c-><c- p>;</c->
@@ -1081,14 +1081,14 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 <c- p>}</c->
 </pre>
     <figure>
-      <img alt="The rule completely covers any gap." src="images/rule-same-width-as-gap.svg"> 
+      <img alt="The rule completely covers any gap." src="images/rule-same-width-as-gap.svg">
      <figcaption>The column rule and column gap occupy the same space.</figcaption>
     </figure>
    </div>
    <h2 class="heading settled" data-level="5" id="column-breaks"><span class="secno">5. </span><span class="content"> Column Breaks</span><a class="self-link" href="#column-breaks"></a></h2>
    <p>When content is laid out in multiple columns,
-	the user agent must determine where column breaks are placed. 
-	The problem of breaking content into columns is similar to breaking content into pages, 
+	the user agent must determine where column breaks are placed.
+	The problem of breaking content into columns is similar to breaking content into pages,
 	which is described in CSS 2.1, section 13.3.3 <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>.</p>
    <p>Three new properties are introduced to allow column breaks to be described in the same properties as page breaks: <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-break-before" id="ref-for-propdef-break-before">break-before</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-break-after" id="ref-for-propdef-break-after">break-after</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-break-inside" id="ref-for-propdef-break-inside">break-inside</a>.</p>
    <h3 class="heading settled" data-level="5.1" id="break-before-break-after-break-inside"><span class="secno">5.1. </span><span class="content">Controlling Fragmentation: the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-break-before" id="ref-for-propdef-break-before①">break-before</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-break-after" id="ref-for-propdef-break-after①">break-after</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-break-inside" id="ref-for-propdef-break-inside①">break-inside</a> properties</span><a class="self-link" href="#break-before-break-after-break-inside"></a></h3>
@@ -1103,41 +1103,41 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-column-span">column-span</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> all 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> all
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td>in-flow block-level elements 
+      <td>in-flow block-level elements
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>This property describes how many columns an element spans across. Values are:</p>
    <dl>
     <dt><dfn class="dfn-paneled css" data-dfn-for="column-span" data-dfn-type="value" data-export id="valdef-column-span-none">none</dfn>
-    <dd> The element does not span multiple columns. 
+    <dd> The element does not span multiple columns.
     <dt><dfn class="dfn-paneled css" data-dfn-for="column-span" data-dfn-type="value" data-export id="valdef-column-span-all">all</dfn>
     <dd>
-      The element is taken <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#out-of-flow" id="ref-for-out-of-flow">out-of-flow</a> and spans across all columns of the nearest multicol ancestor 
+      The element is taken <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#out-of-flow" id="ref-for-out-of-flow">out-of-flow</a> and spans across all columns of the nearest multicol ancestor
 			in the same <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-formatting-context" id="ref-for-block-formatting-context③">block formatting context</a>.
-			Content in the normal flow that appears before the element 
-			is automatically balanced across all columns 
+			Content in the normal flow that appears before the element
+			is automatically balanced across all columns
 			in the immediately preceding <a data-link-type="dfn" href="#multi-column-line" id="ref-for-multi-column-line④">multi-column line</a> before the element appears.
-			The element establishes an <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#independent-formatting-context" id="ref-for-independent-formatting-context②">independent formatting context</a>. 
+			The element establishes an <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#independent-formatting-context" id="ref-for-independent-formatting-context②">independent formatting context</a>.
      <p class="note" role="note"><span>Note:</span> Whether the element establishes a new <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#formatting-context" id="ref-for-formatting-context">formatting context</a> does not depend on whether the element is a descendent of a multicol or not.
 			When <a class="property" data-link-type="propdesc" href="#propdef-column-span" id="ref-for-propdef-column-span③">column-span</a> is <a class="css" data-link-type="maybe" href="#valdef-column-span-all" id="ref-for-valdef-column-span-all">all</a>, it always does.
 			This helps with robustness of designs to later revisions that remove the multicol,
@@ -1147,30 +1147,30 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
    <p>A spanning element is taken <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#out-of-flow" id="ref-for-out-of-flow①">out-of-flow</a>, leaving a forced break.
 	This does not affect the <a href="https://www.w3.org/TR/CSS2/zindex.html">painting order</a> <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> of the spanning element.</p>
    <div class="example" id="example-2c18fd19">
-    <a class="self-link" href="#example-2c18fd19"></a> In this example, an <code>h2</code> element has been added to the sample document after the sixth sentence 
-		(i.e., after the words "the leg of a"). 
-		This styling applies: 
+    <a class="self-link" href="#example-2c18fd19"></a> In this example, an <code>h2</code> element has been added to the sample document after the sixth sentence
+		(i.e., after the words "the leg of a").
+		This styling applies:
 <pre class="highlight"><c- f>h2 </c-><c- p>{</c-> <c- k>column-span</c-><c- p>:</c-> all<c- p>;</c-> <c- k>background</c-><c- p>:</c-> silver <c- p>}</c->
 </pre>
     <p>By setting <a class="property" data-link-type="propdesc" href="#propdef-column-span" id="ref-for-propdef-column-span④">column-span</a> to <a class="css" data-link-type="maybe" href="#valdef-column-span-all" id="ref-for-valdef-column-span-all①">all</a>,
-		all content that appears before the <code>h2</code> element 
+		all content that appears before the <code>h2</code> element
 		is shown before the <code>h2</code> element.</p>
     <figure>
-      <img alt="An element spans all three columns" src="images/h2-spanner.svg"> 
+      <img alt="An element spans all three columns" src="images/h2-spanner.svg">
      <figcaption>The h2 element is set to column-span: all</figcaption>
     </figure>
    </div>
    <p>A spanning element may be lower than the first level of descendants
-	as long as they are part of the same <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#formatting-context" id="ref-for-formatting-context①">formatting context</a>. 
-	If the fragment before the spanner is empty, nothing special happens; 
+	as long as they are part of the same <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#formatting-context" id="ref-for-formatting-context①">formatting context</a>.
+	If the fragment before the spanner is empty, nothing special happens;
 	the top margin/border/padding is above the spanning element, as an empty <a data-link-type="dfn" href="https://drafts.csswg.org/css-break-4/#fragment" id="ref-for-fragment①">fragment</a>.</p>
    <div class="example" id="example-fa0001d6">
-    <a class="self-link" href="#example-fa0001d6"></a> In this example the <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container①⑤">multicol container</a> is the <code>article</code> element. 
-		Inside this parent is a paragraph and then a section element. 
-		The section contains an <code>h2</code> heading set to <a class="css" data-link-type="maybe" href="#valdef-column-span-all" id="ref-for-valdef-column-span-all②">all</a> this spans all three columns while the containing section remains inside the column boxes. 
+    <a class="self-link" href="#example-fa0001d6"></a> In this example the <a data-link-type="dfn" href="#multi-column-container" id="ref-for-multi-column-container①⑤">multicol container</a> is the <code>article</code> element.
+		Inside this parent is a paragraph and then a section element.
+		The section contains an <code>h2</code> heading set to <a class="css" data-link-type="maybe" href="#valdef-column-span-all" id="ref-for-valdef-column-span-all②">all</a> this spans all three columns while the containing section remains inside the column boxes.
     <p>The <code>h2</code> is the first child of the section.
-		This means that the margin, 
-		border (shown in red in the diagram) 
+		This means that the margin,
+		border (shown in red in the diagram)
 		and padding on this section appear before the spanning <code>h2</code> as an empty fragment.</p>
 <pre class="highlight"><c- p>&lt;</c-><c- f>article</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>p</c-><c- p>></c->...<c- p>&lt;/</c-><c- f>p</c-><c- p>></c->
@@ -1192,45 +1192,45 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 <c- p>}</c->
 </pre>
     <figure>
-      <img alt="An element spans all three columns, the red border around the section breaks before the spanner." src="images/nested-spanner.svg"> 
-     <figcaption>The <code>h2</code> element is set to <a class="css" data-link-type="propdesc" href="#propdef-column-span" id="ref-for-propdef-column-span⑤">column-span: all</a>, 
+      <img alt="An element spans all three columns, the red border around the section breaks before the spanner." src="images/nested-spanner.svg">
+     <figcaption>The <code>h2</code> element is set to <a class="css" data-link-type="propdesc" href="#propdef-column-span" id="ref-for-propdef-column-span⑤">column-span: all</a>,
 		the section has a red border and top padding and margin</figcaption>
     </figure>
    </div>
    <p>A spanning element takes up more space than the element would take up otherwise.
-	When space is limited, it may be impossible to find room for the spanning element. 
+	When space is limited, it may be impossible to find room for the spanning element.
 	In these cases, user agents may treat the element as if <a class="css" data-link-type="maybe" href="#valdef-column-span-none" id="ref-for-valdef-column-span-none">none</a> had been specified on this property.</p>
    <div class="example" id="example-2980e0d6">
-    <a class="self-link" href="#example-2980e0d6"></a> In this example, the <code>h2</code> element appears later in the content, 
-		and the height of the multicol container is constrained. 
-		Therefore, the <code>h2</code> element appears in the overflow 
+    <a class="self-link" href="#example-2980e0d6"></a> In this example, the <code>h2</code> element appears later in the content,
+		and the height of the multicol container is constrained.
+		Therefore, the <code>h2</code> element appears in the overflow
 		and there is not room to make the element spanning.
-		As a result, the element appears as if <a class="css" data-link-type="propdesc" href="#propdef-column-span" id="ref-for-propdef-column-span⑥">column-span: none</a> was specified. 
+		As a result, the element appears as if <a class="css" data-link-type="propdesc" href="#propdef-column-span" id="ref-for-propdef-column-span⑥">column-span: none</a> was specified.
     <figure>
-      <img alt="The h2 element is in an overflow column" src="images/h2-in-the-overflow-no-span.svg" style="max-height: 107px;"> 
+      <img alt="The h2 element is in an overflow column" src="images/h2-in-the-overflow-no-span.svg" style="max-height: 107px;">
      <figcaption>The h2 element is in an overflow column and appears as if column-span none is specified</figcaption>
     </figure>
    </div>
    <div class="example" id="example-e49da6ca">
     <a class="self-link" href="#example-e49da6ca"></a> This example is similar to the previous example,
 		except that the H2 element appears naturally in the last column.
-		Still, there is not enough room to make the element spanning. 
+		Still, there is not enough room to make the element spanning.
     <figure>
-      <img alt="The h2 element is in the final column" src="images/h2-in-the-last-column-no-span.svg" style="max-height: 107px;"> 
+      <img alt="The h2 element is in the final column" src="images/h2-in-the-last-column-no-span.svg" style="max-height: 107px;">
      <figcaption>The h2 element is in the final column and appears as if column-span none is specified</figcaption>
     </figure>
    </div>
    <div class="example" id="example-8f69cecc">
     <a class="self-link" href="#example-8f69cecc"></a> In fragmented contexts spanning elements are honored in all fragments.
-		In this example, we are in paged media, 
+		In this example, we are in paged media,
 		and the first three paragraphs have column breaks after them.
-		A spanning <code>H2</code> element appears after the fourth paragraph. 
+		A spanning <code>H2</code> element appears after the fourth paragraph.
     <figure>
-      <img alt="Three columns with two lines of text each" src="images/spanner-page-break1.svg"> 
+      <img alt="Three columns with two lines of text each" src="images/spanner-page-break1.svg">
      <figcaption>This would appear on the first page</figcaption>
     </figure>
     <figure>
-      <img alt="A spanning element across the three columns, text above and below." src="images/spanner-page-break2.svg"> 
+      <img alt="A spanning element across the three columns, text above and below." src="images/spanner-page-break2.svg">
      <figcaption>This would appear on the second page</figcaption>
     </figure>
    </div>
@@ -1239,11 +1239,11 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 	As column boxes establish a new <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-formatting-context" id="ref-for-block-formatting-context④">block formatting context</a>,
 	margins on elements inside a column box will not collapse with the margin of a spanner.</p>
    <div class="example" id="example-f82c16c7">
-    <a class="self-link" href="#example-f82c16c7"></a> Spanners establish new <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#formatting-context" id="ref-for-formatting-context②">formatting contexts</a>, but their margins can be changed by their surroundings. 
-		In this example, two spanners naturally end up at the top of a page. 
-		The top margin of the first spanner is truncated due to adjoining an unforced break. 
-		The margins between the two spanners collapse with each other. 
-		However, the bottom margin of the second spanner does not collapse with the top margin of the subsequent element. 
+    <a class="self-link" href="#example-f82c16c7"></a> Spanners establish new <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#formatting-context" id="ref-for-formatting-context②">formatting contexts</a>, but their margins can be changed by their surroundings.
+		In this example, two spanners naturally end up at the top of a page.
+		The top margin of the first spanner is truncated due to adjoining an unforced break.
+		The margins between the two spanners collapse with each other.
+		However, the bottom margin of the second spanner does not collapse with the top margin of the subsequent element.
 <pre class="highlight"><c- f>h2 </c-><c- p>{</c->
   <c- k>margin</c-><c- p>:</c-> <c- m>16</c-><c- l>px</c-> <c- m>0</c-><c- p>;</c->
   <c- k>column-span</c-><c- p>:</c-> all<c- p>;</c->
@@ -1252,17 +1252,17 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 <c- f>p </c-><c- p>{</c-> <c- k>margin-top</c-><c- p>:</c-> <c- m>16</c-><c- l>px</c-> <c- p>}</c->
 </pre>
     <figure>
-      <img alt="Two spanning elements after a page break" src="images/two-spanners-margin-no-collapse.svg"> 
+      <img alt="Two spanning elements after a page break" src="images/two-spanners-margin-no-collapse.svg">
      <figcaption>Margins collapse between two spanning elements, but not the bottom margin of a spanner and top margin of next element.</figcaption>
     </figure>
    </div>
    <h2 class="heading settled" data-level="7" id="filling-columns"><span class="secno">7. </span><span class="content"> Filling Columns</span><a class="self-link" href="#filling-columns"></a></h2>
    <p>There are two strategies for filling columns:
-	columns can either be balanced, or not. 
-	If columns are balanced, user agents should try to minimize variations in column height, 
-	while honoring forced breaks, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-4/#propdef-widows" id="ref-for-propdef-widows">widows</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-orphans" id="ref-for-propdef-orphans">orphans</a>, 
-	and other properties that may affect column heights. 
-	If columns are not balanced, they are filled sequentially; 
+	columns can either be balanced, or not.
+	If columns are balanced, user agents should try to minimize variations in column height,
+	while honoring forced breaks, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-4/#propdef-widows" id="ref-for-propdef-widows">widows</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-orphans" id="ref-for-propdef-orphans">orphans</a>,
+	and other properties that may affect column heights.
+	If columns are not balanced, they are filled sequentially;
 	some columns may end up partially filled, or with no content at all.</p>
    <h3 class="heading settled" data-level="7.1" id="cf"><span class="secno">7.1. </span><span class="content">Column Balancing: the <a class="property" data-link-type="propdesc" href="#propdef-column-fill" id="ref-for-propdef-column-fill①">column-fill</a> property</span><a class="self-link" href="#cf"></a></h3>
    <table class="def propdef" data-link-for-hint="column-fill">
@@ -1272,46 +1272,46 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-column-fill">column-fill</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> balance <span id="ref-for-comb-one④">|</span> balance-all 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> balance <span id="ref-for-comb-one④">|</span> balance-all
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>balance 
+      <td>balance
      <tr>
       <th>Applies to:
-      <td>multicol containers 
+      <td>multicol containers
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The values are:</p>
    <dl>
     <dt><dfn class="css" data-dfn-for="column-fill" data-dfn-type="value" data-export id="valdef-column-fill-balance">balance<a class="self-link" href="#valdef-column-fill-balance"></a></dfn>
     <dd> Balance content equally between columns, as far as possible.
-			In fragmented contexts, only the last fragment is balanced. 
+			In fragmented contexts, only the last fragment is balanced.
     <dt><dfn class="css" data-dfn-for="column-fill" data-dfn-type="value" data-export id="valdef-column-fill-balance-all">balance-all<a class="self-link" href="#valdef-column-fill-balance-all"></a></dfn>
     <dd> Balance content equally between columns, as far as possible.
-			In fragmented contexts, all fragments are balanced. 
+			In fragmented contexts, all fragments are balanced.
     <dt><dfn class="css" data-dfn-for="column-fill" data-dfn-type="value" data-export id="valdef-column-fill-auto">auto<a class="self-link" href="#valdef-column-fill-auto"></a></dfn>
-    <dd> fill columns sequentially 
+    <dd> fill columns sequentially
    </dl>
    <p class="issue" id="issue-3ed47ce8"><a class="self-link" href="#issue-3ed47ce8"></a> We need to define the behavior of <span class="css">column-fill</span> in continuous contexts. A previous resolution (<a href="https://github.com/w3c/csswg-drafts/issues/3224#issuecomment-468089503">3224</a>) defined that the property should only be consulted if the length of columns was constrained in the block dimension. This was reverted in (<a href="https://github.com/w3c/csswg-drafts/issues/4036#issuecomment-531646703">4036</a>) pending further discussion.</p>
    <p>In continuous contexts, this property does not have any effect when there are overflow columns.</p>
    <div class="example" id="example-0143ee45">
-    <a class="self-link" href="#example-0143ee45"></a> In this example, an article only has one short paragraph which fits on three lines. 
+    <a class="self-link" href="#example-0143ee45"></a> In this example, an article only has one short paragraph which fits on three lines.
 		The three lines are displayed in three different
-		columns due to column balancing. 
+		columns due to column balancing.
 <pre class="highlight"><c- f>article </c-><c- p>{</c->
   <c- k>width</c-><c- p>:</c-> <c- m>60</c-><c- l>em</c-><c- p>;</c->
   <c- k>height</c-><c- p>:</c-> auto<c- p>;</c->
@@ -1320,12 +1320,12 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 <c- p>}</c->
 </pre>
     <figure>
-      <img alt="Four columns, the first three have content." src="images/column-balancing-one-paragraph.svg"> 
+      <img alt="Four columns, the first three have content." src="images/column-balancing-one-paragraph.svg">
      <figcaption>Three lines displayed in three columns due to column balancing.</figcaption>
     </figure>
    </div>
    <div class="example" id="example-8e97de73">
-    <a class="self-link" href="#example-8e97de73"></a> In this example, column balancing is turned off, and the article has a height: 
+    <a class="self-link" href="#example-8e97de73"></a> In this example, column balancing is turned off, and the article has a height:
 <pre class="highlight"><c- f>article </c-><c- p>{</c->
   <c- k>width</c-><c- p>:</c-> <c- m>60</c-><c- l>em</c-><c- p>;</c->
   <c- k>height</c-><c- p>:</c-> <c- m>4</c-><c- l>em</c-><c- p>;</c->
@@ -1335,15 +1335,15 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 </pre>
     <p>As a result, the first column is filled with all content:</p>
     <figure>
-      <img alt="Four columns, the first one has content." src="images/no-column-balancing-one-paragraph.svg"> 
+      <img alt="Four columns, the first one has content." src="images/no-column-balancing-one-paragraph.svg">
      <figcaption>No balancing so the whole text is shown in one paragraph.</figcaption>
     </figure>
    </div>
    <div class="example" id="example-0c7abc2c">
-    <a class="self-link" href="#example-0c7abc2c"></a> In this example, an article has two paragraphs: 
-		first a long one, 
-		then a shorter one. 
-		This code is applied: 
+    <a class="self-link" href="#example-0c7abc2c"></a> In this example, an article has two paragraphs:
+		first a long one,
+		then a shorter one.
+		This code is applied:
 <pre class="highlight"><c- f>article </c-><c- p>{</c->
   <c- k>width</c-><c- p>:</c-> <c- m>60</c-><c- l>em</c-><c- p>;</c->
   <c- k>height</c-><c- p>:</c-> auto<c- p>;</c->
@@ -1360,12 +1360,12 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 		As a result, the third column is as high as the first two columns,
 		while the last column ends up being significantly shorter.</p>
     <figure>
-      <img alt="Four columns, all have content." src="images/column-balancing-with-column-break.svg"> 
+      <img alt="Four columns, all have content." src="images/column-balancing-with-column-break.svg">
      <figcaption>Once column height is established, columns are filled sequentially.</figcaption>
     </figure>
    </div>
    <div class="example" id="example-3b949a54">
-    <a class="self-link" href="#example-3b949a54"></a> 
+    <a class="self-link" href="#example-3b949a54"></a>
 <pre class="highlight"><c- f>article </c-><c- p>{</c->
   <c- k>width</c-><c- p>:</c-> <c- m>60</c-><c- l>em</c-><c- p>;</c->
   <c- k>height</c-><c- p>:</c-> auto<c- p>;</c->
@@ -1376,7 +1376,7 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
     <p>In this example, an article starts with an unbreakable figure which sets the column height.
 		Subsequent content is filled sequentially into the remaining columns:</p>
     <figure>
-      <img alt="Column one contains an image, two and three have content." src="images/column-balancing-with-figure.svg"> 
+      <img alt="Column one contains an image, two and three have content." src="images/column-balancing-with-figure.svg">
      <figcaption>Column height is established by the figure.</figcaption>
     </figure>
    </div>
@@ -1388,9 +1388,9 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
    <p class="note" role="note"><span>Note:</span> See <a href="#column-breaks">§ 5 Column Breaks</a> for column breaks
 	and <a href="#pagination-and-overflow-outside-multicol">§ 8.2 Pagination and Overflow Outside Multicol Containers</a> for whether it is clipped to the multi-column container’s content box.</p>
    <div class="example" id="example-276e0e20">
-    <a class="self-link" href="#example-276e0e20"></a> In this example, the image is wider than the column: 
+    <a class="self-link" href="#example-276e0e20"></a> In this example, the image is wider than the column:
     <figure>
-      <img alt="An imagine in the first column has visible overflow" src="images/image-overflow-not-clipped.svg"> 
+      <img alt="An imagine in the first column has visible overflow" src="images/image-overflow-not-clipped.svg">
      <figcaption>Content visibly overflows and is not clipped to the column box.</figcaption>
     </figure>
    </div>
@@ -1399,22 +1399,22 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 	the edges of the multi-column container are clipped according to the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow">overflow</a> property.</p>
    <p>A multicol container can have more columns than it has room for due to:</p>
    <ul>
-    <li> a declaration that constrains the column height 
-			(e.g., using <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height">height</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-max-height" id="ref-for-propdef-max-height">max-height</a>). 
-			In this case, additional column boxes are created in the inline direction 
-    <li> the size of the page. 
-			In this case, additional column boxes are moved to the next page(s). 
-    <li> explicit column breaks. 
+    <li> a declaration that constrains the column height
+			(e.g., using <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height">height</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-max-height" id="ref-for-propdef-max-height">max-height</a>).
+			In this case, additional column boxes are created in the inline direction
+    <li> the size of the page.
+			In this case, additional column boxes are moved to the next page(s).
+    <li> explicit column breaks.
 			In this case, additional column boxes are created in the inline direction for continuous contexts
-			and additional column boxes are moved to the next fragment(s) for fragmented media. 
+			and additional column boxes are moved to the next fragment(s) for fragmented media.
     <li>
    </ul>
    <p>Columns that appear outside the multicol container in continuous contexts
-	are called <dfn data-dfn-type="dfn" data-export id="overflow-columns">overflow columns<a class="self-link" href="#overflow-columns"></a></dfn>. 
+	are called <dfn data-dfn-type="dfn" data-export id="overflow-columns">overflow columns<a class="self-link" href="#overflow-columns"></a></dfn>.
 	Overflow columns can affect the height of the multicol container.</p>
    <div class="example" id="example-a5e26f6e">
     <a class="self-link" href="#example-a5e26f6e"></a> In this example, the height of the multi-column container has been constrained to a maximum height.
-		Also, the style sheet specifies that overflowing content should be visible: 
+		Also, the style sheet specifies that overflowing content should be visible:
 <pre class="highlight"><c- f>div </c-><c- p>{</c->
   <c- k>max-height</c-><c- p>:</c-> <c- m>5</c-><c- l>em</c-><c- p>;</c->
   <c- k>overflow</c-><c- p>:</c-> visible<c- p>;</c->
@@ -1422,18 +1422,18 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 </pre>
     <p>As a result, the number of columns is increased.</p>
     <figure>
-      <img alt="Four columns, one outside the multicol container" src="images/height-constraint-overflow-inline.svg"> 
+      <img alt="Four columns, one outside the multicol container" src="images/height-constraint-overflow-inline.svg">
      <figcaption>An overflow column is created in the inline direction.</figcaption>
     </figure>
    </div>
    <div class="example" id="example-83d725a5">
-    <a class="self-link" href="#example-83d725a5"></a> 
+    <a class="self-link" href="#example-83d725a5"></a>
     <p>In continuous contexts overflow columns can affect the height of the multicol container.
-		In this example a column appears in the overflow which has four lines of text. 
+		In this example a column appears in the overflow which has four lines of text.
 		The multicol container is made tall enough to accomodate this column.</p>
     <figure>
-      <img alt="Four columns, overflow column is taller than the first three" src="images/overflow-column-effects-height.svg"> 
-     <figcaption>The final column is an overflow column yet is taller than the others. 
+      <img alt="Four columns, overflow column is taller than the first three" src="images/overflow-column-effects-height.svg">
+     <figcaption>The final column is an overflow column yet is taller than the others.
 			The container is tall enough for this column.</figcaption>
     </figure>
    </div>
@@ -1441,26 +1441,26 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
     <a class="self-link" href="#example-a048a782"></a> In fragmented contexts, the overflow content goes into columns in subsequent fragments.
 		Given the same content as in example 31
 		and a page box that only has room for five lines of formatted text,
-		this would appear on the first page: 
+		this would appear on the first page:
     <figure>
-      <img alt="Three columns" src="images/pagination-overflow-page1.svg"> 
+      <img alt="Three columns" src="images/pagination-overflow-page1.svg">
      <figcaption>The first three paragraphs appear on page one.</figcaption>
     </figure>
     <p>Assuming column balancing, this would appear on the second page:</p>
     <figure>
-      <img alt="Three columns" src="images/pagination-overflow-page2.svg"> 
+      <img alt="Three columns" src="images/pagination-overflow-page2.svg">
      <figcaption>The overflow column is moved onto page two.</figcaption>
     </figure>
    </div>
    <div class="example" id="example-da1d960a">
-    <a class="self-link" href="#example-da1d960a"></a> In this example, explicit column breaks are generated after paragraphs: 
+    <a class="self-link" href="#example-da1d960a"></a> In this example, explicit column breaks are generated after paragraphs:
 <pre class="highlight"><c- f>p </c-><c- p>{</c->
   <c- k>break-after</c-><c- p>:</c-> column<c- p>;</c->
 <c- p>}</c->
 </pre>
     <p>As a result, the number of columns increases and the extra columns are added in the inline direction:</p>
     <figure>
-      <img alt="Four columns, one outside the multicol container" src="images/height-constraint-column-break-overflow-inline.svg"> 
+      <img alt="Four columns, one outside the multicol container" src="images/height-constraint-column-break-overflow-inline.svg">
      <figcaption>An overflow column is created in the inline direction.</figcaption>
     </figure>
    </div>
@@ -1468,14 +1468,14 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
     <a class="self-link" href="#example-02cf1ca4"></a> In paged media, extra columns are shown on the next page.
 		Given the same code as the previous example,
 		the last paragraph appears on the second page.
-		This would appear on the first page: 
+		This would appear on the first page:
     <figure>
-      <img alt="Three columns" src="images/pagination-column-break-overflow-page1.svg"> 
+      <img alt="Three columns" src="images/pagination-column-break-overflow-page1.svg">
      <figcaption>The first three paragraphs appear on page one.</figcaption>
     </figure>
     <p>This would appear on the second page:</p>
     <figure>
-      <img alt="Three columns" src="images/pagination-column-break-overflow-page2.svg"> 
+      <img alt="Three columns" src="images/pagination-column-break-overflow-page2.svg">
      <figcaption>The overflow column is moved onto page two.</figcaption>
     </figure>
     <p>Due to column balancing, the last paragraph is split across three columns.</p>
@@ -1484,9 +1484,9 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
    <p>This appendix is <em>informative</em>.</p>
    <h3 class="heading settled" id="changes-from-20180528"><span class="content">Changes from the <a href="https://www.w3.org/TR/2018/WD-css-multicol-1-20180528/">Working Draft (WD) of 28 May 2018</a></span><a class="self-link" href="#changes-from-20180528"></a></h3>
    <ul>
-    <li>Removed the non-normative text 
+    <li>Removed the non-normative text
 	"However, as described below, setting both the width and number of columns rarely makes sense." Editorial 16 Sep 2019, <a href="https://github.com/w3c/csswg-drafts/issues/4291">issue 4291</a>.
-    <li>Added the paragraph, "Spanners are block-level boxes 
+    <li>Added the paragraph, "Spanners are block-level boxes
 	therefore the margins of two adjacent spanners will collapse with each other.
 	As column boxes establish a new <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-formatting-context" id="ref-for-block-formatting-context⑤">block formatting context</a>,
 	margins on elements inside a column box will not collapse with the margin of a spanner." <a href="https://github.com/w3c/csswg-drafts/issues/2203#issuecomment-431783027">Resolved 22 Oct 2018</a>, see also the resolution for <a href="https://github.com/w3c/csswg-drafts/issues/2582#issuecomment-402619872">issue 2582</a>.
@@ -1517,22 +1517,22 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
    </ul>
    <h3 class="heading settled" id="changes-from-20110412"><span class="content">Changes from the <a href="https://www.w3.org/TR/2011/CR-css3-multicol-20110412/">Candidate Recommendation (CR) of 12 April 2011</a>.</span><a class="self-link" href="#changes-from-20110412"></a></h3>
    <ul>
-    <li>Added July 2016 resolution to change the the track size floor to a required UA-specified value, consistent with the CSS Grid spec. <a href="https://lists.w3.org/Archives/Public/www-style/2016Jan/0031.html">Resolved: 7 Jan 2016</a> 
-    <li>Remove the restriction about overflow columns only being in continuous media in the statement that <a class="property" data-link-type="propdesc" href="#propdef-column-fill" id="ref-for-propdef-column-fill②">column-fill</a> has no effect on overflow columns. <a href="https://lists.w3.org/Archives/Public/www-style/2013Sep/0471.html">Resolved: September 2013</a>. 
-    <li>Added keyword balance-all and examples to demonstrate how this should work. <a href="https://lists.w3.org/Archives/Public/www-style/2013Sep/0471.html">Resolved: September 2013</a>. 
-    <li> The pseudo-algorithm has been revised on a number of occasions. <a href="https://lists.w3.org/Archives/Public/www-style/2013Feb/0471.html">Latest change Feb 2013</a>. 
-    <li>Clarified that properties <a class="property" data-link-type="propdesc" href="#propdef-columns" id="ref-for-propdef-columns④">columns</a>, <a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width①③">column-width</a>, <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count①②">column-count</a> "apply to block containers". <a href="https://lists.w3.org/Archives/Public/www-style/2013Feb/0536.html">Ref: Feb 2013</a>. 
-    <li>Breaking properties have beeen moved from this specification to the <a href="https://www.w3.org/TR/css-break-3/">CSS Fragmentation Module</a>. 
-    <li>Change to <a class="property" data-link-type="propdesc" href="#propdef-column-fill" id="ref-for-propdef-column-fill③">column-fill</a> wording to clarify that <span class="property" id="ref-for-propdef-column-fill④">column-fill</span> is honored before page breaks. <a href="https://lists.w3.org/Archives/Public/www-style/2012Jan/0393.html">Ref: Jan 2012</a>. 
-    <li>Amended example and text to clarify what happens with margin collapsing and spanning elements. <a href="https://lists.w3.org/Archives/Public/www-style/2013Oct/0247.html">Ref: Oct 2013</a>. 
-    <li>Clarification that <a class="property" data-link-type="propdesc" href="#propdef-column-rule-width" id="ref-for-propdef-column-rule-width④">column-rule-width</a> does not alter the size or placement of columns. <a href="https://lists.w3.org/Archives/Public/www-style/2013Sep/0550.html">Ref: Sep 2013</a>. 
-    <li>Added that each column spanning element establishes a separate BFC margins between them collapse. <a href="https://lists.w3.org/Archives/Public/www-style/2011Dec/0262.html">Ref: Dec 2011</a>. 
-    <li>Column rules are painted in the inline content layer, but below all inline content inside the multicol. <a href="https://lists.w3.org/Archives/Public/www-style/2013Feb/0363.html">Ref: Feb 2013</a>. 
-    <li>Clarify that <a class="property" data-link-type="propdesc" href="#propdef-column-span" id="ref-for-propdef-column-span⑦">column-span</a> causes the element to establish a formatting context even if it is not in a multicol. 
-    <li>Column spanners do not always establish a <em>block</em> formatting context. 
-    <li>Allow <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-align-3/#propdef-column-gap" id="ref-for-propdef-column-gap⑥">column-gap</a> to accept <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage">&lt;length-percentage></a> instead of just <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> 
-    <li><a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width①④">column-width</a> and <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count①③">column-count</a> applies to <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-container" id="ref-for-block-container③">block containers</a> except <a data-link-type="dfn" href="https://drafts.csswg.org/css-tables-3/#table-wrapper-box" id="ref-for-table-wrapper-box②">table wrapper boxes</a>. 
-    <li>Content that overflows columns is not clipped. 
+    <li>Added July 2016 resolution to change the the track size floor to a required UA-specified value, consistent with the CSS Grid spec. <a href="https://lists.w3.org/Archives/Public/www-style/2016Jan/0031.html">Resolved: 7 Jan 2016</a>
+    <li>Remove the restriction about overflow columns only being in continuous media in the statement that <a class="property" data-link-type="propdesc" href="#propdef-column-fill" id="ref-for-propdef-column-fill②">column-fill</a> has no effect on overflow columns. <a href="https://lists.w3.org/Archives/Public/www-style/2013Sep/0471.html">Resolved: September 2013</a>.
+    <li>Added keyword balance-all and examples to demonstrate how this should work. <a href="https://lists.w3.org/Archives/Public/www-style/2013Sep/0471.html">Resolved: September 2013</a>.
+    <li> The pseudo-algorithm has been revised on a number of occasions. <a href="https://lists.w3.org/Archives/Public/www-style/2013Feb/0471.html">Latest change Feb 2013</a>.
+    <li>Clarified that properties <a class="property" data-link-type="propdesc" href="#propdef-columns" id="ref-for-propdef-columns④">columns</a>, <a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width①③">column-width</a>, <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count①②">column-count</a> "apply to block containers". <a href="https://lists.w3.org/Archives/Public/www-style/2013Feb/0536.html">Ref: Feb 2013</a>.
+    <li>Breaking properties have beeen moved from this specification to the <a href="https://www.w3.org/TR/css-break-3/">CSS Fragmentation Module</a>.
+    <li>Change to <a class="property" data-link-type="propdesc" href="#propdef-column-fill" id="ref-for-propdef-column-fill③">column-fill</a> wording to clarify that <span class="property" id="ref-for-propdef-column-fill④">column-fill</span> is honored before page breaks. <a href="https://lists.w3.org/Archives/Public/www-style/2012Jan/0393.html">Ref: Jan 2012</a>.
+    <li>Amended example and text to clarify what happens with margin collapsing and spanning elements. <a href="https://lists.w3.org/Archives/Public/www-style/2013Oct/0247.html">Ref: Oct 2013</a>.
+    <li>Clarification that <a class="property" data-link-type="propdesc" href="#propdef-column-rule-width" id="ref-for-propdef-column-rule-width④">column-rule-width</a> does not alter the size or placement of columns. <a href="https://lists.w3.org/Archives/Public/www-style/2013Sep/0550.html">Ref: Sep 2013</a>.
+    <li>Added that each column spanning element establishes a separate BFC margins between them collapse. <a href="https://lists.w3.org/Archives/Public/www-style/2011Dec/0262.html">Ref: Dec 2011</a>.
+    <li>Column rules are painted in the inline content layer, but below all inline content inside the multicol. <a href="https://lists.w3.org/Archives/Public/www-style/2013Feb/0363.html">Ref: Feb 2013</a>.
+    <li>Clarify that <a class="property" data-link-type="propdesc" href="#propdef-column-span" id="ref-for-propdef-column-span⑦">column-span</a> causes the element to establish a formatting context even if it is not in a multicol.
+    <li>Column spanners do not always establish a <em>block</em> formatting context.
+    <li>Allow <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-align-3/#propdef-column-gap" id="ref-for-propdef-column-gap⑥">column-gap</a> to accept <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage">&lt;length-percentage></a> instead of just <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>
+    <li><a class="property" data-link-type="propdesc" href="#propdef-column-width" id="ref-for-propdef-column-width①④">column-width</a> and <a class="property" data-link-type="propdesc" href="#propdef-column-count" id="ref-for-propdef-column-count①③">column-count</a> applies to <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-container" id="ref-for-block-container③">block containers</a> except <a data-link-type="dfn" href="https://drafts.csswg.org/css-tables-3/#table-wrapper-box" id="ref-for-table-wrapper-box②">table wrapper boxes</a>.
+    <li>Content that overflows columns is not clipped.
    </ul>
    <h2 class="no-num heading settled" id="acknowledgments"><span class="content"> Acknowledgments</span><a class="self-link" href="#acknowledgments"></a></h2>
    <p>This document is based on several older proposals and comments on older proposals.
@@ -1588,7 +1588,7 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1601,14 +1601,14 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1659,7 +1659,7 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1720,7 +1720,7 @@ columns: auto auto; <c- c>/* column-width: auto; column-count: auto */</c->
   <aside class="dfn-panel" data-for="term-for-propdef-border">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border">https://drafts.csswg.org/css-backgrounds-3/#propdef-border</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-border">1. 
+    <li><a href="#ref-for-propdef-border">1.
 Introduction</a> <a href="#ref-for-propdef-border①">(2)</a>
    </ul>
   </aside>
@@ -1740,7 +1740,7 @@ Introduction</a> <a href="#ref-for-propdef-border①">(2)</a>
   <aside class="dfn-panel" data-for="term-for-fragment">
    <a href="https://drafts.csswg.org/css-break-4/#fragment">https://drafts.csswg.org/css-break-4/#fragment</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragment">2. 
+    <li><a href="#ref-for-fragment">2.
 The Multi-Column Model</a>
     <li><a href="#ref-for-fragment①">6.1. Spanning An Element Across Columns: the column-span property</a>
    </ul>
@@ -1748,56 +1748,56 @@ The Multi-Column Model</a>
   <aside class="dfn-panel" data-for="term-for-fragmentation">
    <a href="https://drafts.csswg.org/css-break-4/#fragmentation">https://drafts.csswg.org/css-break-4/#fragmentation</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation">2. 
+    <li><a href="#ref-for-fragmentation">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-fragmentation-container">
    <a href="https://drafts.csswg.org/css-break-4/#fragmentation-container">https://drafts.csswg.org/css-break-4/#fragmentation-container</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation-container">2. 
+    <li><a href="#ref-for-fragmentation-container">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-fragmentation-context">
    <a href="https://drafts.csswg.org/css-break-4/#fragmentation-context">https://drafts.csswg.org/css-break-4/#fragmentation-context</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation-context">2. 
+    <li><a href="#ref-for-fragmentation-context">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-widows">
    <a href="https://drafts.csswg.org/css-break-4/#propdef-widows">https://drafts.csswg.org/css-break-4/#propdef-widows</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-widows">7. 
+    <li><a href="#ref-for-propdef-widows">7.
 Filling Columns</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valuea-def-color">
    <a href="https://drafts.csswg.org/css-color-3/#valuea-def-color">https://drafts.csswg.org/css-color-3/#valuea-def-color</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valuea-def-color">4.2. The Color of Column Rules: the 
+    <li><a href="#ref-for-valuea-def-color">4.2. The Color of Column Rules: the
 column-rule-color property</a> <a href="#ref-for-valuea-def-color①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-absolutely-positioned">
    <a href="https://drafts.csswg.org/css-display-3/#absolutely-positioned">https://drafts.csswg.org/css-display-3/#absolutely-positioned</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-absolutely-positioned">2. 
+    <li><a href="#ref-for-absolutely-positioned">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-anonymous">
    <a href="https://drafts.csswg.org/css-display-3/#anonymous">https://drafts.csswg.org/css-display-3/#anonymous</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-anonymous">2. 
+    <li><a href="#ref-for-anonymous">2.
 The Multi-Column Model</a> <a href="#ref-for-anonymous①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-container">
    <a href="https://drafts.csswg.org/css-display-3/#block-container">https://drafts.csswg.org/css-display-3/#block-container</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-container">2. 
+    <li><a href="#ref-for-block-container">2.
 The Multi-Column Model</a>
     <li><a href="#ref-for-block-container①">3.1. The Inline Size of Columns: the column-width property</a>
     <li><a href="#ref-for-block-container②">3.2. The Number of Columns: the column-count property</a>
@@ -1808,7 +1808,7 @@ Candidate Recommendation (CR) of 12 April 2011.</a>
   <aside class="dfn-panel" data-for="term-for-block-formatting-context">
    <a href="https://drafts.csswg.org/css-display-3/#block-formatting-context">https://drafts.csswg.org/css-display-3/#block-formatting-context</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-formatting-context">2. 
+    <li><a href="#ref-for-block-formatting-context">2.
 The Multi-Column Model</a> <a href="#ref-for-block-formatting-context①">(2)</a> <a href="#ref-for-block-formatting-context②">(3)</a>
     <li><a href="#ref-for-block-formatting-context③">6.1. Spanning An Element Across Columns: the column-span property</a> <a href="#ref-for-block-formatting-context④">(2)</a>
     <li><a href="#ref-for-block-formatting-context⑤">Changes from the Working Draft (WD) of 28 May 2018</a>
@@ -1817,21 +1817,21 @@ The Multi-Column Model</a> <a href="#ref-for-block-formatting-context①">(2)</a
   <aside class="dfn-panel" data-for="term-for-block-level-box">
    <a href="https://drafts.csswg.org/css-display-3/#block-level-box">https://drafts.csswg.org/css-display-3/#block-level-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-level-box">2. 
+    <li><a href="#ref-for-block-level-box">2.
 The Multi-Column Model</a> <a href="#ref-for-block-level-box①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-containing-block">
    <a href="https://drafts.csswg.org/css-display-3/#containing-block">https://drafts.csswg.org/css-display-3/#containing-block</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-containing-block">2. 
+    <li><a href="#ref-for-containing-block">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-display">
    <a href="https://drafts.csswg.org/css-display-3/#propdef-display">https://drafts.csswg.org/css-display-3/#propdef-display</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-display">2. 
+    <li><a href="#ref-for-propdef-display">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
@@ -1844,7 +1844,7 @@ The Multi-Column Model</a>
   <aside class="dfn-panel" data-for="term-for-independent-formatting-context">
    <a href="https://drafts.csswg.org/css-display-3/#independent-formatting-context">https://drafts.csswg.org/css-display-3/#independent-formatting-context</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-independent-formatting-context">2. 
+    <li><a href="#ref-for-independent-formatting-context">2.
 The Multi-Column Model</a> <a href="#ref-for-independent-formatting-context①">(2)</a>
     <li><a href="#ref-for-independent-formatting-context②">6.1. Spanning An Element Across Columns: the column-span property</a>
    </ul>
@@ -1858,35 +1858,35 @@ The Multi-Column Model</a> <a href="#ref-for-independent-formatting-context①">
   <aside class="dfn-panel" data-for="term-for-principal-box">
    <a href="https://drafts.csswg.org/css-display-3/#principal-box">https://drafts.csswg.org/css-display-3/#principal-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-principal-box">2. 
+    <li><a href="#ref-for-principal-box">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-grid-container">
    <a href="https://drafts.csswg.org/css-grid-1/#grid-container">https://drafts.csswg.org/css-grid-1/#grid-container</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-grid-container">1. 
+    <li><a href="#ref-for-grid-container">1.
 Introduction</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-grid-item">
    <a href="https://drafts.csswg.org/css-grid-1/#grid-item">https://drafts.csswg.org/css-grid-1/#grid-item</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-grid-item">1. 
+    <li><a href="#ref-for-grid-item">1.
 Introduction</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-overflow">
    <a href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow">https://drafts.csswg.org/css-overflow-3/#propdef-overflow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-overflow">8.2. 
+    <li><a href="#ref-for-propdef-overflow">8.2.
 Pagination and Overflow Outside Multicol Containers</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-position">
    <a href="https://drafts.csswg.org/css-position-3/#propdef-position">https://drafts.csswg.org/css-position-3/#propdef-position</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-position">2. 
+    <li><a href="#ref-for-propdef-position">2.
 The Multi-Column Model</a> <a href="#ref-for-propdef-position①">(2)</a> <a href="#ref-for-propdef-position②">(3)</a>
     <li><a href="#ref-for-propdef-position③">Changes from the Working Draft (WD) of 5 October 2017</a>
    </ul>
@@ -1940,35 +1940,35 @@ Candidate Recommendation (CR) of 12 April 2011.</a>
   <aside class="dfn-panel" data-for="term-for-block-axis">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#block-axis">https://drafts.csswg.org/css-writing-modes-4/#block-axis</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-axis">2. 
+    <li><a href="#ref-for-block-axis">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-base-direction">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#inline-base-direction">https://drafts.csswg.org/css-writing-modes-4/#inline-base-direction</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-base-direction">2. 
+    <li><a href="#ref-for-inline-base-direction">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-height">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-height">https://drafts.csswg.org/css2/visudet.html#propdef-height</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-height">8.2. 
+    <li><a href="#ref-for-propdef-height">8.2.
 Pagination and Overflow Outside Multicol Containers</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-max-height">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-max-height">https://drafts.csswg.org/css2/visudet.html#propdef-max-height</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-max-height">8.2. 
+    <li><a href="#ref-for-propdef-max-height">8.2.
 Pagination and Overflow Outside Multicol Containers</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-width">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-width">https://drafts.csswg.org/css2/visudet.html#propdef-width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-width">2. 
+    <li><a href="#ref-for-propdef-width">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
@@ -1990,7 +1990,7 @@ Candidate Recommendation (CR) of 12 April 2011.</a>
   <aside class="dfn-panel" data-for="term-for-propdef-break-after">
    <a href="https://drafts.csswg.org/css-break-3/#propdef-break-after">https://drafts.csswg.org/css-break-3/#propdef-break-after</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-break-after">5. 
+    <li><a href="#ref-for-propdef-break-after">5.
 Column Breaks</a>
     <li><a href="#ref-for-propdef-break-after①">5.1. Controlling Fragmentation: the break-before, break-after, break-inside properties</a> <a href="#ref-for-propdef-break-after②">(2)</a>
    </ul>
@@ -1998,7 +1998,7 @@ Column Breaks</a>
   <aside class="dfn-panel" data-for="term-for-propdef-break-before">
    <a href="https://drafts.csswg.org/css-break-3/#propdef-break-before">https://drafts.csswg.org/css-break-3/#propdef-break-before</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-break-before">5. 
+    <li><a href="#ref-for-propdef-break-before">5.
 Column Breaks</a>
     <li><a href="#ref-for-propdef-break-before①">5.1. Controlling Fragmentation: the break-before, break-after, break-inside properties</a> <a href="#ref-for-propdef-break-before②">(2)</a>
    </ul>
@@ -2006,7 +2006,7 @@ Column Breaks</a>
   <aside class="dfn-panel" data-for="term-for-propdef-break-inside">
    <a href="https://drafts.csswg.org/css-break-3/#propdef-break-inside">https://drafts.csswg.org/css-break-3/#propdef-break-inside</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-break-inside">5. 
+    <li><a href="#ref-for-propdef-break-inside">5.
 Column Breaks</a>
     <li><a href="#ref-for-propdef-break-inside①">5.1. Controlling Fragmentation: the break-before, break-after, break-inside properties</a> <a href="#ref-for-propdef-break-inside②">(2)</a>
    </ul>
@@ -2014,7 +2014,7 @@ Column Breaks</a>
   <aside class="dfn-panel" data-for="term-for-propdef-orphans">
    <a href="https://drafts.csswg.org/css-break-3/#propdef-orphans">https://drafts.csswg.org/css-break-3/#propdef-orphans</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-orphans">7. 
+    <li><a href="#ref-for-propdef-orphans">7.
 Filling Columns</a>
    </ul>
   </aside>
@@ -2285,16 +2285,16 @@ Filling Columns</a>
   <aside class="dfn-panel" data-for="multi-column-layout">
    <b><a href="#multi-column-layout">#multi-column-layout</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-multi-column-layout">2. 
+    <li><a href="#ref-for-multi-column-layout">2.
 The Multi-Column Model</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="multi-column-container">
    <b><a href="#multi-column-container">#multi-column-container</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-multi-column-container">1. 
+    <li><a href="#ref-for-multi-column-container">1.
 Introduction</a> <a href="#ref-for-multi-column-container①">(2)</a>
-    <li><a href="#ref-for-multi-column-container②">2. 
+    <li><a href="#ref-for-multi-column-container②">2.
 The Multi-Column Model</a> <a href="#ref-for-multi-column-container③">(2)</a> <a href="#ref-for-multi-column-container④">(3)</a> <a href="#ref-for-multi-column-container⑤">(4)</a> <a href="#ref-for-multi-column-container⑥">(5)</a> <a href="#ref-for-multi-column-container⑦">(6)</a>
     <li><a href="#ref-for-multi-column-container⑧">3.2. The Number of Columns: the column-count property</a>
     <li><a href="#ref-for-multi-column-container⑨">4. Column Gaps and Rules</a> <a href="#ref-for-multi-column-container①⓪">(2)</a> <a href="#ref-for-multi-column-container①①">(3)</a> <a href="#ref-for-multi-column-container①②">(4)</a> <a href="#ref-for-multi-column-container①③">(5)</a> <a href="#ref-for-multi-column-container①④">(6)</a>
@@ -2304,16 +2304,16 @@ The Multi-Column Model</a> <a href="#ref-for-multi-column-container③">(2)</a> 
   <aside class="dfn-panel" data-for="column-box">
    <b><a href="#column-box">#column-box</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-column-box">2. 
+    <li><a href="#ref-for-column-box">2.
 The Multi-Column Model</a> <a href="#ref-for-column-box①">(2)</a> <a href="#ref-for-column-box②">(3)</a> <a href="#ref-for-column-box③">(4)</a> <a href="#ref-for-column-box④">(5)</a> <a href="#ref-for-column-box⑤">(6)</a>
-    <li><a href="#ref-for-column-box⑥">8.1. 
+    <li><a href="#ref-for-column-box⑥">8.1.
 Overflow Inside Multicol Containers</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="multi-column-line">
    <b><a href="#multi-column-line">#multi-column-line</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-multi-column-line">2. 
+    <li><a href="#ref-for-multi-column-line">2.
 The Multi-Column Model</a> <a href="#ref-for-multi-column-line①">(2)</a> <a href="#ref-for-multi-column-line②">(3)</a> <a href="#ref-for-multi-column-line③">(4)</a>
     <li><a href="#ref-for-multi-column-line④">6.1. Spanning An Element Across Columns: the column-span property</a>
    </ul>
@@ -2321,7 +2321,7 @@ The Multi-Column Model</a> <a href="#ref-for-multi-column-line①">(2)</a> <a hr
   <aside class="dfn-panel" data-for="column-gap">
    <b><a href="#column-gap">#column-gap</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-column-gap">1. 
+    <li><a href="#ref-for-column-gap">1.
 Introduction</a>
     <li><a href="#ref-for-column-gap①">4. Column Gaps and Rules</a>
     <li><a href="#ref-for-column-gap②">4.5. Column Rule Shorthand: the column-rule property</a>
@@ -2330,10 +2330,10 @@ Introduction</a>
   <aside class="dfn-panel" data-for="column-rule">
    <b><a href="#column-rule">#column-rule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-column-rule">1. 
+    <li><a href="#ref-for-column-rule">1.
 Introduction</a>
     <li><a href="#ref-for-column-rule①">4. Column Gaps and Rules</a> <a href="#ref-for-column-rule②">(2)</a> <a href="#ref-for-column-rule③">(3)</a>
-    <li><a href="#ref-for-column-rule④">4.2. The Color of Column Rules: the 
+    <li><a href="#ref-for-column-rule④">4.2. The Color of Column Rules: the
 column-rule-color property</a>
     <li><a href="#ref-for-column-rule⑤">4.5. Column Rule Shorthand: the column-rule property</a>
    </ul>
@@ -2347,9 +2347,9 @@ column-rule-color property</a>
   <aside class="dfn-panel" data-for="propdef-column-width">
    <b><a href="#propdef-column-width">#propdef-column-width</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-column-width">2. 
+    <li><a href="#ref-for-propdef-column-width">2.
 The Multi-Column Model</a>
-    <li><a href="#ref-for-propdef-column-width①">3. 
+    <li><a href="#ref-for-propdef-column-width①">3.
 The Number and Width of Columns</a> <a href="#ref-for-propdef-column-width②">(2)</a>
     <li><a href="#ref-for-propdef-column-width③">3.1. The Inline Size of Columns: the column-width property</a> <a href="#ref-for-propdef-column-width④">(2)</a> <a href="#ref-for-propdef-column-width⑤">(3)</a>
     <li><a href="#ref-for-propdef-column-width⑥">3.2. The Number of Columns: the column-count property</a> <a href="#ref-for-propdef-column-width⑦">(2)</a>
@@ -2362,7 +2362,7 @@ Candidate Recommendation (CR) of 12 April 2011.</a> <a href="#ref-for-propdef-co
   <aside class="dfn-panel" data-for="valdef-column-width-auto">
    <b><a href="#valdef-column-width-auto">#valdef-column-width-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-column-width-auto">2. 
+    <li><a href="#ref-for-valdef-column-width-auto">2.
 The Multi-Column Model</a>
     <li><a href="#ref-for-valdef-column-width-auto①">3.1. The Inline Size of Columns: the column-width property</a>
    </ul>
@@ -2370,9 +2370,9 @@ The Multi-Column Model</a>
   <aside class="dfn-panel" data-for="propdef-column-count">
    <b><a href="#propdef-column-count">#propdef-column-count</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-column-count">2. 
+    <li><a href="#ref-for-propdef-column-count">2.
 The Multi-Column Model</a>
-    <li><a href="#ref-for-propdef-column-count①">3. 
+    <li><a href="#ref-for-propdef-column-count①">3.
 The Number and Width of Columns</a> <a href="#ref-for-propdef-column-count②">(2)</a>
     <li><a href="#ref-for-propdef-column-count③">3.1. The Inline Size of Columns: the column-width property</a>
     <li><a href="#ref-for-propdef-column-count④">3.2. The Number of Columns: the column-count property</a> <a href="#ref-for-propdef-column-count⑤">(2)</a>
@@ -2385,9 +2385,9 @@ Candidate Recommendation (CR) of 12 April 2011.</a> <a href="#ref-for-propdef-co
   <aside class="dfn-panel" data-for="propdef-columns">
    <b><a href="#propdef-columns">#propdef-columns</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-columns">1. 
+    <li><a href="#ref-for-propdef-columns">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-columns①">3. 
+    <li><a href="#ref-for-propdef-columns①">3.
 The Number and Width of Columns</a>
     <li><a href="#ref-for-propdef-columns②">3.3. The column-width and column-count Shorthand: The columns Property</a> <a href="#ref-for-propdef-columns③">(2)</a>
     <li><a href="#ref-for-propdef-columns④">Changes from the
@@ -2397,7 +2397,7 @@ Candidate Recommendation (CR) of 12 April 2011.</a>
   <aside class="dfn-panel" data-for="propdef-column-rule-color">
    <b><a href="#propdef-column-rule-color">#propdef-column-rule-color</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-column-rule-color">4.2. The Color of Column Rules: the 
+    <li><a href="#ref-for-propdef-column-rule-color">4.2. The Color of Column Rules: the
 column-rule-color property</a>
     <li><a href="#ref-for-propdef-column-rule-color①">4.5. Column Rule Shorthand: the column-rule property</a> <a href="#ref-for-propdef-column-rule-color②">(2)</a>
    </ul>
@@ -2422,7 +2422,7 @@ Candidate Recommendation (CR) of 12 April 2011.</a>
   <aside class="dfn-panel" data-for="propdef-column-rule">
    <b><a href="#propdef-column-rule">#propdef-column-rule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-column-rule">1. 
+    <li><a href="#ref-for-propdef-column-rule">1.
 Introduction</a> <a href="#ref-for-propdef-column-rule①">(2)</a> <a href="#ref-for-propdef-column-rule②">(3)</a> <a href="#ref-for-propdef-column-rule③">(4)</a>
     <li><a href="#ref-for-propdef-column-rule④">4.5. Column Rule Shorthand: the column-rule property</a>
    </ul>
@@ -2430,9 +2430,9 @@ Introduction</a> <a href="#ref-for-propdef-column-rule①">(2)</a> <a href="#ref
   <aside class="dfn-panel" data-for="propdef-column-span">
    <b><a href="#propdef-column-span">#propdef-column-span</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-column-span">1. 
+    <li><a href="#ref-for-propdef-column-span">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-column-span①">6. 
+    <li><a href="#ref-for-propdef-column-span①">6.
 Spanning Columns</a>
     <li><a href="#ref-for-propdef-column-span②">6.1. Spanning An Element Across Columns: the column-span property</a> <a href="#ref-for-propdef-column-span③">(2)</a> <a href="#ref-for-propdef-column-span④">(3)</a> <a href="#ref-for-propdef-column-span⑤">(4)</a> <a href="#ref-for-propdef-column-span⑥">(5)</a>
     <li><a href="#ref-for-propdef-column-span⑦">Changes from the
@@ -2454,14 +2454,14 @@ Candidate Recommendation (CR) of 12 April 2011.</a>
   <aside class="dfn-panel" data-for="spanner">
    <b><a href="#spanner">#spanner</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-spanner">2. 
+    <li><a href="#ref-for-spanner">2.
 The Multi-Column Model</a> <a href="#ref-for-spanner①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-column-fill">
    <b><a href="#propdef-column-fill">#propdef-column-fill</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-column-fill">1. 
+    <li><a href="#ref-for-propdef-column-fill">1.
 Introduction</a>
     <li><a href="#ref-for-propdef-column-fill①">7.1. Column Balancing: the column-fill property</a>
     <li><a href="#ref-for-propdef-column-fill②">Changes from the
@@ -2470,57 +2470,65 @@ Candidate Recommendation (CR) of 12 April 2011.</a> <a href="#ref-for-propdef-co
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

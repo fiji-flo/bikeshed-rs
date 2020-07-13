@@ -238,7 +238,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    <p>Books and other paged media often use special techniques to display information. Content may be moved to or generated for special areas of the page, such as running heads or footnotes. Generated content within pages, such as tab leaders or cross-references, helps readers navigate within and between pages.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -366,9 +366,9 @@ on screen, on paper, etc.
    <p>Paged media have many <a href="http://w3c.github.io/dpub-pagination/index.html">special requirements</a> for the display of document content, which have evolved over the long history of printed books. Running headers and footers function as aids to navigation. Notes may appear at the bottom of the page, as footnotes. The properties of pages themselves may change based on their content or position in the document. Leaders visually connect related content. Cross-references may require generated text. Some paged media formats such as PDF use bookmarks for navigation.</p>
    <p>This module defines new properties and values, so that authors may bring these techniques to paged media.</p>
    <h2 class="heading settled" data-level="1" id="running-headers-and-footers"><span class="secno">1. </span><span class="content"> Running headers and footers </span><a class="self-link" href="#running-headers-and-footers"></a></h2>
-    <a data-link-type="biblio" href="#biblio-css3page">[CSS3PAGE]</a> describes the sixteen page margin boxes which can be used for running headers and footers, but does not describe a mechanism for inserting content in those boxes. This module provides two methods for for doing so. <dfn data-dfn-type="dfn" data-lt="named string" data-noexport id="named-string">Named strings<a class="self-link" href="#named-string"></a></dfn> copy text for reuse in margin boxes. <dfn data-dfn-type="dfn" data-noexport id="running-elements0">Running elements<a class="self-link" href="#running-elements0"></a></dfn> move elements (complete with style and structure) from the document to margin boxes. 
+    <a data-link-type="biblio" href="#biblio-css3page">[CSS3PAGE]</a> describes the sixteen page margin boxes which can be used for running headers and footers, but does not describe a mechanism for inserting content in those boxes. This module provides two methods for for doing so. <dfn data-dfn-type="dfn" data-lt="named string" data-noexport id="named-string">Named strings<a class="self-link" href="#named-string"></a></dfn> copy text for reuse in margin boxes. <dfn data-dfn-type="dfn" data-noexport id="running-elements0">Running elements<a class="self-link" href="#running-elements0"></a></dfn> move elements (complete with style and structure) from the document to margin boxes.
    <h3 class="heading settled" data-level="1.1" id="named-strings"><span class="secno">1.1. </span><span class="content"> Named strings </span><a class="self-link" href="#named-strings"></a></h3>
-    The <a class="property" data-link-type="propdesc" href="#propdef-string-set" id="ref-for-propdef-string-set">string-set</a> property copies the text content of an element into a <span class="css">named string</span>, which functions as a variable. The text content of this named string can be retrieved using the <a class="css" data-link-type="maybe" href="#funcdef-string" id="ref-for-funcdef-string">string()</a> function. Since these variables may change on a given page, an optional second value for the <span class="css" id="ref-for-funcdef-string①">string()</span> function allows authors to choose which value on a page is used. 
+    The <a class="property" data-link-type="propdesc" href="#propdef-string-set" id="ref-for-propdef-string-set">string-set</a> property copies the text content of an element into a <span class="css">named string</span>, which functions as a variable. The text content of this named string can be retrieved using the <a class="css" data-link-type="maybe" href="#funcdef-string" id="ref-for-funcdef-string">string()</a> function. Since these variables may change on a given page, an optional second value for the <span class="css" id="ref-for-funcdef-string①">string()</span> function allows authors to choose which value on a page is used.
    <h4 class="heading settled" data-level="1.1.1" id="setting-named-strings-the-string-set-pro"><span class="secno">1.1.1. </span><span class="content"> The string-set property </span><a class="self-link" href="#setting-named-strings-the-string-set-pro"></a></h4>
    <table class="def propdef" data-link-for-hint="<dfn id=&quot;string-set&quot;>string-set</dfn>">
     <tbody>
@@ -406,11 +406,11 @@ on screen, on paper, etc.
 <pre class="prod"><dfn data-dfn-type="dfn" data-noexport id="content-list">content-list<a class="self-link" href="#content-list"></a></dfn> = [ &lt;string> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> &lt;counter()> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> &lt;counters()> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> &lt;content()> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one④">|</a> attr(&lt;identifier>) ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-one-plus" id="ref-for-mult-one-plus">+</a>
 </pre>
    <dl>
-    <dt> &lt;string> 
-    <dd> A <a href="https://www.w3.org/TR/CSS21/syndata.html#strings">string</a>, as defined in <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> 
-    <dt> &lt;counter()> 
+    <dt> &lt;string>
+    <dd> A <a href="https://www.w3.org/TR/CSS21/syndata.html#strings">string</a>, as defined in <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>
+    <dt> &lt;counter()>
     <dd> A <a href="https://www.w3.org/TR/CSS21/syndata.html#counter">counter()</a> function, as described in <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>.
-    <dt> &lt;counters()> 
+    <dt> &lt;counters()>
     <dd> A <a href="https://www.w3.org/TR/CSS21/syndata.html#counter">counters()</a> function, as described in <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>.
     <dt>content()
     <dd>The <a class="css" data-link-type="maybe" href="#funcdef-content" id="ref-for-funcdef-content">content()</a> function, described below.
@@ -425,16 +425,16 @@ on screen, on paper, etc.
     <dt>text
     <dd>The string value of the element, determined as if <code>white-space: normal</code> had been set. This is the default value
     <dt>before
-    <dd>The string value of the <code>::before</code> pseudo-element, determined as if <code>white-space: normal</code> had been set. 
+    <dd>The string value of the <code>::before</code> pseudo-element, determined as if <code>white-space: normal</code> had been set.
     <dt>after
-    <dd>The string value of the <code>::after</code> pseudo-element, determined as if <code>white-space: normal</code> had been set. 
+    <dd>The string value of the <code>::after</code> pseudo-element, determined as if <code>white-space: normal</code> had been set.
     <dt>first-letter
-    <dd>The first letter of the element, as defined for the <code><a href="https://www.w3.org/TR/css3-selectors/#first-letter">::first-letter</a></code> pseudo-element 
+    <dd>The first letter of the element, as defined for the <code><a href="https://www.w3.org/TR/css3-selectors/#first-letter">::first-letter</a></code> pseudo-element
    </dl>
    <p>The content values of named strings are assigned at the point when the content box of the element is first created (or would have been created if the element’s display value is none). The <dfn data-dfn-type="dfn" data-noexport id="entry-value">entry value<a class="self-link" href="#entry-value"></a></dfn> for a page is the assignment in effect at the end of the previous page. The <dfn data-dfn-type="dfn" data-noexport id="exit-value">exit value<a class="self-link" href="#exit-value"></a></dfn> for a page is the assignment in effect at the end of the current page.</p>
    <p>Whenever the value of the element changes, the value of the named string(s) is updated. User agents must be able to recall many values of the named string, as the <a class="css" data-link-type="maybe" href="#funcdef-string" id="ref-for-funcdef-string②">string()</a> function can return past, current, or future values of the assignment.</p>
    <div class="example" id="example-e698ead2">
-    <a class="self-link" href="#example-e698ead2"></a> 
+    <a class="self-link" href="#example-e698ead2"></a>
     <p>HTML:</p>
 <pre>&lt;h1>Loomings&lt;/h1>
 </pre>
@@ -446,7 +446,7 @@ h1::after { content: '.'; }
     <p>The value of the named string “header” will be “Chapter 1: Loomings”.</p>
    </div>
    <div class="example" id="example-ba54cbec">
-    <a class="self-link" href="#example-ba54cbec"></a> HTML: 
+    <a class="self-link" href="#example-ba54cbec"></a> HTML:
 <pre>&lt;section title="Loomings">
 </pre>
     <p>CSS:</p>
@@ -455,7 +455,7 @@ h1::after { content: '.'; }
     <p>The value of the “header” string will be “Loomings”.</p>
    </div>
    <h4 class="heading settled" data-level="1.1.2" id="using-named-strings"><span class="secno">1.1.2. </span><span class="content"> The <a class="css" data-link-type="maybe" href="#funcdef-string" id="ref-for-funcdef-string③">string()</a> function </span><a class="self-link" href="#using-named-strings"></a></h4>
-    The <span class="css" id="ref-for-funcdef-string④">string()</span> function is used to copy the value of a named string to the document, via the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-content-3/#propdef-content" id="ref-for-propdef-content">content</a> property. This function requires one argument, the name of the named string. Since the value of a named string may change several times on a page (as new instances of the element defining the string appear) an optional second argument indicates which value of the named string should be used. 
+    The <span class="css" id="ref-for-funcdef-string④">string()</span> function is used to copy the value of a named string to the document, via the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-content-3/#propdef-content" id="ref-for-propdef-content">content</a> property. This function requires one argument, the name of the named string. Since the value of a named string may change several times on a page (as new instances of the element defining the string appear) an optional second argument indicates which value of the named string should be used.
 <pre class="prod"><dfn class="dfn-paneled" data-dfn-type="function" data-export id="funcdef-string">string()</dfn> = string( <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value②">&lt;custom-ident></a> [ <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-comma" id="ref-for-comb-comma①">,</a> [ first <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> start <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑨">|</a> last <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⓪">|</a> first-except] ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt">?</a> )
 </pre>
    <p>The second argument of the <a class="css" data-link-type="maybe" href="#funcdef-string" id="ref-for-funcdef-string⑤">string()</a> function is one of the following keywords:</p>
@@ -463,14 +463,14 @@ h1::after { content: '.'; }
     <dt id="string-first"><a class="self-link" href="#string-first"></a>first
     <dd>The value of the first assignment on the page is used. If there is no assignment on the page, the <span class="css">entry value</span> is used. <code>first</code> is the default value.
     <dt id="string-start"><a class="self-link" href="#string-start"></a>start
-    <dd>If the element is the first element on the page, the value of the first assignment is used. Otherwise the <span class="css">entry value</span> is used. The <span class="css">entry value</span> may be empty if the element hasn’t yet appeared. 
+    <dd>If the element is the first element on the page, the value of the first assignment is used. Otherwise the <span class="css">entry value</span> is used. The <span class="css">entry value</span> may be empty if the element hasn’t yet appeared.
     <dt id="string-last"><a class="self-link" href="#string-last"></a>last
     <dd>The <span class="css">exit value</span> of the named string is used.
     <dt id="string-first-except"><a class="self-link" href="#string-first-except"></a>first-except
     <dd>This is identical to <code>first</code>, except that the empty string is used on the page where the value is assigned.
    </dl>
    <div class="example" id="example-23e3824c">
-    <a class="self-link" href="#example-23e3824c"></a> CSS: 
+    <a class="self-link" href="#example-23e3824c"></a> CSS:
 <pre>@page {
    size: 15cm 10cm;
    margin: 1.5cm;
@@ -490,22 +490,22 @@ h2 { string-set: heading content() }
 </pre>
     <p>The following figures show the first, start, and last assignments of the “heading” string on various pages.</p>
     <figure>
-      <img alt src="images/using-strings-1.jpg" width="480"> 
+      <img alt src="images/using-strings-1.jpg" width="480">
      <figcaption>The <a href="#string-start">start</a> value is empty, as the string had not yet been set at the start of the page.</figcaption>
     </figure>
     <figure>
-      <img alt src="images/using-strings-2.jpg" width="480"> 
+      <img alt src="images/using-strings-2.jpg" width="480">
      <figcaption>Since the page starts with an h2, the <a href="#string-start">start</a> value is the value of that head.</figcaption>
     </figure>
     <figure>
-      <img alt src="images/using-strings-3.jpg" width="480"> 
+      <img alt src="images/using-strings-3.jpg" width="480">
      <figcaption>Since there’s not an h2 at the top of this page, the <a href="#string-start">start</a> value is the <span class="css">exit value</span> of the previous page.</figcaption>
     </figure>
    </div>
    <h3 class="heading settled" data-level="1.2" id="running-elements"><span class="secno">1.2. </span><span class="content"> Running elements </span><a class="self-link" href="#running-elements"></a></h3>
-    Many headers and footers cannot be represented only by unformatted text. A book title serving as a running head may contain an italic word, for example. A mechanism is needed to move or copy elements into margin boxes. To do this, we add the <a class="css" data-link-type="maybe" href="#funcdef-running" id="ref-for-funcdef-running">running()</a> value to the position property, and the <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element">element()</a> value to the content property. 
+    Many headers and footers cannot be represented only by unformatted text. A book title serving as a running head may contain an italic word, for example. A mechanism is needed to move or copy elements into margin boxes. To do this, we add the <a class="css" data-link-type="maybe" href="#funcdef-running" id="ref-for-funcdef-running">running()</a> value to the position property, and the <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element">element()</a> value to the content property.
    <div class="example" id="example-6cddf8e9">
-    <a class="self-link" href="#example-6cddf8e9"></a> 
+    <a class="self-link" href="#example-6cddf8e9"></a>
 <pre>@page {
   @top { content: element(header); }
 }
@@ -528,7 +528,7 @@ h1 { position: running(header); }
 <pre class="prod"><dfn class="dfn-paneled" data-dfn-type="function" data-export id="funcdef-running">running()</dfn> = string( <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value③">&lt;custom-ident></a> )
 </pre>
    <div class="example" id="example-ffae16e8">
-    <a class="self-link" href="#example-ffae16e8"></a> 
+    <a class="self-link" href="#example-ffae16e8"></a>
     <p>HTML:</p>
 <pre>&lt;p class="rh">&lt;i>Miranda v. Arizona&lt;/i> in Context&lt;/p>
 &lt;h2>&lt;i>Miranda v. Arizona&lt;/i> in Context&lt;/h2>
@@ -553,11 +553,11 @@ p.rh::before {
    </div>
    <p class="note" role="note">The element <span class="css">value()</span> can only be used in page margin boxes. And it cannot be combined with other possible values for the content property.</p>
    <div class="issue" id="issue-929df450">
-    <a class="self-link" href="#issue-929df450"></a> 
+    <a class="self-link" href="#issue-929df450"></a>
     <p>This idea would be much more useful if we could also copy (rather than just move) elements. That would avoid the duplication of HTML in the example above. </p>
     <p>Bert Bos has proposed an alternative syntax, which allows both moving and copying elements into running heads. In the example below, h2 elements appear in their normal place in the document, but are also copied into running heads.</p>
     <div class="example" id="example-ffc3e328">
-     <a class="self-link" href="#example-ffc3e328"></a> 
+     <a class="self-link" href="#example-ffc3e328"></a>
 <pre>h2 {
 display: block;
 running: chapter;
@@ -627,7 +627,7 @@ letter-spacing: 1pt;
 <pre class="prod"><dfn class="dfn-paneled" data-dfn-type="function" data-export id="funcdef-element">element()</dfn> = string( <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value⑤">&lt;custom-ident></a> [ <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-comma" id="ref-for-comb-comma②">,</a> [ first <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①①">|</a> start <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①②">|</a> last <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> first-except] ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt①">?</a> )
 </pre>
    <h2 class="heading settled" data-level="2" id="footnotes"><span class="secno">2. </span><span class="content"> Footnotes </span><a class="self-link" href="#footnotes"></a></h2>
-    Ancillary content may be moved to the bottom or side of a page. A footnote is created when such content moves to the bottom of the page, leaving a reference indicator. 
+    Ancillary content may be moved to the bottom or side of a page. A footnote is created when such content moves to the bottom of the page, leaving a reference indicator.
    <h3 class="heading settled" data-level="2.1" id="footnote-terms"><span class="secno">2.1. </span><span class="content">Terminology</span><a class="self-link" href="#footnote-terms"></a></h3>
    <p>Footnotes are complex objects (see the <a href="https://www.w3.org/TR/2014/WD-dpub-latinreq-20140313/#footnotes">footnote section</a> at <a data-link-type="biblio" href="#biblio-dpub-latinreq">[dpub-latinreq]</a>), so it will be helpful to define some terms before proceeding.</p>
    <figure>
@@ -649,7 +649,7 @@ letter-spacing: 1pt;
     <dd>A horizontal rule is often used to separate the footnote area from the rest of the page. The separator (and the entire footnote area) cannot be rendered on a page with no footnotes.
    </dl>
    <h3 class="heading settled" data-level="2.2" id="creating-footnotes"><span class="secno">2.2. </span><span class="content"> Creating footnotes </span><a class="self-link" href="#creating-footnotes"></a></h3>
-    An element becomes a footnote by applying <code>float: footnote</code> to that element. This triggers the following actions: 
+    An element becomes a footnote by applying <code>float: footnote</code> to that element. This triggers the following actions:
    <ol>
     <li> The footnote element is removed from the flow, and a <code>::footnote-call</code> pseudo-element is inserted in its place, which serves as a reference to the footnote.
     <li> A <code>::footnote-marker</code> pseudo-element, identifying the footnote, is placed at the beginning of the footnote element. Together this is the footnote body.
@@ -657,7 +657,7 @@ letter-spacing: 1pt;
     <li>The footnote body is placed in the footnote area at the bottom of the page. Footnote elements from a given page are placed in the footnote area of that page in document order.
    </ol>
    <div class="example" id="example-efe978c0">
-    <a class="self-link" href="#example-efe978c0"></a> HTML: 
+    <a class="self-link" href="#example-efe978c0"></a> HTML:
 <pre style="word-wrap: break-word; white-space: pre-wrap;">&lt;p>Though the body was erect, the head was thrown back so that the closed eyes were pointed towards the needle of the tell-tale that swung from a beam in the ceiling.&lt;span class="footnote">The cabin-compass is called the tell-tale, because without going to the compass at the helm, the Captain, while below, can inform himself of the course of the ship.&lt;/span>&lt;/p>
 </pre>
     <p>CSS:</p>
@@ -672,7 +672,7 @@ span.footnote { float: footnote; }
    </div>
    <p class="issue" id="issue-4af1f674"><a class="self-link" href="#issue-4af1f674"></a>Why is float:bottom used with the footnote area? Floating footnotes to the footnote area, and then floating the footnote area itself, seems overly complex, given that implementations don’t allow the footnote area to float anywhere else. Note that some implementations do allow the footnote area to be absolutely positioned.</p>
    <h3 class="heading settled" data-level="2.3" id="footnote-types"><span class="secno">2.3. </span><span class="content"> Types of footnotes </span><a class="self-link" href="#footnote-types"></a></h3>
-    The following new value of the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-float" id="ref-for-propdef-float">float</a> property creates a footnote element: 
+    The following new value of the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-float" id="ref-for-propdef-float">float</a> property creates a footnote element:
    <table class="def propdef partial" data-link-for-hint="float">
     <tbody>
      <tr>
@@ -726,10 +726,10 @@ span.footnote { float: footnote; }
     <dd>The user agent determines whether a given footnote element is placed as a block element or an inline element. If two or more footnotes could fit on the same line in the footnote area, they should be placed inline.
    </dl>
    <h3 class="heading settled" data-level="2.4" id="footnote-area"><span class="secno">2.4. </span><span class="content"> The footnote area </span><a class="self-link" href="#footnote-area"></a></h3>
-    A <a href="https://drafts.csswg.org/css-page/#page-area">page area</a> that can be used to display footnotes is described in the <a href="https://drafts.csswg.org/css-page/#page-context">page context</a> using an <code>@footnote</code> rule. This rule defines a box that, if used, will contain all the footnote elements that appear on that page. 
+    A <a href="https://drafts.csswg.org/css-page/#page-area">page area</a> that can be used to display footnotes is described in the <a href="https://drafts.csswg.org/css-page/#page-context">page context</a> using an <code>@footnote</code> rule. This rule defines a box that, if used, will contain all the footnote elements that appear on that page.
    <p class="issue" id="issue-829ce977"><a class="self-link" href="#issue-829ce977"></a>How would one describe this in the grammar of CSS3-Page?</p>
    <h4 class="heading settled" data-level="2.4.1" id="footnote-area-position"><span class="secno">2.4.1. </span><span class="content">Positioning of the footnote area</span><a class="self-link" href="#footnote-area-position"></a></h4>
-    The bottom margin edge of the footnote area is positioned so that it touches the bottom of the page area. The footnote area can only contain footnotes. 
+    The bottom margin edge of the footnote area is positioned so that it touches the bottom of the page area. The footnote area can only contain footnotes.
    <p class="issue" id="issue-069a39a3"><a class="self-link" href="#issue-069a39a3"></a>How do footnotes work in multi-column text? Prince uses <code>float: prince-column-footnote</code> to create a footnote at the bottom of a column rather than the bottom of a page.</p>
    <p class="issue" id="issue-34f910d8"><a class="self-link" href="#issue-34f910d8"></a>Implementations that support footnotes generally support page floats like <code>float: bottom</code>. Page floats should end up above the footnote area. How might this be specified?</p>
    <h4 class="heading settled" data-level="2.4.2" id="footnote-area-size"><span class="secno">2.4.2. </span><span class="content">Size of the footnote area</span><a class="self-link" href="#footnote-area-size"></a></h4>
@@ -740,7 +740,7 @@ span.footnote { float: footnote; }
    <h4 class="heading settled" data-level="2.5.1" id="footnote-counter-values"><span class="secno">2.5.1. </span><span class="content">Values of the footnote counter</span><a class="self-link" href="#footnote-counter-values"></a></h4>
    <p>The footnote counter, like other counters, may use any <a href="https://drafts.csswg.org/css-counter-styles-3/#counter-style">counter style</a>. Footnotes often use a sequence of symbols.</p>
    <div class="example" id="example-c28d19f0">
-    <a class="self-link" href="#example-c28d19f0"></a> 
+    <a class="self-link" href="#example-c28d19f0"></a>
 <pre>::footnote-call { content: counter(footnote, symbols('*', '†', '‡', '§')); }
 
 ::footnote-marker { content: counter(footnote, symbols('*', '†', '‡', '§')) '. '; }
@@ -749,7 +749,7 @@ span.footnote { float: footnote; }
    <h4 class="heading settled" data-level="2.5.2" id="resetting-footnote-counter"><span class="secno">2.5.2. </span><span class="content">Resetting the footnote counter</span><a class="self-link" href="#resetting-footnote-counter"></a></h4>
    <p>The footnote counter may be reset on each page.</p>
    <div class="example" id="example-50e9e077">
-    <a class="self-link" href="#example-50e9e077"></a> 
+    <a class="self-link" href="#example-50e9e077"></a>
 <pre>@page {
   counter-reset: footnote;
   @footnote { … }
@@ -758,9 +758,9 @@ span.footnote { float: footnote; }
    </div>
    <p>Note that the value of the footnote counter should depend on the position of the footnote element in the document tree, not where it is eventually placed. A footnote element may sometimes be placed on the page after the footnote call, but the same counter value must be used for both.</p>
    <h3 class="heading settled" data-level="2.6" id="footnote-call"><span class="secno">2.6. </span><span class="content"> The <code>footnote-call</code> pseudo-element </span><a class="self-link" href="#footnote-call"></a></h3>
-    A <code>::footnote-call</code> pseudo-element is inserted in place of the footnote element when the latter is removed from the flow. By default, the content of this pseudo-element is the value of the footnote counter, styled as a superscripted number. 
+    A <code>::footnote-call</code> pseudo-element is inserted in place of the footnote element when the latter is removed from the flow. By default, the content of this pseudo-element is the value of the footnote counter, styled as a superscripted number.
    <div class="example" id="example-eda00cbe">
-    <a class="self-link" href="#example-eda00cbe"></a> 
+    <a class="self-link" href="#example-eda00cbe"></a>
 <pre>::footnote-call {
 content: counter(footnote);
 vertical-align: baseline;
@@ -771,9 +771,9 @@ font-variant-position: super;
 </pre>
    </div>
    <h3 class="heading settled" data-level="2.7" id="footnote-marker"><span class="secno">2.7. </span><span class="content"> The <code>footnote-marker</code> pseudo-element </span><a class="self-link" href="#footnote-marker"></a></h3>
-    The <code>::footnote-marker</code> pseudo-element represents the footnote element’s marker, the number or symbol that identifies each footnote. This pseudo-element behaves like a <code>::marker</code> pseudo-element, as defined in <a data-link-type="biblio" href="#biblio-css3list">[CSS3LIST]</a>. It is placed at the beginning of the superior parent’s content, and is inline by default. The <code>::footnote-marker</code> can be styled just as other <code>::marker</code> elements can be. The default style should include <code>list-style-position: inside</code>. 
+    The <code>::footnote-marker</code> pseudo-element represents the footnote element’s marker, the number or symbol that identifies each footnote. This pseudo-element behaves like a <code>::marker</code> pseudo-element, as defined in <a data-link-type="biblio" href="#biblio-css3list">[CSS3LIST]</a>. It is placed at the beginning of the superior parent’s content, and is inline by default. The <code>::footnote-marker</code> can be styled just as other <code>::marker</code> elements can be. The default style should include <code>list-style-position: inside</code>.
    <div class="example" id="example-64cfffb1">
-    <a class="self-link" href="#example-64cfffb1"></a> 
+    <a class="self-link" href="#example-64cfffb1"></a>
 <pre>::footnote-marker {
 content: counter(footnote);
 }
@@ -825,17 +825,17 @@ content: '. ';
    </dl>
    <p class="issue" id="issue-da883bb8"><a class="self-link" href="#issue-da883bb8"></a>We need an algorithm for laying out footnotes</p>
    <h3 class="heading settled" data-level="2.9" id="future"><span class="secno">2.9. </span><span class="content"> Future directions </span><a class="self-link" href="#future"></a></h3>
-    The next level will include sidenotes, column footnotes, and multiple footnote areas. 
+    The next level will include sidenotes, column footnotes, and multiple footnote areas.
    <h2 class="heading settled" data-level="3" id="the-first-page-pseudo-element"><span class="secno">3. </span><span class="content"> Selecting Pages </span><a class="self-link" href="#the-first-page-pseudo-element"></a></h2>
    <p>A paginated document consists of a sequence of pages. <a data-link-type="biblio" href="#biblio-css3page">[CSS3PAGE]</a> defines <dfn data-dfn-type="dfn" data-noexport id="page-selectors">page selectors<a class="self-link" href="#page-selectors"></a></dfn>, which allow the selection of the first page of the document, left and right pages, and blank pages. Here we extend the idea of page selectors to enable the selection of arbitrary document pages.</p>
    <h3 class="heading settled" data-level="3.1" id="document-page-selectors"><span class="secno">3.1. </span><span class="content"> Page Selectors </span><a class="self-link" href="#document-page-selectors"></a></h3>
-    The <a class="css" data-link-type="maybe" href="#funcdef-nth" id="ref-for-funcdef-nth">nth()</a> page pseudo-class allows the selection of arbitrary document pages. This pseudo-class takes an argument of the form <a href="https://drafts.csswg.org/css-syntax/#anb">An + B</a> as defined in <a data-link-type="biblio" href="#biblio-css3syn">[CSS3SYN]</a>. When applied to the default @page rule, <span class="css" id="ref-for-funcdef-nth①">nth()</span> selects the document page whose index matches the argument. 
+    The <a class="css" data-link-type="maybe" href="#funcdef-nth" id="ref-for-funcdef-nth">nth()</a> page pseudo-class allows the selection of arbitrary document pages. This pseudo-class takes an argument of the form <a href="https://drafts.csswg.org/css-syntax/#anb">An + B</a> as defined in <a data-link-type="biblio" href="#biblio-css3syn">[CSS3SYN]</a>. When applied to the default @page rule, <span class="css" id="ref-for-funcdef-nth①">nth()</span> selects the document page whose index matches the argument.
 <pre class="prod"><dfn class="dfn-paneled" data-dfn-type="function" data-export id="funcdef-nth">nth()</dfn> = ( An<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-one-plus" id="ref-for-mult-one-plus①">+</a>B [of <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value⑥">&lt;custom-ident></a>]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt②">?</a>)
 </pre>
    <p class="note" role="note"> <a class="css" data-link-type="maybe" href="#funcdef-nth" id="ref-for-funcdef-nth②">nth()</a> is not related to the page counter, which may reset and use various numbering schemes.</p>
    <p>When the <a class="css" data-link-type="maybe" href="#funcdef-nth" id="ref-for-funcdef-nth③">nth()</a> selector is applied to a named page, and that named page is part of a page-group (see below), it selects the nth page in the page group.</p>
    <div class="example" id="example-b3ec403f">
-    <a class="self-link" href="#example-b3ec403f"></a> 
+    <a class="self-link" href="#example-b3ec403f"></a>
 <pre>@page :nth(1)
 </pre>
     <p>This selects the first page of the document.</p>
@@ -844,26 +844,26 @@ content: '. ';
      This selects all even document pages.
    </div>
    <h3 class="heading settled" data-level="3.2" id="document-sequence-selectors"><span class="secno">3.2. </span><span class="content"> Page groups </span><a class="self-link" href="#document-sequence-selectors"></a></h3>
-    Many paginated documents have a repeating structure, consisting of many chapters, sections, or articles. The first page of each subdivision often requires special treatment, but <span>[CSS3PAGE]</span> doesn’t define a way to select the first page of each chapter (as distinct from the first page of the entire document). 
+    Many paginated documents have a repeating structure, consisting of many chapters, sections, or articles. The first page of each subdivision often requires special treatment, but <span>[CSS3PAGE]</span> doesn’t define a way to select the first page of each chapter (as distinct from the first page of the entire document).
    <p>When the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-page-3/#propdef-page" id="ref-for-propdef-page">page</a> property is applied to an element that also has a forced break property applied, a <span class="css">page group</span> is created. The <dfn data-dfn-type="dfn" data-noexport id="page-group">page group<a class="self-link" href="#page-group"></a></dfn> is the collection of all pages created by an instance of that element. When a new instance of the element is rendered, a new <span class="css">page group</span> is started.</p>
    <p>A page may be part of several page groups, as a given <span class="css">page group</span> may have ancestors or descendants that are part of another <span class="css">page group</span>.</p>
    <div class="example" id="example-79556a6d">
-    <a class="self-link" href="#example-79556a6d"></a> CSS: 
+    <a class="self-link" href="#example-79556a6d"></a> CSS:
 <pre>div { page: A }
 child { page: B }
 </pre>
     <figure>
-      <img alt src="images/PageGroups.001.jpg" width="480"> 
+      <img alt src="images/PageGroups.001.jpg" width="480">
      <figcaption>A page may be part of several page groups.</figcaption>
     </figure>
-     Note that page 5 can be selected in three ways: 
+     Note that page 5 can be selected in three ways:
 <pre>@page :nth(5 of A) /* will select 5th page of every &lt;div> */
 @page :nth(1 of B) /* will select first page of every &lt;child> */
 @page :nth(5)   /* will select 5th page of document */
 </pre>
    </div>
    <div class="example" id="example-70adc1c6">
-    <a class="self-link" href="#example-70adc1c6"></a> 
+    <a class="self-link" href="#example-70adc1c6"></a>
     <p>Consider the following HTML:</p>
 <pre>&lt;div class="chapter">
 &lt;h1>Chapter One&lt;/h1>
@@ -921,7 +921,7 @@ page: broadside;
    <h2 class="no-num heading settled" id="ua-stylesheet"><span class="content">Appendix B: Default UA Stylesheet</span><a class="self-link" href="#ua-stylesheet"></a></h2>
    <p>This appendix is informative, and is to help UA developers to implement a default stylesheet for HTML, but UA developers are free to ignore or modify as appropriate. </p>
    <div class="example" id="example-0a0ebdaf">
-    <a class="self-link" href="#example-0a0ebdaf"></a> 
+    <a class="self-link" href="#example-0a0ebdaf"></a>
 <pre>@page {
   counter-reset: footnote;
   @footnote {
@@ -984,42 +984,42 @@ h6 { bookmark-level: 6 }
    </ul>
    <p>Changes since the <a href="https://www.w3.org/TR/2011/WD-css3-gcpm-20111129/">29 November 2011 Working Draft</a>:</p>
    <ul>
-    <li> Page Marks and Bleeds section moved to <a href="https://drafts.csswg.org/css-page/#marks">CSS Paged Media Module Level 3</a> 
-    <li> CMYK Colors section moved to <a href="https://drafts.csswg.org/css-color/#cmyk-colors">CSS Colors Level 4</a>. 
-    <li> Styling Blank Pages section deleted 
-    <li> Paged Presentations section moved to <a href="https://drafts.csswg.org/css-overflow-3/#paginated-overflow">CSS Overflow Module Level 3</a>. 
-    <li> Navigation Between Pages moved to <a href="http://books.spec.whatwg.org/#spatial-layout-of-pages;-@layout">WHATWG CSS Books</a> 
-    <li> Page floats section moved to <a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a> 
-    <li> First-page pseudo-element section deleted 
-    <li> Selecting Columns and Pages section deleted 
-    <li> env() function removed from string-set property 
-    <li> alignment values of leaders removed 
-    <li> leader specified to occupy only a single line 
-    <li> content() value of target-text changed to content(text) 
-    <li> target-pull() value of content property removed 
+    <li> Page Marks and Bleeds section moved to <a href="https://drafts.csswg.org/css-page/#marks">CSS Paged Media Module Level 3</a>
+    <li> CMYK Colors section moved to <a href="https://drafts.csswg.org/css-color/#cmyk-colors">CSS Colors Level 4</a>.
+    <li> Styling Blank Pages section deleted
+    <li> Paged Presentations section moved to <a href="https://drafts.csswg.org/css-overflow-3/#paginated-overflow">CSS Overflow Module Level 3</a>.
+    <li> Navigation Between Pages moved to <a href="http://books.spec.whatwg.org/#spatial-layout-of-pages;-@layout">WHATWG CSS Books</a>
+    <li> Page floats section moved to <a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a>
+    <li> First-page pseudo-element section deleted
+    <li> Selecting Columns and Pages section deleted
+    <li> env() function removed from string-set property
+    <li> alignment values of leaders removed
+    <li> leader specified to occupy only a single line
+    <li> content() value of target-text changed to content(text)
+    <li> target-pull() value of content property removed
    </ul>
    <p>Differences with the <a href="http://books.spec.whatwg.org/">WHATWG CSS Books</a> specification:</p>
    <ul>
     <li>Added <span class="css">attr(&lt;identifier>)</span> value to <a class="property" data-link-type="propdesc" href="#propdef-string-set" id="ref-for-propdef-string-set③">string-set</a> property. This is supported by both Prince and AntennaHouse.
     <li> <a href="http://books.spec.whatwg.org/">CSS Books</a> does not have the <a href="#propdef-footnote-display" id="ref-for-propdef-footnote-display②">footnote-display</a> property.
     <li> <a href="http://books.spec.whatwg.org/">CSS Books</a> does not have the <a href="#footnote-policy">footnote-policy</a> property.
-    <li> The relationship between the <code>nth()</code> page pseudo-class and the page-group concept is clarified, which may make the page-group property redundant. 
-    <li> This specification does not redefine the <code>:first</code> page pseudo-selector to select the first page of a page-group. 
+    <li> The relationship between the <code>nth()</code> page pseudo-class and the page-group concept is clarified, which may make the page-group property redundant.
+    <li> This specification does not redefine the <code>:first</code> page pseudo-selector to select the first page of a page-group.
     <li>
-      This specification does not consider: 
+      This specification does not consider:
      <ol>
-      <li> Named areas 
-      <li> Selecting elements within pages 
-      <li> The <code>range()</code> page pseudo-class 
-      <li> Selecting columns 
-      <li> Baseline rhythms 
-      <li> Extending the box model 
-      <li> Character substitution 
-      <li> Microtypography 
+      <li> Named areas
+      <li> Selecting elements within pages
+      <li> The <code>range()</code> page pseudo-class
+      <li> Selecting columns
+      <li> Baseline rhythms
+      <li> Extending the box model
+      <li> Character substitution
+      <li> Microtypography
      </ol>
    </ul>
    <h2 class="no-num heading settled" id="acknowledgments"><span class="content"> Acknowledgments </span><a class="self-link" href="#acknowledgments"></a></h2>
-    This work would not be possible without the immense contributions of Håkon Wium Lie. 
+    This work would not be possible without the immense contributions of Håkon Wium Lie.
    <p>Chris Lilley, Elika J. Etemad, Alan Stearns, L. David Baron, Bert Bos, Florian Rivoal, [$your_name, ", " ]+ and Liam Quin have provided valuable feedback.</p>
   </main>
   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -1037,7 +1037,7 @@ h6 { bookmark-level: 6 }
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1050,14 +1050,14 @@ h6 { bookmark-level: 6 }
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1108,7 +1108,7 @@ h6 { bookmark-level: 6 }
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1146,83 +1146,83 @@ h6 { bookmark-level: 6 }
   <aside class="dfn-panel" data-for="term-for-propdef-position">
    <a href="https://drafts.csswg.org/css-position-3/#propdef-position">https://drafts.csswg.org/css-position-3/#propdef-position</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-position">1.2.1. 
+    <li><a href="#ref-for-propdef-position">1.2.1.
 The running() value </a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-zero-plus">
    <a href="https://drafts.csswg.org/css-values-4/#mult-zero-plus">https://drafts.csswg.org/css-values-4/#mult-zero-plus</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-zero-plus">1.1.1. 
+    <li><a href="#ref-for-mult-zero-plus">1.1.1.
 	The string-set property </a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-one-plus">
    <a href="https://drafts.csswg.org/css-values-4/#mult-one-plus">https://drafts.csswg.org/css-values-4/#mult-one-plus</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-one-plus">1.1.1. 
+    <li><a href="#ref-for-mult-one-plus">1.1.1.
 	The string-set property </a>
-    <li><a href="#ref-for-mult-one-plus①">3.1. 
+    <li><a href="#ref-for-mult-one-plus①">3.1.
 Page Selectors </a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-comma">
    <a href="https://drafts.csswg.org/css-values-4/#comb-comma">https://drafts.csswg.org/css-values-4/#comb-comma</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-comma">1.1.1. 
+    <li><a href="#ref-for-comb-comma">1.1.1.
 	The string-set property </a>
-    <li><a href="#ref-for-comb-comma①">1.1.2. 
+    <li><a href="#ref-for-comb-comma①">1.1.2.
 	The string() function </a>
-    <li><a href="#ref-for-comb-comma②">1.2.2. 
+    <li><a href="#ref-for-comb-comma②">1.2.2.
 The element() value </a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-identifier-value">
    <a href="https://drafts.csswg.org/css-values-4/#identifier-value">https://drafts.csswg.org/css-values-4/#identifier-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-identifier-value">1.1.1. 
+    <li><a href="#ref-for-identifier-value">1.1.1.
 	The string-set property </a> <a href="#ref-for-identifier-value①">(2)</a>
-    <li><a href="#ref-for-identifier-value②">1.1.2. 
+    <li><a href="#ref-for-identifier-value②">1.1.2.
 	The string() function </a>
-    <li><a href="#ref-for-identifier-value③">1.2.1. 
+    <li><a href="#ref-for-identifier-value③">1.2.1.
 The running() value </a> <a href="#ref-for-identifier-value④">(2)</a>
-    <li><a href="#ref-for-identifier-value⑤">1.2.2. 
+    <li><a href="#ref-for-identifier-value⑤">1.2.2.
 The element() value </a>
-    <li><a href="#ref-for-identifier-value⑥">3.1. 
+    <li><a href="#ref-for-identifier-value⑥">3.1.
 Page Selectors </a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-opt">
    <a href="https://drafts.csswg.org/css-values-4/#mult-opt">https://drafts.csswg.org/css-values-4/#mult-opt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-opt">1.1.2. 
+    <li><a href="#ref-for-mult-opt">1.1.2.
 	The string() function </a>
-    <li><a href="#ref-for-mult-opt①">1.2.2. 
+    <li><a href="#ref-for-mult-opt①">1.2.2.
 The element() value </a>
-    <li><a href="#ref-for-mult-opt②">3.1. 
+    <li><a href="#ref-for-mult-opt②">3.1.
 Page Selectors </a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">1.1.1. 
+    <li><a href="#ref-for-comb-one">1.1.1.
 	The string-set property </a> <a href="#ref-for-comb-one①">(2)</a> <a href="#ref-for-comb-one②">(3)</a> <a href="#ref-for-comb-one③">(4)</a> <a href="#ref-for-comb-one④">(5)</a>
     <li><a href="#ref-for-comb-one⑤">1.1.1.1. The content() function</a> <a href="#ref-for-comb-one⑥">(2)</a> <a href="#ref-for-comb-one⑦">(3)</a>
-    <li><a href="#ref-for-comb-one⑧">1.1.2. 
+    <li><a href="#ref-for-comb-one⑧">1.1.2.
 	The string() function </a> <a href="#ref-for-comb-one⑨">(2)</a> <a href="#ref-for-comb-one①⓪">(3)</a>
-    <li><a href="#ref-for-comb-one①①">1.2.2. 
+    <li><a href="#ref-for-comb-one①①">1.2.2.
 The element() value </a> <a href="#ref-for-comb-one①②">(2)</a> <a href="#ref-for-comb-one①③">(3)</a>
-    <li><a href="#ref-for-comb-one①④">2.3. 
+    <li><a href="#ref-for-comb-one①④">2.3.
 	Types of footnotes </a> <a href="#ref-for-comb-one①⑤">(2)</a>
-    <li><a href="#ref-for-comb-one①⑥">2.8. 
+    <li><a href="#ref-for-comb-one①⑥">2.8.
 Rendering footnotes and footnote policy </a> <a href="#ref-for-comb-one①⑦">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-float">
    <a href="https://drafts.csswg.org/css2/visuren.html#propdef-float">https://drafts.csswg.org/css2/visuren.html#propdef-float</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-float">2.3. 
+    <li><a href="#ref-for-propdef-float">2.3.
 	Types of footnotes </a> <a href="#ref-for-propdef-float①">(2)</a>
    </ul>
   </aside>
@@ -1235,7 +1235,7 @@ Rendering footnotes and footnote policy </a> <a href="#ref-for-comb-one①⑦">(
   <aside class="dfn-panel" data-for="term-for-typedef-content-content-list">
    <a href="https://drafts.csswg.org/css-content-3/#typedef-content-content-list">https://drafts.csswg.org/css-content-3/#typedef-content-content-list</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-content-content-list">1.1.1. 
+    <li><a href="#ref-for-typedef-content-content-list">1.1.1.
 	The string-set property </a> <a href="#ref-for-typedef-content-content-list①">(2)</a>
    </ul>
   </aside>
@@ -1254,16 +1254,16 @@ Rendering footnotes and footnote policy </a> <a href="#ref-for-comb-one①⑦">(
   <aside class="dfn-panel" data-for="term-for-propdef-content">
    <a href="https://drafts.csswg.org/css-content-3/#propdef-content">https://drafts.csswg.org/css-content-3/#propdef-content</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-content">1.1.2. 
+    <li><a href="#ref-for-propdef-content">1.1.2.
 	The string() function </a>
-    <li><a href="#ref-for-propdef-content①">1.2.2. 
+    <li><a href="#ref-for-propdef-content①">1.2.2.
 The element() value </a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-page">
    <a href="https://drafts.csswg.org/css-page-3/#propdef-page">https://drafts.csswg.org/css-page-3/#propdef-page</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-page">3.2. 
+    <li><a href="#ref-for-propdef-page">3.2.
 Page groups </a>
    </ul>
   </aside>
@@ -1462,9 +1462,9 @@ letter-spacing: 1pt;
   <aside class="dfn-panel" data-for="propdef-string-set">
    <b><a href="#propdef-string-set">#propdef-string-set</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-string-set">1.1. 
+    <li><a href="#ref-for-propdef-string-set">1.1.
 	Named strings </a>
-    <li><a href="#ref-for-propdef-string-set①">1.1.1. 
+    <li><a href="#ref-for-propdef-string-set①">1.1.1.
 	The string-set property </a>
     <li><a href="#ref-for-propdef-string-set②">Appendix C: Changes</a> <a href="#ref-for-propdef-string-set③">(2)</a>
    </ul>
@@ -1472,7 +1472,7 @@ letter-spacing: 1pt;
   <aside class="dfn-panel" data-for="funcdef-content">
    <b><a href="#funcdef-content">#funcdef-content</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-content">1.1.1. 
+    <li><a href="#ref-for-funcdef-content">1.1.1.
 	The string-set property </a>
     <li><a href="#ref-for-funcdef-content①">1.1.1.1. The content() function</a>
    </ul>
@@ -1480,41 +1480,41 @@ letter-spacing: 1pt;
   <aside class="dfn-panel" data-for="funcdef-string">
    <b><a href="#funcdef-string">#funcdef-string</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-string">1.1. 
+    <li><a href="#ref-for-funcdef-string">1.1.
 	Named strings </a> <a href="#ref-for-funcdef-string①">(2)</a>
     <li><a href="#ref-for-funcdef-string②">1.1.1.1. The content() function</a>
-    <li><a href="#ref-for-funcdef-string③">1.1.2. 
+    <li><a href="#ref-for-funcdef-string③">1.1.2.
 	The string() function </a> <a href="#ref-for-funcdef-string④">(2)</a> <a href="#ref-for-funcdef-string⑤">(3)</a>
-    <li><a href="#ref-for-funcdef-string⑥">1.2.2. 
+    <li><a href="#ref-for-funcdef-string⑥">1.2.2.
 The element() value </a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="funcdef-running">
    <b><a href="#funcdef-running">#funcdef-running</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-running">1.2. 
+    <li><a href="#ref-for-funcdef-running">1.2.
 	Running elements </a>
-    <li><a href="#ref-for-funcdef-running①">1.2.1. 
+    <li><a href="#ref-for-funcdef-running①">1.2.1.
 The running() value </a>
-    <li><a href="#ref-for-funcdef-running②">1.2.2. 
+    <li><a href="#ref-for-funcdef-running②">1.2.2.
 The element() value </a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="funcdef-element">
    <b><a href="#funcdef-element">#funcdef-element</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-element">1.2. 
+    <li><a href="#ref-for-funcdef-element">1.2.
 	Running elements </a>
-    <li><a href="#ref-for-funcdef-element①">1.2.1. 
+    <li><a href="#ref-for-funcdef-element①">1.2.1.
 The running() value </a>
-    <li><a href="#ref-for-funcdef-element②">1.2.2. 
+    <li><a href="#ref-for-funcdef-element②">1.2.2.
 The element() value </a> <a href="#ref-for-funcdef-element③">(2)</a> <a href="#ref-for-funcdef-element④">(3)</a> <a href="#ref-for-funcdef-element⑤">(4)</a> <a href="#ref-for-funcdef-element⑥">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-footnote-display">
    <b><a href="#propdef-footnote-display">#propdef-footnote-display</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-footnote-display">2.3. 
+    <li><a href="#ref-for-propdef-footnote-display">2.3.
 	Types of footnotes </a>
     <li><a href="#ref-for-propdef-footnote-display①">Appendix C: Changes</a> <a href="#ref-for-propdef-footnote-display">(2)</a>
    </ul>
@@ -1522,7 +1522,7 @@ The element() value </a> <a href="#ref-for-funcdef-element③">(2)</a> <a href="
   <aside class="dfn-panel" data-for="propdef-footnote-policy">
    <b><a href="#propdef-footnote-policy">#propdef-footnote-policy</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-footnote-policy">2.8. 
+    <li><a href="#ref-for-propdef-footnote-policy">2.8.
 Rendering footnotes and footnote policy </a>
     <li><a href="#ref-for-propdef-footnote-policy①">Appendix C: Changes</a>
    </ul>
@@ -1530,70 +1530,78 @@ Rendering footnotes and footnote policy </a>
   <aside class="dfn-panel" data-for="footnote-policy-line">
    <b><a href="#footnote-policy-line">#footnote-policy-line</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-footnote-policy-line">2.8. 
+    <li><a href="#ref-for-footnote-policy-line">2.8.
 Rendering footnotes and footnote policy </a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="funcdef-nth">
    <b><a href="#funcdef-nth">#funcdef-nth</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-nth">3.1. 
+    <li><a href="#ref-for-funcdef-nth">3.1.
 Page Selectors </a> <a href="#ref-for-funcdef-nth①">(2)</a> <a href="#ref-for-funcdef-nth②">(3)</a> <a href="#ref-for-funcdef-nth③">(4)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

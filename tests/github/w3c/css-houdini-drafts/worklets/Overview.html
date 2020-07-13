@@ -491,7 +491,7 @@ defined callbacks, and <a data-link-type="dfn" href="https://html.spec.whatwg.or
     while <a data-link-type="dfn" href="http://heycam.github.io/webidl/#es-invoking-callback-functions" id="ref-for-es-invoking-callback-functions">invoking callback functions</a> provided by the author.</p>
    <h4 class="heading settled" data-level="2.1.2" id="creating-a-workletglobalscope"><span class="secno">2.1.2. </span><span class="content">Creating a WorkletGlobalScope</span><a class="self-link" href="#creating-a-workletglobalscope"></a></h4>
    <div class="algorithm" data-algorithm="create a WorkletGlobalScope">
-     When a user agent is to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="create-a-workletglobalscope">create a WorkletGlobalScope</dfn>, given <var>workletGlobalScopeType</var>, <var>moduleResponsesMap</var>, and <var>outsideSettings</var>, it <em>must</em> run the following steps: 
+     When a user agent is to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="create-a-workletglobalscope">create a WorkletGlobalScope</dfn>, given <var>workletGlobalScopeType</var>, <var>moduleResponsesMap</var>, and <var>outsideSettings</var>, it <em>must</em> run the following steps:
     <ol>
      <li data-md>
       <p>Create the <a data-link-type="dfn" href="#worklet-global-scope-execution-environment" id="ref-for-worklet-global-scope-execution-environment①">worklet global scope execution environment</a> and run the rest of these steps
@@ -535,7 +535,7 @@ it asynchronously completes.</p>
    </div>
    <h4 class="heading settled" data-level="2.1.3" id="script-settings-for-worklets"><span class="secno">2.1.3. </span><span class="content">Script settings for worklets</span><a class="self-link" href="#script-settings-for-worklets"></a></h4>
    <div class="algorithm" data-algorithm="set up a worklet environment settings object">
-     When a user agent is to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="set-up-a-worklet-environment-settings-object">set up a worklet environment settings object</dfn>, given a <var>executionContext</var>, and <var>outsideSettings</var>, it must run the following steps: 
+     When a user agent is to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="set-up-a-worklet-environment-settings-object">set up a worklet environment settings object</dfn>, given a <var>executionContext</var>, and <var>outsideSettings</var>, it must run the following steps:
     <ol>
      <li data-md>
       <p>Let <var>inheritedResponsibleBrowsingContext</var> be <var>outsideSettings</var>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#responsible-browsing-context" id="ref-for-responsible-browsing-context">responsible browsing
@@ -624,7 +624,7 @@ additional <code class="idl"><a data-link-type="idl" href="#workletglobalscope" 
      Practically user agents aren’t expected to implement the following algorithm using a
     thread-safe map. Instead when <code class="idl"><a data-link-type="idl" href="#dom-worklet-addmodule" id="ref-for-dom-worklet-addmodule②">addModule()</a></code> is called user agents can fetch the module
     graph on the main thread, and send the fetched sources (the data contained in the <a data-link-type="dfn" href="#module-responses-map" id="ref-for-module-responses-map②">module
-    responses map</a>) to each thread which has a <code class="idl"><a data-link-type="idl" href="#workletglobalscope" id="ref-for-workletglobalscope①⑧">WorkletGlobalScope</a></code>. 
+    responses map</a>) to each thread which has a <code class="idl"><a data-link-type="idl" href="#workletglobalscope" id="ref-for-workletglobalscope①⑧">WorkletGlobalScope</a></code>.
     <p>If the user agent wishes to create a new <code class="idl"><a data-link-type="idl" href="#workletglobalscope" id="ref-for-workletglobalscope①⑨">WorkletGlobalScope</a></code> it can simply sent the list of
     all fetched sources from the main thread to the thread which owns the <code class="idl"><a data-link-type="idl" href="#workletglobalscope" id="ref-for-workletglobalscope②⓪">WorkletGlobalScope</a></code>.</p>
    </div>
@@ -633,9 +633,9 @@ additional <code class="idl"><a data-link-type="idl" href="#workletglobalscope" 
     <li data-md>
      <p>A <dfn class="dfn-paneled" data-dfn-for="pending tasks struct" data-dfn-type="dfn" data-noexport id="pending-tasks-struct-counter">counter</dfn>.</p>
    </ul>
-   This is used by the algorithms below. 
+   This is used by the algorithms below.
    <div class="algorithm" data-algorithm="addModule(moduleURL, options)" data-algorithm-for="Worklet">
-     When the <dfn class="dfn-paneled idl-code" data-dfn-for="Worklet" data-dfn-type="method" data-export data-lt="addModule(moduleURL, options)|addModule(moduleURL)" id="dom-worklet-addmodule"><code>addModule(<var>moduleURL</var>, <var>options</var>)</code></dfn> method is called on a <code class="idl"><a data-link-type="idl" href="#worklet" id="ref-for-worklet⑦">Worklet</a></code> object, the user agent <em>must</em> run the following steps: 
+     When the <dfn class="dfn-paneled idl-code" data-dfn-for="Worklet" data-dfn-type="method" data-export data-lt="addModule(moduleURL, options)|addModule(moduleURL)" id="dom-worklet-addmodule"><code>addModule(<var>moduleURL</var>, <var>options</var>)</code></dfn> method is called on a <code class="idl"><a data-link-type="idl" href="#worklet" id="ref-for-worklet⑦">Worklet</a></code> object, the user agent <em>must</em> run the following steps:
     <ol>
      <li data-md>
       <p>Let <var>promise</var> be <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guide/#a-new-promise" id="ref-for-a-new-promise">a new promise</a>.</p>
@@ -678,7 +678,7 @@ task</a> on the <var>workletGlobalScope</var> to <a data-link-type="dfn" href="#
         worklet script</a> algorithm.</p>
    </div>
    <div class="algorithm" data-algorithm="fetch and invoke a worklet script">
-     When the user agent is to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="fetch-and-invoke-a-worklet-script">fetch and invoke a worklet script</dfn> given <var>workletGlobalScope</var>, <var>moduleURLRecord</var>, <var>moduleResponsesMap</var>, <var>credentialOptions</var>, <var>outsideSettings</var>, <var>pendingTaskStruct</var>, and <var>promise</var>, the user agent <em>must</em> run the following steps: 
+     When the user agent is to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="fetch-and-invoke-a-worklet-script">fetch and invoke a worklet script</dfn> given <var>workletGlobalScope</var>, <var>moduleURLRecord</var>, <var>moduleResponsesMap</var>, <var>credentialOptions</var>, <var>outsideSettings</var>, <var>pendingTaskStruct</var>, and <var>promise</var>, the user agent <em>must</em> run the following steps:
     <p class="note" role="note"><span>Note:</span> This algorithm is to be run within the <a data-link-type="dfn" href="#worklet-global-scope-execution-environment" id="ref-for-worklet-global-scope-execution-environment②">worklet global scope execution environment</a>.</p>
     <ol>
      <li data-md>
@@ -733,7 +733,7 @@ resolve <var>promise</var>.</p>
     </ol>
    </div>
    <div class="algorithm" data-algorithm="fetch a worklet script">
-     When the user agent is to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="fetch-a-worklet-script">fetch a worklet script</dfn> given <var>moduleURLRecord</var>, <var>moduleResponsesMap</var>, <var>credentialOptions</var>, <var>outsideSettings</var>, and <var>insideSettings</var>, the user agent <em>must</em> run the following steps: 
+     When the user agent is to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="fetch-a-worklet-script">fetch a worklet script</dfn> given <var>moduleURLRecord</var>, <var>moduleResponsesMap</var>, <var>credentialOptions</var>, <var>outsideSettings</var>, and <var>insideSettings</var>, the user agent <em>must</em> run the following steps:
     <p class="note" role="note"><span>Note:</span> This algorithm is to be run within the <a data-link-type="dfn" href="#worklet-global-scope-execution-environment" id="ref-for-worklet-global-scope-execution-environment③">worklet global scope execution environment</a>.</p>
     <ol>
      <li data-md>
@@ -767,7 +767,7 @@ asynchronously complete this algorithm with <var>response</var>.</p>
     promise. If the script throws an error while first evaluating the promise it will resolve as a
     classes may have been registered correctly.</p>
     <div class="example" id="example-98c1bf68">
-     <a class="self-link" href="#example-98c1bf68"></a> When an author adds code into a <code class="idl"><a data-link-type="idl" href="#worklet" id="ref-for-worklet⑨">Worklet</a></code> the code may run against multiple <code class="idl"><a data-link-type="idl" href="#workletglobalscope" id="ref-for-workletglobalscope②③">WorkletGlobalScope</a></code>s, for example: 
+     <a class="self-link" href="#example-98c1bf68"></a> When an author adds code into a <code class="idl"><a data-link-type="idl" href="#worklet" id="ref-for-worklet⑨">Worklet</a></code> the code may run against multiple <code class="idl"><a data-link-type="idl" href="#workletglobalscope" id="ref-for-workletglobalscope②③">WorkletGlobalScope</a></code>s, for example:
 <pre class="lang-javascript highlight"><c- c1>// script.js</c->
 console<c- p>.</c->log<c- p>(</c-><c- t>'Hello from a WorkletGlobalScope!'</c-><c- p>);</c->
 </pre>
@@ -799,7 +799,7 @@ loops and callbacks exceeding imposed time limits.</p>
    <p><em>This section is not normative.</em></p>
    <p>For these examples we’ll use a fake worklet on window.</p>
    <div class="example" id="example-404ba410">
-    <a class="self-link" href="#example-404ba410"></a> 
+    <a class="self-link" href="#example-404ba410"></a>
 <pre class="idl highlight def"><c- b>partial</c-> <c- b>interface</c-> <c- g>Window</c-> {
   [<c- g>SameObject</c->] <c- b>readonly</c-> <c- b>attribute</c-> <c- n>Worklet</c-> <c- g>fakeWorklet1</c->;
   [<c- g>SameObject</c->] <c- b>readonly</c-> <c- b>attribute</c-> <c- n>Worklet</c-> <c- g>fakeWorklet2</c->;
@@ -872,7 +872,7 @@ Arguments=["true"]).</p>
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example.</p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -885,14 +885,14 @@ Arguments=["true"]).</p>
   <p>Conformance to this specification
     is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#style-sheet">CSS
-            style sheet</a>. 
-   <dt>renderer 
+            style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-            documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that writes a style sheet. 
+            documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
     if all of its statements that use syntax defined in this module are valid
@@ -939,7 +939,7 @@ Arguments=["true"]).</p>
   <p>
    Further information on submitting testcases and implementation reports
     can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-    Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+    Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1521,58 +1521,66 @@ Arguments=["true"]).</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

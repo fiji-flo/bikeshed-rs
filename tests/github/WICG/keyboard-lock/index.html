@@ -380,7 +380,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div id="navigator-idl">
     <div class="algorithm" data-algorithm="navigator-keyboard">
      <h4 class="heading settled" data-level="2.1.1" id="h-navigator-keyboard"><span class="secno">2.1.1. </span><span class="content"><dfn class="dfn-paneled" data-dfn-for="Navigator" data-dfn-type="dfn" data-noexport id="navigator-keyboard">keyboard</dfn></span><a class="self-link" href="#h-navigator-keyboard"></a></h4>
-      The <a data-link-type="dfn" href="#navigator-keyboard" id="ref-for-navigator-keyboard">keyboard</a> attribute must return the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#navigator" id="ref-for-navigator①">Navigator</a></code>'s <code class="idl"><a data-link-type="idl" href="#keyboard" id="ref-for-keyboard①">Keyboard</a></code> object. 
+      The <a data-link-type="dfn" href="#navigator-keyboard" id="ref-for-navigator-keyboard">keyboard</a> attribute must return the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#navigator" id="ref-for-navigator①">Navigator</a></code>'s <code class="idl"><a data-link-type="idl" href="#keyboard" id="ref-for-keyboard①">Keyboard</a></code> object.
     </div>
    </div>
    <p class="note" role="note"><span>Note:</span> The <a data-link-type="dfn" href="#navigator-keyboard" id="ref-for-navigator-keyboard①">keyboard</a> object is also defined in the <a href="https://wicg.github.io/keyboard-map/#navigator-interface">Keyboard Map</a> specification. These two definitions will be reconciled once we decide on a final
@@ -467,13 +467,13 @@ substeps:</p>
 			If a second call to <code class="idl"><a data-link-type="idl" href="#dom-keyboard-lock" id="ref-for-dom-keyboard-lock③">lock()</a></code> is made before the first one has finished,
 			then the first one will be rejected with "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#aborterror" id="ref-for-aborterror①">AbortError</a></code>".</p>
      <div class="example" id="example-3c1370ba">
-      <a class="self-link" href="#example-3c1370ba"></a> To capture all keys, simply call <code class="idl"><a data-link-type="idl" href="#dom-keyboard-lock" id="ref-for-dom-keyboard-lock④">lock()</a></code> with no arguments: 
+      <a class="self-link" href="#example-3c1370ba"></a> To capture all keys, simply call <code class="idl"><a data-link-type="idl" href="#dom-keyboard-lock" id="ref-for-dom-keyboard-lock④">lock()</a></code> with no arguments:
 <pre>navigator.keyboard.lock();
 </pre>
      </div>
      <div class="example" id="example-5c32e45b">
       <a class="self-link" href="#example-5c32e45b"></a> To capture the "W", "A", "S", and "D" keys, call <code class="idl"><a data-link-type="idl" href="#dom-keyboard-lock" id="ref-for-dom-keyboard-lock⑤">lock()</a></code> with
-			a list that contains the <a data-link-type="dfn" href="http://www.w3.org/TR/uievents-code/#key-code-attribute-value" id="ref-for-key-code-attribute-value②">key code attribute value</a> for each of these keys: 
+			a list that contains the <a data-link-type="dfn" href="http://www.w3.org/TR/uievents-code/#key-code-attribute-value" id="ref-for-key-code-attribute-value②">key code attribute value</a> for each of these keys:
 <pre>navigator.keyboard.lock(["KeyW", "KeyA", "KeyS", "KeyD"]);
 </pre>
       <p>This will capture these keys regardless of which modifiers are used with the
@@ -483,7 +483,7 @@ substeps:</p>
      </div>
      <div class="example" id="example-025aab28">
       <a class="self-link" href="#example-025aab28"></a> Note that requesting a key is not a guarantee that all modified versions will
-			be made available to the app. As an example, consider <a data-link-type="dfn" href="http://www.w3.org/TR/uievents-code/#code-delete" id="ref-for-code-delete">Delete</a> 
+			be made available to the app. As an example, consider <a data-link-type="dfn" href="http://www.w3.org/TR/uievents-code/#code-delete" id="ref-for-code-delete">Delete</a>
 <pre>navigator.keyboard.lock(["Delete"]);
 </pre>
       <p>While this will make most Delete key presses available (e.g., Shift+Delete,
@@ -523,7 +523,7 @@ substeps:</p>
 		Keyboard Lock feature is intended to provide access to key
 		presses that are not normally made available to the browser (for
 		example, Cmd/Alt-Tab), most platforms will require a special handler
-		to be set up. 
+		to be set up.
    <p>The <a data-link-type="dfn" href="#system-key-press-handler" id="ref-for-system-key-press-handler">system key press handler</a> must have the following properties:</p>
    <ul>
     <li data-md>
@@ -703,7 +703,7 @@ navigator.keyboard.unlock();
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
    <div class="example" id="example-ae2b6bc0">
-    <a class="self-link" href="#example-ae2b6bc0"></a> 
+    <a class="self-link" href="#example-ae2b6bc0"></a>
     <p>This is an example of an informative example.</p>
    </div>
    <p>Informative notes begin with the word “Note” and are set apart from the
@@ -721,7 +721,7 @@ navigator.keyboard.unlock();
     are encouraged to optimize.</p>
   </div>
   <p id="back-to-top" role="navigation"><a href="#toc"><abbr title="Back to top">↑</abbr></a></p>
-  . 
+  .
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
@@ -1079,58 +1079,66 @@ navigator.keyboard.unlock();
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

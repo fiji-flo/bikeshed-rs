@@ -345,7 +345,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>Media Queries Level 4 describes the mechanism and syntax of media queries, media types, and media features. It extends and supersedes the features defined in Media Queries Level 3.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -497,7 +497,7 @@ on screen, on paper, etc.
 	For example, a document may use different style sheets for screen and for print.
 	In HTML, this can be written as:</p>
    <div class="example" id="example-f12a7f15">
-    <a class="self-link" href="#example-f12a7f15"></a> 
+    <a class="self-link" href="#example-f12a7f15"></a>
 <pre>&lt;link rel="stylesheet" type="text/css" media="screen" href="style.css">
 &lt;link rel="stylesheet" type="text/css" media="print" href="print.css">
 </pre>
@@ -506,7 +506,7 @@ on screen, on paper, etc.
 	adding the ability to query the value of individual features:</p>
    <div class="example" id="example-23ee34e2">
     <a class="self-link" href="#example-23ee34e2"></a> Inside a CSS style sheet,
-		one can declare that sections apply to certain <a data-link-type="dfn" href="#media-type" id="ref-for-media-type①">media types</a>: 
+		one can declare that sections apply to certain <a data-link-type="dfn" href="#media-type" id="ref-for-media-type①">media types</a>:
 <pre>@media screen {
   * { font-family: sans-serif }
 }
@@ -516,7 +516,7 @@ on screen, on paper, etc.
    </div>
    <p><a data-link-type="dfn" href="#media-query" id="ref-for-media-query①">Media queries</a> can be used with HTML, XHTML, XML <a data-link-type="biblio" href="#biblio-xmlstyle">[XMLSTYLE]</a> and the @import and @media rules of CSS.</p>
    <div class="example" id="example-6b55b8a3">
-    <a class="self-link" href="#example-6b55b8a3"></a> Here is the same example written in HTML, XHTML, XML, @import and @media: 
+    <a class="self-link" href="#example-6b55b8a3"></a> Here is the same example written in HTML, XHTML, XML, @import and @media:
 <pre>&lt;link media="screen and (color), projection and (color)"
       rel="stylesheet" href="example.css">
 
@@ -661,7 +661,7 @@ matches the media type of the device where the user agent is running, and</p>
 	Media queries that do not conform to the syntax are discussed in <a href="#error-handling">§ 3.2 Error Handling</a>.
 	I.e. the syntax takes precedence over requirements in this section.</p>
    <div class="example" id="example-724d1b7b">
-    <a class="self-link" href="#example-724d1b7b"></a> Here is a simple example written in HTML: 
+    <a class="self-link" href="#example-724d1b7b"></a> Here is a simple example written in HTML:
 <pre>&lt;link rel="stylesheet" media="screen and (color)" href="example.css" /></pre>
     <p>This example expresses that a certain style sheet
 		(<code>example.css</code>) applies to devices of a certain media type
@@ -719,13 +719,13 @@ matches the media type of the device where the user agent is running, and</p>
 	and false only if <em>all</em> of its component <span id="ref-for-media-query⑨">media queries</span> are false.</p>
    <div class="example" id="example-75a76747">
     <a class="self-link" href="#example-75a76747"></a> For example, the following <a data-link-type="dfn" href="#media-query-list" id="ref-for-media-query-list①">media query list</a> is true if either
-		the <a data-link-type="dfn" href="#media-type" id="ref-for-media-type④">media type</a> is <a class="css" data-link-type="maybe" href="#valdef-media-screen" id="ref-for-valdef-media-screen①">screen</a> and it’s a color device, <strong>or</strong> the <span id="ref-for-media-type⑤">media type</span> is <a class="css" data-link-type="maybe" href="#valdef-media-projection" id="ref-for-valdef-media-projection">projection</a> and it’s a color device: 
+		the <a data-link-type="dfn" href="#media-type" id="ref-for-media-type④">media type</a> is <a class="css" data-link-type="maybe" href="#valdef-media-screen" id="ref-for-valdef-media-screen①">screen</a> and it’s a color device, <strong>or</strong> the <span id="ref-for-media-type⑤">media type</span> is <a class="css" data-link-type="maybe" href="#valdef-media-projection" id="ref-for-valdef-media-projection">projection</a> and it’s a color device:
 <pre>@media screen and (color), projection and (color) { … }
 </pre>
    </div>
    <p>An empty <a data-link-type="dfn" href="#media-query-list" id="ref-for-media-query-list②">media query list</a> evaluates to true.</p>
    <div class="example" id="example-6f06ee45">
-    <a class="self-link" href="#example-6f06ee45"></a> For example, these are equivalent: 
+    <a class="self-link" href="#example-6f06ee45"></a> For example, these are equivalent:
 <pre>@media all { … }
 @media { … }
 </pre>
@@ -742,7 +742,7 @@ matches the media type of the device where the user agent is running, and</p>
    <div class="example" id="example-b5a260cd">
     <a class="self-link" href="#example-b5a260cd"></a> For example, the following will apply to everything except color-capable screens.
 		Note that the entire media query is negated,
-		not just the <a data-link-type="dfn" href="#media-type" id="ref-for-media-type⑥">media type</a>. 
+		not just the <a data-link-type="dfn" href="#media-type" id="ref-for-media-type⑥">media type</a>.
 <pre>&lt;link rel="stylesheet" media="not screen and (color)" href="example.css" /></pre>
    </div>
    <h4 class="heading settled" data-level="2.2.2" id="mq-only"><span class="secno">2.2.2. </span><span class="content"> Hiding a Media Query From Legacy User Agents: the <a class="css" data-link-type="maybe" href="#valdef-media-only" id="ref-for-valdef-media-only">only</a> keyword</span><a class="self-link" href="#mq-only"></a></h4>
@@ -766,7 +766,7 @@ matches the media type of the device where the user agent is running, and</p>
    <div class="example" id="example-88774f15">
     <a class="self-link" href="#example-88774f15"></a> In this example, the stylesheet specified by the <code>&lt;link></code> element
 		will not be used by legacy user agents,
-		even if they would normally match the <a class="css" data-link-type="maybe" href="#valdef-media-screen" id="ref-for-valdef-media-screen③">screen</a> <a data-link-type="dfn" href="#media-type" id="ref-for-media-type①①">media type</a>. 
+		even if they would normally match the <a class="css" data-link-type="maybe" href="#valdef-media-screen" id="ref-for-valdef-media-screen③">screen</a> <a data-link-type="dfn" href="#media-type" id="ref-for-media-type①①">media type</a>.
 <pre>&lt;link rel="stylesheet" media="only screen and (color)" href="example.css" /></pre>
    </div>
    <p class="note" role="note"><span>Note:</span> Note that the <a class="css" data-link-type="maybe" href="#valdef-media-only" id="ref-for-valdef-media-only②">only</a> keyword can only be used before a <a data-link-type="dfn" href="#media-type" id="ref-for-media-type①②">media type</a>.
@@ -793,16 +793,16 @@ matches the media type of the device where the user agent is running, and</p>
 	instead, their exclusive aspects are better expressed as <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature④">media features</a> such as <a class="property" data-link-type="propdesc" href="#descdef-media-grid" id="ref-for-descdef-media-grid">grid</a> or <a class="property" data-link-type="propdesc" href="#descdef-media-scan" id="ref-for-descdef-media-scan">scan</a>.</p>
    <p>As such, the following <a data-link-type="dfn" href="#media-type" id="ref-for-media-type①⑥">media types</a> are defined for use in <a data-link-type="dfn" href="#media-query" id="ref-for-media-query②③">media queries</a>:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-all">all</dfn> 
-    <dd>Matches all devices. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-print">print</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-all">all</dfn>
+    <dd>Matches all devices.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-print">print</dfn>
     <dd>Matches printers, and devices intended to reproduce a printed display,
-			such as a web browser showing a document in “Print Preview”. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-screen">screen</dfn> 
-    <dd>Matches all devices that aren’t matched by <a class="css" data-link-type="maybe" href="#valdef-media-print" id="ref-for-valdef-media-print">print</a> or <a class="css" data-link-type="maybe" href="#valdef-media-speech" id="ref-for-valdef-media-speech">speech</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-speech">speech</dfn> 
+			such as a web browser showing a document in “Print Preview”.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-screen">screen</dfn>
+    <dd>Matches all devices that aren’t matched by <a class="css" data-link-type="maybe" href="#valdef-media-print" id="ref-for-valdef-media-print">print</a> or <a class="css" data-link-type="maybe" href="#valdef-media-speech" id="ref-for-valdef-media-speech">speech</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-speech">speech</dfn>
     <dd>
-     Matches devices that similar devices that “read out” a page. 
+     Matches devices that similar devices that “read out” a page.
      <div class="note" role="note">Screen readers that produce a speech rendering based
 		on the the visual layout of the page are expected to match <a class="css" data-link-type="maybe" href="#valdef-media-screen" id="ref-for-valdef-media-screen⑤">screen</a> instead.
 		This media type is for user agents that produce
@@ -816,13 +816,13 @@ matches the media type of the device where the user agent is running, and</p>
    <p>User agents must recognize the following <a data-link-type="dfn" href="#media-type" id="ref-for-media-type①⑨">media types</a> as valid,
 	but must make them match nothing.</p>
    <ul>
-    <li><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-tty">tty</dfn> 
-    <li><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-tv">tv</dfn> 
-    <li><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-projection">projection</dfn> 
-    <li><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-handheld">handheld</dfn> 
-    <li><dfn class="css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-braille">braille<a class="self-link" href="#valdef-media-braille"></a></dfn> 
-    <li><dfn class="css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-embossed">embossed<a class="self-link" href="#valdef-media-embossed"></a></dfn> 
-    <li><dfn class="css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-aural">aural<a class="self-link" href="#valdef-media-aural"></a></dfn> 
+    <li><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-tty">tty</dfn>
+    <li><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-tv">tv</dfn>
+    <li><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-projection">projection</dfn>
+    <li><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-handheld">handheld</dfn>
+    <li><dfn class="css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-braille">braille<a class="self-link" href="#valdef-media-braille"></a></dfn>
+    <li><dfn class="css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-embossed">embossed<a class="self-link" href="#valdef-media-embossed"></a></dfn>
+    <li><dfn class="css" data-dfn-for="@media" data-dfn-type="value" data-export id="valdef-media-aural">aural<a class="self-link" href="#valdef-media-aural"></a></dfn>
    </ul>
    <p class="note" role="note"><span>Note:</span> It is expected that all of the media types will also be deprecated in time,
 	as appropriate <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature⑥">media features</a> are defined which capture their important differences.</p>
@@ -919,28 +919,28 @@ matches the media type of the device where the user agent is running, and</p>
    <p>There are, however, several important differences between properties and media features:</p>
    <ul>
     <li> Properties are used to give information about how to present a document.
-			Media features are used to describe requirements of the output device. 
+			Media features are used to describe requirements of the output device.
     <li> Media features are always wrapped in parentheses
 			and combined with the <span class="css">and</span> or <span class="css">or</span> keywords,
 			like <span class="css">(color) and (min-width: 600px)</span>,
-			rather than being separated with semicolons. 
+			rather than being separated with semicolons.
     <li> A media feature may be given with <em>only</em> its name
 			(omitting the colon and value)
 			to evaluate the feature in a <a data-link-type="dfn" href="#boolean-context" id="ref-for-boolean-context">boolean context</a>.
 			This is a convenient shorthand for features that have a reasonable value representing 0 or “none”.
-			For example, <span class="css">(color)</span> is true is the <a class="property" data-link-type="propdesc" href="#descdef-media-color" id="ref-for-descdef-media-color">color</a> <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature⑧">media feature</a> is non-zero. 
+			For example, <span class="css">(color)</span> is true is the <a class="property" data-link-type="propdesc" href="#descdef-media-color" id="ref-for-descdef-media-color">color</a> <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature⑧">media feature</a> is non-zero.
     <li> <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature⑨">Media features</a> with “range” type can be written in a <a data-link-type="dfn" href="#range-context" id="ref-for-range-context">range context</a>,
 			which uses standard mathematical comparison operators rather than a colon,
-			or have their feature names <a href="#mq-min-max">prefixed with “min-” or “max-”</a>. 
+			or have their feature names <a href="#mq-min-max">prefixed with “min-” or “max-”</a>.
     <li> Properties sometimes accept complex values,
-			e.g., calculations that involve several other values. <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature①⓪">Media features</a> only accept single values: one keyword, one number, etc. 
+			e.g., calculations that involve several other values. <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature①⓪">Media features</a> only accept single values: one keyword, one number, etc.
    </ul>
    <p>If a <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature①①">media feature</a> references a concept which does not exist on the device where the UA is running
 	(for example, speech UAs do not have a concept of “width”),
 	the <span id="ref-for-media-feature①②">media feature</span> must always evaluate to false.</p>
    <div class="example" id="example-b561f02b">
     <a class="self-link" href="#example-b561f02b"></a> The media feature <span class="css">device-aspect-ratio</span> only applies to
-		visual devices. On an <a class="css" data-link-type="maybe" href="#valdef-media-speech" id="ref-for-valdef-media-speech①">speech</a> device, expressions involving <span class="css">device-aspect-ratio</span> will therefore always be false: 
+		visual devices. On an <a class="css" data-link-type="maybe" href="#valdef-media-speech" id="ref-for-valdef-media-speech①">speech</a> device, expressions involving <span class="css">device-aspect-ratio</span> will therefore always be false:
 <pre>&lt;link media="speech and (device-aspect-ratio: 16/9)"
       rel="stylesheet" href="example.css">
 </pre>
@@ -960,7 +960,7 @@ matches the media type of the device where the user agent is running, and</p>
 	it matches when the feature is greater than/less than/equal to the given value.</p>
    <div class="example" id="example-772c034d">
     <a class="self-link" href="#example-772c034d"></a> A ''(width >= 600px)'' <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature①⑤">media feature</a> is true
-		when the viewport’s width is <span class="css">600px</span> <em>or more</em>. 
+		when the viewport’s width is <span class="css">600px</span> <em>or more</em>.
     <p>On the other hand, <span class="css">(width: 600px)</span> by itself is only true
 		when the viewport’s width is <em>exactly</em> <span class="css">600px</span>.
 		If it’s less or greater than <span class="css">600px</span>, it’ll be false.</p>
@@ -976,7 +976,7 @@ matches the media type of the device where the user agent is running, and</p>
 	the <span id="ref-for-media-feature①⑧">media feature</span> evaluates to true.
 	Otherwise, it evaluates to false.</p>
    <div class="example" id="example-f4e46a51">
-    <a class="self-link" href="#example-f4e46a51"></a> Some <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature①⑨">media features</a> are designed to be written like this. 
+    <a class="self-link" href="#example-f4e46a51"></a> Some <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature①⑨">media features</a> are designed to be written like this.
     <p>For example, <a class="property" data-link-type="propdesc" href="#descdef-media-update" id="ref-for-descdef-media-update">update</a> is typically written as <span class="css">(update)</span> to test if any kind of updating is available,
 		or <span class="css">not (update)</span> to check for the opposite.</p>
     <p>It can still be given an explicit value as well,
@@ -989,7 +989,7 @@ matches the media type of the device where the user agent is running, and</p>
 		Others, like <a class="property" data-link-type="propdesc" href="#descdef-media-color" id="ref-for-descdef-media-color①">color</a>, have meaningful zero values: <span class="css">(color)</span> is identical to <span class="css">(color > 0)</span>,
 		indicating that the device is capable of displaying color at all. </div>
    <div class="example" id="example-9591e2ed">
-    <a class="self-link" href="#example-9591e2ed"></a> Only some of the <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature②①">media features</a> that accept keywords are meaningful in a <a data-link-type="dfn" href="#boolean-context" id="ref-for-boolean-context②">boolean context</a>. 
+    <a class="self-link" href="#example-9591e2ed"></a> Only some of the <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature②①">media features</a> that accept keywords are meaningful in a <a data-link-type="dfn" href="#boolean-context" id="ref-for-boolean-context②">boolean context</a>.
     <p>For example, <span class="css">(pointer)</span> is useful,
 		as <a class="property" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer②">pointer</a> has a <a class="css" data-link-type="maybe" href="#valdef-media-pointer-none" id="ref-for-valdef-media-pointer-none">none</a> value to indicate there’s no pointing device at all on the device.
 		On the other hand, <span class="css">(scan)</span> is just always true or always false
@@ -1254,7 +1254,7 @@ matches the media type of the device where the user agent is running, and</p>
 	Similarly, for any visual device, the <a class="property" data-link-type="propdesc" href="#descdef-media-width" id="ref-for-descdef-media-width②">width</a> of the targeted display area is known to be greater than <span class="css">-200px</span> The above rule reflects that,
 	making intuition match what UAs do.</p>
    <div class="example" id="example-d3333f79">
-    <a class="self-link" href="#example-d3333f79"></a> The following examples result in a green background on all visual devices: 
+    <a class="self-link" href="#example-d3333f79"></a> The following examples result in a green background on all visual devices:
 <pre><code class="lang-css highlight"><c- n>@media</c-> not <c- p>(</c->width <c- f>&lt;= -100px) </c-><c- p>{</c->
   body { background: green; }
 }
@@ -1285,9 +1285,9 @@ matches the media type of the device where the user agent is running, and</p>
 	as follows:</p>
    <ul>
     <li> Using a “min-” prefix on a feature name is equivalent to using the “>=” operator.
-			For example, <span class="css">(min-height: 600px)</span> is equivalent to ''(height >= 600px)''. 
+			For example, <span class="css">(min-height: 600px)</span> is equivalent to ''(height >= 600px)''.
     <li> Using a “max-” prefix on a feature name is equivalent to using the “&lt;=” operator.
-			For example, <span class="css">(max-width: 40em)</span> is equivalent to ''(width &lt;= 40em)''. 
+			For example, <span class="css">(max-width: 40em)</span> is equivalent to ''(width &lt;= 40em)''.
    </ul>
    <p class="note" role="note"><span>Note:</span> because “min-” and “max-” both equate to range comparisons that <strong>include</strong> the value,
 	they may be limiting in certain situations.</p>
@@ -1296,7 +1296,7 @@ matches the media type of the device where the user agent is running, and</p>
 		authors trying to define different styles based on a breakpoint in the viewport width using “min-” and “max-”
 		would generally offset the values they’re comparing,
 		to ensure that both queries don’t evaluate to true simultaneously.
-		Assuming the breakpoint is at 320px, authors would conceptually use: 
+		Assuming the breakpoint is at 320px, authors would conceptually use:
 <pre>@media (max-width: 320px) { /* styles for viewports &lt;= 320px */ }
 @media (min-width: 321px) { /* styles for viewports >= 321px */ }
 </pre>
@@ -1410,31 +1410,31 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
    <h3 class="heading settled" data-level="3.1" id="evaluating"><span class="secno">3.1. </span><span class="content">Evaluating Media Queries</span><a class="self-link" href="#evaluating"></a></h3>
    <p>Each of the major subexpression of <a class="production css" data-link-type="type" href="#typedef-media-condition" id="ref-for-typedef-media-condition②">&lt;media-condition></a> or <a class="production css" data-link-type="type" href="#typedef-media-condition-without-or" id="ref-for-typedef-media-condition-without-or①">&lt;media-condition-without-or></a> is associated with a boolean result, as follows:</p>
    <dl>
-    <dt><a class="production css" data-link-type="type" href="#typedef-media-condition" id="ref-for-typedef-media-condition③">&lt;media-condition></a> 
-    <dt><a class="production css" data-link-type="type" href="#typedef-media-condition-without-or" id="ref-for-typedef-media-condition-without-or②">&lt;media-condition-without-or></a> 
-    <dd> The result is the result of the child subexpression. 
-    <dt><a class="production css" data-link-type="type" href="#typedef-media-in-parens" id="ref-for-typedef-media-in-parens⑥">&lt;media-in-parens></a> 
-    <dd> The result is the result of the child term. 
-    <dt><a class="production css" data-link-type="type" href="#typedef-media-not" id="ref-for-typedef-media-not②">&lt;media-not></a> 
+    <dt><a class="production css" data-link-type="type" href="#typedef-media-condition" id="ref-for-typedef-media-condition③">&lt;media-condition></a>
+    <dt><a class="production css" data-link-type="type" href="#typedef-media-condition-without-or" id="ref-for-typedef-media-condition-without-or②">&lt;media-condition-without-or></a>
+    <dd> The result is the result of the child subexpression.
+    <dt><a class="production css" data-link-type="type" href="#typedef-media-in-parens" id="ref-for-typedef-media-in-parens⑥">&lt;media-in-parens></a>
+    <dd> The result is the result of the child term.
+    <dt><a class="production css" data-link-type="type" href="#typedef-media-not" id="ref-for-typedef-media-not②">&lt;media-not></a>
     <dd> The result is the negation of the <a class="production css" data-link-type="type" href="#typedef-media-in-parens" id="ref-for-typedef-media-in-parens⑦">&lt;media-in-parens></a> term.
-			The negation of unknown is unknown. 
-    <dt><a class="production css" data-link-type="type" href="#typedef-media-in-parens" id="ref-for-typedef-media-in-parens⑧">&lt;media-in-parens></a> <a class="production css" data-link-type="type" href="#typedef-media-and" id="ref-for-typedef-media-and②">&lt;media-and></a>* 
+			The negation of unknown is unknown.
+    <dt><a class="production css" data-link-type="type" href="#typedef-media-in-parens" id="ref-for-typedef-media-in-parens⑧">&lt;media-in-parens></a> <a class="production css" data-link-type="type" href="#typedef-media-and" id="ref-for-typedef-media-and②">&lt;media-and></a>*
     <dd> The result is true if the <a class="production css" data-link-type="type" href="#typedef-media-in-parens" id="ref-for-typedef-media-in-parens⑨">&lt;media-in-parens></a> child term
 			and all of the <span class="production" id="ref-for-typedef-media-in-parens①⓪">&lt;media-in-parens></span> children of the <a class="production css" data-link-type="type" href="#typedef-media-and" id="ref-for-typedef-media-and③">&lt;media-and></a> child terms are true,
 			false if at least one of these <span class="production" id="ref-for-typedef-media-in-parens①①">&lt;media-in-parens></span> terms are false,
-			and unknown otherwise. 
-    <dt><a class="production css" data-link-type="type" href="#typedef-media-in-parens" id="ref-for-typedef-media-in-parens①②">&lt;media-in-parens></a> <a class="production css" data-link-type="type" href="#typedef-media-or" id="ref-for-typedef-media-or①">&lt;media-or></a>* 
+			and unknown otherwise.
+    <dt><a class="production css" data-link-type="type" href="#typedef-media-in-parens" id="ref-for-typedef-media-in-parens①②">&lt;media-in-parens></a> <a class="production css" data-link-type="type" href="#typedef-media-or" id="ref-for-typedef-media-or①">&lt;media-or></a>*
     <dd> The result is false if the <a class="production css" data-link-type="type" href="#typedef-media-in-parens" id="ref-for-typedef-media-in-parens①③">&lt;media-in-parens></a> child term
 			and all of the <span class="production" id="ref-for-typedef-media-in-parens①④">&lt;media-in-parens></span> children of the <a class="production css" data-link-type="type" href="#typedef-media-or" id="ref-for-typedef-media-or②">&lt;media-or></a> child terms are false,
 			true if at least one of these <span class="production" id="ref-for-typedef-media-in-parens①⑤">&lt;media-in-parens></span> terms are true,
-			and unknown otherwise. 
-    <dt><a class="production css" data-link-type="type" href="#typedef-general-enclosed" id="ref-for-typedef-general-enclosed③">&lt;general-enclosed></a> 
+			and unknown otherwise.
+    <dt><a class="production css" data-link-type="type" href="#typedef-general-enclosed" id="ref-for-typedef-general-enclosed③">&lt;general-enclosed></a>
     <dd>
-      The result is unknown. 
+      The result is unknown.
      <p>Authors must not use <a class="production css" data-link-type="type" href="#typedef-general-enclosed" id="ref-for-typedef-general-enclosed④">&lt;general-enclosed></a> in their stylesheets. <span class="note">It exists only for future-compatibility,
 			so that new syntax additions do not invalidate too much of a <a class="production css" data-link-type="type" href="#typedef-media-condition" id="ref-for-typedef-media-condition④">&lt;media-condition></a> in older user agents.</span></p>
-    <dt><a class="production css" data-link-type="type" href="#typedef-media-feature" id="ref-for-typedef-media-feature①">&lt;media-feature></a> 
-    <dd> The result is the result of evaluating the specified media feature. 
+    <dt><a class="production css" data-link-type="type" href="#typedef-media-feature" id="ref-for-typedef-media-feature①">&lt;media-feature></a>
+    <dd> The result is the result of evaluating the specified media feature.
    </dl>
    <p>If the result of any of the above productions
 	is used in any context that expects a two-valued boolean,
@@ -1447,7 +1447,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
    <div class="note" role="note">
      Media Queries use a three-value logic where terms can be “true”, “false”, or “unknown”.
 		Specifically, it uses the <a href="http://en.wikipedia.org/wiki/Three-valued_logic#Kleene_and_Priest_logics">Kleene 3-valued logic</a>.
-		In this logic, “unknown” means “either true or false, but we’re not sure which yet”. 
+		In this logic, “unknown” means “either true or false, but we’re not sure which yet”.
     <p>In general, an unknown value showing up in a formula will cause the formula to be unknown as well,
 		as substituting “true” for the unknown will give the formula a different result than substituting “false”.
 		The only way to eliminate an unknown value is to use it in a formula that will give the same result
@@ -1467,7 +1467,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	just the problematic <a data-link-type="dfn" href="#media-query" id="ref-for-media-query②⑦">media query</a>.
 	The parsing behavior defined above automatically recovers at the next top-level comma.</p>
    <div class="example" id="example-bc6a6750">
-    <a class="self-link" href="#example-bc6a6750"></a> 
+    <a class="self-link" href="#example-bc6a6750"></a>
 <pre>@media (example, all,), speech { /* only applicable to speech devices */ }
 @media &amp;test, speech           { /* only applicable to speech devices */ }
 </pre>
@@ -1487,7 +1487,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
    <p>An unknown <a class="production css" data-link-type="type" href="#typedef-media-type" id="ref-for-typedef-media-type②">&lt;media-type></a> must be treated as not matching.</p>
    <div class="example" id="example-2b46833d">
     <a class="self-link" href="#example-2b46833d"></a> For example, the media query <span class="css">unknown</span> is false,
-		as <span class="css">unknown</span> is an unknown <a data-link-type="dfn" href="#media-type" id="ref-for-media-type②①">media type</a>. 
+		as <span class="css">unknown</span> is an unknown <a data-link-type="dfn" href="#media-type" id="ref-for-media-type②①">media type</a>.
     <p>But <span class="css">not unknown</span> is true, as the <a class="css" data-link-type="maybe" href="#valdef-media-not" id="ref-for-valdef-media-not⑦">not</a> negates the false media type.</p>
    </div>
    <div class="example" id="example-45dbfecd"><a class="self-link" href="#example-45dbfecd"></a> Remember that some keywords aren’t allowed as <a class="production css" data-link-type="type" href="#typedef-media-type" id="ref-for-typedef-media-type③">&lt;media-type></a>s
@@ -1498,14 +1498,14 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	results in the value “unknown”.
 	A <a class="production css" data-link-type="type" href="#typedef-media-query" id="ref-for-typedef-media-query②">&lt;media-query></a> whose value is “unknown” must be replaced with <span class="css">not all</span>.</p>
    <div class="example" id="example-d129d027">
-    <a class="self-link" href="#example-d129d027"></a> 
+    <a class="self-link" href="#example-d129d027"></a>
 <pre>&lt;link media="screen and (max-weight: 3kg) and (color), (color)"rel="stylesheet" href="example.css" /></pre>
     <p>As <span class="css">max-weight</span> is an unknown <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature③⓪">media feature</a>,
 		this <a data-link-type="dfn" href="#media-query-list" id="ref-for-media-query-list⑥">media query list</a> is turned into <span class="css">not all, (color)</span>,
 		which is equivalent to just <span class="css">(color)</span>.</p>
    </div>
    <div class="example" id="example-e8d8bc30">
-    <a class="self-link" href="#example-e8d8bc30"></a> 
+    <a class="self-link" href="#example-e8d8bc30"></a>
 <pre>@media (min-orientation:portrait) { … }</pre>
     <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-orientation" id="ref-for-descdef-media-orientation">orientation</a> feature does not accept prefixes,
 		so this is considered an unknown <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature③①">media feature</a>,
@@ -1515,7 +1515,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 		and is therefore turned into <span class="css">not all</span>. </div>
    <div class="note" role="note">
      Note that <a data-link-type="dfn" href="#media-query" id="ref-for-media-query③⓪">media queries</a> are also subject to the parsing rules of the host language.
-		For example, take the following CSS snippet: 
+		For example, take the following CSS snippet:
 <pre>@media test;,all { body { background:lime } }</pre>
     <p>The media query <span class="css">test;,all</span> is, parsed by itself,
 		equivalent to <span class="css">not all, all</span>, which is always true.
@@ -1534,13 +1534,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-width">width</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media③">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media③">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>
      <tr>
       <th>Type:
-      <td>range 
+      <td>range
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-width" id="ref-for-descdef-media-width④">width</a> media feature describes the width of the targeted display area of the output device.
 	For continuous media, this is the width of the viewport
@@ -1551,17 +1551,17 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
    <p><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>s are interpreted according to <a href="#units">§ 1.3 Units</a>.</p>
    <p><a class="property" data-link-type="propdesc" href="#descdef-media-width" id="ref-for-descdef-media-width⑤">width</a> is <a data-link-type="dfn" href="#false-in-the-negative-range" id="ref-for-false-in-the-negative-range">false in the negative range</a>.</p>
    <div class="example" id="example-3ef57809">
-    <a class="self-link" href="#example-3ef57809"></a> For example, this media query expresses that the style sheet is used on printed output wider than 25cm: 
+    <a class="self-link" href="#example-3ef57809"></a> For example, this media query expresses that the style sheet is used on printed output wider than 25cm:
 <pre>&lt;link rel="stylesheet" media="print and (min-width: 25cm)" href="http://…" /></pre>
    </div>
    <div class="example" id="example-462c5899">
     <a class="self-link" href="#example-462c5899"></a> This media query expresses that the style sheet is used on devices with viewport
 		(the part of the screen/paper where the document is rendered)
-		widths between 400 and 700 pixels: 
+		widths between 400 and 700 pixels:
 <pre>@media (400px &lt;= width &lt;= 700px) { … }</pre>
    </div>
    <div class="example" id="example-fab3f079">
-    <a class="self-link" href="#example-fab3f079"></a> This media query expresses that style sheet is used if the width of the viewport is greater than 20em. 
+    <a class="self-link" href="#example-fab3f079"></a> This media query expresses that style sheet is used if the width of the viewport is greater than 20em.
 <pre>@media (min-width: 20em) { … }</pre>
     <p>The <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#em" id="ref-for-em①">em</a> value is relative to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-cascade-4/#initial-value" id="ref-for-initial-value②">initial value</a> of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size" id="ref-for-propdef-font-size①">font-size</a>.</p>
    </div>
@@ -1573,13 +1573,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-height">height</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media④">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media④">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>
      <tr>
       <th>Type:
-      <td>range 
+      <td>range
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-height" id="ref-for-descdef-media-height①">height</a> media feature describes the height of the targeted display area of the output device.
 	For continuous media, this is the height of the viewport including the size of a rendered scroll bar (if any).
@@ -1594,13 +1594,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-aspect-ratio">aspect-ratio</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media⑤">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media⑤">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-ratio" id="ref-for-typedef-ratio①">&lt;ratio></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-ratio" id="ref-for-typedef-ratio①">&lt;ratio></a>
      <tr>
       <th>Type:
-      <td>range 
+      <td>range
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-aspect-ratio" id="ref-for-descdef-media-aspect-ratio①">aspect-ratio</a> media feature is defined as the ratio of the value of the <a class="property" data-link-type="propdesc" href="#descdef-media-width" id="ref-for-descdef-media-width⑥">width</a> media feature
 	to the value of the <a class="property" data-link-type="propdesc" href="#descdef-media-height" id="ref-for-descdef-media-height③">height</a> media feature.</p>
@@ -1615,24 +1615,24 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-orientation">orientation</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media⑥">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media⑥">@media</a>
      <tr>
       <th>Value:
-      <td class="prod">portrait <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> landscape 
+      <td class="prod">portrait <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> landscape
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/orientation" data-dfn-type="value" data-export id="valdef-media-orientation-portrait">portrait</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/orientation" data-dfn-type="value" data-export id="valdef-media-orientation-portrait">portrait</dfn>
     <dd>The <a class="property" data-link-type="propdesc" href="#descdef-media-orientation" id="ref-for-descdef-media-orientation②">orientation</a> media feature is <a class="css" data-link-type="maybe" href="#valdef-media-orientation-portrait" id="ref-for-valdef-media-orientation-portrait">portrait</a> when the value of the <a class="property" data-link-type="propdesc" href="#descdef-media-height" id="ref-for-descdef-media-height④">height</a> media feature is greater than or equal to
-		the value of the <a class="property" data-link-type="propdesc" href="#descdef-media-width" id="ref-for-descdef-media-width⑦">width</a> media feature. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/orientation" data-dfn-type="value" data-export id="valdef-media-orientation-landscape">landscape</dfn> 
-    <dd>Otherwise <a class="property" data-link-type="propdesc" href="#descdef-media-orientation" id="ref-for-descdef-media-orientation③">orientation</a> is <a class="css" data-link-type="maybe" href="#valdef-media-orientation-landscape" id="ref-for-valdef-media-orientation-landscape">landscape</a>. 
+		the value of the <a class="property" data-link-type="propdesc" href="#descdef-media-width" id="ref-for-descdef-media-width⑦">width</a> media feature.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/orientation" data-dfn-type="value" data-export id="valdef-media-orientation-landscape">landscape</dfn>
+    <dd>Otherwise <a class="property" data-link-type="propdesc" href="#descdef-media-orientation" id="ref-for-descdef-media-orientation③">orientation</a> is <a class="css" data-link-type="maybe" href="#valdef-media-orientation-landscape" id="ref-for-valdef-media-orientation-landscape">landscape</a>.
    </dl>
    <div class="example" id="example-cd688c88">
     <a class="self-link" href="#example-cd688c88"></a> The following media query tests for “portrait” orientation,
-		like a phone held upright. 
+		like a phone held upright.
 <pre>@media (orientation:portrait) { … }</pre>
    </div>
    <h2 class="heading settled" data-level="5" id="mf-display-quality"><span class="secno">5. </span><span class="content"> Display Quality Media Features</span><a class="self-link" href="#mf-display-quality"></a></h2>
@@ -1644,13 +1644,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-resolution">resolution</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media⑦">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media⑦">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value①" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> infinite 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value①" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> infinite
      <tr>
       <th>Type:
-      <td>range 
+      <td>range
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-resolution" id="ref-for-descdef-media-resolution②">resolution</a> media feature describes the resolution of the output
 	device, i.e. the density of the pixels, taking into account the <a data-link-type="dfn" href="https://drafts.csswg.org/cssom-view-1/#page-zoom" id="ref-for-page-zoom">page zoom</a> but assuming a <a data-link-type="dfn" href="https://drafts.csswg.org/cssom-view-1/#pinch-zoom" id="ref-for-pinch-zoom">pinch zoom</a> of 1.0.</p>
@@ -1666,11 +1666,11 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	(That is, a query like <span class="css">(resolution > 1000dpi)</span> will be true for an <span class="css" id="ref-for-valdef-media-resolution-infinite①">infinite</span> media.)</p>
    <div class="example" id="example-4141fdad">
     <a class="self-link" href="#example-4141fdad"></a> This media query simply detects “high-resolution” screens
-		(those with a hardware pixel to CSS <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#px" id="ref-for-px">px</a> ratio of at least 2): 
+		(those with a hardware pixel to CSS <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#px" id="ref-for-px">px</a> ratio of at least 2):
 <pre>@media (resolution >= 2dppx)</pre>
    </div>
    <div class="example" id="example-618117ac">
-    <a class="self-link" href="#example-618117ac"></a> For example, this media query expresses that a style sheet is used on devices with resolution greater than 300 dots per CSS <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-3/#in" id="ref-for-in">in</a>: 
+    <a class="self-link" href="#example-618117ac"></a> For example, this media query expresses that a style sheet is used on devices with resolution greater than 300 dots per CSS <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-3/#in" id="ref-for-in">in</a>:
 <pre>@media print and (min-resolution: 300dpi) { … }</pre>
     <p>This media query is equivalent, but uses the CSS <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#cm" id="ref-for-cm">cm</a> unit:</p>
 <pre>@media print and (min-resolution: 118dpcm) { … }</pre>
@@ -1679,7 +1679,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
      <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value③" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a> does not refer to the number of device pixels per physical length unit,
 		but the number of device pixels per css unit.
 		This mapping is done by the user agent,
-		so it is always known to the user agent. 
+		so it is always known to the user agent.
     <p>If the user agent either has no knowledge of the geometry of physical pixels,
 		or knows about the geometry physical pixels and they are (close enough to)
 		square, it would not map a different number of device pixels per css pixels
@@ -1698,36 +1698,36 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-scan">scan</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media⑧">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media⑧">@media</a>
      <tr>
       <th>Value:
-      <td class="prod">interlace <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> progressive 
+      <td class="prod">interlace <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> progressive
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-scan" id="ref-for-descdef-media-scan②">scan</a> media feature describes the scanning process of some output devices.</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="@media/scan" data-dfn-type="value" data-export id="valdef-media-scan-interlace">interlace<a class="self-link" href="#valdef-media-scan-interlace"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="@media/scan" data-dfn-type="value" data-export id="valdef-media-scan-interlace">interlace<a class="self-link" href="#valdef-media-scan-interlace"></a></dfn>
     <dd>
       CRT and some types of plasma TV screens used “interlaced” rendering,
 			where video frames alternated between specifying only the “even” lines on the screen
 			and only the “odd” lines,
 			exploiting various automatic mental image-correction abilities to produce smooth motion.
-			This allowed them to simulate a higher FPS broadcast at half the bandwidth cost. 
+			This allowed them to simulate a higher FPS broadcast at half the bandwidth cost.
      <p>When displaying on interlaced screens,
 			authors should avoid very fast movement across the screen to avoid “combing”,
 			and should ensure that details on the screen are wider than <span class="css">1px</span> to avoid <a href="https://en.wikipedia.org/wiki/Interlaced_video#Interline_twitter">“twitter”</a>.</p>
-    <dt><dfn class="css" data-dfn-for="@media/scan" data-dfn-type="value" data-export id="valdef-media-scan-progressive">progressive<a class="self-link" href="#valdef-media-scan-progressive"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="@media/scan" data-dfn-type="value" data-export id="valdef-media-scan-progressive">progressive<a class="self-link" href="#valdef-media-scan-progressive"></a></dfn>
     <dd>
       A screen using “progressive” rendering displays each screen fully,
-			and needs no special treatment. 
+			and needs no special treatment.
      <p>Most modern screens, and all computer screens, use progressive rendering.</p>
    </dl>
    <div class="example" id="example-3db7de6d">
     <a class="self-link" href="#example-3db7de6d"></a> For example, the “feet” of letters in serif fonts are very small features that can provoke “twitter” on interlaced devices.
 		The <a class="property" data-link-type="propdesc" href="#descdef-media-scan" id="ref-for-descdef-media-scan③">scan</a> media feature can be used to detect this,
-		and use an alternative font with less chance of “twitter”: 
+		and use an alternative font with less chance of “twitter”:
 <pre>@media (scan: interlace) { body { font-family: sans-serif; } }</pre>
    </div>
    <p class="note" role="note"><span>Note:</span> At the time of writing, all known implementations match <code>scan: progressive</code> rather than <code>scan: interlace</code>.</p>
@@ -1739,13 +1739,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-grid">grid</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media⑨">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media⑨">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-mq-boolean" id="ref-for-typedef-mq-boolean">&lt;mq-boolean></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-mq-boolean" id="ref-for-typedef-mq-boolean">&lt;mq-boolean></a>
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-grid" id="ref-for-descdef-media-grid④">grid</a> media feature is used to query whether the output device is grid or bitmap.
 	If the output device is grid-based
@@ -1759,7 +1759,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	If this feature were being designed today,
 	it would instead use proper named keywords for its values.</p>
    <div class="example" id="example-07e10c7e">
-    <a class="self-link" href="#example-07e10c7e"></a> Here is an example that detects a narrow console screen: 
+    <a class="self-link" href="#example-07e10c7e"></a> Here is an example that detects a narrow console screen:
 <pre>@media (grid) and (max-width: 15em) { … }
 </pre>
    </div>
@@ -1772,35 +1772,35 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-update">update</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⓪">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⓪">@media</a>
      <tr>
       <th>Value:
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> slow <span id="ref-for-comb-one④">|</span> fast 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> slow <span id="ref-for-comb-one④">|</span> fast
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-update" id="ref-for-descdef-media-update②">update</a> media feature is used to query the ability of the output device
 	to modify the apearance of content once it has been rendered.
 	It accepts the following values:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/update" data-dfn-type="value" data-export id="valdef-media-update-none">none</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/update" data-dfn-type="value" data-export id="valdef-media-update-none">none</dfn>
     <dd> Once it has been rendered, the layout can no longer be updated.
-			Example: documents printed on paper. 
-    <dt><dfn class="css" data-dfn-for="@media/update" data-dfn-type="value" data-export id="valdef-media-update-slow">slow<a class="self-link" href="#valdef-media-update-slow"></a></dfn> 
+			Example: documents printed on paper.
+    <dt><dfn class="css" data-dfn-for="@media/update" data-dfn-type="value" data-export id="valdef-media-update-slow">slow<a class="self-link" href="#valdef-media-update-slow"></a></dfn>
     <dd> The layout may change dynamically according to the usual rules of CSS,
 			but the output device is not able to render or display changes quickly enough
 			for them to be perceived as a smooth animation.
-			Example: E-ink screens or severely under-powered devices. 
-    <dt><dfn class="css" data-dfn-for="@media/update" data-dfn-type="value" data-export id="valdef-media-update-fast">fast<a class="self-link" href="#valdef-media-update-fast"></a></dfn> 
+			Example: E-ink screens or severely under-powered devices.
+    <dt><dfn class="css" data-dfn-for="@media/update" data-dfn-type="value" data-export id="valdef-media-update-fast">fast<a class="self-link" href="#valdef-media-update-fast"></a></dfn>
     <dd> The layout may change dynamically according to the usual rules of CSS,
 			and the output device is not unusually constrained in speed,
 			so regularly-updating things like CSS Animations can be used.
-			Example: computer screens. 
+			Example: computer screens.
    </dl>
    <div class="example" id="example-57cc8bd6">
     <a class="self-link" href="#example-57cc8bd6"></a> For example, if a page styles its links to only add underlines on hover,
-		it may want to always display underlines when printed: 
+		it may want to always display underlines when printed:
 <pre>@media (update) {
   a { text-decoration: none; }
   a:hover, a:focus { text-decoration: underline; }
@@ -1816,34 +1816,34 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-overflow-block">overflow-block</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①①">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①①">@media</a>
      <tr>
       <th>Value:
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑤">|</a> scroll <span id="ref-for-comb-one⑥">|</span> optional-paged <span id="ref-for-comb-one⑦">|</span> paged 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑤">|</a> scroll <span id="ref-for-comb-one⑥">|</span> optional-paged <span id="ref-for-comb-one⑦">|</span> paged
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-overflow-block" id="ref-for-descdef-media-overflow-block①">overflow-block</a> media feature describes the behavior of the device
 	when content overflows the initial containing block in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#block-axis" id="ref-for-block-axis">block axis</a>.</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="@media/overflow-block" data-dfn-type="value" data-export id="valdef-media-overflow-block-none">none<a class="self-link" href="#valdef-media-overflow-block-none"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="@media/overflow-block" data-dfn-type="value" data-export id="valdef-media-overflow-block-none">none<a class="self-link" href="#valdef-media-overflow-block-none"></a></dfn>
     <dd> There is no affordance for overflow in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#block-axis" id="ref-for-block-axis①">block axis</a>;
 			any overflowing content is simply not displayed.
-			Examples: billboards 
-    <dt><dfn class="css" data-dfn-for="@media/overflow-block" data-dfn-type="value" data-export id="valdef-media-overflow-block-scroll">scroll<a class="self-link" href="#valdef-media-overflow-block-scroll"></a></dfn> 
+			Examples: billboards
+    <dt><dfn class="css" data-dfn-for="@media/overflow-block" data-dfn-type="value" data-export id="valdef-media-overflow-block-scroll">scroll<a class="self-link" href="#valdef-media-overflow-block-scroll"></a></dfn>
     <dd> Overflowing content in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#block-axis" id="ref-for-block-axis②">block axis</a> is exposed by allowing users to scroll to it.
-			Examples: computer screens 
-    <dt><dfn class="css" data-dfn-for="@media/overflow-block" data-dfn-type="value" data-export id="valdef-media-overflow-block-optional-paged">optional-paged<a class="self-link" href="#valdef-media-overflow-block-optional-paged"></a></dfn> 
+			Examples: computer screens
+    <dt><dfn class="css" data-dfn-for="@media/overflow-block" data-dfn-type="value" data-export id="valdef-media-overflow-block-optional-paged">optional-paged<a class="self-link" href="#valdef-media-overflow-block-optional-paged"></a></dfn>
     <dd> Overflowing content in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#block-axis" id="ref-for-block-axis③">block axis</a> is exposed by allowing users to scroll to it,
 			but page breaks can be manually triggered
 			(<span class="non-normative">such as via <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-break-inside" id="ref-for-propdef-break-inside">break-inside</a>, etc</span>)
 			to cause the following content to display on the following page.
-			Examples: slideshows 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/overflow-block" data-dfn-type="value" data-export id="valdef-media-overflow-block-paged">paged</dfn> 
+			Examples: slideshows
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/overflow-block" data-dfn-type="value" data-export id="valdef-media-overflow-block-paged">paged</dfn>
     <dd> Content is broken up into discrete pages;
 			content that overflows one page in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#block-axis" id="ref-for-block-axis④">block axis</a> is displayed on the following page.
-			Examples: printers, ebook readers 
+			Examples: printers, ebook readers
    </dl>
    <h3 class="heading settled" data-level="5.6" id="mf-overflow-inline"><span class="secno">5.6. </span><span class="content"> Inline-Axis Overflow: the <a class="property" data-link-type="propdesc" href="#descdef-media-overflow-inline" id="ref-for-descdef-media-overflow-inline">overflow-inline</a> feature</span><a class="self-link" href="#mf-overflow-inline"></a></h3>
    <table class="def descdef mq">
@@ -1853,22 +1853,22 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-overflow-inline">overflow-inline</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①②">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①②">@media</a>
      <tr>
       <th>Value:
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> scroll 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> scroll
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-overflow-inline" id="ref-for-descdef-media-overflow-inline①">overflow-inline</a> media feature describes the behavior of the device
 	when content overflows the initial containing block in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#inline-axis" id="ref-for-inline-axis">inline axis</a>.</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="@media/overflow-inline" data-dfn-type="value" data-export id="valdef-media-overflow-inline-none">none<a class="self-link" href="#valdef-media-overflow-inline-none"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="@media/overflow-inline" data-dfn-type="value" data-export id="valdef-media-overflow-inline-none">none<a class="self-link" href="#valdef-media-overflow-inline-none"></a></dfn>
     <dd> There is no affordance for overflow in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#inline-axis" id="ref-for-inline-axis①">inline axis</a>;
-			any overflowing content is simply not displayed. 
-    <dt><dfn class="css" data-dfn-for="@media/overflow-inline" data-dfn-type="value" data-export id="valdef-media-overflow-inline-scroll">scroll<a class="self-link" href="#valdef-media-overflow-inline-scroll"></a></dfn> 
-    <dd> Overflowing content in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#inline-axis" id="ref-for-inline-axis②">inline axis</a> is exposed by allowing users to scroll to it. 
+			any overflowing content is simply not displayed.
+    <dt><dfn class="css" data-dfn-for="@media/overflow-inline" data-dfn-type="value" data-export id="valdef-media-overflow-inline-scroll">scroll<a class="self-link" href="#valdef-media-overflow-inline-scroll"></a></dfn>
+    <dd> Overflowing content in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#inline-axis" id="ref-for-inline-axis②">inline axis</a> is exposed by allowing users to scroll to it.
    </dl>
    <p class="note" role="note"><span>Note:</span> There are no known implementations of paged overflow of inline-overflowing content,
 	and the very concept doesn’t seem to make much sense,
@@ -1882,26 +1882,26 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-color">color</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①③">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①③">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value⑥">&lt;integer></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value⑥">&lt;integer></a>
      <tr>
       <th>Type:
-      <td>range 
+      <td>range
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-color" id="ref-for-descdef-media-color④">color</a> media feature describes the number of bits per color component of the output device.
 	If the device is not a color device, the value is zero.</p>
    <p><a class="property" data-link-type="propdesc" href="#descdef-media-color" id="ref-for-descdef-media-color⑤">color</a> is <a data-link-type="dfn" href="#false-in-the-negative-range" id="ref-for-false-in-the-negative-range③">false in the negative range</a>.</p>
    <div class="example" id="example-8d42e196">
-    <a class="self-link" href="#example-8d42e196"></a> For example, these two media queries express that a style sheet applies to all color devices: 
+    <a class="self-link" href="#example-8d42e196"></a> For example, these two media queries express that a style sheet applies to all color devices:
 <pre>@media (color) { … }
 @media (min-color: 1) { … }
 </pre>
    </div>
    <div class="example" id="example-f33339f9">
     <a class="self-link" href="#example-f33339f9"></a> This media query expresses that a style sheet applies to color devices
-		with at least 8 bits per color component: 
+		with at least 8 bits per color component:
 <pre>@media (color >= 8) { … }</pre>
    </div>
    <p>If different color components are represented by different number of bits,
@@ -1922,25 +1922,25 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-color-index">color-index</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①④">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①④">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value⑦">&lt;integer></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value⑦">&lt;integer></a>
      <tr>
       <th>Type:
-      <td>range 
+      <td>range
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-color-index" id="ref-for-descdef-media-color-index①">color-index</a> media feature describes the number of entries in the color lookup table of the output device.
 	If the device does not use a color lookup table, the value is zero.</p>
    <p><a class="property" data-link-type="propdesc" href="#descdef-media-color-index" id="ref-for-descdef-media-color-index②">color-index</a> is <a data-link-type="dfn" href="#false-in-the-negative-range" id="ref-for-false-in-the-negative-range④">false in the negative range</a>.</p>
    <div class="example" id="example-d0764fe1">
-    <a class="self-link" href="#example-d0764fe1"></a> For example, here are two ways to express that a style sheet applies to all color index devices: 
+    <a class="self-link" href="#example-d0764fe1"></a> For example, here are two ways to express that a style sheet applies to all color index devices:
 <pre>@media (color-index) { … }
 @media (color-index >= 1) { … }
 </pre>
    </div>
    <div class="example" id="example-0fec94ea">
-    <a class="self-link" href="#example-0fec94ea"></a> This media query expresses that a style sheet applies to a color index device with 256 or more entries: 
+    <a class="self-link" href="#example-0fec94ea"></a> This media query expresses that a style sheet applies to a color index device with 256 or more entries:
 <pre>&lt;?xml-stylesheet media="(min-color-index: 256)"
   href="http://www.example.com/…" ?>
 </pre>
@@ -1953,28 +1953,28 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-monochrome">monochrome</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⑤">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⑤">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value⑧">&lt;integer></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value⑧">&lt;integer></a>
      <tr>
       <th>Type:
-      <td>range 
+      <td>range
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-monochrome" id="ref-for-descdef-media-monochrome①">monochrome</a> media feature describes the number of bits per pixel in a monochrome frame buffer.
 	If the device is not a monochrome device,
 	the output device value will be 0.</p>
    <p><a class="property" data-link-type="propdesc" href="#descdef-media-monochrome" id="ref-for-descdef-media-monochrome②">monochrome</a> is <a data-link-type="dfn" href="#false-in-the-negative-range" id="ref-for-false-in-the-negative-range⑤">false in the negative range</a>.</p>
    <div class="example" id="example-fa837be6">
-    <a class="self-link" href="#example-fa837be6"></a> For example, this is how to express that a style sheet applies to all monochrome devices: 
+    <a class="self-link" href="#example-fa837be6"></a> For example, this is how to express that a style sheet applies to all monochrome devices:
 <pre>@media (monochrome) { … }</pre>
    </div>
    <div class="example" id="example-83e2c204">
-    <a class="self-link" href="#example-83e2c204"></a> Express that a style sheet applies to monochrome devices with more than 2 bits per pixels: 
+    <a class="self-link" href="#example-83e2c204"></a> Express that a style sheet applies to monochrome devices with more than 2 bits per pixels:
 <pre>@media (monochrome >= 2) { … }</pre>
    </div>
    <div class="example" id="example-60bef5a3">
-    <a class="self-link" href="#example-60bef5a3"></a> Express that there is one style sheet for color pages and another for monochrome: 
+    <a class="self-link" href="#example-60bef5a3"></a> Express that there is one style sheet for color pages and another for monochrome:
 <pre>&lt;link rel="stylesheet" media="print and (color)" href="http://…" />
 &lt;link rel="stylesheet" media="print and (monochrome)" href="http://…" />
 </pre>
@@ -1987,13 +1987,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-color-gamut">color-gamut</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⑥">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⑥">@media</a>
      <tr>
       <th>Value:
-      <td class="prod">srgb <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑨">|</a> p3 <span id="ref-for-comb-one①⓪">|</span> rec2020 
+      <td class="prod">srgb <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑨">|</a> p3 <span id="ref-for-comb-one①⓪">|</span> rec2020
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-color-gamut" id="ref-for-descdef-media-color-gamut②">color-gamut</a> media feature describes the approximate range of colors
 	that are supported by the UA and output device.
@@ -2013,20 +2013,20 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	tagged with color profiles,
 	to the user.</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/color-gamut" data-dfn-type="value" data-export id="valdef-media-color-gamut-srgb">srgb</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/color-gamut" data-dfn-type="value" data-export id="valdef-media-color-gamut-srgb">srgb</dfn>
     <dd>
-      The UA and output device can support approximately the sRGB gamut or more. 
+      The UA and output device can support approximately the sRGB gamut or more.
      <p class="note" role="note"><span>Note:</span> It is expected that the vast majority of color displays
 			will be able to return true to a query of this type.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/color-gamut" data-dfn-type="value" data-export id="valdef-media-color-gamut-p3">p3</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/color-gamut" data-dfn-type="value" data-export id="valdef-media-color-gamut-p3">p3</dfn>
     <dd>
       The UA and output device can support approximately the gamut
-			specified by the DCI P3 Color Space or more. 
+			specified by the DCI P3 Color Space or more.
      <p class="note" role="note"><span>Note:</span> The <a class="css" data-link-type="maybe" href="#valdef-media-color-gamut-p3" id="ref-for-valdef-media-color-gamut-p3">p3</a> gamut is larger than and includes the <a class="css" data-link-type="maybe" href="#valdef-media-color-gamut-srgb" id="ref-for-valdef-media-color-gamut-srgb">srgb</a> gamut.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/color-gamut" data-dfn-type="value" data-export id="valdef-media-color-gamut-rec2020">rec2020</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/color-gamut" data-dfn-type="value" data-export id="valdef-media-color-gamut-rec2020">rec2020</dfn>
     <dd>
       The UA and output device can support approximately the gamut
-			specified by the ITU-R Recommendation BT.2020 Color Space or more. 
+			specified by the ITU-R Recommendation BT.2020 Color Space or more.
      <p class="note" role="note"><span>Note:</span> The <a class="css" data-link-type="maybe" href="#valdef-media-color-gamut-rec2020" id="ref-for-valdef-media-color-gamut-rec2020">rec2020</a> gamut is larger than and includes the <a class="css" data-link-type="maybe" href="#valdef-media-color-gamut-p3" id="ref-for-valdef-media-color-gamut-p3①">p3</a> gamut.</p>
    </dl>
    <p>The following table lists the primary colors of these color spaces in terms of their color space chromaticity coordinates,
@@ -2041,11 +2041,11 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
      <tr>
       <th rowspan="3">Color Space
       <th colspan="2" rowspan="2">White Point
-      <th colspan="6">Primaries 
+      <th colspan="6">Primaries
      <tr>
       <th colspan="2">Red
       <th colspan="2">Green
-      <th colspan="2">Blue 
+      <th colspan="2">Blue
      <tr>
       <th>x<sub>W</sub>
       <th>y<sub>W</sub>
@@ -2054,7 +2054,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <th>x<sub>G</sub>
       <th>y<sub>G</sub>
       <th>x<sub>B</sub>
-      <th>y<sub>B</sub> 
+      <th>y<sub>B</sub>
     <tbody>
      <tr>
       <td>srgb
@@ -2065,7 +2065,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td>0.300
       <td>0.600
       <td>0.150
-      <td>0.060 
+      <td>0.060
      <tr>
       <td>p3
       <td>0.3127
@@ -2075,7 +2075,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td>0.265
       <td>0.690
       <td>0.150
-      <td>0.060 
+      <td>0.060
      <tr>
       <td>rec2020
       <td>0.3127
@@ -2085,7 +2085,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td>0.170
       <td>0.797
       <td>0.131
-      <td>0.046 
+      <td>0.046
    </table>
    <p class="note" role="note"><span>Note:</span> The table above does not contains enough information to fully describe the color spaces,
 	but is sufficient to determine whether an output device approximately covers their respective gamuts.
@@ -2093,7 +2093,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	and <a data-link-type="biblio" href="#biblio-itu-r-bt-2020-2">[ITU-R-BT-2020-2]</a> for more information on ITU-R Recommendation BT.2020.</p>
    <div class="example" id="example-6fba5b94">
     <a class="self-link" href="#example-6fba5b94"></a> For example, this media query applies when the display supports colors
-		in the range of DCI P3: 
+		in the range of DCI P3:
 <pre class="lang-css highlight"><c- n>@media</c-> <c- p>(</c->color-gamut<c- f>: p3) </c-><c- p>{</c-> … }
 </pre>
    </div>
@@ -2112,25 +2112,25 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
    <p class="note" role="note"><span>Note:</span> the <a class="property" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover①">hover</a>, <a class="property" data-link-type="propdesc" href="#descdef-media-any-hover" id="ref-for-descdef-media-any-hover①">any-hover</a>, <a class="property" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer③">pointer</a>, and <a class="property" data-link-type="propdesc" href="#descdef-media-any-pointer" id="ref-for-descdef-media-any-pointer①">any-pointer</a> media features are at risk.</p>
    <p>The “interaction” media features reflect various aspects of how the user interacts with the page.</p>
    <div class="note" role="note">
-     Typical examples of devices matching combinations of <a class="property" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer④">pointer</a> and <a class="property" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover②">hover</a>: 
+     Typical examples of devices matching combinations of <a class="property" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer④">pointer</a> and <a class="property" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover②">hover</a>:
     <table class="data">
      <thead>
       <tr>
        <td>
-       <th><a class="css" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer⑤">pointer: none</a> 
-       <th><a class="css" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer⑥">pointer: coarse</a> 
-       <th><a class="css" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer⑦">pointer: fine</a> 
+       <th><a class="css" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer⑤">pointer: none</a>
+       <th><a class="css" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer⑥">pointer: coarse</a>
+       <th><a class="css" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer⑦">pointer: fine</a>
      <tbody>
       <tr>
-       <th scope="row"><a class="css" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover③">hover: none</a> 
-       <td>keyboard-only controls, sequential/spatial (d-pad) focus navigation 
-       <td>smartphones, touch screens 
-       <td>basic stylus digitizers (Cintiq, Wacom, etc) 
+       <th scope="row"><a class="css" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover③">hover: none</a>
+       <td>keyboard-only controls, sequential/spatial (d-pad) focus navigation
+       <td>smartphones, touch screens
+       <td>basic stylus digitizers (Cintiq, Wacom, etc)
       <tr>
-       <th scope="row"><a class="css" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover④">hover: hover</a> 
+       <th scope="row"><a class="css" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover④">hover: hover</a>
        <td>
-       <td>Nintendo Wii controller, Kinect 
-       <td>mouse, touch pad, advanced stylus digitizers (Surface, Samsung Note, Wacom Intuos Pro, etc) 
+       <td>Nintendo Wii controller, Kinect
+       <td>mouse, touch pad, advanced stylus digitizers (Surface, Samsung Note, Wacom Intuos Pro, etc)
     </table>
    </div>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer⑧">pointer</a> and <a class="property" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover⑤">hover</a> features relate to the characteristics of the “primary” pointing device,
@@ -2163,13 +2163,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-pointer">pointer</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⑦">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⑦">@media</a>
      <tr>
       <th>Value:
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①①">|</a> coarse <span id="ref-for-comb-one①②">|</span> fine 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①①">|</a> coarse <span id="ref-for-comb-one①②">|</span> fine
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer①②">pointer</a> media feature is used to query the presence and accuracy of a pointing device such as a mouse.
 	If multiple pointing devices are present,
@@ -2178,14 +2178,14 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	(To query the capabilities of <em>any</em> available pointing devices,
 		see the <a class="property" data-link-type="propdesc" href="#descdef-media-any-pointer" id="ref-for-descdef-media-any-pointer⑤">any-pointer</a> media feature.)</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/pointer" data-dfn-type="value" data-export id="valdef-media-pointer-none">none</dfn> 
-    <dd>The primary input mechanism of the device does not include a pointing device. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/pointer" data-dfn-type="value" data-export id="valdef-media-pointer-coarse">coarse</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/pointer" data-dfn-type="value" data-export id="valdef-media-pointer-none">none</dfn>
+    <dd>The primary input mechanism of the device does not include a pointing device.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/pointer" data-dfn-type="value" data-export id="valdef-media-pointer-coarse">coarse</dfn>
     <dd>The primary input mechanism of the device includes a pointing device of limited accuracy.
-			Examples include touchscreens and motion-detection sensors (like the Kinect peripheral for the Xbox.) 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/pointer" data-dfn-type="value" data-export id="valdef-media-pointer-fine">fine</dfn> 
+			Examples include touchscreens and motion-detection sensors (like the Kinect peripheral for the Xbox.)
+    <dt><dfn class="dfn-paneled css" data-dfn-for="@media/pointer" data-dfn-type="value" data-export id="valdef-media-pointer-fine">fine</dfn>
     <dd>The primary input mechanism of the device includes an accurate pointing device.
-			Examples include mice, touchpads, and drawing styluses. 
+			Examples include mice, touchpads, and drawing styluses.
    </dl>
    <p>Both <a class="css" data-link-type="maybe" href="#valdef-media-pointer-coarse" id="ref-for-valdef-media-pointer-coarse">coarse</a> and <a class="css" data-link-type="maybe" href="#valdef-media-pointer-fine" id="ref-for-valdef-media-pointer-fine">fine</a> indicate the presence of a pointing device,
 	but differ in accuracy.
@@ -2208,7 +2208,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	wish to query the <a class="property" data-link-type="propdesc" href="#descdef-media-any-pointer" id="ref-for-descdef-media-any-pointer⑥">any-pointer</a> media feature to take these other <span class="css" id="ref-for-valdef-media-pointer-coarse⑥">coarse</span> potential
 	pointing devicess into account.</p>
    <div class="example" id="example-44af24a9">
-    <a class="self-link" href="#example-44af24a9"></a> 
+    <a class="self-link" href="#example-44af24a9"></a>
 <pre>/* Make radio buttons and check boxes larger if we have an inaccurate primary pointing device */
 @media (pointer:coarse) {
   input[type="checkbox"], input[type="radio"] {
@@ -2228,13 +2228,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-hover">hover</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⑧">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⑧">@media</a>
      <tr>
       <th>Value:
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> hover 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> hover
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover⑨">hover</a> media feature is used to query the user’s ability to hover over elements on the page
 	with the primary pointing device.
@@ -2244,24 +2244,24 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	(To query the capabilities of <em>any</em> available pointing devices,
 		see the <a class="property" data-link-type="propdesc" href="#descdef-media-any-hover" id="ref-for-descdef-media-any-hover⑤">any-hover</a> media feature.)</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="@media/hover" data-dfn-type="value" data-export id="valdef-media-hover-none">none<a class="self-link" href="#valdef-media-hover-none"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="@media/hover" data-dfn-type="value" data-export id="valdef-media-hover-none">none<a class="self-link" href="#valdef-media-hover-none"></a></dfn>
     <dd>
       Indicates that the primary pointing device can’t hover,
 			or that there is no pointing device.
-			Examples include touchscreens and screens that use a basic drawing stylus. 
+			Examples include touchscreens and screens that use a basic drawing stylus.
      <p>Pointing devices that can hover,
 			but for which doing so is inconvenient and not part of the normal way they are used,
 			also match this value.
 			For example, a touchscreen where a long press is treated as hovering
 			would match <a class="css" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover①①">hover: none</a>.</p>
-    <dt><dfn class="css" data-dfn-for="@media/hover" data-dfn-type="value" data-export id="valdef-media-hover-hover">hover<a class="self-link" href="#valdef-media-hover-hover"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="@media/hover" data-dfn-type="value" data-export id="valdef-media-hover-hover">hover<a class="self-link" href="#valdef-media-hover-hover"></a></dfn>
     <dd> Indicates that the primary pointing device can easily hover over parts of the page.
-			Examples include mice and devices that physically point at the screen, like the Nintendo Wii controller. 
+			Examples include mice and devices that physically point at the screen, like the Nintendo Wii controller.
    </dl>
    <div class="example" id="example-3d419780">
     <a class="self-link" href="#example-3d419780"></a> For example, on a touch screen device that can also be controlled by an optional mouse,
 		the <a class="property" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover①②">hover</a> <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature③②">media feature</a> should match <span class="css" id="ref-for-descdef-media-hover①③">hover: none</span>,
-		as the primary pointing device (the touch screen) does not allow the user to hover. 
+		as the primary pointing device (the touch screen) does not allow the user to hover.
     <p>However, despite this, the optional mouse does allow users to hover.
 		Authors should therefore be careful not to assume that the ':hover' pseudo class
 		will never match on a device where 'hover:none' is true,
@@ -2273,7 +2273,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	Note that even if the primary input mechanism has 'hover: hover' capability,
 	there may be additional input mechanisms available to the user that do not provide hover capabilities.</p>
    <div class="example" id="example-46b96c8f">
-    <a class="self-link" href="#example-46b96c8f"></a> 
+    <a class="self-link" href="#example-46b96c8f"></a>
 <pre>/* Only use a hover-activated drop down menu on devices that can conveniently hover. */
 @media (hover) {
   .menu > li        {display:inline-block;}
@@ -2292,13 +2292,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-any-pointer">any-pointer</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⑨">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media①⑨">@media</a>
      <tr>
       <th>Value:
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①④">|</a> coarse <span id="ref-for-comb-one①⑤">|</span> fine 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①④">|</a> coarse <span id="ref-for-comb-one①⑤">|</span> fine
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <table class="def descdef mq">
     <tbody>
@@ -2307,13 +2307,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-any-hover">any-hover</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media②⓪">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media②⓪">@media</a>
      <tr>
       <th>Value:
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑥">|</a> hover 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑥">|</a> hover
      <tr>
       <th>Type:
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-any-pointer" id="ref-for-descdef-media-any-pointer⑧">any-pointer</a> and <a class="property" data-link-type="propdesc" href="#descdef-media-any-hover" id="ref-for-descdef-media-any-hover⑦">any-hover</a> media features are identical to the <a class="property" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer①④">pointer</a> and <a class="property" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover①⑤">hover</a> media features,
 	but they correspond to the union of capabilities of all the pointing devices available to the user.
@@ -2350,7 +2350,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
 	are available to the user. </div>
    <div class="example" id="example-45cc4e7d">
     <a class="self-link" href="#example-45cc4e7d"></a> A number of smart TVs come with a way to control an on-screen cursor,
-		but it is often fairly basic controller which is difficult to operate accurately. 
+		but it is often fairly basic controller which is difficult to operate accurately.
     <p>A browser in such a smart TV would have <a class="css" data-link-type="maybe" href="#valdef-media-pointer-coarse" id="ref-for-valdef-media-pointer-coarse⑦">coarse</a> as the value of both <a class="property" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer①⑤">pointer</a> and <a class="property" data-link-type="propdesc" href="#descdef-media-any-pointer" id="ref-for-descdef-media-any-pointer①③">any-pointer</a>,
 		allowing authors to provide a layout with large and easy to reach click targets.</p>
     <p>The user may also have paired a Bluetooth mouse with the TV,
@@ -2389,20 +2389,20 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-device-width">device-width</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media②①">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media②①">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value④" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value④" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>
      <tr>
       <th>Type:
-      <td>range 
+      <td>range
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-device-width" id="ref-for-descdef-media-device-width①">device-width</a> media feature describes the width of the rendering surface of the output device.
 	For continuous media, this is the width of the <a data-link-type="dfn" href="https://drafts.csswg.org/cssom-view-1/#web-exposed-screen-area" id="ref-for-web-exposed-screen-area">Web-exposed screen area</a>.
 	For paged media, this is the width of the page sheet size.</p>
    <p><a class="property" data-link-type="propdesc" href="#descdef-media-device-width" id="ref-for-descdef-media-device-width②">device-width</a> is <a data-link-type="dfn" href="#false-in-the-negative-range" id="ref-for-false-in-the-negative-range⑥">false in the negative range</a>.</p>
    <div class="example" id="example-4b4397c6">
-    <a class="self-link" href="#example-4b4397c6"></a> 
+    <a class="self-link" href="#example-4b4397c6"></a>
 <pre>@media (device-width &lt; 800px) { … }</pre>
     <p>In the example above, the style sheet will apply only to screens
 		less than <span class="css">800px</span> in length.
@@ -2420,20 +2420,20 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-device-height">device-height</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media②②">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media②②">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑤" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value⑤" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>
      <tr>
       <th>Type:
-      <td>range 
+      <td>range
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#descdef-media-device-height" id="ref-for-descdef-media-device-height①">device-height</a> media feature describes the height of the rendering surface of the output device.
 	For continuous media, this is the height of the <a data-link-type="dfn" href="https://drafts.csswg.org/cssom-view-1/#web-exposed-screen-area" id="ref-for-web-exposed-screen-area①">Web-exposed screen area</a>.
 	For paged media, this is the height of the page sheet size.</p>
    <p><a class="property" data-link-type="propdesc" href="#descdef-media-device-height" id="ref-for-descdef-media-device-height②">device-height</a> is <a data-link-type="dfn" href="#false-in-the-negative-range" id="ref-for-false-in-the-negative-range⑦">false in the negative range</a>.</p>
    <div class="example" id="example-c05b0263">
-    <a class="self-link" href="#example-c05b0263"></a> 
+    <a class="self-link" href="#example-c05b0263"></a>
 <pre>&lt;link rel="stylesheet" media="(device-height > 600px)" /></pre>
     <p>In the example above, the style sheet will apply only to screens
 		taller than 600 vertical pixels.
@@ -2447,13 +2447,13 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
       <td><dfn class="dfn-paneled css" data-dfn-for="@media" data-dfn-type="descriptor" data-export id="descdef-media-device-aspect-ratio">device-aspect-ratio</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media②③">@media</a> 
+      <td><a class="css" data-link-type="at-rule" href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media" id="ref-for-at-ruledef-media②③">@media</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-ratio" id="ref-for-typedef-ratio③">&lt;ratio></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-ratio" id="ref-for-typedef-ratio③">&lt;ratio></a>
      <tr>
       <th>Type:
-      <td>range 
+      <td>range
    </table>
    <p>The 'device-aspect-ratio media feature is defined as the ratio of
 	the value of the <a class="property" data-link-type="propdesc" href="#descdef-media-device-width" id="ref-for-descdef-media-device-width③">device-width</a> media feature to
@@ -2462,7 +2462,7 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
     <a class="self-link" href="#example-b60c3a77"></a> For example, if a screen device with square pixels
 		has 1280 horizontal pixels and 720 vertical pixels
 		(commonly referred to as “16:9”),
-		the following media queries will all match the device: 
+		the following media queries will all match the device:
 <pre>@media (device-aspect-ratio: 16/9) { … }
 @media (device-aspect-ratio: 32/18) { … }
 @media (device-aspect-ratio: 1280/720) { … }
@@ -2471,35 +2471,35 @@ it must instead be written as <span class="css">not ((color) or (hover))</span> 
    </div>
    <h2 class="no-num heading settled" id="changes"><span class="content"> Changes</span><a class="self-link" href="#changes"></a></h2>
    <h3 class="heading settled" id="changes-2017-9"><span class="content"> Changes since the 5 Septemper 2017 Candidate Recommendation</span><a class="self-link" href="#changes-2017-9"></a></h3>
-    The following changes were made to this specification since the <a href="https://www.w3.org/TR/2017/CR-mediaqueries-4-20170905/">5 September 2017 Candidate Recommendation</a>: 
+    The following changes were made to this specification since the <a href="https://www.w3.org/TR/2017/CR-mediaqueries-4-20170905/">5 September 2017 Candidate Recommendation</a>:
    <ul>
     <li>Clarify that the <a class="css" data-link-type="maybe" href="#valdef-media-speech" id="ref-for-valdef-media-speech③">speech</a> media type is for pure audio UAs, not screen readers,
-	which as their name indicates, work based on a screen rendition. 
-    <li>Add note referencing the syntax spec to remind that token parsing is ascii case insensitive 
-    <li>Fix a bug in the grammar that accidentally allowed forms like (width 500px), without any comparison 
+	which as their name indicates, work based on a screen rendition.
+    <li>Add note referencing the syntax spec to remind that token parsing is ascii case insensitive
+    <li>Fix a bug in the grammar that accidentally allowed forms like (width 500px), without any comparison
    </ul>
    <h3 class="heading settled" id="changes-2017"><span class="content"> Changes since the 19 May 2017 Working Draft</span><a class="self-link" href="#changes-2017"></a></h3>
-    The following changes were made to this specification since the <a href="https://www.w3.org/TR/2017/WD-mediaqueries-4-20170519/">19 May 2017 Working Draft </a>: 
+    The following changes were made to this specification since the <a href="https://www.w3.org/TR/2017/WD-mediaqueries-4-20170519/">19 May 2017 Working Draft </a>:
    <ul>
-    <li>Changed range media features to be <a data-link-type="dfn" href="#false-in-the-negative-range" id="ref-for-false-in-the-negative-range⑧">false in the negative range</a> instead of failing to parse negative values. 
-    <li>Included enough informaton about the color spaces needed by <a class="property" data-link-type="propdesc" href="#descdef-media-color-gamut" id="ref-for-descdef-media-color-gamut③">color-gamut</a> directly into the specification. 
+    <li>Changed range media features to be <a data-link-type="dfn" href="#false-in-the-negative-range" id="ref-for-false-in-the-negative-range⑧">false in the negative range</a> instead of failing to parse negative values.
+    <li>Included enough informaton about the color spaces needed by <a class="property" data-link-type="propdesc" href="#descdef-media-color-gamut" id="ref-for-descdef-media-color-gamut③">color-gamut</a> directly into the specification.
    </ul>
    <h3 class="heading settled" id="changes-2012"><span class="content"> Changes Since Media Queries Level 3</span><a class="self-link" href="#changes-2012"></a></h3>
    <p>The following changes were made to this specification since the <a href="https://www.w3.org/TR/css3-mediaqueries/">19 June 2012 Recomendation of Media Queries Level 3</a>:</p>
    <ul>
-    <li> Large editorial rewrite and reorgization of the document. 
+    <li> Large editorial rewrite and reorgization of the document.
     <li> <a href="#mq-boolean-context">Boolean-context</a> <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature③⑦">media features</a> are now additionally false
-		if they would be true for the keyword none. 
-    <li> <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature③⑧">Media features</a> with numeric values can now be written in a <a href="#mq-range-context">range context</a>. 
+		if they would be true for the keyword none.
+    <li> <a data-link-type="dfn" href="#media-feature" id="ref-for-media-feature③⑧">Media features</a> with numeric values can now be written in a <a href="#mq-range-context">range context</a>.
     <li> The <a class="property" data-link-type="propdesc" href="#descdef-media-pointer" id="ref-for-descdef-media-pointer①⑦">pointer</a>, <a class="property" data-link-type="propdesc" href="#descdef-media-any-pointer" id="ref-for-descdef-media-any-pointer①⑤">any-pointer</a>, <a class="property" data-link-type="propdesc" href="#descdef-media-hover" id="ref-for-descdef-media-hover①⑥">hover</a>, <a class="property" data-link-type="propdesc" href="#descdef-media-any-hover" id="ref-for-descdef-media-any-hover①①">any-hover</a>, <a class="property" data-link-type="propdesc" href="#descdef-media-update" id="ref-for-descdef-media-update③">update</a>, <a class="property" data-link-type="propdesc" href="#descdef-media-color-gamut" id="ref-for-descdef-media-color-gamut④">color-gamut</a>, <a class="property" data-link-type="propdesc" href="#descdef-media-overflow-block" id="ref-for-descdef-media-overflow-block②">overflow-block</a>,
-		and <a class="property" data-link-type="propdesc" href="#descdef-media-overflow-inline" id="ref-for-descdef-media-overflow-inline③">overflow-inline</a> media features were added. 
+		and <a class="property" data-link-type="propdesc" href="#descdef-media-overflow-inline" id="ref-for-descdef-media-overflow-inline③">overflow-inline</a> media features were added.
     <li> <span class="css">or</span>, <span class="css">and</span>, <a class="css" data-link-type="maybe" href="#valdef-media-only" id="ref-for-valdef-media-only⑤">only</a> and <a class="css" data-link-type="maybe" href="#valdef-media-not" id="ref-for-valdef-media-not⑧">not</a> are disallowed from being recognized as media types,
 		even invalid ones.
-		(They’ll trigger a syntax error instead.) 
-    <li> All media types except for <a class="css" data-link-type="maybe" href="#valdef-media-screen" id="ref-for-valdef-media-screen⑥">screen</a>, <a class="css" data-link-type="maybe" href="#valdef-media-print" id="ref-for-valdef-media-print①">print</a>, <a class="css" data-link-type="maybe" href="#valdef-media-speech" id="ref-for-valdef-media-speech④">speech</a>, and <a class="css" data-link-type="maybe" href="#valdef-media-all" id="ref-for-valdef-media-all">all</a> are deprecated. 
+		(They’ll trigger a syntax error instead.)
+    <li> All media types except for <a class="css" data-link-type="maybe" href="#valdef-media-screen" id="ref-for-valdef-media-screen⑥">screen</a>, <a class="css" data-link-type="maybe" href="#valdef-media-print" id="ref-for-valdef-media-print①">print</a>, <a class="css" data-link-type="maybe" href="#valdef-media-speech" id="ref-for-valdef-media-speech④">speech</a>, and <a class="css" data-link-type="maybe" href="#valdef-media-all" id="ref-for-valdef-media-all">all</a> are deprecated.
     <li> Deprecated <a class="property" data-link-type="propdesc" href="#descdef-media-device-width" id="ref-for-descdef-media-device-width④">device-width</a>, <a class="property" data-link-type="propdesc" href="#descdef-media-device-height" id="ref-for-descdef-media-device-height③">device-height</a>, <a class="property" data-link-type="propdesc" href="#descdef-media-device-aspect-ratio" id="ref-for-descdef-media-device-aspect-ratio①">device-aspect-ratio</a>,
-		and made them refer to the <a data-link-type="dfn" href="https://drafts.csswg.org/cssom-view-1/#web-exposed-screen-area" id="ref-for-web-exposed-screen-area②">Web-exposed screen area</a> instead of the screen for privacy and security reasons. 
-    <li> Mediaqueries may depend on the evaluation of style sheets in some cases 
+		and made them refer to the <a data-link-type="dfn" href="https://drafts.csswg.org/cssom-view-1/#web-exposed-screen-area" id="ref-for-web-exposed-screen-area②">Web-exposed screen area</a> instead of the screen for privacy and security reasons.
+    <li> Mediaqueries may depend on the evaluation of style sheets in some cases
    </ul>
    <h2 class="no-num heading settled" id="acknowledgments"><span class="content"> Acknowledgments</span><a class="self-link" href="#acknowledgments"></a></h2>
    <p>This specification is the product of the W3C Working Group on
@@ -2546,40 +2546,40 @@ UAs have been allowed to report inacurate information.</p>
    <p>The <a href="http://www.w3.org/2001/tag/">TAG</a> has developed a <a href="https://www.w3.org/TR/security-privacy-questionnaire/">self-review questionaire</a> to help editors and Working Groups evaluate the risks introduced by their specifications.
 Answers are provided below.</p>
    <dl>
-    <dt>Does this specification deal with personally-identifiable information? 
-    <dd>No. 
-    <dt>Does this specification deal with high-value data? 
-    <dd>No. 
-    <dt>Does this specification introduce new state for an origin that persists across browsing sessions? 
-    <dd>No. 
-    <dt>Does this specification expose persistent, cross-origin state to the web? 
-    <dd>No. 
-    <dt>Does this specification expose any other data to an origin that it doesn’t currently have access to? 
-    <dd>No. 
-    <dt>Does this specification enable new script execution/loading mechanisms? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to a user’s location? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to sensors on a user’s device? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to aspects of a user’s local computing environment? 
-    <dd> Yes, as described in the prose above this questionaire. 
-    <dt>Does this specification allow an origin access to other devices? 
-    <dd>No. 
-    <dt>Does this specification allow an origin some measure of control over a user agent’s native UI? 
-    <dd>No. 
-    <dt>Does this specification expose temporary identifiers to the web? 
-    <dd>No. 
-    <dt>Does this specification distinguish between behavior in first-party and third-party contexts? 
-    <dd>No. 
-    <dt>How should this specification work in the context of a user agent’s "incognito" mode? 
-    <dd>No difference in behavior is needed. 
-    <dt>Does this specification persist data to a user’s local device? 
-    <dd>No. 
-    <dt>Does this specification have a "Security Considerations" and "Privacy Considerations" section? 
-    <dd>Yes, this is the section you are currently reading. 
-    <dt>Does this specification allow downgrading default security characteristics? 
-    <dd>No. 
+    <dt>Does this specification deal with personally-identifiable information?
+    <dd>No.
+    <dt>Does this specification deal with high-value data?
+    <dd>No.
+    <dt>Does this specification introduce new state for an origin that persists across browsing sessions?
+    <dd>No.
+    <dt>Does this specification expose persistent, cross-origin state to the web?
+    <dd>No.
+    <dt>Does this specification expose any other data to an origin that it doesn’t currently have access to?
+    <dd>No.
+    <dt>Does this specification enable new script execution/loading mechanisms?
+    <dd>No.
+    <dt>Does this specification allow an origin access to a user’s location?
+    <dd>No.
+    <dt>Does this specification allow an origin access to sensors on a user’s device?
+    <dd>No.
+    <dt>Does this specification allow an origin access to aspects of a user’s local computing environment?
+    <dd> Yes, as described in the prose above this questionaire.
+    <dt>Does this specification allow an origin access to other devices?
+    <dd>No.
+    <dt>Does this specification allow an origin some measure of control over a user agent’s native UI?
+    <dd>No.
+    <dt>Does this specification expose temporary identifiers to the web?
+    <dd>No.
+    <dt>Does this specification distinguish between behavior in first-party and third-party contexts?
+    <dd>No.
+    <dt>How should this specification work in the context of a user agent’s "incognito" mode?
+    <dd>No difference in behavior is needed.
+    <dt>Does this specification persist data to a user’s local device?
+    <dd>No.
+    <dt>Does this specification have a "Security Considerations" and "Privacy Considerations" section?
+    <dd>Yes, this is the section you are currently reading.
+    <dt>Does this specification allow downgrading default security characteristics?
+    <dd>No.
    </dl>
   </main>
   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -2597,7 +2597,7 @@ Answers are provided below.</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -2610,14 +2610,14 @@ Answers are provided below.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -2668,7 +2668,7 @@ Answers are provided below.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <aside class="caniuse-status" data-deco data-dfn-id="resolution">
@@ -2787,67 +2787,67 @@ Answers are provided below.</p>
   <aside class="dfn-panel" data-for="term-for-propdef-break-inside">
    <a href="https://drafts.csswg.org/css-break-3/#propdef-break-inside">https://drafts.csswg.org/css-break-3/#propdef-break-inside</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-break-inside">5.5. 
+    <li><a href="#ref-for-propdef-break-inside">5.5.
 Block-Axis Overflow: the overflow-block feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-at-ruledef-import">
    <a href="https://drafts.csswg.org/css-cascade-3/#at-ruledef-import">https://drafts.csswg.org/css-cascade-3/#at-ruledef-import</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-at-ruledef-import">1. 
+    <li><a href="#ref-for-at-ruledef-import">1.
 Introduction</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-initial-value">
    <a href="https://drafts.csswg.org/css-cascade-4/#initial-value">https://drafts.csswg.org/css-cascade-4/#initial-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-initial-value">1.3. 
+    <li><a href="#ref-for-initial-value">1.3.
 Units</a> <a href="#ref-for-initial-value①">(2)</a>
-    <li><a href="#ref-for-initial-value②">4.1. 
+    <li><a href="#ref-for-initial-value②">4.1.
 Width: the width feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-at-ruledef-media">
    <a href="https://drafts.csswg.org/css-conditional-3/#at-ruledef-media">https://drafts.csswg.org/css-conditional-3/#at-ruledef-media</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-at-ruledef-media">1. 
+    <li><a href="#ref-for-at-ruledef-media">1.
 Introduction</a>
     <li><a href="#ref-for-at-ruledef-media①">3.1. Evaluating Media Queries</a>
-    <li><a href="#ref-for-at-ruledef-media②">3.2. 
+    <li><a href="#ref-for-at-ruledef-media②">3.2.
 Error Handling</a>
-    <li><a href="#ref-for-at-ruledef-media③">4.1. 
+    <li><a href="#ref-for-at-ruledef-media③">4.1.
 Width: the width feature</a>
-    <li><a href="#ref-for-at-ruledef-media④">4.2. 
+    <li><a href="#ref-for-at-ruledef-media④">4.2.
 Height: the height feature</a>
-    <li><a href="#ref-for-at-ruledef-media⑤">4.3. 
+    <li><a href="#ref-for-at-ruledef-media⑤">4.3.
 Aspect-Ratio: the aspect-ratio feature</a>
-    <li><a href="#ref-for-at-ruledef-media⑥">4.4. 
+    <li><a href="#ref-for-at-ruledef-media⑥">4.4.
 Orientation: the orientation feature</a>
-    <li><a href="#ref-for-at-ruledef-media⑦">5.1. 
+    <li><a href="#ref-for-at-ruledef-media⑦">5.1.
 Display Resolution: the resolution feature</a>
-    <li><a href="#ref-for-at-ruledef-media⑧">5.2. 
+    <li><a href="#ref-for-at-ruledef-media⑧">5.2.
 Display Type: the scan feature</a>
-    <li><a href="#ref-for-at-ruledef-media⑨">5.3. 
+    <li><a href="#ref-for-at-ruledef-media⑨">5.3.
 Detecting Console Displays: the grid feature</a>
-    <li><a href="#ref-for-at-ruledef-media①⓪">5.4. 
+    <li><a href="#ref-for-at-ruledef-media①⓪">5.4.
 Display Update Frequency: the update feature</a>
-    <li><a href="#ref-for-at-ruledef-media①①">5.5. 
+    <li><a href="#ref-for-at-ruledef-media①①">5.5.
 Block-Axis Overflow: the overflow-block feature</a>
-    <li><a href="#ref-for-at-ruledef-media①②">5.6. 
+    <li><a href="#ref-for-at-ruledef-media①②">5.6.
 Inline-Axis Overflow: the overflow-inline feature</a>
-    <li><a href="#ref-for-at-ruledef-media①③">6.1. 
+    <li><a href="#ref-for-at-ruledef-media①③">6.1.
 Color Depth: the color feature</a>
-    <li><a href="#ref-for-at-ruledef-media①④">6.2. 
+    <li><a href="#ref-for-at-ruledef-media①④">6.2.
 Paletted Color Screens: the color-index feature</a>
-    <li><a href="#ref-for-at-ruledef-media①⑤">6.3. 
+    <li><a href="#ref-for-at-ruledef-media①⑤">6.3.
 Monochrome Screens: the monochrome feature</a>
-    <li><a href="#ref-for-at-ruledef-media①⑥">6.4. 
+    <li><a href="#ref-for-at-ruledef-media①⑥">6.4.
 Color Display Quality: the color-gamut feature</a>
-    <li><a href="#ref-for-at-ruledef-media①⑦">7.1. 
+    <li><a href="#ref-for-at-ruledef-media①⑦">7.1.
 Pointing Device Quality: the pointer feature</a>
-    <li><a href="#ref-for-at-ruledef-media①⑧">7.2. 
+    <li><a href="#ref-for-at-ruledef-media①⑧">7.2.
 Hover Capability: the hover feature</a>
-    <li><a href="#ref-for-at-ruledef-media①⑨">7.3. 
+    <li><a href="#ref-for-at-ruledef-media①⑨">7.3.
 All Available Interaction Capabilities: the any-pointer and any-hover features</a> <a href="#ref-for-at-ruledef-media②⓪">(2)</a>
     <li><a href="#ref-for-at-ruledef-media②①"> device-width</a>
     <li><a href="#ref-for-at-ruledef-media②②"> device-height</a>
@@ -2857,55 +2857,55 @@ All Available Interaction Capabilities: the any-pointer and any-hover features</
   <aside class="dfn-panel" data-for="term-for-at-ruledef-viewport">
    <a href="https://drafts.csswg.org/css-device-adapt-1/#at-ruledef-viewport">https://drafts.csswg.org/css-device-adapt-1/#at-ruledef-viewport</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-at-ruledef-viewport">2. 
+    <li><a href="#ref-for-at-ruledef-viewport">2.
 Media Queries</a> <a href="#ref-for-at-ruledef-viewport①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-font-size">
    <a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size">https://drafts.csswg.org/css-fonts-3/#propdef-font-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-font-size">1.3. 
+    <li><a href="#ref-for-propdef-font-size">1.3.
 Units</a>
-    <li><a href="#ref-for-propdef-font-size①">4.1. 
+    <li><a href="#ref-for-propdef-font-size①">4.1.
 Width: the width feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-dimension">
    <a href="https://drafts.csswg.org/css-values-4/#typedef-dimension">https://drafts.csswg.org/css-values-4/#typedef-dimension</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-dimension">2.4.2. 
+    <li><a href="#ref-for-typedef-dimension">2.4.2.
 Evaluating Media Features in a Boolean Context</a>
-    <li><a href="#ref-for-typedef-dimension①">3. 
+    <li><a href="#ref-for-typedef-dimension①">3.
 Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-ident">
    <a href="https://drafts.csswg.org/css-values-4/#typedef-ident">https://drafts.csswg.org/css-values-4/#typedef-ident</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-ident">3. 
+    <li><a href="#ref-for-typedef-ident">3.
 Syntax</a> <a href="#ref-for-typedef-ident①">(2)</a> <a href="#ref-for-typedef-ident②">(3)</a> <a href="#ref-for-typedef-ident③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cm">
    <a href="https://drafts.csswg.org/css-values-4/#cm">https://drafts.csswg.org/css-values-4/#cm</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cm">5.1. 
+    <li><a href="#ref-for-cm">5.1.
 Display Resolution: the resolution feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-em">
    <a href="https://drafts.csswg.org/css-values-4/#em">https://drafts.csswg.org/css-values-4/#em</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-em">1.3. 
+    <li><a href="#ref-for-em">1.3.
 Units</a>
-    <li><a href="#ref-for-em①">4.1. 
+    <li><a href="#ref-for-em①">4.1.
 Width: the width feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-px">
    <a href="https://drafts.csswg.org/css-values-4/#px">https://drafts.csswg.org/css-values-4/#px</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-px">5.1. 
+    <li><a href="#ref-for-px">5.1.
 Display Resolution: the resolution feature</a>
     <li><a href="#ref-for-px①"> device-width</a>
     <li><a href="#ref-for-px②"> device-height</a>
@@ -2914,100 +2914,100 @@ Display Resolution: the resolution feature</a>
   <aside class="dfn-panel" data-for="term-for-relative-length">
    <a href="https://drafts.csswg.org/css-values-4/#relative-length">https://drafts.csswg.org/css-values-4/#relative-length</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-relative-length">1.3. 
+    <li><a href="#ref-for-relative-length">1.3.
 Units</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">4.4. 
+    <li><a href="#ref-for-comb-one">4.4.
 Orientation: the orientation feature</a>
-    <li><a href="#ref-for-comb-one①">5.1. 
+    <li><a href="#ref-for-comb-one①">5.1.
 Display Resolution: the resolution feature</a>
-    <li><a href="#ref-for-comb-one②">5.2. 
+    <li><a href="#ref-for-comb-one②">5.2.
 Display Type: the scan feature</a>
-    <li><a href="#ref-for-comb-one③">5.4. 
+    <li><a href="#ref-for-comb-one③">5.4.
 Display Update Frequency: the update feature</a> <a href="#ref-for-comb-one④">(2)</a>
-    <li><a href="#ref-for-comb-one⑤">5.5. 
+    <li><a href="#ref-for-comb-one⑤">5.5.
 Block-Axis Overflow: the overflow-block feature</a> <a href="#ref-for-comb-one⑥">(2)</a> <a href="#ref-for-comb-one⑦">(3)</a>
-    <li><a href="#ref-for-comb-one⑧">5.6. 
+    <li><a href="#ref-for-comb-one⑧">5.6.
 Inline-Axis Overflow: the overflow-inline feature</a>
-    <li><a href="#ref-for-comb-one⑨">6.4. 
+    <li><a href="#ref-for-comb-one⑨">6.4.
 Color Display Quality: the color-gamut feature</a> <a href="#ref-for-comb-one①⓪">(2)</a>
-    <li><a href="#ref-for-comb-one①①">7.1. 
+    <li><a href="#ref-for-comb-one①①">7.1.
 Pointing Device Quality: the pointer feature</a> <a href="#ref-for-comb-one①②">(2)</a>
-    <li><a href="#ref-for-comb-one①③">7.2. 
+    <li><a href="#ref-for-comb-one①③">7.2.
 Hover Capability: the hover feature</a>
-    <li><a href="#ref-for-comb-one①④">7.3. 
+    <li><a href="#ref-for-comb-one①④">7.3.
 All Available Interaction Capabilities: the any-pointer and any-hover features</a> <a href="#ref-for-comb-one①⑤">(2)</a> <a href="#ref-for-comb-one①⑥">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-axis">
    <a href="https://www.w3.org/TR/css-writing-modes-4/#block-axis">https://www.w3.org/TR/css-writing-modes-4/#block-axis</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-axis">5.5. 
+    <li><a href="#ref-for-block-axis">5.5.
 Block-Axis Overflow: the overflow-block feature</a> <a href="#ref-for-block-axis①">(2)</a> <a href="#ref-for-block-axis②">(3)</a> <a href="#ref-for-block-axis③">(4)</a> <a href="#ref-for-block-axis④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-axis">
    <a href="https://www.w3.org/TR/css-writing-modes-4/#inline-axis">https://www.w3.org/TR/css-writing-modes-4/#inline-axis</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-axis">5.6. 
+    <li><a href="#ref-for-inline-axis">5.6.
 Inline-Axis Overflow: the overflow-inline feature</a> <a href="#ref-for-inline-axis①">(2)</a> <a href="#ref-for-inline-axis②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-any-value">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-any-value">https://drafts.csswg.org/css-syntax-3/#typedef-any-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-any-value">3. 
+    <li><a href="#ref-for-typedef-any-value">3.
 Syntax</a> <a href="#ref-for-typedef-any-value①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-delim-token">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-delim-token">https://drafts.csswg.org/css-syntax-3/#typedef-delim-token</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-delim-token">3. 
+    <li><a href="#ref-for-typedef-delim-token">3.
 Syntax</a> <a href="#ref-for-typedef-delim-token①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-function-token">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-function-token">https://drafts.csswg.org/css-syntax-3/#typedef-function-token</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-function-token">3. 
+    <li><a href="#ref-for-typedef-function-token">3.
 Syntax</a> <a href="#ref-for-typedef-function-token①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-parse-a-comma-separated-list-of-component-values">
    <a href="https://drafts.csswg.org/css-syntax-3/#parse-a-comma-separated-list-of-component-values">https://drafts.csswg.org/css-syntax-3/#parse-a-comma-separated-list-of-component-values</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-parse-a-comma-separated-list-of-component-values">3. 
+    <li><a href="#ref-for-parse-a-comma-separated-list-of-component-values">3.
 Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-integer-value">
    <a href="https://drafts.csswg.org/css-values-3/#integer-value">https://drafts.csswg.org/css-values-3/#integer-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-integer-value">1.2. 
+    <li><a href="#ref-for-integer-value">1.2.
 Values</a>
-    <li><a href="#ref-for-integer-value①">4.3. 
+    <li><a href="#ref-for-integer-value①">4.3.
 Aspect-Ratio: the aspect-ratio feature</a> <a href="#ref-for-integer-value②">(2)</a> <a href="#ref-for-integer-value③">(3)</a> <a href="#ref-for-integer-value④">(4)</a>
-    <li><a href="#ref-for-integer-value⑤">5.3. 
+    <li><a href="#ref-for-integer-value⑤">5.3.
 Detecting Console Displays: the grid feature</a>
-    <li><a href="#ref-for-integer-value⑥">6.1. 
+    <li><a href="#ref-for-integer-value⑥">6.1.
 Color Depth: the color feature</a>
-    <li><a href="#ref-for-integer-value⑦">6.2. 
+    <li><a href="#ref-for-integer-value⑦">6.2.
 Paletted Color Screens: the color-index feature</a>
-    <li><a href="#ref-for-integer-value⑧">6.3. 
+    <li><a href="#ref-for-integer-value⑧">6.3.
 Monochrome Screens: the monochrome feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-length-value">
    <a href="https://drafts.csswg.org/css-values-3/#length-value">https://drafts.csswg.org/css-values-3/#length-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-length-value">4.1. 
+    <li><a href="#ref-for-length-value">4.1.
 Width: the width feature</a> <a href="#ref-for-length-value①">(2)</a>
-    <li><a href="#ref-for-length-value②">4.2. 
+    <li><a href="#ref-for-length-value②">4.2.
 Height: the height feature</a> <a href="#ref-for-length-value③">(2)</a>
     <li><a href="#ref-for-length-value④"> device-width</a>
     <li><a href="#ref-for-length-value⑤"> device-height</a>
@@ -3016,39 +3016,39 @@ Height: the height feature</a> <a href="#ref-for-length-value③">(2)</a>
   <aside class="dfn-panel" data-for="term-for-number-value">
    <a href="https://drafts.csswg.org/css-values-3/#number-value">https://drafts.csswg.org/css-values-3/#number-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-number-value">1.2. 
+    <li><a href="#ref-for-number-value">1.2.
 Values</a>
-    <li><a href="#ref-for-number-value①">3. 
+    <li><a href="#ref-for-number-value①">3.
 Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-resolution-value">
    <a href="https://drafts.csswg.org/css-values-3/#resolution-value">https://drafts.csswg.org/css-values-3/#resolution-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-resolution-value">1.2. 
+    <li><a href="#ref-for-resolution-value">1.2.
 Values</a>
-    <li><a href="#ref-for-resolution-value①">5.1. 
+    <li><a href="#ref-for-resolution-value①">5.1.
 Display Resolution: the resolution feature</a> <a href="#ref-for-resolution-value②">(2)</a> <a href="#ref-for-resolution-value③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-in">
    <a href="https://drafts.csswg.org/css-values-3/#in">https://drafts.csswg.org/css-values-3/#in</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-in">5.1. 
+    <li><a href="#ref-for-in">5.1.
 Display Resolution: the resolution feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-page-zoom">
    <a href="https://drafts.csswg.org/cssom-view-1/#page-zoom">https://drafts.csswg.org/cssom-view-1/#page-zoom</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-page-zoom">5.1. 
+    <li><a href="#ref-for-page-zoom">5.1.
 Display Resolution: the resolution feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-pinch-zoom">
    <a href="https://drafts.csswg.org/cssom-view-1/#pinch-zoom">https://drafts.csswg.org/cssom-view-1/#pinch-zoom</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-pinch-zoom">5.1. 
+    <li><a href="#ref-for-pinch-zoom">5.1.
 Display Resolution: the resolution feature</a>
    </ul>
   </aside>
@@ -3063,7 +3063,7 @@ Display Resolution: the resolution feature</a>
   <aside class="dfn-panel" data-for="term-for-ascii-case-insensitive">
    <a href="https://infra.spec.whatwg.org/#ascii-case-insensitive">https://infra.spec.whatwg.org/#ascii-case-insensitive</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ascii-case-insensitive">3. 
+    <li><a href="#ref-for-ascii-case-insensitive">3.
 Syntax</a>
    </ul>
   </aside>
@@ -3326,58 +3326,58 @@ Syntax</a>
   <aside class="dfn-panel" data-for="media-query">
    <b><a href="#media-query">#media-query</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-media-query①">1. 
+    <li><a href="#ref-for-media-query①">1.
 Introduction</a>
-    <li><a href="#ref-for-media-query②">2. 
+    <li><a href="#ref-for-media-query②">2.
 Media Queries</a> <a href="#ref-for-media-query③">(2)</a> <a href="#ref-for-media-query④">(3)</a> <a href="#ref-for-media-query⑤">(4)</a> <a href="#ref-for-media-query⑥">(5)</a>
-    <li><a href="#ref-for-media-query⑦">2.1. 
+    <li><a href="#ref-for-media-query⑦">2.1.
 Combining Media Queries</a> <a href="#ref-for-media-query⑧">(2)</a> <a href="#ref-for-media-query⑨">(3)</a>
-    <li><a href="#ref-for-media-query①⓪">2.2. 
+    <li><a href="#ref-for-media-query①⓪">2.2.
 Media Query Modifiers</a> <a href="#ref-for-media-query①①">(2)</a>
-    <li><a href="#ref-for-media-query①②">2.2.1. 
+    <li><a href="#ref-for-media-query①②">2.2.1.
 Negating a Media Query: the not keyword</a> <a href="#ref-for-media-query①③">(2)</a>
-    <li><a href="#ref-for-media-query①④">2.2.2. 
+    <li><a href="#ref-for-media-query①④">2.2.2.
 Hiding a Media Query From Legacy User Agents: the only keyword</a> <a href="#ref-for-media-query①⑤">(2)</a> <a href="#ref-for-media-query①⑥">(3)</a> <a href="#ref-for-media-query①⑦">(4)</a> <a href="#ref-for-media-query①⑧">(5)</a> <a href="#ref-for-media-query①⑨">(6)</a> <a href="#ref-for-media-query②⓪">(7)</a> <a href="#ref-for-media-query②①">(8)</a> <a href="#ref-for-media-query②②">(9)</a>
-    <li><a href="#ref-for-media-query②③">2.3. 
+    <li><a href="#ref-for-media-query②③">2.3.
 Media Types</a>
-    <li><a href="#ref-for-media-query②④">2.4.3. 
+    <li><a href="#ref-for-media-query②④">2.4.3.
 Evaluating Media Features in a Range Context</a>
     <li><a href="#ref-for-media-query②⑤">3.1. Evaluating Media Queries</a> <a href="#ref-for-media-query②⑥">(2)</a>
-    <li><a href="#ref-for-media-query②⑦">3.2. 
+    <li><a href="#ref-for-media-query②⑦">3.2.
 Error Handling</a> <a href="#ref-for-media-query②⑧">(2)</a> <a href="#ref-for-media-query②⑨">(3)</a> <a href="#ref-for-media-query③⓪">(4)</a> <a href="#ref-for-media-query③①">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="media-query-list">
    <b><a href="#media-query-list">#media-query-list</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-media-query-list">2.1. 
+    <li><a href="#ref-for-media-query-list">2.1.
 Combining Media Queries</a> <a href="#ref-for-media-query-list①">(2)</a> <a href="#ref-for-media-query-list②">(3)</a>
-    <li><a href="#ref-for-media-query-list③">3. 
+    <li><a href="#ref-for-media-query-list③">3.
 Syntax</a>
-    <li><a href="#ref-for-media-query-list④">3.2. 
+    <li><a href="#ref-for-media-query-list④">3.2.
 Error Handling</a> <a href="#ref-for-media-query-list⑤">(2)</a> <a href="#ref-for-media-query-list⑥">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="media-query-modifier">
    <b><a href="#media-query-modifier">#media-query-modifier</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-media-query-modifier">2. 
+    <li><a href="#ref-for-media-query-modifier">2.
 Media Queries</a>
-    <li><a href="#ref-for-media-query-modifier①">2.2.2. 
+    <li><a href="#ref-for-media-query-modifier①">2.2.2.
 Hiding a Media Query From Legacy User Agents: the only keyword</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-not">
    <b><a href="#valdef-media-not">#valdef-media-not</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-not">2.2.1. 
+    <li><a href="#ref-for-valdef-media-not">2.2.1.
 Negating a Media Query: the not keyword</a> <a href="#ref-for-valdef-media-not①">(2)</a>
-    <li><a href="#ref-for-valdef-media-not②">2.2.2. 
+    <li><a href="#ref-for-valdef-media-not②">2.2.2.
 Hiding a Media Query From Legacy User Agents: the only keyword</a>
     <li><a href="#ref-for-valdef-media-not③">2.5. Combining Media Features</a> <a href="#ref-for-valdef-media-not④">(2)</a>
-    <li><a href="#ref-for-valdef-media-not⑤">3. 
+    <li><a href="#ref-for-valdef-media-not⑤">3.
 Syntax</a> <a href="#ref-for-valdef-media-not⑥">(2)</a>
-    <li><a href="#ref-for-valdef-media-not⑦">3.2. 
+    <li><a href="#ref-for-valdef-media-not⑦">3.2.
 Error Handling</a>
     <li><a href="#ref-for-valdef-media-not⑧"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -3385,9 +3385,9 @@ Error Handling</a>
   <aside class="dfn-panel" data-for="valdef-media-only">
    <b><a href="#valdef-media-only">#valdef-media-only</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-only">2.2.2. 
+    <li><a href="#ref-for-valdef-media-only">2.2.2.
 Hiding a Media Query From Legacy User Agents: the only keyword</a> <a href="#ref-for-valdef-media-only①">(2)</a> <a href="#ref-for-valdef-media-only②">(3)</a> <a href="#ref-for-valdef-media-only③">(4)</a>
-    <li><a href="#ref-for-valdef-media-only④">3. 
+    <li><a href="#ref-for-valdef-media-only④">3.
 Syntax</a>
     <li><a href="#ref-for-valdef-media-only⑤"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -3395,21 +3395,21 @@ Syntax</a>
   <aside class="dfn-panel" data-for="media-type">
    <b><a href="#media-type">#media-type</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-media-type">1. 
+    <li><a href="#ref-for-media-type">1.
 Introduction</a> <a href="#ref-for-media-type①">(2)</a>
-    <li><a href="#ref-for-media-type②">2. 
+    <li><a href="#ref-for-media-type②">2.
 Media Queries</a> <a href="#ref-for-media-type③">(2)</a>
-    <li><a href="#ref-for-media-type④">2.1. 
+    <li><a href="#ref-for-media-type④">2.1.
 Combining Media Queries</a> <a href="#ref-for-media-type⑤">(2)</a>
-    <li><a href="#ref-for-media-type⑥">2.2.1. 
+    <li><a href="#ref-for-media-type⑥">2.2.1.
 Negating a Media Query: the not keyword</a>
-    <li><a href="#ref-for-media-type⑦">2.2.2. 
+    <li><a href="#ref-for-media-type⑦">2.2.2.
 Hiding a Media Query From Legacy User Agents: the only keyword</a> <a href="#ref-for-media-type⑧">(2)</a> <a href="#ref-for-media-type⑨">(3)</a> <a href="#ref-for-media-type①⓪">(4)</a> <a href="#ref-for-media-type①①">(5)</a> <a href="#ref-for-media-type①②">(6)</a>
-    <li><a href="#ref-for-media-type①③">2.3. 
+    <li><a href="#ref-for-media-type①③">2.3.
 Media Types</a> <a href="#ref-for-media-type①④">(2)</a> <a href="#ref-for-media-type①⑤">(3)</a> <a href="#ref-for-media-type①⑥">(4)</a> <a href="#ref-for-media-type①⑦">(5)</a> <a href="#ref-for-media-type①⑧">(6)</a> <a href="#ref-for-media-type①⑨">(7)</a>
-    <li><a href="#ref-for-media-type②⓪">2.4. 
+    <li><a href="#ref-for-media-type②⓪">2.4.
 Media Features</a>
-    <li><a href="#ref-for-media-type②①">3.2. 
+    <li><a href="#ref-for-media-type②①">3.2.
 Error Handling</a> <a href="#ref-for-media-type②②">(2)</a>
    </ul>
   </aside>
@@ -3422,7 +3422,7 @@ Error Handling</a> <a href="#ref-for-media-type②②">(2)</a>
   <aside class="dfn-panel" data-for="valdef-media-print">
    <b><a href="#valdef-media-print">#valdef-media-print</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-print">2.3. 
+    <li><a href="#ref-for-valdef-media-print">2.3.
 Media Types</a>
     <li><a href="#ref-for-valdef-media-print①"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -3430,13 +3430,13 @@ Media Types</a>
   <aside class="dfn-panel" data-for="valdef-media-screen">
    <b><a href="#valdef-media-screen">#valdef-media-screen</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-screen">2. 
+    <li><a href="#ref-for-valdef-media-screen">2.
 Media Queries</a>
-    <li><a href="#ref-for-valdef-media-screen①">2.1. 
+    <li><a href="#ref-for-valdef-media-screen①">2.1.
 Combining Media Queries</a>
-    <li><a href="#ref-for-valdef-media-screen②">2.2.2. 
+    <li><a href="#ref-for-valdef-media-screen②">2.2.2.
 Hiding a Media Query From Legacy User Agents: the only keyword</a> <a href="#ref-for-valdef-media-screen③">(2)</a>
-    <li><a href="#ref-for-valdef-media-screen④">2.3. 
+    <li><a href="#ref-for-valdef-media-screen④">2.3.
 Media Types</a> <a href="#ref-for-valdef-media-screen⑤">(2)</a>
     <li><a href="#ref-for-valdef-media-screen⑥"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -3444,11 +3444,11 @@ Media Types</a> <a href="#ref-for-valdef-media-screen⑤">(2)</a>
   <aside class="dfn-panel" data-for="valdef-media-speech">
    <b><a href="#valdef-media-speech">#valdef-media-speech</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-speech">2.3. 
+    <li><a href="#ref-for-valdef-media-speech">2.3.
 Media Types</a>
-    <li><a href="#ref-for-valdef-media-speech①">2.4. 
+    <li><a href="#ref-for-valdef-media-speech①">2.4.
 Media Features</a>
-    <li><a href="#ref-for-valdef-media-speech②">3.2. 
+    <li><a href="#ref-for-valdef-media-speech②">3.2.
 Error Handling</a>
     <li><a href="#ref-for-valdef-media-speech③"> Changes since the 5 Septemper 2017 Candidate Recommendation</a>
     <li><a href="#ref-for-valdef-media-speech④"> Changes Since Media Queries Level 3</a>
@@ -3457,54 +3457,54 @@ Error Handling</a>
   <aside class="dfn-panel" data-for="valdef-media-tty">
    <b><a href="#valdef-media-tty">#valdef-media-tty</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-tty">2.3. 
+    <li><a href="#ref-for-valdef-media-tty">2.3.
 Media Types</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-tv">
    <b><a href="#valdef-media-tv">#valdef-media-tv</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-tv">2.3. 
+    <li><a href="#ref-for-valdef-media-tv">2.3.
 Media Types</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-projection">
    <b><a href="#valdef-media-projection">#valdef-media-projection</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-projection">2.1. 
+    <li><a href="#ref-for-valdef-media-projection">2.1.
 Combining Media Queries</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-handheld">
    <b><a href="#valdef-media-handheld">#valdef-media-handheld</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-handheld">2.3. 
+    <li><a href="#ref-for-valdef-media-handheld">2.3.
 Media Types</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="media-feature">
    <b><a href="#media-feature">#media-feature</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-media-feature">2. 
+    <li><a href="#ref-for-media-feature">2.
 Media Queries</a>
-    <li><a href="#ref-for-media-feature①">2.2.2. 
+    <li><a href="#ref-for-media-feature①">2.2.2.
 Hiding a Media Query From Legacy User Agents: the only keyword</a> <a href="#ref-for-media-feature②">(2)</a> <a href="#ref-for-media-feature③">(3)</a>
-    <li><a href="#ref-for-media-feature④">2.3. 
+    <li><a href="#ref-for-media-feature④">2.3.
 Media Types</a> <a href="#ref-for-media-feature⑤">(2)</a> <a href="#ref-for-media-feature⑥">(3)</a>
-    <li><a href="#ref-for-media-feature⑦">2.4. 
+    <li><a href="#ref-for-media-feature⑦">2.4.
 Media Features</a> <a href="#ref-for-media-feature⑧">(2)</a> <a href="#ref-for-media-feature⑨">(3)</a> <a href="#ref-for-media-feature①⓪">(4)</a> <a href="#ref-for-media-feature①①">(5)</a> <a href="#ref-for-media-feature①②">(6)</a>
-    <li><a href="#ref-for-media-feature①③">2.4.1. 
+    <li><a href="#ref-for-media-feature①③">2.4.1.
 Media Feature Types: “range” and “discrete”</a> <a href="#ref-for-media-feature①④">(2)</a> <a href="#ref-for-media-feature①⑤">(3)</a>
-    <li><a href="#ref-for-media-feature①⑥">2.4.2. 
+    <li><a href="#ref-for-media-feature①⑥">2.4.2.
 Evaluating Media Features in a Boolean Context</a> <a href="#ref-for-media-feature①⑦">(2)</a> <a href="#ref-for-media-feature①⑧">(3)</a> <a href="#ref-for-media-feature①⑨">(4)</a> <a href="#ref-for-media-feature②⓪">(5)</a> <a href="#ref-for-media-feature②①">(6)</a>
-    <li><a href="#ref-for-media-feature②②">2.4.3. 
+    <li><a href="#ref-for-media-feature②②">2.4.3.
 Evaluating Media Features in a Range Context</a>
-    <li><a href="#ref-for-media-feature②③">2.4.4. 
+    <li><a href="#ref-for-media-feature②③">2.4.4.
 Using “min-” and “max-” Prefixes On Range Features</a> <a href="#ref-for-media-feature②④">(2)</a> <a href="#ref-for-media-feature②⑤">(3)</a> <a href="#ref-for-media-feature②⑥">(4)</a> <a href="#ref-for-media-feature②⑦">(5)</a> <a href="#ref-for-media-feature②⑧">(6)</a>
     <li><a href="#ref-for-media-feature②⑨">2.5. Combining Media Features</a>
-    <li><a href="#ref-for-media-feature③⓪">3.2. 
+    <li><a href="#ref-for-media-feature③⓪">3.2.
 Error Handling</a> <a href="#ref-for-media-feature③①">(2)</a>
-    <li><a href="#ref-for-media-feature③②">7.2. 
+    <li><a href="#ref-for-media-feature③②">7.2.
 Hover Capability: the hover feature</a>
     <li><a href="#ref-for-media-feature③③"> Appendix A: Deprecated Media Features</a> <a href="#ref-for-media-feature③④">(2)</a> <a href="#ref-for-media-feature③⑤">(3)</a> <a href="#ref-for-media-feature③⑥">(4)</a>
     <li><a href="#ref-for-media-feature③⑦"> Changes Since Media Queries Level 3</a> <a href="#ref-for-media-feature③⑧">(2)</a>
@@ -3513,41 +3513,41 @@ Hover Capability: the hover feature</a>
   <aside class="dfn-panel" data-for="boolean-context">
    <b><a href="#boolean-context">#boolean-context</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-boolean-context">2.4. 
+    <li><a href="#ref-for-boolean-context">2.4.
 Media Features</a>
-    <li><a href="#ref-for-boolean-context①">2.4.2. 
+    <li><a href="#ref-for-boolean-context①">2.4.2.
 Evaluating Media Features in a Boolean Context</a> <a href="#ref-for-boolean-context②">(2)</a>
-    <li><a href="#ref-for-boolean-context③">2.4.4. 
+    <li><a href="#ref-for-boolean-context③">2.4.4.
 Using “min-” and “max-” Prefixes On Range Features</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="range-context">
    <b><a href="#range-context">#range-context</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-range-context">2.4. 
+    <li><a href="#ref-for-range-context">2.4.
 Media Features</a>
-    <li><a href="#ref-for-range-context①">2.4.1. 
+    <li><a href="#ref-for-range-context①">2.4.1.
 Media Feature Types: “range” and “discrete”</a>
-    <li><a href="#ref-for-range-context②">2.4.4. 
+    <li><a href="#ref-for-range-context②">2.4.4.
 Using “min-” and “max-” Prefixes On Range Features</a> <a href="#ref-for-range-context③">(2)</a>
-    <li><a href="#ref-for-range-context④">5.1. 
+    <li><a href="#ref-for-range-context④">5.1.
 Display Resolution: the resolution feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="false-in-the-negative-range">
    <b><a href="#false-in-the-negative-range">#false-in-the-negative-range</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-false-in-the-negative-range">4.1. 
+    <li><a href="#ref-for-false-in-the-negative-range">4.1.
 Width: the width feature</a>
-    <li><a href="#ref-for-false-in-the-negative-range①">4.2. 
+    <li><a href="#ref-for-false-in-the-negative-range①">4.2.
 Height: the height feature</a>
-    <li><a href="#ref-for-false-in-the-negative-range②">5.1. 
+    <li><a href="#ref-for-false-in-the-negative-range②">5.1.
 Display Resolution: the resolution feature</a>
-    <li><a href="#ref-for-false-in-the-negative-range③">6.1. 
+    <li><a href="#ref-for-false-in-the-negative-range③">6.1.
 Color Depth: the color feature</a>
-    <li><a href="#ref-for-false-in-the-negative-range④">6.2. 
+    <li><a href="#ref-for-false-in-the-negative-range④">6.2.
 Paletted Color Screens: the color-index feature</a>
-    <li><a href="#ref-for-false-in-the-negative-range⑤">6.3. 
+    <li><a href="#ref-for-false-in-the-negative-range⑤">6.3.
 Monochrome Screens: the monochrome feature</a>
     <li><a href="#ref-for-false-in-the-negative-range⑥"> device-width</a>
     <li><a href="#ref-for-false-in-the-negative-range⑦"> device-height</a>
@@ -3557,7 +3557,7 @@ Monochrome Screens: the monochrome feature</a>
   <aside class="dfn-panel" data-for="media-condition">
    <b><a href="#media-condition">#media-condition</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-media-condition">2. 
+    <li><a href="#ref-for-media-condition">2.
 Media Queries</a>
     <li><a href="#ref-for-media-condition①">2.5. Combining Media Features</a>
    </ul>
@@ -3565,32 +3565,32 @@ Media Queries</a>
   <aside class="dfn-panel" data-for="typedef-media-query-list">
    <b><a href="#typedef-media-query-list">#typedef-media-query-list</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-query-list">3. 
+    <li><a href="#ref-for-typedef-media-query-list">3.
 Syntax</a> <a href="#ref-for-typedef-media-query-list①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-media-query">
    <b><a href="#typedef-media-query">#typedef-media-query</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-query">3. 
+    <li><a href="#ref-for-typedef-media-query">3.
 Syntax</a> <a href="#ref-for-typedef-media-query①">(2)</a>
-    <li><a href="#ref-for-typedef-media-query②">3.2. 
+    <li><a href="#ref-for-typedef-media-query②">3.2.
 Error Handling</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-media-type">
    <b><a href="#typedef-media-type">#typedef-media-type</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-type">3. 
+    <li><a href="#ref-for-typedef-media-type">3.
 Syntax</a> <a href="#ref-for-typedef-media-type①">(2)</a>
-    <li><a href="#ref-for-typedef-media-type②">3.2. 
+    <li><a href="#ref-for-typedef-media-type②">3.2.
 Error Handling</a> <a href="#ref-for-typedef-media-type③">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-media-condition">
    <b><a href="#typedef-media-condition">#typedef-media-condition</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-condition">3. 
+    <li><a href="#ref-for-typedef-media-condition">3.
 Syntax</a> <a href="#ref-for-typedef-media-condition①">(2)</a>
     <li><a href="#ref-for-typedef-media-condition②">3.1. Evaluating Media Queries</a> <a href="#ref-for-typedef-media-condition③">(2)</a> <a href="#ref-for-typedef-media-condition④">(3)</a>
    </ul>
@@ -3598,7 +3598,7 @@ Syntax</a> <a href="#ref-for-typedef-media-condition①">(2)</a>
   <aside class="dfn-panel" data-for="typedef-media-condition-without-or">
    <b><a href="#typedef-media-condition-without-or">#typedef-media-condition-without-or</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-condition-without-or">3. 
+    <li><a href="#ref-for-typedef-media-condition-without-or">3.
 Syntax</a>
     <li><a href="#ref-for-typedef-media-condition-without-or①">3.1. Evaluating Media Queries</a> <a href="#ref-for-typedef-media-condition-without-or②">(2)</a>
    </ul>
@@ -3606,7 +3606,7 @@ Syntax</a>
   <aside class="dfn-panel" data-for="typedef-media-not">
    <b><a href="#typedef-media-not">#typedef-media-not</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-not">3. 
+    <li><a href="#ref-for-typedef-media-not">3.
 Syntax</a> <a href="#ref-for-typedef-media-not①">(2)</a>
     <li><a href="#ref-for-typedef-media-not②">3.1. Evaluating Media Queries</a>
    </ul>
@@ -3614,7 +3614,7 @@ Syntax</a> <a href="#ref-for-typedef-media-not①">(2)</a>
   <aside class="dfn-panel" data-for="typedef-media-and">
    <b><a href="#typedef-media-and">#typedef-media-and</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-and">3. 
+    <li><a href="#ref-for-typedef-media-and">3.
 Syntax</a> <a href="#ref-for-typedef-media-and①">(2)</a>
     <li><a href="#ref-for-typedef-media-and②">3.1. Evaluating Media Queries</a> <a href="#ref-for-typedef-media-and③">(2)</a>
    </ul>
@@ -3622,7 +3622,7 @@ Syntax</a> <a href="#ref-for-typedef-media-and①">(2)</a>
   <aside class="dfn-panel" data-for="typedef-media-or">
    <b><a href="#typedef-media-or">#typedef-media-or</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-or">3. 
+    <li><a href="#ref-for-typedef-media-or">3.
 Syntax</a>
     <li><a href="#ref-for-typedef-media-or①">3.1. Evaluating Media Queries</a> <a href="#ref-for-typedef-media-or②">(2)</a>
    </ul>
@@ -3630,7 +3630,7 @@ Syntax</a>
   <aside class="dfn-panel" data-for="typedef-media-in-parens">
    <b><a href="#typedef-media-in-parens">#typedef-media-in-parens</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-in-parens">3. 
+    <li><a href="#ref-for-typedef-media-in-parens">3.
 Syntax</a> <a href="#ref-for-typedef-media-in-parens①">(2)</a> <a href="#ref-for-typedef-media-in-parens②">(3)</a> <a href="#ref-for-typedef-media-in-parens③">(4)</a> <a href="#ref-for-typedef-media-in-parens④">(5)</a> <a href="#ref-for-typedef-media-in-parens⑤">(6)</a>
     <li><a href="#ref-for-typedef-media-in-parens⑥">3.1. Evaluating Media Queries</a> <a href="#ref-for-typedef-media-in-parens⑦">(2)</a> <a href="#ref-for-typedef-media-in-parens⑧">(3)</a> <a href="#ref-for-typedef-media-in-parens⑨">(4)</a> <a href="#ref-for-typedef-media-in-parens①⓪">(5)</a> <a href="#ref-for-typedef-media-in-parens①①">(6)</a> <a href="#ref-for-typedef-media-in-parens①②">(7)</a> <a href="#ref-for-typedef-media-in-parens①③">(8)</a> <a href="#ref-for-typedef-media-in-parens①④">(9)</a> <a href="#ref-for-typedef-media-in-parens①⑤">(10)</a>
    </ul>
@@ -3638,7 +3638,7 @@ Syntax</a> <a href="#ref-for-typedef-media-in-parens①">(2)</a> <a href="#ref-f
   <aside class="dfn-panel" data-for="typedef-media-feature">
    <b><a href="#typedef-media-feature">#typedef-media-feature</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-media-feature">3. 
+    <li><a href="#ref-for-typedef-media-feature">3.
 Syntax</a>
     <li><a href="#ref-for-typedef-media-feature①">3.1. Evaluating Media Queries</a>
    </ul>
@@ -3646,74 +3646,74 @@ Syntax</a>
   <aside class="dfn-panel" data-for="typedef-mf-plain">
    <b><a href="#typedef-mf-plain">#typedef-mf-plain</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-mf-plain">3. 
+    <li><a href="#ref-for-typedef-mf-plain">3.
 Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-mf-boolean">
    <b><a href="#typedef-mf-boolean">#typedef-mf-boolean</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-mf-boolean">3. 
+    <li><a href="#ref-for-typedef-mf-boolean">3.
 Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-mf-range">
    <b><a href="#typedef-mf-range">#typedef-mf-range</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-mf-range">3. 
+    <li><a href="#ref-for-typedef-mf-range">3.
 Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-mf-name">
    <b><a href="#typedef-mf-name">#typedef-mf-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-mf-name">3. 
+    <li><a href="#ref-for-typedef-mf-name">3.
 Syntax</a> <a href="#ref-for-typedef-mf-name①">(2)</a> <a href="#ref-for-typedef-mf-name②">(3)</a> <a href="#ref-for-typedef-mf-name③">(4)</a> <a href="#ref-for-typedef-mf-name④">(5)</a> <a href="#ref-for-typedef-mf-name⑤">(6)</a>
-    <li><a href="#ref-for-typedef-mf-name⑥">3.2. 
+    <li><a href="#ref-for-typedef-mf-name⑥">3.2.
 Error Handling</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-mf-value">
    <b><a href="#typedef-mf-value">#typedef-mf-value</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-mf-value">3. 
+    <li><a href="#ref-for-typedef-mf-value">3.
 Syntax</a> <a href="#ref-for-typedef-mf-value①">(2)</a> <a href="#ref-for-typedef-mf-value②">(3)</a> <a href="#ref-for-typedef-mf-value③">(4)</a> <a href="#ref-for-typedef-mf-value④">(5)</a> <a href="#ref-for-typedef-mf-value⑤">(6)</a> <a href="#ref-for-typedef-mf-value⑥">(7)</a>
-    <li><a href="#ref-for-typedef-mf-value⑦">3.2. 
+    <li><a href="#ref-for-typedef-mf-value⑦">3.2.
 Error Handling</a> <a href="#ref-for-typedef-mf-value⑧">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-mf-lt">
    <b><a href="#typedef-mf-lt">#typedef-mf-lt</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-mf-lt">3. 
+    <li><a href="#ref-for-typedef-mf-lt">3.
 Syntax</a> <a href="#ref-for-typedef-mf-lt①">(2)</a> <a href="#ref-for-typedef-mf-lt②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-mf-gt">
    <b><a href="#typedef-mf-gt">#typedef-mf-gt</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-mf-gt">3. 
+    <li><a href="#ref-for-typedef-mf-gt">3.
 Syntax</a> <a href="#ref-for-typedef-mf-gt①">(2)</a> <a href="#ref-for-typedef-mf-gt②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-mf-eq">
    <b><a href="#typedef-mf-eq">#typedef-mf-eq</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-mf-eq">3. 
+    <li><a href="#ref-for-typedef-mf-eq">3.
 Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-mf-comparison">
    <b><a href="#typedef-mf-comparison">#typedef-mf-comparison</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-mf-comparison">3. 
+    <li><a href="#ref-for-typedef-mf-comparison">3.
 Syntax</a> <a href="#ref-for-typedef-mf-comparison①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-general-enclosed">
    <b><a href="#typedef-general-enclosed">#typedef-general-enclosed</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-general-enclosed">3. 
+    <li><a href="#ref-for-typedef-general-enclosed">3.
 Syntax</a> <a href="#ref-for-typedef-general-enclosed①">(2)</a> <a href="#ref-for-typedef-general-enclosed②">(3)</a>
     <li><a href="#ref-for-typedef-general-enclosed③">3.1. Evaluating Media Queries</a> <a href="#ref-for-typedef-general-enclosed④">(2)</a> <a href="#ref-for-typedef-general-enclosed⑤">(3)</a>
    </ul>
@@ -3721,17 +3721,17 @@ Syntax</a> <a href="#ref-for-typedef-general-enclosed①">(2)</a> <a href="#ref-
   <aside class="dfn-panel" data-for="descdef-media-width">
    <b><a href="#descdef-media-width">#descdef-media-width</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-width">2.4.1. 
+    <li><a href="#ref-for-descdef-media-width">2.4.1.
 Media Feature Types: “range” and “discrete”</a>
-    <li><a href="#ref-for-descdef-media-width①">2.4.2. 
+    <li><a href="#ref-for-descdef-media-width①">2.4.2.
 Evaluating Media Features in a Boolean Context</a>
-    <li><a href="#ref-for-descdef-media-width②">2.4.3. 
+    <li><a href="#ref-for-descdef-media-width②">2.4.3.
 Evaluating Media Features in a Range Context</a>
-    <li><a href="#ref-for-descdef-media-width③">4.1. 
+    <li><a href="#ref-for-descdef-media-width③">4.1.
 Width: the width feature</a> <a href="#ref-for-descdef-media-width④">(2)</a> <a href="#ref-for-descdef-media-width⑤">(3)</a>
-    <li><a href="#ref-for-descdef-media-width⑥">4.3. 
+    <li><a href="#ref-for-descdef-media-width⑥">4.3.
 Aspect-Ratio: the aspect-ratio feature</a>
-    <li><a href="#ref-for-descdef-media-width⑦">4.4. 
+    <li><a href="#ref-for-descdef-media-width⑦">4.4.
 Orientation: the orientation feature</a>
     <li><a href="#ref-for-descdef-media-width⑧"> Appendix A: Deprecated Media Features</a>
    </ul>
@@ -3739,11 +3739,11 @@ Orientation: the orientation feature</a>
   <aside class="dfn-panel" data-for="descdef-media-height">
    <b><a href="#descdef-media-height">#descdef-media-height</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-height">4.2. 
+    <li><a href="#ref-for-descdef-media-height">4.2.
 Height: the height feature</a> <a href="#ref-for-descdef-media-height①">(2)</a> <a href="#ref-for-descdef-media-height②">(3)</a>
-    <li><a href="#ref-for-descdef-media-height③">4.3. 
+    <li><a href="#ref-for-descdef-media-height③">4.3.
 Aspect-Ratio: the aspect-ratio feature</a>
-    <li><a href="#ref-for-descdef-media-height④">4.4. 
+    <li><a href="#ref-for-descdef-media-height④">4.4.
 Orientation: the orientation feature</a>
     <li><a href="#ref-for-descdef-media-height⑤"> Appendix A: Deprecated Media Features</a>
    </ul>
@@ -3751,7 +3751,7 @@ Orientation: the orientation feature</a>
   <aside class="dfn-panel" data-for="descdef-media-aspect-ratio">
    <b><a href="#descdef-media-aspect-ratio">#descdef-media-aspect-ratio</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-aspect-ratio">4.3. 
+    <li><a href="#ref-for-descdef-media-aspect-ratio">4.3.
 Aspect-Ratio: the aspect-ratio feature</a> <a href="#ref-for-descdef-media-aspect-ratio①">(2)</a>
     <li><a href="#ref-for-descdef-media-aspect-ratio②"> Appendix A: Deprecated Media Features</a>
    </ul>
@@ -3759,9 +3759,9 @@ Aspect-Ratio: the aspect-ratio feature</a> <a href="#ref-for-descdef-media-aspec
   <aside class="dfn-panel" data-for="typedef-ratio">
    <b><a href="#typedef-ratio">#typedef-ratio</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-ratio">3. 
+    <li><a href="#ref-for-typedef-ratio">3.
 Syntax</a>
-    <li><a href="#ref-for-typedef-ratio①">4.3. 
+    <li><a href="#ref-for-typedef-ratio①">4.3.
 Aspect-Ratio: the aspect-ratio feature</a> <a href="#ref-for-typedef-ratio②">(2)</a>
     <li><a href="#ref-for-typedef-ratio③"> device-aspect-ratio</a>
    </ul>
@@ -3769,75 +3769,75 @@ Aspect-Ratio: the aspect-ratio feature</a> <a href="#ref-for-typedef-ratio②">(
   <aside class="dfn-panel" data-for="descdef-media-orientation">
    <b><a href="#descdef-media-orientation">#descdef-media-orientation</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-orientation">3.2. 
+    <li><a href="#ref-for-descdef-media-orientation">3.2.
 Error Handling</a>
-    <li><a href="#ref-for-descdef-media-orientation①">4.4. 
+    <li><a href="#ref-for-descdef-media-orientation①">4.4.
 Orientation: the orientation feature</a> <a href="#ref-for-descdef-media-orientation②">(2)</a> <a href="#ref-for-descdef-media-orientation③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-orientation-portrait">
    <b><a href="#valdef-media-orientation-portrait">#valdef-media-orientation-portrait</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-orientation-portrait">4.4. 
+    <li><a href="#ref-for-valdef-media-orientation-portrait">4.4.
 Orientation: the orientation feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-orientation-landscape">
    <b><a href="#valdef-media-orientation-landscape">#valdef-media-orientation-landscape</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-orientation-landscape">4.4. 
+    <li><a href="#ref-for-valdef-media-orientation-landscape">4.4.
 Orientation: the orientation feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-resolution">
    <b><a href="#descdef-media-resolution">#descdef-media-resolution</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-resolution">2.4.3. 
+    <li><a href="#ref-for-descdef-media-resolution">2.4.3.
 Evaluating Media Features in a Range Context</a>
-    <li><a href="#ref-for-descdef-media-resolution①">5.1. 
+    <li><a href="#ref-for-descdef-media-resolution①">5.1.
 Display Resolution: the resolution feature</a> <a href="#ref-for-descdef-media-resolution②">(2)</a> <a href="#ref-for-descdef-media-resolution③">(3)</a> <a href="#ref-for-descdef-media-resolution④">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-resolution-infinite">
    <b><a href="#valdef-media-resolution-infinite">#valdef-media-resolution-infinite</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-resolution-infinite">5.1. 
+    <li><a href="#ref-for-valdef-media-resolution-infinite">5.1.
 Display Resolution: the resolution feature</a> <a href="#ref-for-valdef-media-resolution-infinite①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-scan">
    <b><a href="#descdef-media-scan">#descdef-media-scan</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-scan">2.3. 
+    <li><a href="#ref-for-descdef-media-scan">2.3.
 Media Types</a>
-    <li><a href="#ref-for-descdef-media-scan①">5.2. 
+    <li><a href="#ref-for-descdef-media-scan①">5.2.
 Display Type: the scan feature</a> <a href="#ref-for-descdef-media-scan②">(2)</a> <a href="#ref-for-descdef-media-scan③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-grid">
    <b><a href="#descdef-media-grid">#descdef-media-grid</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-grid">2.3. 
+    <li><a href="#ref-for-descdef-media-grid">2.3.
 Media Types</a>
-    <li><a href="#ref-for-descdef-media-grid①">2.4.4. 
+    <li><a href="#ref-for-descdef-media-grid①">2.4.4.
 Using “min-” and “max-” Prefixes On Range Features</a> <a href="#ref-for-descdef-media-grid②">(2)</a>
-    <li><a href="#ref-for-descdef-media-grid③">5.3. 
+    <li><a href="#ref-for-descdef-media-grid③">5.3.
 Detecting Console Displays: the grid feature</a> <a href="#ref-for-descdef-media-grid④">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-mq-boolean">
    <b><a href="#typedef-mq-boolean">#typedef-mq-boolean</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-mq-boolean">5.3. 
+    <li><a href="#ref-for-typedef-mq-boolean">5.3.
 Detecting Console Displays: the grid feature</a> <a href="#ref-for-typedef-mq-boolean①">(2)</a> <a href="#ref-for-typedef-mq-boolean②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-update">
    <b><a href="#descdef-media-update">#descdef-media-update</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-update">2.4.2. 
+    <li><a href="#ref-for-descdef-media-update">2.4.2.
 Evaluating Media Features in a Boolean Context</a>
-    <li><a href="#ref-for-descdef-media-update①">5.4. 
+    <li><a href="#ref-for-descdef-media-update①">5.4.
 Display Update Frequency: the update feature</a> <a href="#ref-for-descdef-media-update②">(2)</a>
     <li><a href="#ref-for-descdef-media-update③"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -3845,14 +3845,14 @@ Display Update Frequency: the update feature</a> <a href="#ref-for-descdef-media
   <aside class="dfn-panel" data-for="valdef-media-update-none">
    <b><a href="#valdef-media-update-none">#valdef-media-update-none</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-update-none">2.4.2. 
+    <li><a href="#ref-for-valdef-media-update-none">2.4.2.
 Evaluating Media Features in a Boolean Context</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-overflow-block">
    <b><a href="#descdef-media-overflow-block">#descdef-media-overflow-block</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-overflow-block">5.5. 
+    <li><a href="#ref-for-descdef-media-overflow-block">5.5.
 Block-Axis Overflow: the overflow-block feature</a> <a href="#ref-for-descdef-media-overflow-block①">(2)</a>
     <li><a href="#ref-for-descdef-media-overflow-block②"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -3860,14 +3860,14 @@ Block-Axis Overflow: the overflow-block feature</a> <a href="#ref-for-descdef-me
   <aside class="dfn-panel" data-for="valdef-media-overflow-block-paged">
    <b><a href="#valdef-media-overflow-block-paged">#valdef-media-overflow-block-paged</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-overflow-block-paged">5.6. 
+    <li><a href="#ref-for-valdef-media-overflow-block-paged">5.6.
 Inline-Axis Overflow: the overflow-inline feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-overflow-inline">
    <b><a href="#descdef-media-overflow-inline">#descdef-media-overflow-inline</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-overflow-inline">5.6. 
+    <li><a href="#ref-for-descdef-media-overflow-inline">5.6.
 Inline-Axis Overflow: the overflow-inline feature</a> <a href="#ref-for-descdef-media-overflow-inline①">(2)</a> <a href="#ref-for-descdef-media-overflow-inline②">(3)</a>
     <li><a href="#ref-for-descdef-media-overflow-inline③"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -3875,36 +3875,36 @@ Inline-Axis Overflow: the overflow-inline feature</a> <a href="#ref-for-descdef-
   <aside class="dfn-panel" data-for="descdef-media-color">
    <b><a href="#descdef-media-color">#descdef-media-color</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-color">2.4. 
+    <li><a href="#ref-for-descdef-media-color">2.4.
 Media Features</a>
-    <li><a href="#ref-for-descdef-media-color①">2.4.2. 
+    <li><a href="#ref-for-descdef-media-color①">2.4.2.
 Evaluating Media Features in a Boolean Context</a>
-    <li><a href="#ref-for-descdef-media-color②">3.2. 
+    <li><a href="#ref-for-descdef-media-color②">3.2.
 Error Handling</a>
-    <li><a href="#ref-for-descdef-media-color③">6.1. 
+    <li><a href="#ref-for-descdef-media-color③">6.1.
 Color Depth: the color feature</a> <a href="#ref-for-descdef-media-color④">(2)</a> <a href="#ref-for-descdef-media-color⑤">(3)</a> <a href="#ref-for-descdef-media-color⑥">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-color-index">
    <b><a href="#descdef-media-color-index">#descdef-media-color-index</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-color-index">6.2. 
+    <li><a href="#ref-for-descdef-media-color-index">6.2.
 Paletted Color Screens: the color-index feature</a> <a href="#ref-for-descdef-media-color-index①">(2)</a> <a href="#ref-for-descdef-media-color-index②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-monochrome">
    <b><a href="#descdef-media-monochrome">#descdef-media-monochrome</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-monochrome">6.3. 
+    <li><a href="#ref-for-descdef-media-monochrome">6.3.
 Monochrome Screens: the monochrome feature</a> <a href="#ref-for-descdef-media-monochrome①">(2)</a> <a href="#ref-for-descdef-media-monochrome②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-color-gamut">
    <b><a href="#descdef-media-color-gamut">#descdef-media-color-gamut</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-color-gamut">6.1. 
+    <li><a href="#ref-for-descdef-media-color-gamut">6.1.
 Color Depth: the color feature</a>
-    <li><a href="#ref-for-descdef-media-color-gamut①">6.4. 
+    <li><a href="#ref-for-descdef-media-color-gamut①">6.4.
 Color Display Quality: the color-gamut feature</a> <a href="#ref-for-descdef-media-color-gamut②">(2)</a>
     <li><a href="#ref-for-descdef-media-color-gamut③"> Changes since the 19 May 2017 Working Draft</a>
     <li><a href="#ref-for-descdef-media-color-gamut④"> Changes Since Media Queries Level 3</a>
@@ -3913,36 +3913,36 @@ Color Display Quality: the color-gamut feature</a> <a href="#ref-for-descdef-med
   <aside class="dfn-panel" data-for="valdef-media-color-gamut-srgb">
    <b><a href="#valdef-media-color-gamut-srgb">#valdef-media-color-gamut-srgb</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-color-gamut-srgb">6.4. 
+    <li><a href="#ref-for-valdef-media-color-gamut-srgb">6.4.
 Color Display Quality: the color-gamut feature</a> <a href="#ref-for-valdef-media-color-gamut-srgb①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-color-gamut-p3">
    <b><a href="#valdef-media-color-gamut-p3">#valdef-media-color-gamut-p3</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-color-gamut-p3">6.4. 
+    <li><a href="#ref-for-valdef-media-color-gamut-p3">6.4.
 Color Display Quality: the color-gamut feature</a> <a href="#ref-for-valdef-media-color-gamut-p3①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-color-gamut-rec2020">
    <b><a href="#valdef-media-color-gamut-rec2020">#valdef-media-color-gamut-rec2020</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-color-gamut-rec2020">6.4. 
+    <li><a href="#ref-for-valdef-media-color-gamut-rec2020">6.4.
 Color Display Quality: the color-gamut feature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-pointer">
    <b><a href="#descdef-media-pointer">#descdef-media-pointer</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-pointer①">2.4.1. 
+    <li><a href="#ref-for-descdef-media-pointer①">2.4.1.
 Media Feature Types: “range” and “discrete”</a>
-    <li><a href="#ref-for-descdef-media-pointer②">2.4.2. 
+    <li><a href="#ref-for-descdef-media-pointer②">2.4.2.
 Evaluating Media Features in a Boolean Context</a>
-    <li><a href="#ref-for-descdef-media-pointer③">7. 
+    <li><a href="#ref-for-descdef-media-pointer③">7.
 Interaction Media Features</a> <a href="#ref-for-descdef-media-pointer④">(2)</a> <a href="#ref-for-descdef-media-pointer⑤">(3)</a> <a href="#ref-for-descdef-media-pointer⑥">(4)</a> <a href="#ref-for-descdef-media-pointer⑦">(5)</a> <a href="#ref-for-descdef-media-pointer⑧">(6)</a> <a href="#ref-for-descdef-media-pointer⑨">(7)</a> <a href="#ref-for-descdef-media-pointer①⓪">(8)</a>
-    <li><a href="#ref-for-descdef-media-pointer①①">7.1. 
+    <li><a href="#ref-for-descdef-media-pointer①①">7.1.
 Pointing Device Quality: the pointer feature</a> <a href="#ref-for-descdef-media-pointer①②">(2)</a> <a href="#ref-for-descdef-media-pointer①③">(3)</a>
-    <li><a href="#ref-for-descdef-media-pointer①④">7.3. 
+    <li><a href="#ref-for-descdef-media-pointer①④">7.3.
 All Available Interaction Capabilities: the any-pointer and any-hover features</a> <a href="#ref-for-descdef-media-pointer①⑤">(2)</a> <a href="#ref-for-descdef-media-pointer①⑥">(3)</a>
     <li><a href="#ref-for-descdef-media-pointer①⑦"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -3950,40 +3950,40 @@ All Available Interaction Capabilities: the any-pointer and any-hover features</
   <aside class="dfn-panel" data-for="valdef-media-pointer-none">
    <b><a href="#valdef-media-pointer-none">#valdef-media-pointer-none</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-pointer-none">2.4.2. 
+    <li><a href="#ref-for-valdef-media-pointer-none">2.4.2.
 Evaluating Media Features in a Boolean Context</a>
-    <li><a href="#ref-for-valdef-media-pointer-none①">7.1. 
+    <li><a href="#ref-for-valdef-media-pointer-none①">7.1.
 Pointing Device Quality: the pointer feature</a>
-    <li><a href="#ref-for-valdef-media-pointer-none②">7.3. 
+    <li><a href="#ref-for-valdef-media-pointer-none②">7.3.
 All Available Interaction Capabilities: the any-pointer and any-hover features</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-pointer-coarse">
    <b><a href="#valdef-media-pointer-coarse">#valdef-media-pointer-coarse</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-pointer-coarse">7.1. 
+    <li><a href="#ref-for-valdef-media-pointer-coarse">7.1.
 Pointing Device Quality: the pointer feature</a> <a href="#ref-for-valdef-media-pointer-coarse①">(2)</a> <a href="#ref-for-valdef-media-pointer-coarse②">(3)</a> <a href="#ref-for-valdef-media-pointer-coarse③">(4)</a> <a href="#ref-for-valdef-media-pointer-coarse④">(5)</a> <a href="#ref-for-valdef-media-pointer-coarse⑤">(6)</a> <a href="#ref-for-valdef-media-pointer-coarse⑥">(7)</a>
-    <li><a href="#ref-for-valdef-media-pointer-coarse⑦">7.3. 
+    <li><a href="#ref-for-valdef-media-pointer-coarse⑦">7.3.
 All Available Interaction Capabilities: the any-pointer and any-hover features</a> <a href="#ref-for-valdef-media-pointer-coarse⑧">(2)</a> <a href="#ref-for-valdef-media-pointer-coarse⑨">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-media-pointer-fine">
    <b><a href="#valdef-media-pointer-fine">#valdef-media-pointer-fine</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-media-pointer-fine">7.1. 
+    <li><a href="#ref-for-valdef-media-pointer-fine">7.1.
 Pointing Device Quality: the pointer feature</a> <a href="#ref-for-valdef-media-pointer-fine①">(2)</a> <a href="#ref-for-valdef-media-pointer-fine②">(3)</a>
-    <li><a href="#ref-for-valdef-media-pointer-fine③">7.3. 
+    <li><a href="#ref-for-valdef-media-pointer-fine③">7.3.
 All Available Interaction Capabilities: the any-pointer and any-hover features</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="descdef-media-hover">
    <b><a href="#descdef-media-hover">#descdef-media-hover</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-hover①">7. 
+    <li><a href="#ref-for-descdef-media-hover①">7.
 Interaction Media Features</a> <a href="#ref-for-descdef-media-hover②">(2)</a> <a href="#ref-for-descdef-media-hover③">(3)</a> <a href="#ref-for-descdef-media-hover④">(4)</a> <a href="#ref-for-descdef-media-hover⑤">(5)</a> <a href="#ref-for-descdef-media-hover⑥">(6)</a> <a href="#ref-for-descdef-media-hover⑦">(7)</a>
-    <li><a href="#ref-for-descdef-media-hover⑧">7.2. 
+    <li><a href="#ref-for-descdef-media-hover⑧">7.2.
 Hover Capability: the hover feature</a> <a href="#ref-for-descdef-media-hover⑨">(2)</a> <a href="#ref-for-descdef-media-hover①⓪">(3)</a> <a href="#ref-for-descdef-media-hover①①">(4)</a> <a href="#ref-for-descdef-media-hover①②">(5)</a> <a href="#ref-for-descdef-media-hover①③">(6)</a> <a href="#ref-for-descdef-media-hover①④">(7)</a>
-    <li><a href="#ref-for-descdef-media-hover①⑤">7.3. 
+    <li><a href="#ref-for-descdef-media-hover①⑤">7.3.
 All Available Interaction Capabilities: the any-pointer and any-hover features</a>
     <li><a href="#ref-for-descdef-media-hover①⑥"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -3991,11 +3991,11 @@ All Available Interaction Capabilities: the any-pointer and any-hover features</
   <aside class="dfn-panel" data-for="descdef-media-any-pointer">
    <b><a href="#descdef-media-any-pointer">#descdef-media-any-pointer</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-any-pointer①">7. 
+    <li><a href="#ref-for-descdef-media-any-pointer①">7.
 Interaction Media Features</a> <a href="#ref-for-descdef-media-any-pointer②">(2)</a> <a href="#ref-for-descdef-media-any-pointer③">(3)</a> <a href="#ref-for-descdef-media-any-pointer④">(4)</a>
-    <li><a href="#ref-for-descdef-media-any-pointer⑤">7.1. 
+    <li><a href="#ref-for-descdef-media-any-pointer⑤">7.1.
 Pointing Device Quality: the pointer feature</a> <a href="#ref-for-descdef-media-any-pointer⑥">(2)</a>
-    <li><a href="#ref-for-descdef-media-any-pointer⑦">7.3. 
+    <li><a href="#ref-for-descdef-media-any-pointer⑦">7.3.
 All Available Interaction Capabilities: the any-pointer and any-hover features</a> <a href="#ref-for-descdef-media-any-pointer⑧">(2)</a> <a href="#ref-for-descdef-media-any-pointer⑨">(3)</a> <a href="#ref-for-descdef-media-any-pointer①⓪">(4)</a> <a href="#ref-for-descdef-media-any-pointer①①">(5)</a> <a href="#ref-for-descdef-media-any-pointer①②">(6)</a> <a href="#ref-for-descdef-media-any-pointer①③">(7)</a> <a href="#ref-for-descdef-media-any-pointer①④">(8)</a>
     <li><a href="#ref-for-descdef-media-any-pointer①⑤"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -4003,11 +4003,11 @@ All Available Interaction Capabilities: the any-pointer and any-hover features</
   <aside class="dfn-panel" data-for="descdef-media-any-hover">
    <b><a href="#descdef-media-any-hover">#descdef-media-any-hover</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-media-any-hover①">7. 
+    <li><a href="#ref-for-descdef-media-any-hover①">7.
 Interaction Media Features</a> <a href="#ref-for-descdef-media-any-hover②">(2)</a> <a href="#ref-for-descdef-media-any-hover③">(3)</a> <a href="#ref-for-descdef-media-any-hover④">(4)</a>
-    <li><a href="#ref-for-descdef-media-any-hover⑤">7.2. 
+    <li><a href="#ref-for-descdef-media-any-hover⑤">7.2.
 Hover Capability: the hover feature</a>
-    <li><a href="#ref-for-descdef-media-any-hover⑥">7.3. 
+    <li><a href="#ref-for-descdef-media-any-hover⑥">7.3.
 All Available Interaction Capabilities: the any-pointer and any-hover features</a> <a href="#ref-for-descdef-media-any-hover⑦">(2)</a> <a href="#ref-for-descdef-media-any-hover⑧">(3)</a> <a href="#ref-for-descdef-media-any-hover⑨">(4)</a> <a href="#ref-for-descdef-media-any-hover①⓪">(5)</a>
     <li><a href="#ref-for-descdef-media-any-hover①①"> Changes Since Media Queries Level 3</a>
    </ul>
@@ -4057,57 +4057,65 @@ All Available Interaction Capabilities: the any-pointer and any-hover features</
             });</script>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

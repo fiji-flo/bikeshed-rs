@@ -233,7 +233,7 @@ It builds on the Page model module and introduces and defines the fragmentation 
 It adds functionality for pagination, breaking variable fragment size and orientation, widows and orphans.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -392,7 +392,7 @@ on screen, on paper, etc.
     <dd> A box—<wbr>such as a page box, column box, or region—<wbr>that contains a portion (or all) of a <a data-link-type="dfn" href="#fragmented-flow" id="ref-for-fragmented-flow">fragmented flow</a>.
 		Fragmentainers can be pre-defined, or generated as needed.
 		When breakable content would overflow a fragmentainer in the block dimension,
-		it breaks into the next container in its <a data-link-type="dfn" href="#fragmentation-context" id="ref-for-fragmentation-context">fragmentation context</a> instead. 
+		it breaks into the next container in its <a data-link-type="dfn" href="#fragmentation-context" id="ref-for-fragmentation-context">fragmentation context</a> instead.
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="fragmentation-context">fragmentation context</dfn>
     <dd> An ordered series of <a data-link-type="dfn" href="#fragmentainer" id="ref-for-fragmentainer①">fragmentainers</a>,
 		such as created by a <a href="https://www.w3.org/TR/css-multicol-1/">multi-column container</a>,
@@ -401,27 +401,27 @@ on screen, on paper, etc.
 		A given fragmentation context can only have one block flow direction
 		across all its <span id="ref-for-fragmentainer②">fragmentainers</span>.
 		(Descendants of the <a data-link-type="dfn" href="#fragmentation-root" id="ref-for-fragmentation-root">fragmentation root</a> may have other block flow directions,
-		but fragmentation proceeds according to the block flow direction applied to the <span id="ref-for-fragmentation-root①">fragmentation root</span>.) 
+		but fragmentation proceeds according to the block flow direction applied to the <span id="ref-for-fragmentation-root①">fragmentation root</span>.)
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="fragmented-flow">fragmented flow</dfn>
     <dd> Content that is being laid out in a <a data-link-type="dfn" href="#fragmentation-context" id="ref-for-fragmentation-context①">fragmentation context</a>.
 		The <a data-link-type="dfn" href="#fragmented-flow" id="ref-for-fragmented-flow①">fragmented flow</a> consists of the content of a (possibly anonymous) box
-		called the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="fragmentation-root">fragmentation root</dfn>. 
+		called the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="fragmentation-root">fragmentation root</dfn>.
     <dt><dfn data-dfn-type="dfn" data-export id="fragmentation-direction">fragmentation direction<a class="self-link" href="#fragmentation-direction"></a></dfn>
     <dd> The block flow direction of the <a data-link-type="dfn" href="#fragmentation-context" id="ref-for-fragmentation-context②">fragmentation context</a>,
 		i.e. the direction in which content is fragmented.
-		(In this level of CSS, content only fragments in one dimension.) 
+		(In this level of CSS, content only fragments in one dimension.)
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="fragmentation">fragmentation</dfn>
-    <dd> The process of splitting a content flow across the <a data-link-type="dfn" href="#fragmentainer" id="ref-for-fragmentainer③">fragmentainers</a> that form a <a data-link-type="dfn" href="#fragmentation-context" id="ref-for-fragmentation-context③">fragmentation context</a>. 
+    <dd> The process of splitting a content flow across the <a data-link-type="dfn" href="#fragmentainer" id="ref-for-fragmentainer③">fragmentainers</a> that form a <a data-link-type="dfn" href="#fragmentation-context" id="ref-for-fragmentation-context③">fragmentation context</a>.
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="box-fragment">box fragment</dfn> or <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="fragment">fragment</dfn>
     <dd> The portion of a box that belongs to exactly one <a data-link-type="dfn" href="#fragmentainer" id="ref-for-fragmentainer④">fragmentainer</a>.
 		A box in continuous flow always consists of only one fragment.
 		A box in a fragmented flow consists of one or more fragments.
 		Each fragment has its own share of the box’s border, padding, and margin,
 		and therefore has its own <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#padding-area" id="ref-for-padding-area">padding area</a>, <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#border-area" id="ref-for-border-area">border area</a>, and <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#margin-area" id="ref-for-margin-area">margin area</a>.
-		(See <a class="property" data-link-type="propdesc" href="#propdef-box-decoration-break" id="ref-for-propdef-box-decoration-break">box-decoration-break</a>, which controls how these are affected by fragmentation.) 
+		(See <a class="property" data-link-type="propdesc" href="#propdef-box-decoration-break" id="ref-for-propdef-box-decoration-break">box-decoration-break</a>, which controls how these are affected by fragmentation.)
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="remaining-fragmentainer-extent">remaining fragmentainer extent</dfn>
     <dd> The remaining <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-axis" id="ref-for-block-axis">block-axis</a> space in the <a data-link-type="dfn" href="#fragmentainer" id="ref-for-fragmentainer⑤">fragmentainer</a> available to a given element,
-		i.e. between the end of preceding content in <span id="ref-for-fragmentainer⑥">fragmentainer</span> and the edge of the <span id="ref-for-fragmentainer⑦">fragmentainer</span>. 
+		i.e. between the end of preceding content in <span id="ref-for-fragmentainer⑥">fragmentainer</span> and the edge of the <span id="ref-for-fragmentainer⑦">fragmentainer</span>.
    </dl>
    <p>Each <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="fragmentation-break">fragmentation break</dfn> (hereafter, <dfn data-dfn-type="dfn" data-noexport id="break">break<a class="self-link" href="#break"></a></dfn>)
 	ends layout of the fragmented box in the current <a data-link-type="dfn" href="#fragmentainer" id="ref-for-fragmentainer⑧">fragmentainer</a> and causes the remaining content to be laid out in the next <span id="ref-for-fragmentainer⑨">fragmentainer</span>,
@@ -451,13 +451,13 @@ on screen, on paper, etc.
    <p>The following are examples of parallel flows
 	whose contents will fragment independently:</p>
    <ul>
-    <li>The contents of a float vs. the content wrapping outside the float. 
-    <li>The contents of a float vs. the contents of an adjacent float. 
-    <li>The contents of each table cell in a single table row. 
-    <li>The contents of each grid item in a single grid row. 
-    <li>The contents of each flex item in a flex layout row. 
+    <li>The contents of a float vs. the content wrapping outside the float.
+    <li>The contents of a float vs. the contents of an adjacent float.
+    <li>The contents of each table cell in a single table row.
+    <li>The contents of each grid item in a single grid row.
+    <li>The contents of each flex item in a flex layout row.
     <li>The contents of absolutely-positioned elements
-			that cover the same range of their containing block’s fragmentation context. 
+			that cover the same range of their containing block’s fragmentation context.
    </ul>
    <p>Content overflowing the content edge of a fixed-size box
 	is considered parallel to the content after the fixed-size box
@@ -505,28 +505,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-break-before">break-before</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-break-after">break-after</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> avoid <span id="ref-for-comb-one①">|</span> always <span id="ref-for-comb-one②">|</span> all <span id="ref-for-comb-one③">|</span> avoid-page <span id="ref-for-comb-one④">|</span> page <span id="ref-for-comb-one⑤">|</span> left <span id="ref-for-comb-one⑥">|</span> right <span id="ref-for-comb-one⑦">|</span> recto <span id="ref-for-comb-one⑧">|</span> verso <span id="ref-for-comb-one⑨">|</span> avoid-column <span id="ref-for-comb-one①⓪">|</span> column <span id="ref-for-comb-one①①">|</span> avoid-region <span id="ref-for-comb-one①②">|</span> region 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> avoid <span id="ref-for-comb-one①">|</span> always <span id="ref-for-comb-one②">|</span> all <span id="ref-for-comb-one③">|</span> avoid-page <span id="ref-for-comb-one④">|</span> page <span id="ref-for-comb-one⑤">|</span> left <span id="ref-for-comb-one⑥">|</span> right <span id="ref-for-comb-one⑦">|</span> recto <span id="ref-for-comb-one⑧">|</span> verso <span id="ref-for-comb-one⑨">|</span> avoid-column <span id="ref-for-comb-one①⓪">|</span> column <span id="ref-for-comb-one①①">|</span> avoid-region <span id="ref-for-comb-one①②">|</span> region
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>block-level boxes, grid items, flex items, table row groups, table rows (but see prose) 
+      <td>block-level boxes, grid items, flex items, table row groups, table rows (but see prose)
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>These properties specify page/column/region break behavior
 	before/after the generated box.
@@ -542,64 +542,64 @@ on screen, on paper, etc.
    <p>These values have an effect regardless of
 	the type of fragmented context containing the flow.</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-auto">auto</dfn> 
-    <dd> Neither force nor forbid a break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-avoid">avoid</dfn> 
-    <dd> Avoid a break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-always">always</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-auto">auto</dfn>
+    <dd> Neither force nor forbid a break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-avoid">avoid</dfn>
+    <dd> Avoid a break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-always">always</dfn>
     <dd> Always force a break before/after the <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#principal-box" id="ref-for-principal-box">principal box</a>.
 		The type of this break is that of the immediately-containing <a data-link-type="dfn" href="#fragmentation-context" id="ref-for-fragmentation-context⑥">fragmentation context</a>.
 		For example, in a <a data-link-type="dfn" href="https://drafts.csswg.org/css-multicol-1/#multi-column-container" id="ref-for-multi-column-container">multi-column container</a> forces a <a data-link-type="dfn" href="#column-break" id="ref-for-column-break">column break</a>;
 		in <a data-link-type="dfn">paged media</a> not inside a <span id="ref-for-multi-column-container①">multi-column container</span>,
-		forces a <a data-link-type="dfn" href="#page-break" id="ref-for-page-break">page break</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-all">all</dfn> 
+		forces a <a data-link-type="dfn" href="#page-break" id="ref-for-page-break">page break</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-all">all</dfn>
     <dd>
       Always force a break before/after the <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#principal-box" id="ref-for-principal-box①">principal box</a>.
 		This value breaks through all containing <a data-link-type="dfn" href="#fragmentation-context" id="ref-for-fragmentation-context⑦">fragmentation contexts</a>.
 		For example, inside a <a data-link-type="dfn" href="https://drafts.csswg.org/css-multicol-1/#multi-column-container" id="ref-for-multi-column-container②">multi-column container</a> in a <a data-link-type="dfn">region</a> in a <span id="ref-for-multi-column-container③">multi-column container</span> in <span>paged media</span>,
 		it forces simultaneously a <a data-link-type="dfn" href="#column-break" id="ref-for-column-break①">column break</a> in the inner <span id="ref-for-multi-column-container④">multi-column container</span>,
 		a <a data-link-type="dfn" href="#region-break" id="ref-for-region-break">region break</a>, a <span id="ref-for-column-break②">column break</span> in the outer <span id="ref-for-multi-column-container⑤">multi-column container</span>,
-		and a <a data-link-type="dfn" href="#page-break" id="ref-for-page-break①">page break</a>. 
+		and a <a data-link-type="dfn" href="#page-break" id="ref-for-page-break①">page break</a>.
      <p class="issue" id="issue-9e81b4a6"><a class="self-link" href="#issue-9e81b4a6"></a> It’s unclear if this value is needed.</p>
    </dl>
    <h4 class="no-num heading settled" id="page-break-values"><span class="content"> Page Break Values</span><a class="self-link" href="#page-break-values"></a></h4>
    <p>These values only have an effect in paginated contexts;
 	if the flow is not paginated, they have no effect.</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-avoid-page">avoid-page</dfn> 
-    <dd> Avoid a page break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-page">page</dfn> 
-    <dd> Always force a page break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-left">left</dfn> 
-    <dd> Force one or two page breaks before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a> so that the next page is formatted as a left page. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-right">right</dfn> 
-    <dd> Force one or two page breaks before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a> so that the next page is formatted as a right page. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-recto">recto</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-avoid-page">avoid-page</dfn>
+    <dd> Avoid a page break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-page">page</dfn>
+    <dd> Always force a page break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-left">left</dfn>
+    <dd> Force one or two page breaks before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a> so that the next page is formatted as a left page.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-right">right</dfn>
+    <dd> Force one or two page breaks before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a> so that the next page is formatted as a right page.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-recto">recto</dfn>
     <dd> Force one or two page breaks before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a> so that
 		the next page is formatted as either a left page or a right page,
-		whichever is second (according to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-page-3/#page-progression" id="ref-for-page-progression">page progression</a>) in a page spread. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-verso">verso</dfn> 
+		whichever is second (according to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-page-3/#page-progression" id="ref-for-page-progression">page progression</a>) in a page spread.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-verso">verso</dfn>
     <dd> Force one or two page breaks before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a> so that
 		the next page is formatted as either a left page or a right page,
-		whichever is first (according to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-page-3/#page-progression" id="ref-for-page-progression①">page progression</a>) in a page spread. 
+		whichever is first (according to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-page-3/#page-progression" id="ref-for-page-progression①">page progression</a>) in a page spread.
    </dl>
    <h4 class="no-num heading settled" id="column-break-values"><span class="content"> Column Break Values</span><a class="self-link" href="#column-break-values"></a></h4>
    <p>These values only have an effect in multi-column contexts;
 	if the flow is not within a multi-column context, they have no effect.</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-avoid-column">avoid-column</dfn> 
-    <dd> Avoid a column break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-column">column</dfn> 
-    <dd> Always force a column break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>. 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-avoid-column">avoid-column</dfn>
+    <dd> Avoid a column break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-column">column</dfn>
+    <dd> Always force a column break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>.
    </dl>
    <h4 class="no-num heading settled" id="region-break-values"><span class="content"> Region Break Values</span><a class="self-link" href="#region-break-values"></a></h4>
    <p>These values only have an effect in multi-region contexts;
 	if the flow is not linked across multiple regions, these values have no effect.</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-avoid-region">avoid-region</dfn> 
-    <dd> Avoid a region break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-region">region</dfn> 
-    <dd> Always force a region break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>. 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-avoid-region">avoid-region</dfn>
+    <dd> Avoid a region break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-before,break-after" data-dfn-type="value" data-export id="valdef-break-before-region">region</dfn>
+    <dd> Always force a region break before/after the <a href="https://www.w3.org/TR/CSS2/visuren.html#block-boxes">principal box</a>.
    </dl>
    <h4 class="heading settled" data-level="3.1.1" id="break-propagation"><span class="secno">3.1.1. </span><span class="content"> Child→Parent Break Propagation</span><a class="self-link" href="#break-propagation"></a></h4>
    <p>Since breaks are only allowed between siblings,
@@ -626,43 +626,43 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-break-inside">break-inside</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> avoid <span id="ref-for-comb-one①④">|</span> avoid-page <span id="ref-for-comb-one①⑤">|</span> avoid-column <span id="ref-for-comb-one①⑥">|</span> avoid-region 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> avoid <span id="ref-for-comb-one①④">|</span> avoid-page <span id="ref-for-comb-one①⑤">|</span> avoid-column <span id="ref-for-comb-one①⑥">|</span> avoid-region
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>all elements except inline-level boxes, internal ruby boxes, table column boxes, table column group boxes, absolutely-positioned boxes 
+      <td>all elements except inline-level boxes, internal ruby boxes, table column boxes, table column group boxes, absolutely-positioned boxes
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>This property specifies page/column/region break behavior
 	within the element’s principal box.
 	Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-inside,page-break-inside" data-dfn-type="value" data-export id="valdef-break-inside-auto">auto</dfn> 
-    <dd> Impose no additional breaking constraints within the box. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="break-inside,page-break-inside" data-dfn-type="value" data-export id="valdef-break-inside-avoid">avoid</dfn> 
-    <dd> Avoid breaks within the box. 
-    <dt><dfn class="css" data-dfn-for="break-inside,page-break-inside" data-dfn-type="value" data-export id="valdef-break-inside-avoid-page">avoid-page<a class="self-link" href="#valdef-break-inside-avoid-page"></a></dfn> 
-    <dd> Avoid a page break within the box. 
-    <dt><dfn class="css" data-dfn-for="break-inside,page-break-inside" data-dfn-type="value" data-export id="valdef-break-inside-avoid-column">avoid-column<a class="self-link" href="#valdef-break-inside-avoid-column"></a></dfn> 
-    <dd> Avoid a column break within the box. 
-    <dt><dfn class="css" data-dfn-for="break-inside,page-break-inside" data-dfn-type="value" data-export id="valdef-break-inside-avoid-region">avoid-region<a class="self-link" href="#valdef-break-inside-avoid-region"></a></dfn> 
-    <dd> Avoid a region break within the box. 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-inside,page-break-inside" data-dfn-type="value" data-export id="valdef-break-inside-auto">auto</dfn>
+    <dd> Impose no additional breaking constraints within the box.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="break-inside,page-break-inside" data-dfn-type="value" data-export id="valdef-break-inside-avoid">avoid</dfn>
+    <dd> Avoid breaks within the box.
+    <dt><dfn class="css" data-dfn-for="break-inside,page-break-inside" data-dfn-type="value" data-export id="valdef-break-inside-avoid-page">avoid-page<a class="self-link" href="#valdef-break-inside-avoid-page"></a></dfn>
+    <dd> Avoid a page break within the box.
+    <dt><dfn class="css" data-dfn-for="break-inside,page-break-inside" data-dfn-type="value" data-export id="valdef-break-inside-avoid-column">avoid-column<a class="self-link" href="#valdef-break-inside-avoid-column"></a></dfn>
+    <dd> Avoid a column break within the box.
+    <dt><dfn class="css" data-dfn-for="break-inside,page-break-inside" data-dfn-type="value" data-export id="valdef-break-inside-avoid-region">avoid-region<a class="self-link" href="#valdef-break-inside-avoid-region"></a></dfn>
+    <dd> Avoid a region break within the box.
    </dl>
    <h3 class="heading settled" data-level="3.3" id="widows-orphans"><span class="secno">3.3. </span><span class="content"> Breaks Between Lines: <a class="property" data-link-type="propdesc" href="#propdef-orphans" id="ref-for-propdef-orphans①">orphans</a>, <a class="property" data-link-type="propdesc" href="#propdef-widows" id="ref-for-propdef-widows①">widows</a></span><a class="self-link" href="#widows-orphans"></a></h3>
    <table class="def propdef" data-link-for-hint="orphans">
@@ -672,28 +672,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-orphans">orphans</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-widows">widows</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value">&lt;integer></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value">&lt;integer></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>2 
+      <td>2
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-container" id="ref-for-block-container">block containers</a> that establish an <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#inline-formatting-context" id="ref-for-inline-formatting-context">inline formatting context</a> 
+      <td><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-container" id="ref-for-block-container">block containers</a> that establish an <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#inline-formatting-context" id="ref-for-inline-formatting-context">inline formatting context</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified integer 
+      <td>specified integer
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-orphans" id="ref-for-propdef-orphans②">orphans</a> property specifies the minimum number
 	of line boxes in a block container
@@ -714,15 +714,15 @@ on screen, on paper, etc.
    <table class="data">
     <thead>
      <tr>
-      <th>Shorthand (<a class="property" data-link-type="propdesc">page-break-*</a>) Values 
-      <th>Longhand (<a class="property" data-link-type="propdesc">break-*</a>) Values 
+      <th>Shorthand (<a class="property" data-link-type="propdesc">page-break-*</a>) Values
+      <th>Longhand (<a class="property" data-link-type="propdesc">break-*</a>) Values
     <tbody>
      <tr>
-      <td><span class="css">auto | left | right | avoid</span> 
-      <td><span class="css">auto | left | right | avoid</span> 
+      <td><span class="css">auto | left | right | avoid</span>
+      <td><span class="css">auto | left | right | avoid</span>
      <tr>
-      <td><span class="css">always</span> 
-      <td><span class="css">page</span> 
+      <td><span class="css">always</span>
+      <td><span class="css">page</span>
    </table>
    <h2 class="heading settled" data-level="4" id="breaking-rules"><span class="secno">4. </span><span class="content"> Rules for Breaking</span><a class="self-link" href="#breaking-rules"></a></h2>
    <p>A <a data-link-type="dfn" href="#fragmented-flow" id="ref-for-fragmented-flow④">fragmented flow</a> may be broken across <a data-link-type="dfn" href="#fragmentainer" id="ref-for-fragmentainer①⑥">fragmentainers</a> at a number of <a href="#possible-breaks">possible break points</a>. In the case of <a href="#forced-breaks">forced breaks</a>, the UA is required to
@@ -735,7 +735,7 @@ on screen, on paper, etc.
    <dl>
     <dt id="btw-blocks"><a class="self-link" href="#btw-blocks"></a>Class A
     <dd>
-      Between sibling boxes of the following types: 
+      Between sibling boxes of the following types:
      <dl>
       <dt>Block-parallel Fragmentation
       <dd> When the block flow direction of the siblings' containing block
@@ -743,21 +743,21 @@ on screen, on paper, etc.
 				a float and an immediately-adjacent in-flow or floated box,
 				table row group boxes,
 				table row boxes,
-				multi-column column row boxes. 
+				multi-column column row boxes.
       <dt>Block-perpendicular Fragmentation
       <dd> When the block flow direction of the siblings' containing block
 				is perpendicular to that of the fragmentation context:
 				table column group boxes,
 				table column boxes,
-				multi-column column boxes. 
+				multi-column column boxes.
      </dl>
     <dt id="btw-lines"><a class="self-link" href="#btw-lines"></a>Class B
-    <dd> Between line boxes inside a block container box. 
+    <dd> Between line boxes inside a block container box.
     <dt id="end-block"><a class="self-link" href="#end-block"></a>Class C
     <dd> Between the content edge of a block container box and the outer edges of its
 		child content (margin edges of block-level children or line box
 		edges for inline-level children) <em>if</em> there is a (non-zero)
-		gap between them. 
+		gap between them.
    </dl>
    <p class="note" role="note"><span>Note:</span> There is no inherent prioritization among these classes of break points.
 	However, individual break points may be prioritized or de-prioritized
@@ -788,20 +788,20 @@ on screen, on paper, etc.
 	fragmentainers they span:</p>
    <dl>
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="page-break">page break</dfn>
-    <dd> A break between two <a href="https://www.w3.org/TR/css-page-3/#page-box">page boxes</a>. <a data-link-type="biblio" href="#biblio-css-page-3">[CSS-PAGE-3]</a> 
+    <dd> A break between two <a href="https://www.w3.org/TR/css-page-3/#page-box">page boxes</a>. <a data-link-type="biblio" href="#biblio-css-page-3">[CSS-PAGE-3]</a>
     <dt><dfn data-dfn-type="dfn" data-export id="spread-break">spread break<a class="self-link" href="#spread-break"></a></dfn>
     <dd> A break between two page boxes that are not associated with <a href="https://www.w3.org/TR/css-page-3/#facing-pages">facing pages</a>.
-		A spread break is always also a page break. <a data-link-type="biblio" href="#biblio-css-page-3">[CSS-PAGE-3]</a> 
+		A spread break is always also a page break. <a data-link-type="biblio" href="#biblio-css-page-3">[CSS-PAGE-3]</a>
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="column-break">column break</dfn>
     <dd> A break between two <a href="https://www.w3.org/TR/css-multicol-1/#column-box">column boxes</a>.
 		Note that if the column boxes are on different pages, then the break is
 		also a <a data-link-type="dfn" href="#page-break" id="ref-for-page-break②">page break</a>.
 		Similarly, if the column boxes are in different regions,
-		then the break is also a <a data-link-type="dfn" href="#region-break" id="ref-for-region-break①">region break</a>. <a data-link-type="biblio" href="#biblio-css-multicol-1">[CSS-MULTICOL-1]</a> 
+		then the break is also a <a data-link-type="dfn" href="#region-break" id="ref-for-region-break①">region break</a>. <a data-link-type="biblio" href="#biblio-css-multicol-1">[CSS-MULTICOL-1]</a>
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="region-break">region break</dfn>
     <dd> A break between two <a href="https://www.w3.org/TR/css3-regions/#regions">regions</a>.
 		Note that if the region boxes are on different pages, then the break is
-		also a <a data-link-type="dfn" href="#page-break" id="ref-for-page-break③">page break</a>. <a data-link-type="biblio" href="#biblio-css3-regions">[CSS3-REGIONS]</a> 
+		also a <a data-link-type="dfn" href="#page-break" id="ref-for-page-break③">page break</a>. <a data-link-type="biblio" href="#biblio-css3-regions">[CSS3-REGIONS]</a>
    </dl>
    <p class="note" role="note"><span>Note:</span> A fifth type of break is the <dfn data-dfn-type="dfn" data-noexport id="line-break">line break<a class="self-link" href="#line-break"></a></dfn>,
 	which is a break between two <a href="https://www.w3.org/TR/CSS2/visuren.html#line-box">line boxes</a>.
@@ -840,19 +840,19 @@ on screen, on paper, etc.
 		all the <a class="property" data-link-type="propdesc" href="#propdef-break-after" id="ref-for-propdef-break-after⑧">break-after</a> and <a class="property" data-link-type="propdesc" href="#propdef-break-before" id="ref-for-propdef-break-before⑧">break-before</a> values applicable to this
 		break point allow it, which is when at least one of them forces a
 		break or when none of them forbid it
-		(<a class="css" data-link-type="maybe" href="#valdef-break-before-avoid" id="ref-for-valdef-break-before-avoid①">avoid</a> or <a class="css" data-link-type="maybe" href="#valdef-break-before-avoid-page" id="ref-for-valdef-break-before-avoid-page①">avoid-page</a>/<a class="css" data-link-type="maybe" href="#valdef-break-before-avoid-column" id="ref-for-valdef-break-before-avoid-column①">avoid-column</a>/<a class="css" data-link-type="maybe" href="#valdef-break-before-avoid-region" id="ref-for-valdef-break-before-avoid-region①">avoid-region</a>, depending on the <a href="#break-types">break type</a>). 
+		(<a class="css" data-link-type="maybe" href="#valdef-break-before-avoid" id="ref-for-valdef-break-before-avoid①">avoid</a> or <a class="css" data-link-type="maybe" href="#valdef-break-before-avoid-page" id="ref-for-valdef-break-before-avoid-page①">avoid-page</a>/<a class="css" data-link-type="maybe" href="#valdef-break-before-avoid-column" id="ref-for-valdef-break-before-avoid-column①">avoid-column</a>/<a class="css" data-link-type="maybe" href="#valdef-break-before-avoid-region" id="ref-for-valdef-break-before-avoid-region①">avoid-region</a>, depending on the <a href="#break-types">break type</a>).
     <dt>Rule 2
     <dd> However, if all of them are <a class="css" data-link-type="maybe" href="#valdef-break-before-auto" id="ref-for-valdef-break-before-auto">auto</a> and a common ancestor of all
 		the elements has a <a class="property" data-link-type="propdesc" href="#propdef-break-inside" id="ref-for-propdef-break-inside④">break-inside</a> value of <a class="css" data-link-type="maybe" href="#valdef-break-inside-avoid" id="ref-for-valdef-break-inside-avoid">avoid</a>, then breaking
-		here is not allowed. 
+		here is not allowed.
     <dt>Rule 3
     <dd> Breaking at a <a href="#btw-lines">class B break point</a> is allowed only if the number
 		of line boxes between the break and the start of the enclosing block
 		box is the value of <a class="property" data-link-type="propdesc" href="#propdef-orphans" id="ref-for-propdef-orphans⑤">orphans</a> or more, and the number of line boxes
-		between the break and the end of the box is the value of <a class="property" data-link-type="propdesc" href="#propdef-widows" id="ref-for-propdef-widows⑤">widows</a> or more. 
+		between the break and the end of the box is the value of <a class="property" data-link-type="propdesc" href="#propdef-widows" id="ref-for-propdef-widows⑤">widows</a> or more.
     <dt>Rule 4
     <dd> Additionally, breaking at <a href="#btw-blocks">class B</a> or <a href="#end-block">class C</a> break points
-		is allowed only if the <a class="property" data-link-type="propdesc" href="#propdef-break-inside" id="ref-for-propdef-break-inside⑤">break-inside</a> property of all ancestors is <a class="css" data-link-type="maybe" href="#valdef-break-inside-auto" id="ref-for-valdef-break-inside-auto">auto</a>. 
+		is allowed only if the <a class="property" data-link-type="propdesc" href="#propdef-break-inside" id="ref-for-propdef-break-inside⑤">break-inside</a> property of all ancestors is <a class="css" data-link-type="maybe" href="#valdef-break-inside-auto" id="ref-for-valdef-break-inside-auto">auto</a>.
    </dl>
    <p>If the above doesn’t provide enough break points to keep content from
 	overflowing the <a data-link-type="dfn" href="#fragmentainer" id="ref-for-fragmentainer①⑧">fragmentainer</a>,
@@ -881,37 +881,37 @@ on screen, on paper, etc.
 	the following guidelines
 	(while recognizing that they are sometimes contradictory):</p>
    <ul>
-    <li>Break as few times as possible. 
+    <li>Break as few times as possible.
     <li>Make all fragmentainers that don’t end with a forced break
-			appear to be equally filled with content. 
-    <li>Avoid breaking inside a replaced element. 
+			appear to be equally filled with content.
+    <li>Avoid breaking inside a replaced element.
    </ul>
    <div class="example" id="widows-orphans-example">
-    <a class="self-link" href="#widows-orphans-example"></a> 
+    <a class="self-link" href="#widows-orphans-example"></a>
     <p>Suppose, for example, that the style sheet contains <span class="css">orphans : 4</span>, <span class="css">widows : 2</span>, and there is space for 20 lines (line boxes) available
 		at the bottom of the current page, and the next block in normal flow
 		is considered for placement:</p>
     <ul>
      <li> If the block contains 20 line boxes or fewer, it should be placed
-				on the current page. 
+				on the current page.
      <li> If the block contains 21 or 22 line boxes, the second fragment of
 				the paragraph must not violate the <a class="property" data-link-type="propdesc" href="#propdef-widows" id="ref-for-propdef-widows⑥">widows</a> constraint, and so
 				the second fragment must contain at least two line boxes;
-				likewise the first fragment must contain at least four line boxes. 
+				likewise the first fragment must contain at least four line boxes.
      <li> If the block contains 23 line boxes or more, the first fragment should
 				contain 20 lines and the second fragment the remaining lines. But if
 				any fragment of the block is placed on the current page, that fragment
 				must contain at least four line boxes and the second fragment at least
-				two line boxes. 
+				two line boxes.
     </ul>
     <p>Now suppose that <a class="property" data-link-type="propdesc" href="#propdef-orphans" id="ref-for-propdef-orphans⑥">orphans</a> is <span class="css">10</span>, <a class="property" data-link-type="propdesc" href="#propdef-widows" id="ref-for-propdef-widows⑦">widows</a> is <span class="css">20</span>, and there
 		are 8 lines available at the bottom of the current page:</p>
     <ul>
      <li> If the block contains 8 lines or fewer, it should be placed
-				on the current page. 
+				on the current page.
      <li> If the block contains 9 lines or more, it must NOT be split
 				(that would violate the <a class="property" data-link-type="propdesc" href="#propdef-orphans" id="ref-for-propdef-orphans⑦">orphans</a> constraint), so it must
-				move as a block to the next page. 
+				move as a block to the next page.
     </ul>
    </div>
    <p>Additionally, CSS imposes one requirement:
@@ -938,12 +938,12 @@ on screen, on paper, etc.
 			of used/remaining fragmentainer size
 			and in amount of used/remaining content.
 			However, when laying out <a data-link-type="dfn" href="#monolithic" id="ref-for-monolithic③">monolithic</a> elements,
-			the UA may instead maintain a consistent <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#inline-size" id="ref-for-inline-size">inline size</a> and resolved <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-size" id="ref-for-block-size①">block size</a> across fragmentainers. 
+			the UA may instead maintain a consistent <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#inline-size" id="ref-for-inline-size">inline size</a> and resolved <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-size" id="ref-for-block-size①">block size</a> across fragmentainers.
     <li> Intrinsic sizes are calculated and maintained
 			across the entire element.
 			Where an initial containing block size is needed
 			to resolve an intrinsic size,
-			assume the size of the first fragmentainer defining a fragmentation context. 
+			assume the size of the first fragmentainer defining a fragmentation context.
     <li>
       Fragments of boxes that began on a previous fragmentainer
 			must obey placement rules with the additional constraint
@@ -953,9 +953,9 @@ on screen, on paper, etc.
 			shifting away from the <span id="ref-for-block-start①">block-start</span> edge of the fragmentainer,
 			then <a class="css" data-link-type="propdesc" href="#propdef-box-decoration-break" id="ref-for-propdef-box-decoration-break①">box-decoration-break: clone</a>, if specified,
 			wraps the fragment with the box’s margin
-			in addition to its padding and border. 
+			in addition to its padding and border.
      <div class="figure">
-       <img alt="Illustration: Breaking in varying-size fragmentainers" src="images/Varying-Size-Fragmentainers.svg" style="width: 75%"> 
+       <img alt="Illustration: Breaking in varying-size fragmentainers" src="images/Varying-Size-Fragmentainers.svg" style="width: 75%">
       <p class="caption"> Illustration of breaking in varying-size fragmentainers. </p>
      </div>
    </ul>
@@ -966,51 +966,51 @@ on screen, on paper, etc.
    <p>Below are listed (informatively) some implications of these rules:</p>
    <ul>
     <li> Boxes (including tables) fulfilling layout constraints at their <a data-link-type="dfn" href="https://drafts.csswg.org/css-sizing-3/#stretch-fit-size" id="ref-for-stretch-fit-size">stretch-fit</a> or percentage-based size
-			may change <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#inline-size" id="ref-for-inline-size①">inline size</a> across pages. 
+			may change <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#inline-size" id="ref-for-inline-size①">inline size</a> across pages.
     <li> Boxes (including tables) fulfilling layout constraints at their <a data-link-type="dfn" href="https://drafts.csswg.org/css-sizing-3/#min-content" id="ref-for-min-content">min-content</a>, <a data-link-type="dfn" href="https://drafts.csswg.org/css-sizing-3/#max-content" id="ref-for-max-content">max-content</a>, or absolute-length size
-			will maintain their <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#inline-size" id="ref-for-inline-size②">inline size</a> across pages. 
+			will maintain their <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#inline-size" id="ref-for-inline-size②">inline size</a> across pages.
     <li> A block-level continuation fragment may be placed
 			below the top of the page if,
 			e.g. it establishes a block formatting context and
 			is placed beside a float
 			and both it and the float continue onto a narrower page
-			that is too narrow to hold both of them side-by-side. 
+			that is too narrow to hold both of them side-by-side.
     <li> An element adjacent to a preceding float on one page
 			may wind up above the float’s continuation on the next page if,
 			e.g. that float is pushed down because
 			it no longer fits side-by-side with an earlier float
-			that also continues onto this narrower page. 
+			that also continues onto this narrower page.
     <li> A left float may appear on a page <em>before</em> the remaining fragments of a preceding right float
 			if that right float does not fit on the earlier page.
 			However another right float will be forced down until
-			the preceding right float’s remaining fragment can be placed. 
+			the preceding right float’s remaining fragment can be placed.
    </ul>
    <div class="example" id="example-fbdd0b64">
     <a class="self-link" href="#example-fbdd0b64"></a> Here is an example that shows the use of percentage-based progress:
 		Suppose we have an absolutely-positioned element that is positioned <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-top" id="ref-for-propdef-top">top: calc(150% + 30px)</a> and has <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height">height: calc(100% - 10px)</a>. If
 		it is placed into a paginated context with a first page height of 400px,
 		a second page of 200px, and a third page of 600px, its layout progresses
-		as follows: 
+		as follows:
     <ul>
      <li> First, the top position is resolved against
 				the height of the first page.
 				This results in 630px.
 				Since the first page has a height of only 400px,
 				layout moves to the second page,
-				recording progress of 400/630 = 63.49% with 36.51% left to go. 
+				recording progress of 400/630 = 63.49% with 36.51% left to go.
      <li> Now on the second page, the top position is again resolved,
 				this time against the height of the second page.
 				This results in 330px.
 				The remaining 36.51% of progress thus resolves to 120.5px,
-				placing the top edge of the element 120.5px down the second page. 
+				placing the top edge of the element 120.5px down the second page.
      <li> Now the height is resolved against the second page;
 				it resolves to 190px.
 				Since there are only 79.5px left on the page,
 				layout moves to the third page,
-				recording progress of 79.5/190 = 41.84%, with 58.16% left to go. 
+				recording progress of 79.5/190 = 41.84%, with 58.16% left to go.
      <li> On the third page, the height resolves to 590px.
 				The remaining 58.16% of progress thus resolves to 343.1px,
-				which fits on this page and completes the element. 
+				which fits on this page and completes the element.
     </ul>
    </div>
    <h3 class="heading settled" data-level="5.2" id="break-margins"><span class="secno">5.2. </span><span class="content"> Adjoining Margins at Breaks: the <a class="property" data-link-type="propdesc" href="#propdef-margin-break" id="ref-for-propdef-margin-break①">margin-break</a> property</span><a class="self-link" href="#break-margins"></a></h3>
@@ -1021,33 +1021,33 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-margin-break">margin-break</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑦">|</a> keep <span id="ref-for-comb-one①⑧">|</span> discard 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑦">|</a> keep <span id="ref-for-comb-one①⑧">|</span> discard
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>Controls whether the box’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-axis" id="ref-for-block-axis①">block-axis</a> <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#margin" id="ref-for-margin">margins</a> are discarded or kept at a <a data-link-type="dfn" href="#fragmentation-break" id="ref-for-fragmentation-break①">fragmentation break</a>.
 	Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="margin-break" data-dfn-type="value" data-export id="valdef-margin-break-auto">auto<a class="self-link" href="#valdef-margin-break-auto"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="margin-break" data-dfn-type="value" data-export id="valdef-margin-break-auto">auto<a class="self-link" href="#valdef-margin-break-auto"></a></dfn>
     <dd>
       When an <em>unforced</em> break occurs before or after the box,
 			any margins adjoining the break truncate to
@@ -1055,15 +1055,15 @@ on screen, on paper, etc.
 			and are truncated to zero after the break.
 			When a <em>forced break</em> occurs there,
 			adjoining margins before the break are truncated,
-			but margins after the break are preserved. <a href="https://www.w3.org/TR/css-break-4/#valdef-box-decoration-break-clone">Cloned margins</a> are always truncated to zero. 
+			but margins after the break are preserved. <a href="https://www.w3.org/TR/css-break-4/#valdef-box-decoration-break-clone">Cloned margins</a> are always truncated to zero.
      <p class="note" role="note"><span>Note:</span> When margins collapse
 			(see <a href="https://www.w3.org/TR/CSS2/box.html#collapsing-margins">CSS2§8.3.1</a>),
 			the margins of multiple boxes can be adjoining the break.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="margin-break" data-dfn-type="value" data-export id="valdef-margin-break-keep">keep</dfn> 
-    <dd> Margins adjoining a <a data-link-type="dfn" href="#fragmentation-break" id="ref-for-fragmentation-break②">fragmentation break</a> are not truncated. 
-    <dt><dfn class="css" data-dfn-for="margin-break" data-dfn-type="value" data-export id="valdef-margin-break-discard">discard<a class="self-link" href="#valdef-margin-break-discard"></a></dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="margin-break" data-dfn-type="value" data-export id="valdef-margin-break-keep">keep</dfn>
+    <dd> Margins adjoining a <a data-link-type="dfn" href="#fragmentation-break" id="ref-for-fragmentation-break②">fragmentation break</a> are not truncated.
+    <dt><dfn class="css" data-dfn-for="margin-break" data-dfn-type="value" data-export id="valdef-margin-break-discard">discard<a class="self-link" href="#valdef-margin-break-discard"></a></dfn>
     <dd> Margins adjoining a <a data-link-type="dfn" href="#fragmentation-break" id="ref-for-fragmentation-break③">fragmentation break</a> are always truncated,
-			including at the start and end of a <a data-link-type="dfn" href="#fragmentation-context" id="ref-for-fragmentation-context⑧">fragmentation context</a>. 
+			including at the start and end of a <a data-link-type="dfn" href="#fragmentation-context" id="ref-for-fragmentation-context⑧">fragmentation context</a>.
    </dl>
    <p class="note" role="note"><span>Note:</span> See also the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-trim" id="ref-for-propdef-margin-trim">margin-trim</a> property,
 	which applies to the <a data-link-type="dfn" href="#fragmentation-container" id="ref-for-fragmentation-container①">fragmentation container</a> (page/column/etc.)</p>
@@ -1074,7 +1074,7 @@ on screen, on paper, etc.
 	Also, if only one <a class="css" data-link-type="maybe" href="#valdef-margin-break-keep" id="ref-for-valdef-margin-break-keep">keep</a> is specified, does it apply only to the before margin or both sides?
 	See <a href="https://github.com/w3c/csswg-drafts/issues/3254">discussion</a>.</p>
    <div class="example" id="example-a4281f24">
-    <a class="self-link" href="#example-a4281f24"></a> Consider the following <a data-link-type="dfn" href="https://drafts.csswg.org/css-multicol-1/#multi-column-layout" id="ref-for-multi-column-layout">multi-column layout</a> example: 
+    <a class="self-link" href="#example-a4281f24"></a> Consider the following <a data-link-type="dfn" href="https://drafts.csswg.org/css-multicol-1/#multi-column-layout" id="ref-for-multi-column-layout">multi-column layout</a> example:
 <pre>&lt;style>
   article { columns: 16ch; border: solid silver; }
   h3 { break-before: always; }
@@ -1094,25 +1094,25 @@ on screen, on paper, etc.
 								but not after the second paragraph
 								(which starts after an unforced break).
 								The bottom margins are all discarded
-								at the bottom of each column." src="images/margin-break-auto.png"> 
+								at the bottom of each column." src="images/margin-break-auto.png">
      <figcaption><a class="css" data-link-type="propdesc" href="#propdef-margin-break" id="ref-for-propdef-margin-break③">margin-break: auto</a> (initial value)</figcaption>
     </figure>
     <figure>
       <img alt="Here the top margins occurring at the top of each column
 								and the bottom margins occurring at the bottom of each column
-								are all truncated to zero." src="images/margin-break-discard.png"> 
+								are all truncated to zero." src="images/margin-break-discard.png">
      <figcaption><a class="css" data-link-type="propdesc" href="#propdef-margin-break" id="ref-for-propdef-margin-break④">margin-break: discard</a></figcaption>
     </figure>
     <figure>
       <img alt="Here the top margins occurring at the top of each column
-								are all kept; however the bottom margins are still truncated." src="images/margin-break-keep-discard.png"> 
+								are all kept; however the bottom margins are still truncated." src="images/margin-break-keep-discard.png">
      <figcaption><a class="css" data-link-type="propdesc" href="#propdef-margin-break" id="ref-for-propdef-margin-break⑤">margin-break: keep discard</a></figcaption>
     </figure>
     <figure>
       <img alt="Here the top margins occurring at the top of each column
 								as well as the bottom margins occurring at the bottom of each column
 								are all kept; this increases the height of the auto-height container
-								to accommodate the bottom margins." src="images/margin-break-keep-keep.png"> 
+								to accommodate the bottom margins." src="images/margin-break-keep-keep.png">
      <figcaption><a class="css" data-link-type="propdesc" href="#propdef-margin-break" id="ref-for-propdef-margin-break⑥">margin-break: keep keep</a></figcaption>
     </figure>
    </div>
@@ -1125,7 +1125,7 @@ on screen, on paper, etc.
 	(i.e. the distance from the break point to the edge of the <a data-link-type="dfn" href="#fragmentainer" id="ref-for-fragmentainer②④">fragmentainer</a>)
 	contributes progress towards any specified limits on the box’s <span id="ref-for-block-size④">block size</span>.</p>
    <div class="figure">
-     <img alt="Illustration: Filling remaining fragmentainer extent" src="images/Remaining-Fragmentainer-Extent.svg" style="width: 80%"> 
+     <img alt="Illustration: Filling remaining fragmentainer extent" src="images/Remaining-Fragmentainer-Extent.svg" style="width: 80%">
     <p class="caption"> Illustration of filling the <a data-link-type="dfn" href="#remaining-fragmentainer-extent" id="ref-for-remaining-fragmentainer-extent②">remaining fragmentainer extent</a>. </p>
    </div>
    <h3 class="heading settled" data-level="5.4" id="break-decoration"><span class="secno">5.4. </span><span class="content"> Fragmented Borders and Backgrounds: the <a class="property" data-link-type="propdesc" href="#propdef-box-decoration-break" id="ref-for-propdef-box-decoration-break③">box-decoration-break</a> property</span><a class="self-link" href="#break-decoration"></a></h3>
@@ -1136,62 +1136,62 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-box-decoration-break">box-decoration-break</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">slice <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑨">|</a> clone 
+      <td class="prod">slice <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⑨">|</a> clone
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>slice 
+      <td>slice
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>When a break (page/column/region/line) splits a box,
 	the <a class="property" data-link-type="propdesc" href="#propdef-box-decoration-break" id="ref-for-propdef-box-decoration-break④">box-decoration-break</a> property controls</p>
    <ul>
     <li> whether the box’s margins, borders, padding, and other decorations
-			wrap the broken edges of the box fragments 
+			wrap the broken edges of the box fragments
     <li> how the <a data-link-type="dfn">background positioning area</a> <a data-link-type="biblio" href="#biblio-css-backgrounds-3">[CSS-BACKGROUNDS-3]</a> (and <a data-link-type="dfn" href="https://drafts.fxtf.org/css-masking-1/#mask-positioning-area" id="ref-for-mask-positioning-area">mask positioning area</a> <a data-link-type="biblio" href="#biblio-css-masking-1">[CSS-MASKING-1]</a>,
 			shape <span>reference box</span> <a data-link-type="biblio" href="#biblio-css-shapes-1">[CSS-SHAPES-1]</a>, etc.)
 			is derived from or duplicated across the box fragments
-			and how the element’s background is drawn within them. 
+			and how the element’s background is drawn within them.
    </ul>
    <p>Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="box-decoration-break" data-dfn-type="value" data-export id="valdef-box-decoration-break-clone">clone</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="box-decoration-break" data-dfn-type="value" data-export id="valdef-box-decoration-break-clone">clone</dfn>
     <dd>
       Each box fragment is independently wrapped with the border, padding, and margin.
 		The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-radius" id="ref-for-propdef-border-radius">border-radius</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-image" id="ref-for-propdef-border-image">border-image</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-box-shadow" id="ref-for-propdef-box-shadow">box-shadow</a>, if any,
 		are applied to each fragment independently.
 		The background is drawn independently in each fragment of the element.
-		A no-repeat background image will thus be rendered once in each fragment of the element. 
+		A no-repeat background image will thus be rendered once in each fragment of the element.
      <p class="note" role="note"><span>Note:</span> Cloned margins are <a href="#break-margins">truncated</a> on block-level boxes.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="box-decoration-break" data-dfn-type="value" data-export id="valdef-box-decoration-break-slice">slice</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="box-decoration-break" data-dfn-type="value" data-export id="valdef-box-decoration-break-slice">slice</dfn>
     <dd> The effect is as though the element were rendered with no breaks present,
 		and then sliced by the breaks afterward:
 		no border and no padding are inserted at a break;
 		no box-shadow is drawn at a broken edge;
 		and backgrounds, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-radius" id="ref-for-propdef-border-radius①">border-radius</a>, and the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-image" id="ref-for-propdef-border-image①">border-image</a> are applied to the geometry of the whole box
-		as if it were unbroken. 
+		as if it were unbroken.
    </dl>
    <div class="figure">
      <img alt="Illustration:
 			(1) a single box cut in two in between two lines of text by a page break and
 			(2) two boxes, one before and one after the page break,
-			both with a border all around and their own background image" src="images/box-break.png"> 
+			both with a border all around and their own background image" src="images/box-break.png">
     <p class="caption">Two possibilities for <a class="property" data-link-type="propdesc" href="#propdef-box-decoration-break" id="ref-for-propdef-box-decoration-break⑤">box-decoration-break</a>:
 		on the left, the value <a class="css" data-link-type="maybe" href="#valdef-box-decoration-break-slice" id="ref-for-valdef-box-decoration-break-slice">slice</a>, on the right the value <a class="css" data-link-type="maybe" href="#valdef-box-decoration-break-clone" id="ref-for-valdef-box-decoration-break-clone②">clone</a>. </p>
    </div>
@@ -1227,16 +1227,16 @@ on screen, on paper, etc.
 		and fragments from subsequent lines are put to the right of it.
 		In a right-to-left containing block,
 		the first fragment is the rightmost on the first line
-		and subsequent fragments are put to the left of it. 
+		and subsequent fragments are put to the left of it.
     <dt>For boxes broken across columns
     <dd> Fragments are connected as if the column boxes were glued together
-		in the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-flow-direction" id="ref-for-block-flow-direction">block flow direction</a> of the multi-column container. 
+		in the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-flow-direction" id="ref-for-block-flow-direction">block flow direction</a> of the multi-column container.
     <dt>For boxes broken across pages
     <dd> Fragments are connected as if page content areas were glued together
-		in the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-flow-direction" id="ref-for-block-flow-direction①">block flow direction</a> of the root element. 
+		in the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-flow-direction" id="ref-for-block-flow-direction①">block flow direction</a> of the root element.
     <dt>For boxes broken across regions
     <dd> Fragments are connected as if region content areas were glued together
-		in the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-flow-direction" id="ref-for-block-flow-direction②">block flow direction</a> of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#principal-writing-mode" id="ref-for-principal-writing-mode">principal writing mode</a> of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-regions-1/#region-chain" id="ref-for-region-chain">region chain</a>. 
+		in the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-flow-direction" id="ref-for-block-flow-direction②">block flow direction</a> of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#principal-writing-mode" id="ref-for-principal-writing-mode">principal writing mode</a> of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-regions-1/#region-chain" id="ref-for-region-chain">region chain</a>.
    </dl>
    <p>If the box fragments have different widths
 	(heights, if the fragments are joined horizontally),
@@ -1265,7 +1265,7 @@ on screen, on paper, etc.
 	thus a transformed fragment that spans pages <em>should</em> be sliced at the page breaks and print in its entirety
 	rather than being clipped by its originating page.</p>
    <div class="figure">
-     <img alt="Illustration: Transformed overflow fragmentation" src="images/fragmented-transforms.png"> 
+     <img alt="Illustration: Transformed overflow fragmentation" src="images/fragmented-transforms.png">
     <p class="caption">A fixed-height box spanning 2.5 pages with overflow content spanning
 			to a total of 4 pages.
 			The transform origin of each fragment is the center of its border box;
@@ -1282,8 +1282,8 @@ on screen, on paper, etc.
    <h3 class="no-num heading settled" id="changes-level-4"><span class="content"> Changes Since Level 3</span><a class="self-link" href="#changes-level-4"></a></h3>
    <p>The following features have been added since <a href="https://www.w3.org/TR/css-break-3/">CSS Fragmentation Level 3</a>:</p>
    <ul>
-    <li>The <a class="property" data-link-type="propdesc" href="#propdef-margin-break" id="ref-for-propdef-margin-break⑦">margin-break</a> property. 
-    <li>The <a class="css" data-link-type="maybe" href="#valdef-break-before-always" id="ref-for-valdef-break-before-always②">always</a> and <a class="css" data-link-type="maybe" href="#valdef-break-before-all" id="ref-for-valdef-break-before-all③">all</a> values of <a class="property" data-link-type="propdesc" href="#propdef-break-before" id="ref-for-propdef-break-before⑨">break-before</a>/<a class="property" data-link-type="propdesc" href="#propdef-break-after" id="ref-for-propdef-break-after⑨">break-after</a>. 
+    <li>The <a class="property" data-link-type="propdesc" href="#propdef-margin-break" id="ref-for-propdef-margin-break⑦">margin-break</a> property.
+    <li>The <a class="css" data-link-type="maybe" href="#valdef-break-before-always" id="ref-for-valdef-break-before-always②">always</a> and <a class="css" data-link-type="maybe" href="#valdef-break-before-all" id="ref-for-valdef-break-before-all③">all</a> values of <a class="property" data-link-type="propdesc" href="#propdef-break-before" id="ref-for-propdef-break-before⑨">break-before</a>/<a class="property" data-link-type="propdesc" href="#propdef-break-after" id="ref-for-propdef-break-after⑨">break-after</a>.
    </ul>
    <h2 class="no-num heading settled" id="acknowledgments"><span class="content"> Acknowledgments</span><a class="self-link" href="#acknowledgments"></a></h2>
    <p>The editors would like to thank
@@ -1307,7 +1307,7 @@ on screen, on paper, etc.
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1320,14 +1320,14 @@ on screen, on paper, etc.
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1378,7 +1378,7 @@ on screen, on paper, etc.
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1464,148 +1464,148 @@ on screen, on paper, etc.
   <aside class="dfn-panel" data-for="term-for-propdef-border-image">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-image">https://drafts.csswg.org/css-backgrounds-3/#propdef-border-image</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-border-image">5.4. 
+    <li><a href="#ref-for-propdef-border-image">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a> <a href="#ref-for-propdef-border-image①">(2)</a>
-    <li><a href="#ref-for-propdef-border-image②">5.4.1. 
+    <li><a href="#ref-for-propdef-border-image②">5.4.1.
 Joining Boxes for slice</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-border-radius">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-radius">https://drafts.csswg.org/css-backgrounds-3/#propdef-border-radius</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-border-radius">5.4. 
+    <li><a href="#ref-for-propdef-border-radius">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a> <a href="#ref-for-propdef-border-radius①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-box-shadow">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-box-shadow">https://drafts.csswg.org/css-backgrounds-3/#propdef-box-shadow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-box-shadow">5.4. 
+    <li><a href="#ref-for-propdef-box-shadow">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-border-area">
    <a href="https://drafts.csswg.org/css-box-3/#border-area">https://drafts.csswg.org/css-box-3/#border-area</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-border-area">2. 
+    <li><a href="#ref-for-border-area">2.
 Fragmentation Model and Terminology</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-margin">
    <a href="https://drafts.csswg.org/css-box-3/#margin">https://drafts.csswg.org/css-box-3/#margin</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-margin">5.2. 
+    <li><a href="#ref-for-margin">5.2.
 Adjoining Margins at Breaks: the margin-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-margin-area">
    <a href="https://drafts.csswg.org/css-box-3/#margin-area">https://drafts.csswg.org/css-box-3/#margin-area</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-margin-area">2. 
+    <li><a href="#ref-for-margin-area">2.
 Fragmentation Model and Terminology</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-margin-trim">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-margin-trim">https://drafts.csswg.org/css-box-3/#propdef-margin-trim</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-margin-trim">5.2. 
+    <li><a href="#ref-for-propdef-margin-trim">5.2.
 Adjoining Margins at Breaks: the margin-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-padding-area">
    <a href="https://drafts.csswg.org/css-box-3/#padding-area">https://drafts.csswg.org/css-box-3/#padding-area</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-padding-area">2. 
+    <li><a href="#ref-for-padding-area">2.
 Fragmentation Model and Terminology</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-computed-value">
    <a href="https://drafts.csswg.org/css-cascade-4/#computed-value">https://drafts.csswg.org/css-cascade-4/#computed-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-computed-value">3.1.1. 
+    <li><a href="#ref-for-computed-value">3.1.1.
 Child→Parent Break Propagation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-legacy-shorthand">
    <a href="https://drafts.csswg.org/css-cascade-4/#legacy-shorthand">https://drafts.csswg.org/css-cascade-4/#legacy-shorthand</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-legacy-shorthand">3.4. 
+    <li><a href="#ref-for-legacy-shorthand">3.4.
 Page Break Aliases: the page-break-before, page-break-after, and page-break-inside properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-container">
    <a href="https://drafts.csswg.org/css-display-3/#block-container">https://drafts.csswg.org/css-display-3/#block-container</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-container">3.3. 
+    <li><a href="#ref-for-block-container">3.3.
 Breaks Between Lines: orphans, widows</a>
-    <li><a href="#ref-for-block-container①">5.4. 
+    <li><a href="#ref-for-block-container①">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-level-box">
    <a href="https://drafts.csswg.org/css-display-3/#block-level-box">https://drafts.csswg.org/css-display-3/#block-level-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-level-box">5.4. 
+    <li><a href="#ref-for-block-level-box">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-display-type">
    <a href="https://drafts.csswg.org/css-display-3/#display-type">https://drafts.csswg.org/css-display-3/#display-type</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-display-type">2. 
+    <li><a href="#ref-for-display-type">2.
 Fragmentation Model and Terminology</a>
-    <li><a href="#ref-for-display-type①">4.1. 
+    <li><a href="#ref-for-display-type①">4.1.
 Possible Break Points</a>
-    <li><a href="#ref-for-display-type②">5.4. 
+    <li><a href="#ref-for-display-type②">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-formatting-context">
    <a href="https://drafts.csswg.org/css-display-3/#formatting-context">https://drafts.csswg.org/css-display-3/#formatting-context</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-formatting-context">2.1. 
+    <li><a href="#ref-for-formatting-context">2.1.
 Parallel Fragmentation Flows</a> <a href="#ref-for-formatting-context①">(2)</a> <a href="#ref-for-formatting-context②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-in-flow">
    <a href="https://drafts.csswg.org/css-display-3/#in-flow">https://drafts.csswg.org/css-display-3/#in-flow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-in-flow">3.1.1. 
+    <li><a href="#ref-for-in-flow">3.1.1.
 Child→Parent Break Propagation</a> <a href="#ref-for-in-flow①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-independent-formatting-context">
    <a href="https://drafts.csswg.org/css-display-3/#independent-formatting-context">https://drafts.csswg.org/css-display-3/#independent-formatting-context</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-independent-formatting-context">4.1. 
+    <li><a href="#ref-for-independent-formatting-context">4.1.
 Possible Break Points</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-box">
    <a href="https://drafts.csswg.org/css-display-3/#inline-box">https://drafts.csswg.org/css-display-3/#inline-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-box">5.4. 
+    <li><a href="#ref-for-inline-box">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-formatting-context">
    <a href="https://drafts.csswg.org/css-display-3/#inline-formatting-context">https://drafts.csswg.org/css-display-3/#inline-formatting-context</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-formatting-context">3.3. 
+    <li><a href="#ref-for-inline-formatting-context">3.3.
 Breaks Between Lines: orphans, widows</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-inline-block">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-inline-block">https://drafts.csswg.org/css-display-3/#valdef-display-inline-block</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-inline-block">4.1. 
+    <li><a href="#ref-for-valdef-display-inline-block">4.1.
 Possible Break Points</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-inline-table">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-inline-table">https://drafts.csswg.org/css-display-3/#valdef-display-inline-table</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-inline-table">4.1. 
+    <li><a href="#ref-for-valdef-display-inline-table">4.1.
 Possible Break Points</a>
    </ul>
   </aside>
@@ -1618,7 +1618,7 @@ Possible Break Points</a>
   <aside class="dfn-panel" data-for="term-for-mask-positioning-area">
    <a href="https://drafts.fxtf.org/css-masking-1/#mask-positioning-area">https://drafts.fxtf.org/css-masking-1/#mask-positioning-area</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mask-positioning-area">5.4. 
+    <li><a href="#ref-for-mask-positioning-area">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a>
    </ul>
   </aside>
@@ -1631,35 +1631,35 @@ Fragmented Borders and Backgrounds: the box-decoration-break property</a>
   <aside class="dfn-panel" data-for="term-for-multi-column-layout">
    <a href="https://drafts.csswg.org/css-multicol-1/#multi-column-layout">https://drafts.csswg.org/css-multicol-1/#multi-column-layout</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-multi-column-layout">5.2. 
+    <li><a href="#ref-for-multi-column-layout">5.2.
 Adjoining Margins at Breaks: the margin-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-overflow-auto">
    <a href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto">https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-overflow-auto">4.1. 
+    <li><a href="#ref-for-valdef-overflow-auto">4.1.
 Possible Break Points</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-overflow">
    <a href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow">https://drafts.csswg.org/css-overflow-3/#propdef-overflow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-overflow">4.1. 
+    <li><a href="#ref-for-propdef-overflow">4.1.
 Possible Break Points</a> <a href="#ref-for-propdef-overflow①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-overflow-scroll">
    <a href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-scroll">https://drafts.csswg.org/css-overflow-3/#valdef-overflow-scroll</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-overflow-scroll">4.1. 
+    <li><a href="#ref-for-valdef-overflow-scroll">4.1.
 Possible Break Points</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-page">
    <a href="https://drafts.csswg.org/css-page-3/#propdef-page">https://drafts.csswg.org/css-page-3/#propdef-page</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-page">4.3. 
+    <li><a href="#ref-for-propdef-page">4.3.
 Forced Breaks</a>
    </ul>
   </aside>
@@ -1672,177 +1672,177 @@ Forced Breaks</a>
   <aside class="dfn-panel" data-for="term-for-propdef-top">
    <a href="https://drafts.csswg.org/css-position-3/#propdef-top">https://drafts.csswg.org/css-position-3/#propdef-top</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-top">5.1. 
+    <li><a href="#ref-for-propdef-top">5.1.
 Breaking into Varying-size Fragmentainers</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-width-auto">
    <a href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto">https://drafts.csswg.org/css-sizing-3/#valdef-width-auto</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-width-auto">4.1. 
+    <li><a href="#ref-for-valdef-width-auto">4.1.
 Possible Break Points</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-max-content">
    <a href="https://drafts.csswg.org/css-sizing-3/#max-content">https://drafts.csswg.org/css-sizing-3/#max-content</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-max-content">5.1. 
+    <li><a href="#ref-for-max-content">5.1.
 Breaking into Varying-size Fragmentainers</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-min-content">
    <a href="https://drafts.csswg.org/css-sizing-3/#min-content">https://drafts.csswg.org/css-sizing-3/#min-content</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-min-content">5.1. 
+    <li><a href="#ref-for-min-content">5.1.
 Breaking into Varying-size Fragmentainers</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-stretch-fit-size">
    <a href="https://drafts.csswg.org/css-sizing-3/#stretch-fit-size">https://drafts.csswg.org/css-sizing-3/#stretch-fit-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-stretch-fit-size">5.1. 
+    <li><a href="#ref-for-stretch-fit-size">5.1.
 Breaking into Varying-size Fragmentainers</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-integer-value">
    <a href="https://drafts.csswg.org/css-values-3/#integer-value">https://drafts.csswg.org/css-values-3/#integer-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-integer-value">3.3. 
+    <li><a href="#ref-for-integer-value">3.3.
 Breaks Between Lines: orphans, widows</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-wide-keywords">
    <a href="https://drafts.csswg.org/css-values-4/#css-wide-keywords">https://drafts.csswg.org/css-values-4/#css-wide-keywords</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-wide-keywords">1.2. 
+    <li><a href="#ref-for-css-wide-keywords">1.2.
 Values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">3.1. 
+    <li><a href="#ref-for-comb-one">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a> <a href="#ref-for-comb-one①">(2)</a> <a href="#ref-for-comb-one②">(3)</a> <a href="#ref-for-comb-one③">(4)</a> <a href="#ref-for-comb-one④">(5)</a> <a href="#ref-for-comb-one⑤">(6)</a> <a href="#ref-for-comb-one⑥">(7)</a> <a href="#ref-for-comb-one⑦">(8)</a> <a href="#ref-for-comb-one⑧">(9)</a> <a href="#ref-for-comb-one⑨">(10)</a> <a href="#ref-for-comb-one①⓪">(11)</a> <a href="#ref-for-comb-one①①">(12)</a> <a href="#ref-for-comb-one①②">(13)</a>
-    <li><a href="#ref-for-comb-one①③">3.2. 
+    <li><a href="#ref-for-comb-one①③">3.2.
 Breaks Within Boxes: the break-inside property</a> <a href="#ref-for-comb-one①④">(2)</a> <a href="#ref-for-comb-one①⑤">(3)</a> <a href="#ref-for-comb-one①⑥">(4)</a>
-    <li><a href="#ref-for-comb-one①⑦">5.2. 
+    <li><a href="#ref-for-comb-one①⑦">5.2.
 Adjoining Margins at Breaks: the margin-break property</a> <a href="#ref-for-comb-one①⑧">(2)</a>
-    <li><a href="#ref-for-comb-one①⑨">5.4. 
+    <li><a href="#ref-for-comb-one①⑨">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-direction">
    <a href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction">https://drafts.csswg.org/css-writing-modes-3/#propdef-direction</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-direction">5.4. 
+    <li><a href="#ref-for-propdef-direction">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a> <a href="#ref-for-propdef-direction①">(2)</a> <a href="#ref-for-propdef-direction②">(3)</a>
-    <li><a href="#ref-for-propdef-direction③">5.4.1. 
+    <li><a href="#ref-for-propdef-direction③">5.4.1.
 Joining Boxes for slice</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-flow-direction">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#block-flow-direction">https://drafts.csswg.org/css-writing-modes-4/#block-flow-direction</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-flow-direction">5.4.1. 
+    <li><a href="#ref-for-block-flow-direction">5.4.1.
 Joining Boxes for slice</a> <a href="#ref-for-block-flow-direction①">(2)</a> <a href="#ref-for-block-flow-direction②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-size">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#block-size">https://drafts.csswg.org/css-writing-modes-4/#block-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-size">4. 
+    <li><a href="#ref-for-block-size">4.
 Rules for Breaking</a>
-    <li><a href="#ref-for-block-size①">5.1. 
+    <li><a href="#ref-for-block-size①">5.1.
 Breaking into Varying-size Fragmentainers</a>
-    <li><a href="#ref-for-block-size②">5.3. 
+    <li><a href="#ref-for-block-size②">5.3.
 Splitting Boxes</a> <a href="#ref-for-block-size③">(2)</a> <a href="#ref-for-block-size④">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-axis">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#block-axis">https://drafts.csswg.org/css-writing-modes-4/#block-axis</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-axis">2. 
+    <li><a href="#ref-for-block-axis">2.
 Fragmentation Model and Terminology</a>
-    <li><a href="#ref-for-block-axis①">5.2. 
+    <li><a href="#ref-for-block-axis①">5.2.
 Adjoining Margins at Breaks: the margin-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-start">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#block-start">https://drafts.csswg.org/css-writing-modes-4/#block-start</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-start">5.1. 
+    <li><a href="#ref-for-block-start">5.1.
 Breaking into Varying-size Fragmentainers</a> <a href="#ref-for-block-start①">(2)</a>
-    <li><a href="#ref-for-block-start②">5.5. 
+    <li><a href="#ref-for-block-start②">5.5.
 Transforms, Positioning, and Pagination</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-base-direction">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#inline-base-direction">https://drafts.csswg.org/css-writing-modes-4/#inline-base-direction</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-base-direction">5.4.1. 
+    <li><a href="#ref-for-inline-base-direction">5.4.1.
 Joining Boxes for slice</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-size">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#inline-size">https://drafts.csswg.org/css-writing-modes-4/#inline-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-size">5.1. 
+    <li><a href="#ref-for-inline-size">5.1.
 Breaking into Varying-size Fragmentainers</a> <a href="#ref-for-inline-size①">(2)</a> <a href="#ref-for-inline-size②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-logical-height">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#logical-height">https://drafts.csswg.org/css-writing-modes-4/#logical-height</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-logical-height">4.1. 
+    <li><a href="#ref-for-logical-height">4.1.
 Possible Break Points</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-direction-ltr">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr">https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-direction-ltr">5.4.1. 
+    <li><a href="#ref-for-valdef-direction-ltr">5.4.1.
 Joining Boxes for slice</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-principal-writing-mode">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#principal-writing-mode">https://drafts.csswg.org/css-writing-modes-4/#principal-writing-mode</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-principal-writing-mode">5.4.1. 
+    <li><a href="#ref-for-principal-writing-mode">5.4.1.
 Joining Boxes for slice</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-height">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-height">https://drafts.csswg.org/css2/visudet.html#propdef-height</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-height">5.1. 
+    <li><a href="#ref-for-propdef-height">5.1.
 Breaking into Varying-size Fragmentainers</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-page-break-after">
    <a href="https://drafts.csswg.org/css2/page.html#propdef-page-break-after">https://drafts.csswg.org/css2/page.html#propdef-page-break-after</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-page-break-after">3.4. 
+    <li><a href="#ref-for-propdef-page-break-after">3.4.
 Page Break Aliases: the page-break-before, page-break-after, and page-break-inside properties</a> <a href="#ref-for-propdef-page-break-after①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-page-break-before">
    <a href="https://drafts.csswg.org/css2/page.html#propdef-page-break-before">https://drafts.csswg.org/css2/page.html#propdef-page-break-before</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-page-break-before">3.4. 
+    <li><a href="#ref-for-propdef-page-break-before">3.4.
 Page Break Aliases: the page-break-before, page-break-after, and page-break-inside properties</a> <a href="#ref-for-propdef-page-break-before①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-page-break-inside">
    <a href="https://drafts.csswg.org/css2/page.html#propdef-page-break-inside">https://drafts.csswg.org/css2/page.html#propdef-page-break-inside</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-page-break-inside">3.4. 
+    <li><a href="#ref-for-propdef-page-break-inside">3.4.
 Page Break Aliases: the page-break-before, page-break-after, and page-break-inside properties</a> <a href="#ref-for-propdef-page-break-inside①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-region-chain">
    <a href="https://drafts.csswg.org/css-regions-1/#region-chain">https://drafts.csswg.org/css-regions-1/#region-chain</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-region-chain">5.4.1. 
+    <li><a href="#ref-for-region-chain">5.4.1.
 Joining Boxes for slice</a>
    </ul>
   </aside>
@@ -2116,136 +2116,136 @@ Joining Boxes for slice</a>
   <aside class="dfn-panel" data-for="fragmentation-container">
    <b><a href="#fragmentation-container">#fragmentation-container</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation-container">1. 
+    <li><a href="#ref-for-fragmentation-container">1.
 Introduction</a>
-    <li><a href="#ref-for-fragmentation-container①">5.2. 
+    <li><a href="#ref-for-fragmentation-container①">5.2.
 Adjoining Margins at Breaks: the margin-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fragmentainer">
    <b><a href="#fragmentainer">#fragmentainer</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentainer">1. 
+    <li><a href="#ref-for-fragmentainer">1.
 Introduction</a>
-    <li><a href="#ref-for-fragmentainer①">2. 
+    <li><a href="#ref-for-fragmentainer①">2.
 Fragmentation Model and Terminology</a> <a href="#ref-for-fragmentainer②">(2)</a> <a href="#ref-for-fragmentainer③">(3)</a> <a href="#ref-for-fragmentainer④">(4)</a> <a href="#ref-for-fragmentainer⑤">(5)</a> <a href="#ref-for-fragmentainer⑥">(6)</a> <a href="#ref-for-fragmentainer⑦">(7)</a> <a href="#ref-for-fragmentainer⑧">(8)</a> <a href="#ref-for-fragmentainer⑨">(9)</a> <a href="#ref-for-fragmentainer①⓪">(10)</a>
-    <li><a href="#ref-for-fragmentainer①①">2.1. 
+    <li><a href="#ref-for-fragmentainer①①">2.1.
 Parallel Fragmentation Flows</a>
-    <li><a href="#ref-for-fragmentainer①②">2.2. 
+    <li><a href="#ref-for-fragmentainer①②">2.2.
 Nested Fragmentation Flows</a> <a href="#ref-for-fragmentainer①③">(2)</a> <a href="#ref-for-fragmentainer①④">(3)</a> <a href="#ref-for-fragmentainer①⑤">(4)</a>
-    <li><a href="#ref-for-fragmentainer①⑥">4. 
+    <li><a href="#ref-for-fragmentainer①⑥">4.
 Rules for Breaking</a>
-    <li><a href="#ref-for-fragmentainer①⑦">4.4. 
+    <li><a href="#ref-for-fragmentainer①⑦">4.4.
 Unforced Breaks</a> <a href="#ref-for-fragmentainer①⑧">(2)</a>
-    <li><a href="#ref-for-fragmentainer①⑨">4.5. 
+    <li><a href="#ref-for-fragmentainer①⑨">4.5.
 Optimizing Unforced Breaks</a> <a href="#ref-for-fragmentainer②⓪">(2)</a> <a href="#ref-for-fragmentainer②①">(3)</a>
-    <li><a href="#ref-for-fragmentainer②②">5.3. 
+    <li><a href="#ref-for-fragmentainer②②">5.3.
 Splitting Boxes</a> <a href="#ref-for-fragmentainer②③">(2)</a> <a href="#ref-for-fragmentainer②④">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fragmentation-context">
    <b><a href="#fragmentation-context">#fragmentation-context</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation-context">2. 
+    <li><a href="#ref-for-fragmentation-context">2.
 Fragmentation Model and Terminology</a> <a href="#ref-for-fragmentation-context①">(2)</a> <a href="#ref-for-fragmentation-context②">(3)</a> <a href="#ref-for-fragmentation-context③">(4)</a>
-    <li><a href="#ref-for-fragmentation-context④">2.2. 
+    <li><a href="#ref-for-fragmentation-context④">2.2.
 Nested Fragmentation Flows</a> <a href="#ref-for-fragmentation-context⑤">(2)</a>
     <li><a href="#ref-for-fragmentation-context⑥"> Generic Break Values</a> <a href="#ref-for-fragmentation-context⑦">(2)</a>
-    <li><a href="#ref-for-fragmentation-context⑧">5.2. 
+    <li><a href="#ref-for-fragmentation-context⑧">5.2.
 Adjoining Margins at Breaks: the margin-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fragmented-flow">
    <b><a href="#fragmented-flow">#fragmented-flow</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmented-flow">2. 
+    <li><a href="#ref-for-fragmented-flow">2.
 Fragmentation Model and Terminology</a> <a href="#ref-for-fragmented-flow①">(2)</a>
-    <li><a href="#ref-for-fragmented-flow②">2.1. 
+    <li><a href="#ref-for-fragmented-flow②">2.1.
 Parallel Fragmentation Flows</a>
-    <li><a href="#ref-for-fragmented-flow③">3. 
+    <li><a href="#ref-for-fragmented-flow③">3.
 Controlling Breaks</a>
-    <li><a href="#ref-for-fragmented-flow④">4. 
+    <li><a href="#ref-for-fragmented-flow④">4.
 Rules for Breaking</a>
-    <li><a href="#ref-for-fragmented-flow⑤">4.4. 
+    <li><a href="#ref-for-fragmented-flow⑤">4.4.
 Unforced Breaks</a>
-    <li><a href="#ref-for-fragmented-flow⑥">4.5. 
+    <li><a href="#ref-for-fragmented-flow⑥">4.5.
 Optimizing Unforced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fragmentation-root">
    <b><a href="#fragmentation-root">#fragmentation-root</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation-root">2. 
+    <li><a href="#ref-for-fragmentation-root">2.
 Fragmentation Model and Terminology</a> <a href="#ref-for-fragmentation-root①">(2)</a>
-    <li><a href="#ref-for-fragmentation-root②">2.1. 
+    <li><a href="#ref-for-fragmentation-root②">2.1.
 Parallel Fragmentation Flows</a>
-    <li><a href="#ref-for-fragmentation-root③">3.1. 
+    <li><a href="#ref-for-fragmentation-root③">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fragmentation">
    <b><a href="#fragmentation">#fragmentation</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation">1. 
+    <li><a href="#ref-for-fragmentation">1.
 Introduction</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="box-fragment">
    <b><a href="#box-fragment">#box-fragment</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-box-fragment">2. 
+    <li><a href="#ref-for-box-fragment">2.
 Fragmentation Model and Terminology</a>
-    <li><a href="#ref-for-box-fragment①">4.5. 
+    <li><a href="#ref-for-box-fragment①">4.5.
 Optimizing Unforced Breaks</a> <a href="#ref-for-box-fragment②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fragment">
    <b><a href="#fragment">#fragment</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragment">2. 
+    <li><a href="#ref-for-fragment">2.
 Fragmentation Model and Terminology</a>
-    <li><a href="#ref-for-fragment①">3.3. 
+    <li><a href="#ref-for-fragment①">3.3.
 Breaks Between Lines: orphans, widows</a> <a href="#ref-for-fragment②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="remaining-fragmentainer-extent">
    <b><a href="#remaining-fragmentainer-extent">#remaining-fragmentainer-extent</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-remaining-fragmentainer-extent">5.2. 
+    <li><a href="#ref-for-remaining-fragmentainer-extent">5.2.
 Adjoining Margins at Breaks: the margin-break property</a>
-    <li><a href="#ref-for-remaining-fragmentainer-extent①">5.3. 
+    <li><a href="#ref-for-remaining-fragmentainer-extent①">5.3.
 Splitting Boxes</a> <a href="#ref-for-remaining-fragmentainer-extent②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fragmentation-break">
    <b><a href="#fragmentation-break">#fragmentation-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fragmentation-break">4.5. 
+    <li><a href="#ref-for-fragmentation-break">4.5.
 Optimizing Unforced Breaks</a>
-    <li><a href="#ref-for-fragmentation-break①">5.2. 
+    <li><a href="#ref-for-fragmentation-break①">5.2.
 Adjoining Margins at Breaks: the margin-break property</a> <a href="#ref-for-fragmentation-break②">(2)</a> <a href="#ref-for-fragmentation-break③">(3)</a>
-    <li><a href="#ref-for-fragmentation-break④">5.3. 
+    <li><a href="#ref-for-fragmentation-break④">5.3.
 Splitting Boxes</a>
-    <li><a href="#ref-for-fragmentation-break⑤">5.5. 
+    <li><a href="#ref-for-fragmentation-break⑤">5.5.
 Transforms, Positioning, and Pagination</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-break-before">
    <b><a href="#propdef-break-before">#propdef-break-before</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-break-before①">1. 
+    <li><a href="#ref-for-propdef-break-before①">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-break-before②">3. 
+    <li><a href="#ref-for-propdef-break-before②">3.
 Controlling Breaks</a>
-    <li><a href="#ref-for-propdef-break-before③">3.1. 
+    <li><a href="#ref-for-propdef-break-before③">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a> <a href="#ref-for-propdef-break-before④">(2)</a>
-    <li><a href="#ref-for-propdef-break-before⑤">3.1.1. 
+    <li><a href="#ref-for-propdef-break-before⑤">3.1.1.
 Child→Parent Break Propagation</a>
-    <li><a href="#ref-for-propdef-break-before⑥">3.4. 
+    <li><a href="#ref-for-propdef-break-before⑥">3.4.
 Page Break Aliases: the page-break-before, page-break-after, and page-break-inside properties</a>
-    <li><a href="#ref-for-propdef-break-before⑦">4.3. 
+    <li><a href="#ref-for-propdef-break-before⑦">4.3.
 Forced Breaks</a>
-    <li><a href="#ref-for-propdef-break-before⑧">4.4. 
+    <li><a href="#ref-for-propdef-break-before⑧">4.4.
 Unforced Breaks</a>
     <li><a href="#ref-for-propdef-break-before⑨"> Changes Since Level 3</a>
    </ul>
@@ -2253,19 +2253,19 @@ Unforced Breaks</a>
   <aside class="dfn-panel" data-for="propdef-break-after">
    <b><a href="#propdef-break-after">#propdef-break-after</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-break-after①">1. 
+    <li><a href="#ref-for-propdef-break-after①">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-break-after②">3. 
+    <li><a href="#ref-for-propdef-break-after②">3.
 Controlling Breaks</a>
-    <li><a href="#ref-for-propdef-break-after③">3.1. 
+    <li><a href="#ref-for-propdef-break-after③">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a> <a href="#ref-for-propdef-break-after④">(2)</a>
-    <li><a href="#ref-for-propdef-break-after⑤">3.1.1. 
+    <li><a href="#ref-for-propdef-break-after⑤">3.1.1.
 Child→Parent Break Propagation</a>
-    <li><a href="#ref-for-propdef-break-after⑥">3.4. 
+    <li><a href="#ref-for-propdef-break-after⑥">3.4.
 Page Break Aliases: the page-break-before, page-break-after, and page-break-inside properties</a>
-    <li><a href="#ref-for-propdef-break-after⑦">4.3. 
+    <li><a href="#ref-for-propdef-break-after⑦">4.3.
 Forced Breaks</a>
-    <li><a href="#ref-for-propdef-break-after⑧">4.4. 
+    <li><a href="#ref-for-propdef-break-after⑧">4.4.
 Unforced Breaks</a>
     <li><a href="#ref-for-propdef-break-after⑨"> Changes Since Level 3</a>
    </ul>
@@ -2273,39 +2273,39 @@ Unforced Breaks</a>
   <aside class="dfn-panel" data-for="forced-break-values">
    <b><a href="#forced-break-values">#forced-break-values</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-forced-break-values">4.3. 
+    <li><a href="#ref-for-forced-break-values">4.3.
 Forced Breaks</a> <a href="#ref-for-forced-break-values①">(2)</a> <a href="#ref-for-forced-break-values②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="avoid-break-values">
    <b><a href="#avoid-break-values">#avoid-break-values</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-avoid-break-values">4.3. 
+    <li><a href="#ref-for-avoid-break-values">4.3.
 Forced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-auto">
    <b><a href="#valdef-break-before-auto">#valdef-break-before-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-auto">4.4. 
+    <li><a href="#ref-for-valdef-break-before-auto">4.4.
 Unforced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-avoid">
    <b><a href="#valdef-break-before-avoid">#valdef-break-before-avoid</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-avoid">3.1. 
+    <li><a href="#ref-for-valdef-break-before-avoid">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
-    <li><a href="#ref-for-valdef-break-before-avoid①">4.4. 
+    <li><a href="#ref-for-valdef-break-before-avoid①">4.4.
 Unforced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-always">
    <b><a href="#valdef-break-before-always">#valdef-break-before-always</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-always">1. 
+    <li><a href="#ref-for-valdef-break-before-always">1.
 Introduction</a>
-    <li><a href="#ref-for-valdef-break-before-always①">3.1. 
+    <li><a href="#ref-for-valdef-break-before-always①">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
     <li><a href="#ref-for-valdef-break-before-always②"> Changes Since Level 3</a>
    </ul>
@@ -2313,9 +2313,9 @@ Breaks Between Boxes: the break-before and break-after properties</a>
   <aside class="dfn-panel" data-for="valdef-break-before-all">
    <b><a href="#valdef-break-before-all">#valdef-break-before-all</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-all①">1. 
+    <li><a href="#ref-for-valdef-break-before-all①">1.
 Introduction</a>
-    <li><a href="#ref-for-valdef-break-before-all②">3.1. 
+    <li><a href="#ref-for-valdef-break-before-all②">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
     <li><a href="#ref-for-valdef-break-before-all③"> Changes Since Level 3</a>
    </ul>
@@ -2323,157 +2323,157 @@ Breaks Between Boxes: the break-before and break-after properties</a>
   <aside class="dfn-panel" data-for="valdef-break-before-avoid-page">
    <b><a href="#valdef-break-before-avoid-page">#valdef-break-before-avoid-page</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-avoid-page">3.1. 
+    <li><a href="#ref-for-valdef-break-before-avoid-page">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
-    <li><a href="#ref-for-valdef-break-before-avoid-page①">4.4. 
+    <li><a href="#ref-for-valdef-break-before-avoid-page①">4.4.
 Unforced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-page">
    <b><a href="#valdef-break-before-page">#valdef-break-before-page</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-page">3.1. 
+    <li><a href="#ref-for-valdef-break-before-page">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-left">
    <b><a href="#valdef-break-before-left">#valdef-break-before-left</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-left">3.1. 
+    <li><a href="#ref-for-valdef-break-before-left">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
-    <li><a href="#ref-for-valdef-break-before-left①">4.3. 
+    <li><a href="#ref-for-valdef-break-before-left①">4.3.
 Forced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-right">
    <b><a href="#valdef-break-before-right">#valdef-break-before-right</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-right">3.1. 
+    <li><a href="#ref-for-valdef-break-before-right">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
-    <li><a href="#ref-for-valdef-break-before-right①">4.3. 
+    <li><a href="#ref-for-valdef-break-before-right①">4.3.
 Forced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-recto">
    <b><a href="#valdef-break-before-recto">#valdef-break-before-recto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-recto">3.1. 
+    <li><a href="#ref-for-valdef-break-before-recto">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
-    <li><a href="#ref-for-valdef-break-before-recto①">4.3. 
+    <li><a href="#ref-for-valdef-break-before-recto①">4.3.
 Forced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-verso">
    <b><a href="#valdef-break-before-verso">#valdef-break-before-verso</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-verso">3.1. 
+    <li><a href="#ref-for-valdef-break-before-verso">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
-    <li><a href="#ref-for-valdef-break-before-verso①">4.3. 
+    <li><a href="#ref-for-valdef-break-before-verso①">4.3.
 Forced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-avoid-column">
    <b><a href="#valdef-break-before-avoid-column">#valdef-break-before-avoid-column</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-avoid-column">3.1. 
+    <li><a href="#ref-for-valdef-break-before-avoid-column">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
-    <li><a href="#ref-for-valdef-break-before-avoid-column①">4.4. 
+    <li><a href="#ref-for-valdef-break-before-avoid-column①">4.4.
 Unforced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-column">
    <b><a href="#valdef-break-before-column">#valdef-break-before-column</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-column">3.1. 
+    <li><a href="#ref-for-valdef-break-before-column">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-avoid-region">
    <b><a href="#valdef-break-before-avoid-region">#valdef-break-before-avoid-region</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-avoid-region">3.1. 
+    <li><a href="#ref-for-valdef-break-before-avoid-region">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
-    <li><a href="#ref-for-valdef-break-before-avoid-region①">4.4. 
+    <li><a href="#ref-for-valdef-break-before-avoid-region①">4.4.
 Unforced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-before-region">
    <b><a href="#valdef-break-before-region">#valdef-break-before-region</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-region">3.1. 
+    <li><a href="#ref-for-valdef-break-before-region">3.1.
 Breaks Between Boxes: the break-before and break-after properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propagate">
    <b><a href="#propagate">#propagate</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propagate">3.1.1. 
+    <li><a href="#ref-for-propagate">3.1.1.
 Child→Parent Break Propagation</a> <a href="#ref-for-propagate①">(2)</a> <a href="#ref-for-propagate②">(3)</a>
-    <li><a href="#ref-for-propagate③">4.3. 
+    <li><a href="#ref-for-propagate③">4.3.
 Forced Breaks</a> <a href="#ref-for-propagate④">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-break-inside">
    <b><a href="#propdef-break-inside">#propdef-break-inside</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-break-inside">3. 
+    <li><a href="#ref-for-propdef-break-inside">3.
 Controlling Breaks</a> <a href="#ref-for-propdef-break-inside①">(2)</a>
-    <li><a href="#ref-for-propdef-break-inside②">3.2. 
+    <li><a href="#ref-for-propdef-break-inside②">3.2.
 Breaks Within Boxes: the break-inside property</a>
-    <li><a href="#ref-for-propdef-break-inside③">3.4. 
+    <li><a href="#ref-for-propdef-break-inside③">3.4.
 Page Break Aliases: the page-break-before, page-break-after, and page-break-inside properties</a>
-    <li><a href="#ref-for-propdef-break-inside④">4.4. 
+    <li><a href="#ref-for-propdef-break-inside④">4.4.
 Unforced Breaks</a> <a href="#ref-for-propdef-break-inside⑤">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-inside-auto">
    <b><a href="#valdef-break-inside-auto">#valdef-break-inside-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-inside-auto">4.4. 
+    <li><a href="#ref-for-valdef-break-inside-auto">4.4.
 Unforced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-break-inside-avoid">
    <b><a href="#valdef-break-inside-avoid">#valdef-break-inside-avoid</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-inside-avoid">4.4. 
+    <li><a href="#ref-for-valdef-break-inside-avoid">4.4.
 Unforced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-orphans">
    <b><a href="#propdef-orphans">#propdef-orphans</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-orphans">3. 
+    <li><a href="#ref-for-propdef-orphans">3.
 Controlling Breaks</a>
-    <li><a href="#ref-for-propdef-orphans①">3.3. 
+    <li><a href="#ref-for-propdef-orphans①">3.3.
 Breaks Between Lines: orphans, widows</a> <a href="#ref-for-propdef-orphans②">(2)</a> <a href="#ref-for-propdef-orphans③">(3)</a> <a href="#ref-for-propdef-orphans④">(4)</a>
-    <li><a href="#ref-for-propdef-orphans⑤">4.4. 
+    <li><a href="#ref-for-propdef-orphans⑤">4.4.
 Unforced Breaks</a>
-    <li><a href="#ref-for-propdef-orphans⑥">4.5. 
+    <li><a href="#ref-for-propdef-orphans⑥">4.5.
 Optimizing Unforced Breaks</a> <a href="#ref-for-propdef-orphans⑦">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-widows">
    <b><a href="#propdef-widows">#propdef-widows</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-widows">3. 
+    <li><a href="#ref-for-propdef-widows">3.
 Controlling Breaks</a>
-    <li><a href="#ref-for-propdef-widows①">3.3. 
+    <li><a href="#ref-for-propdef-widows①">3.3.
 Breaks Between Lines: orphans, widows</a> <a href="#ref-for-propdef-widows②">(2)</a> <a href="#ref-for-propdef-widows③">(3)</a> <a href="#ref-for-propdef-widows④">(4)</a>
-    <li><a href="#ref-for-propdef-widows⑤">4.4. 
+    <li><a href="#ref-for-propdef-widows⑤">4.4.
 Unforced Breaks</a>
-    <li><a href="#ref-for-propdef-widows⑥">4.5. 
+    <li><a href="#ref-for-propdef-widows⑥">4.5.
 Optimizing Unforced Breaks</a> <a href="#ref-for-propdef-widows⑦">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="monolithic">
    <b><a href="#monolithic">#monolithic</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-monolithic">4.1. 
+    <li><a href="#ref-for-monolithic">4.1.
 Possible Break Points</a> <a href="#ref-for-monolithic①">(2)</a>
-    <li><a href="#ref-for-monolithic②">4.4. 
+    <li><a href="#ref-for-monolithic②">4.4.
 Unforced Breaks</a>
-    <li><a href="#ref-for-monolithic③">5.1. 
+    <li><a href="#ref-for-monolithic③">5.1.
 Breaking into Varying-size Fragmentainers</a>
    </ul>
   </aside>
@@ -2481,7 +2481,7 @@ Breaking into Varying-size Fragmentainers</a>
    <b><a href="#page-break">#page-break</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-page-break"> Generic Break Values</a> <a href="#ref-for-page-break①">(2)</a>
-    <li><a href="#ref-for-page-break②">4.2. 
+    <li><a href="#ref-for-page-break②">4.2.
 Types of Breaks</a> <a href="#ref-for-page-break③">(2)</a>
    </ul>
   </aside>
@@ -2495,32 +2495,32 @@ Types of Breaks</a> <a href="#ref-for-page-break③">(2)</a>
    <b><a href="#region-break">#region-break</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-region-break"> Generic Break Values</a>
-    <li><a href="#ref-for-region-break①">4.2. 
+    <li><a href="#ref-for-region-break①">4.2.
 Types of Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="forced-break">
    <b><a href="#forced-break">#forced-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-forced-break">2.1. 
+    <li><a href="#ref-for-forced-break">2.1.
 Parallel Fragmentation Flows</a>
-    <li><a href="#ref-for-forced-break①">4.3. 
+    <li><a href="#ref-for-forced-break①">4.3.
 Forced Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="unforced-break">
    <b><a href="#unforced-break">#unforced-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unforced-break">2.1. 
+    <li><a href="#ref-for-unforced-break">2.1.
 Parallel Fragmentation Flows</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-margin-break">
    <b><a href="#propdef-margin-break">#propdef-margin-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-margin-break">1. 
+    <li><a href="#ref-for-propdef-margin-break">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-margin-break①">5.2. 
+    <li><a href="#ref-for-propdef-margin-break①">5.2.
 Adjoining Margins at Breaks: the margin-break property</a> <a href="#ref-for-propdef-margin-break②">(2)</a> <a href="#ref-for-propdef-margin-break③">(3)</a> <a href="#ref-for-propdef-margin-break④">(4)</a> <a href="#ref-for-propdef-margin-break⑤">(5)</a> <a href="#ref-for-propdef-margin-break⑥">(6)</a>
     <li><a href="#ref-for-propdef-margin-break⑦"> Changes Since Level 3</a>
    </ul>
@@ -2528,96 +2528,104 @@ Adjoining Margins at Breaks: the margin-break property</a> <a href="#ref-for-pro
   <aside class="dfn-panel" data-for="valdef-margin-break-keep">
    <b><a href="#valdef-margin-break-keep">#valdef-margin-break-keep</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-margin-break-keep">5.2. 
+    <li><a href="#ref-for-valdef-margin-break-keep">5.2.
 Adjoining Margins at Breaks: the margin-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-box-decoration-break">
    <b><a href="#propdef-box-decoration-break">#propdef-box-decoration-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-box-decoration-break">2. 
+    <li><a href="#ref-for-propdef-box-decoration-break">2.
 Fragmentation Model and Terminology</a>
-    <li><a href="#ref-for-propdef-box-decoration-break①">5.1. 
+    <li><a href="#ref-for-propdef-box-decoration-break①">5.1.
 Breaking into Varying-size Fragmentainers</a>
-    <li><a href="#ref-for-propdef-box-decoration-break②">5.3. 
+    <li><a href="#ref-for-propdef-box-decoration-break②">5.3.
 Splitting Boxes</a>
-    <li><a href="#ref-for-propdef-box-decoration-break③">5.4. 
+    <li><a href="#ref-for-propdef-box-decoration-break③">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a> <a href="#ref-for-propdef-box-decoration-break④">(2)</a> <a href="#ref-for-propdef-box-decoration-break⑤">(3)</a> <a href="#ref-for-propdef-box-decoration-break⑥">(4)</a>
-    <li><a href="#ref-for-propdef-box-decoration-break⑦">5.4.1. 
+    <li><a href="#ref-for-propdef-box-decoration-break⑦">5.4.1.
 Joining Boxes for slice</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-box-decoration-break-clone">
    <b><a href="#valdef-box-decoration-break-clone">#valdef-box-decoration-break-clone</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-box-decoration-break-clone">4.4. 
+    <li><a href="#ref-for-valdef-box-decoration-break-clone">4.4.
 Unforced Breaks</a> <a href="#ref-for-valdef-box-decoration-break-clone">(2)</a>
-    <li><a href="#ref-for-valdef-box-decoration-break-clone">5.4. 
+    <li><a href="#ref-for-valdef-box-decoration-break-clone">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-box-decoration-break-slice">
    <b><a href="#valdef-box-decoration-break-slice">#valdef-box-decoration-break-slice</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-box-decoration-break-slice">5.4. 
+    <li><a href="#ref-for-valdef-box-decoration-break-slice">5.4.
 Fragmented Borders and Backgrounds: the box-decoration-break property</a> <a href="#ref-for-valdef-box-decoration-break-slice①">(2)</a>
-    <li><a href="#ref-for-valdef-box-decoration-break-slice②">5.4.1. 
+    <li><a href="#ref-for-valdef-box-decoration-break-slice②">5.4.1.
 Joining Boxes for slice</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

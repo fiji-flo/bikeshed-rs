@@ -49,7 +49,7 @@
 </style>
  <body class="h-entry status-LS">
   <div class="head">
-    <a class="logo" href="https://whatwg.org/"> <img alt="WHATWG" crossorigin height="100" src="https://resources.whatwg.org/logo-notifications.svg"> </a> 
+    <a class="logo" href="https://whatwg.org/"> <img alt="WHATWG" crossorigin height="100" src="https://resources.whatwg.org/logo-notifications.svg"> </a>
    <hgroup>
     <h1 class="p-name no-ref" id="title">Notifications API</h1>
     <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard — Last Updated <time class="dt-updated" datetime="1970-01-01">1 January 1970</time></span></h2>
@@ -278,14 +278,14 @@ removed from the <a data-link-type="dfn" href="#list-of-notifications" id="ref-f
 user (or user agent on behalf of the user) has granted <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="permission">permission</dfn>.
 The <a data-link-type="dfn" href="#permission" id="ref-for-permission">permission</a> to show <a data-link-type="dfn" href="#concept-notification" id="ref-for-concept-notification②⑦">notifications</a> for a given <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin①">origin</a> is one of three strings: </p>
    <dl>
-    <dt>"<code>default</code>" 
+    <dt>"<code>default</code>"
     <dd>
      <p>This is equivalent to "<code>denied</code>", but the user has made no
   explicit choice thus far. </p>
-    <dt>"<code>denied</code>" 
+    <dt>"<code>denied</code>"
     <dd>
      <p>This means the user does not want <a data-link-type="dfn" href="#concept-notification" id="ref-for-concept-notification②⑧">notifications</a>. </p>
-    <dt>"<code>granted</code>" 
+    <dt>"<code>granted</code>"
     <dd>
      <p>This means <a data-link-type="dfn" href="#concept-notification" id="ref-for-concept-notification②⑨">notifications</a> can be
   displayed. </p>
@@ -428,7 +428,7 @@ specified) run these steps: </p>
       <li>
        <p>If one of <var>notification</var>’s <a data-link-type="dfn" href="#actions" id="ref-for-actions①②">actions</a> was activated by the
    user, then set <var>action</var> to that <a data-link-type="dfn" href="#actions" id="ref-for-actions①③">action</a>’s <a data-link-type="dfn" href="#action-name" id="ref-for-action-name①">name</a>. </p>
-      <li><a data-link-type="dfn" href="#fire-a-service-worker-notification-event" id="ref-for-fire-a-service-worker-notification-event">Fire a service worker notification event</a> named "<code>notificationclick</code>" given <var>notification</var> and <var>action</var>. 
+      <li><a data-link-type="dfn" href="#fire-a-service-worker-notification-event" id="ref-for-fire-a-service-worker-notification-event">Fire a service worker notification event</a> named "<code>notificationclick</code>" given <var>notification</var> and <var>action</var>.
      </ol>
     <li>
      <p>Otherwise, <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-task" id="ref-for-queue-a-task①">queue a task</a> to run these steps: </p>
@@ -607,21 +607,21 @@ pattern and instead employ one of the <a href="http://robert.ocallahan.org/2011/
    <table>
     <thead>
      <tr>
-      <th><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handlers" id="ref-for-event-handlers①">event handler</a> 
-      <th><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handler-event-type" id="ref-for-event-handler-event-type①">event handler event type</a> 
+      <th><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handlers" id="ref-for-event-handlers①">event handler</a>
+      <th><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handler-event-type" id="ref-for-event-handler-event-type①">event handler event type</a>
     <tbody>
      <tr>
-      <td><dfn class="dfn-paneled idl-code" data-dfn-for="Notification" data-dfn-type="attribute" data-export id="dom-notification-onclick"><code>onclick</code></dfn> 
-      <td><code>click</code> 
+      <td><dfn class="dfn-paneled idl-code" data-dfn-for="Notification" data-dfn-type="attribute" data-export id="dom-notification-onclick"><code>onclick</code></dfn>
+      <td><code>click</code>
      <tr>
-      <td><dfn class="dfn-paneled idl-code" data-dfn-for="Notification" data-dfn-type="attribute" data-export id="dom-notification-onshow"><code>onshow</code></dfn> 
-      <td><code>show</code> 
+      <td><dfn class="dfn-paneled idl-code" data-dfn-for="Notification" data-dfn-type="attribute" data-export id="dom-notification-onshow"><code>onshow</code></dfn>
+      <td><code>show</code>
      <tr>
-      <td><dfn class="dfn-paneled idl-code" data-dfn-for="Notification" data-dfn-type="attribute" data-export id="dom-notification-onerror"><code>onerror</code></dfn> 
-      <td><code>error</code> 
+      <td><dfn class="dfn-paneled idl-code" data-dfn-for="Notification" data-dfn-type="attribute" data-export id="dom-notification-onerror"><code>onerror</code></dfn>
+      <td><code>error</code>
      <tr>
-      <td><dfn class="dfn-paneled idl-code" data-dfn-for="Notification" data-dfn-type="attribute" data-export id="dom-notification-onclose"><code>onclose</code></dfn> 
-      <td><code>close</code> 
+      <td><dfn class="dfn-paneled idl-code" data-dfn-for="Notification" data-dfn-type="attribute" data-export id="dom-notification-onclose"><code>onclose</code></dfn>
+      <td><code>close</code>
    </table>
    <p>The <dfn class="dfn-paneled idl-code" data-dfn-for="Notification" data-dfn-type="method" data-export id="dom-notification-close"><code>close()</code></dfn> method, when
 invoked, must run the <a data-link-type="dfn" href="#close-steps" id="ref-for-close-steps②">close steps</a> for the <a data-link-type="dfn" href="#concept-notification" id="ref-for-concept-notification④②">notification</a>. </p>
@@ -817,10 +817,10 @@ the same underlying <a data-link-type="dfn" href="#concept-notification" id="ref
    <p>To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="fire-a-service-worker-notification-event">fire a service worker notification event</dfn> named <var>name</var> given <var>notification</var> (a <a data-link-type="dfn" href="#concept-notification" id="ref-for-concept-notification⑥⑤">notification</a>), and an optional <var>action</var> (a DOMString,
 defaulting to the empty string), <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#fire-functional-event" id="ref-for-fire-functional-event">Fire Functional Event</a> <var>name</var> using <code class="idl"><a data-link-type="idl" href="#notificationevent" id="ref-for-notificationevent">NotificationEvent</a></code> on <var>notification</var>’s <a data-link-type="dfn" href="#service-worker-registration" id="ref-for-service-worker-registration④">service worker registration</a> with the following properties: </p>
    <dl>
-    <dt><code class="idl"><a data-link-type="idl" href="#dom-notificationevent-notification" id="ref-for-dom-notificationevent-notification">notification</a></code> 
-    <dd>A new <code class="idl"><a data-link-type="idl" href="#notification" id="ref-for-notification①⑦">Notification</a></code> object representing <var>notification</var>. 
-    <dt><code class="idl"><a data-link-type="idl" href="#dom-notificationevent-action" id="ref-for-dom-notificationevent-action">action</a></code> 
-    <dd><var>action</var> 
+    <dt><code class="idl"><a data-link-type="idl" href="#dom-notificationevent-notification" id="ref-for-dom-notificationevent-notification">notification</a></code>
+    <dd>A new <code class="idl"><a data-link-type="idl" href="#notification" id="ref-for-notification①⑦">Notification</a></code> object representing <var>notification</var>.
+    <dt><code class="idl"><a data-link-type="idl" href="#dom-notificationevent-action" id="ref-for-dom-notificationevent-action">action</a></code>
+    <dd><var>action</var>
    </dl>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-notificationevent-notification" id="ref-for-dom-notificationevent-notification①">notification</a></code> attribute’s getter must return the
 value it was initialized to. </p>
@@ -830,15 +830,15 @@ was initialized to. </p>
    <table>
     <thead>
      <tr>
-      <th><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handlers" id="ref-for-event-handlers③">event handler</a> 
-      <th><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handler-event-type" id="ref-for-event-handler-event-type③">event handler event type</a> 
+      <th><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handlers" id="ref-for-event-handlers③">event handler</a>
+      <th><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handler-event-type" id="ref-for-event-handler-event-type③">event handler event type</a>
     <tbody>
      <tr>
-      <td><dfn class="dfn-paneled idl-code" data-dfn-for="ServiceWorkerGlobalScope" data-dfn-type="attribute" data-export id="dom-serviceworkerglobalscope-onnotificationclick"><code>onnotificationclick</code></dfn> 
-      <td><code>notificationclick</code> 
+      <td><dfn class="dfn-paneled idl-code" data-dfn-for="ServiceWorkerGlobalScope" data-dfn-type="attribute" data-export id="dom-serviceworkerglobalscope-onnotificationclick"><code>onnotificationclick</code></dfn>
+      <td><code>notificationclick</code>
      <tr>
-      <td><dfn class="dfn-paneled idl-code" data-dfn-for="ServiceWorkerGlobalScope" data-dfn-type="attribute" data-export id="dom-serviceworkerglobalscope-onnotificationclose"><code>onnotificationclose</code></dfn> 
-      <td><code>notificationclose</code> 
+      <td><dfn class="dfn-paneled idl-code" data-dfn-for="ServiceWorkerGlobalScope" data-dfn-type="attribute" data-export id="dom-serviceworkerglobalscope-onnotificationclose"><code>onnotificationclose</code></dfn>
+      <td><code>notificationclose</code>
    </table>
    <h2 class="no-num heading settled" id="acknowledgments"><span class="content">Acknowledgments</span><a class="self-link" href="#acknowledgments"></a></h2>
    <p>Thanks to
@@ -2162,57 +2162,65 @@ if ("serviceWorker" in navigator) {
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

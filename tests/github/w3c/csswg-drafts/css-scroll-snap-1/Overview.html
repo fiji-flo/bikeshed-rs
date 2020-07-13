@@ -298,7 +298,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This module contains features to control panning and scrolling behavior with “snap positions”.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -469,7 +469,7 @@ CR period.</p>
    <div class="example" id="example-b9bef3ed">
     <a class="self-link" href="#example-b9bef3ed"></a> In this example, a series of images arranged in a <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③">scroll container</a> are used to build a photo gallery.  In this example the <span id="ref-for-scroll-container④">scroll container</span> is larger than the photos contained within (such that multiple images may be seen simultaneously), and the image
         sizes vary.  Using mandatory element-based snap
-        positions, scrolling will always complete with an image centered in the <span id="ref-for-scroll-container⑤">scroll container’s</span> scrollport. 
+        positions, scrolling will always complete with an image centered in the <span id="ref-for-scroll-container⑤">scroll container’s</span> scrollport.
 <pre class="lang-css highlight"><c- f>img </c-><c- p>{</c->
     <c- c>/* Specifies that the center of each photo</c->
 <c- c>       should align with the center of the scroll</c->
@@ -496,7 +496,7 @@ CR period.</p>
 <c- p>&lt;/</c-><c- f>div</c-><c- p>></c->
 </pre>
     <figure>
-      <img alt src="images/element_snap_positions.png"> 
+      <img alt src="images/element_snap_positions.png">
      <figcaption> The layout of the scroll container’s contents in the example.
                 The snapport is represented by the red rectangle, and the snap area is represented by the yellow rectangle.  Since the scroll-snap-align is “center” in the inline (horizontal) axis, a snap position is established at each scroll position which aligns the X-center of the snapport (represented by a red dotted line) with the X-center of a snap area (represented by a yellow dotted line). </figcaption>
     </figure>
@@ -506,7 +506,7 @@ CR period.</p>
         This allows the previous page to “peek” in from above in order to make the user aware that they are not yet at the top of the document.
         Using proximity snap positions instead of mandatory snap positions allows the user to stop halfway through a page (rather than forcing them
         to snap one page at a time).  However, if a scrolling operation would finish near a snap position, then the scroll will be adjusted to
-        align the page as specified. 
+        align the page as specified.
 <pre class="lang-css highlight"><c- f>.page </c-><c- p>{</c->
     <c- c>/* Defines the top of each page as the</c->
 <c- c>       edge that should be used for snapping */</c->
@@ -532,7 +532,7 @@ CR period.</p>
 <c- p>&lt;/</c-><c- f>div</c-><c- p>></c->
 </pre>
     <figure>
-      <img alt src="images/element_snap_positions_offset.png"> 
+      <img alt src="images/element_snap_positions_offset.png">
      <figcaption> The layout of the scroll container’s contents in the example.
                 The snapport is represented by the red rectangle
                 (inset from the top by 100px due to the scroll-padding),
@@ -581,28 +581,28 @@ CR period.</p>
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-snap-type">scroll-snap-type</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">none <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one">|</a> [ x <span id="ref-for-comb-one①">|</span> y <span id="ref-for-comb-one②">|</span> block <span id="ref-for-comb-one③">|</span> inline <span id="ref-for-comb-one④">|</span> both ] [ mandatory <span id="ref-for-comb-one⑤">|</span> proximity ]<a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-opt" id="ref-for-mult-opt">?</a> 
+      <td class="prod">none <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one">|</a> [ x <span id="ref-for-comb-one①">|</span> y <span id="ref-for-comb-one②">|</span> block <span id="ref-for-comb-one③">|</span> inline <span id="ref-for-comb-one④">|</span> both ] [ mandatory <span id="ref-for-comb-one⑤">|</span> proximity ]<a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-opt" id="ref-for-mult-opt">?</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword(s) 
+      <td>specified keyword(s)
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-scroll-snap-type" id="ref-for-propdef-scroll-snap-type②">scroll-snap-type</a> property specifies
     whether a <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①①">scroll container</a> is a <a data-link-type="dfn" href="#scroll-snap-container" id="ref-for-scroll-snap-container">scroll snap container</a>,
@@ -610,7 +610,7 @@ CR period.</p>
     and <a href="#snap-axis">which axes</a> are considered.
     If no strictness value is specified, <a class="css" data-link-type="maybe" href="#valdef-scroll-snap-type-proximity" id="ref-for-valdef-scroll-snap-type-proximity">proximity</a> is assumed.</p>
    <div class="example" id="example-35961710">
-    <a class="self-link" href="#example-35961710"></a> In this example, snapping to headings is enabled in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#block-axis" id="ref-for-block-axis">block axis</a> (the y axis for horizontal writing, x axis for vertical writing): 
+    <a class="self-link" href="#example-35961710"></a> In this example, snapping to headings is enabled in the <a data-link-type="dfn" href="https://www.w3.org/TR/css-writing-modes-4/#block-axis" id="ref-for-block-axis">block axis</a> (the y axis for horizontal writing, x axis for vertical writing):
 <pre>html {
   scroll-snap-type: block;   /* applied to main document scroller */
 }
@@ -628,38 +628,38 @@ h1, h2, h3, h4, h5, h6 {
     or together as a 2D point.
     Values are defined as follows:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-x">x</dfn> 
-    <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①②">scroll container</a> <a data-link-type="dfn" href="#snap" id="ref-for-snap②">snaps</a> to <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①⓪">snap positions</a> in its horizontal axis only. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-y">y</dfn> 
-    <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①③">scroll container</a> <a data-link-type="dfn" href="#snap" id="ref-for-snap③">snaps</a> to <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①①">snap positions</a> in its vertical axis only. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-block">block</dfn> 
-    <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①④">scroll container</a> <a data-link-type="dfn" href="#snap" id="ref-for-snap④">snaps</a> to <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①②">snap positions</a> in its block axis only. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-inline">inline</dfn> 
-    <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①⑤">scroll container</a> <a data-link-type="dfn" href="#snap" id="ref-for-snap⑤">snaps</a> to <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①③">snap positions</a> in its inline axis only. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-both">both</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-x">x</dfn>
+    <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①②">scroll container</a> <a data-link-type="dfn" href="#snap" id="ref-for-snap②">snaps</a> to <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①⓪">snap positions</a> in its horizontal axis only.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-y">y</dfn>
+    <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①③">scroll container</a> <a data-link-type="dfn" href="#snap" id="ref-for-snap③">snaps</a> to <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①①">snap positions</a> in its vertical axis only.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-block">block</dfn>
+    <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①④">scroll container</a> <a data-link-type="dfn" href="#snap" id="ref-for-snap④">snaps</a> to <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①②">snap positions</a> in its block axis only.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-inline">inline</dfn>
+    <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①⑤">scroll container</a> <a data-link-type="dfn" href="#snap" id="ref-for-snap⑤">snaps</a> to <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①③">snap positions</a> in its inline axis only.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-both">both</dfn>
     <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①⑥">scroll container</a> <a data-link-type="dfn" href="#snap" id="ref-for-snap⑥">snaps</a> to <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①④">snap positions</a> in both of its axes independently
-            (potentially snapping to different elements in each axis). 
+            (potentially snapping to different elements in each axis).
    </dl>
    <h4 class="heading settled" data-level="4.1.2" id="snap-strictness"><span class="secno">4.1.2. </span><span class="content"> Scroll Snap Strictness: the <a class="css" data-link-type="maybe" href="#valdef-scroll-snap-type-none" id="ref-for-valdef-scroll-snap-type-none">none</a>, <a class="css" data-link-type="maybe" href="#valdef-scroll-snap-type-proximity" id="ref-for-valdef-scroll-snap-type-proximity①">proximity</a>, and <a class="css" data-link-type="maybe" href="#valdef-scroll-snap-type-mandatory" id="ref-for-valdef-scroll-snap-type-mandatory">mandatory</a> values</span><a class="self-link" href="#snap-strictness"></a></h4>
    <p>The <dfn data-dfn-type="dfn" data-lt="strictness value" data-noexport id="strictness-value">strictness values<a class="self-link" href="#strictness-value"></a></dfn> (<a class="css" data-link-type="maybe" href="#valdef-scroll-snap-type-none" id="ref-for-valdef-scroll-snap-type-none①">none</a>, <a class="css" data-link-type="maybe" href="#valdef-scroll-snap-type-proximity" id="ref-for-valdef-scroll-snap-type-proximity②">proximity</a>, <a class="css" data-link-type="maybe" href="#valdef-scroll-snap-type-mandatory" id="ref-for-valdef-scroll-snap-type-mandatory①">mandatory</a>)
     specify how strictly <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①⑤">snap positions</a> are enforced on the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①⑦">scroll container</a> (by forcing an adjustment to the scroll position).
     Values are defined as follows:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-none">none</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-none">none</dfn>
     <dd> If specified on a <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container①⑧">scroll container</a>,
-            the <span id="ref-for-scroll-container①⑨">scroll container</span> must not <a data-link-type="dfn" href="#snap" id="ref-for-snap⑦">snap</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-mandatory">mandatory</dfn> 
+            the <span id="ref-for-scroll-container①⑨">scroll container</span> must not <a data-link-type="dfn" href="#snap" id="ref-for-snap⑦">snap</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-mandatory">mandatory</dfn>
     <dd> If specified on a <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container②⓪">scroll container</a>,
             the <span id="ref-for-scroll-container②①">scroll container</span> is required to be <a data-link-type="dfn" href="#snap" id="ref-for-snap⑧">snapped</a> to a snap position
             when there are no active scrolling operations.
             If a valid <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position①⑥">snap position</a> exists
             then the scroll container must <span id="ref-for-snap⑨">snap</span> at the termination of a scroll
-            (if none exist then no <span id="ref-for-snap①⓪">snapping</span> occurs). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-proximity">proximity</dfn> 
+            (if none exist then no <span id="ref-for-snap①⓪">snapping</span> occurs).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scroll-snap-type" data-dfn-type="value" data-export id="valdef-scroll-snap-type-proximity">proximity</dfn>
     <dd> If specified on a <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container②②">scroll container</a>,
             the <span id="ref-for-scroll-container②③">scroll container</span> may <a data-link-type="dfn" href="#snap" id="ref-for-snap①①">snap</a> to a snap position
             at the termination of a scroll,
-            at the discretion of the UA given the parameters of the scroll. 
+            at the discretion of the UA given the parameters of the scroll.
    </dl>
    <p><strong class="advisement"> Authors should use mandatory snap positions with consideration of
     varyingly-sized screens and (if applicable) varying-sized content.
@@ -690,7 +690,7 @@ h1, h2, h3, h4, h5, h6 {
 		the log console,
 		when initially loaded and as each message is added to the bottom,
 		remains snapped to the bottom of the content
-		unless the user has scrolled away from that edge: 
+		unless the user has scrolled away from that edge:
 <pre class="lang-css highlight"><c- f>.log </c-><c- p>{</c->
   <c- k>scroll-snap-type</c-><c- p>:</c-> proximity<c- p>;</c->
   <c- k>align-content</c-><c- p>:</c-> end<c- p>;</c->
@@ -721,28 +721,28 @@ h1, h2, h3, h4, h5, h6 {
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-padding">scroll-padding</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">[ auto <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage">&lt;length-percentage></a> ]<a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-num-range" id="ref-for-mult-num-range">{1,4}</a> 
+      <td class="prod">[ auto <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage">&lt;length-percentage></a> ]<a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-num-range" id="ref-for-mult-num-range">{1,4}</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container②⑦">scroll containers</a> 
+      <td><a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container②⑦">scroll containers</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>relative to the corresponding dimension of the scroll container’s scrollport 
+      <td>relative to the corresponding dimension of the scroll container’s scrollport
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>per side, either the keyword <a class="css" data-link-type="maybe" href="#valdef-scroll-padding-auto" id="ref-for-valdef-scroll-padding-auto">auto</a> or a computed <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①">&lt;length-percentage></a> value 
+      <td>per side, either the keyword <a class="css" data-link-type="maybe" href="#valdef-scroll-padding-auto" id="ref-for-valdef-scroll-padding-auto">auto</a> or a computed <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①">&lt;length-percentage></a> value
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
    </table>
    <p>This property specifies
     (for all <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container②⑧">scroll containers</a>, not just <a data-link-type="dfn" href="#scroll-snap-container" id="ref-for-scroll-snap-container③">scroll snap containers</a>)
@@ -788,7 +788,7 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
    <div class="example" id="example-22bb626b">
     <a class="self-link" href="#example-22bb626b"></a> In this example, <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding" id="ref-for-propdef-scroll-padding④">scroll-padding</a> is used to center slideshow images
         within the portion of the scrollport
-        that is not obscured by a fixed-position toolbar. 
+        that is not obscured by a fixed-position toolbar.
 <pre class="lang-css highlight"><c- f>html </c-><c- p>{</c->
     <c- k>overflow-x</c-><c- p>:</c-> auto<c- p>;</c->
     <c- k>overflow-y</c-><c- p>:</c-> hidden<c- p>;</c->
@@ -818,28 +818,28 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-margin">scroll-margin</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://www.w3.org/TR/css3-values/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a><a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-num-range" id="ref-for-mult-num-range①">{1,4}</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://www.w3.org/TR/css3-values/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a><a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-num-range" id="ref-for-mult-num-range①">{1,4}</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>0 
+      <td>0
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>per side, an absolute length 
+      <td>per side, an absolute length
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p>This property is a <a data-link-type="dfn" href="https://www.w3.org/TR/css-cascade-4/#shorthand-property" id="ref-for-shorthand-property①">shorthand property</a> that sets
     all of the <a href="#longhands"><span class="css">scroll-margin-*</span> longhands</a> in one declaration,
@@ -867,28 +867,28 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-snap-align">scroll-snap-align</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">[ none <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one⑦">|</a> start <span id="ref-for-comb-one⑧">|</span> end <span id="ref-for-comb-one⑨">|</span> center ]<a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-num-range" id="ref-for-mult-num-range②">{1,2}</a> 
+      <td class="prod">[ none <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one⑦">|</a> start <span id="ref-for-comb-one⑧">|</span> end <span id="ref-for-comb-one⑨">|</span> center ]<a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-num-range" id="ref-for-mult-num-range②">{1,2}</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>two keywords 
+      <td>two keywords
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-scroll-snap-align" id="ref-for-propdef-scroll-snap-align②">scroll-snap-align</a> property specifies
     the box’s <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②⓪">snap position</a> as an alignment of
@@ -899,14 +899,14 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
     If only one value is specified, the second value defaults to the same value.</p>
    <p>Values are defined as follows:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="scroll-snap-align" data-dfn-type="value" data-export id="valdef-scroll-snap-align-none">none<a class="self-link" href="#valdef-scroll-snap-align-none"></a></dfn> 
-    <dd> This box does not define a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②①">snap position</a> in the specified axis. 
-    <dt><dfn class="css" data-dfn-for="scroll-snap-align" data-dfn-type="value" data-export id="valdef-scroll-snap-align-start">start<a class="self-link" href="#valdef-scroll-snap-align-start"></a></dfn> 
-    <dd> Start alignment of this box’s <a data-link-type="dfn" href="#scroll-snap-area" id="ref-for-scroll-snap-area⑦">scroll snap area</a> within the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③①">scroll container</a>’s <a data-link-type="dfn" href="#scroll-snapport" id="ref-for-scroll-snapport③">snapport</a> is a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②②">snap position</a> in the specified axis. 
-    <dt><dfn class="css" data-dfn-for="scroll-snap-align" data-dfn-type="value" data-export id="valdef-scroll-snap-align-end">end<a class="self-link" href="#valdef-scroll-snap-align-end"></a></dfn> 
-    <dd> End alignment of this box’s <a data-link-type="dfn" href="#scroll-snap-area" id="ref-for-scroll-snap-area⑧">scroll snap area</a> within the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③②">scroll container</a>’s <a data-link-type="dfn" href="#scroll-snapport" id="ref-for-scroll-snapport④">snapport</a> is a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②③">snap position</a> in the specified axis. 
-    <dt><dfn class="css" data-dfn-for="scroll-snap-align" data-dfn-type="value" data-export id="valdef-scroll-snap-align-center">center<a class="self-link" href="#valdef-scroll-snap-align-center"></a></dfn> 
-    <dd> Center alignment of this box’s <a data-link-type="dfn" href="#scroll-snap-area" id="ref-for-scroll-snap-area⑨">scroll snap area</a> within the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③③">scroll container</a>’s <a data-link-type="dfn" href="#scroll-snapport" id="ref-for-scroll-snapport⑤">snapport</a> is a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②④">snap position</a> in the specified axis. 
+    <dt><dfn class="css" data-dfn-for="scroll-snap-align" data-dfn-type="value" data-export id="valdef-scroll-snap-align-none">none<a class="self-link" href="#valdef-scroll-snap-align-none"></a></dfn>
+    <dd> This box does not define a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②①">snap position</a> in the specified axis.
+    <dt><dfn class="css" data-dfn-for="scroll-snap-align" data-dfn-type="value" data-export id="valdef-scroll-snap-align-start">start<a class="self-link" href="#valdef-scroll-snap-align-start"></a></dfn>
+    <dd> Start alignment of this box’s <a data-link-type="dfn" href="#scroll-snap-area" id="ref-for-scroll-snap-area⑦">scroll snap area</a> within the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③①">scroll container</a>’s <a data-link-type="dfn" href="#scroll-snapport" id="ref-for-scroll-snapport③">snapport</a> is a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②②">snap position</a> in the specified axis.
+    <dt><dfn class="css" data-dfn-for="scroll-snap-align" data-dfn-type="value" data-export id="valdef-scroll-snap-align-end">end<a class="self-link" href="#valdef-scroll-snap-align-end"></a></dfn>
+    <dd> End alignment of this box’s <a data-link-type="dfn" href="#scroll-snap-area" id="ref-for-scroll-snap-area⑧">scroll snap area</a> within the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③②">scroll container</a>’s <a data-link-type="dfn" href="#scroll-snapport" id="ref-for-scroll-snapport④">snapport</a> is a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②③">snap position</a> in the specified axis.
+    <dt><dfn class="css" data-dfn-for="scroll-snap-align" data-dfn-type="value" data-export id="valdef-scroll-snap-align-center">center<a class="self-link" href="#valdef-scroll-snap-align-center"></a></dfn>
+    <dd> Center alignment of this box’s <a data-link-type="dfn" href="#scroll-snap-area" id="ref-for-scroll-snap-area⑨">scroll snap area</a> within the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③③">scroll container</a>’s <a data-link-type="dfn" href="#scroll-snapport" id="ref-for-scroll-snapport⑤">snapport</a> is a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②④">snap position</a> in the specified axis.
    </dl>
    <h4 class="heading settled" data-level="5.2.1" id="snap-scope"><span class="secno">5.2.1. </span><span class="content"> Scoping Valid Snap Positions to Visible Boxes</span><a class="self-link" href="#snap-scope"></a></h4>
    <p>Since the purpose of scroll snapping is to align content within the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scrollport" id="ref-for-scrollport⑤">scrollport</a> for optimal viewing,
@@ -916,7 +916,7 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
     <a class="self-link" href="#example-40897215"></a> For example, a <a data-link-type="dfn" href="#scroll-snap-area" id="ref-for-scroll-snap-area①②">snap area</a> is top-aligned to the <a data-link-type="dfn" href="#scroll-snapport" id="ref-for-scroll-snapport⑦">snapport</a> if its top edge is coincident with the <span id="ref-for-scroll-snapport⑧">snapport</span>’s top edge;
         and this would be considered a valid <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②⑥">snap position</a> for block-axis start-aligned snapping of that <span id="ref-for-scroll-snap-area①③">snap area</span> <em>if at least part of the <a data-link-type="dfn" href="#scroll-snap-area" id="ref-for-scroll-snap-area①④">snap area</a> is on-screen</em>.
         If the entire <span id="ref-for-scroll-snap-area①⑤">snap area</span> is outside the <span id="ref-for-scroll-snapport⑨">snapport</span>, however,
-        then the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③④">scroll container</a> cannot be considered to be <a data-link-type="dfn" href="#snap" id="ref-for-snap①⑤">snapped</a> because the required alignment, though satisfied, would not be relevant to the viewer. 
+        then the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③④">scroll container</a> cannot be considered to be <a data-link-type="dfn" href="#snap" id="ref-for-snap①⑤">snapped</a> because the required alignment, though satisfied, would not be relevant to the viewer.
     <figure>
 <pre class="ascii-art">╔════viewport════╗┈┈┈┈┈┈┈┈┌──────────────┐
 ║  ┌─────┐ ┌──┐  ║        │ top-snapping │
@@ -939,7 +939,7 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
         with on-screen elements.
         (If this requirement is onerous for implementers however,
         we can default to a gridded behavior
-        and introduce a switch to get smarter behavior later.) 
+        and introduce a switch to get smarter behavior later.)
    </details>
    <p class="note" role="note"><span>Note:</span> Although <a class="css" data-link-type="propdesc" href="#propdef-scroll-snap-type" id="ref-for-propdef-scroll-snap-type⑦">scroll-snap-type: both</a> evaluates <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position②⑦">snap positions</a> independently in each axis, <a href="#choosing">choosing</a> of a <span id="ref-for-scroll-snap-position②⑧">snap position</span> in one axis
     can be influenced by <span id="ref-for-scroll-snap-position②⑨">snap positions</span> in the other axis.
@@ -959,7 +959,7 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
         which had a photo as the area.
         The author wants mandatory snapping from item to item,
         but if the item happens to be larger than your viewport,
-        you want to be able to scroll around the whole thing once you’re over it. 
+        you want to be able to scroll around the whole thing once you’re over it.
     <p>Since the <a data-link-type="dfn" href="#scroll-snap-area" id="ref-for-scroll-snap-area①⑨">snap area</a> is larger than the <a data-link-type="dfn" href="#scroll-snapport" id="ref-for-scroll-snapport①③">snapport</a>,
         while the area fully fills the viewport,
         the container can be scrolled arbitrarily
@@ -981,7 +981,7 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
         they snap normally;
         when they’re longer,
         the viewer can scroll arbitrarily within them,
-        or within a large segment of the top-level section that has no subsections to snap to. 
+        or within a large segment of the top-level section that has no subsections to snap to.
     <figure>
 <pre class="ascii-art">┌─ top-level section ─┐ ━┓
 │                     │ 1┃
@@ -1038,28 +1038,28 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-snap-stop">scroll-snap-stop</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">normal <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one①⓪">|</a> always 
+      <td class="prod">normal <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one①⓪">|</a> always
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>normal 
+      <td>normal
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>When scrolling with an intended direction,
     the <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③⑥">scroll container</a> can “pass over” several possible <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position③⑦">snap positions</a> (that would be valid to snap to,
@@ -1072,12 +1072,12 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
     before the scrolling operation would naturally end.</p>
    <p>Values are defined as follows:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="scroll-snap-stop" data-dfn-type="value" data-export id="valdef-scroll-snap-stop-normal">normal<a class="self-link" href="#valdef-scroll-snap-stop-normal"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="scroll-snap-stop" data-dfn-type="value" data-export id="valdef-scroll-snap-stop-normal">normal<a class="self-link" href="#valdef-scroll-snap-stop-normal"></a></dfn>
     <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③⑧">scroll container</a> may pass over a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position③⑨">snap position</a> defined
-            by this element during the execution of a scrolling operation. 
-    <dt><dfn class="css" data-dfn-for="scroll-snap-stop" data-dfn-type="value" data-export id="valdef-scroll-snap-stop-always">always<a class="self-link" href="#valdef-scroll-snap-stop-always"></a></dfn> 
+            by this element during the execution of a scrolling operation.
+    <dt><dfn class="css" data-dfn-for="scroll-snap-stop" data-dfn-type="value" data-export id="valdef-scroll-snap-stop-always">always<a class="self-link" href="#valdef-scroll-snap-stop-always"></a></dfn>
     <dd> The <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container③⑨">scroll container</a> must not pass over a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position④⓪">snap position</a> defined by this element during the execution of a scrolling operation;
-            it must instead snap to the first of this element’s <span id="ref-for-scroll-snap-position④①">snap positions</span>. 
+            it must instead snap to the first of this element’s <span id="ref-for-scroll-snap-position④①">snap positions</span>.
    </dl>
    <p>This property has no effect on scrolling operations with only an <a data-link-type="dfn" href="#intended-end-position" id="ref-for-intended-end-position">intended end position</a>,
     as they do not conceptually “pass over” any <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position④②">snap positions</a>.</p>
@@ -1107,7 +1107,7 @@ but UAs may use heuristics to detect when a non-zero value is more appropriate.<
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="intended-end-position">intended end position</dfn>
     <dd data-md>
      <div class="example" id="example-3822aa28">
-      <a class="self-link" href="#example-3822aa28"></a> Common examples of scrolls with only an <a data-link-type="dfn" href="#intended-end-position" id="ref-for-intended-end-position①">intended end position</a> include: 
+      <a class="self-link" href="#example-3822aa28"></a> Common examples of scrolls with only an <a data-link-type="dfn" href="#intended-end-position" id="ref-for-intended-end-position①">intended end position</a> include:
       <ul>
        <li data-md>
         <p>a panning gesture,
@@ -1127,7 +1127,7 @@ released without momentum</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="intended-direction-and-end-position">intended direction and end position</dfn>
     <dd data-md>
      <div class="example" id="example-f50b3650">
-      <a class="self-link" href="#example-f50b3650"></a> Common examples of scrolls with both an <a data-link-type="dfn" href="#intended-direction-and-end-position" id="ref-for-intended-direction-and-end-position">intended direction and end position</a> include: 
+      <a class="self-link" href="#example-f50b3650"></a> Common examples of scrolls with both an <a data-link-type="dfn" href="#intended-direction-and-end-position" id="ref-for-intended-direction-and-end-position">intended direction and end position</a> include:
       <ul>
        <li data-md>
         <p>a “fling” gesture,
@@ -1143,7 +1143,7 @@ as snap points is its <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="intended-direction">intended direction</dfn>
     <dd data-md>
      <div class="example" id="example-33cf1041">
-      <a class="self-link" href="#example-33cf1041"></a> Common examples of scrolls with only an <a data-link-type="dfn" href="#intended-direction" id="ref-for-intended-direction">intended direction</a> include: 
+      <a class="self-link" href="#example-33cf1041"></a> Common examples of scrolls with only an <a data-link-type="dfn" href="#intended-direction" id="ref-for-intended-direction">intended direction</a> include:
       <ul>
        <li data-md>
         <p>pressing an arrow key on the keyboard (or equivalent operations on the scrollbar)</p>
@@ -1211,28 +1211,28 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
       <td><dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-padding-top">scroll-padding-top<a class="self-link" href="#propdef-scroll-padding-top"></a></dfn>, <dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-padding-right">scroll-padding-right<a class="self-link" href="#propdef-scroll-padding-right"></a></dfn>, <dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-padding-bottom">scroll-padding-bottom<a class="self-link" href="#propdef-scroll-padding-bottom"></a></dfn>, <dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-padding-left">scroll-padding-left<a class="self-link" href="#propdef-scroll-padding-left"></a></dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one①①">|</a> <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage③">&lt;length-percentage></a> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one①①">|</a> <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage③">&lt;length-percentage></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container④③">scroll containers</a> 
+      <td><a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container④③">scroll containers</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>relative to the scroll container’s scrollport 
+      <td>relative to the scroll container’s scrollport
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-scroll-padding-auto" id="ref-for-valdef-scroll-padding-auto①">auto</a> or a computed <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage④">&lt;length-percentage></a> value 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-scroll-padding-auto" id="ref-for-valdef-scroll-padding-auto①">auto</a> or a computed <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage④">&lt;length-percentage></a> value
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p>These <a data-link-type="dfn" href="https://www.w3.org/TR/css-cascade-4/#longhand" id="ref-for-longhand">longhands</a> of <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding" id="ref-for-propdef-scroll-padding⑧">scroll-padding</a> specify
     the top, right, bottom, and left edges
@@ -1246,28 +1246,28 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-padding-inline-start">scroll-padding-inline-start</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-padding-block-start">scroll-padding-block-start</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-padding-inline-end">scroll-padding-inline-end</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-padding-block-end">scroll-padding-block-end</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one①②">|</a> <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑤">&lt;length-percentage></a> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one①②">|</a> <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑤">&lt;length-percentage></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container④④">scroll containers</a> 
+      <td><a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container④④">scroll containers</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>relative to the scroll container’s scrollport 
+      <td>relative to the scroll container’s scrollport
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-scroll-padding-auto" id="ref-for-valdef-scroll-padding-auto②">auto</a> or a computed <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑥">&lt;length-percentage></a> value 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-scroll-padding-auto" id="ref-for-valdef-scroll-padding-auto②">auto</a> or a computed <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑥">&lt;length-percentage></a> value
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p>These <a data-link-type="dfn" href="https://www.w3.org/TR/css-cascade-4/#longhand" id="ref-for-longhand①">longhands</a> of <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding" id="ref-for-propdef-scroll-padding①⓪">scroll-padding</a> specify
     the block-start, inline-start, block-end, and inline-end edges
@@ -1280,28 +1280,28 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
       <td><dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-padding-block">scroll-padding-block<a class="self-link" href="#propdef-scroll-padding-block"></a></dfn>, <dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-padding-inline">scroll-padding-inline<a class="self-link" href="#propdef-scroll-padding-inline"></a></dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">[ auto <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑦">&lt;length-percentage></a> ]<a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-num-range" id="ref-for-mult-num-range③">{1,2}</a> 
+      <td class="prod">[ auto <a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑦">&lt;length-percentage></a> ]<a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-num-range" id="ref-for-mult-num-range③">{1,2}</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>relative to the scroll container’s scrollport 
+      <td>relative to the scroll container’s scrollport
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value 
+      <td>by computed value
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
    </table>
    <p>These <a data-link-type="dfn" href="https://www.w3.org/TR/css-cascade-4/#shorthand-property" id="ref-for-shorthand-property②">shorthands</a> of <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding-block-start" id="ref-for-propdef-scroll-padding-block-start">scroll-padding-block-start</a> + <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding-block-end" id="ref-for-propdef-scroll-padding-block-end">scroll-padding-block-end</a> and <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding-inline-start" id="ref-for-propdef-scroll-padding-inline-start">scroll-padding-inline-start</a> + <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding-inline-end" id="ref-for-propdef-scroll-padding-inline-end">scroll-padding-inline-end</a> are <a data-link-type="dfn" href="https://www.w3.org/TR/css-cascade-4/#longhand" id="ref-for-longhand②">longhands</a> of <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding" id="ref-for-propdef-scroll-padding①①">scroll-padding</a>,
     and specify the block-axis and inline-axis edges of the <a data-link-type="dfn" href="#scroll-snapport" id="ref-for-scroll-snapport①⑧">snapport</a>, respectively.</p>
@@ -1315,28 +1315,28 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
       <td><dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-margin-top">scroll-margin-top<a class="self-link" href="#propdef-scroll-margin-top"></a></dfn>, <dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-margin-right">scroll-margin-right<a class="self-link" href="#propdef-scroll-margin-right"></a></dfn>, <dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-margin-bottom">scroll-margin-bottom<a class="self-link" href="#propdef-scroll-margin-bottom"></a></dfn>, <dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-margin-left">scroll-margin-left<a class="self-link" href="#propdef-scroll-margin-left"></a></dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://www.w3.org/TR/css3-values/#length-value" id="ref-for-length-value①" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://www.w3.org/TR/css3-values/#length-value" id="ref-for-length-value①" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>0 
+      <td>0
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>absolute length 
+      <td>absolute length
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p>These <a data-link-type="dfn" href="https://www.w3.org/TR/css-cascade-4/#longhand" id="ref-for-longhand③">longhands</a> of <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin" id="ref-for-propdef-scroll-margin④">scroll-margin</a> specify
     the top, right, bottom, and left edges
@@ -1349,28 +1349,28 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-margin-block-start">scroll-margin-block-start</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-margin-inline-start">scroll-margin-inline-start</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-margin-block-end">scroll-margin-block-end</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-scroll-margin-inline-end">scroll-margin-inline-end</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://www.w3.org/TR/css3-values/#length-value" id="ref-for-length-value②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://www.w3.org/TR/css3-values/#length-value" id="ref-for-length-value②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>0 
+      <td>0
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>absolute length 
+      <td>absolute length
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p>These <a data-link-type="dfn" href="https://www.w3.org/TR/css-cascade-4/#longhand" id="ref-for-longhand④">longhands</a> of <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin" id="ref-for-propdef-scroll-margin⑥">scroll-margin</a> specify the
     block-start, inline-start, block-end, and inline-end edges
@@ -1382,28 +1382,28 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
       <td><dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-margin-block">scroll-margin-block<a class="self-link" href="#propdef-scroll-margin-block"></a></dfn>, <dfn class="css" data-dfn-type="property" data-export id="propdef-scroll-margin-inline">scroll-margin-inline<a class="self-link" href="#propdef-scroll-margin-inline"></a></dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://www.w3.org/TR/css3-values/#length-value" id="ref-for-length-value③" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a><a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-num-range" id="ref-for-mult-num-range④">{1,2}</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://www.w3.org/TR/css3-values/#length-value" id="ref-for-length-value③" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a><a data-link-type="grammar" href="https://www.w3.org/TR/css-values-4/#mult-num-range" id="ref-for-mult-num-range④">{1,2}</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>0 
+      <td>0
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
    </table>
    <p>These <a data-link-type="dfn" href="https://www.w3.org/TR/css-cascade-4/#shorthand-property" id="ref-for-shorthand-property③">shorthands</a> of <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin-block-start" id="ref-for-propdef-scroll-margin-block-start">scroll-margin-block-start</a> + <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin-block-end" id="ref-for-propdef-scroll-margin-block-end">scroll-margin-block-end</a> and <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin-inline-start" id="ref-for-propdef-scroll-margin-inline-start">scroll-margin-inline-start</a> + <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin-inline-end" id="ref-for-propdef-scroll-margin-inline-end">scroll-margin-inline-end</a> are <a data-link-type="dfn" href="https://www.w3.org/TR/css-cascade-4/#longhand" id="ref-for-longhand⑤">longhands</a> of <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin" id="ref-for-propdef-scroll-margin⑦">scroll-margin</a>,
     and specify the block-axis and inline-axis edges
@@ -1433,7 +1433,7 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
     <li id="change-2019-clarify-nonsnapping">
      <a class="self-link" href="#change-2019-clarify-nonsnapping"></a> Emphasized that <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding" id="ref-for-propdef-scroll-padding①②">scroll-padding</a> and <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin" id="ref-for-propdef-scroll-margin⑧">scroll-margin</a> do apply
 			even when scroll snapping is off.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/3721">Issue 3721</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/3721">Issue 3721</a>)
      <blockquote>
       <p>
        <ins>Also, to offer better control over paging and scroll positioning
@@ -1448,7 +1448,7 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
      </blockquote>
      <blockquote>
       <p>
-       This property specifies 
+       This property specifies
        <ins>(for all <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container④⑦">scroll containers</a>, not just <a data-link-type="dfn" href="#scroll-snap-container" id="ref-for-scroll-snap-container⑦">scroll snap containers</a>)</ins>
         offsets that define the <a data-link-type="dfn" href="#optimal-viewing-region" id="ref-for-optimal-viewing-region③">optimal viewing region</a> of a scrollport…
       </p>
@@ -1470,7 +1470,7 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
      <a class="self-link" href="#change-2019-propagation"></a> Defined explicitly that <a class="property" data-link-type="propdesc" href="#propdef-scroll-snap-type" id="ref-for-propdef-scroll-snap-type⑨">scroll-snap-type</a> and <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding" id="ref-for-propdef-scroll-padding①④">scroll-padding</a> values
 			are propagated from the root element to the document viewport
 			as would be expected.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/3740">Issue 3740</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/3740">Issue 3740</a>)
      <blockquote>
       <p>
        <ins>UAs must apply the <a class="property" data-link-type="propdesc" href="#propdef-scroll-snap-type" id="ref-for-propdef-scroll-snap-type①⓪">scroll-snap-type</a> value set on the root element
@@ -1489,10 +1489,10 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
    <p>Changes since the <a href="https://www.w3.org/TR/2018/CR-css-scroll-snap-1-20180814/">14 August 2018 Candidate Recommendation</a> include:</p>
    <ul>
     <li id="change-2018-padding-intial"><a class="self-link" href="#change-2018-padding-intial"></a> Corrected <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding" id="ref-for-propdef-scroll-padding①⑦">scroll-padding</a> longhands to list the new <a class="css" data-link-type="maybe" href="#valdef-scroll-padding-auto" id="ref-for-valdef-scroll-padding-auto③">auto</a> keyword in their property definition tables.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/3189">Issue 3189</a>) 
-    <li id="change-2018-computed-animation"><a class="self-link" href="#change-2018-computed-animation"></a> Fixed up “Computed value” and “Animation type” lines in the property definition tables. 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/3189">Issue 3189</a>)
+    <li id="change-2018-computed-animation"><a class="self-link" href="#change-2018-computed-animation"></a> Fixed up “Computed value” and “Animation type” lines in the property definition tables.
     <li id="change-2018-margin-percentage"><a class="self-link" href="#change-2018-margin-percentage"></a> Cleaned up stray <a class="production css" data-link-type="type" href="https://www.w3.org/TR/css3-values/#percentage-value" id="ref-for-percentage-value">&lt;percentage></a> values in <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin" id="ref-for-propdef-scroll-margin①⓪">scroll-margin</a> property definition tables.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/3289">3289</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/3289">3289</a>)
    </ul>
    <p>A <a href="https://drafts.csswg.org/css-scroll-snap-1/issues-cr-2018">Disposition of Comments is available</a>.</p>
    <h3 class="heading settled" data-level="9.2" id="changes-20171214"><span class="secno">9.2. </span><span class="content">Changes Since 14 December 2017 CR</span><a class="self-link" href="#changes-20171214"></a></h3>
@@ -1501,22 +1501,22 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
     <li id="change-2017-align-values-backwards"><a class="self-link" href="#change-2017-align-values-backwards"></a> Fixed <a class="property" data-link-type="propdesc" href="#propdef-scroll-snap-align" id="ref-for-propdef-scroll-snap-align③">scroll-snap-align</a> shorthand to assign
 			block-axis value first, inline-axis value second,
 			accordingly to logical shorthand conventions.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/2232">Issue 2232</a> 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/2232">Issue 2232</a>
     <li id="change-2017-scroll-padding-auto"><a class="self-link" href="#change-2017-scroll-padding-auto"></a> Added <a class="css" data-link-type="maybe" href="#valdef-scroll-padding-auto" id="ref-for-valdef-scroll-padding-auto④">auto</a> keyword to 'scroll-padding as its initial value
 			to account for UA heuristics.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/2728">Issue 2728</a> 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/2728">Issue 2728</a>
     <li id="change-2017-snap-vs-api-scroll">
      <a class="self-link" href="#change-2017-snap-vs-api-scroll"></a> Clarified in the definition of <a class="property" data-link-type="propdesc" href="#propdef-scroll-snap-type" id="ref-for-propdef-scroll-snap-type①②">scroll-snap-type</a> that programmatig scrolls such as <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/cssom-view/#dom-window-scrollto" id="ref-for-dom-window-scrollto②">scrollTo()</a></code> are also subject to snapping.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/2593">Issue 2593</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/2593">Issue 2593</a>)
      <blockquote>
        Using the <a class="property" data-link-type="propdesc" href="#propdef-scroll-snap-type" id="ref-for-propdef-scroll-snap-type①③">scroll-snap-type</a> property on the relevant <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container④⑧">scroll container</a>,
 				the author can request a particular bias
-				for the scrollport to land on a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position⑤⑤">snap position</a> after scrolling operations 
+				for the scrollport to land on a <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position⑤⑤">snap position</a> after scrolling operations
       <ins>(including programmatic scrolls such as the <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/cssom-view/#dom-window-scrollto" id="ref-for-dom-window-scrollto③">scrollTo()</a></code> method)</ins>
-      . 
+      .
      </blockquote>
     <li id="change-2017-clarify-mandatory-visibility"><a class="self-link" href="#change-2017-clarify-mandatory-visibility"></a> Adjusted wording in <a href="#snap-scope">§ 5.2.1 Scoping Valid Snap Positions to Visible Boxes</a> to be clearer—<wbr>compared to <a href="https://www.w3.org/TR/2017/CR-css-scroll-snap-1-20171214/#snap-scope">old version</a>.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/2526">Issue 2526</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/2526">Issue 2526</a>)
    </ul>
    <p>A <a href="https://drafts.csswg.org/css-scroll-snap-1/issues-cr-2017-12">Disposition of Comments</a> is available.</p>
    <h3 class="heading settled" data-level="9.3" id="changes-20170824"><span class="secno">9.3. </span><span class="content">Changes Since 24 August 2017 CR</span><a class="self-link" href="#changes-20170824"></a></h3>
@@ -1525,7 +1525,7 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
     <li id="change-2017-scroll-margin">
      <a class="self-link" href="#change-2017-scroll-margin"></a> <a class="css" data-link-type="maybe" href="https://www.w3.org/TR/selectors4/#target-pseudo" id="ref-for-target-pseudo③">:target</a>/<code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-view-1/#dom-element-scrollintoview" id="ref-for-dom-element-scrollintoview③">scrollIntoView()</a></code>/etc should take <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin" id="ref-for-propdef-scroll-margin①①">scroll-margin</a> into account,
 			regardless of whether snapping is turned on or not.
-			(<a href="https://drafts.csswg.org/css-scroll-snap-1/issues-cr-2016-08#issue-1">Issue 1</a> 
+			(<a href="https://drafts.csswg.org/css-scroll-snap-1/issues-cr-2016-08#issue-1">Issue 1</a>
      <blockquote>
       <p>
        <ins>If a page is navigated to a fragment that defines a target element
@@ -1539,17 +1539,17 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
     <li id="change-2017-target-snap-must">
      <a class="self-link" href="#change-2017-target-snap-must"></a> <a class="css" data-link-type="maybe" href="https://www.w3.org/TR/selectors4/#target-pseudo" id="ref-for-target-pseudo⑤">:target</a>/<code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-view-1/#dom-element-scrollintoview" id="ref-for-dom-element-scrollintoview⑤">scrollIntoView()</a></code>/etc must (rather than should)
 			use snap positions if snapping is turned on.
-			(<a href="https://drafts.csswg.org/css-scroll-snap-1/issues-cr-2016-08#issue-1">Issue 1</a> 
+			(<a href="https://drafts.csswg.org/css-scroll-snap-1/issues-cr-2016-08#issue-1">Issue 1</a>
      <blockquote>
       <p>
        If a page is navigated to a fragment that defines a target element
 				(one that would be matched by <a class="css" data-link-type="maybe" href="https://www.w3.org/TR/selectors4/#target-pseudo" id="ref-for-target-pseudo⑥">:target</a>,
 				or the target of <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-view-1/#dom-element-scrollintoview" id="ref-for-dom-element-scrollintoview⑥">scrollIntoView()</a></code>),
 				and that element defines some <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position⑤⑥">snap positions</a>,
-				the user agent 
+				the user agent
        <del>should</del>
        <ins>must</ins>
-        <a data-link-type="dfn" href="#snap" id="ref-for-snap①⑧">snap</a> to one of that element’s <span id="ref-for-scroll-snap-position⑤⑦">snap positions</span> 
+        <a data-link-type="dfn" href="#snap" id="ref-for-snap①⑧">snap</a> to one of that element’s <span id="ref-for-scroll-snap-position⑤⑦">snap positions</span>
        <ins>if its nearest <a data-link-type="dfn" href="https://www.w3.org/TR/css-overflow-3/#scroll-container" id="ref-for-scroll-container④⑨">scroll container</a> is a <a data-link-type="dfn" href="#scroll-snap-container" id="ref-for-scroll-snap-container⑧">scroll snap container</a></ins>
        .
 				The user agent <em>may</em> also do this even when
@@ -1559,26 +1559,26 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
     <li id="change-2017-rename-scroll-margin">
      <a class="self-link" href="#change-2017-rename-scroll-margin"></a> Renamed <span class="css">scroll-snap-margin</span> to <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin" id="ref-for-propdef-scroll-margin①②">scroll-margin</a> to reflect its more generic role in providing breathing space
 			for scrolling to an element regardless of snapping behavior.
-			(<a href="https://drafts.csswg.org/css-scroll-snap-1/issues-cr-2016-08#issue-4">Issue 4</a>) 
+			(<a href="https://drafts.csswg.org/css-scroll-snap-1/issues-cr-2016-08#issue-4">Issue 4</a>)
      <p>A <a href="https://drafts.csswg.org/css-scroll-snap-1/issues-cr-2016-08">Disposition of Comments</a> is available.</p>
      <h3 class="heading settled" data-level="9.4" id="changes-20161020"><span class="secno">9.4. </span><span class="content">Changes Since 20 October 2016 CR</span><a class="self-link" href="#changes-20161020"></a></h3>
      <p>Changes since the <a href="https://www.w3.org/TR/2016/CR-css-scroll-snap-1-20161020/">20 October 2016 Candidate Recommendation</a> include:</p>
      <ul>
       <li>
        Restricted <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding" id="ref-for-propdef-scroll-padding①⑧">scroll-padding</a> to non-negative values.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/1084">Issue 1084</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/1084">Issue 1084</a>)
        <blockquote>
         <p>
-         Values 
+         Values
          <ins>must be non-negative and</ins>
           are interpreted as for <a class="property" data-link-type="propdesc" href="https://www.w3.org/TR/css-box-3/#propdef-padding" id="ref-for-propdef-padding①">padding</a> …
         </p>
        </blockquote>
       <li>Added paging and homing operations to examples in <a href="#scroll-types">§ 6.1 Types of Scrolling Methods</a>.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/1605">Issue 1605</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/1605">Issue 1605</a>)
       <li>
        Clarified that snapping in one axis may affect whether snapping to a particular snap area is possible in the other axis.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/950">Issue 950</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/950">Issue 950</a>)
        <blockquote>
         <ins>
          <p class="note" role="note">Although <a class="css" data-link-type="propdesc" href="#propdef-scroll-snap-type" id="ref-for-propdef-scroll-snap-type①⑤">scroll-snap-type: both</a> evaluates <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position⑤⑧">snap positions</a> independently in each axis, <a href="#choosing">choosing</a> of a <span id="ref-for-scroll-snap-position⑤⑨">snap position</span> in one axis
@@ -1590,10 +1590,10 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
        </blockquote>
       <li>Clarified how the <a class="property" data-link-type="propdesc" href="#propdef-scroll-padding" id="ref-for-propdef-scroll-padding①⑨">scroll-padding</a> and <a class="property" data-link-type="propdesc" href="#propdef-scroll-margin" id="ref-for-propdef-scroll-margin①③">scroll-margin</a> shorthands
 			assign values to their longhands.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/1050">Issue 1050</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/1050">Issue 1050</a>)
       <li>
        Clarified that scroll snapping does not mandate any particular input method.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/1305">Issue 1305</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/1305">Issue 1305</a>)
        <blockquote>
         <ins>
          <p class="note" role="note">This specification only applies to scrolling methods supported by the user agent;
@@ -1601,11 +1601,11 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
         </ins>
        </blockquote>
       <li>Clarified the intended effects of <a class="property" data-link-type="propdesc" href="#propdef-scroll-snap-stop" id="ref-for-propdef-scroll-snap-stop③">scroll-snap-stop</a> on various scrolling operations.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/1552">Issue 1552</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/1552">Issue 1552</a>)
       <li>Clarified that <a class="property" data-link-type="propdesc" href="#propdef-scroll-snap-stop" id="ref-for-propdef-scroll-snap-stop④">scroll-snap-stop</a> is applied to the <a data-link-type="dfn" href="#scroll-snap-position" id="ref-for-scroll-snap-position⑥②">snap positions</a> defined by the element,
-			not applied to all <span id="ref-for-scroll-snap-position⑥③">snap positions</span> in the <a data-link-type="dfn" href="#scroll-snap-container" id="ref-for-scroll-snap-container⑨">scroll snap container</a>. 
+			not applied to all <span id="ref-for-scroll-snap-position⑥③">snap positions</span> in the <a data-link-type="dfn" href="#scroll-snap-container" id="ref-for-scroll-snap-container⑨">scroll snap container</a>.
       <li>Fixed some syntax errors in examples and added a new one to the <a class="property" data-link-type="propdesc" href="#propdef-scroll-snap-type" id="ref-for-propdef-scroll-snap-type①⑥">scroll-snap-type</a> section.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/827">Issue 827</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/827">Issue 827</a>)
      </ul>
      <p>A <a href="https://drafts.csswg.org/css-scroll-snap-1/issues-cr-2016">Disposition of Comments</a> is available.</p>
    </ul>
@@ -1625,7 +1625,7 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1638,14 +1638,14 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
   <p>Conformance to this specification
     is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-            style sheet</a>. 
-   <dt>renderer 
+            style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-            documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+            documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
     if all of its statements that use syntax defined in this module are valid
@@ -1704,13 +1704,13 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
     a single product. For the purposes of this criterion, we define the
     following terms: </p>
   <dl>
-   <dt>independent 
+   <dt>independent
    <dd>each implementation must be developed by a
         different party and cannot share, reuse, or derive from code
         used by another qualifying implementation. Sections of code that
         have no bearing on the implementation of this specification are
-        exempt from this requirement. 
-   <dt>interoperable 
+        exempt from this requirement.
+   <dt>interoperable
    <dd>passing the respective test case(s) in the
         official CSS test suite, or, if the implementation is not a Web
         browser, an equivalent test. Every relevant test in the test
@@ -1720,26 +1720,26 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
         must one or more additional UAs which can also pass those
         equivalent tests in the same way for the purpose of
         interoperability. The equivalent tests must be made publicly
-        available for the purposes of peer review. 
-   <dt>implementation 
+        available for the purposes of peer review.
+   <dt>implementation
    <dd>
-    a user agent which: 
+    a user agent which:
     <ol class="inline">
-     <li>implements the specification. 
+     <li>implements the specification.
      <li>is available to the general public. The implementation may
             be a shipping product or other publicly available version
             (i.e., beta version, preview release, or "nightly build").
             Non-shipping product releases must have implemented the
             feature(s) for a period of at least one month in order to
-            demonstrate stability. 
+            demonstrate stability.
      <li>is not experimental (i.e., a version specifically designed
             to pass the test suite and is not intended for normal usage
-            going forward). 
+            going forward).
     </ol>
   </dl>
   <p>
    The specification will remain Candidate Recommendation for at least
-    six months. 
+    six months.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1870,7 +1870,7 @@ interact as defined in <a data-link-type="biblio" href="#biblio-css-logical-1">[
    <a href="https://www.w3.org/TR/css-display-3/#containing-block-chain">https://www.w3.org/TR/css-display-3/#containing-block-chain</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-containing-block-chain">3. Scroll Snap Model</a>
-    <li><a href="#ref-for-containing-block-chain①">4.1.2. 
+    <li><a href="#ref-for-containing-block-chain①">4.1.2.
 Scroll Snap Strictness: the none, proximity, and mandatory values</a>
    </ul>
   </aside>
@@ -1889,18 +1889,18 @@ Scroll Snap Strictness: the none, proximity, and mandatory values</a>
     <li><a href="#ref-for-scroll-container③">2. Motivating Examples</a> <a href="#ref-for-scroll-container④">(2)</a> <a href="#ref-for-scroll-container⑤">(3)</a> <a href="#ref-for-scroll-container⑥">(4)</a>
     <li><a href="#ref-for-scroll-container⑦">3. Scroll Snap Model</a> <a href="#ref-for-scroll-container⑧">(2)</a> <a href="#ref-for-scroll-container⑨">(3)</a> <a href="#ref-for-scroll-container①⓪">(4)</a>
     <li><a href="#ref-for-scroll-container①①">4.1. Scroll Snapping Rules: the scroll-snap-type property</a>
-    <li><a href="#ref-for-scroll-container①②">4.1.1. 
+    <li><a href="#ref-for-scroll-container①②">4.1.1.
 Scroll Snap Axis: the x, y, block, inline, and both values</a> <a href="#ref-for-scroll-container①③">(2)</a> <a href="#ref-for-scroll-container①④">(3)</a> <a href="#ref-for-scroll-container①⑤">(4)</a> <a href="#ref-for-scroll-container①⑥">(5)</a>
-    <li><a href="#ref-for-scroll-container①⑦">4.1.2. 
+    <li><a href="#ref-for-scroll-container①⑦">4.1.2.
 Scroll Snap Strictness: the none, proximity, and mandatory values</a> <a href="#ref-for-scroll-container①⑧">(2)</a> <a href="#ref-for-scroll-container①⑨">(3)</a> <a href="#ref-for-scroll-container②⓪">(4)</a> <a href="#ref-for-scroll-container②①">(5)</a> <a href="#ref-for-scroll-container②②">(6)</a> <a href="#ref-for-scroll-container②③">(7)</a> <a href="#ref-for-scroll-container②④">(8)</a> <a href="#ref-for-scroll-container②⑤">(9)</a>
-    <li><a href="#ref-for-scroll-container②⑥">4.1.3. 
+    <li><a href="#ref-for-scroll-container②⑥">4.1.3.
 Re-snapping After Layout Changes</a>
     <li><a href="#ref-for-scroll-container②⑦">4.2. Scroll Snapport: the scroll-padding property</a> <a href="#ref-for-scroll-container②⑧">(2)</a>
     <li><a href="#ref-for-scroll-container②⑨">5.1. Scroll Snapping Area: the scroll-margin property</a> <a href="#ref-for-scroll-container③⓪">(2)</a>
     <li><a href="#ref-for-scroll-container③①">5.2. Scroll Snapping Alignment: the scroll-snap-align property</a> <a href="#ref-for-scroll-container③②">(2)</a> <a href="#ref-for-scroll-container③③">(3)</a>
-    <li><a href="#ref-for-scroll-container③④">5.2.1. 
+    <li><a href="#ref-for-scroll-container③④">5.2.1.
 Scoping Valid Snap Positions to Visible Boxes</a>
-    <li><a href="#ref-for-scroll-container③⑤">5.2.3. 
+    <li><a href="#ref-for-scroll-container③⑤">5.2.3.
 Unreachable Snap Positions</a>
     <li><a href="#ref-for-scroll-container③⑥">5.3. Scroll Snap Limits: the scroll-snap-stop property</a> <a href="#ref-for-scroll-container③⑦">(2)</a> <a href="#ref-for-scroll-container③⑧">(3)</a> <a href="#ref-for-scroll-container③⑨">(4)</a>
     <li><a href="#ref-for-scroll-container④⓪">6.2. Choosing Snap Positions</a> <a href="#ref-for-scroll-container④①">(2)</a> <a href="#ref-for-scroll-container④②">(3)</a>
@@ -1915,7 +1915,7 @@ Unreachable Snap Positions</a>
    <a href="https://www.w3.org/TR/css-overflow-3/#scrollable-overflow-region">https://www.w3.org/TR/css-overflow-3/#scrollable-overflow-region</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-scrollable-overflow-region">5.1. Scroll Snapping Area: the scroll-margin property</a>
-    <li><a href="#ref-for-scrollable-overflow-region①">5.2.3. 
+    <li><a href="#ref-for-scrollable-overflow-region①">5.2.3.
 Unreachable Snap Positions</a>
     <li><a href="#ref-for-scrollable-overflow-region②">6.2. Choosing Snap Positions</a> <a href="#ref-for-scrollable-overflow-region③">(2)</a>
     <li><a href="#ref-for-scrollable-overflow-region④">9.1. Changes Since 31 January 2019 CR</a>
@@ -1926,14 +1926,14 @@ Unreachable Snap Positions</a>
    <a href="https://www.w3.org/TR/css-overflow-3/#scrollport">https://www.w3.org/TR/css-overflow-3/#scrollport</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-scrollport">4.2. Scroll Snapport: the scroll-padding property</a> <a href="#ref-for-scrollport①">(2)</a> <a href="#ref-for-scrollport②">(3)</a> <a href="#ref-for-scrollport③">(4)</a> <a href="#ref-for-scrollport④">(5)</a>
-    <li><a href="#ref-for-scrollport⑤">5.2.1. 
+    <li><a href="#ref-for-scrollport⑤">5.2.1.
 Scoping Valid Snap Positions to Visible Boxes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-selectordef-after">
    <a href="https://www.w3.org/TR/css-pseudo-4/#selectordef-after">https://www.w3.org/TR/css-pseudo-4/#selectordef-after</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-after">4.1.3. 
+    <li><a href="#ref-for-selectordef-after">4.1.3.
 Re-snapping After Layout Changes</a>
    </ul>
   </aside>
@@ -2051,7 +2051,7 @@ Re-snapping After Layout Changes</a>
   <aside class="dfn-panel" data-for="term-for-the-section-element">
    <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">https://html.spec.whatwg.org/multipage/sections.html#the-section-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-the-section-element">5.2.2. 
+    <li><a href="#ref-for-the-section-element">5.2.2.
 Snapping Boxes that Overflow the Scrollport</a>
    </ul>
   </aside>
@@ -2451,19 +2451,19 @@ Snapping Boxes that Overflow the Scrollport</a>
    <ul>
     <li><a href="#ref-for-scroll-snap-position">1. Introduction</a>
     <li><a href="#ref-for-scroll-snap-position①">3. Scroll Snap Model</a> <a href="#ref-for-scroll-snap-position②">(2)</a> <a href="#ref-for-scroll-snap-position③">(3)</a> <a href="#ref-for-scroll-snap-position④">(4)</a> <a href="#ref-for-scroll-snap-position⑤">(5)</a> <a href="#ref-for-scroll-snap-position⑥">(6)</a> <a href="#ref-for-scroll-snap-position⑦">(7)</a>
-    <li><a href="#ref-for-scroll-snap-position⑧">4.1.1. 
+    <li><a href="#ref-for-scroll-snap-position⑧">4.1.1.
 Scroll Snap Axis: the x, y, block, inline, and both values</a> <a href="#ref-for-scroll-snap-position⑨">(2)</a> <a href="#ref-for-scroll-snap-position①⓪">(3)</a> <a href="#ref-for-scroll-snap-position①①">(4)</a> <a href="#ref-for-scroll-snap-position①②">(5)</a> <a href="#ref-for-scroll-snap-position①③">(6)</a> <a href="#ref-for-scroll-snap-position①④">(7)</a>
-    <li><a href="#ref-for-scroll-snap-position①⑤">4.1.2. 
+    <li><a href="#ref-for-scroll-snap-position①⑤">4.1.2.
 Scroll Snap Strictness: the none, proximity, and mandatory values</a> <a href="#ref-for-scroll-snap-position①⑥">(2)</a> <a href="#ref-for-scroll-snap-position①⑦">(3)</a>
-    <li><a href="#ref-for-scroll-snap-position①⑧">4.1.3. 
+    <li><a href="#ref-for-scroll-snap-position①⑧">4.1.3.
 Re-snapping After Layout Changes</a>
     <li><a href="#ref-for-scroll-snap-position①⑨">4.2. Scroll Snapport: the scroll-padding property</a>
     <li><a href="#ref-for-scroll-snap-position②⓪">5.2. Scroll Snapping Alignment: the scroll-snap-align property</a> <a href="#ref-for-scroll-snap-position②①">(2)</a> <a href="#ref-for-scroll-snap-position②②">(3)</a> <a href="#ref-for-scroll-snap-position②③">(4)</a> <a href="#ref-for-scroll-snap-position②④">(5)</a>
-    <li><a href="#ref-for-scroll-snap-position②⑤">5.2.1. 
+    <li><a href="#ref-for-scroll-snap-position②⑤">5.2.1.
 Scoping Valid Snap Positions to Visible Boxes</a> <a href="#ref-for-scroll-snap-position②⑥">(2)</a> <a href="#ref-for-scroll-snap-position②⑦">(3)</a> <a href="#ref-for-scroll-snap-position②⑧">(4)</a> <a href="#ref-for-scroll-snap-position②⑨">(5)</a> <a href="#ref-for-scroll-snap-position③⓪">(6)</a>
-    <li><a href="#ref-for-scroll-snap-position③①">5.2.2. 
+    <li><a href="#ref-for-scroll-snap-position③①">5.2.2.
 Snapping Boxes that Overflow the Scrollport</a> <a href="#ref-for-scroll-snap-position③②">(2)</a> <a href="#ref-for-scroll-snap-position③③">(3)</a>
-    <li><a href="#ref-for-scroll-snap-position③④">5.2.3. 
+    <li><a href="#ref-for-scroll-snap-position③④">5.2.3.
 Unreachable Snap Positions</a> <a href="#ref-for-scroll-snap-position③⑤">(2)</a> <a href="#ref-for-scroll-snap-position③⑥">(3)</a>
     <li><a href="#ref-for-scroll-snap-position③⑦">5.3. Scroll Snap Limits: the scroll-snap-stop property</a> <a href="#ref-for-scroll-snap-position③⑧">(2)</a> <a href="#ref-for-scroll-snap-position③⑨">(3)</a> <a href="#ref-for-scroll-snap-position④⓪">(4)</a> <a href="#ref-for-scroll-snap-position④①">(5)</a> <a href="#ref-for-scroll-snap-position④②">(6)</a>
     <li><a href="#ref-for-scroll-snap-position④③">6. Snapping Mechanics</a>
@@ -2478,13 +2478,13 @@ Unreachable Snap Positions</a> <a href="#ref-for-scroll-snap-position③⑤">(2)
    <ul>
     <li><a href="#ref-for-snap">3. Scroll Snap Model</a>
     <li><a href="#ref-for-snap①">4.1. Scroll Snapping Rules: the scroll-snap-type property</a>
-    <li><a href="#ref-for-snap②">4.1.1. 
+    <li><a href="#ref-for-snap②">4.1.1.
 Scroll Snap Axis: the x, y, block, inline, and both values</a> <a href="#ref-for-snap③">(2)</a> <a href="#ref-for-snap④">(3)</a> <a href="#ref-for-snap⑤">(4)</a> <a href="#ref-for-snap⑥">(5)</a>
-    <li><a href="#ref-for-snap⑦">4.1.2. 
+    <li><a href="#ref-for-snap⑦">4.1.2.
 Scroll Snap Strictness: the none, proximity, and mandatory values</a> <a href="#ref-for-snap⑧">(2)</a> <a href="#ref-for-snap⑨">(3)</a> <a href="#ref-for-snap①⓪">(4)</a> <a href="#ref-for-snap①①">(5)</a> <a href="#ref-for-snap①②">(6)</a>
-    <li><a href="#ref-for-snap①③">4.1.3. 
+    <li><a href="#ref-for-snap①③">4.1.3.
 Re-snapping After Layout Changes</a>
-    <li><a href="#ref-for-snap①④">5.2.1. 
+    <li><a href="#ref-for-snap①④">5.2.1.
 Scoping Valid Snap Positions to Visible Boxes</a> <a href="#ref-for-snap①⑤">(2)</a> <a href="#ref-for-snap①⑥">(3)</a>
     <li><a href="#ref-for-snap①⑦">6.2. Choosing Snap Positions</a>
     <li><a href="#ref-for-snap①⑧">9.3. Changes Since 24 August 2017 CR</a>
@@ -2495,9 +2495,9 @@ Scoping Valid Snap Positions to Visible Boxes</a> <a href="#ref-for-snap①⑤">
    <ul>
     <li><a href="#ref-for-propdef-scroll-snap-type">3. Scroll Snap Model</a>
     <li><a href="#ref-for-propdef-scroll-snap-type①">4.1. Scroll Snapping Rules: the scroll-snap-type property</a> <a href="#ref-for-propdef-scroll-snap-type②">(2)</a> <a href="#ref-for-propdef-scroll-snap-type③">(3)</a> <a href="#ref-for-propdef-scroll-snap-type④">(4)</a>
-    <li><a href="#ref-for-propdef-scroll-snap-type⑤">4.1.2. 
+    <li><a href="#ref-for-propdef-scroll-snap-type⑤">4.1.2.
 Scroll Snap Strictness: the none, proximity, and mandatory values</a> <a href="#ref-for-propdef-scroll-snap-type⑥">(2)</a>
-    <li><a href="#ref-for-propdef-scroll-snap-type⑦">5.2.1. 
+    <li><a href="#ref-for-propdef-scroll-snap-type⑦">5.2.1.
 Scoping Valid Snap Positions to Visible Boxes</a>
     <li><a href="#ref-for-propdef-scroll-snap-type⑧">6.2. Choosing Snap Positions</a>
     <li><a href="#ref-for-propdef-scroll-snap-type⑨">9.1. Changes Since 31 January 2019 CR</a> <a href="#ref-for-propdef-scroll-snap-type①⓪">(2)</a> <a href="#ref-for-propdef-scroll-snap-type①①">(3)</a>
@@ -2509,49 +2509,49 @@ Scoping Valid Snap Positions to Visible Boxes</a>
   <aside class="dfn-panel" data-for="valdef-scroll-snap-type-x">
    <b><a href="#valdef-scroll-snap-type-x">#valdef-scroll-snap-type-x</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scroll-snap-type-x">4.1.1. 
+    <li><a href="#ref-for-valdef-scroll-snap-type-x">4.1.1.
 Scroll Snap Axis: the x, y, block, inline, and both values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-scroll-snap-type-y">
    <b><a href="#valdef-scroll-snap-type-y">#valdef-scroll-snap-type-y</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scroll-snap-type-y">4.1.1. 
+    <li><a href="#ref-for-valdef-scroll-snap-type-y">4.1.1.
 Scroll Snap Axis: the x, y, block, inline, and both values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-scroll-snap-type-block">
    <b><a href="#valdef-scroll-snap-type-block">#valdef-scroll-snap-type-block</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scroll-snap-type-block">4.1.1. 
+    <li><a href="#ref-for-valdef-scroll-snap-type-block">4.1.1.
 Scroll Snap Axis: the x, y, block, inline, and both values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-scroll-snap-type-inline">
    <b><a href="#valdef-scroll-snap-type-inline">#valdef-scroll-snap-type-inline</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scroll-snap-type-inline">4.1.1. 
+    <li><a href="#ref-for-valdef-scroll-snap-type-inline">4.1.1.
 Scroll Snap Axis: the x, y, block, inline, and both values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-scroll-snap-type-both">
    <b><a href="#valdef-scroll-snap-type-both">#valdef-scroll-snap-type-both</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scroll-snap-type-both">4.1.1. 
+    <li><a href="#ref-for-valdef-scroll-snap-type-both">4.1.1.
 Scroll Snap Axis: the x, y, block, inline, and both values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-scroll-snap-type-none">
    <b><a href="#valdef-scroll-snap-type-none">#valdef-scroll-snap-type-none</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scroll-snap-type-none">4.1.2. 
+    <li><a href="#ref-for-valdef-scroll-snap-type-none">4.1.2.
 Scroll Snap Strictness: the none, proximity, and mandatory values</a> <a href="#ref-for-valdef-scroll-snap-type-none①">(2)</a> <a href="#ref-for-valdef-scroll-snap-type-none②">(3)</a> <a href="#ref-for-valdef-scroll-snap-type-none③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-scroll-snap-type-mandatory">
    <b><a href="#valdef-scroll-snap-type-mandatory">#valdef-scroll-snap-type-mandatory</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scroll-snap-type-mandatory">4.1.2. 
+    <li><a href="#ref-for-valdef-scroll-snap-type-mandatory">4.1.2.
 Scroll Snap Strictness: the none, proximity, and mandatory values</a> <a href="#ref-for-valdef-scroll-snap-type-mandatory①">(2)</a>
     <li><a href="#ref-for-valdef-scroll-snap-type-mandatory②">6.2. Choosing Snap Positions</a>
    </ul>
@@ -2560,14 +2560,14 @@ Scroll Snap Strictness: the none, proximity, and mandatory values</a> <a href="#
    <b><a href="#valdef-scroll-snap-type-proximity">#valdef-scroll-snap-type-proximity</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-valdef-scroll-snap-type-proximity">4.1. Scroll Snapping Rules: the scroll-snap-type property</a>
-    <li><a href="#ref-for-valdef-scroll-snap-type-proximity①">4.1.2. 
+    <li><a href="#ref-for-valdef-scroll-snap-type-proximity①">4.1.2.
 Scroll Snap Strictness: the none, proximity, and mandatory values</a> <a href="#ref-for-valdef-scroll-snap-type-proximity②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="captures-snap-positions">
    <b><a href="#captures-snap-positions">#captures-snap-positions</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-captures-snap-positions">4.1.2. 
+    <li><a href="#ref-for-captures-snap-positions">4.1.2.
 Scroll Snap Strictness: the none, proximity, and mandatory values</a>
    </ul>
   </aside>
@@ -2575,9 +2575,9 @@ Scroll Snap Strictness: the none, proximity, and mandatory values</a>
    <b><a href="#scroll-snap-container">#scroll-snap-container</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-scroll-snap-container">4.1. Scroll Snapping Rules: the scroll-snap-type property</a>
-    <li><a href="#ref-for-scroll-snap-container①">4.1.2. 
+    <li><a href="#ref-for-scroll-snap-container①">4.1.2.
 Scroll Snap Strictness: the none, proximity, and mandatory values</a>
-    <li><a href="#ref-for-scroll-snap-container②">4.1.3. 
+    <li><a href="#ref-for-scroll-snap-container②">4.1.3.
 Re-snapping After Layout Changes</a>
     <li><a href="#ref-for-scroll-snap-container③">4.2. Scroll Snapport: the scroll-padding property</a> <a href="#ref-for-scroll-snap-container④">(2)</a>
     <li><a href="#ref-for-scroll-snap-container⑤">5.2. Scroll Snapping Alignment: the scroll-snap-align property</a>
@@ -2621,12 +2621,12 @@ Re-snapping After Layout Changes</a>
    <b><a href="#scroll-snapport">#scroll-snapport</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-scroll-snapport">3. Scroll Snap Model</a>
-    <li><a href="#ref-for-scroll-snapport①">4.1.3. 
+    <li><a href="#ref-for-scroll-snapport①">4.1.3.
 Re-snapping After Layout Changes</a>
     <li><a href="#ref-for-scroll-snapport②">5.2. Scroll Snapping Alignment: the scroll-snap-align property</a> <a href="#ref-for-scroll-snapport③">(2)</a> <a href="#ref-for-scroll-snapport④">(3)</a> <a href="#ref-for-scroll-snapport⑤">(4)</a>
-    <li><a href="#ref-for-scroll-snapport⑥">5.2.1. 
+    <li><a href="#ref-for-scroll-snapport⑥">5.2.1.
 Scoping Valid Snap Positions to Visible Boxes</a> <a href="#ref-for-scroll-snapport⑦">(2)</a> <a href="#ref-for-scroll-snapport⑧">(3)</a> <a href="#ref-for-scroll-snapport⑨">(4)</a>
-    <li><a href="#ref-for-scroll-snapport①⓪">5.2.2. 
+    <li><a href="#ref-for-scroll-snapport①⓪">5.2.2.
 Snapping Boxes that Overflow the Scrollport</a> <a href="#ref-for-scroll-snapport①①">(2)</a> <a href="#ref-for-scroll-snapport①②">(3)</a> <a href="#ref-for-scroll-snapport①③">(4)</a>
     <li><a href="#ref-for-scroll-snapport①④">6.2. Choosing Snap Positions</a> <a href="#ref-for-scroll-snapport①⑤">(2)</a>
     <li><a href="#ref-for-scroll-snapport①⑥">Physical Longhands for scroll-padding</a>
@@ -2650,16 +2650,16 @@ Snapping Boxes that Overflow the Scrollport</a> <a href="#ref-for-scroll-snappor
    <b><a href="#scroll-snap-area">#scroll-snap-area</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-scroll-snap-area">3. Scroll Snap Model</a>
-    <li><a href="#ref-for-scroll-snap-area①">4.1.3. 
+    <li><a href="#ref-for-scroll-snap-area①">4.1.3.
 Re-snapping After Layout Changes</a>
     <li><a href="#ref-for-scroll-snap-area②">4.2. Scroll Snapport: the scroll-padding property</a>
     <li><a href="#ref-for-scroll-snap-area③">5.1. Scroll Snapping Area: the scroll-margin property</a> <a href="#ref-for-scroll-snap-area④">(2)</a> <a href="#ref-for-scroll-snap-area⑤">(3)</a>
     <li><a href="#ref-for-scroll-snap-area⑥">5.2. Scroll Snapping Alignment: the scroll-snap-align property</a> <a href="#ref-for-scroll-snap-area⑦">(2)</a> <a href="#ref-for-scroll-snap-area⑧">(3)</a> <a href="#ref-for-scroll-snap-area⑨">(4)</a>
-    <li><a href="#ref-for-scroll-snap-area①⓪">5.2.1. 
+    <li><a href="#ref-for-scroll-snap-area①⓪">5.2.1.
 Scoping Valid Snap Positions to Visible Boxes</a> <a href="#ref-for-scroll-snap-area①①">(2)</a> <a href="#ref-for-scroll-snap-area①②">(3)</a> <a href="#ref-for-scroll-snap-area①③">(4)</a> <a href="#ref-for-scroll-snap-area①④">(5)</a> <a href="#ref-for-scroll-snap-area①⑤">(6)</a> <a href="#ref-for-scroll-snap-area①⑥">(7)</a>
-    <li><a href="#ref-for-scroll-snap-area①⑦">5.2.2. 
+    <li><a href="#ref-for-scroll-snap-area①⑦">5.2.2.
 Snapping Boxes that Overflow the Scrollport</a> <a href="#ref-for-scroll-snap-area①⑧">(2)</a> <a href="#ref-for-scroll-snap-area①⑨">(3)</a>
-    <li><a href="#ref-for-scroll-snap-area②⓪">5.2.3. 
+    <li><a href="#ref-for-scroll-snap-area②⓪">5.2.3.
 Unreachable Snap Positions</a>
     <li><a href="#ref-for-scroll-snap-area②①">6.2. Choosing Snap Positions</a>
     <li><a href="#ref-for-scroll-snap-area②②">Physical Longhands for scroll-margin</a>
@@ -2768,57 +2768,65 @@ Unreachable Snap Positions</a>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

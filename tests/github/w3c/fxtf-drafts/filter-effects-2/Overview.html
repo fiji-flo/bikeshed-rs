@@ -535,7 +535,7 @@ holding the contents to be filtering. And assuming nested backdrop-filters or
 mix-blend-mode elements were allowed, this doubling would become an exponential
 performance breakdown. Clearly, this is not a scalable approach.</p>
    <div class="example" id="example-2baed611">
-    <a class="self-link" href="#example-2baed611"></a> 
+    <a class="self-link" href="#example-2baed611"></a>
     <p>Given the following html code:</p>
 <pre><code class="highlight"><c- p>&lt;</c-><c- f>html</c-> <c- e>style</c-><c- o>=</c-><c- s>"background:lightgrey;"</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>div</c-> <c- e>class</c-><c- o>=</c-><c- s>"box"</c-><c- p>></c->
@@ -573,9 +573,9 @@ performance breakdown. Clearly, this is not a scalable approach.</p>
    the Backdrop Root is defined - this example is intended to illustrate why a
    Backdrop Root is formed by elements containing filters.</p>
     <div class="figure">
-      <img alt="ALT TEXT HERE" src="examples/step1.png" style="width:30%"> 
+      <img alt="ALT TEXT HERE" src="examples/step1.png" style="width:30%">
      <p class="caption"><b>Step 1.</b> "Box" is rendered, but filters are not yet applied.</p>
-      <img alt="ALT TEXT HERE" src="examples/step2.png" style="width:30%"> 
+      <img alt="ALT TEXT HERE" src="examples/step2.png" style="width:30%">
      <p class="caption"><b>Step 2.</b> "Dialog" is about to be rendered, but it has
     backdrop-filter applied. Since, for this example, the backdrop-filter "sees"
     all the way to the root, the "Box" element needs to be temporarily
@@ -584,22 +584,22 @@ performance breakdown. Clearly, this is not a scalable approach.</p>
     atomicity of the Stacking Context created by "Box" is broken. This is also
     where the performance penalty applies - the GPU draw work that is
     performed here will end up being done twice.</p>
-      <img alt="ALT TEXT HERE" src="examples/step3.png" style="width:30%"> 
+      <img alt="ALT TEXT HERE" src="examples/step3.png" style="width:30%">
      <p class="caption"><b>Step 3.</b> Start painting the "Dialog" element by
     reading back its backdrop image, applying the "backdrop-filter: blur(2px)"
     filter, and cropping those results to the border box of "Dialog". (The
     dotted black border has been added here for clarity: this is the border box
     for the "Dialog" element.)</p>
-      <img alt="ALT TEXT HERE" src="examples/step4.png" style="width:30%"> 
+      <img alt="ALT TEXT HERE" src="examples/step4.png" style="width:30%">
      <p class="caption"><b>Step 4.</b> Now that the backdrop-filtered contents have
     been read back and filtered, discard the previously "completed" Box element
     and go back to the unfiltered version. Note that you can now see the black
     text at the bottom bleeding through the white, blurred version inside
     "Dialog".</p>
-      <img alt="ALT TEXT HERE" src="examples/step5.png" style="width:30%"> 
+      <img alt="ALT TEXT HERE" src="examples/step5.png" style="width:30%">
      <p class="caption"><b>Step 5.</b> Draw the contents of the "Dialog" element -
     the <b>blue</b> border.</p>
-      <img alt="ALT TEXT HERE" src="examples/step6.png" style="width:30%"> 
+      <img alt="ALT TEXT HERE" src="examples/step6.png" style="width:30%">
      <p class="caption"><b>Step 6.</b> Complete the Stacking Context formed by the
     "Box" element - apply the "filter: invert(1)" to "Box" and all of its
     contents, including the now-completed "Dialog" element. Note that the area
@@ -611,14 +611,14 @@ performance breakdown. Clearly, this is not a scalable approach.</p>
     </div>
    </div>
    <div class="example" id="example-5dfcdb97">
-    <a class="self-link" href="#example-5dfcdb97"></a> 
+    <a class="self-link" href="#example-5dfcdb97"></a>
     <p>Opacity poses much the same problem that filter does. Using the example
   above, but with the <code>filter: invert(1);</code> style replaced with <code>opacity: 0.5;</code> the results are similarly unintuitive. <b>Important note:</b> the left image below does <b>not</b> represent how the
   Backdrop Root is defined - this example is intended to illustrate why a
   Backdrop Root is formed by elements containing opacity less than 1.</p>
     <p></p>
     <div class="figure">
-      <img alt="ALT TEXT HERE" src="examples/opacity.png" style="width:30%">      <img alt="ALT TEXT HERE" src="examples/opacity_correct.png" style="width:30%"> 
+      <img alt="ALT TEXT HERE" src="examples/opacity.png" style="width:30%">      <img alt="ALT TEXT HERE" src="examples/opacity_correct.png" style="width:30%">
      <p class="caption">The left image is the final result of rendering, assuming
   the Backdrop Root includes everything on the page. Note that the blurred
   region inside the blue border is very faint. It is rendered at 0.25 opacity
@@ -629,7 +629,7 @@ performance breakdown. Clearly, this is not a scalable approach.</p>
     </div>
    </div>
    <div class="example" id="example-5be62f4f">
-    <a class="self-link" href="#example-5be62f4f"></a> 
+    <a class="self-link" href="#example-5be62f4f"></a>
     <p>Because masks effectively change the opacity of parts of the elements they
   are masking, the behavior for mask operations is quite similar to that for
   elements with opacity applied. Using the same example as above, but replacing
@@ -640,7 +640,7 @@ performance breakdown. Clearly, this is not a scalable approach.</p>
   intended to illustrate why a Backdrop Root is formed by elements containing
   masks.</p>
     <div class="figure">
-      <img alt="ALT TEXT HERE" src="examples/mask.png" style="width:30%">      <img alt="ALT TEXT HERE" src="examples/mask_correct.png" style="width:30%"> 
+      <img alt="ALT TEXT HERE" src="examples/mask.png" style="width:30%">      <img alt="ALT TEXT HERE" src="examples/mask_correct.png" style="width:30%">
      <p class="caption">The left image is the final result of rendering, assuming
   the Backdrop Root includes everything on the page. Note that the gradient
   applied to the blurred region inside the blue border (but not the border
@@ -700,7 +700,7 @@ See <a href="https://github.com/w3c/fxtf-drafts/issues/53">discussion in issue 5
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -713,14 +713,14 @@ See <a href="https://github.com/w3c/fxtf-drafts/issues/53">discussion in issue 5
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -771,7 +771,7 @@ See <a href="https://github.com/w3c/fxtf-drafts/issues/53">discussion in issue 5
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -897,57 +897,65 @@ See <a href="https://github.com/w3c/fxtf-drafts/issues/53">discussion in issue 5
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

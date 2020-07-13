@@ -49,7 +49,7 @@
 </style>
  <body class="h-entry status-LS">
   <div class="head">
-    <a class="logo" href="https://whatwg.org/"> <img alt="WHATWG" crossorigin height="100" src="https://resources.whatwg.org/logo-fetch.svg"> </a> 
+    <a class="logo" href="https://whatwg.org/"> <img alt="WHATWG" crossorigin height="100" src="https://resources.whatwg.org/logo-fetch.svg"> </a>
    <hgroup>
     <h1 class="p-name no-ref" id="title">Fetch</h1>
     <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard — Last Updated <time class="dt-updated" datetime="1970-01-01">1 January 1970</time></span></h2>
@@ -190,19 +190,19 @@
    <p>To unify fetching across the web platform this specification supplants a number of algorithms and
 specifications: </p>
    <ul class="brief no-backref">
-    <li>HTML Standard’s fetch and potentially CORS-enabled fetch algorithms <a data-link-type="biblio" href="#biblio-html">[HTML]</a> 
-    <li>CORS <a data-link-type="biblio" href="#biblio-cors">[CORS]</a> 
-    <li>HTTP `<a data-link-type="http-header" href="#http-origin" id="ref-for-http-origin"><code>Origin</code></a>` header semantics <a data-link-type="biblio" href="#biblio-origin">[ORIGIN]</a> 
+    <li>HTML Standard’s fetch and potentially CORS-enabled fetch algorithms <a data-link-type="biblio" href="#biblio-html">[HTML]</a>
+    <li>CORS <a data-link-type="biblio" href="#biblio-cors">[CORS]</a>
+    <li>HTTP `<a data-link-type="http-header" href="#http-origin" id="ref-for-http-origin"><code>Origin</code></a>` header semantics <a data-link-type="biblio" href="#biblio-origin">[ORIGIN]</a>
    </ul>
    <p>Unifying fetching provides consistent handling of: </p>
    <ul class="brief">
-    <li>URL schemes 
-    <li>Redirects 
-    <li>Cross-origin semantics 
-    <li>CSP <a data-link-type="biblio" href="#biblio-csp">[CSP]</a> 
-    <li>Service workers <a data-link-type="biblio" href="#biblio-sw">[SW]</a> 
-    <li>Mixed Content <a data-link-type="biblio" href="#biblio-mix">[MIX]</a> 
-    <li>`<code>Referer</code>` <a data-link-type="biblio" href="#biblio-referrer">[REFERRER]</a> 
+    <li>URL schemes
+    <li>Redirects
+    <li>Cross-origin semantics
+    <li>CSP <a data-link-type="biblio" href="#biblio-csp">[CSP]</a>
+    <li>Service workers <a data-link-type="biblio" href="#biblio-sw">[SW]</a>
+    <li>Mixed Content <a data-link-type="biblio" href="#biblio-mix">[MIX]</a>
+    <li>`<code>Referer</code>` <a data-link-type="biblio" href="#biblio-referrer">[REFERRER]</a>
    </ul>
    <h2 class="short heading settled" data-level="1" id="preface"><span class="secno">1. </span><span class="content">Preface</span><a class="self-link" href="#preface"></a></h2>
    <p>At a high level, fetching a resource is a fairly simple operation. A request goes in, a
@@ -228,11 +228,11 @@ RFC 7405. <a data-link-type="biblio" href="#biblio-rfc7405">[RFC7405]</a> </p>
    <p><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-task" id="ref-for-concept-task">Tasks</a> that are <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-task" id="ref-for-queue-a-task">queued</a> by this standard are annotated as one
 of: </p>
    <ul class="brief">
-    <li><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="process-request-body">process request body</dfn> 
-    <li id="process-request-end-of-file"><a class="self-link" href="#process-request-end-of-file"></a><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="process-request-end-of-body">process request end-of-body</dfn> 
-    <li><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="process-response">process response</dfn> 
-    <li id="process-response-end-of-file"><a class="self-link" href="#process-response-end-of-file"></a><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="process-response-end-of-body">process response end-of-body</dfn> 
-    <li><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="process-response-done">process response done</dfn> 
+    <li><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="process-request-body">process request body</dfn>
+    <li id="process-request-end-of-file"><a class="self-link" href="#process-request-end-of-file"></a><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="process-request-end-of-body">process request end-of-body</dfn>
+    <li><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="process-response">process response</dfn>
+    <li id="process-response-end-of-file"><a class="self-link" href="#process-response-end-of-file"></a><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="process-response-end-of-body">process response end-of-body</dfn>
+    <li><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="process-response-done">process response done</dfn>
    </ul>
    <p>To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="queue-a-fetch-task">queue a fetch task</dfn> on <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request">request</a> <var>request</var> to <var>run an operation</var>, run these steps: </p>
    <ol>
@@ -428,7 +428,7 @@ steps: </p>
           <li>
            <p>Append the result of <a data-link-type="dfn" href="#collect-an-http-quoted-string" id="ref-for-collect-an-http-quoted-string">collecting an HTTP quoted string</a> from <var>input</var>,
        given <var>position</var>, to <var>value</var>. </p>
-          <li>If <var>position</var> is not past the end of <var>input</var>, then <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#iteration-continue" id="ref-for-iteration-continue">continue</a>. 
+          <li>If <var>position</var> is not past the end of <var>input</var>, then <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#iteration-continue" id="ref-for-iteration-continue">continue</a>.
          </ol>
         <li>
          <p>Otherwise: </p>
@@ -451,18 +451,18 @@ steps: </p>
      <p>Return <var>values</var>. </p>
    </ol>
    <div class="example" id="example-header-list-get-decode-split">
-    <a class="self-link" href="#example-header-list-get-decode-split"></a> 
+    <a class="self-link" href="#example-header-list-get-decode-split"></a>
     <p>This is how <a data-link-type="dfn" href="#concept-header-list-get-decode-split" id="ref-for-concept-header-list-get-decode-split①">get, decode, and split</a> functions in practice with `<code>A</code>` as the <var>name</var> argument: </p>
     <table>
      <tbody>
       <tr>
-       <th>Headers (as on the network) 
-       <th>Output 
+       <th>Headers (as on the network)
+       <th>Output
       <tr>
        <td>
 <pre><code class="lang-http highlight">A: nosniff,
 </code></pre>
-       <td rowspan="2">« "<code>nosniff</code>", "" » 
+       <td rowspan="2">« "<code>nosniff</code>", "" »
       <tr>
        <td>
 <pre><code class="lang-http highlight">A: nosniff
@@ -472,7 +472,7 @@ A:
       <tr>
        <td>
 <pre><code class="lang-http highlight">A: text/html;", x/x</code></pre>
-       <td rowspan="2">« "<code>text/html;", x/x</code>" » 
+       <td rowspan="2">« "<code>text/html;", x/x</code>" »
       <tr>
        <td>
 <pre><code class="lang-http highlight">A: text/html;"
@@ -482,7 +482,7 @@ A: x/x
        <td>
 <pre><code class="lang-http highlight">A: x/x;test="hi",y/y
 </code></pre>
-       <td rowspan="2">« "<code>x/x;test="hi"</code>", "<code>y/y</code>" » 
+       <td rowspan="2">« "<code>x/x;test="hi"</code>", "<code>y/y</code>" »
       <tr>
        <td>
 <pre><code class="lang-http highlight">A: x/x;test="hi"
@@ -493,7 +493,7 @@ A: y/y
        <td>
 <pre><code class="lang-http highlight">A: x / x,,,1
 </code></pre>
-       <td rowspan="2">« "<code>x / x</code>", "", "", "<code>1</code>" » 
+       <td rowspan="2">« "<code>x / x</code>", "", "", "<code>1</code>" »
       <tr>
        <td>
 <pre><code class="lang-http highlight">A: x / x
@@ -504,7 +504,7 @@ A: 1
        <td>
 <pre><code class="lang-http highlight">A: "1,2", 3
 </code></pre>
-       <td rowspan="2">« "<code>"1,2"</code>", "<code>3</code>" » 
+       <td rowspan="2">« "<code>"1,2"</code>", "<code>3</code>" »
       <tr>
        <td>
 <pre><code class="lang-http highlight">A: "1,2"
@@ -588,17 +588,17 @@ production as <a href="https://github.com/httpwg/http11bis/issues/19" title="fix
     <li>
      <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-lowercase" id="ref-for-byte-lowercase①">Byte-lowercase</a> <var>header</var>’s <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name②②">name</a> and switch on the result: </p>
      <dl class="switch">
-      <dt>`<code>accept</code>` 
+      <dt>`<code>accept</code>`
       <dd>
        <p>If <var>value</var> contains a <a data-link-type="dfn" href="#cors-unsafe-request-header-byte" id="ref-for-cors-unsafe-request-header-byte">CORS-unsafe request-header byte</a>, then return false. </p>
-      <dt>`<code>accept-language</code>` 
-      <dt>`<code>content-language</code>` 
+      <dt>`<code>accept-language</code>`
+      <dt>`<code>content-language</code>`
       <dd>
        <p>If <var>value</var> contains a byte that is not in the range 0x30 (0) to 0x39 (9),
    inclusive, is not in the range 0x41 (A) to 0x5A (Z), inclusive, is not in the range 0x61 (a) to
    0x7A (z), inclusive, and is not 0x20 (SP), 0x2A (*), 0x2C (,), 0x2D (-), 0x2E (.), 0x3B (;), or
    0x3D (=), then return false. </p>
-      <dt>`<code>content-type</code>` 
+      <dt>`<code>content-type</code>`
       <dd>
        <ol>
         <li>
@@ -616,7 +616,7 @@ production as <a href="https://github.com/httpwg/http11bis/issues/19" title="fix
        <p class="warning">This intentionally does not use <a data-link-type="dfn" href="#concept-header-extract-mime-type" id="ref-for-concept-header-extract-mime-type">extract a MIME type</a> as that algorithm is
     rather forgiving and servers are not expected to implement it. </p>
        <div class="example no-backref" id="example-cors-safelisted-request-header-content-type">
-        <a class="self-link" href="#example-cors-safelisted-request-header-content-type"></a> 
+        <a class="self-link" href="#example-cors-safelisted-request-header-content-type"></a>
         <p>If <a data-link-type="dfn" href="#concept-header-extract-mime-type" id="ref-for-concept-header-extract-mime-type①">extract a MIME type</a> were used the following request would not result in a CORS
      preflight and a naïve parser on the server might treat the request body as JSON: </p>
 <pre><code class="lang-javascript highlight">fetch<c- p>(</c-><c- u>"https://victim.example/naïve-endpoint"</c-><c- p>,</c-> <c- p>{</c->
@@ -630,7 +630,7 @@ production as <a href="https://github.com/httpwg/http11bis/issues/19" title="fix
 <c- p>});</c->
 </code></pre>
        </div>
-      <dt>Otherwise 
+      <dt>Otherwise
       <dd>
        <p>Return false. </p>
      </dl>
@@ -677,7 +677,7 @@ following is true: </p>
 for `<code>Authorization</code>`. </p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="privileged-no-cors-request-header-name">privileged no-CORS request-header name</dfn> is a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header①⑤">header</a> <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name②⑤">name</a> that is a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-case-insensitive" id="ref-for-byte-case-insensitive⑥">byte-case-insensitive</a> match for one of </p>
    <ul class="brief">
-    <li>`<code>Range</code>`. 
+    <li>`<code>Range</code>`.
    </ul>
    <div class="note no-backref" role="note">
     <p>These are headers that can be set by privileged APIs, and will be preserved if their associated
@@ -688,21 +688,21 @@ for `<code>Authorization</code>`. </p>
    </div>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="cors-safelisted-response-header-name">CORS-safelisted response-header name</dfn>, given a <a data-link-type="dfn" href="#concept-response-cors-exposed-header-name-list" id="ref-for-concept-response-cors-exposed-header-name-list">CORS-exposed header-name list</a> <var>list</var>, is a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header①⑥">header</a> <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name②⑥">name</a> that is a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-case-insensitive" id="ref-for-byte-case-insensitive⑦">byte-case-insensitive</a> match for one of </p>
    <ul class="brief">
-    <li>`<code>Cache-Control</code>` 
-    <li>`<code>Content-Language</code>` 
-    <li>`<code>Content-Length</code>` 
-    <li>`<code>Content-Type</code>` 
-    <li>`<code>Expires</code>` 
-    <li>`<code>Last-Modified</code>` 
-    <li>`<code>Pragma</code>` 
-    <li>Any <a data-link-type="dfn" href="#concept-header-value" id="ref-for-concept-header-value①⑦">value</a> in <var>list</var> that is not a <a data-link-type="dfn" href="#forbidden-response-header-name" id="ref-for-forbidden-response-header-name">forbidden response-header name</a>. 
+    <li>`<code>Cache-Control</code>`
+    <li>`<code>Content-Language</code>`
+    <li>`<code>Content-Length</code>`
+    <li>`<code>Content-Type</code>`
+    <li>`<code>Expires</code>`
+    <li>`<code>Last-Modified</code>`
+    <li>`<code>Pragma</code>`
+    <li>Any <a data-link-type="dfn" href="#concept-header-value" id="ref-for-concept-header-value①⑦">value</a> in <var>list</var> that is not a <a data-link-type="dfn" href="#forbidden-response-header-name" id="ref-for-forbidden-response-header-name">forbidden response-header name</a>.
    </ul>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="no-cors-safelisted-request-header-name">no-CORS-safelisted request-header name</dfn> is a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header①⑦">header</a> <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name②⑦">name</a> that is a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-case-insensitive" id="ref-for-byte-case-insensitive⑧">byte-case-insensitive</a> match for one of </p>
    <ul class="brief">
-    <li>`<code>Accept</code>` 
-    <li>`<code>Accept-Language</code>` 
-    <li>`<code>Content-Language</code>` 
-    <li>`<code>Content-Type</code>` 
+    <li>`<code>Accept</code>`
+    <li>`<code>Accept-Language</code>`
+    <li>`<code>Content-Language</code>`
+    <li>`<code>Content-Type</code>`
    </ul>
    <p>To determine whether a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header①⑧">header</a> <var>header</var> is a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="no-cors-safelisted-request-header">no-CORS-safelisted request-header</dfn>, run these steps: </p>
    <ol>
@@ -714,26 +714,26 @@ for `<code>Authorization</code>`. </p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="forbidden-header-name">forbidden header name</dfn> is a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header①⑨">header</a> <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name②⑨">name</a> that
 is a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-case-insensitive" id="ref-for-byte-case-insensitive⑨">byte-case-insensitive</a> match for one of </p>
    <ul class="brief">
-    <li>`<code>Accept-Charset</code>` 
-    <li>`<code>Accept-Encoding</code>` 
-    <li>`<a data-link-type="http-header" href="#http-access-control-request-headers" id="ref-for-http-access-control-request-headers"><code>Access-Control-Request-Headers</code></a>` 
-    <li>`<a data-link-type="http-header" href="#http-access-control-request-method" id="ref-for-http-access-control-request-method"><code>Access-Control-Request-Method</code></a>` 
-    <li>`<code>Connection</code>` 
-    <li>`<code>Content-Length</code>` 
-    <li>`<code>Cookie</code>` 
-    <li>`<code>Cookie2</code>` 
-    <li>`<code>Date</code>` 
-    <li>`<code>DNT</code>` 
-    <li>`<code>Expect</code>` 
-    <li>`<code>Host</code>` 
-    <li>`<code>Keep-Alive</code>` 
-    <li>`<a data-link-type="http-header" href="#http-origin" id="ref-for-http-origin①"><code>Origin</code></a>` 
-    <li>`<code>Referer</code>` 
-    <li>`<code>TE</code>` 
-    <li>`<code>Trailer</code>` 
-    <li>`<code>Transfer-Encoding</code>` 
-    <li>`<code>Upgrade</code>` 
-    <li>`<code>Via</code>` 
+    <li>`<code>Accept-Charset</code>`
+    <li>`<code>Accept-Encoding</code>`
+    <li>`<a data-link-type="http-header" href="#http-access-control-request-headers" id="ref-for-http-access-control-request-headers"><code>Access-Control-Request-Headers</code></a>`
+    <li>`<a data-link-type="http-header" href="#http-access-control-request-method" id="ref-for-http-access-control-request-method"><code>Access-Control-Request-Method</code></a>`
+    <li>`<code>Connection</code>`
+    <li>`<code>Content-Length</code>`
+    <li>`<code>Cookie</code>`
+    <li>`<code>Cookie2</code>`
+    <li>`<code>Date</code>`
+    <li>`<code>DNT</code>`
+    <li>`<code>Expect</code>`
+    <li>`<code>Host</code>`
+    <li>`<code>Keep-Alive</code>`
+    <li>`<a data-link-type="http-header" href="#http-origin" id="ref-for-http-origin①"><code>Origin</code></a>`
+    <li>`<code>Referer</code>`
+    <li>`<code>TE</code>`
+    <li>`<code>Trailer</code>`
+    <li>`<code>Transfer-Encoding</code>`
+    <li>`<code>Upgrade</code>`
+    <li>`<code>Via</code>`
    </ul>
    <p>or a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header②⓪">header</a> <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name③⓪">name</a> that
 starts with a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-case-insensitive" id="ref-for-byte-case-insensitive①⓪">byte-case-insensitive</a> match for `<code>Proxy-</code>` or `<code>Sec-</code>`
@@ -744,16 +744,16 @@ reserved to allow new <a data-link-type="dfn" href="#concept-header" id="ref-for
 from APIs using <a data-link-type="dfn" href="#concept-fetch" id="ref-for-concept-fetch①">fetch</a> that allow control over <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header②②">headers</a> by developers, such as <code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#xmlhttprequest" id="ref-for-xmlhttprequest①">XMLHttpRequest</a></code>. <a data-link-type="biblio" href="#biblio-xhr">[XHR]</a> </p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="forbidden-response-header-name">forbidden response-header name</dfn> is a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header②③">header</a> <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name③②">name</a> that is a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-case-insensitive" id="ref-for-byte-case-insensitive①②">byte-case-insensitive</a> match for one of: </p>
    <ul class="brief">
-    <li>`<code>Set-Cookie</code>` 
-    <li>`<code>Set-Cookie2</code>` 
+    <li>`<code>Set-Cookie</code>`
+    <li>`<code>Set-Cookie2</code>`
    </ul>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="request-body-header-name">request-body-header name</dfn> is a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header②④">header</a> <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name③③">name</a> that
 is a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-case-insensitive" id="ref-for-byte-case-insensitive①③">byte-case-insensitive</a> match for one of: </p>
    <ul class="brief">
-    <li>`<code>Content-Encoding</code>` 
-    <li>`<code>Content-Language</code>` 
-    <li>`<code>Content-Location</code>` 
-    <li>`<code>Content-Type</code>` 
+    <li>`<code>Content-Encoding</code>`
+    <li>`<code>Content-Language</code>`
+    <li>`<code>Content-Location</code>`
+    <li>`<code>Content-Type</code>`
    </ul>
    <hr>
    <p>To <dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="extract header values|extracting header values" id="extract-header-values">extract header values</dfn> given a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header②⑤">header</a> <var>header</var>, run these steps: </p>
@@ -866,10 +866,10 @@ is "<code>all</code>" or "<code>none</code>". Unless stated otherwise it is "<co
    <div class="note" role="note">
     <p>This determines which service workers will receive a <code class="idl"><a class="idl-code" data-link-type="event" href="https://w3c.github.io/ServiceWorker/#service-worker-global-scope-fetch-event" id="ref-for-service-worker-global-scope-fetch-event">fetch</a></code> event for this fetch. </p>
     <dl>
-     <dt>"<code>all</code>" 
-     <dd>Relevant service workers will get a <code class="idl"><a class="idl-code" data-link-type="event" href="https://w3c.github.io/ServiceWorker/#service-worker-global-scope-fetch-event" id="ref-for-service-worker-global-scope-fetch-event①">fetch</a></code> event for this fetch. 
-     <dt>"<code>none</code>" 
-     <dd>No service workers will get events for this fetch. 
+     <dt>"<code>all</code>"
+     <dd>Relevant service workers will get a <code class="idl"><a class="idl-code" data-link-type="event" href="https://w3c.github.io/ServiceWorker/#service-worker-global-scope-fetch-event" id="ref-for-service-worker-global-scope-fetch-event①">fetch</a></code> event for this fetch.
+     <dt>"<code>none</code>"
+     <dd>No service workers will get events for this fetch.
     </dl>
    </div>
    <p>A <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request①⑥">request</a> has an associated <dfn class="dfn-paneled" data-dfn-for="request" data-dfn-type="dfn" data-export id="concept-request-initiator">initiator</dfn>, which is
@@ -917,112 +917,112 @@ not always relevant and might require different behavior. </p>
     <table>
      <tbody>
       <tr>
-       <th><a data-link-type="dfn" href="#concept-request-initiator" id="ref-for-concept-request-initiator②">Initiator</a> 
-       <th><a data-link-type="dfn" href="#concept-request-destination" id="ref-for-concept-request-destination②">Destination</a> 
-       <th>CSP directive 
-       <th>Features 
+       <th><a data-link-type="dfn" href="#concept-request-initiator" id="ref-for-concept-request-initiator②">Initiator</a>
+       <th><a data-link-type="dfn" href="#concept-request-destination" id="ref-for-concept-request-destination②">Destination</a>
+       <th>CSP directive
+       <th>Features
       <tr>
-       <td rowspan="18">"" 
-       <td>"<code>report</code>" 
-       <td rowspan="2">— 
-       <td>CSP, NEL reports. 
+       <td rowspan="18">""
+       <td>"<code>report</code>"
+       <td rowspan="2">—
+       <td>CSP, NEL reports.
       <tr>
-       <td>"<code>document</code>" 
-       <td>HTML’s navigate algorithm. 
+       <td>"<code>document</code>"
+       <td>HTML’s navigate algorithm.
       <tr>
-       <td>"<code>document</code>" 
-       <td><code>child-src</code> 
-       <td>HTML’s <code>&lt;iframe></code> and <code>&lt;frame></code> 
+       <td>"<code>document</code>"
+       <td><code>child-src</code>
+       <td>HTML’s <code>&lt;iframe></code> and <code>&lt;frame></code>
       <tr>
-       <td>"" 
-       <td><code>connect-src</code> 
+       <td>""
+       <td><code>connect-src</code>
        <td><code>navigator.sendBeacon()</code>, <code>EventSource</code>,
-   HTML’s <code>&lt;a ping=""></code> and <code>&lt;area ping=""></code>, <a data-link-type="functionish" href="#dom-global-fetch" id="ref-for-dom-global-fetch②"><code>fetch()</code></a>, <code>XMLHttpRequest</code>, <code>WebSocket</code>, Cache API 
+   HTML’s <code>&lt;a ping=""></code> and <code>&lt;area ping=""></code>, <a data-link-type="functionish" href="#dom-global-fetch" id="ref-for-dom-global-fetch②"><code>fetch()</code></a>, <code>XMLHttpRequest</code>, <code>WebSocket</code>, Cache API
       <tr>
-       <td>"<code>object</code>" 
-       <td><code>object-src</code> 
-       <td>HTML’s <code>&lt;object></code> 
+       <td>"<code>object</code>"
+       <td><code>object-src</code>
+       <td>HTML’s <code>&lt;object></code>
       <tr>
-       <td>"<code>embed</code>" 
-       <td><code>object-src</code> 
-       <td>HTML’s <code>&lt;embed></code> 
+       <td>"<code>embed</code>"
+       <td><code>object-src</code>
+       <td>HTML’s <code>&lt;embed></code>
       <tr>
-       <td>"<code>audio</code>" 
-       <td><code>media-src</code> 
-       <td>HTML’s <code>&lt;audio></code> 
+       <td>"<code>audio</code>"
+       <td><code>media-src</code>
+       <td>HTML’s <code>&lt;audio></code>
       <tr>
-       <td>"<code>font</code>" 
-       <td><code>font-src</code> 
-       <td>CSS' <code>@font-face</code> 
+       <td>"<code>font</code>"
+       <td><code>font-src</code>
+       <td>CSS' <code>@font-face</code>
       <tr>
-       <td>"<code>image</code>" 
-       <td><code>img-src</code> 
+       <td>"<code>image</code>"
+       <td><code>img-src</code>
        <td>HTML’s <code>&lt;img src></code>, <code>/favicon.ico</code> resource,
-   SVG’s <code>&lt;image></code>, CSS' <code>background-image</code>, CSS' <code>cursor</code>, CSS' <code>list-style-image</code>, … 
+   SVG’s <code>&lt;image></code>, CSS' <code>background-image</code>, CSS' <code>cursor</code>, CSS' <code>list-style-image</code>, …
       <tr>
-       <td>"<code>audioworklet</code>" 
-       <td><code>script-src</code> 
-       <td><code>audioWorklet.addModule()</code> 
+       <td>"<code>audioworklet</code>"
+       <td><code>script-src</code>
+       <td><code>audioWorklet.addModule()</code>
       <tr>
-       <td>"<code>paintworklet</code>" 
-       <td><code>script-src</code> 
-       <td><code>CSS.paintWorklet.addModule()</code> 
+       <td>"<code>paintworklet</code>"
+       <td><code>script-src</code>
+       <td><code>CSS.paintWorklet.addModule()</code>
       <tr>
-       <td>"<code>script</code>" 
-       <td><code>script-src</code> 
-       <td>HTML’s <code>&lt;script></code>, <code>importScripts()</code> 
+       <td>"<code>script</code>"
+       <td><code>script-src</code>
+       <td>HTML’s <code>&lt;script></code>, <code>importScripts()</code>
       <tr>
-       <td>"<code>serviceworker</code>" 
-       <td><code>child-src</code>, <code>script-src</code>, <code>worker-src</code> 
-       <td><code>navigator.serviceWorker.register()</code> 
+       <td>"<code>serviceworker</code>"
+       <td><code>child-src</code>, <code>script-src</code>, <code>worker-src</code>
+       <td><code>navigator.serviceWorker.register()</code>
       <tr>
-       <td>"<code>sharedworker</code>" 
-       <td><code>child-src</code>, <code>script-src</code>, <code>worker-src</code> 
-       <td><code>SharedWorker</code> 
+       <td>"<code>sharedworker</code>"
+       <td><code>child-src</code>, <code>script-src</code>, <code>worker-src</code>
+       <td><code>SharedWorker</code>
       <tr>
-       <td>"<code>worker</code>" 
-       <td><code>child-src</code>, <code>script-src</code>, <code>worker-src</code> 
-       <td><code>Worker</code> 
+       <td>"<code>worker</code>"
+       <td><code>child-src</code>, <code>script-src</code>, <code>worker-src</code>
+       <td><code>Worker</code>
       <tr>
-       <td>"<code>style</code>" 
-       <td><code>style-src</code> 
-       <td>HTML’s <code>&lt;link rel=stylesheet></code>, CSS' <code>@import</code> 
+       <td>"<code>style</code>"
+       <td><code>style-src</code>
+       <td>HTML’s <code>&lt;link rel=stylesheet></code>, CSS' <code>@import</code>
       <tr>
-       <td>"<code>track</code>" 
-       <td><code>media-src</code> 
-       <td>HTML’s <code>&lt;track></code> 
+       <td>"<code>track</code>"
+       <td><code>media-src</code>
+       <td>HTML’s <code>&lt;track></code>
       <tr>
-       <td>"<code>video</code>" 
-       <td><code>media-src</code> 
-       <td>HTML’s <code>&lt;video></code> element 
+       <td>"<code>video</code>"
+       <td><code>media-src</code>
+       <td>HTML’s <code>&lt;video></code> element
       <tr>
-       <td>"<code>download</code>" 
-       <td>"" 
-       <td>— 
-       <td>HTML’s <code>download=""</code>, "Save Link As…" UI 
+       <td>"<code>download</code>"
+       <td>""
+       <td>—
+       <td>HTML’s <code>download=""</code>, "Save Link As…" UI
       <tr>
-       <td>"<code>imageset</code>" 
-       <td>"<code>image</code>" 
-       <td><code>img-src</code> 
-       <td>HTML’s <code>&lt;img srcset></code> and <code>&lt;picture></code> 
+       <td>"<code>imageset</code>"
+       <td>"<code>image</code>"
+       <td><code>img-src</code>
+       <td>HTML’s <code>&lt;img srcset></code> and <code>&lt;picture></code>
       <tr>
-       <td>"<code>manifest</code>" 
-       <td>"<code>manifest</code>" 
-       <td><code>manifest-src</code> 
-       <td>HTML’s <code>&lt;link rel=manifest></code> 
+       <td>"<code>manifest</code>"
+       <td>"<code>manifest</code>"
+       <td><code>manifest-src</code>
+       <td>HTML’s <code>&lt;link rel=manifest></code>
       <tr>
-       <td>"<code>prefetch</code>" 
-       <td rowspan="2">"" 
-       <td rowspan="2"><code>prefetch-src</code> 
-       <td>HTML’s <code>&lt;link rel=prefetch></code> 
+       <td>"<code>prefetch</code>"
+       <td rowspan="2">""
+       <td rowspan="2"><code>prefetch-src</code>
+       <td>HTML’s <code>&lt;link rel=prefetch></code>
       <tr>
-       <td>"<code>prerender</code>" 
-       <td>HTML’s <code>&lt;link rel=prerender></code> 
+       <td>"<code>prerender</code>"
+       <td>HTML’s <code>&lt;link rel=prerender></code>
       <tr>
-       <td>"<code>xslt</code>" 
-       <td>"<code>xslt</code>" 
-       <td><code>script-src</code> 
-       <td><code>&lt;?xml-stylesheet></code> 
+       <td>"<code>xslt</code>"
+       <td>"<code>xslt</code>"
+       <td><code>script-src</code>
+       <td><code>&lt;?xml-stylesheet></code>
     </table>
     <p>CSP’s <code>form-action</code> needs to be a hook directly in HTML’s navigate or form
  submission algorithm. </p>
@@ -1050,18 +1050,18 @@ unset. </p>
 "<code>no-cors</code>". </p>
    <div class="note no-backref" role="note">
     <dl>
-     <dt>"<code>same-origin</code>" 
-     <dd>Used to ensure requests are made to same-origin URLs. <a data-link-type="dfn" href="#concept-fetch" id="ref-for-concept-fetch⑥">Fetch</a> will return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error">network error</a> if the request is not made to a same-origin URL. 
-     <dt>"<code>cors</code>" 
+     <dt>"<code>same-origin</code>"
+     <dd>Used to ensure requests are made to same-origin URLs. <a data-link-type="dfn" href="#concept-fetch" id="ref-for-concept-fetch⑥">Fetch</a> will return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error">network error</a> if the request is not made to a same-origin URL.
+     <dt>"<code>cors</code>"
      <dd>Makes the request a <a data-link-type="dfn" href="#cors-request" id="ref-for-cors-request">CORS request</a>. Fetch will return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error①">network error</a> if the
-  requested resource does not understand the <a data-link-type="dfn" href="#cors-protocol" id="ref-for-cors-protocol">CORS protocol</a>. 
-     <dt>"<code>no-cors</code>" 
-     <dd>Restricts requests to using <a data-link-type="dfn" href="#cors-safelisted-method" id="ref-for-cors-safelisted-method">CORS-safelisted methods</a> and <a data-link-type="dfn" href="#cors-safelisted-request-header" id="ref-for-cors-safelisted-request-header②">CORS-safelisted request-headers</a>. Upon success, fetch will return an <a data-link-type="dfn" href="#concept-filtered-response-opaque" id="ref-for-concept-filtered-response-opaque">opaque filtered response</a>. 
-     <dt>"<code>navigate</code>" 
-     <dd>This is a special mode used only when <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsing-the-web.html#navigate" id="ref-for-navigate">navigating</a> between documents. 
-     <dt>"<code>websocket</code>" 
+  requested resource does not understand the <a data-link-type="dfn" href="#cors-protocol" id="ref-for-cors-protocol">CORS protocol</a>.
+     <dt>"<code>no-cors</code>"
+     <dd>Restricts requests to using <a data-link-type="dfn" href="#cors-safelisted-method" id="ref-for-cors-safelisted-method">CORS-safelisted methods</a> and <a data-link-type="dfn" href="#cors-safelisted-request-header" id="ref-for-cors-safelisted-request-header②">CORS-safelisted request-headers</a>. Upon success, fetch will return an <a data-link-type="dfn" href="#concept-filtered-response-opaque" id="ref-for-concept-filtered-response-opaque">opaque filtered response</a>.
+     <dt>"<code>navigate</code>"
+     <dd>This is a special mode used only when <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsing-the-web.html#navigate" id="ref-for-navigate">navigating</a> between documents.
+     <dt>"<code>websocket</code>"
      <dd>This is a special mode used only when <a data-link-type="dfn" href="#concept-websocket-establish" id="ref-for-concept-websocket-establish①">establishing
-  a WebSocket connection</a>. 
+  a WebSocket connection</a>.
     </dl>
     <p>Even though the default <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request③⓪">request</a> <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode">mode</a> is "<code>no-cors</code>",
  standards are highly discouraged from using it for new features. It is rather unsafe. </p>
@@ -1076,12 +1076,12 @@ which is "<code>omit</code>", "<code>same-origin</code>", or
 "<code>include</code>". Unless stated otherwise, it is "<code>omit</code>". </p>
    <div class="note no-backref" role="note">
     <dl>
-     <dt>"<code>omit</code>" 
-     <dd>Excludes credentials from this request. 
-     <dt>"<code>same-origin</code>" 
-     <dd>Include credentials with requests made to same-origin URLs. 
-     <dt>"<code>include</code>" 
-     <dd>Always includes credentials with this request. 
+     <dt>"<code>omit</code>"
+     <dd>Excludes credentials from this request.
+     <dt>"<code>same-origin</code>"
+     <dd>Include credentials with requests made to same-origin URLs.
+     <dt>"<code>include</code>"
+     <dd>Always includes credentials with this request.
     </dl>
     <p><a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request③③">Request</a>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode">credentials mode</a> controls the flow of <a data-link-type="dfn" href="#credentials" id="ref-for-credentials">credentials</a> during a <a data-link-type="dfn" href="#concept-fetch" id="ref-for-concept-fetch⑦">fetch</a>. When <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request③④">request</a>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode①">mode</a> is "<code>navigate</code>", its <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode①">credentials mode</a> is
  assumed to be "<code>include</code>" and <a data-link-type="dfn" href="#concept-fetch" id="ref-for-concept-fetch⑧">fetch</a> does not currently account for other
@@ -1095,30 +1095,30 @@ Unless stated otherwise, it is unset. </p>
 "<code>only-if-cached</code>". Unless stated otherwise, it is "<code>default</code>". </p>
    <div class="note no-backref" role="note">
     <dl>
-     <dt>"<code>default</code>" 
+     <dt>"<code>default</code>"
      <dd><a data-link-type="dfn" href="#concept-fetch" id="ref-for-concept-fetch⑨">Fetch</a> will inspect the HTTP cache on the way to the network. If the HTTP cache
   contains a matching <a data-link-type="dfn" href="#concept-fresh-response" id="ref-for-concept-fresh-response">fresh response</a> it will be returned. If the HTTP cache contains a
   matching <a data-link-type="dfn" href="#concept-stale-while-revalidate-response" id="ref-for-concept-stale-while-revalidate-response">stale-while-revalidate response</a> it will be returned, and a conditional network
   fetch will be made to update the entry in the HTTP cache. If the HTTP cache contains a matching <a data-link-type="dfn" href="#concept-stale-response" id="ref-for-concept-stale-response">stale response</a>, a conditional network fetch will be returned to update the entry in
   the HTTP cache. Otherwise, a non-conditional network fetch will be returned to update the entry
-  in the HTTP cache. <a data-link-type="biblio" href="#biblio-http">[HTTP]</a> <a data-link-type="biblio" href="#biblio-http-semantics">[HTTP-SEMANTICS]</a> <a data-link-type="biblio" href="#biblio-http-cond">[HTTP-COND]</a> <a data-link-type="biblio" href="#biblio-http-caching">[HTTP-CACHING]</a> <a data-link-type="biblio" href="#biblio-http-auth">[HTTP-AUTH]</a> <a data-link-type="biblio" href="#biblio-stale-while-revalidate">[STALE-WHILE-REVALIDATE]</a> 
-     <dt>"<code>no-store</code>" 
-     <dd>Fetch behaves as if there is no HTTP cache at all. 
-     <dt>"<code>reload</code>" 
+  in the HTTP cache. <a data-link-type="biblio" href="#biblio-http">[HTTP]</a> <a data-link-type="biblio" href="#biblio-http-semantics">[HTTP-SEMANTICS]</a> <a data-link-type="biblio" href="#biblio-http-cond">[HTTP-COND]</a> <a data-link-type="biblio" href="#biblio-http-caching">[HTTP-CACHING]</a> <a data-link-type="biblio" href="#biblio-http-auth">[HTTP-AUTH]</a> <a data-link-type="biblio" href="#biblio-stale-while-revalidate">[STALE-WHILE-REVALIDATE]</a>
+     <dt>"<code>no-store</code>"
+     <dd>Fetch behaves as if there is no HTTP cache at all.
+     <dt>"<code>reload</code>"
      <dd>Fetch behaves as if there is no HTTP cache on the way to the network. Ergo, it creates a
-  normal request and updates the HTTP cache with the response. 
-     <dt>"<code>no-cache</code>" 
+  normal request and updates the HTTP cache with the response.
+     <dt>"<code>no-cache</code>"
      <dd>Fetch creates a conditional request if there is a response in the HTTP cache and a normal
-  request otherwise. It then updates the HTTP cache with the response. 
-     <dt>"<code>force-cache</code>" 
+  request otherwise. It then updates the HTTP cache with the response.
+     <dt>"<code>force-cache</code>"
      <dd>Fetch uses any response in the HTTP cache matching the request, not paying attention to
   staleness. If there was no response, it creates a normal request and updates the HTTP cache with
-  the response. 
-     <dt>"<code>only-if-cached</code>" 
+  the response.
+     <dt>"<code>only-if-cached</code>"
      <dd>Fetch uses any response in the HTTP cache matching the request, not paying attention to
   staleness. If there was no response, it returns a network error. (Can only be used when <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request③⑦">request</a>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode②">mode</a> is
   "<code>same-origin</code>". Any cached redirects will be followed assuming <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request③⑧">request</a>’s <a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode">redirect mode</a> is "<code>follow</code>" and the
-  redirects do not violate <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request③⑨">request</a>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode③">mode</a>.) 
+  redirects do not violate <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request③⑨">request</a>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode③">mode</a>.)
     </dl>
     <p>If <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list①">header list</a> <a data-link-type="dfn" href="#header-list-contains" id="ref-for-header-list-contains⑦">contains</a> `<code>If-Modified-Since</code>`,
  `<code>If-None-Match</code>`,
@@ -1132,13 +1132,13 @@ Unless stated otherwise, it is unset. </p>
 Unless stated otherwise, it is "<code>follow</code>". </p>
    <div class="note no-backref" role="note">
     <dl>
-     <dt>"<code>follow</code>" 
-     <dd>Follow all redirects incurred when fetching a resource. 
-     <dt>"<code>error</code>" 
-     <dd>Return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error②">network error</a> when a request is met with a redirect. 
-     <dt>"<code>manual</code>" 
+     <dt>"<code>follow</code>"
+     <dd>Follow all redirects incurred when fetching a resource.
+     <dt>"<code>error</code>"
+     <dd>Return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error②">network error</a> when a request is met with a redirect.
+     <dt>"<code>manual</code>"
      <dd>Retrieves an <a data-link-type="dfn" href="#concept-filtered-response-opaque-redirect" id="ref-for-concept-filtered-response-opaque-redirect">opaque-redirect filtered response</a> when a request is met with a redirect so
-  that the redirect can be followed manually. 
+  that the redirect can be followed manually.
     </dl>
    </div>
    <p>A <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request④①">request</a> has associated <dfn class="dfn-paneled" data-dfn-for="request" data-dfn-type="dfn" data-export id="concept-request-integrity-metadata">integrity metadata</dfn> (a string). Unless stated otherwise, it is the empty string. </p>
@@ -1211,7 +1211,7 @@ is to return the result of <a data-link-type="dfn" href="#serializing-a-request-
    <hr>
    <p>To <dfn class="dfn-paneled" data-dfn-for="request" data-dfn-type="dfn" data-export id="concept-request-transmit-body">transmit body</dfn> for a <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request⑥⑥">request</a> <var>request</var>, run these steps: </p>
    <ol>
-    <li>Let <var>body</var> be <var>request</var>’s <a data-link-type="dfn" href="#concept-request-body" id="ref-for-concept-request-body④">body</a>. 
+    <li>Let <var>body</var> be <var>request</var>’s <a data-link-type="dfn" href="#concept-request-body" id="ref-for-concept-request-body④">body</a>.
     <li>
      <p>If <var>body</var> is null, then <a data-link-type="dfn" href="#queue-a-fetch-task" id="ref-for-queue-a-fetch-task①">queue a fetch task</a> on <var>request</var> to <a data-link-type="dfn" href="#process-request-end-of-body" id="ref-for-process-request-end-of-body①">process request end-of-body</a> for <var>request</var> and abort these steps. </p>
     <li>
@@ -1444,208 +1444,208 @@ run these steps: </p>
     <tbody>
      <tr>
       <th>Port
-      <th>Typical service 
+      <th>Typical service
      <tr>
       <td>1
-      <td>tcpmux 
+      <td>tcpmux
      <tr>
       <td>7
-      <td>echo 
+      <td>echo
      <tr>
       <td>9
-      <td>discard 
+      <td>discard
      <tr>
       <td>11
-      <td>systat 
+      <td>systat
      <tr>
       <td>13
-      <td>daytime 
+      <td>daytime
      <tr>
       <td>15
-      <td>netstat 
+      <td>netstat
      <tr>
       <td>17
-      <td>qotd 
+      <td>qotd
      <tr>
       <td>19
-      <td>chargen 
+      <td>chargen
      <tr>
       <td>20
-      <td>ftp-data 
+      <td>ftp-data
      <tr>
       <td>21
-      <td>ftp 
+      <td>ftp
      <tr>
       <td>22
-      <td>ssh 
+      <td>ssh
      <tr>
       <td>23
-      <td>telnet 
+      <td>telnet
      <tr>
       <td>25
-      <td>smtp 
+      <td>smtp
      <tr>
       <td>37
-      <td>time 
+      <td>time
      <tr>
       <td>42
-      <td>name 
+      <td>name
      <tr>
       <td>43
-      <td>nicname 
+      <td>nicname
      <tr>
       <td>53
-      <td>domain 
+      <td>domain
      <tr>
       <td>77
-      <td>priv-rjs 
+      <td>priv-rjs
      <tr>
       <td>79
-      <td>finger 
+      <td>finger
      <tr>
       <td>87
-      <td>ttylink 
+      <td>ttylink
      <tr>
       <td>95
-      <td>supdup 
+      <td>supdup
      <tr>
       <td>101
-      <td>hostriame 
+      <td>hostriame
      <tr>
       <td>102
-      <td>iso-tsap 
+      <td>iso-tsap
      <tr>
       <td>103
-      <td>gppitnp 
+      <td>gppitnp
      <tr>
       <td>104
-      <td>acr-nema 
+      <td>acr-nema
      <tr>
       <td>109
-      <td>pop2 
+      <td>pop2
      <tr>
       <td>110
-      <td>pop3 
+      <td>pop3
      <tr>
       <td>111
-      <td>sunrpc 
+      <td>sunrpc
      <tr>
       <td>113
-      <td>auth 
+      <td>auth
      <tr>
       <td>115
-      <td>sftp 
+      <td>sftp
      <tr>
       <td>117
-      <td>uucp-path 
+      <td>uucp-path
      <tr>
       <td>119
-      <td>nntp 
+      <td>nntp
      <tr>
       <td>123
-      <td>ntp 
+      <td>ntp
      <tr>
       <td>135
-      <td>loc-srv / epmap 
+      <td>loc-srv / epmap
      <tr>
       <td>139
-      <td>netbios 
+      <td>netbios
      <tr>
       <td>143
-      <td>imap2 
+      <td>imap2
      <tr>
       <td>179
-      <td>bgp 
+      <td>bgp
      <tr>
       <td>389
-      <td>ldap 
+      <td>ldap
      <tr>
       <td>427
-      <td>afp (alternate) 
+      <td>afp (alternate)
      <tr>
       <td>465
-      <td>smtp (alternate) 
+      <td>smtp (alternate)
      <tr>
       <td>512
-      <td>print / exec 
+      <td>print / exec
      <tr>
       <td>513
-      <td>login 
+      <td>login
      <tr>
       <td>514
-      <td>shell 
+      <td>shell
      <tr>
       <td>515
-      <td>printer 
+      <td>printer
      <tr>
       <td>526
-      <td>tempo 
+      <td>tempo
      <tr>
       <td>530
-      <td>courier 
+      <td>courier
      <tr>
       <td>531
-      <td>chat 
+      <td>chat
      <tr>
       <td>532
-      <td>netnews 
+      <td>netnews
      <tr>
       <td>540
-      <td>uucp 
+      <td>uucp
      <tr>
       <td>548
-      <td>afp 
+      <td>afp
      <tr>
       <td>556
-      <td>remotefs 
+      <td>remotefs
      <tr>
       <td>563
-      <td>nntp+ssl 
+      <td>nntp+ssl
      <tr>
       <td>587
-      <td>smtp (outgoing) 
+      <td>smtp (outgoing)
      <tr>
       <td>601
-      <td>syslog-conn 
+      <td>syslog-conn
      <tr>
       <td>636
-      <td>ldap+ssl 
+      <td>ldap+ssl
      <tr>
       <td>993
-      <td>ldap+ssl 
+      <td>ldap+ssl
      <tr>
       <td>995
-      <td>pop3+ssl 
+      <td>pop3+ssl
      <tr>
       <td>2049
-      <td>nfs 
+      <td>nfs
      <tr>
       <td>3659
-      <td>apple-sasl 
+      <td>apple-sasl
      <tr>
       <td>4045
-      <td>lockd 
+      <td>lockd
      <tr>
       <td>6000
-      <td>x11 
+      <td>x11
      <tr>
       <td>6665
-      <td>irc (alternate) 
+      <td>irc (alternate)
      <tr>
       <td>6666
-      <td>irc (alternate) 
+      <td>irc (alternate)
      <tr>
       <td>6667
-      <td>irc (default) 
+      <td>irc (default)
      <tr>
       <td>6668
-      <td>irc (alternate) 
+      <td>irc (alternate)
      <tr>
       <td>6669
-      <td>irc (alternate) 
+      <td>irc (alternate)
      <tr>
       <td>6697
-      <td>irc+tls 
+      <td>irc+tls
    </table>
    <h3 class="heading settled dfn-paneled" data-dfn-type="dfn" data-export data-level="2.7" data-lt="should response to request be blocked due to mime type" id="should-response-to-request-be-blocked-due-to-mime-type?"><span class="secno">2.7. </span><span class="content">Should <var>response</var> to <var>request</var> be blocked due to its MIME type?</span></h3>
    <p>Run these steps: </p>
@@ -1661,8 +1661,8 @@ run these steps: </p>
   following is true, then return <b>blocked</b>: </p>
      <ul class="brief">
       <li><var>mimeType</var>’s <a data-link-type="dfn" href="https://mimesniff.spec.whatwg.org/#mime-type-essence" id="ref-for-mime-type-essence①">essence</a> starts with "<code>audio/</code>",
-   "<code>image/</code>", or "<code>video/</code>". 
-      <li><var>mimeType</var>’s <a data-link-type="dfn" href="https://mimesniff.spec.whatwg.org/#mime-type-essence" id="ref-for-mime-type-essence②">essence</a> is "<code>text/csv</code>". 
+   "<code>image/</code>", or "<code>video/</code>".
+      <li><var>mimeType</var>’s <a data-link-type="dfn" href="https://mimesniff.spec.whatwg.org/#mime-type-essence" id="ref-for-mime-type-essence②">essence</a> is "<code>text/csv</code>".
      </ul>
     <li>
      <p>Return <b>allowed</b>. </p>
@@ -1729,7 +1729,7 @@ now separate parameters. If another specification still passes that <var>strateg
      <p>For each <var>chunk</var> in <var>chunks</var>, <a data-link-type="dfn" href="#concept-enqueue-readablestream" id="ref-for-concept-enqueue-readablestream">enqueue</a> <var>chunk</var> into <var>stream</var>. </p>
     <li>
      <p><a data-link-type="abstract-op" href="#concept-close-readablestream" id="ref-for-concept-close-readablestream">Close</a> <var>stream</var>. </p>
-    <li>Return <var>stream</var>. 
+    <li>Return <var>stream</var>.
    </ol>
    <p>To <dfn class="dfn-paneled" data-dfn-for="ReadableStream" data-dfn-type="dfn" data-export id="concept-get-reader">get a reader</dfn> from a <code class="idl"><a data-link-type="idl" href="#concept-readablestream" id="ref-for-concept-readablestream⑦">ReadableStream</a></code> object <var>stream</var>, run these steps: </p>
    <ol>
@@ -1816,19 +1816,19 @@ given a <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-requ
       <li>
        <p>Switch on <var>request</var>’s <a data-link-type="dfn" href="#concept-request-referrer-policy" id="ref-for-concept-request-referrer-policy">referrer policy</a>: </p>
        <dl class="switch">
-        <dt>"<code>no-referrer</code>" 
+        <dt>"<code>no-referrer</code>"
         <dd>
          <p>Set <var>serializedOrigin</var> to `<code>null</code>`. </p>
-        <dt>"<code>no-referrer-when-downgrade</code>" 
-        <dt>"<code>strict-origin</code>" 
-        <dt>"<code>strict-origin-when-cross-origin</code>" 
+        <dt>"<code>no-referrer-when-downgrade</code>"
+        <dt>"<code>strict-origin</code>"
+        <dt>"<code>strict-origin-when-cross-origin</code>"
         <dd>
          <p>If <var>request</var>’s <a data-link-type="dfn" href="#concept-request-origin" id="ref-for-concept-request-origin②">origin</a> is a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin-tuple" id="ref-for-concept-origin-tuple">tuple origin</a>, its <var>scheme</var> is "<code>https</code>", and <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url②">current URL</a>’s <var>scheme</var> is not "<code>https</code>", then set <var>serializedOrigin</var> to `<code>null</code>`. </p>
-        <dt>"<code>same-origin</code>" 
+        <dt>"<code>same-origin</code>"
         <dd>
          <p>If <var>request</var>’s <a data-link-type="dfn" href="#concept-request-origin" id="ref-for-concept-request-origin③">origin</a> is not <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#same-origin" id="ref-for-same-origin">same origin</a> with <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url③">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-origin" id="ref-for-concept-url-origin">origin</a>, then set <var>serializedOrigin</var> to `<code>null</code>`. </p>
-        <dt>Otherwise 
-        <dd>Do nothing. 
+        <dt>Otherwise
+        <dd>Do nothing.
        </dl>
       <li>
        <p><a data-link-type="dfn" href="#concept-header-list-append" id="ref-for-concept-header-list-append②">Append</a> `<code>Origin</code>`/<var>serializedOrigin</var> to <var>request</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list④">header list</a>. </p>
@@ -1858,21 +1858,21 @@ all <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request�
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="cors-preflight-request">CORS-preflight request</dfn> is a <a data-link-type="dfn" href="#cors-request" id="ref-for-cors-request①">CORS request</a> that checks to see
 if the <a data-link-type="dfn" href="#cors-protocol" id="ref-for-cors-protocol⑥">CORS protocol</a> is understood. It uses `<code>OPTIONS</code>` as <a data-link-type="dfn" href="#concept-method" id="ref-for-concept-method⑥">method</a> and includes these <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header③⑤">headers</a>: </p>
    <dl>
-    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-request-method"><code>Access-Control-Request-Method</code></dfn>` 
+    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-request-method"><code>Access-Control-Request-Method</code></dfn>`
     <dd>
      <p>Indicates which <a data-link-type="dfn" href="#concept-method" id="ref-for-concept-method⑦">method</a> a future <a data-link-type="dfn" href="#cors-request" id="ref-for-cors-request②">CORS request</a> to the same resource might use. </p>
-    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-request-headers"><code>Access-Control-Request-Headers</code></dfn>` 
+    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-request-headers"><code>Access-Control-Request-Headers</code></dfn>`
     <dd>
      <p>Indicates which <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header③⑥">headers</a> a future <a data-link-type="dfn" href="#cors-request" id="ref-for-cors-request③">CORS request</a> to the same resource might use. </p>
    </dl>
    <h4 class="heading settled" data-level="3.2.3" id="http-responses"><span class="secno">3.2.3. </span><span class="content">HTTP responses</span><a class="self-link" href="#http-responses"></a></h4>
    <p>An HTTP response to a <a data-link-type="dfn" href="#cors-request" id="ref-for-cors-request④">CORS request</a> can include the following <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header③⑦">headers</a>: </p>
    <dl>
-    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-allow-origin"><code>Access-Control-Allow-Origin</code></dfn>` 
+    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-allow-origin"><code>Access-Control-Allow-Origin</code></dfn>`
     <dd>
      <p>Indicates whether the response can be shared, via returning the literal <a data-link-type="dfn" href="#concept-header-value" id="ref-for-concept-header-value②④">value</a> of the
  `<a data-link-type="http-header" href="#http-origin" id="ref-for-http-origin⑤"><code>Origin</code></a>` request <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header③⑧">header</a> (which can be `<code>null</code>`) or `<code>*</code>` in a response. </p>
-    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-allow-credentials"><code>Access-Control-Allow-Credentials</code></dfn>` 
+    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-allow-credentials"><code>Access-Control-Allow-Credentials</code></dfn>`
     <dd>
      <p>Indicates whether the response can be shared when <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request⑦⑨">request</a>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode②">credentials mode</a> is
   "<code>include</code>". </p>
@@ -1882,15 +1882,15 @@ if the <a data-link-type="dfn" href="#cors-protocol" id="ref-for-cors-protocol�
    </dl>
    <p>An HTTP response to a <a data-link-type="dfn" href="#cors-preflight-request" id="ref-for-cors-preflight-request④">CORS-preflight request</a> can include the following <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header③⑨">headers</a>: </p>
    <dl>
-    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-allow-methods"><code>Access-Control-Allow-Methods</code></dfn>` 
+    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-allow-methods"><code>Access-Control-Allow-Methods</code></dfn>`
     <dd>
      <p>Indicates which <a data-link-type="dfn" href="#concept-method" id="ref-for-concept-method⑧">methods</a> are supported by the <a data-link-type="dfn" href="#concept-response" id="ref-for-concept-response③④">response</a>’s <a data-link-type="dfn" href="#concept-response-url" id="ref-for-concept-response-url">URL</a> for the purposes of the <a data-link-type="dfn" href="#cors-protocol" id="ref-for-cors-protocol⑦">CORS protocol</a>. </p>
      <p class="note" role="note">The `<code>Allow</code>` <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header④⓪">header</a> is
   not relevant for the purposes of the <a data-link-type="dfn" href="#cors-protocol" id="ref-for-cors-protocol⑧">CORS protocol</a>. </p>
-    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-allow-headers"><code>Access-Control-Allow-Headers</code></dfn>` 
+    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-allow-headers"><code>Access-Control-Allow-Headers</code></dfn>`
     <dd>
      <p>Indicates which <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header④①">headers</a> are supported by the <a data-link-type="dfn" href="#concept-response" id="ref-for-concept-response③⑤">response</a>’s <a data-link-type="dfn" href="#concept-response-url" id="ref-for-concept-response-url①">URL</a> for the purposes of the <a data-link-type="dfn" href="#cors-protocol" id="ref-for-cors-protocol⑨">CORS protocol</a>. </p>
-    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-max-age"><code>Access-Control-Max-Age</code></dfn>` 
+    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-max-age"><code>Access-Control-Max-Age</code></dfn>`
     <dd>
      <p>Indicates how long the information provided by the
  `<a data-link-type="http-header" href="#http-access-control-allow-methods" id="ref-for-http-access-control-allow-methods"><code>Access-Control-Allow-Methods</code></a>` and
@@ -1898,7 +1898,7 @@ if the <a data-link-type="dfn" href="#cors-protocol" id="ref-for-cors-protocol�
    </dl>
    <p>An HTTP response to a <a data-link-type="dfn" href="#cors-request" id="ref-for-cors-request⑥">CORS request</a> that is not a <a data-link-type="dfn" href="#cors-preflight-request" id="ref-for-cors-preflight-request⑤">CORS-preflight request</a> can also include the following <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header④③">header</a>: </p>
    <dl>
-    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-expose-headers"><code>Access-Control-Expose-Headers</code></dfn>` 
+    <dt>`<dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-access-control-expose-headers"><code>Access-Control-Expose-Headers</code></dfn>`
     <dd>
      <p>Indicates which <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header④④">headers</a> can be exposed as part
  of the response by listing their <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name④①">names</a>. </p>
@@ -1929,7 +1929,7 @@ way to solely match a <a data-link-type="dfn" href="#concept-header" id="ref-for
    <p>When <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request⑧③">request</a>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode④">credentials mode</a> is "<code>include</code>" it
 has an impact on the functioning of the <a data-link-type="dfn" href="#cors-protocol" id="ref-for-cors-protocol①②">CORS protocol</a> other than including <a data-link-type="dfn" href="#credentials" id="ref-for-credentials③">credentials</a> in the <a data-link-type="dfn" href="#concept-fetch" id="ref-for-concept-fetch①⑨">fetch</a>. </p>
    <div class="example" id="example-xhr-credentials">
-    <a class="self-link" href="#example-xhr-credentials"></a> 
+    <a class="self-link" href="#example-xhr-credentials"></a>
     <p>In the old days, <code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#xmlhttprequest" id="ref-for-xmlhttprequest③">XMLHttpRequest</a></code> could be used to set <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request⑧④">request</a>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode⑤">credentials mode</a> to "<code>include</code>": </p>
 <pre><code class="lang-javascript highlight"><c- a>var</c-> client <c- o>=</c-> <c- k>new</c-> XMLHttpRequest<c- p>()</c->
 client<c- p>.</c->open<c- p>(</c-><c- u>"GET"</c-><c- p>,</c-> <c- u>"./"</c-><c- p>)</c->
@@ -1951,56 +1951,56 @@ request to <code>https://rabbit.invalid/</code>: </p>
    <table>
     <tbody>
      <tr>
-      <th>Request’s credentials mode 
-      <th>`<a data-link-type="http-header" href="#http-access-control-allow-origin" id="ref-for-http-access-control-allow-origin①"><code>Access-Control-Allow-Origin</code></a>` 
-      <th>`<a data-link-type="http-header" href="#http-access-control-allow-credentials" id="ref-for-http-access-control-allow-credentials①"><code>Access-Control-Allow-Credentials</code></a>` 
-      <th>Shared? 
-      <th>Notes 
+      <th>Request’s credentials mode
+      <th>`<a data-link-type="http-header" href="#http-access-control-allow-origin" id="ref-for-http-access-control-allow-origin①"><code>Access-Control-Allow-Origin</code></a>`
+      <th>`<a data-link-type="http-header" href="#http-access-control-allow-credentials" id="ref-for-http-access-control-allow-credentials①"><code>Access-Control-Allow-Credentials</code></a>`
+      <th>Shared?
+      <th>Notes
      <tr>
-      <td>"<code>omit</code>" 
-      <td>`<code>*</code>` 
-      <td>Omitted 
-      <td>✅ 
+      <td>"<code>omit</code>"
+      <td>`<code>*</code>`
+      <td>Omitted
+      <td>✅
       <td>—<wbr>
      <tr>
-      <td>"<code>omit</code>" 
-      <td>`<code>*</code>` 
-      <td>`<code>true</code>` 
-      <td>✅ 
+      <td>"<code>omit</code>"
+      <td>`<code>*</code>`
+      <td>`<code>true</code>`
+      <td>✅
       <td>If credentials mode is not "<code>include</code>", then
-  `<a data-link-type="http-header" href="#http-access-control-allow-credentials" id="ref-for-http-access-control-allow-credentials②"><code>Access-Control-Allow-Credentials</code></a>` is ignored. 
+  `<a data-link-type="http-header" href="#http-access-control-allow-credentials" id="ref-for-http-access-control-allow-credentials②"><code>Access-Control-Allow-Credentials</code></a>` is ignored.
      <tr>
-      <td>"<code>omit</code>" 
-      <td>`<code>https://rabbit.invalid/`</code> 
-      <td>Omitted 
-      <td>❌ 
-      <td>A serialized origin has no trailing slash. 
+      <td>"<code>omit</code>"
+      <td>`<code>https://rabbit.invalid/`</code>
+      <td>Omitted
+      <td>❌
+      <td>A serialized origin has no trailing slash.
      <tr>
-      <td>"<code>omit</code>" 
-      <td>`<code>https://rabbit.invalid`</code> 
-      <td>Omitted 
-      <td>✅ 
+      <td>"<code>omit</code>"
+      <td>`<code>https://rabbit.invalid`</code>
+      <td>Omitted
+      <td>✅
       <td>—<wbr>
      <tr>
-      <td>"<code>include</code>" 
-      <td>`<code>*</code>` 
-      <td>`<code>true</code>` 
-      <td>❌ 
+      <td>"<code>include</code>"
+      <td>`<code>*</code>`
+      <td>`<code>true</code>`
+      <td>❌
       <td>If credentials mode is "<code>include</code>", then
   `<a data-link-type="http-header" href="#http-access-control-allow-origin" id="ref-for-http-access-control-allow-origin②"><code>Access-Control-Allow-Origin</code></a>` cannot be
-  `<code>*</code>`. 
+  `<code>*</code>`.
      <tr>
-      <td>"<code>include</code>" 
-      <td>`<code>https://rabbit.invalid`</code> 
-      <td>`<code>true</code>` 
-      <td>✅ 
+      <td>"<code>include</code>"
+      <td>`<code>https://rabbit.invalid`</code>
+      <td>`<code>true</code>`
+      <td>✅
       <td>—<wbr>
      <tr>
-      <td>"<code>include</code>" 
-      <td>`<code>https://rabbit.invalid`</code> 
-      <td>`<code>True</code>` 
-      <td>❌ 
-      <td>`<code>true</code>` is (byte) case-sensitive. 
+      <td>"<code>include</code>"
+      <td>`<code>https://rabbit.invalid`</code>
+      <td>`<code>True</code>`
+      <td>❌
+      <td>`<code>true</code>` is (byte) case-sensitive.
    </table>
    <p>Similarly, `<a data-link-type="http-header" href="#http-access-control-expose-headers" id="ref-for-http-access-control-expose-headers①"><code>Access-Control-Expose-Headers</code></a>`,
 `<a data-link-type="http-header" href="#http-access-control-allow-methods" id="ref-for-http-access-control-allow-methods①"><code>Access-Control-Allow-Methods</code></a>`, and
@@ -2009,7 +2009,7 @@ request to <code>https://rabbit.invalid/</code>: </p>
 "<code>include</code>". </p>
    <h4 class="heading settled" data-level="3.2.6" id="cors-protocol-examples"><span class="secno">3.2.6. </span><span class="content">Examples</span><a class="self-link" href="#cors-protocol-examples"></a></h4>
    <div class="example" id="example-simple-cors">
-    <a class="self-link" href="#example-simple-cors"></a> 
+    <a class="self-link" href="#example-simple-cors"></a>
     <p>A script at <code>https://foo.invalid/</code> wants to fetch some data from <code>https://bar.invalid/</code>. (Neither <a data-link-type="dfn" href="#credentials" id="ref-for-credentials①①">credentials</a> nor response header access is
  important.) </p>
 <pre id="unicorn"><code class="lang-javascript highlight"><c- a>var</c-> url <c- o>=</c-> <c- u>"https://bar.invalid/api?key=730d67a37d7f3d802e96396d00280768773813fbe726d116944d814422fc1a45&amp;data=about:unicorn"</c-><c- p>;</c->
@@ -2026,7 +2026,7 @@ fetch<c- p>(</c->url<c- p>).</c->then<c- p>(</c->success<c- p>,</c-> failure<c- 
  the <code>failure</code> callback. </p>
    </div>
    <div class="example" id="example-cors-with-response-header">
-    <a class="self-link" href="#example-cors-with-response-header"></a> 
+    <a class="self-link" href="#example-cors-with-response-header"></a>
     <p>The developer of <code>foo.invalid</code> is back, and now wants to fetch some data from <code>bar.invalid</code> while also accessing a response header. </p>
 <pre><code class="lang-javascript highlight">fetch<c- p>(</c->url<c- p>).</c->then<c- p>(</c->response <c- p>=></c-> <c- p>{</c->
   <c- a>var</c-> hsts <c- o>=</c-> response<c- p>.</c->headers<c- p>.</c->get<c- p>(</c-><c- u>"strict-transport-security"</c-><c- p>),</c->
@@ -2054,7 +2054,7 @@ Access-Control-Expose-Headers: Content-Security-Policy
  explicitly and `<code>*</code>` could not be used. </p>
    </div>
    <div class="example" id="example-cors-with-credentials">
-    <a class="self-link" href="#example-cors-with-credentials"></a> 
+    <a class="self-link" href="#example-cors-with-credentials"></a>
     <p>The developer of <code>foo.invalid</code> returns, now fetching some data from <code>bar.invalid</code> while including <a data-link-type="dfn" href="#credentials" id="ref-for-credentials①④">credentials</a>. This time around the <a data-link-type="dfn" href="#cors-protocol" id="ref-for-cors-protocol①⑤">CORS protocol</a> is no longer transparent to the developer as <a data-link-type="dfn" href="#credentials" id="ref-for-credentials①⑤">credentials</a> require an explicit opt-in: </p>
 <pre><code class="lang-javascript highlight">fetch<c- p>(</c->url<c- p>,</c-> <c- p>{</c-> credentials<c- o>:</c-><c- u>"include"</c-> <c- p>}).</c->then<c- p>(</c->success<c- p>,</c-> failure<c- p>)</c->
 </code></pre>
@@ -2079,10 +2079,10 @@ content. Therefore, servers should expect cross-origin web content to be allowed
 non-preflighted requests with the following non-safelisted `<code>Content-Type</code>` header
 values: </p>
    <ul class="brief">
-    <li>`<code>application/csp-report</code>` <a data-link-type="biblio" href="#biblio-csp">[CSP]</a> 
-    <li>`<code>application/expect-ct-report+json</code>` <a data-link-type="biblio" href="#biblio-expect-ct">[EXPECT-CT]</a> 
-    <li>`<code>application/xss-auditor-report</code>` 
-    <li>`<code>application/ocsp-request</code>` <a data-link-type="biblio" href="#biblio-ocsp">[OCSP]</a> 
+    <li>`<code>application/csp-report</code>` <a data-link-type="biblio" href="#biblio-csp">[CSP]</a>
+    <li>`<code>application/expect-ct-report+json</code>` <a data-link-type="biblio" href="#biblio-expect-ct">[EXPECT-CT]</a>
+    <li>`<code>application/xss-auditor-report</code>`
+    <li>`<code>application/ocsp-request</code>` <a data-link-type="biblio" href="#biblio-ocsp">[OCSP]</a>
    </ul>
    <p>Specifications should avoid introducing new exceptions and should only do so with careful
 consideration for the security consequences. New exceptions can be proposed by <a href="https://github.com/whatwg/fetch/issues/new">filing an issue</a>. </p>
@@ -2133,23 +2133,23 @@ defined here as the ABNF defined in HTTP is not compatible with web content. <a 
 Existing web platform features have not always followed this pattern, which has been a major source
 of security vulnerabilities in those features over the years. In contrast, a <a data-link-type="dfn" href="https://mimesniff.spec.whatwg.org/#mime-type" id="ref-for-mime-type②">MIME type</a>’s <a data-link-type="dfn" href="https://mimesniff.spec.whatwg.org/#parameters" id="ref-for-parameters④">parameters</a> can typically be safely ignored. </p>
    <div class="example" id="example-extract-a-mime-type">
-    <a class="self-link" href="#example-extract-a-mime-type"></a> 
+    <a class="self-link" href="#example-extract-a-mime-type"></a>
     <p>This is how <a data-link-type="dfn" href="#concept-header-extract-mime-type" id="ref-for-concept-header-extract-mime-type④">extract a MIME type</a> functions in practice: </p>
     <table>
      <tbody>
       <tr>
-       <th>Headers (as on the network) 
-       <th>Output (<a data-link-type="dfn" href="https://mimesniff.spec.whatwg.org/#serialize-a-mime-type" id="ref-for-serialize-a-mime-type">serialized</a>) 
+       <th>Headers (as on the network)
+       <th>Output (<a data-link-type="dfn" href="https://mimesniff.spec.whatwg.org/#serialize-a-mime-type" id="ref-for-serialize-a-mime-type">serialized</a>)
       <tr>
        <td>
 <pre><code class="lang-http highlight">Content-Type: text/plain;charset=gbk, text/html
 </code></pre>
-       <td><code>text/html</code> 
+       <td><code>text/html</code>
       <tr>
        <td>
 <pre><code class="lang-http highlight">Content-Type: text/html;charset=gbk;a=b, text/html;x=y
 </code></pre>
-       <td rowspan="2"><code>text/html;x=y;charset=gbk</code> 
+       <td rowspan="2"><code>text/html;x=y;charset=gbk</code>
       <tr>
        <td>
 <pre><code class="lang-http highlight">Content-Type: text/html;charset=gbk;a=b
@@ -2161,13 +2161,13 @@ Content-Type: text/html;x=y
 Content-Type: x/x
 Content-Type: text/html;x=y
 </code></pre>
-       <td><code>text/html;x=y</code> 
+       <td><code>text/html;x=y</code>
       <tr>
        <td>
 <pre><code class="lang-http highlight">Content-Type: text/html
 Content-Type: cannot-parse
 </code></pre>
-       <td rowspan="3"><code>text/html</code> 
+       <td rowspan="3"><code>text/html</code>
       <tr>
        <td>
 <pre><code class="lang-http highlight">Content-Type: text/html
@@ -2279,10 +2279,10 @@ response <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-head
     <li>
      <p>If the following are true </p>
      <ul class="brief">
-      <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-origin" id="ref-for-concept-request-origin⑥">origin</a> is <a data-link-type="dfn">schemelessly same site</a> with <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url⑧">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-origin" id="ref-for-concept-url-origin③">origin</a> 
+      <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-origin" id="ref-for-concept-request-origin⑥">origin</a> is <a data-link-type="dfn">schemelessly same site</a> with <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url⑧">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-origin" id="ref-for-concept-url-origin③">origin</a>
       <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-origin" id="ref-for-concept-request-origin⑦">origin</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-scheme" id="ref-for-concept-url-scheme⑧">scheme</a> is
    "<code>https</code>" or <var>response</var>’s <a data-link-type="dfn" href="#concept-response-https-state" id="ref-for-concept-response-https-state①">HTTPS state</a> is
-   "<code>none</code>" 
+   "<code>none</code>"
      </ul>
      <p>then return <b>allowed</b>. </p>
      <p class="note" role="note">This prevents HTTPS responses with
@@ -2332,10 +2332,10 @@ the request. </p>
          <p>Otherwise, a user agent should set <var>value</var> to the first matching statement, if
       any, switching on <var>request</var>’s <a data-link-type="dfn" href="#concept-request-destination" id="ref-for-concept-request-destination①③">destination</a>: </p>
          <dl class="switch">
-          <dt>"<code>image</code>" 
-          <dd>`<code>image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5</code>` 
-          <dt>"<code>style</code>" 
-          <dd>`<code>text/css,*/*;q=0.1</code>` 
+          <dt>"<code>image</code>"
+          <dd>`<code>image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5</code>`
+          <dt>"<code>style</code>"
+          <dd>`<code>text/css,*/*;q=0.1</code>`
          </dl>
         <li>
          <p><a data-link-type="dfn" href="#concept-header-list-append" id="ref-for-concept-header-list-append③">Append</a> `<code>Accept</code>`/<var>value</var> to <var>request</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list⑥">header list</a>. </p>
@@ -2409,10 +2409,10 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
     "<code>https</code>" if all of the following conditions are true: </p>
        <ul class="brief">
         <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url①②">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-scheme" id="ref-for-concept-url-scheme①②">scheme</a> is
-     "<code>http</code>" 
-        <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url①③">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-host" id="ref-for-concept-url-host①">host</a> is a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-domain" id="ref-for-concept-domain">domain</a> 
+     "<code>http</code>"
+        <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url①③">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-host" id="ref-for-concept-url-host①">host</a> is a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-domain" id="ref-for-concept-domain">domain</a>
         <li>Matching <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url①④">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-host" id="ref-for-concept-url-host②">host</a> per <a href="https://tools.ietf.org/html/rfc6797#section-8.2">Known HSTS Host Domain Name Matching</a> results in either a superdomain match with an asserted <code>includeSubDomains</code> directive
-     or a congruent match (with or without an asserted <code>includeSubDomains</code> directive). <a data-link-type="biblio" href="#biblio-hsts">[HSTS]</a> 
+     or a congruent match (with or without an asserted <code>includeSubDomains</code> directive). <a data-link-type="biblio" href="#biblio-hsts">[HSTS]</a>
        </ul>
      </ol>
     <li>
@@ -2431,11 +2431,11 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
      <p>If <var>response</var> is null, then set <var>response</var> to the result of running the steps
   corresponding to the first matching statement: </p>
      <dl class="switch">
-      <dt><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url①⑤">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-origin" id="ref-for-concept-url-origin④">origin</a> is <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#same-origin" id="ref-for-same-origin②">same origin</a> with <var>request</var>’s <a data-link-type="dfn" href="#concept-request-origin" id="ref-for-concept-request-origin①⓪">origin</a>, and <var>request</var>’s <a data-link-type="dfn" href="#concept-request-response-tainting" id="ref-for-concept-request-response-tainting③">response tainting</a> is "<code>basic</code>" 
+      <dt><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url①⑤">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-origin" id="ref-for-concept-url-origin④">origin</a> is <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#same-origin" id="ref-for-same-origin②">same origin</a> with <var>request</var>’s <a data-link-type="dfn" href="#concept-request-origin" id="ref-for-concept-request-origin①⓪">origin</a>, and <var>request</var>’s <a data-link-type="dfn" href="#concept-request-response-tainting" id="ref-for-concept-request-response-tainting③">response tainting</a> is "<code>basic</code>"
       <dt><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url①⑥">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-scheme" id="ref-for-concept-url-scheme①③">scheme</a> is
-   "<code>data</code>" 
+   "<code>data</code>"
       <dt><var>request</var>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode⑦">mode</a> is
-   "<code>navigate</code>" or "<code>websocket</code>" 
+   "<code>navigate</code>" or "<code>websocket</code>"
       <dd>
        <ol>
         <li>
@@ -2446,11 +2446,11 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
        <p class="note no-backref" role="note">HTML assigns any documents and workers created from <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url" id="ref-for-concept-url⑨">URLs</a> whose <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-scheme" id="ref-for-concept-url-scheme①④">scheme</a> is "<code>data</code>" a unique <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin-opaque" id="ref-for-concept-origin-opaque">opaque origin</a>. Service
     workers can only be created from <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url" id="ref-for-concept-url①⓪">URLs</a> whose <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-scheme" id="ref-for-concept-url-scheme①⑤">scheme</a> is an <a data-link-type="dfn" href="#http-scheme" id="ref-for-http-scheme③">HTTP(S) scheme</a>. <a data-link-type="biblio" href="#biblio-html">[HTML]</a> <a data-link-type="biblio" href="#biblio-sw">[SW]</a> </p>
       <dt><var>request</var>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode⑧">mode</a> is
-   "<code>same-origin</code>" 
+   "<code>same-origin</code>"
       <dd>
        <p>Return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error①①">network error</a>. </p>
       <dt><var>request</var>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode⑨">mode</a> is
-   "<code>no-cors</code>" 
+   "<code>no-cors</code>"
       <dd>
        <ol>
         <li>
@@ -2467,11 +2467,11 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
          <p>Return a new <a data-link-type="dfn" href="#concept-response" id="ref-for-concept-response④⓪">response</a> whose <a data-link-type="dfn" href="#concept-response-status" id="ref-for-concept-response-status⑤">status</a> is <var>noCorsResponse</var>’s <a data-link-type="dfn" href="#concept-response-status" id="ref-for-concept-response-status⑥">status</a>, <a data-link-type="dfn" href="#concept-response-https-state" id="ref-for-concept-response-https-state②">HTTPS state</a> is <var>noCorsResponse</var>’s <a data-link-type="dfn" href="#concept-response-https-state" id="ref-for-concept-response-https-state③">HTTPS state</a>, and <a data-link-type="dfn" href="#concept-response-csp-list" id="ref-for-concept-response-csp-list">CSP list</a> is <var>noCorsResponse</var>’s <a data-link-type="dfn" href="#concept-response-csp-list" id="ref-for-concept-response-csp-list①">CSP list</a>. </p>
          <p class="warning">This is only an effective defense against side channel attacks if <var>noCorsResponse</var> is kept isolated from the process that initiated the request. </p>
        </ol>
-      <dt><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url①⑦">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-scheme" id="ref-for-concept-url-scheme①⑥">scheme</a> is not an <a data-link-type="dfn" href="#http-scheme" id="ref-for-http-scheme④">HTTP(S) scheme</a> 
+      <dt><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url①⑦">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-scheme" id="ref-for-concept-url-scheme①⑥">scheme</a> is not an <a data-link-type="dfn" href="#http-scheme" id="ref-for-http-scheme④">HTTP(S) scheme</a>
       <dd>
        <p>Return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error①③">network error</a>. </p>
-      <dt><var>request</var>’s <a data-link-type="dfn" href="#use-cors-preflight-flag" id="ref-for-use-cors-preflight-flag②">use-CORS-preflight flag</a> is set 
-      <dt><var>request</var>’s <a data-link-type="dfn" href="#unsafe-request-flag" id="ref-for-unsafe-request-flag①">unsafe-request flag</a> is set and either <var>request</var>’s <a data-link-type="dfn" href="#concept-request-method" id="ref-for-concept-request-method④">method</a> is not a <a data-link-type="dfn" href="#cors-safelisted-method" id="ref-for-cors-safelisted-method①">CORS-safelisted method</a> or <a data-link-type="dfn" href="#cors-unsafe-request-header-names" id="ref-for-cors-unsafe-request-header-names">CORS-unsafe request-header names</a> with <var>request</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list⑨">header list</a> <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-is-empty" id="ref-for-list-is-empty">is not empty</a> 
+      <dt><var>request</var>’s <a data-link-type="dfn" href="#use-cors-preflight-flag" id="ref-for-use-cors-preflight-flag②">use-CORS-preflight flag</a> is set
+      <dt><var>request</var>’s <a data-link-type="dfn" href="#unsafe-request-flag" id="ref-for-unsafe-request-flag①">unsafe-request flag</a> is set and either <var>request</var>’s <a data-link-type="dfn" href="#concept-request-method" id="ref-for-concept-request-method④">method</a> is not a <a data-link-type="dfn" href="#cors-safelisted-method" id="ref-for-cors-safelisted-method①">CORS-safelisted method</a> or <a data-link-type="dfn" href="#cors-unsafe-request-header-names" id="ref-for-cors-unsafe-request-header-names">CORS-unsafe request-header names</a> with <var>request</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list⑨">header list</a> <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-is-empty" id="ref-for-list-is-empty">is not empty</a>
       <dd>
        <ol>
         <li>
@@ -2484,7 +2484,7 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
         <li>
          <p>Return <var>corsWithPreflightResponse</var>. </p>
        </ol>
-      <dt>Otherwise 
+      <dt>Otherwise
       <dd>
        <ol>
         <li>
@@ -2516,12 +2516,12 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
       <li>
        <p>Set <var>response</var> to the following <a data-link-type="dfn" href="#concept-filtered-response" id="ref-for-concept-filtered-response⑨">filtered response</a> with <var>response</var> as its <a data-link-type="dfn" href="#concept-internal-response" id="ref-for-concept-internal-response⑦">internal response</a>, depending on <var>request</var>’s <a data-link-type="dfn" href="#concept-request-response-tainting" id="ref-for-concept-request-response-tainting⑨">response tainting</a>: </p>
        <dl class="switch compact">
-        <dt>"<code>basic</code>" 
-        <dd><a data-link-type="dfn" href="#concept-filtered-response-basic" id="ref-for-concept-filtered-response-basic">basic filtered response</a> 
-        <dt>"<code>cors</code>" 
-        <dd><a data-link-type="dfn" href="#concept-filtered-response-cors" id="ref-for-concept-filtered-response-cors①">CORS filtered response</a> 
-        <dt>"<code>opaque</code>" 
-        <dd><a data-link-type="dfn" href="#concept-filtered-response-opaque" id="ref-for-concept-filtered-response-opaque②">opaque filtered response</a> 
+        <dt>"<code>basic</code>"
+        <dd><a data-link-type="dfn" href="#concept-filtered-response-basic" id="ref-for-concept-filtered-response-basic">basic filtered response</a>
+        <dt>"<code>cors</code>"
+        <dd><a data-link-type="dfn" href="#concept-filtered-response-cors" id="ref-for-concept-filtered-response-cors①">CORS filtered response</a>
+        <dt>"<code>opaque</code>"
+        <dd><a data-link-type="dfn" href="#concept-filtered-response-opaque" id="ref-for-concept-filtered-response-opaque②">opaque filtered response</a>
        </dl>
      </ol>
     <li>
@@ -2540,10 +2540,10 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
      <p>If <var>response</var> is not a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error①⑦">network error</a> and any
   of the following algorithms returns <b>blocked</b>, then set <var>response</var> and <var>internalResponse</var> to a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error①⑧">network error</a>: </p>
      <ul class="brief">
-      <li><a href="https://w3c.github.io/webappsec-mixed-content/#should-block-response">should <var>internalResponse</var> to <var>request</var> be blocked as mixed content</a> <a data-link-type="biblio" href="#biblio-mix">[MIX]</a> 
-      <li><a href="https://w3c.github.io/webappsec-csp/#should-block-response">should <var>internalResponse</var> to <var>request</var> be blocked by Content Security Policy</a> <a data-link-type="biblio" href="#biblio-csp">[CSP]</a> 
-      <li><a data-link-type="dfn" href="#should-response-to-request-be-blocked-due-to-mime-type?" id="ref-for-should-response-to-request-be-blocked-due-to-mime-type?">should <var>internalResponse</var> to <var>request</var> be blocked due to its MIME type</a> 
-      <li><a data-link-type="dfn" href="#should-response-to-request-be-blocked-due-to-nosniff?" id="ref-for-should-response-to-request-be-blocked-due-to-nosniff?">should <var>internalResponse</var> to <var>request</var> be blocked due to nosniff</a> 
+      <li><a href="https://w3c.github.io/webappsec-mixed-content/#should-block-response">should <var>internalResponse</var> to <var>request</var> be blocked as mixed content</a> <a data-link-type="biblio" href="#biblio-mix">[MIX]</a>
+      <li><a href="https://w3c.github.io/webappsec-csp/#should-block-response">should <var>internalResponse</var> to <var>request</var> be blocked by Content Security Policy</a> <a data-link-type="biblio" href="#biblio-csp">[CSP]</a>
+      <li><a data-link-type="dfn" href="#should-response-to-request-be-blocked-due-to-mime-type?" id="ref-for-should-response-to-request-be-blocked-due-to-mime-type?">should <var>internalResponse</var> to <var>request</var> be blocked due to its MIME type</a>
+      <li><a data-link-type="dfn" href="#should-response-to-request-be-blocked-due-to-nosniff?" id="ref-for-should-response-to-request-be-blocked-due-to-nosniff?">should <var>internalResponse</var> to <var>request</var> be blocked due to nosniff</a>
      </ul>
     <li>
      <p>If <var>response</var>’s <a data-link-type="dfn" href="#concept-response-type" id="ref-for-concept-response-type⑥">type</a> is "<code>opaque</code>", <var>internalResponse</var>’s <a data-link-type="dfn" href="#concept-response-status" id="ref-for-concept-response-status⑦">status</a> is <code>206</code>, <var>internalResponse</var>’s <a data-link-type="dfn" href="#concept-response-range-requested-flag" id="ref-for-concept-response-range-requested-flag">range-requested flag</a> is set, and <var>request</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list①⓪">header list</a> does not <a data-link-type="dfn" href="#header-list-contains" id="ref-for-header-list-contains①⓪">contain</a> `<code>Range</code>`, then set <var>response</var> and <var>internalResponse</var> to a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error①⑨">network error</a>. </p>
@@ -2601,7 +2601,7 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
    <h3 class="heading settled" data-level="4.2" id="scheme-fetch"><span class="secno">4.2. </span><span class="content">Scheme fetch</span><span id="basic-fetch"></span><a class="self-link" href="#scheme-fetch"></a></h3>
    <p>To perform a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="concept-scheme-fetch">scheme fetch<span id="concept-basic-fetch"></span></dfn> using <var>request</var>, switch on <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url①⑨">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-scheme" id="ref-for-concept-url-scheme①⑧">scheme</a>, and run the associated steps: </p>
    <dl class="switch">
-    <dt>"<code>about</code>" 
+    <dt>"<code>about</code>"
     <dd>
      <p>If <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url②⓪">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#url-cannot-be-a-base-url-flag" id="ref-for-url-cannot-be-a-base-url-flag">cannot-be-a-base-URL flag</a> is
   set and <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-path" id="ref-for-concept-url-path①">path</a> contains a single string "<code>blank</code>", then return a new <a data-link-type="dfn" href="#concept-response" id="ref-for-concept-response④②">response</a> whose <a data-link-type="dfn" href="#concept-response-status-message" id="ref-for-concept-response-status-message③">status message</a> is `<code>OK</code>`, <a data-link-type="dfn" href="#concept-response-header-list" id="ref-for-concept-response-header-list①⑤">header list</a> consist of a single <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header⑤⑤">header</a> whose <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name④⑤">name</a> is `<code>Content-Type</code>` and <a data-link-type="dfn" href="#concept-header-value" id="ref-for-concept-header-value③⓪">value</a> is
@@ -2609,7 +2609,7 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
      <p>Otherwise, return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error②③">network error</a>. </p>
      <p class="note no-backref" role="note"><a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url" id="ref-for-concept-url①①">URLs</a> such as "<code>about:config</code>" are handled
   during <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsing-the-web.html#navigate" id="ref-for-navigate①">navigation</a> and result in a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error②④">network error</a> in the context of <a data-link-type="dfn" href="#concept-fetch" id="ref-for-concept-fetch②④">fetching</a>. </p>
-    <dt>"<code>blob</code>" 
+    <dt>"<code>blob</code>"
     <dd>
      <ol>
       <li>
@@ -2646,7 +2646,7 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
          <p>Return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error②⑥">network error</a>. </p>
        </ol>
      </ol>
-    <dt>"<code>data</code>" 
+    <dt>"<code>data</code>"
     <dd>
      <ol>
       <li>
@@ -2657,12 +2657,12 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
        <p>Return a <a data-link-type="dfn" href="#concept-response" id="ref-for-concept-response④④">response</a> whose <a data-link-type="dfn" href="#concept-response-status-message" id="ref-for-concept-response-status-message⑤">status message</a> is
    `<code>OK</code>`, <a data-link-type="dfn" href="#concept-response-header-list" id="ref-for-concept-response-header-list①⑧">header list</a> consist of a single <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header⑤⑥">header</a> whose <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name④⑥">name</a> is `<code>Content-Type</code>` and <a data-link-type="dfn" href="#concept-header-value" id="ref-for-concept-header-value③①">value</a> is <var>dataURLStruct</var>’s <a data-link-type="dfn" href="#data-url-struct-mime-type" id="ref-for-data-url-struct-mime-type">MIME type</a>, <a data-link-type="dfn" href="https://mimesniff.spec.whatwg.org/#serialize-a-mime-type-to-bytes" id="ref-for-serialize-a-mime-type-to-bytes">serialized</a>, <a data-link-type="dfn" href="#concept-response-body" id="ref-for-concept-response-body①④">body</a> is <var>dataURLStruct</var>’s <a data-link-type="dfn" href="#data-url-struct-body" id="ref-for-data-url-struct-body">body</a>, and <a data-link-type="dfn" href="#concept-response-https-state" id="ref-for-concept-response-https-state⑥">HTTPS state</a> is <var>request</var>’s <a data-link-type="dfn" href="#concept-request-client" id="ref-for-concept-request-client①⑤">client</a>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#https-state" id="ref-for-https-state③">HTTPS state</a> if <var>request</var>’s <a data-link-type="dfn" href="#concept-request-client" id="ref-for-concept-request-client①⑥">client</a> is non-null. </p>
      </ol>
-    <dt>"<code>file</code>" 
+    <dt>"<code>file</code>"
     <dd>
      <p>For now, unfortunate as it is, <code>file</code> <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url" id="ref-for-concept-url①②">URLs</a> are left as an exercise for
   the reader. </p>
      <p>When in doubt, return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error②⑧">network error</a>. </p>
-    <dt>"<code>ftp</code>" 
+    <dt>"<code>ftp</code>"
     <dd>
      <p>For now, unfortunate as it is, <code>ftp</code> <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url" id="ref-for-concept-url①③">URLs</a> are mostly left as an
   exercise for the reader. </p>
@@ -2679,10 +2679,10 @@ optionally with a <i>recursive flag</i>, run these steps: </p>
    `<code>OK</code>`, <a data-link-type="dfn" href="#concept-response-header-list" id="ref-for-concept-response-header-list①⑨">header list</a> consists of a single <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header⑤⑦">header</a> whose <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name④⑦">name</a> is `<code>Content-Type</code>` and whose <a data-link-type="dfn" href="#concept-header-value" id="ref-for-concept-header-value③②">value</a> is <var>mime</var>, <a data-link-type="dfn" href="#concept-response-body" id="ref-for-concept-response-body①⑤">body</a> is <var>body</var>, and <a data-link-type="dfn" href="#concept-response-https-state" id="ref-for-concept-response-https-state⑦">HTTPS state</a> is "<code>none</code>". </p>
      </ol>
      <p>When in doubt, return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error②⑨">network error</a>. </p>
-    <dt><a data-link-type="dfn" href="#http-scheme" id="ref-for-http-scheme⑥">HTTP(S) scheme</a> 
+    <dt><a data-link-type="dfn" href="#http-scheme" id="ref-for-http-scheme⑥">HTTP(S) scheme</a>
     <dd>
      <p>Return the result of performing an <a data-link-type="dfn" href="#concept-http-fetch" id="ref-for-concept-http-fetch⑤">HTTP fetch</a> using <var>request</var>. </p>
-    <dt>Otherwise 
+    <dt>Otherwise
     <dd>
      <p>Return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error③⓪">network error</a>. </p>
    </dl>
@@ -2716,8 +2716,8 @@ optional <i>CORS-preflight flag</i>, run these steps: </p>
            <p><var>request</var>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode①⓪">mode</a> is "<code>same-origin</code>" and <var>response</var>’s <a data-link-type="dfn" href="#concept-response-type" id="ref-for-concept-response-type⑧">type</a> is "<code>cors</code>" </p>
           <li>
            <p><var>request</var>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode①①">mode</a> is not "<code>no-cors</code>" and <var>response</var>’s <a data-link-type="dfn" href="#concept-response-type" id="ref-for-concept-response-type⑨">type</a> is "<code>opaque</code>" </p>
-          <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode②">redirect mode</a> is not "<code>manual</code>" and <var>response</var>’s <a data-link-type="dfn" href="#concept-response-type" id="ref-for-concept-response-type①⓪">type</a> is "<code>opaqueredirect</code>" 
-          <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode③">redirect mode</a> is not "<code>follow</code>" and <var>response</var>’s <a data-link-type="dfn" href="#concept-response-url-list" id="ref-for-concept-response-url-list⑦">URL list</a> has more than one item. 
+          <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode②">redirect mode</a> is not "<code>manual</code>" and <var>response</var>’s <a data-link-type="dfn" href="#concept-response-type" id="ref-for-concept-response-type①⓪">type</a> is "<code>opaqueredirect</code>"
+          <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode③">redirect mode</a> is not "<code>follow</code>" and <var>response</var>’s <a data-link-type="dfn" href="#concept-response-url-list" id="ref-for-concept-response-url-list⑦">URL list</a> has more than one item.
          </ul>
          <p>then return a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error③①">network error</a>. </p>
        </ol>
@@ -2730,7 +2730,7 @@ optional <i>CORS-preflight flag</i>, run these steps: </p>
        <ul class="brief">
         <li>
          <p>There is no <a data-link-type="dfn" href="#concept-cache-match-method" id="ref-for-concept-cache-match-method">method cache entry match</a> for <var>request</var>’s <a data-link-type="dfn" href="#concept-request-method" id="ref-for-concept-request-method⑦">method</a> using <var>request</var>, and either <var>request</var>’s <a data-link-type="dfn" href="#concept-request-method" id="ref-for-concept-request-method⑧">method</a> is a not a <a data-link-type="dfn" href="#cors-safelisted-method" id="ref-for-cors-safelisted-method②">CORS-safelisted method</a> or <var>request</var>’s <a data-link-type="dfn" href="#use-cors-preflight-flag" id="ref-for-use-cors-preflight-flag③">use-CORS-preflight flag</a> is set. </p>
-        <li>There is at least one <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-item" id="ref-for-list-item">item</a> in the <a data-link-type="dfn" href="#cors-unsafe-request-header-names" id="ref-for-cors-unsafe-request-header-names①">CORS-unsafe request-header names</a> with <var>request</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list①①">header list</a> for which there is no <a data-link-type="dfn" href="#concept-cache-match-header" id="ref-for-concept-cache-match-header">header-name cache entry match</a> using <var>request</var>. 
+        <li>There is at least one <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-item" id="ref-for-list-item">item</a> in the <a data-link-type="dfn" href="#cors-unsafe-request-header-names" id="ref-for-cors-unsafe-request-header-names①">CORS-unsafe request-header names</a> with <var>request</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list①①">header list</a> for which there is no <a data-link-type="dfn" href="#concept-cache-match-header" id="ref-for-concept-cache-match-header">header-name cache entry match</a> using <var>request</var>.
        </ul>
        <p>Then: </p>
        <ol>
@@ -2774,13 +2774,13 @@ optional <i>CORS-preflight flag</i>, run these steps: </p>
       <li>
        <p>Switch on <var>request</var>’s <a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode⑤">redirect mode</a>: </p>
        <dl class="switch">
-        <dt>"<code>error</code>" 
+        <dt>"<code>error</code>"
         <dd>
          <p>Set <var>response</var> to a <a data-link-type="dfn" href="#concept-network-error" id="ref-for-concept-network-error③④">network error</a>. </p>
-        <dt>"<code>manual</code>" 
+        <dt>"<code>manual</code>"
         <dd>
          <p>Set <var>response</var> to an <a data-link-type="dfn" href="#concept-filtered-response-opaque-redirect" id="ref-for-concept-filtered-response-opaque-redirect③">opaque-redirect filtered response</a> whose <a data-link-type="dfn" href="#concept-internal-response" id="ref-for-concept-internal-response①⓪">internal response</a> is <var>actualResponse</var>. </p>
-        <dt>"<code>follow</code>" 
+        <dt>"<code>follow</code>"
         <dd>
          <p>Set <var>response</var> to the result of performing <a data-link-type="dfn" href="#concept-http-redirect-fetch" id="ref-for-concept-http-redirect-fetch">HTTP-redirect fetch</a> using <var>request</var> and <var>response</var>. </p>
        </dl>
@@ -2887,9 +2887,9 @@ Range Requests</cite>. <a data-link-type="biblio" href="#biblio-http-range">[HTT
        <p>Let <i>credentials flag</i> be set if one of </p>
        <ul class="brief">
         <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode⑨">credentials mode</a> is
-     "<code>include</code>" 
+     "<code>include</code>"
         <li><var>request</var>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode①⓪">credentials mode</a> is
-     "<code>same-origin</code>" and <var>request</var>’s <a data-link-type="dfn" href="#concept-request-response-tainting" id="ref-for-concept-request-response-tainting①③">response tainting</a> is "<code>basic</code>" 
+     "<code>same-origin</code>" and <var>request</var>’s <a data-link-type="dfn" href="#concept-request-response-tainting" id="ref-for-concept-request-response-tainting①③">response tainting</a> is "<code>basic</code>"
        </ul>
        <p>is true, and unset otherwise. </p>
       <li>
@@ -2981,7 +2981,7 @@ Range Requests</cite>. <a data-link-type="biblio" href="#biblio-http-range">[HTT
            <p>Let <var>cookies</var> be the result of running the "cookie-string" algorithm (see <a href="https://tools.ietf.org/html/rfc6265#section-5.4">section 5.4</a> of <a data-link-type="biblio" href="#biblio-cookies">[COOKIES]</a>) with
        the user agent’s cookie store and <var>httpRequest</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url②⑥">current URL</a>. </p>
           <li>If <var>cookies</var> is not the empty string, append
-       `<code>Cookie</code>`/<var>cookies</var> to <var>httpRequest</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list②⑧">header list</a>. 
+       `<code>Cookie</code>`/<var>cookies</var> to <var>httpRequest</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list②⑧">header list</a>.
          </ol>
         <li>
          <p>If <var>httpRequest</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list②⑨">header list</a> <a data-link-type="dfn" href="#header-list-contains" id="ref-for-header-list-contains①⑧">does not contain</a> `<code>Authorization</code>`, then: </p>
@@ -3189,10 +3189,10 @@ Range Requests</cite>. <a data-link-type="biblio" href="#biblio-http-range">[HTT
     <li>
      <p>Switch on <var>request</var>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode①③">mode</a>: </p>
      <dl>
-      <dt>"<code>websocket</code>" 
+      <dt>"<code>websocket</code>"
       <dd>
        <p>Let <var>connection</var> be the result of <a data-link-type="dfn" href="#concept-websocket-connection-obtain" id="ref-for-concept-websocket-connection-obtain">obtaining a WebSocket connection</a>, given <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url③②">current URL</a>. </p>
-      <dt>Otherwise 
+      <dt>Otherwise
       <dd>
        <p>Let <var>connection</var> be the result of <a data-link-type="dfn" href="#concept-connection-obtain" id="ref-for-concept-connection-obtain">obtaining a connection</a>, given <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url③③">current URL</a>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url-origin" id="ref-for-concept-url-origin⑨">origin</a> and <var>credentials</var>. </p>
      </dl>
@@ -3442,13 +3442,13 @@ run these steps: </p>
    <p>A user agent has an associated <a data-link-type="dfn" href="#concept-cache" id="ref-for-concept-cache④">CORS-preflight cache</a>. A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="concept-cache">CORS-preflight cache</dfn> is a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list⑨">list</a> of <a data-link-type="dfn" href="#cache-entry" id="ref-for-cache-entry">cache entries</a>. </p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="cache-entry">cache entry</dfn> consists of: </p>
    <ul class="brief">
-    <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-origin">byte-serialized origin</dfn> (a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-sequence" id="ref-for-byte-sequence④">byte sequence</a>) 
-    <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-url">URL</dfn> (a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url" id="ref-for-concept-url①⑤">URL</a>) 
-    <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-max-age">max-age</dfn> (a number of seconds) 
-    <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-credentials">credentials</dfn> (a boolean) 
-    <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-method">method</dfn> (null, `<code>*</code>`, or a <a data-link-type="dfn" href="#concept-method" id="ref-for-concept-method①①">method</a>) 
+    <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-origin">byte-serialized origin</dfn> (a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-sequence" id="ref-for-byte-sequence④">byte sequence</a>)
+    <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-url">URL</dfn> (a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-url" id="ref-for-concept-url①⑤">URL</a>)
+    <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-max-age">max-age</dfn> (a number of seconds)
+    <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-credentials">credentials</dfn> (a boolean)
+    <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-method">method</dfn> (null, `<code>*</code>`, or a <a data-link-type="dfn" href="#concept-method" id="ref-for-concept-method①①">method</a>)
     <li><dfn class="dfn-paneled" data-dfn-for="cache entry" data-dfn-type="dfn" data-noexport id="concept-cache-header-name">header name</dfn> (null, `<code>*</code>`,
- or a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header⑥④">header</a> <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name⑤①">name</a>) 
+ or a <a data-link-type="dfn" href="#concept-header" id="ref-for-concept-header⑥④">header</a> <a data-link-type="dfn" href="#concept-header-name" id="ref-for-concept-header-name⑤①">name</a>)
    </ul>
    <p><a data-link-type="dfn" href="#cache-entry" id="ref-for-cache-entry①">Cache entries</a> must be removed after the seconds specified in their <a data-link-type="dfn" href="#concept-cache-max-age" id="ref-for-concept-cache-max-age③">max-age</a> field have passed since storing the entry. <a data-link-type="dfn" href="#cache-entry" id="ref-for-cache-entry②">Cache entries</a> may
 be removed before that moment arrives. </p>
@@ -3457,23 +3457,23 @@ be removed before that moment arrives. </p>
     <li>
      <p>Let <var>entry</var> be a <a data-link-type="dfn" href="#cache-entry" id="ref-for-cache-entry③">cache entry</a>, initialized as follows: </p>
      <dl>
-      <dt><a data-link-type="dfn" href="#concept-cache-origin" id="ref-for-concept-cache-origin">byte-serialized origin</a> 
+      <dt><a data-link-type="dfn" href="#concept-cache-origin" id="ref-for-concept-cache-origin">byte-serialized origin</a>
       <dd>
        <p>The result of <a data-link-type="dfn" href="#byte-serializing-a-request-origin" id="ref-for-byte-serializing-a-request-origin①">byte-serializing a request origin</a> with <var>request</var> </p>
-      <dt><a data-link-type="dfn" href="#concept-cache-url" id="ref-for-concept-cache-url">URL</a> 
+      <dt><a data-link-type="dfn" href="#concept-cache-url" id="ref-for-concept-cache-url">URL</a>
       <dd>
        <p><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url③⑥">current URL</a> </p>
-      <dt><a data-link-type="dfn" href="#concept-cache-max-age" id="ref-for-concept-cache-max-age④">max-age</a> 
+      <dt><a data-link-type="dfn" href="#concept-cache-max-age" id="ref-for-concept-cache-max-age④">max-age</a>
       <dd>
        <p><var>max-age</var> </p>
-      <dt><a data-link-type="dfn" href="#concept-cache-credentials" id="ref-for-concept-cache-credentials">credentials</a> 
+      <dt><a data-link-type="dfn" href="#concept-cache-credentials" id="ref-for-concept-cache-credentials">credentials</a>
       <dd>
        <p>True if <var>request</var>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode①⑤">credentials mode</a> is
    "<code>include</code>", and false otherwise </p>
-      <dt><a data-link-type="dfn" href="#concept-cache-method" id="ref-for-concept-cache-method">method</a> 
+      <dt><a data-link-type="dfn" href="#concept-cache-method" id="ref-for-concept-cache-method">method</a>
       <dd>
        <p><var>method</var> </p>
-      <dt><a data-link-type="dfn" href="#concept-cache-header-name" id="ref-for-concept-cache-header-name">header name</a> 
+      <dt><a data-link-type="dfn" href="#concept-cache-header-name" id="ref-for-concept-cache-header-name">header name</a>
       <dd>
        <p><var>headerName</var> </p>
      </dl>
@@ -3483,17 +3483,17 @@ be removed before that moment arrives. </p>
    <p>To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="concept-cache-clear">clear cache entries</dfn>, given a <var>request</var>, <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-remove" id="ref-for-list-remove②">remove</a> any <a data-link-type="dfn" href="#cache-entry" id="ref-for-cache-entry④">cache entries</a> in the user agent’s <a data-link-type="dfn" href="#concept-cache" id="ref-for-concept-cache⑥">CORS-preflight cache</a> whose <a data-link-type="dfn" href="#concept-cache-origin" id="ref-for-concept-cache-origin①">byte-serialized origin</a> is the result of <a data-link-type="dfn" href="#byte-serializing-a-request-origin" id="ref-for-byte-serializing-a-request-origin②">byte-serializing a request origin</a> with <var>request</var> and whose <a data-link-type="dfn" href="#concept-cache-url" id="ref-for-concept-cache-url①">URL</a> is <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url③⑦">current URL</a>. </p>
    <p>There is a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="concept-cache-match">cache entry match</dfn> for a <a data-link-type="dfn" href="#cache-entry" id="ref-for-cache-entry⑤">cache entry</a> <var>entry</var> with <var>request</var> if <var>entry</var>’s <a data-link-type="dfn" href="#concept-cache-origin" id="ref-for-concept-cache-origin②">byte-serialized origin</a> is the result of <a data-link-type="dfn" href="#byte-serializing-a-request-origin" id="ref-for-byte-serializing-a-request-origin③">byte-serializing a request origin</a> with <var>request</var>, <var>entry</var>’s <a data-link-type="dfn" href="#concept-cache-url" id="ref-for-concept-cache-url②">URL</a> is <var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url③⑧">current URL</a>, and one of </p>
    <ul class="brief">
-    <li><var>entry</var>’s <a data-link-type="dfn" href="#concept-cache-credentials" id="ref-for-concept-cache-credentials①">credentials</a> is true 
-    <li><var>entry</var>’s <a data-link-type="dfn" href="#concept-cache-credentials" id="ref-for-concept-cache-credentials②">credentials</a> is false and <var>request</var>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode①⑥">credentials mode</a> is not "<code>include</code>". 
+    <li><var>entry</var>’s <a data-link-type="dfn" href="#concept-cache-credentials" id="ref-for-concept-cache-credentials①">credentials</a> is true
+    <li><var>entry</var>’s <a data-link-type="dfn" href="#concept-cache-credentials" id="ref-for-concept-cache-credentials②">credentials</a> is false and <var>request</var>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode①⑥">credentials mode</a> is not "<code>include</code>".
    </ul>
    <p>is true. </p>
    <p>There is a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="concept-cache-match-method">method cache entry match</dfn> for <var>method</var> using <var>request</var> when there is a <a data-link-type="dfn" href="#cache-entry" id="ref-for-cache-entry⑥">cache entry</a> in the user agent’s <a data-link-type="dfn" href="#concept-cache" id="ref-for-concept-cache⑦">CORS-preflight cache</a> for which there is a <a data-link-type="dfn" href="#concept-cache-match" id="ref-for-concept-cache-match">cache entry match</a> with <var>request</var> and its <a data-link-type="dfn" href="#concept-cache-method" id="ref-for-concept-cache-method①">method</a> is <var>method</var> or `<code>*</code>`. </p>
    <p>There is a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="concept-cache-match-header">header-name cache entry match</dfn> for <var>headerName</var> using <var>request</var> when there is a <a data-link-type="dfn" href="#cache-entry" id="ref-for-cache-entry⑦">cache entry</a> in the user
 agent’s <a data-link-type="dfn" href="#concept-cache" id="ref-for-concept-cache⑧">CORS-preflight cache</a> for which there is a <a data-link-type="dfn" href="#concept-cache-match" id="ref-for-concept-cache-match①">cache entry match</a> with <var>request</var> and one of </p>
    <ul class="brief">
-    <li>its <a data-link-type="dfn" href="#concept-cache-header-name" id="ref-for-concept-cache-header-name①">header name</a> is a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-case-insensitive" id="ref-for-byte-case-insensitive①⑦">byte-case-insensitive</a> match for <var>headerName</var> 
+    <li>its <a data-link-type="dfn" href="#concept-cache-header-name" id="ref-for-concept-cache-header-name①">header name</a> is a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-case-insensitive" id="ref-for-byte-case-insensitive①⑦">byte-case-insensitive</a> match for <var>headerName</var>
     <li>its <a data-link-type="dfn" href="#concept-cache-header-name" id="ref-for-concept-cache-header-name②">header name</a> is `<code>*</code>` and <var>headerName</var> is not
- a <a data-link-type="dfn" href="#cors-non-wildcard-request-header-name" id="ref-for-cors-non-wildcard-request-header-name①">CORS non-wildcard request-header name</a> 
+ a <a data-link-type="dfn" href="#cors-non-wildcard-request-header-name" id="ref-for-cors-non-wildcard-request-header-name①">CORS non-wildcard request-header name</a>
    </ul>
    <p>is true. </p>
    <h3 class="heading settled" data-level="4.9" id="cors-check"><span class="secno">4.9. </span><span class="content">CORS check</span><a class="self-link" href="#cors-check"></a></h3>
@@ -3543,7 +3543,7 @@ low-level API for <a data-link-type="dfn" href="#concept-fetch" id="ref-for-conc
 more ground than <code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#xmlhttprequest" id="ref-for-xmlhttprequest⑤">XMLHttpRequest</a></code>, although it is
 currently lacking when it comes to request progression (not response progression). </p>
    <div class="example no-backref" id="fetch-blob-example">
-    <a class="self-link" href="#fetch-blob-example"></a> 
+    <a class="self-link" href="#fetch-blob-example"></a>
     <p>The <a data-link-type="functionish" href="#dom-global-fetch" id="ref-for-dom-global-fetch⑤"><code>fetch()</code></a> method makes it quite straightforward
  to <a data-link-type="dfn" href="#concept-fetch" id="ref-for-concept-fetch②⑦">fetch</a> a resource and extract its contents as a <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-Blob" id="ref-for-dfn-Blob①">Blob</a></code>: </p>
 <pre><code class="lang-javascript highlight">fetch<c- p>(</c-><c- u>"/music/pk/altes-kamuffel.flac"</c-><c- p>)</c->
@@ -3615,7 +3615,7 @@ headers are not exposed to client-side JavaScript this is deemed an acceptable c
 Implementations could chose the more efficient <code class="idl"><a data-link-type="idl" href="#headers" id="ref-for-headers①">Headers</a></code> object representation even for a <a data-link-type="dfn" href="#concept-header-list" id="ref-for-concept-header-list②⓪">header list</a>, as long as they also support an associated data structure for
 `<code>Set-Cookie</code>` headers. </p>
    <div class="example" id="example-headers-class">
-    <a class="self-link" href="#example-headers-class"></a> 
+    <a class="self-link" href="#example-headers-class"></a>
     <p>A <code class="idl"><a data-link-type="idl" href="#headers" id="ref-for-headers②">Headers</a></code> object can be initialized with various JavaScript data structures: </p>
 <pre><code class="lang-javascript highlight"><c- a>var</c-> meta <c- o>=</c-> <c- p>{</c-> <c- u>"Content-Type"</c-><c- o>:</c-> <c- u>"text/xml"</c-><c- p>,</c-> <c- u>"Breaking-Bad"</c-><c- o>:</c-> <c- u>"&lt;3"</c-> <c- p>}</c->
 <c- k>new</c-> Headers<c- p>(</c->meta<c- p>)</c->
@@ -3794,33 +3794,33 @@ when invoked, must run these steps: </p>
     <li>
      <p>Switch on <var>object</var>’s type: </p>
      <dl class="switch">
-      <dt><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-Blob" id="ref-for-dfn-Blob③">Blob</a></code> 
+      <dt><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-Blob" id="ref-for-dfn-Blob③">Blob</a></code>
       <dd>
        <p>Set <var>action</var> to an action that reads <var>object</var>. </p>
        <p>If <var>object</var>’s <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-type" id="ref-for-dfn-type①">type</a></code> attribute is not the empty byte sequence, set <var>Content-Type</var> to its value. </p>
        <p>Set <var>source</var> to <var>object</var>. </p>
-      <dt><code>BufferSource</code> 
+      <dt><code>BufferSource</code>
       <dd>
        <p><a data-link-type="dfn" href="#concept-enqueue-readablestream" id="ref-for-concept-enqueue-readablestream②">Enqueue</a> a <code>Uint8Array</code> object
     wrapping an <code>ArrayBuffer</code> containing a copy of the bytes held by <var>object</var> to <var>stream</var> and <a data-link-type="abstract-op" href="#concept-close-readablestream" id="ref-for-concept-close-readablestream②">close</a> <var>stream</var>. If that threw an exception, <a data-link-type="abstract-op" href="#concept-error-readablestream" id="ref-for-concept-error-readablestream③">error</a> <var>stream</var> with that exception. </p>
        <p>Set <var>source</var> to <var>object</var>. </p>
-      <dt><code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#formdata" id="ref-for-formdata①">FormData</a></code> 
+      <dt><code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#formdata" id="ref-for-formdata①">FormData</a></code>
       <dd>
        <p>Set <var>action</var> to an action that runs the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#multipart/form-data-encoding-algorithm" id="ref-for-multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>, with <var>object</var> as <var>form data set</var> and with <a data-link-type="dfn" href="https://encoding.spec.whatwg.org/#utf-8" id="ref-for-utf-8">UTF-8</a> as the explicit character encoding. </p>
        <p>Set <var>Content-Type</var> to `<code>multipart/form-data; boundary=</code>`, followed by the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#multipart/form-data-boundary-string" id="ref-for-multipart/form-data-boundary-string"><code>multipart/form-data</code> boundary string</a> generated by the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#multipart/form-data-encoding-algorithm" id="ref-for-multipart/form-data-encoding-algorithm①"><code>multipart/form-data</code> encoding algorithm</a>. </p>
        <p>Set <var>source</var> to <var>object</var>. </p>
-      <dt><code class="idl"><a data-link-type="idl" href="https://url.spec.whatwg.org/#urlsearchparams" id="ref-for-urlsearchparams①">URLSearchParams</a></code> 
+      <dt><code class="idl"><a data-link-type="idl" href="https://url.spec.whatwg.org/#urlsearchparams" id="ref-for-urlsearchparams①">URLSearchParams</a></code>
       <dd>
        <p>Set <var>action</var> to an action that runs the <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-urlencoded-serializer" id="ref-for-concept-urlencoded-serializer"><code>application/x-www-form-urlencoded</code> serializer</a> with <var>object</var>’s <a data-link-type="dfn" href="https://url.spec.whatwg.org/#concept-urlsearchparams-list" id="ref-for-concept-urlsearchparams-list">list</a>. </p>
        <p>Set <var>Content-Type</var> to
     `<code>application/x-www-form-urlencoded;charset=UTF-8</code>`. </p>
        <p>Set <var>source</var> to <var>object</var>. </p>
-      <dt><code>USVString</code> 
+      <dt><code>USVString</code>
       <dd>
        <p>Set <var>action</var> to an action that runs <a data-link-type="dfn" href="https://encoding.spec.whatwg.org/#utf-8-encode" id="ref-for-utf-8-encode">UTF-8 encode</a> on <var>object</var>. </p>
        <p>Set <var>Content-Type</var> to `<code>text/plain;charset=UTF-8</code>`. </p>
        <p>Set <var>source</var> to <var>object</var>. </p>
-      <dt><code class="idl"><a data-link-type="idl" href="#concept-readablestream" id="ref-for-concept-readablestream②⑤">ReadableStream</a></code> 
+      <dt><code class="idl"><a data-link-type="idl" href="#concept-readablestream" id="ref-for-concept-readablestream②⑤">ReadableStream</a></code>
       <dd>
        <p>If the <var>keepalive flag</var> is set, then <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-throw" id="ref-for-dfn-throw⑨">throw</a> a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror①①">TypeError</a></code>. </p>
        <p>If <var>object</var> is <a data-link-type="dfn" href="#concept-readablestream-disturbed" id="ref-for-concept-readablestream-disturbed①">disturbed</a> or <a data-link-type="dfn" href="#concept-readablestream-locked" id="ref-for-concept-readablestream-locked①">locked</a>, then <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-throw" id="ref-for-dfn-throw①⓪">throw</a> a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror①②">TypeError</a></code>. </p>
@@ -3866,14 +3866,14 @@ return true if <a data-link-type="dfn" href="#concept-body-disturbed" id="ref-fo
    <p>Objects implementing the <code class="idl"><a data-link-type="idl" href="#body" id="ref-for-body③">Body</a></code> mixin also have an associated <dfn class="dfn-paneled" data-dfn-for="Body" data-dfn-type="dfn" data-noexport id="concept-body-package-data">package data</dfn> algorithm, given <var>bytes</var>, a <var>type</var> and a <var>mimeType</var>, switches on <var>type</var>, and
 runs the associated steps: </p>
    <dl class="switch">
-    <dt><i>ArrayBuffer</i> 
+    <dt><i>ArrayBuffer</i>
     <dd>
      <p>Return a new <code>ArrayBuffer</code> whose contents are <var>bytes</var>. </p>
      <p class="note" role="note">Allocating an <code>ArrayBuffer</code> can throw a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror">RangeError</a></code>. </p>
-    <dt><i>Blob</i> 
+    <dt><i>Blob</i>
     <dd>
      <p>Return a <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-Blob" id="ref-for-dfn-Blob⑤">Blob</a></code> whose contents are <var>bytes</var> and <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-type" id="ref-for-dfn-type②">type</a></code> attribute is <var>mimeType</var>. </p>
-    <dt><i>FormData</i> 
+    <dt><i>FormData</i>
     <dd>
      <p>If <var>mimeType</var>’s <a data-link-type="dfn" href="https://mimesniff.spec.whatwg.org/#mime-type-essence" id="ref-for-mime-type-essence⑨">essence</a> is "<code>multipart/form-data</code>",
   then: </p>
@@ -3913,10 +3913,10 @@ runs the associated steps: </p>
        <p>Return a new <code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#formdata" id="ref-for-formdata④">FormData</a></code> object whose <a data-link-type="dfn" href="https://xhr.spec.whatwg.org/#concept-formdata-entry" id="ref-for-concept-formdata-entry④">entries</a> are <var>entries</var>. </p>
      </ol>
      <p>Otherwise, <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-throw" id="ref-for-dfn-throw①③">throw</a> a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror①⑤">TypeError</a></code>. </p>
-    <dt><i>JSON</i> 
+    <dt><i>JSON</i>
     <dd>
      <p>Return the result of running <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#parse-json-from-bytes" id="ref-for-parse-json-from-bytes">parse JSON from bytes</a> on <var>bytes</var>. </p>
-    <dt><i>text</i> 
+    <dt><i>text</i>
     <dd>
      <p>Return the result of running <a data-link-type="dfn" href="https://encoding.spec.whatwg.org/#utf-8-decode" id="ref-for-utf-8-decode">UTF-8 decode</a> on <var>bytes</var>. </p>
    </dl>
@@ -4008,88 +4008,88 @@ omitted from <a class="idl-code" data-link-type="enum" href="#requestmode" id="r
 initially a new <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#abortsignal" id="ref-for-abortsignal③">AbortSignal</a></code> object. </p>
    <p>A <code class="idl"><a data-link-type="idl" href="#request" id="ref-for-request⑦">Request</a></code> object’s <a data-link-type="dfn" href="#concept-body-body" id="ref-for-concept-body-body⑥">body</a> is its <a data-link-type="dfn" href="#concept-request-request" id="ref-for-concept-request-request">request</a>’s <a data-link-type="dfn" href="#concept-request-body" id="ref-for-concept-request-body③②">body</a>. </p>
    <dl class="domintro">
-    <dt><code><var>request</var> = new <a class="idl-code" data-link-type="constructor" href="#dom-request" id="ref-for-dom-request①">Request</a>(<var>input</var> [, <var>init</var>])</code> 
+    <dt><code><var>request</var> = new <a class="idl-code" data-link-type="constructor" href="#dom-request" id="ref-for-dom-request①">Request</a>(<var>input</var> [, <var>init</var>])</code>
     <dd>
      <p>Returns a new <var>request</var> whose <code class="idl"><a data-link-type="idl" href="#dom-request-url" id="ref-for-dom-request-url①">url</a></code> property is <var>input</var> if <var>input</var> is a string, and <var>input</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-url" id="ref-for-dom-request-url②">url</a></code> if <var>input</var> is a <code class="idl"><a data-link-type="idl" href="#request" id="ref-for-request⑧">Request</a></code> object. </p>
      <p>The <var>init</var> argument is an object whose properties can be set as follows:</p>
      <dl>
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-method" id="ref-for-dom-requestinit-method">method</a></code> 
-      <dd>A string to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-method" id="ref-for-dom-request-method①">method</a></code>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-headers" id="ref-for-dom-requestinit-headers">headers</a></code> 
-      <dd>A <code class="idl"><a data-link-type="idl" href="#headers" id="ref-for-headers①①">Headers</a></code> object, an object literal, or an array of two-item arrays to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-headers" id="ref-for-dom-request-headers①">headers</a></code>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-body" id="ref-for-dom-requestinit-body">body</a></code> 
-      <dd>A <code class="idl"><a data-link-type="idl" href="#bodyinit" id="ref-for-bodyinit①">BodyInit</a></code> object or null to set <var>request</var>’s <a data-link-type="dfn" href="#concept-request-body" id="ref-for-concept-request-body③③">body</a>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-referrer" id="ref-for-dom-requestinit-referrer">referrer</a></code> 
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-method" id="ref-for-dom-requestinit-method">method</a></code>
+      <dd>A string to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-method" id="ref-for-dom-request-method①">method</a></code>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-headers" id="ref-for-dom-requestinit-headers">headers</a></code>
+      <dd>A <code class="idl"><a data-link-type="idl" href="#headers" id="ref-for-headers①①">Headers</a></code> object, an object literal, or an array of two-item arrays to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-headers" id="ref-for-dom-request-headers①">headers</a></code>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-body" id="ref-for-dom-requestinit-body">body</a></code>
+      <dd>A <code class="idl"><a data-link-type="idl" href="#bodyinit" id="ref-for-bodyinit①">BodyInit</a></code> object or null to set <var>request</var>’s <a data-link-type="dfn" href="#concept-request-body" id="ref-for-concept-request-body③③">body</a>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-referrer" id="ref-for-dom-requestinit-referrer">referrer</a></code>
       <dd>A string whose value is a same-origin URL, "<code>about:client</code>", or the empty string,
-   to set <var>request</var>’s <a data-link-type="dfn" href="#concept-request-referrer" id="ref-for-concept-request-referrer⑧">referrer</a>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-referrerpolicy" id="ref-for-dom-requestinit-referrerpolicy">referrerPolicy</a></code> 
-      <dd>A <a data-link-type="dfn" href="https://w3c.github.io/webappsec-referrer-policy/#referrer-policy" id="ref-for-referrer-policy①">referrer policy</a> to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-referrerpolicy" id="ref-for-dom-request-referrerpolicy①">referrerPolicy</a></code>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-mode" id="ref-for-dom-requestinit-mode">mode</a></code> 
+   to set <var>request</var>’s <a data-link-type="dfn" href="#concept-request-referrer" id="ref-for-concept-request-referrer⑧">referrer</a>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-referrerpolicy" id="ref-for-dom-requestinit-referrerpolicy">referrerPolicy</a></code>
+      <dd>A <a data-link-type="dfn" href="https://w3c.github.io/webappsec-referrer-policy/#referrer-policy" id="ref-for-referrer-policy①">referrer policy</a> to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-referrerpolicy" id="ref-for-dom-request-referrerpolicy①">referrerPolicy</a></code>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-mode" id="ref-for-dom-requestinit-mode">mode</a></code>
       <dd>A string to indicate whether the request will use CORS, or will be restricted to same-origin
-   URLs. Sets <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-mode" id="ref-for-dom-request-mode①">mode</a></code>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-credentials" id="ref-for-dom-requestinit-credentials">credentials</a></code> 
+   URLs. Sets <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-mode" id="ref-for-dom-request-mode①">mode</a></code>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-credentials" id="ref-for-dom-requestinit-credentials">credentials</a></code>
       <dd>A string indicating whether credentials will be sent with the request always, never, or only
-   when sent to a same-origin URL. Sets <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-credentials" id="ref-for-dom-request-credentials①">credentials</a></code>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-cache" id="ref-for-dom-requestinit-cache">cache</a></code> 
-      <dd>A string indicating how the request will interact with the browser’s cache to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-cache" id="ref-for-dom-request-cache①">cache</a></code>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-redirect" id="ref-for-dom-requestinit-redirect">redirect</a></code> 
+   when sent to a same-origin URL. Sets <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-credentials" id="ref-for-dom-request-credentials①">credentials</a></code>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-cache" id="ref-for-dom-requestinit-cache">cache</a></code>
+      <dd>A string indicating how the request will interact with the browser’s cache to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-cache" id="ref-for-dom-request-cache①">cache</a></code>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-redirect" id="ref-for-dom-requestinit-redirect">redirect</a></code>
       <dd>A string indicating whether <var>request</var> follows redirects, results in an error upon
-   encountering a redirect, or returns the redirect (in an opaque fashion). Sets <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-redirect" id="ref-for-dom-request-redirect①">redirect</a></code>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-integrity" id="ref-for-dom-requestinit-integrity">integrity</a></code> 
-      <dd>A cryptographic hash of the resource to be fetched by <var>request</var>. Sets <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-integrity" id="ref-for-dom-request-integrity①">integrity</a></code>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-keepalive" id="ref-for-dom-requestinit-keepalive">keepalive</a></code> 
-      <dd>A boolean to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-keepalive" id="ref-for-dom-request-keepalive①">keepalive</a></code>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-signal" id="ref-for-dom-requestinit-signal">signal</a></code> 
-      <dd>An <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#abortsignal" id="ref-for-abortsignal④">AbortSignal</a></code> to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-signal" id="ref-for-dom-request-signal①">signal</a></code>. 
-      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-window" id="ref-for-dom-requestinit-window">window</a></code> 
-      <dd>Can only be null. Used to disassociate <var>request</var> from any <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window②">Window</a></code>. 
+   encountering a redirect, or returns the redirect (in an opaque fashion). Sets <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-redirect" id="ref-for-dom-request-redirect①">redirect</a></code>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-integrity" id="ref-for-dom-requestinit-integrity">integrity</a></code>
+      <dd>A cryptographic hash of the resource to be fetched by <var>request</var>. Sets <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-integrity" id="ref-for-dom-request-integrity①">integrity</a></code>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-keepalive" id="ref-for-dom-requestinit-keepalive">keepalive</a></code>
+      <dd>A boolean to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-keepalive" id="ref-for-dom-request-keepalive①">keepalive</a></code>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-signal" id="ref-for-dom-requestinit-signal">signal</a></code>
+      <dd>An <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#abortsignal" id="ref-for-abortsignal④">AbortSignal</a></code> to set <var>request</var>’s <code class="idl"><a data-link-type="idl" href="#dom-request-signal" id="ref-for-dom-request-signal①">signal</a></code>.
+      <dt><code class="idl"><a data-link-type="idl" href="#dom-requestinit-window" id="ref-for-dom-requestinit-window">window</a></code>
+      <dd>Can only be null. Used to disassociate <var>request</var> from any <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window②">Window</a></code>.
      </dl>
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-method" id="ref-for-dom-request-method②">method</a></code> 
-    <dd>Returns <var>request</var>’s HTTP method, which is "<code>GET</code>" by default. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-url" id="ref-for-dom-request-url③">url</a></code> 
-    <dd>Returns the URL of <var>request</var> as a string. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-headers" id="ref-for-dom-request-headers②">headers</a></code> 
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-method" id="ref-for-dom-request-method②">method</a></code>
+    <dd>Returns <var>request</var>’s HTTP method, which is "<code>GET</code>" by default.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-url" id="ref-for-dom-request-url③">url</a></code>
+    <dd>Returns the URL of <var>request</var> as a string.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-headers" id="ref-for-dom-request-headers②">headers</a></code>
     <dd>Returns a <code class="idl"><a data-link-type="idl" href="#headers" id="ref-for-headers①②">Headers</a></code> object consisting of the headers associated with <var>request</var>.
  Note that headers added in the network layer by the user agent will not be accounted for in this
- object, e.g., the "<code>Host</code>" header. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-destination" id="ref-for-dom-request-destination①">destination</a></code> 
+ object, e.g., the "<code>Host</code>" header.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-destination" id="ref-for-dom-request-destination①">destination</a></code>
     <dd>Returns the kind of resource requested by <var>request</var>, e.g., "<code>document</code>" or
- "<code>script</code>". 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-referrer" id="ref-for-dom-request-referrer①">referrer</a></code> 
+ "<code>script</code>".
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-referrer" id="ref-for-dom-request-referrer①">referrer</a></code>
     <dd>Returns the referrer of <var>request</var>. Its value can be a same-origin URL if
  explicitly set in <var>init</var>, the empty string to indicate no referrer, and
  "<code>about:client</code>" when defaulting to the global’s default. This is used during
- fetching to determine the value of the `<code>Referer</code>` header of the request being made. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-referrerpolicy" id="ref-for-dom-request-referrerpolicy②">referrerPolicy</a></code> 
+ fetching to determine the value of the `<code>Referer</code>` header of the request being made.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-referrerpolicy" id="ref-for-dom-request-referrerpolicy②">referrerPolicy</a></code>
     <dd>Returns the referrer policy associated with <var>request</var>. This is used during
- fetching to compute the value of the <var>request</var>’s referrer. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-mode" id="ref-for-dom-request-mode②">mode</a></code> 
+ fetching to compute the value of the <var>request</var>’s referrer.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-mode" id="ref-for-dom-request-mode②">mode</a></code>
     <dd>Returns the <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode①⑤">mode</a> associated with <var>request</var>, which is a string indicating
- whether the request will use CORS, or will be restricted to same-origin URLs. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-credentials" id="ref-for-dom-request-credentials②">credentials</a></code> 
+ whether the request will use CORS, or will be restricted to same-origin URLs.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-credentials" id="ref-for-dom-request-credentials②">credentials</a></code>
     <dd>Returns the <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode①⑨">credentials mode</a> associated with <var>request</var>, which is a string
  indicating whether credentials will be sent with the request always, never, or only when sent to a
- same-origin URL. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-cache" id="ref-for-dom-request-cache②">cache</a></code> 
+ same-origin URL.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-cache" id="ref-for-dom-request-cache②">cache</a></code>
     <dd>Returns the <a data-link-type="dfn" href="#concept-request-cache-mode" id="ref-for-concept-request-cache-mode①①">cache mode</a> associated with <var>request</var>, which is a string indicating
- how the request will interact with the browser’s cache when fetching. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-redirect" id="ref-for-dom-request-redirect②">redirect</a></code> 
+ how the request will interact with the browser’s cache when fetching.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-redirect" id="ref-for-dom-request-redirect②">redirect</a></code>
     <dd>Returns the <a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode⑧">redirect mode</a> associated with <var>request</var>, which is a string
- indicating how redirects for the request will be handled during fetching. A <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request①⓪②">request</a> will follow redirects by default. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-integrity" id="ref-for-dom-request-integrity②">integrity</a></code> 
+ indicating how redirects for the request will be handled during fetching. A <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request①⓪②">request</a> will follow redirects by default.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-integrity" id="ref-for-dom-request-integrity②">integrity</a></code>
     <dd>Returns <var>request</var>’s subresource integrity metadata, which is a cryptographic hash of
- the resource being fetched. Its value consists of multiple hashes separated by whitespace. <a data-link-type="biblio" href="#biblio-sri">[SRI]</a> 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-keepalive" id="ref-for-dom-request-keepalive②">keepalive</a></code> 
+ the resource being fetched. Its value consists of multiple hashes separated by whitespace. <a data-link-type="biblio" href="#biblio-sri">[SRI]</a>
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-keepalive" id="ref-for-dom-request-keepalive②">keepalive</a></code>
     <dd>Returns a boolean indicating whether or not <var>request</var> can outlive the global in which
- it was created. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-isreloadnavigation" id="ref-for-dom-request-isreloadnavigation①">isReloadNavigation</a></code> 
-    <dd>Returns a boolean indicating whether or not <var>request</var> is for a reload navigation. 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-ishistorynavigation" id="ref-for-dom-request-ishistorynavigation①">isHistoryNavigation</a></code> 
+ it was created.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-isreloadnavigation" id="ref-for-dom-request-isreloadnavigation①">isReloadNavigation</a></code>
+    <dd>Returns a boolean indicating whether or not <var>request</var> is for a reload navigation.
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-ishistorynavigation" id="ref-for-dom-request-ishistorynavigation①">isHistoryNavigation</a></code>
     <dd>Returns a boolean indicating whether or not <var>request</var> is for a history
- navigation (a.k.a. back-foward navigation). 
-    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-signal" id="ref-for-dom-request-signal②">signal</a></code> 
+ navigation (a.k.a. back-foward navigation).
+    <dt><code><var>request</var> . <a class="idl-code" data-link-type="attribute" href="#dom-request-signal" id="ref-for-dom-request-signal②">signal</a></code>
     <dd>Returns the signal associated with <var>request</var>, which is an <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#abortsignal" id="ref-for-abortsignal⑤">AbortSignal</a></code> object indicating whether or not <var>request</var> has been aborted, and its abort
- event handler. 
+ event handler.
    </dl>
    <hr>
    <p>The <dfn class="dfn-paneled idl-code" data-dfn-for="Request" data-dfn-type="constructor" data-export data-lt="Request(input, init)|constructor(input, init)|Request(input)|constructor(input)" id="dom-request"><code>Request(<var>input</var>, <var>init</var>)</code></dfn> constructor must run these steps: </p>
@@ -4142,42 +4142,42 @@ initially a new <code class="idl"><a data-link-type="idl" href="https://dom.spec
     <li>
      <p>Set <var>request</var> to a new <a data-link-type="dfn" href="#concept-request" id="ref-for-concept-request①⓪④">request</a> with the following properties: </p>
      <dl>
-      <dt><a data-link-type="dfn" href="#concept-request-url" id="ref-for-concept-request-url③">URL</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url③⑨">current URL</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-method" id="ref-for-concept-request-method①⑨">method</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-method" id="ref-for-concept-request-method②⓪">method</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list④②">header list</a> 
-      <dd>A copy of <var>request</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list④③">header list</a>. 
-      <dt><a data-link-type="dfn" href="#unsafe-request-flag" id="ref-for-unsafe-request-flag②">unsafe-request flag</a> 
-      <dd>Set. 
-      <dt><a data-link-type="dfn" href="#concept-request-client" id="ref-for-concept-request-client①⑨">client</a> 
-      <dd><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object②">Current settings object</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-window" id="ref-for-concept-request-window①②">window</a> 
-      <dd><var>window</var>. 
-      <dt><a data-link-type="dfn" href="#concept-request-priority" id="ref-for-concept-request-priority②">priority</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-priority" id="ref-for-concept-request-priority③">priority</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-origin" id="ref-for-concept-request-origin①⑤">origin</a> 
-      <dd>"<code>client</code>". 
-      <dt><a data-link-type="dfn" href="#concept-request-referrer" id="ref-for-concept-request-referrer⑨">referrer</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-referrer" id="ref-for-concept-request-referrer①⓪">referrer</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-referrer-policy" id="ref-for-concept-request-referrer-policy⑧">referrer policy</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-referrer-policy" id="ref-for-concept-request-referrer-policy⑨">referrer policy</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode①⑥">mode</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode①⑦">mode</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode②⓪">credentials mode</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode②①">credentials mode</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-cache-mode" id="ref-for-concept-request-cache-mode①②">cache mode</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-cache-mode" id="ref-for-concept-request-cache-mode①③">cache mode</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode⑨">redirect mode</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode①⓪">redirect mode</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-integrity-metadata" id="ref-for-concept-request-integrity-metadata②">integrity metadata</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-integrity-metadata" id="ref-for-concept-request-integrity-metadata③">integrity metadata</a>. 
-      <dt><a data-link-type="dfn" href="#request-keepalive-flag" id="ref-for-request-keepalive-flag③">keepalive flag</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#request-keepalive-flag" id="ref-for-request-keepalive-flag④">keepalive flag</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-reload-navigation-flag" id="ref-for-concept-request-reload-navigation-flag">reload-navigation flag</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-reload-navigation-flag" id="ref-for-concept-request-reload-navigation-flag①">reload-navigation flag</a>. 
-      <dt><a data-link-type="dfn" href="#concept-request-history-navigation-flag" id="ref-for-concept-request-history-navigation-flag">history-navigation flag</a> 
-      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-history-navigation-flag" id="ref-for-concept-request-history-navigation-flag①">history-navigation flag</a>. 
+      <dt><a data-link-type="dfn" href="#concept-request-url" id="ref-for-concept-request-url③">URL</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-current-url" id="ref-for-concept-request-current-url③⑨">current URL</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-method" id="ref-for-concept-request-method①⑨">method</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-method" id="ref-for-concept-request-method②⓪">method</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list④②">header list</a>
+      <dd>A copy of <var>request</var>’s <a data-link-type="dfn" href="#concept-request-header-list" id="ref-for-concept-request-header-list④③">header list</a>.
+      <dt><a data-link-type="dfn" href="#unsafe-request-flag" id="ref-for-unsafe-request-flag②">unsafe-request flag</a>
+      <dd>Set.
+      <dt><a data-link-type="dfn" href="#concept-request-client" id="ref-for-concept-request-client①⑨">client</a>
+      <dd><a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object②">Current settings object</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-window" id="ref-for-concept-request-window①②">window</a>
+      <dd><var>window</var>.
+      <dt><a data-link-type="dfn" href="#concept-request-priority" id="ref-for-concept-request-priority②">priority</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-priority" id="ref-for-concept-request-priority③">priority</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-origin" id="ref-for-concept-request-origin①⑤">origin</a>
+      <dd>"<code>client</code>".
+      <dt><a data-link-type="dfn" href="#concept-request-referrer" id="ref-for-concept-request-referrer⑨">referrer</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-referrer" id="ref-for-concept-request-referrer①⓪">referrer</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-referrer-policy" id="ref-for-concept-request-referrer-policy⑧">referrer policy</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-referrer-policy" id="ref-for-concept-request-referrer-policy⑨">referrer policy</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode①⑥">mode</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-mode" id="ref-for-concept-request-mode①⑦">mode</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode②⓪">credentials mode</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-credentials-mode" id="ref-for-concept-request-credentials-mode②①">credentials mode</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-cache-mode" id="ref-for-concept-request-cache-mode①②">cache mode</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-cache-mode" id="ref-for-concept-request-cache-mode①③">cache mode</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode⑨">redirect mode</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-redirect-mode" id="ref-for-concept-request-redirect-mode①⓪">redirect mode</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-integrity-metadata" id="ref-for-concept-request-integrity-metadata②">integrity metadata</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-integrity-metadata" id="ref-for-concept-request-integrity-metadata③">integrity metadata</a>.
+      <dt><a data-link-type="dfn" href="#request-keepalive-flag" id="ref-for-request-keepalive-flag③">keepalive flag</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#request-keepalive-flag" id="ref-for-request-keepalive-flag④">keepalive flag</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-reload-navigation-flag" id="ref-for-concept-request-reload-navigation-flag">reload-navigation flag</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-reload-navigation-flag" id="ref-for-concept-request-reload-navigation-flag①">reload-navigation flag</a>.
+      <dt><a data-link-type="dfn" href="#concept-request-history-navigation-flag" id="ref-for-concept-request-history-navigation-flag">history-navigation flag</a>
+      <dd><var>request</var>’s <a data-link-type="dfn" href="#concept-request-history-navigation-flag" id="ref-for-concept-request-history-navigation-flag①">history-navigation flag</a>.
      </dl>
     <li>
      <p>If <var>init</var> <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#map-is-empty" id="ref-for-map-is-empty">is not empty</a>, then: </p>
@@ -4401,10 +4401,10 @@ run these steps: </p>
      <p>Set <var>clonedRequestObject</var>’s <a data-link-type="dfn" href="#request-headers" id="ref-for-request-headers⑦">headers</a> to a new <code class="idl"><a data-link-type="idl" href="#headers" id="ref-for-headers①⑥">Headers</a></code> object
   with the following properties: </p>
      <dl>
-      <dt><a data-link-type="dfn" href="#concept-headers-header-list" id="ref-for-concept-headers-header-list①④">header list</a> 
-      <dd><var>clonedRequest</var>’s <a data-link-type="dfn" href="#concept-headers-header-list" id="ref-for-concept-headers-header-list①⑤">header list</a>. 
-      <dt><a data-link-type="dfn" href="#concept-headers-guard" id="ref-for-concept-headers-guard①⑧">guard</a> 
-      <dd>The <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#context-object" id="ref-for-context-object③⑧">context object</a>’s <a data-link-type="dfn" href="#request-headers" id="ref-for-request-headers⑧">headers</a>’s <a data-link-type="dfn" href="#concept-headers-guard" id="ref-for-concept-headers-guard①⑨">guard</a>. 
+      <dt><a data-link-type="dfn" href="#concept-headers-header-list" id="ref-for-concept-headers-header-list①④">header list</a>
+      <dd><var>clonedRequest</var>’s <a data-link-type="dfn" href="#concept-headers-header-list" id="ref-for-concept-headers-header-list①⑤">header list</a>.
+      <dt><a data-link-type="dfn" href="#concept-headers-guard" id="ref-for-concept-headers-guard①⑧">guard</a>
+      <dd>The <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#context-object" id="ref-for-context-object③⑧">context object</a>’s <a data-link-type="dfn" href="#request-headers" id="ref-for-request-headers⑧">headers</a>’s <a data-link-type="dfn" href="#concept-headers-guard" id="ref-for-concept-headers-guard①⑨">guard</a>.
      </dl>
     <li>
      <p>Make <var>clonedRequestObject</var>’s <a data-link-type="dfn" href="#request-signal" id="ref-for-request-signal③">signal</a> <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#abortsignal-follow" id="ref-for-abortsignal-follow①">follow</a> the <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#context-object" id="ref-for-context-object③⑨">context object</a>’s <a data-link-type="dfn" href="#request-signal" id="ref-for-request-signal④">signal</a>. </p>
@@ -4568,7 +4568,7 @@ run these steps: </p>
        <p>Return <var>p</var>. </p>
      </ol>
     <li>If <var>request</var>’s <a data-link-type="dfn" href="#concept-request-client" id="ref-for-concept-request-client②⓪">client</a>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-settings-object-global" id="ref-for-concept-settings-object-global②">global object</a> is a <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/ServiceWorker/#serviceworkerglobalscope" id="ref-for-serviceworkerglobalscope">ServiceWorkerGlobalScope</a></code> object,
- then set <var>request</var>’s <a data-link-type="dfn" href="#request-service-workers-mode" id="ref-for-request-service-workers-mode④">service-workers mode</a> to "<code>none</code>". 
+ then set <var>request</var>’s <a data-link-type="dfn" href="#request-service-workers-mode" id="ref-for-request-service-workers-mode④">service-workers mode</a> to "<code>none</code>".
     <li>
      <p>Let <var>responseObject</var> be a new <code class="idl"><a data-link-type="idl" href="#response" id="ref-for-response①②">Response</a></code> object and a new associated <code class="idl"><a data-link-type="idl" href="#headers" id="ref-for-headers②③">Headers</a></code> object whose <a data-link-type="dfn" href="#concept-headers-guard" id="ref-for-concept-headers-guard②⑤">guard</a> is
  "<code>immutable</code>". </p>
@@ -4630,7 +4630,7 @@ communicating with the server through a side-channel are not included. </p>
    <p class="note no-backref" role="note">The server being able to observe garbage collection has precedent, e.g.,
 with <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/web-sockets.html#websocket" id="ref-for-websocket">WebSocket</a></code> and <code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#xmlhttprequest" id="ref-for-xmlhttprequest⑥">XMLHttpRequest</a></code> objects. </p>
    <div class="example no-backref" id="terminate-examples">
-    <a class="self-link" href="#terminate-examples"></a> 
+    <a class="self-link" href="#terminate-examples"></a>
     <p>The user agent can terminate the fetch because the termination cannot be observed. </p>
 <pre><code class="lang-javascript highlight">fetch<c- p>(</c-><c- u>"https://www.example.com/"</c-><c- p>)</c->
 </code></pre>
@@ -9710,57 +9710,65 @@ response to request be blocked due to nosniff?</a>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
