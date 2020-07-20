@@ -298,7 +298,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>The CSS Regions module allows content from one or more elements to flow through one or more boxes called CSS Regions, fragmented as defined in <a data-link-type="biblio" href="#biblio-css3-break">[CSS3-BREAK]</a>. This module also defines CSSOM to expose both the inputs and outputs of this fragmentation.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -447,7 +447,7 @@ on screen, on paper, etc.
 	over <em>there</em> (a <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain">region chain</a>)."
 	The simplest example is:</p>
    <div class="example" id="example-4d2695ea">
-    <a class="self-link" href="#example-4d2695ea"></a> 
+    <a class="self-link" href="#example-4d2695ea"></a>
 <pre><code>#this {
   flow-into: my-flow;
 }
@@ -477,7 +477,7 @@ on screen, on paper, etc.
     <a class="self-link" href="#example-8cf70305"></a> Linked display boxes can be created
 		to display article content above and below
 		other content on a page.
-		Given markup like this: 
+		Given markup like this:
 <pre><code class="html">&lt;article> ...some content... &lt;/article>
 &lt;aside> ad or image content &lt;/aside>
 </code></pre>
@@ -513,11 +513,11 @@ on screen, on paper, etc.
 		the article will continue
 		in the second box after the &lt;aside> content.</p>
     <figure style="float:left; margin:1em;">
-      <img alt="Article and aside rendering without CSS Regions" src="images/linked-boxes-before.png"> 
+      <img alt="Article and aside rendering without CSS Regions" src="images/linked-boxes-before.png">
      <figcaption> Rendering without CSS Regions </figcaption>
     </figure>
     <figure style="float:left; margin:1em;">
-      <img alt="Article and aside rendering with CSS Regions" src="images/linked-boxes-after.png"> 
+      <img alt="Article and aside rendering with CSS Regions" src="images/linked-boxes-after.png">
      <figcaption> Rendering with CSS Regions </figcaption>
     </figure>
     <p style="clear:left;">In the images above,
@@ -528,7 +528,7 @@ on screen, on paper, etc.
 		but more boxes could be added to the <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain④">region chain</a> to regularly interleave other content with the article.</p>
    </div>
    <div class="example" id="example-f605d07f">
-    <a class="self-link" href="#example-f605d07f"></a> 
+    <a class="self-link" href="#example-f605d07f"></a>
     <p>Custom overflow handling can be accomplished by linking a separate overflow box. In this example, the overflow box is nestled inside a menu in the markup, and only displays if the menu is toggled.</p>
 <pre><code class="html">&lt;nav> ...some links... &lt;/nav>
 
@@ -547,16 +547,16 @@ nav {
 </code></pre>
     <p>Then the main nav element and the menu can be arranged with constraints such that when the screen is too narrow for the main nav element to display all of the navigation links, the overflow moves to the menu.</p>
     <figure>
-      <img alt="Wide nav bar showing all of the links" src="images/menu-wide.png"> 
+      <img alt="Wide nav bar showing all of the links" src="images/menu-wide.png">
      <figcaption> Wide rendering with menu shown </figcaption>
     </figure>
     <figure>
-      <img alt="Narrow nav bar with some of the links in the menu" src="images/menu-narrow.png"> 
+      <img alt="Narrow nav bar with some of the links in the menu" src="images/menu-narrow.png">
      <figcaption> Narrow rendering with menu shown </figcaption>
     </figure>
    </div>
    <div class="example" id="example-ee40b35e">
-    <a class="self-link" href="#example-ee40b35e"></a> 
+    <a class="self-link" href="#example-ee40b35e"></a>
     <p>Since content is assigned to a <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑤">named flow</a> using a CSS selector, the content can come from multiple sources. The resulting aggregation can be displayed in a single box or flowed through multiple boxes as above.</p>
     <p>So given this markup:</p>
 <pre><code class="html">&lt;div class="breaking-news">&lt;/div>
@@ -578,7 +578,7 @@ nav {
     <p>Given more data accessible to CSS selectors, you could rearrange the articles in other ways (sports on top, etc.) depending on the user’s preferences.</p>
    </div>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p><strong><a data-link-type="dfn" href="#css-region" id="ref-for-css-region">CSS Regions</a> are independent from layout</strong></p>
     <p>Any of the CSS layout facilities can be used
 		to create, position and size boxes that can become <a data-link-type="dfn" href="#css-region" id="ref-for-css-region①">CSS Regions</a>.</p>
@@ -588,7 +588,7 @@ nav {
 		with existing and future CSS layout facilities.</p>
    </div>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p><strong><a data-link-type="dfn" href="#css-region" id="ref-for-css-region②">CSS Regions</a> do not have to be elements</strong></p>
     <p>The CSS Regions module is independent
 		of the layout of boxes and
@@ -661,7 +661,7 @@ nav {
    <h3 class="heading settled" data-level="3.1" id="the-flow-into-property"><span class="secno">3.1. </span><span class="content"> The <a class="property" data-link-type="propdesc" href="#propdef-flow-into" id="ref-for-propdef-flow-into①">flow-into</a> property</span><a class="self-link" href="#the-flow-into-property"></a></h3>
    <div class="issue-marker wrapper">
     <div class="issue-marker">
-      <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=16527">Issue-16527</a> 
+      <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=16527">Issue-16527</a>
      <div class="issue-details">
       <p class="short-desc">[Shadow]: getFlowByName and shadow DOM</p>
      </div>
@@ -679,33 +679,33 @@ nav {
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-flow-into">flow-into</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-ident" id="ref-for-typedef-ident">&lt;ident></a> [element<span id="ref-for-comb-one①">|</span>content]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt">?</a> 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-ident" id="ref-for-typedef-ident">&lt;ident></a> [element<span id="ref-for-comb-one①">|</span>content]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt">?</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td>All elements, but not <a href="https://www.w3.org/TR/selectors/#pseudo-elements">pseudo-elements</a> such as <code>::first-line</code>, <code>::first-letter</code>, <code>::before</code> or <code>::after</code>. 
+      <td>All elements, but not <a href="https://www.w3.org/TR/selectors/#pseudo-elements">pseudo-elements</a> such as <code>::first-line</code>, <code>::first-letter</code>, <code>::before</code> or <code>::after</code>.
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>as specified 
+      <td>as specified
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <dl>
     <dt>none
     <dd> The element is not moved
-			to a <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow②⓪">named flow</a> and normal CSS processing takes place. 
+			to a <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow②⓪">named flow</a> and normal CSS processing takes place.
     <dt><a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a>
     <dd> If the keyword <dfn data-dfn-type="dfn" data-noexport id="element">element<a class="self-link" href="#element"></a></dfn> is present
 			or neither keyword is present,
@@ -718,7 +718,7 @@ nav {
 			are placed into the named flow.
 			The element or content is said to have
 			a <dfn data-dfn-type="dfn" data-noexport id="specified-flow">specified flow<a class="self-link" href="#specified-flow"></a></dfn>.
-			The values <code class="css">none</code>, <code class="css">inherit</code>, <code class="css">default</code>, <code class="css">auto</code> and <code class="css">initial</code> are invalid flow names. 
+			The values <code class="css">none</code>, <code class="css">inherit</code>, <code class="css">default</code>, <code class="css">auto</code> and <code class="css">initial</code> are invalid flow names.
    </dl>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-flow-into" id="ref-for-propdef-flow-into②">flow-into</a> property affects
 	the visual formatting of elements or contents
@@ -773,7 +773,7 @@ nav {
    <p>If an element has <a data-link-type="dfn" href="https://drafts.csswg.org/css-contain-1/#style-containment" id="ref-for-style-containment">style containment</a> (See <a data-link-type="biblio" href="#biblio-css-contain-1">[CSS-CONTAIN-1]</a>),
 	then the <a class="property" data-link-type="propdesc" href="#propdef-flow-into" id="ref-for-propdef-flow-into⑦">flow-into</a> property must be <a data-link-type="dfn" href="https://drafts.csswg.org/css-contain-1/#property-scoped" id="ref-for-property-scoped">scoped</a> to that element.</p>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p>The <a class="property" data-link-type="propdesc" href="#propdef-flow-into" id="ref-for-propdef-flow-into⑧">flow-into</a> property moves an element into the flow
 		and the interplay with selectors should be considered carefully.</p>
     <p>For example,</p>
@@ -805,7 +805,7 @@ nav {
 		to avoid unintended results.</p>
    </div>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p>Another consequence of moving elements
 		into <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow③④">named flows</a> is that surrounding whitespace
 		is not moved into the named flow.
@@ -838,32 +838,32 @@ nav {
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-flow-from">flow-from</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-ident" id="ref-for-typedef-ident①">&lt;ident></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> none 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-ident" id="ref-for-typedef-ident①">&lt;ident></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> none
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td>Non-replaced <a href="https://www.w3.org/TR/CSS21/visuren.html#block-boxes">block containers</a>. <br> This might be expanded in future versions of the specification to allow other types of containers to receive flow content. 
+      <td>Non-replaced <a href="https://www.w3.org/TR/CSS21/visuren.html#block-boxes">block containers</a>. <br> This might be expanded in future versions of the specification to allow other types of containers to receive flow content.
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>as specified 
+      <td>as specified
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <dl>
     <dt><strong>none</strong>
-    <dd> The block container is not a <a data-link-type="dfn" href="#css-region" id="ref-for-css-region①③">CSS Region</a>. 
+    <dd> The block container is not a <a data-link-type="dfn" href="#css-region" id="ref-for-css-region①③">CSS Region</a>.
     <dt><strong><a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a></strong>
     <dd> The block container becomes a <a data-link-type="dfn" href="#css-region" id="ref-for-css-region①④">CSS Region</a> (except as detailed in the text below),
 			and is ordered in a <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain①⑨">region chain</a> according to its document order.
@@ -871,7 +871,7 @@ nav {
 			with the <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a> name will be <a href="#region-flow-break">broken
 			into fragments</a> and visually formatted in the <a href="https://www.w3.org/TR/CSS21/visuren.html#principal-box">principal boxes</a> of the <span>regions</span> in the <span id="ref-for-region-chain②⓪">region chain</span>. <br> If there is no flow with name <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a>,
 			then the block container does not
-			format any content visually. 
+			format any content visually.
    </dl>
    <p>If the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-content-3/#propdef-content" id="ref-for-propdef-content">content</a> property computes
 	to something else than <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#valdef-content-normal" id="ref-for-valdef-content-normal">normal</a> (or <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#valdef-content-none" id="ref-for-valdef-content-none">none</a> for a pseudo-element),
@@ -894,7 +894,7 @@ nav {
    <p>If an element has <a data-link-type="dfn" href="https://drafts.csswg.org/css-contain-1/#style-containment" id="ref-for-style-containment①">style containment</a> (See <a data-link-type="biblio" href="#biblio-css-contain-1">[CSS-CONTAIN-1]</a>),
 	then the <a class="property" data-link-type="propdesc" href="#propdef-flow-from" id="ref-for-propdef-flow-from⑥">flow-from</a> property must be <a data-link-type="dfn" href="https://drafts.csswg.org/css-contain-1/#property-scoped" id="ref-for-property-scoped①">scoped</a> to that element.</p>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p>A block container becomes a <a data-link-type="dfn" href="#css-region" id="ref-for-css-region①⑨">CSS Region</a> when its <a class="property" data-link-type="propdesc" href="#propdef-flow-from" id="ref-for-propdef-flow-from⑦">flow-from</a> property is set
 		to a valid <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a> value,
 		even if there is no content contributing
@@ -925,7 +925,7 @@ nav {
 		its children are not formatted visually.</p>
    </div>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p>At the time of this note-writing, the <code>display</code> values that
 		always result in a non-replaced block container include <code>block</code>, <code>inline-block</code>, <code>table-cell</code>, <code>table-caption</code>, and <code>list-item</code>. All of these
 		display values work as regions with non-replaced elements.</p>
@@ -940,7 +940,7 @@ nav {
 	laid out in <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain②②">region chains</a>,
 	just as for non-regions.</p>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p>With <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain②③">region chains</a>,
 		an element may be split across multiple boxes
 		and these boxes may overlap
@@ -981,14 +981,14 @@ nav {
    <p>The dependency graph consists of edges such that:</p>
    <ul>
     <li> Every <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow④⓪">named flow</a> depends on its elements
-		where the value of <a class="property" data-link-type="propdesc" href="#propdef-flow-from" id="ref-for-propdef-flow-from⑨">flow-from</a> computes to an <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a>. 
-    <li> Every element in a <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow④①">named flow</a> where the value of <a class="property" data-link-type="propdesc" href="#propdef-flow-from" id="ref-for-propdef-flow-from①⓪">flow-from</a> computes to an <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a> depends on the <span id="ref-for-named-flow④②">named flow</span> with the <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a> name. 
+		where the value of <a class="property" data-link-type="propdesc" href="#propdef-flow-from" id="ref-for-propdef-flow-from⑨">flow-from</a> computes to an <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a>.
+    <li> Every element in a <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow④①">named flow</a> where the value of <a class="property" data-link-type="propdesc" href="#propdef-flow-from" id="ref-for-propdef-flow-from①⓪">flow-from</a> computes to an <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a> depends on the <span id="ref-for-named-flow④②">named flow</span> with the <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a> name.
    </ul>
    <p>If the graph contains a cycle,
 	any elements where the value of <a class="property" data-link-type="propdesc" href="#propdef-flow-from" id="ref-for-propdef-flow-from①①">flow-from</a> computes to an <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier">&lt;ident></a> participating in the cycle
 	do not become <a data-link-type="dfn" href="#css-region" id="ref-for-css-region②⑦">CSS Regions</a>.</p>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p>For example, styling like this:</p>
 <pre>#id {
   flow-into: foolish;
@@ -1003,7 +1003,7 @@ nav {
 		So the <code>#id</code> element does not become a <span id="ref-for-css-region②⑨">CSS Region</span>.</p>
    </div>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p>The content keyword can be used to break cycles in some circumstances:</p>
 <pre>#id {
   flow-into: not-so-foolish content;
@@ -1049,28 +1049,28 @@ nav {
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-region-fragment">region-fragment</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> break 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> break
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="#css-region" id="ref-for-css-region③⑤">CSS Regions</a> 
+      <td><a data-link-type="dfn" href="#css-region" id="ref-for-css-region③⑤">CSS Regions</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p class="issue" id="issue-e3598b8f"><a class="self-link" href="#issue-e3598b8f"></a> The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-4/#propdef-continue" id="ref-for-propdef-continue">continue</a> property in <a data-link-type="biblio" href="#biblio-css-overflow-3">[css-overflow-3]</a> is likely to replace this property.</p>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-region-fragment" id="ref-for-propdef-region-fragment①">region-fragment</a> property controls the behavior
@@ -1080,7 +1080,7 @@ nav {
     <dd> Content flows as it would in a regular content box.
 			If the content exceeds the container box,
 			it is subject to the <a href="https://www.w3.org/TR/CSS21/visufx.html#propdef-overflow">overflow</a> property’s computed value on the <a data-link-type="dfn" href="#css-region" id="ref-for-css-region③⑥">CSS Region</a>.
-			Region breaks must be ignored on the <a data-link-type="dfn" href="#last-usable-region" id="ref-for-last-usable-region②">last usable region</a>. 
+			Region breaks must be ignored on the <a data-link-type="dfn" href="#last-usable-region" id="ref-for-last-usable-region②">last usable region</a>.
     <dt>break
     <dd>
      <p>If the content fits within the <a data-link-type="dfn" href="#css-region" id="ref-for-css-region③⑦">CSS Region</a>,
@@ -1096,7 +1096,7 @@ nav {
    <p>The following code sample illustrates
 	the usage of the <a class="property" data-link-type="propdesc" href="#propdef-region-fragment" id="ref-for-propdef-region-fragment③">region-fragment</a> property.</p>
    <div class="example" id="example-0bff9c90">
-    <a class="self-link" href="#example-0bff9c90"></a> 
+    <a class="self-link" href="#example-0bff9c90"></a>
 <pre>&lt;style>
   article {
     flow-into: article-flow;
@@ -1136,7 +1136,7 @@ nav {
     <figcaption> Combinations of region-fragment and overflow. </figcaption>
    </figure>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow">overflow</a> property is honored on a region:
 		if region content overflows,
 		such as the borders of elements
@@ -1261,8 +1261,8 @@ nav {
 	in document order.</p>
    <p>The <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑥⑤">named flow</a> states are :</p>
    <ul>
-    <li> <code class="idl">NULL</code>: the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑥⑥">named flow</a> contains no conent and has no <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain③②">region chain</a>. 
-    <li> <code class="idl">CREATED</code>: the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑥⑦">named flow</a> either contains content or has a <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain③③">region chain</a>. 
+    <li> <code class="idl">NULL</code>: the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑥⑥">named flow</a> contains no conent and has no <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain③②">region chain</a>.
+    <li> <code class="idl">CREATED</code>: the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑥⑦">named flow</a> either contains content or has a <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain③③">region chain</a>.
    </ul>
    <p>A <a data-link-type="idl" href="#namedflow" id="ref-for-namedflow①⓪">NamedFlow</a> object is live:
 	it always represents the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑥⑧">named flow</a> with the corresponding name even if
@@ -1287,7 +1287,7 @@ nav {
 			not able to fit the remaining content from the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑦⓪">named flow</a>.
 			Note that the region’s <a href="https://www.w3.org/TR/CSS21/visufx.html#overflow"> <code class="idl">overflow</code></a> property value can be used to control the
 			visibility of the overflowing content and the <a class="property" data-link-type="propdesc" href="#propdef-region-fragment" id="ref-for-propdef-region-fragment④">region-fragment</a> property controls whether or not fragmentation happens
-			on the content that overflows the <span id="ref-for-last-usable-region⑥">last usable region</span>. 
+			on the content that overflows the <span id="ref-for-last-usable-region⑥">last usable region</span>.
     <dt><span class="css">fit</span>
     <dd> The region’s flow fragment content
 			fits into the region’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#content-box" id="ref-for-content-box">content box</a>.
@@ -1302,9 +1302,9 @@ nav {
 			(for example if the region is too small
 			to accommodate any content).
 			This value is returned if the <a data-link-type="idl" href="#region" id="ref-for-region④">Region</a> object
-			is not (or no longer) a region. 
+			is not (or no longer) a region.
     <dt><span class="css">empty</span>
-    <dd> All content from the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑦③">named flow</a> was fitted in prior regions. 
+    <dd> All content from the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑦③">named flow</a> was fitted in prior regions.
    </dl>
    <p>If there is no content
 	in the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑦④">named flow</a>,
@@ -1379,7 +1379,7 @@ nav {
       <th>Context info
       <td>
        <ul>
-        <li><code class="attribute-name">Event.target</code>: <a data-link-type="idl" href="#namedflow" id="ref-for-namedflow①③">NamedFlow</a> whose fragmentation has changed. 
+        <li><code class="attribute-name">Event.target</code>: <a data-link-type="idl" href="#namedflow" id="ref-for-namedflow①③">NamedFlow</a> whose fragmentation has changed.
        </ul>
    </table>
    <p>The regionoversetchange event is dispatched
@@ -1413,7 +1413,7 @@ nav {
       <th>Context info
       <td>
        <ul>
-        <li><code class="attribute-name">Event.target</code>: <a data-link-type="idl" href="#namedflow" id="ref-for-namedflow①⑤">NamedFlow</a> whose <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain④③">region chain</a> has regionOverset values that have changed. 
+        <li><code class="attribute-name">Event.target</code>: <a data-link-type="idl" href="#namedflow" id="ref-for-namedflow①⑤">NamedFlow</a> whose <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain④③">region chain</a> has regionOverset values that have changed.
        </ul>
    </table>
    <h3 class="heading settled" data-level="4.4" id="cssomview-and-regions"><span class="secno">4.4. </span><span class="content"> Clarifications on pre-existing APIs</span><a class="self-link" href="#cssomview-and-regions"></a></h3>
@@ -1472,7 +1472,7 @@ nav {
 	is the <a data-link-type="dfn" href="#last-usable-region" id="ref-for-last-usable-region①⓪">last usable region</a> in a <span id="ref-for-region-chain④⑧">region chain</span>,
 	then the multicol region must follow the <a href="https://drafts.csswg.org/css3-multicol/#overflow-columns">overflow column rules</a> <a data-link-type="biblio" href="#biblio-css3col">[CSS3COL]</a>.</p>
    <div class="example" id="example-b3d3d94a">
-    <a class="self-link" href="#example-b3d3d94a"></a> 
+    <a class="self-link" href="#example-b3d3d94a"></a>
     <p>The following example:</p>
 <pre>&lt;style>
   article {
@@ -1574,12 +1574,12 @@ nav {
    <h3 class="heading settled" data-level="7.2" id="regions-flow-content-box"><span class="secno">7.2. </span><span class="content"> The Region Flow Content Box (RFCB)</span><a class="self-link" href="#regions-flow-content-box"></a></h3>
    <p>A region box lays out the following boxes:</p>
    <ul>
-    <li> The boxes generated by its <code>::before</code> and <code>::after</code> pseudo-elements, if any. 
+    <li> The boxes generated by its <code>::before</code> and <code>::after</code> pseudo-elements, if any.
     <li> The anonymous <dfn data-dfn-type="dfn" data-noexport id="region-flow-content-box">region flow content box<a class="self-link" href="#region-flow-content-box"></a></dfn> (called <dfn data-dfn-type="dfn" data-noexport id="rfcb">RFCB<a class="self-link" href="#rfcb"></a></dfn> in this document)
-			which contains the fragment of the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑧④">named flow</a> that the region receives. 
+			which contains the fragment of the <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑧④">named flow</a> that the region receives.
    </ul>
    <figure>
-     <img alt="The ::before, RFCB and ::after boxes contained in the Region Box" src="images/RFCB.svg" width="600"> 
+     <img alt="The ::before, RFCB and ::after boxes contained in the Region Box" src="images/RFCB.svg" width="600">
     <figcaption> The Region Flow Content Box (RFCB) </figcaption>
    </figure>
    <p>Laying out a <span>region</span> box follows the same processing rules
@@ -1604,15 +1604,15 @@ nav {
 	is a three-step process:</p>
    <ul>
     <li> <em>Step 1: RFCB <dfn data-dfn-type="dfn" data-noexport id="flow-fragment-height">flow fragment height<a class="self-link" href="#flow-fragment-height"></a></dfn> resolution</em>.
-			In this step, the heights of fragments fitting in the regions' RFCBs are resolved. 
+			In this step, the heights of fragments fitting in the regions' RFCBs are resolved.
     <li> <em>Step 2: document and regions layout</em>.
 			In this step, the document content and regions are laid out.
-			However, <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑧⑧">named flow</a> content is not laid out in regions yet. 
+			However, <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑧⑧">named flow</a> content is not laid out in regions yet.
     <li> <em>Step 3: <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑧⑨">named flow</a> layout</em>.
-			In this step, the content of <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑨⓪">named flows</a> is laid out in their respective <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain⑤①">region chains</a>. 
+			In this step, the content of <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow⑨⓪">named flows</a> is laid out in their respective <a data-link-type="dfn" href="#region-chain" id="ref-for-region-chain⑤①">region chains</a>.
    </ul>
    <figure>
-     <img alt="visual representation of the three-step process" src="images/regions-layout-three-steps.svg" width="600"> 
+     <img alt="visual representation of the three-step process" src="images/regions-layout-three-steps.svg" width="600">
     <figcaption> Regions visual formatting steps </figcaption>
    </figure>
    <h4 class="heading settled" data-level="7.3.1" id="rfcb-flow-fragment-height-resolution"><span class="secno">7.3.1. </span><span class="content"> Step 1: RFCB flow fragment height resolution</span><a class="self-link" href="#rfcb-flow-fragment-height-resolution"></a></h4>
@@ -1685,7 +1685,7 @@ nav {
 	and if the triggers are met
 	the events dispatch at this point.</p>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p>The model for resolving auto sized regions will cause,
 		under certain circumstances,
 		the flow content to be overset or underset.
@@ -1709,7 +1709,7 @@ nav {
    <p>This example considers a document where content flows between three regions,
 	and region boxes are intermixed with the normal document content.</p>
    <div class="example" id="example-5a116191">
-    <a class="self-link" href="#example-5a116191"></a> 
+    <a class="self-link" href="#example-5a116191"></a>
 <pre>&lt;style>
   article {
       flow-into: article;
@@ -1771,7 +1771,7 @@ nav {
 	of their containing block’s content box.</p>
    <ol>
     <li>
-     RFCB-A: stretches to fit the rA content box. 
+     RFCB-A: stretches to fit the rA content box.
      <p>Since rA also has an <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto" id="ref-for-valdef-width-auto②">auto</a> <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑧">width</a>, its own used <span class="property" id="ref-for-propdef-width⑨">width</span> is stretched to fit the <code>&lt;body></code> content box.</p>
     <li>RFCB-B: stretches to fit the <code>rB</code> content box.
     <li>RFCB-C: stretches to fit the <code>rC</code> content box.
@@ -1780,7 +1780,7 @@ nav {
 	the used values for the RFCBs <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height⑤">height</a> properties are all zero.</p>
    <p>Conceptually, this produces the layout illustrated below.</p>
    <figure>
-     <img alt="Step 1 - Phase 1: Layout RFCBs with used heights of 0" src="images/flow-fragment-height-phase-1.png" width="500"> 
+     <img alt="Step 1 - Phase 1: Layout RFCBs with used heights of 0" src="images/flow-fragment-height-phase-1.png" width="500">
     <figcaption> Step 1 - Phase 1: Layout RFCBs with used heights of 0 </figcaption>
    </figure>
    <h4 class="heading settled" data-level="7.5.2" id="step1-phase2-example"><span class="secno">7.5.2. </span><span class="content"> Step 1 - Phase 2: Layout flow to compute the RFCBs' flow fragments heights</span><a class="self-link" href="#step1-phase2-example"></a></h4>
@@ -1806,7 +1806,7 @@ nav {
 	the remaining content is laid out in RFCB-C’s used <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①③">width</a>.
 	This results in a resolved flow fragment height: FH-C.</p>
    <figure>
-     <img alt="Step 1 - Phase 2: Measure flow fragments heights" src="images/flow-fragment-height-phase-2.png" width="370"> 
+     <img alt="Step 1 - Phase 2: Measure flow fragments heights" src="images/flow-fragment-height-phase-2.png" width="370">
     <figcaption> Step 1 - Phase 2: Measure flow fragments heights </figcaption>
    </figure>
    <h4 class="heading settled" data-level="7.5.3" id="step2-example"><span class="secno">7.5.3. </span><span class="content"> Step 2: Layout document and regions without named flows</span><a class="self-link" href="#step2-example"></a></h4>
@@ -1822,7 +1822,7 @@ nav {
    <p>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height①②">height</a> of rC’s box results from <a href="https://www.w3.org/TR/CSS2/visudet.html#block-root-margin">calculating its content measure</a>:
 	FH-C becomes rC’s used <span class="property" id="ref-for-propdef-height①③">height</span>.</p>
    <figure>
-     <img alt="Step 2: Layout document and regions without named flows" src="images/regions-visual-formatting-step-2.png" width="370"> 
+     <img alt="Step 2: Layout document and regions without named flows" src="images/regions-visual-formatting-step-2.png" width="370">
     <figcaption> Step 2: Layout document and regions without <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow①⓪①">named flows</a> </figcaption>
    </figure>
    <h4 class="heading settled" data-level="7.5.4" id="step3-example"><span class="secno">7.5.4. </span><span class="content"> Step 3: named flows layout</span><a class="self-link" href="#step3-example"></a></h4>
@@ -1841,7 +1841,7 @@ nav {
    <p>There may be situations where the used <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height①⑥">height</a> of RFCBs resolved in Step 3 are different
 	from the <span>flow fragment height</span> computed in Step 1 Phase 2.</p>
    <figure>
-     <img alt="Step 3: Final result after laying out named flows in regions" src="images/regions-visual-formatting-step-3.png" width="370"> 
+     <img alt="Step 3: Final result after laying out named flows in regions" src="images/regions-visual-formatting-step-3.png" width="370">
     <figcaption> Step 3: Final result after laying out <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow①⓪③">named flows</a> in regions </figcaption>
    </figure>
    <h2 class="heading settled" data-level="8" id="relation-to-document-events"><span class="secno">8. </span><span class="content"> Relation to document events</span><a class="self-link" href="#relation-to-document-events"></a></h2>
@@ -1853,7 +1853,7 @@ nav {
 	that is part of a <a data-link-type="dfn" href="#named-flow" id="ref-for-named-flow①⓪④">named flow</a>,
 	the <a href="https://www.w3.org/TR/dom/#events">event’s bubble and capture phases</a> happen following the document tree order.</p>
    <div class="note" role="note">
-    <span class="note-prefix">Note </span> 
+    <span class="note-prefix">Note </span>
     <p>This means that in most cases <a data-link-type="dfn" href="#css-region" id="ref-for-css-region④③">CSS Regions</a> will not receive user events
 		that trigger on their named flow content.
 		Event handlers for named flow content can check <code><a href="https://drafts.csswg.org/cssom-view/#extensions-to-the-document-interface">getElementsFromPoint()</a></code> <a data-link-type="biblio" href="#biblio-cssom-view">[CSSOM-VIEW]</a> to find the <span id="ref-for-css-region④④">CSS Region</span> where the user event occurred.
@@ -1869,23 +1869,23 @@ nav {
    <ol>
     <li> CSS Fragmentation Module Level 3 <a data-link-type="biblio" href="#biblio-css3-break">[CSS3-BREAK]</a>.
 			This module defines the rules for fragmenting content over multiple containers
-			and applies to <a data-link-type="dfn" href="#css-region" id="ref-for-css-region④⑤">CSS Regions</a> in addition to applying to multi-column and paged media. 
+			and applies to <a data-link-type="dfn" href="#css-region" id="ref-for-css-region④⑤">CSS Regions</a> in addition to applying to multi-column and paged media.
     <li> CSS Pagination Templates Module Level 3 <a data-link-type="biblio" href="#biblio-css3-page-template">[CSS3-PAGE-TEMPLATE]</a>.
 			This module defines a syntax to define layout templates
 			which can be used when paginating content.
-			The page templates use regions. 
+			The page templates use regions.
     <li> CSS Exclusions Module <a data-link-type="biblio" href="#biblio-css3-exclusions">[CSS3-EXCLUSIONS]</a>.
 			This module defines a generic way to define exclusions
 			around which content can flow.
 			This can be seen as an extension to CSS floats.
 			In advanced layout designs,
 			it is expected that the CSS Exclusions module
-			will be commonly combined with the CSS Regions module. 
+			will be commonly combined with the CSS Regions module.
     <li> CSS Line Grid Module <a data-link-type="biblio" href="#biblio-css3-line-grid">[CSS3-LINE-GRID]</a>.
 			This module defines a concept of line grid
 			to align the position of lines in different elements.
 			The line grid functionality is related and needed
-			for aligning content flowing in separate regions. 
+			for aligning content flowing in separate regions.
    </ol>
    <h2 class="heading settled" data-level="10" id="usecases"><span class="secno">10. </span><span class="content"> Use Cases</span><a class="self-link" href="#usecases"></a></h2>
    <p>Use cases are described on <a href="http://wiki.csswg.org/spec/css3-regions/regions-use-cases">these</a> <a href="http://wiki.csswg.org/spec/css3-regions/regions-print-use-cases">pages</a>.</p>
@@ -1900,7 +1900,7 @@ nav {
    <ul>
     <li>Added three simpler examples to the introduction
     <li>Moved complex example to the <a href="http://wiki.csswg.org/spec/css3-regions/complex-layout-example">CSSWG wiki</a>
-    <li>Moved the effects of CSS containment to this specification from <a data-link-type="biblio" href="#biblio-css-contain-1">[CSS-CONTAIN-1]</a>. 
+    <li>Moved the effects of CSS containment to this specification from <a data-link-type="biblio" href="#biblio-css-contain-1">[CSS-CONTAIN-1]</a>.
    </ul>
    <h3 class="heading settled" data-level="11.3" id="changes_from_May_28_2013"><span class="secno">11.3. </span><span class="content"> Changes from <a href="https://www.w3.org/TR/2013/WD-css3-regions-20130528/">May 28<sup>th</sup> 2013</a> version</span><a class="self-link" href="#changes_from_May_28_2013"></a></h3>
    <ul>
@@ -2015,7 +2015,7 @@ nav {
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -2028,14 +2028,14 @@ nav {
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -2086,7 +2086,7 @@ nav {
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -2137,304 +2137,304 @@ nav {
   <aside class="dfn-panel" data-for="term-for-content-box">
    <a href="https://drafts.csswg.org/css-box-3/#content-box">https://drafts.csswg.org/css-box-3/#content-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-content-box">4.2. 
+    <li><a href="#ref-for-content-box">4.2.
 The Region mixin</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-break-before-always">
    <a href="https://drafts.csswg.org/css-break-4/#valdef-break-before-always">https://drafts.csswg.org/css-break-4/#valdef-break-before-always</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-always">3.3. 
+    <li><a href="#ref-for-valdef-break-before-always">3.3.
 Controlling Region Flow Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-break-before-auto">
    <a href="https://drafts.csswg.org/css-break-4/#valdef-break-before-auto">https://drafts.csswg.org/css-break-4/#valdef-break-before-auto</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-auto">3.3. 
+    <li><a href="#ref-for-valdef-break-before-auto">3.3.
 Controlling Region Flow Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-break-before-avoid">
    <a href="https://drafts.csswg.org/css-break-4/#valdef-break-before-avoid">https://drafts.csswg.org/css-break-4/#valdef-break-before-avoid</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-avoid">3.3. 
+    <li><a href="#ref-for-valdef-break-before-avoid">3.3.
 Controlling Region Flow Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-break-before-avoid-region">
    <a href="https://drafts.csswg.org/css-break-4/#valdef-break-before-avoid-region">https://drafts.csswg.org/css-break-4/#valdef-break-before-avoid-region</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-avoid-region">3.3. 
+    <li><a href="#ref-for-valdef-break-before-avoid-region">3.3.
 Controlling Region Flow Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-break-before-region">
    <a href="https://drafts.csswg.org/css-break-4/#valdef-break-before-region">https://drafts.csswg.org/css-break-4/#valdef-break-before-region</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-break-before-region">3.3. 
+    <li><a href="#ref-for-valdef-break-before-region">3.3.
 Controlling Region Flow Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-layout-containment">
    <a href="https://drafts.csswg.org/css-contain-1/#layout-containment">https://drafts.csswg.org/css-contain-1/#layout-containment</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-layout-containment">2.3. 
+    <li><a href="#ref-for-layout-containment">2.3.
 Last region</a> <a href="#ref-for-layout-containment①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-property-scoped">
    <a href="https://drafts.csswg.org/css-contain-1/#property-scoped">https://drafts.csswg.org/css-contain-1/#property-scoped</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-property-scoped">3.1. 
+    <li><a href="#ref-for-property-scoped">3.1.
 The flow-into property</a>
-    <li><a href="#ref-for-property-scoped①">3.2. 
+    <li><a href="#ref-for-property-scoped①">3.2.
 The flow-from property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-style-containment">
    <a href="https://drafts.csswg.org/css-contain-1/#style-containment">https://drafts.csswg.org/css-contain-1/#style-containment</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-style-containment">3.1. 
+    <li><a href="#ref-for-style-containment">3.1.
 The flow-into property</a>
-    <li><a href="#ref-for-style-containment①">3.2. 
+    <li><a href="#ref-for-style-containment①">3.2.
 The flow-from property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-content">
    <a href="https://drafts.csswg.org/css-content-3/#propdef-content">https://drafts.csswg.org/css-content-3/#propdef-content</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-content">3.2. 
+    <li><a href="#ref-for-propdef-content">3.2.
 The flow-from property</a> <a href="#ref-for-propdef-content①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-content-none">
    <a href="https://drafts.csswg.org/css-content-3/#valdef-content-none">https://drafts.csswg.org/css-content-3/#valdef-content-none</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-content-none">3.2. 
+    <li><a href="#ref-for-valdef-content-none">3.2.
 The flow-from property</a> <a href="#ref-for-valdef-content-none①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-content-normal">
    <a href="https://drafts.csswg.org/css-content-3/#valdef-content-normal">https://drafts.csswg.org/css-content-3/#valdef-content-normal</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-content-normal">3.2. 
+    <li><a href="#ref-for-valdef-content-normal">3.2.
 The flow-from property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-display">
    <a href="https://drafts.csswg.org/css-display-3/#propdef-display">https://drafts.csswg.org/css-display-3/#propdef-display</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-display">3.2. 
+    <li><a href="#ref-for-propdef-display">3.2.
 The flow-from property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-none">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-none">https://drafts.csswg.org/css-display-3/#valdef-display-none</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-none">3.2. 
+    <li><a href="#ref-for-valdef-display-none">3.2.
 The flow-from property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-overflow">
    <a href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow">https://drafts.csswg.org/css-overflow-3/#propdef-overflow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-overflow">3.4. 
+    <li><a href="#ref-for-propdef-overflow">3.4.
 The region-fragment property</a> <a href="#ref-for-propdef-overflow①">(2)</a> <a href="#ref-for-propdef-overflow②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-continue">
    <a href="https://drafts.csswg.org/css-overflow-4/#propdef-continue">https://drafts.csswg.org/css-overflow-4/#propdef-continue</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-continue">3.4. 
+    <li><a href="#ref-for-propdef-continue">3.4.
 The region-fragment property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-width-auto">
    <a href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto">https://drafts.csswg.org/css-sizing-3/#valdef-width-auto</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-width-auto">7.2. 
+    <li><a href="#ref-for-valdef-width-auto">7.2.
 The Region Flow Content Box (RFCB)</a>
-    <li><a href="#ref-for-valdef-width-auto①">7.5.1. 
+    <li><a href="#ref-for-valdef-width-auto①">7.5.1.
 Step 1 - Phase 1: Laying out RFCBs with used height of zero</a> <a href="#ref-for-valdef-width-auto②">(2)</a>
-    <li><a href="#ref-for-valdef-width-auto③">7.5.2. 
+    <li><a href="#ref-for-valdef-width-auto③">7.5.2.
 Step 1 - Phase 2: Layout flow to compute the RFCBs' flow fragments heights</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-ident">
    <a href="https://drafts.csswg.org/css-values-4/#typedef-ident">https://drafts.csswg.org/css-values-4/#typedef-ident</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-ident">3.1. 
+    <li><a href="#ref-for-typedef-ident">3.1.
 The flow-into property</a>
-    <li><a href="#ref-for-typedef-ident①">3.2. 
+    <li><a href="#ref-for-typedef-ident①">3.2.
 The flow-from property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-opt">
    <a href="https://drafts.csswg.org/css-values-4/#mult-opt">https://drafts.csswg.org/css-values-4/#mult-opt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-opt">3.1. 
+    <li><a href="#ref-for-mult-opt">3.1.
 The flow-into property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">3.1. 
+    <li><a href="#ref-for-comb-one">3.1.
 The flow-into property</a> <a href="#ref-for-comb-one①">(2)</a>
-    <li><a href="#ref-for-comb-one②">3.2. 
+    <li><a href="#ref-for-comb-one②">3.2.
 The flow-from property</a>
-    <li><a href="#ref-for-comb-one③">3.4. 
+    <li><a href="#ref-for-comb-one③">3.4.
 The region-fragment property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-height">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-height">https://drafts.csswg.org/css2/visudet.html#propdef-height</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-height">3.2. 
+    <li><a href="#ref-for-propdef-height">3.2.
 The flow-from property</a>
-    <li><a href="#ref-for-propdef-height①">7.2. 
+    <li><a href="#ref-for-propdef-height①">7.2.
 The Region Flow Content Box (RFCB)</a>
-    <li><a href="#ref-for-propdef-height②">7.3.1.2. 
+    <li><a href="#ref-for-propdef-height②">7.3.1.2.
 RFCB flow fragment height resolution, Phase 2</a>
-    <li><a href="#ref-for-propdef-height③">7.3.3. 
+    <li><a href="#ref-for-propdef-height③">7.3.3.
 Step 3: named flows layout</a>
-    <li><a href="#ref-for-propdef-height④">7.4. 
+    <li><a href="#ref-for-propdef-height④">7.4.
 Regions visual formatting: implementation note</a>
-    <li><a href="#ref-for-propdef-height⑤">7.5.1. 
+    <li><a href="#ref-for-propdef-height⑤">7.5.1.
 Step 1 - Phase 1: Laying out RFCBs with used height of zero</a>
-    <li><a href="#ref-for-propdef-height⑥">7.5.2. 
+    <li><a href="#ref-for-propdef-height⑥">7.5.2.
 Step 1 - Phase 2: Layout flow to compute the RFCBs' flow fragments heights</a> <a href="#ref-for-propdef-height⑦">(2)</a>
-    <li><a href="#ref-for-propdef-height⑧">7.5.3. 
+    <li><a href="#ref-for-propdef-height⑧">7.5.3.
 Step 2: Layout document and regions without named flows</a> <a href="#ref-for-propdef-height⑨">(2)</a> <a href="#ref-for-propdef-height①⓪">(3)</a> <a href="#ref-for-propdef-height①①">(4)</a> <a href="#ref-for-propdef-height①②">(5)</a> <a href="#ref-for-propdef-height①③">(6)</a>
-    <li><a href="#ref-for-propdef-height①④">7.5.4. 
+    <li><a href="#ref-for-propdef-height①④">7.5.4.
 Step 3: named flows layout</a> <a href="#ref-for-propdef-height①⑤">(2)</a> <a href="#ref-for-propdef-height①⑥">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-max-height">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-max-height">https://drafts.csswg.org/css2/visudet.html#propdef-max-height</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-max-height">7.3.1.2. 
+    <li><a href="#ref-for-propdef-max-height">7.3.1.2.
 RFCB flow fragment height resolution, Phase 2</a>
-    <li><a href="#ref-for-propdef-max-height①">7.5.2. 
+    <li><a href="#ref-for-propdef-max-height①">7.5.2.
 Step 1 - Phase 2: Layout flow to compute the RFCBs' flow fragments heights</a>
-    <li><a href="#ref-for-propdef-max-height②">7.5.3. 
+    <li><a href="#ref-for-propdef-max-height②">7.5.3.
 Step 2: Layout document and regions without named flows</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-width">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-width">https://drafts.csswg.org/css2/visudet.html#propdef-width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-width">3.2. 
+    <li><a href="#ref-for-propdef-width">3.2.
 The flow-from property</a>
-    <li><a href="#ref-for-propdef-width①">7.2. 
+    <li><a href="#ref-for-propdef-width①">7.2.
 The Region Flow Content Box (RFCB)</a>
-    <li><a href="#ref-for-propdef-width②">7.2.1. 
+    <li><a href="#ref-for-propdef-width②">7.2.1.
 RFCB width resolution</a> <a href="#ref-for-propdef-width③">(2)</a> <a href="#ref-for-propdef-width④">(3)</a>
-    <li><a href="#ref-for-propdef-width⑤">7.3.2. 
+    <li><a href="#ref-for-propdef-width⑤">7.3.2.
 Step 2: region boxes layout</a>
-    <li><a href="#ref-for-propdef-width⑥">7.3.3. 
+    <li><a href="#ref-for-propdef-width⑥">7.3.3.
 Step 3: named flows layout</a>
-    <li><a href="#ref-for-propdef-width⑦">7.5.1. 
+    <li><a href="#ref-for-propdef-width⑦">7.5.1.
 Step 1 - Phase 1: Laying out RFCBs with used height of zero</a> <a href="#ref-for-propdef-width⑧">(2)</a> <a href="#ref-for-propdef-width⑨">(3)</a>
-    <li><a href="#ref-for-propdef-width①⓪">7.5.2. 
+    <li><a href="#ref-for-propdef-width①⓪">7.5.2.
 Step 1 - Phase 2: Layout flow to compute the RFCBs' flow fragments heights</a> <a href="#ref-for-propdef-width①①">(2)</a> <a href="#ref-for-propdef-width①②">(3)</a> <a href="#ref-for-propdef-width①③">(4)</a>
-    <li><a href="#ref-for-propdef-width①④">7.5.3. 
+    <li><a href="#ref-for-propdef-width①④">7.5.3.
 Step 2: Layout document and regions without named flows</a>
-    <li><a href="#ref-for-propdef-width①⑤">7.5.4. 
+    <li><a href="#ref-for-propdef-width①⑤">7.5.4.
 Step 3: named flows layout</a> <a href="#ref-for-propdef-width①⑥">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-break-after">
    <a href="https://drafts.csswg.org/css-break-3/#propdef-break-after">https://drafts.csswg.org/css-break-3/#propdef-break-after</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-break-after">3.3. 
+    <li><a href="#ref-for-propdef-break-after">3.3.
 Controlling Region Flow Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-break-before">
    <a href="https://drafts.csswg.org/css-break-3/#propdef-break-before">https://drafts.csswg.org/css-break-3/#propdef-break-before</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-break-before">3.3. 
+    <li><a href="#ref-for-propdef-break-before">3.3.
 Controlling Region Flow Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-break-inside">
    <a href="https://drafts.csswg.org/css-break-3/#propdef-break-inside">https://drafts.csswg.org/css-break-3/#propdef-break-inside</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-break-inside">3.3. 
+    <li><a href="#ref-for-propdef-break-inside">3.3.
 Controlling Region Flow Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-column-fill">
    <a href="https://drafts.csswg.org/css-multicol-1/#propdef-column-fill">https://drafts.csswg.org/css-multicol-1/#propdef-column-fill</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-column-fill">5. 
+    <li><a href="#ref-for-propdef-column-fill">5.
 Multi-column regions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssomstring">
    <a href="https://drafts.csswg.org/cssom-1/#cssomstring">https://drafts.csswg.org/cssom-1/#cssomstring</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssomstring">4.1. 
+    <li><a href="#ref-for-cssomstring">4.1.
 The NamedFlow interface</a> <a href="#ref-for-cssomstring①">(2)</a> <a href="#ref-for-cssomstring②">(3)</a> <a href="#ref-for-cssomstring③">(4)</a> <a href="#ref-for-cssomstring④">(5)</a> <a href="#ref-for-cssomstring⑤">(6)</a>
-    <li><a href="#ref-for-cssomstring⑥">4.2. 
+    <li><a href="#ref-for-cssomstring⑥">4.2.
 The Region mixin</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-document">
    <a href="https://dom.spec.whatwg.org/#document">https://dom.spec.whatwg.org/#document</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-document">4.1. 
+    <li><a href="#ref-for-document">4.1.
 The NamedFlow interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-element">
    <a href="https://dom.spec.whatwg.org/#element">https://dom.spec.whatwg.org/#element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-element">4.2. 
+    <li><a href="#ref-for-element">4.2.
 The Region mixin</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-eventtarget">
    <a href="https://dom.spec.whatwg.org/#eventtarget">https://dom.spec.whatwg.org/#eventtarget</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventtarget">4.1. 
+    <li><a href="#ref-for-eventtarget">4.1.
 The NamedFlow interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-node">
    <a href="https://dom.spec.whatwg.org/#node">https://dom.spec.whatwg.org/#node</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-node">4.1. 
+    <li><a href="#ref-for-node">4.1.
 The NamedFlow interface</a> <a href="#ref-for-node①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-range">
    <a href="https://dom.spec.whatwg.org/#range">https://dom.spec.whatwg.org/#range</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-range">4.2. 
+    <li><a href="#ref-for-range">4.2.
 The Region mixin</a> <a href="#ref-for-range①">(2)</a> <a href="#ref-for-range②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-Exposed">
    <a href="https://heycam.github.io/webidl/#Exposed">https://heycam.github.io/webidl/#Exposed</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-Exposed">4.1. 
+    <li><a href="#ref-for-Exposed">4.1.
 The NamedFlow interface</a> <a href="#ref-for-Exposed①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-boolean">
    <a href="https://heycam.github.io/webidl/#idl-boolean">https://heycam.github.io/webidl/#idl-boolean</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-boolean">4.1. 
+    <li><a href="#ref-for-idl-boolean">4.1.
 The NamedFlow interface</a> <a href="#ref-for-idl-boolean①">(2)</a> <a href="#ref-for-idl-boolean②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-short">
    <a href="https://heycam.github.io/webidl/#idl-short">https://heycam.github.io/webidl/#idl-short</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-short">4.1. 
+    <li><a href="#ref-for-idl-short">4.1.
 The NamedFlow interface</a>
    </ul>
   </aside>
@@ -2681,334 +2681,342 @@ The NamedFlow interface</a>
   <aside class="dfn-panel" data-for="css-region">
    <b><a href="#css-region">#css-region</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-region">1. 
+    <li><a href="#ref-for-css-region">1.
 Introduction</a> <a href="#ref-for-css-region①">(2)</a> <a href="#ref-for-css-region②">(3)</a> <a href="#ref-for-css-region③">(4)</a>
-    <li><a href="#ref-for-css-region④">2.2. 
+    <li><a href="#ref-for-css-region④">2.2.
 Region chain</a> <a href="#ref-for-css-region⑤">(2)</a>
-    <li><a href="#ref-for-css-region⑥">2.3. 
+    <li><a href="#ref-for-css-region⑥">2.3.
 Last region</a>
-    <li><a href="#ref-for-css-region⑦">2.4. 
+    <li><a href="#ref-for-css-region⑦">2.4.
 Named flows</a>
-    <li><a href="#ref-for-css-region⑧">2.5. 
+    <li><a href="#ref-for-css-region⑧">2.5.
 Regions flow breaking rules</a> <a href="#ref-for-css-region⑨">(2)</a>
-    <li><a href="#ref-for-css-region①⓪">3.1. 
+    <li><a href="#ref-for-css-region①⓪">3.1.
 The flow-into property</a> <a href="#ref-for-css-region①①">(2)</a> <a href="#ref-for-css-region①②">(3)</a>
-    <li><a href="#ref-for-css-region①③">3.2. 
+    <li><a href="#ref-for-css-region①③">3.2.
 The flow-from property</a> <a href="#ref-for-css-region①④">(2)</a> <a href="#ref-for-css-region①⑤">(3)</a> <a href="#ref-for-css-region①⑥">(4)</a> <a href="#ref-for-css-region①⑦">(5)</a> <a href="#ref-for-css-region①⑧">(6)</a> <a href="#ref-for-css-region①⑨">(7)</a> <a href="#ref-for-css-region②⓪">(8)</a> <a href="#ref-for-css-region②①">(9)</a> <a href="#ref-for-css-region②②">(10)</a> <a href="#ref-for-css-region②③">(11)</a> <a href="#ref-for-css-region②④">(12)</a> <a href="#ref-for-css-region②⑤">(13)</a>
-    <li><a href="#ref-for-css-region②⑥">3.2.1. 
+    <li><a href="#ref-for-css-region②⑥">3.2.1.
 Cycle Detection</a> <a href="#ref-for-css-region②⑦">(2)</a> <a href="#ref-for-css-region②⑧">(3)</a> <a href="#ref-for-css-region②⑨">(4)</a> <a href="#ref-for-css-region③⓪">(5)</a>
-    <li><a href="#ref-for-css-region③①">3.2.2. 
+    <li><a href="#ref-for-css-region③①">3.2.2.
 Nested fragmentation contexts</a> <a href="#ref-for-css-region③②">(2)</a> <a href="#ref-for-css-region③③">(3)</a> <a href="#ref-for-css-region③④">(4)</a>
-    <li><a href="#ref-for-css-region③⑤">3.4. 
+    <li><a href="#ref-for-css-region③⑤">3.4.
 The region-fragment property</a> <a href="#ref-for-css-region③⑥">(2)</a> <a href="#ref-for-css-region③⑦">(3)</a> <a href="#ref-for-css-region③⑧">(4)</a>
-    <li><a href="#ref-for-css-region③⑨">4.1. 
+    <li><a href="#ref-for-css-region③⑨">4.1.
 The NamedFlow interface</a>
-    <li><a href="#ref-for-css-region④⓪">4.2. 
+    <li><a href="#ref-for-css-region④⓪">4.2.
 The Region mixin</a>
-    <li><a href="#ref-for-css-region④①">5. 
+    <li><a href="#ref-for-css-region④①">5.
 Multi-column regions</a>
-    <li><a href="#ref-for-css-region④②">6. 
+    <li><a href="#ref-for-css-region④②">6.
 Pseudo-elements</a>
-    <li><a href="#ref-for-css-region④③">8. 
+    <li><a href="#ref-for-css-region④③">8.
 Relation to document events</a> <a href="#ref-for-css-region④④">(2)</a>
-    <li><a href="#ref-for-css-region④⑤">9. 
+    <li><a href="#ref-for-css-region④⑤">9.
 Relation to other specifications</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="region-chain">
    <b><a href="#region-chain">#region-chain</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-region-chain">1. 
+    <li><a href="#ref-for-region-chain">1.
 Introduction</a> <a href="#ref-for-region-chain①">(2)</a> <a href="#ref-for-region-chain②">(3)</a> <a href="#ref-for-region-chain③">(4)</a> <a href="#ref-for-region-chain④">(5)</a>
-    <li><a href="#ref-for-region-chain⑤">2.2. 
+    <li><a href="#ref-for-region-chain⑤">2.2.
 Region chain</a> <a href="#ref-for-region-chain⑥">(2)</a>
-    <li><a href="#ref-for-region-chain⑦">2.3. 
+    <li><a href="#ref-for-region-chain⑦">2.3.
 Last region</a>
-    <li><a href="#ref-for-region-chain⑧">2.4. 
+    <li><a href="#ref-for-region-chain⑧">2.4.
 Named flows</a>
-    <li><a href="#ref-for-region-chain⑨">2.5. 
+    <li><a href="#ref-for-region-chain⑨">2.5.
 Regions flow breaking rules</a> <a href="#ref-for-region-chain①⓪">(2)</a> <a href="#ref-for-region-chain①①">(3)</a> <a href="#ref-for-region-chain①②">(4)</a>
-    <li><a href="#ref-for-region-chain①③">3.1. 
+    <li><a href="#ref-for-region-chain①③">3.1.
 The flow-into property</a> <a href="#ref-for-region-chain①④">(2)</a> <a href="#ref-for-region-chain①⑤">(3)</a> <a href="#ref-for-region-chain①⑥">(4)</a> <a href="#ref-for-region-chain①⑦">(5)</a> <a href="#ref-for-region-chain①⑧">(6)</a>
-    <li><a href="#ref-for-region-chain①⑨">3.2. 
+    <li><a href="#ref-for-region-chain①⑨">3.2.
 The flow-from property</a> <a href="#ref-for-region-chain②⓪">(2)</a> <a href="#ref-for-region-chain②①">(3)</a> <a href="#ref-for-region-chain②②">(4)</a> <a href="#ref-for-region-chain②③">(5)</a>
-    <li><a href="#ref-for-region-chain②④">3.2.1. 
+    <li><a href="#ref-for-region-chain②④">3.2.1.
 Cycle Detection</a> <a href="#ref-for-region-chain②⑤">(2)</a>
-    <li><a href="#ref-for-region-chain②⑥">3.2.2. 
+    <li><a href="#ref-for-region-chain②⑥">3.2.2.
 Nested fragmentation contexts</a>
-    <li><a href="#ref-for-region-chain②⑦">4.1. 
+    <li><a href="#ref-for-region-chain②⑦">4.1.
 The NamedFlow interface</a> <a href="#ref-for-region-chain②⑧">(2)</a> <a href="#ref-for-region-chain②⑨">(3)</a> <a href="#ref-for-region-chain③⓪">(4)</a> <a href="#ref-for-region-chain③①">(5)</a> <a href="#ref-for-region-chain③②">(6)</a> <a href="#ref-for-region-chain③③">(7)</a>
-    <li><a href="#ref-for-region-chain③④">4.2. 
+    <li><a href="#ref-for-region-chain③④">4.2.
 The Region mixin</a> <a href="#ref-for-region-chain③⑤">(2)</a> <a href="#ref-for-region-chain③⑥">(3)</a> <a href="#ref-for-region-chain③⑦">(4)</a> <a href="#ref-for-region-chain③⑧">(5)</a> <a href="#ref-for-region-chain③⑨">(6)</a> <a href="#ref-for-region-chain④⓪">(7)</a>
-    <li><a href="#ref-for-region-chain④①">4.3. 
+    <li><a href="#ref-for-region-chain④①">4.3.
 Named flow events</a> <a href="#ref-for-region-chain④②">(2)</a> <a href="#ref-for-region-chain④③">(3)</a>
-    <li><a href="#ref-for-region-chain④④">4.4.1. 
+    <li><a href="#ref-for-region-chain④④">4.4.1.
 getClientRects() and getBoundingClientRect()</a>
-    <li><a href="#ref-for-region-chain④⑤">5. 
+    <li><a href="#ref-for-region-chain④⑤">5.
 Multi-column regions</a> <a href="#ref-for-region-chain④⑥">(2)</a> <a href="#ref-for-region-chain④⑦">(3)</a> <a href="#ref-for-region-chain④⑧">(4)</a>
-    <li><a href="#ref-for-region-chain④⑨">6. 
+    <li><a href="#ref-for-region-chain④⑨">6.
 Pseudo-elements</a> <a href="#ref-for-region-chain⑤⓪">(2)</a>
-    <li><a href="#ref-for-region-chain⑤①">7.3. 
+    <li><a href="#ref-for-region-chain⑤①">7.3.
 Regions visual formatting steps</a>
-    <li><a href="#ref-for-region-chain⑤②">7.3.3. 
+    <li><a href="#ref-for-region-chain⑤②">7.3.3.
 Step 3: named flows layout</a>
-    <li><a href="#ref-for-region-chain⑤③">7.5.4. 
+    <li><a href="#ref-for-region-chain⑤③">7.5.4.
 Step 3: named flows layout</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="last-usable-region">
    <b><a href="#last-usable-region">#last-usable-region</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-last-usable-region">2.5. 
+    <li><a href="#ref-for-last-usable-region">2.5.
 Regions flow breaking rules</a>
-    <li><a href="#ref-for-last-usable-region①">3.4. 
+    <li><a href="#ref-for-last-usable-region①">3.4.
 The region-fragment property</a> <a href="#ref-for-last-usable-region②">(2)</a> <a href="#ref-for-last-usable-region③">(3)</a>
-    <li><a href="#ref-for-last-usable-region④">4.1. 
+    <li><a href="#ref-for-last-usable-region④">4.1.
 The NamedFlow interface</a>
-    <li><a href="#ref-for-last-usable-region⑤">4.2. 
+    <li><a href="#ref-for-last-usable-region⑤">4.2.
 The Region mixin</a> <a href="#ref-for-last-usable-region⑥">(2)</a> <a href="#ref-for-last-usable-region⑦">(3)</a> <a href="#ref-for-last-usable-region⑧">(4)</a> <a href="#ref-for-last-usable-region⑨">(5)</a>
-    <li><a href="#ref-for-last-usable-region①⓪">5. 
+    <li><a href="#ref-for-last-usable-region①⓪">5.
 Multi-column regions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="named-flow">
    <b><a href="#named-flow">#named-flow</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-named-flow">1. 
+    <li><a href="#ref-for-named-flow">1.
 Introduction</a> <a href="#ref-for-named-flow①">(2)</a> <a href="#ref-for-named-flow②">(3)</a> <a href="#ref-for-named-flow③">(4)</a> <a href="#ref-for-named-flow④">(5)</a> <a href="#ref-for-named-flow⑤">(6)</a>
-    <li><a href="#ref-for-named-flow⑥">2.1. 
+    <li><a href="#ref-for-named-flow⑥">2.1.
 Regions</a>
-    <li><a href="#ref-for-named-flow⑦">2.2. 
+    <li><a href="#ref-for-named-flow⑦">2.2.
 Region chain</a> <a href="#ref-for-named-flow⑧">(2)</a>
-    <li><a href="#ref-for-named-flow⑨">2.4. 
+    <li><a href="#ref-for-named-flow⑨">2.4.
 Named flows</a> <a href="#ref-for-named-flow①⓪">(2)</a> <a href="#ref-for-named-flow①①">(3)</a> <a href="#ref-for-named-flow①②">(4)</a> <a href="#ref-for-named-flow①③">(5)</a> <a href="#ref-for-named-flow①④">(6)</a>
-    <li><a href="#ref-for-named-flow①⑤">2.5. 
+    <li><a href="#ref-for-named-flow①⑤">2.5.
 Regions flow breaking rules</a> <a href="#ref-for-named-flow①⑥">(2)</a> <a href="#ref-for-named-flow①⑦">(3)</a> <a href="#ref-for-named-flow①⑧">(4)</a>
-    <li><a href="#ref-for-named-flow①⑨">3.1. 
+    <li><a href="#ref-for-named-flow①⑨">3.1.
 The flow-into property</a> <a href="#ref-for-named-flow②⓪">(2)</a> <a href="#ref-for-named-flow②①">(3)</a> <a href="#ref-for-named-flow②②">(4)</a> <a href="#ref-for-named-flow②③">(5)</a> <a href="#ref-for-named-flow②④">(6)</a> <a href="#ref-for-named-flow②⑤">(7)</a> <a href="#ref-for-named-flow②⑥">(8)</a> <a href="#ref-for-named-flow②⑦">(9)</a> <a href="#ref-for-named-flow②⑧">(10)</a> <a href="#ref-for-named-flow②⑨">(11)</a> <a href="#ref-for-named-flow③⓪">(12)</a> <a href="#ref-for-named-flow③①">(13)</a> <a href="#ref-for-named-flow③②">(14)</a> <a href="#ref-for-named-flow③③">(15)</a> <a href="#ref-for-named-flow③④">(16)</a>
-    <li><a href="#ref-for-named-flow③⑤">3.2. 
+    <li><a href="#ref-for-named-flow③⑤">3.2.
 The flow-from property</a> <a href="#ref-for-named-flow③⑥">(2)</a> <a href="#ref-for-named-flow③⑦">(3)</a>
-    <li><a href="#ref-for-named-flow③⑧">3.2.1. 
+    <li><a href="#ref-for-named-flow③⑧">3.2.1.
 Cycle Detection</a> <a href="#ref-for-named-flow③⑨">(2)</a> <a href="#ref-for-named-flow④⓪">(3)</a> <a href="#ref-for-named-flow④①">(4)</a> <a href="#ref-for-named-flow④②">(5)</a> <a href="#ref-for-named-flow④③">(6)</a> <a href="#ref-for-named-flow④④">(7)</a> <a href="#ref-for-named-flow④⑤">(8)</a> <a href="#ref-for-named-flow④⑥">(9)</a> <a href="#ref-for-named-flow④⑦">(10)</a>
-    <li><a href="#ref-for-named-flow④⑧">3.2.2. 
+    <li><a href="#ref-for-named-flow④⑧">3.2.2.
 Nested fragmentation contexts</a>
-    <li><a href="#ref-for-named-flow④⑨">3.4. 
+    <li><a href="#ref-for-named-flow④⑨">3.4.
 The region-fragment property</a>
-    <li><a href="#ref-for-named-flow⑤⓪">4.1. 
+    <li><a href="#ref-for-named-flow⑤⓪">4.1.
 The NamedFlow interface</a> <a href="#ref-for-named-flow⑤①">(2)</a> <a href="#ref-for-named-flow⑤②">(3)</a> <a href="#ref-for-named-flow⑤③">(4)</a> <a href="#ref-for-named-flow⑤④">(5)</a> <a href="#ref-for-named-flow⑤⑤">(6)</a> <a href="#ref-for-named-flow⑤⑥">(7)</a> <a href="#ref-for-named-flow⑤⑦">(8)</a> <a href="#ref-for-named-flow⑤⑧">(9)</a> <a href="#ref-for-named-flow⑤⑨">(10)</a> <a href="#ref-for-named-flow⑥⓪">(11)</a> <a href="#ref-for-named-flow⑥①">(12)</a> <a href="#ref-for-named-flow⑥②">(13)</a> <a href="#ref-for-named-flow⑥③">(14)</a> <a href="#ref-for-named-flow⑥④">(15)</a> <a href="#ref-for-named-flow⑥⑤">(16)</a> <a href="#ref-for-named-flow⑥⑥">(17)</a> <a href="#ref-for-named-flow⑥⑦">(18)</a> <a href="#ref-for-named-flow⑥⑧">(19)</a> <a href="#ref-for-named-flow⑥⑨">(20)</a>
-    <li><a href="#ref-for-named-flow⑦⓪">4.2. 
+    <li><a href="#ref-for-named-flow⑦⓪">4.2.
 The Region mixin</a> <a href="#ref-for-named-flow⑦①">(2)</a> <a href="#ref-for-named-flow⑦②">(3)</a> <a href="#ref-for-named-flow⑦③">(4)</a> <a href="#ref-for-named-flow⑦④">(5)</a> <a href="#ref-for-named-flow⑦⑤">(6)</a> <a href="#ref-for-named-flow⑦⑥">(7)</a> <a href="#ref-for-named-flow⑦⑦">(8)</a>
-    <li><a href="#ref-for-named-flow⑦⑧">4.4.2. 
+    <li><a href="#ref-for-named-flow⑦⑧">4.4.2.
 offsetTop, offsetLeft,
 offsetWidth, offsetHeight and offsetParent</a> <a href="#ref-for-named-flow⑦⑨">(2)</a>
-    <li><a href="#ref-for-named-flow⑧⓪">5. 
+    <li><a href="#ref-for-named-flow⑧⓪">5.
 Multi-column regions</a> <a href="#ref-for-named-flow⑧①">(2)</a>
-    <li><a href="#ref-for-named-flow⑧②">7. 
+    <li><a href="#ref-for-named-flow⑧②">7.
 Regions visual formatting details</a> <a href="#ref-for-named-flow⑧③">(2)</a>
-    <li><a href="#ref-for-named-flow⑧④">7.2. 
+    <li><a href="#ref-for-named-flow⑧④">7.2.
 The Region Flow Content Box (RFCB)</a>
-    <li><a href="#ref-for-named-flow⑧⑤">7.2.1. 
+    <li><a href="#ref-for-named-flow⑧⑤">7.2.1.
 RFCB width resolution</a> <a href="#ref-for-named-flow⑧⑥">(2)</a>
-    <li><a href="#ref-for-named-flow⑧⑦">7.3. 
+    <li><a href="#ref-for-named-flow⑧⑦">7.3.
 Regions visual formatting steps</a> <a href="#ref-for-named-flow⑧⑧">(2)</a> <a href="#ref-for-named-flow⑧⑨">(3)</a> <a href="#ref-for-named-flow⑨⓪">(4)</a>
-    <li><a href="#ref-for-named-flow⑨①">7.3.1.1. 
+    <li><a href="#ref-for-named-flow⑨①">7.3.1.1.
 RFCB flow fragment height resolution, Phase 1</a>
-    <li><a href="#ref-for-named-flow⑨②">7.3.1.2. 
+    <li><a href="#ref-for-named-flow⑨②">7.3.1.2.
 RFCB flow fragment height resolution, Phase 2</a> <a href="#ref-for-named-flow⑨③">(2)</a> <a href="#ref-for-named-flow⑨④">(3)</a>
-    <li><a href="#ref-for-named-flow⑨⑤">7.3.2. 
+    <li><a href="#ref-for-named-flow⑨⑤">7.3.2.
 Step 2: region boxes layout</a>
-    <li><a href="#ref-for-named-flow⑨⑥">7.3.3. 
+    <li><a href="#ref-for-named-flow⑨⑥">7.3.3.
 Step 3: named flows layout</a> <a href="#ref-for-named-flow⑨⑦">(2)</a> <a href="#ref-for-named-flow⑨⑧">(3)</a> <a href="#ref-for-named-flow⑨⑨">(4)</a>
-    <li><a href="#ref-for-named-flow①⓪⓪">7.4. 
+    <li><a href="#ref-for-named-flow①⓪⓪">7.4.
 Regions visual formatting: implementation note</a>
-    <li><a href="#ref-for-named-flow①⓪①">7.5.3. 
+    <li><a href="#ref-for-named-flow①⓪①">7.5.3.
 Step 2: Layout document and regions without named flows</a>
-    <li><a href="#ref-for-named-flow①⓪②">7.5.4. 
+    <li><a href="#ref-for-named-flow①⓪②">7.5.4.
 Step 3: named flows layout</a> <a href="#ref-for-named-flow①⓪③">(2)</a>
-    <li><a href="#ref-for-named-flow①⓪④">8. 
+    <li><a href="#ref-for-named-flow①⓪④">8.
 Relation to document events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-flow-into">
    <b><a href="#propdef-flow-into">#propdef-flow-into</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-flow-into">2.4. 
+    <li><a href="#ref-for-propdef-flow-into">2.4.
 Named flows</a>
-    <li><a href="#ref-for-propdef-flow-into①">3.1. 
+    <li><a href="#ref-for-propdef-flow-into①">3.1.
 The flow-into property</a> <a href="#ref-for-propdef-flow-into②">(2)</a> <a href="#ref-for-propdef-flow-into③">(3)</a> <a href="#ref-for-propdef-flow-into④">(4)</a> <a href="#ref-for-propdef-flow-into⑤">(5)</a> <a href="#ref-for-propdef-flow-into⑥">(6)</a> <a href="#ref-for-propdef-flow-into⑦">(7)</a> <a href="#ref-for-propdef-flow-into⑧">(8)</a> <a href="#ref-for-propdef-flow-into⑨">(9)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-flow-from">
    <b><a href="#propdef-flow-from">#propdef-flow-from</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-flow-from">1. 
+    <li><a href="#ref-for-propdef-flow-from">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-flow-from①">2.1. 
+    <li><a href="#ref-for-propdef-flow-from①">2.1.
 Regions</a>
-    <li><a href="#ref-for-propdef-flow-from②">2.4. 
+    <li><a href="#ref-for-propdef-flow-from②">2.4.
 Named flows</a>
-    <li><a href="#ref-for-propdef-flow-from③">3.2. 
+    <li><a href="#ref-for-propdef-flow-from③">3.2.
 The flow-from property</a> <a href="#ref-for-propdef-flow-from④">(2)</a> <a href="#ref-for-propdef-flow-from⑤">(3)</a> <a href="#ref-for-propdef-flow-from⑥">(4)</a> <a href="#ref-for-propdef-flow-from⑦">(5)</a>
-    <li><a href="#ref-for-propdef-flow-from⑧">3.2.1. 
+    <li><a href="#ref-for-propdef-flow-from⑧">3.2.1.
 Cycle Detection</a> <a href="#ref-for-propdef-flow-from⑨">(2)</a> <a href="#ref-for-propdef-flow-from①⓪">(3)</a> <a href="#ref-for-propdef-flow-from①①">(4)</a>
-    <li><a href="#ref-for-propdef-flow-from①②">4.2. 
+    <li><a href="#ref-for-propdef-flow-from①②">4.2.
 The Region mixin</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="nested-region-context">
    <b><a href="#nested-region-context">#nested-region-context</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-nested-region-context">7.3.1.2. 
+    <li><a href="#ref-for-nested-region-context">7.3.1.2.
 RFCB flow fragment height resolution, Phase 2</a>
-    <li><a href="#ref-for-nested-region-context①">7.3.3. 
+    <li><a href="#ref-for-nested-region-context①">7.3.3.
 Step 3: named flows layout</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-region-fragment">
    <b><a href="#propdef-region-fragment">#propdef-region-fragment</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-region-fragment">2.5. 
+    <li><a href="#ref-for-propdef-region-fragment">2.5.
 Regions flow breaking rules</a>
-    <li><a href="#ref-for-propdef-region-fragment①">3.4. 
+    <li><a href="#ref-for-propdef-region-fragment①">3.4.
 The region-fragment property</a> <a href="#ref-for-propdef-region-fragment②">(2)</a> <a href="#ref-for-propdef-region-fragment③">(3)</a>
-    <li><a href="#ref-for-propdef-region-fragment④">4.2. 
+    <li><a href="#ref-for-propdef-region-fragment④">4.2.
 The Region mixin</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-document-namedflows">
    <b><a href="#dom-document-namedflows">#dom-document-namedflows</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-document-namedflows">4.1. 
+    <li><a href="#ref-for-dom-document-namedflows">4.1.
 The NamedFlow interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="namedflowmap">
    <b><a href="#namedflowmap">#namedflowmap</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-namedflowmap">4.1. 
+    <li><a href="#ref-for-namedflowmap">4.1.
 The NamedFlow interface</a> <a href="#ref-for-namedflowmap①">(2)</a> <a href="#ref-for-namedflowmap②">(3)</a> <a href="#ref-for-namedflowmap③">(4)</a> <a href="#ref-for-namedflowmap④">(5)</a> <a href="#ref-for-namedflowmap⑤">(6)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="namedflow">
    <b><a href="#namedflow">#namedflow</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-namedflow">4.1. 
+    <li><a href="#ref-for-namedflow">4.1.
 The NamedFlow interface</a> <a href="#ref-for-namedflow①">(2)</a> <a href="#ref-for-namedflow②">(3)</a> <a href="#ref-for-namedflow③">(4)</a> <a href="#ref-for-namedflow④">(5)</a> <a href="#ref-for-namedflow⑤">(6)</a> <a href="#ref-for-namedflow⑥">(7)</a> <a href="#ref-for-namedflow⑦">(8)</a> <a href="#ref-for-namedflow⑧">(9)</a> <a href="#ref-for-namedflow⑨">(10)</a> <a href="#ref-for-namedflow①⓪">(11)</a>
-    <li><a href="#ref-for-namedflow①①">4.3. 
+    <li><a href="#ref-for-namedflow①①">4.3.
 Named flow events</a> <a href="#ref-for-namedflow①②">(2)</a> <a href="#ref-for-namedflow①③">(3)</a> <a href="#ref-for-namedflow①④">(4)</a> <a href="#ref-for-namedflow①⑤">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-namedflow-name">
    <b><a href="#dom-namedflow-name">#dom-namedflow-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-namedflow-name">4.1. 
+    <li><a href="#ref-for-dom-namedflow-name">4.1.
 The NamedFlow interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-namedflow-overset">
    <b><a href="#dom-namedflow-overset">#dom-namedflow-overset</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-namedflow-overset">4.1. 
+    <li><a href="#ref-for-dom-namedflow-overset">4.1.
 The NamedFlow interface</a> <a href="#ref-for-dom-namedflow-overset①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-namedflow-getregions">
    <b><a href="#dom-namedflow-getregions">#dom-namedflow-getregions</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-namedflow-getregions">4.1. 
+    <li><a href="#ref-for-dom-namedflow-getregions">4.1.
 The NamedFlow interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-namedflow-firstemptyregionindex">
    <b><a href="#dom-namedflow-firstemptyregionindex">#dom-namedflow-firstemptyregionindex</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-namedflow-firstemptyregionindex">4.1. 
+    <li><a href="#ref-for-dom-namedflow-firstemptyregionindex">4.1.
 The NamedFlow interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-namedflow-getcontent">
    <b><a href="#dom-namedflow-getcontent">#dom-namedflow-getcontent</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-namedflow-getcontent">4.1. 
+    <li><a href="#ref-for-dom-namedflow-getcontent">4.1.
 The NamedFlow interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="region">
    <b><a href="#region">#region</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-region">4.1. 
+    <li><a href="#ref-for-region">4.1.
 The NamedFlow interface</a> <a href="#ref-for-region①">(2)</a>
-    <li><a href="#ref-for-region②">4.2. 
+    <li><a href="#ref-for-region②">4.2.
 The Region mixin</a> <a href="#ref-for-region③">(2)</a> <a href="#ref-for-region④">(3)</a> <a href="#ref-for-region⑤">(4)</a> <a href="#ref-for-region⑥">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-region-regionoverset">
    <b><a href="#dom-region-regionoverset">#dom-region-regionoverset</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-region-regionoverset">4.2. 
+    <li><a href="#ref-for-dom-region-regionoverset">4.2.
 The Region mixin</a> <a href="#ref-for-dom-region-regionoverset①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-region-getregionflowranges">
    <b><a href="#dom-region-getregionflowranges">#dom-region-getregionflowranges</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-region-getregionflowranges">4.2. 
+    <li><a href="#ref-for-dom-region-getregionflowranges">4.2.
 The Region mixin</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

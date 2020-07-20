@@ -1587,14 +1587,14 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>Finally, the specification provides a <a data-link-type="dfn" href="#def-compassneedscalibration" id="ref-for-def-compassneedscalibration">compassneedscalibration</a> DOM event, which is used to inform Web sites that a compass being used to provide data for one of the above events is in need of calibration.</p>
    <p>The following code extracts illustrate basic use of the events.</p>
    <div class="example" id="example-7620a2e2">
-    <a class="self-link" href="#example-7620a2e2"></a> Registering to receive <a data-link-type="dfn" href="#def-deviceorientation" id="ref-for-def-deviceorientation①">deviceorientation</a> events: 
+    <a class="self-link" href="#example-7620a2e2"></a> Registering to receive <a data-link-type="dfn" href="#def-deviceorientation" id="ref-for-def-deviceorientation①">deviceorientation</a> events:
 <pre class="lang-js highlight">window<c- p>.</c->addEventListener<c- p>(</c-><c- u>"deviceorientation"</c-><c- p>,</c-> <c- a>function</c-><c- p>(</c->event<c- p>)</c-> <c- p>{</c->
     <c- c1>// process event.alpha, event.beta and event.gamma</c->
 <c- p>},</c-> <c- kc>true</c-><c- p>);</c->
 </pre>
    </div>
    <div class="example" id="example-f3190052">
-    <a class="self-link" href="#example-f3190052"></a> A device lying flat on a horizontal surface with the top of the screen pointing West has the following orientation: 
+    <a class="self-link" href="#example-f3190052"></a> A device lying flat on a horizontal surface with the top of the screen pointing West has the following orientation:
 <pre class="lang-json highlight"><c- p>{</c->alpha: 90,
  beta: 0,
  gamma: 0<c- p>}</c->;
@@ -1603,14 +1603,14 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </div>
    <div class="example" id="example-f560d6db"><a class="self-link" href="#example-f560d6db"></a> A user is holding the device in their hand, with the screen in a vertical plane and the top of the screen pointing upwards. The value of <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-beta" id="ref-for-dom-deviceorientationevent-beta">beta</a></code> is 90, irrespective of what <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-alpha" id="ref-for-dom-deviceorientationevent-alpha①">alpha</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-gamma" id="ref-for-dom-deviceorientationevent-gamma">gamma</a></code> are. </div>
    <div class="example" id="example-7f23e354">
-    <a class="self-link" href="#example-7f23e354"></a> A user facing a compass heading of alpha degrees is holding the device in their hand, with the screen in a vertical plane and the top of the screen pointing to their right. The orientation of the device is: 
+    <a class="self-link" href="#example-7f23e354"></a> A user facing a compass heading of alpha degrees is holding the device in their hand, with the screen in a vertical plane and the top of the screen pointing to their right. The orientation of the device is:
 <pre class="lang-json highlight"><c- p>{</c->alpha: 270 - alpha,
  beta: 0,
  gamma: 90<c- p>}</c->;
 </pre>
    </div>
    <div class="example" id="example-e96b4fed">
-    <a class="self-link" href="#example-e96b4fed"></a> Showing custom UI to instruct the user to calibrate the compass: 
+    <a class="self-link" href="#example-e96b4fed"></a> Showing custom UI to instruct the user to calibrate the compass:
 <pre class="lang-js highlight">window<c- p>.</c->addEventListener<c- p>(</c-><c- u>"compassneedscalibration"</c-><c- p>,</c-> <c- a>function</c-><c- p>(</c->event<c- p>)</c-> <c- p>{</c->
     alert<c- p>(</c-><c- t>'Your compass needs calibrating! Wave your device in a figure-eight motion'</c-><c- p>);</c->
     event<c- p>.</c->preventDefault<c- p>();</c->
@@ -1618,7 +1618,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </pre>
    </div>
    <div class="example" id="example-76fffcaa">
-    <a class="self-link" href="#example-76fffcaa"></a> Registering to receive <a data-link-type="dfn" href="#def-devicemotion" id="ref-for-def-devicemotion①">devicemotion</a> events: 
+    <a class="self-link" href="#example-76fffcaa"></a> Registering to receive <a data-link-type="dfn" href="#def-devicemotion" id="ref-for-def-devicemotion①">devicemotion</a> events:
 <pre class="lang-js highlight">window<c- p>.</c->addEventListener<c- p>(</c-><c- u>"devicemotion"</c-><c- p>,</c-> <c- a>function</c-><c- p>(</c->event<c- p>)</c-> <c- p>{</c->
     <c- c1>// Process event.acceleration, event.accelerationIncludingGravity,</c->
     <c- c1>// event.rotationRate and event.interval</c->
@@ -1626,21 +1626,21 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </pre>
    </div>
    <div class="example" id="example-0ab45ce3">
-    <a class="self-link" href="#example-0ab45ce3"></a> A device lying flat on a horizontal surface with the screen upmost has an <code class="idl"><a data-link-type="idl" href="#dom-devicemotionevent-acceleration" id="ref-for-dom-devicemotionevent-acceleration">acceleration</a></code> of zero and the following value for <code class="idl"><a data-link-type="idl" href="#dom-devicemotionevent-accelerationincludinggravity" id="ref-for-dom-devicemotionevent-accelerationincludinggravity">accelerationIncludingGravity</a></code>: 
+    <a class="self-link" href="#example-0ab45ce3"></a> A device lying flat on a horizontal surface with the screen upmost has an <code class="idl"><a data-link-type="idl" href="#dom-devicemotionevent-acceleration" id="ref-for-dom-devicemotionevent-acceleration">acceleration</a></code> of zero and the following value for <code class="idl"><a data-link-type="idl" href="#dom-devicemotionevent-accelerationincludinggravity" id="ref-for-dom-devicemotionevent-accelerationincludinggravity">accelerationIncludingGravity</a></code>:
 <pre class="lang-json highlight"><c- p>{</c->x: 0,
  y: 0,
  z: 9.81<c- p>}</c->;
 </pre>
    </div>
    <div class="example" id="example-56241d7e">
-    <a class="self-link" href="#example-56241d7e"></a> A device in free-fall, with the screen horizontal and upmost, has an <code class="idl"><a data-link-type="idl" href="#dom-devicemotionevent-accelerationincludinggravity" id="ref-for-dom-devicemotionevent-accelerationincludinggravity①">accelerationIncludingGravity</a></code> of zero and the following value for acceleration: 
+    <a class="self-link" href="#example-56241d7e"></a> A device in free-fall, with the screen horizontal and upmost, has an <code class="idl"><a data-link-type="idl" href="#dom-devicemotionevent-accelerationincludinggravity" id="ref-for-dom-devicemotionevent-accelerationincludinggravity①">accelerationIncludingGravity</a></code> of zero and the following value for acceleration:
 <pre class="lang-json highlight"><c- p>{</c->x: 0,
  y: 0,
  z: -9.81<c- p>}</c->;
 </pre>
    </div>
    <div class="example" id="example-08216a06">
-    <a class="self-link" href="#example-08216a06"></a> A device is mounted in a vehicle, with the screen in a vertical plane, the top uppermost and facing the rear of the vehicle. The vehicle is travelling at speed v around a right-hand bend of radius r. The device records a positive x component for both <code class="idl"><a data-link-type="idl" href="#dom-devicemotionevent-acceleration" id="ref-for-dom-devicemotionevent-acceleration①">acceleration</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-devicemotionevent-accelerationincludinggravity" id="ref-for-dom-devicemotionevent-accelerationincludinggravity②">accelerationIncludingGravity</a></code>. The device also records a negative value for <code class="idl"><a class="idl-code" data-link-type="attribute" href="#dom-devicemotionevent-rotationrate" id="ref-for-dom-devicemotionevent-rotationrate">rotationRate</a></code>.<code class="idl"><a data-link-type="idl" href="#dom-devicemotioneventrotationrate-gamma" id="ref-for-dom-devicemotioneventrotationrate-gamma">gamma</a></code>: 
+    <a class="self-link" href="#example-08216a06"></a> A device is mounted in a vehicle, with the screen in a vertical plane, the top uppermost and facing the rear of the vehicle. The vehicle is travelling at speed v around a right-hand bend of radius r. The device records a positive x component for both <code class="idl"><a data-link-type="idl" href="#dom-devicemotionevent-acceleration" id="ref-for-dom-devicemotionevent-acceleration①">acceleration</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-devicemotionevent-accelerationincludinggravity" id="ref-for-dom-devicemotionevent-accelerationincludinggravity②">accelerationIncludingGravity</a></code>. The device also records a negative value for <code class="idl"><a class="idl-code" data-link-type="attribute" href="#dom-devicemotionevent-rotationrate" id="ref-for-dom-devicemotionevent-rotationrate">rotationRate</a></code>.<code class="idl"><a data-link-type="idl" href="#dom-devicemotioneventrotationrate-gamma" id="ref-for-dom-devicemotioneventrotationrate-gamma">gamma</a></code>:
 <pre class="lang-json highlight"><c- p>{</c->acceleration: {x: v^2/r, y: 0, z: 0<c- p>}</c->,
  accelerationIncludingGravity: <c- p>{</c->x: v^2/r, y: 0, z: 9.81<c- p>}</c->,
  rotationRate: <c- p>{</c->alpha: 0, beta: 0, gamma: -v/r*180/pi<c- p>}</c-> };
@@ -1736,23 +1736,23 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li>
      <p>Rotate the device frame around its z axis by <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-alpha" id="ref-for-dom-deviceorientationevent-alpha④">alpha</a></code> degrees, with <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-alpha" id="ref-for-dom-deviceorientationevent-alpha⑤">alpha</a></code> in [0, 360).</p>
      <div>
-       <img alt="start orientation" src="start.png"> 
+       <img alt="start orientation" src="start.png">
       <div>Device in the initial position, with Earth (XYZ) and body (xyz) frames aligned.</div>
      </div>
      <div>
-       <img alt="rotation about z axis" src="c-rotation.png"> 
+       <img alt="rotation about z axis" src="c-rotation.png">
       <div>Device rotated through angle alpha about z axis, with previous locations of x and y axes shown as x<sub>0</sub> and y<sub>0</sub>.</div>
      </div>
     <li>
      <p>Rotate the device frame around its x axis by <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-beta" id="ref-for-dom-deviceorientationevent-beta③">beta</a></code> degrees, with <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-beta" id="ref-for-dom-deviceorientationevent-beta④">beta</a></code> in [-180, 180).</p>
      <div>
-       <img alt="rotation about x axis" src="a-rotation.png"> 
+       <img alt="rotation about x axis" src="a-rotation.png">
       <div>Device rotated through angle beta about new x axis, with previous locations of y and z axes shown as y<sub>0</sub> and z<sub>0</sub>.</div>
      </div>
     <li>
      <p>Rotate the device frame around its y axis by <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-gamma" id="ref-for-dom-deviceorientationevent-gamma③">gamma</a></code> degrees, with <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-gamma" id="ref-for-dom-deviceorientationevent-gamma④">gamma</a></code> in [-90, 90).</p>
      <div>
-       <img alt="rotation about y axis" src="b-rotation.png"> 
+       <img alt="rotation about y axis" src="b-rotation.png">
       <div>Device rotated through angle gamma about new y axis, with previous locations of x and z axes shown as x<sub>0</sub> and z<sub>0</sub>.</div>
      </div>
    </ol>
@@ -1872,15 +1872,15 @@ user (or user agent on behalf of the user) has granted <dfn class="dfn-paneled" 
 The <a data-link-type="dfn" href="#permission" id="ref-for-permission④">permission</a> to share device orientation &amp; motion
 for a given <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin">origin</a> is one of three strings: </p>
    <dl>
-    <dt>"<code>default</code>" 
+    <dt>"<code>default</code>"
     <dd>
      <p>This is equivalent to "<code>denied</code>", but the user has made no
   explicit choice thus far. </p>
-    <dt>"<code>denied</code>" 
+    <dt>"<code>denied</code>"
     <dd>
      <p>This means the user does not want
   to share device orientation or motion. </p>
-    <dt>"<code>granted</code>" 
+    <dt>"<code>granted</code>"
     <dd>
      <p>This means device orientation or motion may be shared. </p>
    </dl>
@@ -1954,7 +1954,7 @@ for the application to ask for <a data-link-type="dfn" href="#permission" id="re
    <object class="equation" data="equation6.xhtml" type="application/mathml+xml"> <img alt="theta = atan((v’_x)/(v’_y)) = atan((-cos(alpha)sin(gamma)-sin(alpha)sin(beta)cos(gamma))/(-sin(alpha)sin(gamma)+cos(alpha)sin(beta)cos(gamma)))" src="equation6.png"> </object>
    <p>provided that β and γ are not both zero.</p>
    <div class="example" id="example-cad08fa0">
-    <a class="self-link" href="#example-cad08fa0"></a> 
+    <a class="self-link" href="#example-cad08fa0"></a>
     <p>The compass heading calculation above can be represented in JavaScript as follows to return the correct compass heading when the provided parameters are defined, not null and represent <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-absolute" id="ref-for-dom-deviceorientationevent-absolute④">absolute</a></code> values.</p>
 <pre class="lang-js highlight"><c- a>var</c-> degtorad <c- o>=</c-> Math<c- p>.</c->PI <c- o>/</c-> <c- mi>180</c-><c- p>;</c-> <c- c1>// Degree-to-Radian conversion</c->
 
@@ -2004,7 +2004,7 @@ for the application to ask for <a data-link-type="dfn" href="#permission" id="re
    <p>If R represents the rotation matrix of the device in the earth frame XYZ, then since the initial body frame is aligned with the earth, R is as follows.</p>
    <object class="equation" data="equation13a.xhtml" type="application/mathml+xml"> <img alt="R = ZXY = [[cos(alpha) cos(gamma)-sin(alpha) sin(beta) sin(gamma), -cos(beta) sin(alpha), cos(gamma) sin(alpha) sin(beta)+cos(alpha) sin(gamma)], [cos(gamma) sin(alpha)+cos(alpha) sin(beta) sin(gamma), cos(alpha) cos(beta), sin(alpha) sin(gamma)-cos(alpha) cos(gamma) sin(beta)], [-cos(beta) sin(gamma), sin(beta), cos(beta) cos(gamma)]]" src="equation13a.png"> </object>
    <div class="example" id="example-76d62ad0">
-    <a class="self-link" href="#example-76d62ad0"></a> The above combined rotation matrix can be represented in JavaScript as follows provided passed parameters are defined, not null and represent <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-absolute" id="ref-for-dom-deviceorientationevent-absolute⑤">absolute</a></code> values. 
+    <a class="self-link" href="#example-76d62ad0"></a> The above combined rotation matrix can be represented in JavaScript as follows provided passed parameters are defined, not null and represent <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-absolute" id="ref-for-dom-deviceorientationevent-absolute⑤">absolute</a></code> values.
 <pre class="lang-js highlight"><c- a>var</c-> degtorad <c- o>=</c-> Math<c- p>.</c->PI <c- o>/</c-> <c- mi>180</c-><c- p>;</c-> <c- c1>// Degree-to-Radian conversion</c->
 
 <c- a>function</c-> getRotationMatrix<c- p>(</c-> alpha<c- p>,</c-> beta<c- p>,</c-> gamma <c- p>)</c-> <c- p>{</c->
@@ -2049,7 +2049,7 @@ for the application to ask for <a data-link-type="dfn" href="#permission" id="re
    <p>If q represents the unit quaternion of the device in the earth frame XYZ, then since the initial body frame is aligned with the earth, q is as follows.</p>
    <object class="equation" data="equation14.xhtml" type="application/mathml+xml"> <img alt="q = [[q_w], [q_x], [q_y], [q_z]] = [[cos(beta)cos(gamma)cos(alpha) - sin(beta)sin(gamma)sin(alpha)], [sin(beta)cos(gamma)cos(alpha) - cos(beta)sin(gamma)sin(alpha)], [cos(beta)sin(gamma)cos(alpha) + sin(beta)cos(gamma)sin(alpha)], [cos(beta)cos(gamma)sin(alpha) + sin(beta)sin(gamma)cos(alpha)]]" src="equation14.png"> </object>
    <div class="example" id="example-8f884833">
-    <a class="self-link" href="#example-8f884833"></a> The above quaternion can be represented in JavaScript as follows provided the passed parameters are defined, are <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-absolute" id="ref-for-dom-deviceorientationevent-absolute⑥">absolute</a></code> values and those parameters are not null. 
+    <a class="self-link" href="#example-8f884833"></a> The above quaternion can be represented in JavaScript as follows provided the passed parameters are defined, are <code class="idl"><a data-link-type="idl" href="#dom-deviceorientationevent-absolute" id="ref-for-dom-deviceorientationevent-absolute⑥">absolute</a></code> values and those parameters are not null.
 <pre class="lang-js highlight"><c- a>var</c-> degtorad <c- o>=</c-> Math<c- p>.</c->PI <c- o>/</c-> <c- mi>180</c-><c- p>;</c-> <c- c1>// Degree-to-Radian conversion</c->
 
 <c- a>function</c-> getQuaternion<c- p>(</c-> alpha<c- p>,</c-> beta<c- p>,</c-> gamma <c- p>)</c-> <c- p>{</c->
@@ -2715,57 +2715,65 @@ for the application to ask for <a data-link-type="dfn" href="#permission" id="re
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

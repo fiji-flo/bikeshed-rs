@@ -1635,7 +1635,7 @@ on top of the existing Geolocation API.</p>
    <h2 class="heading settled" data-level="2" id="examples"><span class="secno">2. </span><span class="content">Examples</span><a class="self-link" href="#examples"></a></h2>
    <p> Get a new geolocation reading every second: </p>
    <div class="example" id="example-c8cdc575">
-    <a class="self-link" href="#example-c8cdc575"></a> 
+    <a class="self-link" href="#example-c8cdc575"></a>
 <pre class="highlight"><c- kr>const</c-> geo <c- o>=</c-> <c- k>new</c-> GeolocationSensor<c- p>({</c-> frequency<c- o>:</c-> <c- mi>1</c-> <c- p>});</c->
 geo<c- p>.</c->start<c- p>();</c->
 
@@ -1646,7 +1646,7 @@ geo<c- p>.</c->onerror <c- o>=</c-> event <c- p>=></c-> console<c- p>.</c->error
    </div>
    <p> Get a one-shot geolocation reading: </p>
    <div class="example" id="example-9488bb9f">
-    <a class="self-link" href="#example-9488bb9f"></a> 
+    <a class="self-link" href="#example-9488bb9f"></a>
 <pre class="highlight">GeolocationSensor<c- p>.</c->read<c- p>()</c->
   <c- p>.</c->then<c- p>(</c->geo <c- p>=></c-> console<c- p>.</c->log<c- p>(</c-><c- sb>`lat: </c-><c- si>${</c->geo<c- p>.</c->latitude<c- si>}</c-><c- sb>, long: </c-><c- si>${</c->geo<c- p>.</c->longitude<c- si>}</c-><c- sb>`</c-><c- p>))</c->
   <c- p>.</c-><c- k>catch</c-><c- p>(</c->error <c- p>=></c-> console<c- p>.</c->error<c- p>(</c->error<c- p>.</c->name<c- p>));</c->
@@ -1703,14 +1703,14 @@ and whose <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#map-value
 
 </pre>
    <div class="note" role="note">
-     Normative changes to the <code> <a href="https://dev.w3.org/geo/api/spec-source.html#coordinates_interface"> Coordinates</a></code> interface of the Geolocation API are the following: 
+     Normative changes to the <code> <a href="https://dev.w3.org/geo/api/spec-source.html#coordinates_interface"> Coordinates</a></code> interface of the Geolocation API are the following:
     <ul>
      <li>Use <a href="https://heycam.github.io/webidl/#idl-unrestricted-double" id="termref-for-"> unrestricted double</a> to not throw TypeError on NaN, +Infinity or −Infinity.
-  (Geolocation API defines NaN as a valid value for heading, yet uses double as its type.) 
+  (Geolocation API defines NaN as a valid value for heading, yet uses double as its type.)
      <li>Use <a href="https://heycam.github.io/webidl/#dfn-nullable-type">nullable</a> to allow
   all attributes to default to null. (Geolocation API does not provide synchronous means to
   access these attributes, thus latitude, longitude, and altitude are not nullable and "must be
-  supported by all implementations".) 
+  supported by all implementations".)
     </ul>
    </div>
    <p>To construct a <code class="idl"><a data-link-type="idl" href="#geolocationsensor" id="ref-for-geolocationsensor④">GeolocationSensor</a></code> object the user agent must invoke the <a data-link-type="dfn" href="#construct-a-geolocation-sensor-object" id="ref-for-construct-a-geolocation-sensor-object">construct a geolocation sensor object</a> abstract operation.</p>
@@ -1836,7 +1836,7 @@ per second.</p>
    </div>
    <h2 class="heading settled" data-level="7" id="automation"><span class="secno">7. </span><span class="content">Automation</span><a class="self-link" href="#automation"></a></h2>
     This section extends the <a data-link-type="dfn" href="https://w3c.github.io/sensors#automation" id="ref-for-automation">automation</a> section defined in the Generic Sensor API <a data-link-type="biblio" href="#biblio-generic-sensor">[GENERIC-SENSOR]</a> to provide mocking information about the <a data-link-type="dfn" href="#geolocation" id="ref-for-geolocation⑦">geolocation</a> of the hosting device for the purposes of
-testing a user agent’s implementation of <code class="idl"><a data-link-type="idl" href="#geolocationsensor" id="ref-for-geolocationsensor①⑤">GeolocationSensor</a></code> API. 
+testing a user agent’s implementation of <code class="idl"><a data-link-type="idl" href="#geolocationsensor" id="ref-for-geolocationsensor①⑤">GeolocationSensor</a></code> API.
    <h3 class="heading settled" data-level="7.1" id="mock-geolocation-sensor-type"><span class="secno">7.1. </span><span class="content">Mock Sensor Type</span><a class="self-link" href="#mock-geolocation-sensor-type"></a></h3>
    <p>The <code class="idl"><a data-link-type="idl" href="#geolocationsensor" id="ref-for-geolocationsensor①⑥">GeolocationSensor</a></code> class has an associated <a data-link-type="dfn" href="https://w3c.github.io/sensors#mock-sensor-type" id="ref-for-mock-sensor-type">mock sensor type</a> which is <a class="idl-code" data-link-type="enum-value" href="https://w3c.github.io/sensors/#dom-mocksensortype-geolocation" id="ref-for-dom-mocksensortype-geolocation">"geolocation"</a>, its <a data-link-type="dfn" href="https://w3c.github.io/sensors#mock-sensor-reading-values" id="ref-for-mock-sensor-reading-values">mock sensor reading values</a> dictionary is defined as follows:</p>
 <pre class="idl highlight def"><c- b>dictionary</c-> <dfn class="idl-code" data-dfn-type="dictionary" data-export id="dictdef-geolocationreadingvalues"><code><c- g>GeolocationReadingValues</c-></code><a class="self-link" href="#dictdef-geolocationreadingvalues"></a></dfn> {
@@ -2526,58 +2526,66 @@ from 2008 until 2017.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

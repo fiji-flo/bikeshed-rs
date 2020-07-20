@@ -1621,7 +1621,7 @@ web-developer facing, and not implementer-facing. The exact processing model (gi
 including invalid ones.</p>
    <div class="example" id="example-invalid-manifest">
     <a class="self-link" href="#example-invalid-manifest"></a> The following <a data-link-type="dfn" href="#payment-method-manifest" id="ref-for-payment-method-manifest⑥">payment method manifest</a> is not <a data-link-type="dfn" href="#valid-payment-method-manifest" id="ref-for-valid-payment-method-manifest①">valid</a>, but the currently-specified processing
-  model algorithms will still accept it: 
+  model algorithms will still accept it:
 <pre class="highlight"><c- p>{</c->
   <c- f>"default_applications"</c-><c- p>:</c-> <c- p>[</c-><c- u>"app/webappmanifest.json"</c-><c- p>],</c->
   <c- f>"created_by"</c-><c- p>:</c-> <c- u>"Alice"</c-><c- p>,</c->
@@ -1881,7 +1881,7 @@ return failure.</p>
    <div class="note" role="note">
      Empty arrays for "<code>default_applications</code>" or "<code>supported_origins</code>"
   will cause parsing to fail. That is, this is not a <a data-link-type="dfn" href="#valid-payment-method-manifest" id="ref-for-valid-payment-method-manifest③">valid payment method manifest</a>, and will
-  be rejected by the above algorithm: 
+  be rejected by the above algorithm:
 <pre class="highlight"><c- p>{</c->
   <c- f>"default_applications"</c-><c- p>:</c-> <c- p>[</c-><c- u>"https://alicepay.com/pay/app/webappmanifest.json"</c-><c- p>],</c->
   <c- f>"supported_origins"</c-><c- p>:</c-> <c- p>[]</c->
@@ -2695,57 +2695,65 @@ Rouslan Solomakhin for their contributions to making this specification awesome!
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

@@ -49,7 +49,7 @@
 </style>
  <body class="h-entry status-LS">
   <div class="head">
-    <a class="logo" href="https://whatwg.org/"> <img alt="WHATWG" crossorigin height="100" src="https://resources.whatwg.org/logo-infra.svg"> </a> 
+    <a class="logo" href="https://whatwg.org/"> <img alt="WHATWG" crossorigin height="100" src="https://resources.whatwg.org/logo-infra.svg"> </a>
    <hgroup>
     <h1 class="p-name no-ref" id="title">Infra</h1>
     <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard — Last Updated <time class="dt-updated" datetime="1970-01-01">1 January 1970</time></span></h2>
@@ -193,23 +193,23 @@ implements the specification. </p>
 leading spaces" or "return false") are to be interpreted with the meaning of the keyword (e.g.,
 "must") used in introducing the algorithm or step. If no such keyword is used, must is implied. </p>
    <div class="example" id="example-algorithms">
-    <a class="self-link" href="#example-algorithms"></a> 
+    <a class="self-link" href="#example-algorithms"></a>
     <p>For example, were the spec to say:</p>
     <blockquote>
      <p class="allow-2119">To eat an orange, the user must: </p>
      <ol class="brief">
-      <li>Peel the orange. 
-      <li>Separate each slice of the orange. 
-      <li>Eat the orange slices. 
+      <li>Peel the orange.
+      <li>Separate each slice of the orange.
+      <li>Eat the orange slices.
      </ol>
     </blockquote>
     <p>it would be equivalent to the following:</p>
     <blockquote>
      <p>To eat an orange: </p>
      <ol class="brief">
-      <li class="allow-2119">The user must peel the orange. 
-      <li class="allow-2119">The user must separate each slice of the orange. 
-      <li class="allow-2119">The user must eat the orange slices. 
+      <li class="allow-2119">The user must peel the orange.
+      <li class="allow-2119">The user must separate each slice of the orange.
+      <li class="allow-2119">The user must eat the orange slices.
      </ol>
     </blockquote>
     <p class="allow-2119">Here the key word is "must".</p>
@@ -230,7 +230,7 @@ over. </p>
    <p>A variable is declared with "let" and changed with "set". </p>
    <p class="example" id="example-variable"><a class="self-link" href="#example-variable"></a>Let <var>list</var> be a new <a data-link-type="dfn" href="#list" id="ref-for-list">list</a>.</p>
    <div class="example" id="example-variable-null">
-    <a class="self-link" href="#example-variable-null"></a> 
+    <a class="self-link" href="#example-variable-null"></a>
     <ol>
      <li>
       <p>Let <var>value</var> be null. </p>
@@ -259,7 +259,7 @@ as-written, but by additionally inserting a step before each of them that evalua
    <p>In such algorithms, the subsequent step can be annotated to run <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="if-aborted">if aborted</dfn>, in
 which case it must run if any of the preceding steps were skipped due to the <var>condition</var> of the preceding <a data-link-type="dfn" href="#abort-when" id="ref-for-abort-when">abort when</a> step evaluated to true. </p>
    <div class="example" id="example-conditional-abort">
-    <a class="self-link" href="#example-conditional-abort"></a> 
+    <a class="self-link" href="#example-conditional-abort"></a>
     <p>The following algorithm </p>
     <ol>
      <li>
@@ -311,14 +311,14 @@ mutated during a compute operation, the user agent could stop the computation. <
    <p class="note" role="note">The Infra Standard is not (yet) exhaustive on this; please file an issue if you need
 something. </p>
    <dl>
-    <dt>For each 
+    <dt>For each
     <dd>
      <p>As defined <a data-link-type="dfn" href="#list-iterate" id="ref-for-list-iterate">for lists</a> (and derivatives) and <a data-link-type="dfn" href="#map-iterate" id="ref-for-map-iterate">maps</a>. </p>
-    <dt><dfn class="dfn-paneled" data-dfn-for="iteration" data-dfn-type="dfn" data-export data-lt="while" id="iteration-while">While</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-for="iteration" data-dfn-type="dfn" data-export data-lt="while" id="iteration-while">While</dfn>
     <dd>
      <p>An instruction to repeat a set of steps as long as a condition is met. </p>
      <div class="example" id="example-while">
-      <a class="self-link" href="#example-while"></a> 
+      <a class="self-link" href="#example-while"></a>
       <p>While <var>condition</var> is "<code>met</code>": </p>
       <ol>
        <li>
@@ -331,13 +331,13 @@ next item. If no further items remain, the iteration will stop. <a data-link-typ
 over any remaining steps in an iteration, and skip over any remaining items as well, stopping the
 iteration. </p>
    <div class="example" id="example-break-continue">
-    <a class="self-link" href="#example-break-continue"></a> 
+    <a class="self-link" href="#example-break-continue"></a>
     <p>Let <var>example</var> be the <a data-link-type="dfn" href="#list" id="ref-for-list③">list</a> « 1, 2, 3, 4 ». The following prose would perform <var>operation</var> upon 1, then 2, then 3, then 4: </p>
     <ol>
      <li>
       <p><a data-link-type="dfn" href="#list-iterate" id="ref-for-list-iterate①">For each</a> <var>item</var> of <var>example</var>: </p>
       <ol>
-       <li>Perform <var>operation</var> on <var>item</var>. 
+       <li>Perform <var>operation</var> on <var>item</var>.
       </ol>
     </ol>
     <p>The following prose would perform <var>operation</var> upon 1, then 2, then 4. 3 would be skipped. </p>
@@ -345,8 +345,8 @@ iteration. </p>
      <li>
       <p><a data-link-type="dfn" href="#list-iterate" id="ref-for-list-iterate②">For each</a> <var>item</var> of <var>example</var>: </p>
       <ol>
-       <li>If <var>item</var> is 3, then <a data-link-type="dfn" href="#iteration-continue" id="ref-for-iteration-continue①">continue</a>. 
-       <li>Perform <var>operation</var> on <var>item</var>. 
+       <li>If <var>item</var> is 3, then <a data-link-type="dfn" href="#iteration-continue" id="ref-for-iteration-continue①">continue</a>.
+       <li>Perform <var>operation</var> on <var>item</var>.
       </ol>
     </ol>
     <p>The following prose would perform <var>operation</var> upon 1, then 2. 3 and 4 would be skipped. </p>
@@ -354,8 +354,8 @@ iteration. </p>
      <li>
       <p><a data-link-type="dfn" href="#list-iterate" id="ref-for-list-iterate③">For each</a> <var>item</var> of <var>example</var>: </p>
       <ol>
-       <li>If <var>item</var> is 3, then <a data-link-type="dfn" href="#iteration-break" id="ref-for-iteration-break①">break</a>. 
-       <li>Perform <var>operation</var> on <var>item</var>. 
+       <li>If <var>item</var> is 3, then <a data-link-type="dfn" href="#iteration-break" id="ref-for-iteration-break①">break</a>.
+       <li>Perform <var>operation</var> on <var>item</var>.
       </ol>
     </ol>
    </div>
@@ -366,7 +366,7 @@ true. If the statement ends up being false that indicates an issue with the docu
 Standard that should be reported and addressed. </p>
    <p class="note" role="note">Since the statement can only ever be true, it has no implications for implementations. </p>
    <div class="example" id="example-assert">
-    <a class="self-link" href="#example-assert"></a> 
+    <a class="self-link" href="#example-assert"></a>
     <ol>
      <li>
       <p>Let <var>x</var> be "<code>Aperture Science</code>". </p>
@@ -397,7 +397,7 @@ sequence of bytes. Byte sequences with bytes in the range 0x20 (SP) to 0x7E (~),
 alternately be written as a string, but using backticks instead of quotation marks, to avoid
 confusion with an actual <a data-link-type="dfn" href="#string" id="ref-for-string②">string</a>. </p>
    <div class="example" id="example-byte-sequence-notation">
-    <a class="self-link" href="#example-byte-sequence-notation"></a> 
+    <a class="self-link" href="#example-byte-sequence-notation"></a>
     <p>0x48 0x49 can also be represented as `<code>HI</code>`. </p>
     <p>Headers, such as `<code>Content-Type</code>`, are <a data-link-type="dfn" href="#byte-sequence" id="ref-for-byte-sequence">byte sequences</a>. </p>
    </div>
@@ -455,7 +455,7 @@ is not U+0028 or U+0029, or by both. Documents using the Infra Standard are enco
 follow them by their rendered form between parentheses, for legibility. </p>
    <p>A <a data-link-type="dfn" href="#code-point" id="ref-for-code-point④">code point</a>’s name is defined in the Unicode Standard and represented in <a data-link-type="dfn" href="#ascii-uppercase" id="ref-for-ascii-uppercase">ASCII uppercase</a>. <a data-link-type="biblio" href="#biblio-unicode">[UNICODE]</a> </p>
    <div class="example" id="example-code-point-notation">
-    <a class="self-link" href="#example-code-point-notation"></a> 
+    <a class="self-link" href="#example-code-point-notation"></a>
     <p>The <a data-link-type="dfn" href="#code-point" id="ref-for-code-point⑤">code point</a> rendered as 🤔 is represented as U+1F914. </p>
     <p>When referring to that <a data-link-type="dfn" href="#code-point" id="ref-for-code-point⑥">code point</a>, we might say "U+1F914 (🤔)", to provide extra context.
  Documents are allowed to use "U+1F914 THINKING FACE (🤔)" as well, though this is somewhat verbose. </p>
@@ -695,7 +695,7 @@ interspersed <a data-link-type="dfn" href="#ascii-whitespace" id="ref-for-ascii-
        <p>Let <var>token</var> be the result of <a data-link-type="dfn" href="#collect-a-sequence-of-code-points" id="ref-for-collect-a-sequence-of-code-points④">collecting a sequence of code points</a> that are
     not U+002C (,) from <var>input</var>, given <var>position</var>. </p>
        <p class="note" role="note"><var>token</var> might be the empty string. </p>
-      <li><a data-link-type="dfn" href="#strip-leading-and-trailing-ascii-whitespace" id="ref-for-strip-leading-and-trailing-ascii-whitespace">Strip leading and trailing ASCII whitespace</a> from <var>token</var>. 
+      <li><a data-link-type="dfn" href="#strip-leading-and-trailing-ascii-whitespace" id="ref-for-strip-leading-and-trailing-ascii-whitespace">Strip leading and trailing ASCII whitespace</a> from <var>token</var>.
       <li>
        <p><a data-link-type="dfn" href="#list-append" id="ref-for-list-append①①">Append</a> <var>token</var> to <var>tokens</var>. </p>
       <li>
@@ -743,7 +743,7 @@ out-of-bounds, except when used with <a data-link-type="dfn" href="#list-contain
 add the given <a data-link-type="dfn" href="#list-item" id="ref-for-list-item③">item</a> to the end of the list. </p>
    <p>To <dfn class="dfn-paneled" data-dfn-for="list" data-dfn-type="dfn" data-export id="list-extend">extend</dfn> a <a data-link-type="dfn" href="#list" id="ref-for-list①①">list</a> <var>A</var> with a <a data-link-type="dfn" href="#list" id="ref-for-list①②">list</a> <var>B</var>, <a data-link-type="dfn" href="#list-iterate" id="ref-for-list-iterate④">for each</a> <var>item</var> of <var>B</var>, <a data-link-type="dfn" href="#list-append" id="ref-for-list-append①②">append</a> <var>item</var> to <var>A</var>. </p>
    <div class="example" id="example-list-extend">
-    <a class="self-link" href="#example-list-extend"></a> 
+    <a class="self-link" href="#example-list-extend"></a>
     <ol>
      <li>
       <p>Let <var>ghostbusters</var> be « "<code>Erin Gilbert</code>", "<code>Abby Yates</code>" ». </p>
@@ -769,7 +769,7 @@ the given index is 0, then <a data-link-type="dfn" href="#list-prepend" id="ref-
    <p>To <dfn class="dfn-paneled" data-dfn-for="list,set" data-dfn-type="dfn" data-export id="list-remove">remove</dfn> zero or more <a data-link-type="dfn" href="#list-item" id="ref-for-list-item⑦">items</a> from a <a data-link-type="dfn" href="#list" id="ref-for-list①⑦">list</a> is
 to remove all items from the list that match a given condition, or do nothing if none do. </p>
    <div class="example" id="example-list-remove">
-    <a class="self-link" href="#example-list-remove"></a> 
+    <a class="self-link" href="#example-list-remove"></a>
     <p><a data-link-type="dfn" href="#list-remove" id="ref-for-list-remove">Removing</a> <var>x</var> from the <a data-link-type="dfn" href="#list" id="ref-for-list①⑧">list</a> « <var>x</var>, <var>y</var>, <var>z</var>, <var>x</var> » is to remove all
  items from the list that are equal to <var>x</var>. The list now is equivalent to « <var>y</var>, <var>z</var> ». </p>
     <p><a data-link-type="dfn" href="#list-remove" id="ref-for-list-remove①">Removing</a> all items that start with the <a data-link-type="dfn" href="#string" id="ref-for-string④⓪">string</a> "<code>a</code>" from the <a data-link-type="dfn" href="#list" id="ref-for-list①⑨">list</a> « "<code>a</code>", "<code>b</code>", "<code>ab</code>", "<code>ba</code>" » is to
@@ -899,15 +899,15 @@ tuple with parenthesis and separating its <a data-link-type="dfn" href="#struct-
 the <a data-link-type="dfn" href="#struct-name" id="ref-for-struct-name">names</a> need to be clear from context. This can be done by preceding the first
 instance with the name given to the <a data-link-type="dfn" href="#tuple" id="ref-for-tuple①">tuple</a>. </p>
    <div class="example" id="example-tuple">
-    <a class="self-link" href="#example-tuple"></a> 
+    <a class="self-link" href="#example-tuple"></a>
     <p>A status is an example <a data-link-type="dfn" href="#tuple" id="ref-for-tuple②">tuple</a> consisting of a code (a three-digit number) and text (a byte
  sequence). </p>
     <p>A nonsense algorithm that manipulates status tuples for the purpose of demonstrating their
  usage is then:</p>
     <ol>
-     <li>Let <var>statusInstance</var> be the status (200, `<code>OK</code>`). 
-     <li>Set <var>statusInstance</var> to (301, `<code>FOO BAR</code>`). 
-     <li>If <var>statusInstance</var>’s code is 404, then … 
+     <li>Let <var>statusInstance</var> be the status (200, `<code>OK</code>`).
+     <li>Set <var>statusInstance</var> to (301, `<code>FOO BAR</code>`).
+     <li>If <var>statusInstance</var>’s code is 404, then …
     </ol>
    </div>
    <p class="note" role="note">It is intentional that not all <a data-link-type="dfn" href="#struct" id="ref-for-struct①">structs</a> are <a data-link-type="dfn" href="#tuple" id="ref-for-tuple③">tuples</a>. Documents using the
@@ -1016,9 +1016,9 @@ certain inputs. </p>
     <li>
      <p>If <var>data</var> contains a <a data-link-type="dfn" href="#code-point" id="ref-for-code-point④⑨">code point</a> that is not one of </p>
      <ul class="brief">
-      <li>U+002B (+) 
-      <li>U+002F (/) 
-      <li><a data-link-type="dfn" href="#ascii-alphanumeric" id="ref-for-ascii-alphanumeric">ASCII alphanumeric</a> 
+      <li>U+002B (+)
+      <li>U+002F (/)
+      <li><a data-link-type="dfn" href="#ascii-alphanumeric" id="ref-for-ascii-alphanumeric">ASCII alphanumeric</a>
      </ul>
      <p>then return failure. </p>
     <li>
@@ -2095,57 +2095,65 @@ if ("serviceWorker" in navigator) {
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

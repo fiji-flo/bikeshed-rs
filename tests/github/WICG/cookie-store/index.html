@@ -1641,7 +1641,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
    <p>Although it is tempting to <a href="https://discourse.wicg.io/t/rethinking-cookies/744">rethink cookies</a> entirely, web sites today continue to rely heavily on them, and the script APIs for using them are largely unchanged over their first decades of usage.</p>
    <p>Today writing a cookie means blocking your event loop while waiting for the browser to synchronously update the cookie jar with a carefully-crafted cookie string in <code>Set-Cookie</code> format:</p>
    <div class="example" id="example-e33babf4">
-    <a class="self-link" href="#example-e33babf4"></a> 
+    <a class="self-link" href="#example-e33babf4"></a>
 <pre class="language-js highlight">document<c- p>.</c->cookie <c- o>=</c->
   <c- t>'__Secure-COOKIENAME=cookie-value'</c-> <c- o>+</c->
   <c- t>'; Path=/'</c-> <c- o>+</c->
@@ -1662,7 +1662,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
    </div>
    <p>What if you could instead write:</p>
    <div class="example" id="example-ac70a48e">
-    <a class="self-link" href="#example-ac70a48e"></a> 
+    <a class="self-link" href="#example-ac70a48e"></a>
 <pre class="language-js highlight">cookieStore<c- p>.</c->set<c- p>(</c->
   <c- t>'__Secure-COOKIENAME'</c-><c- p>,</c->
   <c- t>'cookie-value'</c-><c- p>,</c->
@@ -1756,7 +1756,7 @@ Both methods take the same arguments, which can be either:</p>
    </ul>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-get-options" id="ref-for-dom-cookiestore-get-options①">get()</a></code> method is essentially a form of <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getall-options" id="ref-for-dom-cookiestore-getall-options①">getAll()</a></code> that only returns the first result.</p>
    <div class="example" id="example-75b57f43">
-    <a class="self-link" href="#example-75b57f43"></a> Reading a cookie: 
+    <a class="self-link" href="#example-75b57f43"></a> Reading a cookie:
 <pre class="language-js highlight"><c- k>try</c-> <c- p>{</c->
   <c- kr>const</c-> cookie <c- o>=</c-> await cookieStore<c- p>.</c->get<c- p>(</c-><c- t>'session_id'</c-><c- p>);</c->
   <c- k>if</c-> <c- p>(</c->cookie<c- p>)</c-> <c- p>{</c->
@@ -1770,7 +1770,7 @@ Both methods take the same arguments, which can be either:</p>
 </pre>
    </div>
    <div class="example" id="example-c8309e80">
-    <a class="self-link" href="#example-c8309e80"></a> Reading multiple cookies: 
+    <a class="self-link" href="#example-c8309e80"></a> Reading multiple cookies:
 <pre class="language-js highlight"><c- k>try</c-> <c- p>{</c->
   <c- kr>const</c-> cookies <c- o>=</c-> await cookieStore<c- p>.</c->getAll<c- p>({</c->
     name<c- o>:</c-> <c- t>'session_'</c-><c- p>,</c->
@@ -1786,7 +1786,7 @@ Both methods take the same arguments, which can be either:</p>
    <p><a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker①">Service workers</a> can obtain the list of cookies that would be sent by a <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-fetch" id="ref-for-concept-fetch">fetch</a> to
 any URL under their <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-scope-url" id="ref-for-dfn-scope-url">scope</a>.</p>
    <div class="example" id="example-2f07df9d">
-    <a class="self-link" href="#example-2f07df9d"></a> Read the cookies for a specific URL (in a <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker②">service worker</a>): 
+    <a class="self-link" href="#example-2f07df9d"></a> Read the cookies for a specific URL (in a <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker②">service worker</a>):
 <pre class="language-js highlight">await cookieStore<c- p>.</c->getAll<c- p>({</c->url<c- o>:</c-> <c- t>'/admin'</c-><c- p>});</c->
 </pre>
    </div>
@@ -1794,7 +1794,7 @@ any URL under their <a data-link-type="dfn" href="https://w3c.github.io/ServiceW
 the only valid <code class="idl"><a data-link-type="idl" href="#dom-cookiestoregetoptions-url" id="ref-for-dom-cookiestoregetoptions-url">url</a></code> value in <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-document" id="ref-for-concept-document②">Document</a> contexts is the document’s URL.</p>
    <p>The objects returned by <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-get-options" id="ref-for-dom-cookiestore-get-options②">get()</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getall-options" id="ref-for-dom-cookiestore-getall-options②">getAll()</a></code> contain all the relevant information in the cookie store, not just the <a data-link-type="dfn" href="#cookie-name" id="ref-for-cookie-name">name</a> and the <a data-link-type="dfn" href="#cookie-value" id="ref-for-cookie-value">value</a> as in the older <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/dom.html#dom-document-cookie" id="ref-for-dom-document-cookie⑥">document.cookie</a></code> API.</p>
    <div class="example" id="example-74bb82cb">
-    <a class="self-link" href="#example-74bb82cb"></a> Accessing all the cookie data: 
+    <a class="self-link" href="#example-74bb82cb"></a> Accessing all the cookie data:
 <pre class="language-js highlight">await cookie <c- o>=</c-> cookieStore<c- p>.</c->get<c- p>(</c-><c- t>'session_id'</c-><c- p>);</c->
 console<c- p>.</c->log<c- p>(</c-><c- sb>`Cookie scope - Domain: </c-><c- si>${</c->cookie<c- p>.</c->domain<c- si>}</c-><c- sb> Path: </c-><c- si>${</c->cookie<c- p>.</c->path<c- si>}</c-><c- sb>`</c-><c- p>);</c->
 <c- k>if</c-> <c- p>(</c->cookie<c- p>.</c->expires <c- o>===</c-> <c- kc>null</c-><c- p>)</c-> <c- p>{</c->
@@ -1810,7 +1810,7 @@ console<c- p>.</c->log<c- p>(</c-><c- sb>`Cookie scope - Domain: </c-><c- si>${<
    <p>Both <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-document" id="ref-for-concept-document③">documents</a> and <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker③">service workers</a> access the same modification API, via the <code class="idl"><a data-link-type="idl" href="#dom-window-cookiestore" id="ref-for-dom-window-cookiestore①">cookieStore</a></code> property on the <a href="#globals">global object</a>.</p>
    <p>Cookies are created or modified (written) using the <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-set" id="ref-for-dom-cookiestore-set">set()</a></code> method.</p>
    <div class="example" id="example-818b011d">
-    <a class="self-link" href="#example-818b011d"></a> Write a cookie: 
+    <a class="self-link" href="#example-818b011d"></a> Write a cookie:
 <pre class="language-js highlight"><c- k>try</c-> <c- p>{</c->
   await cookieStore<c- p>.</c->set<c- p>(</c-><c- t>'opted_out'</c-><c- p>,</c-> <c- t>'1'</c-><c- p>);</c->
 <c- p>}</c-> <c- k>catch</c-> <c- p>(</c->e<c- p>)</c-> <c- p>{</c->
@@ -1834,7 +1834,7 @@ console<c- p>.</c->log<c- p>(</c-><c- sb>`Cookie scope - Domain: </c-><c- si>${<
    </div>
    <p>Cookies are deleted (expired) using the <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-delete" id="ref-for-dom-cookiestore-delete">delete()</a></code> method.</p>
    <div class="example" id="example-7990c896">
-    <a class="self-link" href="#example-7990c896"></a> Delete a cookie: 
+    <a class="self-link" href="#example-7990c896"></a> Delete a cookie:
 <pre class="language-js highlight"><c- k>try</c-> <c- p>{</c->
   await cookieStore<c- p>.</c-><c- k>delete</c-><c- p>(</c-><c- t>'session_id'</c-><c- p>);</c->
 <c- p>}</c-> <c- k>catch</c-> <c- p>(</c->e<c- p>)</c-> <c- p>{</c->
@@ -1844,7 +1844,7 @@ console<c- p>.</c->log<c- p>(</c-><c- sb>`Cookie scope - Domain: </c-><c- si>${<
    </div>
    <p>Under the hood, deleting a cookie is done by changing the cookie’s expiration date to the past, which still works.</p>
    <div class="example" id="example-5614708e">
-    <a class="self-link" href="#example-5614708e"></a> Deleting a cookie by changing the expiry date: 
+    <a class="self-link" href="#example-5614708e"></a> Deleting a cookie by changing the expiry date:
 <pre class="language-js highlight"><c- k>try</c-> <c- p>{</c->
   <c- kr>const</c-> one_day_ms <c- o>=</c-> <c- mi>24</c-> <c- o>*</c-> <c- mi>60</c-> <c- o>*</c-> <c- mi>60</c-> <c- o>*</c-> <c- mi>1000</c-><c- p>;</c->
   await cookieStore<c- p>.</c->set<c- p>(</c-><c- t>'session_id'</c-><c- p>,</c-> <c- t>'value will be ignored'</c-><c- p>,</c->
@@ -1858,7 +1858,7 @@ console<c- p>.</c->log<c- p>(</c-><c- sb>`Cookie scope - Domain: </c-><c- si>${<
    <p>To avoid polling, it is possible to observe changes to cookies.</p>
    <p>In <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-document" id="ref-for-concept-document④">documents</a>, <code>change</code> events are fired for all relevant cookie changes.</p>
    <div class="example" id="example-7e599641">
-    <a class="self-link" href="#example-7e599641"></a> Register for <code>change</code> events in documents: 
+    <a class="self-link" href="#example-7e599641"></a> Register for <code>change</code> events in documents:
 <pre class="language-js highlight">cookieStore<c- p>.</c->addEventListener<c- p>(</c-><c- t>'change'</c-><c- p>,</c-> event <c- p>=></c-> <c- p>{</c->
   console<c- p>.</c->log<c- p>(</c-><c- sb>`</c-><c- si>${</c->event<c- p>.</c->changed<c- p>.</c->length<c- si>}</c-><c- sb> changed cookies`</c-><c- p>);</c->
   <c- k>for</c-> <c- p>(</c-><c- kr>const</c-> cookie <c- k>in</c-> event<c- p>.</c->changed<c- p>)</c->
@@ -1873,7 +1873,7 @@ console<c- p>.</c->log<c- p>(</c-><c- sb>`</c-><c- si>${</c->event<c- p>.</c->de
    <p><a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker④">Service workers</a> have to subscribe for events during the <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-state" id="ref-for-dfn-state">install</a> stage,
 and start receiving <code>cookiechange</code> events when <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-state" id="ref-for-dfn-state①">activated</a>.</p>
    <div class="example" id="example-854f2a11">
-    <a class="self-link" href="#example-854f2a11"></a> Register for <code>cookiechange</code> events in a service worker: 
+    <a class="self-link" href="#example-854f2a11"></a> Register for <code>cookiechange</code> events in a service worker:
 <pre class="language-js highlight">self<c- p>.</c->addEventListener<c- p>(</c-><c- t>'install'</c-><c- p>,</c-> event <c- p>=></c-> <c- p>{</c->
   event<c- p>.</c->waitFor<c- p>(</c->async <c- p>()</c-> <c- p>=></c-> <c- p>{</c->
     await cookieStore<c- p>.</c->subscribeToChanges<c- p>([{</c->
@@ -1903,7 +1903,7 @@ require waking up the worker, which has a significant impact on battery life.</p
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getchangesubscriptions" id="ref-for-dom-cookiestore-getchangesubscriptions">getChangeSubscriptions()</a></code> allows a <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker⑧">service worker</a> to introspect
 the subscriptions that have been made.</p>
    <div class="example" id="example-ef0cb9c6">
-    <a class="self-link" href="#example-ef0cb9c6"></a> Checking change subscriptions: 
+    <a class="self-link" href="#example-ef0cb9c6"></a> Checking change subscriptions:
 <pre class="language-js highlight">   <c- kr>const</c-> subscriptions <c- o>=</c-> await cookieStore<c- p>.</c->getChangeSubscriptions<c- p>();</c->
    <c- k>for</c-> <c- p>(</c-><c- kr>const</c-> sub <c- k>of</c-> subscriptions<c- p>)</c-> <c- p>{</c->
      console<c- p>.</c->log<c- p>(</c->sub<c- p>.</c->name<c- p>,</c-> sub<c- p>.</c->url<c- p>,</c-> sub<c- p>.</c->matchType<c- p>);</c->
@@ -2008,16 +2008,16 @@ each member is a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="
    <h3 class="heading settled" data-level="3.1" id="CookieStore-get"><span class="secno">3.1. </span><span class="content">The <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-get-options" id="ref-for-dom-cookiestore-get-options⑤">get()</a></code> method</span><a class="self-link" href="#CookieStore-get"></a></h3>
    <div class="note" role="note">
     <dl class="domintro">
-     <dt><var>cookie</var> = await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-get" id="ref-for-dom-cookiestore-get①">get</a></code>(<var>name</var>) 
-     <dt><var>cookie</var> = await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-get-options" id="ref-for-dom-cookiestore-get-options⑥">get</a></code>(<var>options</var>) 
+     <dt><var>cookie</var> = await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-get" id="ref-for-dom-cookiestore-get①">get</a></code>(<var>name</var>)
+     <dt><var>cookie</var> = await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-get-options" id="ref-for-dom-cookiestore-get-options⑥">get</a></code>(<var>options</var>)
      <dd> Returns a promise resolving to the first in-scope <a data-link-type="dfn" href="#script-visible" id="ref-for-script-visible②">script-visible</a> value
         for a given cookie name (or other options).
         In a service worker context this defaults to the path of the service worker’s registered scope.
-        In a document it defaults to the path of the current document and does not respect changes from <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/history.html#dom-history-replacestate" id="ref-for-dom-history-replacestate">replaceState()</a></code> or <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/origin.html#dom-document-domain" id="ref-for-dom-document-domain">document.domain</a></code>. 
+        In a document it defaults to the path of the current document and does not respect changes from <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/history.html#dom-history-replacestate" id="ref-for-dom-history-replacestate">replaceState()</a></code> or <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/origin.html#dom-document-domain" id="ref-for-dom-document-domain">document.domain</a></code>.
     </dl>
    </div>
    <div class="algorithm">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-get"><code>get(<var>name</var>)</code></dfn> method, when invoked, must run these steps: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-get"><code>get(<var>name</var>)</code></dfn> method, when invoked, must run these steps:
     <ol>
      <li data-md>
       <p>Let <var>origin</var> be the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object">current settings object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin">origin</a>.</p>
@@ -2044,7 +2044,7 @@ each member is a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="
     </ol>
    </div>
    <div class="algorithm">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export data-lt="get(options)|get()" id="dom-cookiestore-get-options"><code>get(<var>options</var>)</code></dfn> method, when invoked, must run these steps: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export data-lt="get(options)|get()" id="dom-cookiestore-get-options"><code>get(<var>options</var>)</code></dfn> method, when invoked, must run these steps:
     <ol>
      <li data-md>
       <p>Let <var>origin</var> be the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object②">current settings object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin①">origin</a>.</p>
@@ -2087,8 +2087,8 @@ then return <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promis
    <h3 class="heading settled" data-level="3.2" id="CookieStore-getAll"><span class="secno">3.2. </span><span class="content">The <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getall-options" id="ref-for-dom-cookiestore-getall-options⑤">getAll()</a></code> method</span><a class="self-link" href="#CookieStore-getAll"></a></h3>
    <div class="note" role="note">
     <dl class="domintro">
-     <dt><var>cookies</var> = await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getall" id="ref-for-dom-cookiestore-getall①">getAll</a></code>(<var>name</var>) 
-     <dt><var>cookies</var> = await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getall-options" id="ref-for-dom-cookiestore-getall-options⑥">getAll</a></code>(<var>options</var>) 
+     <dt><var>cookies</var> = await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getall" id="ref-for-dom-cookiestore-getall①">getAll</a></code>(<var>name</var>)
+     <dt><var>cookies</var> = await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getall-options" id="ref-for-dom-cookiestore-getall-options⑥">getAll</a></code>(<var>options</var>)
      <dd>
       <p>Returns a promise resolving to the all in-scope <a data-link-type="dfn" href="#script-visible" id="ref-for-script-visible③">script-visible</a> value
         for a given cookie name (or other options).
@@ -2097,7 +2097,7 @@ then return <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promis
     </dl>
    </div>
    <div class="algorithm">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-getall"><code>getAll(<var>name</var>)</code></dfn> method, when invoked, must run these steps: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-getall"><code>getAll(<var>name</var>)</code></dfn> method, when invoked, must run these steps:
     <ol>
      <li data-md>
       <p>Let <var>origin</var> be the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object④">current settings object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin②">origin</a>.</p>
@@ -2122,7 +2122,7 @@ then return <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promis
     </ol>
    </div>
    <div class="algorithm">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export data-lt="getAll(options)|getAll()" id="dom-cookiestore-getall-options"><code>getAll(<var>options</var>)</code></dfn> method, when invoked, must run these steps: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export data-lt="getAll(options)|getAll()" id="dom-cookiestore-getall-options"><code>getAll(<var>options</var>)</code></dfn> method, when invoked, must run these steps:
     <ol>
      <li data-md>
       <p>Let <var>origin</var> be the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object⑥">current settings object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin③">origin</a>.</p>
@@ -2163,10 +2163,10 @@ then return <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promis
    <h3 class="heading settled" data-level="3.3" id="CookieStore-set"><span class="secno">3.3. </span><span class="content">The <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-set" id="ref-for-dom-cookiestore-set③">set()</a></code> method</span><a class="self-link" href="#CookieStore-set"></a></h3>
    <div class="note" role="note">
     <dl class="domintro">
-     <dt>await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-set" id="ref-for-dom-cookiestore-set④">set</a></code>(<var>name</var>, <var>value</var>) 
-     <dt>await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-set-options" id="ref-for-dom-cookiestore-set-options①">set</a></code>(<var>options</var>) 
+     <dt>await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-set" id="ref-for-dom-cookiestore-set④">set</a></code>(<var>name</var>, <var>value</var>)
+     <dt>await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-set-options" id="ref-for-dom-cookiestore-set-options①">set</a></code>(<var>options</var>)
      <dd>
-       Writes (creates or modifies) a cookie. 
+       Writes (creates or modifies) a cookie.
       <p>The options default to:</p>
       <ul>
        <li data-md>
@@ -2183,7 +2183,7 @@ then return <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promis
     </dl>
    </div>
    <div class="algorithm">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export data-lt="set(name, value, options)|set(name, value)" id="dom-cookiestore-set"><code>set(<var>name</var>, <var>value</var>, <var>options</var>)</code></dfn> method, when invoked, must run these steps: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export data-lt="set(name, value, options)|set(name, value)" id="dom-cookiestore-set"><code>set(<var>name</var>, <var>value</var>, <var>options</var>)</code></dfn> method, when invoked, must run these steps:
     <ol>
      <li data-md>
       <p>Let <var>origin</var> be the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object⑧">current settings object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin④">origin</a>.</p>
@@ -2208,7 +2208,7 @@ then return <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promis
     </ol>
    </div>
    <div class="algorithm">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-set-options"><code>set(<var>options</var>)</code></dfn> method, when invoked, must run these steps: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-set-options"><code>set(<var>options</var>)</code></dfn> method, when invoked, must run these steps:
     <ol>
      <li data-md>
       <p>Let <var>origin</var> be the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object①⓪">current settings object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin⑤">origin</a>.</p>
@@ -2235,13 +2235,13 @@ then return <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promis
    <h3 class="heading settled" data-level="3.4" id="CookieStore-delete"><span class="secno">3.4. </span><span class="content">The <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-delete" id="ref-for-dom-cookiestore-delete②">delete()</a></code> method</span><a class="self-link" href="#CookieStore-delete"></a></h3>
    <div class="note" role="note">
     <dl class="domintro">
-     <dt>await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-delete" id="ref-for-dom-cookiestore-delete③">delete</a></code>(<var>name</var>) 
-     <dt>await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-delete-options" id="ref-for-dom-cookiestore-delete-options①">delete</a></code>(<var>options</var>) 
-     <dd> Deletes (expires) a cookie with the given name or name and optional domain and path. 
+     <dt>await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-delete" id="ref-for-dom-cookiestore-delete③">delete</a></code>(<var>name</var>)
+     <dt>await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-delete-options" id="ref-for-dom-cookiestore-delete-options①">delete</a></code>(<var>options</var>)
+     <dd> Deletes (expires) a cookie with the given name or name and optional domain and path.
     </dl>
    </div>
    <div class="algorithm">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-delete"><code>delete(<var>name</var>)</code></dfn> method, when invoked, must run these steps: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-delete"><code>delete(<var>name</var>)</code></dfn> method, when invoked, must run these steps:
     <ol>
      <li data-md>
       <p>Let <var>origin</var> be the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object①②">current settings object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin⑥">origin</a>.</p>
@@ -2270,7 +2270,7 @@ true, and
     </ol>
    </div>
    <div class="algorithm">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-delete-options"><code>delete(<var>options</var>)</code></dfn> method, when invoked, must run these steps: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-delete-options"><code>delete(<var>options</var>)</code></dfn> method, when invoked, must run these steps:
     <ol>
      <li data-md>
       <p>Let <var>origin</var> be the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object①④">current settings object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin⑦">origin</a>.</p>
@@ -2297,15 +2297,15 @@ true, and
    <h3 class="heading settled" data-level="3.5" id="CookieStore-subscribeToChanges"><span class="secno">3.5. </span><span class="content">The <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-subscribetochanges" id="ref-for-dom-cookiestore-subscribetochanges②">subscribeToChanges()</a></code> method</span><a class="self-link" href="#CookieStore-subscribeToChanges"></a></h3>
    <div class="note" role="note">
     <dl class="domintro">
-     <dt>await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-subscribetochanges" id="ref-for-dom-cookiestore-subscribetochanges③">subscribeToChanges</a></code>(<var>subscriptions</var>) 
+     <dt>await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-subscribetochanges" id="ref-for-dom-cookiestore-subscribetochanges③">subscribeToChanges</a></code>(<var>subscriptions</var>)
      <dd>
-       This method can only be called during a <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker⑨">Service Worker</a> install phase. 
+       This method can only be called during a <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker⑨">Service Worker</a> install phase.
       <p>Once subscribed, notifications are delivered as "<code>cookiechange</code>" events
       fired against the <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker①⓪">Service Worker</a>'s global scope:</p>
     </dl>
    </div>
    <div class="algorithm">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-subscribetochanges"><code>subscribeToChanges(<var>subscriptions</var>)</code></dfn> method, when invoked, must run these steps: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-subscribetochanges"><code>subscribeToChanges(<var>subscriptions</var>)</code></dfn> method, when invoked, must run these steps:
     <ol>
      <li data-md>
       <p>Let <var>serviceWorker</var> be the <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#context-object" id="ref-for-context-object②">context object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-settings-object-global" id="ref-for-concept-settings-object-global">global object</a>'s <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker①①">service worker</a>.</p>
@@ -2346,13 +2346,13 @@ then <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guid
    <h3 class="heading settled" data-level="3.6" id="CookieStore-getChangeSubscriptions"><span class="secno">3.6. </span><span class="content">The <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getchangesubscriptions" id="ref-for-dom-cookiestore-getchangesubscriptions②">getChangeSubscriptions()</a></code> method</span><a class="self-link" href="#CookieStore-getChangeSubscriptions"></a></h3>
    <div class="note" role="note">
     <dl class="domintro">
-     <dt><var>subscriptions</var> = await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getchangesubscriptions" id="ref-for-dom-cookiestore-getchangesubscriptions③">getChangeSubscriptions()</a></code> 
+     <dt><var>subscriptions</var> = await cookieStore . <code class="idl"><a data-link-type="idl" href="#dom-cookiestore-getchangesubscriptions" id="ref-for-dom-cookiestore-getchangesubscriptions③">getChangeSubscriptions()</a></code>
      <dd> This method returns a promise which resolves to a list of the cookie change subscriptions
-      made for this Service Worker registration. 
+      made for this Service Worker registration.
     </dl>
    </div>
    <div class="algorithm">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-getchangesubscriptions"><code>getChangeSubscriptions()</code></dfn> method, when invoked, must run these steps: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="CookieStore" data-dfn-type="method" data-export id="dom-cookiestore-getchangesubscriptions"><code>getChangeSubscriptions()</code></dfn> method, when invoked, must run these steps:
     <ol>
      <li data-md>
       <p>Let <var>serviceWorker</var> be the <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#context-object" id="ref-for-context-object④">context object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-settings-object-global" id="ref-for-concept-settings-object-global①">global object</a>'s <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#dfn-service-worker" id="ref-for-dfn-service-worker①②">service worker</a>.</p>
@@ -2540,7 +2540,7 @@ then return false.</p>
    <div class="algorithm">
      To represent a date and time <var>dateTime</var> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="as-a-timestamp">as a timestamp</dfn>,
 return the number of milliseconds from 00:00:00 UTC, 1 January 1970 to <var>dateTime</var>,
-(assuming that there are exactly 86,400,000 milliseconds per day). 
+(assuming that there are exactly 86,400,000 milliseconds per day).
     <p class="note" role="note"><span>Note:</span> This is the same representation used for <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-time-values-and-time-range" id="ref-for-sec-time-values-and-time-range">time values</a> in <a data-link-type="biblio" href="#biblio-ecmascript">[ECMAScript]</a>.</p>
    </div>
    <h3 class="heading settled" data-level="6.2" id="set-cookie-algorithm"><span class="secno">6.2. </span><span class="content">Set a Cookie</span><a class="self-link" href="#set-cookie-algorithm"></a></h3>
@@ -4522,57 +4522,65 @@ authoring advice.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

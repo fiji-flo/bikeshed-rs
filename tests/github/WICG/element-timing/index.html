@@ -1708,7 +1708,7 @@ This means that a single <a data-link-type="dfn" href="https://drafts.csswg.org/
    </ol>
    <h3 class="heading settled" data-level="3.4" id="sec-process-loaded-image"><span class="secno">3.4. </span><span class="content">Process image that finished loading</span><a class="self-link" href="#sec-process-loaded-image"></a></h3>
    <div class="algorithm" data-algorithm="image element loaded">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="process-an-image-that-finished-loading">process an image that finished loading</dfn> given <var>element</var> and <var>imageRequest</var> as inputs: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="process-an-image-that-finished-loading">process an image that finished loading</dfn> given <var>element</var> and <var>imageRequest</var> as inputs:
     <ol>
      <li data-md>
       <p>Let <var>element</var> be the input <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element①⑧">Element</a></code>.</p>
@@ -1728,7 +1728,7 @@ This means that a single <a data-link-type="dfn" href="https://drafts.csswg.org/
    </div>
    <h3 class="heading settled" data-level="3.5" id="sec-report-image-element"><span class="secno">3.5. </span><span class="content">Report image Element Timing</span><a class="self-link" href="#sec-report-image-element"></a></h3>
    <div class="algorithm" data-algorithm="report image element timing">
-     When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="report-image-element-timing">report image element timing</dfn> given a triple (<var>element</var>, <var>imageRequest</var>, <var>loadTime</var>), a DOMHighResTimestamp <var>renderTime</var> and a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑥">Document</a></code> <var>document</var>, perform the following steps: 
+     When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="report-image-element-timing">report image element timing</dfn> given a triple (<var>element</var>, <var>imageRequest</var>, <var>loadTime</var>), a DOMHighResTimestamp <var>renderTime</var> and a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑥">Document</a></code> <var>document</var>, perform the following steps:
     <ol>
      <li data-md>
       <p>Let <var>intersectionRect</var> be the value returned by the <a data-link-type="dfn" href="https://w3c.github.io/IntersectionObserver#calculate-intersection-rect-algo" id="ref-for-calculate-intersection-rect-algo">intersection rect algorithm</a> using <var>element</var> as the target and viewport as the root.</p>
@@ -1766,7 +1766,7 @@ This means that a single <a data-link-type="dfn" href="https://drafts.csswg.org/
    </div>
    <h3 class="heading settled" data-level="3.6" id="sec-report-text"><span class="secno">3.6. </span><span class="content">Report text Element Timing</span><a class="self-link" href="#sec-report-text"></a></h3>
    <div class="algorithm" data-algorithm="report text element timing">
-     When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="report-text-element-timing">report text element timing</dfn> given an <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element②⓪">Element</a></code> <var>element</var>, a DOMHighResTimestamp <var>renderTime</var> and a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑦">Document</a></code> <var>document</var>, perform the following steps: 
+     When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="report-text-element-timing">report text element timing</dfn> given an <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element②⓪">Element</a></code> <var>element</var>, a DOMHighResTimestamp <var>renderTime</var> and a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑦">Document</a></code> <var>document</var>, perform the following steps:
     <ol>
      <li data-md>
       <p>Let <var>intersectionRect</var> be an empty rectangle.</p>
@@ -1810,7 +1810,7 @@ This means that a single <a data-link-type="dfn" href="https://drafts.csswg.org/
    </div>
    <h3 class="heading settled" data-level="3.7" id="sec-element-processing"><span class="secno">3.7. </span><span class="content">Element Timing processing</span><a class="self-link" href="#sec-element-processing"></a></h3>
    <div class="algorithm" data-algorithm="process element timing">
-     The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="element-timing-processing">element timing processing</dfn> algorithm receives a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑧">Document</a></code> <var>doc</var> and a timestamp <var>now</var> and performs the following steps: 
+     The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="element-timing-processing">element timing processing</dfn> algorithm receives a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑧">Document</a></code> <var>doc</var> and a timestamp <var>now</var> and performs the following steps:
     <ol>
      <li data-md>
       <p>For each <var>imagePendingRenderingTriple</var> in <var>doc</var>’s <a data-link-type="dfn" href="#images-pending-rendering" id="ref-for-images-pending-rendering①">images pending rendering</a> list:</p>
@@ -1842,7 +1842,7 @@ This means that a single <a data-link-type="dfn" href="https://drafts.csswg.org/
    </div>
    <h3 class="heading settled" data-level="3.8" id="sec-get-an-element"><span class="secno">3.8. </span><span class="content">Get an element algorithm</span><a class="self-link" href="#sec-get-an-element"></a></h3>
    <div class="algorithm" data-algorithm="PerformanceElementTiming element">
-     When asked to run the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="get-an-element">get an element</dfn> algorithm with <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element②③">Element</a></code> <var>element</var> and <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑨">Document</a></code> <var>document</var> as inputs, run these steps: 
+     When asked to run the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="get-an-element">get an element</dfn> algorithm with <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element②③">Element</a></code> <var>element</var> and <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑨">Document</a></code> <var>document</var> as inputs, run these steps:
     <ol>
      <li data-md>
       <p>If <var>element</var> is not <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#connected" id="ref-for-connected">connected</a>, return <code class="highlight"><c- kc>null</c-></code>.</p>
@@ -2817,58 +2817,66 @@ This would unintentionally leak some of the display timing of the image.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

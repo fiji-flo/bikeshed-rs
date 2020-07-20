@@ -435,7 +435,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This module contains the features of CSS relating to new mechanisms of overflow handling in visual media (e.g., screen or paper).  In interactive media, it describes features that allow the overflow from a fixed size container to be handled by pagination (displaying one page at a time).  It also describes features, applying to all visual media, that allow the contents of an element to be spread across multiple fragments, allowing the contents to flow across multiple regions or to have different styles for different fragments.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -633,24 +633,24 @@ even if the scrollbar itself changes.
 Also, it must be the same for all elements in the page.</p>
    <p>The values of this property have the following meaning:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scrollbar-gutter" data-dfn-type="value" data-export id="valdef-scrollbar-gutter-auto">auto</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scrollbar-gutter" data-dfn-type="value" data-export id="valdef-scrollbar-gutter-auto">auto</dfn>
     <dd><a data-link-type="dfn" href="#classic-scrollbars" id="ref-for-classic-scrollbars②">Classic scrollbars</a> consume space by creating a <a data-link-type="dfn" href="#scrollbar-gutter" id="ref-for-scrollbar-gutter⑧">scrollbar gutter</a> when <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow②">overflow</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-scroll" id="ref-for-valdef-overflow-scroll">scroll</a>,
-	or when <span class="property" id="ref-for-propdef-overflow③">overflow</span> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto" id="ref-for-valdef-overflow-auto">auto</a> and the box is overflowing. <a data-link-type="dfn" href="#overlay-scrollbars" id="ref-for-overlay-scrollbars②">Overlay scrollbars</a> do not consume space. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scrollbar-gutter" data-dfn-type="value" data-export id="valdef-scrollbar-gutter-stable">stable</dfn> 
+	or when <span class="property" id="ref-for-propdef-overflow③">overflow</span> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto" id="ref-for-valdef-overflow-auto">auto</a> and the box is overflowing. <a data-link-type="dfn" href="#overlay-scrollbars" id="ref-for-overlay-scrollbars②">Overlay scrollbars</a> do not consume space.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scrollbar-gutter" data-dfn-type="value" data-export id="valdef-scrollbar-gutter-stable">stable</dfn>
     <dd>The <a data-link-type="dfn" href="#scrollbar-gutter" id="ref-for-scrollbar-gutter⑨">scrollbar gutter</a> is present when <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow④">overflow</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-scroll" id="ref-for-valdef-overflow-scroll①">scroll</a> or <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto" id="ref-for-valdef-overflow-auto①">auto</a> and the scrollbar is a <a data-link-type="dfn" href="#classic-scrollbars" id="ref-for-classic-scrollbars③">classic scrollbar</a> even if the box is not overflowing,
-	but not when the scrollbar is an <a data-link-type="dfn" href="#overlay-scrollbars" id="ref-for-overlay-scrollbars③">overlay scrollbar</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scrollbar-gutter" data-dfn-type="value" data-export id="valdef-scrollbar-gutter-always">always</dfn> 
+	but not when the scrollbar is an <a data-link-type="dfn" href="#overlay-scrollbars" id="ref-for-overlay-scrollbars③">overlay scrollbar</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scrollbar-gutter" data-dfn-type="value" data-export id="valdef-scrollbar-gutter-always">always</dfn>
     <dd>The <a data-link-type="dfn" href="#scrollbar-gutter" id="ref-for-scrollbar-gutter①⓪">scrollbar gutter</a> is always present when <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow⑤">overflow</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-scroll" id="ref-for-valdef-overflow-scroll②">scroll</a> or <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto" id="ref-for-valdef-overflow-auto②">auto</a>,
 	regardless of the type of scrollbar or
-	of whether the box is overflowing. 
-    <dt><dfn class="css" data-dfn-for="scrollbar-gutter" data-dfn-type="value" data-export id="valdef-scrollbar-gutter-both">both<a class="self-link" href="#valdef-scrollbar-gutter-both"></a></dfn> 
+	of whether the box is overflowing.
+    <dt><dfn class="css" data-dfn-for="scrollbar-gutter" data-dfn-type="value" data-export id="valdef-scrollbar-gutter-both">both<a class="self-link" href="#valdef-scrollbar-gutter-both"></a></dfn>
     <dd>If a <a data-link-type="dfn" href="#scrollbar-gutter" id="ref-for-scrollbar-gutter①①">scrollbar gutter</a> would be present
 	on one of the inline start edge or the inline end edge of the box,
-	another <span id="ref-for-scrollbar-gutter①②">scrollbar gutter</span> must be present on the opposite edge as well. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="scrollbar-gutter" data-dfn-type="value" data-export id="valdef-scrollbar-gutter-force">force</dfn> 
+	another <span id="ref-for-scrollbar-gutter①②">scrollbar gutter</span> must be present on the opposite edge as well.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="scrollbar-gutter" data-dfn-type="value" data-export id="valdef-scrollbar-gutter-force">force</dfn>
     <dd>When the <a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-force" id="ref-for-valdef-scrollbar-gutter-force">force</a> keyword is present <a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-stable" id="ref-for-valdef-scrollbar-gutter-stable">stable</a> and <a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-always" id="ref-for-valdef-scrollbar-gutter-always">always</a> take effect
 	when <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow⑥">overflow</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-visible" id="ref-for-valdef-overflow-visible">visible</a>, <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-hidden" id="ref-for-valdef-overflow-hidden">hidden</a> or <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-clip" id="ref-for-valdef-overflow-clip">clip</a> in addition <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto" id="ref-for-valdef-overflow-auto③">auto</a> or <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-scroll" id="ref-for-valdef-overflow-scroll③">scroll</a>.
-	This does not cause a scrollbar to be displayed, only a <a data-link-type="dfn" href="#scrollbar-gutter" id="ref-for-scrollbar-gutter①③">scrollbar gutter</a>. 
+	This does not cause a scrollbar to be displayed, only a <a data-link-type="dfn" href="#scrollbar-gutter" id="ref-for-scrollbar-gutter①③">scrollbar gutter</a>.
    </dl>
    <p>When the <a data-link-type="dfn" href="#scrollbar-gutter" id="ref-for-scrollbar-gutter①④">scrollbar gutter</a> is present but the scrollbar is not,
 or the scrollbar is transparent or otherwise does not fully obscure the <span id="ref-for-scrollbar-gutter①⑤">scrollbar gutter</span>,
@@ -660,79 +660,79 @@ the background of the <span id="ref-for-scrollbar-gutter①⑥">scrollbar gutter
 showing in which case space is reserved for the <a data-link-type="dfn" href="#scrollbar-gutter" id="ref-for-scrollbar-gutter①⑦">scrollbar gutter</a>.
 In this table, “G” represents cases where space is reserved for the <span id="ref-for-scrollbar-gutter①⑧">scrollbar gutter</span>,
 “f?” cases where space is reserved for the <span id="ref-for-scrollbar-gutter①⑨">scrollbar gutter</span> if <a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-force" id="ref-for-valdef-scrollbar-gutter-force①">force</a> was specified,
-and empty cells cases where the no space is reserved. 
+and empty cells cases where the no space is reserved.
     <table class="data">
      <thead>
       <tr>
        <td>
        <td>
-       <th colspan="2">Classic scrollbars 
-       <th colspan="2">Overlay scrollbars 
+       <th colspan="2">Classic scrollbars
+       <th colspan="2">Overlay scrollbars
       <tr>
-       <th><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow⑧">overflow</a> 
-       <th><a class="property" data-link-type="propdesc" href="#propdef-scrollbar-gutter" id="ref-for-propdef-scrollbar-gutter④">scrollbar-gutter</a> 
-       <th>Overflowing 
-       <th>Not overflowing 
-       <th>Overflowing 
-       <th>Not overflowing 
+       <th><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow⑧">overflow</a>
+       <th><a class="property" data-link-type="propdesc" href="#propdef-scrollbar-gutter" id="ref-for-propdef-scrollbar-gutter④">scrollbar-gutter</a>
+       <th>Overflowing
+       <th>Not overflowing
+       <th>Overflowing
+       <th>Not overflowing
      <tbody>
       <tr>
-       <th rowspan="3"><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-scroll" id="ref-for-valdef-overflow-scroll④">scroll</a> 
-       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-auto" id="ref-for-valdef-scrollbar-gutter-auto①">auto</a> 
-       <td>G 
-       <td>G 
+       <th rowspan="3"><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-scroll" id="ref-for-valdef-overflow-scroll④">scroll</a>
+       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-auto" id="ref-for-valdef-scrollbar-gutter-auto①">auto</a>
+       <td>G
+       <td>G
        <td>
        <td>
       <tr>
-       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-stable" id="ref-for-valdef-scrollbar-gutter-stable①">stable</a> 
-       <td>G 
-       <td>G 
+       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-stable" id="ref-for-valdef-scrollbar-gutter-stable①">stable</a>
+       <td>G
+       <td>G
        <td>
        <td>
       <tr>
-       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-always" id="ref-for-valdef-scrollbar-gutter-always①">always</a> 
-       <td>G 
-       <td>G 
-       <td>G 
-       <td>G 
+       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-always" id="ref-for-valdef-scrollbar-gutter-always①">always</a>
+       <td>G
+       <td>G
+       <td>G
+       <td>G
       <tr>
-       <th rowspan="3"><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto" id="ref-for-valdef-overflow-auto④">auto</a> 
-       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-auto" id="ref-for-valdef-scrollbar-gutter-auto②">auto</a> 
-       <td>G 
-       <td>
-       <td>
-       <td>
-      <tr>
-       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-stable" id="ref-for-valdef-scrollbar-gutter-stable②">stable</a> 
-       <td>G 
-       <td>G 
-       <td>
-       <td>
-      <tr>
-       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-always" id="ref-for-valdef-scrollbar-gutter-always②">always</a> 
-       <td>G 
-       <td>G 
-       <td>G 
-       <td>G 
-      <tr>
-       <th rowspan="3"><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-visible" id="ref-for-valdef-overflow-visible①">visible</a>, <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-hidden" id="ref-for-valdef-overflow-hidden①">hidden</a>, <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-clip" id="ref-for-valdef-overflow-clip①">clip</a> 
-       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-auto" id="ref-for-valdef-scrollbar-gutter-auto③">auto</a> 
-       <td>
+       <th rowspan="3"><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto" id="ref-for-valdef-overflow-auto④">auto</a>
+       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-auto" id="ref-for-valdef-scrollbar-gutter-auto②">auto</a>
+       <td>G
        <td>
        <td>
        <td>
       <tr>
-       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-stable" id="ref-for-valdef-scrollbar-gutter-stable③">stable</a> 
-       <td>f? 
-       <td>f? 
+       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-stable" id="ref-for-valdef-scrollbar-gutter-stable②">stable</a>
+       <td>G
+       <td>G
        <td>
        <td>
       <tr>
-       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-always" id="ref-for-valdef-scrollbar-gutter-always③">always</a> 
-       <td>f? 
-       <td>f? 
-       <td>f? 
-       <td>f? 
+       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-always" id="ref-for-valdef-scrollbar-gutter-always②">always</a>
+       <td>G
+       <td>G
+       <td>G
+       <td>G
+      <tr>
+       <th rowspan="3"><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-visible" id="ref-for-valdef-overflow-visible①">visible</a>, <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-hidden" id="ref-for-valdef-overflow-hidden①">hidden</a>, <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-clip" id="ref-for-valdef-overflow-clip①">clip</a>
+       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-auto" id="ref-for-valdef-scrollbar-gutter-auto③">auto</a>
+       <td>
+       <td>
+       <td>
+       <td>
+      <tr>
+       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-stable" id="ref-for-valdef-scrollbar-gutter-stable③">stable</a>
+       <td>f?
+       <td>f?
+       <td>
+       <td>
+      <tr>
+       <th><a class="css" data-link-type="maybe" href="#valdef-scrollbar-gutter-always" id="ref-for-valdef-scrollbar-gutter-always③">always</a>
+       <td>f?
+       <td>f?
+       <td>f?
+       <td>f?
     </table>
    </div>
    <h2 class="heading settled caniuse-paneled" data-level="5" id="text-overflow"><span class="secno">5. </span><span class="content">Overflow Ellipsis: the <a class="property" data-link-type="propdesc" href="#propdef-text-overflow" id="ref-for-propdef-text-overflow①">text-overflow</a> property</span><a class="self-link" href="#text-overflow"></a></h2>
@@ -783,26 +783,26 @@ it is ellipsed.</span></p>
 (e.g. due to <code class="lang-css highlight">white-space: nowrap</code> or a single word is too long to fit).
 Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="text-overflow" data-dfn-type="value" data-export id="overflow-clip">clip<a class="self-link" href="#overflow-clip"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="text-overflow" data-dfn-type="value" data-export id="overflow-clip">clip<a class="self-link" href="#overflow-clip"></a></dfn>
     <dd> Clip inline content that overflows its block container element.
-		Characters may be only partially rendered. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="text-overflow" data-dfn-type="value" data-export id="overflow-ellipsis">ellipsis</dfn> 
+		Characters may be only partially rendered.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="text-overflow" data-dfn-type="value" data-export id="overflow-ellipsis">ellipsis</dfn>
     <dd> Render an ellipsis character (U+2026)
 		to represent clipped inline content.
 		Implementations may substitute a more language, script, or writing-mode appropriate
 		ellipsis character,
-		or three dots "..." if the ellipsis character is unavailable. 
-    <dt id="overflow-string"><a class="self-link" href="#overflow-string"></a><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#string-value" id="ref-for-string-value①">&lt;string></a> 
+		or three dots "..." if the ellipsis character is unavailable.
+    <dt id="overflow-string"><a class="self-link" href="#overflow-string"></a><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#string-value" id="ref-for-string-value①">&lt;string></a>
     <dd> Render the given string to represent clipped inline content.
 		The given string is treated as an independent paragraph
-		for bidi purposes. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="text-overflow" data-dfn-type="function" data-export data-lt="fade()" id="funcdef-text-overflow-fade">fade( <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value">&lt;percentage></a> )</dfn> 
+		for bidi purposes.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="text-overflow" data-dfn-type="function" data-export data-lt="fade()" id="funcdef-text-overflow-fade">fade( <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value">&lt;percentage></a> )</dfn>
     <dd>
       Clip inline content that overflows its line box.
 		Characters may be only partially rendered.
 		In addition, the UA must apply a fade out effect
 		near the edge of the line box,
-		reaching complete transparency at the edge. 
+		reaching complete transparency at the edge.
      <p class="issue" id="issue-ebe65138"><a class="self-link" href="#issue-ebe65138"></a> Do we need to define the way
 		the fade out is calculated
 		so that the fading is identical across browsers?
@@ -824,10 +824,10 @@ Values have the following meanings:</p>
 		Should fade apply to the logical content of the line,
 		or to the physical area of the line box,
 		or the intersection of both?</p>
-    <dt><dfn class="css" data-dfn-for="text-overflow" data-dfn-type="value" data-export id="valdef-text-overflow-fade">fade<a class="self-link" href="#valdef-text-overflow-fade"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="text-overflow" data-dfn-type="value" data-export id="valdef-text-overflow-fade">fade<a class="self-link" href="#valdef-text-overflow-fade"></a></dfn>
     <dd> Same as <a class="css" data-link-type="maybe" href="#funcdef-text-overflow-fade" id="ref-for-funcdef-text-overflow-fade①">fade()</a>,
 		but the distance over which the fading effect is applied
-		is determined by the UA. <span class="css">1em</span> is suggested as a reasonable value. 
+		is determined by the UA. <span class="css">1em</span> is suggested as a reasonable value.
    </dl>
    <p>The term "character" is used in this property definition
 for better readability and means "grapheme cluster" <a data-link-type="biblio" href="#biblio-uax29">[UAX29]</a> for implementation purposes.</p>
@@ -847,11 +847,11 @@ to the applicable edge(s) of the remaining inline content.
 The first character or <a href="https://www.w3.org/TR/CSS21/visuren.html#inline-boxes"> atomic inline-level element</a> on a line
 must be clipped rather than ellipsed.</p>
    <div class="example" id="example-160d0058">
-    <a class="self-link" href="#example-160d0058"></a> 
+    <a class="self-link" href="#example-160d0058"></a>
     <h3 class="no-num no-toc heading settled" id="bidi-ellipsis"><span class="content">Bidi ellipsis examples</span><a class="self-link" href="#bidi-ellipsis"></a></h3>
      These examples demonstrate which characters get hidden
 to make room for the ellipsis in a bidi situation:
-those visually at the edge of the line. 
+those visually at the edge of the line.
     <p>Sample CSS:</p>
 <pre><code class="highlight"><c- f>div </c-><c- p>{</c->
   <c- k>font-family</c-><c- p>:</c-> monospace<c- p>;</c->
@@ -888,26 +888,26 @@ those visually at the edge of the line.
     <li> Ellipsing only affects rendering and must not affect layout
 		nor dispatching of pointer events:
 		The UA should dispatch any pointer event on the ellipsis to the elided element,
-		as if <a class="property" data-link-type="propdesc" href="#propdef-text-overflow" id="ref-for-propdef-text-overflow③">text-overflow</a> had been <span class="css">none</span>. 
-    <li> The ellipsis is styled and baseline-aligned according to the block. 
-    <li> Ellipsing occurs after relative positioning and other graphical transformations. 
+		as if <a class="property" data-link-type="propdesc" href="#propdef-text-overflow" id="ref-for-propdef-text-overflow③">text-overflow</a> had been <span class="css">none</span>.
+    <li> The ellipsis is styled and baseline-aligned according to the block.
+    <li> Ellipsing occurs after relative positioning and other graphical transformations.
     <li> If there is insufficient space for the ellipsis,
 		then clip the rendering of the ellipsis itself
 		(on the same side that neutral characters on the line
-		would have otherwise been clipped with the <span class="css">text-overflow:clip</span> value). 
+		would have otherwise been clipped with the <span class="css">text-overflow:clip</span> value).
    </ul>
    <h3 class="no-num no-toc heading settled" id="ellipsis-interaction"><span class="content">user interaction with ellipsis</span><a class="self-link" href="#ellipsis-interaction"></a></h3>
    <ul>
     <li> When the user is interacting with content
 		(e.g. editing, selecting, scrolling),
-		the user agent may treat <a class="css" data-link-type="maybe" href="#overflow-ellipsis" id="ref-for-overflow-ellipsis">ellipsis</a>, string values, <span class="css">fade</span> or <span class="css">fade()</span> as <span class="css">text-overflow:clip</span>. 
+		the user agent may treat <a class="css" data-link-type="maybe" href="#overflow-ellipsis" id="ref-for-overflow-ellipsis">ellipsis</a>, string values, <span class="css">fade</span> or <span class="css">fade()</span> as <span class="css">text-overflow:clip</span>.
     <li> Selecting the ellipsis should select the ellipsed text.
 		If all of the ellipsed text is selected,
 		UAs should show selection of the ellipsis.
-		Behavior of partially-selected ellipsed text is up to the UA. 
+		Behavior of partially-selected ellipsed text is up to the UA.
    </ul>
    <div class="example" id="example-44082941">
-    <a class="self-link" href="#example-44082941"></a> 
+    <a class="self-link" href="#example-44082941"></a>
     <h3 class="no-num no-toc heading settled" id="text-overflow-examples"><span class="content">text-overflow examples</span><a class="self-link" href="#text-overflow-examples"></a></h3>
     <p>These examples demonstrate setting the text-overflow of a block container element
 	that has text which overflows its dimensions:</p>
@@ -924,9 +924,9 @@ those visually at the edge of the line.
     <table class="awesome-table">
      <tbody>
       <tr>
-       <th>HTML 
-       <th>sample rendering 
-       <th>your browser 
+       <th>HTML
+       <th>sample rendering
+       <th>your browser
       <tr>
        <td>
 <pre><code class="lang-markup highlight"><c- p>&lt;</c-><c- f>div</c-><c- p>></c->
@@ -969,7 +969,7 @@ WON’T ELLIPSE.
         <object data="images/nes.png" type="image/png"> Fourth, a box with a nested paragraph demonstrating anonymous block boxes equivalency and non-inheritance into a nested element. </object>
        <td>
         <div style="width:3.1em; border:solid .1em black; margin:1em 0; padding:.2em;  font-family:Helvetica,sans-serif; line-height:1.1; overflow:hidden;text-overflow:ellipsis;">
-         NESTED 
+         NESTED
          <p>PARAGRAPH</p>
           WON’T ELLIPSE.
         </div>
@@ -1015,7 +1015,7 @@ at which point that content should be displayed
 rather than an ellipsis/string.</p>
    <div class="example" id="example-45d2531f">
     <a class="self-link" href="#example-45d2531f"></a> This example uses text-overflow on an element with overflow scroll
-	to demonstrate the above described behavior. 
+	to demonstrate the above described behavior.
     <p>sample CSS:</p>
 <pre><code class="lang-css highlight"><c- f>div.crawlbar </c-><c- p>{</c->
   <c- k>text-overflow</c-><c- p>:</c-> ellipsis<c- p>;</c->
@@ -1053,7 +1053,7 @@ the block’s direction (per the direction property).</p>
 implementations may adjust their rendering of ellipses/strings
 (e.g. align to the box edges rather than line edges).</p>
    <div class="example" id="example-347bbb66">
-    <a class="self-link" href="#example-347bbb66"></a> Same as previous example except with <code>text-overflow: ellipsis ellipsis</code>, demonstrated: 
+    <a class="self-link" href="#example-347bbb66"></a> Same as previous example except with <code>text-overflow: ellipsis ellipsis</code>, demonstrated:
     <div style="text-overflow: ellipsis ellipsis; height: 2em; overflow: scroll; white-space: nowrap; width: 15em; border:1em solid black;"> CSS is awesome, especially when you can scroll
 	to see extra text instead of just
 	having it overlap other text by default. </div>
@@ -1076,28 +1076,28 @@ and extends it further.</p>
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-continue">continue</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> overflow <span id="ref-for-comb-one⑦">|</span> paginate <span id="ref-for-comb-one⑧">|</span> fragments <span id="ref-for-comb-one⑨">|</span> discard 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> overflow <span id="ref-for-comb-one⑦">|</span> paginate <span id="ref-for-comb-one⑧">|</span> fragments <span id="ref-for-comb-one⑨">|</span> discard
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>block containers <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, flex containers <a data-link-type="biblio" href="#biblio-css3-flexbox">[CSS3-FLEXBOX]</a>, and grid containers <a data-link-type="biblio" href="#biblio-css3-grid-layout">[CSS3-GRID-LAYOUT]</a> 
+      <td>block containers <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a>, flex containers <a data-link-type="biblio" href="#biblio-css3-flexbox">[CSS3-FLEXBOX]</a>, and grid containers <a data-link-type="biblio" href="#biblio-css3-grid-layout">[CSS3-GRID-LAYOUT]</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>see below 
+      <td>see below
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p class="issue" id="issue-70dec9cf"><a class="self-link" href="#issue-70dec9cf"></a> The naming of this property and its values is preliminary.
 This was initially proposed as
@@ -1110,55 +1110,55 @@ Once it is sufficiently stable in this specification, <span class="property" id=
 from earlier versions of this specification,
 while <span class="css" id="ref-for-propdef-continue②">continue: paginate</span> replaces "overflow: paged-x | paged-y | paged-x-controls | paged-y-controls"</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="continue" data-dfn-type="value" data-export id="valdef-continue-auto">auto</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="continue" data-dfn-type="value" data-export id="valdef-continue-auto">auto</dfn>
     <dd>
      <a class="css" data-link-type="maybe" href="#valdef-continue-auto" id="ref-for-valdef-continue-auto">auto</a> may only occur as a computed value
 		if the element is a <a data-link-type="dfn" href="https://drafts.csswg.org/css-regions-1/#css-region" id="ref-for-css-region">CSS Region</a> other than the last one in a <a data-link-type="dfn" href="https://drafts.csswg.org/css-regions-1/#region-chain" id="ref-for-region-chain">region chain</a>.
-		Content that doesn’t fit is pushed to the next region of the chain. 
+		Content that doesn’t fit is pushed to the next region of the chain.
      <p>In all other cases, <a class="css" data-link-type="maybe" href="#valdef-continue-auto" id="ref-for-valdef-continue-auto①">auto</a> computes to one of the other values.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="continue" data-dfn-type="value" data-export id="valdef-continue-overflow">overflow</dfn> 
-    <dd>Content that doesn’t fit overflows, according to the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow①⓪">overflow</a> property 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="continue" data-dfn-type="value" data-export id="valdef-continue-discard">discard</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="continue" data-dfn-type="value" data-export id="valdef-continue-overflow">overflow</dfn>
+    <dd>Content that doesn’t fit overflows, according to the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow①⓪">overflow</a> property
+    <dt><dfn class="dfn-paneled css" data-dfn-for="continue" data-dfn-type="value" data-export id="valdef-continue-discard">discard</dfn>
     <dd>
-     Content that doesn’t fit is discarded at a fragmentation break 
+     Content that doesn’t fit is discarded at a fragmentation break
      <p class="note" role="note"><span>Note:</span> generalized from region-fragment: break; on the last region of a region chain</p>
      <p class="issue" id="issue-ee8089b5"><a class="self-link" href="#issue-ee8089b5"></a> When the element isn’t a <a data-link-type="dfn" href="https://drafts.csswg.org/css-break-4/#fragmentation-container" id="ref-for-fragmentation-container">fragmentation container</a> already,
 		should this work by turning it directly into one,
 		or by creating a <a data-link-type="dfn" href="#fragment-box" id="ref-for-fragment-box">fragment box</a> inside it like <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="ref-for-valdef-continue-fragments">fragments</a> does?</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="continue" data-dfn-type="value" data-export id="valdef-continue-paginate">paginate</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="continue" data-dfn-type="value" data-export id="valdef-continue-paginate">paginate</dfn>
     <dd>
      Content that doesn’t fit paginates.
 		This creates a paginated view inside the element
-		similar to the way that 'overflow: scroll' creates a scrollable view. 
+		similar to the way that 'overflow: scroll' creates a scrollable view.
      <p>See <a href="#paginated-overflow">paginated overflow</a></p>
      <p class="note" role="note"><span>Note:</span> Print is effectively "continue: paginate" on the root.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="continue" data-dfn-type="value" data-export id="valdef-continue-fragments">fragments</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="continue" data-dfn-type="value" data-export id="valdef-continue-fragments">fragments</dfn>
     <dd>
-     content that doesn’t fit causes the element to copy itself and continue laying out. 
+     content that doesn’t fit causes the element to copy itself and continue laying out.
      <p>See <a href="#fragment-overflow">fragment overflow</a>.</p>
    </dl>
    <p>The computed value of the <a class="property" data-link-type="propdesc" href="#propdef-continue" id="ref-for-propdef-continue③">continue</a> for a given element or pseudo element is determined as follow:</p>
    <ol>
     <li>On elements or pseudo elements with <a data-link-type="dfn" href="https://drafts.csswg.org/css-contain-1/#layout-containment" id="ref-for-layout-containment">layout containment</a> (see <a data-link-type="biblio" href="#biblio-css-contain-1">[CSS-CONTAIN-1]</a>),
-	if the specified value is <a class="css" data-link-type="maybe" href="#valdef-continue-auto" id="ref-for-valdef-continue-auto②">auto</a> or <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="ref-for-valdef-continue-fragments①">fragments</a> then the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-overflow" id="ref-for-valdef-continue-overflow">overflow</a>. 
+	if the specified value is <a class="css" data-link-type="maybe" href="#valdef-continue-auto" id="ref-for-valdef-continue-auto②">auto</a> or <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="ref-for-valdef-continue-fragments①">fragments</a> then the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-overflow" id="ref-for-valdef-continue-overflow">overflow</a>.
     <li>
-     Otherwise, if the specified value is <a class="css" data-link-type="maybe" href="#valdef-continue-auto" id="ref-for-valdef-continue-auto③">auto</a> 
+     Otherwise, if the specified value is <a class="css" data-link-type="maybe" href="#valdef-continue-auto" id="ref-for-valdef-continue-auto③">auto</a>
      <ol>
       <li>On a <a data-link-type="dfn" href="https://drafts.csswg.org/css-regions-1/#css-region" id="ref-for-css-region①">CSS Region</a> other than the last one in a <a data-link-type="dfn" href="https://drafts.csswg.org/css-regions-1/#region-chain" id="ref-for-region-chain①">region chain</a>,
-		the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-auto" id="ref-for-valdef-continue-auto④">auto</a> 
+		the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-auto" id="ref-for-valdef-continue-auto④">auto</a>
       <li>On a page
-		the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-paginate" id="ref-for-valdef-continue-paginate">paginate</a> 
-      <li>On a <a data-link-type="dfn" href="#fragment-box" id="ref-for-fragment-box①">fragment box</a> the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="ref-for-valdef-continue-fragments②">fragments</a> 
-      <li>Otherwise, the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-overflow" id="ref-for-valdef-continue-overflow①">overflow</a> 
+		the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-paginate" id="ref-for-valdef-continue-paginate">paginate</a>
+      <li>On a <a data-link-type="dfn" href="#fragment-box" id="ref-for-fragment-box①">fragment box</a> the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="ref-for-valdef-continue-fragments②">fragments</a>
+      <li>Otherwise, the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-overflow" id="ref-for-valdef-continue-overflow①">overflow</a>
      </ol>
     <li>
-     Otherwise, if the specified value is <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="ref-for-valdef-continue-fragments③">fragments</a> 
+     Otherwise, if the specified value is <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="ref-for-valdef-continue-fragments③">fragments</a>
      <ol>
       <li>On a page
-		the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-paginate" id="ref-for-valdef-continue-paginate①">paginate</a> 
-      <li>Otherwise, the computed value is the specified value 
+		the computed value is <a class="css" data-link-type="maybe" href="#valdef-continue-paginate" id="ref-for-valdef-continue-paginate①">paginate</a>
+      <li>Otherwise, the computed value is the specified value
      </ol>
-    <li>In all other cases, the computed value is the specified value 
+    <li>In all other cases, the computed value is the specified value
    </ol>
    <p class="issue" id="issue-7e96806f"><a class="self-link" href="#issue-7e96806f"></a> If we introduce a pseudo element that can select columns in a multicol,
 we would need to specify that auto computes to auto on it,
@@ -1172,7 +1172,7 @@ or introduce a new value and have auto compute to that
    <div class="issue" id="issue-20e2f78e">
     <a class="self-link" href="#issue-20e2f78e"></a> Should traditional pagination (e.g. when printing)
 be expressed through some magic in the computed value of <a class="css" data-link-type="maybe" href="#valdef-continue-auto" id="ref-for-valdef-continue-auto⑤">auto</a>,
-or by inserting this in the UA stylesheet: 
+or by inserting this in the UA stylesheet:
 <pre><code class="lang-css highlight"><c- n>@media</c-> <c- p>(</c->overflow-block<c- f>: paged), (overflow-block: optional-paged) </c-><c- p>{</c->
   :root {
     continue: paginate;
@@ -1241,7 +1241,7 @@ the <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="
 		These rules prevent ever using <a class="css" data-link-type="maybe" href="#selectordef-nth-fragment" id="ref-for-selectordef-nth-fragment">::nth-fragment()</a> for that,
 		despite that the name seems the most logical name for such a feature. </p>
    <div class="example" id="example-6427c43a">
-    <a class="self-link" href="#example-6427c43a"></a> 
+    <a class="self-link" href="#example-6427c43a"></a>
     <table class="source-demo-pair">
      <tbody>
       <tr>
@@ -1338,7 +1338,7 @@ the <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="
 		of a pseudo-class to the specificity calculation. <span class="issue" id="issue-40daaa94"><a class="self-link" href="#issue-40daaa94"></a>Does this need to be specified in
 		the cascading module as well?</span> </p>
    <div class="example" id="example-5cb99d62">
-    <a class="self-link" href="#example-5cb99d62"></a> 
+    <a class="self-link" href="#example-5cb99d62"></a>
     <table class="source-demo-pair">
      <tbody>
       <tr>
@@ -1415,7 +1415,7 @@ the <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="
 		The restrictions that apply to styling inside fragments
 		should also apply to inheritance from fragments. </p>
    <div class="example" id="example-b77c4f49">
-    <a class="self-link" href="#example-b77c4f49"></a> 
+    <a class="self-link" href="#example-b77c4f49"></a>
     <table class="source-demo-pair">
      <tbody>
       <tr>
@@ -1462,20 +1462,20 @@ the <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="
 		the declarations in that rule apply to
 		a fragment (or pseudo-element thereof) when: </p>
    <ol>
-    <li> the declarations are for properties that apply to the <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-pseudo-4/#selectordef-first-letter" id="ref-for-selectordef-first-letter③">::first-letter</a> pseudo-element, 
+    <li> the declarations are for properties that apply to the <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-pseudo-4/#selectordef-first-letter" id="ref-for-selectordef-first-letter③">::first-letter</a> pseudo-element,
     <li> the declarations would apply to
 			that fragment (or pseudo-element thereof)
 			had those <a class="css" data-link-type="maybe" href="#selectordef-nth-fragment" id="ref-for-selectordef-nth-fragment①④">::nth-fragment()</a> pseudo-elements been removed,
 			with a particular association between
 			each sequence of simple selectors and the element it matched,
-			and 
+			and
     <li> for each removed <a class="css" data-link-type="maybe" href="#selectordef-nth-fragment" id="ref-for-selectordef-nth-fragment①⑤">::nth-fragment()</a> pseudo-element,
 			the fragment lives within a <a data-link-type="dfn" href="#fragment-box" id="ref-for-fragment-box②①">fragment box</a> of the element associated in that association
 			with the selector that the pseudo-element was attached to,
-			and whose index matches the pseudo-element. 
+			and whose index matches the pseudo-element.
    </ol>
    <div class="example" id="example-7d383baf">
-    <a class="self-link" href="#example-7d383baf"></a> 
+    <a class="self-link" href="#example-7d383baf"></a>
     <table class="source-demo-pair">
      <tbody>
       <tr>
@@ -1537,37 +1537,37 @@ the <a class="css" data-link-type="maybe" href="#valdef-continue-fragments" id="
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-max-lines">max-lines</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⓪">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value">&lt;integer></a> 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①⓪">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value">&lt;integer></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td>fragment boxes 
+      <td>fragment boxes
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-max-lines-none" id="ref-for-valdef-max-lines-none">none</a> or an integer 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-max-lines-none" id="ref-for-valdef-max-lines-none">none</a> or an integer
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
-      <td>as <a href="https://www.w3.org/TR/css3-transitions/#animatable-types">integer</a> 
+      <td>as <a href="https://www.w3.org/TR/css3-transitions/#animatable-types">integer</a>
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="max-lines" data-dfn-type="value" data-export id="valdef-max-lines-none">none</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="max-lines" data-dfn-type="value" data-export id="valdef-max-lines-none">none</dfn>
     <dd>
      <p> Breaks occur only as specified elsewhere. </p>
-    <dt><dfn class="css" data-dfn-for="max-lines" data-dfn-type="value" data-export id="valdef-max-lines-integer"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value①">&lt;integer></a><a class="self-link" href="#valdef-max-lines-integer"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="max-lines" data-dfn-type="value" data-export id="valdef-max-lines-integer"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#integer-value" id="ref-for-integer-value①">&lt;integer></a><a class="self-link" href="#valdef-max-lines-integer"></a></dfn>
     <dd>
      <p> In addition to any breaks specified elsewhere,
 				a break is forced before any line that would exceed
@@ -1592,7 +1592,7 @@ When applied to non fragmentainers,
 it should probably cause <a class="property" data-link-type="propdesc" href="#propdef-continue" id="ref-for-propdef-continue①⑤">continue</a> to compute to <a class="css" data-link-type="maybe" href="#valdef-continue-discard" id="ref-for-valdef-continue-discard">discard</a> so that you only need to reach for one property rather than 2 to get
 that effect.</p>
    <div class="example" id="example-11848354">
-    <a class="self-link" href="#example-11848354"></a> 
+    <a class="self-link" href="#example-11848354"></a>
     <table class="source-demo-pair">
      <tbody>
       <tr>
@@ -1627,47 +1627,47 @@ that effect.</p>
    <p>The <a href="http://www.w3.org/2001/tag/">TAG</a> has developed a <a href="https://www.w3.org/TR/security-privacy-questionnaire/">self-review questionnaire</a> to help editors and Working Groups evaluate the risks introduced by their specifications.
 Answers are provided below.</p>
    <dl>
-    <dt>Does this specification deal with personally-identifiable information? 
-    <dd>No. 
-    <dt>Does this specification deal with high-value data? 
-    <dd>No. 
-    <dt>Does this specification introduce new state for an origin that persists across browsing sessions? 
-    <dd>No. 
-    <dt>Does this specification expose persistent, cross-origin state to the web? 
-    <dd>No. 
-    <dt>Does this specification expose any other data to an origin that it doesn’t currently have access to? 
-    <dd>No. 
-    <dt>Does this specification enable new script execution/loading mechanisms? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to a user’s location? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to sensors on a user’s device? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to aspects of a user’s local computing environment? 
-    <dd>No. 
-    <dt>Does this specification allow an origin access to other devices? 
-    <dd>No. 
-    <dt>Does this specification allow an origin some measure of control over a user agent’s native UI? 
-    <dd>No 
-    <dt>Does this specification expose temporary identifiers to the web? 
-    <dd>No. 
-    <dt>Does this specification distinguish between behavior in first-party and third-party contexts? 
-    <dd>No. 
-    <dt>How should this specification work in the context of a user agent’s "incognito" mode? 
-    <dd>No difference in behavior is needed. 
-    <dt>Does this specification persist data to a user’s local device? 
-    <dd>No. 
-    <dt>Does this specification have a "Security Considerations" and "Privacy Considerations" section? 
-    <dd>Yes, this is the section you are currently reading. 
-    <dt>Does this specification allow downgrading default security characteristics? 
-    <dd>No. 
+    <dt>Does this specification deal with personally-identifiable information?
+    <dd>No.
+    <dt>Does this specification deal with high-value data?
+    <dd>No.
+    <dt>Does this specification introduce new state for an origin that persists across browsing sessions?
+    <dd>No.
+    <dt>Does this specification expose persistent, cross-origin state to the web?
+    <dd>No.
+    <dt>Does this specification expose any other data to an origin that it doesn’t currently have access to?
+    <dd>No.
+    <dt>Does this specification enable new script execution/loading mechanisms?
+    <dd>No.
+    <dt>Does this specification allow an origin access to a user’s location?
+    <dd>No.
+    <dt>Does this specification allow an origin access to sensors on a user’s device?
+    <dd>No.
+    <dt>Does this specification allow an origin access to aspects of a user’s local computing environment?
+    <dd>No.
+    <dt>Does this specification allow an origin access to other devices?
+    <dd>No.
+    <dt>Does this specification allow an origin some measure of control over a user agent’s native UI?
+    <dd>No
+    <dt>Does this specification expose temporary identifiers to the web?
+    <dd>No.
+    <dt>Does this specification distinguish between behavior in first-party and third-party contexts?
+    <dd>No.
+    <dt>How should this specification work in the context of a user agent’s "incognito" mode?
+    <dd>No difference in behavior is needed.
+    <dt>Does this specification persist data to a user’s local device?
+    <dd>No.
+    <dt>Does this specification have a "Security Considerations" and "Privacy Considerations" section?
+    <dd>Yes, this is the section you are currently reading.
+    <dt>Does this specification allow downgrading default security characteristics?
+    <dd>No.
    </dl>
    <h2 class="no-num heading settled" id="changes"><span class="content"> Changes</span><a class="self-link" href="#changes"></a></h2>
    <h3 class="heading settled" id="changes-l3"><span class="content"> Changes Since Level 3</span><a class="self-link" href="#changes-l3"></a></h3>
    <p>The following changes were made to this specification since the <a href="https://drafts.csswg.org/css-overflow-3/">CSS Overflow Module Level 3</a>:</p>
    <ul>
-    <li>The Fragmentation of overflow, Paginated overflow, and Fragment overflow sections and subsections have been removed form Level 3 and moved to Level 4. 
-    <li>The <a class="property" data-link-type="propdesc" href="#propdef-scrollbar-gutter" id="ref-for-propdef-scrollbar-gutter⑤">scrollbar-gutter</a> property has been added. 
+    <li>The Fragmentation of overflow, Paginated overflow, and Fragment overflow sections and subsections have been removed form Level 3 and moved to Level 4.
+    <li>The <a class="property" data-link-type="propdesc" href="#propdef-scrollbar-gutter" id="ref-for-propdef-scrollbar-gutter⑤">scrollbar-gutter</a> property has been added.
    </ul>
    <h2 class="no-num heading settled" id="acknowledgments"><span class="content"> Acknowledgments</span><a class="self-link" href="#acknowledgments"></a></h2>
    <p> Thanks especially to the feedback from
@@ -1701,7 +1701,7 @@ Answers are provided below.</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1714,14 +1714,14 @@ Answers are provided below.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1772,7 +1772,7 @@ Answers are provided below.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <aside class="caniuse-status" data-deco data-dfn-id="text-overflow">
@@ -1864,30 +1864,30 @@ Answers are provided below.</p>
   <aside class="dfn-panel" data-for="term-for-valdef-overflow-auto">
    <a href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto">https://drafts.csswg.org/css-overflow-3/#valdef-overflow-auto</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-overflow-auto">4. 
+    <li><a href="#ref-for-valdef-overflow-auto">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-valdef-overflow-auto①">(2)</a> <a href="#ref-for-valdef-overflow-auto②">(3)</a> <a href="#ref-for-valdef-overflow-auto③">(4)</a> <a href="#ref-for-valdef-overflow-auto④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-overflow-clip">
    <a href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-clip">https://drafts.csswg.org/css-overflow-3/#valdef-overflow-clip</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-overflow-clip">4. 
+    <li><a href="#ref-for-valdef-overflow-clip">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-valdef-overflow-clip①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-overflow-hidden">
    <a href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-hidden">https://drafts.csswg.org/css-overflow-3/#valdef-overflow-hidden</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-overflow-hidden">4. 
+    <li><a href="#ref-for-valdef-overflow-hidden">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-valdef-overflow-hidden①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-overflow">
    <a href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow">https://drafts.csswg.org/css-overflow-3/#propdef-overflow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-overflow">1. 
+    <li><a href="#ref-for-propdef-overflow">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-overflow①">4. 
+    <li><a href="#ref-for-propdef-overflow①">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-propdef-overflow②">(2)</a> <a href="#ref-for-propdef-overflow③">(3)</a> <a href="#ref-for-propdef-overflow④">(4)</a> <a href="#ref-for-propdef-overflow⑤">(5)</a> <a href="#ref-for-propdef-overflow⑥">(6)</a> <a href="#ref-for-propdef-overflow⑦">(7)</a> <a href="#ref-for-propdef-overflow⑧">(8)</a>
     <li><a href="#ref-for-propdef-overflow⑨">5. Overflow Ellipsis: the text-overflow property</a>
     <li><a href="#ref-for-propdef-overflow①⓪">6. Fragmentation of overflow</a>
@@ -1896,14 +1896,14 @@ Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#r
   <aside class="dfn-panel" data-for="term-for-valdef-overflow-scroll">
    <a href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-scroll">https://drafts.csswg.org/css-overflow-3/#valdef-overflow-scroll</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-overflow-scroll">4. 
+    <li><a href="#ref-for-valdef-overflow-scroll">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-valdef-overflow-scroll①">(2)</a> <a href="#ref-for-valdef-overflow-scroll②">(3)</a> <a href="#ref-for-valdef-overflow-scroll③">(4)</a> <a href="#ref-for-valdef-overflow-scroll④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-overflow-visible">
    <a href="https://drafts.csswg.org/css-overflow-3/#valdef-overflow-visible">https://drafts.csswg.org/css-overflow-3/#valdef-overflow-visible</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-overflow-visible">4. 
+    <li><a href="#ref-for-valdef-overflow-visible">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-valdef-overflow-visible①">(2)</a>
     <li><a href="#ref-for-valdef-overflow-visible②">5. Overflow Ellipsis: the text-overflow property</a>
    </ul>
@@ -1954,14 +1954,14 @@ Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#r
   <aside class="dfn-panel" data-for="term-for-comb-all">
    <a href="https://drafts.csswg.org/css-values-4/#comb-all">https://drafts.csswg.org/css-values-4/#comb-all</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-all">4. 
+    <li><a href="#ref-for-comb-all">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-comb-all①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-opt">
    <a href="https://drafts.csswg.org/css-values-4/#mult-opt">https://drafts.csswg.org/css-values-4/#mult-opt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-opt">4. 
+    <li><a href="#ref-for-mult-opt">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-mult-opt①">(2)</a>
    </ul>
   </aside>
@@ -1974,7 +1974,7 @@ Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#r
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">4. 
+    <li><a href="#ref-for-comb-one">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-comb-one①">(2)</a>
     <li><a href="#ref-for-comb-one②">5. Overflow Ellipsis: the text-overflow property</a> <a href="#ref-for-comb-one③">(2)</a> <a href="#ref-for-comb-one④">(3)</a> <a href="#ref-for-comb-one⑤">(4)</a>
     <li><a href="#ref-for-comb-one⑥">6. Fragmentation of overflow</a> <a href="#ref-for-comb-one⑦">(2)</a> <a href="#ref-for-comb-one⑧">(3)</a> <a href="#ref-for-comb-one⑨">(4)</a>
@@ -1996,14 +1996,14 @@ Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#r
   <aside class="dfn-panel" data-for="term-for-block-end">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#block-end">https://drafts.csswg.org/css-writing-modes-4/#block-end</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-end">4. 
+    <li><a href="#ref-for-block-end">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-start">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#block-start">https://drafts.csswg.org/css-writing-modes-4/#block-start</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-start">4. 
+    <li><a href="#ref-for-block-start">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a>
    </ul>
   </aside>
@@ -2017,14 +2017,14 @@ Reserving space for the scrollbar: the scrollbar-gutter property</a>
   <aside class="dfn-panel" data-for="term-for-inline-end">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#inline-end">https://drafts.csswg.org/css-writing-modes-4/#inline-end</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-end">4. 
+    <li><a href="#ref-for-inline-end">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-inline-end①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-start">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#inline-start">https://drafts.csswg.org/css-writing-modes-4/#inline-start</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-start">4. 
+    <li><a href="#ref-for-inline-start">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-inline-start①">(2)</a>
    </ul>
   </aside>
@@ -2352,7 +2352,7 @@ or introduce a new value and have auto compute to that
    <div class="issue">
      Should traditional pagination (e.g. when printing)
 be expressed through some magic in the computed value of <a class="css" data-link-type="maybe" href="#valdef-continue-auto">auto</a>,
-or by inserting this in the UA stylesheet: 
+or by inserting this in the UA stylesheet:
 <pre><code class="lang-css highlight"><c- n>@media</c-> <c- p>(</c->overflow-block<c- f>: paged), (overflow-block: optional-paged) </c-><c- p>{</c->
   :root {
     continue: paginate;
@@ -2453,14 +2453,14 @@ that effect.<a href="#issue-9eb7883d"> ↵ </a></div>
   <aside class="dfn-panel" data-for="scrollbar-gutter">
    <b><a href="#scrollbar-gutter">#scrollbar-gutter</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-scrollbar-gutter">4. 
+    <li><a href="#ref-for-scrollbar-gutter">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-scrollbar-gutter①">(2)</a> <a href="#ref-for-scrollbar-gutter②">(3)</a> <a href="#ref-for-scrollbar-gutter③">(4)</a> <a href="#ref-for-scrollbar-gutter④">(5)</a> <a href="#ref-for-scrollbar-gutter⑤">(6)</a> <a href="#ref-for-scrollbar-gutter⑥">(7)</a> <a href="#ref-for-scrollbar-gutter⑦">(8)</a> <a href="#ref-for-scrollbar-gutter⑧">(9)</a> <a href="#ref-for-scrollbar-gutter⑨">(10)</a> <a href="#ref-for-scrollbar-gutter①⓪">(11)</a> <a href="#ref-for-scrollbar-gutter①①">(12)</a> <a href="#ref-for-scrollbar-gutter①②">(13)</a> <a href="#ref-for-scrollbar-gutter①③">(14)</a> <a href="#ref-for-scrollbar-gutter①④">(15)</a> <a href="#ref-for-scrollbar-gutter①⑤">(16)</a> <a href="#ref-for-scrollbar-gutter①⑥">(17)</a> <a href="#ref-for-scrollbar-gutter①⑦">(18)</a> <a href="#ref-for-scrollbar-gutter①⑧">(19)</a> <a href="#ref-for-scrollbar-gutter①⑨">(20)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-scrollbar-gutter">
    <b><a href="#propdef-scrollbar-gutter">#propdef-scrollbar-gutter</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-scrollbar-gutter">4. 
+    <li><a href="#ref-for-propdef-scrollbar-gutter">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-propdef-scrollbar-gutter①">(2)</a> <a href="#ref-for-propdef-scrollbar-gutter②">(3)</a> <a href="#ref-for-propdef-scrollbar-gutter③">(4)</a> <a href="#ref-for-propdef-scrollbar-gutter④">(5)</a>
     <li><a href="#ref-for-propdef-scrollbar-gutter⑤"> Changes Since Level 3</a>
    </ul>
@@ -2468,49 +2468,49 @@ Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#r
   <aside class="dfn-panel" data-for="overlay-scrollbars">
    <b><a href="#overlay-scrollbars">#overlay-scrollbars</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-overlay-scrollbars">4. 
+    <li><a href="#ref-for-overlay-scrollbars">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-overlay-scrollbars①">(2)</a> <a href="#ref-for-overlay-scrollbars②">(3)</a> <a href="#ref-for-overlay-scrollbars③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="classic-scrollbars">
    <b><a href="#classic-scrollbars">#classic-scrollbars</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-classic-scrollbars">4. 
+    <li><a href="#ref-for-classic-scrollbars">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-classic-scrollbars①">(2)</a> <a href="#ref-for-classic-scrollbars②">(3)</a> <a href="#ref-for-classic-scrollbars③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-scrollbar-gutter-auto">
    <b><a href="#valdef-scrollbar-gutter-auto">#valdef-scrollbar-gutter-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scrollbar-gutter-auto">4. 
+    <li><a href="#ref-for-valdef-scrollbar-gutter-auto">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-valdef-scrollbar-gutter-auto①">(2)</a> <a href="#ref-for-valdef-scrollbar-gutter-auto②">(3)</a> <a href="#ref-for-valdef-scrollbar-gutter-auto③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-scrollbar-gutter-stable">
    <b><a href="#valdef-scrollbar-gutter-stable">#valdef-scrollbar-gutter-stable</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scrollbar-gutter-stable">4. 
+    <li><a href="#ref-for-valdef-scrollbar-gutter-stable">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-valdef-scrollbar-gutter-stable①">(2)</a> <a href="#ref-for-valdef-scrollbar-gutter-stable②">(3)</a> <a href="#ref-for-valdef-scrollbar-gutter-stable③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-scrollbar-gutter-always">
    <b><a href="#valdef-scrollbar-gutter-always">#valdef-scrollbar-gutter-always</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scrollbar-gutter-always">4. 
+    <li><a href="#ref-for-valdef-scrollbar-gutter-always">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-valdef-scrollbar-gutter-always①">(2)</a> <a href="#ref-for-valdef-scrollbar-gutter-always②">(3)</a> <a href="#ref-for-valdef-scrollbar-gutter-always③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-scrollbar-gutter-force">
    <b><a href="#valdef-scrollbar-gutter-force">#valdef-scrollbar-gutter-force</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-scrollbar-gutter-force">4. 
+    <li><a href="#ref-for-valdef-scrollbar-gutter-force">4.
 Reserving space for the scrollbar: the scrollbar-gutter property</a> <a href="#ref-for-valdef-scrollbar-gutter-force①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-text-overflow">
    <b><a href="#propdef-text-overflow">#propdef-text-overflow</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-overflow">1. 
+    <li><a href="#ref-for-propdef-text-overflow">1.
 Introduction</a>
     <li><a href="#ref-for-propdef-text-overflow①">5. Overflow Ellipsis: the text-overflow property</a> <a href="#ref-for-propdef-text-overflow②">(2)</a>
     <li><a href="#ref-for-propdef-text-overflow③">ellipsing details</a>
@@ -2622,57 +2622,65 @@ Introduction</a>
             });</script>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

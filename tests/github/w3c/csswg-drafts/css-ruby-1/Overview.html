@@ -240,7 +240,7 @@ They are typically used in East Asian documents to indicate pronunciation or to 
 This module describes the rendering model and formatting controls related to displaying ruby annotations in CSS.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -390,11 +390,11 @@ on screen, on paper, etc.
 	There are a number of illustrations in this document
 	for which the following legend is used: </p>
    <dl>
-    <dt><img alt="Symbolic wide-cell glyph representation" height="39" src="images/fullwidth.gif" width="39"> 
+    <dt><img alt="Symbolic wide-cell glyph representation" height="39" src="images/fullwidth.gif" width="39">
     <dd>Wide-cell glyph (e.g. Han) that is the <var>n</var>th character in the text run.
-		They are typically sized to 50% when used as annotations. 
-    <dt><img alt="Symbolic narrow-cell glyph representation" height="39" src="images/halfwidth.gif" width="19"> 
-    <dd>Narrow-cell glyph (e.g. Roman) which is the <var>n</var>th glyph in the text run. 
+		They are typically sized to 50% when used as annotations.
+    <dt><img alt="Symbolic narrow-cell glyph representation" height="39" src="images/halfwidth.gif" width="19">
+    <dd>Narrow-cell glyph (e.g. Roman) which is the <var>n</var>th glyph in the text run.
    </dl>
    <p>The orientation which the above symbols assume in the diagrams
 	corresponds to the orientation that the glyphs they represent
@@ -408,7 +408,7 @@ on screen, on paper, etc.
    <p>The following figures show two examples of Ruby,
 	a simple case and one with more complicated structure. </p>
    <div class="example" id="example-30c5764f">
-    <a class="self-link" href="#example-30c5764f"></a> 
+    <a class="self-link" href="#example-30c5764f"></a>
     <p>In this first example, a single annotation is used to annotate the base text. </p>
     <div class="figure">
      <p><img alt="Example of ruby applied on top of a Japanese expression" src="images/licence.png"> </p>
@@ -419,7 +419,7 @@ on screen, on paper, etc.
 		with multi-character word (as a whole). </p>
    </div>
    <div class="example" id="example-2c64627d">
-    <a class="self-link" href="#example-2c64627d"></a> 
+    <a class="self-link" href="#example-2c64627d"></a>
     <p>In this second example,
 		two levels of annotations are attached to a base sequence:
 		the hiragana characters on top refer to the pronunciation of each of the base kanji characters,
@@ -471,25 +471,25 @@ on screen, on paper, etc.
       <td><a class="css" data-link-type="property" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display②">display</a>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">New values:</a>
-      <td class="prod">ruby <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> ruby-base <span id="ref-for-comb-one①">|</span> ruby-text <span id="ref-for-comb-one②">|</span> ruby-base-container <span id="ref-for-comb-one③">|</span> ruby-text-container 
+      <td class="prod">ruby <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> ruby-base <span id="ref-for-comb-one①">|</span> ruby-text <span id="ref-for-comb-one②">|</span> ruby-base-container <span id="ref-for-comb-one③">|</span> ruby-text-container
    </table>
    <p>The following new <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display③">display</a> values assign ruby layout roles to an arbitrary element: </p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="display" data-dfn-type="value" data-export id="valdef-display-ruby">ruby</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="display" data-dfn-type="value" data-export id="valdef-display-ruby">ruby</dfn>
     <dd>Specifies that an element generates a <dfn data-dfn-for data-dfn-type="dfn" data-export data-lt="ruby container | ruby container box" id="ruby-container">ruby container box<a class="self-link" href="#ruby-container"></a></dfn>.
-			(Corresponds to HTML/XHTML <code>&lt;ruby></code> elements.) 
-    <dt><dfn class="css" data-dfn-for="display" data-dfn-type="value" data-export id="valdef-display-ruby-base">ruby-base<a class="self-link" href="#valdef-display-ruby-base"></a></dfn> 
+			(Corresponds to HTML/XHTML <code>&lt;ruby></code> elements.)
+    <dt><dfn class="css" data-dfn-for="display" data-dfn-type="value" data-export id="valdef-display-ruby-base">ruby-base<a class="self-link" href="#valdef-display-ruby-base"></a></dfn>
     <dd>Specifies that an element generates a <dfn data-dfn-for data-dfn-type="dfn" data-export data-lt="ruby base box | ruby base" id="ruby-base-box">ruby base box<a class="self-link" href="#ruby-base-box"></a></dfn>.
-			(Corresponds to HTML/XHTML <code>&lt;rb></code> elements.) 
-    <dt><dfn class="css" data-dfn-for="display" data-dfn-type="value" data-export id="valdef-display-ruby-text">ruby-text<a class="self-link" href="#valdef-display-ruby-text"></a></dfn> 
+			(Corresponds to HTML/XHTML <code>&lt;rb></code> elements.)
+    <dt><dfn class="css" data-dfn-for="display" data-dfn-type="value" data-export id="valdef-display-ruby-text">ruby-text<a class="self-link" href="#valdef-display-ruby-text"></a></dfn>
     <dd>Specifies that an element generates a <dfn data-dfn-for data-dfn-type="dfn" data-export data-lt="ruby annotation box | ruby annotation | annotation" id="ruby-annotation-box">ruby annotation box<a class="self-link" href="#ruby-annotation-box"></a></dfn>.
-			(Corresponds to HTML/XHTML <code>&lt;rt></code> elements.) 
-    <dt><dfn class="css" data-dfn-for="display" data-dfn-type="value" data-export id="valdef-display-ruby-base-container">ruby-base-container<a class="self-link" href="#valdef-display-ruby-base-container"></a></dfn> 
+			(Corresponds to HTML/XHTML <code>&lt;rt></code> elements.)
+    <dt><dfn class="css" data-dfn-for="display" data-dfn-type="value" data-export id="valdef-display-ruby-base-container">ruby-base-container<a class="self-link" href="#valdef-display-ruby-base-container"></a></dfn>
     <dd>Specifies that an element generates a <dfn data-dfn-for data-dfn-type="dfn" data-export data-lt="ruby base container box | ruby base container" id="ruby-base-container-box">ruby base container box<a class="self-link" href="#ruby-base-container-box"></a></dfn>.
-			(Corresponds to XHTML <code>&lt;rbc></code> elements; generated as an anonymous box in HTML.) 
-    <dt><dfn class="css" data-dfn-for="display" data-dfn-type="value" data-export id="valdef-display-ruby-text-container">ruby-text-container<a class="self-link" href="#valdef-display-ruby-text-container"></a></dfn> 
+			(Corresponds to XHTML <code>&lt;rbc></code> elements; generated as an anonymous box in HTML.)
+    <dt><dfn class="css" data-dfn-for="display" data-dfn-type="value" data-export id="valdef-display-ruby-text-container">ruby-text-container<a class="self-link" href="#valdef-display-ruby-text-container"></a></dfn>
     <dd>Specifies that an element generates a <dfn data-dfn-for data-dfn-type="dfn" data-export data-lt="ruby annotation container box | ruby annotation container" id="ruby-annotation-container-box">ruby annotation container box<a class="self-link" href="#ruby-annotation-container-box"></a></dfn>.
-			(Corresponds to HTML/XHTML <code>&lt;rtc></code> elements.) 
+			(Corresponds to HTML/XHTML <code>&lt;rtc></code> elements.)
    </dl>
    <p class="advisement">Authors using a language (such as HTML)
 	that supports dedicated ruby markup
@@ -539,18 +539,18 @@ on screen, on paper, etc.
 			and their <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display⑦">display</a> value computed accordingly,
 			so that they contain only inline-level content.
 			For example,
-			the <span class="property" id="ref-for-propdef-display⑧">display</span> property of an in-flow element with <span class="css" id="ref-for-propdef-display⑨">display: block</span> parented by an element with <span class="css" id="ref-for-propdef-display①⓪">display: ruby-text</span> computes to <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-display-3/#valdef-display-inline-block" id="ref-for-valdef-display-inline-block">inline-block</a>. 
+			the <span class="property" id="ref-for-propdef-display⑧">display</span> property of an in-flow element with <span class="css" id="ref-for-propdef-display⑨">display: block</span> parented by an element with <span class="css" id="ref-for-propdef-display①⓪">display: ruby-text</span> computes to <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-display-3/#valdef-display-inline-block" id="ref-for-valdef-display-inline-block">inline-block</a>.
     <li id="anon-gen-anon-ruby">
      <a class="self-link" href="#anon-gen-anon-ruby"></a><strong>Generate anonymous ruby containers</strong>:
 			Any <a href="https://www.w3.org/TR/CSS2/tables.html#anonymous-boxes">consecutive</a> sequence of
 			improperly-contained <i>ruby base containers</i>, <i>ruby annotation containers</i>, <i>ruby bases</i>,
 			and/or <i>ruby annotations</i> (and any intervening <i>white space</i>)
 			is wrapped in an anonymous <i>ruby container</i>.
-			For the purpose of this step: 
+			For the purpose of this step:
      <ul>
-      <li>an improperly-contained <i>ruby base</i> is one not parented by a <i>ruby base container</i> or <i>ruby container</i> 
-      <li>an improperly-contained <i>ruby annotation</i> is one not parented by a <i>ruby annotation container</i> or <i>ruby container</i> 
-      <li>an improperly-contained <i>ruby base container</i> or <i>ruby annotation container</i> is one not parented by a <i>ruby container</i> 
+      <li>an improperly-contained <i>ruby base</i> is one not parented by a <i>ruby base container</i> or <i>ruby container</i>
+      <li>an improperly-contained <i>ruby annotation</i> is one not parented by a <i>ruby annotation container</i> or <i>ruby container</i>
+      <li>an improperly-contained <i>ruby base container</i> or <i>ruby annotation container</i> is one not parented by a <i>ruby container</i>
      </ul>
     <li id="anon-gen-bare-inlines">
      <a class="self-link" href="#anon-gen-bare-inlines"></a><strong>Wrap misparented inline-level content:</strong> Any consecutive sequence of text and inline-level boxes
@@ -558,76 +558,76 @@ on screen, on paper, etc.
 			Similarly, any consecutive sequence of text and inline-level boxes
 			directly parented by a <i>ruby annotation container</i> is wrapped in an anonymous <i>ruby annotation</i>.
 			(For this purpose, misparented <i>internal table elements</i> are treated as <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#inline-level" id="ref-for-inline-level">inline-level content</a> since, being parented by ruby boxes,
-			they will be ultimately wrapped by an <a data-link-type="dfn">inline table</a>.) 
+			they will be ultimately wrapped by an <a data-link-type="dfn">inline table</a>.)
      <p>However, if an anonymous box so constructed contains only <i>white space</i>,
 			it is considered <dfn data-dfn-type="dfn" data-noexport id="intra-ruby-white-space">intra-ruby white space<a class="self-link" href="#intra-ruby-white-space"></a></dfn> and is either discarded
 			or preserved
 			as described below.</p>
     <li id="anony-gen-trim-space"><a class="self-link" href="#anony-gen-trim-space"></a><strong>Trim leading/trailing white space:</strong> Any <i>intra-ruby white space</i> that is not the sole child of its parent
 			and occurs at the beginning or end of
-			a <i>ruby container</i>, <i>ruby annotation container</i>, or <i>ruby base container</i> is removed, as if it had <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display①①">display: none</a> 
+			a <i>ruby container</i>, <i>ruby annotation container</i>, or <i>ruby base container</i> is removed, as if it had <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display①①">display: none</a>
     <li id="anon-gen-discard-space">
      <a class="self-link" href="#anon-gen-discard-space"></a><strong>Remove inter-level white space:</strong> Any <i>intra-ruby white space</i> whose immediately adjacent siblings match one of the patterns below
-			is <dfn data-dfn-type="dfn" data-noexport id="inter-level-white-space">inter-level white space<a class="self-link" href="#inter-level-white-space"></a></dfn> and is removed, as if it had <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display①②">display: none</a>. 
+			is <dfn data-dfn-type="dfn" data-noexport id="inter-level-white-space">inter-level white space<a class="self-link" href="#inter-level-white-space"></a></dfn> and is removed, as if it had <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display①②">display: none</a>.
      <table class="data">
       <thead>
        <tr>
-        <th>Previous box 
-        <th>Next box 
+        <th>Previous box
+        <th>Next box
       <tbody>
        <tr>
-        <td><var>any</var> 
-        <td><i>ruby annotation container</i> 
+        <td><var>any</var>
+        <td><i>ruby annotation container</i>
        <tr>
-        <td>not <i>ruby annotation</i> 
-        <td><i>ruby annotation</i> 
+        <td>not <i>ruby annotation</i>
+        <td><i>ruby annotation</i>
      </table>
     <li id="anon-gen-interpret-space">
      <a class="self-link" href="#anon-gen-interpret-space"></a><strong>Interpret intra-level white space:</strong> Any <i>intra-ruby white space</i> box
 			whose immediately adjacent siblings match one of the patterns below
-			is assigned the box type and subtype defined in the table below: 
+			is assigned the box type and subtype defined in the table below:
      <table class="data">
       <colgroup span="2">
       <colgroup span="2">
       <thead>
        <tr>
-        <th>Previous box 
-        <th>Next box 
-        <th>Box type 
-        <th>Subtype 
+        <th>Previous box
+        <th>Next box
+        <th>Box type
+        <th>Subtype
       <tbody>
        <tr>
-        <td><i>ruby base</i> 
-        <td><i>ruby base</i> 
-        <td><i>ruby base</i> 
-        <td><dfn data-dfn-type="dfn" data-noexport id="inter-base-white-space">inter-base white space<a class="self-link" href="#inter-base-white-space"></a></dfn> 
+        <td><i>ruby base</i>
+        <td><i>ruby base</i>
+        <td><i>ruby base</i>
+        <td><dfn data-dfn-type="dfn" data-noexport id="inter-base-white-space">inter-base white space<a class="self-link" href="#inter-base-white-space"></a></dfn>
        <tr>
-        <td><i>ruby annotation</i> 
-        <td><i>ruby annotation</i> 
-        <td><i>ruby annotation</i> 
-        <td><dfn data-dfn-type="dfn" data-noexport id="inter-annotation-white-space">inter-annotation white space<a class="self-link" href="#inter-annotation-white-space"></a></dfn> 
+        <td><i>ruby annotation</i>
+        <td><i>ruby annotation</i>
+        <td><i>ruby annotation</i>
+        <td><dfn data-dfn-type="dfn" data-noexport id="inter-annotation-white-space">inter-annotation white space<a class="self-link" href="#inter-annotation-white-space"></a></dfn>
        <tr>
-        <td><i>ruby annotation</i> or <i>ruby annotation container</i> 
-        <td><i>ruby base</i> or <i>ruby base container</i> 
-        <td rowspan="3"><i>ruby base</i> 
-        <td rowspan="3"><dfn data-dfn-type="dfn" data-noexport id="inter-segment-white-space">inter-segment white space<a class="self-link" href="#inter-segment-white-space"></a></dfn> 
+        <td><i>ruby annotation</i> or <i>ruby annotation container</i>
+        <td><i>ruby base</i> or <i>ruby base container</i>
+        <td rowspan="3"><i>ruby base</i>
+        <td rowspan="3"><dfn data-dfn-type="dfn" data-noexport id="inter-segment-white-space">inter-segment white space<a class="self-link" href="#inter-segment-white-space"></a></dfn>
        <tr>
-        <td><i>ruby base</i> or <i>ruby base container</i> 
-        <td><i>ruby base container</i> 
+        <td><i>ruby base</i> or <i>ruby base container</i>
+        <td><i>ruby base container</i>
        <tr>
-        <td><i>ruby base container</i> 
-        <td><i>ruby base</i> or <i>ruby base container</i> 
+        <td><i>ruby base container</i>
+        <td><i>ruby base</i> or <i>ruby base container</i>
      </table>
       The <dfn data-dfn-type="dfn" data-noexport id="intra-level-white-space">intra-level white space<a class="self-link" href="#intra-level-white-space"></a></dfn> boxes defined above are
-			treated specially for pairing and layout. See below. 
+			treated specially for pairing and layout. See below.
     <li id="anon-gen-unbreak">
      <a class="self-link" href="#anon-gen-unbreak"></a><strong>Suppress line breaks:</strong> Convert all forced line breaks inside <i>ruby annotations</i> (regardless of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-4/#propdef-white-space" id="ref-for-propdef-white-space">white-space</a> value)
-			as defined for <i>collapsible</i> segment breaks in <a href="https://www.w3.org/TR/css-text-3/#line-break-transform">CSS Text Level 3 § 4.1.2</a>. 
+			as defined for <i>collapsible</i> segment breaks in <a href="https://www.w3.org/TR/css-text-3/#line-break-transform">CSS Text Level 3 § 4.1.2</a>.
      <p class="issue" id="issue-f0987196"><a class="self-link" href="#issue-f0987196"></a>The goal of this is to simplify the layout model by suppressing any line breaks within ruby annotations.
 			Alternatively we could try to define some kind of acceptable behavior for them. </p>
     <li id="anon-gen-anon-containers"><a class="self-link" href="#anon-gen-anon-containers"></a><strong>Generate anonymous level containers:</strong> Any consecutive sequence of <i>ruby bases</i> and <i>inter-base white space</i> (and not <i>inter-segment white space</i>)
 			not parented by a <i>ruby base container</i> is wrapped in an anonymous <i>ruby base container</i>.
-			Similarly, any consecutive sequence of <i>ruby annotations</i> and <i>inter-annotation white space</i> not parented by a <i>ruby annotation container</i> is wrapped in an anonymous <i>ruby annotation container</i>. 
+			Similarly, any consecutive sequence of <i>ruby annotations</i> and <i>inter-annotation white space</i> not parented by a <i>ruby annotation container</i> is wrapped in an anonymous <i>ruby annotation container</i>.
    </ol>
    <p class="issue" id="issue-dfd9c615"><a class="self-link" href="#issue-dfd9c615"></a>Make <a href="http://lists.w3.org/Archives/Public/www-archive/2014Jun/att-0027/PastedGraphic-1.png">this diagram</a> into an example. </p>
    <p>Once all ruby layout structures are properly parented,
@@ -662,9 +662,9 @@ on screen, on paper, etc.
    <p>In order to handle degenerate cases, some empty anonymous containers are assumed: </p>
    <ul>
     <li>If the first child of a <i>ruby container</i> is a <i>ruby annotation container</i>,
-		an anonymous, empty <i>ruby base container</i> is assumed to exist before it. 
+		an anonymous, empty <i>ruby base container</i> is assumed to exist before it.
     <li>Similarly, if the <i>ruby container</i> contains consecutive <i>ruby base containers</i>,
-		anonymous, empty <i>ruby annotation containers</i> are assumed to exist between them. 
+		anonymous, empty <i>ruby annotation containers</i> are assumed to exist between them.
    </ul>
    <p><i>Inter-segment white space</i> is effectively a <i>ruby segment</i> of its own. </p>
    <h4 class="heading settled" data-level="2.3.2" id="base-annotation-pairing"><span class="secno">2.3.2. </span><span class="content"> Unit Pairing and Spanning Annotations</span><a class="self-link" href="#base-annotation-pairing"></a></h4>
@@ -689,12 +689,12 @@ on screen, on paper, etc.
 	However, if the immediately-adjacent <i>ruby bases</i> or <i>ruby annotations</i> are paired </p>
    <ul>
     <li>with two <i>ruby bases</i> or <i data-lt="ruby annotations">annotations</i> that surround corresponding <i>intra-level white space</i> in another level,
-		then the so-corresponding <i>intra-level white space</i> boxes are also paired. 
+		then the so-corresponding <i>intra-level white space</i> boxes are also paired.
     <li>with a single spanning <i>ruby annotation</i>,
-		then the <i>intra-level white space</i> is also paired to that <i>ruby annotation</i> 
+		then the <i>intra-level white space</i> is also paired to that <i>ruby annotation</i>
     <li>with two <i>ruby bases</i> or <i data-lt="ruby annotations">annotations</i> with no intervening <i>intra-level white space</i>,
 		then the <i>intra-level white space</i> box pairs with
-		an anonymous empty <i>intra-level white space</i> box assumed to exist between them. 
+		an anonymous empty <i>intra-level white space</i> box assumed to exist between them.
    </ul>
    <p class="issue" id="issue-0230a91a"><a class="self-link" href="#issue-0230a91a"></a>Insert diagram</p>
    <h4 class="heading settled" data-level="2.3.3" id="nested-pairing"><span class="secno">2.3.3. </span><span class="content"> Complex Spanning with Nested Ruby</span><a class="self-link" href="#nested-pairing"></a></h4>
@@ -723,7 +723,7 @@ on screen, on paper, etc.
 	as if they belonged to separate segments
 	and the <i>hidden annotation</i>’s base were not a <i>ruby base</i> but an intervening inline. </p>
    <div class="example" id="example-775b2890">
-    <a class="self-link" href="#example-775b2890"></a> 
+    <a class="self-link" href="#example-775b2890"></a>
     <p>This is to allow correct inlined display of annotations
 		for Japanese words that are a mix of kanji and hiragana.
 		For example, the word <span lang="ja">振り仮名</span> should be inlined as </p>
@@ -753,12 +753,12 @@ on screen, on paper, etc.
    <h3 class="heading settled" data-level="2.5" id="white-space"><span class="secno">2.5. </span><span class="content"> White Space Collapsing</span><a class="self-link" href="#white-space"></a></h3>
    <p>White space within a ruby structure is <a href="#anon-gen-discard-space">discarded</a> </p>
    <ul>
-    <li>at the beginning and end of a <i>ruby container</i>, <i>ruby annotation container</i>, or <i>ruby base container</i>, 
-    <li>between a <i>ruby base container</i> and its following <i>ruby annotation container</i>, 
-    <li>between <i>ruby annotation containers</i>. 
+    <li>at the beginning and end of a <i>ruby container</i>, <i>ruby annotation container</i>, or <i>ruby base container</i>,
+    <li>between a <i>ruby base container</i> and its following <i>ruby annotation container</i>,
+    <li>between <i>ruby annotation containers</i>.
    </ul>
    <div class="example" id="example-abf396f5">
-    <a class="self-link" href="#example-abf396f5"></a> For example, the following markup will display without any spaces: 
+    <a class="self-link" href="#example-abf396f5"></a> For example, the following markup will display without any spaces:
 <pre>&lt;ruby>
   &lt;rb>東&lt;/rb>&lt;rb>京&lt;/rb>
   &lt;rt>とう&lt;/rt>&lt;rt>きょう&lt;/rt>
@@ -772,7 +772,7 @@ on screen, on paper, etc.
 	or <i>inter-segment white space</i>.
 	(See <a href="#box-fixup">Anonymous Ruby Box Generation</a>, above.) </p>
    <div class="example" id="example-4ae8c97c">
-    <a class="self-link" href="#example-4ae8c97c"></a> 
+    <a class="self-link" href="#example-4ae8c97c"></a>
     <p>The rules preserving white space allow ruby to be used with space-separated scripts such as Latin.
 		For example, </p>
 <pre>&lt;ruby>
@@ -865,7 +865,7 @@ on screen, on paper, etc.
 	The line <em>must not</em> break between a <i>ruby base</i> and its <i>annotations</i>,
 	even in the case of <a class="css" data-link-type="maybe" href="#valdef-ruby-position-inter-character" id="ref-for-valdef-ruby-position-inter-character④">inter-character</a> <i>annotations</i>. </p>
    <div class="figure">
-     <img alt="Diagram showing the line breaking opportunity in a &quot;Bopomofo&quot; ruby" src="images/r-break-b.gif"> 
+     <img alt="Diagram showing the line breaking opportunity in a &quot;Bopomofo&quot; ruby" src="images/r-break-b.gif">
     <p class="caption"><a class="css" data-link-type="maybe" href="#valdef-ruby-position-inter-character" id="ref-for-valdef-ruby-position-inter-character⑤">inter-character</a> ruby line breaking opportunity </p>
    </div>
    <h4 class="heading settled" data-level="3.3.1" id="break-between"><span class="secno">3.3.1. </span><span class="content"> Breaking Between Bases</span><a class="self-link" href="#break-between"></a></h4>
@@ -881,7 +881,7 @@ on screen, on paper, etc.
 	exactly as if the <i>ruby bases</i> were adjacent inline boxes.
 	(The annotations are ignored when determining soft wrap opportunities for the <i>base level</i>.) </p>
    <div class="example" id="example-9780a5d8">
-    <a class="self-link" href="#example-9780a5d8"></a> 
+    <a class="self-link" href="#example-9780a5d8"></a>
     <p>For example, if two adjacent ruby bases are “蝴” and “蝶”,
 		the line may break between them,
 		because lines are normally allowed to break between two Han characters.
@@ -892,7 +892,7 @@ on screen, on paper, etc.
 	As with white space between inlines, it collapses when the line breaks there.
 	Similarly, annotation white space is also trimmed at a line break. </p>
    <div class="example" id="example-79694ff5">
-    <a class="self-link" href="#example-79694ff5"></a> 
+    <a class="self-link" href="#example-79694ff5"></a>
     <p>For example, given the following markup: </p>
 <pre>&lt;ruby>&lt;rb>one&lt;/rb> &lt;rb>two&lt;/rb> &lt;rt>1&lt;/rt> &lt;rt>2&lt;/rt>&lt;/ruby></pre>
     <p>Due to the space, the line may break between “one” and “two“.
@@ -922,24 +922,24 @@ on screen, on paper, etc.
    <p>To preserve the correspondance of <i>ruby annotations</i> to their respective <i>ruby bases</i>,
 	a few restrictions must be imposed: </p>
    <ul>
-    <li>The contents of a <i>ruby base</i> or <i>ruby annotation</i> must remain contiguous. 
-    <li><i>Ruby annotations</i> must be reordered together with their <i>ruby bases</i>. 
-    <li>All <i>ruby bases</i> spanned by a single <i>ruby annotation</i> must remain contiguous. 
+    <li>The contents of a <i>ruby base</i> or <i>ruby annotation</i> must remain contiguous.
+    <li><i>Ruby annotations</i> must be reordered together with their <i>ruby bases</i>.
+    <li>All <i>ruby bases</i> spanned by a single <i>ruby annotation</i> must remain contiguous.
    </ul>
    <p>To this end, </p>
    <ul>
     <li>
       Bidi isolation is forced on all <i>internal ruby boxes</i> and the <i>ruby container</i>:
 			the <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-normal" id="ref-for-valdef-unicode-bidi-normal">normal</a> and <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-embed" id="ref-for-valdef-unicode-bidi-embed">embed</a> values of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-unicode-bidi" id="ref-for-propdef-unicode-bidi">unicode-bidi</a> compute to <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-isolate" id="ref-for-valdef-unicode-bidi-isolate">isolate</a>,
-			and <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-bidi-override" id="ref-for-valdef-unicode-bidi-bidi-override">bidi-override</a> computes to <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-isolate-override" id="ref-for-valdef-unicode-bidi-isolate-override">isolate-override</a>. 
+			and <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-bidi-override" id="ref-for-valdef-unicode-bidi-bidi-override">bidi-override</a> computes to <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-isolate-override" id="ref-for-valdef-unicode-bidi-isolate-override">isolate-override</a>.
      <p class="note" role="note"> Note this means that implicit bidi reordering does not work across ruby bases,
 				so authors will need to ensure that the <i>ruby container</i>’s declared directionality
 				does indeed match its contents. </p>
-    <li> During layout, <i>ruby segments</i> are ordered within the <i>ruby container</i> by the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction">direction</a> property of their <i>ruby container</i>. 
+    <li> During layout, <i>ruby segments</i> are ordered within the <i>ruby container</i> by the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction">direction</a> property of their <i>ruby container</i>.
     <li> Within a segment, <i>ruby bases</i> and <i>ruby annotations</i> are ordered within their respective containers
 			by the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction①">direction</a> property of the segment’s <i>ruby base container</i>. <span class="note"> Note this means the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction②">direction</a> property on <i>ruby annotation containers</i> is ignored for the purpose of layout.
 				However, it can still inherit into the container’s children
-				and thereby affect the <i>inline base direction</i> of any <i>ruby annotations</i> it contains. </span> 
+				and thereby affect the <i>inline base direction</i> of any <i>ruby annotations</i> it contains. </span>
    </ul>
    <p>As with other inline-level content,
 	the bidi reordering of <i>internal ruby boxes</i> happens after line-breaking
@@ -995,36 +995,36 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-ruby-position">ruby-position</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">over <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one④">|</a> under <span id="ref-for-comb-one⑤">|</span> inter-character 
+      <td class="prod">over <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one④">|</a> under <span id="ref-for-comb-one⑤">|</span> inter-character
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>over 
+      <td>over
      <tr>
       <th>Applies to:
-      <td>ruby annotation containers 
+      <td>ruby annotation containers
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>This property controls position of the ruby text with respect to its base.
 	Values have the following meanings: </p>
    <p class="issue" id="issue-1cd8ef1d"><a class="self-link" href="#issue-1cd8ef1d"></a><span class="issuehead">Issue-107: </span> Roland Steiner has requested the addition of an auto value as default. See <a href="http://www.w3.org/Search/Mail/Public/advanced_search?keywords=&amp;hdr-1-name=subject&amp;hdr-1-query=ruby-position%3A+undesirable+default+value+%27before%27+for+complex+ruby&amp;hdr-2-name=from&amp;hdr-2-query=&amp;hdr-3-name=message-id&amp;hdr-3-query=&amp;period_month=&amp;period_year=&amp;index-grp=Public__FULL&amp;index-type=t&amp;type-index=www-style&amp;resultsperpage=20&amp;sortby=date">this thread</a> and <a href="http://www.w3.org/Search/Mail/Public/advanced_search?keywords=&amp;hdr-1-name=subject&amp;hdr-1-query=Styling+of+complex+Ruby&amp;hdr-2-name=from&amp;hdr-2-query=&amp;hdr-3-name=message-id&amp;hdr-3-query=&amp;period_month=&amp;period_year=&amp;index-grp=Public__FULL&amp;index-type=t&amp;type-index=public-i18n-core&amp;resultsperpage=20&amp;sortby=date">this one</a>. Current proposal is to add an optional <span class="css">alternate?</span> keyword.</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="ruby-position" data-dfn-type="value" data-export id="valdef-ruby-position-over">over<a class="self-link" href="#valdef-ruby-position-over"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="ruby-position" data-dfn-type="value" data-export id="valdef-ruby-position-over">over<a class="self-link" href="#valdef-ruby-position-over"></a></dfn>
     <dd>
-     The ruby text appears <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#line-over" id="ref-for-line-over">line-over</a> the base. 
+     The ruby text appears <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#line-over" id="ref-for-line-over">line-over</a> the base.
      <div class="figure">
       <p><img alt="Diagram of ruby glyph layout in horizontal mode with ruby text appearing above the base" src="images/shinkansen-top.gif"> </p>
       <p class="caption">Ruby over Japanese base text in horizontal layout </p>
@@ -1033,11 +1033,11 @@ on screen, on paper, etc.
       <p><img alt="Diagram of ruby glyph layout in vertical mode with ruby text appearing vertically on the right of the base" src="images/shinkansen-right.gif" width="33"> </p>
       <p class="caption">Ruby to the right of Japanese base text in vertical layout </p>
      </div>
-    <dt><dfn class="css" data-dfn-for="ruby-position" data-dfn-type="value" data-export id="valdef-ruby-position-under">under<a class="self-link" href="#valdef-ruby-position-under"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="ruby-position" data-dfn-type="value" data-export id="valdef-ruby-position-under">under<a class="self-link" href="#valdef-ruby-position-under"></a></dfn>
     <dd>
      The ruby text appears <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#line-under" id="ref-for-line-under">line-under</a> the base.
 			This is a relatively rare setting used in ideographic East Asian writing systems,
-			most easily found in educational text. 
+			most easily found in educational text.
      <div class="figure">
       <p><img alt="Diagram of ruby glyph layout in horizontal mode with ruby text appearing below the base" src="images/shinkansen-bottom.gif"> </p>
       <p class="caption">Ruby under Japanese base text in horizontal layout </p>
@@ -1072,28 +1072,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-ruby-merge">ruby-merge</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">separate <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> collapse <span id="ref-for-comb-one⑦">|</span> auto 
+      <td class="prod">separate <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> collapse <span id="ref-for-comb-one⑦">|</span> auto
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>separate 
+      <td>separate
      <tr>
       <th>Applies to:
-      <td>ruby annotation containers 
+      <td>ruby annotation containers
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p> This property controls how ruby annotation boxes should be rendered
 		when there are more than one in a ruby container box:
@@ -1102,25 +1102,25 @@ on screen, on paper, etc.
 		or the separation should be determined based on the space available. </p>
    <p>Possible values:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="ruby-merge" data-dfn-type="value" data-export id="valdef-ruby-merge-separate">separate</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="ruby-merge" data-dfn-type="value" data-export id="valdef-ruby-merge-separate">separate</dfn>
     <dd>
      <p> Each ruby annotation box is rendered in the same column(s) as its corresponding base box(es).
 				This style is called “mono ruby” in <a data-link-type="biblio" href="#biblio-jlreq">[JLREQ]</a>. </p>
      <div class="example" id="example-c95bac75">
-      <a class="self-link" href="#example-c95bac75"></a> 
+      <a class="self-link" href="#example-c95bac75"></a>
       <p>For example, the following two markups render the same: </p>
 <pre>&lt;ruby>無&lt;rt>む&lt;/ruby>&lt;ruby>常&lt;rt>じょう&lt;/ruby></pre>
       <p>and: </p>
 <pre>&lt;ruby style="ruby-merge:separate">&lt;rb>無&lt;rb>常&lt;rt>む&lt;rt>じょう&lt;/ruby></pre>
      </div>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="ruby-merge" data-dfn-type="value" data-export id="valdef-ruby-merge-collapse">collapse</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="ruby-merge" data-dfn-type="value" data-export id="valdef-ruby-merge-collapse">collapse</dfn>
     <dd>
      <p> All <i>ruby annotation boxes</i> within the same <i>ruby segment</i> on the same line are concatenated,
 				and laid out as if their contents belonged to a single <i>ruby annotation box</i> spanning all their associated <i>ruby base boxes</i>.
 				This style renders similar to “group ruby” in <a data-link-type="biblio" href="#biblio-jlreq">[JLREQ]</a>,
 				except that <i>ruby annotations</i> are kept together with their respective <i>ruby bases</i> when breaking lines. </p>
      <div class="example" id="example-75d0f4f7">
-      <a class="self-link" href="#example-75d0f4f7"></a> 
+      <a class="self-link" href="#example-75d0f4f7"></a>
       <p>The following two markups render the same both characters fit on one line: </p>
 <pre>&lt;ruby>無常&lt;rt>むじょう&lt;/ruby></pre>
       <p>and: </p>
@@ -1137,7 +1137,7 @@ on screen, on paper, etc.
 				the space is shared in some way
 				to avoid imposing space between bases. </p>
      <div class="example" id="example-85d8104f">
-      <a class="self-link" href="#example-85d8104f"></a> 
+      <a class="self-link" href="#example-85d8104f"></a>
       <p> One possible algorithm is described as “jukugo ruby” in <a data-link-type="biblio" href="#biblio-jlreq">[JLREQ]</a>. </p>
       <p> Another, more simplified algorithm of “jukugo ruby” is
 				to render as <a class="css" data-link-type="maybe" href="#valdef-ruby-merge-separate" id="ref-for-valdef-ruby-merge-separate①">separate</a> if all ruby annotation boxes fit
@@ -1153,28 +1153,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-ruby-align">ruby-align</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">start <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> center <span id="ref-for-comb-one⑨">|</span> space-between <span id="ref-for-comb-one①⓪">|</span> space-around 
+      <td class="prod">start <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> center <span id="ref-for-comb-one⑨">|</span> space-between <span id="ref-for-comb-one①⓪">|</span> space-around
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>space-around 
+      <td>space-around
      <tr>
       <th>Applies to:
-      <td>ruby bases, ruby annotations, ruby base containers, ruby annotation containers 
+      <td>ruby bases, ruby annotations, ruby base containers, ruby annotation containers
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p>This property specifies how text is distributed within the various ruby boxes
 	when their contents do not exactly fill their respective boxes.
@@ -1184,14 +1184,14 @@ on screen, on paper, etc.
    <dl>
     <dt><dfn class="dfn-paneled css" data-dfn-for="ruby-align" data-dfn-type="value" data-export id="valdef-ruby-align-start">start</dfn>
     <dd>
-     The ruby content is aligned with the start edge of its box. 
+     The ruby content is aligned with the start edge of its box.
      <div class="figure">
       <p><img alt="Diagram of glyph layout in left aligned ruby when ruby text is shorter than base" height="91" src="images/ra-l.gif" width="145"><img alt="Diagram of glyph layout in left aligned ruby when ruby text is longer than base" height="91" src="images/ra-l-rb.gif" width="145"> </p>
       <p class="caption"><a class="css" data-link-type="maybe" href="#valdef-ruby-align-start" id="ref-for-valdef-ruby-align-start">start</a> ruby distribution </p>
      </div>
     <dt><dfn class="dfn-paneled css" data-dfn-for="ruby-align" data-dfn-type="value" data-export id="valdef-ruby-align-center">center</dfn>
     <dd>
-     The ruby content is centered within its box. 
+     The ruby content is centered within its box.
      <div class="figure">
       <p><img alt="Diagram of glyph layout in center aligned ruby when ruby text is shorter than base" height="91" src="images/ra-c.gif" width="145"><img alt="Diagram of glyph layout in center aligned ruby when ruby text is longer than base" height="91" src="images/ra-c-rb.gif" width="145"> </p>
       <p class="caption"><a class="css" data-link-type="maybe" href="#valdef-ruby-align-center" id="ref-for-valdef-ruby-align-center">center</a> ruby distribution </p>
@@ -1209,7 +1209,7 @@ on screen, on paper, etc.
     <dd>
      <p>As for <a class="css" data-link-type="maybe" href="#valdef-ruby-align-space-between" id="ref-for-valdef-ruby-align-space-between①">space-between</a> except that there exists an extra <i>justification opportunities</i> whose space is distributed half before and half after the ruby content. </p>
      <div class="example" id="example-fac0e6d5">
-      <a class="self-link" href="#example-fac0e6d5"></a> 
+      <a class="self-link" href="#example-fac0e6d5"></a>
       <p>Since a typical implementation will by default define <i>justification opportunities</i> between every adjacent pair of CJK <i>characters</i> and not between adjacent pairs of Latin <i>characters</i>,
 					this should result in the behavior recommended by <a data-link-type="biblio" href="#biblio-jlreq">[JLREQ]</a>:
 					for wide-cell ruby content to be distributed... </p>
@@ -1280,7 +1280,7 @@ on screen, on paper, etc.
 	only the dimension in which it works in such a layout is vertical,
 	instead of horizontal. </p>
    <div class="example" id="example-bf180944">
-    <a class="self-link" href="#example-bf180944"></a> 
+    <a class="self-link" href="#example-bf180944"></a>
     <p> The user agent may use <a data-link-type="biblio" href="#biblio-jis4051">[JIS4051]</a> recommendation of
 		using one ruby text character length as the maximum overhang length.
 		Detailed rules for how ruby text can overhang adjacent characters for Japanese are described by <a data-link-type="biblio" href="#biblio-jlreq">[JLREQ]</a>. </p>
@@ -1348,10 +1348,10 @@ rt + rb::before  { content: ")"; }
 rt + rtc::before { content: ")("; }</pre>
    <h2 class="heading settled" data-level="6" id="glossary"><span class="secno">6. </span><span class="content"> Glossary</span><a class="self-link" href="#glossary"></a></h2>
    <dl>
-    <dt id="g-bopomofo" lang="zh"><a class="self-link" href="#g-bopomofo"></a>Bopomofo 
+    <dt id="g-bopomofo" lang="zh"><a class="self-link" href="#g-bopomofo"></a>Bopomofo
     <dd>
      37 characters and 4 tone markings used as phonetics in Chinese,
-      especially standard Mandarin. 
+      especially standard Mandarin.
      <p class="note" role="note"> Note that the user agent is responsible for ensuring the correct relative alignment and positioning of the glyphs,
           including bopomofo tone marks, when displaying text,
           whether it occurs in ruby annotations or as normal inline text.
@@ -1359,26 +1359,26 @@ rt + rtc::before { content: ")("; }</pre>
           They are usually displayed in a separate column to the right of or above the bopomofo characters,
           and the position of the tone mark depends on the number of characters in the syllable.
           One tone mark, however, is placed before the bopomofo, not over it. </p>
-    <dt id="g-hanja" lang="ko"><a class="self-link" href="#g-hanja"></a>Hanja 
+    <dt id="g-hanja" lang="ko"><a class="self-link" href="#g-hanja"></a>Hanja
     <dd>Subset of the Korean writing system that utilizes ideographic
       characters borrowed or adapted from the Chinese writing system. Also see <a href="#g-kanji"><span lang="ja">Kanji</span></a>.
-    <dt id="g-hiragana" lang="ja"><a class="self-link" href="#g-hiragana"></a>Hiragana 
+    <dt id="g-hiragana" lang="ja"><a class="self-link" href="#g-hiragana"></a>Hiragana
     <dd>Japanese syllabic script, or character of that script. Rounded and
     cursive in appearance. Subset of the Japanese writing system, used together
     with kanji and katakana. In recent times, mostly used to write Japanese
     words when kanji are not available or appropriate, and word endings and
     particles. Also see <a href="#g-katakana"><span lang="ja">Katakana</span></a>.
-    <dt id="g-ideogram"><a class="self-link" href="#g-ideogram"></a>Ideograph 
+    <dt id="g-ideogram"><a class="self-link" href="#g-ideogram"></a>Ideograph
     <dd>A character that is used to represent an idea, word, or word component,
     in contrast to a character from an alphabetic or syllabic script. The most
     well-known ideographic script is used (with some variation) in East Asia
     (China, Japan, Korea,...).
-    <dt id="g-kana" lang="ja"><a class="self-link" href="#g-kana"></a>Kana 
+    <dt id="g-kana" lang="ja"><a class="self-link" href="#g-kana"></a>Kana
     <dd>Collective term for hiragana and katakana.
-    <dt id="g-kanji"><a class="self-link" href="#g-kanji"></a>Kanji 
+    <dt id="g-kanji"><a class="self-link" href="#g-kanji"></a>Kanji
     <dd>Japanese term for ideographs; ideographs used in Japanese. Subset of the
     Japanese writing system, used together with hiragana and katakana. Also see <a href="#g-hanja"><span lang="ko">Hanja</span></a>.
-    <dt id="g-katakana" lang="ja"><a class="self-link" href="#g-katakana"></a>Katakana 
+    <dt id="g-katakana" lang="ja"><a class="self-link" href="#g-katakana"></a>Katakana
     <dd>Japanese syllabic script, or character of that script. Angular in
     appearance. Subset of the Japanese writing system,  used together with
     kanji and hiragana. In recent times, mainly used to write foreign words. Also see <a href="#g-hiragana"><span lang="ja">Hiragana</span></a>.
@@ -1407,66 +1407,66 @@ rt + rtc::before { content: ")("; }</pre>
    <p>This section documents the changes since previous publications.</p>
    <h3 class="heading settled" id="changes-20140805"><span class="content"> Changes since the 5 August 2014 WD</span><a class="self-link" href="#changes-20140805"></a></h3>
    <ul>
-    <li>Harmonize ininification with the <a href="https://www.w3.org/TR/css-display-3/">CSS Display Module</a>. 
-    <li>Allow UA to shift ruby/emphasis marks if they conflict with underlines/overlines. 
-    <li>Disable autohiding when the computed value of <a class="property" data-link-type="propdesc" href="#propdef-ruby-merge" id="ref-for-propdef-ruby-merge④">ruby-merge</a> is <a class="css" data-link-type="maybe" href="#valdef-ruby-merge-collapse" id="ref-for-valdef-ruby-merge-collapse②">collapse</a>. 
-    <li>Tweak the <a href="#default-stylesheet">default style sheet</a>. 
-    <li>Add section on <a href="#ruby-text-decoration">text decoration</a>. 
-    <li>Defer the <span class="css">right</span> and <span class="css">left</span> values of <a class="property" data-link-type="propdesc" href="#propdef-ruby-position" id="ref-for-propdef-ruby-position⑥">ruby-position</a> to the next level. 
-    <li>Change ruby pairing rules to only operate on anonymous annotations (i.e. content directly contained by an <code><a data-link-type="element">rtc</a></code>). 
+    <li>Harmonize ininification with the <a href="https://www.w3.org/TR/css-display-3/">CSS Display Module</a>.
+    <li>Allow UA to shift ruby/emphasis marks if they conflict with underlines/overlines.
+    <li>Disable autohiding when the computed value of <a class="property" data-link-type="propdesc" href="#propdef-ruby-merge" id="ref-for-propdef-ruby-merge④">ruby-merge</a> is <a class="css" data-link-type="maybe" href="#valdef-ruby-merge-collapse" id="ref-for-valdef-ruby-merge-collapse②">collapse</a>.
+    <li>Tweak the <a href="#default-stylesheet">default style sheet</a>.
+    <li>Add section on <a href="#ruby-text-decoration">text decoration</a>.
+    <li>Defer the <span class="css">right</span> and <span class="css">left</span> values of <a class="property" data-link-type="propdesc" href="#propdef-ruby-position" id="ref-for-propdef-ruby-position⑥">ruby-position</a> to the next level.
+    <li>Change ruby pairing rules to only operate on anonymous annotations (i.e. content directly contained by an <code><a data-link-type="element">rtc</a></code>).
     <li>Apply <a class="property" data-link-type="propdesc" href="#propdef-ruby-position" id="ref-for-propdef-ruby-position⑦">ruby-position</a> to <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-pseudo-4/#selectordef-first-line" id="ref-for-selectordef-first-line②">::first-line</a>.
-		(<a href="https://github.com/w3c/csswg-drafts/issues/2998">Issue 2998</a>) 
+		(<a href="https://github.com/w3c/csswg-drafts/issues/2998">Issue 2998</a>)
    </ul>
    <h3 class="heading settled" id="changes-20130919"><span class="content"> Changes since the 19 September 2013 WD</span><a class="self-link" href="#changes-20130919"></a></h3>
    <ul>
     <li>Rewrite anonymous box generation rules and white space handling rules,
-		defined specialized pairing of anonymous white space boxes. 
+		defined specialized pairing of anonymous white space boxes.
     <li>Take nested ruby handling out of pairing.
-		(Will be handling it via sizing/layout.) 
-    <li>Define bidi layout of ruby structures. 
+		(Will be handling it via sizing/layout.)
+    <li>Define bidi layout of ruby structures.
    </ul>
    <h3 class="heading settled" id="changes-20110630"><span class="content"> Changes since the 30 June 2011 WD</span><a class="self-link" href="#changes-20110630"></a></h3>
    <dl>
-    <dt>Remove <a class="property" data-link-type="propdesc">ruby-span</a> and mentions of <code>rbspan</code>. 
+    <dt>Remove <a class="property" data-link-type="propdesc">ruby-span</a> and mentions of <code>rbspan</code>.
     <dd> Explicit spanning is not used in HTML ruby in favor of implicit
 				 spanning. This can’t handle some pathological double-sided spanning
 				 cases, but there seems to be no requirement for these at the moment. (For
 				 implementations that support full complex XHTML Ruby, they can imply
 				 spanning from the markup the same magic way that we handle cell spanning
 				 from tables. It doesn’t seem necessary to include controls this in Level
-				 1.) 
-    <dt>Defer <a class="property" data-link-type="propdesc">ruby-overhang</a> and <code>ruby-align: line-end</code> to Level 2. 
+				 1.)
+    <dt>Defer <a class="property" data-link-type="propdesc">ruby-overhang</a> and <code>ruby-align: line-end</code> to Level 2.
     <dd> It’s somewhat complicated, advanced feature. Proposal is to make this
-				 behavior UA-defined and provide some examples of acceptable options. 
-    <dt>Close issue requesting <code>display: rp</code>: use <code>display: none</code>. 
+				 behavior UA-defined and provide some examples of acceptable options.
+    <dt>Close issue requesting <code>display: rp</code>: use <code>display: none</code>.
     <dd> The Internationalization WG added an issue requesting a display value
 				 for <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element" id="ref-for-the-rp-element">rp</a></code> elements. They’re supposed to be hidden when <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element" id="ref-for-the-ruby-element">ruby</a></code> is
-				 displayed as ruby. But this is easily accomplished already with <code>display: none</code>. 
-    <dt>Change <a class="property" data-link-type="propdesc" href="#propdef-ruby-position" id="ref-for-propdef-ruby-position⑧">ruby-position</a> values to match <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-emphasis-position" id="ref-for-propdef-text-emphasis-position">text-emphasis-position</a>. 
+				 displayed as ruby. But this is easily accomplished already with <code>display: none</code>.
+    <dt>Change <a class="property" data-link-type="propdesc" href="#propdef-ruby-position" id="ref-for-propdef-ruby-position⑧">ruby-position</a> values to match <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-emphasis-position" id="ref-for-propdef-text-emphasis-position">text-emphasis-position</a>.
     <dd> Other than <a class="css" data-link-type="maybe" href="#valdef-ruby-position-inter-character" id="ref-for-valdef-ruby-position-inter-character⑦">inter-character</a>, which we
 				 need to keep, it makes more sense to align ruby positions with <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-decor-3/#propdef-text-emphasis-position" id="ref-for-propdef-text-emphasis-position①">text-emphasis-position</a>, which can correctly
-				 handle various combinations of horizontal/vertical preferences. 
-    <dt>Remove unused values of <a class="property" data-link-type="propdesc" href="#propdef-ruby-align" id="ref-for-propdef-ruby-align④">ruby-align</a>. 
-    <dd> <span class="css">left</span>, <span class="css">right</span>, and <span class="css">end</span> are not needed. 
-    <dt>Replace <span class="css">auto</span>, <span class="css">distribute-letter</span>, and <span class="css">distribute-space</span> from <a class="property" data-link-type="propdesc" href="#propdef-ruby-align" id="ref-for-propdef-ruby-align⑤">ruby-align</a> with <a class="css" data-link-type="maybe" href="#valdef-ruby-align-space-between" id="ref-for-valdef-ruby-align-space-between②">space-between</a> and <a class="css" data-link-type="maybe" href="#valdef-ruby-align-space-around" id="ref-for-valdef-ruby-align-space-around②">space-around</a>. 
+				 handle various combinations of horizontal/vertical preferences.
+    <dt>Remove unused values of <a class="property" data-link-type="propdesc" href="#propdef-ruby-align" id="ref-for-propdef-ruby-align④">ruby-align</a>.
+    <dd> <span class="css">left</span>, <span class="css">right</span>, and <span class="css">end</span> are not needed.
+    <dt>Replace <span class="css">auto</span>, <span class="css">distribute-letter</span>, and <span class="css">distribute-space</span> from <a class="property" data-link-type="propdesc" href="#propdef-ruby-align" id="ref-for-propdef-ruby-align⑤">ruby-align</a> with <a class="css" data-link-type="maybe" href="#valdef-ruby-align-space-between" id="ref-for-valdef-ruby-align-space-between②">space-between</a> and <a class="css" data-link-type="maybe" href="#valdef-ruby-align-space-around" id="ref-for-valdef-ruby-align-space-around②">space-around</a>.
     <dd> The <span class="css">auto</span> value relied on inspecting
 				 content to determine behavior; this can be avoided by just using <a class="css" data-link-type="maybe" href="#valdef-ruby-align-space-around" id="ref-for-valdef-ruby-align-space-around③">space-around</a> with standard justification rules (which allow spacing between CJK but not between Latin).
-				 Replaced <span class="css">distribute-letter</span> and <span class="css">distribute-space</span> with <a class="css" data-link-type="maybe" href="#valdef-ruby-align-space-between" id="ref-for-valdef-ruby-align-space-between③">space-between</a> and <span class="css" id="ref-for-valdef-ruby-align-space-around④">space-around</span> for consistency with distribution keywords in <a data-link-type="biblio" href="#biblio-css-flexbox-1">[CSS-FLEXBOX-1]</a> and <a data-link-type="biblio" href="#biblio-css-align-3">[CSS-ALIGN-3]</a> and to avoid any links to the definition of <code>text-justify: distribute</code>. 
-    <dt>Added <a class="property" data-link-type="propdesc" href="#propdef-ruby-merge" id="ref-for-propdef-ruby-merge⑤">ruby-merge</a> property to control jukugo rendering. 
+				 Replaced <span class="css">distribute-letter</span> and <span class="css">distribute-space</span> with <a class="css" data-link-type="maybe" href="#valdef-ruby-align-space-between" id="ref-for-valdef-ruby-align-space-between③">space-between</a> and <span class="css" id="ref-for-valdef-ruby-align-space-around④">space-around</span> for consistency with distribution keywords in <a data-link-type="biblio" href="#biblio-css-flexbox-1">[CSS-FLEXBOX-1]</a> and <a data-link-type="biblio" href="#biblio-css-align-3">[CSS-ALIGN-3]</a> and to avoid any links to the definition of <code>text-justify: distribute</code>.
+    <dt>Added <a class="property" data-link-type="propdesc" href="#propdef-ruby-merge" id="ref-for-propdef-ruby-merge⑤">ruby-merge</a> property to control jukugo rendering.
     <dd> This is a stylistic effect, not a structural one; the previous model
 				 assumed that it was structural and suggested handling it by changing
-				 markup. :( 
-    <dt>Remove <span class="css">inline</span> from <a class="property" data-link-type="propdesc" href="#propdef-ruby-position" id="ref-for-propdef-ruby-position⑨">ruby-position</a>. 
+				 markup. :(
+    <dt>Remove <span class="css">inline</span> from <a class="property" data-link-type="propdesc" href="#propdef-ruby-position" id="ref-for-propdef-ruby-position⑨">ruby-position</a>.
     <dd> This is do-able via <code>display: inline</code> on
-				 all the ruby-related elements, see <a href="#default-inline">Appendix A</a>. 
-    <dt>Added <a href="#default-stylesheet">Default Style</a> rules 
-    <dd> As requested by Internationalization WG. 
-    <dt>Wrote anonymous box generation rules 
+				 all the ruby-related elements, see <a href="#default-inline">Appendix A</a>.
+    <dt>Added <a href="#default-stylesheet">Default Style</a> rules
+    <dd> As requested by Internationalization WG.
+    <dt>Wrote anonymous box generation rules
     <dd> And defined pairing of bases and annotations. Should now handle all
-				 the crazy proposed permutations of HTML ruby markup. 
-    <dt>Defined layout of ruby 
+				 the crazy proposed permutations of HTML ruby markup.
+    <dt>Defined layout of ruby
     <dd> Defined in detail space distribution, white space handling, line
-				 breaking, line stacking, etc. Open issue left for bidi. 
+				 breaking, line stacking, etc. Open issue left for bidi.
    </dl>
   </main>
   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -1484,7 +1484,7 @@ rt + rtc::before { content: ")("; }</pre>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1497,14 +1497,14 @@ rt + rtc::before { content: ")("; }</pre>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1555,7 +1555,7 @@ rt + rtc::before { content: ")("; }</pre>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1615,76 +1615,76 @@ rt + rtc::before { content: ")("; }</pre>
   <aside class="dfn-panel" data-for="term-for-propdef-padding">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-padding">https://drafts.csswg.org/css-box-3/#propdef-padding</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-padding">3.5. 
+    <li><a href="#ref-for-propdef-padding">3.5.
 Line Spacing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-block">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-block">https://drafts.csswg.org/css-display-3/#valdef-display-block</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-block">2.1.2. 
+    <li><a href="#ref-for-valdef-display-block">2.1.2.
 Non-Inline Ruby</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-display">
    <a href="https://drafts.csswg.org/css-display-3/#propdef-display">https://drafts.csswg.org/css-display-3/#propdef-display</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-display">2.1. 
+    <li><a href="#ref-for-propdef-display">2.1.
 Ruby-specific display Values</a> <a href="#ref-for-propdef-display①">(2)</a> <a href="#ref-for-propdef-display②">(3)</a> <a href="#ref-for-propdef-display③">(4)</a> <a href="#ref-for-propdef-display④">(5)</a>
-    <li><a href="#ref-for-propdef-display⑤">2.1.2. 
+    <li><a href="#ref-for-propdef-display⑤">2.1.2.
 Non-Inline Ruby</a> <a href="#ref-for-propdef-display⑥">(2)</a>
-    <li><a href="#ref-for-propdef-display⑦">2.2. 
+    <li><a href="#ref-for-propdef-display⑦">2.2.
 Anonymous Ruby Box Generation</a> <a href="#ref-for-propdef-display⑧">(2)</a> <a href="#ref-for-propdef-display⑨">(3)</a> <a href="#ref-for-propdef-display①⓪">(4)</a> <a href="#ref-for-propdef-display①①">(5)</a> <a href="#ref-for-propdef-display①②">(6)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-inline">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-inline">https://drafts.csswg.org/css-display-3/#valdef-display-inline</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-inline">2.1.2. 
+    <li><a href="#ref-for-valdef-display-inline">2.1.2.
 Non-Inline Ruby</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-inline-block">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-inline-block">https://drafts.csswg.org/css-display-3/#valdef-display-inline-block</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-inline-block">2.2. 
+    <li><a href="#ref-for-valdef-display-inline-block">2.2.
 Anonymous Ruby Box Generation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-level">
    <a href="https://drafts.csswg.org/css-display-3/#inline-level">https://drafts.csswg.org/css-display-3/#inline-level</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-level">2.2. 
+    <li><a href="#ref-for-inline-level">2.2.
 Anonymous Ruby Box Generation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inlinify">
    <a href="https://drafts.csswg.org/css-display-3/#inlinify">https://drafts.csswg.org/css-display-3/#inlinify</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inlinify">2.2. 
+    <li><a href="#ref-for-inlinify">2.2.
 Anonymous Ruby Box Generation</a> <a href="#ref-for-inlinify①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-vertical-align">
    <a href="https://drafts.csswg.org/css-inline-3/#propdef-vertical-align">https://drafts.csswg.org/css-inline-3/#propdef-vertical-align</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-vertical-align">3. 
+    <li><a href="#ref-for-propdef-vertical-align">3.
 Ruby Layout</a>
-    <li><a href="#ref-for-propdef-vertical-align①">3.5. 
+    <li><a href="#ref-for-propdef-vertical-align①">3.5.
 Line Spacing</a> <a href="#ref-for-propdef-vertical-align②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-selectordef-first-letter">
    <a href="https://drafts.csswg.org/css-pseudo-4/#selectordef-first-letter">https://drafts.csswg.org/css-pseudo-4/#selectordef-first-letter</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-first-letter">1.1. 
+    <li><a href="#ref-for-selectordef-first-letter">1.1.
 Module interactions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-selectordef-first-line">
    <a href="https://drafts.csswg.org/css-pseudo-4/#selectordef-first-line">https://drafts.csswg.org/css-pseudo-4/#selectordef-first-line</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-first-line">1.1. 
+    <li><a href="#ref-for-selectordef-first-line">1.1.
 Module interactions</a> <a href="#ref-for-selectordef-first-line①">(2)</a>
     <li><a href="#ref-for-selectordef-first-line②"> Changes since the 5 August 2014 WD</a>
    </ul>
@@ -1692,101 +1692,101 @@ Module interactions</a> <a href="#ref-for-selectordef-first-line①">(2)</a>
   <aside class="dfn-panel" data-for="term-for-propdef-white-space">
    <a href="https://drafts.csswg.org/css-text-4/#propdef-white-space">https://drafts.csswg.org/css-text-4/#propdef-white-space</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-white-space">2.2. 
+    <li><a href="#ref-for-propdef-white-space">2.2.
 Anonymous Ruby Box Generation</a>
-    <li><a href="#ref-for-propdef-white-space①">2.4. 
+    <li><a href="#ref-for-propdef-white-space①">2.4.
 Autohiding Base-identical Annotations</a>
-    <li><a href="#ref-for-propdef-white-space②">3.3.2. 
+    <li><a href="#ref-for-propdef-white-space②">3.3.2.
 Breaking Within Bases</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-wide-keywords">
    <a href="https://drafts.csswg.org/css-values-4/#css-wide-keywords">https://drafts.csswg.org/css-values-4/#css-wide-keywords</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-wide-keywords">1.2. 
+    <li><a href="#ref-for-css-wide-keywords">1.2.
 Values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">2.1. 
+    <li><a href="#ref-for-comb-one">2.1.
 Ruby-specific display Values</a> <a href="#ref-for-comb-one①">(2)</a> <a href="#ref-for-comb-one②">(3)</a> <a href="#ref-for-comb-one③">(4)</a>
-    <li><a href="#ref-for-comb-one④">4.1. 
+    <li><a href="#ref-for-comb-one④">4.1.
 Ruby Positioning: the ruby-position property</a> <a href="#ref-for-comb-one⑤">(2)</a>
-    <li><a href="#ref-for-comb-one⑥">4.2. 
+    <li><a href="#ref-for-comb-one⑥">4.2.
 Sharing Annotation Space: the ruby-merge property</a> <a href="#ref-for-comb-one⑦">(2)</a>
-    <li><a href="#ref-for-comb-one⑧">4.3. 
+    <li><a href="#ref-for-comb-one⑧">4.3.
 Ruby Text Distribution: the ruby-align property</a> <a href="#ref-for-comb-one⑨">(2)</a> <a href="#ref-for-comb-one①⓪">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-unicode-bidi-bidi-override">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-bidi-override">https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-bidi-override</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-unicode-bidi-bidi-override">3.4. 
+    <li><a href="#ref-for-valdef-unicode-bidi-bidi-override">3.4.
 Bidi Reordering</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-unicode-bidi-embed">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-embed">https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-embed</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-unicode-bidi-embed">3.4. 
+    <li><a href="#ref-for-valdef-unicode-bidi-embed">3.4.
 Bidi Reordering</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-unicode-bidi-isolate">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-isolate">https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-isolate</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-unicode-bidi-isolate">3.4. 
+    <li><a href="#ref-for-valdef-unicode-bidi-isolate">3.4.
 Bidi Reordering</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-unicode-bidi-isolate-override">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-isolate-override">https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-isolate-override</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-unicode-bidi-isolate-override">3.4. 
+    <li><a href="#ref-for-valdef-unicode-bidi-isolate-override">3.4.
 Bidi Reordering</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-line-over">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#line-over">https://drafts.csswg.org/css-writing-modes-4/#line-over</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-line-over">4.1. 
+    <li><a href="#ref-for-line-over">4.1.
 Ruby Positioning: the ruby-position property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-line-under">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#line-under">https://drafts.csswg.org/css-writing-modes-4/#line-under</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-line-under">4.1. 
+    <li><a href="#ref-for-line-under">4.1.
 Ruby Positioning: the ruby-position property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-unicode-bidi-normal">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-normal">https://drafts.csswg.org/css-writing-modes-4/#valdef-unicode-bidi-normal</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-unicode-bidi-normal">3.4. 
+    <li><a href="#ref-for-valdef-unicode-bidi-normal">3.4.
 Bidi Reordering</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-writing-mode-vertical-rl">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#valdef-writing-mode-vertical-rl">https://drafts.csswg.org/css-writing-modes-4/#valdef-writing-mode-vertical-rl</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-writing-mode-vertical-rl">4.1. 
+    <li><a href="#ref-for-valdef-writing-mode-vertical-rl">4.1.
 Ruby Positioning: the ruby-position property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-writing-mode">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#propdef-writing-mode">https://drafts.csswg.org/css-writing-modes-4/#propdef-writing-mode</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-writing-mode">4.1. 
+    <li><a href="#ref-for-propdef-writing-mode">4.1.
 Ruby Positioning: the ruby-position property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-line-height">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-line-height">https://drafts.csswg.org/css2/visudet.html#propdef-line-height</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-line-height">3.5. 
+    <li><a href="#ref-for-propdef-line-height">3.5.
 Line Spacing</a> <a href="#ref-for-propdef-line-height①">(2)</a> <a href="#ref-for-propdef-line-height②">(3)</a> <a href="#ref-for-propdef-line-height③">(4)</a> <a href="#ref-for-propdef-line-height④">(5)</a>
    </ul>
   </aside>
@@ -1799,42 +1799,42 @@ Line Spacing</a> <a href="#ref-for-propdef-line-height①">(2)</a> <a href="#ref
   <aside class="dfn-panel" data-for="term-for-propdef-direction">
    <a href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction">https://drafts.csswg.org/css-writing-modes-3/#propdef-direction</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-direction">3.4. 
+    <li><a href="#ref-for-propdef-direction">3.4.
 Bidi Reordering</a> <a href="#ref-for-propdef-direction①">(2)</a> <a href="#ref-for-propdef-direction②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-unicode-bidi">
    <a href="https://drafts.csswg.org/css-writing-modes-3/#propdef-unicode-bidi">https://drafts.csswg.org/css-writing-modes-3/#propdef-unicode-bidi</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-unicode-bidi">3.4. 
+    <li><a href="#ref-for-propdef-unicode-bidi">3.4.
 Bidi Reordering</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-word-break-keep-all">
    <a href="https://drafts.csswg.org/css-text-3/#valdef-word-break-keep-all">https://drafts.csswg.org/css-text-3/#valdef-word-break-keep-all</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-word-break-keep-all">3.3.1. 
+    <li><a href="#ref-for-valdef-word-break-keep-all">3.3.1.
 Breaking Between Bases</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-text-justify">
    <a href="https://drafts.csswg.org/css-text-3/#propdef-text-justify">https://drafts.csswg.org/css-text-3/#propdef-text-justify</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-justify">4.3. 
+    <li><a href="#ref-for-propdef-text-justify">4.3.
 Ruby Text Distribution: the ruby-align property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-text-transform">
    <a href="https://drafts.csswg.org/css-text-3/#propdef-text-transform">https://drafts.csswg.org/css-text-3/#propdef-text-transform</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-transform">2.4. 
+    <li><a href="#ref-for-propdef-text-transform">2.4.
 Autohiding Base-identical Annotations</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-word-break">
    <a href="https://drafts.csswg.org/css-text-3/#propdef-word-break">https://drafts.csswg.org/css-text-3/#propdef-word-break</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-word-break">3.3.1. 
+    <li><a href="#ref-for-propdef-word-break">3.3.1.
 Breaking Between Bases</a>
    </ul>
   </aside>
@@ -2053,22 +2053,22 @@ Breaking Between Bases</a>
   <aside class="dfn-panel" data-for="valdef-display-ruby">
    <b><a href="#valdef-display-ruby">#valdef-display-ruby</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-ruby">2.1.2. 
+    <li><a href="#ref-for-valdef-display-ruby">2.1.2.
 Non-Inline Ruby</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-ruby-position">
    <b><a href="#propdef-ruby-position">#propdef-ruby-position</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-ruby-position">1.1. 
+    <li><a href="#ref-for-propdef-ruby-position">1.1.
 Module interactions</a>
-    <li><a href="#ref-for-propdef-ruby-position①">3. 
+    <li><a href="#ref-for-propdef-ruby-position①">3.
 Ruby Layout</a>
-    <li><a href="#ref-for-propdef-ruby-position②">3.1. 
+    <li><a href="#ref-for-propdef-ruby-position②">3.1.
 Inter-character Ruby Layout</a>
-    <li><a href="#ref-for-propdef-ruby-position③">4.1. 
+    <li><a href="#ref-for-propdef-ruby-position③">4.1.
 Ruby Positioning: the ruby-position property</a> <a href="#ref-for-propdef-ruby-position④">(2)</a>
-    <li><a href="#ref-for-propdef-ruby-position⑤">4.2. 
+    <li><a href="#ref-for-propdef-ruby-position⑤">4.2.
 Sharing Annotation Space: the ruby-merge property</a>
     <li><a href="#ref-for-propdef-ruby-position⑥"> Changes since the 5 August 2014 WD</a> <a href="#ref-for-propdef-ruby-position⑦">(2)</a>
     <li><a href="#ref-for-propdef-ruby-position⑧"> Changes since the 30 June 2011 WD</a> <a href="#ref-for-propdef-ruby-position⑨">(2)</a>
@@ -2077,11 +2077,11 @@ Sharing Annotation Space: the ruby-merge property</a>
   <aside class="dfn-panel" data-for="valdef-ruby-position-inter-character">
    <b><a href="#valdef-ruby-position-inter-character">#valdef-ruby-position-inter-character</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-ruby-position-inter-character">3.1. 
+    <li><a href="#ref-for-valdef-ruby-position-inter-character">3.1.
 Inter-character Ruby Layout</a> <a href="#ref-for-valdef-ruby-position-inter-character①">(2)</a> <a href="#ref-for-valdef-ruby-position-inter-character②">(3)</a> <a href="#ref-for-valdef-ruby-position-inter-character③">(4)</a>
-    <li><a href="#ref-for-valdef-ruby-position-inter-character④">3.3. 
+    <li><a href="#ref-for-valdef-ruby-position-inter-character④">3.3.
 Breaking Across Lines</a> <a href="#ref-for-valdef-ruby-position-inter-character⑤">(2)</a>
-    <li><a href="#ref-for-valdef-ruby-position-inter-character⑥">3.3.2. 
+    <li><a href="#ref-for-valdef-ruby-position-inter-character⑥">3.3.2.
 Breaking Within Bases</a>
     <li><a href="#ref-for-valdef-ruby-position-inter-character⑦"> Changes since the 30 June 2011 WD</a>
    </ul>
@@ -2089,11 +2089,11 @@ Breaking Within Bases</a>
   <aside class="dfn-panel" data-for="propdef-ruby-merge">
    <b><a href="#propdef-ruby-merge">#propdef-ruby-merge</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-ruby-merge">2.4. 
+    <li><a href="#ref-for-propdef-ruby-merge">2.4.
 Autohiding Base-identical Annotations</a> <a href="#ref-for-propdef-ruby-merge①">(2)</a>
-    <li><a href="#ref-for-propdef-ruby-merge②">3. 
+    <li><a href="#ref-for-propdef-ruby-merge②">3.
 Ruby Layout</a>
-    <li><a href="#ref-for-propdef-ruby-merge③">4.2. 
+    <li><a href="#ref-for-propdef-ruby-merge③">4.2.
 Sharing Annotation Space: the ruby-merge property</a>
     <li><a href="#ref-for-propdef-ruby-merge④"> Changes since the 5 August 2014 WD</a>
     <li><a href="#ref-for-propdef-ruby-merge⑤"> Changes since the 30 June 2011 WD</a>
@@ -2102,18 +2102,18 @@ Sharing Annotation Space: the ruby-merge property</a>
   <aside class="dfn-panel" data-for="valdef-ruby-merge-separate">
    <b><a href="#valdef-ruby-merge-separate">#valdef-ruby-merge-separate</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-ruby-merge-separate">2.4. 
+    <li><a href="#ref-for-valdef-ruby-merge-separate">2.4.
 Autohiding Base-identical Annotations</a>
-    <li><a href="#ref-for-valdef-ruby-merge-separate①">4.2. 
+    <li><a href="#ref-for-valdef-ruby-merge-separate①">4.2.
 Sharing Annotation Space: the ruby-merge property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-ruby-merge-collapse">
    <b><a href="#valdef-ruby-merge-collapse">#valdef-ruby-merge-collapse</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-ruby-merge-collapse">2.4. 
+    <li><a href="#ref-for-valdef-ruby-merge-collapse">2.4.
 Autohiding Base-identical Annotations</a>
-    <li><a href="#ref-for-valdef-ruby-merge-collapse①">4.2. 
+    <li><a href="#ref-for-valdef-ruby-merge-collapse①">4.2.
 Sharing Annotation Space: the ruby-merge property</a>
     <li><a href="#ref-for-valdef-ruby-merge-collapse②"> Changes since the 5 August 2014 WD</a>
    </ul>
@@ -2121,18 +2121,18 @@ Sharing Annotation Space: the ruby-merge property</a>
   <aside class="dfn-panel" data-for="valdef-ruby-merge-auto">
    <b><a href="#valdef-ruby-merge-auto">#valdef-ruby-merge-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-ruby-merge-auto">2.4. 
+    <li><a href="#ref-for-valdef-ruby-merge-auto">2.4.
 Autohiding Base-identical Annotations</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-ruby-align">
    <b><a href="#propdef-ruby-align">#propdef-ruby-align</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-ruby-align">3. 
+    <li><a href="#ref-for-propdef-ruby-align">3.
 Ruby Layout</a>
-    <li><a href="#ref-for-propdef-ruby-align①">4.3. 
+    <li><a href="#ref-for-propdef-ruby-align①">4.3.
 Ruby Text Distribution: the ruby-align property</a> <a href="#ref-for-propdef-ruby-align②">(2)</a>
-    <li><a href="#ref-for-propdef-ruby-align③">5.1. 
+    <li><a href="#ref-for-propdef-ruby-align③">5.1.
 Overhanging Ruby</a>
     <li><a href="#ref-for-propdef-ruby-align④"> Changes since the 30 June 2011 WD</a> <a href="#ref-for-propdef-ruby-align⑤">(2)</a>
    </ul>
@@ -2140,21 +2140,21 @@ Overhanging Ruby</a>
   <aside class="dfn-panel" data-for="valdef-ruby-align-start">
    <b><a href="#valdef-ruby-align-start">#valdef-ruby-align-start</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-ruby-align-start">4.3. 
+    <li><a href="#ref-for-valdef-ruby-align-start">4.3.
 Ruby Text Distribution: the ruby-align property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-ruby-align-center">
    <b><a href="#valdef-ruby-align-center">#valdef-ruby-align-center</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-ruby-align-center">4.3. 
+    <li><a href="#ref-for-valdef-ruby-align-center">4.3.
 Ruby Text Distribution: the ruby-align property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-ruby-align-space-between">
    <b><a href="#valdef-ruby-align-space-between">#valdef-ruby-align-space-between</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-ruby-align-space-between">4.3. 
+    <li><a href="#ref-for-valdef-ruby-align-space-between">4.3.
 Ruby Text Distribution: the ruby-align property</a> <a href="#ref-for-valdef-ruby-align-space-between①">(2)</a>
     <li><a href="#ref-for-valdef-ruby-align-space-between②"> Changes since the 30 June 2011 WD</a> <a href="#ref-for-valdef-ruby-align-space-between③">(2)</a>
    </ul>
@@ -2162,64 +2162,72 @@ Ruby Text Distribution: the ruby-align property</a> <a href="#ref-for-valdef-rub
   <aside class="dfn-panel" data-for="valdef-ruby-align-space-around">
    <b><a href="#valdef-ruby-align-space-around">#valdef-ruby-align-space-around</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-ruby-align-space-around">4.3. 
+    <li><a href="#ref-for-valdef-ruby-align-space-around">4.3.
 Ruby Text Distribution: the ruby-align property</a> <a href="#ref-for-valdef-ruby-align-space-around①">(2)</a>
     <li><a href="#ref-for-valdef-ruby-align-space-around②"> Changes since the 30 June 2011 WD</a> <a href="#ref-for-valdef-ruby-align-space-around③">(2)</a> <a href="#ref-for-valdef-ruby-align-space-around④">(3)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

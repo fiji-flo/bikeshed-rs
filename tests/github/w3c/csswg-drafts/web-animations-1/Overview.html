@@ -386,7 +386,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     features.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -647,7 +647,7 @@ states</span></a>
 <script src="MathJax/MathJax.js?config=MML_SVG"></script>
    <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>Web Animations defines a model for supporting animation and
 synchronization on the Web platform.
 It is intended that other specifications will build on this model and
@@ -673,7 +673,7 @@ to wait for all currently running animation to complete,
 regardless of whether they are defined by CSS Transitions, CSS Animations,
 SVG animations, or created directly using the programming interface.</p>
       <div class="example" id="example-e8eccc9e">
-       <a class="self-link" href="#example-e8eccc9e"></a> 
+       <a class="self-link" href="#example-e8eccc9e"></a>
 <pre class="lang-javascript highlight"><c- c1>// Wait until all animations have finished before removing the element</c->
 Promise<c- p>.</c->all<c- p>(</c->
   elem<c- p>.</c->getAnimations<c- p>().</c->map<c- p>(</c->animation <c- p>=></c-> animation<c- p>.</c->finished<c- p>)</c->
@@ -683,7 +683,7 @@ Promise<c- p>.</c->all<c- p>(</c->
       <p>Alternatively, applications may wish to query the playback state of
 animations without waiting.</p>
       <div class="example" id="example-9a95d87d">
-       <a class="self-link" href="#example-9a95d87d"></a> 
+       <a class="self-link" href="#example-9a95d87d"></a>
 <pre class="lang-javascript highlight"><c- kr>const</c-> isAnimating <c- o>=</c-> elem<c- p>.</c->getAnimations<c- p>().</c->some<c- p>(</c->
   animation <c- p>=></c-> animation<c- p>.</c->playState <c- o>===</c-> <c- t>'running'</c->
 <c- p>);</c->
@@ -697,7 +697,7 @@ For example, it may be necessary to pause all existing animations before
 displaying a modal dialog so that they do not distract the user’s
 attention.</p>
       <div class="example" id="example-e67fe245">
-       <a class="self-link" href="#example-e67fe245"></a> 
+       <a class="self-link" href="#example-e67fe245"></a>
 <pre class="lang-javascript highlight"><c- c1>// Pause all existing animations in the document</c->
 document<c- p>.</c->getAnimations<c- p>().</c->forEach<c- p>(</c->
   animation <c- p>=></c-> animation<c- p>.</c->pause<c- p>()</c->
@@ -715,7 +715,7 @@ Using the Web Animations programming interface, it is possible to
 create animations from script that have the same behavior and performance
 characteristics as declarative animations.</p>
       <div class="example" id="example-824e8c83">
-       <a class="self-link" href="#example-824e8c83"></a> 
+       <a class="self-link" href="#example-824e8c83"></a>
 <pre class="lang-javascript highlight"><c- c1>// Fade out quickly</c->
 elem<c- p>.</c->animate<c- p>({</c-> transform<c- o>:</c-> <c- t>'scale(0)'</c-><c- p>,</c-> opacity<c- o>:</c-> <c- mi>0</c-> <c- p>},</c-> <c- mi>300</c-><c- p>);</c->
 </pre>
@@ -728,7 +728,7 @@ The Web Animations programming interface may be used to inspect
 running animations to answer questions such as,
 “Why is the opacity of this element changing?”</p>
       <div class="example" id="example-1ff8b03c">
-       <a class="self-link" href="#example-1ff8b03c"></a> 
+       <a class="self-link" href="#example-1ff8b03c"></a>
 <pre class="lang-javascript highlight"><c- c1>// Print the id of any opacity animations on elem</c->
 elem<c- p>.</c->getAnimations<c- p>().</c->filter<c- p>(</c->
   animation <c- p>=></c->
@@ -742,7 +742,7 @@ elem<c- p>.</c->getAnimations<c- p>().</c->filter<c- p>(</c->
       <p>Likewise, in order to fine tune animations, it is often necessary to
 reduce their playback rate and replay them.</p>
       <div class="example" id="example-517f3219">
-       <a class="self-link" href="#example-517f3219"></a> 
+       <a class="self-link" href="#example-517f3219"></a>
 <pre class="lang-javascript highlight"><c- c1>// Slow down and replay any transform animations</c->
 elem<c- p>.</c->getAnimations<c- p>().</c->filter<c- p>(</c->
   animation <c- p>=></c->
@@ -763,7 +763,7 @@ impractical to wait for such animations to run to completion.
 Rather, it is desirable to seek the animations to specific times.</p>
     </dl>
     <div class="example" id="example-78167354">
-     <a class="self-link" href="#example-78167354"></a> 
+     <a class="self-link" href="#example-78167354"></a>
 <pre class="lang-javascript highlight"><c- c1>// Seek to the half-way point of an animation and check that the opacity is 50%</c->
 elem<c- p>.</c->getAnimations<c- p>().</c->forEach<c- p>(</c->
   animation <c- p>=></c->
@@ -835,7 +835,7 @@ procedure.</p>
 are described in <a href="#document-conventions">Document conventions</a>.</p>
    <h2 class="heading settled" data-level="3" id="web-animations-model-overview"><span class="secno">3. </span><span class="content">Web Animations model overview</span><a class="self-link" href="#web-animations-model-overview"></a></h2>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>At a glance, the Web Animations model consists of two largely
 independent pieces, a <em>timing model</em> and an <em>animation
 model</em>.  The role of these pieces is as follows:</p>
@@ -854,7 +854,7 @@ to apply to the target properties.</p>
     </dl>
     <p>Graphically, this flow can be represented as follows:</p>
     <figure>
-      <img alt="Overview of the operation of the Web Animations model." src="img/timing-and-animation-models.svg" width="600"> 
+      <img alt="Overview of the operation of the Web Animations model." src="img/timing-and-animation-models.svg" width="600">
      <figcaption> Overview of the operation of the Web Animations model.<br> The current time is input to the timing model which produces an iteration
     progress value and an iteration index.<br> These parameters are used as input to the animation model which produces
     the values to apply. </figcaption>
@@ -937,7 +937,7 @@ animation effect.
 At each step, time may be shifted backwards and forwards, scaled,
 reversed, paused, and repeated.</p>
     <figure>
-      <img alt="A hierarchy of timing nodes" src="img/time-hierarchy.svg" width="350"> 
+      <img alt="A hierarchy of timing nodes" src="img/time-hierarchy.svg" width="350">
      <figcaption> A hierarchy of timing nodes.
     Each node in the tree derives its time from its parent node. </figcaption>
     </figure>
@@ -1060,7 +1060,7 @@ The <a data-link-type="dfn" href="#default-document-timeline" id="ref-for-defaul
 the lifetime of the document including calls to <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#dom-document-open" id="ref-for-dom-document-open">document.open()</a> <a data-link-type="biblio" href="#biblio-html">[HTML]</a>.</p>
    <p>The <a data-link-type="dfn" href="#default-document-timeline" id="ref-for-default-document-timeline①">default document timeline</a> has an <a data-link-type="dfn" href="#origin-time" id="ref-for-origin-time①">origin time</a> of zero.</p>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>Since no scaling is applied to the <var>now</var> timestamp values provided
 to <a data-link-type="dfn" href="#document-timeline" id="ref-for-document-timeline④">document timelines</a>, the <a data-link-type="dfn" href="#time-value" id="ref-for-time-value①①">time values</a> it produces will be
 proportional to wall-clock milliseconds.</p>
@@ -1070,7 +1070,7 @@ to the <a data-link-type="dfn" href="#update-animations-and-send-events" id="ref
    </div>
    <h3 class="heading settled" data-level="4.4" id="animations"><span class="secno">4.4. </span><span class="content">Animations</span><a class="self-link" href="#animations"></a></h3>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>The children of a <a data-link-type="dfn" href="#timeline" id="ref-for-timeline⑧">timeline</a> are called <em>animations</em>.
 An animation takes an <a data-link-type="dfn" href="#animation-effect" id="ref-for-animation-effect②">animation effect</a> which is a static
 description of some timed behavior and binds it to a <span id="ref-for-timeline⑨">timeline</span> so that it runs.
@@ -1625,7 +1625,7 @@ Animations' animations do not play forwards beyond the <a data-link-type="dfn" h
 is said to have <em>finished</em>.</p>
     <p>Graphically, the effect of limiting the current time is shown below.</p>
     <figure>
-      <img alt="The effect of limiting the current time of an animation." src="img/limiting.svg" width="500"> 
+      <img alt="The effect of limiting the current time of an animation." src="img/limiting.svg" width="500">
      <figcaption> The effect of limiting the <a data-link-type="dfn" href="#current-time" id="ref-for-current-time②⑥">current time</a> of an <a data-link-type="dfn" href="#concept-animation" id="ref-for-concept-animation①⑧">animation</a> with a start time of 1s, an <a data-link-type="dfn" href="#associated-effect" id="ref-for-associated-effect①②">associated effect</a> of length 3s, and
     a positive <a data-link-type="dfn" href="#playback-rate" id="ref-for-playback-rate①⑤">playback rate</a>.
     After the <span id="ref-for-current-time②⑦">current time</span> of the animation reaches the end of the
@@ -2015,7 +2015,7 @@ its <a data-link-type="dfn" href="#effective-playback-rate" id="ref-for-effectiv
      <p>If the steps to <a data-link-type="dfn" href="#play-an-animation" id="ref-for-play-an-animation③">play an animation</a> throw an exception, set <var>animation</var>’s <a data-link-type="dfn" href="#pending-playback-rate" id="ref-for-pending-playback-rate①⑥">pending playback rate</a> to <var>original pending playback rate</var> and propagate the exception.</p>
    </ol>
    <h4 class="heading settled" data-level="4.4.18" id="play-states"><span class="secno">4.4.18. </span><span class="content">Play states</span><a class="self-link" href="#play-states"></a></h4>
-   <p>An <a data-link-type="dfn" href="#concept-animation" id="ref-for-concept-animation③⓪">animation</a> may be described as being in one of the following <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="play state" data-noexport id="play-state">play states</dfn> for each of which, a 
+   <p>An <a data-link-type="dfn" href="#concept-animation" id="ref-for-concept-animation③⓪">animation</a> may be described as being in one of the following <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="play state" data-noexport id="play-state">play states</dfn> for each of which, a
 non-normative description is also provided:</p>
    <div class="informative-bg">
     <dl>
@@ -2200,7 +2200,7 @@ duration</a>.</p>
 delay</a>, and <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration①">active duration</a> is illustrated below.</p>
     <figure>
       <img alt="Examples of the effect of the start delay on the endpoints
-          of the active interval" src="img/active-interval-examples.svg" width="600"> 
+          of the active interval" src="img/active-interval-examples.svg" width="600">
      <figcaption> Examples of the effect of the <a data-link-type="dfn" href="#start-delay" id="ref-for-start-delay②">start delay</a> on the endpoints of
     the <a data-link-type="dfn" href="#active-interval" id="ref-for-active-interval②">active interval</a>.<br> (a) An animation effect with no delay; the <a data-link-type="dfn" href="#start-time" id="ref-for-start-time④①">start time</a> and beginning of
     the <span id="ref-for-active-interval③">active interval</span> are coincident.<br> (b) An animation effect with a positive delay; the beginning of the <span id="ref-for-active-interval④">active interval</span> is deferred by the delay.<br> (c) An animation effect with a negative delay; the beginning of the <span id="ref-for-active-interval⑤">active interval</span> is brought forward by the delay. </figcaption>
@@ -2241,7 +2241,7 @@ moment is based on the first matching condition from the following:</p>
    <h4 class="heading settled" data-level="4.5.5" id="animation-effect-phases-and-states"><span class="secno">4.5.5. </span><span class="content">Animation effect phases and
 states</span><a class="self-link" href="#animation-effect-phases-and-states"></a></h4>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>At a given moment, an <a data-link-type="dfn" href="#animation-effect" id="ref-for-animation-effect②③">animation effect</a> may be in one of three
 possible <em>phases</em>.
 If an <span id="ref-for-animation-effect②④">animation effect</span> has an <a data-link-type="dfn" href="#unresolved" id="ref-for-unresolved⑧⓪">unresolved</a> <a data-link-type="dfn" href="#local-time" id="ref-for-local-time">local
@@ -2249,7 +2249,7 @@ time</a> it will not be in any phase.</p>
     <p>The different phases are illustrated below.</p>
     <figure>
       <img alt="An example of the different phases and states used to
-          describe an animation effect." src="img/animation-effect-phases-and-states.svg" width="700"> 
+          describe an animation effect." src="img/animation-effect-phases-and-states.svg" width="700">
      <figcaption> An example of the different phases and states used to describe
     an <a data-link-type="dfn" href="#animation-effect" id="ref-for-animation-effect②⑤">animation effect</a>. </figcaption>
     </figure>
@@ -2428,7 +2428,7 @@ For example:</p>
    </div>
    <h4 class="heading settled" data-level="4.6.1" id="fill-modes"><span class="secno">4.6.1. </span><span class="content">Fill modes</span><a class="self-link" href="#fill-modes"></a></h4>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>The effect of each <a data-link-type="dfn" href="#fill-mode" id="ref-for-fill-mode⑤">fill mode</a> is as follows:</p>
     <dl>
      <dt data-md>none
@@ -2455,7 +2455,7 @@ is in its <a data-link-type="dfn" href="#after-phase" id="ref-for-after-phase④
     </dl>
     <p>Some examples of the these fill modes are illustrated below.</p>
     <figure>
-      <img alt="Examples of various fill modes and the states produced." src="img/animation-state-and-fill-behavior.svg" width="600"> 
+      <img alt="Examples of various fill modes and the states produced." src="img/animation-state-and-fill-behavior.svg" width="600">
      <figcaption> Examples of various fill modes and the states produced.<br> (a) fill mode ‘none’. The animation effect has no effect
         outside its active phase.<br> (b) fill mode ‘forwards’. After the active phase has
         finished, the <a data-link-type="dfn" href="#iteration-progress" id="ref-for-iteration-progress②">iteration progress</a> value continues to maintain
@@ -2482,7 +2482,7 @@ corresponding to the <a data-link-type="dfn" href="#current-iteration" id="ref-f
 duration</dfn>.
 The initial <a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-duration①">iteration duration</a> of an animation effect is zero.</p>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>Comparing the <a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-duration②">iteration duration</a> and the <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration⑤">active
 duration</a> we have:</p>
     <dl>
@@ -2499,7 +2499,7 @@ This may be longer or shorter than the <a data-link-type="dfn" href="#iteration-
     <p>The relationship between the <a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-duration④">iteration duration</a> and <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration⑥">active
 duration</a> is illustrated below.</p>
     <figure>
-      <img alt="Comparison of the iteration duration and active time." src="img/iteration-intervals.svg" width="600"> 
+      <img alt="Comparison of the iteration duration and active time." src="img/iteration-intervals.svg" width="600">
      <figcaption> A comparison of the <a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-duration⑤">iteration duration</a> and <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration⑦">active
     duration</a> of an animation effect with an <a data-link-type="dfn" href="#iteration-count" id="ref-for-iteration-count">iteration count</a> of
     2.5.
@@ -2520,10 +2520,10 @@ The <a data-link-type="dfn" href="#iteration-start" id="ref-for-iteration-start"
 equal to zero.</p>
    <p>The behavior of these parameters is defined in the calculations in <a href="#core-animation-effect-calculations">§ 4.8 Core animation effect calculations</a>.</p>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>The effect of the <a data-link-type="dfn" href="#iteration-count" id="ref-for-iteration-count④">iteration count</a> and <a data-link-type="dfn" href="#iteration-start" id="ref-for-iteration-start①">iteration start</a> parameters is illustrated below.</p>
     <figure>
-      <img alt="The effect of the iteration count and iteration start parameters" src="img/iteration-count-and-start.svg" width="600"> 
+      <img alt="The effect of the iteration count and iteration start parameters" src="img/iteration-count-and-start.svg" width="600">
      <figcaption> The effect of the <a data-link-type="dfn" href="#iteration-count" id="ref-for-iteration-count⑤">iteration count</a> and <a data-link-type="dfn" href="#iteration-start" id="ref-for-iteration-start②">iteration start</a> parameters.<br> In the first case the <span id="ref-for-iteration-count⑥">iteration count</span> is 2.5 resulting in the
     third iteration being cut-off half way through its <a data-link-type="dfn" href="#iteration-interval" id="ref-for-iteration-interval①">iteration
     interval</a>.<br> The second case is the same but with an <span id="ref-for-iteration-start③">iteration start</span> of
@@ -2540,7 +2540,7 @@ operation</a> of <a data-link-type="dfn" href="https://drafts.csswg.org/web-anim
    </div>
    <h4 class="heading settled" data-level="4.7.3" id="iteration-time-space"><span class="secno">4.7.3. </span><span class="content">Iteration time space</span><a class="self-link" href="#iteration-time-space"></a></h4>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>In Web Animations all times are relative to some point of reference.
 These different points of reference produce different <em>time
 spaces</em>.</p>
@@ -2559,7 +2559,7 @@ This time space, however, is internal to the model and not exposed in
 the programming interface or in markup.</p>
     <p>These time spaces are illustrated below.</p>
     <figure>
-      <img alt="A comparison of local time, active time, and iteration time." src="img/time-spaces.svg" width="600"> 
+      <img alt="A comparison of local time, active time, and iteration time." src="img/time-spaces.svg" width="600">
      <figcaption> A comparison of local time, active time, and iteration time for an
     animation with a iteration duration of 1s and an iteration count of
     2.5. </figcaption>
@@ -2575,7 +2575,7 @@ values</a> of the <a data-link-type="dfn" href="#default-document-timeline" id="
    </div>
    <h4 class="heading settled" data-level="4.7.4" id="interval-timing"><span class="secno">4.7.4. </span><span class="content">Interval timing</span><a class="self-link" href="#interval-timing"></a></h4>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>When an animation effect repeats we must define the behavior at the
 iteration boundaries.
 For this, and indeed for all interval timing, Web Animations uses an
@@ -2589,7 +2589,7 @@ sequenced since there is no overlap between the intervals.</p>
 the iteration time is 0.
 For the sequenced animations, at timeline time 1s, only animation B’s <a data-link-type="dfn" href="#associated-effect" id="ref-for-associated-effect②③">associated effect</a> will be <a data-link-type="dfn" href="#in-play" id="ref-for-in-play①⓪">in play</a>; there is no overlap.</p>
     <figure>
-      <img alt="Illustration of end-point exclusive timing." src="img/endpoint-exclusive-timing.svg" width="600"> 
+      <img alt="Illustration of end-point exclusive timing." src="img/endpoint-exclusive-timing.svg" width="600">
      <figcaption> Illustration of end-point exclusive timing. For both repeated and
     sequenced animation effects there is no overlap at the boundaries
     between intervals. </figcaption>
@@ -2598,7 +2598,7 @@ For the sequenced animations, at timeline time 1s, only animation B’s <a data-
 interval endpoint, the endpoint is used.
 This behavior falls out of the algorithm given in <a href="#calculating-the-simple-iteration-progress">§ 4.8.3.3 Calculating the simple iteration progress</a> and is illustrated below.</p>
     <figure>
-      <img alt="Effect of iterations and fill on iteration time." src="img/endpoint-exclusive-timing-and-fill.svg" width="600"> 
+      <img alt="Effect of iterations and fill on iteration time." src="img/endpoint-exclusive-timing-and-fill.svg" width="600">
      <figcaption> After one iteration, the <a data-link-type="dfn" href="#iteration-progress" id="ref-for-iteration-progress④">iteration progress</a> is 0, but after two
     iterations (and there onwards), the <span id="ref-for-iteration-progress⑤">iteration progress</span> is 1
     due to the special behavior defined when an animation effect fills. </figcaption>
@@ -2607,14 +2607,14 @@ This behavior falls out of the algorithm given in <a href="#calculating-the-simp
    <h3 class="heading settled" data-level="4.8" id="core-animation-effect-calculations"><span class="secno">4.8. </span><span class="content">Core animation effect calculations</span><a class="self-link" href="#core-animation-effect-calculations"></a></h3>
    <h4 class="heading settled" data-level="4.8.1" id="animation-effect-calculations-overview"><span class="secno">4.8.1. </span><span class="content">Overview</span><a class="self-link" href="#animation-effect-calculations-overview"></a></h4>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>At the core of the Web Animations timing model is the process that
 takes a <a data-link-type="dfn" href="#local-time" id="ref-for-local-time①①">local time</a> value and converts it to an <a data-link-type="dfn" href="#iteration-progress" id="ref-for-iteration-progress⑥">iteration progress</a>.</p>
     <p>The first step in this process is to calculate the bounds of the <a data-link-type="dfn" href="#active-interval" id="ref-for-active-interval①⑤">active interval</a> which is determined by the <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration①⓪">active
 duration</a>.</p>
     <p>This process is illustrated below.</p>
     <figure>
-      <img alt="Calculation of the active duration." src="img/active-duration-calculation.svg" width="650"> 
+      <img alt="Calculation of the active duration." src="img/active-duration-calculation.svg" width="650">
      <figcaption> Calculation of the <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration①①">active duration</a> is based on
     multiplying the <a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-duration⑦">iteration duration</a> by the <a data-link-type="dfn" href="#iteration-count" id="ref-for-iteration-count⑧">iteration count</a>. </figcaption>
     </figure>
@@ -2623,7 +2623,7 @@ duration</a>.</p>
     <p> Having established the <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration①③">active duration</a>, the process for
   transforming an <a data-link-type="dfn" href="#animation-effect" id="ref-for-animation-effect⑤⑤">animation effect</a>’s <a data-link-type="dfn" href="#local-time" id="ref-for-local-time①②">local time</a> into its <a data-link-type="dfn" href="#transformed-progress" id="ref-for-transformed-progress">transformed progress</a> (<a data-link-type="dfn" href="#iteration-progress" id="ref-for-iteration-progress⑦">iteration progress</a>) is illustrated below. </p>
     <figure>
-      <img alt="An overview of timing model calculations." src="img/time-calculations.svg" width="650"> 
+      <img alt="An overview of timing model calculations." src="img/time-calculations.svg" width="650">
      <figcaption> An overview of timing model calculations.<br> (1) The <a data-link-type="dfn" href="#local-time" id="ref-for-local-time①③">local time</a> is determined from the associated <a data-link-type="dfn" href="#concept-animation" id="ref-for-concept-animation④④">animation</a>.<br> (2) The <span id="ref-for-local-time①④">local time</span> is converted into an <a data-link-type="dfn" href="#active-time" id="ref-for-active-time⑨">active time</a> by
     incorporating the <a data-link-type="dfn" href="#start-delay" id="ref-for-start-delay①①">start
     delay</a>.<br> (3) The <span id="ref-for-active-time①⓪">active time</span> is divided by the <a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-duration⑧">iteration duration</a> incorporating also the <a data-link-type="dfn" href="#iteration-start" id="ref-for-iteration-start⑥">iteration start</a> property to produce the <a data-link-type="dfn" href="#overall-progress" id="ref-for-overall-progress">overall progress</a>.<br> (4) The <span id="ref-for-overall-progress①">overall progress</span> time is then converted to an offset
@@ -2638,7 +2638,7 @@ Steps 5 and 6 are described in <a href="#calculating-the-directed-progress">§�
    <h4 class="heading settled" data-level="4.8.2" id="calculating-the-active-duration"><span class="secno">4.8.2. </span><span class="content">Calculating the active duration</span><a class="self-link" href="#calculating-the-active-duration"></a></h4>
    <p>The <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration①④">active duration</a> is calculated as follows:</p>
    <blockquote>
-     <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="active-duration">active duration</dfn> = <code><a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-duration⑨">iteration duration</a> × <a data-link-type="dfn" href="#iteration-count" id="ref-for-iteration-count⑨">iteration count</a></code> 
+     <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="active-duration">active duration</dfn> = <code><a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-duration⑨">iteration duration</a> × <a data-link-type="dfn" href="#iteration-count" id="ref-for-iteration-count⑨">iteration count</a></code>
     <p> If either the <a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-duration①⓪">iteration duration</a> or <a data-link-type="dfn" href="#iteration-count" id="ref-for-iteration-count①⓪">iteration count</a> are zero, the <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration①⑤">active duration</a> is zero. </p>
     <p class="note" role="note"> This clarification is needed since the result of infinity
       multiplied by zero is undefined according to IEEE 754-2008. </p>
@@ -2780,7 +2780,7 @@ direction</dfn> parameter which takes one of the following values:</p>
    <p>The semantics of these values are incorporated into the calculation of
 the <a data-link-type="dfn" href="#directed-progress" id="ref-for-directed-progress②">directed progress</a> which follows.</p>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>A non-normative definition of these values is as follows:</p>
     <dl>
      <dt data-md>normal
@@ -2876,7 +2876,7 @@ function</a> passing <a data-link-type="dfn" href="#directed-progress" id="ref-f
 its <a data-link-type="dfn" href="#transformed-progress" id="ref-for-transformed-progress②">transformed progress</a>.</p>
    <h2 class="heading settled" data-level="5" id="animation-model"><span class="secno">5. </span><span class="content">Animation model</span><a class="self-link" href="#animation-model"></a></h2>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>For some kinds of <a data-link-type="dfn" href="#animation-effect" id="ref-for-animation-effect⑥③">animation effects</a>, the Web Animations <em>animation
 model</em> takes the <a data-link-type="dfn" href="#iteration-progress" id="ref-for-iteration-progress⑧">iteration progress</a> and <a data-link-type="dfn" href="#current-iteration" id="ref-for-current-iteration②">current iteration</a> values produced by the <em>timing model</em> and uses them to calculate
 a corresponding output.</p>
@@ -2898,11 +2898,11 @@ How property values combine is defined by
 the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="animation-type">Animation type</dfn> line
 in each property’s property definition table:</p>
    <dl>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="not-animatable">not animatable</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="not-animatable">not animatable</dfn>
     <dd>
       The property is not animatable.
     It is not processed when listed in an animation keyframe,
-    and is not affected by transitions. 
+    and is not affected by transitions.
      <p class="note" role="note"><span>Note:</span> Properties are typically excluded from animation
     because animating them would create excessive complications.
     For example, properties defining animation parameters are <a data-link-type="dfn" href="#not-animatable" id="ref-for-not-animatable">not animatable</a> since doing so would create complex recursive behavior.</p>
@@ -2910,12 +2910,12 @@ in each property’s property definition table:</p>
     that are <a data-link-type="dfn" href="#not-animatable" id="ref-for-not-animatable①">not animatable</a> will still exhibit
     the usual behavior for an <span id="ref-for-animation-effect⑥⑦">animation effect</span> such as firing events and
     delaying the fulfilment of the <a data-link-type="dfn" href="#concept-animation" id="ref-for-concept-animation④⑤">animation</a>’s <a data-link-type="dfn" href="#current-finished-promise" id="ref-for-current-finished-promise①⓪">current finished promise</a>.</p>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="discrete">discrete</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="discrete">discrete</dfn>
     <dd>
       The property’s values cannot be meaningfully combined,
     thus it is <a data-link-type="dfn" href="https://drafts.csswg.org/css-values-4/#not-additive" id="ref-for-not-additive">not additive</a> and <a data-link-type="dfn" href="https://drafts.csswg.org/css-values-4/#interpolation" id="ref-for-interpolation">interpolation</a> swaps
     from <var>V<sub>a</sub></var> to <var>V<sub>b</sub></var> at 50% (<var>p=0.5</var>),
-    i.e. 
+    i.e.
      <div class="formula" role="math">
       <math xmlns="http://www.w3.org/1998/Math/MathML">
        <msub>
@@ -2959,7 +2959,7 @@ in each property’s property definition table:</p>
        </mrow>
       </math>
      </div>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="by-computed-value">by computed value</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="by-computed-value">by computed value</dfn>
     <dd> Corresponding individual components of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-cascade-4/#computed-value" id="ref-for-computed-value">computed values</a> are combined (interpolated, added, or accumulated)
     using the indicated procedure for that value type
     (see <a href="https://www.w3.org/TR/css-values-4/#combining-values">CSS Values 4 §3 Combining Values: Interpolation, Addition, and Accumulation</a>).
@@ -2967,15 +2967,15 @@ in each property’s property definition table:</p>
     do not match,
     or if any component value uses <a data-link-type="dfn" href="#discrete" id="ref-for-discrete">discrete</a> animation
     and the two corresponding values do not match,
-    then the property values combine as <span id="ref-for-discrete①">discrete</span>. 
-    <dt><dfn data-dfn-type="dfn" data-export id="repeatable-list">repeatable list<a class="self-link" href="#repeatable-list"></a></dfn> 
+    then the property values combine as <span id="ref-for-discrete①">discrete</span>.
+    <dt><dfn data-dfn-type="dfn" data-export id="repeatable-list">repeatable list<a class="self-link" href="#repeatable-list"></a></dfn>
     <dd>
       Same as <a data-link-type="dfn" href="#by-computed-value" id="ref-for-by-computed-value">by computed value</a> except that if the two lists have differing numbers of items,
     they are first repeated to the least common multiple number of items.
     Each item is then combined <span id="ref-for-by-computed-value①">by computed value</span>.
     If a pair of values cannot be combined
     or if any component value uses <a data-link-type="dfn" href="#discrete" id="ref-for-discrete②">discrete</a> animation,
-    then the property values combine as <span id="ref-for-discrete③">discrete</span>. 
+    then the property values combine as <span id="ref-for-discrete③">discrete</span>.
      <p class="note" role="note"><span>Note:</span> The repeatable list concept ensures that
     a list that is conceptually repeated to a certain length
     (as <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-origin" id="ref-for-propdef-background-origin">background-origin</a> is repeated to the length of
@@ -2985,11 +2985,11 @@ in each property’s property definition table:</p>
     and so that the computed value
     will properly represent the result
     (and potentially be inherited correctly).</p>
-    <dt>(See prose) 
+    <dt>(See prose)
     <dd> Some properties have specific interpolation behavior not covered by the
     above cases;
     in this case the animation behavior will be specified explicitly
-    for that property. 
+    for that property.
    </dl>
    <p>The <a data-link-type="dfn" href="#animation-type" id="ref-for-animation-type①">animation type</a> of properties that do not yet include
 an <span id="ref-for-animation-type②">Animation type</span> line in their property definition,
@@ -3289,7 +3289,7 @@ value on each keyframe.</p>
     progress to an animation effect is not limited to the range [0, 1].
     Currently, however, keyframe offsets <em>are</em> limited to the
     range [0, 1] and property values are simply extrapolated for input
-    iteration progress values outside this range. 
+    iteration progress values outside this range.
     <p>We have considered removing this restriction since some cases exist
     where it is useful to be able to specify non-linear
     changes in property values at iteration progress values outside the
@@ -3312,7 +3312,7 @@ value on each keyframe.</p>
    </div>
    <h3 class="heading settled" data-level="5.4" id="combining-effects"><span class="secno">5.4. </span><span class="content">Combining effects</span><a class="self-link" href="#combining-effects"></a></h3>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>After calculating the <a data-link-type="dfn" href="#effect-value" id="ref-for-effect-value④">effect values</a> for a <a data-link-type="dfn" href="#keyframe-effect" id="ref-for-keyframe-effect①③">keyframe effect</a>, they are applied to the <a data-link-type="dfn" href="#animation-effect" id="ref-for-animation-effect⑥⑨">animation
 effect</a>’s <a data-link-type="dfn" href="#target-property" id="ref-for-target-property②">target properties</a>.</p>
     <p>Since it is possible for multiple <a data-link-type="dfn" href="#in-effect" id="ref-for-in-effect②">in effect</a> <a data-link-type="dfn" href="#keyframe-effect" id="ref-for-keyframe-effect①④">keyframe effects</a> to
@@ -3324,7 +3324,7 @@ effects</a> together, the composited result is combined with other
 values specified for the <a data-link-type="dfn" href="#target-property" id="ref-for-target-property③">target property</a>.</p>
     <p>The arrangement is illustrated below:</p>
     <figure>
-      <img alt="Overview of the application of effect values to their target properties" src="img/animation-cascade.svg" width="500"> 
+      <img alt="Overview of the application of effect values to their target properties" src="img/animation-cascade.svg" width="500">
      <figcaption> Overview of the application of <a data-link-type="dfn" href="#effect-value" id="ref-for-effect-value⑤">effect values</a> to
     their <a data-link-type="dfn" href="#target-property" id="ref-for-target-property④">target properties</a>.<br> The results of <a data-link-type="dfn" href="#keyframe-effect" id="ref-for-keyframe-effect①⑦">keyframe effects</a> targeting the same property
     are composited together using an <a data-link-type="dfn" href="#effect-stack" id="ref-for-effect-stack②">effect stack</a>.<br> The result of this composition is then inserted into the CSS cascade
@@ -3349,7 +3349,7 @@ generated an <a data-link-type="dfn" href="#concept-animation" id="ref-for-conce
    <p>Further specifications may define specialized behavior for composite
 ordering between different classes of animations or within a particular class.</p>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>For example, animations whose <a data-link-type="dfn" href="#animation-class" id="ref-for-animation-class①">class</a> is ‘CSS
 animation’ are defined as having a <em>higher</em> composite order than
 animations whose class is ‘CSS transition’ but <em>lower</em> than
@@ -3429,7 +3429,7 @@ property.
 By default, the specified value is added to the ‘Animation
 declarations’ level of the cascade (<a data-link-type="biblio" href="#biblio-css-cascade-3">[css-cascade-3]</a>).</p>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>For example, if the effect with the highest composite order is associated with
 a ‘CSS transition’-class animation, the <a data-link-type="dfn" href="#composited-value" id="ref-for-composited-value①">composited value</a> will be added to ‘Transition declarations’ level of the cascade.</p>
    </div>
@@ -3454,7 +3454,7 @@ property.</p>
    </ol>
    <h3 class="heading settled" data-level="5.5" id="replacing-animations"><span class="secno">5.5. </span><span class="content">Replacing animations</span><a class="self-link" href="#replacing-animations"></a></h3>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>Using the programming interface defined in this specification, it is possible to
 repeatedly trigger new animations that contribute to an element’s animated style
 indefinitely.</p>
@@ -3551,7 +3551,7 @@ an <span id="ref-for-animation-effect⑦⑥">animation effect</span> associated 
 and which is associated with an <a data-link-type="dfn" href="#concept-animation" id="ref-for-concept-animation⑥③">animation</a> whose <a data-link-type="dfn" href="#replace-state" id="ref-for-replace-state⑤">replace state</a> is <em>not</em> <a data-link-type="dfn" href="#removed-replace-state" id="ref-for-removed-replace-state③">removed</a>,
 the user agent must act as if the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-will-change-1/#propdef-will-change" id="ref-for-propdef-will-change">will-change</a> property (<a data-link-type="biblio" href="#biblio-css-will-change-1">[css-will-change-1]</a>) on the <a data-link-type="dfn" href="#effect-target" id="ref-for-effect-target⑧">effect target</a> includes the property.</p>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>As a result of the above requirement, if an animation targets, for example,
 the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-transforms-1/#propdef-transform" id="ref-for-propdef-transform">transform</a> property of an element, a <a data-link-type="dfn" href="https://drafts.csswg.org/css-position-3/#stacking-context" id="ref-for-stacking-context">stacking context</a> will be
 created for the <a data-link-type="dfn" href="#effect-target" id="ref-for-effect-target⑨">effect target</a> so long as the <a data-link-type="dfn" href="#concept-animation" id="ref-for-concept-animation⑥④">animation</a> is in
@@ -3561,7 +3561,7 @@ phase</a>.</p>
    </div>
    <h2 class="heading settled" data-level="6" id="programming-interface"><span class="secno">6. </span><span class="content">Programming interface</span><a class="self-link" href="#programming-interface"></a></h2>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>In addition to the abstract model described above, Web Animations also
 defines a programming interface to the model.
 This interface can be used to inspect and extend animations produced
@@ -3833,7 +3833,7 @@ using the <a data-link-type="dfn" href="#commit-computed-styles" id="ref-for-com
       <li data-md>
        <p>If, after applying any pending style changes, <var>target</var> is not <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#being-rendered" id="ref-for-being-rendered">being rendered</a>, <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-throw" id="ref-for-dfn-throw⑥">throw</a> an "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror⑤">InvalidStateError</a></code>" <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMException" id="ref-for-idl-DOMException⑤">DOMException</a></code> and abort these steps.</p>
        <div class="issue" id="issue-8f3b970c">
-        <a class="self-link" href="#issue-8f3b970c"></a> 
+        <a class="self-link" href="#issue-8f3b970c"></a>
         <p>The definition of <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#being-rendered" id="ref-for-being-rendered①">being rendered</a> <a data-link-type="biblio" href="#biblio-html">[HTML]</a> with regards to <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display">display: contents</a> is still <a href="https://github.com/whatwg/html/issues/1837">under discussion</a>.
   For the purpose of this procedure, we assume that an
   element with <span class="css" id="ref-for-propdef-display①">display: contents</span> that otherwise would have
@@ -4034,7 +4034,7 @@ effect begins 20% of the way through its second iteration.</p>
 an animation effect with an <code class="idl"><a data-link-type="idl" href="#dom-effecttiming-iterationstart" id="ref-for-dom-effecttiming-iterationstart②">iterationStart</a></code> of
 ‘0.5’ and <code class="idl"><a data-link-type="idl" href="#dom-effecttiming-iterations" id="ref-for-dom-effecttiming-iterations②">iterations</a></code> of
 ‘2’ will still repeat twice however it will begin
-and end half-way through its <a data-link-type="dfn" href="#iteration-interval" id="ref-for-iteration-interval②">iteration interval</a>. 
+and end half-way through its <a data-link-type="dfn" href="#iteration-interval" id="ref-for-iteration-interval②">iteration interval</a>.
        <p><code class="idl"><a data-link-type="idl" href="#dom-effecttiming-iterationstart" id="ref-for-dom-effecttiming-iterationstart③">iterationStart</a></code> values greater than
 or equal to one are typically only useful in combination with an
 animation effect that has an <a data-link-type="dfn" href="https://drafts.csswg.org/web-animations-2/#iteration-composite-operation" id="ref-for-iteration-composite-operation①">iteration composite
@@ -4355,7 +4355,7 @@ values.</p>
      <dd data-md>
       <p>Returns the keyframes that make up this effect along with their <a data-link-type="dfn" href="#computed-keyframe-offset" id="ref-for-computed-keyframe-offset②③">computed keyframe offsets</a>.</p>
       <div class="informative-bg">
-       <em>This section is non-normative</em> 
+       <em>This section is non-normative</em>
        <p>The result of this method is a sequence of objects of the following
   format:</p>
 <pre class="lang-idl highlight"><c- b>dictionary</c-> <c- g>ComputedKeyframe</c-> {
@@ -4464,7 +4464,7 @@ If that procedure throws an exception, this effect’s <span id="ref-for-keyfram
    </div>
    <h4 class="heading settled" data-level="6.6.1" id="creating-a-new-keyframeeffect-object"><span class="secno">6.6.1. </span><span class="content">Creating a new <code>KeyframeEffect</code> object</span><a class="self-link" href="#creating-a-new-keyframeeffect-object"></a></h4>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>The <code class="idl"><a data-link-type="idl" href="#dom-keyframeeffect-keyframeeffect" id="ref-for-dom-keyframeeffect-keyframeeffect②">KeyframeEffect</a></code> constructor
 offers a number of approaches to creating new <code class="idl"><a data-link-type="idl" href="#keyframeeffect" id="ref-for-keyframeeffect⑧">KeyframeEffect</a></code> objects.</p>
     <p>At its simplest, a <code class="idl"><a data-link-type="idl" href="#keyframeeffect" id="ref-for-keyframeeffect⑨">KeyframeEffect</a></code> object that changes the
@@ -4478,7 +4478,7 @@ seconds can be constructed as follows:</p>
 specify multiple properties. (See <a href="#processing-a-keyframes-argument">§ 6.6.3 Processing a keyframes
 argument</a>.)</p>
     <div class="example" id="example-d6624b71">
-     <a class="self-link" href="#example-d6624b71"></a> 
+     <a class="self-link" href="#example-d6624b71"></a>
 <pre class="lang-javascript highlight"><c- c1>// Specify multiple properties at once</c->
 <c- a>var</c-> effectA <c- o>=</c-> <c- k>new</c-> KeyframeEffect<c- p>(</c->elem<c- p>,</c-> <c- p>{</c-> left<c- o>:</c-> <c- t>'100px'</c-><c- p>,</c-> top<c- o>:</c-> <c- t>'300px'</c-> <c- p>},</c-> <c- mi>3000</c-><c- p>);</c->
 
@@ -4546,7 +4546,7 @@ property</a> algorithm <a data-link-type="biblio" href="#biblio-cssom">[CSSOM]</
    </ol>
    <h4 class="heading settled" data-level="6.6.3" id="processing-a-keyframes-argument"><span class="secno">6.6.3. </span><span class="content">Processing a <code>keyframes</code> argument</span><a class="self-link" href="#processing-a-keyframes-argument"></a></h4>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>The following methods all accept a set of keyframes as an argument:</p>
     <ul>
      <li data-md>
@@ -4558,7 +4558,7 @@ property</a> algorithm <a data-link-type="biblio" href="#biblio-cssom">[CSSOM]</
     </ul>
     <p>This argument may be specified in the one of two forms as illustrated below.</p>
     <div class="example" id="example-23ca44fc">
-     <a class="self-link" href="#example-23ca44fc"></a> 
+     <a class="self-link" href="#example-23ca44fc"></a>
 <pre class="lang-javascript highlight"><c- c1>// The following two expressions produce the same result:</c->
 elem<c- p>.</c->animate<c- p>([</c-> <c- p>{</c-> color<c- o>:</c-> <c- t>'blue'</c-> <c- p>},</c->
                <c- p>{</c-> color<c- o>:</c-> <c- t>'green'</c-> <c- p>},</c->
@@ -4588,7 +4588,7 @@ property may specify a single animation value or an array of animation values.</
     <p>The first array-form is the canonical form and is the form returned by the <code class="idl"><a data-link-type="idl" href="#dom-keyframeeffect-getkeyframes" id="ref-for-dom-keyframeeffect-getkeyframes①">getKeyframes()</a></code> method.</p>
     <p><a data-link-type="dfn" href="#keyframe-offset" id="ref-for-keyframe-offset⑧">Keyframe offsets</a> can be specified using either form as illustrated below:</p>
     <div class="example" id="example-34879cb3">
-     <a class="self-link" href="#example-34879cb3"></a> 
+     <a class="self-link" href="#example-34879cb3"></a>
 <pre class="lang-javascript highlight"><c- c1>// The keyframes without offsets will automatically have offsets computed</c->
 <c- c1>// as 0 for the first keyframe, 0.65 for the middle keyframe, and 1 for the</c->
 <c- c1>// final keyframe.</c->
@@ -4611,7 +4611,7 @@ specifying different values for each <a data-link-type="dfn" href="#keyframe" id
 the list of values will be repeated as needed until each keyframe has been
 assigned a value.</p>
     <div class="example" id="example-52bc65a2">
-     <a class="self-link" href="#example-52bc65a2"></a> 
+     <a class="self-link" href="#example-52bc65a2"></a>
 <pre class="lang-javascript highlight"><c- c1>// Since timing functions apply _between_ keyframes, even if we specify a</c->
 <c- c1>// a timing function on the last keyframe it will be ignored.</c->
 elem<c- p>.</c->animate<c- p>([</c-> <c- p>{</c-> color<c- o>:</c-> <c- t>'blue'</c-><c- p>,</c-> easing<c- o>:</c-> <c- t>'ease-in'</c-> <c- p>},</c->
@@ -4634,7 +4634,7 @@ entire <a data-link-type="dfn" href="#iteration-duration" id="ref-for-iteration-
 using a <code class="idl"><a data-link-type="idl" href="#dictdef-keyframeeffectoptions" id="ref-for-dictdef-keyframeeffectoptions④">KeyframeEffectOptions</a></code> object (or <code class="idl"><a data-link-type="idl" href="#dictdef-keyframeanimationoptions" id="ref-for-dictdef-keyframeanimationoptions">KeyframeAnimationOptions</a></code> object when using the <code class="idl"><a data-link-type="idl" href="#dom-animatable-animate" id="ref-for-dom-animatable-animate①">animate()</a></code> method of the <code class="idl"><a data-link-type="idl" href="#animatable" id="ref-for-animatable①">Animatable</a></code> interface mixin).</p>
     <p>In the following example, the two statements produce different results.</p>
     <div class="example" id="example-148601d7">
-     <a class="self-link" href="#example-148601d7"></a> 
+     <a class="self-link" href="#example-148601d7"></a>
 <pre class="lang-javascript highlight"><c- c1>// Here, 'ease-in-out' is applied between each color value.</c->
 elem<c- p>.</c->animate<c- p>({</c-> color<c- o>:</c-> <c- p>[</c-> <c- t>'blue'</c-><c- p>,</c-> <c- t>'green'</c-><c- p>,</c-> <c- t>'yellow'</c-> <c- p>],</c->
                easing<c- o>:</c-> <c- t>'ease-in-out'</c-> <c- p>},</c-> <c- mi>2000</c-><c- p>);</c->
@@ -5117,7 +5117,7 @@ assign the value of the <code>id</code> member of <var>options</var> to <var>ani
         <p>Return <var>animation</var>.</p>
       </ol>
       <div class="informative-bg">
-       <em>This section is non-normative</em> 
+       <em>This section is non-normative</em>
        <p>The following code fragment:</p>
 <pre class="lang-javascript highlight"><c- a>var</c-> animation <c- o>=</c-> elem<c- p>.</c->animate<c- p>({</c-> opacity<c- o>:</c-> <c- mi>0</c-> <c- p>},</c-> <c- mi>2000</c-><c- p>);</c-></pre>
        <p>is roughly equivalent to:</p>
@@ -5294,7 +5294,7 @@ when the interfaces in this specification represent
 animations defined by CSS markup,
 many of their methods will need to trigger <span id="ref-for-style-change-event⑤">style change events</span> in order to reflect changes to the specified style.</p>
    <div class="informative-bg">
-    <em>This section is non-normative</em> 
+    <em>This section is non-normative</em>
     <p>Based on the above requirement and normative requirements elsewhere
 in this specification, the following invariants can be observed:</p>
     <dl>
@@ -5305,7 +5305,7 @@ interface, the value returned when querying the
 animation’s <code>startTime</code> will reflect updated state of
 the model immediately.</p>
       <div class="example" id="example-14eb88bc">
-       <a class="self-link" href="#example-14eb88bc"></a> 
+       <a class="self-link" href="#example-14eb88bc"></a>
 <pre class="lang-javascript highlight"><c- c1>// Initially animation.effect.getComputedTiming().localTime is 3000</c->
 animation<c- p>.</c->currentTime <c- o>+=</c-> <c- mi>2000</c-><c- p>;</c->
 alert<c- p>(</c->animation<c- p>.</c->effect<c- p>.</c->getComputedTiming<c- p>().</c->localTime<c- p>);</c-> <c- c1>// Displays ‘5000’</c-></pre>
@@ -5318,7 +5318,7 @@ immediately after applying a new <code class="idl"><a data-link-type="idl" href=
 element, the result of the new animation will be
 incorporated in the value returned.</p>
       <div class="example" id="example-366bf7e4">
-       <a class="self-link" href="#example-366bf7e4"></a> 
+       <a class="self-link" href="#example-366bf7e4"></a>
 <pre class="lang-javascript highlight"><c- c1>// Set opacity to 0 immediately</c->
 elem<c- p>.</c->animate<c- p>({</c-> opacity<c- o>:</c-> <c- mi>0</c-> <c- p>},</c-> <c- p>{</c-> fill<c- o>:</c-> <c- t>'forwards'</c-> <c- p>});</c->
 alert<c- p>(</c->window<c- p>.</c->getComputedStyle<c- p>(</c->elem<c- p>).</c->opacity<c- p>);</c-> <c- c1>// Displays ‘0’</c-></pre>
@@ -5331,7 +5331,7 @@ combined with ECMAScript’s run-to-completion semantics,
 there should never be a situation where, for example, <em>only</em> the changes to specified style are rendered without
 applying animation.</p>
       <div class="example" id="example-a559e918">
-       <a class="self-link" href="#example-a559e918"></a> 
+       <a class="self-link" href="#example-a559e918"></a>
 <pre class="lang-javascript highlight"><c- c1>// Fade the opacity with fallback for browsers that don’t</c->
 <c- c1>// support Element.animate</c->
 elem<c- p>.</c->style<c- p>.</c->opacity <c- o>=</c-> <c- t>'0'</c-><c- p>;</c->
@@ -5351,7 +5351,7 @@ querying the <code>currentTime</code> twice within
 a long block of code that is executed in the same script block
 will return the same value as shown in the following example.</p>
       <div class="example" id="example-16dafcc0">
-       <a class="self-link" href="#example-16dafcc0"></a> 
+       <a class="self-link" href="#example-16dafcc0"></a>
 <pre class="lang-javascript highlight"><c- a>var</c-> a <c- o>=</c-> document<c- p>.</c->timeline<c- p>.</c->currentTime<c- p>;</c->
 <c- c1>// ... many lines of code ...</c->
 <c- a>var</c-> b <c- o>=</c-> document<c- p>.</c->timeline<c- p>.</c->currentTime<c- p>;</c->
@@ -5365,7 +5365,7 @@ to <a data-link-type="dfn" href="#update-animations-and-send-events" id="ref-for
 callbacks</a>, and since the time passed to such callbacks is the same <var>now</var> timestamp is passed to both procedures, the <a data-link-type="dfn" href="#timeline-current-time" id="ref-for-timeline-current-time①①">current time</a> of a the <a data-link-type="dfn" href="#default-document-timeline" id="ref-for-default-document-timeline⑨">default document timeline</a> should
 match the time passed to <code>requestAnimationFrame</code>.</p>
       <div class="example" id="example-a0637e5c">
-       <a class="self-link" href="#example-a0637e5c"></a> 
+       <a class="self-link" href="#example-a0637e5c"></a>
 <pre class="lang-javascript highlight">window<c- p>.</c->requestAnimationFrame<c- p>(</c-><c- a>function</c-><c- p>(</c->now<c- p>)</c-> <c- p>{</c->
   <c- c1>// Displays 0</c->
   alert<c- p>(</c->now <c- o>-</c-> document<c- p>.</c->timeline<c- p>.</c->currentTime<c- p>);</c->
@@ -5375,7 +5375,7 @@ match the time passed to <code>requestAnimationFrame</code>.</p>
      <dd data-md>
       <p>Consider the following example:</p>
       <div class="example" id="example-a8ba32df">
-       <a class="self-link" href="#example-a8ba32df"></a> 
+       <a class="self-link" href="#example-a8ba32df"></a>
 <pre class="lang-javascript highlight"><c- c1>// Setup transition start point</c->
 div<c- p>.</c->style<c- p>.</c->opacity <c- o>=</c-> <c- t>'1'</c-><c- p>;</c->
 getComputedStyle<c- p>(</c->div<c- p>).</c->opacity<c- p>;</c->
@@ -5536,7 +5536,7 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -5549,14 +5549,14 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -5607,7 +5607,7 @@ according to its type, or falling back to <a data-link-type="dfn" href="#discret
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -7512,7 +7512,7 @@ argument</a> <a href="#ref-for-dfn-throw①③">(2)</a> <a href="#ref-for-dfn-th
     progress to an animation effect is not limited to the range [0, 1].
     Currently, however, keyframe offsets <em>are</em> limited to the
     range [0, 1] and property values are simply extrapolated for input
-    iteration progress values outside this range. 
+    iteration progress values outside this range.
     <p>We have considered removing this restriction since some cases exist
     where it is useful to be able to specify non-linear
     changes in property values at iteration progress values outside the
@@ -9842,57 +9842,65 @@ argument</a> <a href="#ref-for-dom-animatable-animate①">(2)</a>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

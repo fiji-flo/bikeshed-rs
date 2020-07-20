@@ -291,7 +291,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This module extends CSS Color <a data-link-type="biblio" href="#biblio-css-color-4">[css-color-4]</a> to add color modification functions.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -403,7 +403,7 @@ on screen, on paper, etc.
 	in <a class="css" data-link-type="maybe" href="#funcdef-lch" id="ref-for-funcdef-lch①">lch()</a> colorspace (the default),
 	with the lightness being 50% of the lightness of red
 	(and thus, 50% of the lightness of white).
-	The chroma and hue of red are left unchanged. 
+	The chroma and hue of red are left unchanged.
 <pre class="lang-css highlight">mix-color(red, white, lightness(50%));</pre>
     <p>The calculation is as follows:</p>
     <ul>
@@ -425,7 +425,7 @@ on screen, on paper, etc.
 	in <a class="css" data-link-type="maybe" href="#funcdef-lch" id="ref-for-funcdef-lch②">lch()</a> colorspace (the default),
 	with the lightness being 30% of the lightness of red
 	(and thus, 70% of the lightness of yellow).
-	The chroma and hue of red are left unchanged. 
+	The chroma and hue of red are left unchanged.
 <pre class="lang-css highlight">mix-color(red, yellow, lightness(30%));</pre>
     <p>The calculation is as follows:</p>
     <ul>
@@ -449,7 +449,7 @@ which applies to all color channels.</p>
     <a class="self-link" href="#example-006c15da"></a> This example produces the mixture of red and yellow,
 	in <span class="css">lch</span> colorspace (the default),
 	with each lch channel being 65% of the value for red
-	and 35% of the value for yellow. 
+	and 35% of the value for yellow.
     <p class="note" role="note"><span>Note:</span> interpolating on hue and chroma
 	keeps the intermediate colors
 	as saturated as the endpoint colors.</p>
@@ -481,7 +481,7 @@ which applies to all color channels.</p>
 	the color with highest luminance contrast
 	to the single color.</p>
    <div class="example" id="example-1f86f74a">
-    <a class="self-link" href="#example-1f86f74a"></a> 
+    <a class="self-link" href="#example-1f86f74a"></a>
 <pre class="lang-css highlight">color-contrast(wheat tan, sienna, var(--myAccent), #d2691e)</pre>
     <p>The calculation is as follows:</p>
     <ul>
@@ -520,7 +520,7 @@ will be chosen to produce a single eventual solution. <a href="https://github.co
     <a class="self-link" href="#example-f3c5adaf"></a> This example produces the adjustment of peru (#CD853F),
 		in <a class="css" data-link-type="maybe" href="#funcdef-lch" id="ref-for-funcdef-lch④">lch()</a> colorspace (the default),
 		with the lightness being reduced by 20%.
-		The chroma and hue of red are left unchanged. 
+		The chroma and hue of red are left unchanged.
 <pre class="lang-css highlight">adjust-color(peru, lightness(-20%));</pre>
     <p>The calculation is as follows:</p>
     <ul>
@@ -603,7 +603,7 @@ will be chosen to produce a single eventual solution. <a href="https://github.co
      <p><a class="property" data-link-type="propdesc">alpha</a> is a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①⑨">&lt;percentage></a> that corresponds to the origin color’s alpha transparency</p>
    </ul>
    <div class="example" id="example-a68fb7a2">
-    <a class="self-link" href="#example-a68fb7a2"></a> Multiple ways to adjust the transparency of a base color: 
+    <a class="self-link" href="#example-a68fb7a2"></a> Multiple ways to adjust the transparency of a base color:
     <ul>
      <li data-md>
       <p><span class="css">lab(from var(--mycolor) l a b / 100%)</span> sets the alpha of <span class="css">var(--mycolor)</span> to 100% regardless of what it originally was.</p>
@@ -660,7 +660,7 @@ will be chosen to produce a single eventual solution. <a href="https://github.co
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -673,14 +673,14 @@ will be chosen to produce a single eventual solution. <a href="https://github.co
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -731,7 +731,7 @@ will be chosen to produce a single eventual solution. <a href="https://github.co
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -945,57 +945,65 @@ will be chosen to produce a single eventual solution. <a href="https://github.co
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

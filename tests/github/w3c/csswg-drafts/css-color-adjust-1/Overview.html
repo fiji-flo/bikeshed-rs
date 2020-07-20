@@ -246,7 +246,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    <p>This module introduces a model and controls over automatic color adjustment by the user agent to handle user preferences, such as "Dark Mode", contrast adjustment, or specific desired color schemes.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -379,28 +379,28 @@ and the <a href="https://www.w3.org/TR/css-color-4/#system-colors">system colors
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-color-scheme">color-scheme</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">normal <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> [ light <span id="ref-for-comb-one①">|</span> dark <span id="ref-for-comb-one②">|</span> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value">&lt;custom-ident></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-one-plus" id="ref-for-mult-one-plus">+</a> <span id="ref-for-comb-one③">|</span> only <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-all" id="ref-for-comb-all">&amp;&amp;</a> light 
+      <td class="prod">normal <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> [ light <span id="ref-for-comb-one①">|</span> dark <span id="ref-for-comb-one②">|</span> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value">&lt;custom-ident></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-one-plus" id="ref-for-mult-one-plus">+</a> <span id="ref-for-comb-one③">|</span> only <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-all" id="ref-for-comb-all">&amp;&amp;</a> light
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>normal 
+      <td>normal
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-color-scheme-normal" id="ref-for-valdef-color-scheme-normal">normal</a>, or optional <a class="css" data-link-type="maybe" href="#valdef-color-scheme-only" id="ref-for-valdef-color-scheme-only">only</a> keyword and ordered list of specified color scheme keywords 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-color-scheme-normal" id="ref-for-valdef-color-scheme-normal">normal</a>, or optional <a class="css" data-link-type="maybe" href="#valdef-color-scheme-only" id="ref-for-valdef-color-scheme-only">only</a> keyword and ordered list of specified color scheme keywords
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-color-scheme" id="ref-for-propdef-color-scheme③">color-scheme</a> property allows an element to indicate
 	which color schemes it is comfortable being rendered with.
@@ -468,7 +468,7 @@ is still not guaranteed to have any effect on the rendering of the element.</p>
 	they need to be specified explicitly.</p>
    <h3 class="heading settled" data-level="2.2" id="color-scheme-processing"><span class="secno">2.2. </span><span class="content">Finding the Used Color Scheme</span><a class="self-link" href="#color-scheme-processing"></a></h3>
    <div class="algorithm" data-algorithm="used color scheme">
-     To find the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="used-color-scheme">used color scheme</dfn> for an element <var>el</var>: 
+     To find the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="used-color-scheme">used color scheme</dfn> for an element <var>el</var>:
     <ol>
      <li data-md>
       <p>Let <var>scheme</var> be the keyword matching <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme" id="ref-for-descdef-media-prefers-color-scheme③">prefers-color-scheme</a>.</p>
@@ -618,28 +618,28 @@ text-shadow: none !important;
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-forced-color-adjust">forced-color-adjust</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one④">|</a> none 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one④">|</a> none
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>as specified 
+      <td>as specified
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-forced-color-adjust" id="ref-for-propdef-forced-color-adjust③">forced-color-adjust</a> property
 	allows authors to opt particular elements
@@ -701,28 +701,28 @@ svg|text, svg|foreignObject { forced-color-adjust: auto; }
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-color-adjust">color-adjust</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">economy <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑤">|</a> exact 
+      <td class="prod">economy <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑤">|</a> exact
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>economy 
+      <td>economy
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-color-adjust" id="ref-for-propdef-color-adjust③">color-adjust</a> property provides a hint to the user-agent about how it should treat color and style choices
 	that might be expensive or generally unwise on a given device,
@@ -732,19 +732,19 @@ svg|text, svg|foreignObject { forced-color-adjust: auto; }
 	than the hint provided by <span class="property" id="ref-for-propdef-color-adjust④">color-adjust</span>.
 	It has the following values:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="color-adjust" data-dfn-type="value" data-export id="valdef-color-adjust-economy">economy<a class="self-link" href="#valdef-color-adjust-economy"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="color-adjust" data-dfn-type="value" data-export id="valdef-color-adjust-economy">economy<a class="self-link" href="#valdef-color-adjust-economy"></a></dfn>
     <dd>
       The user agent should make adjustments to the page’s styling
-			as it deems necessary and prudent for the output device. 
+			as it deems necessary and prudent for the output device.
      <p>For example, if the document is being printed,
 			a user agent might ignore any backgrounds
 			and adjust text color to be sufficiently dark,
 			to minimize ink usage.</p>
-    <dt><dfn class="css" data-dfn-for="color-adjust" data-dfn-type="value" data-export id="valdef-color-adjust-exact">exact<a class="self-link" href="#valdef-color-adjust-exact"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="color-adjust" data-dfn-type="value" data-export id="valdef-color-adjust-exact">exact<a class="self-link" href="#valdef-color-adjust-exact"></a></dfn>
     <dd>
       This value indicates that the page is using color and styling on the specified element
 			in a way which is important and significant,
-			and which should not be tweaked or changed except at the user’s request. 
+			and which should not be tweaked or changed except at the user’s request.
      <p>For example,
 			a mapping website offering printed directions
 			might "zebra-stripe" the steps in the directions,
@@ -780,7 +780,7 @@ svg|text, svg|foreignObject { forced-color-adjust: auto; }
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -793,14 +793,14 @@ svg|text, svg|foreignObject { forced-color-adjust: auto; }
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -851,7 +851,7 @@ svg|text, svg|foreignObject { forced-color-adjust: auto; }
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1194,58 +1194,66 @@ depending on further consideration.<a href="#issue-daa039ca"> ↵ </a></div>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

@@ -1814,10 +1814,10 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <li data-md>
       <p>Set the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device④">immersive XR device</a> as follows:</p>
       <dl class="switch">
-       <dt> If there are any active <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession④">XRSession</a></code>s and the <a data-link-type="dfn" href="#list-of-immersive-xr-devices" id="ref-for-list-of-immersive-xr-devices⑧">list of immersive XR devices</a> <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-contain" id="ref-for-list-contain②">contains</a> <var>oldDevice</var> 
-       <dd> Set the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device⑤">immersive XR device</a> to <var>oldDevice</var> 
-       <dt> Otherwise 
-       <dd> Set the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device⑥">immersive XR device</a> to a device of the user agent’s choosing 
+       <dt> If there are any active <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession④">XRSession</a></code>s and the <a data-link-type="dfn" href="#list-of-immersive-xr-devices" id="ref-for-list-of-immersive-xr-devices⑧">list of immersive XR devices</a> <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-contain" id="ref-for-list-contain②">contains</a> <var>oldDevice</var>
+       <dd> Set the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device⑤">immersive XR device</a> to <var>oldDevice</var>
+       <dt> Otherwise
+       <dd> Set the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device⑥">immersive XR device</a> to a device of the user agent’s choosing
       </dl>
      <li data-md>
       <p>If this is the first time devices have been enumerated or <var>oldDevice</var> equals the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device⑦">immersive XR device</a>, abort these steps.</p>
@@ -1843,7 +1843,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </div>
    <p>The <dfn class="dfn-paneled idl-code" data-dfn-for="XR" data-dfn-type="attribute" data-export id="dom-xr-ondevicechange"><code>ondevicechange</code></dfn> attribute is an <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handler-idl-attributes" id="ref-for-event-handler-idl-attributes">Event handler IDL attribute</a> for the <code class="idl"><a data-link-type="idl" href="#eventdef-xr-devicechange" id="ref-for-eventdef-xr-devicechange①">devicechange</a></code> event type.</p>
    <div class="algorithm" data-algorithm="session-supported">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="XR" data-dfn-type="method" data-export id="dom-xr-issessionsupported"><code>isSessionSupported(<var>mode</var>)</code></dfn> method queries if a given <var>mode</var> is supported by the user agent and device capabilities. 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="XR" data-dfn-type="method" data-export id="dom-xr-issessionsupported"><code>isSessionSupported(<var>mode</var>)</code></dfn> method queries if a given <var>mode</var> is supported by the user agent and device capabilities.
     <p>When this method is invoked, it MUST run the following steps:</p>
     <ol>
      <li data-md>
@@ -1870,7 +1870,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </div>
    <p>Calling <code class="idl"><a data-link-type="idl" href="#dom-xr-issessionsupported" id="ref-for-dom-xr-issessionsupported②">isSessionSupported()</a></code> MUST NOT trigger device-selection UI as this would cause many sites to display XR-specific dialogs early in the document lifecycle without user activation. Additionally, calling <code class="idl"><a data-link-type="idl" href="#dom-xr-issessionsupported" id="ref-for-dom-xr-issessionsupported③">isSessionSupported()</a></code> MUST NOT interfere with any running XR applications on the system, and MUST NOT cause XR-related applications to launch such as system trays or storefronts.</p>
    <div class="example" id="example-787228f4">
-    <a class="self-link" href="#example-787228f4"></a> The following code checks to see if <code class="idl"><a data-link-type="idl" href="#dom-xrsessionmode-immersive-vr" id="ref-for-dom-xrsessionmode-immersive-vr">immersive-vr</a></code> sessions are supported. 
+    <a class="self-link" href="#example-787228f4"></a> The following code checks to see if <code class="idl"><a data-link-type="idl" href="#dom-xrsessionmode-immersive-vr" id="ref-for-dom-xrsessionmode-immersive-vr">immersive-vr</a></code> sessions are supported.
 <pre class="highlight">navigator<c- p>.</c->xr<c- p>.</c->isSessionSupported<c- p>(</c-><c- t>'immersive-vr'</c-><c- p>).</c->then<c- p>((</c->supported<c- p>)</c-> <c- p>=></c-> <c- p>{</c->
   <c- k>if</c-> <c- p>(</c->supported<c- p>)</c-> <c- p>{</c->
     <c- c1>// 'immersive-vr' sessions are supported.</c->
@@ -1955,10 +1955,10 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
          <li data-md>
           <p>Potentially set the <a data-link-type="dfn" href="#active-immersive-session" id="ref-for-active-immersive-session①">active immersive session</a> as follows:</p>
           <dl class="switch">
-           <dt> If <var>immersive</var> is <code>true</code> 
-           <dd> Set the <a data-link-type="dfn" href="#active-immersive-session" id="ref-for-active-immersive-session②">active immersive session</a> to <var>session</var>, and set <a data-link-type="dfn" href="#pending-immersive-session" id="ref-for-pending-immersive-session④">pending immersive session</a> to <code>false</code>. 
-           <dt> Otherwise 
-           <dd> Append <var>session</var> to the <a data-link-type="dfn" href="#list-of-inline-sessions" id="ref-for-list-of-inline-sessions">list of inline sessions</a>. 
+           <dt> If <var>immersive</var> is <code>true</code>
+           <dd> Set the <a data-link-type="dfn" href="#active-immersive-session" id="ref-for-active-immersive-session②">active immersive session</a> to <var>session</var>, and set <a data-link-type="dfn" href="#pending-immersive-session" id="ref-for-pending-immersive-session④">pending immersive session</a> to <code>false</code>.
+           <dt> Otherwise
+           <dd> Append <var>session</var> to the <a data-link-type="dfn" href="#list-of-inline-sessions" id="ref-for-list-of-inline-sessions">list of inline sessions</a>.
           </dl>
          <li data-md>
           <p><a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guide/#resolve-promise" id="ref-for-resolve-promise④">Resolve</a> <var>promise</var> with <var>session</var>.</p>
@@ -1969,7 +1969,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     </ol>
    </div>
    <div class="example" id="example-a17c6da1">
-    <a class="self-link" href="#example-a17c6da1"></a> The following code attempts to retrieve an <code class="idl"><a data-link-type="idl" href="#dom-xrsessionmode-immersive-vr" id="ref-for-dom-xrsessionmode-immersive-vr①">immersive-vr</a></code> <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession⑧">XRSession</a></code>. 
+    <a class="self-link" href="#example-a17c6da1"></a> The following code attempts to retrieve an <code class="idl"><a data-link-type="idl" href="#dom-xrsessionmode-immersive-vr" id="ref-for-dom-xrsessionmode-immersive-vr①">immersive-vr</a></code> <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession⑧">XRSession</a></code>.
 <pre class="highlight"><c- a>let</c-> xrSession<c- p>;</c->
 
 navigator<c- p>.</c->xr<c- p>.</c->requestSession<c- p>(</c-><c- u>"immersive-vr"</c-><c- p>).</c->then<c- p>((</c->session<c- p>)</c-> <c- p>=></c-> <c- p>{</c->
@@ -2277,17 +2277,17 @@ navigator<c- p>.</c->xr<c- p>.</c->requestSession<c- p>(</c-><c- u>"immersive-vr
      <li data-md>
       <p>Set <var>activeState</var>’s <a data-link-type="dfn" href="#xrrenderstate-composition-disabled" id="ref-for-xrrenderstate-composition-disabled">composition disabled</a> and <a data-link-type="dfn" href="#xrrenderstate-output-canvas" id="ref-for-xrrenderstate-output-canvas">output canvas</a> as follows:</p>
       <dl class="switch">
-       <dt> If <var>session</var>’s <a data-link-type="dfn" href="#xrsession-mode" id="ref-for-xrsession-mode②">mode</a> is <code class="idl"><a data-link-type="idl" href="#dom-xrsessionmode-inline" id="ref-for-dom-xrsessionmode-inline⑥">"inline"</a></code> and <var>baseLayer</var> is an instance of an <code class="idl"><a data-link-type="idl" href="#xrwebgllayer" id="ref-for-xrwebgllayer">XRWebGLLayer</a></code> with <a data-link-type="dfn" href="#xrwebgllayer-composition-disabled" id="ref-for-xrwebgllayer-composition-disabled">composition disabled</a> set to <code>true</code> 
-       <dd> Set <var>activeState</var>’s <a data-link-type="dfn" href="#xrrenderstate-composition-disabled" id="ref-for-xrrenderstate-composition-disabled①">composition disabled</a> boolean to <code>true</code>. 
-       <dd> Set <var>activeState</var>’s <a data-link-type="dfn" href="#xrrenderstate-output-canvas" id="ref-for-xrrenderstate-output-canvas①">output canvas</a> to <var>baseLayer</var>’s <a data-link-type="dfn" href="#xrwebgllayer-context" id="ref-for-xrwebgllayer-context">context</a>'s <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#WebGLRenderingContext" id="ref-for-WebGLRenderingContext">canvas</a></code>. 
-       <dt> Otherwise 
-       <dd> Set <var>activeState</var>’s <a data-link-type="dfn" href="#xrrenderstate-composition-disabled" id="ref-for-xrrenderstate-composition-disabled②">composition disabled</a> boolean to <code>false</code>. 
-       <dd> Set <var>activeState</var>’s <a data-link-type="dfn" href="#xrrenderstate-output-canvas" id="ref-for-xrrenderstate-output-canvas②">output canvas</a> to <code>null</code>. 
+       <dt> If <var>session</var>’s <a data-link-type="dfn" href="#xrsession-mode" id="ref-for-xrsession-mode②">mode</a> is <code class="idl"><a data-link-type="idl" href="#dom-xrsessionmode-inline" id="ref-for-dom-xrsessionmode-inline⑥">"inline"</a></code> and <var>baseLayer</var> is an instance of an <code class="idl"><a data-link-type="idl" href="#xrwebgllayer" id="ref-for-xrwebgllayer">XRWebGLLayer</a></code> with <a data-link-type="dfn" href="#xrwebgllayer-composition-disabled" id="ref-for-xrwebgllayer-composition-disabled">composition disabled</a> set to <code>true</code>
+       <dd> Set <var>activeState</var>’s <a data-link-type="dfn" href="#xrrenderstate-composition-disabled" id="ref-for-xrrenderstate-composition-disabled①">composition disabled</a> boolean to <code>true</code>.
+       <dd> Set <var>activeState</var>’s <a data-link-type="dfn" href="#xrrenderstate-output-canvas" id="ref-for-xrrenderstate-output-canvas①">output canvas</a> to <var>baseLayer</var>’s <a data-link-type="dfn" href="#xrwebgllayer-context" id="ref-for-xrwebgllayer-context">context</a>'s <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#WebGLRenderingContext" id="ref-for-WebGLRenderingContext">canvas</a></code>.
+       <dt> Otherwise
+       <dd> Set <var>activeState</var>’s <a data-link-type="dfn" href="#xrrenderstate-composition-disabled" id="ref-for-xrrenderstate-composition-disabled②">composition disabled</a> boolean to <code>false</code>.
+       <dd> Set <var>activeState</var>’s <a data-link-type="dfn" href="#xrrenderstate-output-canvas" id="ref-for-xrrenderstate-output-canvas②">output canvas</a> to <code>null</code>.
       </dl>
     </ol>
    </div>
    <div class="algorithm" data-algorithm="request-reference-space">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="XRSession" data-dfn-type="method" data-export id="dom-xrsession-requestreferencespace"><code>requestReferenceSpace(<var>type</var>)</code></dfn> method constructs a new <code class="idl"><a data-link-type="idl" href="#xrreferencespace" id="ref-for-xrreferencespace②">XRReferenceSpace</a></code> of a given <var>type</var>, if possible. 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="XRSession" data-dfn-type="method" data-export id="dom-xrsession-requestreferencespace"><code>requestReferenceSpace(<var>type</var>)</code></dfn> method constructs a new <code class="idl"><a data-link-type="idl" href="#xrreferencespace" id="ref-for-xrreferencespace②">XRReferenceSpace</a></code> of a given <var>type</var>, if possible.
     <p>When this method is invoked, the user agent MUST run the following steps:</p>
     <ol>
      <li data-md>
@@ -2439,10 +2439,10 @@ navigator<c- p>.</c->xr<c- p>.</c->requestSession<c- p>(</c-><c- u>"immersive-vr
      <li data-md>
       <p>Initialize <var>state</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrenderstate-inlineverticalfieldofview" id="ref-for-dom-xrrenderstate-inlineverticalfieldofview⑥">inlineVerticalFieldOfView</a></code> as follows:</p>
       <dl class="switch">
-       <dt> If <var>session</var> is an <a data-link-type="dfn" href="#inline-session" id="ref-for-inline-session②">inline session</a> 
-       <dd> Initialize <var>state</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrenderstate-inlineverticalfieldofview" id="ref-for-dom-xrrenderstate-inlineverticalfieldofview⑦">inlineVerticalFieldOfView</a></code> to <code>PI * 0.5</code>. 
-       <dt> Else 
-       <dd> Initialize <var>state</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrenderstate-inlineverticalfieldofview" id="ref-for-dom-xrrenderstate-inlineverticalfieldofview⑧">inlineVerticalFieldOfView</a></code> to <code>null</code>. 
+       <dt> If <var>session</var> is an <a data-link-type="dfn" href="#inline-session" id="ref-for-inline-session②">inline session</a>
+       <dd> Initialize <var>state</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrenderstate-inlineverticalfieldofview" id="ref-for-dom-xrrenderstate-inlineverticalfieldofview⑦">inlineVerticalFieldOfView</a></code> to <code>PI * 0.5</code>.
+       <dt> Else
+       <dd> Initialize <var>state</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrenderstate-inlineverticalfieldofview" id="ref-for-dom-xrrenderstate-inlineverticalfieldofview⑧">inlineVerticalFieldOfView</a></code> to <code>null</code>.
       </dl>
      <li data-md>
       <p>Initialize <var>state</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrenderstate-baselayer" id="ref-for-dom-xrrenderstate-baselayer③">baseLayer</a></code> to <code>null</code>.</p>
@@ -2522,7 +2522,7 @@ navigator<c- p>.</c->xr<c- p>.</c->requestSession<c- p>(</c-><c- u>"immersive-vr
    </div>
    <p>The behavior of the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window">Window</a></code> interface’s <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-animationframeprovider-requestanimationframe" id="ref-for-dom-animationframeprovider-requestanimationframe">requestAnimationFrame()</a></code> method is not changed by the presence of any active <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession⑥③">XRSession</a></code>, nor does calling <code class="idl"><a data-link-type="idl" href="#dom-xrsession-requestanimationframe" id="ref-for-dom-xrsession-requestanimationframe⑤">requestAnimationFrame()</a></code> on any <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession⑥④">XRSession</a></code> interact with <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window①">Window</a></code>'s <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-animationframeprovider-requestanimationframe" id="ref-for-dom-animationframeprovider-requestanimationframe①">requestAnimationFrame()</a></code> in any way. An <a data-link-type="dfn" href="#active-immersive-session" id="ref-for-active-immersive-session⑤">active immersive session</a> MAY affect the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#rendering-opportunity" id="ref-for-rendering-opportunity">rendering opportunity</a> of a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#browsing-context" id="ref-for-browsing-context">browsing context</a> if it causes the page to be obscured.</p>
    <div class="example" id="example-c523945b">
-    <a class="self-link" href="#example-c523945b"></a> If an <a data-link-type="dfn" href="#immersive-session" id="ref-for-immersive-session①⑥">immersive session</a> prevents <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#rendering-opportunity" id="ref-for-rendering-opportunity①">rendering opportunities</a> then callbacks supplied to <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window②">Window</a></code> <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-animationframeprovider-requestanimationframe" id="ref-for-dom-animationframeprovider-requestanimationframe②">requestAnimationFrame()</a></code> may not be processed while the session is active. This depends on the type of device being used and is most likely to happen depend on mobile or standalone devices where the immersive content completely obscures the HTML document. As such, developers must not rely on <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window③">Window</a></code> <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-animationframeprovider-requestanimationframe" id="ref-for-dom-animationframeprovider-requestanimationframe③">requestAnimationFrame()</a></code> callbacks to schedule <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession⑥⑤">XRSession</a></code> <code class="idl"><a data-link-type="idl" href="#dom-xrsession-requestanimationframe" id="ref-for-dom-xrsession-requestanimationframe⑥">requestAnimationFrame()</a></code> callbacks and visa-versa, even if they share the same rendering logic. Applications that do not follow this guidance may not execute properly on all platforms. A more effective pattern for applications that wish to transition between these two types of animation loops is demonstrated below: 
+    <a class="self-link" href="#example-c523945b"></a> If an <a data-link-type="dfn" href="#immersive-session" id="ref-for-immersive-session①⑥">immersive session</a> prevents <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#rendering-opportunity" id="ref-for-rendering-opportunity①">rendering opportunities</a> then callbacks supplied to <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window②">Window</a></code> <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-animationframeprovider-requestanimationframe" id="ref-for-dom-animationframeprovider-requestanimationframe②">requestAnimationFrame()</a></code> may not be processed while the session is active. This depends on the type of device being used and is most likely to happen depend on mobile or standalone devices where the immersive content completely obscures the HTML document. As such, developers must not rely on <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window③">Window</a></code> <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-animationframeprovider-requestanimationframe" id="ref-for-dom-animationframeprovider-requestanimationframe③">requestAnimationFrame()</a></code> callbacks to schedule <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession⑥⑤">XRSession</a></code> <code class="idl"><a data-link-type="idl" href="#dom-xrsession-requestanimationframe" id="ref-for-dom-xrsession-requestanimationframe⑥">requestAnimationFrame()</a></code> callbacks and visa-versa, even if they share the same rendering logic. Applications that do not follow this guidance may not execute properly on all platforms. A more effective pattern for applications that wish to transition between these two types of animation loops is demonstrated below:
 <pre class="highlight"><c- a>let</c-> xrSession <c- o>=</c-> <c- kc>null</c-><c- p>;</c->
 
 <c- a>function</c-> onWindowAnimationFrame<c- p>(</c->time<c- p>)</c-> <c- p>{</c->
@@ -2682,20 +2682,20 @@ window<c- p>.</c->requestAnimationFrame<c- p>(</c->onWindowAnimationFrame<c- p>)
      <li data-md>
       <p>Query the <a data-link-type="dfn" href="#xr-device" id="ref-for-xr-device①⓪">XR device</a>'s tracking system for <var>space</var>’s pose relative to <var>baseSpace</var> at the <var>frame</var>’s <a data-link-type="dfn" href="#xrframe-time" id="ref-for-xrframe-time③">time</a>, then perform the following steps:</p>
       <dl class="switch">
-       <dt> If <var>limit</var> is <code>false</code> and the tracking system provides a <a data-link-type="dfn" href="#6dof" id="ref-for-6dof②">6DoF</a> pose whose position is actively tracked or statically known for <var>space</var>’s pose relative to <var>baseSpace</var>: 
-       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation">orientation</a></code> to the orientation of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin①">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system">coordinate system</a>. 
-       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-position" id="ref-for-dom-xrrigidtransform-position">position</a></code> to the position of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin②">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system①">coordinate system</a>. 
-       <dd> Set <var>pose</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrpose-emulatedposition" id="ref-for-dom-xrpose-emulatedposition">emulatedPosition</a></code> to <code>false</code>. 
-       <dt> Else if <var>limit</var> is <code>false</code> and the tracking system provides a <a data-link-type="dfn" href="#3dof" id="ref-for-3dof②">3DoF</a> pose or a <a data-link-type="dfn" href="#6dof" id="ref-for-6dof③">6DoF</a> pose whose position is neither actively tracked nor statically known for <var>space</var>’s pose relative to <var>baseSpace</var>: 
-       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation①">orientation</a></code> to the orientation of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin③">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system②">coordinate system</a>. 
-       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-position" id="ref-for-dom-xrrigidtransform-position①">position</a></code> to the tracking system’s best estimate of the position of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin④">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system③">coordinate system</a>. This MAY include a computed offset such as a neck or arm model. If a position estimate is not available, the last known position MUST be used. 
-       <dd> Set <var>pose</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrpose-emulatedposition" id="ref-for-dom-xrpose-emulatedposition①">emulatedPosition</a></code> to <code>true</code>. 
-       <dt> Else if <var>space</var>’s pose relative to <var>baseSpace</var> has been determined in the past: 
-       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-position" id="ref-for-dom-xrrigidtransform-position②">position</a></code> to the last known position of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin⑤">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system④">coordinate system</a>. 
-       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation②">orientation</a></code> to the last known orientation of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin⑥">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system⑤">coordinate system</a>. 
-       <dd> Set <var>pose</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrpose-emulatedposition" id="ref-for-dom-xrpose-emulatedposition②">emulatedPosition</a></code> boolean to <code>true</code>. 
-       <dt> Else if <var>space</var>’s pose relative to <var>baseSpace</var> has never been determined: 
-       <dd> Set <var>pose</var> to <code>null</code>. 
+       <dt> If <var>limit</var> is <code>false</code> and the tracking system provides a <a data-link-type="dfn" href="#6dof" id="ref-for-6dof②">6DoF</a> pose whose position is actively tracked or statically known for <var>space</var>’s pose relative to <var>baseSpace</var>:
+       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation">orientation</a></code> to the orientation of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin①">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system">coordinate system</a>.
+       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-position" id="ref-for-dom-xrrigidtransform-position">position</a></code> to the position of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin②">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system①">coordinate system</a>.
+       <dd> Set <var>pose</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrpose-emulatedposition" id="ref-for-dom-xrpose-emulatedposition">emulatedPosition</a></code> to <code>false</code>.
+       <dt> Else if <var>limit</var> is <code>false</code> and the tracking system provides a <a data-link-type="dfn" href="#3dof" id="ref-for-3dof②">3DoF</a> pose or a <a data-link-type="dfn" href="#6dof" id="ref-for-6dof③">6DoF</a> pose whose position is neither actively tracked nor statically known for <var>space</var>’s pose relative to <var>baseSpace</var>:
+       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation①">orientation</a></code> to the orientation of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin③">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system②">coordinate system</a>.
+       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-position" id="ref-for-dom-xrrigidtransform-position①">position</a></code> to the tracking system’s best estimate of the position of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin④">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system③">coordinate system</a>. This MAY include a computed offset such as a neck or arm model. If a position estimate is not available, the last known position MUST be used.
+       <dd> Set <var>pose</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrpose-emulatedposition" id="ref-for-dom-xrpose-emulatedposition①">emulatedPosition</a></code> to <code>true</code>.
+       <dt> Else if <var>space</var>’s pose relative to <var>baseSpace</var> has been determined in the past:
+       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-position" id="ref-for-dom-xrrigidtransform-position②">position</a></code> to the last known position of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin⑤">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system④">coordinate system</a>.
+       <dd> Set <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation②">orientation</a></code> to the last known orientation of <var>space</var>’s <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin⑥">effective origin</a> in <var>baseSpace</var>’s <a data-link-type="dfn" href="#xrspace-coordinate-system" id="ref-for-xrspace-coordinate-system⑤">coordinate system</a>.
+       <dd> Set <var>pose</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrpose-emulatedposition" id="ref-for-dom-xrpose-emulatedposition②">emulatedPosition</a></code> boolean to <code>true</code>.
+       <dt> Else if <var>space</var>’s pose relative to <var>baseSpace</var> has never been determined:
+       <dd> Set <var>pose</var> to <code>null</code>.
       </dl>
     </ol>
     <p class="note" role="note"><span>Note:</span> The <code class="idl"><a data-link-type="idl" href="#xrpose" id="ref-for-xrpose⑤">XRPose</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-xrpose-emulatedposition" id="ref-for-dom-xrpose-emulatedposition③">emulatedPosition</a></code> boolean does not indicate whether <var>baseSpace</var>’s position is emulated or not, only whether evaluating <var>space</var>’s position relative to <var>baseSpace</var> relies on emulation. For example, a controller with <a data-link-type="dfn" href="#3dof" id="ref-for-3dof③">3DoF</a> tracking would report poses with an <code class="idl"><a data-link-type="idl" href="#dom-xrpose-emulatedposition" id="ref-for-dom-xrpose-emulatedposition④">emulatedPosition</a></code> of <code>true</code> when its <code class="idl"><a data-link-type="idl" href="#dom-xrinputsource-targetrayspace" id="ref-for-dom-xrinputsource-targetrayspace">targetRaySpace</a></code> or <code class="idl"><a data-link-type="idl" href="#dom-xrinputsource-gripspace" id="ref-for-dom-xrinputsource-gripspace①">gripSpace</a></code> are queried against an <code class="idl"><a data-link-type="idl" href="#xrreferencespace" id="ref-for-xrreferencespace⑤">XRReferenceSpace</a></code>, but would report an <code class="idl"><a data-link-type="idl" href="#dom-xrpose-emulatedposition" id="ref-for-dom-xrpose-emulatedposition⑤">emulatedPosition</a></code> of <code>false</code> if the pose of the <code class="idl"><a data-link-type="idl" href="#dom-xrinputsource-targetrayspace" id="ref-for-dom-xrinputsource-targetrayspace①">targetRaySpace</a></code> was queried in <code class="idl"><a data-link-type="idl" href="#dom-xrinputsource-gripspace" id="ref-for-dom-xrinputsource-gripspace②">gripSpace</a></code>, because the relationship between those two spaces should be known exactly.</p>
@@ -2748,10 +2748,10 @@ window<c- p>.</c->requestAnimationFrame<c- p>(</c->onWindowAnimationFrame<c- p>)
        <li data-md>
         <p>Initialize <var>referenceSpace</var> as follows:</p>
         <dl class="switch">
-         <dt> If <var>type</var> is <code class="idl"><a data-link-type="idl" href="#dom-xrreferencespacetype-bounded-floor" id="ref-for-dom-xrreferencespacetype-bounded-floor⑤">bounded-floor</a></code> 
-         <dd> Let <var>referenceSpace</var> be a new <code class="idl"><a data-link-type="idl" href="#xrboundedreferencespace" id="ref-for-xrboundedreferencespace①">XRBoundedReferenceSpace</a></code>. 
-         <dt> Otherwise 
-         <dd> Let <var>referenceSpace</var> be a new <code class="idl"><a data-link-type="idl" href="#xrreferencespace" id="ref-for-xrreferencespace①⑨">XRReferenceSpace</a></code>. 
+         <dt> If <var>type</var> is <code class="idl"><a data-link-type="idl" href="#dom-xrreferencespacetype-bounded-floor" id="ref-for-dom-xrreferencespacetype-bounded-floor⑤">bounded-floor</a></code>
+         <dd> Let <var>referenceSpace</var> be a new <code class="idl"><a data-link-type="idl" href="#xrboundedreferencespace" id="ref-for-xrboundedreferencespace①">XRBoundedReferenceSpace</a></code>.
+         <dt> Otherwise
+         <dd> Let <var>referenceSpace</var> be a new <code class="idl"><a data-link-type="idl" href="#xrreferencespace" id="ref-for-xrreferencespace①⑨">XRReferenceSpace</a></code>.
         </dl>
        <li data-md>
         <p>Initialize <var>referenceSpace</var>’s <a data-link-type="dfn" href="#xrreferencespace-type" id="ref-for-xrreferencespace-type">type</a> to <var>type</var>.</p>
@@ -2765,7 +2765,7 @@ window<c- p>.</c->requestAnimationFrame<c- p>(</c->onWindowAnimationFrame<c- p>)
     </ol>
    </div>
    <div class="algorithm" data-algorithm="reference-space-supported">
-     To check if a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="reference-space-is-supported">reference space is supported</dfn> for a given reference space type <var>type</var> and <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession⑦⑤">XRSession</a></code> <var>session</var>, run the following steps: 
+     To check if a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="reference-space-is-supported">reference space is supported</dfn> for a given reference space type <var>type</var> and <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession⑦⑤">XRSession</a></code> <var>session</var>, run the following steps:
     <ol>
      <li data-md>
       <p>If <var>type</var> is not <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-contain" id="ref-for-list-contain⑤">contained</a> in <var>session</var>’s <a data-link-type="dfn" href="#xrsession-list-of-enabled-features" id="ref-for-xrsession-list-of-enabled-features④">list of enabled features</a> return <code>false</code>.</p>
@@ -2784,17 +2784,17 @@ window<c- p>.</c->requestAnimationFrame<c- p>(</c->onWindowAnimationFrame<c- p>)
     </ol>
    </div>
    <div class="algorithm" data-algorithm="get-offset-space">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="XRReferenceSpace" data-dfn-type="method" data-export id="dom-xrreferencespace-getoffsetreferencespace"><code>getOffsetReferenceSpace(<var>originOffset</var>)</code></dfn> method MUST perform the following steps when invoked: 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="XRReferenceSpace" data-dfn-type="method" data-export id="dom-xrreferencespace-getoffsetreferencespace"><code>getOffsetReferenceSpace(<var>originOffset</var>)</code></dfn> method MUST perform the following steps when invoked:
     <ol>
      <li data-md>
       <p>Let <var>base</var> be the <code class="idl"><a data-link-type="idl" href="#xrreferencespace" id="ref-for-xrreferencespace②⓪">XRReferenceSpace</a></code> the method was called on.</p>
      <li data-md>
       <p>Initialize <var>offsetSpace</var> as follows:</p>
       <dl class="switch">
-       <dt> If <var>base</var> is an instance of <code class="idl"><a data-link-type="idl" href="#xrboundedreferencespace" id="ref-for-xrboundedreferencespace②">XRBoundedReferenceSpace</a></code> 
-       <dd> Let <var>offsetSpace</var> be a new <code class="idl"><a data-link-type="idl" href="#xrboundedreferencespace" id="ref-for-xrboundedreferencespace③">XRBoundedReferenceSpace</a></code> and set <var>offsetSpace</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrboundedreferencespace-boundsgeometry" id="ref-for-dom-xrboundedreferencespace-boundsgeometry②">boundsGeometry</a></code> to <var>base</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrboundedreferencespace-boundsgeometry" id="ref-for-dom-xrboundedreferencespace-boundsgeometry③">boundsGeometry</a></code>, with each point multiplied by the <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-inverse" id="ref-for-dom-xrrigidtransform-inverse">inverse</a></code> of <var>originOffset</var>. 
-       <dt> Else 
-       <dd> Let <var>offsetSpace</var> be a new <code class="idl"><a data-link-type="idl" href="#xrreferencespace" id="ref-for-xrreferencespace②①">XRReferenceSpace</a></code>. 
+       <dt> If <var>base</var> is an instance of <code class="idl"><a data-link-type="idl" href="#xrboundedreferencespace" id="ref-for-xrboundedreferencespace②">XRBoundedReferenceSpace</a></code>
+       <dd> Let <var>offsetSpace</var> be a new <code class="idl"><a data-link-type="idl" href="#xrboundedreferencespace" id="ref-for-xrboundedreferencespace③">XRBoundedReferenceSpace</a></code> and set <var>offsetSpace</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrboundedreferencespace-boundsgeometry" id="ref-for-dom-xrboundedreferencespace-boundsgeometry②">boundsGeometry</a></code> to <var>base</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrboundedreferencespace-boundsgeometry" id="ref-for-dom-xrboundedreferencespace-boundsgeometry③">boundsGeometry</a></code>, with each point multiplied by the <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-inverse" id="ref-for-dom-xrrigidtransform-inverse">inverse</a></code> of <var>originOffset</var>.
+       <dt> Else
+       <dd> Let <var>offsetSpace</var> be a new <code class="idl"><a data-link-type="idl" href="#xrreferencespace" id="ref-for-xrreferencespace②①">XRReferenceSpace</a></code>.
       </dl>
      <li data-md>
       <p>Set <var>offsetSpace</var>’s <a data-link-type="dfn" href="#xrspace-native-origin" id="ref-for-xrspace-native-origin⑧">native origin</a> to <var>base</var>’s <a data-link-type="dfn" href="#xrspace-native-origin" id="ref-for-xrspace-native-origin⑨">native origin</a>.</p>
@@ -2821,7 +2821,7 @@ window<c- p>.</c->requestAnimationFrame<c- p>(</c->onWindowAnimationFrame<c- p>)
    <p class="note" role="note"><span>Note:</span> It is suggested that points of the <a data-link-type="dfn" href="#xrboundedreferencespace-native-bounds-geometry" id="ref-for-xrboundedreferencespace-native-bounds-geometry③">native bounds geometry</a> be <a data-link-type="dfn" href="#quantization" id="ref-for-quantization①">quantized</a> to the nearest 5cm.</p>
    <p>The <dfn class="dfn-paneled idl-code" data-dfn-for="XRBoundedReferenceSpace" data-dfn-type="attribute" data-export id="dom-xrboundedreferencespace-boundsgeometry"><code>boundsGeometry</code></dfn> attribute is an array of <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dompointreadonly" id="ref-for-dompointreadonly②">DOMPointReadOnly</a></code>s such that each entry is equal to the entry in the <code class="idl"><a data-link-type="idl" href="#xrboundedreferencespace" id="ref-for-xrboundedreferencespace⑨">XRBoundedReferenceSpace</a></code>'s <a data-link-type="dfn" href="#xrboundedreferencespace-native-bounds-geometry" id="ref-for-xrboundedreferencespace-native-bounds-geometry④">native bounds geometry</a> premultiplied by the <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-inverse" id="ref-for-dom-xrrigidtransform-inverse①">inverse</a></code> of the <a data-link-type="dfn" href="#xrspace-origin-offset" id="ref-for-xrspace-origin-offset③">origin offset</a>. In other words, it provides the same border in <code class="idl"><a data-link-type="idl" href="#xrboundedreferencespace" id="ref-for-xrboundedreferencespace①⓪">XRBoundedReferenceSpace</a></code> coordinates relative to the <a data-link-type="dfn" href="#xrspace-effective-origin" id="ref-for-xrspace-effective-origin⑦">effective origin</a>.</p>
    <div class="algorithm" data-algorithm="bounded-space-supported">
-     To check if <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="bounded-reference-spaces-are-supported">bounded reference spaces are supported</dfn> run the following steps: 
+     To check if <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="bounded-reference-spaces-are-supported">bounded reference spaces are supported</dfn> run the following steps:
     <ol>
      <li data-md>
       <p>If the <a data-link-type="dfn" href="#xrsession-xr-device" id="ref-for-xrsession-xr-device②③">XR device</a> cannot report boundaries, return false.</p>
@@ -2891,7 +2891,7 @@ window<c- p>.</c->requestAnimationFrame<c- p>(</c->onWindowAnimationFrame<c- p>)
      <p>When used with an <code class="idl"><a data-link-type="idl" href="#xrwebgllayer" id="ref-for-xrwebgllayer⑤">XRWebGLLayer</a></code> the <code class="idl"><a data-link-type="idl" href="#dom-xrviewport-x" id="ref-for-dom-xrviewport-x①">x</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-xrviewport-y" id="ref-for-dom-xrviewport-y①">y</a></code> attributes specify the lower left corner of the viewport rectangle, in pixels, with the viewport rectangle extending <code class="idl"><a data-link-type="idl" href="#dom-xrviewport-width" id="ref-for-dom-xrviewport-width①">width</a></code> pixels to the right of <code class="idl"><a data-link-type="idl" href="#dom-xrviewport-x" id="ref-for-dom-xrviewport-x②">x</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-xrviewport-height" id="ref-for-dom-xrviewport-height①">height</a></code> pixels above <code class="idl"><a data-link-type="idl" href="#dom-xrviewport-y" id="ref-for-dom-xrviewport-y②">y</a></code>. The values can be passed to the <a data-link-type="dfn" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.4" id="ref-for-5.14.4">WebGL viewport</a> function directly.</p>
    </ul>
    <div class="example" id="example-36db3bb0">
-    <a class="self-link" href="#example-36db3bb0"></a> The following code loops through all of the <code class="idl"><a data-link-type="idl" href="#xrview" id="ref-for-xrview⑧">XRView</a></code>s of an <code class="idl"><a data-link-type="idl" href="#xrviewerpose" id="ref-for-xrviewerpose④">XRViewerPose</a></code>, queries an <code class="idl"><a data-link-type="idl" href="#xrviewport" id="ref-for-xrviewport①">XRViewport</a></code> from an <code class="idl"><a data-link-type="idl" href="#xrwebgllayer" id="ref-for-xrwebgllayer⑥">XRWebGLLayer</a></code> for each, and uses them to set the appropriate <a data-link-type="dfn" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.4" id="ref-for-5.14.4①">WebGL viewport</a>s for rendering. 
+    <a class="self-link" href="#example-36db3bb0"></a> The following code loops through all of the <code class="idl"><a data-link-type="idl" href="#xrview" id="ref-for-xrview⑧">XRView</a></code>s of an <code class="idl"><a data-link-type="idl" href="#xrviewerpose" id="ref-for-xrviewerpose④">XRViewerPose</a></code>, queries an <code class="idl"><a data-link-type="idl" href="#xrviewport" id="ref-for-xrviewport①">XRViewport</a></code> from an <code class="idl"><a data-link-type="idl" href="#xrwebgllayer" id="ref-for-xrwebgllayer⑥">XRWebGLLayer</a></code> for each, and uses them to set the appropriate <a data-link-type="dfn" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.4" id="ref-for-5.14.4①">WebGL viewport</a>s for rendering.
 <pre class="highlight">xrSession<c- p>.</c->requestAnimationFrame<c- p>((</c->time<c- p>,</c-> xrFrame<c- p>)</c-> <c- p>=></c-> <c- p>{</c->
   <c- a>let</c-> viewer <c- o>=</c-> xrFrame<c- p>.</c->getViewerPose<c- p>(</c->xrReferenceSpace<c- p>);</c->
 
@@ -2909,7 +2909,7 @@ window<c- p>.</c->requestAnimationFrame<c- p>(</c->onWindowAnimationFrame<c- p>)
    <h3 class="heading settled" data-level="8.1" id="matrices"><span class="secno">8.1. </span><span class="content">Matrices</span><a class="self-link" href="#matrices"></a></h3>
    <p>WebXR provides various transforms in the form of <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="matrix" data-noexport id="matrix">matrices</dfn>. WebXR uses the WebGL conventions when communicating matrices, in which 4x4 matrices are given as 16 element <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-Float32Array" id="ref-for-idl-Float32Array①">Float32Array</a></code>s with column major storage, and are applied to column vectors by premultiplying the matrix from the left. They may be passed directly to WebGL’s <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10" id="ref-for-5.14.10">uniformMatrix4fv</a></code> function, used to create an equivalent <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dommatrix" id="ref-for-dommatrix">DOMMatrix</a></code>, or used with a variety of third party math libraries.</p>
    <div class="example" id="example-2a96dddb">
-    <a class="self-link" href="#example-2a96dddb"></a> Matrices returned from the WebXR Device API will be a 16 element <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-Float32Array" id="ref-for-idl-Float32Array②">Float32Array</a></code> laid out like so: 
+    <a class="self-link" href="#example-2a96dddb"></a> Matrices returned from the WebXR Device API will be a 16 element <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-Float32Array" id="ref-for-idl-Float32Array②">Float32Array</a></code> laid out like so:
 <pre>[a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15]
 </pre>
     <p>Applying this matrix as a transform to a column vector specified as a <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dompointreadonly" id="ref-for-dompointreadonly③">DOMPointReadOnly</a></code> like so:</p>
@@ -2960,10 +2960,10 @@ a3 a7 a11 a15     1     a3 * X + a7 * Y + a11 * Z + a15
      <li data-md>
       <p>Initialize <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation⑥">orientation</a></code> as follows:</p>
       <dl class="switch">
-       <dt> If <var>orientation</var> is not a <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dictdef-dompointinit" id="ref-for-dictdef-dompointinit③">DOMPointInit</a></code> 
-       <dd> Initialize <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation⑦">orientation</a></code> to <code>{ x: 0.0, y: 0.0, z: 0.0, w: 1.0 }</code>. 
-       <dt> Else 
-       <dd> Initialize <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation⑧">orientation</a></code>’s <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dom-dompointreadonly-x" id="ref-for-dom-dompointreadonly-x①">x</a></code> value to <var>orientation</var>’s x dictionary member, <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dom-dompointreadonly-y" id="ref-for-dom-dompointreadonly-y②">y</a></code> value to <var>orientation</var>’s y dictionary member, <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dom-dompointreadonly-z" id="ref-for-dom-dompointreadonly-z①">z</a></code> value to <var>orientation</var>’s z dictionary member and <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dom-dompointreadonly-w" id="ref-for-dom-dompointreadonly-w③">w</a></code> value to <var>orientation</var>’s w dictionary member. 
+       <dt> If <var>orientation</var> is not a <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dictdef-dompointinit" id="ref-for-dictdef-dompointinit③">DOMPointInit</a></code>
+       <dd> Initialize <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation⑦">orientation</a></code> to <code>{ x: 0.0, y: 0.0, z: 0.0, w: 1.0 }</code>.
+       <dt> Else
+       <dd> Initialize <var>transform</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrrigidtransform-orientation" id="ref-for-dom-xrrigidtransform-orientation⑧">orientation</a></code>’s <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dom-dompointreadonly-x" id="ref-for-dom-dompointreadonly-x①">x</a></code> value to <var>orientation</var>’s x dictionary member, <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dom-dompointreadonly-y" id="ref-for-dom-dompointreadonly-y②">y</a></code> value to <var>orientation</var>’s y dictionary member, <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dom-dompointreadonly-z" id="ref-for-dom-dompointreadonly-z①">z</a></code> value to <var>orientation</var>’s z dictionary member and <code class="idl"><a data-link-type="idl" href="https://drafts.fxtf.org/geometry-1/#dom-dompointreadonly-w" id="ref-for-dom-dompointreadonly-w③">w</a></code> value to <var>orientation</var>’s w dictionary member.
       </dl>
      <li data-md>
       <p>Initialize <var>transform</var>’s <a data-link-type="dfn" href="#xrrigidtransform-internal-matrix" id="ref-for-xrrigidtransform-internal-matrix">internal matrix</a> to <code>null</code>.</p>
@@ -3276,22 +3276,22 @@ a3 a7 a11 a15     1     a3 * X + a7 * Y + a11 * Z + a15
      <li data-md>
       <p>Initialize <var>layer</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrwebgllayer-ignoredepthvalues" id="ref-for-dom-xrwebgllayer-ignoredepthvalues①">ignoreDepthValues</a></code> as follows:</p>
       <dl class="switch">
-       <dt> If <var>layerInit</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrwebgllayerinit-ignoredepthvalues" id="ref-for-dom-xrwebgllayerinit-ignoredepthvalues">ignoreDepthValues</a></code> value is <code>false</code> and the <a data-link-type="dfn" href="#xr-compositor" id="ref-for-xr-compositor②">XR Compositor</a> will make use of depth values 
-       <dd> Initialize <var>layer</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrwebgllayer-ignoredepthvalues" id="ref-for-dom-xrwebgllayer-ignoredepthvalues②">ignoreDepthValues</a></code> to <code>false</code> 
-       <dt> Otherwise 
-       <dd> Initialize <var>layer</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrwebgllayer-ignoredepthvalues" id="ref-for-dom-xrwebgllayer-ignoredepthvalues③">ignoreDepthValues</a></code> to <code>true</code> 
+       <dt> If <var>layerInit</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrwebgllayerinit-ignoredepthvalues" id="ref-for-dom-xrwebgllayerinit-ignoredepthvalues">ignoreDepthValues</a></code> value is <code>false</code> and the <a data-link-type="dfn" href="#xr-compositor" id="ref-for-xr-compositor②">XR Compositor</a> will make use of depth values
+       <dd> Initialize <var>layer</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrwebgllayer-ignoredepthvalues" id="ref-for-dom-xrwebgllayer-ignoredepthvalues②">ignoreDepthValues</a></code> to <code>false</code>
+       <dt> Otherwise
+       <dd> Initialize <var>layer</var>’s <code class="idl"><a data-link-type="idl" href="#dom-xrwebgllayer-ignoredepthvalues" id="ref-for-dom-xrwebgllayer-ignoredepthvalues③">ignoreDepthValues</a></code> to <code>true</code>
       </dl>
      <li data-md>
       <p>Initialize <var>layer</var>’s <a data-link-type="dfn" href="#xrwebgllayer-composition-disabled" id="ref-for-xrwebgllayer-composition-disabled①">composition disabled</a> boolean as follows:</p>
       <dl class="switch">
-       <dt> If <var>session</var> is an <a data-link-type="dfn" href="#inline-session" id="ref-for-inline-session③">inline session</a> 
-       <dd> Initialize <var>layer</var>’s <a data-link-type="dfn" href="#xrwebgllayer-composition-disabled" id="ref-for-xrwebgllayer-composition-disabled②">composition disabled</a> to <code>true</code> 
-       <dt> Otherwise 
-       <dd> Initialize <var>layer</var>’s <a data-link-type="dfn" href="#xrwebgllayer-composition-disabled" id="ref-for-xrwebgllayer-composition-disabled③">composition disabled</a> boolean to <code>false</code> 
+       <dt> If <var>session</var> is an <a data-link-type="dfn" href="#inline-session" id="ref-for-inline-session③">inline session</a>
+       <dd> Initialize <var>layer</var>’s <a data-link-type="dfn" href="#xrwebgllayer-composition-disabled" id="ref-for-xrwebgllayer-composition-disabled②">composition disabled</a> to <code>true</code>
+       <dt> Otherwise
+       <dd> Initialize <var>layer</var>’s <a data-link-type="dfn" href="#xrwebgllayer-composition-disabled" id="ref-for-xrwebgllayer-composition-disabled③">composition disabled</a> boolean to <code>false</code>
       </dl>
      <li data-md>
       <dl class="switch">
-       <dt> If <var>layer</var>’s <a data-link-type="dfn" href="#xrwebgllayer-composition-disabled" id="ref-for-xrwebgllayer-composition-disabled④">composition disabled</a> boolean is <code>false</code>: 
+       <dt> If <var>layer</var>’s <a data-link-type="dfn" href="#xrwebgllayer-composition-disabled" id="ref-for-xrwebgllayer-composition-disabled④">composition disabled</a> boolean is <code>false</code>:
        <dd>
         <ol>
          <li data-md>
@@ -3303,7 +3303,7 @@ a3 a7 a11 a15     1     a3 * X + a7 * Y + a11 * Z + a15
          <li data-md>
           <p>If <var>layer</var>’s resources were unable to be created for any reason, throw an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#operationerror" id="ref-for-operationerror">OperationError</a></code> and abort these steps.</p>
         </ol>
-       <dt> Otherwise 
+       <dt> Otherwise
        <dd>
         <ol>
          <li data-md>
@@ -3458,7 +3458,7 @@ a3 a7 a11 a15     1     a3 * X + a7 * Y + a11 * Z + a15
     </ol>
    </div>
    <div class="example" id="example-81ea8b88">
-    <a class="self-link" href="#example-81ea8b88"></a> The following code creates a WebGL context that is compatible with an <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device②④">immersive XR device</a> and then uses it to create an <code class="idl"><a data-link-type="idl" href="#xrwebgllayer" id="ref-for-xrwebgllayer②③">XRWebGLLayer</a></code>. 
+    <a class="self-link" href="#example-81ea8b88"></a> The following code creates a WebGL context that is compatible with an <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device②④">immersive XR device</a> and then uses it to create an <code class="idl"><a data-link-type="idl" href="#xrwebgllayer" id="ref-for-xrwebgllayer②③">XRWebGLLayer</a></code>.
 <pre class="highlight"><c- a>function</c-> onXRSessionStarted<c- p>(</c->xrSession<c- p>)</c-> <c- p>{</c->
   <c- a>let</c-> glCanvas <c- o>=</c-> document<c- p>.</c->createElement<c- p>(</c-><c- u>"canvas"</c-><c- p>);</c->
   <c- a>let</c-> gl <c- o>=</c-> glCanvas<c- p>.</c->getContext<c- p>(</c-><c- u>"webgl"</c-><c- p>,</c-> <c- p>{</c-> xrCompatible<c- o>:</c-> <c- kc>true</c-> <c- p>});</c->
@@ -3471,7 +3471,7 @@ a3 a7 a11 a15     1     a3 * X + a7 * Y + a11 * Z + a15
    </div>
    <p>To set the <a data-link-type="dfn" href="#xr-compatible" id="ref-for-xr-compatible⑦">XR compatible</a> boolean after the context has been created, the <code class="idl"><a data-link-type="idl" href="#dom-webglrenderingcontextbase-makexrcompatible" id="ref-for-dom-webglrenderingcontextbase-makexrcompatible①">makeXRCompatible()</a></code> method is used.</p>
    <div class="algorithm" data-algorithm="make-xr-compatible">
-     The <dfn class="dfn-paneled idl-code" data-dfn-for="WebGLRenderingContextBase" data-dfn-type="method" data-export id="dom-webglrenderingcontextbase-makexrcompatible"><code>makeXRCompatible()</code></dfn> method ensures the <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#WebGLRenderingContextBase" id="ref-for-WebGLRenderingContextBase⑥">WebGLRenderingContextBase</a></code> is running on a <a data-link-type="dfn" href="#compatible-graphics-adapter" id="ref-for-compatible-graphics-adapter⑤">compatible graphics adapter</a> for the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device②⑤">immersive XR device</a>. 
+     The <dfn class="dfn-paneled idl-code" data-dfn-for="WebGLRenderingContextBase" data-dfn-type="method" data-export id="dom-webglrenderingcontextbase-makexrcompatible"><code>makeXRCompatible()</code></dfn> method ensures the <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#WebGLRenderingContextBase" id="ref-for-WebGLRenderingContextBase⑥">WebGLRenderingContextBase</a></code> is running on a <a data-link-type="dfn" href="#compatible-graphics-adapter" id="ref-for-compatible-graphics-adapter⑤">compatible graphics adapter</a> for the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device②⑤">immersive XR device</a>.
     <p>When this method is invoked, the user agent MUST run the following steps:</p>
     <ol>
      <li data-md>
@@ -3483,17 +3483,17 @@ a3 a7 a11 a15     1     a3 * X + a7 * Y + a11 * Z + a15
      <li data-md>
       <p>Set <var>context</var>’s <a data-link-type="dfn" href="#xr-compatible" id="ref-for-xr-compatible⑧">XR compatible</a> boolean as follows:</p>
       <dl class="switch">
-       <dt> If <var>context</var>’s <a data-link-type="dfn" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#webgl-context-lost-flag" id="ref-for-webgl-context-lost-flag">WebGL context lost flag</a> is set 
-       <dd> Set <var>context</var>’s <a data-link-type="dfn" href="#xr-compatible" id="ref-for-xr-compatible⑨">XR compatible</a> boolean to <code>false</code> and <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guide/#reject-promise" id="ref-for-reject-promise⑧">reject</a> <var>promise</var> with an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑤">InvalidStateError</a></code>. 
-       <dt> If the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device②⑥">immersive XR device</a> is <code>null</code> 
-       <dd> Set <var>context</var>’s <a data-link-type="dfn" href="#xr-compatible" id="ref-for-xr-compatible①⓪">XR compatible</a> boolean to <code>false</code> and <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guide/#reject-promise" id="ref-for-reject-promise⑨">reject</a> <var>promise</var> with an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑥">InvalidStateError</a></code>. 
-       <dt> If <var>context</var>’s <a data-link-type="dfn" href="#xr-compatible" id="ref-for-xr-compatible①①">XR compatible</a> boolean is <code>true</code> 
-       <dd> <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guide/#resolve-promise" id="ref-for-resolve-promise⑦">Resolve</a> <var>promise</var>. 
-       <dt> If <var>context</var> was created on a <a data-link-type="dfn" href="#compatible-graphics-adapter" id="ref-for-compatible-graphics-adapter⑥">compatible graphics adapter</a> for the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device②⑦">immersive XR device</a> 
-       <dd> Set <var>context</var>’s <a data-link-type="dfn" href="#xr-compatible" id="ref-for-xr-compatible①②">XR compatible</a> boolean to <code>true</code> and <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guide/#resolve-promise" id="ref-for-resolve-promise⑧">resolve</a> <var>promise</var>. 
-       <dt> Otherwise 
+       <dt> If <var>context</var>’s <a data-link-type="dfn" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#webgl-context-lost-flag" id="ref-for-webgl-context-lost-flag">WebGL context lost flag</a> is set
+       <dd> Set <var>context</var>’s <a data-link-type="dfn" href="#xr-compatible" id="ref-for-xr-compatible⑨">XR compatible</a> boolean to <code>false</code> and <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guide/#reject-promise" id="ref-for-reject-promise⑧">reject</a> <var>promise</var> with an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑤">InvalidStateError</a></code>.
+       <dt> If the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device②⑥">immersive XR device</a> is <code>null</code>
+       <dd> Set <var>context</var>’s <a data-link-type="dfn" href="#xr-compatible" id="ref-for-xr-compatible①⓪">XR compatible</a> boolean to <code>false</code> and <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guide/#reject-promise" id="ref-for-reject-promise⑨">reject</a> <var>promise</var> with an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑥">InvalidStateError</a></code>.
+       <dt> If <var>context</var>’s <a data-link-type="dfn" href="#xr-compatible" id="ref-for-xr-compatible①①">XR compatible</a> boolean is <code>true</code>
+       <dd> <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guide/#resolve-promise" id="ref-for-resolve-promise⑦">Resolve</a> <var>promise</var>.
+       <dt> If <var>context</var> was created on a <a data-link-type="dfn" href="#compatible-graphics-adapter" id="ref-for-compatible-graphics-adapter⑥">compatible graphics adapter</a> for the <a data-link-type="dfn" href="#xr-immersive-xr-device" id="ref-for-xr-immersive-xr-device②⑦">immersive XR device</a>
+       <dd> Set <var>context</var>’s <a data-link-type="dfn" href="#xr-compatible" id="ref-for-xr-compatible①②">XR compatible</a> boolean to <code>true</code> and <a data-link-type="dfn" href="https://www.w3.org/2001/tag/doc/promises-guide/#resolve-promise" id="ref-for-resolve-promise⑧">resolve</a> <var>promise</var>.
+       <dt> Otherwise
        <dd>
-         <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-task" id="ref-for-queue-a-task①⑥">Queue a task</a> on the <a data-link-type="dfn" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15" id="ref-for-5.15">WebGL task source</a> to perform the following steps: 
+         <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-task" id="ref-for-queue-a-task①⑥">Queue a task</a> on the <a data-link-type="dfn" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15" id="ref-for-5.15">WebGL task source</a> to perform the following steps:
         <ol>
          <li data-md>
           <p>Force <var>context</var> to be lost and <a data-link-type="dfn" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#CONTEXT_LOST" id="ref-for-CONTEXT_LOST">handle the context loss</a> as described by the WebGL specification.</p>
@@ -3519,7 +3519,7 @@ a3 a7 a11 a15     1     a3 * X + a7 * Y + a11 * Z + a15
     </ol>
    </div>
    <div class="example" id="example-d1414183">
-    <a class="self-link" href="#example-d1414183"></a> The following code creates an <code class="idl"><a data-link-type="idl" href="#xrwebgllayer" id="ref-for-xrwebgllayer②④">XRWebGLLayer</a></code> from a pre-existing WebGL context. 
+    <a class="self-link" href="#example-d1414183"></a> The following code creates an <code class="idl"><a data-link-type="idl" href="#xrwebgllayer" id="ref-for-xrwebgllayer②④">XRWebGLLayer</a></code> from a pre-existing WebGL context.
 <pre class="highlight"><c- a>let</c-> glCanvas <c- o>=</c-> document<c- p>.</c->createElement<c- p>(</c-><c- u>"canvas"</c-><c- p>);</c->
 <c- a>let</c-> gl <c- o>=</c-> glCanvas<c- p>.</c->getContext<c- p>(</c-><c- u>"webgl"</c-><c- p>);</c->
 
@@ -3647,7 +3647,7 @@ glCanvas<c- p>.</c->addEventListener<c- p>(</c-><c- u>"webglcontextrestored"</c-
    <h3 class="heading settled" data-level="13.1" id="sensitive-information-header"><span class="secno">13.1. </span><span class="content">Sensitive Information</span><a class="self-link" href="#sensitive-information-header"></a></h3>
    <p>In the context of XR, <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="sensitive-information">sensitive information</dfn> includes, but is not limited to, user-configurable data such as interpupillary distance (IPD) and sensor-based data such as <code class="idl"><a data-link-type="idl" href="#xrpose" id="ref-for-xrpose①①">XRPose</a></code>s. All <a data-link-type="dfn" href="#immersive-session" id="ref-for-immersive-session②②">immersive sessions</a> will expose some amount of sensitive data, due to the user’s pose being necessary to render anything. However, in some cases, the same sensitive information will also be exposed via <code class="idl"><a data-link-type="idl" href="#dom-xrsessionmode-inline" id="ref-for-dom-xrsessionmode-inline①⑥">"inline"</a></code> sessions.</p>
    <h4 class="heading settled" data-level="13.1.1" id="active-and-focused-document"><span class="secno">13.1.1. </span><span class="content">Active and focused document</span><a class="self-link" href="#active-and-focused-document"></a></h4>
-    A document MUST be <a data-link-type="dfn" href="#active-and-focused" id="ref-for-active-and-focused">active and focused</a> at the time that <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information②">sensitive information</a> is requested. 
+    A document MUST be <a data-link-type="dfn" href="#active-and-focused" id="ref-for-active-and-focused">active and focused</a> at the time that <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information②">sensitive information</a> is requested.
    <div class="algorithm" data-algorithm="document-is-active-and-focused">
     <p>To determine if a given <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document">Document</a></code> <var>document</var> is <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="active-and-focused">active and focused</dfn> the user agent MUST run the following steps:</p>
     <ol>
@@ -3660,7 +3660,7 @@ glCanvas<c- p>.</c->addEventListener<c- p>(</c-><c- u>"webglcontextrestored"</c-
     </ol>
    </div>
    <h4 class="heading settled" data-level="13.1.2" id="trustworthy-documents"><span class="secno">13.1.2. </span><span class="content">Trustworthy documents and origins</span><a class="self-link" href="#trustworthy-documents"></a></h4>
-    In order to expose any <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information③">sensitive information</a> the requesting document MUST be considered <a data-link-type="dfn" href="#trustworthy" id="ref-for-trustworthy">trustworthy</a>. 
+    In order to expose any <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information③">sensitive information</a> the requesting document MUST be considered <a data-link-type="dfn" href="#trustworthy" id="ref-for-trustworthy">trustworthy</a>.
    <div class="algorithm" data-algorithm="document-is-trustworthy">
     <p>To determine if a given <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document①">Document</a></code> <var>document</var> is <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="trustworthy">trustworthy</dfn> the user agent MUST run the following steps:</p>
     <ol>
@@ -3675,14 +3675,14 @@ glCanvas<c- p>.</c->addEventListener<c- p>(</c-><c- u>"webglcontextrestored"</c-
    <h3 class="heading settled" data-level="13.2" id="user-intention"><span class="secno">13.2. </span><span class="content">User intention</span><a class="self-link" href="#user-intention"></a></h3>
    <p>It is often necessary to be sure of <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="user-intent">user intent</dfn> before exposing sensitive information or allowing actions with a significant effect on the user’s experience. This intent may be communicated or observed in a number of ways.</p>
    <h4 class="heading settled" data-level="13.2.1" id="user-activation"><span class="secno">13.2.1. </span><span class="content">User activation</span><a class="self-link" href="#user-activation"></a></h4>
-    Events which are <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/interaction.html#triggered-by-user-activation" id="ref-for-triggered-by-user-activation①">triggered by user activation</a> MAY serve as an indication of <a data-link-type="dfn" href="#user-intent" id="ref-for-user-intent⑧">user intent</a> in some scenarios. 
+    Events which are <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/interaction.html#triggered-by-user-activation" id="ref-for-triggered-by-user-activation①">triggered by user activation</a> MAY serve as an indication of <a data-link-type="dfn" href="#user-intent" id="ref-for-user-intent⑧">user intent</a> in some scenarios.
    <h4 class="heading settled" data-level="13.2.2" id="application-launch"><span class="secno">13.2.2. </span><span class="content">Launching a web application</span><a class="self-link" href="#application-launch"></a></h4>
-    In some environments a page may be presented as an application, installed with the express intent of running immersive content. In that case <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="launching-a-web-application">launching a web application</dfn> MAY also serve as an indication of <a data-link-type="dfn" href="#user-intent" id="ref-for-user-intent⑨">user intent</a>. 
+    In some environments a page may be presented as an application, installed with the express intent of running immersive content. In that case <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="launching-a-web-application">launching a web application</dfn> MAY also serve as an indication of <a data-link-type="dfn" href="#user-intent" id="ref-for-user-intent⑨">user intent</a>.
    <h4 class="heading settled" data-level="13.2.3" id="user-consent"><span class="secno">13.2.3. </span><span class="content">Implicit and Explicit consent</span><a class="self-link" href="#user-consent"></a></h4>
-    A user agent MAY use <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="implicit-consent">implicit consent</dfn> based, for example, on the install status of a web application or frequency and recency of visits. Given the sensitivity of XR data, caution is strongly advised when relying on implicit signals. 
+    A user agent MAY use <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="implicit-consent">implicit consent</dfn> based, for example, on the install status of a web application or frequency and recency of visits. Given the sensitivity of XR data, caution is strongly advised when relying on implicit signals.
    <p>It is often useful to get <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="explicit-consent">explicit consent</dfn> from the user before exposing <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information④">sensitive information</a>. When gathering explicit user consent, user agents present an explanation of what is being requested and provide users the option to decline. Requests for user consent can be presented in many visual forms based on the features being protected and user agent choice.</p>
    <h4 class="heading settled" data-level="13.2.4" id="consent-duration"><span class="secno">13.2.4. </span><span class="content">Duration of consent</span><a class="self-link" href="#consent-duration"></a></h4>
-    It is recommended that once <a data-link-type="dfn" href="#explicit-consent" id="ref-for-explicit-consent⑤">explicit consent</a> is granted for a specific <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin">origin</a> that this consent persist until the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#browsing-context" id="ref-for-browsing-context①">browsing context</a> has ended. User agents may choose to lengthen or shorten this consent duration based upon implicit or explicit signals of <a data-link-type="dfn" href="#user-intent" id="ref-for-user-intent①⓪">user intent</a>, but implementations are advised to exercise caution when deviating from this recommendation, particularly when relying on implicit signals. For example, it may be appropriate for a web application installed with the express intent of running immersive content to persist the user’s consent, but not for an installed web application where immersive content is a secondary feature. 
+    It is recommended that once <a data-link-type="dfn" href="#explicit-consent" id="ref-for-explicit-consent⑤">explicit consent</a> is granted for a specific <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin">origin</a> that this consent persist until the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#browsing-context" id="ref-for-browsing-context①">browsing context</a> has ended. User agents may choose to lengthen or shorten this consent duration based upon implicit or explicit signals of <a data-link-type="dfn" href="#user-intent" id="ref-for-user-intent①⓪">user intent</a>, but implementations are advised to exercise caution when deviating from this recommendation, particularly when relying on implicit signals. For example, it may be appropriate for a web application installed with the express intent of running immersive content to persist the user’s consent, but not for an installed web application where immersive content is a secondary feature.
    <p>Regardless of how long the user agent chooses to persist the user’s consent, <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information⑤">sensitive information</a> MUST only be exposed by an <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession①①⑨">XRSession</a></code> which has not <a data-link-type="dfn" href="#ended" id="ref-for-ended④">ended</a>.</p>
    <h3 class="heading settled" data-level="13.3" id="mid-session-consent"><span class="secno">13.3. </span><span class="content">Mid-session consent</span><a class="self-link" href="#mid-session-consent"></a></h3>
    <p>There are multiple non-XR APIs which cause user agents to request <a data-link-type="dfn" href="#explicit-consent" id="ref-for-explicit-consent⑥">explicit consent</a> to use a feature. If the user agent will request the user’s consent while there is an <a data-link-type="dfn" href="#active-immersive-session" id="ref-for-active-immersive-session⑥">active immersive session</a>, the user agent MUST <a data-link-type="dfn" href="#shut-down-the-session" id="ref-for-shut-down-the-session③">shut down the session</a> prior to displaying the consent request to the user. If the user’s consent for the feature had been granted prior to the <a data-link-type="dfn" href="#active-immersive-session" id="ref-for-active-immersive-session⑦">active immersive session</a> being created the session does not need to be terminated.</p>
@@ -3690,15 +3690,15 @@ glCanvas<c- p>.</c->addEventListener<c- p>(</c-><c- u>"webglcontextrestored"</c-
    <h3 class="heading settled" data-level="13.4" id="data-adjustments-header"><span class="secno">13.4. </span><span class="content">Data adjustments</span><a class="self-link" href="#data-adjustments-header"></a></h3>
    <p>In some cases, security and privacy threats can be mitigated through <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="data-adjustment">data adjustment</dfn>s such as throttling, quantizing, rounding, limiting, or otherwise manipulating the data reported from the <a data-link-type="dfn" href="#xr-device" id="ref-for-xr-device①③">XR device</a>. This may sometimes be necessary to avoid fingerprinting, even in situations when <a data-link-type="dfn" href="#user-intent" id="ref-for-user-intent①①">user intent</a> has been established.  However, <a data-link-type="dfn" href="#data-adjustment" id="ref-for-data-adjustment">data adjustment</a> mitigations MUST only be used in situations which would not result in user discomfort.</p>
    <h4 class="heading settled" data-level="13.4.1" id="throttling-header"><span class="secno">13.4.1. </span><span class="content">Throttling</span><a class="self-link" href="#throttling-header"></a></h4>
-    <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="throttling">Throttling</dfn> is when <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information⑥">sensitive information</a> is reported at a lower frequency than otherwise possible. This mitigation has the potential to reduce a site’s ability to infer user intent, infer location, or perform user profiling. However, when not used appropriately throttling runs a significant risk of causing user discomfort. In addition, under many circumstances it may be inadequate to provide a complete mitigation. 
+    <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="throttling">Throttling</dfn> is when <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information⑥">sensitive information</a> is reported at a lower frequency than otherwise possible. This mitigation has the potential to reduce a site’s ability to infer user intent, infer location, or perform user profiling. However, when not used appropriately throttling runs a significant risk of causing user discomfort. In addition, under many circumstances it may be inadequate to provide a complete mitigation.
    <h4 class="heading settled" data-level="13.4.2" id="rounding-and-friends"><span class="secno">13.4.2. </span><span class="content">Rounding, quantization, and fuzzing</span><a class="self-link" href="#rounding-and-friends"></a></h4>
-    Rounding, quantization, and fuzzing are three categories of mitigations that modify the raw data that would otherwise be returned to the developer. <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="rounding">Rounding</dfn> decreases the precision of data by reducing the number of digits used to express it. <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="quantization">Quantization</dfn> constrains continuous data to instead report a discrete subset of values. Fuzzing is the introduction of slight, random errors into the the data. Collectively, these mitigations are useful to avoid fingerprinting, and are especially useful when doing so does not cause noticeable impact on user comfort. 
+    Rounding, quantization, and fuzzing are three categories of mitigations that modify the raw data that would otherwise be returned to the developer. <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="rounding">Rounding</dfn> decreases the precision of data by reducing the number of digits used to express it. <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="quantization">Quantization</dfn> constrains continuous data to instead report a discrete subset of values. Fuzzing is the introduction of slight, random errors into the the data. Collectively, these mitigations are useful to avoid fingerprinting, and are especially useful when doing so does not cause noticeable impact on user comfort.
    <h4 class="heading settled" data-level="13.4.3" id="limiting-header"><span class="secno">13.4.3. </span><span class="content">Limiting</span><a class="self-link" href="#limiting-header"></a></h4>
-    <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="limiting">Limiting</dfn> is when data is reported only when it is within a specific range. For example, it is possible to comfortably limit reporting positional pose data when a user has moved beyond a specific distance away from an approved location. Care should be taken to ensure that the user experience is not negatively affected when employing this mitigation. It is often desirable to avoid a 'hard stop' at the end of a range as this may cause disruptive user experiences. 
+    <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="limiting">Limiting</dfn> is when data is reported only when it is within a specific range. For example, it is possible to comfortably limit reporting positional pose data when a user has moved beyond a specific distance away from an approved location. Care should be taken to ensure that the user experience is not negatively affected when employing this mitigation. It is often desirable to avoid a 'hard stop' at the end of a range as this may cause disruptive user experiences.
    <h3 class="heading settled" data-level="13.5" id="protected-functionality"><span class="secno">13.5. </span><span class="content">Protected functionality</span><a class="self-link" href="#protected-functionality"></a></h3>
    <p>The <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information⑦">sensitive information</a> exposed by the API can be divided into categories that share threat profiles and necessary protections against those threats.</p>
    <h4 class="heading settled" data-level="13.5.1" id="protect-immersiveness"><span class="secno">13.5.1. </span><span class="content">Immersiveness</span><a class="self-link" href="#protect-immersiveness"></a></h4>
-    Users must be in control of when immersive sessions are created because the creation causes invasive changes on a user’s machine. For example, starting an <a data-link-type="dfn" href="#immersive-session" id="ref-for-immersive-session②③">immersive session</a> will engage the <a data-link-type="dfn" href="#xr-device" id="ref-for-xr-device①④">XR device</a> sensors, take over access to the device’s display, and begin presentating immersive content which may terminate another application’s access to the XR hardware. It may also incur significant power or performance overhead on some systems or trigger the launching of a status tray or storefront. 
+    Users must be in control of when immersive sessions are created because the creation causes invasive changes on a user’s machine. For example, starting an <a data-link-type="dfn" href="#immersive-session" id="ref-for-immersive-session②③">immersive session</a> will engage the <a data-link-type="dfn" href="#xr-device" id="ref-for-xr-device①④">XR device</a> sensors, take over access to the device’s display, and begin presentating immersive content which may terminate another application’s access to the XR hardware. It may also incur significant power or performance overhead on some systems or trigger the launching of a status tray or storefront.
    <div class="algorithm" data-algorithm="immersive-session-allowed">
     <p>To determine if an <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="immersive-session-request-is-allowed">immersive session request is allowed</dfn> the user agent MUST run the following steps:</p>
     <ol>
@@ -3725,7 +3725,7 @@ glCanvas<c- p>.</c->addEventListener<c- p>(</c-><c- u>"webglcontextrestored"</c-
     </ol>
    </div>
    <h4 class="heading settled" data-level="13.5.2" id="protect-poses"><span class="secno">13.5.2. </span><span class="content">Poses</span><a class="self-link" href="#protect-poses"></a></h4>
-    When based on sensor data, <code class="idl"><a data-link-type="idl" href="#xrpose" id="ref-for-xrpose①②">XRPose</a></code> and <code class="idl"><a data-link-type="idl" href="#xrviewerpose" id="ref-for-xrviewerpose①⓪">XRViewerPose</a></code> will expose <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information⑧">sensitive information</a> that may be misused in a number of ways, including input sniffing, gaze tracking, or fingerprinting. 
+    When based on sensor data, <code class="idl"><a data-link-type="idl" href="#xrpose" id="ref-for-xrpose①②">XRPose</a></code> and <code class="idl"><a data-link-type="idl" href="#xrviewerpose" id="ref-for-xrviewerpose①⓪">XRViewerPose</a></code> will expose <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information⑧">sensitive information</a> that may be misused in a number of ways, including input sniffing, gaze tracking, or fingerprinting.
    <div class="algorithm" data-algorithm="poses-allowed">
     <p>To determine if <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="poses-may-be-reported">poses may be reported</dfn> to an <code class="idl"><a data-link-type="idl" href="#xrsession" id="ref-for-xrsession①②⓪">XRSession</a></code> <var>session</var>, the user agent MUST run the following steps:</p>
     <ol>
@@ -3740,14 +3740,14 @@ glCanvas<c- p>.</c->addEventListener<c- p>(</c-><c- u>"webglcontextrestored"</c-
      <li data-md>
       <p>Determine if the pose data can be returned as follows:</p>
       <dl class="switch">
-       <dt> If the pose data is known by the user agent to not expose fingerprintable sensor data 
-       <dd> Return <code>true</code>. 
-       <dt> If <a data-link-type="dfn" href="#data-adjustment" id="ref-for-data-adjustment①">data adjustments</a> will be applied to the underlying sensor data to prevent fingerprinting or profiling 
-       <dd> Return <code>true</code>. 
-       <dt> If <a data-link-type="dfn" href="#user-intent" id="ref-for-user-intent①③">user intent</a> is well understood, either via <a data-link-type="dfn" href="#explicit-consent" id="ref-for-explicit-consent⑨">explicit consent</a> or <a data-link-type="dfn" href="#implicit-consent" id="ref-for-implicit-consent③">implicit consent</a> 
-       <dd> Return <code>true</code>. 
-       <dt> Otherwise 
-       <dd> Return <code>false</code>. 
+       <dt> If the pose data is known by the user agent to not expose fingerprintable sensor data
+       <dd> Return <code>true</code>.
+       <dt> If <a data-link-type="dfn" href="#data-adjustment" id="ref-for-data-adjustment①">data adjustments</a> will be applied to the underlying sensor data to prevent fingerprinting or profiling
+       <dd> Return <code>true</code>.
+       <dt> If <a data-link-type="dfn" href="#user-intent" id="ref-for-user-intent①③">user intent</a> is well understood, either via <a data-link-type="dfn" href="#explicit-consent" id="ref-for-explicit-consent⑨">explicit consent</a> or <a data-link-type="dfn" href="#implicit-consent" id="ref-for-implicit-consent③">implicit consent</a>
+       <dd> Return <code>true</code>.
+       <dt> Otherwise
+       <dd> Return <code>false</code>.
       </dl>
     </ol>
    </div>
@@ -3756,7 +3756,7 @@ glCanvas<c- p>.</c->addEventListener<c- p>(</c-><c- u>"webglcontextrestored"</c-
    <p>If the relationship between <code class="idl"><a data-link-type="idl" href="#xrview" id="ref-for-xrview①⑧">XRView</a></code>s could uniquely identify the <a data-link-type="dfn" href="#xr-device" id="ref-for-xr-device①⑤">XR device</a>, then the user agent MUST anonymize the <code class="idl"><a data-link-type="idl" href="#xrview" id="ref-for-xrview①⑨">XRView</a></code> data to prevent fingerprinting. The method of anonymization is at the discretion of the user agent.</p>
    <p class="note" role="note"><span>Note:</span> Furthermore, if the relationship between <code class="idl"><a data-link-type="idl" href="#xrview" id="ref-for-xrview②⓪">XRView</a></code>s is affected by a user-configured interpupillary distance (IPD), then it is strongly recommended that the user agent require <a data-link-type="dfn" href="#explicit-consent" id="ref-for-explicit-consent①⓪">explicit consent</a> during session creation, prior to reporting any <code class="idl"><a data-link-type="idl" href="#xrview" id="ref-for-xrview②①">XRView</a></code> data.</p>
    <h4 class="heading settled" data-level="13.5.3" id="protect-reference-spaces"><span class="secno">13.5.3. </span><span class="content">Reference spaces</span><a class="self-link" href="#protect-reference-spaces"></a></h4>
-    Depending on the reference spaces used, several different types of <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information①⓪">sensitive information</a> may be exposed to the application. 
+    Depending on the reference spaces used, several different types of <a data-link-type="dfn" href="#sensitive-information" id="ref-for-sensitive-information①⓪">sensitive information</a> may be exposed to the application.
    <ul>
     <li data-md>
      <p>On devices which support <a data-link-type="dfn" href="#6dof" id="ref-for-6dof⑦">6DoF</a> tracking, <code class="idl"><a data-link-type="idl" href="#dom-xrreferencespacetype-local" id="ref-for-dom-xrreferencespacetype-local⑧">"local"</a></code> reference spaces may be used to perform gait analysis, allowing user profiling and fingerprinting.</p>
@@ -3798,7 +3798,7 @@ glCanvas<c- p>.</c->addEventListener<c- p>(</c-><c- u>"webglcontextrestored"</c-
    </ul>
    <p>Broadly speaking, there are two options for user agents who wish to support <a data-link-type="dfn" href="#trusted-ui" id="ref-for-trusted-ui②">trusted UI</a>. One option is <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="trusted-immersive-ui">trusted immersive UI</dfn>, which is a <a data-link-type="dfn" href="#trusted-ui" id="ref-for-trusted-ui③">trusted UI</a> which does not exit immersive mode. Implementing <a data-link-type="dfn" href="#trusted-immersive-ui" id="ref-for-trusted-immersive-ui">trusted immersive UI</a> can be challenging because `XRWebGLLayer` buffers fill the XR Device display and the User Agent does not typically "reserve" pixels for its own use. User agents are not required to support <a data-link-type="dfn" href="#trusted-immersive-ui" id="ref-for-trusted-immersive-ui①">trusted immersive UI</a>, they may instead temporarily pause/exit immersive mode and show non-immersive <a data-link-type="dfn" href="#trusted-ui" id="ref-for-trusted-ui④">trusted UI</a> to the user.</p>
    <div class="note" role="note">
-     Note: Examples of <a data-link-type="dfn" href="#trusted-ui" id="ref-for-trusted-ui⑤">trusted UI</a> include: 
+     Note: Examples of <a data-link-type="dfn" href="#trusted-ui" id="ref-for-trusted-ui⑤">trusted UI</a> include:
     <ul>
      <li data-md>
       <p>The default 2D mode browser shown when not in immersive mode</p>
@@ -7349,58 +7349,66 @@ glCanvas<c- p>.</c->addEventListener<c- p>(</c-><c- u>"webglcontextrestored"</c-
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

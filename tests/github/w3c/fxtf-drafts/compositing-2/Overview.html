@@ -238,7 +238,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <li>advanced blending modes which allow control of how colors mix in the areas where shapes overlap
     <li>compositing groups
    </ul>
-    In addition, this specification will define CSS properties for blending and group isolation and the properties of the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-globalcompositeoperation" id="ref-for-dom-context-2d-globalcompositeoperation">globalCompositeOperation</a></code> attribute. 
+    In addition, this specification will define CSS properties for blending and group isolation and the properties of the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-globalcompositeoperation" id="ref-for-dom-context-2d-globalcompositeoperation">globalCompositeOperation</a></code> attribute.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -477,7 +477,7 @@ This behavior is described in more detail in <a href="#blending">Blending</a>.</
 <a data-link-type="value" href="#valdef-blend-mode-saturation" id="ref-for-valdef-blend-mode-saturation">saturation</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> <a data-link-type="value" href="#valdef-blend-mode-color" id="ref-for-valdef-blend-mode-color">color</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①④">|</a> <a data-link-type="value" href="#valdef-blend-mode-luminosity" id="ref-for-valdef-blend-mode-luminosity">luminosity</a></pre>
    <p class="note" role="note"><span>Note:</span> Applying a blendmode other than <a class="css" data-link-type="value" href="#valdef-blend-mode-normal" id="ref-for-valdef-blend-mode-normal①">normal</a> to the element must establish a new <a data-link-type="dfn" href="https://drafts.csswg.org/css2/visuren.html#x43" id="ref-for-x43③">stacking context</a>. This group must then be blended and composited with the <span id="ref-for-x43④">stacking context</span> that contains the element.</p>
    <div class="example" id="example-7e584e42">
-    <a class="self-link" href="#example-7e584e42"></a> 
+    <a class="self-link" href="#example-7e584e42"></a>
     <p>Given the following sample markup:</p>
 <pre>&lt;body>
   &lt;img src="ducky.png"/>
@@ -488,7 +488,7 @@ This behavior is described in more detail in <a href="#blending">Blending</a>.</
 </pre>
     <p> ... will produce the following result: </p>
     <div class="figure">
-      <img alt="example of an image of duck with the lime color of the document" src="examples/ducky_normal.png" style="width:30%"> 
+      <img alt="example of an image of duck with the lime color of the document" src="examples/ducky_normal.png" style="width:30%">
      <p class="caption"> Partially transparent image on a lime backdrop</p>
     </div>
     <p>If we change the style rule to include blending:</p>
@@ -497,12 +497,12 @@ img { mix-blend-mode: multiply; }
 </pre>
     <p> ... the output will be the image blending with the lime background of the &lt;body> element. </p>
     <div class="figure">
-      <img alt="example of an image of duck blending with the lime color of the document" src="examples/ducky_multiply.png" style="width:30%"> 
+      <img alt="example of an image of duck blending with the lime color of the document" src="examples/ducky_multiply.png" style="width:30%">
      <p class="caption"> Blending of a transparent image on a lime backdrop. </p>
     </div>
    </div>
    <div class="example" id="example-cc75cc4f">
-    <a class="self-link" href="#example-cc75cc4f"></a> 
+    <a class="self-link" href="#example-cc75cc4f"></a>
     <p>Given the following svg code:</p>
 <pre>&lt;svg>
   &lt;circle cx="40" cy="40" r="40" fill="red"/>
@@ -515,12 +515,12 @@ img { mix-blend-mode: multiply; }
 </pre>
     <p> ... the output will be blending of the 3 circles. Each circle is rendered from bottom to top. Where the elements overlap, the blend mode produces a change in color. </p>
     <div class="figure">
-      <img alt="example of 3 circles blending with a screen blend mode" src="examples/screen_example.svg" style="width:30%"> 
+      <img alt="example of 3 circles blending with a screen blend mode" src="examples/screen_example.svg" style="width:30%">
      <p class="caption"> Example of 3 circles blending with a screen blend mode </p>
     </div>
    </div>
    <div class="example" id="example-0c443386">
-    <a class="self-link" href="#example-0c443386"></a> 
+    <a class="self-link" href="#example-0c443386"></a>
     <p>In the following style sheet and document fragment:</p>
 <pre>body { background-color: lime; }
 div { background-color: red; width: 200px; opacity: .95}
@@ -534,13 +534,13 @@ img { mix-blend-mode: difference; }
 </pre>
     <p> ... the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-4/#propdef-opacity" id="ref-for-propdef-opacity">opacity</a> on the &lt;div> element is causing the creation of a stacking context. This causes the creation of a new group so the image doesn’t blend with the color of the &lt;body>. </p>
     <div class="figure">
-      <img alt="example of an image of duck blending with the lime color of the document" src="examples/ducky_difference.png" style="width:30%"> 
+      <img alt="example of an image of duck blending with the lime color of the document" src="examples/ducky_difference.png" style="width:30%">
      <p class="caption"> Example of blending within a stacking context.</p>
     </div>
     <p> Note how the image is not blending with the lime color. </p>
    </div>
    <div class="example" id="example-f6e93bc6">
-    <a class="self-link" href="#example-f6e93bc6"></a> 
+    <a class="self-link" href="#example-f6e93bc6"></a>
     <p>Given the following sample markup:</p>
 <pre>&lt;body>
    &lt;div>
@@ -560,7 +560,7 @@ p {
 }
 </pre>
     <div class="figure">
-      <img alt="example of text that has an overlay blend on top of a texture" src="examples/overlay_text.png" style="width:75%"> 
+      <img alt="example of text that has an overlay blend on top of a texture" src="examples/overlay_text.png" style="width:75%">
      <p class="caption"> Text with a blend overlay on top of an image. </p>
     </div>
    </div>
@@ -645,7 +645,7 @@ p {
    <p></p>
    <p>If the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background" id="ref-for-propdef-background">background</a> <a data-link-type="biblio" href="#biblio-css3bg">[CSS3BG]</a> shorthand is used, the <a class="property" data-link-type="propdesc" href="#propdef-background-blend-mode" id="ref-for-propdef-background-blend-mode④">background-blend-mode</a> property for that element must be reset to its initial value.</p>
    <div class="example" id="example-392c0544">
-    <a class="self-link" href="#example-392c0544"></a> 
+    <a class="self-link" href="#example-392c0544"></a>
     <p>Given the following sample markup:</p>
 <pre>&lt;body>
    &lt;div>&lt;/div>
@@ -663,7 +663,7 @@ div {
 }
 </pre>
     <div class="figure">
-      <img alt="example of div that has an image of a duck and a gradient that is blending" src="examples/ducky_background_blend.png" style="width:30%"> 
+      <img alt="example of div that has an image of a duck and a gradient that is blending" src="examples/ducky_background_blend.png" style="width:30%">
      <p class="caption"> Blending of 2 background images. </p>
     </div>
     <p> Note that the gradient is not blending with the color of <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element" id="ref-for-the-body-element">body</a>. Instead it retains its original color. </p>
@@ -679,7 +679,7 @@ div {
        <tbody>
         <tr>
          <td><em>Value:</em>  
-         <td> <a class="production css" data-link-type="type" href="#ltblendmodegt" id="ref-for-ltblendmodegt③" title="Expands to: color | color-burn | color-dodge | darken | difference | exclusion | hard-light | hue | lighten | luminosity | multiply | normal | overlay | saturation | screen | soft-light">&lt;blend-mode></a> | <a class="production css" data-link-type="type" href="#compositemode" id="ref-for-compositemode">&lt;composite-mode></a> 
+         <td> <a class="production css" data-link-type="type" href="#ltblendmodegt" id="ref-for-ltblendmodegt③" title="Expands to: color | color-burn | color-dodge | darken | difference | exclusion | hard-light | hue | lighten | luminosity | multiply | normal | overlay | saturation | screen | soft-light">&lt;blend-mode></a> | <a class="production css" data-link-type="type" href="#compositemode" id="ref-for-compositemode">&lt;composite-mode></a>
         <tr>
          <td><em>Initial:</em>  
          <td>source-over
@@ -705,11 +705,11 @@ transparent; i.e. there is no color contribution from any geometry because the g
 </pre>
    <p>Where</p>
    <ul>
-    <li>co: the premultiplied pixel value after compositing 
-    <li>Cs: the color value of the source graphic element being composited 
-    <li>αs: the alpha value of the source graphic element being composited 
-    <li>Cb: the color value of the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop③">backdrop</a> 
-    <li>αb: the alpha value of the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop④">backdrop</a> 
+    <li>co: the premultiplied pixel value after compositing
+    <li>Cs: the color value of the source graphic element being composited
+    <li>αs: the alpha value of the source graphic element being composited
+    <li>Cb: the color value of the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop③">backdrop</a>
+    <li>αb: the alpha value of the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop④">backdrop</a>
    </ul>
    <p class="note" role="note"><span>Note:</span> All values are between 0 and 1 inclusive.</p>
    <p>The pixel value after compositing (co) is given by adding the contributions from the source graphic element [Cs x αs] and the backdrop [Cb x αb x (1 - αs)].
@@ -726,9 +726,9 @@ The formula for the resultant alpha of the composite is</p>
 </pre>
    <p>Where</p>
    <ul>
-    <li>αo: the alpha value of the composite 
-    <li>αs: the alpha value of the graphic element being composited 
-    <li>αb: the alpha value of the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop⑤">backdrop</a> 
+    <li>αo: the alpha value of the composite
+    <li>αs: the alpha value of the graphic element being composited
+    <li>αb: the alpha value of the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop⑤">backdrop</a>
    </ul>
    <p></p>
    <div class="note" role="note">
@@ -738,9 +738,9 @@ The pre-multiplied value is given by </p>
 </pre>
     <p>with</p>
     <ul>
-     <li>cs: the pre-multiplied value 
-     <li>Cs: the color value 
-     <li>αs: the alpha value 
+     <li>cs: the pre-multiplied value
+     <li>Cs: the color value
+     <li>αs: the alpha value
     </ul>
     <p> Thus the formula for simple alpha compositing using pre-multiplied values becomes </p>
 <pre>co = cs + cb x (1 - αs)
@@ -754,9 +754,9 @@ The pre-multiplied value is given by </p>
    </div>
    <h4 class="heading settled" data-level="5.1.1" id="simplealphacompositingexamples"><span class="secno">5.1.1. </span><span class="content">Examples of simple alpha compositing</span><a class="self-link" href="#simplealphacompositingexamples"></a></h4>
    <div class="example" id="example-01feca57">
-    <a class="self-link" href="#example-01feca57"></a> 
+    <a class="self-link" href="#example-01feca57"></a>
     <div class="figure">
-      <img alt="Simple box showing alpha compositing" src="examples/simple_box.svg"> 
+      <img alt="Simple box showing alpha compositing" src="examples/simple_box.svg">
      <p class="caption"></p>
     </div>
     <p> This describes the most basic case. It consists of 1 shape that is filled with a solid color (α = 1).
@@ -774,9 +774,9 @@ co = RGB(1,0,0)
     <p></p>
    </div>
    <div class="example" id="example-189dd094">
-    <a class="self-link" href="#example-189dd094"></a> 
+    <a class="self-link" href="#example-189dd094"></a>
     <div class="figure">
-      <img alt="simple shape" src="examples/two_box.svg"> 
+      <img alt="simple shape" src="examples/two_box.svg">
      <p class="caption"></p>
     </div>
     <p> This is a more complex example. There is no transparency, but the 2 shapes intersect. </p>
@@ -805,9 +805,9 @@ Co = RGB(0, 0, 1)
     <p></p>
    </div>
    <div class="example" id="example-418d3c3f">
-    <a class="self-link" href="#example-418d3c3f"></a> 
+    <a class="self-link" href="#example-418d3c3f"></a>
     <div class="figure">
-      <img alt="interaction of a solid box with a transparent box on top" src="examples/two_box_transparency.svg"> 
+      <img alt="interaction of a solid box with a transparent box on top" src="examples/two_box_transparency.svg">
      <p class="caption"></p>
     </div>
     <p> This is an example where the shape has some transparency, but the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop⑥">backdrop</a> is fully opaque. </p>
@@ -835,9 +835,9 @@ Co = RGB(0.5, 0, 0.5)
     <p></p>
    </div>
    <div class="example" id="example-9f8d7c4e">
-    <a class="self-link" href="#example-9f8d7c4e"></a> 
+    <a class="self-link" href="#example-9f8d7c4e"></a>
     <div class="figure">
-      <img alt="interaction of 2 transparent boxes" src="examples/two_box_transparency_both.svg"> 
+      <img alt="interaction of 2 transparent boxes" src="examples/two_box_transparency_both.svg">
      <p class="caption"></p>
     </div>
     <p> Figure 4 shows an example where both the shape and the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop⑦">backdrop</a> are transparent. </p>
@@ -875,31 +875,31 @@ The terms used in these functions will be described in detail in the following s
 </pre>
    <p>Where:</p>
    <ul>
-    <li><strong>Cs</strong>: is the source color 
-    <li><strong>Cb</strong>: is the backdrop color 
-    <li><strong>αs</strong>: is the source alpha 
-    <li><strong>αb</strong>: is the backdrop alpha 
-    <li><strong>B(Cb, Cs)</strong>: is the mixing function 
-    <li><strong>Fa</strong>: is defined by the Porter Duff operator in use 
-    <li><strong>Fb</strong>: is defined by the Porter Duff operator in use 
+    <li><strong>Cs</strong>: is the source color
+    <li><strong>Cb</strong>: is the backdrop color
+    <li><strong>αs</strong>: is the source alpha
+    <li><strong>αb</strong>: is the backdrop alpha
+    <li><strong>B(Cb, Cs)</strong>: is the mixing function
+    <li><strong>Fa</strong>: is defined by the Porter Duff operator in use
+    <li><strong>Fb</strong>: is defined by the Porter Duff operator in use
    </ul>
    <h2 class="heading settled" data-level="7" id="backdropCalc"><span class="secno">7. </span><span class="content">Backdrop calculation</span><a class="self-link" href="#backdropCalc"></a></h2>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="backdrop">backdrop</dfn> is the content behind the element and is what the element is composited with.
 This means that the backdrop is the result of compositing all previous elements.</p>
    <h3 class="heading settled" data-level="7.1" id="backdropexamples"><span class="secno">7.1. </span><span class="content">Examples of backdrop calculation</span><a class="self-link" href="#backdropexamples"></a></h3>
    <div class="example" id="example-fddbb891">
-    <a class="self-link" href="#example-fddbb891"></a> 
+    <a class="self-link" href="#example-fddbb891"></a>
     <div class="figure">
-      <img alt="example of a simple backdrop calculation" src="examples/simple_backdrop.svg"> 
+      <img alt="example of a simple backdrop calculation" src="examples/simple_backdrop.svg">
      <p class="caption"></p>
     </div>
     <p> This example has 2 simple shapes. The backdrop for the blue shape includes the bottom right corner of the red shape .
 The dotted line shows the area that is examined during compositing of the blue shape. </p>
    </div>
    <div class="example" id="example-5dfb7a50">
-    <a class="self-link" href="#example-5dfb7a50"></a> 
+    <a class="self-link" href="#example-5dfb7a50"></a>
     <div class="figure">
-      <img alt="example of a backdrop with alpha" src="examples/simple_backdrop_alpha.svg"> 
+      <img alt="example of a backdrop with alpha" src="examples/simple_backdrop_alpha.svg">
      <p class="caption"></p>
     </div>
     <p> The shape in the backdrop has an alpha value. The alpha value of the backdrop shape is preserved when the backdrop is calculated. </p>
@@ -915,9 +915,9 @@ Steps shall be taken to ensure the group backdrop makes only a single contributi
    <dl>
     <dt id="initialbackdrop"><a class="self-link" href="#initialbackdrop"></a>initial backdrop
     <dd> The initial backdrop is the backdrop used for compositing the group’s first element. This will be the same as the group backdrop in a non-isolated
-group, or a fully transparent backdrop for an isolated group. 
+group, or a fully transparent backdrop for an isolated group.
     <dt id="groupbackdrop"><a class="self-link" href="#groupbackdrop"></a>group backdrop
-    <dd> The group backdrop is the result of compositing all elements up to but not including the first element in the group. 
+    <dd> The group backdrop is the result of compositing all elements up to but not including the first element in the group.
    </dl>
    <h3 class="heading settled" data-level="8.1" id="groupinvariance"><span class="secno">8.1. </span><span class="content">Group invariance</span><a class="self-link" href="#groupinvariance"></a></h3>
    <p>An important property of simple alpha compositing is its group invariance. This behavior is preserved in the more complex model described in this specification.
@@ -937,7 +937,7 @@ root element group, and any filter, clip-path, mask and and opacity is then
 applied, before compositing into the <a href="#rootgroup">root group</a>,
 if present.</p>
    <h3 class="heading settled" data-level="8.4" id="rootgroup"><span class="secno">8.4. </span><span class="content">The Root Group</span><a class="self-link" href="#rootgroup"></a></h3>
-    The root group encompasses the entire canvas and contains (or is below) the root element group of the root element of a web page. 
+    The root group encompasses the entire canvas and contains (or is below) the root element group of the root element of a web page.
    <p class="note" role="note">Browsers often use an infinite <a href="https://www.w3.org/TR/css-color-4/#sample">white, 100% opaque</a> root group,
 for final compositing, but this is not required. </p>
    <h2 class="heading settled" data-level="9" id="advancedcompositing"><span class="secno">9. </span><span class="content">Advanced compositing features</span><a class="self-link" href="#advancedcompositing"></a></h2>
@@ -963,7 +963,7 @@ for final compositing, but this is not required. </p>
     The contribution from each region to the final pixel color is defined by the coverage of the shape at that pixel, and the operator in use.
 Coverage is specified in terms of alpha. Full alpha (1) implies full coverage, while zero alpha (0) implies no coverage.
 This means that the area of each region within the sub-pixel is dependent on the coverage of each shape contributing to the pixel.
-The area of each region can be calculated with the following equations: 
+The area of each region can be calculated with the following equations:
    <div class="data">
     <table>
      <tbody>
@@ -1004,14 +1004,14 @@ The general form of the equation for coverage is:</p>
 </pre>
    <p>Where:</p>
    <ul>
-    <li>co is the output color pre-multiplied with the output alpha [0 &lt;= co &lt;= 1] 
-    <li>αs is the coverage of the source Fa is defined by the operator and controls inclusion of the source Cs is the color of the source (not multiplied by alpha) 
-    <li>αb is the coverage of the destination Fb is defined by the operator and controls inclusion of the destination Cb is the color of the destination (not multiplied by alpha) 
+    <li>co is the output color pre-multiplied with the output alpha [0 &lt;= co &lt;= 1]
+    <li>αs is the coverage of the source Fa is defined by the operator and controls inclusion of the source Cs is the color of the source (not multiplied by alpha)
+    <li>αb is the coverage of the destination Fb is defined by the operator and controls inclusion of the destination Cb is the color of the destination (not multiplied by alpha)
    </ul>
    <h4 class="heading settled" data-level="9.1.1" id="porterduffcompositingoperators_clear"><span class="secno">9.1.1. </span><span class="content">Clear</span><a class="self-link" href="#porterduffcompositingoperators_clear"></a></h4>
    <p>With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="clear">clear</dfn> compositing operator, no regions are enabled.</p>
    <div class="figure">
-     <img alt="example of porter duff clear" src="examples/PD_clr.svg"> 
+     <img alt="example of porter duff clear" src="examples/PD_clr.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = 0; Fb = 0
@@ -1019,9 +1019,9 @@ co = 0
 αo = 0
 </pre>
    <h4 class="heading settled" data-level="9.1.2" id="porterduffcompositingoperators_src"><span class="secno">9.1.2. </span><span class="content">Copy</span><a class="self-link" href="#porterduffcompositingoperators_src"></a></h4>
-    With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="copy">copy</dfn> compositing operator, only the source will be present. 
+    With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="copy">copy</dfn> compositing operator, only the source will be present.
    <div class="figure">
-     <img alt="example of porter duff copy" src="examples/PD_src.svg"> 
+     <img alt="example of porter duff copy" src="examples/PD_src.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = 1; Fb = 0
@@ -1031,7 +1031,7 @@ co = αs x Cs
    <h4 class="heading settled" data-level="9.1.3" id="porterduffcompositingoperators_dst"><span class="secno">9.1.3. </span><span class="content">Destination</span><a class="self-link" href="#porterduffcompositingoperators_dst"></a></h4>
    <p>With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="destination">destination</dfn> compositing operator, only the destination will be present.</p>
    <div class="figure">
-     <img alt="example of porter duff destination" src="examples/PD_dst.svg"> 
+     <img alt="example of porter duff destination" src="examples/PD_dst.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = 0; Fb = 1
@@ -1041,7 +1041,7 @@ co = αb x Cb
    <h4 class="heading settled" data-level="9.1.4" id="porterduffcompositingoperators_srcover"><span class="secno">9.1.4. </span><span class="content">Source Over</span><a class="self-link" href="#porterduffcompositingoperators_srcover"></a></h4>
    <p>With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="source-over">source-over</dfn> compositing operator, the source is placed over the destination.</p>
    <div class="figure">
-     <img alt="example of porter duff source over" src="examples/PD_src-over.svg"> 
+     <img alt="example of porter duff source over" src="examples/PD_src-over.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = 1; Fb = 1 – αs
@@ -1051,7 +1051,7 @@ co = αs x Cs + αb x Cb x (1 – αs)
    <h4 class="heading settled" data-level="9.1.5" id="porterduffcompositingoperators_dstover"><span class="secno">9.1.5. </span><span class="content">Destination Over</span><a class="self-link" href="#porterduffcompositingoperators_dstover"></a></h4>
    <p>With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="destination-over">destination-over</dfn> compositing operator, Destination is placed over the source.</p>
    <div class="figure">
-     <img alt="example of porter duff destination over" src="examples/PD_dst-over.svg"> 
+     <img alt="example of porter duff destination over" src="examples/PD_dst-over.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = 1 – αb; Fb = 1
@@ -1061,7 +1061,7 @@ co = αs x Cs x (1 – αb) + αb x Cb
    <h4 class="heading settled" data-level="9.1.6" id="porterduffcompositingoperators_srcin"><span class="secno">9.1.6. </span><span class="content">Source In</span><a class="self-link" href="#porterduffcompositingoperators_srcin"></a></h4>
    <p>With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="source-in">source-in</dfn> compositing operator, the parts of the source that overlap with the desitnation are placed.</p>
    <div class="figure">
-     <img alt="example of porter duff source in" src="examples/PD_src-in.svg"> 
+     <img alt="example of porter duff source in" src="examples/PD_src-in.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = αb; Fb = 0
@@ -1069,9 +1069,9 @@ co = αs x Cs x αb
 αo = αs x αb
 </pre>
    <h4 class="heading settled" data-level="9.1.7" id="porterduffcompositingoperators_dstin"><span class="secno">9.1.7. </span><span class="content">Destination In</span><a class="self-link" href="#porterduffcompositingoperators_dstin"></a></h4>
-    With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="destination-in">destination-in</dfn> compositing operator, the parts of the destination that overlap with the source are placed. 
+    With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="destination-in">destination-in</dfn> compositing operator, the parts of the destination that overlap with the source are placed.
    <div class="figure">
-     <img alt="example of porter duff destination in " src="examples/PD_dst-in.svg"> 
+     <img alt="example of porter duff destination in " src="examples/PD_dst-in.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = 0; Fb = αs
@@ -1081,7 +1081,7 @@ co = αb x Cb x αs
    <h4 class="heading settled" data-level="9.1.8" id="porterduffcompositingoperators_srcout"><span class="secno">9.1.8. </span><span class="content">Source Out</span><a class="self-link" href="#porterduffcompositingoperators_srcout"></a></h4>
    <p>With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="source-out">source-out</dfn> compositing operator, the parts of the source that fall outside of the destination are placed.</p>
    <div class="figure">
-     <img alt="example of porter duff source out" src="examples/PD_src-out.svg"> 
+     <img alt="example of porter duff source out" src="examples/PD_src-out.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = 1 – αb; Fb = 0
@@ -1091,7 +1091,7 @@ co = αs x Cs x (1 – αb)
    <h4 class="heading settled" data-level="9.1.9" id="porterduffcompositingoperators_dstout"><span class="secno">9.1.9. </span><span class="content">Destination Out</span><a class="self-link" href="#porterduffcompositingoperators_dstout"></a></h4>
    <p>With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="destination-out">destination-out</dfn> compositing operator, the parts of the destination that fall outside of the source are placed.</p>
    <div class="figure">
-     <img alt="example of porter duff destination out" src="examples/PD_dst-out.svg"> 
+     <img alt="example of porter duff destination out" src="examples/PD_dst-out.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = 0; Fb = 1 – αs
@@ -1101,7 +1101,7 @@ co = αb x Cb x (1 – αs)
    <h4 class="heading settled" data-level="9.1.10" id="porterduffcompositingoperators_srcatop"><span class="secno">9.1.10. </span><span class="content">Source Atop</span><a class="self-link" href="#porterduffcompositingoperators_srcatop"></a></h4>
    <p>With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="source-atop">source-atop</dfn> compositing operator, the parts of the source which overlap the destination replace the destination. The destination is placed everywhere else.</p>
    <div class="figure">
-     <img alt="example of porter duff source atop" src="examples/PD_src-atop.svg"> 
+     <img alt="example of porter duff source atop" src="examples/PD_src-atop.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = αb; Fb = 1 – αs
@@ -1111,7 +1111,7 @@ co = αs x Cs x αb + αb x Cb x (1 – αs)
    <h4 class="heading settled" data-level="9.1.11" id="porterduffcompositingoperators_dstatop"><span class="secno">9.1.11. </span><span class="content">Destination Atop</span><a class="self-link" href="#porterduffcompositingoperators_dstatop"></a></h4>
    <p>With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="destination-atop">destination-atop</dfn> compositing operator, the parts of the destination which overlaps the source replace the source. The source is placed everywhere else.</p>
    <div class="figure">
-     <img alt="example of porter duff destination atop" src="examples/PD_dst-atop.svg"> 
+     <img alt="example of porter duff destination atop" src="examples/PD_dst-atop.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = 1 - αb; Fb = αs
@@ -1121,7 +1121,7 @@ co = αs x Cs x (1 - αb) + αb x Cb x αs
    <h4 class="heading settled" data-level="9.1.12" id="porterduffcompositingoperators_xor"><span class="secno">9.1.12. </span><span class="content">XOR</span><a class="self-link" href="#porterduffcompositingoperators_xor"></a></h4>
    <p>With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="xor">xor</dfn> compositing operator, the non-overlapping regions of source and destination are combined.</p>
    <div class="figure">
-     <img alt="example of porter duff xor" src="examples/PD_xor.svg"> 
+     <img alt="example of porter duff xor" src="examples/PD_xor.svg">
     <p class="caption"></p>
    </div>
 <pre>Fa = 1 - αb; Fb = 1 – αs
@@ -1129,7 +1129,7 @@ co = αs x Cs x (1 - αb) + αb x Cb x (1 – αs)
 αo = αs x (1 - αb) + αb x (1 – αs)
 </pre>
    <h4 class="heading settled" data-level="9.1.13" id="porterduffcompositingoperators_plus"><span class="secno">9.1.13. </span><span class="content">Lighter</span><a class="self-link" href="#porterduffcompositingoperators_plus"></a></h4>
-    With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="lighter">lighter</dfn> compositing operator, the sum of the source image and destination image is displayed. It is defined in the Porter Duff paper as the <span class="css">plus</span> operator <a data-link-type="biblio" href="#biblio-porterduff">[PORTERDUFF]</a>. 
+    With the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="lighter">lighter</dfn> compositing operator, the sum of the source image and destination image is displayed. It is defined in the Porter Duff paper as the <span class="css">plus</span> operator <a data-link-type="biblio" href="#biblio-porterduff">[PORTERDUFF]</a>.
 <pre>Fa = 1; Fb = 1
 co = αs x Cs + αb x Cb;
 αo = αs + αb
@@ -1157,10 +1157,10 @@ In practice, this is usually all performed in one step. <br>The blending calcula
 </pre>
    <p>with:</p>
    <ul>
-    <li>Cm: the result color after blending 
-    <li>B: the formula that does the blending 
-    <li>Cb: the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop⑨">backdrop</a> color 
-    <li>Cs: the source color 
+    <li>Cm: the result color after blending
+    <li>B: the formula that does the blending
+    <li>Cb: the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop⑨">backdrop</a> color
+    <li>Cs: the source color
    </ul>
    <p>The result of the mixing formula must be clamped to the minimum and maximum values of the color range.</p>
    <p>The result of the mixing function is modulated by the backdrop alpha. A fully opaque backdrop allows the mixing function to be fully realized.
@@ -1170,16 +1170,16 @@ The value of the new color  becomes:</p>
 </pre>
    <p>with:</p>
    <ul>
-    <li>Cr: the result color 
-    <li>B: the formula that does the blending 
-    <li>Cs: the source color 
-    <li>Cb: the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop①⓪">backdrop</a> color 
-    <li>αb: the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop①①">backdrop</a> alpha 
+    <li>Cr: the result color
+    <li>B: the formula that does the blending
+    <li>Cs: the source color
+    <li>Cb: the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop①⓪">backdrop</a> color
+    <li>αb: the <a data-link-type="dfn" href="#backdrop" id="ref-for-backdrop①①">backdrop</a> alpha
    </ul>
    <div class="example" id="example-a731b849">
-    <a class="self-link" href="#example-a731b849"></a> 
+    <a class="self-link" href="#example-a731b849"></a>
     <div class="figure">
-      <img alt="example of blending with opacity" src="examples/blend_background_opacity.svg"> 
+      <img alt="example of blending with opacity" src="examples/blend_background_opacity.svg">
      <p class="caption"></p>
     </div>
     <p> This example has a red rectangle with a blending mode that is placed on top of a set of green rectangles that have different levels of opacity.</p>
@@ -1204,7 +1204,7 @@ For simplicity, all the examples in this chapter use <a data-link-type="dfn" hre
 <pre>B(Cb, Cs) = Cs
 </pre>
    <div class="figure">
-     <img alt="example of normal blending" src="examples/normal.png"> 
+     <img alt="example of normal blending" src="examples/normal.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.2" id="blendingmultiply"><span class="secno">10.1.2. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-multiply">multiply</dfn> blend mode</span><a class="self-link" href="#blendingmultiply"></a></h4>
@@ -1214,7 +1214,7 @@ For simplicity, all the examples in this chapter use <a data-link-type="dfn" hre
 </pre>
    <p></p>
    <div class="figure">
-     <img alt="example of multiply blending" src="examples/multiply.png"> 
+     <img alt="example of multiply blending" src="examples/multiply.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.3" id="blendingscreen"><span class="secno">10.1.3. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-screen">screen</dfn> blend mode</span><a class="self-link" href="#blendingscreen"></a></h4>
@@ -1225,7 +1225,7 @@ For simplicity, all the examples in this chapter use <a data-link-type="dfn" hre
 </pre>
    <p></p>
    <div class="figure">
-     <img alt="example of screen blending" src="examples/screen.png"> 
+     <img alt="example of screen blending" src="examples/screen.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.4" id="blendingoverlay"><span class="secno">10.1.4. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-overlay">overlay</dfn> blend mode</span><a class="self-link" href="#blendingoverlay"></a></h4>
@@ -1235,7 +1235,7 @@ For simplicity, all the examples in this chapter use <a data-link-type="dfn" hre
 </pre>
    <p>Overlay is the inverse of the <a class="css" data-link-type="value" href="#valdef-blend-mode-hard-light" id="ref-for-valdef-blend-mode-hard-light①">hard-light</a> blend mode. See the definition of <span id="ref-for-valdef-blend-mode-hard-light②">hard-light</span> for the formula.</p>
    <div class="figure">
-     <img alt="example of overlay blending" src="examples/overlay.png"> 
+     <img alt="example of overlay blending" src="examples/overlay.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.5" id="blendingdarken"><span class="secno">10.1.5. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-darken">darken</dfn> blend mode</span><a class="self-link" href="#blendingdarken"></a></h4>
@@ -1244,7 +1244,7 @@ For simplicity, all the examples in this chapter use <a data-link-type="dfn" hre
 <pre>B(Cb, Cs) = min(Cb, Cs)
 </pre>
    <div class="figure">
-     <img alt="example of darken blending" src="examples/darken.png"> 
+     <img alt="example of darken blending" src="examples/darken.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.6" id="blendinglighten"><span class="secno">10.1.6. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-lighten">lighten</dfn> blend mode</span><a class="self-link" href="#blendinglighten"></a></h4>
@@ -1254,7 +1254,7 @@ For simplicity, all the examples in this chapter use <a data-link-type="dfn" hre
 </pre>
    <p class="note" role="note"><span>Note:</span> The result must be rounded down if it exceeds the range.</p>
    <div class="figure">
-     <img alt="example of lighten blending" src="examples/lighten.png"> 
+     <img alt="example of lighten blending" src="examples/lighten.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.7" id="blendingcolordodge"><span class="secno">10.1.7. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-color-dodge">color-dodge</dfn> blend mode</span><a class="self-link" href="#blendingcolordodge"></a></h4>
@@ -1267,7 +1267,7 @@ else
     B(Cb, Cs) = min(1, Cb / (1 - Cs))
 </pre>
    <div class="figure">
-     <img alt="example of color dodge blending" src="examples/colordodge.png"> 
+     <img alt="example of color dodge blending" src="examples/colordodge.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.8" id="blendingcolorburn"><span class="secno">10.1.8. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-color-burn">color-burn</dfn> blend mode</span><a class="self-link" href="#blendingcolorburn"></a></h4>
@@ -1280,7 +1280,7 @@ else
     B(Cb, Cs) = 1 - min(1, (1 - Cb) / Cs)
 </pre>
    <div class="figure">
-     <img alt="example of color burn blending" src="examples/colorburn.png"> 
+     <img alt="example of color burn blending" src="examples/colorburn.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.9" id="blendinghardlight"><span class="secno">10.1.9. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-hard-light">hard-light</dfn> blend mode</span><a class="self-link" href="#blendinghardlight"></a></h4>
@@ -1292,7 +1292,7 @@ else
 </pre>
    <p>See the definition of <a class="css" data-link-type="value" href="#valdef-blend-mode-multiply" id="ref-for-valdef-blend-mode-multiply①">multiply</a> and <a class="css" data-link-type="value" href="#valdef-blend-mode-screen" id="ref-for-valdef-blend-mode-screen①">screen</a> for their formulas.</p>
    <div class="figure">
-     <img alt="example of hard light blending" src="examples/hardlight.png"> 
+     <img alt="example of hard light blending" src="examples/hardlight.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.10" id="blendingsoftlight"><span class="secno">10.1.10. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-soft-light">soft-light</dfn> blend mode</span><a class="self-link" href="#blendingsoftlight"></a></h4>
@@ -1308,7 +1308,7 @@ with
         D(Cb) = sqrt(Cb)
 </pre>
    <div class="figure">
-     <img alt="example of soft light blending" src="examples/softlight.png"> 
+     <img alt="example of soft light blending" src="examples/softlight.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.11" id="blendingdifference"><span class="secno">10.1.11. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-difference">difference</dfn> blend mode</span><a class="self-link" href="#blendingdifference"></a></h4>
@@ -1318,7 +1318,7 @@ with
 </pre>
    <p></p>
    <div class="figure">
-     <img alt="example of difference blending" src="examples/difference.png"> 
+     <img alt="example of difference blending" src="examples/difference.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.1.12" id="blendingexclusion"><span class="secno">10.1.12. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-exclusion">exclusion</dfn> blend mode</span><a class="self-link" href="#blendingexclusion"></a></h4>
@@ -1327,7 +1327,7 @@ with
 </pre>
    <p></p>
    <div class="figure">
-     <img alt="example of exclusion blending" src="examples/exclusion.png"> 
+     <img alt="example of exclusion blending" src="examples/exclusion.png">
     <p class="caption"></p>
    </div>
    <h3 class="heading settled" data-level="10.2" id="blendingnonseparable"><span class="secno">10.2. </span><span class="content">Non-separable blend modes</span><a class="self-link" href="#blendingnonseparable"></a></h3>
@@ -1379,7 +1379,7 @@ components having the minimum, middle, and maximum values upon entry to the func
 <pre>B(Cb, Cs) = SetLum(SetSat(Cs, Sat(Cb)), Lum(Cb))
 </pre>
    <div class="figure">
-     <img alt="example of hue blending" src="examples/hue.png"> 
+     <img alt="example of hue blending" src="examples/hue.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.2.2" id="blendingsaturation"><span class="secno">10.2.2. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-saturation">saturation</dfn> blend mode</span><a class="self-link" href="#blendingsaturation"></a></h4>
@@ -1387,7 +1387,7 @@ components having the minimum, middle, and maximum values upon entry to the func
 <pre>B(Cb, Cs) = SetLum(SetSat(Cb, Sat(Cs)), Lum(Cb))
 </pre>
    <div class="figure">
-     <img alt="example of saturation blending" src="examples/saturation.png"> 
+     <img alt="example of saturation blending" src="examples/saturation.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.2.3" id="blendingcolor"><span class="secno">10.2.3. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-color">color</dfn> blend mode</span><a class="self-link" href="#blendingcolor"></a></h4>
@@ -1395,7 +1395,7 @@ components having the minimum, middle, and maximum values upon entry to the func
 <pre>B(Cb, Cs) = SetLum(Cs, Lum(Cb))
 </pre>
    <div class="figure">
-     <img alt="example of color blending" src="examples/color.png"> 
+     <img alt="example of color blending" src="examples/color.png">
     <p class="caption"></p>
    </div>
    <h4 class="heading settled" data-level="10.2.4" id="blendingluminosity"><span class="secno">10.2.4. </span><span class="content"><dfn class="dfn-paneled css" data-dfn-for="<blend-mode>" data-dfn-type="value" data-export id="valdef-blend-mode-luminosity">luminosity</dfn> blend mode</span><a class="self-link" href="#blendingluminosity"></a></h4>
@@ -1403,7 +1403,7 @@ components having the minimum, middle, and maximum values upon entry to the func
 <pre>B(Cb, Cs) = SetLum(Cb, Lum(Cs))
 </pre>
    <div class="figure">
-     <img alt="example of luminosity blending" src="examples/luminosity.png"> 
+     <img alt="example of luminosity blending" src="examples/luminosity.png">
     <p class="caption"></p>
    </div>
    <h3 class="heading settled" data-level="10.3" id="isolationblending"><span class="secno">10.3. </span><span class="content">Effect of group isolation on blending</span><a class="self-link" href="#isolationblending"></a></h3>
@@ -1415,7 +1415,7 @@ components having the minimum, middle, and maximum values upon entry to the func
 In the normal group, the elements within the group are composited onto the initial backdrop containing the land and sky. Therefore the elements of the airplane multiply with the land and sky.
 In both instances, the result of the group composite is composited onto the land and sky using the normal mix-blend-mode (the default mix-blend-mode applied to the group). </p>
     <div class="figure">
-      <img alt="example of isolated group blending" src="examples/isolate_blend_example.png"> 
+      <img alt="example of isolated group blending" src="examples/isolate_blend_example.png">
      <p class="caption"></p>
     </div>
    </div>
@@ -1455,11 +1455,11 @@ Working draft of 10 October 2013</a>:</p>
 Draft of 2013-06-25</a>:</p>
    <ul>
     <li>clipping was removed as one of the operators that
- creates an isolated group in SVG 
+ creates an isolated group in SVG
     <li>background-blend-mode was changed so it matches
- repeating behavior of other background syntaxes. 
-    <li>The mix-composite property was removed 
-    <li>all open issues were resolved 
+ repeating behavior of other background syntaxes.
+    <li>The mix-composite property was removed
+    <li>all open issues were resolved
    </ul>
   </main>
   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -1477,7 +1477,7 @@ Draft of 2013-06-25</a>:</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1490,14 +1490,14 @@ Draft of 2013-06-25</a>:</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1548,7 +1548,7 @@ Draft of 2013-06-25</a>:</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1746,7 +1746,7 @@ Draft of 2013-06-25</a>:</p>
    <dt id="biblio-css-color-4">[CSS-COLOR-4]
    <dd>Tab Atkins Jr.; Chris Lilley. <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a>. 5 March 2019. WD. URL: <a href="https://www.w3.org/TR/css-color-4/">https://www.w3.org/TR/css-color-4/</a>
    <dt id="biblio-porterduff">[PORTERDUFF]
-   <dd>Thomas Porter; Tom Duff. Compositing digital images. July 1984. 
+   <dd>Thomas Porter; Tom Duff. Compositing digital images. July 1984.
   </dl>
   <h2 class="no-num no-ref heading settled" id="property-index"><span class="content">Property Index</span><a class="self-link" href="#property-index"></a></h2>
   <div class="big-element-wrapper">
@@ -2062,57 +2062,65 @@ Draft of 2013-06-25</a>:</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

@@ -235,7 +235,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    <p>This document defines the <a class="property" data-link-type="propdesc" href="#propdef-will-change" id="ref-for-propdef-will-change">will-change</a> CSS property, which allows an author to inform the UA ahead of time of what kinds of changes they are likely to make to an element.  This allows the UA to optimize how they handle the element ahead of time, performing potentially-expensive work preparing for an animation before the animation actually begins.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -309,7 +309,7 @@ on screen, on paper, etc.
 		where they can render independently from the rest of the page and be composited in later.
 		This isolates the rendering of the content so that the rest of the page doesn’t have to be rerendered
 		if the element’s transform is the only thing that changes between frames,
-		and often provides significant speed benefits. 
+		and often provides significant speed benefits.
     <p>However, setting up the element in a fresh layer is a relatively expensive operation,
 		which can delay the start of a <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-transforms-1/#propdef-transform" id="ref-for-propdef-transform">transform</a> animation by a noticeable fraction of a second.</p>
    </div>
@@ -347,7 +347,7 @@ on screen, on paper, etc.
     <a class="self-link" href="#example-831888c0"></a> For example,
 		specifying <a class="property" data-link-type="propdesc" href="#propdef-will-change" id="ref-for-propdef-will-change①③">will-change</a> for a small number of persistent UI elements in a page
 		which should react snappily to the user
-		is appropriate: 
+		is appropriate:
 <pre>body > .sidebar {
    will-change: transform;
    /* Will use 'transform' to slide it out
@@ -364,7 +364,7 @@ on screen, on paper, etc.
 		or just regularly takes some action that causes an animation.
 		In this case, just declaring the <a class="property" data-link-type="propdesc" href="#propdef-will-change" id="ref-for-propdef-will-change①④">will-change</a> value in the stylesheet is fine,
 		as it accurately describes that the element will regularly/constantly change,
-		and so should be kept optimized. 
+		and so should be kept optimized.
 <pre>.cats-flying-around-the-screen {
   will-change: left, top;
 }
@@ -384,7 +384,7 @@ on screen, on paper, etc.
 		for the optimizations to be set up,
 		as human reaction time is relatively slow.
 		This can be done either via scripting,
-		or rather simply with a CSS rule: 
+		or rather simply with a CSS rule:
 <pre>.element { transition: opacity .2s; opacity: 1; }
 .element:hover { will-change: opacity; }
 .element:active { opacity: .3; }
@@ -414,28 +414,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-will-change">will-change</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="#typedef-animateable-feature" id="ref-for-typedef-animateable-feature">&lt;animateable-feature></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma">#</a> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="#typedef-animateable-feature" id="ref-for-typedef-animateable-feature">&lt;animateable-feature></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified value 
+      <td>specified value
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
 <pre class="prod"><dfn class="dfn-paneled" data-dfn-type="type" data-export id="typedef-animateable-feature">&lt;animateable-feature></dfn> = scroll-position <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> contents <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> <a class="production" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value">&lt;custom-ident></a></pre>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-will-change" id="ref-for-propdef-will-change②③">will-change</a> property provides a rendering hint to the user agent,
@@ -450,20 +450,20 @@ on screen, on paper, etc.
 		to avoid exhausting GPU memory. </div>
    <p>Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="will-change" data-dfn-type="value" data-export id="valdef-will-change-auto">auto</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="will-change" data-dfn-type="value" data-export id="valdef-will-change-auto">auto</dfn>
     <dd> Expresses no particular intent;
-			the user agent should apply whatever heuristics and optimizations it normally does. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="will-change" data-dfn-type="value" data-export id="valdef-will-change-scroll-position">scroll-position</dfn> 
+			the user agent should apply whatever heuristics and optimizations it normally does.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="will-change" data-dfn-type="value" data-export id="valdef-will-change-scroll-position">scroll-position</dfn>
     <dd>
-      Indicates that the author expects to animate or change the scroll position of the element in the near future. 
+      Indicates that the author expects to animate or change the scroll position of the element in the near future.
      <p class="example" id="example-c0594e8a"><a class="self-link" href="#example-c0594e8a"></a> For example, browsers often only render the content in the "scroll window" on a scrollable element,
 				and some of the content past that window,
 				balancing memory and time savings from the skipped rendering against making scrolling look nice.
 				A browser might take this value as a signal to expand the range of content around the scroll window that is rendered,
 				so that longer/faster scrolls can be done smoothly. </p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="will-change" data-dfn-type="value" data-export id="valdef-will-change-contents">contents</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="will-change" data-dfn-type="value" data-export id="valdef-will-change-contents">contents</dfn>
     <dd>
-      Indicates that the author expects to animate or change something about the element’s contents in the near future. 
+      Indicates that the author expects to animate or change something about the element’s contents in the near future.
      <div class="example" id="example-5dd10a2f">
       <a class="self-link" href="#example-5dd10a2f"></a> For example, browsers often “cache” rendering of elements over time,
 				because most things don’t change very often,
@@ -471,7 +471,7 @@ on screen, on paper, etc.
 				However, if an element <em>does</em> change its contents continually,
 				producing and maintaining this cache is a waste of time.
 				A browser might take this value as a signal to cache less aggressively on the element,
-				or avoid caching at all and just continually re-render the element from scratch. 
+				or avoid caching at all and just continually re-render the element from scratch.
       <p>This value is mostly intended to help browsers optimize JS-based animations of content,
 				which change aspects of an element’s contents many times per second.
 				This kind of optimization, when possible,
@@ -482,12 +482,12 @@ on screen, on paper, etc.
 			Using this on an element “high up” in your document might be very bad for your page’s performance;
 			try to only use this on elements near the “bottom” of your document tree,
 			containing as little of the document as possible.</p>
-    <dt><dfn class="css" data-dfn-for="will-change" data-dfn-type="value" data-export id="valdef-will-change-custom-ident"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value①">&lt;custom-ident></a><a class="self-link" href="#valdef-will-change-custom-ident"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="will-change" data-dfn-type="value" data-export id="valdef-will-change-custom-ident"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value①">&lt;custom-ident></a><a class="self-link" href="#valdef-will-change-custom-ident"></a></dfn>
     <dd>
       If the <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value②">&lt;custom-ident></a> is an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ascii-case-insensitive" id="ref-for-ascii-case-insensitive">ASCII case-insensitive</a> match for the name of a built-in CSS property,
 			it indicates that the author expects to animate or change the property with the given name on the element in the near future.
 			If the property given is a shorthand,
-			it indicates the expectation for all the longhands the shorthand expands to. 
+			it indicates the expectation for all the longhands the shorthand expands to.
      <p class="example" id="example-03a1e696"><a class="self-link" href="#example-03a1e696"></a> For example, setting <a class="css" data-link-type="propdesc" href="#propdef-will-change" id="ref-for-propdef-will-change②⑥">will-change: background;</a> is identical to setting <span class="css" id="ref-for-propdef-will-change②⑦">will-change: background-image, background-position, ...</span> for all the properties that <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background" id="ref-for-propdef-background">background</a> expands into. </p>
      <p>The <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value③">&lt;custom-ident></a> production used here excludes the keywords <span class="css">will-change</span>, <span class="css">none</span>, <span class="css">all</span>, <a class="css" data-link-type="maybe" href="#valdef-will-change-auto" id="ref-for-valdef-will-change-auto">auto</a>, <a class="css" data-link-type="maybe" href="#valdef-will-change-scroll-position" id="ref-for-valdef-will-change-scroll-position">scroll-position</a>, and <a class="css" data-link-type="maybe" href="#valdef-will-change-contents" id="ref-for-valdef-will-change-contents">contents</a>,
 			in addition to the keywords normally excluded from <span class="production" id="ref-for-identifier-value④">&lt;custom-ident></span>.</p>
@@ -557,7 +557,7 @@ and doing a lot of the initial design work.</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -570,14 +570,14 @@ and doing a lot of the initial design work.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -628,7 +628,7 @@ and doing a lot of the initial design work.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -644,51 +644,51 @@ and doing a lot of the initial design work.</p>
   <aside class="dfn-panel" data-for="term-for-propdef-background">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background">https://drafts.csswg.org/css-backgrounds-3/#propdef-background</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-background">2. 
+    <li><a href="#ref-for-propdef-background">2.
 Hinting at Future Behavior: the will-change property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-opacity">
    <a href="https://drafts.csswg.org/css-color-4/#propdef-opacity">https://drafts.csswg.org/css-color-4/#propdef-opacity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-opacity">2. 
+    <li><a href="#ref-for-propdef-opacity">2.
 Hinting at Future Behavior: the will-change property</a> <a href="#ref-for-propdef-opacity①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-transform">
    <a href="https://drafts.csswg.org/css-transforms-1/#propdef-transform">https://drafts.csswg.org/css-transforms-1/#propdef-transform</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-transform">1. 
+    <li><a href="#ref-for-propdef-transform">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-transform①">2. 
+    <li><a href="#ref-for-propdef-transform①">2.
 Hinting at Future Behavior: the will-change property</a> <a href="#ref-for-propdef-transform②">(2)</a> <a href="#ref-for-propdef-transform③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-comma">
    <a href="https://drafts.csswg.org/css-values-4/#mult-comma">https://drafts.csswg.org/css-values-4/#mult-comma</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-comma">2. 
+    <li><a href="#ref-for-mult-comma">2.
 Hinting at Future Behavior: the will-change property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-identifier-value">
    <a href="https://drafts.csswg.org/css-values-4/#identifier-value">https://drafts.csswg.org/css-values-4/#identifier-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-identifier-value">2. 
+    <li><a href="#ref-for-identifier-value">2.
 Hinting at Future Behavior: the will-change property</a> <a href="#ref-for-identifier-value①">(2)</a> <a href="#ref-for-identifier-value②">(3)</a> <a href="#ref-for-identifier-value③">(4)</a> <a href="#ref-for-identifier-value④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">2. 
+    <li><a href="#ref-for-comb-one">2.
 Hinting at Future Behavior: the will-change property</a> <a href="#ref-for-comb-one①">(2)</a> <a href="#ref-for-comb-one②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ascii-case-insensitive">
    <a href="https://infra.spec.whatwg.org/#ascii-case-insensitive">https://infra.spec.whatwg.org/#ascii-case-insensitive</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ascii-case-insensitive">2. 
+    <li><a href="#ref-for-ascii-case-insensitive">2.
 Hinting at Future Behavior: the will-change property</a>
    </ul>
   </aside>
@@ -771,15 +771,15 @@ Hinting at Future Behavior: the will-change property</a>
   <aside class="dfn-panel" data-for="propdef-will-change">
    <b><a href="#propdef-will-change">#propdef-will-change</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-will-change①">1. 
+    <li><a href="#ref-for-propdef-will-change①">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-will-change②">1.1. 
+    <li><a href="#ref-for-propdef-will-change②">1.1.
 Using will-change Well</a> <a href="#ref-for-propdef-will-change③">(2)</a> <a href="#ref-for-propdef-will-change④">(3)</a>
     <li><a href="#ref-for-propdef-will-change⑤"> Don’t Spam will-change Across Too Many Properties or Elements</a> <a href="#ref-for-propdef-will-change⑥">(2)</a> <a href="#ref-for-propdef-will-change⑦">(3)</a> <a href="#ref-for-propdef-will-change⑧">(4)</a>
     <li><a href="#ref-for-propdef-will-change⑨"> Use will-change Sparingly In Stylesheets</a> <a href="#ref-for-propdef-will-change①⓪">(2)</a> <a href="#ref-for-propdef-will-change①①">(3)</a> <a href="#ref-for-propdef-will-change①②">(4)</a> <a href="#ref-for-propdef-will-change①③">(5)</a> <a href="#ref-for-propdef-will-change①④">(6)</a>
     <li><a href="#ref-for-propdef-will-change①⑤"> Give will-change Sufficient Time To Work</a> <a href="#ref-for-propdef-will-change①⑥">(2)</a> <a href="#ref-for-propdef-will-change①⑦">(3)</a> <a href="#ref-for-propdef-will-change①⑧">(4)</a> <a href="#ref-for-propdef-will-change①⑨">(5)</a>
     <li><a href="#ref-for-propdef-will-change②⓪"> Don’t Waste Resources On Elements That Have Stopped Changing</a> <a href="#ref-for-propdef-will-change②①">(2)</a>
-    <li><a href="#ref-for-propdef-will-change②②">2. 
+    <li><a href="#ref-for-propdef-will-change②②">2.
 Hinting at Future Behavior: the will-change property</a> <a href="#ref-for-propdef-will-change②③">(2)</a> <a href="#ref-for-propdef-will-change②④">(3)</a> <a href="#ref-for-propdef-will-change②⑤">(4)</a> <a href="#ref-for-propdef-will-change②⑥">(5)</a> <a href="#ref-for-propdef-will-change②⑦">(6)</a> <a href="#ref-for-propdef-will-change②⑧">(7)</a> <a href="#ref-for-propdef-will-change②⑨">(8)</a> <a href="#ref-for-propdef-will-change③⓪">(9)</a> <a href="#ref-for-propdef-will-change③①">(10)</a> <a href="#ref-for-propdef-will-change③②">(11)</a> <a href="#ref-for-propdef-will-change③③">(12)</a>
     <li><a href="#ref-for-propdef-will-change③④">4. Changes since the April 29 2014 Working Draft</a>
    </ul>
@@ -787,84 +787,92 @@ Hinting at Future Behavior: the will-change property</a> <a href="#ref-for-propd
   <aside class="dfn-panel" data-for="typedef-animateable-feature">
    <b><a href="#typedef-animateable-feature">#typedef-animateable-feature</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-animateable-feature">2. 
+    <li><a href="#ref-for-typedef-animateable-feature">2.
 Hinting at Future Behavior: the will-change property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-will-change-auto">
    <b><a href="#valdef-will-change-auto">#valdef-will-change-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-will-change-auto">2. 
+    <li><a href="#ref-for-valdef-will-change-auto">2.
 Hinting at Future Behavior: the will-change property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-will-change-scroll-position">
    <b><a href="#valdef-will-change-scroll-position">#valdef-will-change-scroll-position</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-will-change-scroll-position">2. 
+    <li><a href="#ref-for-valdef-will-change-scroll-position">2.
 Hinting at Future Behavior: the will-change property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-will-change-contents">
    <b><a href="#valdef-will-change-contents">#valdef-will-change-contents</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-will-change-contents">2. 
+    <li><a href="#ref-for-valdef-will-change-contents">2.
 Hinting at Future Behavior: the will-change property</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

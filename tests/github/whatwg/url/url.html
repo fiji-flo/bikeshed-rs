@@ -49,7 +49,7 @@
 </style>
  <body class="h-entry status-LS">
   <div class="head">
-    <a class="logo" href="https://whatwg.org/"> <img alt="WHATWG" crossorigin height="100" src="https://resources.whatwg.org/logo-url.svg"> </a> 
+    <a class="logo" href="https://whatwg.org/"> <img alt="WHATWG" crossorigin height="100" src="https://resources.whatwg.org/logo-url.svg"> </a>
    <hgroup>
     <h1 class="p-name no-ref allcaps" id="title">URL</h1>
     <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard — Last Updated <time class="dt-updated" datetime="1970-01-01">1 January 1970</time></span></h2>
@@ -177,13 +177,13 @@ might increase in scope somewhat. </p>
    <p>This specification depends on the Infra Standard. <a data-link-type="biblio" href="#biblio-infra">[INFRA]</a> </p>
    <p>Some terms used in this specification are defined in the following standards and specifications: </p>
    <ul class="brief">
-    <li>DOM Standard <a data-link-type="biblio" href="#biblio-dom">[DOM]</a> 
-    <li>Encoding Standard <a data-link-type="biblio" href="#biblio-encoding">[ENCODING]</a> 
-    <li>File API <a data-link-type="biblio" href="#biblio-fileapi">[FILEAPI]</a> 
-    <li>HTML Standard <a data-link-type="biblio" href="#biblio-html">[HTML]</a> 
-    <li>Media Source Extensions <a data-link-type="biblio" href="#biblio-media-source">[MEDIA-SOURCE]</a> 
-    <li>Unicode IDNA Compatibility Processing <a data-link-type="biblio" href="#biblio-uts46">[UTS46]</a> 
-    <li>Web IDL <a data-link-type="biblio" href="#biblio-webidl">[WEBIDL]</a> 
+    <li>DOM Standard <a data-link-type="biblio" href="#biblio-dom">[DOM]</a>
+    <li>Encoding Standard <a data-link-type="biblio" href="#biblio-encoding">[ENCODING]</a>
+    <li>File API <a data-link-type="biblio" href="#biblio-fileapi">[FILEAPI]</a>
+    <li>HTML Standard <a data-link-type="biblio" href="#biblio-html">[HTML]</a>
+    <li>Media Source Extensions <a data-link-type="biblio" href="#biblio-media-source">[MEDIA-SOURCE]</a>
+    <li>Unicode IDNA Compatibility Processing <a data-link-type="biblio" href="#biblio-uts46">[UTS46]</a>
+    <li>Web IDL <a data-link-type="biblio" href="#biblio-webidl">[WEBIDL]</a>
    </ul>
    <hr>
    <p>To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="serialize-an-integer">serialize an integer</dfn>, represent it as the shortest possible decimal
@@ -331,53 +331,53 @@ obtain <var>host</var>’s <a data-link-type="dfn" href="#host-registrable-domai
      <p>Return the <a data-link-type="dfn" href="#host-registrable-domain" id="ref-for-host-registrable-domain①">registrable domain</a> obtained by executing the <a href="https://publicsuffix.org/list/">algorithm</a> defined by the Public Suffix List on <var>host</var>. <a data-link-type="biblio" href="#biblio-psl">[PSL]</a> </p>
    </ol>
    <div class="example" id="example-host-psl">
-    <a class="self-link" href="#example-host-psl"></a> 
+    <a class="self-link" href="#example-host-psl"></a>
     <table>
      <tbody>
       <tr>
-       <th>Host input 
-       <th>Public suffix 
-       <th>Registrable domain 
+       <th>Host input
+       <th>Public suffix
+       <th>Registrable domain
       <tr>
-       <td><code>com</code> 
-       <td><code>com</code> 
-       <td><i>null</i> 
+       <td><code>com</code>
+       <td><code>com</code>
+       <td><i>null</i>
       <tr>
-       <td><code>example.com</code> 
-       <td><code>com</code> 
-       <td><code>example.com</code> 
+       <td><code>example.com</code>
+       <td><code>com</code>
+       <td><code>example.com</code>
       <tr>
-       <td><code>www.example.com</code> 
-       <td><code>com</code> 
-       <td><code>example.com</code> 
+       <td><code>www.example.com</code>
+       <td><code>com</code>
+       <td><code>example.com</code>
       <tr>
-       <td><code>sub.www.example.com</code> 
-       <td><code>com</code> 
-       <td><code>example.com</code> 
+       <td><code>sub.www.example.com</code>
+       <td><code>com</code>
+       <td><code>example.com</code>
       <tr>
-       <td><code>EXAMPLE.COM</code> 
-       <td><code>com</code> 
-       <td><code>example.com</code> 
+       <td><code>EXAMPLE.COM</code>
+       <td><code>com</code>
+       <td><code>example.com</code>
       <tr>
-       <td><code>github.io</code> 
-       <td><code>github.io</code> 
-       <td><i>null</i> 
+       <td><code>github.io</code>
+       <td><code>github.io</code>
+       <td><i>null</i>
       <tr>
-       <td><code>whatwg.github.io</code> 
-       <td><code>github.io</code> 
-       <td><code>whatwg.github.io</code> 
+       <td><code>whatwg.github.io</code>
+       <td><code>github.io</code>
+       <td><code>whatwg.github.io</code>
       <tr>
-       <td><code>إختبار</code> 
-       <td><code>xn-kgbechtv</code> 
-       <td><i>null</i> 
+       <td><code>إختبار</code>
+       <td><code>xn-kgbechtv</code>
+       <td><i>null</i>
       <tr>
-       <td><code>example.إختبار</code> 
-       <td><code>xn-kgbechtv</code> 
-       <td><code>example.xn-kgbechtv</code> 
+       <td><code>example.إختبار</code>
+       <td><code>xn-kgbechtv</code>
+       <td><code>example.xn-kgbechtv</code>
       <tr>
-       <td><code>sub.example.إختبار</code> 
-       <td><code>xn-kgbechtv</code> 
-       <td><code>example.xn-kgbechtv</code> 
+       <td><code>sub.example.إختبار</code>
+       <td><code>xn-kgbechtv</code>
+       <td><code>example.xn-kgbechtv</code>
     </table>
    </div>
    <p class="warning" id="warning-avoid-psl">Specifications should prefer the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin">origin</a> concept
@@ -598,7 +598,7 @@ then runs these steps: </p>
        <ol>
         <li>
          <p>If <var>compress</var> is non-null, <a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error①③">validation error</a>, return failure. </p>
-        <li>Increase <var>pointer</var> and <var>pieceIndex</var> by 1, set <var>compress</var> to <var>pieceIndex</var>, and then <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#iteration-continue" id="ref-for-iteration-continue">continue</a>. 
+        <li>Increase <var>pointer</var> and <var>pieceIndex</var> by 1, set <var>compress</var> to <var>pieceIndex</var>, and then <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#iteration-continue" id="ref-for-iteration-continue">continue</a>.
        </ol>
       <li>
        <p>Let <var>value</var> and <var>length</var> be 0. </p>
@@ -626,7 +626,7 @@ then runs these steps: </p>
            <ol>
             <li>
              <p>If <a data-link-type="dfn" href="#c" id="ref-for-c⑧">c</a> is a U+002E (.) and <var>numbersSeen</var> is less than 4, then increase <var>pointer</var> by 1. </p>
-            <li>Otherwise, <a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error①⑥">validation error</a>, return failure. 
+            <li>Otherwise, <a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error①⑥">validation error</a>, return failure.
            </ol>
           <li>
            <p>If <a data-link-type="dfn" href="#c" id="ref-for-c⑨">c</a> is not an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ascii-digit" id="ref-for-ascii-digit①">ASCII digit</a>, <a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error①⑦">validation error</a>, return failure. </p>
@@ -798,99 +798,99 @@ unified model would be, please file an issue. </p>
  that string is then <a data-link-type="dfn" href="#concept-url-parser" id="ref-for-concept-url-parser③">parsed</a>, the result will <a data-link-type="dfn" href="#concept-url-equals" id="ref-for-concept-url-equals">equal</a> the <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url①①">URL</a> that was <a data-link-type="dfn" href="#concept-url-serializer" id="ref-for-concept-url-serializer②">serialized</a>.) </p>
    </ul>
    <div class="example" id="example-url-parsing">
-    <a class="self-link" href="#example-url-parsing"></a> 
+    <a class="self-link" href="#example-url-parsing"></a>
     <table>
      <tbody>
       <tr>
-       <th>Input 
-       <th>Base 
-       <th>Valid 
-       <th>Output 
+       <th>Input
+       <th>Base
+       <th>Valid
+       <th>Output
       <tr>
-       <td><code>https:example.org</code> 
+       <td><code>https:example.org</code>
        <td>
-       <td>❌ 
-       <td><code>https://example.org/</code> 
+       <td>❌
+       <td><code>https://example.org/</code>
       <tr>
-       <td><code>https://////example.com///</code> 
+       <td><code>https://////example.com///</code>
        <td>
-       <td>❌ 
-       <td><code>https://example.com///</code> 
+       <td>❌
+       <td><code>https://example.com///</code>
       <tr>
-       <td><code>https://example.com/././foo</code> 
+       <td><code>https://example.com/././foo</code>
        <td>
-       <td>✅ 
-       <td><code>https://example.com/foo</code> 
+       <td>✅
+       <td><code>https://example.com/foo</code>
       <tr>
-       <td><code>hello:world</code> 
-       <td><code>https://example.com/</code> 
-       <td>✅ 
-       <td><code>hello:world</code> 
+       <td><code>hello:world</code>
+       <td><code>https://example.com/</code>
+       <td>✅
+       <td><code>hello:world</code>
       <tr>
-       <td><code>https:example.org</code> 
-       <td><code>https://example.com/</code> 
-       <td>❌ 
-       <td><code>https://example.com/example.org</code> 
+       <td><code>https:example.org</code>
+       <td><code>https://example.com/</code>
+       <td>❌
+       <td><code>https://example.com/example.org</code>
       <tr>
-       <td><code>\example\..\demo/.\</code> 
-       <td><code>https://example.com/</code> 
-       <td>❌ 
-       <td><code>https://example.com/demo/</code> 
+       <td><code>\example\..\demo/.\</code>
+       <td><code>https://example.com/</code>
+       <td>❌
+       <td><code>https://example.com/demo/</code>
       <tr>
-       <td><code>example</code> 
-       <td><code>https://example.com/demo</code> 
-       <td>✅ 
-       <td><code>https://example.com/example</code> 
+       <td><code>example</code>
+       <td><code>https://example.com/demo</code>
+       <td>✅
+       <td><code>https://example.com/example</code>
       <tr>
-       <td><code>file:///C|/demo</code> 
+       <td><code>file:///C|/demo</code>
        <td>
-       <td>❌ 
-       <td><code>file:///C:/demo</code> 
+       <td>❌
+       <td><code>file:///C:/demo</code>
       <tr>
-       <td><code>..</code> 
-       <td><code>file:///C:/demo</code> 
-       <td>✅ 
-       <td><code>file:///C:/</code> 
+       <td><code>..</code>
+       <td><code>file:///C:/demo</code>
+       <td>✅
+       <td><code>file:///C:/</code>
       <tr>
-       <td><code>file://loc%61lhost/</code> 
+       <td><code>file://loc%61lhost/</code>
        <td>
-       <td>✅ 
-       <td><code>file:///</code> 
+       <td>✅
+       <td><code>file:///</code>
       <tr>
-       <td><code>https://user:password@example.org/</code> 
+       <td><code>https://user:password@example.org/</code>
        <td>
-       <td>❌ 
-       <td><code>https://user:password@example.org/</code> 
+       <td>❌
+       <td><code>https://user:password@example.org/</code>
       <tr>
-       <td><code>https://example.org/foo bar</code> 
+       <td><code>https://example.org/foo bar</code>
        <td>
-       <td>❌ 
-       <td><code>https://example.org/foo%20bar</code> 
+       <td>❌
+       <td><code>https://example.org/foo%20bar</code>
       <tr>
-       <td><code>https://EXAMPLE.com/../x</code> 
+       <td><code>https://EXAMPLE.com/../x</code>
        <td>
-       <td>✅ 
-       <td><code>https://example.com/x</code> 
+       <td>✅
+       <td><code>https://example.com/x</code>
       <tr>
-       <td><code>https://ex ample.org/</code> 
+       <td><code>https://ex ample.org/</code>
        <td>
-       <td>❌ 
-       <td>Failure 
+       <td>❌
+       <td>Failure
       <tr>
-       <td><code>example</code> 
+       <td><code>example</code>
        <td>
-       <td>❌, due to lack of base 
-       <td>Failure 
+       <td>❌, due to lack of base
+       <td>Failure
       <tr>
-       <td><code>https://example.com:demo</code> 
+       <td><code>https://example.com:demo</code>
        <td>
-       <td>❌ 
-       <td>Failure 
+       <td>❌
+       <td>Failure
       <tr>
-       <td><code>http://[www.example.com]/</code> 
+       <td><code>http://[www.example.com]/</code>
        <td>
-       <td>❌ 
-       <td>Failure 
+       <td>❌
+       <td>Failure
     </table>
     <p>The base and output <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url①②">URL</a> are represented in <a data-link-type="dfn" href="#concept-url-serializer" id="ref-for-concept-url-serializer③">serialized</a> form for brevity. </p>
    </div>
@@ -908,39 +908,39 @@ It is initially the empty string. </p>
     <table>
      <tbody>
       <tr>
-       <th rowspan="2"><a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme①">scheme</a> 
-       <th colspan="6"><a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host①">host</a> 
+       <th rowspan="2"><a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme①">scheme</a>
+       <th colspan="6"><a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host①">host</a>
       <tr>
-       <th><a data-link-type="dfn" href="#concept-domain" id="ref-for-concept-domain⑦">domain</a> 
-       <th><a data-link-type="dfn" href="#concept-ipv4" id="ref-for-concept-ipv4⑤">IPv4 address</a> 
-       <th><a data-link-type="dfn" href="#concept-ipv6" id="ref-for-concept-ipv6④">IPv6 address</a> 
-       <th><a data-link-type="dfn" href="#opaque-host" id="ref-for-opaque-host②">opaque host</a> 
-       <th><a data-link-type="dfn" href="#empty-host" id="ref-for-empty-host②">empty host</a> 
-       <th>null 
+       <th><a data-link-type="dfn" href="#concept-domain" id="ref-for-concept-domain⑦">domain</a>
+       <th><a data-link-type="dfn" href="#concept-ipv4" id="ref-for-concept-ipv4⑤">IPv4 address</a>
+       <th><a data-link-type="dfn" href="#concept-ipv6" id="ref-for-concept-ipv6④">IPv6 address</a>
+       <th><a data-link-type="dfn" href="#opaque-host" id="ref-for-opaque-host②">opaque host</a>
+       <th><a data-link-type="dfn" href="#empty-host" id="ref-for-empty-host②">empty host</a>
+       <th>null
       <tr>
-       <td>non-"<code>file</code>" <a data-link-type="dfn" href="#special-scheme" id="ref-for-special-scheme">special</a> 
-       <td>✅ 
-       <td>✅ 
-       <td>✅ 
-       <td>❌ 
-       <td>❌ 
-       <td>❌ 
+       <td>non-"<code>file</code>" <a data-link-type="dfn" href="#special-scheme" id="ref-for-special-scheme">special</a>
+       <td>✅
+       <td>✅
+       <td>✅
+       <td>❌
+       <td>❌
+       <td>❌
       <tr>
-       <td>"<code>file</code>" 
-       <td>✅ 
-       <td>✅ 
-       <td>✅ 
-       <td>❌ 
-       <td>✅ 
-       <td>✅ 
+       <td>"<code>file</code>"
+       <td>✅
+       <td>✅
+       <td>✅
+       <td>❌
+       <td>✅
+       <td>✅
       <tr>
-       <td><a data-link-type="dfn" href="#special-scheme" id="ref-for-special-scheme①">non-special</a> 
-       <td>❌ 
-       <td>❌ 
-       <td>✅ 
-       <td>✅ 
-       <td>✅ 
-       <td>✅ 
+       <td><a data-link-type="dfn" href="#special-scheme" id="ref-for-special-scheme①">non-special</a>
+       <td>❌
+       <td>❌
+       <td>✅
+       <td>✅
+       <td>✅
+       <td>✅
     </table>
    </div>
    <p>A <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url②①">URL</a>’s <dfn class="dfn-paneled" data-dfn-for="url" data-dfn-type="dfn" data-export id="concept-url-port">port</dfn> is either
@@ -967,26 +967,26 @@ corresponding <a data-link-type="dfn" href="#concept-url-port" id="ref-for-conce
    <table>
     <tbody>
      <tr>
-      <th><a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme③">scheme</a> 
-      <th><a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port①">port</a> 
+      <th><a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme③">scheme</a>
+      <th><a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port①">port</a>
      <tr>
       <td>"<code>ftp</code>"
-      <td>21 
+      <td>21
      <tr>
       <td>"<code>file</code>"
       <td>
      <tr>
       <td>"<code>http</code>"
-      <td>80 
+      <td>80
      <tr>
       <td>"<code>https</code>"
-      <td>443 
+      <td>443
      <tr>
       <td>"<code>ws</code>"
-      <td>80 
+      <td>80
      <tr>
       <td>"<code>wss</code>"
-      <td>443 
+      <td>443
    </table>
    <p>A <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url③⓪">URL</a> <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="is-special">is special</dfn> if its <a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme④">scheme</a> is a <a data-link-type="dfn" href="#special-scheme" id="ref-for-special-scheme③">special scheme</a>. A <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url③①">URL</a> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="is-not-special">is not special</dfn> if its <a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme⑤">scheme</a> is
 not a <a data-link-type="dfn" href="#special-scheme" id="ref-for-special-scheme④">special scheme</a>. </p>
@@ -1003,27 +1003,27 @@ code point is U+003A (:). </p>
    <p class="note" role="note">As per the <a href="#url-writing">URL writing</a> section, only a <a data-link-type="dfn" href="#normalized-windows-drive-letter" id="ref-for-normalized-windows-drive-letter">normalized Windows drive letter</a> is conforming. </p>
    <p>A string <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="start with a Windows drive letter|starts with a Windows drive letter" data-noexport id="start-with-a-windows-drive-letter">starts with a Windows drive letter</dfn> if all of the following are true: </p>
    <ul class="brief">
-    <li>its <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#string-length" id="ref-for-string-length">length</a> is greater than or equal to 2 
-    <li>its first two code points are a <a data-link-type="dfn" href="#windows-drive-letter" id="ref-for-windows-drive-letter①">Windows drive letter</a> 
+    <li>its <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#string-length" id="ref-for-string-length">length</a> is greater than or equal to 2
+    <li>its first two code points are a <a data-link-type="dfn" href="#windows-drive-letter" id="ref-for-windows-drive-letter①">Windows drive letter</a>
     <li>its <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#string-length" id="ref-for-string-length①">length</a> is 2 or its third code point is U+002F (/), U+005C (\),
- U+003F (?), or U+0023 (#). 
+ U+003F (?), or U+0023 (#).
    </ul>
    <div class="example" id="example-start-with-a-widows-drive-letter">
-    <a class="self-link" href="#example-start-with-a-widows-drive-letter"></a> 
+    <a class="self-link" href="#example-start-with-a-widows-drive-letter"></a>
     <table>
      <tbody>
       <tr>
-       <th>String 
-       <th>Starts with a Windows drive letter 
+       <th>String
+       <th>Starts with a Windows drive letter
       <tr>
-       <td>"<code>c:</code>" 
-       <td>✅ 
+       <td>"<code>c:</code>"
+       <td>✅
       <tr>
-       <td>"<code>c:/</code>" 
-       <td>✅ 
+       <td>"<code>c:/</code>"
+       <td>✅
       <tr>
-       <td>"<code>c:a</code>" 
-       <td>❌ 
+       <td>"<code>c:a</code>"
+       <td>❌
     </table>
    </div>
    <p id="pop-a-urls-path">To <dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="shorten" data-noexport id="shorten-a-urls-path">shorten a <var>url</var>’s path</dfn>: </p>
@@ -1060,14 +1060,14 @@ followed by zero or more of <a data-link-type="dfn" href="https://infra.spec.wha
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="relative-url-string">relative-URL string<span id="syntax-url-relative"></span></dfn> must be one of the following,
 switching on <a data-link-type="dfn" href="#concept-base-url" id="ref-for-concept-base-url①">base URL</a>’s <a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme⑧">scheme</a>: </p>
    <dl class="switch">
-    <dt>A <a data-link-type="dfn" href="#special-scheme" id="ref-for-special-scheme⑦">special scheme</a> that is not "<code>file</code>" 
+    <dt>A <a data-link-type="dfn" href="#special-scheme" id="ref-for-special-scheme⑦">special scheme</a> that is not "<code>file</code>"
     <dd>
      <p>a <a data-link-type="dfn" href="#scheme-relative-special-url-string" id="ref-for-scheme-relative-special-url-string①">scheme-relative-special-URL string</a> </p>
     <dd>
      <p>a <a data-link-type="dfn" href="#path-absolute-url-string" id="ref-for-path-absolute-url-string">path-absolute-URL string</a> </p>
     <dd>
      <p>a <a data-link-type="dfn" href="#path-relative-scheme-less-url-string" id="ref-for-path-relative-scheme-less-url-string">path-relative-scheme-less-URL string</a> </p>
-    <dt>"<code>file</code>" 
+    <dt>"<code>file</code>"
     <dd>
      <p>a <a data-link-type="dfn" href="#scheme-relative-file-url-string" id="ref-for-scheme-relative-file-url-string①">scheme-relative-file-URL string</a> </p>
     <dd>
@@ -1076,7 +1076,7 @@ switching on <a data-link-type="dfn" href="#concept-base-url" id="ref-for-concep
      <p>a <a data-link-type="dfn" href="#path-absolute-non-windows-file-url-string" id="ref-for-path-absolute-non-windows-file-url-string">path-absolute-non-Windows-file-URL string</a> if <a data-link-type="dfn" href="#concept-base-url" id="ref-for-concept-base-url③">base URL</a>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host④">host</a> is not an <a data-link-type="dfn" href="#empty-host" id="ref-for-empty-host④">empty host</a> </p>
     <dd>
      <p>a <a data-link-type="dfn" href="#path-relative-scheme-less-url-string" id="ref-for-path-relative-scheme-less-url-string①">path-relative-scheme-less-URL string</a> </p>
-    <dt>Otherwise 
+    <dt>Otherwise
     <dd>
      <p>a <a data-link-type="dfn" href="#scheme-relative-url-string" id="ref-for-scheme-relative-url-string">scheme-relative-URL string</a> </p>
     <dd>
@@ -1150,7 +1150,7 @@ and <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#code-point" id=
 can cause problems if a URL that works in one document is copied to another document that uses a
 different document encoding. Using the <a data-link-type="dfn" href="https://encoding.spec.whatwg.org/#utf-8" id="ref-for-utf-8">UTF-8</a> encoding everywhere solves this problem. </p>
    <div class="example" id="query-encoding-example">
-    <a class="self-link" href="#query-encoding-example"></a> 
+    <a class="self-link" href="#query-encoding-example"></a>
     <p>For example, consider this HTML document: </p>
 <pre><code class="lang-html highlight"><c- cp>&lt;!doctype html></c->
 <c- p>&lt;</c-><c- f>meta</c-> <c- e>charset</c-><c- o>=</c-><c- s>"windows-1252"</c-><c- p>></c->
@@ -1221,7 +1221,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
     <li>
      <p>Keep running the following state machine by switching on <var>state</var>. If after a run <var>pointer</var> points to the <a data-link-type="dfn" href="#eof-code-point" id="ref-for-eof-code-point④">EOF code point</a>, go to the next step. Otherwise, increase <var>pointer</var> by one and continue with the state machine. </p>
      <dl class="switch">
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="scheme-start-state">scheme start state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="scheme-start-state">scheme start state</dfn>
       <dd>
        <ol>
         <li>
@@ -1234,7 +1234,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
          <p>Otherwise, <a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error②⑧">validation error</a>, return failure. </p>
          <p class="note" role="note">This indication of failure is used exclusively by <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/history.html#location" id="ref-for-location">Location</a></code> object’s <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/history.html#dom-location-protocol" id="ref-for-dom-location-protocol">protocol</a></code> attribute. </p>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="scheme-state">scheme state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="scheme-state">scheme state</dfn>
       <dd>
        <ol>
         <li>
@@ -1295,7 +1295,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
          <p class="note" role="note">This indication of failure is used exclusively by <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/history.html#location" id="ref-for-location①">Location</a></code> object’s <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/history.html#dom-location-protocol" id="ref-for-dom-location-protocol①">protocol</a></code> attribute. Furthermore, the non-failure termination earlier in this
       state is an intentional difference for defining that attribute. </p>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="no-scheme-state">no scheme state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="no-scheme-state">no scheme state</dfn>
       <dd>
        <ol>
         <li>
@@ -1308,34 +1308,34 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
         <li>
          <p>Otherwise, set <var>state</var> to <a data-link-type="dfn" href="#file-state" id="ref-for-file-state①">file state</a> and decrease <var>pointer</var> by one. </p>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="special-relative-or-authority-state">special relative or authority state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="special-relative-or-authority-state">special relative or authority state</dfn>
       <dd>
        <p>If <a data-link-type="dfn" href="#c" id="ref-for-c②②">c</a> is U+002F (/) and <a data-link-type="dfn" href="#remaining" id="ref-for-remaining④">remaining</a> starts with U+002F (/), then set <var>state</var> to <a data-link-type="dfn" href="#special-authority-ignore-slashes-state" id="ref-for-special-authority-ignore-slashes-state">special authority ignore slashes state</a> and increase <var>pointer</var> by one. </p>
        <p>Otherwise, <a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error③②">validation error</a>, set <var>state</var> to <a data-link-type="dfn" href="#relative-state" id="ref-for-relative-state①">relative state</a> and
     decrease <var>pointer</var> by one. </p>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="path-or-authority-state">path or authority state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="path-or-authority-state">path or authority state</dfn>
       <dd>
        <p>If <a data-link-type="dfn" href="#c" id="ref-for-c②③">c</a> is U+002F (/), then set <var>state</var> to <a data-link-type="dfn" href="#authority-state" id="ref-for-authority-state">authority state</a>. </p>
        <p>Otherwise, set <var>state</var> to <a data-link-type="dfn" href="#path-state" id="ref-for-path-state">path state</a>, and decrease <var>pointer</var> by one. </p>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="relative-state">relative state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="relative-state">relative state</dfn>
       <dd>
        <p>Set <var>url</var>’s <a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme②①">scheme</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme②②">scheme</a>, and then, switching on <a data-link-type="dfn" href="#c" id="ref-for-c②④">c</a>: </p>
        <dl class="switch">
-        <dt>The <a data-link-type="dfn" href="#eof-code-point" id="ref-for-eof-code-point⑤">EOF code point</a> 
+        <dt>The <a data-link-type="dfn" href="#eof-code-point" id="ref-for-eof-code-point⑤">EOF code point</a>
         <dd>
          <p>Set <var>url</var>’s <a data-link-type="dfn" href="#concept-url-username" id="ref-for-concept-url-username②">username</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-username" id="ref-for-concept-url-username③">username</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-password" id="ref-for-concept-url-password②">password</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-password" id="ref-for-concept-url-password③">password</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host⑥">host</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host⑦">host</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port⑤">port</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port⑥">port</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path⑤">path</a> to a copy of <var>base</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path⑥">path</a>, and <var>url</var>’s <a data-link-type="dfn" href="#concept-url-query" id="ref-for-concept-url-query③">query</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-query" id="ref-for-concept-url-query④">query</a>. </p>
-        <dt>U+002F (/) 
+        <dt>U+002F (/)
         <dd>
          <p>Set <var>state</var> to <a data-link-type="dfn" href="#relative-slash-state" id="ref-for-relative-slash-state">relative slash state</a>. </p>
-        <dt>U+003F (?) 
+        <dt>U+003F (?)
         <dd>
          <p>Set <var>url</var>’s <a data-link-type="dfn" href="#concept-url-username" id="ref-for-concept-url-username④">username</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-username" id="ref-for-concept-url-username⑤">username</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-password" id="ref-for-concept-url-password④">password</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-password" id="ref-for-concept-url-password⑤">password</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host⑧">host</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host⑨">host</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port⑦">port</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port⑧">port</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path⑦">path</a> to a copy of <var>base</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path⑧">path</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-query" id="ref-for-concept-url-query⑤">query</a> to the empty string,
      and <var>state</var> to <a data-link-type="dfn" href="#query-state" id="ref-for-query-state">query state</a>. </p>
-        <dt>U+0023 (#) 
+        <dt>U+0023 (#)
         <dd>
          <p>Set <var>url</var>’s <a data-link-type="dfn" href="#concept-url-username" id="ref-for-concept-url-username⑥">username</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-username" id="ref-for-concept-url-username⑦">username</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-password" id="ref-for-concept-url-password⑥">password</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-password" id="ref-for-concept-url-password⑦">password</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host①⓪">host</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host①①">host</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port⑨">port</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port①⓪">port</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path⑨">path</a> to a copy of <var>base</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path①⓪">path</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-query" id="ref-for-concept-url-query⑥">query</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-query" id="ref-for-concept-url-query⑦">query</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-fragment" id="ref-for-concept-url-fragment①">fragment</a> to the empty string,
      and <var>state</var> to <a data-link-type="dfn" href="#fragment-state" id="ref-for-fragment-state①">fragment state</a>. </p>
-        <dt>Otherwise 
+        <dt>Otherwise
         <dd>
          <p>If <var>url</var> <a data-link-type="dfn" href="#is-special" id="ref-for-is-special③">is special</a> and <a data-link-type="dfn" href="#c" id="ref-for-c②⑤">c</a> is U+005C (\), <a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error③③">validation error</a>,
       set <var>state</var> to <a data-link-type="dfn" href="#relative-slash-state" id="ref-for-relative-slash-state①">relative slash state</a>. </p>
@@ -1348,7 +1348,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
        and decrease <var>pointer</var> by one. </p>
          </ol>
        </dl>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="relative-slash-state">relative slash state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="relative-slash-state">relative slash state</dfn>
       <dd>
        <ol>
         <li>
@@ -1364,15 +1364,15 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
         <li>
          <p>Otherwise, set <var>url</var>’s <a data-link-type="dfn" href="#concept-url-username" id="ref-for-concept-url-username①⓪">username</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-username" id="ref-for-concept-url-username①①">username</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-password" id="ref-for-concept-url-password①⓪">password</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-password" id="ref-for-concept-url-password①①">password</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host①④">host</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host①⑤">host</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port①③">port</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port①④">port</a>, <var>state</var> to <a data-link-type="dfn" href="#path-state" id="ref-for-path-state②">path state</a>, and then, decrease <var>pointer</var> by one. </p>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="special-authority-slashes-state">special authority slashes state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="special-authority-slashes-state">special authority slashes state</dfn>
       <dd>
        <p>If <a data-link-type="dfn" href="#c" id="ref-for-c②⑨">c</a> is U+002F (/) and <a data-link-type="dfn" href="#remaining" id="ref-for-remaining⑤">remaining</a> starts with U+002F (/), then set <var>state</var> to <a data-link-type="dfn" href="#special-authority-ignore-slashes-state" id="ref-for-special-authority-ignore-slashes-state②">special authority ignore slashes state</a> and increase <var>pointer</var> by one. </p>
        <p>Otherwise, <a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error③⑤">validation error</a>, set <var>state</var> to <a data-link-type="dfn" href="#special-authority-ignore-slashes-state" id="ref-for-special-authority-ignore-slashes-state③">special authority ignore slashes state</a>, and decrease <var>pointer</var> by one. </p>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="special-authority-ignore-slashes-state">special authority ignore slashes state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="special-authority-ignore-slashes-state">special authority ignore slashes state</dfn>
       <dd>
        <p>If <a data-link-type="dfn" href="#c" id="ref-for-c③⓪">c</a> is neither U+002F (/) nor U+005C (\), then set <var>state</var> to <a data-link-type="dfn" href="#authority-state" id="ref-for-authority-state②">authority state</a> and decrease <var>pointer</var> by one. </p>
        <p>Otherwise, <a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error③⑥">validation error</a>. </p>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="authority-state">authority state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="authority-state">authority state</dfn>
       <dd>
        <ol>
         <li>
@@ -1419,8 +1419,8 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
         <li>
          <p>Otherwise, append <a data-link-type="dfn" href="#c" id="ref-for-c③④">c</a> to <var>buffer</var>. </p>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="host-state">host state</dfn> 
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="hostname-state">hostname state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="host-state">host state</dfn>
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="hostname-state">hostname state</dfn>
       <dd>
        <ol>
         <li>
@@ -1477,7 +1477,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
            <p>Append <a data-link-type="dfn" href="#c" id="ref-for-c④⓪">c</a> to <var>buffer</var>. </p>
          </ol>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="port-state">port state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="port-state">port state</dfn>
       <dd>
        <ol>
         <li>
@@ -1516,7 +1516,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
         <li>
          <p>Otherwise, <a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error④③">validation error</a>, return failure. </p>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="file-state">file state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="file-state">file state</dfn>
       <dd>
        <ol>
         <li>
@@ -1533,16 +1533,16 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
          <p>Otherwise, if <var>base</var> is non-null and <var>base</var>’s <a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme②⑥">scheme</a> is
       "<code>file</code>", switch on <a data-link-type="dfn" href="#c" id="ref-for-c④⑦">c</a>: </p>
          <dl class="switch">
-          <dt>The <a data-link-type="dfn" href="#eof-code-point" id="ref-for-eof-code-point⑨">EOF code point</a> 
+          <dt>The <a data-link-type="dfn" href="#eof-code-point" id="ref-for-eof-code-point⑨">EOF code point</a>
           <dd>
            <p>Set <var>url</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host①⑧">host</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host①⑨">host</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path①④">path</a> to a copy of <var>base</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path①⑤">path</a>, and <var>url</var>’s <a data-link-type="dfn" href="#concept-url-query" id="ref-for-concept-url-query⑧">query</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-query" id="ref-for-concept-url-query⑨">query</a>. </p>
-          <dt>U+003F (?) 
+          <dt>U+003F (?)
           <dd>
            <p>Set <var>url</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host②⓪">host</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host②①">host</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path①⑥">path</a> to a copy of <var>base</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path①⑦">path</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-query" id="ref-for-concept-url-query①⓪">query</a> to the empty string, and <var>state</var> to <a data-link-type="dfn" href="#query-state" id="ref-for-query-state①">query state</a>. </p>
-          <dt>U+0023 (#) 
+          <dt>U+0023 (#)
           <dd>
            <p>Set <var>url</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host②②">host</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host②③">host</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path①⑧">path</a> to a copy of <var>base</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path①⑨">path</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-query" id="ref-for-concept-url-query①①">query</a> to <var>base</var>’s <a data-link-type="dfn" href="#concept-url-query" id="ref-for-concept-url-query①②">query</a>, <var>url</var>’s <a data-link-type="dfn" href="#concept-url-fragment" id="ref-for-concept-url-fragment②">fragment</a> to the empty string, and <var>state</var> to <a data-link-type="dfn" href="#fragment-state" id="ref-for-fragment-state②">fragment state</a>. </p>
-          <dt>Otherwise 
+          <dt>Otherwise
           <dd>
            <ol>
             <li>
@@ -1558,7 +1558,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
          <p>Otherwise, set <var>state</var> to <a data-link-type="dfn" href="#path-state" id="ref-for-path-state④">path state</a>, and decrease <var>pointer</var> by
      one. </p>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="file-slash-state">file slash state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="file-slash-state">file slash state</dfn>
       <dd>
        <ol>
         <li>
@@ -1587,7 +1587,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
            <p>Set <var>state</var> to <a data-link-type="dfn" href="#path-state" id="ref-for-path-state⑤">path state</a>, and decrease <var>pointer</var> by one. </p>
          </ol>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="file-host-state">file host state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="file-host-state">file host state</dfn>
       <dd>
        <ol>
         <li>
@@ -1628,7 +1628,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
         <li>
          <p>Otherwise, append <a data-link-type="dfn" href="#c" id="ref-for-c⑤①">c</a> to <var>buffer</var>. </p>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="path-start-state">path start state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="path-start-state">path start state</dfn>
       <dd>
        <ol>
         <li>
@@ -1655,7 +1655,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
            <p>If <a data-link-type="dfn" href="#c" id="ref-for-c⑤⑦">c</a> is not U+002F (/), then decrease <var>pointer</var> by one. </p>
          </ol>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="path-state">path state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="path-state">path state</dfn>
       <dd>
        <ol>
         <li>
@@ -1714,7 +1714,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
        append the result to <var>buffer</var>. </p>
          </ol>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="cannot-be-a-base-url-path-state">cannot-be-a-base-URL path state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="cannot-be-a-base-url-path-state">cannot-be-a-base-URL path state</dfn>
       <dd>
        <ol>
         <li>
@@ -1734,7 +1734,7 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
            <p>If <a data-link-type="dfn" href="#c" id="ref-for-c⑦⑥">c</a> is not the <a data-link-type="dfn" href="#eof-code-point" id="ref-for-eof-code-point①⑤">EOF code point</a>, <a data-link-type="dfn" href="#utf-8-percent-encode" id="ref-for-utf-8-percent-encode③">UTF-8 percent encode</a> <a data-link-type="dfn" href="#c" id="ref-for-c⑦⑦">c</a> using the <a data-link-type="dfn" href="#c0-control-percent-encode-set" id="ref-for-c0-control-percent-encode-set②">C0 control percent-encode set</a>, and append the result to <var>url</var>’s <a data-link-type="dfn" href="#concept-url-path" id="ref-for-concept-url-path③④">path</a>[0]. </p>
          </ol>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="query-state">query state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="query-state">query state</dfn>
       <dd>
        <ol>
         <li>
@@ -1791,17 +1791,17 @@ string <var>input</var>, optionally with a <a data-link-type="dfn" href="#concep
            </ol>
          </ol>
        </ol>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="fragment-state">fragment state</dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="fragment-state">fragment state</dfn>
       <dd>
        <p>Switching on <a data-link-type="dfn" href="#c" id="ref-for-c⑧③">c</a>: </p>
        <dl class="switch">
-        <dt>The <a data-link-type="dfn" href="#eof-code-point" id="ref-for-eof-code-point①⑦">EOF code point</a> 
+        <dt>The <a data-link-type="dfn" href="#eof-code-point" id="ref-for-eof-code-point①⑦">EOF code point</a>
         <dd>
          <p>Do nothing. </p>
-        <dt>U+0000 NULL 
+        <dt>U+0000 NULL
         <dd>
          <p><a data-link-type="dfn" href="#validation-error" id="ref-for-validation-error⑤⑧">Validation error</a>. </p>
-        <dt>Otherwise 
+        <dt>Otherwise
         <dd>
          <ol>
           <li>
@@ -1890,7 +1890,7 @@ then runs these steps, returning an <a data-link-type="dfn" href="https://infra.
 background information. <a data-link-type="biblio" href="#biblio-html">[HTML]</a> </p>
    <p>A <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url④②">URL</a>’s <dfn class="dfn-paneled" data-dfn-for="url" data-dfn-type="dfn" data-export id="concept-url-origin">origin</dfn> is the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin②">origin</a> returned by running these steps, switching on <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url④③">URL</a>’s <a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme③③">scheme</a>: </p>
    <dl class="switch">
-    <dt>"<code>blob</code>" 
+    <dt>"<code>blob</code>"
     <dd>
      <ol>
       <li>
@@ -1902,18 +1902,18 @@ background information. <a data-link-type="biblio" href="#biblio-html">[HTML]</a
      </ol>
      <p class="example no-backref" id="example-43b5cea5"><a class="self-link" href="#example-43b5cea5"></a>The <a data-link-type="dfn" href="#concept-url-origin" id="ref-for-concept-url-origin①">origin</a> of <code>blob:https://whatwg.org/d0360e2f-caee-469f-9a2f-87d5b0456f6f</code> is the tuple
   (<code>https</code>, <code>whatwg.org</code>, null, null). </p>
-    <dt>"<code>ftp</code>" 
-    <dt>"<code>http</code>" 
-    <dt>"<code>https</code>" 
-    <dt>"<code>ws</code>" 
-    <dt>"<code>wss</code>" 
+    <dt>"<code>ftp</code>"
+    <dt>"<code>http</code>"
+    <dt>"<code>https</code>"
+    <dt>"<code>ws</code>"
+    <dt>"<code>wss</code>"
     <dd>
      <p>Return a tuple consisting of <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url④⑦">URL</a>’s <a data-link-type="dfn" href="#concept-url-scheme" id="ref-for-concept-url-scheme③④">scheme</a>, <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url④⑧">URL</a>’s <a data-link-type="dfn" href="#concept-url-host" id="ref-for-concept-url-host③⑥">host</a>, <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url④⑨">URL</a>’s <a data-link-type="dfn" href="#concept-url-port" id="ref-for-concept-url-port①⑨">port</a>, and null. </p>
-    <dt>"<code>file</code>" 
+    <dt>"<code>file</code>"
     <dd>
      <p>Unfortunate as it is, this is left as an exercise to the reader. When in doubt,
  return a new <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin-opaque" id="ref-for-concept-origin-opaque①">opaque origin</a>. </p>
-    <dt>Otherwise 
+    <dt>Otherwise
     <dd>
      <p>Return a new <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin-opaque" id="ref-for-concept-origin-opaque②">opaque origin</a>. </p>
      <p class="note no-backref" role="note">This does indeed mean that these <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url⑤⓪">URLs</a> cannot be <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#same-origin" id="ref-for-same-origin">same-origin</a> with themselves. </p>
@@ -2024,19 +2024,19 @@ conforming. </p>
     <li>
      <p>For each byte in <var>input</var>, depending on <var>byte</var>: </p>
      <dl>
-      <dt>0x20 (SP) 
+      <dt>0x20 (SP)
       <dd>
        <p>Append U+002B (+) to <var>output</var>. </p>
-      <dt>0x2A (*) 
-      <dt>0x2D (-) 
-      <dt>0x2E (.) 
-      <dt>0x30 (0) to 0x39 (9) 
-      <dt>0x41 (A) to 0x5A (Z) 
-      <dt>0x5F (_) 
-      <dt>0x61 (a) to 0x7A (z) 
+      <dt>0x2A (*)
+      <dt>0x2D (-)
+      <dt>0x2E (.)
+      <dt>0x30 (0) to 0x39 (9)
+      <dt>0x41 (A) to 0x5A (Z)
+      <dt>0x5F (_)
+      <dt>0x61 (a) to 0x7A (z)
       <dd>
        <p>Append a code point whose value is <var>byte</var> to <var>output</var>. </p>
-      <dt>Otherwise 
+      <dt>Otherwise
       <dd>
        <p>Append <var>byte</var>, <a data-link-type="dfn" href="#percent-encode" id="ref-for-percent-encode②">percent encoded</a>, to <var>output</var>. </p>
      </dl>
@@ -2065,9 +2065,9 @@ conforming. </p>
       <li>
        <p>If <var>tuple</var> is not the first pair in <var>tuples</var>, then append
    U+0026 (&amp;) to <var>output</var>. </p>
-      <li>Append <var>name</var>, followed by U+003D (=), followed by <var>value</var>, to <var>output</var>. 
+      <li>Append <var>name</var>, followed by U+003D (=), followed by <var>value</var>, to <var>output</var>.
      </ol>
-    <li>Return <var>output</var>. 
+    <li>Return <var>output</var>.
    </ol>
    <p class="note no-backref" role="note">The <cite>HTML standard</cite> invokes this algorithm with values that
 are files. <a data-link-type="biblio" href="#biblio-html">[HTML]</a> </p>
@@ -2127,7 +2127,7 @@ are files. <a data-link-type="biblio" href="#biblio-html">[HTML]</a> </p>
      <p>Return <var>result</var>. </p>
    </ol>
    <div class="example no-backref" id="example-5434421b">
-    <a class="self-link" href="#example-5434421b"></a> 
+    <a class="self-link" href="#example-5434421b"></a>
     <p>To <a data-link-type="dfn" href="#concept-basic-url-parser" id="ref-for-concept-basic-url-parser⑥">parse</a> a string into a <a data-link-type="dfn" href="#concept-url" id="ref-for-concept-url⑥⓪">URL</a> without using a <a data-link-type="dfn" href="#concept-base-url" id="ref-for-concept-base-url⑦">base URL</a>, invoke the <code class="idl"><a data-link-type="idl" href="#url" id="ref-for-url③">URL</a></code> constructor with a single argument: </p>
 <pre><code class="lang-javascript highlight"><c- a>var</c-> input <c- o>=</c-> <c- u>"https://example.org/💩"</c-><c- p>,</c->
     url <c- o>=</c-> <c- k>new</c-> URL<c- p>(</c->input<c- p>)</c->
@@ -2336,7 +2336,7 @@ steps: </p>
 };
 </pre>
    <div class="example" id="example-constructing-urlsearchparams">
-    <a class="self-link" href="#example-constructing-urlsearchparams"></a> 
+    <a class="self-link" href="#example-constructing-urlsearchparams"></a>
     <p>Constructing and stringifying a <code class="idl"><a data-link-type="idl" href="#urlsearchparams" id="ref-for-urlsearchparams③">URLSearchParams</a></code> object is fairly straightforward: </p>
 <pre><code class="lang-javascript highlight"><c- a>let</c-> params <c- o>=</c-> <c- k>new</c-> URLSearchParams<c- p>({</c->key<c- o>:</c-> <c- u>"730d67"</c-><c- p>})</c->
 params<c- p>.</c->toString<c- p>()</c-> <c- c1>// "key=730d67"</c-></code></pre>
@@ -2412,7 +2412,7 @@ in <a data-link-type="dfn" href="#concept-urlsearchparams-list" id="ref-for-conc
    </ol>
    <hr>
    <div class="example" id="example-searchparams-sort">
-    <a class="self-link" href="#example-searchparams-sort"></a> 
+    <a class="self-link" href="#example-searchparams-sort"></a>
     <p>It can be useful to sort the name-value pairs in a <code class="idl"><a data-link-type="idl" href="#urlsearchparams" id="ref-for-urlsearchparams①①">URLSearchParams</a></code> object, in particular to
  increase cache hits. This can be accomplished through invoking the <code class="idl"><a data-link-type="idl" href="#dom-urlsearchparams-sort" id="ref-for-dom-urlsearchparams-sort①">sort()</a></code> method: </p>
 <pre><code class="lang-javascript highlight"><c- kr>const</c-> url <c- o>=</c-> <c- k>new</c-> URL<c- p>(</c-><c- u>"https://example.org/?q=🏳️‍🌈&amp;key=e1f7bc78"</c-><c- p>);</c->
@@ -4390,57 +4390,65 @@ if ("serviceWorker" in navigator) {
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

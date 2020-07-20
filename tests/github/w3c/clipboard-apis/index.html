@@ -465,19 +465,19 @@ access to this API is controlled by a permission.</p>
 		operations (cut/copy/paste). Here are a few examples:</p>
    <ul>
     <li><strong>Metadata</strong> When copying text from a repository of documents, it can be useful for the
-			copied text to include metadata about the source of the copied content. 
+			copied text to include metadata about the source of the copied content.
     <li><strong>Rich content editing</strong> When copying text which contains hyperlinks or other structure,
 			it is often useful to be able to reformat the content to preserve
-			important information. 
+			important information.
     <li><strong>Graphics with built-in semantics</strong> In order to make web applications which allow the manipulation of rich
 			text, or of graphic content such as <a data-link-type="biblio" href="#biblio-svg11">[SVG11]</a>, it is useful to provide a
-			mechanism that allows for copying more than just the rendered content. 
+			mechanism that allows for copying more than just the rendered content.
     <li><strong>Mathematical information</strong> With content such as mathematics, simply copying rendered text and pasting
 			it into another application generally leads to most of the semantics being
 			lost. MathML often needs to be transformed to be copied as plain text, for
 			example to make sure "to the power of" is shown with the caret  "^" sign
 			in a formula plain-text input. The XML source could also be placed in the
-			clipboard with the appropriate transformation occurring at paste time. 
+			clipboard with the appropriate transformation occurring at paste time.
    </ul>
    <h3 class="heading settled" data-level="2.2" id="remote-clipboard-sync"><span class="secno">2.2. </span><span class="content">Remote Clipboard Synchronization</span><a class="self-link" href="#remote-clipboard-sync"></a></h3>
    <p>For web applications that communicate with remote devices (e.g., remote access
@@ -839,7 +839,7 @@ document.addEventListener('paste', function(e) {
    <div id="navigator-idl">
     <div class="algorithm" data-algorithm="navigator-clipboard">
      <h4 class="heading settled" data-level="7.1.1" id="h-navigator-clipboard"><span class="secno">7.1.1. </span><span class="content"><dfn class="dfn-paneled" data-dfn-for="Navigator" data-dfn-type="dfn" data-noexport id="navigator-clipboard">clipboard</dfn></span><a class="self-link" href="#h-navigator-clipboard"></a></h4>
-      The <a data-link-type="dfn" href="#navigator-clipboard" id="ref-for-navigator-clipboard">clipboard</a> attribute must return the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#navigator" id="ref-for-navigator①">Navigator</a></code>'s <a data-link-type="dfn" href="#navigator-clipboard" id="ref-for-navigator-clipboard①">clipboard</a> object. 
+      The <a data-link-type="dfn" href="#navigator-clipboard" id="ref-for-navigator-clipboard">clipboard</a> attribute must return the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#navigator" id="ref-for-navigator①">Navigator</a></code>'s <a data-link-type="dfn" href="#navigator-clipboard" id="ref-for-navigator-clipboard①">clipboard</a> object.
     </div>
    </div>
    <h3 class="heading settled" data-level="7.2" id="clipboard-interface"><span class="secno">7.2. </span><span class="content">Clipboard Interface</span><a class="self-link" href="#clipboard-interface"></a></h3>
@@ -882,7 +882,7 @@ document.addEventListener('paste', function(e) {
    <div id="clipboard-idl">
     <div class="algorithm" data-algorithm="clipboard-read">
      <h4 class="heading settled dfn-paneled idl-code" data-dfn-for="Clipboard" data-dfn-type="method" data-export data-level="7.2.1" data-lt="read()" id="dom-clipboard-read"><span class="secno">7.2.1. </span><span class="content">read()</span></h4>
-      The <code class="idl"><a data-link-type="idl" href="#dom-clipboard-read" id="ref-for-dom-clipboard-read②">read()</a></code> method must run these steps: 
+      The <code class="idl"><a data-link-type="idl" href="#dom-clipboard-read" id="ref-for-dom-clipboard-read②">read()</a></code> method must run these steps:
      <ol>
       <li data-md>
        <p>Let <var>p</var> be a new <a data-link-type="dfn" href="http://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects">Promise</a>.</p>
@@ -910,7 +910,7 @@ const text = await (new Response(textBlob)).text();
     </div>
     <div class="algorithm" data-algorithm="clipboard-readtext">
      <h4 class="heading settled dfn-paneled idl-code" data-dfn-for="Clipboard" data-dfn-type="method" data-export data-level="7.2.2" data-lt="readText()" id="dom-clipboard-readtext"><span class="secno">7.2.2. </span><span class="content">readText()</span></h4>
-      The <code class="idl"><a data-link-type="idl" href="#dom-clipboard-readtext" id="ref-for-dom-clipboard-readtext①">readText()</a></code> method must run these steps: 
+      The <code class="idl"><a data-link-type="idl" href="#dom-clipboard-readtext" id="ref-for-dom-clipboard-readtext①">readText()</a></code> method must run these steps:
      <ol>
       <li data-md>
        <p>Let <var>p</var> be a new <a data-link-type="dfn" href="http://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects①">Promise</a>.</p>
@@ -945,7 +945,7 @@ const text = await (new Response(textBlob)).text();
     </div>
     <div class="algorithm" data-algorithm="clipboard-write">
      <h4 class="heading settled dfn-paneled idl-code" data-dfn-for="Clipboard" data-dfn-type="method" data-export data-level="7.2.3" data-lt="write(data)" id="dom-clipboard-write"><span class="secno">7.2.3. </span><span class="content">write(<var>data</var>)</span></h4>
-      The <code class="idl"><a data-link-type="idl" href="#dom-clipboard-write" id="ref-for-dom-clipboard-write②">write(data)</a></code> method must run these steps: 
+      The <code class="idl"><a data-link-type="idl" href="#dom-clipboard-write" id="ref-for-dom-clipboard-write②">write(data)</a></code> method must run these steps:
      <ol>
       <li data-md>
        <p>Let <var>p</var> be a new <a data-link-type="dfn" href="http://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects②">Promise</a>.</p>
@@ -987,7 +987,7 @@ navigator.clipboard.write(data).then(function() {
     </div>
     <div class="algorithm" data-algorithm="clipboard-writetext">
      <h4 class="heading settled dfn-paneled idl-code" data-dfn-for="Clipboard" data-dfn-type="method" data-export data-level="7.2.4" data-lt="writeText(data)" id="dom-clipboard-writetext"><span class="secno">7.2.4. </span><span class="content">writeText(<var>data</var>)</span></h4>
-      The <code class="idl"><a data-link-type="idl" href="#dom-clipboard-writetext" id="ref-for-dom-clipboard-writetext①">writeText(data)</a></code> method must run these steps: 
+      The <code class="idl"><a data-link-type="idl" href="#dom-clipboard-writetext" id="ref-for-dom-clipboard-writetext①">writeText(data)</a></code> method must run these steps:
      <ol>
       <li data-md>
        <p>Let <var>p</var> be a new <a data-link-type="dfn" href="http://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects③">Promise</a>.</p>
@@ -1208,7 +1208,7 @@ the modification, see <a href="#integration-with-other-scripts-and-events">§ 
    <p>These clipboard permissions are <a data-link-type="dfn" href="https://w3c.github.io/permissions/#powerful-feature" id="ref-for-powerful-feature②">powerful feature</a>s
 	permission-related algorithms and types are defined as follows:</p>
    <dl>
-    <dt> <a data-link-type="dfn" href="https://w3c.github.io/permissions/#permission-descriptor-type" id="ref-for-permission-descriptor-type">permission descriptor type</a> 
+    <dt> <a data-link-type="dfn" href="https://w3c.github.io/permissions/#permission-descriptor-type" id="ref-for-permission-descriptor-type">permission descriptor type</a>
     <dd>
 <pre class="idl highlight def"><c- b>dictionary</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="dictionary" data-export id="dictdef-clipboardpermissiondescriptor"><code><c- g>ClipboardPermissionDescriptor</c-></code></dfn> : <a class="n" data-link-type="idl-name" href="https://w3c.github.io/permissions/#dictdef-permissiondescriptor" id="ref-for-dictdef-permissiondescriptor"><c- n>PermissionDescriptor</c-></a> {
   <a class="idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-boolean" id="ref-for-idl-boolean①"><c- b>boolean</c-></a> <dfn class="idl-code" data-default="false" data-dfn-for="ClipboardPermissionDescriptor" data-dfn-type="dict-member" data-export data-type="boolean " id="dom-clipboardpermissiondescriptor-allowwithoutgesture"><code><c- g>allowWithoutGesture</c-></code><a class="self-link" href="#dom-clipboardpermissiondescriptor-allowwithoutgesture"></a></dfn> = <c- b>false</c->;
@@ -1244,7 +1244,7 @@ the modification, see <a href="#integration-with-other-scripts-and-events">§ 
 	settings and how (or if) they are exposed to the user.</p>
     <div class="example" id="example-3f9d3e28">
      <a class="self-link" href="#example-3f9d3e28"></a> A user agent that wants to have separate user-settable read and write controls over the clipboad
-		and always require a user gesture would handle each descriptor as follows: 
+		and always require a user gesture would handle each descriptor as follows:
      <ul>
       <li data-md>
        <p><code class="perm">{ "clipboard-read" + false }</code> is exposed for user control</p>
@@ -1260,7 +1260,7 @@ the modification, see <a href="#integration-with-other-scripts-and-events">§ 
      <a class="self-link" href="#example-2d4efd3e"></a> A user agent that wants to automatically grant "write" access (with a gesture),
 		but have a single user-settable permission that controls full gesture-less access would
 		define "clipboard-read" as being stronger than "clipboard-write" and then handle
-		each descriptor as follows: 
+		each descriptor as follows:
      <ul>
       <li data-md>
        <p><code class="perm">{ "clipboard-read" + false }</code> is inherited from <code class="perm">{ "clipboard-read" + true }</code></p>
@@ -1881,7 +1881,7 @@ HTML code.</p>
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
    <div class="example" id="example-ae2b6bc0">
-    <a class="self-link" href="#example-ae2b6bc0"></a> 
+    <a class="self-link" href="#example-ae2b6bc0"></a>
     <p>This is an example of an informative example.</p>
    </div>
    <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1899,7 +1899,7 @@ HTML code.</p>
     are encouraged to optimize.</p>
   </div>
   <p id="back-to-top" role="navigation"><a href="#toc"><abbr title="Back to top">↑</abbr></a></p>
-  . 
+  .
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
@@ -2644,58 +2644,66 @@ required, and because it’s hard to test in a cross-platform way.<a href="#issu
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

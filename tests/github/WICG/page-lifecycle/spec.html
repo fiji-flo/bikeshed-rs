@@ -1583,7 +1583,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
   </nav>
   <main>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
-    With large numbers of web apps (and tabs) running, critical resources such as memory, CPU, battery, network, etc. easily get oversubscribed, leading to a bad end-user experience. Application lifecycle is a key way that modern OSs manage resources. 
+    With large numbers of web apps (and tabs) running, critical resources such as memory, CPU, battery, network, etc. easily get oversubscribed, leading to a bad end-user experience. Application lifecycle is a key way that modern OSs manage resources.
    <p>For a platform to support application lifecycle, it needs to:</p>
    <ul>
     <li data-md>
@@ -1668,7 +1668,7 @@ A user could have multiple tabs open for the same app &amp; URL. If they are bot
    <h2 class="heading settled" data-level="4" id="feature-policies"><span class="secno">4. </span><span class="content">Feature Policies</span><a class="self-link" href="#feature-policies"></a></h2>
     Controlling the execution state of <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#nested-browsing-context" id="ref-for-nested-browsing-context">nested browsing contexts</a> is desirable from a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#concept-document-bc" id="ref-for-concept-document-bc②">browsing context</a> in order to control
 the user experience. An application may desire that when a document is not <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/rendering.html#being-rendered" id="ref-for-being-rendered">being rendered</a> or does not intersect the <a data-link-type="dfn" href="https://www.w3.org/TR/CSS2/visuren.html#viewport" id="ref-for-viewport">viewport</a> that all execution stops in the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#nested-browsing-context" id="ref-for-nested-browsing-context①">nested browsing context</a> (including currently playing video, audio). Stopping all execution
-can lead to an improvement in CPU utilization. To meet these needs, two feature policies are defined: 
+can lead to an improvement in CPU utilization. To meet these needs, two feature policies are defined:
    <ul>
     <li data-md>
      <p>"<dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="execution-while-not-rendered"><code>execution-while-not-rendered</code></dfn>", which has a <a data-link-type="dfn" href="https://wicg.github.io/feature-policy/#default-allowlist" id="ref-for-default-allowlist">default allowlist</a> of <code>*</code></p>
@@ -1697,7 +1697,7 @@ conditions have been met:</p>
   <c- e>src</c-><c- o>=</c-><c- s>"subframe.html"</c-> <c- e>style</c-><c- o>=</c-><c- s>"display:none"</c-><c- p>>&lt;/</c-><c- f>iframe</c-><c- p>></c->
 </pre>
    <div class="algorithm" data-algorithm="update document frozenness steps">
-     To run the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="update-document-frozenness-steps">update document frozenness steps</dfn> for a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑤">Document</a></code> <var>document</var>: 
+     To run the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="update-document-frozenness-steps">update document frozenness steps</dfn> for a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑤">Document</a></code> <var>document</var>:
     <ol>
      <li data-md>
       <p>If <var>document</var>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#concept-document-bc" id="ref-for-concept-document-bc③">browsing context</a> is not a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#nested-browsing-context" id="ref-for-nested-browsing-context④">nested browsing context</a>, then return.</p>
@@ -1730,7 +1730,7 @@ conditions have been met:</p>
    <p>Any <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#worklet-agent" id="ref-for-worklet-agent">worklet agent</a> whose single <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-code-realms" id="ref-for-sec-code-realms">realm</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-global" id="ref-for-concept-realm-global">global object</a>'s <a data-link-type="dfn" href="https://drafts.css-houdini.org/worklets#workletglobalscope-owner-document" id="ref-for-workletglobalscope-owner-document">owning document</a> is <a data-link-type="dfn" href="#frozen" id="ref-for-frozen③">frozen</a> must become <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-forward-progress" id="ref-for-sec-forward-progress">blocked</a>.
 Any <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#dedicated-worker-agent" id="ref-for-dedicated-worker-agent">dedicated worker agent</a> whose single <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-code-realms" id="ref-for-sec-code-realms①">realm</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-global" id="ref-for-concept-realm-global①">global object</a>'s <a data-link-type="dfn" href="#dedicatedworkerglobalscope-owning-document" id="ref-for-dedicatedworkerglobalscope-owning-document">owning document</a> is non-null and <a data-link-type="dfn" href="#frozen" id="ref-for-frozen④">frozen</a> must become <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-forward-progress" id="ref-for-sec-forward-progress①">blocked</a>.</p>
    <div class="algorithm" data-algorithm="owning document" data-algorithm-for="DedicatedWorkerGlobalScope">
-     To determine the <dfn class="dfn-paneled" data-dfn-for="DedicatedWorkerGlobalScope" data-dfn-type="dfn" data-export id="dedicatedworkerglobalscope-owning-document">owning document</dfn> for a <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#dedicatedworkerglobalscope" id="ref-for-dedicatedworkerglobalscope">DedicatedWorkerGlobalScope</a></code> <var>workerGlobalScope</var>: 
+     To determine the <dfn class="dfn-paneled" data-dfn-for="DedicatedWorkerGlobalScope" data-dfn-type="dfn" data-export id="dedicatedworkerglobalscope-owning-document">owning document</dfn> for a <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#dedicatedworkerglobalscope" id="ref-for-dedicatedworkerglobalscope">DedicatedWorkerGlobalScope</a></code> <var>workerGlobalScope</var>:
     <ol>
      <li data-md>
       <p>If <var>workerGlobalScope</var>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/workers.html#concept-WorkerGlobalScope-owner-set" id="ref-for-concept-WorkerGlobalScope-owner-set">owner set</a> consists of a single <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑥">Document</a></code> <var>document</var>, then return <var>document</var>.</p>
@@ -1872,7 +1872,7 @@ Any <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappa
    </section>
    <h3 class="heading settled" data-level="5.4" id="page-lifecycle"><span class="secno">5.4. </span><span class="content">Page lifecycle processing model</span><a class="self-link" href="#page-lifecycle"></a></h3>
    <h4 class="heading settled" data-level="5.4.1" id="frozenness-state"><span class="secno">5.4.1. </span><span class="content">FROZENNESS state</span><a class="self-link" href="#frozenness-state"></a></h4>
-    A document can be in one of the following <dfn class="dfn-paneled" data-dfn-for="Document" data-dfn-type="dfn" data-noexport id="document-frozenness">FROZENNESS</dfn> states: 
+    A document can be in one of the following <dfn class="dfn-paneled" data-dfn-for="Document" data-dfn-type="dfn" data-noexport id="document-frozenness">FROZENNESS</dfn> states:
    <ul>
     <li data-md>
      <p>true: the document is <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="frozen">frozen</dfn>, any tasks associated with the document will not run</p>
@@ -1894,7 +1894,7 @@ Specific examples:</p>
    <p>The UA will typically execute <a data-link-type="dfn" href="#change-the-frozenness-of-a-top-level-document" id="ref-for-change-the-frozenness-of-a-top-level-document③">change the frozenness of a top-level document</a> with false when the user revisits that browsing context. In addition, the UA may choose to periodically execute <a data-link-type="dfn" href="#change-the-frozenness-of-a-top-level-document" id="ref-for-change-the-frozenness-of-a-top-level-document④">change the frozenness of a top-level document</a> with false in the background, if plentiful resources are available.</p>
    <h4 class="heading settled" data-level="5.4.2" id="changing-frozenness"><span class="secno">5.4.2. </span><span class="content">Changing the frozenness of documents</span><a class="self-link" href="#changing-frozenness"></a></h4>
    <div class="algorithm" data-algorithm="change the frozenness of a top-level document">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="change-the-frozenness-of-a-top-level-document">change the frozenness of a top-level document</dfn>, given a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑨">Document</a></code> <var>topLevelDoc</var> and boolean <a data-link-type="dfn" href="#document-frozenness" id="ref-for-document-frozenness④">frozenness</a> state <var>frozenness</var>: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="change-the-frozenness-of-a-top-level-document">change the frozenness of a top-level document</dfn>, given a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑨">Document</a></code> <var>topLevelDoc</var> and boolean <a data-link-type="dfn" href="#document-frozenness" id="ref-for-document-frozenness④">frozenness</a> state <var>frozenness</var>:
     <ol>
      <li data-md>
       <p class="assertion">Assert: <var>doc</var>’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#concept-document-bc" id="ref-for-concept-document-bc⑤">browsing context</a> is a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#top-level-browsing-context" id="ref-for-top-level-browsing-context">top-level browsing context</a>.</p>
@@ -1913,7 +1913,7 @@ Specific examples:</p>
     </ol>
    </div>
    <div class="algorithm" data-algorithm="change the frozenness of a document">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="change-the-frozenness-of-a-document">change the frozenness of a document</dfn>, given a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document①⓪">Document</a></code> <var>doc</var>, a boolean <a data-link-type="dfn" href="#document-frozenness" id="ref-for-document-frozenness⑤">frozenness</a> state <var>frozenness</var>, and a boolean <var>auto resume frozen media</var>: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="change-the-frozenness-of-a-document">change the frozenness of a document</dfn>, given a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document①⓪">Document</a></code> <var>doc</var>, a boolean <a data-link-type="dfn" href="#document-frozenness" id="ref-for-document-frozenness⑤">frozenness</a> state <var>frozenness</var>, and a boolean <var>auto resume frozen media</var>:
     <ol>
      <li data-md>
       <p>If <var>frozenness</var> is true, run the <a data-link-type="dfn" href="#freeze-steps" id="ref-for-freeze-steps①">freeze steps</a> for <var>doc</var> given <var>auto resume frozen media</var>.</p>
@@ -1922,7 +1922,7 @@ Specific examples:</p>
     </ol>
    </div>
    <div class="algorithm" data-algorithm="freeze steps">
-     To run the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="freeze-steps">freeze steps</dfn> for a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document①①">Document</a></code> <var>doc</var>, given a boolean <var>auto resume frozen media</var>: 
+     To run the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="freeze-steps">freeze steps</dfn> for a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document①①">Document</a></code> <var>doc</var>, given a boolean <var>auto resume frozen media</var>:
     <ol>
      <li data-md>
       <p>Set <var>doc</var>’s <a data-link-type="dfn" href="#document-frozenness" id="ref-for-document-frozenness⑥">frozenness</a> state to true.</p>
@@ -1947,7 +1947,7 @@ occurs first before event firing.</p>
     </ol>
    </div>
    <div class="algorithm" data-algorithm="resume steps">
-     To run the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="resume-steps">resume steps</dfn> for a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document①②">Document</a></code> <var>doc</var>: 
+     To run the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="resume-steps">resume steps</dfn> for a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document①②">Document</a></code> <var>doc</var>:
     <ol>
      <li data-md>
       <p>Let <var>elements</var> be all <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/media.html#media-element" id="ref-for-media-element①">media elements</a> that are <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-shadow-including-descendant" id="ref-for-concept-shadow-including-descendant①">shadow-including descendants</a> of <var>doc</var>, in <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-shadow-including-tree-order" id="ref-for-concept-shadow-including-tree-order①">shadow-including tree order</a>.</p>
@@ -1974,7 +1974,7 @@ comes last after event firing.</p>
     </ol>
    </div>
    <h4 class="heading settled" data-level="5.4.3" id="discarding"><span class="secno">5.4.3. </span><span class="content">Discarding</span><a class="self-link" href="#discarding"></a></h4>
-    Each Document has a <dfn class="dfn-paneled" data-dfn-for="Document" data-dfn-type="dfn" data-noexport id="document-discarded">discarded</dfn> boolean, which is initially false. 
+    Each Document has a <dfn class="dfn-paneled" data-dfn-for="Document" data-dfn-type="dfn" data-noexport id="document-discarded">discarded</dfn> boolean, which is initially false.
    <p>To <dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="discarded|discard" id="discarded">discard</dfn> a browsing context, <a href="https://html.spec.whatwg.org/multipage/window-object.html#a-browsing-context-is-discarded">destroy the browsing context</a>, and make note of the fact that the reason it and any descendant browsing contents were destroyed was because of discarding.</p>
    <p class="note" role="note"><span>NOTE:</span> <a data-link-type="dfn" href="#discarded" id="ref-for-discarded⑤">Discard</a> is typically done to reclaim system memory, when memory and other resources are running low. On the other hand destroying a browser context is the normal teardown due to user leaving the page etc.</p>
    <p>Browsing contexts -- that are in the background and have their documents in <a href="https://www.w3.org/TR/page-visibility-2/#visibility-states-and-the-visibilitystate-enum">VisibilityState hidden</a> -- can be <a data-link-type="dfn" href="#discarded" id="ref-for-discarded⑥">discarded</a>, under resource pressure (eg. low memory). Specific example:</p>
@@ -2808,58 +2808,66 @@ for their technical input and suggestions that led to improvements to this speci
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

@@ -315,7 +315,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>CSS Transitions allows property changes in CSS values to occur smoothly over a specified duration.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -424,24 +424,24 @@ on screen, on paper, etc.
    <p> Normally when the value of a CSS property changes, the rendered result is instantly updated, with the affected elements immediately changing from the old property value to the new property value. This section describes a way to specify transitions using new CSS properties. These properties are used to animate smoothly from the old state to the new state over time. </p>
    <p> For example, suppose that transitions of one second have been defined on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-left" id="ref-for-propdef-left">left</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/colors.html#propdef-background-color" id="ref-for-propdef-background-color">background-color</a> properties. The following diagram illustrates the effect of updating those properties on an element, in this case moving it to the right and changing the background from red to blue. This assumes other transition parameters still have their default values. </p>
    <figure>
-     <img alt="Example showing the initial, intermediate, and final states of a box whose color and position is interpolated" src="transition-example.svg" width="518"> 
+     <img alt="Example showing the initial, intermediate, and final states of a box whose color and position is interpolated" src="transition-example.svg" width="518">
     <figcaption> Transitions of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-left" id="ref-for-propdef-left①">left</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/colors.html#propdef-background-color" id="ref-for-propdef-background-color①">background-color</a>. </figcaption>
    </figure>
    <p> Transitions are a presentational effect. The <a data-link-type="dfn" href="https://drafts.csswg.org/css-cascade-4/#computed-value" id="ref-for-computed-value">computed value</a> of a property transitions over time from the old value to the new value. Therefore if a script queries the <span id="ref-for-computed-value①">computed value</span> of a property (or other data depending on it) as it is transitioning, it will see an intermediate value that represents the current animated value of the property. </p>
    <p> The transition for a property is defined using a number of new properties. For example: </p>
    <div class="example" id="example-c14634d9">
-    <a class="self-link" href="#example-c14634d9"></a> 
+    <a class="self-link" href="#example-c14634d9"></a>
     <p style="display:none"> Example(s): </p>
 <pre>div {
   transition-property: opacity;
   transition-duration: 2s;
 }
 </pre>
-    The above example defines a transition on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#opacity" id="ref-for-opacity">opacity</a> property that, when a new value is assigned to it, will cause a smooth change between the old value and the new value over a period of two seconds. 
+    The above example defines a transition on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#opacity" id="ref-for-opacity">opacity</a> property that, when a new value is assigned to it, will cause a smooth change between the old value and the new value over a period of two seconds.
    </div>
    <p> Each of the transition properties accepts a comma-separated list, allowing multiple transitions to be defined, each acting on a different property. In this case, the individual transitions take their parameters from the same index in all the lists. For example: </p>
    <div class="example" id="example-0825db11">
-    <a class="self-link" href="#example-0825db11"></a> 
+    <a class="self-link" href="#example-0825db11"></a>
     <p style="display:none"> Example(s): </p>
 <pre>div {
   transition-property: opacity, left;
@@ -449,7 +449,7 @@ on screen, on paper, etc.
 }
 
 </pre>
-    This will cause the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#opacity" id="ref-for-opacity①">opacity</a> property to transition over a period of two seconds and the left property to transition over a period of four seconds. 
+    This will cause the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#opacity" id="ref-for-opacity①">opacity</a> property to transition over a period of two seconds and the left property to transition over a period of four seconds.
    </div>
    <p id="list-matching"> In the case where the lists of values in transition properties
         do not have the same length, the length of the <a class="property" data-link-type="propdesc" href="#propdef-transition-property" id="ref-for-propdef-transition-property">transition-property</a> list determines the number of items in
@@ -460,7 +460,7 @@ on screen, on paper, etc.
         repeating the list of values until there are enough.  This
         truncation or repetition does not affect the computed value. <span class="note"> Note: This is analogous to the behavior of the <a class="property" data-link-type="propdesc">background-*</a> properties, with <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-image" id="ref-for-propdef-background-image">background-image</a> analogous to <a class="property" data-link-type="propdesc" href="#propdef-transition-property" id="ref-for-propdef-transition-property②">transition-property</a>. </span> </p>
    <div class="example" id="example-d94cbd75">
-    <a class="self-link" href="#example-d94cbd75"></a> 
+    <a class="self-link" href="#example-d94cbd75"></a>
     <p style="display:none"> Example(s): </p>
 <pre>div {
   transition-property: opacity, left, top, width;
@@ -470,7 +470,7 @@ on screen, on paper, etc.
     The above example defines a transition on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-3/#opacity" id="ref-for-opacity②">opacity</a> property of 2 seconds duration, a      transition on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-left" id="ref-for-propdef-left②">left</a> property of 1
       second duration, a transition on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-top" id="ref-for-propdef-top">top</a> property of 2 seconds duration and a
       transition on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width">width</a> property of 1
-      second duration. 
+      second duration.
    </div>
    <p> While authors can use transitions to create dynamically changing content,
         dynamically changing content can lead to seizures in some users.
@@ -486,28 +486,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-transition-property">transition-property</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="#single-transition-property" id="ref-for-single-transition-property">&lt;single-transition-property></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma">#</a> 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="#single-transition-property" id="ref-for-single-transition-property">&lt;single-transition-property></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>all 
+      <td>all
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-transition-property-none" id="ref-for-valdef-transition-property-none">none</a> else a list of identifiers 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-transition-property-none" id="ref-for-valdef-transition-property-none">none</a> else a list of identifiers
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <div class="prod"> <dfn class="dfn-paneled css" data-dfn-type="type" data-export id="single-transition-property">&lt;single-transition-property></dfn> = <a class="css" data-link-type="maybe" href="#valdef-transition-property-all" id="ref-for-valdef-transition-property-all">all</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value">&lt;custom-ident></a>; </div>
    <p> A value of <dfn class="dfn-paneled css" data-dfn-for="transition-property" data-dfn-type="value" data-export id="valdef-transition-property-none">none</dfn> means that no property will transition.
@@ -547,28 +547,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-transition-duration">transition-duration</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value" title="Expands to: ms | s">&lt;time></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma①">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value" title="Expands to: ms | s">&lt;time></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma①">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td><span class="css">0s</span> 
+      <td><span class="css">0s</span>
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>list, each item a duration 
+      <td>list, each item a duration
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <p> This property specifies how long the transition from the old value to the new value should take. By default the value is <span class="css">0s</span>, meaning that the transition is immediate (i.e. there will be no animation). A negative value for <a class="property" data-link-type="propdesc" href="#propdef-transition-duration" id="ref-for-propdef-transition-duration③">transition-duration</a> renders the declaration invalid. </p>
    <h3 class="heading settled" data-level="2.3" id="transition-timing-function-property"><span class="secno">2.3. </span><span class="content"><span id="transition-timing-function_tag">The <a class="property" data-link-type="propdesc" href="#propdef-transition-timing-function" id="ref-for-propdef-transition-timing-function①">transition-timing-function</a> Property</span></span><a class="self-link" href="#transition-timing-function-property"></a></h3>
@@ -587,28 +587,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-transition-timing-function">transition-timing-function</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-easing-1/#typedef-easing-function" id="ref-for-typedef-easing-function">&lt;easing-function></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma②">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-easing-1/#typedef-easing-function" id="ref-for-typedef-easing-function">&lt;easing-function></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma②">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td><span class="css">ease</span> 
+      <td><span class="css">ease</span>
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>as specified 
+      <td>as specified
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <h3 class="heading settled" data-level="2.4" id="transition-delay-property"><span class="secno">2.4. </span><span class="content"><span id="the-transition-delay-property-">The <a class="property" data-link-type="propdesc" href="#propdef-transition-delay" id="ref-for-propdef-transition-delay①">transition-delay</a> Property</span></span><a class="self-link" href="#transition-delay-property"></a></h3>
    <p> The <a class="property" data-link-type="propdesc" href="#propdef-transition-delay" id="ref-for-propdef-transition-delay②">transition-delay</a> property defines when the transition will start. It allows a transition to begin execution some some period of time from when it is applied. A <span class="property" id="ref-for-propdef-transition-delay③">transition-delay</span> value of <span class="css">0s</span> means the transition will execute as soon as the property is changed. Otherwise, the value specifies an offset from the moment the property is changed, and the transition will delay execution by that offset. </p>
@@ -620,28 +620,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-transition-delay">transition-delay</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value①" title="Expands to: ms | s">&lt;time></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma③">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value①" title="Expands to: ms | s">&lt;time></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma③">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td><span class="css">0s</span> 
+      <td><span class="css">0s</span>
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>list, each item a duration 
+      <td>list, each item a duration
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <h3 class="heading settled" data-level="2.5" id="transition-shorthand-property"><span class="secno">2.5. </span><span class="content"><span id="the-transition-shorthand-property-">The <a class="property" data-link-type="propdesc" href="#propdef-transition" id="ref-for-propdef-transition">transition</a> Shorthand Property</span></span><a class="self-link" href="#transition-shorthand-property"></a></h3>
    <p> The <a class="property" data-link-type="propdesc" href="#propdef-transition" id="ref-for-propdef-transition①">transition</a> shorthand property combines the four properties described above into a single property. </p>
@@ -652,31 +652,31 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-transition">transition</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="#single-transition" id="ref-for-single-transition">&lt;single-transition></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma④">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="#single-transition" id="ref-for-single-transition">&lt;single-transition></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma④">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <div class="prod"> <dfn class="dfn-paneled css" data-dfn-type="type" data-export id="single-transition">&lt;single-transition></dfn> = [ <a class="css" data-link-type="maybe" href="#valdef-transition-property-none" id="ref-for-valdef-transition-property-none③">none</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> <a class="production css" data-link-type="type" href="#single-transition-property" id="ref-for-single-transition-property②">&lt;single-transition-property></a> ] <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value②" title="Expands to: ms | s">&lt;time></a> <span id="ref-for-comb-any①">||</span> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-easing-1/#typedef-easing-function" id="ref-for-typedef-easing-function①">&lt;easing-function></a> <span id="ref-for-comb-any②">||</span> <span class="production" id="ref-for-time-value③" title="Expands to: ms | s">&lt;time></span> </div>
    <p> Note that order is important within the items in this property:
@@ -837,78 +837,78 @@ on screen, on paper, etc.
       as follows:</p>
    <ol>
     <li>
-      If all of the following are true: 
+      If all of the following are true:
      <ul>
       <li> the element does not have
-            a <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition③">running transition</a> for the property, 
+            a <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition③">running transition</a> for the property,
       <li> the <a data-link-type="dfn" href="#before-change-style" id="ref-for-before-change-style④">before-change style</a> is different from
             the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style⑦">after-change style</a> for that property,
-            and the values for the property are <a data-link-type="dfn" href="#transitionable" id="ref-for-transitionable①">transitionable</a>, 
+            and the values for the property are <a data-link-type="dfn" href="#transitionable" id="ref-for-transitionable①">transitionable</a>,
       <li> the element does not have a <a data-link-type="dfn" href="#completed-transition" id="ref-for-completed-transition②">completed transition</a> for the property
-            or the <a data-link-type="dfn" href="#transition-end-value" id="ref-for-transition-end-value">end value</a> of the <span id="ref-for-completed-transition③">completed transition</span> is different from the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style⑧">after-change style</a> for the property, 
-      <li> there is a <a data-link-type="dfn" href="#matching-transition-property-value" id="ref-for-matching-transition-property-value">matching transition-property value</a>, and 
-      <li> the <a data-link-type="dfn" href="#transition-combined-duration" id="ref-for-transition-combined-duration">combined duration</a> is greater than <span class="css">0s</span>, 
+            or the <a data-link-type="dfn" href="#transition-end-value" id="ref-for-transition-end-value">end value</a> of the <span id="ref-for-completed-transition③">completed transition</span> is different from the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style⑧">after-change style</a> for the property,
+      <li> there is a <a data-link-type="dfn" href="#matching-transition-property-value" id="ref-for-matching-transition-property-value">matching transition-property value</a>, and
+      <li> the <a data-link-type="dfn" href="#transition-combined-duration" id="ref-for-transition-combined-duration">combined duration</a> is greater than <span class="css">0s</span>,
      </ul>
       then implementations must
         remove the <a data-link-type="dfn" href="#completed-transition" id="ref-for-completed-transition④">completed transition</a> (if present) from the set
         of completed transitions and
-        start a transition whose: 
+        start a transition whose:
      <ul>
       <li> <a data-link-type="dfn" href="#transition-start-time" id="ref-for-transition-start-time">start time</a> is
             the time of the <a data-link-type="dfn" href="#style-change-event" id="ref-for-style-change-event⑤">style change event</a> plus
-            the <a data-link-type="dfn" href="#matching-transition-delay" id="ref-for-matching-transition-delay①">matching transition delay</a>, 
+            the <a data-link-type="dfn" href="#matching-transition-delay" id="ref-for-matching-transition-delay①">matching transition delay</a>,
       <li> <a data-link-type="dfn" href="#transition-end-time" id="ref-for-transition-end-time">end time</a> is
             the <a data-link-type="dfn" href="#transition-start-time" id="ref-for-transition-start-time①">start time</a> plus
-            the <a data-link-type="dfn" href="#matching-transition-duration" id="ref-for-matching-transition-duration①">matching transition duration</a>, 
+            the <a data-link-type="dfn" href="#matching-transition-duration" id="ref-for-matching-transition-duration①">matching transition duration</a>,
       <li> <a data-link-type="dfn" href="#transition-start-value" id="ref-for-transition-start-value">start value</a> is
             the value of the transitioning property
-            in the <a data-link-type="dfn" href="#before-change-style" id="ref-for-before-change-style⑤">before-change style</a>, 
+            in the <a data-link-type="dfn" href="#before-change-style" id="ref-for-before-change-style⑤">before-change style</a>,
       <li> <a data-link-type="dfn" href="#transition-end-value" id="ref-for-transition-end-value①">end value</a> is
             the value of the transitioning property
-            in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style⑨">after-change style</a>, 
+            in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style⑨">after-change style</a>,
       <li> <a data-link-type="dfn" href="#transition-reversing-adjusted-start-value" id="ref-for-transition-reversing-adjusted-start-value①">reversing-adjusted start value</a> is the same as
-            the <a data-link-type="dfn" href="#transition-start-value" id="ref-for-transition-start-value①">start value</a>, and 
-      <li> <a data-link-type="dfn" href="#transition-reversing-shortening-factor" id="ref-for-transition-reversing-shortening-factor①">reversing shortening factor</a> is 1. 
+            the <a data-link-type="dfn" href="#transition-start-value" id="ref-for-transition-start-value①">start value</a>, and
+      <li> <a data-link-type="dfn" href="#transition-reversing-shortening-factor" id="ref-for-transition-reversing-shortening-factor①">reversing shortening factor</a> is 1.
      </ul>
     <li> Otherwise,
         if the element has a <a data-link-type="dfn" href="#completed-transition" id="ref-for-completed-transition⑤">completed transition</a> for the property
         and the <a data-link-type="dfn" href="#transition-end-value" id="ref-for-transition-end-value②">end value</a> of the <span id="ref-for-completed-transition⑥">completed transition</span> is different from the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style①⓪">after-change style</a> for the property,
         then implementations must
-        remove the <span id="ref-for-completed-transition⑦">completed transition</span> from the set of <span id="ref-for-completed-transition⑧">completed transitions</span>. 
+        remove the <span id="ref-for-completed-transition⑦">completed transition</span> from the set of <span id="ref-for-completed-transition⑧">completed transitions</span>.
     <li> If the element has a <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition④">running transition</a> or <a data-link-type="dfn" href="#completed-transition" id="ref-for-completed-transition⑨">completed transition</a> for the property,
         and there is <strong>not</strong> a <a data-link-type="dfn" href="#matching-transition-property-value" id="ref-for-matching-transition-property-value①">matching transition-property value</a>,
-        then implementations must <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel①">cancel</a> the <span id="ref-for-running-transition⑤">running transition</span> or remove the <span id="ref-for-completed-transition①⓪">completed transition</span> from the set of <span id="ref-for-completed-transition①①">completed transitions</span>. 
+        then implementations must <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel①">cancel</a> the <span id="ref-for-running-transition⑤">running transition</span> or remove the <span id="ref-for-completed-transition①⓪">completed transition</span> from the set of <span id="ref-for-completed-transition①①">completed transitions</span>.
     <li>
       If the element has a <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition⑥">running transition</a> for the property,
         there is a <a data-link-type="dfn" href="#matching-transition-property-value" id="ref-for-matching-transition-property-value②">matching transition-property value</a>,
-        and the <a data-link-type="dfn" href="#transition-end-value" id="ref-for-transition-end-value③">end value</a> of the <span id="ref-for-running-transition⑦">running transition</span> is <strong>not</strong> equal to the value of the property in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style①①">after-change style</a>, then: 
+        and the <a data-link-type="dfn" href="#transition-end-value" id="ref-for-transition-end-value③">end value</a> of the <span id="ref-for-running-transition⑦">running transition</span> is <strong>not</strong> equal to the value of the property in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style①①">after-change style</a>, then:
      <ol>
       <li> If the <a data-link-type="dfn" href="#current-value" id="ref-for-current-value">current value</a> of the property
             in the <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition⑧">running transition</a> is equal to
             the value of the property in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style①②">after-change style</a>,
             or if these two values are not <a data-link-type="dfn" href="#transitionable" id="ref-for-transitionable②">transitionable</a>,
-            then implementations must <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel②">cancel</a> the <span id="ref-for-running-transition⑨">running transition</span>. 
+            then implementations must <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel②">cancel</a> the <span id="ref-for-running-transition⑨">running transition</span>.
       <li> Otherwise, if the <a data-link-type="dfn" href="#transition-combined-duration" id="ref-for-transition-combined-duration①">combined duration</a> is
             less than or equal to <span class="css">0s</span>,
             or if the <a data-link-type="dfn" href="#current-value" id="ref-for-current-value①">current value</a> of the property in the <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition①⓪">running transition</a> is not <a data-link-type="dfn" href="#transitionable" id="ref-for-transitionable③">transitionable</a> with
             the value of the property in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style①③">after-change style</a>,
-            then implementations must <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel③">cancel</a> the <span id="ref-for-running-transition①①">running transition</span>. 
+            then implementations must <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel③">cancel</a> the <span id="ref-for-running-transition①①">running transition</span>.
       <li>
         Otherwise, if the <a data-link-type="dfn" href="#transition-reversing-adjusted-start-value" id="ref-for-transition-reversing-adjusted-start-value②">reversing-adjusted start value</a> of the <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition①②">running transition</a> is the same as the value of
             the property in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style①④">after-change style</a> <span class="note">(see the <a href="#reversing">section on reversing of
             transitions</a> for why these case exists)</span>,
             implementations must <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel④">cancel</a> the <span id="ref-for-running-transition①③">running transition</span> and
-            start a new transition whose: 
+            start a new transition whose:
        <ul>
         <li> <a data-link-type="dfn" href="#transition-reversing-adjusted-start-value" id="ref-for-transition-reversing-adjusted-start-value③">reversing-adjusted start value</a> is
                 the <a data-link-type="dfn" href="#transition-end-value" id="ref-for-transition-end-value④">end value</a> of the <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition①④">running transition</a> <span class="note">(Note: This represents the logical start state of
                 the transition, and allows some calculations to ignore that
                 the transition started before that state was reached, which
                 in turn allows repeated reversals of the same transition to
-                work correctly),</span> 
+                work correctly),</span>
         <li>
           <a data-link-type="dfn" href="#transition-reversing-shortening-factor" id="ref-for-transition-reversing-shortening-factor②">reversing shortening factor</a> is the absolute value, clamped to the range [0, 1],
-                of the sum of: 
+                of the sum of:
          <ol>
           <li>the output of the timing function of the old transition
                   at the time of the <a data-link-type="dfn" href="#style-change-event" id="ref-for-style-change-event⑥">style change event</a>,
@@ -921,47 +921,47 @@ on screen, on paper, etc.
                 space between the <a data-link-type="dfn" href="#transition-reversing-adjusted-start-value" id="ref-for-transition-reversing-adjusted-start-value④">reversing-adjusted start value</a> and the <a data-link-type="dfn" href="#transition-end-value" id="ref-for-transition-end-value⑤">end value</a> that the old transition has
                 traversed (in amounts of the value, not time), except with the
                 absolute value and clamping to handle timing functions that
-                have y1 or y2 outside the range [0, 1].</span> 
+                have y1 or y2 outside the range [0, 1].</span>
         <li>
           <a data-link-type="dfn" href="#transition-start-time" id="ref-for-transition-start-time②">start time</a> is
-                the time of the <a data-link-type="dfn" href="#style-change-event" id="ref-for-style-change-event⑦">style change event</a> plus: 
+                the time of the <a data-link-type="dfn" href="#style-change-event" id="ref-for-style-change-event⑦">style change event</a> plus:
          <ol>
           <li>if the <a data-link-type="dfn" href="#matching-transition-delay" id="ref-for-matching-transition-delay②">matching transition delay</a> is nonnegative,
-                      the <span id="ref-for-matching-transition-delay③">matching transition delay</span>, or 
+                      the <span id="ref-for-matching-transition-delay③">matching transition delay</span>, or
           <li>if the <a data-link-type="dfn" href="#matching-transition-delay" id="ref-for-matching-transition-delay④">matching transition delay</a> is negative,
                       the product of
                       the new transition’s <a data-link-type="dfn" href="#transition-reversing-shortening-factor" id="ref-for-transition-reversing-shortening-factor⑤">reversing shortening factor</a> and
-                      the <span id="ref-for-matching-transition-delay⑤">matching transition delay</span>, 
+                      the <span id="ref-for-matching-transition-delay⑤">matching transition delay</span>,
          </ol>
         <li> <a data-link-type="dfn" href="#transition-end-time" id="ref-for-transition-end-time①">end time</a> is
                 the <a data-link-type="dfn" href="#transition-start-time" id="ref-for-transition-start-time③">start time</a> plus the product of
                 the <a data-link-type="dfn" href="#matching-transition-duration" id="ref-for-matching-transition-duration②">matching transition duration</a> and
-                the new transition’s <a data-link-type="dfn" href="#transition-reversing-shortening-factor" id="ref-for-transition-reversing-shortening-factor⑥">reversing shortening factor</a>, 
+                the new transition’s <a data-link-type="dfn" href="#transition-reversing-shortening-factor" id="ref-for-transition-reversing-shortening-factor⑥">reversing shortening factor</a>,
         <li> <a data-link-type="dfn" href="#transition-start-value" id="ref-for-transition-start-value②">start value</a> is
                 the <a data-link-type="dfn" href="#current-value" id="ref-for-current-value②">current value</a> of the property
-                in the <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition①⑤">running transition</a>, 
+                in the <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition①⑤">running transition</a>,
         <li> <a data-link-type="dfn" href="#transition-end-value" id="ref-for-transition-end-value⑥">end value</a> is
                 the value of the property
-                in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style①⑤">after-change style</a>, 
+                in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style①⑤">after-change style</a>,
        </ul>
       <li>
-        Otherwise, implementations must <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel⑤">cancel</a> the <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition①⑥">running transition</a> and start a new transition whose: 
+        Otherwise, implementations must <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel⑤">cancel</a> the <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition①⑥">running transition</a> and start a new transition whose:
        <ul>
         <li> <a data-link-type="dfn" href="#transition-start-time" id="ref-for-transition-start-time④">start time</a> is
                 the time of the <a data-link-type="dfn" href="#style-change-event" id="ref-for-style-change-event⑧">style change event</a> plus
-                the <a data-link-type="dfn" href="#matching-transition-delay" id="ref-for-matching-transition-delay⑥">matching transition delay</a>, 
+                the <a data-link-type="dfn" href="#matching-transition-delay" id="ref-for-matching-transition-delay⑥">matching transition delay</a>,
         <li> <a data-link-type="dfn" href="#transition-end-time" id="ref-for-transition-end-time②">end time</a> is
                 the <a data-link-type="dfn" href="#transition-start-time" id="ref-for-transition-start-time⑤">start time</a> plus
-                the <a data-link-type="dfn" href="#matching-transition-duration" id="ref-for-matching-transition-duration③">matching transition duration</a>, 
+                the <a data-link-type="dfn" href="#matching-transition-duration" id="ref-for-matching-transition-duration③">matching transition duration</a>,
         <li> <a data-link-type="dfn" href="#transition-start-value" id="ref-for-transition-start-value③">start value</a> is
                 the <a data-link-type="dfn" href="#current-value" id="ref-for-current-value③">current value</a> of the property
-                in the <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition①⑦">running transition</a>, 
+                in the <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition①⑦">running transition</a>,
         <li> <a data-link-type="dfn" href="#transition-end-value" id="ref-for-transition-end-value⑦">end value</a> is
                 the value of the property
-                in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style①⑥">after-change style</a>, 
+                in the <a data-link-type="dfn" href="#after-change-style" id="ref-for-after-change-style①⑥">after-change style</a>,
         <li> <a data-link-type="dfn" href="#transition-reversing-adjusted-start-value" id="ref-for-transition-reversing-adjusted-start-value⑤">reversing-adjusted start value</a> is the same as
-                the <a data-link-type="dfn" href="#transition-start-value" id="ref-for-transition-start-value④">start value</a>, and 
-        <li> <a data-link-type="dfn" href="#transition-reversing-shortening-factor" id="ref-for-transition-reversing-shortening-factor⑦">reversing shortening factor</a> is 1. 
+                the <a data-link-type="dfn" href="#transition-start-value" id="ref-for-transition-start-value④">start value</a>, and
+        <li> <a data-link-type="dfn" href="#transition-reversing-shortening-factor" id="ref-for-transition-reversing-shortening-factor⑦">reversing shortening factor</a> is 1.
        </ul>
      </ol>
    </ol>
@@ -978,7 +978,7 @@ on screen, on paper, etc.
           it is the <em>new</em> values of the <span class="property">transition-*</span> properties
           that control the transition. </p>
     <div class="example" id="manual-reversing-example">
-     <a class="self-link" href="#manual-reversing-example"></a> 
+     <a class="self-link" href="#manual-reversing-example"></a>
      <p style="display:none"> Example(s): </p>
      <p>This provides a way for authors to specify different values
           of the <a class="property" data-link-type="propdesc">transition-*</a> properties for the “forward”
@@ -1162,7 +1162,7 @@ means the target of the event is that element).</p>
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="transitionevent" data-dfn-type="event" data-export id="transitionrun"><code>transitionrun</code></dfn>
     <dd>
       The <code class="idl"><a data-link-type="idl" href="#transitionrun" id="ref-for-transitionrun">transitionrun</a></code> event occurs when a transition is created (i.e.,
-      when it is added to the set of <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition②①">running transitions</a>). 
+      when it is added to the set of <a data-link-type="dfn" href="#running-transition" id="ref-for-running-transition②①">running transitions</a>).
      <p>A negative <a class="property" data-link-type="propdesc" href="#propdef-transition-delay" id="ref-for-propdef-transition-delay①⓪">transition-delay</a> will cause the event to fire with
       an <code class="idl"><a data-link-type="idl" href="#Events-TransitionEvent-elapsedTime" id="ref-for-Events-TransitionEvent-elapsedTime①">elapsedTime</a></code> equal to the absolute value of the
       delay capped to the <a class="property" data-link-type="propdesc" href="#propdef-transition-duration" id="ref-for-propdef-transition-duration⑨">transition-duration</a> of the animation. That is,
@@ -1174,7 +1174,7 @@ means the target of the event is that element).</p>
      </ul>
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="transitionevent" data-dfn-type="event" data-export id="transitionstart"><code>transitionstart</code></dfn>
     <dd>
-      The <code class="idl"><a data-link-type="idl" href="#transitionstart" id="ref-for-transitionstart">transitionstart</a></code> event occurs when a transition’s delay phase ends. 
+      The <code class="idl"><a data-link-type="idl" href="#transitionstart" id="ref-for-transitionstart">transitionstart</a></code> event occurs when a transition’s delay phase ends.
      <p>The value of <code class="idl"><a data-link-type="idl" href="#Events-TransitionEvent-elapsedTime" id="ref-for-Events-TransitionEvent-elapsedTime②">elapsedTime</a></code> for <code class="idl"><a data-link-type="idl" href="#transitionstart" id="ref-for-transitionstart①">transitionstart</a></code> events is the same as the value used for <code class="idl"><a data-link-type="idl" href="#transitionrun" id="ref-for-transitionrun①">transitionrun</a></code> events.</p>
      <ul>
       <li>Bubbles: Yes
@@ -1184,7 +1184,7 @@ means the target of the event is that element).</p>
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="transitionevent" data-dfn-type="event" data-export id="transitionend"><code>transitionend</code></dfn>
     <dd>
       The <code class="idl"><a data-link-type="idl" href="#transitionend" id="ref-for-transitionend">transitionend</a></code> event occurs at the completion of the transition. In
-      the case where a transition is removed before completion, such as if the <a class="property" data-link-type="propdesc" href="#propdef-transition-property" id="ref-for-propdef-transition-property①①">transition-property</a> is removed, then the event will not fire. 
+      the case where a transition is removed before completion, such as if the <a class="property" data-link-type="propdesc" href="#propdef-transition-property" id="ref-for-propdef-transition-property①①">transition-property</a> is removed, then the event will not fire.
      <p>The value of <code class="idl"><a data-link-type="idl" href="#Events-TransitionEvent-elapsedTime" id="ref-for-Events-TransitionEvent-elapsedTime③">elapsedTime</a></code> for this event is equal to
       the value of <a class="property" data-link-type="propdesc" href="#propdef-transition-duration" id="ref-for-propdef-transition-duration①①">transition-duration</a>.</p>
      <ul>
@@ -1194,7 +1194,7 @@ means the target of the event is that element).</p>
      </ul>
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="transitionevent" data-dfn-type="event" data-export id="transitioncancel"><code>transitioncancel</code></dfn>
     <dd>
-      The <code class="idl"><a data-link-type="idl" href="#transitioncancel" id="ref-for-transitioncancel">transitioncancel</a></code> event occurs when a transition is <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel⑥">canceled</a>. 
+      The <code class="idl"><a data-link-type="idl" href="#transitioncancel" id="ref-for-transitioncancel">transitioncancel</a></code> event occurs when a transition is <a data-link-type="dfn" href="#transition-cancel" id="ref-for-transition-cancel⑥">canceled</a>.
      <p>The <code class="idl"><a data-link-type="idl" href="#Events-TransitionEvent-elapsedTime" id="ref-for-Events-TransitionEvent-elapsedTime④">elapsedTime</a></code> for <code class="idl"><a data-link-type="idl" href="#transitioncancel" id="ref-for-transitioncancel①">transitioncancel</a></code> events is
       the number of seconds from the end of the transition’s delay to the
       moment when the transition was canceled.
@@ -1374,7 +1374,7 @@ and all the rest of the <a href="http://lists.w3.org/Archives/Public/www-style/"
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1387,14 +1387,14 @@ and all the rest of the <a href="http://lists.w3.org/Archives/Public/www-style/"
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1445,7 +1445,7 @@ and all the rest of the <a href="http://lists.w3.org/Archives/Public/www-style/"
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -2319,57 +2319,65 @@ and all the rest of the <a href="http://lists.w3.org/Archives/Public/www-style/"
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

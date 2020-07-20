@@ -291,7 +291,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This CSS module describes events and interfaces used for dynamically loading font resources.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -612,27 +612,27 @@ If <var>font</var> was the last item in that list
    <p>When the <dfn class="dfn-paneled idl-code" data-dfn-for="FontFace" data-dfn-type="method" data-export id="dom-fontface-load"><code>load()</code></dfn> method is called,
 	execute these steps:</p>
    <ol>
-    <li> Let <var>font face</var> be the <code class="idl"><a data-link-type="idl" href="#fontface" id="ref-for-fontface①②">FontFace</a></code> object on which this method was called. 
+    <li> Let <var>font face</var> be the <code class="idl"><a data-link-type="idl" href="#fontface" id="ref-for-fontface①②">FontFace</a></code> object on which this method was called.
     <li> If <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-urls-slot" id="ref-for-dom-fontface-urls-slot①">[[Urls]]</a></code> slot is <code>null</code>,
 			or its <code class="idl"><a data-link-type="idl" href="#dom-fontface-status" id="ref-for-dom-fontface-status⑦">status</a></code> attribute is anything other than <code>"unloaded"</code>,
-			return <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-fontstatuspromise-slot" id="ref-for-dom-fontface-fontstatuspromise-slot⑤">[[FontStatusPromise]]</a></code> and abort these steps. 
+			return <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-fontstatuspromise-slot" id="ref-for-dom-fontface-fontstatuspromise-slot⑤">[[FontStatusPromise]]</a></code> and abort these steps.
     <li> Otherwise,
 			set <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-status" id="ref-for-dom-fontface-status⑧">status</a></code> attribute to "loading",
 			return <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-fontstatuspromise-slot" id="ref-for-dom-fontface-fontstatuspromise-slot⑥">[[FontStatusPromise]]</a></code>,
-			and continue executing the rest of this algorithm asynchronously. 
+			and continue executing the rest of this algorithm asynchronously.
     <li> Using the value of <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-urls-slot" id="ref-for-dom-fontface-urls-slot②">[[Urls]]</a></code> slot,
 			attempt to load a font as defined in <a data-link-type="biblio" href="#biblio-css-fonts-3">[CSS-FONTS-3]</a>,
-			as if it was the value of a <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-fonts-4/#at-font-face-rule" id="ref-for-at-font-face-rule⑨">@font-face</a> rule’s <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#descdef-src" id="ref-for-descdef-src">src</a> descriptor. 
+			as if it was the value of a <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-fonts-4/#at-font-face-rule" id="ref-for-at-font-face-rule⑨">@font-face</a> rule’s <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#descdef-src" id="ref-for-descdef-src">src</a> descriptor.
     <li>
       When the load operation completes,
 			successfully or not,
-			queue a task to run the following steps synchronously: 
+			queue a task to run the following steps synchronously:
      <ol>
       <li>
         If the attempt to load fails,
 					reject <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-fontstatuspromise-slot" id="ref-for-dom-fontface-fontstatuspromise-slot⑦">[[FontStatusPromise]]</a></code> with
 					a DOMException whose name is "NetworkError"
-					and set <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-status" id="ref-for-dom-fontface-status⑨">status</a></code> attribute to "error". 
+					and set <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-status" id="ref-for-dom-fontface-status⑨">status</a></code> attribute to "error".
        <p>For each <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset⑨">FontFaceSet</a></code> <var>font face</var> is in:</p>
        <ol>
         <li data-md>
@@ -644,7 +644,7 @@ If <var>font</var> was the last item in that list
        </ol>
       <li>
         Otherwise, <var>font face</var> now represents the loaded font;
-					fulfill <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-fontstatuspromise-slot" id="ref-for-dom-fontface-fontstatuspromise-slot⑧">[[FontStatusPromise]]</a></code> with <var>font face</var> and set <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-status" id="ref-for-dom-fontface-status①⓪">status</a></code> attribute to "loaded". 
+					fulfill <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-fontstatuspromise-slot" id="ref-for-dom-fontface-fontstatuspromise-slot⑧">[[FontStatusPromise]]</a></code> with <var>font face</var> and set <var>font face’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontface-status" id="ref-for-dom-fontface-status①⓪">status</a></code> attribute to "loaded".
        <p>For each <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset①②">FontFaceSet</a></code> <var>font face</var> is in:</p>
        <ol>
         <li data-md>
@@ -860,32 +860,32 @@ or which depend on recently-loaded fonts</p>
    <table class="data" id="eventhandlers">
     <thead>
      <tr>
-      <th>Event handler 
-      <th>Event handler event type 
+      <th>Event handler
+      <th>Event handler event type
     <tbody>
      <tr>
-      <th><code class="idl"><a data-link-type="idl" href="#dom-fontfaceset-onloading" id="ref-for-dom-fontfaceset-onloading">onloading</a></code> 
-      <td><code class="idl"><a class="idl-code" data-link-type="event" href="#eventdef-fontfaceset-loading" id="ref-for-eventdef-fontfaceset-loading">loading</a></code> 
+      <th><code class="idl"><a data-link-type="idl" href="#dom-fontfaceset-onloading" id="ref-for-dom-fontfaceset-onloading">onloading</a></code>
+      <td><code class="idl"><a class="idl-code" data-link-type="event" href="#eventdef-fontfaceset-loading" id="ref-for-eventdef-fontfaceset-loading">loading</a></code>
      <tr>
-      <th><code class="idl"><a data-link-type="idl" href="#dom-fontfaceset-onloadingdone" id="ref-for-dom-fontfaceset-onloadingdone">onloadingdone</a></code> 
-      <td><code class="idl"><a data-link-type="idl" href="#eventdef-fontfaceset-loadingdone" id="ref-for-eventdef-fontfaceset-loadingdone">loadingdone</a></code> 
+      <th><code class="idl"><a data-link-type="idl" href="#dom-fontfaceset-onloadingdone" id="ref-for-dom-fontfaceset-onloadingdone">onloadingdone</a></code>
+      <td><code class="idl"><a data-link-type="idl" href="#eventdef-fontfaceset-loadingdone" id="ref-for-eventdef-fontfaceset-loadingdone">loadingdone</a></code>
      <tr>
-      <th><code class="idl"><a data-link-type="idl" href="#dom-fontfaceset-onloadingerror" id="ref-for-dom-fontfaceset-onloadingerror">onloadingerror</a></code> 
-      <td><code class="idl"><a data-link-type="idl" href="#eventdef-fontfaceset-loadingerror" id="ref-for-eventdef-fontfaceset-loadingerror">loadingerror</a></code> 
+      <th><code class="idl"><a data-link-type="idl" href="#dom-fontfaceset-onloadingerror" id="ref-for-dom-fontfaceset-onloadingerror">onloadingerror</a></code>
+      <td><code class="idl"><a data-link-type="idl" href="#eventdef-fontfaceset-loadingerror" id="ref-for-eventdef-fontfaceset-loadingerror">loadingerror</a></code>
    </table>
    <p>To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="fire-a-font-load-event">fire a font load event</dfn> named <var>e</var> at a <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset③⑥">FontFaceSet</a></code> <var>target</var> with optional <var>font faces</var> means to <a href="https://www.w3.org/TR/html5/webappapis.html#event-firing">fire a simple event</a> named <var>e</var> using the <code class="idl"><a data-link-type="idl" href="#fontfacesetloadevent" id="ref-for-fontfacesetloadevent">FontFaceSetLoadEvent</a></code> interface that also meets these conditions:</p>
    <ol>
     <li> The <code class="idl"><a data-link-type="idl" href="#dom-fontfacesetloadevent-fontfaces" id="ref-for-dom-fontfacesetloadevent-fontfaces">fontfaces</a></code> attribute is initialized to
-			the result of filtering <var>font faces</var> to only contain <code class="idl"><a data-link-type="idl" href="#fontface" id="ref-for-fontface③⑧">FontFace</a></code> objects contained in <var>target</var>. 
+			the result of filtering <var>font faces</var> to only contain <code class="idl"><a data-link-type="idl" href="#fontface" id="ref-for-fontface③⑧">FontFace</a></code> objects contained in <var>target</var>.
    </ol>
    <p>When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="switch-the-fontfaceset-to-loading">switch the FontFaceSet to loading</dfn> for a given <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset③⑦">FontFaceSet</a></code>,
 	the user agent must run the following steps:</p>
    <ol>
-    <li> Let <var>font face set</var> be the given <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset③⑧">FontFaceSet</a></code>. 
-    <li> Set the <code class="idl"><a data-link-type="idl" href="#dom-fontfaceset-status" id="ref-for-dom-fontfaceset-status">status</a></code> attribute of <var>font face set</var> to "loading". 
+    <li> Let <var>font face set</var> be the given <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset③⑧">FontFaceSet</a></code>.
+    <li> Set the <code class="idl"><a data-link-type="idl" href="#dom-fontfaceset-status" id="ref-for-dom-fontfaceset-status">status</a></code> attribute of <var>font face set</var> to "loading".
     <li> If <var>font face set’s</var> <code class="idl"><a data-link-type="idl" href="#dom-fontfaceset-readypromise-slot" id="ref-for-dom-fontfaceset-readypromise-slot①">[[ReadyPromise]]</a></code> slot currently holds a fulfilled promise,
-			replace it with a fresh pending promise. 
-    <li> Queue a task to <a data-link-type="dfn" href="#fire-a-font-load-event" id="ref-for-fire-a-font-load-event">fire a font load event</a> named <code class="idl"><a class="idl-code" data-link-type="event" href="#eventdef-fontfaceset-loading" id="ref-for-eventdef-fontfaceset-loading①">loading</a></code> at <var>font face set</var>. 
+			replace it with a fresh pending promise.
+    <li> Queue a task to <a data-link-type="dfn" href="#fire-a-font-load-event" id="ref-for-fire-a-font-load-event">fire a font load event</a> named <code class="idl"><a class="idl-code" data-link-type="event" href="#eventdef-fontfaceset-loading" id="ref-for-eventdef-fontfaceset-loading①">loading</a></code> at <var>font face set</var>.
    </ol>
    <p>When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="switch-the-fontfaceset-to-loaded">switch the FontFaceSet to loaded</dfn> for a given <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset③⑨">FontFaceSet</a></code>,
 	the user agent must run the following steps:</p>
@@ -932,32 +932,32 @@ unmark it as such.</p>
     <li>
       Parse <var>font</var> using the CSS value syntax of the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font" id="ref-for-propdef-font">font</a> property.
 			If a syntax error occurs,
-			return a syntax error. 
+			return a syntax error.
      <p>If the parsed value is a <a data-link-type="dfn" href="https://drafts.csswg.org/css-values-4/#css-wide-keywords" id="ref-for-css-wide-keywords">CSS-wide keyword</a>,
 			return a syntax error.</p>
      <p>Absolutize all relative lengths against the initial values of the corresponding properties.
 			(For example, a relative font weight like <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-fonts-4/#valdef-font-weight-bolder" id="ref-for-valdef-font-weight-bolder">bolder</a> is evaluated against the initial value <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-fonts-4/#valdef-font-weight-normal" id="ref-for-valdef-font-weight-normal">normal</a>.)</p>
     <li> If <var>text</var> was not explicitly provided,
-			let it be a string containing a single space character (U+0020 SPACE). 
+			let it be a string containing a single space character (U+0020 SPACE).
     <li> Let <var>font family list</var> be the list of font families parsed from <var>font</var>,
-			and <var>font style</var> be the other font style attributes parsed from <var>font</var>. 
+			and <var>font style</var> be the other font style attributes parsed from <var>font</var>.
     <li> Let <var>available font faces</var> be the font faces within <var>source</var>.
 			If the <var>allow system fonts</var> flag is specified,
-			add all system fonts to <var>available font faces</var>. 
-    <li> Let <var>matched font faces</var> initially be an empty list. 
+			add all system fonts to <var>available font faces</var>.
+    <li> Let <var>matched font faces</var> initially be an empty list.
     <li> For each family in <var>font family list</var>,
 			use the font matching rules to select the font faces from <var>available font faces</var> that match the <var>font style</var>,
 			and add them to <var>matched font faces</var>.
-			The use of the <code class="idl"><a data-link-type="idl" href="#dom-fontface-unicoderange" id="ref-for-dom-fontface-unicoderange②">unicodeRange</a></code> attribute means that this may be more than just a single font face. 
+			The use of the <code class="idl"><a data-link-type="idl" href="#dom-fontface-unicoderange" id="ref-for-dom-fontface-unicoderange②">unicodeRange</a></code> attribute means that this may be more than just a single font face.
     <li> If <var>matched font faces</var> is empty,
 			set the <var>found faces</var> flag to false.
-			Otherwise, set it to true. 
+			Otherwise, set it to true.
     <li>
       For each font face in <var>matched font faces</var>,
 			if its defined <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-4/#descdef-font-face-unicode-range" id="ref-for-descdef-font-face-unicode-range">unicode-range</a> does not include the codepoint of at least one character in <var>text</var>,
-			remove it from the list. 
+			remove it from the list.
      <p class="note" role="note"><span>Note:</span> Therefore, if <var>text</var> is the empty string, every font will be removed.</p>
-    <li> Return <var>matched font faces</var> and the <var>found faces</var> flag. 
+    <li> Return <var>matched font faces</var> and the <var>found faces</var> flag.
    </ol>
    <h3 class="heading settled" data-level="3.2" id="font-face-set-load"><span class="secno">3.2. </span><span class="content"> The <code>load()</code> method</span><a class="self-link" href="#font-face-set-load"></a></h3>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-fontfaceset-load" id="ref-for-dom-fontfaceset-load②">load()</a></code> method of <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset④④">FontFaceSet</a></code> will determine whether all fonts in the given font list
@@ -971,22 +971,22 @@ unmark it as such.</p>
 	execute these steps:</p>
    <ol>
     <li> Let <var>font face set</var> be the <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset④⑤">FontFaceSet</a></code> object this method was called on.
-			Let <var>promise</var> be a newly-created promise object. 
+			Let <var>promise</var> be a newly-created promise object.
     <li> Return <var>promise</var>.
-			Complete the rest of these steps asynchronously. 
+			Complete the rest of these steps asynchronously.
     <li> <a data-link-type="dfn" href="#find-the-matching-font-faces" id="ref-for-find-the-matching-font-faces">Find the matching font faces</a> from <var>font face set</var> using the <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/css-font-loading-3/#dom-fontfacesetload-font" id="ref-for-dom-fontfacesetload-font">font</a></code> and <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/css-font-loading-3/#dom-fontfacesetload-text" id="ref-for-dom-fontfacesetload-text">text</a></code> arguments passed to the function,
 			and let <var>font face list</var> be the return value
 			(ignoring the <var>found faces</var> flag).
 			If a syntax error was returned,
 			reject <var>promise</var> with a SyntaxError exception
-			and terminate these steps. 
+			and terminate these steps.
     <li>
-      Queue a task to run the following steps synchronously: 
+      Queue a task to run the following steps synchronously:
      <ol>
       <li> For all of the font faces in the <var>font face list</var>,
-					call their <code class="idl"><a data-link-type="idl" href="#dom-fontface-load" id="ref-for-dom-fontface-load④">load()</a></code> method. 
+					call their <code class="idl"><a data-link-type="idl" href="#dom-fontface-load" id="ref-for-dom-fontface-load④">load()</a></code> method.
       <li> Resolve <var>promise</var> with the result of
-					waiting for all of the <code class="idl"><a data-link-type="idl" href="#dom-fontface-fontstatuspromise-slot" id="ref-for-dom-fontface-fontstatuspromise-slot⑨">[[FontStatusPromise]]</a></code>s of each font face in the <var>font face list</var>, in order. 
+					waiting for all of the <code class="idl"><a data-link-type="idl" href="#dom-fontface-fontstatuspromise-slot" id="ref-for-dom-fontface-fontstatuspromise-slot⑨">[[FontStatusPromise]]</a></code>s of each font face in the <var>font face list</var>, in order.
      </ol>
    </ol>
    <h3 class="heading settled" data-level="3.3" id="font-face-set-check"><span class="secno">3.3. </span><span class="content"> The <code>check()</code> method</span><a class="self-link" href="#font-face-set-check"></a></h3>
@@ -998,7 +998,7 @@ unmark it as such.</p>
 	otherwise, it returns false.</p>
    <div class="note" role="note">
      Two special cases in this method’s behavior should be noted,
-		as they are non-obvious: 
+		as they are non-obvious:
     <ul>
      <li data-md>
       <p>If the specified fonts exist,
@@ -1020,21 +1020,21 @@ and an error is more useful than a vacuous <code>true</code>.</p>
    <p>When the <dfn class="dfn-paneled idl-code" data-dfn-for="FontFaceSet" data-dfn-type="method" data-export data-lt="check(font, text)|check(font)" id="dom-fontfaceset-check"><code>check</code></dfn>( <span><dfn class="dfn-paneled idl-code" data-dfn-for="FontFaceSet/check(font, text)" data-dfn-type="argument" data-export id="dom-fontfaceset-check-font-text-font"><code>font</code></dfn>, <dfn class="dfn-paneled idl-code" data-dfn-for="FontFaceSet/check(font, text)" data-dfn-type="argument" data-export id="dom-fontfaceset-check-font-text-text"><code>text</code></dfn>)</span> method is called,
 	execute these steps:</p>
    <ol>
-    <li> Let <var>font face set</var> be the <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset④⑦">FontFaceSet</a></code> object this method was called on. 
+    <li> Let <var>font face set</var> be the <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset④⑦">FontFaceSet</a></code> object this method was called on.
     <li> <a data-link-type="dfn" href="#find-the-matching-font-faces" id="ref-for-find-the-matching-font-faces①">Find the matching font faces</a> from <var>font face set</var> using the <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/css-font-loading-3/#dom-fontfacesetcheck-font" id="ref-for-dom-fontfacesetcheck-font">font</a></code> and <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/css-font-loading-3/#dom-fontfacesetcheck-text" id="ref-for-dom-fontfacesetcheck-text">text</a></code> arguments passed to the function,
 			and including system fonts,
 			and let <var>font face list</var> be the returned list of font faces,
 			and <var>found faces</var> be the returned <var>found faces</var> flag.
 			If a syntax error was returned,
 			throw a SyntaxError exception
-			and terminate these steps. 
+			and terminate these steps.
     <li> If <var>found faces</var> is false,
 			throw an XXX error
-			and abort this algorithm. 
+			and abort this algorithm.
     <li> If <var>font face list</var> is empty,
 			or all fonts in the <var>font face list</var> either have a <code class="idl"><a data-link-type="idl" href="#dom-fontface-status" id="ref-for-dom-fontface-status①②">status</a></code> attribute of "loaded" or are system fonts,
 			return <code>true</code>.
-			Otherwise, return <code>false</code>. 
+			Otherwise, return <code>false</code>.
    </ol>
    <h3 class="heading settled" data-level="3.4" id="font-face-set-ready"><span class="secno">3.4. </span><span class="content"> The <code>ready</code> attribute</span><a class="self-link" href="#font-face-set-ready"></a></h3>
    <p>Because the number of fonts loaded depends on the how many fonts are used for a given piece of text,
@@ -1071,7 +1071,7 @@ and an error is more useful than a vacuous <code>true</code>.</p>
    <div class="example" id="example-00e0f107">
     <a class="self-link" href="#example-00e0f107"></a> Fonts are available when they are added to a <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset④⑧">FontFaceSet</a></code>.
 		Adding a new <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-fonts-4/#at-font-face-rule" id="ref-for-at-font-face-rule②②">@font-face</a> rule to a stylesheet
-		also adds a new <code class="idl"><a data-link-type="idl" href="#fontface" id="ref-for-fontface④①">FontFace</a></code> to the <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset④⑨">FontFaceSet</a></code> of the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document">Document</a></code> object. 
+		also adds a new <code class="idl"><a data-link-type="idl" href="#fontface" id="ref-for-fontface④①">FontFace</a></code> to the <code class="idl"><a data-link-type="idl" href="#fontfaceset" id="ref-for-fontfaceset④⑨">FontFaceSet</a></code> of the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document">Document</a></code> object.
     <p>Adding a new <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-fonts-4/#at-font-face-rule" id="ref-for-at-font-face-rule②③">@font-face</a> rule:</p>
 <pre class="highlight">document<c- p>.</c->styleSheets<c- p>[</c-><c- mi>0</c-><c- p>].</c->insertRule<c- p>(</c->
   <c- u>"@font-face { font-family: newfont; src: url(newfont.woff); }"</c-><c- p>,</c-> <c- mi>0</c-><c- p>);</c->
@@ -1153,7 +1153,7 @@ f<c- p>.</c->load<c- p>().</c->then<c- p>(</c-><c- a>function</c-> <c- p>(</c->l
 	will define ways of interacting with and querying local fonts as well.</p>
    <h2 class="heading settled" data-level="5" id="font-load-event-examples"><span class="secno">5. </span><span class="content"> API Examples</span><a class="self-link" href="#font-load-event-examples"></a></h2>
    <div class="example" id="example-c4045522">
-    <a class="self-link" href="#example-c4045522"></a> To show content only after all font loads complete: 
+    <a class="self-link" href="#example-c4045522"></a> To show content only after all font loads complete:
 <pre class="highlight">document<c- p>.</c->fonts<c- p>.</c->ready<c- p>.</c->then<c- p>(</c-><c- a>function</c-><c- p>()</c-> <c- p>{</c->
   <c- a>var</c-> content <c- o>=</c-> document<c- p>.</c->getElementById<c- p>(</c-><c- u>"content"</c-><c- p>);</c->
   content<c- p>.</c->style<c- p>.</c->visibility <c- o>=</c-> <c- u>"visible"</c-><c- p>;</c->
@@ -1162,7 +1162,7 @@ f<c- p>.</c->load<c- p>().</c->then<c- p>(</c-><c- a>function</c-> <c- p>(</c->l
    </div>
    <div class="example" id="example-95b58c34">
     <a class="self-link" href="#example-95b58c34"></a> Drawing text in a canvas with a downloadable font, explicitly
-		initiating the font download and drawing upon completion: 
+		initiating the font download and drawing upon completion:
 <pre class="highlight"><c- a>function</c-> drawStuff<c- p>()</c-> <c- p>{</c->
   <c- a>var</c-> ctx <c- o>=</c-> document<c- p>.</c->getElementById<c- p>(</c-><c- u>"c"</c-><c- p>).</c->getContext<c- p>(</c-><c- u>"2d"</c-><c- p>);</c->
 
@@ -1180,7 +1180,7 @@ document<c- p>.</c->fonts<c- p>.</c->load<c- p>(</c-><c- u>"50px MyDownloadableF
 		after editing operations have taken place.  Since style changes may
 		or may not require additional fonts to be downloaded, or the fonts
 		may already have been downloaded, the measurement procedures need to
-		occur after those font loads complete: 
+		occur after those font loads complete:
 <pre class="highlight"><c- a>function</c-> measureTextElements<c- p>()</c-> <c- p>{</c->
   <c- c1>// contents can now be measured using the metrics of</c->
   <c- c1>// the downloadable font(s)</c->
@@ -1193,7 +1193,7 @@ document<c- p>.</c->fonts<c- p>.</c->load<c- p>(</c-><c- u>"50px MyDownloadableF
 </pre>
    </div>
    <div class="example" id="example-268ae257">
-    <a class="self-link" href="#example-268ae257"></a> The <code class="idl"><a data-link-type="idl" href="#eventdef-fontfaceset-loadingdone" id="ref-for-eventdef-fontfaceset-loadingdone③">loadingdone</a></code> event only fires after all font related loads have completed <strong>and</strong> text has been laid out without causing additional font loads: 
+    <a class="self-link" href="#example-268ae257"></a> The <code class="idl"><a data-link-type="idl" href="#eventdef-fontfaceset-loadingdone" id="ref-for-eventdef-fontfaceset-loadingdone③">loadingdone</a></code> event only fires after all font related loads have completed <strong>and</strong> text has been laid out without causing additional font loads:
 <pre class="highlight"><c- p>&lt;</c-><c- f>style</c-><c- p>></c->
 <c- p>@</c-><c- k>font-face</c-> <c- p>{</c->
   <c- f>font-family</c-><c- o>:</c-> <c- f>latin-serif</c-><c- o>;</c->
@@ -1259,7 +1259,7 @@ to match with proper IDL practice.</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1272,14 +1272,14 @@ to match with proper IDL practice.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1330,7 +1330,7 @@ to match with proper IDL practice.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1462,37 +1462,37 @@ to match with proper IDL practice.</p>
   <aside class="dfn-panel" data-for="term-for-propdef-font">
    <a href="https://drafts.csswg.org/css-fonts-3/#propdef-font">https://drafts.csswg.org/css-fonts-3/#propdef-font</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-font">3.1. 
+    <li><a href="#ref-for-propdef-font">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-descdef-src">
    <a href="https://drafts.csswg.org/css-fonts-3/#descdef-src">https://drafts.csswg.org/css-fonts-3/#descdef-src</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-src">2.2. 
+    <li><a href="#ref-for-descdef-src">2.2.
 The load() method</a>
-    <li><a href="#ref-for-descdef-src①">2.3. 
+    <li><a href="#ref-for-descdef-src①">2.3.
 Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-descdef-src②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-at-font-face-rule">
    <a href="https://drafts.csswg.org/css-fonts-4/#at-font-face-rule">https://drafts.csswg.org/css-fonts-4/#at-font-face-rule</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-at-font-face-rule">1. 
+    <li><a href="#ref-for-at-font-face-rule">1.
 Introduction</a>
-    <li><a href="#ref-for-at-font-face-rule①">2. 
+    <li><a href="#ref-for-at-font-face-rule①">2.
 The FontFace Interface</a> <a href="#ref-for-at-font-face-rule②">(2)</a> <a href="#ref-for-at-font-face-rule③">(3)</a> <a href="#ref-for-at-font-face-rule④">(4)</a> <a href="#ref-for-at-font-face-rule⑤">(5)</a> <a href="#ref-for-at-font-face-rule⑥">(6)</a>
-    <li><a href="#ref-for-at-font-face-rule⑦">2.1. 
+    <li><a href="#ref-for-at-font-face-rule⑦">2.1.
 The Constructor</a> <a href="#ref-for-at-font-face-rule⑧">(2)</a>
-    <li><a href="#ref-for-at-font-face-rule⑨">2.2. 
+    <li><a href="#ref-for-at-font-face-rule⑨">2.2.
 The load() method</a>
-    <li><a href="#ref-for-at-font-face-rule①⓪">2.3. 
+    <li><a href="#ref-for-at-font-face-rule①⓪">2.3.
 Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-at-font-face-rule①①">(2)</a> <a href="#ref-for-at-font-face-rule①②">(3)</a> <a href="#ref-for-at-font-face-rule①③">(4)</a> <a href="#ref-for-at-font-face-rule①④">(5)</a> <a href="#ref-for-at-font-face-rule①⑤">(6)</a> <a href="#ref-for-at-font-face-rule①⑥">(7)</a> <a href="#ref-for-at-font-face-rule①⑦">(8)</a> <a href="#ref-for-at-font-face-rule①⑧">(9)</a> <a href="#ref-for-at-font-face-rule①⑨">(10)</a> <a href="#ref-for-at-font-face-rule②⓪">(11)</a>
-    <li><a href="#ref-for-at-font-face-rule②①">3. 
+    <li><a href="#ref-for-at-font-face-rule②①">3.
 The FontFaceSet Interface</a>
-    <li><a href="#ref-for-at-font-face-rule②②">3.5. 
+    <li><a href="#ref-for-at-font-face-rule②②">3.5.
 Interaction with CSS Font Loading and Matching</a> <a href="#ref-for-at-font-face-rule②③">(2)</a> <a href="#ref-for-at-font-face-rule②④">(3)</a>
-    <li><a href="#ref-for-at-font-face-rule②⑤">4.2. 
+    <li><a href="#ref-for-at-font-face-rule②⑤">4.2.
 Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-at-font-face-rule②⑥">(2)</a> <a href="#ref-for-at-font-face-rule②⑦">(3)</a> <a href="#ref-for-at-font-face-rule②⑧">(4)</a>
     <li><a href="#ref-for-at-font-face-rule②⑨">Changes</a>
     <li><a href="#ref-for-at-font-face-rule③⓪"> Privacy &amp; Security Considerations</a>
@@ -1501,190 +1501,190 @@ Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-at-font-face-rule
   <aside class="dfn-panel" data-for="term-for-valdef-font-weight-bolder">
    <a href="https://drafts.csswg.org/css-fonts-4/#valdef-font-weight-bolder">https://drafts.csswg.org/css-fonts-4/#valdef-font-weight-bolder</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-font-weight-bolder">3.1. 
+    <li><a href="#ref-for-valdef-font-weight-bolder">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-font-weight-normal">
    <a href="https://drafts.csswg.org/css-fonts-4/#valdef-font-weight-normal">https://drafts.csswg.org/css-fonts-4/#valdef-font-weight-normal</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-font-weight-normal">3.1. 
+    <li><a href="#ref-for-valdef-font-weight-normal">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-descdef-font-face-unicode-range">
    <a href="https://drafts.csswg.org/css-fonts-4/#descdef-font-face-unicode-range">https://drafts.csswg.org/css-fonts-4/#descdef-font-face-unicode-range</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-font-face-unicode-range">3.1. 
+    <li><a href="#ref-for-descdef-font-face-unicode-range">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-parse-something-according-to-a-css-grammar">
    <a href="https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar">https://drafts.csswg.org/css-syntax-3/#css-parse-something-according-to-a-css-grammar</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-parse-something-according-to-a-css-grammar">2. 
+    <li><a href="#ref-for-css-parse-something-according-to-a-css-grammar">2.
 The FontFace Interface</a> <a href="#ref-for-css-parse-something-according-to-a-css-grammar①">(2)</a>
-    <li><a href="#ref-for-css-parse-something-according-to-a-css-grammar②">2.1. 
+    <li><a href="#ref-for-css-parse-something-according-to-a-css-grammar②">2.1.
 The Constructor</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-wide-keywords">
    <a href="https://drafts.csswg.org/css-values-4/#css-wide-keywords">https://drafts.csswg.org/css-values-4/#css-wide-keywords</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-wide-keywords">3.1. 
+    <li><a href="#ref-for-css-wide-keywords">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-funcdef-url">
    <a href="https://drafts.csswg.org/css-values-4/#funcdef-url">https://drafts.csswg.org/css-values-4/#funcdef-url</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-url">2.1. 
+    <li><a href="#ref-for-funcdef-url">2.1.
 The Constructor</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssomstring">
    <a href="https://drafts.csswg.org/cssom-1/#cssomstring">https://drafts.csswg.org/cssom-1/#cssomstring</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssomstring">2. 
+    <li><a href="#ref-for-cssomstring">2.
 The FontFace Interface</a> <a href="#ref-for-cssomstring①">(2)</a> <a href="#ref-for-cssomstring②">(3)</a> <a href="#ref-for-cssomstring③">(4)</a> <a href="#ref-for-cssomstring④">(5)</a> <a href="#ref-for-cssomstring⑤">(6)</a> <a href="#ref-for-cssomstring⑥">(7)</a> <a href="#ref-for-cssomstring⑦">(8)</a> <a href="#ref-for-cssomstring⑧">(9)</a> <a href="#ref-for-cssomstring⑨">(10)</a> <a href="#ref-for-cssomstring①⓪">(11)</a> <a href="#ref-for-cssomstring①①">(12)</a> <a href="#ref-for-cssomstring①②">(13)</a> <a href="#ref-for-cssomstring①③">(14)</a> <a href="#ref-for-cssomstring①④">(15)</a> <a href="#ref-for-cssomstring①⑤">(16)</a> <a href="#ref-for-cssomstring①⑥">(17)</a> <a href="#ref-for-cssomstring①⑦">(18)</a> <a href="#ref-for-cssomstring①⑧">(19)</a> <a href="#ref-for-cssomstring①⑨">(20)</a> <a href="#ref-for-cssomstring②⓪">(21)</a> <a href="#ref-for-cssomstring②①">(22)</a> <a href="#ref-for-cssomstring②②">(23)</a> <a href="#ref-for-cssomstring②③">(24)</a> <a href="#ref-for-cssomstring②④">(25)</a> <a href="#ref-for-cssomstring②⑤">(26)</a> <a href="#ref-for-cssomstring②⑥">(27)</a> <a href="#ref-for-cssomstring②⑦">(28)</a>
-    <li><a href="#ref-for-cssomstring②⑧">2.1. 
+    <li><a href="#ref-for-cssomstring②⑧">2.1.
 The Constructor</a> <a href="#ref-for-cssomstring②⑨">(2)</a>
-    <li><a href="#ref-for-cssomstring③⓪">3. 
+    <li><a href="#ref-for-cssomstring③⓪">3.
 The FontFaceSet Interface</a> <a href="#ref-for-cssomstring③①">(2)</a> <a href="#ref-for-cssomstring③②">(3)</a> <a href="#ref-for-cssomstring③③">(4)</a> <a href="#ref-for-cssomstring③④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-document">
    <a href="https://dom.spec.whatwg.org/#document">https://dom.spec.whatwg.org/#document</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-document">3.5. 
+    <li><a href="#ref-for-document">3.5.
 Interaction with CSS Font Loading and Matching</a>
-    <li><a href="#ref-for-document①">4. 
+    <li><a href="#ref-for-document①">4.
 The FontFaceSource mixin</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-event">
    <a href="https://dom.spec.whatwg.org/#event">https://dom.spec.whatwg.org/#event</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-event">3. 
+    <li><a href="#ref-for-event">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dictdef-eventinit">
    <a href="https://dom.spec.whatwg.org/#dictdef-eventinit">https://dom.spec.whatwg.org/#dictdef-eventinit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dictdef-eventinit">3. 
+    <li><a href="#ref-for-dictdef-eventinit">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-eventtarget">
    <a href="https://dom.spec.whatwg.org/#eventtarget">https://dom.spec.whatwg.org/#eventtarget</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventtarget">3. 
+    <li><a href="#ref-for-eventtarget">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-eventhandler">
    <a href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler">https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventhandler">3. 
+    <li><a href="#ref-for-eventhandler">3.
 The FontFaceSet Interface</a> <a href="#ref-for-eventhandler①">(2)</a> <a href="#ref-for-eventhandler②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-offscreencanvas">
    <a href="https://html.spec.whatwg.org/multipage/canvas.html#offscreencanvas">https://html.spec.whatwg.org/multipage/canvas.html#offscreencanvas</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-offscreencanvas">4.1. 
+    <li><a href="#ref-for-offscreencanvas">4.1.
 Worker FontFaceSources</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-workerglobalscope">
    <a href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope">https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-workerglobalscope">4. 
+    <li><a href="#ref-for-workerglobalscope">4.
 The FontFaceSource mixin</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-ArrayBuffer">
    <a href="https://heycam.github.io/webidl/#idl-ArrayBuffer">https://heycam.github.io/webidl/#idl-ArrayBuffer</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-ArrayBuffer">2. 
+    <li><a href="#ref-for-idl-ArrayBuffer">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-idl-ArrayBuffer①">2.1. 
+    <li><a href="#ref-for-idl-ArrayBuffer①">2.1.
 The Constructor</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ArrayBufferView">
    <a href="https://heycam.github.io/webidl/#ArrayBufferView">https://heycam.github.io/webidl/#ArrayBufferView</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ArrayBufferView">2. 
+    <li><a href="#ref-for-ArrayBufferView">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-ArrayBufferView①">2.1. 
+    <li><a href="#ref-for-ArrayBufferView①">2.1.
 The Constructor</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-Exposed">
    <a href="https://heycam.github.io/webidl/#Exposed">https://heycam.github.io/webidl/#Exposed</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-Exposed">2. 
+    <li><a href="#ref-for-Exposed">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-Exposed①">3. 
+    <li><a href="#ref-for-Exposed①">3.
 The FontFaceSet Interface</a> <a href="#ref-for-Exposed②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-invalidmodificationerror">
    <a href="https://heycam.github.io/webidl/#invalidmodificationerror">https://heycam.github.io/webidl/#invalidmodificationerror</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-invalidmodificationerror">3. 
+    <li><a href="#ref-for-invalidmodificationerror">3.
 The FontFaceSet Interface</a>
-    <li><a href="#ref-for-invalidmodificationerror①">4.2. 
+    <li><a href="#ref-for-invalidmodificationerror①">4.2.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-promise">
    <a href="https://heycam.github.io/webidl/#idl-promise">https://heycam.github.io/webidl/#idl-promise</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-promise">1.1. 
+    <li><a href="#ref-for-idl-promise">1.1.
 Values</a>
-    <li><a href="#ref-for-idl-promise①">2.1. 
+    <li><a href="#ref-for-idl-promise①">2.1.
 The Constructor</a>
-    <li><a href="#ref-for-idl-promise②">3. 
+    <li><a href="#ref-for-idl-promise②">3.
 The FontFaceSet Interface</a> <a href="#ref-for-idl-promise③">(2)</a>
-    <li><a href="#ref-for-idl-promise④">3.4. 
+    <li><a href="#ref-for-idl-promise④">3.4.
 The ready attribute</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-SameObject">
    <a href="https://heycam.github.io/webidl/#SameObject">https://heycam.github.io/webidl/#SameObject</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-SameObject">3. 
+    <li><a href="#ref-for-SameObject">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-syntaxerror">
    <a href="https://heycam.github.io/webidl/#syntaxerror">https://heycam.github.io/webidl/#syntaxerror</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-syntaxerror">2. 
+    <li><a href="#ref-for-syntaxerror">2.
 The FontFace Interface</a> <a href="#ref-for-syntaxerror①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-boolean">
    <a href="https://heycam.github.io/webidl/#idl-boolean">https://heycam.github.io/webidl/#idl-boolean</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-boolean">3. 
+    <li><a href="#ref-for-idl-boolean">3.
 The FontFaceSet Interface</a> <a href="#ref-for-idl-boolean①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-long">
    <a href="https://heycam.github.io/webidl/#idl-long">https://heycam.github.io/webidl/#idl-long</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-long">3. 
+    <li><a href="#ref-for-idl-long">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dfn-set-entries">
    <a href="https://heycam.github.io/webidl/#dfn-set-entries">https://heycam.github.io/webidl/#dfn-set-entries</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-set-entries">3. 
+    <li><a href="#ref-for-dfn-set-entries">3.
 The FontFaceSet Interface</a> <a href="#ref-for-dfn-set-entries①">(2)</a>
    </ul>
   </aside>
@@ -1882,122 +1882,122 @@ Is that always defined?<a href="#issue-65bdbf2d"> ↵ </a></div>
   <aside class="dfn-panel" data-for="typedefdef-binarydata">
    <b><a href="#typedefdef-binarydata">#typedefdef-binarydata</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedefdef-binarydata">2. 
+    <li><a href="#ref-for-typedefdef-binarydata">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-typedefdef-binarydata①">2.1. 
+    <li><a href="#ref-for-typedefdef-binarydata①">2.1.
 The Constructor</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dictdef-fontfacedescriptors">
    <b><a href="#dictdef-fontfacedescriptors">#dictdef-fontfacedescriptors</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dictdef-fontfacedescriptors">2. 
+    <li><a href="#ref-for-dictdef-fontfacedescriptors">2.
 The FontFace Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="enumdef-fontfaceloadstatus">
    <b><a href="#enumdef-fontfaceloadstatus">#enumdef-fontfaceloadstatus</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-enumdef-fontfaceloadstatus">2. 
+    <li><a href="#ref-for-enumdef-fontfaceloadstatus">2.
 The FontFace Interface</a> <a href="#ref-for-enumdef-fontfaceloadstatus①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fontface">
    <b><a href="#fontface">#fontface</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fontface">2. 
+    <li><a href="#ref-for-fontface">2.
 The FontFace Interface</a> <a href="#ref-for-fontface①">(2)</a> <a href="#ref-for-fontface②">(3)</a> <a href="#ref-for-fontface③">(4)</a> <a href="#ref-for-fontface④">(5)</a> <a href="#ref-for-fontface⑤">(6)</a> <a href="#ref-for-fontface⑥">(7)</a> <a href="#ref-for-fontface⑦">(8)</a> <a href="#ref-for-fontface⑧">(9)</a>
-    <li><a href="#ref-for-fontface⑨">2.1. 
+    <li><a href="#ref-for-fontface⑨">2.1.
 The Constructor</a> <a href="#ref-for-fontface①⓪">(2)</a>
-    <li><a href="#ref-for-fontface①①">2.2. 
+    <li><a href="#ref-for-fontface①①">2.2.
 The load() method</a> <a href="#ref-for-fontface①②">(2)</a> <a href="#ref-for-fontface①③">(3)</a> <a href="#ref-for-fontface①④">(4)</a> <a href="#ref-for-fontface①⑤">(5)</a> <a href="#ref-for-fontface①⑥">(6)</a>
-    <li><a href="#ref-for-fontface①⑦">2.3. 
+    <li><a href="#ref-for-fontface①⑦">2.3.
 Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-fontface①⑧">(2)</a> <a href="#ref-for-fontface①⑨">(3)</a> <a href="#ref-for-fontface②⓪">(4)</a> <a href="#ref-for-fontface②①">(5)</a> <a href="#ref-for-fontface②②">(6)</a> <a href="#ref-for-fontface②③">(7)</a> <a href="#ref-for-fontface②④">(8)</a> <a href="#ref-for-fontface②⑤">(9)</a> <a href="#ref-for-fontface②⑥">(10)</a> <a href="#ref-for-fontface②⑦">(11)</a>
-    <li><a href="#ref-for-fontface②⑧">3. 
+    <li><a href="#ref-for-fontface②⑧">3.
 The FontFaceSet Interface</a> <a href="#ref-for-fontface②⑨">(2)</a> <a href="#ref-for-fontface③⓪">(3)</a> <a href="#ref-for-fontface③①">(4)</a> <a href="#ref-for-fontface③②">(5)</a> <a href="#ref-for-fontface③③">(6)</a> <a href="#ref-for-fontface③④">(7)</a> <a href="#ref-for-fontface③⑤">(8)</a> <a href="#ref-for-fontface③⑥">(9)</a> <a href="#ref-for-fontface③⑦">(10)</a>
-    <li><a href="#ref-for-fontface③⑧">3.1. 
+    <li><a href="#ref-for-fontface③⑧">3.1.
 Events</a>
-    <li><a href="#ref-for-fontface③⑨">3.4. 
+    <li><a href="#ref-for-fontface③⑨">3.4.
 The ready attribute</a>
-    <li><a href="#ref-for-fontface④⓪">3.5. 
+    <li><a href="#ref-for-fontface④⓪">3.5.
 Interaction with CSS Font Loading and Matching</a> <a href="#ref-for-fontface④①">(2)</a> <a href="#ref-for-fontface④②">(3)</a> <a href="#ref-for-fontface④③">(4)</a>
-    <li><a href="#ref-for-fontface④④">4. 
+    <li><a href="#ref-for-fontface④④">4.
 The FontFaceSource mixin</a>
-    <li><a href="#ref-for-fontface④⑤">4.1. 
+    <li><a href="#ref-for-fontface④⑤">4.1.
 Worker FontFaceSources</a>
-    <li><a href="#ref-for-fontface④⑥">4.2. 
+    <li><a href="#ref-for-fontface④⑥">4.2.
 Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-fontface④⑦">(2)</a> <a href="#ref-for-fontface④⑧">(3)</a> <a href="#ref-for-fontface④⑨">(4)</a> <a href="#ref-for-fontface⑤⓪">(5)</a> <a href="#ref-for-fontface⑤①">(6)</a> <a href="#ref-for-fontface⑤②">(7)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-family">
    <b><a href="#dom-fontface-family">#dom-fontface-family</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-family">2. 
+    <li><a href="#ref-for-dom-fontface-family">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-dom-fontface-family①">2.3. 
+    <li><a href="#ref-for-dom-fontface-family①">2.3.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-style">
    <b><a href="#dom-fontface-style">#dom-fontface-style</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-style">2. 
+    <li><a href="#ref-for-dom-fontface-style">2.
 The FontFace Interface</a> <a href="#ref-for-dom-fontface-style①">(2)</a>
-    <li><a href="#ref-for-dom-fontface-style②">2.3. 
+    <li><a href="#ref-for-dom-fontface-style②">2.3.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-weight">
    <b><a href="#dom-fontface-weight">#dom-fontface-weight</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-weight">2. 
+    <li><a href="#ref-for-dom-fontface-weight">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-dom-fontface-weight①">2.3. 
+    <li><a href="#ref-for-dom-fontface-weight①">2.3.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-stretch">
    <b><a href="#dom-fontface-stretch">#dom-fontface-stretch</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-stretch">2. 
+    <li><a href="#ref-for-dom-fontface-stretch">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-dom-fontface-stretch①">2.3. 
+    <li><a href="#ref-for-dom-fontface-stretch①">2.3.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-unicoderange">
    <b><a href="#dom-fontface-unicoderange">#dom-fontface-unicoderange</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-unicoderange">2. 
+    <li><a href="#ref-for-dom-fontface-unicoderange">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-dom-fontface-unicoderange①">2.3. 
+    <li><a href="#ref-for-dom-fontface-unicoderange①">2.3.
 Interaction with CSS’s @font-face Rule</a>
-    <li><a href="#ref-for-dom-fontface-unicoderange②">3.1. 
+    <li><a href="#ref-for-dom-fontface-unicoderange②">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-variant">
    <b><a href="#dom-fontface-variant">#dom-fontface-variant</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-variant">2. 
+    <li><a href="#ref-for-dom-fontface-variant">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-dom-fontface-variant①">2.3. 
+    <li><a href="#ref-for-dom-fontface-variant①">2.3.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-featuresettings">
    <b><a href="#dom-fontface-featuresettings">#dom-fontface-featuresettings</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-featuresettings">2. 
+    <li><a href="#ref-for-dom-fontface-featuresettings">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-dom-fontface-featuresettings①">2.3. 
+    <li><a href="#ref-for-dom-fontface-featuresettings①">2.3.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-variationsettings">
    <b><a href="#dom-fontface-variationsettings">#dom-fontface-variationsettings</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-variationsettings">2. 
+    <li><a href="#ref-for-dom-fontface-variationsettings">2.
 The FontFace Interface</a>
     <li><a href="#ref-for-dom-fontface-variationsettings①">Changes</a>
    </ul>
@@ -2005,7 +2005,7 @@ The FontFace Interface</a>
   <aside class="dfn-panel" data-for="dom-fontface-display">
    <b><a href="#dom-fontface-display">#dom-fontface-display</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-display">2. 
+    <li><a href="#ref-for-dom-fontface-display">2.
 The FontFace Interface</a>
     <li><a href="#ref-for-dom-fontface-display①">Changes</a>
    </ul>
@@ -2013,100 +2013,100 @@ The FontFace Interface</a>
   <aside class="dfn-panel" data-for="dom-fontface-status">
    <b><a href="#dom-fontface-status">#dom-fontface-status</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-status">2. 
+    <li><a href="#ref-for-dom-fontface-status">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-dom-fontface-status①">2.1. 
+    <li><a href="#ref-for-dom-fontface-status①">2.1.
 The Constructor</a> <a href="#ref-for-dom-fontface-status②">(2)</a> <a href="#ref-for-dom-fontface-status③">(3)</a> <a href="#ref-for-dom-fontface-status④">(4)</a> <a href="#ref-for-dom-fontface-status⑤">(5)</a> <a href="#ref-for-dom-fontface-status⑥">(6)</a>
-    <li><a href="#ref-for-dom-fontface-status⑦">2.2. 
+    <li><a href="#ref-for-dom-fontface-status⑦">2.2.
 The load() method</a> <a href="#ref-for-dom-fontface-status⑧">(2)</a> <a href="#ref-for-dom-fontface-status⑨">(3)</a> <a href="#ref-for-dom-fontface-status①⓪">(4)</a>
-    <li><a href="#ref-for-dom-fontface-status①①">3. 
+    <li><a href="#ref-for-dom-fontface-status①①">3.
 The FontFaceSet Interface</a>
-    <li><a href="#ref-for-dom-fontface-status①②">3.3. 
+    <li><a href="#ref-for-dom-fontface-status①②">3.3.
 The check() method</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-loaded">
    <b><a href="#dom-fontface-loaded">#dom-fontface-loaded</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-loaded">2. 
+    <li><a href="#ref-for-dom-fontface-loaded">2.
 The FontFace Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-fontstatuspromise-slot">
    <b><a href="#dom-fontface-fontstatuspromise-slot">#dom-fontface-fontstatuspromise-slot</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-fontstatuspromise-slot">2. 
+    <li><a href="#ref-for-dom-fontface-fontstatuspromise-slot">2.
 The FontFace Interface</a>
-    <li><a href="#ref-for-dom-fontface-fontstatuspromise-slot①">2.1. 
+    <li><a href="#ref-for-dom-fontface-fontstatuspromise-slot①">2.1.
 The Constructor</a> <a href="#ref-for-dom-fontface-fontstatuspromise-slot②">(2)</a> <a href="#ref-for-dom-fontface-fontstatuspromise-slot③">(3)</a> <a href="#ref-for-dom-fontface-fontstatuspromise-slot④">(4)</a>
-    <li><a href="#ref-for-dom-fontface-fontstatuspromise-slot⑤">2.2. 
+    <li><a href="#ref-for-dom-fontface-fontstatuspromise-slot⑤">2.2.
 The load() method</a> <a href="#ref-for-dom-fontface-fontstatuspromise-slot⑥">(2)</a> <a href="#ref-for-dom-fontface-fontstatuspromise-slot⑦">(3)</a> <a href="#ref-for-dom-fontface-fontstatuspromise-slot⑧">(4)</a>
-    <li><a href="#ref-for-dom-fontface-fontstatuspromise-slot⑨">3.2. 
+    <li><a href="#ref-for-dom-fontface-fontstatuspromise-slot⑨">3.2.
 The load() method</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-urls-slot">
    <b><a href="#dom-fontface-urls-slot">#dom-fontface-urls-slot</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-urls-slot">2.1. 
+    <li><a href="#ref-for-dom-fontface-urls-slot">2.1.
 The Constructor</a>
-    <li><a href="#ref-for-dom-fontface-urls-slot①">2.2. 
+    <li><a href="#ref-for-dom-fontface-urls-slot①">2.2.
 The load() method</a> <a href="#ref-for-dom-fontface-urls-slot②">(2)</a>
-    <li><a href="#ref-for-dom-fontface-urls-slot③">2.3. 
+    <li><a href="#ref-for-dom-fontface-urls-slot③">2.3.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-data-slot">
    <b><a href="#dom-fontface-data-slot">#dom-fontface-data-slot</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-data-slot">2.1. 
+    <li><a href="#ref-for-dom-fontface-data-slot">2.1.
 The Constructor</a> <a href="#ref-for-dom-fontface-data-slot①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontface-load">
    <b><a href="#dom-fontface-load">#dom-fontface-load</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontface-load">2. 
+    <li><a href="#ref-for-dom-fontface-load">2.
 The FontFace Interface</a> <a href="#ref-for-dom-fontface-load①">(2)</a>
-    <li><a href="#ref-for-dom-fontface-load②">2.2. 
+    <li><a href="#ref-for-dom-fontface-load②">2.2.
 The load() method</a> <a href="#ref-for-dom-fontface-load③">(2)</a>
-    <li><a href="#ref-for-dom-fontface-load④">3.2. 
+    <li><a href="#ref-for-dom-fontface-load④">3.2.
 The load() method</a>
-    <li><a href="#ref-for-dom-fontface-load⑤">3.4. 
+    <li><a href="#ref-for-dom-fontface-load⑤">3.4.
 The ready attribute</a>
-    <li><a href="#ref-for-dom-fontface-load⑥">3.5. 
+    <li><a href="#ref-for-dom-fontface-load⑥">3.5.
 Interaction with CSS Font Loading and Matching</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="css-connected">
    <b><a href="#css-connected">#css-connected</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-connected">2.3. 
+    <li><a href="#ref-for-css-connected">2.3.
 Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-css-connected①">(2)</a> <a href="#ref-for-css-connected②">(3)</a> <a href="#ref-for-css-connected③">(4)</a>
-    <li><a href="#ref-for-css-connected④">3. 
+    <li><a href="#ref-for-css-connected④">3.
 The FontFaceSet Interface</a> <a href="#ref-for-css-connected⑤">(2)</a> <a href="#ref-for-css-connected⑥">(3)</a> <a href="#ref-for-css-connected⑦">(4)</a>
-    <li><a href="#ref-for-css-connected⑧">4.2. 
+    <li><a href="#ref-for-css-connected⑧">4.2.
 Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-css-connected⑨">(2)</a> <a href="#ref-for-css-connected①⓪">(3)</a> <a href="#ref-for-css-connected①①">(4)</a> <a href="#ref-for-css-connected①②">(5)</a> <a href="#ref-for-css-connected①③">(6)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dictdef-fontfacesetloadeventinit">
    <b><a href="#dictdef-fontfacesetloadeventinit">#dictdef-fontfacesetloadeventinit</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dictdef-fontfacesetloadeventinit">3. 
+    <li><a href="#ref-for-dictdef-fontfacesetloadeventinit">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fontfacesetloadevent">
    <b><a href="#fontfacesetloadevent">#fontfacesetloadevent</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fontfacesetloadevent">3.1. 
+    <li><a href="#ref-for-fontfacesetloadevent">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfacesetloadevent-fontfaces">
    <b><a href="#dom-fontfacesetloadevent-fontfaces">#dom-fontfacesetloadevent-fontfaces</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfacesetloadevent-fontfaces">3.1. 
+    <li><a href="#ref-for-dom-fontfacesetloadevent-fontfaces">3.1.
 Events</a>
     <li><a href="#ref-for-dom-fontfacesetloadevent-fontfaces①">Changes</a>
    </ul>
@@ -2114,30 +2114,30 @@ Events</a>
   <aside class="dfn-panel" data-for="enumdef-fontfacesetloadstatus">
    <b><a href="#enumdef-fontfacesetloadstatus">#enumdef-fontfacesetloadstatus</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-enumdef-fontfacesetloadstatus">3. 
+    <li><a href="#ref-for-enumdef-fontfacesetloadstatus">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fontfaceset">
    <b><a href="#fontfaceset">#fontfaceset</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fontfaceset">2.1. 
+    <li><a href="#ref-for-fontfaceset">2.1.
 The Constructor</a> <a href="#ref-for-fontfaceset①">(2)</a> <a href="#ref-for-fontfaceset②">(3)</a> <a href="#ref-for-fontfaceset③">(4)</a> <a href="#ref-for-fontfaceset④">(5)</a> <a href="#ref-for-fontfaceset⑤">(6)</a> <a href="#ref-for-fontfaceset⑥">(7)</a> <a href="#ref-for-fontfaceset⑦">(8)</a> <a href="#ref-for-fontfaceset⑧">(9)</a>
-    <li><a href="#ref-for-fontfaceset⑨">2.2. 
+    <li><a href="#ref-for-fontfaceset⑨">2.2.
 The load() method</a> <a href="#ref-for-fontfaceset①⓪">(2)</a> <a href="#ref-for-fontfaceset①①">(3)</a> <a href="#ref-for-fontfaceset①②">(4)</a> <a href="#ref-for-fontfaceset①③">(5)</a> <a href="#ref-for-fontfaceset①④">(6)</a> <a href="#ref-for-fontfaceset①⑤">(7)</a>
-    <li><a href="#ref-for-fontfaceset①⑥">3. 
+    <li><a href="#ref-for-fontfaceset①⑥">3.
 The FontFaceSet Interface</a> <a href="#ref-for-fontfaceset①⑦">(2)</a> <a href="#ref-for-fontfaceset①⑧">(3)</a> <a href="#ref-for-fontfaceset①⑨">(4)</a> <a href="#ref-for-fontfaceset②⓪">(5)</a> <a href="#ref-for-fontfaceset②①">(6)</a> <a href="#ref-for-fontfaceset②②">(7)</a> <a href="#ref-for-fontfaceset②③">(8)</a> <a href="#ref-for-fontfaceset②④">(9)</a> <a href="#ref-for-fontfaceset②⑤">(10)</a> <a href="#ref-for-fontfaceset②⑥">(11)</a> <a href="#ref-for-fontfaceset②⑦">(12)</a> <a href="#ref-for-fontfaceset②⑧">(13)</a> <a href="#ref-for-fontfaceset②⑨">(14)</a> <a href="#ref-for-fontfaceset③⓪">(15)</a> <a href="#ref-for-fontfaceset③①">(16)</a> <a href="#ref-for-fontfaceset③②">(17)</a> <a href="#ref-for-fontfaceset③③">(18)</a> <a href="#ref-for-fontfaceset③④">(19)</a> <a href="#ref-for-fontfaceset③⑤">(20)</a>
-    <li><a href="#ref-for-fontfaceset③⑥">3.1. 
+    <li><a href="#ref-for-fontfaceset③⑥">3.1.
 Events</a> <a href="#ref-for-fontfaceset③⑦">(2)</a> <a href="#ref-for-fontfaceset③⑧">(3)</a> <a href="#ref-for-fontfaceset③⑨">(4)</a> <a href="#ref-for-fontfaceset④⓪">(5)</a> <a href="#ref-for-fontfaceset④①">(6)</a> <a href="#ref-for-fontfaceset④②">(7)</a> <a href="#ref-for-fontfaceset④③">(8)</a>
-    <li><a href="#ref-for-fontfaceset④④">3.2. 
+    <li><a href="#ref-for-fontfaceset④④">3.2.
 The load() method</a> <a href="#ref-for-fontfaceset④⑤">(2)</a>
-    <li><a href="#ref-for-fontfaceset④⑥">3.3. 
+    <li><a href="#ref-for-fontfaceset④⑥">3.3.
 The check() method</a> <a href="#ref-for-fontfaceset④⑦">(2)</a>
-    <li><a href="#ref-for-fontfaceset④⑧">3.5. 
+    <li><a href="#ref-for-fontfaceset④⑧">3.5.
 Interaction with CSS Font Loading and Matching</a> <a href="#ref-for-fontfaceset④⑨">(2)</a> <a href="#ref-for-fontfaceset⑤⓪">(3)</a> <a href="#ref-for-fontfaceset⑤①">(4)</a>
-    <li><a href="#ref-for-fontfaceset⑤②">4. 
+    <li><a href="#ref-for-fontfaceset⑤②">4.
 The FontFaceSource mixin</a>
-    <li><a href="#ref-for-fontfaceset⑤③">4.2. 
+    <li><a href="#ref-for-fontfaceset⑤③">4.2.
 Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-fontfaceset⑤④">(2)</a>
     <li><a href="#ref-for-fontfaceset⑤⑤"> Privacy &amp; Security Considerations</a>
    </ul>
@@ -2145,331 +2145,339 @@ Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-fontfaceset⑤④
   <aside class="dfn-panel" data-for="dom-fontfaceset-onloading">
    <b><a href="#dom-fontfaceset-onloading">#dom-fontfaceset-onloading</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-onloading">3.1. 
+    <li><a href="#ref-for-dom-fontfaceset-onloading">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-onloadingdone">
    <b><a href="#dom-fontfaceset-onloadingdone">#dom-fontfaceset-onloadingdone</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-onloadingdone">3.1. 
+    <li><a href="#ref-for-dom-fontfaceset-onloadingdone">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-onloadingerror">
    <b><a href="#dom-fontfaceset-onloadingerror">#dom-fontfaceset-onloadingerror</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-onloadingerror">3.1. 
+    <li><a href="#ref-for-dom-fontfaceset-onloadingerror">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-status">
    <b><a href="#dom-fontfaceset-status">#dom-fontfaceset-status</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-status">3.1. 
+    <li><a href="#ref-for-dom-fontfaceset-status">3.1.
 Events</a> <a href="#ref-for-dom-fontfaceset-status①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-ready">
    <b><a href="#dom-fontfaceset-ready">#dom-fontfaceset-ready</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-ready">3. 
+    <li><a href="#ref-for-dom-fontfaceset-ready">3.
 The FontFaceSet Interface</a>
-    <li><a href="#ref-for-dom-fontfaceset-ready①">3.4. 
+    <li><a href="#ref-for-dom-fontfaceset-ready①">3.4.
 The ready attribute</a> <a href="#ref-for-dom-fontfaceset-ready②">(2)</a> <a href="#ref-for-dom-fontfaceset-ready③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fontfaceset-set-entries">
    <b><a href="#fontfaceset-set-entries">#fontfaceset-set-entries</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fontfaceset-set-entries">3. 
+    <li><a href="#ref-for-fontfaceset-set-entries">3.
 The FontFaceSet Interface</a> <a href="#ref-for-fontfaceset-set-entries①">(2)</a> <a href="#ref-for-fontfaceset-set-entries②">(3)</a> <a href="#ref-for-fontfaceset-set-entries③">(4)</a> <a href="#ref-for-fontfaceset-set-entries④">(5)</a>
-    <li><a href="#ref-for-fontfaceset-set-entries⑤">4.2. 
+    <li><a href="#ref-for-fontfaceset-set-entries⑤">4.2.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-add">
    <b><a href="#dom-fontfaceset-add">#dom-fontfaceset-add</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-add">3. 
+    <li><a href="#ref-for-dom-fontfaceset-add">3.
 The FontFaceSet Interface</a> <a href="#ref-for-dom-fontfaceset-add①">(2)</a>
-    <li><a href="#ref-for-dom-fontfaceset-add②">4.2. 
+    <li><a href="#ref-for-dom-fontfaceset-add②">4.2.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-delete">
    <b><a href="#dom-fontfaceset-delete">#dom-fontfaceset-delete</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-delete">3. 
+    <li><a href="#ref-for-dom-fontfaceset-delete">3.
 The FontFaceSet Interface</a> <a href="#ref-for-dom-fontfaceset-delete①">(2)</a>
-    <li><a href="#ref-for-dom-fontfaceset-delete②">4.2. 
+    <li><a href="#ref-for-dom-fontfaceset-delete②">4.2.
 Interaction with CSS’s @font-face Rule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-clear">
    <b><a href="#dom-fontfaceset-clear">#dom-fontfaceset-clear</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-clear">3. 
+    <li><a href="#ref-for-dom-fontfaceset-clear">3.
 The FontFaceSet Interface</a> <a href="#ref-for-dom-fontfaceset-clear①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-loadingfonts-slot">
    <b><a href="#dom-fontfaceset-loadingfonts-slot">#dom-fontfaceset-loadingfonts-slot</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-loadingfonts-slot">2.1. 
+    <li><a href="#ref-for-dom-fontfaceset-loadingfonts-slot">2.1.
 The Constructor</a> <a href="#ref-for-dom-fontfaceset-loadingfonts-slot①">(2)</a> <a href="#ref-for-dom-fontfaceset-loadingfonts-slot②">(3)</a> <a href="#ref-for-dom-fontfaceset-loadingfonts-slot③">(4)</a>
-    <li><a href="#ref-for-dom-fontfaceset-loadingfonts-slot④">2.2. 
+    <li><a href="#ref-for-dom-fontfaceset-loadingfonts-slot④">2.2.
 The load() method</a> <a href="#ref-for-dom-fontfaceset-loadingfonts-slot⑤">(2)</a>
-    <li><a href="#ref-for-dom-fontfaceset-loadingfonts-slot⑥">3. 
+    <li><a href="#ref-for-dom-fontfaceset-loadingfonts-slot⑥">3.
 The FontFaceSet Interface</a> <a href="#ref-for-dom-fontfaceset-loadingfonts-slot⑦">(2)</a> <a href="#ref-for-dom-fontfaceset-loadingfonts-slot⑧">(3)</a> <a href="#ref-for-dom-fontfaceset-loadingfonts-slot⑨">(4)</a>
-    <li><a href="#ref-for-dom-fontfaceset-loadingfonts-slot①⓪">3.1. 
+    <li><a href="#ref-for-dom-fontfaceset-loadingfonts-slot①⓪">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-loadedfonts-slot">
    <b><a href="#dom-fontfaceset-loadedfonts-slot">#dom-fontfaceset-loadedfonts-slot</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-loadedfonts-slot">2.1. 
+    <li><a href="#ref-for-dom-fontfaceset-loadedfonts-slot">2.1.
 The Constructor</a>
-    <li><a href="#ref-for-dom-fontfaceset-loadedfonts-slot①">2.2. 
+    <li><a href="#ref-for-dom-fontfaceset-loadedfonts-slot①">2.2.
 The load() method</a>
-    <li><a href="#ref-for-dom-fontfaceset-loadedfonts-slot②">3. 
+    <li><a href="#ref-for-dom-fontfaceset-loadedfonts-slot②">3.
 The FontFaceSet Interface</a> <a href="#ref-for-dom-fontfaceset-loadedfonts-slot③">(2)</a>
-    <li><a href="#ref-for-dom-fontfaceset-loadedfonts-slot④">3.1. 
+    <li><a href="#ref-for-dom-fontfaceset-loadedfonts-slot④">3.1.
 Events</a> <a href="#ref-for-dom-fontfaceset-loadedfonts-slot⑤">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-failedfonts-slot">
    <b><a href="#dom-fontfaceset-failedfonts-slot">#dom-fontfaceset-failedfonts-slot</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-failedfonts-slot">2.1. 
+    <li><a href="#ref-for-dom-fontfaceset-failedfonts-slot">2.1.
 The Constructor</a>
-    <li><a href="#ref-for-dom-fontfaceset-failedfonts-slot①">2.2. 
+    <li><a href="#ref-for-dom-fontfaceset-failedfonts-slot①">2.2.
 The load() method</a>
-    <li><a href="#ref-for-dom-fontfaceset-failedfonts-slot②">3. 
+    <li><a href="#ref-for-dom-fontfaceset-failedfonts-slot②">3.
 The FontFaceSet Interface</a> <a href="#ref-for-dom-fontfaceset-failedfonts-slot③">(2)</a>
-    <li><a href="#ref-for-dom-fontfaceset-failedfonts-slot④">3.1. 
+    <li><a href="#ref-for-dom-fontfaceset-failedfonts-slot④">3.1.
 Events</a> <a href="#ref-for-dom-fontfaceset-failedfonts-slot⑤">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-readypromise-slot">
    <b><a href="#dom-fontfaceset-readypromise-slot">#dom-fontfaceset-readypromise-slot</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-readypromise-slot">3. 
+    <li><a href="#ref-for-dom-fontfaceset-readypromise-slot">3.
 The FontFaceSet Interface</a>
-    <li><a href="#ref-for-dom-fontfaceset-readypromise-slot①">3.1. 
+    <li><a href="#ref-for-dom-fontfaceset-readypromise-slot①">3.1.
 Events</a> <a href="#ref-for-dom-fontfaceset-readypromise-slot②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fontfaceset-pending-on-the-environment">
    <b><a href="#fontfaceset-pending-on-the-environment">#fontfaceset-pending-on-the-environment</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fontfaceset-pending-on-the-environment">3. 
+    <li><a href="#ref-for-fontfaceset-pending-on-the-environment">3.
 The FontFaceSet Interface</a>
-    <li><a href="#ref-for-fontfaceset-pending-on-the-environment①">3.1. 
+    <li><a href="#ref-for-fontfaceset-pending-on-the-environment①">3.1.
 Events</a> <a href="#ref-for-fontfaceset-pending-on-the-environment②">(2)</a> <a href="#ref-for-fontfaceset-pending-on-the-environment③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="eventdef-fontfaceset-loading">
    <b><a href="#eventdef-fontfaceset-loading">#eventdef-fontfaceset-loading</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventdef-fontfaceset-loading">3.1. 
+    <li><a href="#ref-for-eventdef-fontfaceset-loading">3.1.
 Events</a> <a href="#ref-for-eventdef-fontfaceset-loading①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="eventdef-fontfaceset-loadingdone">
    <b><a href="#eventdef-fontfaceset-loadingdone">#eventdef-fontfaceset-loadingdone</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventdef-fontfaceset-loadingdone">3.1. 
+    <li><a href="#ref-for-eventdef-fontfaceset-loadingdone">3.1.
 Events</a> <a href="#ref-for-eventdef-fontfaceset-loadingdone①">(2)</a>
-    <li><a href="#ref-for-eventdef-fontfaceset-loadingdone②">3.4. 
+    <li><a href="#ref-for-eventdef-fontfaceset-loadingdone②">3.4.
 The ready attribute</a>
-    <li><a href="#ref-for-eventdef-fontfaceset-loadingdone③">5. 
+    <li><a href="#ref-for-eventdef-fontfaceset-loadingdone③">5.
 API Examples</a> <a href="#ref-for-eventdef-fontfaceset-loadingdone④">(2)</a> <a href="#ref-for-eventdef-fontfaceset-loadingdone⑤">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="eventdef-fontfaceset-loadingerror">
    <b><a href="#eventdef-fontfaceset-loadingerror">#eventdef-fontfaceset-loadingerror</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventdef-fontfaceset-loadingerror">3.1. 
+    <li><a href="#ref-for-eventdef-fontfaceset-loadingerror">3.1.
 Events</a> <a href="#ref-for-eventdef-fontfaceset-loadingerror①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fire-a-font-load-event">
    <b><a href="#fire-a-font-load-event">#fire-a-font-load-event</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fire-a-font-load-event">3.1. 
+    <li><a href="#ref-for-fire-a-font-load-event">3.1.
 Events</a> <a href="#ref-for-fire-a-font-load-event①">(2)</a> <a href="#ref-for-fire-a-font-load-event②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="switch-the-fontfaceset-to-loading">
    <b><a href="#switch-the-fontfaceset-to-loading">#switch-the-fontfaceset-to-loading</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-switch-the-fontfaceset-to-loading">2.1. 
+    <li><a href="#ref-for-switch-the-fontfaceset-to-loading">2.1.
 The Constructor</a>
-    <li><a href="#ref-for-switch-the-fontfaceset-to-loading①">3. 
+    <li><a href="#ref-for-switch-the-fontfaceset-to-loading①">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="switch-the-fontfaceset-to-loaded">
    <b><a href="#switch-the-fontfaceset-to-loaded">#switch-the-fontfaceset-to-loaded</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-switch-the-fontfaceset-to-loaded">2.1. 
+    <li><a href="#ref-for-switch-the-fontfaceset-to-loaded">2.1.
 The Constructor</a> <a href="#ref-for-switch-the-fontfaceset-to-loaded①">(2)</a>
-    <li><a href="#ref-for-switch-the-fontfaceset-to-loaded②">2.2. 
+    <li><a href="#ref-for-switch-the-fontfaceset-to-loaded②">2.2.
 The load() method</a> <a href="#ref-for-switch-the-fontfaceset-to-loaded③">(2)</a>
-    <li><a href="#ref-for-switch-the-fontfaceset-to-loaded④">3. 
+    <li><a href="#ref-for-switch-the-fontfaceset-to-loaded④">3.
 The FontFaceSet Interface</a> <a href="#ref-for-switch-the-fontfaceset-to-loaded⑤">(2)</a>
-    <li><a href="#ref-for-switch-the-fontfaceset-to-loaded⑥">3.1. 
+    <li><a href="#ref-for-switch-the-fontfaceset-to-loaded⑥">3.1.
 Events</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fontfaceset-stuck-on-the-environment">
    <b><a href="#fontfaceset-stuck-on-the-environment">#fontfaceset-stuck-on-the-environment</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fontfaceset-stuck-on-the-environment">3.1. 
+    <li><a href="#ref-for-fontfaceset-stuck-on-the-environment">3.1.
 Events</a> <a href="#ref-for-fontfaceset-stuck-on-the-environment①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="find-the-matching-font-faces">
    <b><a href="#find-the-matching-font-faces">#find-the-matching-font-faces</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-find-the-matching-font-faces">3.2. 
+    <li><a href="#ref-for-find-the-matching-font-faces">3.2.
 The load() method</a>
-    <li><a href="#ref-for-find-the-matching-font-faces①">3.3. 
+    <li><a href="#ref-for-find-the-matching-font-faces①">3.3.
 The check() method</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-load">
    <b><a href="#dom-fontfaceset-load">#dom-fontfaceset-load</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-load">3. 
+    <li><a href="#ref-for-dom-fontfaceset-load">3.
 The FontFaceSet Interface</a> <a href="#ref-for-dom-fontfaceset-load①">(2)</a>
-    <li><a href="#ref-for-dom-fontfaceset-load②">3.2. 
+    <li><a href="#ref-for-dom-fontfaceset-load②">3.2.
 The load() method</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-load-font-text-font">
    <b><a href="#dom-fontfaceset-load-font-text-font">#dom-fontfaceset-load-font-text-font</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-load-font-text-font">3. 
+    <li><a href="#ref-for-dom-fontfaceset-load-font-text-font">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-load-font-text-text">
    <b><a href="#dom-fontfaceset-load-font-text-text">#dom-fontfaceset-load-font-text-text</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-load-font-text-text">3. 
+    <li><a href="#ref-for-dom-fontfaceset-load-font-text-text">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-check">
    <b><a href="#dom-fontfaceset-check">#dom-fontfaceset-check</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-check">3. 
+    <li><a href="#ref-for-dom-fontfaceset-check">3.
 The FontFaceSet Interface</a>
-    <li><a href="#ref-for-dom-fontfaceset-check①">3.3. 
+    <li><a href="#ref-for-dom-fontfaceset-check①">3.3.
 The check() method</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-check-font-text-font">
    <b><a href="#dom-fontfaceset-check-font-text-font">#dom-fontfaceset-check-font-text-font</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-check-font-text-font">3. 
+    <li><a href="#ref-for-dom-fontfaceset-check-font-text-font">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfaceset-check-font-text-text">
    <b><a href="#dom-fontfaceset-check-font-text-text">#dom-fontfaceset-check-font-text-text</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfaceset-check-font-text-text">3. 
+    <li><a href="#ref-for-dom-fontfaceset-check-font-text-text">3.
 The FontFaceSet Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fontfacesource">
    <b><a href="#fontfacesource">#fontfacesource</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fontfacesource">4. 
+    <li><a href="#ref-for-fontfacesource">4.
 The FontFaceSource mixin</a> <a href="#ref-for-fontfacesource①">(2)</a> <a href="#ref-for-fontfacesource②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-fontfacesource-fonts">
    <b><a href="#dom-fontfacesource-fonts">#dom-fontfacesource-fonts</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-fontfacesource-fonts">4. 
+    <li><a href="#ref-for-dom-fontfacesource-fonts">4.
 The FontFaceSource mixin</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="font-source">
    <b><a href="#font-source">#font-source</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-font-source">2.3. 
+    <li><a href="#ref-for-font-source">2.3.
 Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-font-source①">(2)</a>
-    <li><a href="#ref-for-font-source②">3. 
+    <li><a href="#ref-for-font-source②">3.
 The FontFaceSet Interface</a>
-    <li><a href="#ref-for-font-source③">3.5. 
+    <li><a href="#ref-for-font-source③">3.5.
 Interaction with CSS Font Loading and Matching</a>
-    <li><a href="#ref-for-font-source④">4. 
+    <li><a href="#ref-for-font-source④">4.
 The FontFaceSource mixin</a> <a href="#ref-for-font-source⑤">(2)</a>
-    <li><a href="#ref-for-font-source⑥">4.1. 
+    <li><a href="#ref-for-font-source⑥">4.1.
 Worker FontFaceSources</a>
-    <li><a href="#ref-for-font-source⑦">4.2. 
+    <li><a href="#ref-for-font-source⑦">4.2.
 Interaction with CSS’s @font-face Rule</a> <a href="#ref-for-font-source⑧">(2)</a> <a href="#ref-for-font-source⑨">(3)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

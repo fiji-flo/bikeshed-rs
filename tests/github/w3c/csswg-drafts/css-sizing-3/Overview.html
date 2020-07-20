@@ -336,7 +336,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This module extends the CSS sizing properties with keywords that represent content-based "intrinsic" sizes and context-based "extrinsic" sizes, allowing CSS to more easily describe boxes that fit their content or fit into a particular layout context.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -461,25 +461,25 @@ on screen, on paper, etc.
 	For readability they have not been repeated explicitly.</p>
    <h2 class="heading settled" data-level="2" id="terms"><span class="secno">2. </span><span class="content"> Terminology</span><a class="self-link" href="#terms"></a></h2>
    <dl>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="size">size</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="size">size</dfn>
     <dd>
       A one- or two-dimensional measurement:
 			a <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-size" id="ref-for-block-size">block size</a> and/or <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#inline-size" id="ref-for-inline-size">inline size</a>;
-			alternatively a width and/or height. 
+			alternatively a width and/or height.
      <figure>
        <img alt="In left-to-right, top-to-bottom horizontal English,
 				          the horizontal width and inline size are synonymous,
 				          and vertical height and block size are synonymous." src="images/sizing-ltr-tb.svg" style="max-width: 49%;"> <img alt="In top-to-bottom, right-to-left vertical Japanese,
 				           the horizontal width and block size are synonymous,
-				           and vertical height and inline size are synonymous." src="images/sizing-ttb-rl.svg" style="max-width: 49%;"> 
+				           and vertical height and inline size are synonymous." src="images/sizing-ttb-rl.svg" style="max-width: 49%;">
       <figcaption>Whether the <a data-link-type="dfn" href="#width" id="ref-for-width">width</a> or <a data-link-type="dfn" href="#height" id="ref-for-height">height</a> corresponds
 				to an <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#inline-size" id="ref-for-inline-size①">inline size</a> or <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-size" id="ref-for-block-size①">block size</a> depends on the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#writing-mode" id="ref-for-writing-mode">writing mode</a>.</figcaption>
      </figure>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="inner-size">inner size</dfn> 
-    <dd> The <a href="https://www.w3.org/TR/css2/box.html#box-dimensions">content-box</a> size of a <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#box" id="ref-for-box">box</a>. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="outer-size">outer size</dfn> 
-    <dd> The <a href="https://www.w3.org/TR/css2/box.html#box-dimensions">margin-box</a> size of a <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#box" id="ref-for-box①">box</a>. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="definite|definite size" id="definite">definite size</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="inner-size">inner size</dfn>
+    <dd> The <a href="https://www.w3.org/TR/css2/box.html#box-dimensions">content-box</a> size of a <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#box" id="ref-for-box">box</a>.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="outer-size">outer size</dfn>
+    <dd> The <a href="https://www.w3.org/TR/css2/box.html#box-dimensions">margin-box</a> size of a <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#box" id="ref-for-box①">box</a>.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="definite|definite size" id="definite">definite size</dfn>
     <dd>
       A size that can be determined without performing layout;
 			that is, a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>,
@@ -487,19 +487,19 @@ on screen, on paper, etc.
 			a size of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#initial-containing-block" id="ref-for-initial-containing-block">initial containing block</a>,
 			or a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value">&lt;percentage></a> or other formula
 			(such the <a href="https://www.w3.org/TR/CSS2/visudet.html#blockwidth">“stretch-fit” sizing of non-replaced blocks</a> <a data-link-type="biblio" href="#biblio-css2">[CSS2]</a>)
-			that is resolved solely against <a data-link-type="dfn" href="#definite" id="ref-for-definite">definite</a> sizes. 
+			that is resolved solely against <a data-link-type="dfn" href="#definite" id="ref-for-definite">definite</a> sizes.
      <p>Additionally, the size of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block">containing block</a> of an absolutely positioned element is always <a data-link-type="dfn" href="#definite" id="ref-for-definite①">definite</a> with respect to that element.</p>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="indefinite|indefinite size" id="indefinite">indefinite size</dfn> 
-    <dd> A size that is not <a data-link-type="dfn" href="#definite" id="ref-for-definite②">definite</a>. <a data-link-type="dfn" href="#indefinite" id="ref-for-indefinite">Indefinite</a> <a data-link-type="dfn" href="#available" id="ref-for-available">available space</a> is essentially infinite. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-local-lt="available" data-lt="available space|available inline space|available block space" id="available">available space</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="indefinite|indefinite size" id="indefinite">indefinite size</dfn>
+    <dd> A size that is not <a data-link-type="dfn" href="#definite" id="ref-for-definite②">definite</a>. <a data-link-type="dfn" href="#indefinite" id="ref-for-indefinite">Indefinite</a> <a data-link-type="dfn" href="#available" id="ref-for-available">available space</a> is essentially infinite.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-local-lt="available" data-lt="available space|available inline space|available block space" id="available">available space</dfn>
     <dd> A size representing the space into which a box is laid out,
 			as determined by
 			the rules of the formatting context in which it participates.
 			The space available to a box is usually
 			either a measurement of its <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block①">containing block</a> (if that is <a data-link-type="dfn" href="#definite" id="ref-for-definite③">definite</a>)
 			or an infinite size (when it is <a data-link-type="dfn" href="#indefinite" id="ref-for-indefinite①">indefinite</a>). <a data-link-type="dfn" href="#available" id="ref-for-available①">Available space</a> can alternatively be either a <a data-link-type="dfn" href="#min-content-constraint" id="ref-for-min-content-constraint">min-content constraint</a> or
-			a <a data-link-type="dfn" href="#max-content-constraint" id="ref-for-max-content-constraint">max-content constraint</a>. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="stretch-fit">stretch fit</dfn> 
+			a <a data-link-type="dfn" href="#max-content-constraint" id="ref-for-max-content-constraint">max-content constraint</a>.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="stretch-fit">stretch fit</dfn>
     <dd>
       The <a data-link-type="dfn" href="#stretch-fit" id="ref-for-stretch-fit">stretch fit</a> into a given size
 			is that size,
@@ -507,37 +507,37 @@ on screen, on paper, etc.
 			border, and padding in the given dimension
 			(such that the outer size is a perfect fit),
 			and flooring at zero
-			(so that the inner size is not negative). 
+			(so that the inner size is not negative).
      <p class="note" role="note"> Note: This is the formula used to calculate the <a class="css" data-link-type="maybe" href="#valdef-width-auto" id="ref-for-valdef-width-auto">auto</a> widths
 				of non-replaced blocks in normal flow in <a href="https://www.w3.org/TR/CSS2/visudet.html#blockwidth">CSS2.1§10.3.3</a>. </p>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="fallback|fallback size" id="fallback">fallback size</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="fallback|fallback size" id="fallback">fallback size</dfn>
     <dd> Some sizing algorithms do not work well with an infinite size.
 			In these cases, the <a data-link-type="dfn" href="#fallback" id="ref-for-fallback">fallback size</a> is used instead.
 			Unless otherwise specified,
-			this is the size of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#initial-containing-block" id="ref-for-initial-containing-block①">initial containing block</a>. 
+			this is the size of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#initial-containing-block" id="ref-for-initial-containing-block①">initial containing block</a>.
    </dl>
    <h3 class="heading settled" data-level="2.1" id="auto-box-sizes"><span class="secno">2.1. </span><span class="content"> Auto Box Sizes</span><a class="self-link" href="#auto-box-sizes"></a></h3>
    <p>There are four types of automatically-determined sizes in CSS
 	(sizes resulting from <a class="css" data-link-type="maybe" href="#valdef-width-auto" id="ref-for-valdef-width-auto①">auto</a> sizing rules, depending on context):</p>
    <dl>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="stretch-fit-size">stretch-fit size</dfn> 
-    <dt><dfn data-dfn-type="dfn" data-export id="stretch-fit-inline-size">stretch-fit inline size<a class="self-link" href="#stretch-fit-inline-size"></a></dfn> 
-    <dt><dfn data-dfn-type="dfn" data-export id="stretch-fit-block-size">stretch-fit block size<a class="self-link" href="#stretch-fit-block-size"></a></dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="stretch-fit-size">stretch-fit size</dfn>
+    <dt><dfn data-dfn-type="dfn" data-export id="stretch-fit-inline-size">stretch-fit inline size<a class="self-link" href="#stretch-fit-inline-size"></a></dfn>
+    <dt><dfn data-dfn-type="dfn" data-export id="stretch-fit-block-size">stretch-fit block size<a class="self-link" href="#stretch-fit-block-size"></a></dfn>
     <dd>
       The <a data-link-type="dfn" href="#size" id="ref-for-size">size</a> a box would take
 			if its <a data-link-type="dfn" href="#outer-size" id="ref-for-outer-size">outer size</a> filled the <a data-link-type="dfn" href="#available" id="ref-for-available②">available space</a> in the given axis;
 			in other words, the <a data-link-type="dfn" href="#stretch-fit" id="ref-for-stretch-fit①">stretch fit</a> into the <span id="ref-for-available③">available space</span>,
 			if that is <a data-link-type="dfn" href="#definite" id="ref-for-definite④">definite</a>.
-			Undefined if the <span id="ref-for-available④">available space</span> is <a data-link-type="dfn" href="#indefinite" id="ref-for-indefinite②">indefinite</a>. 
+			Undefined if the <span id="ref-for-available④">available space</span> is <a data-link-type="dfn" href="#indefinite" id="ref-for-indefinite②">indefinite</a>.
      <p class="note" role="note"><span>Note:</span> For the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#inline-axis" id="ref-for-inline-axis">inline axis</a>, this is called the “available width” in <a href="https://www.w3.org/TR/CSS2/visudet.html#float-width">CSS2.1§10.3.5</a> and computed by the rules in <a href="https://www.w3.org/TR/CSS2/visudet.html#blockwidth">CSS2.1§10.3.3</a>.</p>
      <p class="note" role="note"><span>Note:</span> Calculations involving this size need to specify a fallback behavior
 			for when the <a data-link-type="dfn" href="#available" id="ref-for-available⑤">available space</a> is <a data-link-type="dfn" href="#indefinite" id="ref-for-indefinite③">indefinite</a> if that happens to be possible.</p>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="max-content | max-content size" id="max-content">max-content size</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="max-content | max-content size" id="max-content">max-content size</dfn>
     <dd>
       A box’s “ideal” <a data-link-type="dfn" href="#size" id="ref-for-size①">size</a> in a given axis when given infinite available space.
 			Usually this is the smallest <span id="ref-for-size②">size</span> the box could take in that axis
 			while still fitting around its contents,
-			i.e. minimizing unfilled space while avoiding overflow. 
+			i.e. minimizing unfilled space while avoiding overflow.
      <dl>
       <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="max-content-inline-size">max-content inline size</dfn>
       <dd data-md>
@@ -551,12 +551,12 @@ if <em>none</em> of the soft wrap opportunities within the box were taken.
        <p>The box’s “ideal” <a data-link-type="dfn" href="#size" id="ref-for-size④">size</a> in the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-axis" id="ref-for-block-axis">block axis</a>.
 Usually the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-size" id="ref-for-block-size②">block size</a> of the content after layout.</p>
      </dl>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="min-content | min-content size" id="min-content">min-content size</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="min-content | min-content size" id="min-content">min-content size</dfn>
     <dd>
       The smallest <a data-link-type="dfn" href="#size" id="ref-for-size⑤">size</a> a box could take
 			that doesn’t lead to overflow
 			that could be avoided by choosing a larger <span id="ref-for-size⑥">size</span>.
-			(See <a href="#intrinsic">§ 4 Intrinsic Size Determination</a>.) 
+			(See <a href="#intrinsic">§ 4 Intrinsic Size Determination</a>.)
      <dl>
       <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="min-content-inline-size">min-content inline size</dfn>
       <dd data-md>
@@ -572,38 +572,38 @@ if <em>all</em> soft wrap opportunities within the box were taken.</p>
 and definitely for <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-container" id="ref-for-block-container">block containers</a>, tables, and <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#inline-box" id="ref-for-inline-box">inline boxes</a>,
 this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size" id="ref-for-max-content-block-size">max-content block size</a>.</p>
      </dl>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="fit-content-size">fit-content size</dfn> 
-    <dt><dfn data-dfn-type="dfn" data-export id="fit-content-inline-size">fit-content inline size<a class="self-link" href="#fit-content-inline-size"></a></dfn> 
-    <dt><dfn data-dfn-type="dfn" data-export id="fit-content-block-size">fit-content block size<a class="self-link" href="#fit-content-block-size"></a></dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="fit-content-size">fit-content size</dfn>
+    <dt><dfn data-dfn-type="dfn" data-export id="fit-content-inline-size">fit-content inline size<a class="self-link" href="#fit-content-inline-size"></a></dfn>
+    <dt><dfn data-dfn-type="dfn" data-export id="fit-content-block-size">fit-content block size<a class="self-link" href="#fit-content-block-size"></a></dfn>
     <dd>
       If the <a data-link-type="dfn" href="#available" id="ref-for-available⑥">available space</a> in a given axis is <a data-link-type="dfn" href="#definite" id="ref-for-definite⑤">definite</a>,
 			equal to <code>min(<a data-link-type="dfn" href="#max-content" id="ref-for-max-content">max-content size</a>, max(<a data-link-type="dfn" href="#min-content" id="ref-for-min-content">min-content size</a>, <a data-link-type="dfn" href="#stretch-fit-size" id="ref-for-stretch-fit-size">stretch-fit size</a>))</code>.
-			Otherwise, equal to the <a data-link-type="dfn" href="#max-content" id="ref-for-max-content①">max-content size</a> in that axis. 
+			Otherwise, equal to the <a data-link-type="dfn" href="#max-content" id="ref-for-max-content①">max-content size</a> in that axis.
      <p class="note" role="note"><span>Note:</span> This is called the “shrink-to-fit” width in <a href="https://www.w3.org/TR/CSS2/visudet.html#float-width">CSS2.1§10.3.5</a> and <a href="https://www.w3.org/TR/css3-multicol/#pseudo-algorithm">CSS Multi-column Layout § 3.4</a>.</p>
-    <dt><dfn data-dfn-type="dfn" data-export id="intrinsic-size">intrinsic size<a class="self-link" href="#intrinsic-size"></a></dfn> 
+    <dt><dfn data-dfn-type="dfn" data-export id="intrinsic-size">intrinsic size<a class="self-link" href="#intrinsic-size"></a></dfn>
     <dd> A <a data-link-type="dfn" href="#max-content" id="ref-for-max-content②">max-content size</a> or <a data-link-type="dfn" href="#min-content" id="ref-for-min-content①">min-content size</a>,
 			i.e. a size arising primarily from the size of the content.
 			(Some uses of this term may refer also to sizes
-			derived primarily from one of these two sizes.) 
+			derived primarily from one of these two sizes.)
    </dl>
    <h3 class="heading settled" data-level="2.2" id="contributions"><span class="secno">2.2. </span><span class="content"> Intrinsic Size Contributions</span><a class="self-link" href="#contributions"></a></h3>
    <dl>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="max-content contribution|max-content inline-size contribution|max-content block-size contribution" id="max-content-contribution">max-content contribution</dfn> 
-    <dd> The size that a box contributes to its <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block②">containing block</a>’s <a data-link-type="dfn" href="#max-content" id="ref-for-max-content③">max-content size</a>. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="min-content contribution|min-content inline-size contribution|min-content block-size contribution" id="min-content-contribution">min-content contribution</dfn> 
-    <dd> The size that a box contributes to its <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block③">containing block</a>’s <a data-link-type="dfn" href="#min-content" id="ref-for-min-content②">min-content size</a>. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="intrinsic-size-contribution">intrinsic size contribution</dfn> 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="max-content contribution|max-content inline-size contribution|max-content block-size contribution" id="max-content-contribution">max-content contribution</dfn>
+    <dd> The size that a box contributes to its <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block②">containing block</a>’s <a data-link-type="dfn" href="#max-content" id="ref-for-max-content③">max-content size</a>.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="min-content contribution|min-content inline-size contribution|min-content block-size contribution" id="min-content-contribution">min-content contribution</dfn>
+    <dd> The size that a box contributes to its <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block③">containing block</a>’s <a data-link-type="dfn" href="#min-content" id="ref-for-min-content②">min-content size</a>.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="intrinsic-size-contribution">intrinsic size contribution</dfn>
     <dd> A <a data-link-type="dfn" href="#max-content-contribution" id="ref-for-max-content-contribution">max-content contribution</a>, <a data-link-type="dfn" href="#min-content-contribution" id="ref-for-min-content-contribution">min-content contribution</a>,
-			or similarly-calculated content-based size contribution. 
+			or similarly-calculated content-based size contribution.
    </dl>
    <p>Intrinsic size contributions are based on the <a data-link-type="dfn" href="#outer-size" id="ref-for-outer-size①">outer size</a> of the box;
 	for this purpose <span class="css">auto</span> margins are treated as zero.</p>
    <h3 class="heading settled" data-dfn-type="dfn" data-export data-level="2.3" data-lt="intrinsic size constraint" id="constraints"><span class="secno">2.3. </span><span class="content"> Intrinsic Size Constraints</span><a class="self-link" href="#constraints"></a></h3>
    <dl>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="max-content-constraint">max-content constraint</dfn> 
-    <dd> A sizing constraint imposed by the box’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block④">containing block</a> that causes it to produce its <a data-link-type="dfn" href="#max-content-contribution" id="ref-for-max-content-contribution①">max-content contribution</a>. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="min-content-constraint">min-content constraint</dfn> 
-    <dd> A sizing constraint imposed by the box’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block⑤">containing block</a> that causes it to produce its <a data-link-type="dfn" href="#min-content-contribution" id="ref-for-min-content-contribution①">min-content contribution</a>. 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="max-content-constraint">max-content constraint</dfn>
+    <dd> A sizing constraint imposed by the box’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block④">containing block</a> that causes it to produce its <a data-link-type="dfn" href="#max-content-contribution" id="ref-for-max-content-contribution①">max-content contribution</a>.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="min-content-constraint">min-content constraint</dfn>
+    <dd> A sizing constraint imposed by the box’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block⑤">containing block</a> that causes it to produce its <a data-link-type="dfn" href="#min-content-contribution" id="ref-for-min-content-contribution①">min-content contribution</a>.
    </dl>
    <h2 class="heading settled" data-level="3" id="specifying-sizes"><span class="secno">3. </span><span class="content"> Specifying Box Sizes</span><span id="size-keywords"></span><a class="self-link" href="#specifying-sizes"></a></h2>
    <h3 class="heading settled" data-level="3.1" id="sizing-properties"><span class="secno">3.1. </span><span class="content"> Sizing Properties</span><a class="self-link" href="#sizing-properties"></a></h3>
@@ -624,28 +624,28 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-width">width</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-height">height</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage">&lt;length-percentage></a> <span id="ref-for-comb-one①">|</span> min-content <span id="ref-for-comb-one②">|</span> max-content <span id="ref-for-comb-one③">|</span> <span style=";white-space:nowrap">fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①">&lt;length-percentage></a>)</span> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage">&lt;length-percentage></a> <span id="ref-for-comb-one①">|</span> min-content <span id="ref-for-comb-one②">|</span> max-content <span id="ref-for-comb-one③">|</span> <span style=";white-space:nowrap">fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①">&lt;length-percentage></a>)</span>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>all elements except <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#non-replaced" id="ref-for-non-replaced">non-replaced</a> <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#inline" id="ref-for-inline">inlines</a> 
+      <td>all elements except <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#non-replaced" id="ref-for-non-replaced">non-replaced</a> <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#inline" id="ref-for-inline">inlines</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>relative to width/height of <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block⑥">containing block</a> 
+      <td>relative to width/height of <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block⑥">containing block</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>as specified, with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage②">&lt;length-percentage></a> values computed 
+      <td>as specified, with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage②">&lt;length-percentage></a> values computed
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type, recursing into <a class="css" data-link-type="maybe" href="#valdef-width-fit-content-length-percentage" id="ref-for-valdef-width-fit-content-length-percentage">fit-content()</a> 
+      <td>by computed value type, recursing into <a class="css" data-link-type="maybe" href="#valdef-width-fit-content-length-percentage" id="ref-for-valdef-width-fit-content-length-percentage">fit-content()</a>
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width⑤">width</a> and <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height⑤">height</a> properties specify
 	the <dfn data-dfn-type="dfn" data-export data-lt="preferred size" id="preferred-size">preferred<a class="self-link" href="#preferred-size"></a></dfn> (<a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#physical" id="ref-for-physical">physical</a>) <dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="width | preferred width" id="width">width</dfn> and <dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="height | preferred height" id="height">height</dfn> of the box, respectively.</p>
@@ -657,28 +657,28 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-min-width">min-width</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-min-height">min-height</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one④">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage③">&lt;length-percentage></a> <span id="ref-for-comb-one⑤">|</span> min-content <span id="ref-for-comb-one⑥">|</span> max-content <span id="ref-for-comb-one⑦">|</span> <span style=";white-space:nowrap">fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage④">&lt;length-percentage></a>)</span> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one④">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage③">&lt;length-percentage></a> <span id="ref-for-comb-one⑤">|</span> min-content <span id="ref-for-comb-one⑥">|</span> max-content <span id="ref-for-comb-one⑦">|</span> <span style=";white-space:nowrap">fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage④">&lt;length-percentage></a>)</span>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>all elements that accept <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width⑥">width</a> or <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height⑥">height</a> 
+      <td>all elements that accept <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width⑥">width</a> or <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height⑥">height</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>relative to width/height of <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block⑦">containing block</a> 
+      <td>relative to width/height of <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block⑦">containing block</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>as specified, with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑤">&lt;length-percentage></a> values computed 
+      <td>as specified, with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑤">&lt;length-percentage></a> values computed
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
-      <td>by computed value, recursing into <a class="css" data-link-type="maybe" href="#valdef-width-fit-content-length-percentage" id="ref-for-valdef-width-fit-content-length-percentage①">fit-content()</a> 
+      <td>by computed value, recursing into <a class="css" data-link-type="maybe" href="#valdef-width-fit-content-length-percentage" id="ref-for-valdef-width-fit-content-length-percentage①">fit-content()</a>
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-min-width" id="ref-for-propdef-min-width③">min-width</a> and <a class="property" data-link-type="propdesc" href="#propdef-min-height" id="ref-for-propdef-min-height③">min-height</a> properties specify
 	the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="min width | minimum width | min size | minimum size" id="min-width">minimum width</dfn> (or “min width”)
@@ -694,28 +694,28 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-max-width">max-width</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-max-height">max-height</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑥">&lt;length-percentage></a> <span id="ref-for-comb-one⑨">|</span> min-content <span id="ref-for-comb-one①⓪">|</span> max-content <span id="ref-for-comb-one①①">|</span> <span style=";white-space:nowrap">fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑦">&lt;length-percentage></a>)</span> 
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑥">&lt;length-percentage></a> <span id="ref-for-comb-one⑨">|</span> min-content <span id="ref-for-comb-one①⓪">|</span> max-content <span id="ref-for-comb-one①①">|</span> <span style=";white-space:nowrap">fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑦">&lt;length-percentage></a>)</span>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td>all elements that accept <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width⑦">width</a> or <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height⑦">height</a> 
+      <td>all elements that accept <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width⑦">width</a> or <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height⑦">height</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>relative to width/height of <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block⑧">containing block</a> 
+      <td>relative to width/height of <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block⑧">containing block</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>as specified, with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑧">&lt;length-percentage></a> values computed 
+      <td>as specified, with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑧">&lt;length-percentage></a> values computed
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
-      <td>by computed value, recursing into <a class="css" data-link-type="maybe" href="#valdef-width-fit-content-length-percentage" id="ref-for-valdef-width-fit-content-length-percentage②">fit-content()</a> 
+      <td>by computed value, recursing into <a class="css" data-link-type="maybe" href="#valdef-width-fit-content-length-percentage" id="ref-for-valdef-width-fit-content-length-percentage②">fit-content()</a>
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-max-width" id="ref-for-propdef-max-width③">max-width</a> and <a class="property" data-link-type="propdesc" href="#propdef-max-height" id="ref-for-propdef-max-height③">max-height</a> properties specify
 	the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="max width | maximum width | max size | maximum size" id="max-width">maximum width</dfn> (or “max width”)
@@ -723,10 +723,10 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
 	of the box, respectively.</p>
    <h3 class="heading settled" data-level="3.2" id="sizing-values"><span class="secno">3.2. </span><span class="content"> Sizing Values: the <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑨">&lt;length-percentage></a>, <a class="css" data-link-type="maybe" href="#valdef-width-auto" id="ref-for-valdef-width-auto③">auto</a> | <a class="css" data-link-type="maybe" href="#valdef-max-width-none" id="ref-for-valdef-max-width-none">none</a>, <a class="css" data-link-type="maybe" href="#valdef-width-min-content" id="ref-for-valdef-width-min-content">min-content</a>, <a class="css" data-link-type="maybe" href="#valdef-width-max-content" id="ref-for-valdef-width-max-content">max-content</a>, and <a class="css" data-link-type="maybe" href="#valdef-width-fit-content-length-percentage" id="ref-for-valdef-width-fit-content-length-percentage③">fit-content()</a> values</span><span id="width-height-keywords"></span><a class="self-link" href="#sizing-values"></a></h3>
    <dl>
-    <dt><dfn class="css" data-dfn-for="width, min-width, max-width, height, min-height, max-height" data-dfn-type="value" data-export id="valdef-width-length-percentage"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①⓪">&lt;length-percentage></a><a class="self-link" href="#valdef-width-length-percentage"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="width, min-width, max-width, height, min-height, max-height" data-dfn-type="value" data-export id="valdef-width-length-percentage"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①⓪">&lt;length-percentage></a><a class="self-link" href="#valdef-width-length-percentage"></a></dfn>
     <dd>
       Specifies the size of the box using <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value①" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> and/or <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value①">&lt;percentage></a>.
-			The <a class="property" data-link-type="propdesc" href="#propdef-box-sizing" id="ref-for-propdef-box-sizing①">box-sizing</a> property indicates whether the <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#content-box" id="ref-for-content-box">content box</a> or <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#border-box" id="ref-for-border-box">border box</a> is measured. 
+			The <a class="property" data-link-type="propdesc" href="#propdef-box-sizing" id="ref-for-propdef-box-sizing①">box-sizing</a> property indicates whether the <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#content-box" id="ref-for-content-box">content box</a> or <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#border-box" id="ref-for-border-box">border box</a> is measured.
      <p>Percentages are resolved against the width/height, as appropriate,
 			of the box’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block⑨">containing block</a>.
 			If, in a particular axis,
@@ -734,10 +734,10 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
 			see the relevant layout module
 			for special rules on how to resolve percentages.</p>
      <p>Negative values are invalid.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="width, height, min-width, min-height" data-dfn-type="value" data-export id="valdef-width-auto">auto</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="width, height, min-width, min-height" data-dfn-type="value" data-export id="valdef-width-auto">auto</dfn>
     <dd>
       For <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width⑧">width</a>/<a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height⑧">height</a>, specifies an <dfn class="dfn-paneled" data-dfn-for data-dfn-type="dfn" data-export id="automatic-size">automatic size</dfn>.
-			See the relevant layout module for how to calculate this. 
+			See the relevant layout module for how to calculate this.
      <p>For <a class="property" data-link-type="propdesc" href="#propdef-min-width" id="ref-for-propdef-min-width④">min-width</a>/<a class="property" data-link-type="propdesc" href="#propdef-min-height" id="ref-for-propdef-min-height④">min-height</a>,
 			specifies an <dfn class="dfn-paneled" data-dfn-for data-dfn-type="dfn" data-export id="automatic-minimum-size">automatic minimum size</dfn>.
 			Unless otherwise defined by the relevant layout module,
@@ -751,23 +751,23 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
 			and all the table layout boxes.
 			It also resolves to zero
 			when no box is generated.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="max-width, max-height" data-dfn-type="value" data-export id="valdef-max-width-none">none</dfn> 
-    <dd> No limit on the size of the box. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="width, min-width, max-width, height, min-height, max-height" data-dfn-type="value" data-export id="valdef-width-min-content">min-content</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="max-width, max-height" data-dfn-type="value" data-export id="valdef-max-width-none">none</dfn>
+    <dd> No limit on the size of the box.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="width, min-width, max-width, height, min-height, max-height" data-dfn-type="value" data-export id="valdef-width-min-content">min-content</dfn>
     <dd> Use the <a data-link-type="dfn" href="#min-content" id="ref-for-min-content③">min-content size</a> in the relevant axis;
 			for a box’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-size" id="ref-for-block-size③">block size</a>,
 			unless otherwise specified,
-			this is equivalent to its <a data-link-type="dfn" href="#automatic-size" id="ref-for-automatic-size">automatic size</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="width, min-width, max-width, height, min-height, max-height" data-dfn-type="value" data-export id="valdef-width-max-content">max-content</dfn> 
+			this is equivalent to its <a data-link-type="dfn" href="#automatic-size" id="ref-for-automatic-size">automatic size</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="width, min-width, max-width, height, min-height, max-height" data-dfn-type="value" data-export id="valdef-width-max-content">max-content</dfn>
     <dd> Use the <a data-link-type="dfn" href="#min-content" id="ref-for-min-content④">min-content size</a> in the relevant axis;
 			for a box’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#block-size" id="ref-for-block-size④">block size</a>,
 			unless otherwise specified,
-			this is equivalent to its <a data-link-type="dfn" href="#automatic-size" id="ref-for-automatic-size①">automatic size</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="width, min-width, max-width, height, min-height, max-height" data-dfn-type="value" data-export id="valdef-width-fit-content-length-percentage">fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①①">&lt;length-percentage></a>)</dfn> 
+			this is equivalent to its <a data-link-type="dfn" href="#automatic-size" id="ref-for-automatic-size①">automatic size</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="width, min-width, max-width, height, min-height, max-height" data-dfn-type="value" data-export id="valdef-width-fit-content-length-percentage">fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①①">&lt;length-percentage></a>)</dfn>
     <dd>
       Use the fit-content formula
 			with the <a data-link-type="dfn" href="#available" id="ref-for-available⑦">available space</a> replaced by the specified argument,
-			i.e. <code>min(<a class="css" data-link-type="maybe" href="#valdef-width-max-content" id="ref-for-valdef-width-max-content①">max-content</a>, max(<a class="css" data-link-type="maybe" href="#valdef-width-min-content" id="ref-for-valdef-width-min-content①">min-content</a>, <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①②">&lt;length-percentage></a>))</code>. 
+			i.e. <code>min(<a class="css" data-link-type="maybe" href="#valdef-width-max-content" id="ref-for-valdef-width-max-content①">max-content</a>, max(<a class="css" data-link-type="maybe" href="#valdef-width-min-content" id="ref-for-valdef-width-min-content①">min-content</a>, <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①②">&lt;length-percentage></a>))</code>.
      <p>For <a data-link-type="dfn" href="#intrinsic-size-contribution" id="ref-for-intrinsic-size-contribution">intrinsic size contributions</a>,
 			''fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>)'' behaves as the resulting length; <a class="css" data-link-type="maybe" href="#valdef-width-fit-content-length-percentage" id="ref-for-valdef-width-fit-content-length-percentage④">fit-content()</a> containing a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value②">&lt;percentage></a> behaves
 			as <a class="css" data-link-type="maybe" href="#valdef-width-min-content" id="ref-for-valdef-width-min-content②">min-content</a> for <a data-link-type="dfn" href="#min-content-contribution" id="ref-for-min-content-contribution②">min-content contributions</a>,
@@ -813,28 +813,28 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-box-sizing">box-sizing</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">content-box <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①②">|</a> border-box 
+      <td class="prod">content-box <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①②">|</a> border-box
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>content-box 
+      <td>content-box
      <tr>
       <th>Applies to:
-      <td>all elements that accept <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width①②">width</a> or <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height①①">height</a> 
+      <td>all elements that accept <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width①②">width</a> or <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height①①">height</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-box-sizing" id="ref-for-propdef-box-sizing③">box-sizing</a> property defines whether
 	fixed sizes (such as <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value③" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>s and <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value③">&lt;percentage></a>s)
@@ -843,16 +843,16 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
 	including <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-flexbox-1/#propdef-flex-basis" id="ref-for-propdef-flex-basis①">flex-basis</a>.</p>
    <p>Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="box-sizing" data-dfn-type="value" data-export id="valdef-box-sizing-content-box">content-box<a class="self-link" href="#valdef-box-sizing-content-box"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="box-sizing" data-dfn-type="value" data-export id="valdef-box-sizing-content-box">content-box<a class="self-link" href="#valdef-box-sizing-content-box"></a></dfn>
     <dd>
       Sizes specified on <a data-link-type="dfn" href="#sizing-property" id="ref-for-sizing-property①">sizing properties</a> as <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①③">&lt;length-percentage></a> represent the box’s <a data-link-type="dfn" href="#inner-size" id="ref-for-inner-size①">inner sizes</a>,
 			excluding the margins/border/padding:
 			they are applied to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#content-box" id="ref-for-content-box②">content box</a>.
 			The padding and border of the box
-			are laid out and drawn <em>outside</em> the specified <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width①③">width</a> and <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height①②">height</a>. 
+			are laid out and drawn <em>outside</em> the specified <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width①③">width</a> and <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height①②">height</a>.
      <p class="note" role="note"><span>Note:</span> This is the behavior of width and height as specified by CSS2.1,
 			and is thus the default.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="box-sizing" data-dfn-type="value" data-export id="valdef-box-sizing-border-box">border-box</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="box-sizing" data-dfn-type="value" data-export id="valdef-box-sizing-border-box">border-box</dfn>
     <dd>
       Sizes specified on <a data-link-type="dfn" href="#sizing-property" id="ref-for-sizing-property②">sizing properties</a> as <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①④">&lt;length-percentage></a> represent the box’s visually-apparent sizes,
 			including the borders/padding (but not margin):
@@ -860,7 +860,7 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
 			The padding and border of the box
 			are laid out and drawn <em>inside</em> the specified <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width①④">width</a> and <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height①③">height</a>,
 			with the <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#content-box" id="ref-for-content-box③">content box</a> sized to fill the remaining space,
-			floored at zero. 
+			floored at zero.
      <p>The content width and height are calculated
 			by subtracting the border and padding widths of the respective sides
 			from the specified <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①⑤">&lt;length-percentage></a>.
@@ -878,7 +878,7 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
    <div class="example" id="example-8af7a68e">
     <a class="self-link" href="#example-8af7a68e"></a> For example, the following properties set
 		the content-box size of the box to <span class="css">100px</span>,
-		with the border-box size calculating to <span class="css">120px</span>: 
+		with the border-box size calculating to <span class="css">120px</span>:
 <pre class="lang-css highlight"><c- f>.box </c-><c- p>{</c->
   <c- k>box-sizing</c-><c- p>:</c->   content-box<c- p>;</c-> <c- c>/* default */</c->
   <c- k>width</c-><c- p>:</c->        <c- m>100</c-><c- l>px</c-><c- p>;</c->
@@ -913,7 +913,7 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
    <div class="example" id="example-0700ac27">
     <a class="self-link" href="#example-0700ac27"></a> This example uses box-sizing to evenly horizontally split
 		two divs with fixed size borders inside a div container,
-		which would otherwise require additional markup. 
+		which would otherwise require additional markup.
     <p>sample CSS:</p>
 <pre><code class="lang-css highlight"><c- f>div.container </c-><c- p>{</c->
   <c- k>width</c-><c- p>:</c-><c- m>38</c-><c- l>em</c-><c- p>;</c->
@@ -967,23 +967,23 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
       <td><a class="css" data-link-type="property" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-width" id="ref-for-propdef-column-width①">column-width</a>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">New values:</a>
-      <td class="prod">min-content <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> max-content <span id="ref-for-comb-one①④">|</span> fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①⑦">&lt;length-percentage></a>) 
+      <td class="prod">min-content <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①③">|</a> max-content <span id="ref-for-comb-one①④">|</span> fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①⑦">&lt;length-percentage></a>)
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>as specified, with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①⑧">&lt;length-percentage></a> values computed 
+      <td>as specified, with <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①⑧">&lt;length-percentage></a> values computed
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value type 
+      <td>by computed value type
    </table>
    <p>When  used as values for <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-multicol-1/#propdef-column-width" id="ref-for-propdef-column-width②">column-width</a>,
 		the new keywords specify the optimal column width: </p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="column-width" data-dfn-type="value" data-export id="valdef-column-width-min-content">min-content</dfn> 
-    <dd>Specifies the optimal column width as the <a data-link-type="dfn" href="#min-content-inline-size" id="ref-for-min-content-inline-size">min-content inline size</a> of the multi-column container’s contents. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="column-width" data-dfn-type="value" data-export id="valdef-column-width-max-content">max-content</dfn> 
-    <dd>Specifies the optimal column width as the <a data-link-type="dfn" href="#max-content-inline-size" id="ref-for-max-content-inline-size">max-content inline size</a> of the multi-column container’s contents. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="column-width" data-dfn-type="value" data-export id="valdef-column-width-fit-content-length-percentage">fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①⑨">&lt;length-percentage></a>)</dfn> 
-    <dd> Specifies the optimal column width as <code>min(<a data-link-type="dfn" href="#max-content" id="ref-for-max-content④">max-content size</a>, max(<a data-link-type="dfn" href="#min-content" id="ref-for-min-content⑤">min-content size</a>, <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage②⓪">&lt;length-percentage></a>))</code> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="column-width" data-dfn-type="value" data-export id="valdef-column-width-min-content">min-content</dfn>
+    <dd>Specifies the optimal column width as the <a data-link-type="dfn" href="#min-content-inline-size" id="ref-for-min-content-inline-size">min-content inline size</a> of the multi-column container’s contents.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="column-width" data-dfn-type="value" data-export id="valdef-column-width-max-content">max-content</dfn>
+    <dd>Specifies the optimal column width as the <a data-link-type="dfn" href="#max-content-inline-size" id="ref-for-max-content-inline-size">max-content inline size</a> of the multi-column container’s contents.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="column-width" data-dfn-type="value" data-export id="valdef-column-width-fit-content-length-percentage">fit-content(<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①⑨">&lt;length-percentage></a>)</dfn>
+    <dd> Specifies the optimal column width as <code>min(<a data-link-type="dfn" href="#max-content" id="ref-for-max-content④">max-content size</a>, max(<a data-link-type="dfn" href="#min-content" id="ref-for-min-content⑤">min-content size</a>, <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage②⓪">&lt;length-percentage></a>))</code>
    </dl>
    <p class="note" role="note"><span>Note:</span> The column width never varies by column.
 	When the column width is informed by the multi-column container’s contents
@@ -1020,7 +1020,7 @@ this is equivalent to the <a data-link-type="dfn" href="#max-content-block-size"
 	and therefore can’t be calculated against an infinitely-sized containing block
 	then:</p>
    <dl>
-    <dt>For boxes with an intrinsic aspect ratio, but no intrinsic size: 
+    <dt>For boxes with an intrinsic aspect ratio, but no intrinsic size:
     <dd>
      <ul>
       <li data-md>
@@ -1043,7 +1043,7 @@ but please send feedback to the CSSWG if there are any problems.</p>
 use a width of <span class="css">300px</span> (height of <span class="css">150px</span> in <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-4/#vertical-writing-mode" id="ref-for-vertical-writing-mode">vertical writing modes</a>)
 and calculate the other dimension using the aspect ratio.</p>
      </ul>
-    <dt>For boxes without an intrinsic aspect ratio: 
+    <dt>For boxes without an intrinsic aspect ratio:
     <dd>
      <ul>
       <li data-md>
@@ -1125,7 +1125,7 @@ as needed.</p>
    <h3 class="heading settled" data-level="5.1" id="percentage-sizing"><span class="secno">5.1. </span><span class="content"> Percentage Sizing</span><a class="self-link" href="#percentage-sizing"></a></h3>
    <p>Percentages specify sizing of a box with respect to the box’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#containing-block" id="ref-for-containing-block①①">containing block</a>.</p>
    <div class="example" id="example-65abfbed">
-    <a class="self-link" href="#example-65abfbed"></a> For example, in the following markup: 
+    <a class="self-link" href="#example-65abfbed"></a> For example, in the following markup:
 <pre class="lang-html highlight"><c- p>&lt;</c-><c- f>article</c-> <c- e>style</c-><c- o>=</c-><c- s>"height: 60em"</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>figure</c-> <c- e>style</c-><c- o>=</c-><c- s>"height: 50%;"</c-><c- p>></c->
     <c- p>&lt;</c-><c- f>img</c-> <c- e>style</c-><c- o>=</c-><c- s>"height: 50%;"</c-><c- p>></c->
@@ -1158,10 +1158,10 @@ as needed.</p>
 		For example, given a box with <span class="css" id="ref-for-propdef-width①⑨">width: calc(20px + 50%)</span>,
 		its max-content contribution is calculated as if its <span class="property" id="ref-for-propdef-width②⓪">width</span> were <a class="css" data-link-type="maybe" href="#valdef-width-auto" id="ref-for-valdef-width-auto①④">auto</a>.
 		(The percentage is honored as usual, however,
-		during the actual sizing of the box itself; see below.) 
+		during the actual sizing of the box itself; see below.)
     <li id="replaced-percentage-max-contribution"><a class="self-link" href="#replaced-percentage-max-contribution"></a> Likewise, if the box is <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#replaced-element" id="ref-for-replaced-element">replaced</a>,
 		then the entire value of any <a data-link-type="dfn" href="#max-size-properties" id="ref-for-max-size-properties①">max size property</a> or <a data-link-type="dfn" href="#preferred-size-properties" id="ref-for-preferred-size-properties①">preferred size property</a> specified as an expression containing a percentage
-		that is <a data-link-type="dfn" href="#cyclic-percentage" id="ref-for-cyclic-percentage①">cyclic</a> is treated <em>for the purpose of calculating the box’s <a data-link-type="dfn" href="#max-content-contribution" id="ref-for-max-content-contribution④">max-content contributions</a> only</em> as that property’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-cascade-4/#initial-value" id="ref-for-initial-value①">initial value</a>. 
+		that is <a data-link-type="dfn" href="#cyclic-percentage" id="ref-for-cyclic-percentage①">cyclic</a> is treated <em>for the purpose of calculating the box’s <a data-link-type="dfn" href="#max-content-contribution" id="ref-for-max-content-contribution④">max-content contributions</a> only</em> as that property’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-cascade-4/#initial-value" id="ref-for-initial-value①">initial value</a>.
     <li id="replaced-percentage-min-contribution">
      <a class="self-link" href="#replaced-percentage-min-contribution"></a> If the box is <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#replaced-element" id="ref-for-replaced-element①">replaced</a>,
 		a <a data-link-type="dfn" href="#cyclic-percentage" id="ref-for-cyclic-percentage②">cyclic percentage</a> in the value of any <a data-link-type="dfn" href="#max-size-properties" id="ref-for-max-size-properties②">max size property</a> or <a data-link-type="dfn" href="#preferred-size-properties" id="ref-for-preferred-size-properties②">preferred size property</a> (<a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width②①">width</a>/<a class="property" data-link-type="propdesc" href="#propdef-max-width" id="ref-for-propdef-max-width⑤">max-width</a>/<a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height①⑦">height</a>/<a class="property" data-link-type="propdesc" href="#propdef-max-height" id="ref-for-propdef-max-height⑤">max-height</a>),
@@ -1173,7 +1173,7 @@ as needed.</p>
 		(for example, the dropdown arrow on a <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element" id="ref-for-the-select-element">select</a></code>).
 		This rule also applies when calculating
 		a content-based <a data-link-type="dfn" href="#automatic-minimum-size" id="ref-for-automatic-minimum-size①">automatic minimum size</a> or its corresponding size contribution,
-		yielding a <a data-link-type="dfn" href="#definite" id="ref-for-definite①③">definite</a> “specified size suggestion”. 
+		yielding a <a data-link-type="dfn" href="#definite" id="ref-for-definite①③">definite</a> “specified size suggestion”.
      <div class="example" id="example-b06093ff"><a class="self-link" href="#example-b06093ff"></a> For example,
 			an <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element" id="ref-for-the-input-element①">input</a></code> assigned <a class="css" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width②②">width: calc(50% + 50px)</a> has a <a data-link-type="dfn" href="#min-content-contribution" id="ref-for-min-content-contribution⑤">min-content contribution</a> of <span class="css">50px</span>,
 			plus any horizontal margin/border/padding. </div>
@@ -1182,7 +1182,7 @@ as needed.</p>
     <li id="min-percentage-contribution"><a class="self-link" href="#min-percentage-contribution"></a> For the <a data-link-type="dfn" href="#min-size-properties" id="ref-for-min-size-properties">min size properties</a>,
 		as well as for margins and paddings,
 		a <a data-link-type="dfn" href="#cyclic-percentage" id="ref-for-cyclic-percentage③">cyclic percentage</a> is resolved against zero
-		for determining intrinsic size contributions. 
+		for determining intrinsic size contributions.
    </ol>
    <table class="data">
     <caption>Summary of the Cyclic-Percentage Intrinsic Size Contribution Rules (Above)</caption>
@@ -1191,28 +1191,28 @@ as needed.</p>
     <colgroup span="2">
     <thead>
      <tr>
-      <th scope="row">Element Type 
-      <th colspan="2" scope="colgroup"><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#replaced-element" id="ref-for-replaced-element②">Replaced</a> 
-      <th colspan="2" scope="colgroup"><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#non-replaced" id="ref-for-non-replaced②">Non-replaced</a> 
+      <th scope="row">Element Type
+      <th colspan="2" scope="colgroup"><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#replaced-element" id="ref-for-replaced-element②">Replaced</a>
+      <th colspan="2" scope="colgroup"><a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#non-replaced" id="ref-for-non-replaced②">Non-replaced</a>
      <tr>
-      <th scope="row">Contribution Type 
-      <th scope="col"><a data-link-type="dfn" href="#min-content-contribution" id="ref-for-min-content-contribution⑥">min-content</a> 
-      <th scope="col"><a data-link-type="dfn" href="#max-content-contribution" id="ref-for-max-content-contribution⑤">max-content</a> 
-      <th scope="col"><a data-link-type="dfn" href="#min-content-contribution" id="ref-for-min-content-contribution⑦">min-content</a> 
-      <th scope="col"><a data-link-type="dfn" href="#max-content-contribution" id="ref-for-max-content-contribution⑥">max-content</a> 
+      <th scope="row">Contribution Type
+      <th scope="col"><a data-link-type="dfn" href="#min-content-contribution" id="ref-for-min-content-contribution⑥">min-content</a>
+      <th scope="col"><a data-link-type="dfn" href="#max-content-contribution" id="ref-for-max-content-contribution⑤">max-content</a>
+      <th scope="col"><a data-link-type="dfn" href="#min-content-contribution" id="ref-for-min-content-contribution⑦">min-content</a>
+      <th scope="col"><a data-link-type="dfn" href="#max-content-contribution" id="ref-for-max-content-contribution⑥">max-content</a>
     <tbody>
      <tr>
-      <th scope="row"><a data-link-type="dfn" href="#min-size-properties" id="ref-for-min-size-properties①">min size</a> &amp; <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#margin-properties" id="ref-for-margin-properties">margin</a>/<a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#padding-properties" id="ref-for-padding-properties">padding</a> 
-      <td><a href="#min-percentage-contribution">zeroᵈ</a> 
-      <td><a href="#min-percentage-contribution">zeroᵈ</a> 
-      <td><a href="#min-percentage-contribution">zeroᵈ</a> 
-      <td><a href="#min-percentage-contribution">zeroᵈ</a> 
+      <th scope="row"><a data-link-type="dfn" href="#min-size-properties" id="ref-for-min-size-properties①">min size</a> &amp; <a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#margin-properties" id="ref-for-margin-properties">margin</a>/<a data-link-type="dfn" href="https://drafts.csswg.org/css-box-3/#padding-properties" id="ref-for-padding-properties">padding</a>
+      <td><a href="#min-percentage-contribution">zeroᵈ</a>
+      <td><a href="#min-percentage-contribution">zeroᵈ</a>
+      <td><a href="#min-percentage-contribution">zeroᵈ</a>
+      <td><a href="#min-percentage-contribution">zeroᵈ</a>
      <tr>
-      <th scope="row"><a data-link-type="dfn" href="#max-size-properties" id="ref-for-max-size-properties③">max</a> &amp; <a data-link-type="dfn" href="#preferred-size-properties" id="ref-for-preferred-size-properties③">preferred size</a> 
-      <td><a href="#replaced-percentage-min-contribution">zeroᶜ</a> 
-      <td><a href="#replaced-percentage-max-contribution">initialᵇ</a> 
-      <td><a href="#non-replaced-percentage-contribution">initialᵃ</a> 
-      <td><a href="#non-replaced-percentage-contribution">initialᵃ</a> 
+      <th scope="row"><a data-link-type="dfn" href="#max-size-properties" id="ref-for-max-size-properties③">max</a> &amp; <a data-link-type="dfn" href="#preferred-size-properties" id="ref-for-preferred-size-properties③">preferred size</a>
+      <td><a href="#replaced-percentage-min-contribution">zeroᶜ</a>
+      <td><a href="#replaced-percentage-max-contribution">initialᵇ</a>
+      <td><a href="#non-replaced-percentage-contribution">initialᵃ</a>
+      <td><a href="#non-replaced-percentage-contribution">initialᵃ</a>
    </table>
    <p>Then, unless otherwise specified,
 	when calculating the used sizes and positions of the containing block’s <em>contents</em>:</p>
@@ -1235,7 +1235,7 @@ the contents might thus overflow or underflow the containing block).</p>
 	(such as <a href="http://www.w3.org/TR/css-flexbox/">flex layout</a>)
 	not described in CSS2.</p>
    <div class="example" id="example-a57016da">
-    <a class="self-link" href="#example-a57016da"></a> For example, in the following markup: 
+    <a class="self-link" href="#example-a57016da"></a> For example, in the following markup:
 <pre class="lang-html highlight"><c- p>&lt;</c-><c- f>article</c-> <c- e>style</c-><c- o>=</c-><c- s>"width: min-content"</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>aside</c-> <c- e>style</c-><c- o>=</c-><c- s>"width: 50%;"</c-><c- p>></c->
   LOOOOOOOOOOOOOOOOOOOONG
@@ -1250,7 +1250,7 @@ the contents might thus overflow or underflow the containing block).</p>
 		whose width resolves to half that of the <code>&lt;article></code>.</p>
    </div>
    <div class="example" id="example-a6fc9bae">
-    <a class="self-link" href="#example-a6fc9bae"></a> In this example, 
+    <a class="self-link" href="#example-a6fc9bae"></a> In this example,
 <pre class="lang-html highlight"><c- p>&lt;</c-><c- f>article</c-> <c- e>style</c-><c- o>=</c-><c- s>"height:auto"</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>aside</c-> <c- e>style</c-><c- o>=</c-><c- s>"height: 50%;"</c-><c- p>></c->
     <c- p>&lt;</c-><c- f>div</c-> <c- e>class</c-><c- o>=</c-><c- s>block</c-> <c- e>style</c-><c- o>=</c-><c- s>"height: 150px;"</c-><c- p>>&lt;/</c-><c- f>div</c-><c- p>></c->
@@ -1264,7 +1264,7 @@ the contents might thus overflow or underflow the containing block).</p>
 		that is, it behaves exactly as if <a class="css" data-link-type="maybe" href="#valdef-width-auto" id="ref-for-valdef-width-auto①⑤">auto</a> were specified.</p>
    </div>
    <div class="example" id="example-8559f728">
-    <a class="self-link" href="#example-8559f728"></a> 
+    <a class="self-link" href="#example-8559f728"></a>
     <p class="issue" id="issue-9b3707fe"><a class="self-link" href="#issue-9b3707fe"></a> Letting percentages still resolve against a definite <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height①⑨">height</a> when the min-height is intrinsic is an open issue.
 		(CSS2 has a general statement about "height depending on contents",
 		which this technically is,
@@ -1348,25 +1348,25 @@ and a button (button-like, and thus not shrinkable).</p>
    <h2 class="no-num heading settled" id="changes"><span class="content"> Changes</span><a class="self-link" href="#changes"></a></h2>
    <p> Major changes since the <a href="https://www.w3.org/TR/2018/WD-css-sizing-3-20180304/">4 March 2018 Working Draft</a> include: </p>
    <ul>
-    <li>Imported the <a class="property" data-link-type="propdesc" href="#propdef-box-sizing" id="ref-for-propdef-box-sizing⑦">box-sizing</a> definition from <a href="https://www.w3.org/TR/css-ui-3/">CSS UI Level 3</a>. 
+    <li>Imported the <a class="property" data-link-type="propdesc" href="#propdef-box-sizing" id="ref-for-propdef-box-sizing⑦">box-sizing</a> definition from <a href="https://www.w3.org/TR/css-ui-3/">CSS UI Level 3</a>.
     <li>More rigorously specified handling of <a data-link-type="dfn" href="#cyclic-percentage" id="ref-for-cyclic-percentage④">cyclic percentages</a>.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/1132">#1132</a>, <a href="https://github.com/w3c/csswg-drafts/issues/2384">#2384</a>, <a href="https://github.com/w3c/csswg-drafts/issues/2297">#2297</a>, <a href="https://github.com/w3c/csswg-drafts/issues/2674">#2674</a>) 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/1132">#1132</a>, <a href="https://github.com/w3c/csswg-drafts/issues/2384">#2384</a>, <a href="https://github.com/w3c/csswg-drafts/issues/2297">#2297</a>, <a href="https://github.com/w3c/csswg-drafts/issues/2674">#2674</a>)
     <li>Changed the <span class="css">*-content</span> values applied to the bock axis
 			to not compute to the property’s initial value,
 			but to rather “behave as” the property’s initial value.
-			(<a href="https://github.com/w3c/csswg-drafts/issues/2708">#2708</a>) 
-    <li>Fixed miscellaneous trivial errors. 
+			(<a href="https://github.com/w3c/csswg-drafts/issues/2708">#2708</a>)
+    <li>Fixed miscellaneous trivial errors.
    </ul>
    <p> Major changes since the <a href="https://www.w3.org/TR/2017/WD-css-sizing-3-20170207/">7 February 2017 Working Draft</a> include: </p>
    <ul>
-    <li>More accurate definition of min-content and max-content sizes for replaced elements. 
-    <li>Compute new keywords to the initial value, not to a potentially non-existent <a class="css" data-link-type="maybe" href="#valdef-width-auto" id="ref-for-valdef-width-auto①⑦">auto</a>, when applied to the block axis. 
-    <li>Specify that percent sizes on replaced elements zero out their min-content contribution. 
+    <li>More accurate definition of min-content and max-content sizes for replaced elements.
+    <li>Compute new keywords to the initial value, not to a potentially non-existent <a class="css" data-link-type="maybe" href="#valdef-width-auto" id="ref-for-valdef-width-auto①⑦">auto</a>, when applied to the block axis.
+    <li>Specify that percent sizes on replaced elements zero out their min-content contribution.
     <li>Fix confusing/wrong definition of percentage sizes resolved against a dependent containing block.
-			(This may require further work.) 
+			(This may require further work.)
     <li>Deferred the <span class="css">stretch</span> and <span class="css">fit-content</span> keywords to Level 4
-			to allow for further consideration of their behavior in <a data-link-type="dfn" href="#indefinite" id="ref-for-indefinite⑥">indefinite</a> containing blocks. 
-    <li>Pulled in full definitions for all of the sizing properties (rather than diffing them): <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width②⑤">width</a>, <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height②④">height</a>, <a class="property" data-link-type="propdesc" href="#propdef-min-width" id="ref-for-propdef-min-width⑦">min-width</a>, <a class="property" data-link-type="propdesc" href="#propdef-min-height" id="ref-for-propdef-min-height①⓪">min-height</a>, max-width', <a class="property" data-link-type="propdesc" href="#propdef-max-height" id="ref-for-propdef-max-height⑦">max-height</a>, and <a class="property" data-link-type="propdesc" href="#propdef-box-sizing" id="ref-for-propdef-box-sizing⑧">box-sizing</a>. 
+			to allow for further consideration of their behavior in <a data-link-type="dfn" href="#indefinite" id="ref-for-indefinite⑥">indefinite</a> containing blocks.
+    <li>Pulled in full definitions for all of the sizing properties (rather than diffing them): <a class="property" data-link-type="propdesc" href="#propdef-width" id="ref-for-propdef-width②⑤">width</a>, <a class="property" data-link-type="propdesc" href="#propdef-height" id="ref-for-propdef-height②④">height</a>, <a class="property" data-link-type="propdesc" href="#propdef-min-width" id="ref-for-propdef-min-width⑦">min-width</a>, <a class="property" data-link-type="propdesc" href="#propdef-min-height" id="ref-for-propdef-min-height①⓪">min-height</a>, max-width', <a class="property" data-link-type="propdesc" href="#propdef-max-height" id="ref-for-propdef-max-height⑦">max-height</a>, and <a class="property" data-link-type="propdesc" href="#propdef-box-sizing" id="ref-for-propdef-box-sizing⑧">box-sizing</a>.
    </ul>
    <h2 class="no-num heading settled" id="acknowledgments"><span class="content"> Acknowledgments</span><a class="self-link" href="#acknowledgments"></a></h2>
    <p>Special thanks go to
@@ -1394,7 +1394,7 @@ and a button (button-like, and thus not shrinkable).</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1407,14 +1407,14 @@ and a button (button-like, and thus not shrinkable).</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1465,7 +1465,7 @@ and a button (button-like, and thus not shrinkable).</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <aside class="caniuse-status" data-deco data-dfn-id="box-sizing">
@@ -1587,162 +1587,162 @@ and a button (button-like, and thus not shrinkable).</p>
   <aside class="dfn-panel" data-for="term-for-propdef-border">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border">https://drafts.csswg.org/css-backgrounds-3/#propdef-border</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-border">3.3. 
+    <li><a href="#ref-for-propdef-border">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-border-box">
    <a href="https://drafts.csswg.org/css-box-3/#border-box">https://drafts.csswg.org/css-box-3/#border-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-border-box">3.2. 
+    <li><a href="#ref-for-border-box">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-border-box①">3.3. 
+    <li><a href="#ref-for-border-box①">3.3.
 Box Edges for Sizing: the box-sizing property</a> <a href="#ref-for-border-box②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-content-box">
    <a href="https://drafts.csswg.org/css-box-3/#content-box">https://drafts.csswg.org/css-box-3/#content-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-content-box">3.2. 
+    <li><a href="#ref-for-content-box">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-content-box①">3.3. 
+    <li><a href="#ref-for-content-box①">3.3.
 Box Edges for Sizing: the box-sizing property</a> <a href="#ref-for-content-box②">(2)</a> <a href="#ref-for-content-box③">(3)</a> <a href="#ref-for-content-box④">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-margin-properties">
    <a href="https://drafts.csswg.org/css-box-3/#margin-properties">https://drafts.csswg.org/css-box-3/#margin-properties</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-margin-properties">5.1. 
+    <li><a href="#ref-for-margin-properties">5.1.
 	Percentage Sizing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-padding">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-padding">https://drafts.csswg.org/css-box-3/#propdef-padding</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-padding">3.3. 
+    <li><a href="#ref-for-propdef-padding">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-padding-properties">
    <a href="https://drafts.csswg.org/css-box-3/#padding-properties">https://drafts.csswg.org/css-box-3/#padding-properties</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-padding-properties">5.1. 
+    <li><a href="#ref-for-padding-properties">5.1.
 	Percentage Sizing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-computed-value">
    <a href="https://drafts.csswg.org/css-cascade-4/#computed-value">https://drafts.csswg.org/css-cascade-4/#computed-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-computed-value">3.3. 
+    <li><a href="#ref-for-computed-value">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-initial-value">
    <a href="https://drafts.csswg.org/css-cascade-4/#initial-value">https://drafts.csswg.org/css-cascade-4/#initial-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-initial-value">5.1. 
+    <li><a href="#ref-for-initial-value">5.1.
 	Percentage Sizing</a> <a href="#ref-for-initial-value①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-box">
    <a href="https://drafts.csswg.org/css-display-3/#block-box">https://drafts.csswg.org/css-display-3/#block-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-box">3.2.2. 
+    <li><a href="#ref-for-block-box">3.2.2.
 Containing or Excluding Floats</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-container">
    <a href="https://drafts.csswg.org/css-display-3/#block-container">https://drafts.csswg.org/css-display-3/#block-container</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-container">2.1. 
+    <li><a href="#ref-for-block-container">2.1.
 Auto Box Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-box">
    <a href="https://drafts.csswg.org/css-display-3/#box">https://drafts.csswg.org/css-display-3/#box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-box">2. 
+    <li><a href="#ref-for-box">2.
 Terminology</a> <a href="#ref-for-box①">(2)</a>
-    <li><a href="#ref-for-box②">3.3. 
+    <li><a href="#ref-for-box②">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-containing-block">
    <a href="https://drafts.csswg.org/css-display-3/#containing-block">https://drafts.csswg.org/css-display-3/#containing-block</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-containing-block">2. 
+    <li><a href="#ref-for-containing-block">2.
 Terminology</a> <a href="#ref-for-containing-block①">(2)</a>
-    <li><a href="#ref-for-containing-block②">2.2. 
+    <li><a href="#ref-for-containing-block②">2.2.
 Intrinsic Size Contributions</a> <a href="#ref-for-containing-block③">(2)</a>
-    <li><a href="#ref-for-containing-block④">2.3. 
+    <li><a href="#ref-for-containing-block④">2.3.
 Intrinsic Size Constraints</a> <a href="#ref-for-containing-block⑤">(2)</a>
-    <li><a href="#ref-for-containing-block⑥">3.1.1. 
+    <li><a href="#ref-for-containing-block⑥">3.1.1.
 Preferred Size Properties: the width and height properties</a>
-    <li><a href="#ref-for-containing-block⑦">3.1.2. 
+    <li><a href="#ref-for-containing-block⑦">3.1.2.
 Minimum Size Properties: the min-width and min-height properties</a>
-    <li><a href="#ref-for-containing-block⑧">3.1.3. 
+    <li><a href="#ref-for-containing-block⑧">3.1.3.
 Maximum Size Properties: the max-width and max-height properties</a>
-    <li><a href="#ref-for-containing-block⑨">3.2. 
+    <li><a href="#ref-for-containing-block⑨">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-containing-block①⓪">(2)</a>
-    <li><a href="#ref-for-containing-block①①">5.1. 
+    <li><a href="#ref-for-containing-block①①">5.1.
 	Percentage Sizing</a> <a href="#ref-for-containing-block①②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-display">
    <a href="https://drafts.csswg.org/css-display-3/#propdef-display">https://drafts.csswg.org/css-display-3/#propdef-display</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-display">3.2.2. 
+    <li><a href="#ref-for-propdef-display">3.2.2.
 Containing or Excluding Floats</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-display-type">
    <a href="https://drafts.csswg.org/css-display-3/#display-type">https://drafts.csswg.org/css-display-3/#display-type</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-display-type">3.2. 
+    <li><a href="#ref-for-display-type">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-formatting-context">
    <a href="https://drafts.csswg.org/css-display-3/#formatting-context">https://drafts.csswg.org/css-display-3/#formatting-context</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-formatting-context">3.2.2. 
+    <li><a href="#ref-for-formatting-context">3.2.2.
 Containing or Excluding Floats</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-initial-containing-block">
    <a href="https://drafts.csswg.org/css-display-3/#initial-containing-block">https://drafts.csswg.org/css-display-3/#initial-containing-block</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-initial-containing-block">2. 
+    <li><a href="#ref-for-initial-containing-block">2.
 Terminology</a> <a href="#ref-for-initial-containing-block①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline">
    <a href="https://drafts.csswg.org/css-display-3/#inline">https://drafts.csswg.org/css-display-3/#inline</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline">3.1.1. 
+    <li><a href="#ref-for-inline">3.1.1.
 Preferred Size Properties: the width and height properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-box">
    <a href="https://drafts.csswg.org/css-display-3/#inline-box">https://drafts.csswg.org/css-display-3/#inline-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-box">2.1. 
+    <li><a href="#ref-for-inline-box">2.1.
 Auto Box Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-non-replaced">
    <a href="https://drafts.csswg.org/css-display-3/#non-replaced">https://drafts.csswg.org/css-display-3/#non-replaced</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-non-replaced">3.1.1. 
+    <li><a href="#ref-for-non-replaced">3.1.1.
 Preferred Size Properties: the width and height properties</a>
-    <li><a href="#ref-for-non-replaced①">5.1. 
+    <li><a href="#ref-for-non-replaced①">5.1.
 	Percentage Sizing</a> <a href="#ref-for-non-replaced②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-replaced-element">
    <a href="https://drafts.csswg.org/css-display-3/#replaced-element">https://drafts.csswg.org/css-display-3/#replaced-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-replaced-element">5.1. 
+    <li><a href="#ref-for-replaced-element">5.1.
 	Percentage Sizing</a> <a href="#ref-for-replaced-element①">(2)</a> <a href="#ref-for-replaced-element②">(3)</a>
     <li><a href="#ref-for-replaced-element③"> Compressible Replaced Elements</a>
    </ul>
@@ -1750,7 +1750,7 @@ Preferred Size Properties: the width and height properties</a>
   <aside class="dfn-panel" data-for="term-for-replaced-element">
    <a href="https://drafts.csswg.org/css-display-3/#replaced-element">https://drafts.csswg.org/css-display-3/#replaced-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-replaced-element">5.1. 
+    <li><a href="#ref-for-replaced-element">5.1.
 	Percentage Sizing</a> <a href="#ref-for-replaced-element①">(2)</a> <a href="#ref-for-replaced-element②">(3)</a>
     <li><a href="#ref-for-replaced-element③"> Compressible Replaced Elements</a>
    </ul>
@@ -1758,222 +1758,222 @@ Preferred Size Properties: the width and height properties</a>
   <aside class="dfn-panel" data-for="term-for-text-run">
    <a href="https://drafts.csswg.org/css-display-3/#text-run">https://drafts.csswg.org/css-display-3/#text-run</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-text-run">4.1. 
+    <li><a href="#ref-for-text-run">4.1.
 Intrinsic Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-flex-item">
    <a href="https://drafts.csswg.org/css-flexbox-1/#flex-item">https://drafts.csswg.org/css-flexbox-1/#flex-item</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-flex-item">5.1. 
+    <li><a href="#ref-for-flex-item">5.1.
 	Percentage Sizing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-flex-basis">
    <a href="https://drafts.csswg.org/css-flexbox-1/#propdef-flex-basis">https://drafts.csswg.org/css-flexbox-1/#propdef-flex-basis</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-flex-basis">3.2. 
+    <li><a href="#ref-for-propdef-flex-basis">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-propdef-flex-basis①">3.3. 
+    <li><a href="#ref-for-propdef-flex-basis①">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-grid-item">
    <a href="https://drafts.csswg.org/css-grid-1/#grid-item">https://drafts.csswg.org/css-grid-1/#grid-item</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-grid-item">5.1. 
+    <li><a href="#ref-for-grid-item">5.1.
 	Percentage Sizing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-block-size">
    <a href="https://drafts.csswg.org/css-logical-1/#propdef-block-size">https://drafts.csswg.org/css-logical-1/#propdef-block-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-block-size">5.1. 
+    <li><a href="#ref-for-propdef-block-size">5.1.
 	Percentage Sizing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-max-block-size">
    <a href="https://drafts.csswg.org/css-logical-1/#propdef-max-block-size">https://drafts.csswg.org/css-logical-1/#propdef-max-block-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-max-block-size">5.1. 
+    <li><a href="#ref-for-propdef-max-block-size">5.1.
 	Percentage Sizing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-at-ruledef-page">
    <a href="https://drafts.csswg.org/css-page-3/#at-ruledef-page">https://drafts.csswg.org/css-page-3/#at-ruledef-page</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-at-ruledef-page">3.1. 
+    <li><a href="#ref-for-at-ruledef-page">3.1.
 Sizing Properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-descdef-page-size">
    <a href="https://drafts.csswg.org/css-page-3/#descdef-page-size">https://drafts.csswg.org/css-page-3/#descdef-page-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-descdef-page-size">3.1. 
+    <li><a href="#ref-for-descdef-page-size">3.1.
 Sizing Properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-soft-wrap-opportunity">
    <a href="https://drafts.csswg.org/css-text-3/#soft-wrap-opportunity">https://drafts.csswg.org/css-text-3/#soft-wrap-opportunity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-soft-wrap-opportunity">4.1. 
+    <li><a href="#ref-for-soft-wrap-opportunity">4.1.
 Intrinsic Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-length-value">
    <a href="https://drafts.csswg.org/css-values-3/#length-value">https://drafts.csswg.org/css-values-3/#length-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-length-value">2. 
+    <li><a href="#ref-for-length-value">2.
 Terminology</a>
-    <li><a href="#ref-for-length-value①">3.2. 
+    <li><a href="#ref-for-length-value①">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-length-value②">(2)</a>
-    <li><a href="#ref-for-length-value③">3.3. 
+    <li><a href="#ref-for-length-value③">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-percentage-value">
    <a href="https://drafts.csswg.org/css-values-3/#percentage-value">https://drafts.csswg.org/css-values-3/#percentage-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-percentage-value">2. 
+    <li><a href="#ref-for-percentage-value">2.
 Terminology</a>
-    <li><a href="#ref-for-percentage-value①">3.2. 
+    <li><a href="#ref-for-percentage-value①">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-percentage-value②">(2)</a>
-    <li><a href="#ref-for-percentage-value③">3.3. 
+    <li><a href="#ref-for-percentage-value③">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-length-percentage">
    <a href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage">https://drafts.csswg.org/css-values-4/#typedef-length-percentage</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-length-percentage">3.1.1. 
+    <li><a href="#ref-for-typedef-length-percentage">3.1.1.
 Preferred Size Properties: the width and height properties</a> <a href="#ref-for-typedef-length-percentage①">(2)</a> <a href="#ref-for-typedef-length-percentage②">(3)</a>
-    <li><a href="#ref-for-typedef-length-percentage③">3.1.2. 
+    <li><a href="#ref-for-typedef-length-percentage③">3.1.2.
 Minimum Size Properties: the min-width and min-height properties</a> <a href="#ref-for-typedef-length-percentage④">(2)</a> <a href="#ref-for-typedef-length-percentage⑤">(3)</a>
-    <li><a href="#ref-for-typedef-length-percentage⑥">3.1.3. 
+    <li><a href="#ref-for-typedef-length-percentage⑥">3.1.3.
 Maximum Size Properties: the max-width and max-height properties</a> <a href="#ref-for-typedef-length-percentage⑦">(2)</a> <a href="#ref-for-typedef-length-percentage⑧">(3)</a>
-    <li><a href="#ref-for-typedef-length-percentage⑨">3.2. 
+    <li><a href="#ref-for-typedef-length-percentage⑨">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-typedef-length-percentage①⓪">(2)</a> <a href="#ref-for-typedef-length-percentage①①">(3)</a> <a href="#ref-for-typedef-length-percentage①②">(4)</a>
-    <li><a href="#ref-for-typedef-length-percentage①③">3.3. 
+    <li><a href="#ref-for-typedef-length-percentage①③">3.3.
 Box Edges for Sizing: the box-sizing property</a> <a href="#ref-for-typedef-length-percentage①④">(2)</a> <a href="#ref-for-typedef-length-percentage①⑤">(3)</a> <a href="#ref-for-typedef-length-percentage①⑥">(4)</a>
-    <li><a href="#ref-for-typedef-length-percentage①⑦">3.4. 
+    <li><a href="#ref-for-typedef-length-percentage①⑦">3.4.
 New Column Sizing Values: the min-content, max-content, and fit-content() values</a> <a href="#ref-for-typedef-length-percentage①⑧">(2)</a> <a href="#ref-for-typedef-length-percentage①⑨">(3)</a> <a href="#ref-for-typedef-length-percentage②⓪">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-wide-keywords">
    <a href="https://drafts.csswg.org/css-values-4/#css-wide-keywords">https://drafts.csswg.org/css-values-4/#css-wide-keywords</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-wide-keywords">1.2. 
+    <li><a href="#ref-for-css-wide-keywords">1.2.
 Values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">3.1.1. 
+    <li><a href="#ref-for-comb-one">3.1.1.
 Preferred Size Properties: the width and height properties</a> <a href="#ref-for-comb-one①">(2)</a> <a href="#ref-for-comb-one②">(3)</a> <a href="#ref-for-comb-one③">(4)</a>
-    <li><a href="#ref-for-comb-one④">3.1.2. 
+    <li><a href="#ref-for-comb-one④">3.1.2.
 Minimum Size Properties: the min-width and min-height properties</a> <a href="#ref-for-comb-one⑤">(2)</a> <a href="#ref-for-comb-one⑥">(3)</a> <a href="#ref-for-comb-one⑦">(4)</a>
-    <li><a href="#ref-for-comb-one⑧">3.1.3. 
+    <li><a href="#ref-for-comb-one⑧">3.1.3.
 Maximum Size Properties: the max-width and max-height properties</a> <a href="#ref-for-comb-one⑨">(2)</a> <a href="#ref-for-comb-one①⓪">(3)</a> <a href="#ref-for-comb-one①①">(4)</a>
-    <li><a href="#ref-for-comb-one①②">3.3. 
+    <li><a href="#ref-for-comb-one①②">3.3.
 Box Edges for Sizing: the box-sizing property</a>
-    <li><a href="#ref-for-comb-one①③">3.4. 
+    <li><a href="#ref-for-comb-one①③">3.4.
 New Column Sizing Values: the min-content, max-content, and fit-content() values</a> <a href="#ref-for-comb-one①④">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-axis">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#block-axis">https://drafts.csswg.org/css-writing-modes-4/#block-axis</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-axis">2.1. 
+    <li><a href="#ref-for-block-axis">2.1.
 Auto Box Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-block-size">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#block-size">https://drafts.csswg.org/css-writing-modes-4/#block-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-size">2. 
+    <li><a href="#ref-for-block-size">2.
 Terminology</a> <a href="#ref-for-block-size①">(2)</a>
-    <li><a href="#ref-for-block-size②">2.1. 
+    <li><a href="#ref-for-block-size②">2.1.
 Auto Box Sizes</a>
-    <li><a href="#ref-for-block-size③">3.2. 
+    <li><a href="#ref-for-block-size③">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-block-size④">(2)</a>
-    <li><a href="#ref-for-block-size⑤">5.1. 
+    <li><a href="#ref-for-block-size⑤">5.1.
 	Percentage Sizing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-flow-relative">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#flow-relative">https://drafts.csswg.org/css-writing-modes-4/#flow-relative</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-flow-relative">3.1. 
+    <li><a href="#ref-for-flow-relative">3.1.
 Sizing Properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-axis">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#inline-axis">https://drafts.csswg.org/css-writing-modes-4/#inline-axis</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-axis">2.1. 
+    <li><a href="#ref-for-inline-axis">2.1.
 Auto Box Sizes</a> <a href="#ref-for-inline-axis①">(2)</a>
-    <li><a href="#ref-for-inline-axis②">4.1. 
+    <li><a href="#ref-for-inline-axis②">4.1.
 Intrinsic Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-inline-size">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#inline-size">https://drafts.csswg.org/css-writing-modes-4/#inline-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inline-size">2. 
+    <li><a href="#ref-for-inline-size">2.
 Terminology</a> <a href="#ref-for-inline-size①">(2)</a>
-    <li><a href="#ref-for-inline-size②">2.1. 
+    <li><a href="#ref-for-inline-size②">2.1.
 Auto Box Sizes</a> <a href="#ref-for-inline-size③">(2)</a> <a href="#ref-for-inline-size④">(3)</a> <a href="#ref-for-inline-size⑤">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-physical">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#physical">https://drafts.csswg.org/css-writing-modes-4/#physical</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-physical">3.1.1. 
+    <li><a href="#ref-for-physical">3.1.1.
 Preferred Size Properties: the width and height properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-vertical-writing-mode">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#vertical-writing-mode">https://drafts.csswg.org/css-writing-modes-4/#vertical-writing-mode</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-vertical-writing-mode">4.1. 
+    <li><a href="#ref-for-vertical-writing-mode">4.1.
 Intrinsic Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-writing-mode">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#writing-mode">https://drafts.csswg.org/css-writing-modes-4/#writing-mode</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-writing-mode">2. 
+    <li><a href="#ref-for-writing-mode">2.
 Terminology</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-column-width">
    <a href="https://drafts.csswg.org/css-multicol-1/#propdef-column-width">https://drafts.csswg.org/css-multicol-1/#propdef-column-width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-column-width">1.1. 
+    <li><a href="#ref-for-propdef-column-width">1.1.
 Module interactions</a>
-    <li><a href="#ref-for-propdef-column-width①">3.4. 
+    <li><a href="#ref-for-propdef-column-width①">3.4.
 New Column Sizing Values: the min-content, max-content, and fit-content() values</a> <a href="#ref-for-propdef-column-width②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dom-window-getcomputedstyle">
    <a href="https://drafts.csswg.org/cssom-1/#dom-window-getcomputedstyle">https://drafts.csswg.org/cssom-1/#dom-window-getcomputedstyle</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-window-getcomputedstyle">3.3. 
+    <li><a href="#ref-for-dom-window-getcomputedstyle">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-resolved-value">
    <a href="https://drafts.csswg.org/cssom-1/#resolved-value">https://drafts.csswg.org/cssom-1/#resolved-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-resolved-value">3.2. 
+    <li><a href="#ref-for-resolved-value">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-the-button-element">
    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element">https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-the-button-element">3.3. 
+    <li><a href="#ref-for-the-button-element">3.3.
 Box Edges for Sizing: the box-sizing property</a>
     <li><a href="#ref-for-the-button-element①"> Compressible Replaced Elements</a>
    </ul>
@@ -1981,16 +1981,16 @@ Box Edges for Sizing: the box-sizing property</a>
   <aside class="dfn-panel" data-for="term-for-the-iframe-element">
    <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element">https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-the-iframe-element">4.1. 
+    <li><a href="#ref-for-the-iframe-element">4.1.
 Intrinsic Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-the-input-element">
    <a href="https://html.spec.whatwg.org/multipage/input.html#the-input-element">https://html.spec.whatwg.org/multipage/input.html#the-input-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-the-input-element">4.1. 
+    <li><a href="#ref-for-the-input-element">4.1.
 Intrinsic Sizes</a>
-    <li><a href="#ref-for-the-input-element①">5.1. 
+    <li><a href="#ref-for-the-input-element①">5.1.
 	Percentage Sizing</a>
     <li><a href="#ref-for-the-input-element②"> Compressible Replaced Elements</a>
    </ul>
@@ -2010,14 +2010,14 @@ Intrinsic Sizes</a>
   <aside class="dfn-panel" data-for="term-for-concept-textarea-raw-value">
    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#concept-textarea-raw-value">https://html.spec.whatwg.org/multipage/form-elements.html#concept-textarea-raw-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-textarea-raw-value">4.1. 
+    <li><a href="#ref-for-concept-textarea-raw-value">4.1.
 Intrinsic Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-the-select-element">
    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-the-select-element">5.1. 
+    <li><a href="#ref-for-the-select-element">5.1.
 	Percentage Sizing</a>
     <li><a href="#ref-for-the-select-element①"> Compressible Replaced Elements</a>
    </ul>
@@ -2025,7 +2025,7 @@ Intrinsic Sizes</a>
   <aside class="dfn-panel" data-for="term-for-the-textarea-element">
    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-the-textarea-element">4.1. 
+    <li><a href="#ref-for-the-textarea-element">4.1.
 Intrinsic Sizes</a>
     <li><a href="#ref-for-the-textarea-element①"> Compressible Replaced Elements</a>
    </ul>
@@ -2311,53 +2311,53 @@ Intrinsic Sizes</a>
   <aside class="dfn-panel" data-for="size">
    <b><a href="#size">#size</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-size">2.1. 
+    <li><a href="#ref-for-size">2.1.
 Auto Box Sizes</a> <a href="#ref-for-size①">(2)</a> <a href="#ref-for-size②">(3)</a> <a href="#ref-for-size③">(4)</a> <a href="#ref-for-size④">(5)</a> <a href="#ref-for-size⑤">(6)</a> <a href="#ref-for-size⑥">(7)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="inner-size">
    <b><a href="#inner-size">#inner-size</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-inner-size">3.2. 
+    <li><a href="#ref-for-inner-size">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-inner-size①">3.3. 
+    <li><a href="#ref-for-inner-size①">3.3.
 Box Edges for Sizing: the box-sizing property</a> <a href="#ref-for-inner-size②">(2)</a> <a href="#ref-for-inner-size③">(3)</a> <a href="#ref-for-inner-size④">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="outer-size">
    <b><a href="#outer-size">#outer-size</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-outer-size">2.1. 
+    <li><a href="#ref-for-outer-size">2.1.
 Auto Box Sizes</a>
-    <li><a href="#ref-for-outer-size①">2.2. 
+    <li><a href="#ref-for-outer-size①">2.2.
 Intrinsic Size Contributions</a>
-    <li><a href="#ref-for-outer-size②">3.3. 
+    <li><a href="#ref-for-outer-size②">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="definite">
    <b><a href="#definite">#definite</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-definite">2. 
+    <li><a href="#ref-for-definite">2.
 Terminology</a> <a href="#ref-for-definite①">(2)</a> <a href="#ref-for-definite②">(3)</a> <a href="#ref-for-definite③">(4)</a>
-    <li><a href="#ref-for-definite④">2.1. 
+    <li><a href="#ref-for-definite④">2.1.
 Auto Box Sizes</a> <a href="#ref-for-definite⑤">(2)</a>
-    <li><a href="#ref-for-definite⑥">4.1. 
+    <li><a href="#ref-for-definite⑥">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-definite⑦">(2)</a> <a href="#ref-for-definite⑧">(3)</a> <a href="#ref-for-definite⑨">(4)</a>
-    <li><a href="#ref-for-definite①⓪">5.1. 
+    <li><a href="#ref-for-definite①⓪">5.1.
 	Percentage Sizing</a> <a href="#ref-for-definite①①">(2)</a> <a href="#ref-for-definite①②">(3)</a> <a href="#ref-for-definite①③">(4)</a> <a href="#ref-for-definite①④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="indefinite">
    <b><a href="#indefinite">#indefinite</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-indefinite">2. 
+    <li><a href="#ref-for-indefinite">2.
 Terminology</a> <a href="#ref-for-indefinite①">(2)</a>
-    <li><a href="#ref-for-indefinite②">2.1. 
+    <li><a href="#ref-for-indefinite②">2.1.
 Auto Box Sizes</a> <a href="#ref-for-indefinite③">(2)</a>
-    <li><a href="#ref-for-indefinite④">3.2. 
+    <li><a href="#ref-for-indefinite④">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-indefinite⑤">3.2.1. 
+    <li><a href="#ref-for-indefinite⑤">3.2.1.
 “Behaving as auto”</a>
     <li><a href="#ref-for-indefinite⑥"> Changes</a>
    </ul>
@@ -2365,82 +2365,82 @@ Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content
   <aside class="dfn-panel" data-for="available">
    <b><a href="#available">#available</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-available">2. 
+    <li><a href="#ref-for-available">2.
 Terminology</a> <a href="#ref-for-available①">(2)</a>
-    <li><a href="#ref-for-available②">2.1. 
+    <li><a href="#ref-for-available②">2.1.
 Auto Box Sizes</a> <a href="#ref-for-available③">(2)</a> <a href="#ref-for-available④">(3)</a> <a href="#ref-for-available⑤">(4)</a> <a href="#ref-for-available⑥">(5)</a>
-    <li><a href="#ref-for-available⑦">3.2. 
+    <li><a href="#ref-for-available⑦">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-available⑧">(2)</a>
-    <li><a href="#ref-for-available⑨">4.1. 
+    <li><a href="#ref-for-available⑨">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-available①⓪">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="stretch-fit">
    <b><a href="#stretch-fit">#stretch-fit</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-stretch-fit">2. 
+    <li><a href="#ref-for-stretch-fit">2.
 Terminology</a>
-    <li><a href="#ref-for-stretch-fit①">2.1. 
+    <li><a href="#ref-for-stretch-fit①">2.1.
 Auto Box Sizes</a>
-    <li><a href="#ref-for-stretch-fit②">4.1. 
+    <li><a href="#ref-for-stretch-fit②">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-stretch-fit③">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fallback">
    <b><a href="#fallback">#fallback</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fallback">2. 
+    <li><a href="#ref-for-fallback">2.
 Terminology</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="stretch-fit-size">
    <b><a href="#stretch-fit-size">#stretch-fit-size</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-stretch-fit-size">2.1. 
+    <li><a href="#ref-for-stretch-fit-size">2.1.
 Auto Box Sizes</a>
-    <li><a href="#ref-for-stretch-fit-size①">3.2. 
+    <li><a href="#ref-for-stretch-fit-size①">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="max-content">
    <b><a href="#max-content">#max-content</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-max-content">2.1. 
+    <li><a href="#ref-for-max-content">2.1.
 Auto Box Sizes</a> <a href="#ref-for-max-content①">(2)</a> <a href="#ref-for-max-content②">(3)</a>
-    <li><a href="#ref-for-max-content③">2.2. 
+    <li><a href="#ref-for-max-content③">2.2.
 Intrinsic Size Contributions</a>
-    <li><a href="#ref-for-max-content④">3.4. 
+    <li><a href="#ref-for-max-content④">3.4.
 New Column Sizing Values: the min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-max-content⑤">4.1. 
+    <li><a href="#ref-for-max-content⑤">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-max-content⑥">(2)</a> <a href="#ref-for-max-content⑦">(3)</a> <a href="#ref-for-max-content⑧">(4)</a> <a href="#ref-for-max-content⑨">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="max-content-inline-size">
    <b><a href="#max-content-inline-size">#max-content-inline-size</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-max-content-inline-size">3.4. 
+    <li><a href="#ref-for-max-content-inline-size">3.4.
 New Column Sizing Values: the min-content, max-content, and fit-content() values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="max-content-block-size">
    <b><a href="#max-content-block-size">#max-content-block-size</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-max-content-block-size">2.1. 
+    <li><a href="#ref-for-max-content-block-size">2.1.
 Auto Box Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="min-content">
    <b><a href="#min-content">#min-content</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-min-content">2.1. 
+    <li><a href="#ref-for-min-content">2.1.
 Auto Box Sizes</a> <a href="#ref-for-min-content①">(2)</a>
-    <li><a href="#ref-for-min-content②">2.2. 
+    <li><a href="#ref-for-min-content②">2.2.
 Intrinsic Size Contributions</a>
-    <li><a href="#ref-for-min-content③">3.2. 
+    <li><a href="#ref-for-min-content③">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-min-content④">(2)</a>
-    <li><a href="#ref-for-min-content⑤">3.4. 
+    <li><a href="#ref-for-min-content⑤">3.4.
 New Column Sizing Values: the min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-min-content⑥">4.1. 
+    <li><a href="#ref-for-min-content⑥">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-min-content⑦">(2)</a> <a href="#ref-for-min-content⑧">(3)</a>
     <li><a href="#ref-for-min-content⑨"> Compressible Replaced Elements</a>
    </ul>
@@ -2448,110 +2448,110 @@ Intrinsic Sizes</a> <a href="#ref-for-min-content⑦">(2)</a> <a href="#ref-for-
   <aside class="dfn-panel" data-for="min-content-inline-size">
    <b><a href="#min-content-inline-size">#min-content-inline-size</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-min-content-inline-size">3.4. 
+    <li><a href="#ref-for-min-content-inline-size">3.4.
 New Column Sizing Values: the min-content, max-content, and fit-content() values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="fit-content-size">
    <b><a href="#fit-content-size">#fit-content-size</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-fit-content-size">3.2. 
+    <li><a href="#ref-for-fit-content-size">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="max-content-contribution">
    <b><a href="#max-content-contribution">#max-content-contribution</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-max-content-contribution">2.2. 
+    <li><a href="#ref-for-max-content-contribution">2.2.
 Intrinsic Size Contributions</a>
-    <li><a href="#ref-for-max-content-contribution①">2.3. 
+    <li><a href="#ref-for-max-content-contribution①">2.3.
 Intrinsic Size Constraints</a>
-    <li><a href="#ref-for-max-content-contribution②">3.2. 
+    <li><a href="#ref-for-max-content-contribution②">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-max-content-contribution③">4.2. 
+    <li><a href="#ref-for-max-content-contribution③">4.2.
 Intrinsic Contributions</a>
-    <li><a href="#ref-for-max-content-contribution④">5.1. 
+    <li><a href="#ref-for-max-content-contribution④">5.1.
 	Percentage Sizing</a> <a href="#ref-for-max-content-contribution⑤">(2)</a> <a href="#ref-for-max-content-contribution⑥">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="min-content-contribution">
    <b><a href="#min-content-contribution">#min-content-contribution</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-min-content-contribution">2.2. 
+    <li><a href="#ref-for-min-content-contribution">2.2.
 Intrinsic Size Contributions</a>
-    <li><a href="#ref-for-min-content-contribution①">2.3. 
+    <li><a href="#ref-for-min-content-contribution①">2.3.
 Intrinsic Size Constraints</a>
-    <li><a href="#ref-for-min-content-contribution②">3.2. 
+    <li><a href="#ref-for-min-content-contribution②">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-min-content-contribution③">4.2. 
+    <li><a href="#ref-for-min-content-contribution③">4.2.
 Intrinsic Contributions</a>
-    <li><a href="#ref-for-min-content-contribution④">5.1. 
+    <li><a href="#ref-for-min-content-contribution④">5.1.
 	Percentage Sizing</a> <a href="#ref-for-min-content-contribution⑤">(2)</a> <a href="#ref-for-min-content-contribution⑥">(3)</a> <a href="#ref-for-min-content-contribution⑦">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="intrinsic-size-contribution">
    <b><a href="#intrinsic-size-contribution">#intrinsic-size-contribution</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-intrinsic-size-contribution">3.2. 
+    <li><a href="#ref-for-intrinsic-size-contribution">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-intrinsic-size-contribution①">5.1. 
+    <li><a href="#ref-for-intrinsic-size-contribution①">5.1.
 	Percentage Sizing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="max-content-constraint">
    <b><a href="#max-content-constraint">#max-content-constraint</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-max-content-constraint">2. 
+    <li><a href="#ref-for-max-content-constraint">2.
 Terminology</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="min-content-constraint">
    <b><a href="#min-content-constraint">#min-content-constraint</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-min-content-constraint">2. 
+    <li><a href="#ref-for-min-content-constraint">2.
 Terminology</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="sizing-property">
    <b><a href="#sizing-property">#sizing-property</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-sizing-property">3.3. 
+    <li><a href="#ref-for-sizing-property">3.3.
 Box Edges for Sizing: the box-sizing property</a> <a href="#ref-for-sizing-property①">(2)</a> <a href="#ref-for-sizing-property②">(3)</a> <a href="#ref-for-sizing-property③">(4)</a>
-    <li><a href="#ref-for-sizing-property④">4.1. 
+    <li><a href="#ref-for-sizing-property④">4.1.
 Intrinsic Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="preferred-size-properties">
    <b><a href="#preferred-size-properties">#preferred-size-properties</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-preferred-size-properties">5.1. 
+    <li><a href="#ref-for-preferred-size-properties">5.1.
 	Percentage Sizing</a> <a href="#ref-for-preferred-size-properties①">(2)</a> <a href="#ref-for-preferred-size-properties②">(3)</a> <a href="#ref-for-preferred-size-properties③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-width">
    <b><a href="#propdef-width">#propdef-width</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-width">1. 
+    <li><a href="#ref-for-propdef-width">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-width①">1.1. 
+    <li><a href="#ref-for-propdef-width①">1.1.
 Module interactions</a>
-    <li><a href="#ref-for-propdef-width②">3.1. 
+    <li><a href="#ref-for-propdef-width②">3.1.
 Sizing Properties</a> <a href="#ref-for-propdef-width③">(2)</a>
-    <li><a href="#ref-for-propdef-width④">3.1.1. 
+    <li><a href="#ref-for-propdef-width④">3.1.1.
 Preferred Size Properties: the width and height properties</a> <a href="#ref-for-propdef-width⑤">(2)</a>
-    <li><a href="#ref-for-propdef-width⑥">3.1.2. 
+    <li><a href="#ref-for-propdef-width⑥">3.1.2.
 Minimum Size Properties: the min-width and min-height properties</a>
-    <li><a href="#ref-for-propdef-width⑦">3.1.3. 
+    <li><a href="#ref-for-propdef-width⑦">3.1.3.
 Maximum Size Properties: the max-width and max-height properties</a>
-    <li><a href="#ref-for-propdef-width⑧">3.2. 
+    <li><a href="#ref-for-propdef-width⑧">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-propdef-width⑨">(2)</a>
-    <li><a href="#ref-for-propdef-width①⓪">3.2.1. 
+    <li><a href="#ref-for-propdef-width①⓪">3.2.1.
 “Behaving as auto”</a> <a href="#ref-for-propdef-width①①">(2)</a>
-    <li><a href="#ref-for-propdef-width①②">3.3. 
+    <li><a href="#ref-for-propdef-width①②">3.3.
 Box Edges for Sizing: the box-sizing property</a> <a href="#ref-for-propdef-width①③">(2)</a> <a href="#ref-for-propdef-width①④">(3)</a> <a href="#ref-for-propdef-width①⑤">(4)</a>
-    <li><a href="#ref-for-propdef-width①⑥">4.1. 
+    <li><a href="#ref-for-propdef-width①⑥">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-propdef-width①⑦">(2)</a>
-    <li><a href="#ref-for-propdef-width①⑧">5.1. 
+    <li><a href="#ref-for-propdef-width①⑧">5.1.
 	Percentage Sizing</a> <a href="#ref-for-propdef-width①⑨">(2)</a> <a href="#ref-for-propdef-width②⓪">(3)</a> <a href="#ref-for-propdef-width②①">(4)</a> <a href="#ref-for-propdef-width②②">(5)</a> <a href="#ref-for-propdef-width②③">(6)</a>
     <li><a href="#ref-for-propdef-width②④"> Compressible Replaced Elements</a>
     <li><a href="#ref-for-propdef-width②⑤"> Changes</a>
@@ -2560,27 +2560,27 @@ Intrinsic Sizes</a> <a href="#ref-for-propdef-width①⑦">(2)</a>
   <aside class="dfn-panel" data-for="propdef-height">
    <b><a href="#propdef-height">#propdef-height</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-height">1. 
+    <li><a href="#ref-for-propdef-height">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-height①">1.1. 
+    <li><a href="#ref-for-propdef-height①">1.1.
 Module interactions</a>
-    <li><a href="#ref-for-propdef-height②">3.1. 
+    <li><a href="#ref-for-propdef-height②">3.1.
 Sizing Properties</a> <a href="#ref-for-propdef-height③">(2)</a>
-    <li><a href="#ref-for-propdef-height④">3.1.1. 
+    <li><a href="#ref-for-propdef-height④">3.1.1.
 Preferred Size Properties: the width and height properties</a> <a href="#ref-for-propdef-height⑤">(2)</a>
-    <li><a href="#ref-for-propdef-height⑥">3.1.2. 
+    <li><a href="#ref-for-propdef-height⑥">3.1.2.
 Minimum Size Properties: the min-width and min-height properties</a>
-    <li><a href="#ref-for-propdef-height⑦">3.1.3. 
+    <li><a href="#ref-for-propdef-height⑦">3.1.3.
 Maximum Size Properties: the max-width and max-height properties</a>
-    <li><a href="#ref-for-propdef-height⑧">3.2. 
+    <li><a href="#ref-for-propdef-height⑧">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-propdef-height⑨">3.2.1. 
+    <li><a href="#ref-for-propdef-height⑨">3.2.1.
 “Behaving as auto”</a> <a href="#ref-for-propdef-height①⓪">(2)</a>
-    <li><a href="#ref-for-propdef-height①①">3.3. 
+    <li><a href="#ref-for-propdef-height①①">3.3.
 Box Edges for Sizing: the box-sizing property</a> <a href="#ref-for-propdef-height①②">(2)</a> <a href="#ref-for-propdef-height①③">(3)</a>
-    <li><a href="#ref-for-propdef-height①④">4.1. 
+    <li><a href="#ref-for-propdef-height①④">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-propdef-height①⑤">(2)</a>
-    <li><a href="#ref-for-propdef-height①⑥">5.1. 
+    <li><a href="#ref-for-propdef-height①⑥">5.1.
 	Percentage Sizing</a> <a href="#ref-for-propdef-height①⑦">(2)</a> <a href="#ref-for-propdef-height①⑧">(3)</a> <a href="#ref-for-propdef-height①⑨">(4)</a> <a href="#ref-for-propdef-height②⓪">(5)</a> <a href="#ref-for-propdef-height②①">(6)</a> <a href="#ref-for-propdef-height②②">(7)</a>
     <li><a href="#ref-for-propdef-height②③"> Compressible Replaced Elements</a>
     <li><a href="#ref-for-propdef-height②④"> Changes</a>
@@ -2589,40 +2589,40 @@ Intrinsic Sizes</a> <a href="#ref-for-propdef-height①⑤">(2)</a>
   <aside class="dfn-panel" data-for="width">
    <b><a href="#width">#width</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-width">2. 
+    <li><a href="#ref-for-width">2.
 Terminology</a>
-    <li><a href="#ref-for-width①">3.3. 
+    <li><a href="#ref-for-width①">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="height">
    <b><a href="#height">#height</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-height">2. 
+    <li><a href="#ref-for-height">2.
 Terminology</a>
-    <li><a href="#ref-for-height①">3.3. 
+    <li><a href="#ref-for-height①">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="min-size-properties">
    <b><a href="#min-size-properties">#min-size-properties</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-min-size-properties">5.1. 
+    <li><a href="#ref-for-min-size-properties">5.1.
 	Percentage Sizing</a> <a href="#ref-for-min-size-properties①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-min-width">
    <b><a href="#propdef-min-width">#propdef-min-width</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-min-width">1.1. 
+    <li><a href="#ref-for-propdef-min-width">1.1.
 Module interactions</a>
-    <li><a href="#ref-for-propdef-min-width①">3.1. 
+    <li><a href="#ref-for-propdef-min-width①">3.1.
 Sizing Properties</a>
-    <li><a href="#ref-for-propdef-min-width②">3.1.2. 
+    <li><a href="#ref-for-propdef-min-width②">3.1.2.
 Minimum Size Properties: the min-width and min-height properties</a> <a href="#ref-for-propdef-min-width③">(2)</a>
-    <li><a href="#ref-for-propdef-min-width④">3.2. 
+    <li><a href="#ref-for-propdef-min-width④">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-propdef-min-width⑤">4.1. 
+    <li><a href="#ref-for-propdef-min-width⑤">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-propdef-min-width⑥">(2)</a>
     <li><a href="#ref-for-propdef-min-width⑦"> Changes</a>
    </ul>
@@ -2630,17 +2630,17 @@ Intrinsic Sizes</a> <a href="#ref-for-propdef-min-width⑥">(2)</a>
   <aside class="dfn-panel" data-for="propdef-min-height">
    <b><a href="#propdef-min-height">#propdef-min-height</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-min-height">1.1. 
+    <li><a href="#ref-for-propdef-min-height">1.1.
 Module interactions</a>
-    <li><a href="#ref-for-propdef-min-height①">3.1. 
+    <li><a href="#ref-for-propdef-min-height①">3.1.
 Sizing Properties</a>
-    <li><a href="#ref-for-propdef-min-height②">3.1.2. 
+    <li><a href="#ref-for-propdef-min-height②">3.1.2.
 Minimum Size Properties: the min-width and min-height properties</a> <a href="#ref-for-propdef-min-height③">(2)</a>
-    <li><a href="#ref-for-propdef-min-height④">3.2. 
+    <li><a href="#ref-for-propdef-min-height④">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-propdef-min-height⑤">4.1. 
+    <li><a href="#ref-for-propdef-min-height⑤">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-propdef-min-height⑥">(2)</a>
-    <li><a href="#ref-for-propdef-min-height⑦">5.1. 
+    <li><a href="#ref-for-propdef-min-height⑦">5.1.
 	Percentage Sizing</a> <a href="#ref-for-propdef-min-height⑧">(2)</a> <a href="#ref-for-propdef-min-height⑨">(3)</a>
     <li><a href="#ref-for-propdef-min-height①⓪"> Changes</a>
    </ul>
@@ -2648,36 +2648,36 @@ Intrinsic Sizes</a> <a href="#ref-for-propdef-min-height⑥">(2)</a>
   <aside class="dfn-panel" data-for="min-width">
    <b><a href="#min-width">#min-width</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-min-width">3.3. 
+    <li><a href="#ref-for-min-width">3.3.
 Box Edges for Sizing: the box-sizing property</a>
-    <li><a href="#ref-for-min-width①">4.1. 
+    <li><a href="#ref-for-min-width①">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-min-width②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="min-height">
    <b><a href="#min-height">#min-height</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-min-height">3.3. 
+    <li><a href="#ref-for-min-height">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="max-size-properties">
    <b><a href="#max-size-properties">#max-size-properties</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-max-size-properties">5.1. 
+    <li><a href="#ref-for-max-size-properties">5.1.
 	Percentage Sizing</a> <a href="#ref-for-max-size-properties①">(2)</a> <a href="#ref-for-max-size-properties②">(3)</a> <a href="#ref-for-max-size-properties③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-max-width">
    <b><a href="#propdef-max-width">#propdef-max-width</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-max-width">1.1. 
+    <li><a href="#ref-for-propdef-max-width">1.1.
 Module interactions</a>
-    <li><a href="#ref-for-propdef-max-width①">3.1. 
+    <li><a href="#ref-for-propdef-max-width①">3.1.
 Sizing Properties</a>
-    <li><a href="#ref-for-propdef-max-width②">3.1.3. 
+    <li><a href="#ref-for-propdef-max-width②">3.1.3.
 Maximum Size Properties: the max-width and max-height properties</a> <a href="#ref-for-propdef-max-width③">(2)</a>
-    <li><a href="#ref-for-propdef-max-width④">5.1. 
+    <li><a href="#ref-for-propdef-max-width④">5.1.
 	Percentage Sizing</a> <a href="#ref-for-propdef-max-width⑤">(2)</a> <a href="#ref-for-propdef-max-width⑥">(3)</a>
     <li><a href="#ref-for-propdef-max-width⑦"> Compressible Replaced Elements</a>
    </ul>
@@ -2685,13 +2685,13 @@ Maximum Size Properties: the max-width and max-height properties</a> <a href="#r
   <aside class="dfn-panel" data-for="propdef-max-height">
    <b><a href="#propdef-max-height">#propdef-max-height</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-max-height">1.1. 
+    <li><a href="#ref-for-propdef-max-height">1.1.
 Module interactions</a>
-    <li><a href="#ref-for-propdef-max-height①">3.1. 
+    <li><a href="#ref-for-propdef-max-height①">3.1.
 Sizing Properties</a>
-    <li><a href="#ref-for-propdef-max-height②">3.1.3. 
+    <li><a href="#ref-for-propdef-max-height②">3.1.3.
 Maximum Size Properties: the max-width and max-height properties</a> <a href="#ref-for-propdef-max-height③">(2)</a>
-    <li><a href="#ref-for-propdef-max-height④">5.1. 
+    <li><a href="#ref-for-propdef-max-height④">5.1.
 	Percentage Sizing</a> <a href="#ref-for-propdef-max-height⑤">(2)</a>
     <li><a href="#ref-for-propdef-max-height⑥"> Compressible Replaced Elements</a>
     <li><a href="#ref-for-propdef-max-height⑦"> Changes</a>
@@ -2700,39 +2700,39 @@ Maximum Size Properties: the max-width and max-height properties</a> <a href="#r
   <aside class="dfn-panel" data-for="max-width">
    <b><a href="#max-width">#max-width</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-max-width">3.3. 
+    <li><a href="#ref-for-max-width">3.3.
 Box Edges for Sizing: the box-sizing property</a>
-    <li><a href="#ref-for-max-width①">4.1. 
+    <li><a href="#ref-for-max-width①">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-max-width②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="max-height">
    <b><a href="#max-height">#max-height</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-max-height">3.3. 
+    <li><a href="#ref-for-max-height">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-width-auto">
    <b><a href="#valdef-width-auto">#valdef-width-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-width-auto">2. 
+    <li><a href="#ref-for-valdef-width-auto">2.
 Terminology</a>
-    <li><a href="#ref-for-valdef-width-auto①">2.1. 
+    <li><a href="#ref-for-valdef-width-auto①">2.1.
 Auto Box Sizes</a>
-    <li><a href="#ref-for-valdef-width-auto②">3.1.2. 
+    <li><a href="#ref-for-valdef-width-auto②">3.1.2.
 Minimum Size Properties: the min-width and min-height properties</a>
-    <li><a href="#ref-for-valdef-width-auto③">3.2. 
+    <li><a href="#ref-for-valdef-width-auto③">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-valdef-width-auto④">3.2.1. 
+    <li><a href="#ref-for-valdef-width-auto④">3.2.1.
 “Behaving as auto”</a> <a href="#ref-for-valdef-width-auto⑤">(2)</a> <a href="#ref-for-valdef-width-auto⑥">(3)</a> <a href="#ref-for-valdef-width-auto⑦">(4)</a>
-    <li><a href="#ref-for-valdef-width-auto⑧">3.3. 
+    <li><a href="#ref-for-valdef-width-auto⑧">3.3.
 Box Edges for Sizing: the box-sizing property</a>
-    <li><a href="#ref-for-valdef-width-auto⑨">4.1. 
+    <li><a href="#ref-for-valdef-width-auto⑨">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-valdef-width-auto①⓪">(2)</a> <a href="#ref-for-valdef-width-auto①①">(3)</a> <a href="#ref-for-valdef-width-auto①②">(4)</a>
-    <li><a href="#ref-for-valdef-width-auto①③">4.2. 
+    <li><a href="#ref-for-valdef-width-auto①③">4.2.
 Intrinsic Contributions</a>
-    <li><a href="#ref-for-valdef-width-auto①④">5.1. 
+    <li><a href="#ref-for-valdef-width-auto①④">5.1.
 	Percentage Sizing</a> <a href="#ref-for-valdef-width-auto①⑤">(2)</a> <a href="#ref-for-valdef-width-auto①⑥">(3)</a>
     <li><a href="#ref-for-valdef-width-auto①⑦"> Changes</a>
    </ul>
@@ -2740,82 +2740,82 @@ Intrinsic Contributions</a>
   <aside class="dfn-panel" data-for="automatic-size">
    <b><a href="#automatic-size">#automatic-size</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-automatic-size">3.2. 
+    <li><a href="#ref-for-automatic-size">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-automatic-size①">(2)</a>
-    <li><a href="#ref-for-automatic-size②">3.2.1. 
+    <li><a href="#ref-for-automatic-size②">3.2.1.
 “Behaving as auto”</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="automatic-minimum-size">
    <b><a href="#automatic-minimum-size">#automatic-minimum-size</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-automatic-minimum-size">5.1. 
+    <li><a href="#ref-for-automatic-minimum-size">5.1.
 	Percentage Sizing</a> <a href="#ref-for-automatic-minimum-size①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-max-width-none">
    <b><a href="#valdef-max-width-none">#valdef-max-width-none</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-max-width-none">3.2. 
+    <li><a href="#ref-for-valdef-max-width-none">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-width-min-content">
    <b><a href="#valdef-width-min-content">#valdef-width-min-content</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-width-min-content">3.2. 
+    <li><a href="#ref-for-valdef-width-min-content">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-valdef-width-min-content①">(2)</a> <a href="#ref-for-valdef-width-min-content②">(3)</a> <a href="#ref-for-valdef-width-min-content③">(4)</a>
-    <li><a href="#ref-for-valdef-width-min-content④">3.3. 
+    <li><a href="#ref-for-valdef-width-min-content④">3.3.
 Box Edges for Sizing: the box-sizing property</a>
-    <li><a href="#ref-for-valdef-width-min-content⑤">4.1. 
+    <li><a href="#ref-for-valdef-width-min-content⑤">4.1.
 Intrinsic Sizes</a>
-    <li><a href="#ref-for-valdef-width-min-content⑥">5.1. 
+    <li><a href="#ref-for-valdef-width-min-content⑥">5.1.
 	Percentage Sizing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-width-max-content">
    <b><a href="#valdef-width-max-content">#valdef-width-max-content</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-width-max-content">3.2. 
+    <li><a href="#ref-for-valdef-width-max-content">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-valdef-width-max-content①">(2)</a> <a href="#ref-for-valdef-width-max-content②">(3)</a> <a href="#ref-for-valdef-width-max-content③">(4)</a>
-    <li><a href="#ref-for-valdef-width-max-content④">4.1. 
+    <li><a href="#ref-for-valdef-width-max-content④">4.1.
 Intrinsic Sizes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-width-fit-content-length-percentage">
    <b><a href="#valdef-width-fit-content-length-percentage">#valdef-width-fit-content-length-percentage</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-width-fit-content-length-percentage">3.1.1. 
+    <li><a href="#ref-for-valdef-width-fit-content-length-percentage">3.1.1.
 Preferred Size Properties: the width and height properties</a>
-    <li><a href="#ref-for-valdef-width-fit-content-length-percentage①">3.1.2. 
+    <li><a href="#ref-for-valdef-width-fit-content-length-percentage①">3.1.2.
 Minimum Size Properties: the min-width and min-height properties</a>
-    <li><a href="#ref-for-valdef-width-fit-content-length-percentage②">3.1.3. 
+    <li><a href="#ref-for-valdef-width-fit-content-length-percentage②">3.1.3.
 Maximum Size Properties: the max-width and max-height properties</a>
-    <li><a href="#ref-for-valdef-width-fit-content-length-percentage③">3.2. 
+    <li><a href="#ref-for-valdef-width-fit-content-length-percentage③">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a> <a href="#ref-for-valdef-width-fit-content-length-percentage④">(2)</a> <a href="#ref-for-valdef-width-fit-content-length-percentage⑤">(3)</a>
-    <li><a href="#ref-for-valdef-width-fit-content-length-percentage⑥">3.3. 
+    <li><a href="#ref-for-valdef-width-fit-content-length-percentage⑥">3.3.
 Box Edges for Sizing: the box-sizing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="behave-as-auto">
    <b><a href="#behave-as-auto">#behave-as-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-behave-as-auto">3.2.1. 
+    <li><a href="#ref-for-behave-as-auto">3.2.1.
 “Behaving as auto”</a>
-    <li><a href="#ref-for-behave-as-auto①">4.1. 
+    <li><a href="#ref-for-behave-as-auto①">4.1.
 Intrinsic Sizes</a> <a href="#ref-for-behave-as-auto②">(2)</a>
-    <li><a href="#ref-for-behave-as-auto③">5.1. 
+    <li><a href="#ref-for-behave-as-auto③">5.1.
 	Percentage Sizing</a> <a href="#ref-for-behave-as-auto④">(2)</a> <a href="#ref-for-behave-as-auto⑤">(3)</a> <a href="#ref-for-behave-as-auto⑥">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-box-sizing">
    <b><a href="#propdef-box-sizing">#propdef-box-sizing</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-box-sizing">1.1. 
+    <li><a href="#ref-for-propdef-box-sizing">1.1.
 Module interactions</a>
-    <li><a href="#ref-for-propdef-box-sizing①">3.2. 
+    <li><a href="#ref-for-propdef-box-sizing①">3.2.
 Sizing Values: the &lt;length-percentage>, auto | none, min-content, max-content, and fit-content() values</a>
-    <li><a href="#ref-for-propdef-box-sizing②">3.3. 
+    <li><a href="#ref-for-propdef-box-sizing②">3.3.
 Box Edges for Sizing: the box-sizing property</a> <a href="#ref-for-propdef-box-sizing③">(2)</a> <a href="#ref-for-propdef-box-sizing④">(3)</a> <a href="#ref-for-propdef-box-sizing⑤">(4)</a> <a href="#ref-for-propdef-box-sizing⑥">(5)</a>
     <li><a href="#ref-for-propdef-box-sizing⑦"> Changes</a> <a href="#ref-for-propdef-box-sizing⑧">(2)</a>
    </ul>
@@ -2823,35 +2823,35 @@ Box Edges for Sizing: the box-sizing property</a> <a href="#ref-for-propdef-box-
   <aside class="dfn-panel" data-for="valdef-box-sizing-border-box">
    <b><a href="#valdef-box-sizing-border-box">#valdef-box-sizing-border-box</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-box-sizing-border-box">3.3. 
+    <li><a href="#ref-for-valdef-box-sizing-border-box">3.3.
 Box Edges for Sizing: the box-sizing property</a> <a href="#ref-for-valdef-box-sizing-border-box①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-column-width-min-content">
    <b><a href="#valdef-column-width-min-content">#valdef-column-width-min-content</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-column-width-min-content">3.4. 
+    <li><a href="#ref-for-valdef-column-width-min-content">3.4.
 New Column Sizing Values: the min-content, max-content, and fit-content() values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-column-width-max-content">
    <b><a href="#valdef-column-width-max-content">#valdef-column-width-max-content</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-column-width-max-content">3.4. 
+    <li><a href="#ref-for-valdef-column-width-max-content">3.4.
 New Column Sizing Values: the min-content, max-content, and fit-content() values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-column-width-fit-content-length-percentage">
    <b><a href="#valdef-column-width-fit-content-length-percentage">#valdef-column-width-fit-content-length-percentage</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-column-width-fit-content-length-percentage">3.4. 
+    <li><a href="#ref-for-valdef-column-width-fit-content-length-percentage">3.4.
 New Column Sizing Values: the min-content, max-content, and fit-content() values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="cyclic-percentage">
    <b><a href="#cyclic-percentage">#cyclic-percentage</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cyclic-percentage">5.1. 
+    <li><a href="#ref-for-cyclic-percentage">5.1.
 	Percentage Sizing</a> <a href="#ref-for-cyclic-percentage①">(2)</a> <a href="#ref-for-cyclic-percentage②">(3)</a> <a href="#ref-for-cyclic-percentage③">(4)</a>
     <li><a href="#ref-for-cyclic-percentage④"> Changes</a>
    </ul>
@@ -2874,57 +2874,65 @@ New Column Sizing Values: the min-content, max-content, and fit-content() values
             });</script>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

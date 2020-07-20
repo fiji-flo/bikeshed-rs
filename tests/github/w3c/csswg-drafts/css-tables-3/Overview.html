@@ -383,7 +383,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This CSS module defines a two-dimensional grid-based layout system, optimized for tabular data rendering. In the table layout model, each display node is assigned to an intersection between a set of consecutive rows and a set of consecutive columns, themselves generated from the table structure and sized according to their content.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -630,20 +630,20 @@ on screen, on paper, etc.
    <p>To summarize, an instance of the table model consists of:</p>
    <ul class="compact">
     <li>
-     Its <a href="#table-root-element" id="ref-for-table-root-element">table-root</a> containing: 
+     Its <a href="#table-root-element" id="ref-for-table-root-element">table-root</a> containing:
      <ul>
       <li>
-       Zero, one or more <a href="#table-row" id="ref-for-table-row">table rows</a>, optionally in <a href="#table-row-group" id="ref-for-table-row-group">row groups</a>, 
+       Zero, one or more <a href="#table-row" id="ref-for-table-row">table rows</a>, optionally in <a href="#table-row-group" id="ref-for-table-row-group">row groups</a>,
        <ul>
         <li>Each of them contaning one or more <a href="#table-cell" id="ref-for-table-cell">table cells</a>
        </ul>
       <li>Optionally: one or more <a href="#table-column" id="ref-for-table-column">table columns</a>,
-				optionally in <a href="#table-column-group" id="ref-for-table-column-group">column groups</a> 
-      <li>Optionally: one or more <a href="#table-caption" id="ref-for-table-caption">table caption</a>. 
+				optionally in <a href="#table-column-group" id="ref-for-table-column-group">column groups</a>
+      <li>Optionally: one or more <a href="#table-caption" id="ref-for-table-caption">table caption</a>.
      </ul>
    </ul>
    <figure>
-     <img alt="[see-caption-below]" src="images/table-structure.png" width="493"> 
+     <img alt="[see-caption-below]" src="images/table-structure.png" width="493">
     <figcaption>Two representations of the structure of a table (tree vs layout)</figcaption>
    </figure>
    <p>The CSS model does not require that the document language include elements that correspond to each of these components.
@@ -652,41 +652,41 @@ on screen, on paper, etc.
 	This is done with the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display">display</a> property.</p>
    <p>The following <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display①">display</a> values assign table formatting rules to an arbitrary element:</p>
    <dl id="display-types">
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table">table</dfn> (equivalent to HTML: &lt;table>) 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table">table</dfn> (equivalent to HTML: &lt;table>)
     <dd>Specifies that an element defines a table
-			that is <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-level" id="ref-for-block-level">block-level</a> when placed in <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#flow-layout" id="ref-for-flow-layout">flow layout</a>. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="inline-table">inline-table</dfn> (equivalent to HTML: &lt;table>) 
+			that is <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#block-level" id="ref-for-block-level">block-level</a> when placed in <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#flow-layout" id="ref-for-flow-layout">flow layout</a>.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="inline-table">inline-table</dfn> (equivalent to HTML: &lt;table>)
     <dd>Specifies that an element defines a table
-			that is <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#inline-level" id="ref-for-inline-level">inline-level</a> when placed in <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#flow-layout" id="ref-for-flow-layout①">flow layout</a>. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-row">table-row</dfn> (equivalent to HTML: &lt;tr>) 
-    <dd>Specifies that an element is a row of cells. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-row-group">table-row-group</dfn> (equivalent to HTML: &lt;tbody>) 
+			that is <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#inline-level" id="ref-for-inline-level">inline-level</a> when placed in <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#flow-layout" id="ref-for-flow-layout①">flow layout</a>.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-row">table-row</dfn> (equivalent to HTML: &lt;tr>)
+    <dd>Specifies that an element is a row of cells.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-row-group">table-row-group</dfn> (equivalent to HTML: &lt;tbody>)
     <dd>
-     Specifies that an element groups some amount of rows. 
+     Specifies that an element groups some amount of rows.
      <p>Unless explicitly mentioned otherwise, mentions of <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group⑨">table-row-groups</a> in this spec also encompass the specialized <a data-link-type="dfn" href="#table-header-group" id="ref-for-table-header-group">table-header-groups</a> and <a data-link-type="dfn" href="#table-footer-group" id="ref-for-table-footer-group">table-footer-groups</a>.</p>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-header-group">table-header-group</dfn> (equivalent to HTML: &lt;thead>) 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-header-group">table-header-group</dfn> (equivalent to HTML: &lt;thead>)
     <dd>
      Like <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group①">table-row-group</a> but, for layout purposes,
-			the first such row group is always displayed before all other rows and row groups. 
+			the first such row group is always displayed before all other rows and row groups.
      <div class="advisement"> If a table owns multiple <code>display: table-header-group</code> boxes,
 					only the first is treated as a header;
 					the others are treated as if they had <code>display: table-row-group</code>. </div>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-footer-group">table-footer-group</dfn> (equivalent to HTML: &lt;tfoot>) 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-footer-group">table-footer-group</dfn> (equivalent to HTML: &lt;tfoot>)
     <dd>
      Like <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group②">table-row-group</a> but, for layout purposes,
-			the fist such row group is always displayed after all other rows and row groups. 
+			the fist such row group is always displayed after all other rows and row groups.
      <div class="advisement"> If a table owns multiple <code>display: table-footer-group</code> boxes,
 					only the first is treated as a footer;
 					the others are treated as if they had <code>display: table-row-group</code>. </div>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-column">table-column</dfn> (equivalent to HTML: &lt;col>) 
-    <dd>Specifies that an element describes a column of cells. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-column-group">table-column-group</dfn> (equivalent to HTML: &lt;colgroup>) 
-    <dd>Specifies that an element groups one or more columns. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-cell">table-cell</dfn> (equivalent to HTML: &lt;td> or &lt;th>) 
-    <dd>Specifies that an element represents a table cell. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-caption">table-caption</dfn> (equivalent to HTML: &lt;caption>) 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-column">table-column</dfn> (equivalent to HTML: &lt;col>)
+    <dd>Specifies that an element describes a column of cells.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-column-group">table-column-group</dfn> (equivalent to HTML: &lt;colgroup>)
+    <dd>Specifies that an element groups one or more columns.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-cell">table-cell</dfn> (equivalent to HTML: &lt;td> or &lt;th>)
+    <dd>Specifies that an element represents a table cell.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-caption">table-caption</dfn> (equivalent to HTML: &lt;caption>)
     <dd>Specifies a caption for the table.
-			Table captions are positioned between the table margins and its borders. 
+			Table captions are positioned between the table margins and its borders.
    </dl>
    <p class="advisement"> Authors should not assign a display type from the previous list to replaced elements (eg: input fields or images).
 		When the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display②">display</a> property of a replaced element computes to one of these values,
@@ -699,62 +699,62 @@ on screen, on paper, etc.
    <p>In addition to the table structure display types,
 			the following wording is also being used in this spec:</p>
    <dl>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-local-lt="table-wrapper" data-lt="table wrapper box | table-wrapper box" id="table-wrapper-box">table wrapper box</dfn> 
-    <dd> A block container box <a href="#fixup-algorithm">generated around table grid boxes</a> to account for any space occupied by each <a data-link-type="dfn" href="#table-caption" id="ref-for-table-caption④">table-caption</a> it owns. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-local-lt="table-grid" data-lt="table grid box | table-grid box" id="table-grid-box">table grid box</dfn> 
-    <dd> A block-level box containing the table-internal boxes, excluding its captions. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-root-element">table-root</dfn> element 
-    <dd> An element whose <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#inner-display-type" id="ref-for-inner-display-type">inner display type</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-display-3/#valdef-display-table" id="ref-for-valdef-display-table">table</a>. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-non-root-element">table-non-root</dfn> box or element 
-    <dd> A <a data-link-type="dfn" href="#proper-table-child-element" id="ref-for-proper-table-child-element">proper table child</a>, or a <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell②⑥">table-cell</a> box. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-track">table-track</dfn> box or element 
-    <dd> A <a data-link-type="dfn" href="#table-row" id="ref-for-table-row①③">table-row</a>, or <a data-link-type="dfn" href="#table-column" id="ref-for-table-column⑥">table-column</a> box. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-track-group-element">table-track-group</dfn> box or element 
-    <dd> A <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group③">table-row-group</a>, or <a data-link-type="dfn" href="#table-column-group" id="ref-for-table-column-group⑤">table-column-group</a> box. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="proper-table-child-element">proper table child</dfn> box or element 
-    <dd> A <a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element">table-track-group</a>, <a data-link-type="dfn" href="#table-track" id="ref-for-table-track">table-track</a>, or <a data-link-type="dfn" href="#table-caption" id="ref-for-table-caption①">table-caption</a> box. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="proper-table-row-parent-element">proper table-row parent</dfn> box or element 
-    <dd> A <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element②⑦">table-root</a> or a <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group④">table-row-group</a> box. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-internal-element">table-internal</dfn> box or element 
-    <dd> A <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①">table-cell</a>, <a data-link-type="dfn" href="#table-track" id="ref-for-table-track①">table-track</a> or <a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element①">table-track-group</a> box. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="tabular-container">tabular container</dfn> 
-    <dd> A <a data-link-type="dfn" href="#table-row" id="ref-for-table-row①">table-row</a> or <a data-link-type="dfn" href="#proper-table-row-parent-element" id="ref-for-proper-table-row-parent-element">proper table-row parent</a> box. 
-    <dt><dfn data-dfn-type="dfn" data-noexport id="consecutive-boxes">consecutive<a class="self-link" href="#consecutive-boxes"></a></dfn> boxes 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-local-lt="table-wrapper" data-lt="table wrapper box | table-wrapper box" id="table-wrapper-box">table wrapper box</dfn>
+    <dd> A block container box <a href="#fixup-algorithm">generated around table grid boxes</a> to account for any space occupied by each <a data-link-type="dfn" href="#table-caption" id="ref-for-table-caption④">table-caption</a> it owns.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-local-lt="table-grid" data-lt="table grid box | table-grid box" id="table-grid-box">table grid box</dfn>
+    <dd> A block-level box containing the table-internal boxes, excluding its captions.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-root-element">table-root</dfn> element
+    <dd> An element whose <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#inner-display-type" id="ref-for-inner-display-type">inner display type</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-display-3/#valdef-display-table" id="ref-for-valdef-display-table">table</a>.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-non-root-element">table-non-root</dfn> box or element
+    <dd> A <a data-link-type="dfn" href="#proper-table-child-element" id="ref-for-proper-table-child-element">proper table child</a>, or a <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell②⑥">table-cell</a> box.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-track">table-track</dfn> box or element
+    <dd> A <a data-link-type="dfn" href="#table-row" id="ref-for-table-row①③">table-row</a>, or <a data-link-type="dfn" href="#table-column" id="ref-for-table-column⑥">table-column</a> box.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-track-group-element">table-track-group</dfn> box or element
+    <dd> A <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group③">table-row-group</a>, or <a data-link-type="dfn" href="#table-column-group" id="ref-for-table-column-group⑤">table-column-group</a> box.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="proper-table-child-element">proper table child</dfn> box or element
+    <dd> A <a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element">table-track-group</a>, <a data-link-type="dfn" href="#table-track" id="ref-for-table-track">table-track</a>, or <a data-link-type="dfn" href="#table-caption" id="ref-for-table-caption①">table-caption</a> box.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="proper-table-row-parent-element">proper table-row parent</dfn> box or element
+    <dd> A <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element②⑦">table-root</a> or a <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group④">table-row-group</a> box.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-internal-element">table-internal</dfn> box or element
+    <dd> A <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①">table-cell</a>, <a data-link-type="dfn" href="#table-track" id="ref-for-table-track①">table-track</a> or <a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element①">table-track-group</a> box.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="tabular-container">tabular container</dfn>
+    <dd> A <a data-link-type="dfn" href="#table-row" id="ref-for-table-row①">table-row</a> or <a data-link-type="dfn" href="#proper-table-row-parent-element" id="ref-for-proper-table-row-parent-element">proper table-row parent</a> box.
+    <dt><dfn data-dfn-type="dfn" data-noexport id="consecutive-boxes">consecutive<a class="self-link" href="#consecutive-boxes"></a></dfn> boxes
     <dd> Two sibling boxes are consecutive
 					if they have no intervening siblings
 					other than, optionally, an anonymous inline containing only white spaces.
 				A sequence of sibling boxes is consecutive
-					if each box in the sequence is consecutive to the one before it in the sequence. 
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-grid">table grid</dfn> 
+					if each box in the sequence is consecutive to the one before it in the sequence.
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="table-grid">table grid</dfn>
     <dd>
-      A matrix 
+      A matrix
 					containing as many <dfn data-dfn-type="dfn" data-export id="row">rows<a class="self-link" href="#row"></a></dfn> and <dfn data-dfn-type="dfn" data-export id="column">columns<a class="self-link" href="#column"></a></dfn> as needed to describe the position of all the <a data-link-type="dfn" href="#table-row" id="ref-for-table-row②">table-rows</a> and <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell②">table-cells</a> of a <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element①">table-root</a>,
-					as determined by the <a href="#dimensioning-the-row-column-grid">grid-dimensioning algorithm</a>. 
+					as determined by the <a href="#dimensioning-the-row-column-grid">grid-dimensioning algorithm</a>.
      <p>Each row of the grid might correspond to a <a data-link-type="dfn" href="#table-row" id="ref-for-table-row③">table-row</a>, and each column to a <a data-link-type="dfn" href="#table-column" id="ref-for-table-column①">table-column</a>.</p>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="slot">slot</dfn> of the table grid 
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="slot">slot</dfn> of the table grid
     <dd>
       A <a data-link-type="dfn" href="#slot" id="ref-for-slot">slot</a> <code>(r,c)</code> is an available space created
-					by the intersection of a row <code>r</code> and a column <code>c</code> in the <a data-link-type="dfn" href="#table-grid" id="ref-for-table-grid">table grid</a>. 
+					by the intersection of a row <code>r</code> and a column <code>c</code> in the <a data-link-type="dfn" href="#table-grid" id="ref-for-table-grid">table grid</a>.
      <p>Each slot of the table grid is covered by at least one <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell③">table-cell</a> (<a href="#missing-cells-fixup">some of them anonymous</a>), and at most two.
 				Each table-cell of a table-root covers at least one slot.</p>
      <p>Table-cells which cover more than one slot do so densely,
-					meaning the set of slots they cover can always be described as a set of four strictly-positive integers <code>(rowStart, colStart, rowSpan, colSpan)</code> such that a slot <code>(r,c)</code> is covered by the table-cell 
-						if and only if <code>r</code> lies in the interval between <code>rowStart</code> (included) and <code>rowStart+rowSpan</code> (exculded), 
+					meaning the set of slots they cover can always be described as a set of four strictly-positive integers <code>(rowStart, colStart, rowSpan, colSpan)</code> such that a slot <code>(r,c)</code> is covered by the table-cell
+						if and only if <code>r</code> lies in the interval between <code>rowStart</code> (included) and <code>rowStart+rowSpan</code> (exculded),
 						and <code>c</code> lies in the interval between <code>colStart</code> (included) and <code>colStart+colSpan</code> (exculded);</p>
      <p>Such table-cell is said to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="originate">originate</dfn> from row <code>rowStart</code> and column <code>colStart</code>.
 				Also:</p>
      <ul>
-      <li>A table-cell is said to originate a table-row <i>(resp. table-column)</i> if it originates its corresponding row <i>(resp. column)</i> 
-      <li>A table-cell is said to originate a table-row-group <i>(resp. table-column-group)</i> if the group contains the cell’s originating row <i>(resp. column)</i> 
+      <li>A table-cell is said to originate a table-row <i>(resp. table-column)</i> if it originates its corresponding row <i>(resp. column)</i>
+      <li>A table-cell is said to originate a table-row-group <i>(resp. table-column-group)</i> if the group contains the cell’s originating row <i>(resp. column)</i>
      </ul>
      <p>Such table-cell is said to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="span">span</dfn> all rows <code>r</code> and columns <code>c</code> matching the above condition.
 				Also:</p>
      <ul>
-      <li>A table-cell is said to span a table-row <i>(resp. table-column)</i> if it spans its corresponding row <i>(resp. column)</i> 
-      <li>A table-row <i>(resp. table-column)</i> corresponding to a row <i>(resp. column)</i> is said to span this row <i>(resp. column)</i> 
-      <li>A table-row <i>(resp. table-column)</i> is said to span all columns of the grid <i>(resp. row)</i> 
-      <li>A table-row-group <i>(resp. table-column)</i> containing a row <i>(resp. column)</i> is said to span the row <i>(resp. column)</i> 
-      <li>A table-row-group <i>(resp. table-column)</i> is said to span all columns of the grid <i>(resp. row)</i> 
+      <li>A table-cell is said to span a table-row <i>(resp. table-column)</i> if it spans its corresponding row <i>(resp. column)</i>
+      <li>A table-row <i>(resp. table-column)</i> corresponding to a row <i>(resp. column)</i> is said to span this row <i>(resp. column)</i>
+      <li>A table-row <i>(resp. table-column)</i> is said to span all columns of the grid <i>(resp. row)</i>
+      <li>A table-row-group <i>(resp. table-column)</i> containing a row <i>(resp. column)</i> is said to span the row <i>(resp. column)</i>
+      <li>A table-row-group <i>(resp. table-column)</i> is said to span all columns of the grid <i>(resp. row)</i>
      </ul>
    </dl>
    <h3 class="heading settled" data-level="2.2" id="fixup"><span class="secno">2.2. </span><span class="content">Fixup</span><a class="self-link" href="#fixup"></a></h3>
@@ -774,61 +774,61 @@ on screen, on paper, etc.
    <p>The following steps are performed in three stages:</p>
    <ol>
     <li>
-     <b>Remove irrelevant boxes:</b><br> The following boxes are discarded as if they were <code>display:none</code>: 
+     <b>Remove irrelevant boxes:</b><br> The following boxes are discarded as if they were <code>display:none</code>:
      <ol>
-      <li>Children of a <a data-link-type="dfn" href="#table-column" id="ref-for-table-column②">table-column</a>. 
-      <li>Children of a <a data-link-type="dfn" href="#table-column-group" id="ref-for-table-column-group①">table-column-group</a> which are not a <a data-link-type="dfn" href="#table-column" id="ref-for-table-column③">table-column</a>. 
+      <li>Children of a <a data-link-type="dfn" href="#table-column" id="ref-for-table-column②">table-column</a>.
+      <li>Children of a <a data-link-type="dfn" href="#table-column-group" id="ref-for-table-column-group①">table-column-group</a> which are not a <a data-link-type="dfn" href="#table-column" id="ref-for-table-column③">table-column</a>.
       <li>Anonymous inline boxes which contain only white space and
-							are between two immediate siblings each of which is a <a data-link-type="dfn" href="#table-non-root-element" id="ref-for-table-non-root-element">table-non-root</a> box. 
+							are between two immediate siblings each of which is a <a data-link-type="dfn" href="#table-non-root-element" id="ref-for-table-non-root-element">table-non-root</a> box.
       <li>
-       Anonymous inline boxes which meet all of the following criteria: 
+       Anonymous inline boxes which meet all of the following criteria:
        <ul>
-        <li>they contain only white space 
-        <li>they are the first and/or last child of a <a data-link-type="dfn" href="#tabular-container" id="ref-for-tabular-container">tabular container</a> 
-        <li>whose immediate sibling, if any, is a <a data-link-type="dfn" href="#table-non-root-element" id="ref-for-table-non-root-element①">table-non-root</a> box 
+        <li>they contain only white space
+        <li>they are the first and/or last child of a <a data-link-type="dfn" href="#tabular-container" id="ref-for-tabular-container">tabular container</a>
+        <li>whose immediate sibling, if any, is a <a data-link-type="dfn" href="#table-non-root-element" id="ref-for-table-non-root-element①">table-non-root</a> box
        </ul>
      </ol>
     <li>
-     <b>Generate missing child wrappers:</b> 
+     <b>Generate missing child wrappers:</b>
      <ol>
       <li>An anonymous <a data-link-type="dfn" href="#table-row" id="ref-for-table-row⑤">table-row</a> box must be generated
 							around each sequence of consecutive children of a <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element③">table-root</a> box
-							which are not <a data-link-type="dfn" href="#proper-table-child-element" id="ref-for-proper-table-child-element①">proper table child</a> boxes. <a class="hint" href="https://jsfiddle.net/hj2w7wwa/2/">!!Testcase</a> 
+							which are not <a data-link-type="dfn" href="#proper-table-child-element" id="ref-for-proper-table-child-element①">proper table child</a> boxes. <a class="hint" href="https://jsfiddle.net/hj2w7wwa/2/">!!Testcase</a>
       <li>An anonymous <a data-link-type="dfn" href="#table-row" id="ref-for-table-row⑥">table-row</a> box must be generated
 							around each sequence of consecutive children of a <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group⑤">table-row-group</a> box
-							which are not <span id="ref-for-table-row⑦">table-row</span> boxes. <a class="hint" href="https://jsfiddle.net/hj2w7wwa/3/">!Testcase</a> 
+							which are not <span id="ref-for-table-row⑦">table-row</span> boxes. <a class="hint" href="https://jsfiddle.net/hj2w7wwa/3/">!Testcase</a>
       <li>An anonymous <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell⑤">table-cell</a> box must be generated
 							around each sequence of consecutive children of a <a data-link-type="dfn" href="#table-row" id="ref-for-table-row⑧">table-row</a> box
-							which are not <span id="ref-for-table-cell⑥">table-cell</span> boxes. <a class="hint" href="https://jsfiddle.net/hj2w7wwa/4/">!Testcase</a> 
+							which are not <span id="ref-for-table-cell⑥">table-cell</span> boxes. <a class="hint" href="https://jsfiddle.net/hj2w7wwa/4/">!Testcase</a>
      </ol>
     <li>
-     <b>Generate missing parents:</b> 
+     <b>Generate missing parents:</b>
      <ol>
       <li>An anonymous <a data-link-type="dfn" href="#table-row" id="ref-for-table-row⑨">table-row</a> box must be generated
 							around each sequence of consecutive <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell⑦">table-cell</a> boxes
-							whose parent is not a <span id="ref-for-table-row①⓪">table-row</span>. <a class="hint" href="https://jsfiddle.net/hj2w7wwa/5/">Testcase</a> 
+							whose parent is not a <span id="ref-for-table-row①⓪">table-row</span>. <a class="hint" href="https://jsfiddle.net/hj2w7wwa/5/">Testcase</a>
       <li>
        An anonymous <a data-link-type="dfn" href="#table" id="ref-for-table②">table</a> or <a data-link-type="dfn" href="#inline-table" id="ref-for-inline-table①">inline-table</a> box must be generated
 							around each sequence of consecutive <a data-link-type="dfn" href="#proper-table-child-element" id="ref-for-proper-table-child-element②">proper table child</a> boxes
 							which are misparented.
 							If the box’s parent is an inline, run-in, or ruby box (or any box that would perform inlinification of its children),
 								then an <span id="ref-for-inline-table②">inline-table</span> box must be generated;
-								otherwise it must be a <span id="ref-for-table③">table</span> box. 
+								otherwise it must be a <span id="ref-for-table③">table</span> box.
        <ul>
         <li>A <a data-link-type="dfn" href="#table-row" id="ref-for-table-row①①">table-row</a> is misparented
-									if its parent is neither a <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group⑥">table-row-group</a> nor a <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element④">table-root</a> box. 
+									if its parent is neither a <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group⑥">table-row-group</a> nor a <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element④">table-root</a> box.
         <li>A <a data-link-type="dfn" href="#table-column" id="ref-for-table-column④">table-column</a> box is misparented
-									if its parent is neither a <a data-link-type="dfn" href="#table-column-group" id="ref-for-table-column-group②">table-column-group</a> box nor a <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element⑤">table-root</a> box. 
+									if its parent is neither a <a data-link-type="dfn" href="#table-column-group" id="ref-for-table-column-group②">table-column-group</a> box nor a <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element⑤">table-root</a> box.
         <li>A <a data-link-type="dfn" href="#table-row-group" id="ref-for-table-row-group⑦">table-row-group</a>, <a data-link-type="dfn" href="#table-column-group" id="ref-for-table-column-group③">table-column-group</a>, or <a data-link-type="dfn" href="#table-caption" id="ref-for-table-caption②">table-caption</a> box is misparented
-									if its parent is not a <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element⑥">table-root</a> box. 
+									if its parent is not a <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element⑥">table-root</a> box.
        </ul>
-        <a class="hint" href="https://jsfiddle.net/hj2w7wwa/7/">Testcase</a> <a class="hint" href="https://jsfiddle.net/hj2w7wwa/8/">Testcase</a> <a class="hint" href="https://jsfiddle.net/hj2w7wwa/9/">!Testcase</a> 
+        <a class="hint" href="https://jsfiddle.net/hj2w7wwa/7/">Testcase</a> <a class="hint" href="https://jsfiddle.net/hj2w7wwa/8/">Testcase</a> <a class="hint" href="https://jsfiddle.net/hj2w7wwa/9/">!Testcase</a>
       <li>An anonymous <a data-link-type="dfn" href="#table-wrapper-box" id="ref-for-table-wrapper-box">table-wrapper</a> box must be generated around each <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element⑦">table-root</a>.
 							Its display type is <code>inline-block</code> for <a data-link-type="dfn" href="#inline-table" id="ref-for-inline-table③">inline-table</a> boxes and block for <a data-link-type="dfn" href="#table" id="ref-for-table④">table</a> boxes.
 							The table wrapper box establishes a block formatting context.
 							The table-root box (not the table-wrapper box) is used when doing baseline vertical alignment for an <span id="ref-for-inline-table④">inline-table</span>.
 							The width of the table-wrapper box is the border-edge width of the table grid box inside it.
-							Percentages which would depend on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width">width</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height">height</a> on the table-wrapper box’s size are relative to the table-wrapper box’s containing block instead, not the table-wrapper box itself. 
+							Percentages which would depend on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width">width</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height">height</a> on the table-wrapper box’s size are relative to the table-wrapper box’s containing block instead, not the table-wrapper box itself.
      </ol>
    </ol>
    <div class="note" role="note"> Please note that some layout modes such as flexbox and grid <a href="http://www.w3.org/TR/css-display-3/#blockify">override the display type</a> of their children.
@@ -851,7 +851,7 @@ on screen, on paper, etc.
    </div>
    <h4 class="heading settled" data-level="2.2.3" id="fixup-examples"><span class="secno">2.2.3. </span><span class="content">Examples</span><a class="self-link" href="#fixup-examples"></a></h4>
    <div class="example" id="example-6896a3aa">
-    <a class="self-link" href="#example-6896a3aa"></a> 
+    <a class="self-link" href="#example-6896a3aa"></a>
 <pre class="lang-markup highlight"><c- p>&lt;</c-><c- f>div</c-> <c- e>class</c-><c- o>=</c-><c- s>"row"</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>div</c-> <c- e>class</c-><c- o>=</c-><c- s>"cell"</c-><c- p>></c->George<c- p>&lt;/</c-><c- f>div</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>div</c-> <c- e>class</c-><c- o>=</c-><c- s>"cell"</c-><c- p>></c->4287<c- p>&lt;/</c-><c- f>div</c-><c- p>></c->
@@ -873,7 +873,7 @@ on screen, on paper, etc.
 </pre>
    </div>
    <div class="example" id="example-62453c98">
-    <a class="self-link" href="#example-62453c98"></a> 
+    <a class="self-link" href="#example-62453c98"></a>
     <p>In this example, three <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell⑧">table-cell</a> anonymous boxes are assumed to contain the text in the rows. The text inside
 				of the divs with a <code>display: table-row</code> are encapsulated in anonymous inline boxes, as explained in <a href="https://www.w3.org/TR/CSS21/visuren.html#anonymous" target="_blank">visual formatting model</a>:</p>
 <pre class="lang-markup highlight"><c- p>&lt;</c-><c- f>div</c-> <c- e>class</c-><c- o>=</c-><c- s>"inline-table"</c-><c- p>></c->
@@ -920,33 +920,33 @@ on screen, on paper, etc.
    <h3 class="heading settled" data-level="3.2" id="table-layout-algorithm"><span class="secno">3.2. </span><span class="content">Table layout algorithm</span><a class="self-link" href="#table-layout-algorithm"></a></h3>
    <p>To layout a table, user agents must apply the following actions:</p>
    <ol>
-    <li><b>Determine the number of rows/columns the table requires.</b><br> This is done by executing the steps described in <a href="#dimensioning-the-row-column-grid">§ 3.3 Dimensioning the row/column grid</a>. 
+    <li><b>Determine the number of rows/columns the table requires.</b><br> This is done by executing the steps described in <a href="#dimensioning-the-row-column-grid">§ 3.3 Dimensioning the row/column grid</a>.
     <li>
-     <b>[A] If the row/column grid has at least one <a data-link-type="dfn" href="#slot" id="ref-for-slot①">slot</a>:</b> 
+     <b>[A] If the row/column grid has at least one <a data-link-type="dfn" href="#slot" id="ref-for-slot①">slot</a>:</b>
      <ol>
-      <li><b>Ensure each cell <a data-link-type="dfn" href="#slot" id="ref-for-slot②">slot</a> is occupied by at least one cell.</b><br> This is done by executing the steps described in <a href="#missing-cells-fixup">§ 3.4 Missing cells fixup</a>. 
-      <li><b>Compute the minimum width of each column.</b><br> This is done by executing the steps described in <a href="#content-measure">§ 3.8 Computing table measures</a>. 
-      <li><b>Compute the width of the table.</b><br> This is done by executing the steps described in <a href="#computing-the-table-width">§ 3.9.1 Computing the table width</a>. 
-      <li><b>Distribute the width of the table among columns.</b><br> This is done by executing the steps described in <a href="#width-distribution-algorithm">§ 3.9.3 Distribution algorithm</a>. 
-      <li><b>Compute the height of the table.</b><br> This is done by executing the steps described in <a href="#computing-the-table-height">§ 3.10.1 Computing the table height</a>. 
-      <li><b>Distribute the height of the table among rows.</b><br> This is done by executing the steps described in <a href="#height-distribution-algorithm">§ 3.10.5 Distribution algorithm</a>. 
+      <li><b>Ensure each cell <a data-link-type="dfn" href="#slot" id="ref-for-slot②">slot</a> is occupied by at least one cell.</b><br> This is done by executing the steps described in <a href="#missing-cells-fixup">§ 3.4 Missing cells fixup</a>.
+      <li><b>Compute the minimum width of each column.</b><br> This is done by executing the steps described in <a href="#content-measure">§ 3.8 Computing table measures</a>.
+      <li><b>Compute the width of the table.</b><br> This is done by executing the steps described in <a href="#computing-the-table-width">§ 3.9.1 Computing the table width</a>.
+      <li><b>Distribute the width of the table among columns.</b><br> This is done by executing the steps described in <a href="#width-distribution-algorithm">§ 3.9.3 Distribution algorithm</a>.
+      <li><b>Compute the height of the table.</b><br> This is done by executing the steps described in <a href="#computing-the-table-height">§ 3.10.1 Computing the table height</a>.
+      <li><b>Distribute the height of the table among rows.</b><br> This is done by executing the steps described in <a href="#height-distribution-algorithm">§ 3.10.5 Distribution algorithm</a>.
      </ol>
      <p><b>[B] Else, an <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="empty-table">empty table</dfn> is laid out:</b></p>
      <ol>
       <li><b>Compute the width of the table.</b><br> This is done by returning the largest value of <a href="#capmin" id="ref-for-capmin">CAPMIN</a> and the computed width of the table grid box (including borders and paddings)
-								if it is definite (use zero otherwise). 
+								if it is definite (use zero otherwise).
       <li><b>Compute the height of the table.</b><br> This is done by returning the sum of all table-caption heights
 								(their width being set to the table width,
 								with margins taken into consideration appropriately)
 							and the computed height of the table grid box (including borders and paddings)
-								if it is definite (use zero otherwise). 
+								if it is definite (use zero otherwise).
      </ol>
-    <li><b>Assign to each table-caption and table-cell their position and size.</b><br> This is done by running the steps of <a href="#bounding-box-assignment">§ 3.11 Positioning of cells, captions and other internal table boxes</a>. 
+    <li><b>Assign to each table-caption and table-cell their position and size.</b><br> This is done by running the steps of <a href="#bounding-box-assignment">§ 3.11 Positioning of cells, captions and other internal table boxes</a>.
    </ol>
    <figure>
     <p class="note" role="note"> The following schema describes the algorithm in a different way,
 					to make it easier to understand. </p>
-     <img alt="[see-caption-below]" src="images/CSS-Tables-Layout-Merged.svg" style="width: 100%"> 
+     <img alt="[see-caption-below]" src="images/CSS-Tables-Layout-Merged.svg" style="width: 100%">
     <figcaption>Overview of the table layout algorithm. Not normative.</figcaption>
    </figure>
    <h3 class="heading settled" data-level="3.3" id="dimensioning-the-row-column-grid"><span class="secno">3.3. </span><span class="content">Dimensioning the row/column grid</span><a class="self-link" href="#dimensioning-the-row-column-grid"></a></h3>
@@ -965,7 +965,7 @@ on screen, on paper, etc.
 			and use the attributes of their originating element if and only if it is an HTML element of the same type
 			(otherwise, they act like if they didnt’t have any attribute).</p>
    <div class="example" id="example-f35b62a4">
-    <a class="self-link" href="#example-f35b62a4"></a> 
+    <a class="self-link" href="#example-f35b62a4"></a>
 <pre class="lang-markup highlight"><c- p>&lt;</c-><c- f>ul</c-> <c- e>class</c-><c- o>=</c-><c- s>"table"</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>li</c-><c- p>>&lt;</c-><c- f>b</c-><c- p>></c->One<c- p>&lt;/</c-><c- f>b</c-><c- p>>&lt;</c-><c- f>i</c-><c- p>></c->1<c- p>&lt;/</c-><c- f>i</c-><c- p>>&lt;/</c-><c- f>li</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>li</c-><c- p>>&lt;</c-><c- f>b</c-><c- p>></c->Two<c- p>&lt;/</c-><c- f>b</c-><c- p>>&lt;</c-><c- f>i</c-><c- p>></c->2<c- p>&lt;/</c-><c- f>i</c-><c- p>>&lt;/</c-><c- f>li</c-><c- p>></c->
@@ -995,7 +995,7 @@ on screen, on paper, etc.
 </pre>
    </div>
    <div class="example" id="example-e71aef50">
-    <a class="self-link" href="#example-e71aef50"></a> 
+    <a class="self-link" href="#example-e71aef50"></a>
 <pre class="lang-markup highlight" style="margin-bottom:0;padding-bottom:0;"><c- c>&lt;!-- built using dom api, as this would be fixed by the html parser --></c->
 </pre>
 <pre class="lang-markup highlight" style="margin-top:0;padding-top:0;"><c- p>&lt;</c-><c- f>grid</c-> <c- e>style</c-><c- o>=</c-><c- s>"display: table"</c-><c- p>></c->
@@ -1062,28 +1062,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-table-layout">table-layout</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> fixed 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> fixed
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="#table-grid-box" id="ref-for-table-grid-box">table grid boxes</a> 
+      <td><a data-link-type="dfn" href="#table-grid-box" id="ref-for-table-grid-box">table grid boxes</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>A table-root is said to be laid out <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="in-fixed-mode">in fixed mode</dfn> whenever the computed value of the <a class="property" data-link-type="propdesc" href="#propdef-table-layout" id="ref-for-propdef-table-layout①">table-layout</a> property is equal to <code>fixed</code>,
 				and the specified width of the table root is either
@@ -1106,28 +1106,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-border-collapse">border-collapse</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">separate <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> collapse 
+      <td class="prod">separate <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①">|</a> collapse
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>separate 
+      <td>separate
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="#table-grid-box" id="ref-for-table-grid-box①">table grid boxes</a> 
+      <td><a data-link-type="dfn" href="#table-grid-box" id="ref-for-table-grid-box①">table grid boxes</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>When the <a class="property" data-link-type="propdesc" href="#propdef-border-collapse" id="ref-for-propdef-border-collapse②">border-collapse</a> property has <code>collapse</code> as its value,
 			the borders of adjacent cells are merged together such that each cell draws only half of the shared border.
@@ -1143,28 +1143,28 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-border-spacing">border-spacing</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">&lt;​length​><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num-range" id="ref-for-mult-num-range">{1,2}</a> 
+      <td class="prod">&lt;​length​><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-num-range" id="ref-for-mult-num-range">{1,2}</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>0px 0px 
+      <td>0px 0px
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="#table-grid-box" id="ref-for-table-grid-box②">table grid boxes</a> when <a class="property" data-link-type="propdesc" href="#propdef-border-collapse" id="ref-for-propdef-border-collapse③">border-collapse</a> is <span class="css">separate</span> 
+      <td><a data-link-type="dfn" href="#table-grid-box" id="ref-for-table-grid-box②">table grid boxes</a> when <a class="property" data-link-type="propdesc" href="#propdef-border-collapse" id="ref-for-propdef-border-collapse③">border-collapse</a> is <span class="css">separate</span>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>two absolute lengths 
+      <td>two absolute lengths
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value 
+      <td>by computed value
    </table>
    <p>The lengths specify the distance that separates adjoining cell borders <a data-link-type="dfn" href="#in-separated-borders-mode" id="ref-for-in-separated-borders-mode">in separated-borders mode</a>,
 				and must not be strictly negative.</p>
@@ -1179,36 +1179,36 @@ on screen, on paper, etc.
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-caption-side">caption-side</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">top <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> bottom 
+      <td class="prod">top <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②">|</a> bottom
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>top 
+      <td>top
      <tr>
       <th>Applies to:
-      <td><a data-link-type="dfn" href="#table-caption" id="ref-for-table-caption③">table-caption</a> boxes 
+      <td><a data-link-type="dfn" href="#table-caption" id="ref-for-table-caption③">table-caption</a> boxes
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>This property specifies the position of the caption box with respect to the table grid box.
 			Values have the following meanings:</p>
    <dl>
-    <dt><dfn data-dfn-type="dfn" data-noexport id="caption-side-top">top<a class="self-link" href="#caption-side-top"></a></dfn> 
-    <dd> Positions the caption box above the table grid box. 
-    <dt><dfn data-dfn-type="dfn" data-noexport id="caption-side-bottom">bottom<a class="self-link" href="#caption-side-bottom"></a></dfn> 
-    <dd> Positions the caption box below the table grid box. 
+    <dt><dfn data-dfn-type="dfn" data-noexport id="caption-side-top">top<a class="self-link" href="#caption-side-top"></a></dfn>
+    <dd> Positions the caption box above the table grid box.
+    <dt><dfn data-dfn-type="dfn" data-noexport id="caption-side-bottom">bottom<a class="self-link" href="#caption-side-bottom"></a></dfn>
+    <dd> Positions the caption box below the table grid box.
    </dl>
    <div class="note" role="note"> CSS2 described a different width and horizontal alignment behavior.
 				That behavior was supposed to be introduced in CSS3
@@ -1217,7 +1217,7 @@ on screen, on paper, etc.
 				is not attempting to define their implementation of said values. </div>
    <div class="note" role="note"> Gecko has a bug when dealing with multiple captions. <a class="hint" href="http://codepen.io/FremyCompany/pen/WrJxwP">!Testcase</a> </div>
    <div class="example" id="example-51a1f9db">
-    <a class="self-link" href="#example-51a1f9db"></a> 
+    <a class="self-link" href="#example-51a1f9db"></a>
     <p>To align caption content horizontally within the caption box, use the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-3/#propdef-text-align" id="ref-for-propdef-text-align">text-align</a> property.</p>
     <p>In this example, the <a class="property" data-link-type="propdesc" href="#propdef-caption-side" id="ref-for-propdef-caption-side①">caption-side</a> property places captions below tables.
 				The caption will be as wide as the parent of the table, and caption text will be left-justified.</p>
@@ -1238,25 +1238,25 @@ on screen, on paper, etc.
 					are used on the table-wrapper box and not the table grid box;
 					the same holds true for the properties whose use could force the used value of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-transforms-2/#propdef-transform-style" id="ref-for-propdef-transform-style">transform-style</a> to <code>flat</code> (see <a href="https://drafts.csswg.org/css-transforms/#grouping-property-values">list</a>) and their shorthands/longhands relatives:
 						this list currently includes <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow">overflow</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-4/#propdef-opacity" id="ref-for-propdef-opacity">opacity</a>, <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/filter-effects-1/#propdef-filter" id="ref-for-propdef-filter">filter</a>, <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/css-masking-1/#propdef-clip" id="ref-for-propdef-clip">clip</a>, <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/css-masking-1/#propdef-clip-path" id="ref-for-propdef-clip-path">clip-path</a>, <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/compositing-2/#propdef-isolation" id="ref-for-propdef-isolation">isolation</a>, <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/css-masking-1/#propdef-mask" id="ref-for-propdef-mask">mask</a>-*, <a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/compositing-2/#propdef-mix-blend-mode" id="ref-for-propdef-mix-blend-mode">mix-blend-mode</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-transforms-1/#propdef-transform" id="ref-for-propdef-transform">transform</a>-* and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-transforms-2/#propdef-perspective" id="ref-for-propdef-perspective">perspective</a>. <br> Where the specified values are not applied on the table grid and/or wrapper boxes,
-						the unset values are used instead for that box (inherit or initial, depending on the property). 
+						the unset values are used instead for that box (inherit or initial, depending on the property).
     <li>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow①">overflow</a> property on the <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element①①">table-root</a> and <a data-link-type="dfn" href="#table-wrapper-box" id="ref-for-table-wrapper-box①">table-wrapper</a> box, when its value is not either <code>visible</code> or <code>hidden</code>,
-					is ignored and treated as if its value was <code>visible</code>. 
+					is ignored and treated as if its value was <code>visible</code>.
     <li>All css properties of <a data-link-type="dfn" href="#table-column" id="ref-for-table-column⑤">table-column</a> and <a data-link-type="dfn" href="#table-column-group" id="ref-for-table-column-group④">table-column-group</a> boxes are ignored,
-					except when explicitly specified by this specification. 
-    <li>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin" id="ref-for-propdef-margin①">margin</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-padding" id="ref-for-propdef-padding">padding</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow②">overflow</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-z-index" id="ref-for-propdef-z-index">z-index</a> of <a data-link-type="dfn" href="#table-track" id="ref-for-table-track②">table-track</a> and <a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element②">table-track-group</a> are ignored. 
-    <li>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin" id="ref-for-propdef-margin②">margin</a> of <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①⓪">table-cell</a> boxes is ignored (as if it was set to 0px). 
+					except when explicitly specified by this specification.
+    <li>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin" id="ref-for-propdef-margin①">margin</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-padding" id="ref-for-propdef-padding">padding</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow②">overflow</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-z-index" id="ref-for-propdef-z-index">z-index</a> of <a data-link-type="dfn" href="#table-track" id="ref-for-table-track②">table-track</a> and <a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element②">table-track-group</a> are ignored.
+    <li>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin" id="ref-for-propdef-margin②">margin</a> of <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①⓪">table-cell</a> boxes is ignored (as if it was set to 0px).
     <li>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background" id="ref-for-propdef-background">background</a> of <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①①">table-cell</a> boxes
-					are painted using a special background painting algorithm described in <a href="#drawing-cell-backgrounds">§ 5.3.2 Drawing cell backgrounds</a>. 
+					are painted using a special background painting algorithm described in <a href="#drawing-cell-backgrounds">§ 5.3.2 Drawing cell backgrounds</a>.
    </ul>
    <h4 class="heading settled" data-level="3.6.2" id="collapsed-style-overrides"><span class="secno">3.6.2. </span><span class="content">Overrides applying in collapsed-borders mode</span><a class="self-link" href="#collapsed-style-overrides"></a></h4>
    <p>When a table is laid out <a data-link-type="dfn" href="#in-collapsed-borders-mode" id="ref-for-in-collapsed-borders-mode">in collapsed-borders mode</a>, the following rules apply:</p>
    <ul>
-    <li>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-padding" id="ref-for-propdef-padding①">padding</a> of the <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element①②">table-root</a> is ignored (as if it was set to 0px). 
-    <li>The <a class="property" data-link-type="propdesc" href="#propdef-border-spacing" id="ref-for-propdef-border-spacing②">border-spacing</a> of the <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element①③">table-root</a> is ignored (as if it was set to 0px). 
+    <li>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-padding" id="ref-for-propdef-padding①">padding</a> of the <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element①②">table-root</a> is ignored (as if it was set to 0px).
+    <li>The <a class="property" data-link-type="propdesc" href="#propdef-border-spacing" id="ref-for-propdef-border-spacing②">border-spacing</a> of the <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element①③">table-root</a> is ignored (as if it was set to 0px).
     <li>The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-radius" id="ref-for-propdef-border-radius">border-radius</a> of both <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element①④">table-root</a> and <a data-link-type="dfn" href="#table-non-root-element" id="ref-for-table-non-root-element②">table-non-root</a> boxes
-					is ignored (as it it was set to 0px). 
+					is ignored (as it it was set to 0px).
     <li>The values used for the layout and rendering of the borders of the <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element①⑤">table-root</a> and the <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①②">table-cell</a> boxes it owns are
-						determined using a special conflict resolution algorithm described in <a href="#border-collapsing">§ 3.7 Border-collapsing</a>. 
+						determined using a special conflict resolution algorithm described in <a href="#border-collapsing">§ 3.7 Border-collapsing</a>.
    </ul>
    <h3 class="heading settled" data-level="3.7" id="border-collapsing"><span class="secno">3.7. </span><span class="content">Border-collapsing</span><a class="self-link" href="#border-collapsing"></a></h3>
    <div class="note" role="note">
@@ -1289,45 +1289,45 @@ on screen, on paper, etc.
    <p><b>For any <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①④">table-cell</a> C° of a <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element①⑦">table-root</a>:</b></p>
    <ul>
     <li>
-     Resolve conflicts with border-right: 
+     Resolve conflicts with border-right:
      <ol start="0">
       <li>Let S be an ordered set of <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①⑤">table-cell</a> border styles, sorted by cell in RowStart/ColumnStart order;
-					initially, let S contain only C°’s border-right style 
+					initially, let S contain only C°’s border-right style
       <li>Add to the set S the border-left style of all cells
-					sharing a section of their left border with C°’s right border 
+					sharing a section of their left border with C°’s right border
       <li>
-       Repeat the following two instructions, until no new border style is added to S: 
+       Repeat the following two instructions, until no new border style is added to S:
        <ul>
         <li>For all newly-added left borders from cell C<sub>i</sub> having a <a href="#slot" id="ref-for-slot⑤">rowspan</a> greater than one,
 						add to the set S the border-right style of all cells
-						sharing a section of their border-right with C<sub>i</sub>’s border-left 
+						sharing a section of their border-right with C<sub>i</sub>’s border-left
         <li>For all newly-added right borders from cell C<sub>i</sub> having a <a href="#slot" id="ref-for-slot⑥">rowspan</a> greater than one,
 						add to the set S the border-left style of all cells
-						sharing a section of their border-left with C<sub>i</sub>’s border-right 
+						sharing a section of their border-left with C<sub>i</sub>’s border-right
        </ul>
-      <li>Harmonize the conflicting borders of S 
+      <li>Harmonize the conflicting borders of S
      </ol>
     <li>
-     Resolve conflicts with border-bottom: 
+     Resolve conflicts with border-bottom:
      <ol start="0">
       <li>Let S be an ordered set of <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①⑥">table-cell</a> border styles, sorted by cell in RowStart/ColumnStart order;
-					initially, let S contain only C°’s border-bottom style 
+					initially, let S contain only C°’s border-bottom style
       <li>Add to the set S the border-top style of all cells
-					sharing a section of their top border with C°’s bottom border 
+					sharing a section of their top border with C°’s bottom border
       <li>
-       Repeat the following two instructions, until no new border style is added to S: 
+       Repeat the following two instructions, until no new border style is added to S:
        <ul>
         <li>For all newly-added top borders from cell C<sub>i</sub> having a <a href="#slot" id="ref-for-slot⑦">rowspan</a> greater than one,
 						add to the set S the border-bottom style of all cells
-						sharing a section of their bottom border with C<sub>i</sub>’s top border 
+						sharing a section of their bottom border with C<sub>i</sub>’s top border
         <li>For all newly-added bottom borders from cell C<sub>i</sub> having a <a href="#slot" id="ref-for-slot⑧">rowspan</a> greater than one,
 						add to the set S the border-top style of all cells
-						sharing a section of their top border with C<sub>i</sub>’s bottom border 
+						sharing a section of their top border with C<sub>i</sub>’s bottom border
        </ul>
-      <li>Harmonize the conflicting borders of S 
+      <li>Harmonize the conflicting borders of S
      </ol>
     <li>
-     Divide the used width of all borders by two.<br> 
+     Divide the used width of all borders by two.<br>
      <div class="note" role="note"> This effect will be compensated at rendering time wherever needed,
 					but is required for layout correctness. <span class="hint">(see <a href="#drawing-collapsed-borders-2">§ 5.3.3.1 Changes in collapsed-borders mode</a>)</span> </div>
      <p><b>Then, for that <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element①⑧">table-root</a>:</b></p>
@@ -1337,7 +1337,7 @@ on screen, on paper, etc.
 					without actually modifying the border properties of the <span id="ref-for-table-root-element②⓪">table-root</span>.<br> <br> If the table and the cell border styles have the same specificity,
 					keep the cell border style. <br> Once this is done, set the <span id="ref-for-table-root-element②①">table-root</span> border-{…}-width
 					to half the maximum width found during the harmonization processes for that border,
-					then set border-{…}-style to solid, and border-{…}-color to transparent. 
+					then set border-{…}-style to solid, and border-{…}-color to transparent.
      </ul>
      <div class="note" role="note"> Implementations may of course choose to skip some of the steps of the previous algorithm,
 			provided they can prove those have no visible impact on the final results;
@@ -1353,41 +1353,41 @@ on screen, on paper, etc.
      <p>Given an ordered set of border styles (BC<sub>1,</sub> BC<sub>2</sub>, … located in cells C<sub>1,</sub> C<sub>2</sub>, …)
 		execute the following algorithm to determine the used value of the border properties for those conflicting borders.</p>
      <ul>
-      <li> Set CurrentlyWinningBorderProperties to “border: 0px none transparent” 
+      <li> Set CurrentlyWinningBorderProperties to “border: 0px none transparent”
       <li>
-        For each border BC<sub>i</sub>: 
+        For each border BC<sub>i</sub>:
        <ul>
-        <li>Consider the BC<sub>i</sub> border’s properties 
+        <li>Consider the BC<sub>i</sub> border’s properties
        </ul>
       <li>
-        If the border separates two columns: 
+        If the border separates two columns:
        <ul>
         <li>For each border BC<sub>i</sub>:
 						For each table-column spanned by the C<sub>i</sub> cell, if any.
-						Consider the border’s properties of any border of the table-column that would be drawn contiguously to BC<sub>i</sub>. 
+						Consider the border’s properties of any border of the table-column that would be drawn contiguously to BC<sub>i</sub>.
         <li>For each border BC<sub>i</sub>:
 						For each table-column-group containing a column spanned by the C<sub>i</sub> cell, if any.
-						Consider the border’s properties of any border of the table-column-group that would be drawn contiguously to BC<sub>i</sub>. 
+						Consider the border’s properties of any border of the table-column-group that would be drawn contiguously to BC<sub>i</sub>.
        </ul>
       <li>
-        If the border separates two rows: 
+        If the border separates two rows:
        <ul>
         <li>For each border BC<sub>i</sub>:
 						For each table-row spanned by the C<sub>i</sub> cell, if any.
-						Consider the border’s properties of any border of the table-column that would be drawn contiguously to BC<sub>i</sub>. 
+						Consider the border’s properties of any border of the table-column that would be drawn contiguously to BC<sub>i</sub>.
         <li>For each border BC<sub>i</sub>:
 						For each table-row-group containing a column spanned by the C<sub>i</sub> cell, if any.
-						Consider the border’s properties of any border of the table-row-group that would be drawn contiguously to BC<sub>i</sub>. 
+						Consider the border’s properties of any border of the table-row-group that would be drawn contiguously to BC<sub>i</sub>.
        </ul>
-      <li> Return CurrentlyWinningBorderProperties 
+      <li> Return CurrentlyWinningBorderProperties
      </ul>
      <h5 class="heading settled" data-level="3.7.1.3" id="border-specificity"><span class="secno">3.7.1.3. </span><span class="content">Specificity of a border style</span><a class="self-link" href="#border-specificity"></a></h5>
      <p>Given two borders styles, the border style having the most specificity is the border style which…</p>
      <ol>
-      <li>… has the value "hidden" as <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-style" id="ref-for-propdef-border-style">border-style</a>, if only one does 
-      <li>… has the biggest <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-width" id="ref-for-propdef-border-width">border-width</a>, once converted into css pixels 
+      <li>… has the value "hidden" as <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-style" id="ref-for-propdef-border-style">border-style</a>, if only one does
+      <li>… has the biggest <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-width" id="ref-for-propdef-border-width">border-width</a>, once converted into css pixels
       <li>
-       … has the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-style" id="ref-for-propdef-border-style①">border-style</a> which comes first in the following list: 
+       … has the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-style" id="ref-for-propdef-border-style①">border-style</a> which comes first in the following list:
 <pre>double, solid, dashed, dotted, ridge, outset, groove, inset, none</pre>
      </ol>
      <p>If none of these criterion matches, then both borders share the same specificity.</p>
@@ -1416,11 +1416,11 @@ on screen, on paper, etc.
 						that are relevant to intrinsic width calculation.
 					It is a set of computed values for border-left-width, padding-left, padding-right, and border-right-width
 						(along with zero values for margin-left and margin-right)
-						defined as follows: 
+						defined as follows:
        <ul>
-        <li><a data-link-type="dfn" href="#in-separated-borders-mode" id="ref-for-in-separated-borders-mode①">In separated-borders mode</a>: the computed horizontal padding and border of the table-cell 
+        <li><a data-link-type="dfn" href="#in-separated-borders-mode" id="ref-for-in-separated-borders-mode①">In separated-borders mode</a>: the computed horizontal padding and border of the table-cell
         <li><a data-link-type="dfn" href="#in-collapsed-borders-mode" id="ref-for-in-collapsed-borders-mode②">In collapsed-borders mode</a>: the computed horizontal padding of the cell and, for border values,
-							the used border-width values of the cell (half the winning border-width) 
+							the used border-width values of the cell (half the winning border-width)
        </ul>
       <dt><dfn data-dfn-type="dfn" data-noexport id="table-intrinsic-offsets">table intrinsic offsets<a class="self-link" href="#table-intrinsic-offsets"></a></dfn>
       <dd>
@@ -1428,35 +1428,35 @@ on screen, on paper, etc.
 						that are relevant to intrinsic width calculation.
 					It is a set of computed values for border-left-width, padding-left, padding-right, and border-right-width
 						(along with zero values for margin-left and margin-right)
-						defined as follows: 
+						defined as follows:
        <ul>
-        <li><a data-link-type="dfn" href="#in-separated-borders-mode" id="ref-for-in-separated-borders-mode②">In separated-borders mode</a>: the computed horizontal padding and border of the table-root 
-        <li><a data-link-type="dfn" href="#in-collapsed-borders-mode" id="ref-for-in-collapsed-borders-mode③">In collapsed-borders mode</a>: the used border-width values of the cell (half the winning border-width) 
+        <li><a data-link-type="dfn" href="#in-separated-borders-mode" id="ref-for-in-separated-borders-mode②">In separated-borders mode</a>: the computed horizontal padding and border of the table-root
+        <li><a data-link-type="dfn" href="#in-collapsed-borders-mode" id="ref-for-in-collapsed-borders-mode③">In collapsed-borders mode</a>: the used border-width values of the cell (half the winning border-width)
        </ul>
        <p class="note" role="note"> The margins are not included in the table intrinsic offsets
 							because handling of margins depends on the <a class="property" data-link-type="propdesc" href="#propdef-caption-side" id="ref-for-propdef-caption-side②">caption-side</a> property. </p>
        <p class="issue" id="issue-941e2d76"><a class="self-link" href="#issue-941e2d76"></a> Handling of intrinsic offsets when in border collapsing mode <a href="https://github.com/w3c/csswg-drafts/issues/608">&lt;https://github.com/w3c/csswg-drafts/issues/608></a></p>
       <dt><dfn data-dfn-type="dfn" data-noexport id="total-horizontal-border-spacing">total horizontal border spacing<a class="self-link" href="#total-horizontal-border-spacing"></a></dfn>
       <dd>
-       The total horizontal border spacing is defined for each table: 
+       The total horizontal border spacing is defined for each table:
        <ul>
         <li>For tables laid out <a data-link-type="dfn" href="#in-separated-borders-mode" id="ref-for-in-separated-borders-mode③">in separated-borders mode</a> containing at least one column,
 							the horizontal component of the computed value of the border-spacing property times one plus
-							the number of columns in the table 
-        <li>Otherwise, 0 
+							the number of columns in the table
+        <li>Otherwise, 0
        </ul>
       <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="offsets-adjusted-width">offsets-adjusted min-width, width, and max-width</dfn>
       <dd>
        <ul>
-        <li>For <a data-link-type="dfn" href="#table-track" id="ref-for-table-track③">table-track</a> and <a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element③">table-track-group</a> boxes, 
-							the offsets-adjusted value of width properties is their computed value, 
-							irrespective of the value of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-box-sizing" id="ref-for-propdef-box-sizing">box-sizing</a> applied on the element. 
+        <li>For <a data-link-type="dfn" href="#table-track" id="ref-for-table-track③">table-track</a> and <a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element③">table-track-group</a> boxes,
+							the offsets-adjusted value of width properties is their computed value,
+							irrespective of the value of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-box-sizing" id="ref-for-propdef-box-sizing">box-sizing</a> applied on the element.
         <li>
          For <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①⑦">table-cell</a> boxes,
 							the offsets-adjusted value of width properties is their computed value
 							from which the cell’s border-{left|right}-width and/or padding-{left|right} have eventually been deduced,
-							depending on the value of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-box-sizing" id="ref-for-propdef-box-sizing①">box-sizing</a>. 
-         <div class="note" role="note"> When the table is laid out <a data-link-type="dfn" href="#in-collapsed-borders-mode" id="ref-for-in-collapsed-borders-mode④">in collapsed-borders mode</a>, 
+							depending on the value of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-box-sizing" id="ref-for-propdef-box-sizing①">box-sizing</a>.
+         <div class="note" role="note"> When the table is laid out <a data-link-type="dfn" href="#in-collapsed-borders-mode" id="ref-for-in-collapsed-borders-mode④">in collapsed-borders mode</a>,
 								the border value to deduce is half the value of the winning border value on each side
 								(see <a href="#border-conflict-resolution-algorithm">conflict resolution explaination note</a>) </div>
        </ul>
@@ -1464,20 +1464,20 @@ on screen, on paper, etc.
       <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="outer-min-content">outer min-content</dfn> and <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="outer-max-content">outer max-content</dfn> widths
       <dd>
        The outer min-content and max-content widths are defined for table cells, columns, and column groups.
-					The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width②">width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width">min-width</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-max-width" id="ref-for-propdef-max-width">max-width</a> values used in these definitions are the offsets-adjusted values defined <a href="#offsets-adjusted-width" id="ref-for-offsets-adjusted-width">above</a>: 
+					The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width②">width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width">min-width</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-max-width" id="ref-for-propdef-max-width">max-width</a> values used in these definitions are the offsets-adjusted values defined <a href="#offsets-adjusted-width" id="ref-for-offsets-adjusted-width">above</a>:
        <ul>
-        <li>The <b>outer min-content width</b> of a table-cell is <code>max(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width①">min-width</a>, min-content width)</code> adjusted by the cell intrinsic offsets. 
-        <li>The <b>outer min-content width</b> of a table-column or table-column-group is <code>max(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width②">min-width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width③">width</a>)</code>. 
-        <li>The <b>outer max-content width</b> of a table-cell in a <a data-link-type="dfn" href="#constrainedness" id="ref-for-constrainedness">non-constrained column</a> is <code>max(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width③">min-width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width④">width</a>, min-content width, min(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-max-width" id="ref-for-propdef-max-width①">max-width</a>, max-content width))</code> adjusted by the cell intrinsic offsets. 
-        <li>The <b>outer max-content width</b> of a table-cell in a <a data-link-type="dfn" href="#constrainedness" id="ref-for-constrainedness①">constrained column</a> is <code>max(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width④">min-width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑤">width</a>, min-content width, min(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-max-width" id="ref-for-propdef-max-width②">max-width</a>, <span class="property" id="ref-for-propdef-width⑥">width</span>))</code> adjusted by the cell intrinsic offsets. 
-        <li>The <b>outer max-content width</b> of a table-column or table-column-group is <code>max(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width⑤">min-width</a>, min(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-max-width" id="ref-for-propdef-max-width③">max-width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑦">width</a>))</code>. 
+        <li>The <b>outer min-content width</b> of a table-cell is <code>max(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width①">min-width</a>, min-content width)</code> adjusted by the cell intrinsic offsets.
+        <li>The <b>outer min-content width</b> of a table-column or table-column-group is <code>max(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width②">min-width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width③">width</a>)</code>.
+        <li>The <b>outer max-content width</b> of a table-cell in a <a data-link-type="dfn" href="#constrainedness" id="ref-for-constrainedness">non-constrained column</a> is <code>max(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width③">min-width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width④">width</a>, min-content width, min(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-max-width" id="ref-for-propdef-max-width①">max-width</a>, max-content width))</code> adjusted by the cell intrinsic offsets.
+        <li>The <b>outer max-content width</b> of a table-cell in a <a data-link-type="dfn" href="#constrainedness" id="ref-for-constrainedness①">constrained column</a> is <code>max(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width④">min-width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑤">width</a>, min-content width, min(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-max-width" id="ref-for-propdef-max-width②">max-width</a>, <span class="property" id="ref-for-propdef-width⑥">width</span>))</code> adjusted by the cell intrinsic offsets.
+        <li>The <b>outer max-content width</b> of a table-column or table-column-group is <code>max(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width⑤">min-width</a>, min(<a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-max-width" id="ref-for-propdef-max-width③">max-width</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑦">width</a>))</code>.
        </ul>
       <dt><dfn data-dfn-type="dfn" data-noexport id="percentage-contribution">percentage contribution<a class="self-link" href="#percentage-contribution"></a></dfn>s
       <dd>
        The percentage contribution of a table cell, column, or column group
 						is defined in terms of the computed values of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑧">width</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-max-width" id="ref-for-propdef-max-width④">max-width</a> that have computed values that are percentages:<br> <br> <code>min(percentage <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑨">width</a>, percentage <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-max-width" id="ref-for-propdef-max-width⑤">max-width</a>)</code>.<br> <br> If the computed values are not percentages,
 						then <code>0%</code> is used for <span class="property" id="ref-for-propdef-width①⓪">width</span>, and
-						an <code>infinite</code> percentage is used for <span class="property" id="ref-for-propdef-max-width⑥">max-width</span>. 
+						an <code>infinite</code> percentage is used for <span class="property" id="ref-for-propdef-max-width⑥">max-width</span>.
        <div class="note" role="note"> Please note that <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width⑥">min-width</a> is not included in this computation.
 							As a result, a percentage <span class="property" id="ref-for-propdef-min-width⑦">min-width</span> is ignored.
 						Since <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①①">width</a> functions like a <span class="property" id="ref-for-propdef-min-width⑧">min-width</span> in table layout
@@ -1490,7 +1490,7 @@ on screen, on paper, etc.
 				their <a href="#min-content-width-of-a-column" id="ref-for-min-content-width-of-a-column">min-content width</a> (the smallest possible width attributed to this column),
 				their <a href="#max-content-width-of-a-column" id="ref-for-max-content-width-of-a-column">max-content width</a> (the width that would be attributed to the column if no other constraint applied),
 				their <a href="#intrinsic-percentage-width-of-a-column" id="ref-for-intrinsic-percentage-width-of-a-column">intrinsic percentage width</a> (the percentage of the table width the column desires to get, and could end up overriding its max-content width).</p>
-     <p class="note" role="note"> To compute these values, an iterative algorithm is used. 
+     <p class="note" role="note"> To compute these values, an iterative algorithm is used.
 				First, these values are computed ignoring any cell spanning more than one column.
 				Then, these values are updated by taking into account cells spanning incrementally more columns.
 				When cells that spanned all columns of the table have been considered, this algorithm ends and the values are then finalized. </p>
@@ -1508,74 +1508,74 @@ on screen, on paper, etc.
      <dl>
       <dt><dfn data-dfn-type="dfn" data-noexport id="min-content-width-of-a-column-based-on-cells-of-span-up-to-1">min-content width of a column based on cells of span up to 1<a class="self-link" href="#min-content-width-of-a-column-based-on-cells-of-span-up-to-1"></a></dfn>
       <dd>
-       The largest of: 
+       The largest of:
        <ul>
         <li>
          the width specified for the column:
          <ul>
-          <li>the <a data-link-type="dfn" href="#outer-min-content" id="ref-for-outer-min-content">outer min-content</a> width of its corresponding table-column, if any (and not auto) 
-          <li>the <a data-link-type="dfn" href="#outer-min-content" id="ref-for-outer-min-content①">outer min-content</a> width of its corresponding table-column-group, if any 
-          <li>or 0, if there is none 
+          <li>the <a data-link-type="dfn" href="#outer-min-content" id="ref-for-outer-min-content">outer min-content</a> width of its corresponding table-column, if any (and not auto)
+          <li>the <a data-link-type="dfn" href="#outer-min-content" id="ref-for-outer-min-content①">outer min-content</a> width of its corresponding table-column-group, if any
+          <li>or 0, if there is none
          </ul>
         <li>the <a data-link-type="dfn" href="#outer-min-content" id="ref-for-outer-min-content②">outer min-content</a> width of each cell that <a data-link-type="dfn" href="#span" id="ref-for-span③">spans</a> the column whose <a href="#slot" id="ref-for-slot⑨">colSpan</a> is 1
 							(or just the one in the first row <a data-link-type="dfn" href="#in-fixed-mode" id="ref-for-in-fixed-mode③">in fixed mode</a>)
-							or 0 if there is none 
+							or 0 if there is none
        </ul>
       <dt><dfn data-dfn-type="dfn" data-noexport id="max-content-width-of-a-column-based-on-cells-of-span-up-to-1">max-content width of a column based on cells of span up to 1<a class="self-link" href="#max-content-width-of-a-column-based-on-cells-of-span-up-to-1"></a></dfn>
       <dd>
-       The largest of: 
+       The largest of:
        <ul>
-        <li>the <a data-link-type="dfn" href="#outer-max-content" id="ref-for-outer-max-content">outer max-content</a> width of its corresponding table-column-group, if any 
-        <li>the <a data-link-type="dfn" href="#outer-max-content" id="ref-for-outer-max-content①">outer max-content</a> width of its corresponding table-column, if any 
+        <li>the <a data-link-type="dfn" href="#outer-max-content" id="ref-for-outer-max-content">outer max-content</a> width of its corresponding table-column-group, if any
+        <li>the <a data-link-type="dfn" href="#outer-max-content" id="ref-for-outer-max-content①">outer max-content</a> width of its corresponding table-column, if any
         <li>the <a data-link-type="dfn" href="#outer-max-content" id="ref-for-outer-max-content②">outer max-content</a> width of each cell that <a data-link-type="dfn" href="#span" id="ref-for-span④">spans</a> the column whose <a href="#slot" id="ref-for-slot①⓪">colSpan</a> is 1
 							(or just the one in the first row if <a data-link-type="dfn" href="#in-fixed-mode" id="ref-for-in-fixed-mode④">in fixed mode</a>)
-							or 0 if there is no such cell 
+							or 0 if there is no such cell
        </ul>
       <dt><dfn data-dfn-type="dfn" data-noexport id="intrinsic-percentage-width-of-a-column-based-on-cells-of-span-up-to-1">intrinsic percentage width of a column based on cells of span up to 1<a class="self-link" href="#intrinsic-percentage-width-of-a-column-based-on-cells-of-span-up-to-1"></a></dfn>
       <dd>The largest of the percentage contributions of
 						each cell that <a data-link-type="dfn" href="#span" id="ref-for-span⑤">spans</a> the column whose <a href="#slot" id="ref-for-slot①①">colSpan</a> is 1,
 						of its corresponding table-column (if any), and
-						of its corresponding table-column-group (if any) 
+						of its corresponding table-column-group (if any)
       <dt><dfn data-dfn-type="dfn" data-noexport id="min-content-width-of-a-column-based-on-cells-of-span-up-to-n-n--1">min-content width of a column based on cells of span up to N (N > 1)<a class="self-link" href="#min-content-width-of-a-column-based-on-cells-of-span-up-to-n-n--1"></a></dfn>
       <dd>
        the largest of the min-content width of the column based on cells of span up to N-1 and the contributions
 						of the cells in the column whose <a href="#slot" id="ref-for-slot①②">colSpan</a> is N,
-						where the contribution of a cell is the result of taking the following steps: 
+						where the contribution of a cell is the result of taking the following steps:
        <ol>
         <li>Define the baseline min-content width
-							as the sum of the max-content widths based on cells of span up to N-1 
-							of all columns that the cell spans. 
+							as the sum of the max-content widths based on cells of span up to N-1
+							of all columns that the cell spans.
         <li>Define the baseline border spacing as the sum of the horizontal
 							border-spacing for any columns spanned by the cell,
-							other than the one in which the cell originates. 
+							other than the one in which the cell originates.
         <li>
-         The contribution of the cell is the sum of: 
+         The contribution of the cell is the sum of:
          <ul>
-          <li>the min-content width of the column based on cells of span up to N-1 
+          <li>the min-content width of the column based on cells of span up to N-1
           <li>
-           the product of: 
+           the product of:
            <ul>
             <li>
-             the ratio of: 
+             the ratio of:
              <ul>
               <li>the max-content width of the column based on cells of span up to N-1 of the column
-													minus the min-content width of the column based on cells of span up to N-1 of the column, to 
-              <li>the baseline max-content width minus the baseline min-content width 
+													minus the min-content width of the column based on cells of span up to N-1 of the column, to
+              <li>the baseline max-content width minus the baseline min-content width
              </ul>
-              or zero if this ratio is undefined, and 
+              or zero if this ratio is undefined, and
             <li>the outer min-content width of the cell
 											minus the baseline min-content width and the baseline border spacing,
 											clamped to be at least 0 and at most the difference
-											between the baseline max-content width and the baseline min-content width 
+											between the baseline max-content width and the baseline min-content width
            </ul>
           <li>
-           the product of: 
+           the product of:
            <ul>
             <li>the ratio of the max-content width
-											based on cells of span up to N-1 of the column to the baseline max-content width 
+											based on cells of span up to N-1 of the column to the baseline max-content width
             <li>the outer min-content width of the cell
 											minus the baseline max-content width and baseline border spacing,
-											or 0 if this is negative 
+											or 0 if this is negative
            </ul>
          </ul>
        </ol>
@@ -1583,27 +1583,27 @@ on screen, on paper, etc.
       <dd>
        The largest of the max-content width
 					based on cells of span up to N-1 and the contributions of the cells in the column whose <a href="#slot" id="ref-for-slot①③">colSpan</a> is N,
-					where the contribution of a cell is the result of taking the following steps: 
+					where the contribution of a cell is the result of taking the following steps:
        <ol>
         <li>Define the baseline max-content width as
 							the sum of the max-content widths based on cells of span up to N-1
-							of all columns that the cell spans. 
+							of all columns that the cell spans.
         <li>Define the baseline border spacing as
 							the sum of the horizontal border-spacing
 							for any columns spanned by the cell,
-							other than the one in which the cell originates. 
+							other than the one in which the cell originates.
         <li>
-         The contribution of the cell is the sum of: 
+         The contribution of the cell is the sum of:
          <ul>
-          <li>the max-content width of the column based on cells of span up to N-1 
+          <li>the max-content width of the column based on cells of span up to N-1
           <li>
-           the product of: 
+           the product of:
            <ul>
             <li>the ratio of the max-content width
-											based on cells of span up to N-1 of the column to the baseline max-content width 
+											based on cells of span up to N-1 of the column to the baseline max-content width
             <li>the outer max-content width of the cell
 											minus the baseline max-content width and the baseline border spacing,
-											or 0 if this is negative 
+											or 0 if this is negative
            </ul>
          </ul>
        </ol>
@@ -1613,34 +1613,34 @@ on screen, on paper, etc.
 					then the intrinsic percentage width of the column based on cells of span up to N is
 					the same as the intrinsic percentage width of the column based on cells of span up to N-1.<br> <br> Otherwise, it is the largest of the contributions of the cells in the column
 					whose <a href="#slot" id="ref-for-slot①④">colSpan</a> is N,
-					where the contribution of a cell is the result of taking the following steps: 
+					where the contribution of a cell is the result of taking the following steps:
        <ol>
-        <li>Start with the percentage contribution of the cell. 
+        <li>Start with the percentage contribution of the cell.
         <li>Subtract the intrinsic percentage width of the column based on cells of span up to N-1 of all columns that the cell spans.
-							If this gives a negative result, change it to 0%. 
+							If this gives a negative result, change it to 0%.
         <li>
-         Multiply by the ratio of 
+         Multiply by the ratio of
          <ul>
-          <li>the column’s non-spanning max-content width to 
+          <li>the column’s non-spanning max-content width to
           <li>the sum of the non-spanning max-content widths of all columns spanned by the cell
-									that have an intrinsic percentage width of the column based on cells of span up to N-1 equal to 0%. 
+									that have an intrinsic percentage width of the column based on cells of span up to N-1 equal to 0%.
          </ul>
           However, if this ratio is undefined because the denominator is zero,
 							instead use the 1 divided by the number of columns spanned by the cell
-							that have an intrinsic percentage width of the column based on cells of span up to N-1 equal to zero. 
+							that have an intrinsic percentage width of the column based on cells of span up to N-1 equal to zero.
        </ol>
       <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="min-content-width-of-a-column">min-content width of a column</dfn>
-      <dd>the min-content width of the column based on cells of span up to N, where N is the number of columns in the table 
+      <dd>the min-content width of the column based on cells of span up to N, where N is the number of columns in the table
       <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="max-content-width-of-a-column">max-content width of a column</dfn>
-      <dd>the max-content width of the column based on cells of span up to N, where N is the number of columns in the table 
+      <dd>the max-content width of the column based on cells of span up to N, where N is the number of columns in the table
       <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="intrinsic-percentage-width-of-a-column">intrinsic percentage width of a column</dfn>
       <dd>
-       the smaller of: 
+       the smaller of:
        <ul>
         <li>the intrinsic percentage width of the column based on cells of span up to N,
-							where N is the number of columns in the table 
+							where N is the number of columns in the table
         <li>100% minus the sum of the intrinsic percentage width of all prior columns in the table
-							(further left when direction is "ltr" (right for "rtl")) <a class="hint" href="https://wptest.center/#/45xdf3">Testcase</a> 
+							(further left when direction is "ltr" (right for "rtl")) <a class="hint" href="https://wptest.center/#/45xdf3">Testcase</a>
        </ul>
        <p class="note" role="note"> The clamping of the total of the intrinsic percentage widths of columns to a maximum of 100%
 						means that the table layout algorithm is not invariant under switching of columns. </p>
@@ -1650,7 +1650,7 @@ on screen, on paper, etc.
 						its corresponding table-column (if any),
 						or any of the cells spanning only that column
 					has a computed <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①③">width</a> that is not "auto",
-						and is not a percentage. 
+						and is not a percentage.
      </dl>
      <div class="note" role="note"> In a future revision of this specification, this algorithm will need to account
 					for character-alignment of cells ('<a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#string-value" id="ref-for-string-value">&lt;string></a>' values of the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-3/#propdef-text-align" id="ref-for-propdef-text-align①">text-align</a> property).
@@ -1691,13 +1691,13 @@ on screen, on paper, etc.
        If the <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element②②">table-root</a>’s <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①④">width</a> property has a computed value (resolving to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="resolved-table-width">resolved-table-width</dfn>)
 					other than <code>auto</code>,
 						the <a href="#used-width-of-table" id="ref-for-used-width-of-table">used width</a> is the greater of <a data-link-type="dfn" href="#resolved-table-width" id="ref-for-resolved-table-width">resolved-table-width</a>, and
-							the <a href="#used-min-width-of-table" id="ref-for-used-min-width-of-table">used min-width of the table</a>. 
+							the <a href="#used-min-width-of-table" id="ref-for-used-min-width-of-table">used min-width of the table</a>.
        <div class="note" role="note"> If the used width is greater than <a href="#gridmin" id="ref-for-gridmin①">GRIDMIN</a>,
 						the extra width should be distributed over the columns. <span class="hint">See <a href="#width-distribution">§ 3.9 Available Width Distribution</a>.</span> </div>
       <li>If the <a data-link-type="dfn" href="#table-root-element" id="ref-for-table-root-element②③">table-root</a> has 'width: auto',
 						the <a href="#used-width-of-table" id="ref-for-used-width-of-table①">used width</a> is the greater of
 							min(<a href="#gridmax" id="ref-for-gridmax">GRIDMAX</a>, the table’s containing block width),
-							the <a href="#used-min-width-of-table" id="ref-for-used-min-width-of-table①">used min-width of the table</a>. 
+							the <a href="#used-min-width-of-table" id="ref-for-used-min-width-of-table①">used min-width of the table</a>.
      </ul>
      <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="assignable-table-width">assignable table width</dfn> is
 				the used width of the table
@@ -1734,10 +1734,10 @@ on screen, on paper, etc.
      <h5 class="heading settled" data-level="3.9.2.2" id="width-distribution-principles-rR"><span class="secno">3.9.2.2. </span><span class="content">Available sizings</span><a class="self-link" href="#width-distribution-principles-rR"></a></h5>
      <p>All three types of columns have the following possible used widths.</p>
      <ol>
-      <li>min-content width: <br> <span class="hint">The size required to fit the content of the column</span> 
-      <li>min-content width + delta: <br> <span class="hint">A value between the min-content and preferred widths</span> 
+      <li>min-content width: <br> <span class="hint">The size required to fit the content of the column</span>
+      <li>min-content width + delta: <br> <span class="hint">A value between the min-content and preferred widths</span>
       <li>preferred width: <br> <span class="hint">The size specified for the column,
-							or the size required to fit the content of the column without breaking</span> 
+							or the size required to fit the content of the column without breaking</span>
       <li>preferred width + delta<br> <span class="hint">A value larger than the preferred width</span>
      </ol>
      <p>The distribution algorithm defines those values and explains when to use them.</p>
@@ -1757,44 +1757,44 @@ on screen, on paper, etc.
      <p>Then, valid sizing methods are to be assigned to the columns by sizing type, yielding the following sizing-guesses:</p>
      <ol>
       <li>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="min-content-sizing-guess">min-content sizing-guess</dfn> is the set of column width assignments where
-					each column is assigned its min-content width. 
+					each column is assigned its min-content width.
       <li>
-       The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="min-content-percentage-sizing-guess">min-content-percentage sizing-guess</dfn> is the set of column width assignments where: 
+       The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="min-content-percentage-sizing-guess">min-content-percentage sizing-guess</dfn> is the set of column width assignments where:
        <ul>
         <li>
-         each <a data-link-type="dfn" href="#percent-column" id="ref-for-percent-column">percent-column</a> is assigned the larger of: 
+         each <a data-link-type="dfn" href="#percent-column" id="ref-for-percent-column">percent-column</a> is assigned the larger of:
          <ul>
-          <li>its intrinsic percentage width times the assignable width and 
-          <li>its min-content width. 
+          <li>its intrinsic percentage width times the assignable width and
+          <li>its min-content width.
          </ul>
-        <li>all other columns are assigned their min-content width. 
+        <li>all other columns are assigned their min-content width.
        </ul>
       <li>
-       The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="min-content-specified-sizing-guess">min-content-specified sizing-guess</dfn> is the set of column width assignments where: 
+       The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="min-content-specified-sizing-guess">min-content-specified sizing-guess</dfn> is the set of column width assignments where:
        <ul>
         <li>
-         each <a data-link-type="dfn" href="#percent-column" id="ref-for-percent-column①">percent-column</a> is assigned the larger of: 
+         each <a data-link-type="dfn" href="#percent-column" id="ref-for-percent-column①">percent-column</a> is assigned the larger of:
          <ul>
-          <li>its intrinsic percentage width times the assignable width and 
-          <li>its min-content width 
+          <li>its intrinsic percentage width times the assignable width and
+          <li>its min-content width
          </ul>
-        <li>any other column that is <a data-link-type="dfn" href="#constrainedness" id="ref-for-constrainedness②">constrained</a> is assigned its max-content width 
-        <li>all other columns are assigned their min-content width. 
+        <li>any other column that is <a data-link-type="dfn" href="#constrainedness" id="ref-for-constrainedness②">constrained</a> is assigned its max-content width
+        <li>all other columns are assigned their min-content width.
        </ul>
       <li>
-       The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="max-content-sizing-guess">max-content sizing-guess</dfn> is the set of column width assignments where: 
+       The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="max-content-sizing-guess">max-content sizing-guess</dfn> is the set of column width assignments where:
        <ul>
         <li>
-         each <a data-link-type="dfn" href="#percent-column" id="ref-for-percent-column②">percent-column</a> is assigned the larger of: 
+         each <a data-link-type="dfn" href="#percent-column" id="ref-for-percent-column②">percent-column</a> is assigned the larger of:
          <ul>
-          <li>its intrinsic percentage width times the assignable width and 
-          <li>its min-content width 
+          <li>its intrinsic percentage width times the assignable width and
+          <li>its min-content width
          </ul>
-        <li>all other columns are assigned their max-content width. 
+        <li>all other columns are assigned their max-content width.
        </ul>
      </ol>
      <div class="note" role="note">
-       Note that: 
+       Note that:
       <ul>
        <li data-md>
         <p>The <a data-link-type="dfn" href="#assignable-table-width" id="ref-for-assignable-table-width②">assignable table width</a> is always greater than or equal
@@ -1819,19 +1819,19 @@ are in nondecreasing order.</p>
         <p><b>Sizing algorithms: </b> Each drawing of the table represents a way of sizing the columns.
 					The four cases on the left are the sizing-guesses described above in the spec: <a href="#min-content-sizing-guess" id="ref-for-min-content-sizing-guess">min-content</a>, <a href="#min-content-percentage-sizing-guess" id="ref-for-min-content-percentage-sizing-guess">min-content-percentage</a>, <a href="#min-content-specified-sizing-guess" id="ref-for-min-content-specified-sizing-guess">min-content-specified</a>, and <a href="#max-content-sizing-guess" id="ref-for-max-content-sizing-guess②">max-content</a>.
 					The cases on the right are interpolations required for available sizes that do not match exactly one of the four sizing-guesses.</p>
-        <p><b>Choice of sizing method: </b> The sizing method selection always starts at the min-content sizing-guess (top left), 
+        <p><b>Choice of sizing method: </b> The sizing method selection always starts at the min-content sizing-guess (top left),
 						and then proceeds by comparing the available width and the width consumed by the method currently in use.
-					Green arrows indicate the direction you should follow 
+					Green arrows indicate the direction you should follow
 						if you have extra space to distribute after applying the current method.
-					Red arrows indicate the direction you should follow 
+					Red arrows indicate the direction you should follow
 						if you have distributed too much space by applying the current method and need to backtrack.</p>
         <p><b>Columns types: </b> Each type of column (auto, px, %) has its own color in the schema (yellow, blue, orange).
-					In an interpolation: 
-						columns that get shrinked down from their size in previous sizing-guess are repainted red, and 
+					In an interpolation:
+						columns that get shrinked down from their size in previous sizing-guess are repainted red, and
 						columns that get expanded from their size in previous sizing-guess are repainted green.</p>
        </div>
       </details>
-       <img alt="[see-caption-below]" src="images/CSS-Tables-Column-Width-Assignment.svg" style="width: 100%"> 
+       <img alt="[see-caption-below]" src="images/CSS-Tables-Column-Width-Assignment.svg" style="width: 100%">
       <figcaption>Overview of the width distribution algorithm. Not normative.</figcaption>
      </figure>
      <h5 class="heading settled" data-level="3.9.3.1" id="width-distribution-in-fixed-mode"><span class="secno">3.9.3.1. </span><span class="content">Changes to width distribution in fixed mode</span><a class="self-link" href="#width-distribution-in-fixed-mode"></a></h5>
@@ -1855,9 +1855,9 @@ because of how width distribution works for percentage-based columns.</p>
      <p>The rules for <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="distributing-excess-width-to-columns">distributing excess width to columns</dfn> can be invoked in two ways:</p>
      <ul>
       <li>for distributing the excess width of a table to its columns
-				during the computation of the used widths of those columns (for used width calculation), or 
+				during the computation of the used widths of those columns (for used width calculation), or
       <li>for distributing the excess max-content or min-content width of a cell spanning more than one column
-				to the max-content or min-content widths of the columns it spans (for intrinsic width calculation). 
+				to the max-content or min-content widths of the columns it spans (for intrinsic width calculation).
      </ul>
      <p>The rules for these two cases are largely the same, but there are slight differences.</p>
      <p>The remainder of this section uses the term <dfn data-dfn-type="dfn" data-noexport id="distributed-width">distributed width<a class="self-link" href="#distributed-width"></a></dfn> to refer to the one of these widths that is being distributed,
@@ -1869,39 +1869,39 @@ because of how width distribution works for percentage-based columns.</p>
 					with nonzero max-content width <i class="hint">(aka the columns allowed to grow by this rule)</i>,
 				the distributed widths of the columns allowed to grow by this rule
 					are increased in proportion to max-content width
-					so the total increase adds to the excess width. 
+					so the total increase adds to the excess width.
       <li>Otherwise, if there are <a data-link-type="dfn" href="#constrainedness" id="ref-for-constrainedness④">non-constrained columns</a> that have originating cells
 					with intrinsic percentage width of 0% <i class="hint">(aka the columns allowed to grow by this rule,
 					which thanks to the previous rule must have zero max-content width)</i>,
 				the distributed widths of the columns allowed to grow by this rule
 					are increased by equal amounts
-					so the total increase adds to the excess width. 
+					so the total increase adds to the excess width.
       <li>Otherwise, if there are <a data-link-type="dfn" href="#constrainedness" id="ref-for-constrainedness⑤">constrained columns</a> with intrinsic percentage width of 0% and
 					with nonzero max-content width <i class="hint">(aka the columns allowed to grow by this rule, which, due to other rules, must have originating cells)</i>,
 				the distributed widths of the columns allowed to grow by this rule
 					are increased in proportion to max-content width
-					so the total increase adds to the excess width. 
+					so the total increase adds to the excess width.
       <li>Otherwise, if there are columns
 					with intrinsic percentage width greater than 0% <i class="hint">(aka the columns allowed to grow by this rule, which, due to other rules, must have originating cells)</i>,
 				the distributed widths of the columns allowed to grow by this rule
 					are increased in proportion to intrinsic percentage width
-					so the total increase adds to the excess width. 
+					so the total increase adds to the excess width.
       <li>Otherwise, if there is any such column,
 					the distributed widths of all columns that have originating cells
 					are increased by equal amounts
-					so the total increase adds to the excess width. 
+					so the total increase adds to the excess width.
       <li>Otherwise,
 					the distributed widths of all columns
 					are increased by equal amounts
-					so the total increase adds to the excess width. 
+					so the total increase adds to the excess width.
      </ol>
      <div class="advisement">
        These rules do not apply when the table is laid out <a data-link-type="dfn" href="#in-fixed-mode" id="ref-for-in-fixed-mode⑧">in fixed mode</a>.
-			In this case, the simpler rules that follow apply instead: 
+			In this case, the simpler rules that follow apply instead:
       <ul>
-       <li>If there are any columns with no width specified, the excess width is distributed in equally to such columns 
-       <li>otherwise, if there are columns with non-zero length widths from the base assignment, the excess width is distributed proportionally to width among those columns 
-       <li>otherwise, if there are columns with non-zero percentage widths from the base assignment, the excess width is distributed proportionally to percentage width among those columns 
+       <li>If there are any columns with no width specified, the excess width is distributed in equally to such columns
+       <li>otherwise, if there are columns with non-zero length widths from the base assignment, the excess width is distributed proportionally to width among those columns
+       <li>otherwise, if there are columns with non-zero percentage widths from the base assignment, the excess width is distributed proportionally to percentage width among those columns
        <li>otherwise, the excess width is distributed equally to the zero-sized columns
       </ul>
      </div>
@@ -1914,8 +1914,8 @@ because of how width distribution works for percentage-based columns.</p>
 				If their collective size ends up being greater than the specified <span class="property" id="ref-for-propdef-height②">height</span>, the specified <span class="property" id="ref-for-propdef-height③">height</span> will have no effect.</p>
      <p>The <strong>minimum height of a row</strong> is the maximum of:</p>
      <ul>
-      <li>the computed <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height④">height</a> (if definite, percentages being considered 0px) of its corresponding table-row (if nay) 
-      <li>the computed <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height⑤">height</a> of each cell spanning the current row exclusively (if definite, percentages being treated as 0px), and 
+      <li>the computed <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height④">height</a> (if definite, percentages being considered 0px) of its corresponding table-row (if nay)
+      <li>the computed <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height⑤">height</a> of each cell spanning the current row exclusively (if definite, percentages being treated as 0px), and
       <li>the minimum height (<a data-link-type="dfn" href="#ROWMIN" id="ref-for-ROWMIN">ROWMIN</a>) required by the cells spanning the row.
      </ul>
      <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="ROWMIN">ROWMIN</dfn> is defined as
@@ -1941,7 +1941,7 @@ because of how width distribution works for percentage-based columns.</p>
 				descendants of table cells whose height depends on percentages of their parent cell' height <a href="#appropriateness-of-child-percentage-resolution" id="ref-for-appropriateness-of-child-percentage-resolution">(see section below)</a> are considered to have an auto height
 					if they have <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow" id="ref-for-propdef-overflow③">overflow</a> set to <code>visible</code> or <code>hidden</code> or if they are replaced elements,
 				and a 0px height if they have not. <a href="https://jsfiddle.net/0e12ve9b/">Testcase</a> <a href="https://jsfiddle.net/0e12ve9b/3/">!!Testcase</a></p>
-     <div class="note" role="note"> For table-cell descendants whose percentage height was ignored as a result of the above, 
+     <div class="note" role="note"> For table-cell descendants whose percentage height was ignored as a result of the above,
 					a second layout pass of the table-cell content will happen once height distribution has concluded
 					to attempt to properly take this sizing into account <a href="#resolving-percentages-heights-in-table-cell-content" id="ref-for-resolving-percentages-heights-in-table-cell-content">(see section below)</a> </div>
      <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="table-cell-baseline">baseline of a cell</dfn> is defined as
@@ -1951,7 +1951,7 @@ because of how width distribution works for percentage-based columns.</p>
 			If there is no such line box or table-row,
 				the baseline is the bottom of content edge of the cell box.</p>
      <div class="example" id="example-3a1212fb">
-      <a class="self-link" href="#example-3a1212fb"></a> 
+      <a class="self-link" href="#example-3a1212fb"></a>
       <p>Here is how this works out in practice:</p>
 <pre>td { vertical-align: baseline; outline: 3px solid silver; }
 img { float: left; clear: left; width: 32px; height: 32px; }
@@ -1968,7 +1968,7 @@ img[title] { float: none; }
 &lt;/tr>&lt;/table>
 </pre>
       <figure>
-        <img alt="[see-caption-below]" height="185" src="images/td-baseline-example-rendering.png" width="585"> 
+        <img alt="[see-caption-below]" height="185" src="images/td-baseline-example-rendering.png" width="585">
        <figcaption>Rendering of <a href="https://jsfiddle.net/x8sh0f60/3/">this example</a> in a compliant browser</figcaption>
       </figure>
      </div>
@@ -1978,7 +1978,7 @@ img[title] { float: none; }
      <p class="note" role="note"> The baseline of a cell may end up below its bottom border,
 					see the example below. </p>
      <div class="example" id="example-f858e943">
-      <a class="self-link" href="#example-f858e943"></a> 
+      <a class="self-link" href="#example-f858e943"></a>
       <p>The cell in this example has a baseline below its bottom border:</p>
 <pre>div { height: 0; overflow: hidden; }
 
@@ -2026,22 +2026,22 @@ img[title] { float: none; }
 				the alignment of cells proceeds in the following order:</p>
       <ul>
        <li>First the cells that are aligned on their baseline are positioned.
-						This will establish the baseline of the row. 
+						This will establish the baseline of the row.
        <li>Next the cells with 'vertical-align: top' are positioned.
 						The row now has a top, possibly a baseline, and a provisional height,
-							which is the distance from the top to the lowest bottom of the cells positioned so far. 
+							which is the distance from the top to the lowest bottom of the cells positioned so far.
        <li>If any of the remaining cells, those aligned at the bottom or the middle,
 							have a height that is larger than the current height of the row,
 							the height of the row will be increased to the maximum of those cells,
-							by lowering the bottom. 
-       <li>Finally, assign their position to the remaining cells. 
+							by lowering the bottom.
+       <li>Finally, assign their position to the remaining cells.
       </ul>
      </div>
      <div class="example" id="example-7b23a3cb">
-      <a class="self-link" href="#example-7b23a3cb"></a> 
+      <a class="self-link" href="#example-7b23a3cb"></a>
       <p>Example showing how the previous algorithm creates the various alignment lines of a row.</p>
       <figure>
-        <a href="http://www.w3.org/TR/CSS2/images/longdesc/cell-align-desc.html"><img alt="[see-caption-below]" height="241" src="images/cell-align-explainer.png" width="375"></a> 
+        <a href="http://www.w3.org/TR/CSS2/images/longdesc/cell-align-desc.html"><img alt="[see-caption-below]" height="241" src="images/cell-align-explainer.png" width="375"></a>
        <figcaption> Diagram showing the effect of various values of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-inline-3/#propdef-vertical-align" id="ref-for-propdef-vertical-align②">vertical-align</a> on table cells.
 						Cell boxes 1 and 2 are aligned at their baselines. Cell box 2 has the largest height above the baseline, so that determines the baseline of the row. </figcaption>
       </figure>
@@ -2071,7 +2071,7 @@ img[title] { float: none; }
      <p>Once the table height has been determined, a second row layout pass will be performed, if necessary,
 				to assign the correct minimum height to table rows, by taking percentages used in rows/cells specified <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height⑦">height</a> into account.
 				Other than that, all instructions for the first-pass row layout apply <a href="#row-layout">(see above)</a>.</p>
-     <div class="note" role="note"> Please note that this second-pass minimum height therefore still treats percentage heights of table-cell descendants as advised for the first pass <a href="#row-layout">(see above)</a>. 
+     <div class="note" role="note"> Please note that this second-pass minimum height therefore still treats percentage heights of table-cell descendants as advised for the first pass <a href="#row-layout">(see above)</a>.
 				For this reason, it is not required to relayout the content of table-cells to compute the new row minimum height.
 				If necessary, table-cell content will undergo a relayout later,
 					after table height distribution has concluded <a href="#table-cell-content-relayout">(see below)</a>. </div>
@@ -2102,22 +2102,22 @@ img[title] { float: none; }
        <p>In Edge and Firefox, empty tracks do not get an increased size by this distribution if there are filled auto tracks.
 					In Chrome, empty tracks count as distributable tracks as well even if there are other auto tracks.</p>
        <ul class="inline hint">
-        <li>Case 1: <a href="https://jsfiddle.net/Lh9shm8p/">height</a> vs <a href="https://jsfiddle.net/wza8huh7/">width</a> 
-        <li>Case 2: <a href="https://jsfiddle.net/Lh9shm8p/1/">height</a> vs <a href="https://jsfiddle.net/wza8huh7/1/">width</a> 
-        <li>Case 3: <a href="https://jsfiddle.net/Lh9shm8p/2/">height</a> vs <a href="https://jsfiddle.net/wza8huh7/2/">width</a> 
-        <li>Case 4: <a href="https://jsfiddle.net/Lh9shm8p/3/">height</a> vs <a href="https://jsfiddle.net/wza8huh7/3/">width</a> 
-        <li>Case 5: <a href="https://jsfiddle.net/Lh9shm8p/4/">height</a> vs <a href="https://jsfiddle.net/wza8huh7/4/">width</a> 
+        <li>Case 1: <a href="https://jsfiddle.net/Lh9shm8p/">height</a> vs <a href="https://jsfiddle.net/wza8huh7/">width</a>
+        <li>Case 2: <a href="https://jsfiddle.net/Lh9shm8p/1/">height</a> vs <a href="https://jsfiddle.net/wza8huh7/1/">width</a>
+        <li>Case 3: <a href="https://jsfiddle.net/Lh9shm8p/2/">height</a> vs <a href="https://jsfiddle.net/wza8huh7/2/">width</a>
+        <li>Case 4: <a href="https://jsfiddle.net/Lh9shm8p/3/">height</a> vs <a href="https://jsfiddle.net/wza8huh7/3/">width</a>
+        <li>Case 5: <a href="https://jsfiddle.net/Lh9shm8p/4/">height</a> vs <a href="https://jsfiddle.net/wza8huh7/4/">width</a>
        </ul>
        <p id="min-content-and-percentages"> Intersting test cases about min-content and content using percentage sizes: </p>
        <ul class="compact">
-        <li><a href="https://jsfiddle.net/gzapbyeg/1/">Case 10</a>. 
-        <li><a href="https://jsfiddle.net/gzapbyeg/2/">Case 11</a>. 
+        <li><a href="https://jsfiddle.net/gzapbyeg/1/">Case 10</a>.
+        <li><a href="https://jsfiddle.net/gzapbyeg/2/">Case 11</a>.
        </ul>
         <br> Chrome and Edge apply percentages on the final layout.
 						All browsers work around them during the first pass
 							by considering them 0% (Chrome) or
 							by ignoring the declaration (Edge, Firefox).
-						The difference of choice is visible in <a href="https://jsfiddle.net/vmfrLzke/1/">Case 12</a>. <a href="http://codepen.io/FremyCompany/pen/obdYjv?editors=1100">Case 13</a>. 
+						The difference of choice is visible in <a href="https://jsfiddle.net/vmfrLzke/1/">Case 12</a>. <a href="http://codepen.io/FremyCompany/pen/obdYjv?editors=1100">Case 13</a>.
       </aside>
      </details>
      <h4 class="heading settled" data-level="3.10.5" id="height-distribution-algorithm"><span class="secno">3.10.5. </span><span class="content">Distribution algorithm</span><a class="self-link" href="#height-distribution-algorithm"></a></h4>
@@ -2127,7 +2127,7 @@ img[title] { float: none; }
 				(the one it was assigned when ROWMIN was evaluated).</p>
      <p>Its <strong>reference size</strong> is the largest of</p>
      <ul>
-      <li>its initial base height and 
+      <li>its initial base height and
       <li>its new base height
 					(the one evaluated during the second layout pass,
 					where percentages used in rowgroups/rows/cells' specified heights
@@ -2158,12 +2158,12 @@ img[title] { float: none; }
      </div>
      <h4 class="heading settled" data-level="3.10.6" id="table-cell-content-relayout"><span class="secno">3.10.6. </span><span class="content">Table-cell content layout (second pass)</span><a class="self-link" href="#table-cell-content-relayout"></a></h4>
      <p>Once table-height distribution has concluded, and the sum of row heights plus spacing/border is equal to the table height,
-				the content of table-cells which contained descendants whose percentage heights were ignored 
+				the content of table-cells which contained descendants whose percentage heights were ignored
 				or treated as 0px by the first-pass row layout rules <a href="#row-layout">(see above)</a> must undergo a second layout pass, as defined below.</p>
      <div class="note" role="note"> Note that this means UAs are either required to keep track of the usage of percentages
 				in the properties of any direct child of the table-cell including (but not limited to)
-				the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height⑧">height</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-height" id="ref-for-propdef-min-height">min-height</a> properties for horizontal flows and 
-				the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①⑤">width</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width①①">min-width</a> properties for vertical flows, 
+				the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height⑧">height</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-height" id="ref-for-propdef-min-height">min-height</a> properties for horizontal flows and
+				the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①⑤">width</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-sizing-3/#propdef-min-width" id="ref-for-propdef-min-width①①">min-width</a> properties for vertical flows,
 				or else required to perform this second layout pass on table-cell content in all cases. </div>
      <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="Resolve percentage heights in table-cell content:" data-noexport id="resolving-percentages-heights-in-table-cell-content"> Resolve percentage heights in table-cell content:</dfn> Once the final size of the table and the rows has been determined,
 				after height distribution has concluded,
@@ -2174,11 +2174,11 @@ img[title] { float: none; }
 				or the child is absolutely positioned, see <a href="http://www.w3.org/TR/CSS2/visudet.html#the-height-property">CSS 2</a>.</p>
      <p>For compat reasons, it is further clarified that
 				a cell is considered to have its height specified explicitly
-				if the computed height of the cell is a length, or 
+				if the computed height of the cell is a length, or
 				if the computed height of its table-root ancestor is a length or percentage,
 				regardless of whether that percentage does <a data-link-type="dfn" href="https://drafts.csswg.org/css-sizing-3/#behave-as-auto" id="ref-for-behave-as-auto">behave as auto</a> or not.</p>
      <div class="example" id="example-a3b7459d">
-      <a class="self-link" href="#example-a3b7459d"></a> To clarify the preceding statements, here is a table of the resulting "A" div height based on the value being used: 
+      <a class="self-link" href="#example-a3b7459d"></a> To clarify the preceding statements, here is a table of the resulting "A" div height based on the value being used:
 <pre>&lt;section style="height: var(--wrapper-height)">
   &lt;table style="height: var(--table-height)">
     &lt;tr>
@@ -2229,8 +2229,8 @@ img[title] { float: none; }
 				but compat issues appeared when an implementation landed, and the behavior was then special-cased.</p>
      </div>
      <div class="note" role="note"> It is possible that this second layout pass (where height percentages are being resolved)
-					will make some cell contents overflow their parent cell, 
-					for instance if the sum of all percentages used is superior to 100%. 
+					will make some cell contents overflow their parent cell,
+					for instance if the sum of all percentages used is superior to 100%.
 				This is by design. </div>
      <h3 class="heading settled" data-level="3.11" id="bounding-box-assignment"><span class="secno">3.11. </span><span class="content">Positioning of cells, captions and other internal table boxes</span><a class="self-link" href="#bounding-box-assignment"></a></h3>
      <p class="issue" id="issue-4891a998"><a class="self-link" href="#issue-4891a998"></a> We need a resolution on what visibility:collapse does. <a href="https://github.com/w3c/csswg-drafts/issues/478">&lt;https://github.com/w3c/csswg-drafts/issues/478></a></p>
@@ -2248,38 +2248,38 @@ img[title] { float: none; }
      <p>The <b>position of any table-caption having "top" as <a class="property" data-link-type="propdesc" href="#propdef-caption-side" id="ref-for-propdef-caption-side③">caption-side</a></b> within the table is defined as the rectangle whose:</p>
      <ul class="compact">
       <li>
-       width/height is: 
+       width/height is:
        <ul>
         <li>the width/height assigned to the caption during layout
        </ul>
       <li>
-       top location is the sum of: 
+       top location is the sum of:
        <ul>
-        <li>the height reserved for previous top captions (including margins), if any 
+        <li>the height reserved for previous top captions (including margins), if any
         <li>any necessary extra top margin remaining after collapsing margins with the previous caption, if any.
        </ul>
       <li>
-       left location is the sum of: 
+       left location is the sum of:
        <ul>
-        <li>the margin left of the caption 
+        <li>the margin left of the caption
         <li>half of (the table width minus the width of caption and its total horizontal margin).
        </ul>
      </ul>
      <p>The <b>position of any table-cell, table-track, or table-track-group box</b> within the table is defined as the rectangle whose:</p>
      <ul class="compact">
       <li>
-       width/height is the sum of: 
+       width/height is the sum of:
        <ul>
-        <li>the widths/heights of all <a href="#span" id="ref-for-span⑥">spanned</a> <a href="#visible-track" id="ref-for-visible-track">visible</a> columns/rows 
-        <li>the horizontal/vertical <a class="property" data-link-type="propdesc" href="#propdef-border-spacing" id="ref-for-propdef-border-spacing④">border-spacing</a> times the amount of <a href="#span" id="ref-for-span⑦">spanned</a> <a href="#visible-track" id="ref-for-visible-track①">visible</a> columns/rows minus one 
+        <li>the widths/heights of all <a href="#span" id="ref-for-span⑥">spanned</a> <a href="#visible-track" id="ref-for-visible-track">visible</a> columns/rows
+        <li>the horizontal/vertical <a class="property" data-link-type="propdesc" href="#propdef-border-spacing" id="ref-for-propdef-border-spacing④">border-spacing</a> times the amount of <a href="#span" id="ref-for-span⑦">spanned</a> <a href="#visible-track" id="ref-for-visible-track①">visible</a> columns/rows minus one
        </ul>
       <li>
-       left/top location is the sum of: 
+       left/top location is the sum of:
        <ul>
-        <li>for top: the height reserved for top captions (including margins), if any 
-        <li>the padding-left/padding-top and border-left-width/border-top-width of the table 
-        <li>the widths/heights of all previous <a href="#visible-track" id="ref-for-visible-track②">visible</a> columns/rows 
-        <li>the horizontal/vertical <a class="property" data-link-type="propdesc" href="#propdef-border-spacing" id="ref-for-propdef-border-spacing⑤">border-spacing</a> times the amount of previous <a href="#visible-track" id="ref-for-visible-track③">visible</a> columns/rows plus one 
+        <li>for top: the height reserved for top captions (including margins), if any
+        <li>the padding-left/padding-top and border-left-width/border-top-width of the table
+        <li>the widths/heights of all previous <a href="#visible-track" id="ref-for-visible-track②">visible</a> columns/rows
+        <li>the horizontal/vertical <a class="property" data-link-type="propdesc" href="#propdef-border-spacing" id="ref-for-propdef-border-spacing⑤">border-spacing</a> times the amount of previous <a href="#visible-track" id="ref-for-visible-track③">visible</a> columns/rows plus one
        </ul>
      </ul>
      <div class="note" role="note"> <b>Reminder:</b> For table-track and table-track-group boxes,
@@ -2287,33 +2287,33 @@ img[title] { float: none; }
 			For instance, a table-header-group is considered to span all the columns,
 				and a table-column-group is considered to span all the rows. </div>
      <div class="note" role="note">
-       The above formula take in account <a class="property" data-link-type="propdesc" href="#propdef-border-spacing" id="ref-for-propdef-border-spacing⑥">border-spacing</a>, and it might not be directly obvious what the effect of these mean, so here are a couple of properties of those formula: 
+       The above formula take in account <a class="property" data-link-type="propdesc" href="#propdef-border-spacing" id="ref-for-propdef-border-spacing⑥">border-spacing</a>, and it might not be directly obvious what the effect of these mean, so here are a couple of properties of those formula:
       <ul>
-       <li> the border-spacing before the first track or after the last track in a direction is not included in any track’s or track-group’s breadth. 
-       <li> the border-spacing between tracks is not included in any track’s breadth, but is included in the breadth of track-groups spanning both tracks. 
+       <li> the border-spacing before the first track or after the last track in a direction is not included in any track’s or track-group’s breadth.
+       <li> the border-spacing between tracks is not included in any track’s breadth, but is included in the breadth of track-groups spanning both tracks.
       </ul>
      </div>
      <p>The <b>position of any table-caption having "bottom" as <a class="property" data-link-type="propdesc" href="#propdef-caption-side" id="ref-for-propdef-caption-side④">caption-side</a></b> within the table is defined as the rectangle whose:</p>
      <ul class="compact">
       <li>
-       width/height is: 
+       width/height is:
        <ul>
         <li>the width/height assigned to the caption during layout
        </ul>
       <li>
-       top location is the sum of: 
+       top location is the sum of:
        <ul>
-        <li>the height reserved for top captions (including margins), if any 
-        <li>padding-top and border-top-width of the table 
-        <li>the height of all <a href="#visible-track" id="ref-for-visible-track④">visible</a> rows 
-        <li>padding-bottom and border-bottom-width of the table 
-        <li>the height reserved for previous bottom captions (including margins), if any 
+        <li>the height reserved for top captions (including margins), if any
+        <li>padding-top and border-top-width of the table
+        <li>the height of all <a href="#visible-track" id="ref-for-visible-track④">visible</a> rows
+        <li>padding-bottom and border-bottom-width of the table
+        <li>the height reserved for previous bottom captions (including margins), if any
         <li>any necessary extra top margin remaining after collapsing margins with the previous bottom caption, if any.
        </ul>
       <li>
-       left location is the sum of: 
+       left location is the sum of:
        <ul>
-        <li>the margin left of the caption 
+        <li>the margin left of the caption
         <li>half of (the table width minus the width of caption and its total horizontal margin).
        </ul>
      </ul>
@@ -2328,9 +2328,9 @@ img[title] { float: none; }
      <div class="advisement"> <strong>Visible tracks: </strong> For the purpose of this algorithm, a column or row
 			is considered a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="visible-track">visible track</dfn> if neither its corresponding table-track nor its table-track-group parent (if any) have <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visufx.html#propdef-visibility" id="ref-for-propdef-visibility">visibility</a> set to <code>collapse</code>.</div>
      <div class="example" id="example-c06d1eca">
-      <a class="self-link" href="#example-c06d1eca"></a> 
+      <a class="self-link" href="#example-c06d1eca"></a>
       <figure>
-        <img alt="A table with a caption above it, showing how the caption margins are totally nested inside the table margins, but are outside the border-box of the table nonetheless." height="483" src="images/table_container.png" width="533"> 
+        <img alt="A table with a caption above it, showing how the caption margins are totally nested inside the table margins, but are outside the border-box of the table nonetheless." height="483" src="images/table_container.png" width="533">
        <figcaption>Diagram of a table with a caption above it.</figcaption>
       </figure>
      </div>
@@ -2347,10 +2347,10 @@ img[title] { float: none; }
 	and does not contribute to the sizing of any table grid tracks
 	or affect the size/configuration of the table grid in any way.</p>
      <div class="example" id="example-b3bf1370">
-      <a class="self-link" href="#example-b3bf1370"></a> 
+      <a class="self-link" href="#example-b3bf1370"></a>
       <figure style="margin: 0">
        <figcaption style="text-align: left; font-style: normal;"> The figure below shows how a box absolutely-positioned relative to a table should be rendred. <br><br> The <b>yellow</b> area is the table content edge, yellow arrows the table margins. <br> The <b>green</b> area is the table caption, green arrows the caption margins. <br> The <b>blue</b> area is the table background area, and the darker blue area where the table border area. <br> The <b>black</b> area is the descendant positioned relative to the table, the arrows represent the top/left/bottom/right displacements. </figcaption>
-        <img alt="[see-caption-above]" height="402" src="images/css-tables-abspos.svg" width="702"> 
+        <img alt="[see-caption-above]" height="402" src="images/css-tables-abspos.svg" width="702">
       </figure>
      </div>
      <h3 class="heading settled" data-level="4.2" id="abspos-boxes-in-table-internal"><span class="secno">4.2. </span><span class="content"> With a table-internal as containing block</span><a class="self-link" href="#abspos-boxes-in-table-internal"></a></h3>
@@ -2367,8 +2367,8 @@ img[title] { float: none; }
 	in case both top+bottom and/or left+right end up being auto.</p>
      <p>For table-cells, the absolutely-positioned content is positioned follows the rules for block layout as usual.</p>
      <p>Due to <a href="#fixup">table fixup</a>,
-	it is not possible to create an absolutely-positioned box 
-	that is the child of a table-internal box that is not a table-cell 
+	it is not possible to create an absolutely-positioned box
+	that is the child of a table-internal box that is not a table-cell
 	(see note about float and position for more details).</p>
      <h2 class="heading settled" data-level="5" id="rendering"><span class="secno">5. </span><span class="content">Rendering</span><a class="self-link" href="#rendering"></a></h2>
      <h3 class="heading settled" data-level="5.1" id="paint-order"><span class="secno">5.1. </span><span class="content">Paint order of cells</span><a class="self-link" href="#paint-order"></a></h3>
@@ -2382,28 +2382,28 @@ img[title] { float: none; }
         <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-empty-cells">empty-cells</dfn>
        <tr class="value">
         <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-        <td class="prod">show <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> hide 
+        <td class="prod">show <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③">|</a> hide
        <tr>
         <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-        <td>show 
+        <td>show
        <tr>
         <th>Applies to:
-        <td><a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①⑧">table-cell</a> boxes 
+        <td><a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell①⑧">table-cell</a> boxes
        <tr>
         <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-        <td>yes 
+        <td>yes
        <tr>
         <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-        <td>n/a 
+        <td>n/a
        <tr>
         <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-        <td>specified keyword 
+        <td>specified keyword
        <tr>
         <th>Canonical order:
-        <td>per grammar 
+        <td>per grammar
        <tr>
         <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-        <td>discrete 
+        <td>discrete
      </table>
      <p><a data-link-type="dfn" href="#in-collapsed-borders-mode" id="ref-for-in-collapsed-borders-mode⑤">In collapsed-borders mode</a>,
 			this property has no effect.</p>
@@ -2412,12 +2412,12 @@ img[title] { float: none; }
 			no borders or backgrounds are drawn around/behind <a data-link-type="dfn" href="#empty-cell" id="ref-for-empty-cell">empty cells</a>.</p>
      <p>An <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="empty-cell">empty cell</dfn> is a table-cell containing neither:</p>
      <ul>
-      <li>floating content, nor 
+      <li>floating content, nor
       <li>in-flow content (other than white space that has been collapsed away by the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-4/#propdef-white-space" id="ref-for-propdef-white-space">white-space</a> property handling).
      </ul>
      <p class="issue" id="issue-b8b01e42"><a class="self-link" href="#issue-b8b01e42"></a> Can we simplify empty-cells:hide? <a href="https://github.com/w3c/csswg-drafts/issues/605">&lt;https://github.com/w3c/csswg-drafts/issues/605></a></p>
      <div class="example" id="example-4dff6f91">
-      <a class="self-link" href="#example-4dff6f91"></a> 
+      <a class="self-link" href="#example-4dff6f91"></a>
       <p>For example, take the following markup and css:</p>
 <pre class="lang-markup highlight"><c- p>&lt;</c-><c- f>table</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>td</c-><c- p>>&lt;</c-><c- f>span</c-><c- p>>&lt;/</c-><c- f>span</c-><c- p>>&lt;/</c-><c- f>td</c-><c- p>></c->
@@ -2438,7 +2438,7 @@ img[title] { float: none; }
 </pre>
       <p>The correct rendering of this code snippet is depicted here:</p>
       <figure>
-        <img alt="[see-caption-below]" height="300" src="images/empty-cells-example.gif" width="500"> 
+        <img alt="[see-caption-below]" height="300" src="images/empty-cells-example.gif" width="500">
        <figcaption>Rendering of three columns whose middle one is hidden by empty-cells:hide</figcaption>
       </figure>
      </div>
@@ -2450,9 +2450,9 @@ img[title] { float: none; }
 				which means the drawing areas of various effects applied to the table-root need to be modified.</p>
      <p><b>Painting areas:</b></p>
      <ul>
-      <li>Backgrounds, borders and outlines painted relative to the content-box of a table-root are painted relative to the rectangular area occupied by the table grid and its border spacings. 
-      <li>Backgrounds, borders and outlines painted relative to the padding-box of a table-root are painted relative to the rectangular area occupied by the table grid and its border spacings, extended on each side by the table-root padding. 
-      <li>Backgrounds, borders and outlines painted relative to the border-box of a table-root are painted relative to the rectangular area occuped by the table grid and its border spacings, extended on each side by the table-root padding and border-width. 
+      <li>Backgrounds, borders and outlines painted relative to the content-box of a table-root are painted relative to the rectangular area occupied by the table grid and its border spacings.
+      <li>Backgrounds, borders and outlines painted relative to the padding-box of a table-root are painted relative to the rectangular area occupied by the table grid and its border spacings, extended on each side by the table-root padding.
+      <li>Backgrounds, borders and outlines painted relative to the border-box of a table-root are painted relative to the rectangular area occuped by the table grid and its border spacings, extended on each side by the table-root padding and border-width.
      </ul>
      <div class="note" role="note"> This does not affect other uses of these concepts, like <a href="#TODO">absolute positioning</a>. </div>
      <p><a class="hint" href="https://wptest.center/#/6xd2b3">!Testcase</a></p>
@@ -2480,35 +2480,35 @@ img[title] { float: none; }
 			The background set in one of the layers will only be visible
 				if the layers above it have a transparent background.</p>
      <figure>
-       <img alt="[see-caption-below]" src="https://www.w3.org/TR/CSS2/images/tbl-layers.png"> 
+       <img alt="[see-caption-below]" src="https://www.w3.org/TR/CSS2/images/tbl-layers.png">
       <figcaption>Schema of table layers.</figcaption>
      </figure>
      <p></p>
      <ol start="0">
       <li>The table background is being rendered by the table,
-					and does not affect the cell background. 
+					and does not affect the cell background.
       <li>The first background drawn by a cell is the background of its originating table-column-group (if any).
 					For the purpose of background-positioning,
 						it is expected that a column group occupies
 						the largest possible area a single cell could occupy in the row/column grid
-						while originating in the column group and not entering any column not part of the column group. 
+						while originating in the column group and not entering any column not part of the column group.
       <li>The second background drawn by a cell is the background of its originating table-column (if any).
 					For the purpose of background-positioning,
 						it is expected that a column occupies
 						the largest possible area a single cell could occupy in the row/column grid
-						while originating in the column and not entering any other column. 
+						while originating in the column and not entering any other column.
       <li>The third background drawn by a cell is the background of its originating table-row-group (if any).
 					For the purpose of background-positioning,
 						it is expected that a row group occupies
 						the largest possible area a single cell could occupy in the row/column grid
-						while originating in the row group and not entering any row not part of the row group. 
+						while originating in the row group and not entering any row not part of the row group.
       <li>The fourth background drawn by a cell is the background of its originating table-row (if any).
 					For the purpose of background-positioning,
 						it is expected that a row occupies
 						the largest possible area a single cell could occupy in the row/column grid
-						while originating in the row and not entering any other row. 
+						while originating in the row and not entering any other row.
       <li>The fifth background drawn by a cell is its own background.
-					This is the one that appears on top once all backgrounds have been rendered. 
+					This is the one that appears on top once all backgrounds have been rendered.
      </ol>
      <p>As the figure above shows, although all rows contain the same number of cells,
 				not every cell may have specified content. <a data-link-type="dfn" href="#in-separated-borders-mode" id="ref-for-in-separated-borders-mode⑤">In separated-borders mode</a>, if the value of their <a class="property" data-link-type="propdesc" href="#propdef-empty-cells" id="ref-for-propdef-empty-cells">empty-cells</a> property is <code>hide</code>,
@@ -2548,19 +2548,19 @@ img[title] { float: none; }
 	differently depending if it is on a <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell②①">table-cell</a>, spanning <span id="ref-for-table-cell②②">table-cell</span>, or a <a data-link-type="dfn" href="#table-track" id="ref-for-table-track⑤">table-track</a>/<a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element⑤">table-track-group</a>.</p>
      <h4 class="heading settled" data-level="5.4.1" id="visibility-collapse-cell-rendering"><span class="secno">5.4.1. </span><span class="content">Rendering a visibility: collapse table cell</span><a class="self-link" href="#visibility-collapse-cell-rendering"></a></h4>
       As stated in CSS 2.2, if a <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell②③">table-cell</a> has its visibility set to that of collapse, it is rendered the same as
-		if it had <a href="http://www.w3.org/TR/CSS22/visufx.html#visibility">visibility: hidden</a> set. 
+		if it had <a href="http://www.w3.org/TR/CSS22/visufx.html#visibility">visibility: hidden</a> set.
      <div class="note" role="note">
       <p>This happens when you set visibility:collapse on a table-row that contains a table-cell.
-			If you want to hide a row but continue to display its cells that span other rows, 
+			If you want to hide a row but continue to display its cells that span other rows,
 			set visibility:visible on those cells to prevent them from inheriting their value.</p>
      </div>
      <p>If the <a data-link-type="dfn" href="#table-cell" id="ref-for-table-cell②④">table-cell</a> is spanning more than one <a data-link-type="dfn" href="#table-track" id="ref-for-table-track⑥">table-track</a>, and at least one of those <span id="ref-for-table-track⑦">table-track</span> is set to <a href="http://www.w3.org/TR/CSS22/visufx.html#visibility">visibility: collapse</a> then clip the content
 		to the <span id="ref-for-table-cell②⑤">table-cell</span>’s border-box. This means that the top left (top right in rtl) content of the cell will continue to show,
 		regardless of which of the tracks the cell spans has been collapsed.</p>
      <h4 class="heading settled" data-level="5.4.2" id="visibility-collapse-track-rendering"><span class="secno">5.4.2. </span><span class="content">Rendering a visibility: collapse table-track or table-track-group</span><a class="self-link" href="#visibility-collapse-track-rendering"></a></h4>
-      When a <a data-link-type="dfn" href="#table-track" id="ref-for-table-track⑧">table-track</a> or <a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element⑥">table-track-group</a> has <a href="http://www.w3.org/TR/CSS22/visufx.html#visibility">visibility: collapse</a>, 
+      When a <a data-link-type="dfn" href="#table-track" id="ref-for-table-track⑧">table-track</a> or <a data-link-type="dfn" href="#table-track-group-element" id="ref-for-table-track-group-element⑥">table-track-group</a> has <a href="http://www.w3.org/TR/CSS22/visufx.html#visibility">visibility: collapse</a>,
 		all the backgrounds, borders or outlines that are contributed by the cells within the given <span id="ref-for-table-track⑨">table-track</span> or <span id="ref-for-table-track-group-element⑦">table-track-group</span> will continue to be painted on cells that have not been fully collapsed
-		(because they spanned multiple tracks). 
+		(because they spanned multiple tracks).
      <h2 class="heading settled" data-level="6" id="fragmentation"><span class="secno">6. </span><span class="content">Fragmentation</span><a class="self-link" href="#fragmentation"></a></h2>
      <h3 class="heading settled" data-level="6.1" id="breaking-rules"><span class="secno">6.1. </span><span class="content">Breaking across fragmentainers</span><a class="self-link" href="#breaking-rules"></a></h3>
      <p>When fragmenting a table, user agents must attempt
@@ -2578,7 +2578,7 @@ img[title] { float: none; }
 			then the footer must come directly after the last row in the fragmentainer
 			and the vertical gap must be inserted after the repeated footer.</p>
      <figure>
-       <img alt="[see-caption-below]" src="./images/CSS-Tables-Fragmentation-1.svg" style="width:100%; max-width: 500px;"> 
+       <img alt="[see-caption-below]" src="./images/CSS-Tables-Fragmentation-1.svg" style="width:100%; max-width: 500px;">
       <figcaption>Expected rendering of table fragmented across two pages</figcaption>
      </figure>
      <p>When there is no row fitting entirely in the current fragmentainer
@@ -2588,7 +2588,7 @@ img[title] { float: none; }
 			then break to the next fragment and start the content of each cell where it was stopped
 			in its previous fragment (top borders must not be repainted in continuation fragments).</p>
      <figure>
-       <img alt="[see-caption-below]" src="./images/CSS-Tables-Fragmentation-2.svg" style="width:100%; max-width: 500px;"> 
+       <img alt="[see-caption-below]" src="./images/CSS-Tables-Fragmentation-2.svg" style="width:100%; max-width: 500px;">
       <figcaption>Expected rendering of table containing a tall row fragmented across two pages</figcaption>
      </figure>
      <p>When <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-break-before" id="ref-for-propdef-break-before">break-before</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-break-3/#propdef-break-after" id="ref-for-propdef-break-after">break-after</a> is applied
@@ -2615,7 +2615,7 @@ img[title] { float: none; }
 			leave room and if needed render the table top border.
 		The same applies for footer rows and the table bottom border.</p>
      <figure>
-       <img alt="[see-caption-below]" src="./images/CSS-Tables-Repeating-Headers.svg" style="width:100%; max-width: 500px;"> 
+       <img alt="[see-caption-below]" src="./images/CSS-Tables-Repeating-Headers.svg" style="width:100%; max-width: 500px;">
       <figcaption>Expected rendering of table with headers and footers fragmented across two pages</figcaption>
      </figure>
      <p class="advisement"> User agents may decide to extend this behavior to more fragmentation contexts,
@@ -2701,7 +2701,7 @@ img[title] { float: none; }
         <summary tabindex="0"> <a href="http://codepen.io/FremyCompany/pen/MKVqXQ?editors=1100"> Row with explicit 'visibility:visible' lose background color
 				when parent table has 'visibility: hidden' </a> </summary>
         <aside>
-          Chrome only hides table background + border.<br> Firefox hides table background + border, and row-group background.<br> Edge hides every border + table/row-group/row background.<br> <br> This specification currently says that Chrome is right.<br> <a href="#drawing-cell-backgrounds">§ 5.3.2 Drawing cell backgrounds</a><br> 
+          Chrome only hides table background + border.<br> Firefox hides table background + border, and row-group background.<br> Edge hides every border + table/row-group/row background.<br> <br> This specification currently says that Chrome is right.<br> <a href="#drawing-cell-backgrounds">§ 5.3.2 Drawing cell backgrounds</a><br>
          <div class="issue" id="issue-2d70544e"><a class="self-link" href="#issue-2d70544e"></a> Should we hide the row-group background
 					by saying cells only draw the backgrounds
 					of visibility:visible grouping elements? </div>
@@ -2901,7 +2901,7 @@ img[title] { float: none; }
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -2914,14 +2914,14 @@ img[title] { float: none; }
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -2972,7 +2972,7 @@ img[title] { float: none; }
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -3185,9 +3185,9 @@ img[title] { float: none; }
   <aside class="dfn-panel" data-for="term-for-containing-block">
    <a href="https://drafts.csswg.org/css-display-3/#containing-block">https://drafts.csswg.org/css-display-3/#containing-block</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-containing-block">4.1. 
+    <li><a href="#ref-for-containing-block">4.1.
 With a table-root as containing block</a> <a href="#ref-for-containing-block①">(2)</a>
-    <li><a href="#ref-for-containing-block②">4.2. 
+    <li><a href="#ref-for-containing-block②">4.2.
 With a table-internal as containing block</a> <a href="#ref-for-containing-block③">(2)</a>
    </ul>
   </aside>
@@ -3263,9 +3263,9 @@ With a table-internal as containing block</a> <a href="#ref-for-containing-block
    <a href="https://drafts.csswg.org/css-position-3/#propdef-left">https://drafts.csswg.org/css-position-3/#propdef-left</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-left">3.6.1. Overrides applying in all modes</a>
-    <li><a href="#ref-for-propdef-left①">4.1. 
+    <li><a href="#ref-for-propdef-left①">4.1.
 With a table-root as containing block</a>
-    <li><a href="#ref-for-propdef-left②">4.2. 
+    <li><a href="#ref-for-propdef-left②">4.2.
 With a table-internal as containing block</a>
    </ul>
   </aside>
@@ -3377,9 +3377,9 @@ With a table-internal as containing block</a>
    <a href="https://drafts.csswg.org/css2/visuren.html#propdef-bottom">https://drafts.csswg.org/css2/visuren.html#propdef-bottom</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-bottom">3.6.1. Overrides applying in all modes</a>
-    <li><a href="#ref-for-propdef-bottom①">4.1. 
+    <li><a href="#ref-for-propdef-bottom①">4.1.
 With a table-root as containing block</a>
-    <li><a href="#ref-for-propdef-bottom②">4.2. 
+    <li><a href="#ref-for-propdef-bottom②">4.2.
 With a table-internal as containing block</a>
    </ul>
   </aside>
@@ -3403,9 +3403,9 @@ With a table-internal as containing block</a>
    <a href="https://drafts.csswg.org/css2/visuren.html#propdef-right">https://drafts.csswg.org/css2/visuren.html#propdef-right</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-right">3.6.1. Overrides applying in all modes</a>
-    <li><a href="#ref-for-propdef-right①">4.1. 
+    <li><a href="#ref-for-propdef-right①">4.1.
 With a table-root as containing block</a>
-    <li><a href="#ref-for-propdef-right②">4.2. 
+    <li><a href="#ref-for-propdef-right②">4.2.
 With a table-internal as containing block</a>
    </ul>
   </aside>
@@ -3413,9 +3413,9 @@ With a table-internal as containing block</a>
    <a href="https://drafts.csswg.org/css2/visuren.html#propdef-top">https://drafts.csswg.org/css2/visuren.html#propdef-top</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-top">3.6.1. Overrides applying in all modes</a>
-    <li><a href="#ref-for-propdef-top①">4.1. 
+    <li><a href="#ref-for-propdef-top①">4.1.
 With a table-root as containing block</a>
-    <li><a href="#ref-for-propdef-top②">4.2. 
+    <li><a href="#ref-for-propdef-top②">4.2.
 With a table-internal as containing block</a>
    </ul>
   </aside>
@@ -3423,7 +3423,7 @@ With a table-internal as containing block</a>
    <a href="https://drafts.csswg.org/css2/visufx.html#propdef-visibility">https://drafts.csswg.org/css2/visufx.html#propdef-visibility</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-visibility">3.11. Positioning of cells, captions and other internal table boxes</a>
-    <li><a href="#ref-for-propdef-visibility①">4.2. 
+    <li><a href="#ref-for-propdef-visibility①">4.2.
 With a table-internal as containing block</a>
    </ul>
   </aside>
@@ -3723,7 +3723,7 @@ With a table-internal as containing block</a>
     <li><a href="#ref-for-table">2.1. Table Structure</a>
     <li><a href="#ref-for-table①">2.2. Fixup</a>
     <li><a href="#ref-for-table②">2.2.1. Fixup Algorithm</a> <a href="#ref-for-table③">(2)</a> <a href="#ref-for-table④">(3)</a>
-    <li><a href="#ref-for-table⑤">4.1. 
+    <li><a href="#ref-for-table⑤">4.1.
 With a table-root as containing block</a>
    </ul>
   </aside>
@@ -3822,7 +3822,7 @@ With a table-root as containing block</a>
     <li><a href="#ref-for-table-wrapper-box">2.2.1. Fixup Algorithm</a>
     <li><a href="#ref-for-table-wrapper-box①">3.6.1. Overrides applying in all modes</a>
     <li><a href="#ref-for-table-wrapper-box②">3.11. Positioning of cells, captions and other internal table boxes</a>
-    <li><a href="#ref-for-table-wrapper-box③">4.1. 
+    <li><a href="#ref-for-table-wrapper-box③">4.1.
 With a table-root as containing block</a>
    </ul>
   </aside>
@@ -3900,7 +3900,7 @@ With a table-root as containing block</a>
    <b><a href="#table-internal-element">#table-internal-element</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-table-internal-element">2.2. Fixup</a>
-    <li><a href="#ref-for-table-internal-element①">4.2. 
+    <li><a href="#ref-for-table-internal-element①">4.2.
 With a table-internal as containing block</a>
    </ul>
   </aside>
@@ -4231,57 +4231,65 @@ With a table-internal as containing block</a>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

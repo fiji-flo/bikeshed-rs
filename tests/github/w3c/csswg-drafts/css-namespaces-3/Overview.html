@@ -240,7 +240,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    <p>This CSS Namespaces module defines the syntax for using namespaces in CSS. It defines the <span class="css">@namespace</span> rule for declaring the default namespace and binding namespaces to namespace prefixes, and it also defines a syntax that other specifications can adopt for using those prefixes in namespace-qualified names.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -322,7 +322,7 @@ on screen, on paper, etc.
 	is taken to represent the null namespace
 	or lack of a namespace.</p>
    <div class="example" id="example-e2c750a7">
-    <a class="self-link" href="#example-e2c750a7"></a> For example, given the namespace declarations: 
+    <a class="self-link" href="#example-e2c750a7"></a> For example, given the namespace declarations:
 <pre>@namespace empty "";
 @namespace "";
 </pre>
@@ -335,7 +335,7 @@ on screen, on paper, etc.
 	This namespace prefix can then be used in namespace-qualified names
 	such as the <a data-link-type="dfn" href="#css-qualified-name" id="ref-for-css-qualified-name">CSS qualified names</a> defined below.</p>
    <div class="example" id="example-7c34a04d">
-    <a class="self-link" href="#example-7c34a04d"></a> 
+    <a class="self-link" href="#example-7c34a04d"></a>
 <pre>@namespace "http://www.w3.org/1999/xhtml";
 @namespace svg "http://www.w3.org/2000/svg";
 </pre>
@@ -351,7 +351,7 @@ on screen, on paper, etc.
 	are independent of the namespace prefixes used in the markup
 	and whether these are defaulted or not.</p>
    <div class="example" id="example-53c91314">
-    <a class="self-link" href="#example-53c91314"></a> For example, given the following XML document: 
+    <a class="self-link" href="#example-53c91314"></a> For example, given the following XML document:
 <pre>&lt;qml:elem xmlns:qml="http://example.com/q-markup">&lt;/qml:elem>
 </pre>
     <p>and the following <span class="css">@namespace</span> declarations at the
@@ -431,21 +431,21 @@ namespace_prefix
 	as a wildcard prefix to indicate a name in any namespace,
 	including no namespace.</p>
    <div class="example" id="example-06c0bddc">
-    <a class="self-link" href="#example-06c0bddc"></a> Given the namespace declarations: 
+    <a class="self-link" href="#example-06c0bddc"></a> Given the namespace declarations:
 <pre>@namespace toto "http://toto.example.org";
 @namespace "http://example.com/foo";
 </pre>
     <p>In a context where the default namespace applies</p>
     <dl>
-     <dt><code>toto|A</code> 
-     <dd> represents the name <code>A</code> in the <code>http://toto.example.org</code> namespace. 
-     <dt><code>|B</code> 
-     <dd> represents the name <code>B</code> that belongs to no namespace. 
-     <dt><code>*|C</code> 
+     <dt><code>toto|A</code>
+     <dd> represents the name <code>A</code> in the <code>http://toto.example.org</code> namespace.
+     <dt><code>|B</code>
+     <dd> represents the name <code>B</code> that belongs to no namespace.
+     <dt><code>*|C</code>
      <dd> represents the name <code>C</code> in any namespace,
-				including no namespace. 
-     <dt><code>D</code> 
-     <dd> represents the name <code>D</code> in the <code>http://example.com/foo</code> namespace. 
+				including no namespace.
+     <dt><code>D</code>
+     <dd> represents the name <code>D</code> in the <code>http://example.com/foo</code> namespace.
     </dl>
    </div>
    <p>The syntax for the portion of a CSS qualified name before the local name is given below,
@@ -482,7 +482,7 @@ wqwname
    <p>Changes made since the <a href="https://www.w3.org/TR/2011/REC-css3-namespace-20110929/">29 September 2011 Recommendation</a>:</p>
    <ul>
     <li>Added predefined <span class="css">qname</span>, <span class="css">wqname</span>, and <span class="css">wqwname</span> productions,
-		to make those constructs easier for other specs to use. 
+		to make those constructs easier for other specs to use.
    </ul>
    <h2 class="no-num heading settled" id="acks"><span class="content"> Acknowledgments</span><a class="self-link" href="#acks"></a></h2>
    <p>This draft borrows heavily from earlier drafts on CSS namespace support
@@ -516,7 +516,7 @@ wqwname
   <aside class="dfn-panel" data-for="term-for-type-selector">
    <a href="https://drafts.csswg.org/selectors-4/#type-selector">https://drafts.csswg.org/selectors-4/#type-selector</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-type-selector">1.1. 
+    <li><a href="#ref-for-type-selector">1.1.
 Terminology</a>
    </ul>
   </aside>
@@ -558,57 +558,65 @@ Terminology</a>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

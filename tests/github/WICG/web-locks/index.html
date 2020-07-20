@@ -1618,7 +1618,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
      <p>The lock is automatically released when the task completes.</p>
    </ol>
    <aside class="example" id="example-basic-usage">
-    <a class="self-link" href="#example-basic-usage"></a> 
+    <a class="self-link" href="#example-basic-usage"></a>
     <p>A basic example of the API usage is as follows:</p>
 <pre class="language-js highlight">navigator<c- p>.</c->locks<c- p>.</c->request<c- p>(</c-><c- t>'my_resource'</c-><c- p>,</c-> async lock <c- p>=></c-> <c- p>{</c->
    <c- c1>// The lock has been acquired.</c->
@@ -1657,7 +1657,7 @@ await navigator<c- p>.</c->locks<c- p>.</c->request<c- p>(</c-><c- t>'my_resourc
 across <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/browsers.html#browsing-context" id="ref-for-browsing-context">browsing contexts</a> within an <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/origin.html#concept-origin" id="ref-for-concept-origin">origin</a>. Web applications are free to use any resource naming scheme.</p>
    <aside class="example" id="example-indexeddb-transactions">
     <a class="self-link" href="#example-indexeddb-transactions"></a> To mimic transaction locking over named stores within a named
-database in <a data-link-type="biblio" href="#biblio-indexeddb-2">[IndexedDB-2]</a>, an origin might compose resource names as: 
+database in <a data-link-type="biblio" href="#biblio-indexeddb-2">[IndexedDB-2]</a>, an origin might compose resource names as:
 <pre class="language-js highlight">encodeURIComponent<c- p>(</c->db_name<c- p>)</c-> <c- o>+</c-> <c- t>'/'</c-> <c- o>+</c-> encodeURIComponent<c- p>(</c->store_name<c- p>)</c->
 </pre>
    </aside>
@@ -1689,7 +1689,7 @@ database in <a data-link-type="biblio" href="#biblio-indexeddb-2">[IndexedDB-2]<
     <p>A <a data-link-type="dfn" href="#lock-concept" id="ref-for-lock-concept⑦">lock</a> has a <dfn class="dfn-paneled" data-dfn-for="lock-concept" data-dfn-type="dfn" data-noexport id="lock-concept-waiting-promise">waiting promise</dfn> which is a Promise.</p>
     <p>A <a data-link-type="dfn" href="#lock-concept" id="ref-for-lock-concept⑧">lock</a> has a <dfn class="dfn-paneled" data-dfn-for="lock-concept" data-dfn-type="dfn" data-noexport id="lock-concept-released-promise">released promise</dfn> which is a Promise.</p>
     <aside class="note">
-      There are two promises associated with a lock’s lifecycle: 
+      There are two promises associated with a lock’s lifecycle:
      <ul>
       <li data-md>
        <p>A promise provided either implicitly or explicitly by the callback when the lock is granted which determines how long the lock is held. When this promise settles, the lock is released. This is known as the lock’s <a data-link-type="dfn" href="#lock-concept-waiting-promise" id="ref-for-lock-concept-waiting-promise">waiting promise</a>.</p>
@@ -1761,7 +1761,7 @@ Further note that if the callback is not <code>async</code> and returns a non-pr
    </div>
    <h3 class="heading settled" data-level="2.6" id="agent-integration"><span class="secno">2.6. </span><span class="content">Agent Integration</span><a class="self-link" href="#agent-integration"></a></h3>
    <div class="algorithm">
-     When an <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#agent" id="ref-for-agent④">agent</a> terminates, <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#enqueue-the-following-steps" id="ref-for-enqueue-the-following-steps②">enqueue the following steps</a> on the <a data-link-type="dfn" href="#lock-task-queue" id="ref-for-lock-task-queue①">lock task queue</a>: 
+     When an <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#agent" id="ref-for-agent④">agent</a> terminates, <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#enqueue-the-following-steps" id="ref-for-enqueue-the-following-steps②">enqueue the following steps</a> on the <a data-link-type="dfn" href="#lock-task-queue" id="ref-for-lock-task-queue①">lock task queue</a>:
     <aside class="issue" id="issue-9d75c9d8"><a class="self-link" href="#issue-9d75c9d8"></a> Normative reference for <i>terminates</i>. </aside>
     <ol>
      <li data-md>
@@ -1893,7 +1893,7 @@ setTimeout<c- p>(()</c-> <c- p>=></c-> controller<c- p>.</c->abort<c- p>(),</c->
     Once the lock has been granted, the signal is ignored.</p>
      <dt><var>options</var> . steal
      <dd>
-       If the <code class="idl"><a data-link-type="idl" href="#dom-lockoptions-steal" id="ref-for-dom-lockoptions-steal">steal</a></code> option is <code>true</code>, then any held locks for the resource will be released (and the <a data-link-type="dfn" href="#lock-concept-released-promise" id="ref-for-lock-concept-released-promise④">released promise</a> of such locks will resolve with <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#aborterror" id="ref-for-aborterror①">AbortError</a></code>), and the request will be granted, preempting any queued requests for it. 
+       If the <code class="idl"><a data-link-type="idl" href="#dom-lockoptions-steal" id="ref-for-dom-lockoptions-steal">steal</a></code> option is <code>true</code>, then any held locks for the resource will be released (and the <a data-link-type="dfn" href="#lock-concept-released-promise" id="ref-for-lock-concept-released-promise④">released promise</a> of such locks will resolve with <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#aborterror" id="ref-for-aborterror①">AbortError</a></code>), and the request will be granted, preempting any queued requests for it.
       <p>If a web application detects an unrecoverable state — for example, some coordination point like a Service Worker determines that a tab holding a lock is no longer responding — then it can "steal" a lock using this option.</p>
     </dl>
    </div>
@@ -1994,7 +1994,7 @@ setTimeout<c- p>(()</c-> <c- p>=></c-> controller<c- p>.</c->abort<c- p>(),</c->
    <h2 class="heading settled" data-level="4" id="algorithms"><span class="secno">4. </span><span class="content">Algorithms</span><a class="self-link" href="#algorithms"></a></h2>
    <h3 class="heading settled" data-level="4.1" id="algorithm-request-lock"><span class="secno">4.1. </span><span class="content">Request a lock</span><a class="self-link" href="#algorithm-request-lock"></a></h3>
    <div class="algorithm">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="request-a-lock">request a lock</dfn> with <var>promise</var>, <var>agent</var>, <var>clientId</var>, <var>origin</var>, <var>callback</var>, <var>name</var>, <var>mode</var>, <var>ifAvailable</var>, <var>steal</var>, and optional <var>signal</var>: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="request-a-lock">request a lock</dfn> with <var>promise</var>, <var>agent</var>, <var>clientId</var>, <var>origin</var>, <var>callback</var>, <var>name</var>, <var>mode</var>, <var>ifAvailable</var>, <var>steal</var>, and optional <var>signal</var>:
     <ol>
      <li data-md>
       <p>Let <var>request</var> be a new <a data-link-type="dfn" href="#lock-request" id="ref-for-lock-request⑨">lock request</a> (<var>agent</var>, <var>clientId</var>, <var>origin</var>, <var>name</var>, <var>mode</var>, <var>promise</var>).</p>
@@ -2049,7 +2049,7 @@ setTimeout<c- p>(()</c-> <c- p>=></c-> controller<c- p>.</c->abort<c- p>(),</c->
    </div>
    <h3 class="heading settled" data-level="4.2" id="algorithm-release-lock"><span class="secno">4.2. </span><span class="content">Release a lock</span><a class="self-link" href="#algorithm-release-lock"></a></h3>
    <div class="algorithm">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="release-the-lock">release the lock</dfn> <var>lock</var>: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="release-the-lock">release the lock</dfn> <var>lock</var>:
     <ol>
      <li data-md>
       <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#assert" id="ref-for-assert">Assert</a>: these steps are running on the <a data-link-type="dfn" href="#lock-task-queue" id="ref-for-lock-task-queue⑤">lock task queue</a>.</p>
@@ -2069,7 +2069,7 @@ setTimeout<c- p>(()</c-> <c- p>=></c-> controller<c- p>.</c->abort<c- p>(),</c->
    </div>
    <h3 class="heading settled" data-level="4.3" id="algorithm-abort-request"><span class="secno">4.3. </span><span class="content">Abort a request</span><a class="self-link" href="#algorithm-abort-request"></a></h3>
    <div class="algorithm">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="abort-the-request">abort the request</dfn> <var>request</var>: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="abort-the-request">abort the request</dfn> <var>request</var>:
     <ol>
      <li data-md>
       <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#assert" id="ref-for-assert①">Assert</a>: these steps are running on the <a data-link-type="dfn" href="#lock-task-queue" id="ref-for-lock-task-queue⑥">lock task queue</a>.</p>
@@ -2089,7 +2089,7 @@ setTimeout<c- p>(()</c-> <c- p>=></c-> controller<c- p>.</c->abort<c- p>(),</c->
    </div>
    <h3 class="heading settled" data-level="4.4" id="algorithm-process-request"><span class="secno">4.4. </span><span class="content">Process a lock request queue for a given resource name</span><a class="self-link" href="#algorithm-process-request"></a></h3>
    <div class="algorithm">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="process-the-lock-request-queue">process the lock request queue</dfn> <var>queue</var>: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="process-the-lock-request-queue">process the lock request queue</dfn> <var>queue</var>:
     <ol>
      <li data-md>
       <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#assert" id="ref-for-assert②">Assert</a>: these steps are running on the <a data-link-type="dfn" href="#lock-task-queue" id="ref-for-lock-task-queue⑦">lock task queue</a>.</p>
@@ -2131,7 +2131,7 @@ setTimeout<c- p>(()</c-> <c- p>=></c-> controller<c- p>.</c->abort<c- p>(),</c->
    </div>
    <h3 class="heading settled" data-level="4.5" id="algorithm-snapshot-state"><span class="secno">4.5. </span><span class="content">Snapshot the lock state</span><a class="self-link" href="#algorithm-snapshot-state"></a></h3>
    <div class="algorithm">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="snapshot-the-lock-state">snapshot the lock state</dfn> for <var>origin</var> with <var>promise</var>: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="snapshot-the-lock-state">snapshot the lock state</dfn> for <var>origin</var> with <var>promise</var>:
     <ol>
      <li data-md>
       <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#assert" id="ref-for-assert③">Assert</a>: these steps are running on the <a data-link-type="dfn" href="#lock-task-queue" id="ref-for-lock-task-queue⑧">lock task queue</a>.</p>
@@ -2175,7 +2175,7 @@ setTimeout<c- p>(()</c-> <c- p>=></c-> controller<c- p>.</c->abort<c- p>(),</c->
    <h3 class="heading settled" data-level="5.1" id="deadlocks"><span class="secno">5.1. </span><span class="content">Deadlocks</span><a class="self-link" href="#deadlocks"></a></h3>
    <p><a href="https://en.wikipedia.org/wiki/Deadlock">Deadlocks</a> are a concept in concurrent computing, and deadlocks scoped to a particular <a data-link-type="dfn" href="#lock-manager" id="ref-for-lock-manager④">lock manager</a> can be introduced by this API.</p>
    <aside class="example" id="example-deadlocks">
-    <a class="self-link" href="#example-deadlocks"></a> An example of how deadlocks can be encountered through the use of this API is as follows. 
+    <a class="self-link" href="#example-deadlocks"></a> An example of how deadlocks can be encountered through the use of this API is as follows.
     <p>Script 1:</p>
 <pre class="language-js highlight">navigator<c- p>.</c->locks<c- p>.</c->request<c- p>(</c-><c- t>'A'</c-><c- p>,</c-> async a <c- p>=></c-> <c- p>{</c->
   await navigator<c- p>.</c->locks<c- p>.</c->request<c- p>(</c-><c- t>'B'</c-><c- p>,</c-> async b <c- p>=></c-> <c- p>{</c->
@@ -2194,7 +2194,7 @@ setTimeout<c- p>(()</c-> <c- p>=></c-> controller<c- p>.</c->abort<c- p>(),</c->
    </aside>
    <p>Preventing deadlocks requires care. One approach is to always acquire multiple locks in a strict order.</p>
    <aside class="example" id="example-request-multiple-locks">
-    <a class="self-link" href="#example-request-multiple-locks"></a> 
+    <a class="self-link" href="#example-request-multiple-locks"></a>
     <p>A helper function such as the following could be used to request multiple locks in a consistent order.</p>
 <pre class="language-js highlight">async <c- a>function</c-> requestMultiple<c- p>(</c->resources<c- p>,</c-> callback<c- p>)</c-> <c- p>{</c->
   <c- kr>const</c-> sortedResources <c- o>=</c-> <c- p>[...</c->resources<c- p>];</c->
@@ -3376,57 +3376,65 @@ authoring advice.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

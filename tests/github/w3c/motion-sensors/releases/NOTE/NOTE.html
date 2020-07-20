@@ -404,7 +404,7 @@ pushing the device upwards.</p>
 but they do have some purposes like registering shakes, steps and the like.</p>
    <p>Often for such use-cases the developer is interested in the <a data-link-type="dfn" href="https://w3c.github.io/accelerometer#linear-acceleration" id="ref-for-linear-acceleration">linear acceleration</a> which is
 the acceleration without the <a data-link-type="dfn" href="https://w3c.github.io/accelerometer#gravity" id="ref-for-gravity②">gravity</a>, called <a data-link-type="dfn" href="https://w3c.github.io/accelerometer#gravity" id="ref-for-gravity③">gravity</a> compensation
-(See <a data-link-type="dfn" href="#linear-acceleration-sensor" id="ref-for-linear-acceleration-sensor">Linear Acceleration Sensor</a>); or the developer is interested in the isolated <a data-link-type="dfn" href="https://w3c.github.io/accelerometer#gravity" id="ref-for-gravity④">gravity</a>, 
+(See <a data-link-type="dfn" href="#linear-acceleration-sensor" id="ref-for-linear-acceleration-sensor">Linear Acceleration Sensor</a>); or the developer is interested in the isolated <a data-link-type="dfn" href="https://w3c.github.io/accelerometer#gravity" id="ref-for-gravity④">gravity</a>,
 in order to know the <a data-link-type="dfn" href="https://w3c.github.io/accelerometer#gravity" id="ref-for-gravity⑤">gravity</a> vector (see <a data-link-type="dfn" href="#gravity-sensor" id="ref-for-gravity-sensor">Gravity Sensor</a>), which can be useful for some
 kinds of sensor fusion like creating a magnetic compass.</p>
    <p>For acceleration, you usually care about the big changes and want to avoid noise, like the <a data-link-type="dfn" href="https://w3c.github.io/accelerometer#gravity" id="ref-for-gravity⑥">gravity</a>, thus a <a data-link-type="dfn" href="#high-pass-filter" id="ref-for-high-pass-filter">high-pass filter</a> can help isolate the <a data-link-type="dfn" href="https://w3c.github.io/accelerometer#linear-acceleration" id="ref-for-linear-acceleration①">linear acceleration</a> and a <a data-link-type="dfn" href="#low-pass-filter" id="ref-for-low-pass-filter">low-pass
@@ -505,7 +505,7 @@ the filter remembers common values and thus smoothens out uncommon values which 
 often are a result of noise. As it uses a big percentage of the existing value, this
 solution introduces a delay in registering the actual events.</p>
    <div class="example" id="example-716517d4">
-    <a class="self-link" href="#example-716517d4"></a> 
+    <a class="self-link" href="#example-716517d4"></a>
 <pre class="highlight"><c- kr>class</c-> LowPassFilterData <c- p>{</c->
   constructor<c- p>(</c->reading<c- p>,</c-> bias<c- p>)</c-> <c- p>{</c->
     Object<c- p>.</c->assign<c- p>(</c-><c- k>this</c-><c- p>,</c-> <c- p>{</c-> x<c- o>:</c-> reading<c- p>.</c->x<c- p>,</c-> y<c- o>:</c-> reading<c- p>.</c->y<c- p>,</c-> z<c- o>:</c-> reading<c- p>.</c->z <c- p>});</c->
@@ -520,7 +520,7 @@ solution introduces a delay in registering the actual events.</p>
 <c- p>};</c->
 
 <c- kr>const</c-> accl <c- o>=</c-> <c- k>new</c-> Accelerometer<c- p>({</c-> frequency<c- o>:</c-> <c- mi>20</c-> <c- p>});</c->
-              
+
 <c- c1>// Isolate gravity with low-pass filter.</c->
 <c- kr>const</c-> filter <c- o>=</c-> <c- k>new</c-> LowPassFilterData<c- p>(</c->accl<c- p>,</c-> <c- mf>0.8</c-><c- p>);</c->
 
@@ -537,7 +537,7 @@ accl<c- p>.</c->start<c- p>();</c->
    <p>This can be useful to get rid of the drift which builds up over time
 with <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscope⑥">gyroscope</a> readings.</p>
    <div class="example" id="example-3706d94a">
-    <a class="self-link" href="#example-3706d94a"></a> 
+    <a class="self-link" href="#example-3706d94a"></a>
 <pre class="highlight"><c- kr>class</c-> HighPassFilterData <c- p>{</c->
   constructor<c- p>(</c->reading<c- p>,</c-> cutoffFrequency<c- p>)</c-> <c- p>{</c->
     Object<c- p>.</c->assign<c- p>(</c-><c- k>this</c-><c- p>,</c-> <c- p>{</c-> x<c- o>:</c-> reading<c- p>.</c->x<c- p>,</c-> y<c- o>:</c-> reading<c- p>.</c->y<c- p>,</c-> z<c- o>:</c-> reading<c- p>.</c->z <c- p>});</c->
@@ -557,7 +557,7 @@ with <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscope⑥">gyrosco
 <c- p>};</c->
 
 <c- kr>const</c-> gyro <c- o>=</c-> <c- k>new</c-> Gyroscope<c- p>({</c-> frequency<c- o>:</c-> <c- mi>20</c-> <c- p>});</c->
-              
+
 <c- c1>// Remove drift with a  high pass filter.</c->
 <c- kr>const</c-> filter <c- o>=</c-> <c- k>new</c-> HighPassFilterData<c- p>(</c->gyro<c- p>,</c-> <c- mf>0.8</c-><c- p>);</c->
 
@@ -624,7 +624,7 @@ complementing the <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscop
 velocity</a> from <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscope①①">gyroscope</a> and ∂t being the time between measurements.</p>
    <p>A common value for α is 0.98, which means that 98% of the weight lays on the <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscope①②">gyroscope</a> measurements.</p>
    <div class="example" id="example-828cabd4">
-    <a class="self-link" href="#example-828cabd4"></a> Manually calculate the relative orientation in Euler angles (radian) using a <a data-link-type="dfn" href="#complementary-filter" id="ref-for-complementary-filter②">complementary filter</a>. 
+    <a class="self-link" href="#example-828cabd4"></a> Manually calculate the relative orientation in Euler angles (radian) using a <a data-link-type="dfn" href="#complementary-filter" id="ref-for-complementary-filter②">complementary filter</a>.
     <p>The <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscope①③">gyroscope</a> measures <i><a data-link-type="dfn" href="https://w3c.github.io/gyroscope#angular-velocity" id="ref-for-angular-velocity⑤">angular velocity</a></i>, so by multiplying with the time difference,
   we get the <i>change of angle</i>. This change is always calculated relative to the current device
   position, so we need to use the <a data-link-type="dfn" href="#accelerometer" id="ref-for-accelerometer①⑥">accelerometer</a>, which includes <a data-link-type="dfn" href="https://w3c.github.io/accelerometer#gravity" id="ref-for-gravity②①">gravity</a>, to calibrate this
@@ -636,7 +636,7 @@ velocity</a> from <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscop
     <p>When there is no or little movement, the vector obtained from the <a data-link-type="dfn" href="#accelerometer" id="ref-for-accelerometer①⑨">accelerometer</a> reading will contribute more to the (alpha, beta, gamma) angles than the <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscope①④">gyroscope</a>.</p>
     <p>As values from a steady <a data-link-type="dfn" href="#accelerometer" id="ref-for-accelerometer②⓪">accelerometer</a> represent the <a data-link-type="dfn" href="https://w3c.github.io/accelerometer#gravity" id="ref-for-gravity②③">gravity</a> vector, and we don’t
   include the z component in the alpha, the result of this is that the orientation will
-  just follow the <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscope①⑤">gyroscope</a> and be stable. But as the origin of the heading depends on 
+  just follow the <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscope①⑤">gyroscope</a> and be stable. But as the origin of the heading depends on
   the device position at start this a <i>device-relative orientation sensor</i>.</p>
 <pre class="highlight"><c- kr>const</c-> options <c- o>=</c-> <c- p>{</c-> frequency<c- o>:</c-> <c- mi>50</c-> <c- p>};</c->
 
@@ -673,7 +673,7 @@ gyro<c- p>.</c->onchange <c- o>=</c-> <c- p>()</c-> <c- p>=></c-> <c- p>{</c->
 </pre>
    </div>
    <div class="example" id="example-c2e7c2b3">
-    <a class="self-link" href="#example-c2e7c2b3"></a> An device-adjusting, relative orientation sensor. 
+    <a class="self-link" href="#example-c2e7c2b3"></a> An device-adjusting, relative orientation sensor.
     <p>From the above example, we notice that the alpha represented the initial heading
   orientation. We also know that this heading might drift over time due to being
   based on the <a data-link-type="dfn" href="#gyroscope" id="ref-for-gyroscope①⑥">gyroscope</a>.</p>
@@ -995,57 +995,65 @@ processing algorithms have enough samples to provide accurate results.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

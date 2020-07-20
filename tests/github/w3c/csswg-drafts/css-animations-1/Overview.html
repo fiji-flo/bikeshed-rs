@@ -317,7 +317,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This CSS module describes a way for authors to animate the values of CSS properties over time, using keyframes. The behavior of these keyframe animations can be controlled by specifying their duration, number of repeats, and repeating behavior.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -526,7 +526,7 @@ handlers on elements, <code>Document</code> objects, and <code>Window</code> obj
 	become the <em>second</em> animation in the list and a new animation will be
 	created for the first item in the list.</p>
    <div class="example" id="example-4e34d7ba">
-    <a class="self-link" href="#example-4e34d7ba"></a> 
+    <a class="self-link" href="#example-4e34d7ba"></a>
 <pre>div {
   animation-name: diagonal-slide;
   animation-duration: 5s;
@@ -591,7 +591,7 @@ handlers on elements, <code>Document</code> objects, and <code>Window</code> obj
 	The <span class="production" id="ref-for-identifier-value③">&lt;custom-ident></span> additionally excludes the <a class="css" data-link-type="maybe" href="#valdef-animation-name-none" id="ref-for-valdef-animation-name-none">none</a> keyword.</p>
    <div class="example" id="example-d0936079">
     <a class="self-link" href="#example-d0936079"></a> For example, the following two <a class="css" data-link-type="maybe" href="#at-ruledef-keyframes" id="ref-for-at-ruledef-keyframes②">@keyframes</a> rules have the same name,
-		so the first will be ignored: 
+		so the first will be ignored:
 <pre class="lang-css highlight"><c- n>@keyframes</c-> foo { <c- c>/* ... */</c-> <c- p>}</c->
 <c- n>@keyframes</c-> <c- s>"foo"</c-> { <c- c>/* ... */</c-> <c- p>}</c->
 </pre>
@@ -624,7 +624,7 @@ handlers on elements, <code>Document</code> objects, and <code>Window</code> obj
 	the last one in document order wins,
 	and all preceding ones are ignored.</p>
    <div class="example" id="example-b784185b">
-    <a class="self-link" href="#example-b784185b"></a> 
+    <a class="self-link" href="#example-b784185b"></a>
 <pre>div {
   animation-name: slide-right;
   animation-duration: 2s;
@@ -679,7 +679,7 @@ as illustrated below:</p>
 	constructed for each property that is present in any of the keyframes, and an animation is run
 	independently for each property.</p>
    <div class="example" id="example-10d90bd9">
-    <a class="self-link" href="#example-10d90bd9"></a> 
+    <a class="self-link" href="#example-10d90bd9"></a>
 <pre>@keyframes wobble {
   0% {
     left: 100px;
@@ -705,7 +705,7 @@ as illustrated below:</p>
 		animation cycle, the value of <span class="property" id="ref-for-propdef-left③">left</span> has returned to <span class="css">100px</span>. The diagram below shows
 		the state of the animation if it were given a duration of <span class="css">10s</span>.</p>
     <figure>
-      <img alt src="./animation1.png"> 
+      <img alt src="./animation1.png">
      <figcaption>Animation states specified by keyframes</figcaption>
     </figure>
    </div>
@@ -716,7 +716,7 @@ as illustrated below:</p>
    <p>A keyframe style rule may also declare the timing function that is to be used as the animation
 	moves to the next keyframe.</p>
    <div class="example" id="example-a9d2ebec">
-    <a class="self-link" href="#example-a9d2ebec"></a> 
+    <a class="self-link" href="#example-a9d2ebec"></a>
 <pre>@keyframes bounce {
 
   from {
@@ -776,38 +776,38 @@ as illustrated below:</p>
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-animation-name">animation-name</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">[ none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="#typedef-keyframes-name" id="ref-for-typedef-keyframes-name①">&lt;keyframes-name></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma">#</a> 
+      <td class="prod">[ none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="type" href="#typedef-keyframes-name" id="ref-for-typedef-keyframes-name①">&lt;keyframes-name></a> ]<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>list, each item either a case-sensitive <a data-link-type="dfn" href="https://drafts.csswg.org/css-values-4/#css-identifier" id="ref-for-css-identifier">css identifier</a> or the keyword <a class="css" data-link-type="maybe" href="#valdef-animation-name-none" id="ref-for-valdef-animation-name-none①">none</a> 
+      <td>list, each item either a case-sensitive <a data-link-type="dfn" href="https://drafts.csswg.org/css-values-4/#css-identifier" id="ref-for-css-identifier">css identifier</a> or the keyword <a class="css" data-link-type="maybe" href="#valdef-animation-name-none" id="ref-for-valdef-animation-name-none①">none</a>
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <p>The values of <a class="property" data-link-type="propdesc" href="#propdef-animation-name" id="ref-for-propdef-animation-name①③">animation-name</a> have the following meanings:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-name" data-dfn-type="value" data-export id="valdef-animation-name-none">none</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-name" data-dfn-type="value" data-export id="valdef-animation-name-none">none</dfn>
     <dd> No keyframes are specified at all, so there will be no animation.
-			Any other animations properties specified for this animation have no effect. 
-    <dt><dfn class="css" data-dfn-for="animation-name" data-dfn-type="value" data-export id="valdef-animation-name-keyframes-name"><a class="production css" data-link-type="type" href="#typedef-keyframes-name" id="ref-for-typedef-keyframes-name②">&lt;keyframes-name></a><a class="self-link" href="#valdef-animation-name-keyframes-name"></a></dfn> 
+			Any other animations properties specified for this animation have no effect.
+    <dt><dfn class="css" data-dfn-for="animation-name" data-dfn-type="value" data-export id="valdef-animation-name-keyframes-name"><a class="production css" data-link-type="type" href="#typedef-keyframes-name" id="ref-for-typedef-keyframes-name②">&lt;keyframes-name></a><a class="self-link" href="#valdef-animation-name-keyframes-name"></a></dfn>
     <dd> The animation will use the keyframes with the name specified by the <a class="production css" data-link-type="type" href="#typedef-keyframes-name" id="ref-for-typedef-keyframes-name③">&lt;keyframes-name></a>,
 			if they exist.
-			If no <a class="css" data-link-type="maybe" href="#at-ruledef-keyframes" id="ref-for-at-ruledef-keyframes⑧">@keyframes</a> rule with that name exists, there is no animation. 
+			If no <a class="css" data-link-type="maybe" href="#at-ruledef-keyframes" id="ref-for-at-ruledef-keyframes⑧">@keyframes</a> rule with that name exists, there is no animation.
    </dl>
    <h3 class="heading settled" data-level="4.3" id="animation-duration"><span class="secno">4.3. </span><span class="content"> The <a class="property" data-link-type="propdesc" href="#propdef-animation-duration" id="ref-for-propdef-animation-duration">animation-duration</a> property</span><a class="self-link" href="#animation-duration"></a></h3>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-animation-duration" id="ref-for-propdef-animation-duration①">animation-duration</a> property defines duration of a single animation cycle.</p>
@@ -818,34 +818,34 @@ as illustrated below:</p>
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-animation-duration">animation-duration</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value" title="Expands to: ms | s">&lt;time></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma①">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value" title="Expands to: ms | s">&lt;time></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma①">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>0s 
+      <td>0s
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>list, each item a duration 
+      <td>list, each item a duration
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <dl>
-    <dt><dfn class="css" data-dfn-for="animation-duration" data-dfn-type="value" data-export id="valdef-animation-duration-time"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value①" title="Expands to: ms | s">&lt;time></a><a class="self-link" href="#valdef-animation-duration-time"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="animation-duration" data-dfn-type="value" data-export id="valdef-animation-duration-time"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value①" title="Expands to: ms | s">&lt;time></a><a class="self-link" href="#valdef-animation-duration-time"></a></dfn>
     <dd>
       The <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value②" title="Expands to: ms | s">&lt;time></a> specifies the length of time that an animation takes to complete one cycle.
-A negative <span class="production" id="ref-for-time-value③" title="Expands to: ms | s">&lt;time></span> is invalid. 
+A negative <span class="production" id="ref-for-time-value③" title="Expands to: ms | s">&lt;time></span> is invalid.
      <p>If the <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value④" title="Expands to: ms | s">&lt;time></a> is <span class="css">0s</span>, like the initial value,
 the keyframes of the animation have no effect,
 but the animation itself still occurs instantaneously.
@@ -878,28 +878,28 @@ If <span class="property" id="ref-for-propdef-animation-fill-mode④">animation-
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-animation-timing-function">animation-timing-function</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-easing-1/#typedef-easing-function" id="ref-for-typedef-easing-function">&lt;easing-function></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma②">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-easing-1/#typedef-easing-function" id="ref-for-typedef-easing-function">&lt;easing-function></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma②">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>ease 
+      <td>ease
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>list, each item a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-easing-1/#typedef-easing-function" id="ref-for-typedef-easing-function①">&lt;easing-function></a> 
+      <td>list, each item a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-easing-1/#typedef-easing-function" id="ref-for-typedef-easing-function①">&lt;easing-function></a>
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <p>When specified in a keyframe, <a class="property" data-link-type="propdesc" href="#propdef-animation-timing-function" id="ref-for-propdef-animation-timing-function⑥">animation-timing-function</a> defines
 	the progression of the animation
@@ -922,34 +922,34 @@ If <span class="property" id="ref-for-propdef-animation-fill-mode④">animation-
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-animation-iteration-count">animation-iteration-count</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-single-animation-iteration-count" id="ref-for-typedef-single-animation-iteration-count">&lt;single-animation-iteration-count></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma③">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-single-animation-iteration-count" id="ref-for-typedef-single-animation-iteration-count">&lt;single-animation-iteration-count></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma③">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>1 
+      <td>1
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>list, each item either a number or the keyword <a class="css" data-link-type="maybe" href="#valdef-animation-iteration-count-infinite" id="ref-for-valdef-animation-iteration-count-infinite">infinite</a> 
+      <td>list, each item either a number or the keyword <a class="css" data-link-type="maybe" href="#valdef-animation-iteration-count-infinite" id="ref-for-valdef-animation-iteration-count-infinite">infinite</a>
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <p><dfn class="dfn-paneled css" data-dfn-type="type" data-export id="typedef-single-animation-iteration-count">&lt;single-animation-iteration-count></dfn> = infinite | <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value">&lt;number></a></p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-iteration-count" data-dfn-type="value" data-export id="valdef-animation-iteration-count-infinite">infinite</dfn> 
-    <dd> The animation will repeat forever. 
-    <dt><dfn class="css" data-dfn-for="animation-iteration-count" data-dfn-type="value" data-export id="valdef-animation-iteration-count-number"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①">&lt;number></a><a class="self-link" href="#valdef-animation-iteration-count-number"></a></dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-iteration-count" data-dfn-type="value" data-export id="valdef-animation-iteration-count-infinite">infinite</dfn>
+    <dd> The animation will repeat forever.
+    <dt><dfn class="css" data-dfn-for="animation-iteration-count" data-dfn-type="value" data-export id="valdef-animation-iteration-count-number"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①">&lt;number></a><a class="self-link" href="#valdef-animation-iteration-count-number"></a></dfn>
     <dd>
      <p>The animation will repeat the specified number of times.
 			If the number is not an integer,
@@ -970,44 +970,44 @@ If <span class="property" id="ref-for-propdef-animation-fill-mode④">animation-
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-animation-direction">animation-direction</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-single-animation-direction" id="ref-for-typedef-single-animation-direction">&lt;single-animation-direction></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma④">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-single-animation-direction" id="ref-for-typedef-single-animation-direction">&lt;single-animation-direction></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma④">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>normal 
+      <td>normal
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>list, each item a keyword as specified 
+      <td>list, each item a keyword as specified
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <p><dfn class="dfn-paneled css" data-dfn-type="type" data-export id="typedef-single-animation-direction">&lt;single-animation-direction></dfn> = normal | reverse | alternate | alternate-reverse</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-direction" data-dfn-type="value" data-export id="valdef-animation-direction-normal">normal</dfn> 
-    <dd> All iterations of the animation are played as specified. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-direction" data-dfn-type="value" data-export id="valdef-animation-direction-reverse">reverse</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-direction" data-dfn-type="value" data-export id="valdef-animation-direction-normal">normal</dfn>
+    <dd> All iterations of the animation are played as specified.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-direction" data-dfn-type="value" data-export id="valdef-animation-direction-reverse">reverse</dfn>
     <dd> All iterations of the animation are played in the reverse direction
-			from the way they were specified. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-direction" data-dfn-type="value" data-export id="valdef-animation-direction-alternate">alternate</dfn> 
+			from the way they were specified.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-direction" data-dfn-type="value" data-export id="valdef-animation-direction-alternate">alternate</dfn>
     <dd> The animation cycle iterations that are odd counts are played in the
 			normal direction, and the animation cycle iterations that are even
-			counts are played in a reverse direction. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-direction" data-dfn-type="value" data-export id="valdef-animation-direction-alternate-reverse">alternate-reverse</dfn> 
+			counts are played in a reverse direction.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-direction" data-dfn-type="value" data-export id="valdef-animation-direction-alternate-reverse">alternate-reverse</dfn>
     <dd> The animation cycle iterations that are odd counts are played in the
 			reverse direction, and the animation cycle iterations that are even
-			counts are played in a normal direction. 
+			counts are played in a normal direction.
    </dl>
    <p class="note" role="note"><span>Note:</span> For the purpose of determining whether an iteration is even or odd,
 	iterations start counting from 1.</p>
@@ -1020,41 +1020,41 @@ If <span class="property" id="ref-for-propdef-animation-fill-mode④">animation-
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-animation-play-state">animation-play-state</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-single-animation-play-state" id="ref-for-typedef-single-animation-play-state">&lt;single-animation-play-state></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma⑤">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-single-animation-play-state" id="ref-for-typedef-single-animation-play-state">&lt;single-animation-play-state></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma⑤">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>running 
+      <td>running
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>list, each item a keyword as specified 
+      <td>list, each item a keyword as specified
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <p><dfn class="dfn-paneled css" data-dfn-type="type" data-export id="typedef-single-animation-play-state">&lt;single-animation-play-state></dfn> = running | paused</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-play-state" data-dfn-type="value" data-export id="valdef-animation-play-state-running">running</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-play-state" data-dfn-type="value" data-export id="valdef-animation-play-state-running">running</dfn>
     <dd> While this property is set to <a class="css" data-link-type="maybe" href="#valdef-animation-play-state-running" id="ref-for-valdef-animation-play-state-running">running</a>,
-			the animation proceeds as normal. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-play-state" data-dfn-type="value" data-export id="valdef-animation-play-state-paused">paused</dfn> 
+			the animation proceeds as normal.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-play-state" data-dfn-type="value" data-export id="valdef-animation-play-state-paused">paused</dfn>
     <dd>
       While this property is set to <a class="css" data-link-type="maybe" href="#valdef-animation-play-state-paused" id="ref-for-valdef-animation-play-state-paused">paused</a>,
 			the animation is paused.
 			The animation continues to apply to the element with the progress it had made before being paused.
 			When unpaused (set back to <a class="css" data-link-type="maybe" href="#valdef-animation-play-state-running" id="ref-for-valdef-animation-play-state-running①">running</a>), it restarts from where it left off,
-			as if the "clock" that controls the animation had stopped and started again. 
+			as if the "clock" that controls the animation had stopped and started again.
      <p>If the property is set to <a class="css" data-link-type="maybe" href="#valdef-animation-play-state-paused" id="ref-for-valdef-animation-play-state-paused①">paused</a> during the delay phase of the animation,
 			the delay clock is also paused and resumes as soon as <a class="property" data-link-type="propdesc" href="#propdef-animation-play-state" id="ref-for-propdef-animation-play-state②">animation-play-state</a> is set back to <a class="css" data-link-type="maybe" href="#valdef-animation-play-state-running" id="ref-for-valdef-animation-play-state-running②">running</a>.</p>
    </dl>
@@ -1069,36 +1069,36 @@ If <span class="property" id="ref-for-propdef-animation-fill-mode④">animation-
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-animation-delay">animation-delay</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value⑤" title="Expands to: ms | s">&lt;time></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma⑥">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value⑤" title="Expands to: ms | s">&lt;time></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma⑥">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>0s 
+      <td>0s
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>list, each item a duration 
+      <td>list, each item a duration
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <dl>
-    <dt><dfn class="css" data-dfn-for="animation-delay" data-dfn-type="value" data-export id="valdef-animation-delay-time"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value⑥" title="Expands to: ms | s">&lt;time></a><a class="self-link" href="#valdef-animation-delay-time"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="animation-delay" data-dfn-type="value" data-export id="valdef-animation-delay-time"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value⑥" title="Expands to: ms | s">&lt;time></a><a class="self-link" href="#valdef-animation-delay-time"></a></dfn>
     <dd>
       The <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value⑦" title="Expands to: ms | s">&lt;time></a> defines how long of a delay there is between the start of the animation
 			(when the animation is applied to the element via these properties)
 			and when it begins executing.
-			A delay of <span class="css">0s</span> (the initial value) means that the animation will execute as soon as it is applied. 
+			A delay of <span class="css">0s</span> (the initial value) means that the animation will execute as soon as it is applied.
      <p>A negative delay is <strong>valid</strong>.
 			Similar to a delay of <span class="css">0s</span>, it means that the animation executes immediately,
 			but is automatically progressed by the absolute value of the delay,
@@ -1123,45 +1123,45 @@ If <span class="property" id="ref-for-propdef-animation-fill-mode④">animation-
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-animation-fill-mode">animation-fill-mode</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-single-animation-fill-mode" id="ref-for-typedef-single-animation-fill-mode">&lt;single-animation-fill-mode></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma⑦">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-single-animation-fill-mode" id="ref-for-typedef-single-animation-fill-mode">&lt;single-animation-fill-mode></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma⑦">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>list, each item a keyword as specified 
+      <td>list, each item a keyword as specified
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <p><dfn class="dfn-paneled css" data-dfn-type="type" data-export id="typedef-single-animation-fill-mode">&lt;single-animation-fill-mode></dfn> = none | forwards | backwards | both</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-fill-mode" data-dfn-type="value" data-export id="valdef-animation-fill-mode-none">none</dfn> 
-    <dd> The animation has no effect when it is applied but not executing. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-fill-mode" data-dfn-type="value" data-export id="valdef-animation-fill-mode-forwards">forwards</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-fill-mode" data-dfn-type="value" data-export id="valdef-animation-fill-mode-none">none</dfn>
+    <dd> The animation has no effect when it is applied but not executing.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-fill-mode" data-dfn-type="value" data-export id="valdef-animation-fill-mode-forwards">forwards</dfn>
     <dd> After the animation ends (as determined by its <a class="property" data-link-type="propdesc" href="#propdef-animation-iteration-count" id="ref-for-propdef-animation-iteration-count④">animation-iteration-count</a>), the animation
 			will apply the property values for the time the animation ended. When <span class="property" id="ref-for-propdef-animation-iteration-count⑤">animation-iteration-count</span> is an integer greater than zero, the values applied will be those for the end of the last
 			completed iteration of the animation (rather than the values for the start of the iteration
 			that would be next). When <span class="property" id="ref-for-propdef-animation-iteration-count⑥">animation-iteration-count</span> is zero, the values applied will be
-			those that would start the first iteration (just as when <a class="property" data-link-type="propdesc" href="#propdef-animation-fill-mode" id="ref-for-propdef-animation-fill-mode⑧">animation-fill-mode</a> is <a class="css" data-link-type="maybe" href="#valdef-animation-fill-mode-backwards" id="ref-for-valdef-animation-fill-mode-backwards①">backwards</a>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-fill-mode" data-dfn-type="value" data-export id="valdef-animation-fill-mode-backwards">backwards</dfn> 
+			those that would start the first iteration (just as when <a class="property" data-link-type="propdesc" href="#propdef-animation-fill-mode" id="ref-for-propdef-animation-fill-mode⑧">animation-fill-mode</a> is <a class="css" data-link-type="maybe" href="#valdef-animation-fill-mode-backwards" id="ref-for-valdef-animation-fill-mode-backwards①">backwards</a>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-fill-mode" data-dfn-type="value" data-export id="valdef-animation-fill-mode-backwards">backwards</dfn>
     <dd> During the period defined by <a class="property" data-link-type="propdesc" href="#propdef-animation-delay" id="ref-for-propdef-animation-delay⑧">animation-delay</a>, the animation will apply the property values
 			defined in the keyframe that will start the first iteration of the animation.
-			These are either the values of the <span class="css">from</span> keyframe (when <a class="property" data-link-type="propdesc" href="#propdef-animation-direction" id="ref-for-propdef-animation-direction⑥">animation-direction</a> is <a class="css" data-link-type="maybe" href="#valdef-animation-direction-normal" id="ref-for-valdef-animation-direction-normal">normal</a> or <a class="css" data-link-type="maybe" href="#valdef-animation-direction-alternate" id="ref-for-valdef-animation-direction-alternate①">alternate</a>) or those of the <span class="css">to</span> keyframe (when <span class="property" id="ref-for-propdef-animation-direction⑦">animation-direction</span> is <a class="css" data-link-type="maybe" href="#valdef-animation-direction-reverse" id="ref-for-valdef-animation-direction-reverse">reverse</a> or <a class="css" data-link-type="maybe" href="#valdef-animation-direction-alternate-reverse" id="ref-for-valdef-animation-direction-alternate-reverse">alternate-reverse</a>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-fill-mode" data-dfn-type="value" data-export id="valdef-animation-fill-mode-both">both</dfn> 
-    <dd> The effects of both <a class="css" data-link-type="maybe" href="#valdef-animation-fill-mode-forwards" id="ref-for-valdef-animation-fill-mode-forwards②">forwards</a> and <a class="css" data-link-type="maybe" href="#valdef-animation-fill-mode-backwards" id="ref-for-valdef-animation-fill-mode-backwards②">backwards</a> fill apply. 
+			These are either the values of the <span class="css">from</span> keyframe (when <a class="property" data-link-type="propdesc" href="#propdef-animation-direction" id="ref-for-propdef-animation-direction⑥">animation-direction</a> is <a class="css" data-link-type="maybe" href="#valdef-animation-direction-normal" id="ref-for-valdef-animation-direction-normal">normal</a> or <a class="css" data-link-type="maybe" href="#valdef-animation-direction-alternate" id="ref-for-valdef-animation-direction-alternate①">alternate</a>) or those of the <span class="css">to</span> keyframe (when <span class="property" id="ref-for-propdef-animation-direction⑦">animation-direction</span> is <a class="css" data-link-type="maybe" href="#valdef-animation-direction-reverse" id="ref-for-valdef-animation-direction-reverse">reverse</a> or <a class="css" data-link-type="maybe" href="#valdef-animation-direction-alternate-reverse" id="ref-for-valdef-animation-direction-alternate-reverse">alternate-reverse</a>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="animation-fill-mode" data-dfn-type="value" data-export id="valdef-animation-fill-mode-both">both</dfn>
+    <dd> The effects of both <a class="css" data-link-type="maybe" href="#valdef-animation-fill-mode-forwards" id="ref-for-valdef-animation-fill-mode-forwards②">forwards</a> and <a class="css" data-link-type="maybe" href="#valdef-animation-fill-mode-backwards" id="ref-for-valdef-animation-fill-mode-backwards②">backwards</a> fill apply.
    </dl>
    <h3 class="heading settled" data-level="4.10" id="animation"><span class="secno">4.10. </span><span class="content"> The <a class="property" data-link-type="propdesc" href="#propdef-animation" id="ref-for-propdef-animation">animation</a> shorthand property</span><a class="self-link" href="#animation"></a></h3>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-animation" id="ref-for-propdef-animation①">animation</a> shorthand property is a comma-separated list of animation definitions. Each item in
@@ -1176,28 +1176,28 @@ If <span class="property" id="ref-for-propdef-animation-fill-mode④">animation-
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-animation">animation</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-single-animation" id="ref-for-typedef-single-animation">&lt;single-animation></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma⑧">#</a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="#typedef-single-animation" id="ref-for-typedef-single-animation">&lt;single-animation></a><a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-comma" id="ref-for-mult-comma⑧">#</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>see individual properties 
+      <td>see individual properties
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>not animatable 
+      <td>not animatable
    </table>
    <p><dfn class="dfn-paneled css" data-dfn-type="type" data-export id="typedef-single-animation">&lt;single-animation></dfn> = <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value⑧" title="Expands to: ms | s">&lt;time></a> || <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-easing-1/#typedef-easing-function" id="ref-for-typedef-easing-function②">&lt;easing-function></a> || <span class="production" id="ref-for-time-value⑨" title="Expands to: ms | s">&lt;time></span> || <a class="production css" data-link-type="type" href="#typedef-single-animation-iteration-count" id="ref-for-typedef-single-animation-iteration-count①">&lt;single-animation-iteration-count></a> || <a class="production css" data-link-type="type" href="#typedef-single-animation-direction" id="ref-for-typedef-single-animation-direction①">&lt;single-animation-direction></a> || <a class="production css" data-link-type="type" href="#typedef-single-animation-fill-mode" id="ref-for-typedef-single-animation-fill-mode①">&lt;single-animation-fill-mode></a> || <a class="production css" data-link-type="type" href="#typedef-single-animation-play-state" id="ref-for-typedef-single-animation-play-state①">&lt;single-animation-play-state></a> || [ none | <a class="production css" data-link-type="type" href="#typedef-keyframes-name" id="ref-for-typedef-keyframes-name④">&lt;keyframes-name></a> ]</p>
    <p>Note that order is important within each animation definition: the first value in each <a class="production css" data-link-type="type" href="#typedef-single-animation" id="ref-for-typedef-single-animation①">&lt;single-animation></a> that can be parsed as a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#time-value" id="ref-for-time-value①⓪" title="Expands to: ms | s">&lt;time></a> is assigned to the <a class="property" data-link-type="propdesc" href="#propdef-animation-duration" id="ref-for-propdef-animation-duration④">animation-duration</a>,
@@ -1242,26 +1242,26 @@ If <span class="property" id="ref-for-propdef-animation-fill-mode④">animation-
    <h4 class="heading settled" data-level="5.1.2" id="interface-animationevent-attributes"><span class="secno">5.1.2. </span><span class="content"> Attributes</span><a class="self-link" href="#interface-animationevent-attributes"></a></h4>
    <dl>
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="AnimationEvent" data-dfn-type="attribute" data-export id="dom-animationevent-animationname"><code>animationName</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring⑤">CSSOMString</a>, readonly</span>
-    <dd> The value of the <a class="property" data-link-type="propdesc" href="#propdef-animation-name" id="ref-for-propdef-animation-name②⑤">animation-name</a> property of the animation that fired the event. 
+    <dd> The value of the <a class="property" data-link-type="propdesc" href="#propdef-animation-name" id="ref-for-propdef-animation-name②⑤">animation-name</a> property of the animation that fired the event.
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="AnimationEvent" data-dfn-type="attribute" data-export id="dom-animationevent-elapsedtime"><code>elapsedTime</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②">double</a>, readonly</span>
     <dd> The amount of time the animation has been running, in seconds, when this event fired,
 			excluding any time the animation was paused. The precise calculation for
-			of this member is defined along with each event type. 
+			of this member is defined along with each event type.
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="AnimationEvent" data-dfn-type="attribute" data-export id="dom-animationevent-pseudoelement"><code>pseudoElement</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring⑥">CSSOMString</a>, readonly</span>
     <dd> The name (beginning with two colons) of the CSS pseudo-element on which the animation
 			runs (in which case the target of the event is that pseudo-element’s corresponding
 			element), or the empty string if the animation runs on an element (which means the
-			target of the event is that element). 
+			target of the event is that element).
    </dl>
    <p><dfn class="css" data-dfn-type="function" data-export data-lt="AnimationEvent()" id="funcdef-animationevent">AnimationEvent(type, animationEventInitDict)<a class="self-link" href="#funcdef-animationevent"></a></dfn> is an <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#constructing-events" id="ref-for-constructing-events">event constructor</a>.</p>
    <h3 class="heading settled" data-level="5.2" id="event-animationevent"><span class="secno">5.2. </span><span class="content"> Types of <code>AnimationEvent</code></span><a class="self-link" href="#event-animationevent"></a></h3>
    <p>The different types of animation events that can occur are:</p>
    <dl>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="animationevent" data-dfn-type="event" data-export id="eventdef-animationevent-animationstart"><code>animationstart</code></dfn> 
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="animationevent" data-dfn-type="event" data-export id="eventdef-animationevent-animationstart"><code>animationstart</code></dfn>
     <dd>
       The <code class="idl"><a data-link-type="idl" href="#eventdef-animationevent-animationstart" id="ref-for-eventdef-animationevent-animationstart①">animationstart</a></code> event occurs at the start of the animation.
 			If there is an <a class="property" data-link-type="propdesc" href="#propdef-animation-delay" id="ref-for-propdef-animation-delay①⓪">animation-delay</a> then this event will fire once the delay
-			period has expired. 
+			period has expired.
      <p> A negative delay will cause the event to fire with
 			an <code class="idl"><a data-link-type="idl" href="#dom-animationevent-elapsedtime" id="ref-for-dom-animationevent-elapsedtime①">elapsedTime</a></code> equal to the absolute value of the delay
 			capped to the <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration">active duration</a> of the animation, that is, <code>min(max(-<a class="property" data-link-type="propdesc" href="#propdef-animation-delay" id="ref-for-propdef-animation-delay①①">animation-delay</a>, 0), <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration①">active duration</a>)</code>; in
@@ -1271,22 +1271,22 @@ If <span class="property" id="ref-for-propdef-animation-fill-mode④">animation-
       <li>Cancelable: No
       <li>Context Info: animationName, elapsedTime, pseudoElement
      </ul>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="animationevent" data-dfn-type="event" data-export id="eventdef-animationevent-animationend"><code>animationend</code></dfn> 
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="animationevent" data-dfn-type="event" data-export id="eventdef-animationevent-animationend"><code>animationend</code></dfn>
     <dd>
       The <code class="idl"><a data-link-type="idl" href="#eventdef-animationevent-animationend" id="ref-for-eventdef-animationevent-animationend①">animationend</a></code> event occurs when the animation finishes.
 			In this case the value of the <code class="idl"><a data-link-type="idl" href="#dom-animationevent-elapsedtime" id="ref-for-dom-animationevent-elapsedtime②">elapsedTime</a></code> member of
-			the event is equal to the <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration②">active duration</a>. 
+			the event is equal to the <a data-link-type="dfn" href="#active-duration" id="ref-for-active-duration②">active duration</a>.
      <ul>
       <li>Bubbles: Yes
       <li>Cancelable: No
       <li>Context Info: animationName, elapsedTime, pseudoElement
      </ul>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="animationevent" data-dfn-type="event" data-export id="eventdef-animationevent-animationiteration"><code>animationiteration</code></dfn> 
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="animationevent" data-dfn-type="event" data-export id="eventdef-animationevent-animationiteration"><code>animationiteration</code></dfn>
     <dd>
       The <code class="idl"><a data-link-type="idl" href="#eventdef-animationevent-animationiteration" id="ref-for-eventdef-animationevent-animationiteration">animationiteration</a></code> event occurs at the end of each iteration of an
 			animation, except when an animationend event would fire at the same time.
 			This means that this event does not occur for animations with an iteration
-			count of one or less. 
+			count of one or less.
      <p>The <code class="idl"><a data-link-type="idl" href="#dom-animationevent-elapsedtime" id="ref-for-dom-animationevent-elapsedtime③">elapsedTime</a></code> member in this case is equal to the
 			product of the <var>current iteration</var> and <a class="property" data-link-type="propdesc" href="#propdef-animation-duration" id="ref-for-propdef-animation-duration⑤">animation-duration</a> where
 			the <var>current iteration</var> is the zero-based index of the new
@@ -1297,12 +1297,12 @@ If <span class="property" id="ref-for-propdef-animation-fill-mode④">animation-
       <li>Cancelable: No
       <li>Context Info: animationName, elapsedTime, pseudoElement
      </ul>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="animationevent" data-dfn-type="event" data-export id="eventdef-animationevent-animationcancel"><code>animationcancel</code></dfn> 
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="animationevent" data-dfn-type="event" data-export id="eventdef-animationevent-animationcancel"><code>animationcancel</code></dfn>
     <dd>
       The <code class="idl"><a data-link-type="idl" href="#eventdef-animationevent-animationcancel" id="ref-for-eventdef-animationevent-animationcancel">animationcancel</a></code> event occurs when the animation stops
 			running in a way that does not fire an <code class="idl"><a data-link-type="idl" href="#eventdef-animationevent-animationend" id="ref-for-eventdef-animationevent-animationend②">animationend</a></code> event, such
 			as a change in the <a class="property" data-link-type="propdesc" href="#propdef-animation-name" id="ref-for-propdef-animation-name②⑥">animation-name</a> that removes the animation, or the
-			animating element or one of its ancestors becoming <span class="css">display:none</span>. 
+			animating element or one of its ancestors becoming <span class="css">display:none</span>.
      <p>The <code class="idl"><a data-link-type="idl" href="#dom-animationevent-elapsedtime" id="ref-for-dom-animationevent-elapsedtime④">elapsedTime</a></code> member for this event indicates
 			the number of seconds that had elapsed since the beginning of the
 			animation at the moment when the animation was canceled.
@@ -1368,13 +1368,13 @@ attributes</a>; and that must be supported by all <code class="idl"><a data-link
     <dd>
       This attribute represents the keyframe selector as a comma-separated list
       of percentage values. The <span class="css">from</span> and <span class="css">to</span> keywords map to 0% and 100%,
-      respectively. 
+      respectively.
      <p>If <a class="idl-code" data-link-type="attribute" href="#dom-csskeyframerule-keytext" id="ref-for-dom-csskeyframerule-keytext①">keyText</a> is updated with an
       invalid keyframe selector, a <a class="idl-code" data-link-type="exception" href="https://heycam.github.io/webidl/#syntaxerror" id="ref-for-syntaxerror">SyntaxError</a> exception must be thrown and the value of <span id="ref-for-dom-csskeyframerule-keytext②">keyText</span> must remain unchanged.</p>
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSKeyframeRule" data-dfn-type="attribute" data-export id="dom-csskeyframerule-style"><code>style</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssstyledeclaration" id="ref-for-cssstyledeclaration①">CSSStyleDeclaration</a>, readonly</span>
     <dd>
       Must return a <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#cssstyledeclaration" id="ref-for-cssstyledeclaration②">CSSStyleDeclaration</a></code> object for the
-      keyframe rule, with the following properties: 
+      keyframe rule, with the following properties:
      <dl>
       <dt><a data-link-type="dfn" href="https://drafts.csswg.org/cssom-1/#cssstyledeclaration-readonly-flag" id="ref-for-cssstyledeclaration-readonly-flag">readonly flag</a>
       <dd>Unset.
@@ -1404,17 +1404,17 @@ attributes</a>; and that must be supported by all <code class="idl"><a data-link
    <h4 class="heading settled" data-level="6.3.2" id="interface-csskeyframesrule-attributes"><span class="secno">6.3.2. </span><span class="content"> Attributes</span><a class="self-link" href="#interface-csskeyframesrule-attributes"></a></h4>
    <dl>
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSKeyframesRule" data-dfn-type="attribute" data-export id="dom-csskeyframesrule-name"><code>name</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring①③">CSSOMString</a></span>
-    <dd> This attribute is the name of the keyframes, used by the <a class="property" data-link-type="propdesc" href="#propdef-animation-name" id="ref-for-propdef-animation-name②⑦">animation-name</a> property. 
+    <dd> This attribute is the name of the keyframes, used by the <a class="property" data-link-type="propdesc" href="#propdef-animation-name" id="ref-for-propdef-animation-name②⑦">animation-name</a> property.
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSKeyframesRule" data-dfn-type="attribute" data-export id="dom-csskeyframesrule-cssrules"><code>cssRules</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssrulelist" id="ref-for-cssrulelist①">CSSRuleList</a>, readonly</span>
-    <dd> This attribute gives access to the keyframes in the list. 
+    <dd> This attribute gives access to the keyframes in the list.
    </dl>
    <h4 class="heading settled" data-level="6.3.3" id="interface-csskeyframesrule-appendrule"><span class="secno">6.3.3. </span><span class="content"> The <code>appendRule</code> method</span><a class="self-link" href="#interface-csskeyframesrule-appendrule"></a></h4>
    <p>The <dfn class="dfn-paneled idl-code" data-dfn-for="CSSKeyframesRule" data-dfn-type="method" data-export data-lt="appendRule(rule)" id="dom-csskeyframesrule-appendrule"><code>appendRule</code></dfn> method appends the passed <code class="idl"><a data-link-type="idl" href="#csskeyframerule" id="ref-for-csskeyframerule③">CSSKeyframeRule</a></code> at the end of the keyframes rule.</p>
    <p>Parameters:</p>
    <dl>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSKeyframesRule/appendRule(rule)" data-dfn-type="argument" data-export id="dom-csskeyframesrule-appendrule-rule-rule"><code>rule</code></dfn> of type <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring①④">CSSOMString</a></code> 
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSKeyframesRule/appendRule(rule)" data-dfn-type="argument" data-export id="dom-csskeyframesrule-appendrule-rule-rule"><code>rule</code></dfn> of type <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring①④">CSSOMString</a></code>
     <dd> The rule to be appended, expressed in the same syntax as one entry in the <a class="css" data-link-type="maybe" href="#at-ruledef-keyframes" id="ref-for-at-ruledef-keyframes⑨">@keyframes</a> rule. A valid rule is always appended e.g. even if its key(s) already
-			exists. 
+			exists.
    </dl>
    <p>No Return Value</p>
    <p>No Exceptions</p>
@@ -1424,9 +1424,9 @@ deletes the last declared <code class="idl"><a data-link-type="idl" href="#csske
 If no matching rule exists, the method does nothing.</p>
    <p>Parameters:</p>
    <dl>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSKeyframesRule/deleteRule(select)" data-dfn-type="argument" data-export id="dom-csskeyframesrule-deleterule-select-select"><code>select</code></dfn> of type <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring①⑤">CSSOMString</a></code> 
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSKeyframesRule/deleteRule(select)" data-dfn-type="argument" data-export id="dom-csskeyframesrule-deleterule-select-select"><code>select</code></dfn> of type <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring①⑤">CSSOMString</a></code>
     <dd>
-      The keyframe selector of the rule to be deleted: a comma-separated list of percentage values between 0% and 100% or the keywords <span class="css">from</span> or <span class="css">to</span> which resolve to 0% and 100%, respectively. 
+      The keyframe selector of the rule to be deleted: a comma-separated list of percentage values between 0% and 100% or the keywords <span class="css">from</span> or <span class="css">to</span> which resolve to 0% and 100%, respectively.
      <p>The number and order of the values in the specified keyframe selector must match those of the targeted keyframe rule(s).  The match is not sensitive to white space around the values in the list.</p>
    </dl>
    <p>No Return Value</p>
@@ -1437,19 +1437,19 @@ If no matching rule exists, the method does nothing.</p>
     If no matching rule exists, the method does nothing.</p>
    <p>Parameters:</p>
    <dl>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSKeyframesRule/findRule(select)" data-dfn-type="argument" data-export id="dom-csskeyframesrule-findrule-select-select"><code>select</code></dfn> of type <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring①⑥">CSSOMString</a></code> 
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSKeyframesRule/findRule(select)" data-dfn-type="argument" data-export id="dom-csskeyframesrule-findrule-select-select"><code>select</code></dfn> of type <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring①⑥">CSSOMString</a></code>
     <dd>
-      The keyframe selector of the rule to be deleted: a comma-separated list of percentage values between 0% and 100% or the keywords <span class="css">from</span> or <span class="css">to</span> which resolve to 0% and 100%, respectively. 
+      The keyframe selector of the rule to be deleted: a comma-separated list of percentage values between 0% and 100% or the keywords <span class="css">from</span> or <span class="css">to</span> which resolve to 0% and 100%, respectively.
      <p>The number and order of the values in the specified keyframe selector must match those of the targeted keyframe rule(s). The match is not sensitive to white space around the values in the list.</p>
    </dl>
    <p>Return Value:</p>
    <dl>
-    <dt><code class="idl"><a data-link-type="idl" href="#csskeyframerule" id="ref-for-csskeyframerule⑥">CSSKeyframeRule</a></code> 
-    <dd> The found rule. 
+    <dt><code class="idl"><a data-link-type="idl" href="#csskeyframerule" id="ref-for-csskeyframerule⑥">CSSKeyframeRule</a></code>
+    <dd> The found rule.
    </dl>
    <p>No Exceptions</p>
    <div class="example" id="example-d1f87811">
-    <a class="self-link" href="#example-d1f87811"></a> For example, given the following animation: 
+    <a class="self-link" href="#example-d1f87811"></a> For example, given the following animation:
 <pre>@keyframes colorful-diagonal-slide {
 
   from {
@@ -1527,9 +1527,9 @@ objects</a>.</p>
 	need to be edited in:</p>
    <ul>
     <li>
-     2014-09-09 minutes (Antibes f2f) 
+     2014-09-09 minutes (Antibes f2f)
      <ul>
-      <li>Detail how/when keyframe values are computed; using <a href="http://lists.w3.org/Archives/Public/www-style/2014Aug/0132.html">G.beta in dbaron’s mail</a> 
+      <li>Detail how/when keyframe values are computed; using <a href="http://lists.w3.org/Archives/Public/www-style/2014Aug/0132.html">G.beta in dbaron’s mail</a>
       <li>
        <del>Agreed that both transitions and animations animate all properties. css-transitions to define animation of non-interoperable/discrete values. They take their starting values below 50% timing function progress, and end values above</del>
       <li>
@@ -1544,7 +1544,7 @@ objects</a>.</p>
        <del>If an animation with a negative animation delay is initially paused, the start event still fires </del>
      </ul>
     <li>
-     2012-10-29 minutes 
+     2012-10-29 minutes
      <ul>
       <li>
        <del>Change the animation properties to be dynamically changeable </del>
@@ -1556,7 +1556,7 @@ objects</a>.</p>
        <del>Make *animations* transition *all* properties. Unless otherwise specified, discrete properties take their starting values below 50% timing function progress, and end values above 50% timing function progress.</del>
      </ul>
     <li>
-     2012-12-12 minutes and intermediate comments 
+     2012-12-12 minutes and intermediate comments
      <del>and 2012-12-19 minutes</del>
      <ul>
       <li>
@@ -1571,7 +1571,7 @@ objects</a>.</p>
        <del>animation-play-state has the same list behavior as the other animation properties, matching the length of animation-name (<a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=14786">Bug</a>)</del>
      </ul>
     <li>
-     2013-02-20 minutes 
+     2013-02-20 minutes
      <ul>
       <li>
        <del>Øyvind’s clarification accepted</del>
@@ -1581,13 +1581,13 @@ objects</a>.</p>
        <del>mark pseudoElement at-risk</del>
      </ul>
     <li>
-     2013-05-30 minutes 
+     2013-05-30 minutes
      <ul>
       <li>
        <del>expectations on animations in non-interactive media</del>
      </ul>
     <li>
-     2014-01-27 minutes 
+     2014-01-27 minutes
      <ul>
       <li>
        <del>remove text about waiting for document load</del>
@@ -1609,7 +1609,7 @@ objects</a>.</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1622,14 +1622,14 @@ objects</a>.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -1680,7 +1680,7 @@ objects</a>.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1801,286 +1801,286 @@ objects</a>.</p>
   <aside class="dfn-panel" data-for="term-for-propdef-background-image">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-image">https://drafts.csswg.org/css-backgrounds-3/#propdef-background-image</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-background-image">4.2. 
+    <li><a href="#ref-for-propdef-background-image">4.2.
 The animation-name property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-none">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-none">https://drafts.csswg.org/css-display-3/#valdef-display-none</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-none">3. 
+    <li><a href="#ref-for-valdef-display-none">3.
 Animations</a> <a href="#ref-for-valdef-display-none①">(2)</a> <a href="#ref-for-valdef-display-none②">(3)</a> <a href="#ref-for-valdef-display-none③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-easing-function">
    <a href="https://drafts.csswg.org/css-easing-1/#typedef-easing-function">https://drafts.csswg.org/css-easing-1/#typedef-easing-function</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-easing-function">4.4. 
+    <li><a href="#ref-for-typedef-easing-function">4.4.
 The animation-timing-function property</a> <a href="#ref-for-typedef-easing-function①">(2)</a>
-    <li><a href="#ref-for-typedef-easing-function②">4.10. 
+    <li><a href="#ref-for-typedef-easing-function②">4.10.
 The animation shorthand property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-cubic-bezier-easing-function-ease-in">
    <a href="https://drafts.csswg.org/css-easing-1/#valdef-cubic-bezier-easing-function-ease-in">https://drafts.csswg.org/css-easing-1/#valdef-cubic-bezier-easing-function-ease-in</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-cubic-bezier-easing-function-ease-in">4.6. 
+    <li><a href="#ref-for-valdef-cubic-bezier-easing-function-ease-in">4.6.
 The animation-direction property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-cubic-bezier-easing-function-ease-out">
    <a href="https://drafts.csswg.org/css-easing-1/#valdef-cubic-bezier-easing-function-ease-out">https://drafts.csswg.org/css-easing-1/#valdef-cubic-bezier-easing-function-ease-out</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-cubic-bezier-easing-function-ease-out">4.6. 
+    <li><a href="#ref-for-valdef-cubic-bezier-easing-function-ease-out">4.6.
 The animation-direction property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-input-progress-value">
    <a href="https://drafts.csswg.org/css-easing-1/#input-progress-value">https://drafts.csswg.org/css-easing-1/#input-progress-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-input-progress-value">4.4. 
+    <li><a href="#ref-for-input-progress-value">4.4.
 The animation-timing-function property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-output-progress-value">
    <a href="https://drafts.csswg.org/css-easing-1/#output-progress-value">https://drafts.csswg.org/css-easing-1/#output-progress-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-output-progress-value">4.4. 
+    <li><a href="#ref-for-output-progress-value">4.4.
 The animation-timing-function property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-steps-start">
    <a href="https://drafts.csswg.org/css-easing-1/#valdef-steps-start">https://drafts.csswg.org/css-easing-1/#valdef-steps-start</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-steps-start">4.4. 
+    <li><a href="#ref-for-valdef-steps-start">4.4.
 The animation-timing-function property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-step-easing-function">
    <a href="https://drafts.csswg.org/css-easing-1/#step-easing-function">https://drafts.csswg.org/css-easing-1/#step-easing-function</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-step-easing-function">4.4. 
+    <li><a href="#ref-for-step-easing-function">4.4.
 The animation-timing-function property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-step-position">
    <a href="https://drafts.csswg.org/css-easing-1/#step-position">https://drafts.csswg.org/css-easing-1/#step-position</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-step-position">4.4. 
+    <li><a href="#ref-for-step-position">4.4.
 The animation-timing-function property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-left">
    <a href="https://drafts.csswg.org/css-position-3/#propdef-left">https://drafts.csswg.org/css-position-3/#propdef-left</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-left">4. 
+    <li><a href="#ref-for-propdef-left">4.
 Keyframes</a> <a href="#ref-for-propdef-left①">(2)</a> <a href="#ref-for-propdef-left②">(3)</a> <a href="#ref-for-propdef-left③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-declaration-list">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-declaration-list">https://drafts.csswg.org/css-syntax-3/#typedef-declaration-list</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-declaration-list">4. 
+    <li><a href="#ref-for-typedef-declaration-list">4.
 Keyframes</a> <a href="#ref-for-typedef-declaration-list①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-rule-list">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-rule-list">https://drafts.csswg.org/css-syntax-3/#typedef-rule-list</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-rule-list">4. 
+    <li><a href="#ref-for-typedef-rule-list">4.
 Keyframes</a> <a href="#ref-for-typedef-rule-list①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-number-value">
    <a href="https://drafts.csswg.org/css-values-3/#number-value">https://drafts.csswg.org/css-values-3/#number-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-number-value">4.5. 
+    <li><a href="#ref-for-number-value">4.5.
 The animation-iteration-count property</a> <a href="#ref-for-number-value①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-percentage-value">
    <a href="https://drafts.csswg.org/css-values-3/#percentage-value">https://drafts.csswg.org/css-values-3/#percentage-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-percentage-value">4. 
+    <li><a href="#ref-for-percentage-value">4.
 Keyframes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-string-value">
    <a href="https://drafts.csswg.org/css-values-3/#string-value">https://drafts.csswg.org/css-values-3/#string-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-string-value">4. 
+    <li><a href="#ref-for-string-value">4.
 Keyframes</a> <a href="#ref-for-string-value①">(2)</a> <a href="#ref-for-string-value②">(3)</a> <a href="#ref-for-string-value③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-time-value">
    <a href="https://drafts.csswg.org/css-values-3/#time-value">https://drafts.csswg.org/css-values-3/#time-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-time-value">4.3. 
+    <li><a href="#ref-for-time-value">4.3.
 The animation-duration property</a> <a href="#ref-for-time-value①">(2)</a> <a href="#ref-for-time-value②">(3)</a> <a href="#ref-for-time-value③">(4)</a> <a href="#ref-for-time-value④">(5)</a>
-    <li><a href="#ref-for-time-value⑤">4.8. 
+    <li><a href="#ref-for-time-value⑤">4.8.
 The animation-delay property</a> <a href="#ref-for-time-value⑥">(2)</a> <a href="#ref-for-time-value⑦">(3)</a>
-    <li><a href="#ref-for-time-value⑧">4.10. 
+    <li><a href="#ref-for-time-value⑧">4.10.
 The animation shorthand property</a> <a href="#ref-for-time-value⑨">(2)</a> <a href="#ref-for-time-value①⓪">(3)</a> <a href="#ref-for-time-value①①">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-comma">
    <a href="https://drafts.csswg.org/css-values-4/#mult-comma">https://drafts.csswg.org/css-values-4/#mult-comma</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-comma">4.2. 
+    <li><a href="#ref-for-mult-comma">4.2.
 The animation-name property</a>
-    <li><a href="#ref-for-mult-comma①">4.3. 
+    <li><a href="#ref-for-mult-comma①">4.3.
 The animation-duration property</a>
-    <li><a href="#ref-for-mult-comma②">4.4. 
+    <li><a href="#ref-for-mult-comma②">4.4.
 The animation-timing-function property</a>
-    <li><a href="#ref-for-mult-comma③">4.5. 
+    <li><a href="#ref-for-mult-comma③">4.5.
 The animation-iteration-count property</a>
-    <li><a href="#ref-for-mult-comma④">4.6. 
+    <li><a href="#ref-for-mult-comma④">4.6.
 The animation-direction property</a>
-    <li><a href="#ref-for-mult-comma⑤">4.7. 
+    <li><a href="#ref-for-mult-comma⑤">4.7.
 The animation-play-state property</a>
-    <li><a href="#ref-for-mult-comma⑥">4.8. 
+    <li><a href="#ref-for-mult-comma⑥">4.8.
 The animation-delay property</a>
-    <li><a href="#ref-for-mult-comma⑦">4.9. 
+    <li><a href="#ref-for-mult-comma⑦">4.9.
 The animation-fill-mode property</a>
-    <li><a href="#ref-for-mult-comma⑧">4.10. 
+    <li><a href="#ref-for-mult-comma⑧">4.10.
 The animation shorthand property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-identifier-value">
    <a href="https://drafts.csswg.org/css-values-4/#identifier-value">https://drafts.csswg.org/css-values-4/#identifier-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-identifier-value">4. 
+    <li><a href="#ref-for-identifier-value">4.
 Keyframes</a> <a href="#ref-for-identifier-value①">(2)</a> <a href="#ref-for-identifier-value②">(3)</a> <a href="#ref-for-identifier-value③">(4)</a> <a href="#ref-for-identifier-value④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-identifier">
    <a href="https://drafts.csswg.org/css-values-4/#css-identifier">https://drafts.csswg.org/css-values-4/#css-identifier</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-identifier">4.2. 
+    <li><a href="#ref-for-css-identifier">4.2.
 The animation-name property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-wide-keywords">
    <a href="https://drafts.csswg.org/css-values-4/#css-wide-keywords">https://drafts.csswg.org/css-values-4/#css-wide-keywords</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-wide-keywords">2. 
+    <li><a href="#ref-for-css-wide-keywords">2.
 Values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">4.2. 
+    <li><a href="#ref-for-comb-one">4.2.
 The animation-name property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-will-change">
    <a href="https://drafts.csswg.org/css-will-change-1/#propdef-will-change">https://drafts.csswg.org/css-will-change-1/#propdef-will-change</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-will-change">3. 
+    <li><a href="#ref-for-propdef-will-change">3.
 Animations</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-display">
    <a href="https://drafts.csswg.org/css2/visuren.html#propdef-display">https://drafts.csswg.org/css2/visuren.html#propdef-display</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-display">3. 
+    <li><a href="#ref-for-propdef-display">3.
 Animations</a> <a href="#ref-for-propdef-display①">(2)</a> <a href="#ref-for-propdef-display②">(3)</a> <a href="#ref-for-propdef-display③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssomstring">
    <a href="https://drafts.csswg.org/cssom-1/#cssomstring">https://drafts.csswg.org/cssom-1/#cssomstring</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssomstring">5.1.1. 
+    <li><a href="#ref-for-cssomstring">5.1.1.
 IDL Definition</a> <a href="#ref-for-cssomstring①">(2)</a> <a href="#ref-for-cssomstring②">(3)</a> <a href="#ref-for-cssomstring③">(4)</a> <a href="#ref-for-cssomstring④">(5)</a>
-    <li><a href="#ref-for-cssomstring⑤">5.1.2. 
+    <li><a href="#ref-for-cssomstring⑤">5.1.2.
 Attributes</a> <a href="#ref-for-cssomstring⑥">(2)</a>
-    <li><a href="#ref-for-cssomstring⑦">6.2.1. 
+    <li><a href="#ref-for-cssomstring⑦">6.2.1.
 IDL Definition</a>
-    <li><a href="#ref-for-cssomstring⑧">6.2.2. 
+    <li><a href="#ref-for-cssomstring⑧">6.2.2.
 Attributes</a>
-    <li><a href="#ref-for-cssomstring⑨">6.3.1. 
+    <li><a href="#ref-for-cssomstring⑨">6.3.1.
 IDL Definition</a> <a href="#ref-for-cssomstring①⓪">(2)</a> <a href="#ref-for-cssomstring①①">(3)</a> <a href="#ref-for-cssomstring①②">(4)</a>
-    <li><a href="#ref-for-cssomstring①③">6.3.2. 
+    <li><a href="#ref-for-cssomstring①③">6.3.2.
 Attributes</a>
-    <li><a href="#ref-for-cssomstring①④">6.3.3. 
+    <li><a href="#ref-for-cssomstring①④">6.3.3.
 The appendRule method</a>
-    <li><a href="#ref-for-cssomstring①⑤">6.3.4. 
+    <li><a href="#ref-for-cssomstring①⑤">6.3.4.
 The deleteRule method</a>
-    <li><a href="#ref-for-cssomstring①⑥">6.3.5. 
+    <li><a href="#ref-for-cssomstring①⑥">6.3.5.
 The findRule method</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssrule">
    <a href="https://drafts.csswg.org/cssom-1/#cssrule">https://drafts.csswg.org/cssom-1/#cssrule</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssrule">6.1. 
+    <li><a href="#ref-for-cssrule">6.1.
 The CSSRule Interface</a>
-    <li><a href="#ref-for-cssrule①">6.1.1. 
+    <li><a href="#ref-for-cssrule①">6.1.1.
 IDL Definition</a>
-    <li><a href="#ref-for-cssrule②">6.2.1. 
+    <li><a href="#ref-for-cssrule②">6.2.1.
 IDL Definition</a>
-    <li><a href="#ref-for-cssrule③">6.3.1. 
+    <li><a href="#ref-for-cssrule③">6.3.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssrulelist">
    <a href="https://drafts.csswg.org/cssom-1/#cssrulelist">https://drafts.csswg.org/cssom-1/#cssrulelist</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssrulelist">6.3.1. 
+    <li><a href="#ref-for-cssrulelist">6.3.1.
 IDL Definition</a>
-    <li><a href="#ref-for-cssrulelist①">6.3.2. 
+    <li><a href="#ref-for-cssrulelist①">6.3.2.
 Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssstyledeclaration">
    <a href="https://drafts.csswg.org/cssom-1/#cssstyledeclaration">https://drafts.csswg.org/cssom-1/#cssstyledeclaration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssstyledeclaration">6.2.1. 
+    <li><a href="#ref-for-cssstyledeclaration">6.2.1.
 IDL Definition</a>
-    <li><a href="#ref-for-cssstyledeclaration①">6.2.2. 
+    <li><a href="#ref-for-cssstyledeclaration①">6.2.2.
 Attributes</a> <a href="#ref-for-cssstyledeclaration②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dom-cssstyledeclaration-csstext">
    <a href="https://drafts.csswg.org/cssom-1/#dom-cssstyledeclaration-csstext">https://drafts.csswg.org/cssom-1/#dom-cssstyledeclaration-csstext</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-cssstyledeclaration-csstext">6.2.1. 
+    <li><a href="#ref-for-dom-cssstyledeclaration-csstext">6.2.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssstyledeclaration-declarations">
    <a href="https://drafts.csswg.org/cssom-1/#cssstyledeclaration-declarations">https://drafts.csswg.org/cssom-1/#cssstyledeclaration-declarations</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssstyledeclaration-declarations">6.2.2. 
+    <li><a href="#ref-for-cssstyledeclaration-declarations">6.2.2.
 Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssstyledeclaration-owner-node">
    <a href="https://drafts.csswg.org/cssom-1/#cssstyledeclaration-owner-node">https://drafts.csswg.org/cssom-1/#cssstyledeclaration-owner-node</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssstyledeclaration-owner-node">6.2.2. 
+    <li><a href="#ref-for-cssstyledeclaration-owner-node">6.2.2.
 Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssstyledeclaration-parent-css-rule">
    <a href="https://drafts.csswg.org/cssom-1/#cssstyledeclaration-parent-css-rule">https://drafts.csswg.org/cssom-1/#cssstyledeclaration-parent-css-rule</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssstyledeclaration-parent-css-rule">6.2.2. 
+    <li><a href="#ref-for-cssstyledeclaration-parent-css-rule">6.2.2.
 Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-cssstyledeclaration-readonly-flag">
    <a href="https://drafts.csswg.org/cssom-1/#cssstyledeclaration-readonly-flag">https://drafts.csswg.org/cssom-1/#cssstyledeclaration-readonly-flag</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cssstyledeclaration-readonly-flag">6.2.2. 
+    <li><a href="#ref-for-cssstyledeclaration-readonly-flag">6.2.2.
 Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-declarations-specified-order">
    <a href="https://drafts.csswg.org/cssom-1/#concept-declarations-specified-order">https://drafts.csswg.org/cssom-1/#concept-declarations-specified-order</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-declarations-specified-order">6.2.2. 
+    <li><a href="#ref-for-concept-declarations-specified-order">6.2.2.
 Attributes</a>
    </ul>
   </aside>
@@ -2095,37 +2095,37 @@ objects</a>
   <aside class="dfn-panel" data-for="term-for-event">
    <a href="https://dom.spec.whatwg.org/#event">https://dom.spec.whatwg.org/#event</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-event">5.1.1. 
+    <li><a href="#ref-for-event">5.1.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dictdef-eventinit">
    <a href="https://dom.spec.whatwg.org/#dictdef-eventinit">https://dom.spec.whatwg.org/#dictdef-eventinit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dictdef-eventinit">5.1.1. 
+    <li><a href="#ref-for-dictdef-eventinit">5.1.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-context-object">
    <a href="https://dom.spec.whatwg.org/#context-object">https://dom.spec.whatwg.org/#context-object</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-context-object">6.2.2. 
+    <li><a href="#ref-for-context-object">6.2.2.
 Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-eventhandler">
    <a href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler">https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventhandler">6.4.1. 
+    <li><a href="#ref-for-eventhandler">6.4.1.
 IDL Definition</a> <a href="#ref-for-eventhandler①">(2)</a> <a href="#ref-for-eventhandler②">(3)</a> <a href="#ref-for-eventhandler③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-globaleventhandlers">
    <a href="https://html.spec.whatwg.org/multipage/webappapis.html#globaleventhandlers">https://html.spec.whatwg.org/multipage/webappapis.html#globaleventhandlers</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-globaleventhandlers">6.4. 
+    <li><a href="#ref-for-globaleventhandlers">6.4.
 Extensions to the GlobalEventHandlers Interface Mixin</a>
-    <li><a href="#ref-for-globaleventhandlers①">6.4.1. 
+    <li><a href="#ref-for-globaleventhandlers①">6.4.1.
 IDL Definition</a>
    </ul>
   </aside>
@@ -2140,7 +2140,7 @@ objects</a>
   <aside class="dfn-panel" data-for="term-for-case-sensitive">
    <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#case-sensitive">https://html.spec.whatwg.org/multipage/infrastructure.html#case-sensitive</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-case-sensitive">4. 
+    <li><a href="#ref-for-case-sensitive">4.
 Keyframes</a>
    </ul>
   </aside>
@@ -2166,7 +2166,7 @@ objects</a> <a href="#ref-for-event-handler-event-type①">(2)</a>
     <li><a href="#ref-for-event-handler-idl-attributes">5.3. Event
 handlers on elements, Document objects, and Window
 objects</a> <a href="#ref-for-event-handler-idl-attributes①">(2)</a>
-    <li><a href="#ref-for-event-handler-idl-attributes②">6.4. 
+    <li><a href="#ref-for-event-handler-idl-attributes②">6.4.
 Extensions to the GlobalEventHandlers Interface Mixin</a>
    </ul>
   </aside>
@@ -2189,48 +2189,48 @@ objects</a>
   <aside class="dfn-panel" data-for="term-for-Exposed">
    <a href="https://heycam.github.io/webidl/#Exposed">https://heycam.github.io/webidl/#Exposed</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-Exposed">5.1.1. 
+    <li><a href="#ref-for-Exposed">5.1.1.
 IDL Definition</a>
-    <li><a href="#ref-for-Exposed①">6.2.1. 
+    <li><a href="#ref-for-Exposed①">6.2.1.
 IDL Definition</a>
-    <li><a href="#ref-for-Exposed②">6.3.1. 
+    <li><a href="#ref-for-Exposed②">6.3.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-PutForwards">
    <a href="https://heycam.github.io/webidl/#PutForwards">https://heycam.github.io/webidl/#PutForwards</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-PutForwards">6.2.1. 
+    <li><a href="#ref-for-PutForwards">6.2.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-SameObject">
    <a href="https://heycam.github.io/webidl/#SameObject">https://heycam.github.io/webidl/#SameObject</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-SameObject">6.2.1. 
+    <li><a href="#ref-for-SameObject">6.2.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-syntaxerror">
    <a href="https://heycam.github.io/webidl/#syntaxerror">https://heycam.github.io/webidl/#syntaxerror</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-syntaxerror">6.2.2. 
+    <li><a href="#ref-for-syntaxerror">6.2.2.
 Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-double">
    <a href="https://heycam.github.io/webidl/#idl-double">https://heycam.github.io/webidl/#idl-double</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-double">5.1.1. 
+    <li><a href="#ref-for-idl-double">5.1.1.
 IDL Definition</a> <a href="#ref-for-idl-double①">(2)</a>
-    <li><a href="#ref-for-idl-double②">5.1.2. 
+    <li><a href="#ref-for-idl-double②">5.1.2.
 Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-unsigned-short">
    <a href="https://heycam.github.io/webidl/#idl-unsigned-short">https://heycam.github.io/webidl/#idl-unsigned-short</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-unsigned-short">6.1.1. 
+    <li><a href="#ref-for-idl-unsigned-short">6.1.1.
 IDL Definition</a> <a href="#ref-for-idl-unsigned-short①">(2)</a>
    </ul>
   </aside>
@@ -2543,352 +2543,352 @@ IDL Definition</a> <a href="#ref-for-idl-unsigned-short①">(2)</a>
   <aside class="dfn-panel" data-for="at-ruledef-keyframes">
    <b><a href="#at-ruledef-keyframes">#at-ruledef-keyframes</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-at-ruledef-keyframes">4. 
+    <li><a href="#ref-for-at-ruledef-keyframes">4.
 Keyframes</a> <a href="#ref-for-at-ruledef-keyframes①">(2)</a> <a href="#ref-for-at-ruledef-keyframes②">(3)</a> <a href="#ref-for-at-ruledef-keyframes③">(4)</a> <a href="#ref-for-at-ruledef-keyframes④">(5)</a> <a href="#ref-for-at-ruledef-keyframes⑤">(6)</a> <a href="#ref-for-at-ruledef-keyframes⑥">(7)</a> <a href="#ref-for-at-ruledef-keyframes⑦">(8)</a>
-    <li><a href="#ref-for-at-ruledef-keyframes⑧">4.2. 
+    <li><a href="#ref-for-at-ruledef-keyframes⑧">4.2.
 The animation-name property</a>
-    <li><a href="#ref-for-at-ruledef-keyframes⑨">6.3.3. 
+    <li><a href="#ref-for-at-ruledef-keyframes⑨">6.3.3.
 The appendRule method</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-keyframes-name">
    <b><a href="#typedef-keyframes-name">#typedef-keyframes-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-keyframes-name">4. 
+    <li><a href="#ref-for-typedef-keyframes-name">4.
 Keyframes</a>
-    <li><a href="#ref-for-typedef-keyframes-name①">4.2. 
+    <li><a href="#ref-for-typedef-keyframes-name①">4.2.
 The animation-name property</a> <a href="#ref-for-typedef-keyframes-name②">(2)</a> <a href="#ref-for-typedef-keyframes-name③">(3)</a>
-    <li><a href="#ref-for-typedef-keyframes-name④">4.10. 
+    <li><a href="#ref-for-typedef-keyframes-name④">4.10.
 The animation shorthand property</a> <a href="#ref-for-typedef-keyframes-name⑤">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-keyframe-block">
    <b><a href="#typedef-keyframe-block">#typedef-keyframe-block</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-keyframe-block">4. 
+    <li><a href="#ref-for-typedef-keyframe-block">4.
 Keyframes</a> <a href="#ref-for-typedef-keyframe-block①">(2)</a> <a href="#ref-for-typedef-keyframe-block②">(3)</a> <a href="#ref-for-typedef-keyframe-block③">(4)</a> <a href="#ref-for-typedef-keyframe-block④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-keyframe-selector">
    <b><a href="#typedef-keyframe-selector">#typedef-keyframe-selector</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-keyframe-selector">4. 
+    <li><a href="#ref-for-typedef-keyframe-selector">4.
 Keyframes</a> <a href="#ref-for-typedef-keyframe-selector①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-animation-name">
    <b><a href="#propdef-animation-name">#propdef-animation-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-animation-name">3. 
+    <li><a href="#ref-for-propdef-animation-name">3.
 Animations</a> <a href="#ref-for-propdef-animation-name①">(2)</a> <a href="#ref-for-propdef-animation-name②">(3)</a> <a href="#ref-for-propdef-animation-name③">(4)</a> <a href="#ref-for-propdef-animation-name④">(5)</a> <a href="#ref-for-propdef-animation-name⑤">(6)</a> <a href="#ref-for-propdef-animation-name⑥">(7)</a> <a href="#ref-for-propdef-animation-name⑦">(8)</a>
-    <li><a href="#ref-for-propdef-animation-name⑧">4.2. 
+    <li><a href="#ref-for-propdef-animation-name⑧">4.2.
 The animation-name property</a> <a href="#ref-for-propdef-animation-name⑨">(2)</a> <a href="#ref-for-propdef-animation-name①⓪">(3)</a> <a href="#ref-for-propdef-animation-name①①">(4)</a> <a href="#ref-for-propdef-animation-name①②">(5)</a> <a href="#ref-for-propdef-animation-name①③">(6)</a>
-    <li><a href="#ref-for-propdef-animation-name①④">4.9. 
+    <li><a href="#ref-for-propdef-animation-name①④">4.9.
 The animation-fill-mode property</a>
-    <li><a href="#ref-for-propdef-animation-name①⑤">4.10. 
+    <li><a href="#ref-for-propdef-animation-name①⑤">4.10.
 The animation shorthand property</a> <a href="#ref-for-propdef-animation-name①⑥">(2)</a> <a href="#ref-for-propdef-animation-name①⑦">(3)</a> <a href="#ref-for-propdef-animation-name①⑧">(4)</a> <a href="#ref-for-propdef-animation-name①⑨">(5)</a> <a href="#ref-for-propdef-animation-name②⓪">(6)</a>
-    <li><a href="#ref-for-propdef-animation-name②①">5. 
+    <li><a href="#ref-for-propdef-animation-name②①">5.
 Animation Events</a> <a href="#ref-for-propdef-animation-name②②">(2)</a> <a href="#ref-for-propdef-animation-name②③">(3)</a> <a href="#ref-for-propdef-animation-name②④">(4)</a>
-    <li><a href="#ref-for-propdef-animation-name②⑤">5.1.2. 
+    <li><a href="#ref-for-propdef-animation-name②⑤">5.1.2.
 Attributes</a>
-    <li><a href="#ref-for-propdef-animation-name②⑥">5.2. 
+    <li><a href="#ref-for-propdef-animation-name②⑥">5.2.
 Types of AnimationEvent</a>
-    <li><a href="#ref-for-propdef-animation-name②⑦">6.3.2. 
+    <li><a href="#ref-for-propdef-animation-name②⑦">6.3.2.
 Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-name-none">
    <b><a href="#valdef-animation-name-none">#valdef-animation-name-none</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-name-none">4. 
+    <li><a href="#ref-for-valdef-animation-name-none">4.
 Keyframes</a>
-    <li><a href="#ref-for-valdef-animation-name-none①">4.2. 
+    <li><a href="#ref-for-valdef-animation-name-none①">4.2.
 The animation-name property</a>
-    <li><a href="#ref-for-valdef-animation-name-none②">4.10. 
+    <li><a href="#ref-for-valdef-animation-name-none②">4.10.
 The animation shorthand property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-animation-duration">
    <b><a href="#propdef-animation-duration">#propdef-animation-duration</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-animation-duration">4.3. 
+    <li><a href="#ref-for-propdef-animation-duration">4.3.
 The animation-duration property</a> <a href="#ref-for-propdef-animation-duration①">(2)</a>
-    <li><a href="#ref-for-propdef-animation-duration②">4.5. 
+    <li><a href="#ref-for-propdef-animation-duration②">4.5.
 The animation-iteration-count property</a>
-    <li><a href="#ref-for-propdef-animation-duration③">4.9. 
+    <li><a href="#ref-for-propdef-animation-duration③">4.9.
 The animation-fill-mode property</a>
-    <li><a href="#ref-for-propdef-animation-duration④">4.10. 
+    <li><a href="#ref-for-propdef-animation-duration④">4.10.
 The animation shorthand property</a>
-    <li><a href="#ref-for-propdef-animation-duration⑤">5.2. 
+    <li><a href="#ref-for-propdef-animation-duration⑤">5.2.
 Types of AnimationEvent</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-animation-timing-function">
    <b><a href="#propdef-animation-timing-function">#propdef-animation-timing-function</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-animation-timing-function">4. 
+    <li><a href="#ref-for-propdef-animation-timing-function">4.
 Keyframes</a> <a href="#ref-for-propdef-animation-timing-function①">(2)</a>
-    <li><a href="#ref-for-propdef-animation-timing-function②">4.1. 
+    <li><a href="#ref-for-propdef-animation-timing-function②">4.1.
 Timing functions for keyframes</a>
-    <li><a href="#ref-for-propdef-animation-timing-function③">4.4. 
+    <li><a href="#ref-for-propdef-animation-timing-function③">4.4.
 The animation-timing-function property</a> <a href="#ref-for-propdef-animation-timing-function④">(2)</a> <a href="#ref-for-propdef-animation-timing-function⑤">(3)</a> <a href="#ref-for-propdef-animation-timing-function⑥">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="active-duration">
    <b><a href="#active-duration">#active-duration</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-active-duration">5.2. 
+    <li><a href="#ref-for-active-duration">5.2.
 Types of AnimationEvent</a> <a href="#ref-for-active-duration①">(2)</a> <a href="#ref-for-active-duration②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-animation-iteration-count">
    <b><a href="#propdef-animation-iteration-count">#propdef-animation-iteration-count</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-animation-iteration-count">4.5. 
+    <li><a href="#ref-for-propdef-animation-iteration-count">4.5.
 The animation-iteration-count property</a> <a href="#ref-for-propdef-animation-iteration-count①">(2)</a> <a href="#ref-for-propdef-animation-iteration-count②">(3)</a>
-    <li><a href="#ref-for-propdef-animation-iteration-count③">4.9. 
+    <li><a href="#ref-for-propdef-animation-iteration-count③">4.9.
 The animation-fill-mode property</a> <a href="#ref-for-propdef-animation-iteration-count④">(2)</a> <a href="#ref-for-propdef-animation-iteration-count⑤">(3)</a> <a href="#ref-for-propdef-animation-iteration-count⑥">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-single-animation-iteration-count">
    <b><a href="#typedef-single-animation-iteration-count">#typedef-single-animation-iteration-count</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-single-animation-iteration-count">4.5. 
+    <li><a href="#ref-for-typedef-single-animation-iteration-count">4.5.
 The animation-iteration-count property</a>
-    <li><a href="#ref-for-typedef-single-animation-iteration-count①">4.10. 
+    <li><a href="#ref-for-typedef-single-animation-iteration-count①">4.10.
 The animation shorthand property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-iteration-count-infinite">
    <b><a href="#valdef-animation-iteration-count-infinite">#valdef-animation-iteration-count-infinite</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-iteration-count-infinite">4.5. 
+    <li><a href="#ref-for-valdef-animation-iteration-count-infinite">4.5.
 The animation-iteration-count property</a> <a href="#ref-for-valdef-animation-iteration-count-infinite①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-animation-direction">
    <b><a href="#propdef-animation-direction">#propdef-animation-direction</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-animation-direction">4.3. 
+    <li><a href="#ref-for-propdef-animation-direction">4.3.
 The animation-duration property</a> <a href="#ref-for-propdef-animation-direction①">(2)</a>
-    <li><a href="#ref-for-propdef-animation-direction②">4.4. 
+    <li><a href="#ref-for-propdef-animation-direction②">4.4.
 The animation-timing-function property</a>
-    <li><a href="#ref-for-propdef-animation-direction③">4.5. 
+    <li><a href="#ref-for-propdef-animation-direction③">4.5.
 The animation-iteration-count property</a>
-    <li><a href="#ref-for-propdef-animation-direction④">4.6. 
+    <li><a href="#ref-for-propdef-animation-direction④">4.6.
 The animation-direction property</a> <a href="#ref-for-propdef-animation-direction⑤">(2)</a>
-    <li><a href="#ref-for-propdef-animation-direction⑥">4.9. 
+    <li><a href="#ref-for-propdef-animation-direction⑥">4.9.
 The animation-fill-mode property</a> <a href="#ref-for-propdef-animation-direction⑦">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-single-animation-direction">
    <b><a href="#typedef-single-animation-direction">#typedef-single-animation-direction</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-single-animation-direction">4.6. 
+    <li><a href="#ref-for-typedef-single-animation-direction">4.6.
 The animation-direction property</a>
-    <li><a href="#ref-for-typedef-single-animation-direction①">4.10. 
+    <li><a href="#ref-for-typedef-single-animation-direction①">4.10.
 The animation shorthand property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-direction-normal">
    <b><a href="#valdef-animation-direction-normal">#valdef-animation-direction-normal</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-direction-normal">4.9. 
+    <li><a href="#ref-for-valdef-animation-direction-normal">4.9.
 The animation-fill-mode property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-direction-reverse">
    <b><a href="#valdef-animation-direction-reverse">#valdef-animation-direction-reverse</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-direction-reverse">4.9. 
+    <li><a href="#ref-for-valdef-animation-direction-reverse">4.9.
 The animation-fill-mode property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-direction-alternate">
    <b><a href="#valdef-animation-direction-alternate">#valdef-animation-direction-alternate</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-direction-alternate">4.5. 
+    <li><a href="#ref-for-valdef-animation-direction-alternate">4.5.
 The animation-iteration-count property</a>
-    <li><a href="#ref-for-valdef-animation-direction-alternate①">4.9. 
+    <li><a href="#ref-for-valdef-animation-direction-alternate①">4.9.
 The animation-fill-mode property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-direction-alternate-reverse">
    <b><a href="#valdef-animation-direction-alternate-reverse">#valdef-animation-direction-alternate-reverse</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-direction-alternate-reverse">4.9. 
+    <li><a href="#ref-for-valdef-animation-direction-alternate-reverse">4.9.
 The animation-fill-mode property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-animation-play-state">
    <b><a href="#propdef-animation-play-state">#propdef-animation-play-state</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-animation-play-state">4.7. 
+    <li><a href="#ref-for-propdef-animation-play-state">4.7.
 The animation-play-state property</a> <a href="#ref-for-propdef-animation-play-state①">(2)</a> <a href="#ref-for-propdef-animation-play-state②">(3)</a>
-    <li><a href="#ref-for-propdef-animation-play-state③">5.2. 
+    <li><a href="#ref-for-propdef-animation-play-state③">5.2.
 Types of AnimationEvent</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-single-animation-play-state">
    <b><a href="#typedef-single-animation-play-state">#typedef-single-animation-play-state</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-single-animation-play-state">4.7. 
+    <li><a href="#ref-for-typedef-single-animation-play-state">4.7.
 The animation-play-state property</a>
-    <li><a href="#ref-for-typedef-single-animation-play-state①">4.10. 
+    <li><a href="#ref-for-typedef-single-animation-play-state①">4.10.
 The animation shorthand property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-play-state-running">
    <b><a href="#valdef-animation-play-state-running">#valdef-animation-play-state-running</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-play-state-running">4.7. 
+    <li><a href="#ref-for-valdef-animation-play-state-running">4.7.
 The animation-play-state property</a> <a href="#ref-for-valdef-animation-play-state-running①">(2)</a> <a href="#ref-for-valdef-animation-play-state-running②">(3)</a>
-    <li><a href="#ref-for-valdef-animation-play-state-running③">5.2. 
+    <li><a href="#ref-for-valdef-animation-play-state-running③">5.2.
 Types of AnimationEvent</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-play-state-paused">
    <b><a href="#valdef-animation-play-state-paused">#valdef-animation-play-state-paused</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-play-state-paused">4.7. 
+    <li><a href="#ref-for-valdef-animation-play-state-paused">4.7.
 The animation-play-state property</a> <a href="#ref-for-valdef-animation-play-state-paused①">(2)</a>
-    <li><a href="#ref-for-valdef-animation-play-state-paused②">5. 
+    <li><a href="#ref-for-valdef-animation-play-state-paused②">5.
 Animation Events</a>
-    <li><a href="#ref-for-valdef-animation-play-state-paused③">5.2. 
+    <li><a href="#ref-for-valdef-animation-play-state-paused③">5.2.
 Types of AnimationEvent</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-animation-delay">
    <b><a href="#propdef-animation-delay">#propdef-animation-delay</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-animation-delay">3. 
+    <li><a href="#ref-for-propdef-animation-delay">3.
 Animations</a> <a href="#ref-for-propdef-animation-delay①">(2)</a>
-    <li><a href="#ref-for-propdef-animation-delay②">4.3. 
+    <li><a href="#ref-for-propdef-animation-delay②">4.3.
 The animation-duration property</a> <a href="#ref-for-propdef-animation-delay③">(2)</a>
-    <li><a href="#ref-for-propdef-animation-delay④">4.4. 
+    <li><a href="#ref-for-propdef-animation-delay④">4.4.
 The animation-timing-function property</a>
-    <li><a href="#ref-for-propdef-animation-delay⑤">4.8. 
+    <li><a href="#ref-for-propdef-animation-delay⑤">4.8.
 The animation-delay property</a> <a href="#ref-for-propdef-animation-delay⑥">(2)</a>
-    <li><a href="#ref-for-propdef-animation-delay⑦">4.9. 
+    <li><a href="#ref-for-propdef-animation-delay⑦">4.9.
 The animation-fill-mode property</a> <a href="#ref-for-propdef-animation-delay⑧">(2)</a>
-    <li><a href="#ref-for-propdef-animation-delay⑨">4.10. 
+    <li><a href="#ref-for-propdef-animation-delay⑨">4.10.
 The animation shorthand property</a>
-    <li><a href="#ref-for-propdef-animation-delay①⓪">5.2. 
+    <li><a href="#ref-for-propdef-animation-delay①⓪">5.2.
 Types of AnimationEvent</a> <a href="#ref-for-propdef-animation-delay①①">(2)</a> <a href="#ref-for-propdef-animation-delay①②">(3)</a> <a href="#ref-for-propdef-animation-delay①③">(4)</a> <a href="#ref-for-propdef-animation-delay①④">(5)</a> <a href="#ref-for-propdef-animation-delay①⑤">(6)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-animation-fill-mode">
    <b><a href="#propdef-animation-fill-mode">#propdef-animation-fill-mode</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-animation-fill-mode">3. 
+    <li><a href="#ref-for-propdef-animation-fill-mode">3.
 Animations</a> <a href="#ref-for-propdef-animation-fill-mode①">(2)</a>
-    <li><a href="#ref-for-propdef-animation-fill-mode②">4.3. 
+    <li><a href="#ref-for-propdef-animation-fill-mode②">4.3.
 The animation-duration property</a> <a href="#ref-for-propdef-animation-fill-mode③">(2)</a> <a href="#ref-for-propdef-animation-fill-mode④">(3)</a>
-    <li><a href="#ref-for-propdef-animation-fill-mode⑤">4.9. 
+    <li><a href="#ref-for-propdef-animation-fill-mode⑤">4.9.
 The animation-fill-mode property</a> <a href="#ref-for-propdef-animation-fill-mode⑥">(2)</a> <a href="#ref-for-propdef-animation-fill-mode⑦">(3)</a> <a href="#ref-for-propdef-animation-fill-mode⑧">(4)</a>
-    <li><a href="#ref-for-propdef-animation-fill-mode⑨">4.10. 
+    <li><a href="#ref-for-propdef-animation-fill-mode⑨">4.10.
 The animation shorthand property</a> <a href="#ref-for-propdef-animation-fill-mode①⓪">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-single-animation-fill-mode">
    <b><a href="#typedef-single-animation-fill-mode">#typedef-single-animation-fill-mode</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-single-animation-fill-mode">4.9. 
+    <li><a href="#ref-for-typedef-single-animation-fill-mode">4.9.
 The animation-fill-mode property</a>
-    <li><a href="#ref-for-typedef-single-animation-fill-mode①">4.10. 
+    <li><a href="#ref-for-typedef-single-animation-fill-mode①">4.10.
 The animation shorthand property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-fill-mode-none">
    <b><a href="#valdef-animation-fill-mode-none">#valdef-animation-fill-mode-none</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-fill-mode-none">4.3. 
+    <li><a href="#ref-for-valdef-animation-fill-mode-none">4.3.
 The animation-duration property</a>
-    <li><a href="#ref-for-valdef-animation-fill-mode-none①">4.10. 
+    <li><a href="#ref-for-valdef-animation-fill-mode-none①">4.10.
 The animation shorthand property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-fill-mode-forwards">
    <b><a href="#valdef-animation-fill-mode-forwards">#valdef-animation-fill-mode-forwards</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-fill-mode-forwards">3. 
+    <li><a href="#ref-for-valdef-animation-fill-mode-forwards">3.
 Animations</a>
-    <li><a href="#ref-for-valdef-animation-fill-mode-forwards①">4.3. 
+    <li><a href="#ref-for-valdef-animation-fill-mode-forwards①">4.3.
 The animation-duration property</a>
-    <li><a href="#ref-for-valdef-animation-fill-mode-forwards②">4.9. 
+    <li><a href="#ref-for-valdef-animation-fill-mode-forwards②">4.9.
 The animation-fill-mode property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-fill-mode-backwards">
    <b><a href="#valdef-animation-fill-mode-backwards">#valdef-animation-fill-mode-backwards</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-fill-mode-backwards">4.3. 
+    <li><a href="#ref-for-valdef-animation-fill-mode-backwards">4.3.
 The animation-duration property</a>
-    <li><a href="#ref-for-valdef-animation-fill-mode-backwards①">4.9. 
+    <li><a href="#ref-for-valdef-animation-fill-mode-backwards①">4.9.
 The animation-fill-mode property</a> <a href="#ref-for-valdef-animation-fill-mode-backwards②">(2)</a>
-    <li><a href="#ref-for-valdef-animation-fill-mode-backwards③">4.10. 
+    <li><a href="#ref-for-valdef-animation-fill-mode-backwards③">4.10.
 The animation shorthand property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-animation-fill-mode-both">
    <b><a href="#valdef-animation-fill-mode-both">#valdef-animation-fill-mode-both</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-animation-fill-mode-both">3. 
+    <li><a href="#ref-for-valdef-animation-fill-mode-both">3.
 Animations</a>
-    <li><a href="#ref-for-valdef-animation-fill-mode-both①">4.3. 
+    <li><a href="#ref-for-valdef-animation-fill-mode-both①">4.3.
 The animation-duration property</a> <a href="#ref-for-valdef-animation-fill-mode-both②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-animation">
    <b><a href="#propdef-animation">#propdef-animation</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-animation">4.10. 
+    <li><a href="#ref-for-propdef-animation">4.10.
 The animation shorthand property</a> <a href="#ref-for-propdef-animation①">(2)</a> <a href="#ref-for-propdef-animation②">(3)</a> <a href="#ref-for-propdef-animation③">(4)</a> <a href="#ref-for-propdef-animation④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-single-animation">
    <b><a href="#typedef-single-animation">#typedef-single-animation</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-single-animation">4.10. 
+    <li><a href="#ref-for-typedef-single-animation">4.10.
 The animation shorthand property</a> <a href="#ref-for-typedef-single-animation①">(2)</a> <a href="#ref-for-typedef-single-animation②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dictdef-animationeventinit">
    <b><a href="#dictdef-animationeventinit">#dictdef-animationeventinit</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dictdef-animationeventinit">5.1.1. 
+    <li><a href="#ref-for-dictdef-animationeventinit">5.1.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-animationevent-animationname">
    <b><a href="#dom-animationevent-animationname">#dom-animationevent-animationname</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-animationevent-animationname">5.1.1. 
+    <li><a href="#ref-for-dom-animationevent-animationname">5.1.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-animationevent-elapsedtime">
    <b><a href="#dom-animationevent-elapsedtime">#dom-animationevent-elapsedtime</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-animationevent-elapsedtime">5.1.1. 
+    <li><a href="#ref-for-dom-animationevent-elapsedtime">5.1.1.
 IDL Definition</a>
-    <li><a href="#ref-for-dom-animationevent-elapsedtime①">5.2. 
+    <li><a href="#ref-for-dom-animationevent-elapsedtime①">5.2.
 Types of AnimationEvent</a> <a href="#ref-for-dom-animationevent-elapsedtime②">(2)</a> <a href="#ref-for-dom-animationevent-elapsedtime③">(3)</a> <a href="#ref-for-dom-animationevent-elapsedtime④">(4)</a> <a href="#ref-for-dom-animationevent-elapsedtime⑤">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-animationevent-pseudoelement">
    <b><a href="#dom-animationevent-pseudoelement">#dom-animationevent-pseudoelement</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-animationevent-pseudoelement">5.1.1. 
+    <li><a href="#ref-for-dom-animationevent-pseudoelement">5.1.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="eventdef-animationevent-animationstart">
    <b><a href="#eventdef-animationevent-animationstart">#eventdef-animationevent-animationstart</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventdef-animationevent-animationstart">3. 
+    <li><a href="#ref-for-eventdef-animationevent-animationstart">3.
 Animations</a>
-    <li><a href="#ref-for-eventdef-animationevent-animationstart①">5.2. 
+    <li><a href="#ref-for-eventdef-animationevent-animationstart①">5.2.
 Types of AnimationEvent</a>
     <li><a href="#ref-for-eventdef-animationevent-animationstart②">5.3. Event
 handlers on elements, Document objects, and Window
@@ -2898,9 +2898,9 @@ objects</a>
   <aside class="dfn-panel" data-for="eventdef-animationevent-animationend">
    <b><a href="#eventdef-animationevent-animationend">#eventdef-animationevent-animationend</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventdef-animationevent-animationend">3. 
+    <li><a href="#ref-for-eventdef-animationevent-animationend">3.
 Animations</a>
-    <li><a href="#ref-for-eventdef-animationevent-animationend①">5.2. 
+    <li><a href="#ref-for-eventdef-animationevent-animationend①">5.2.
 Types of AnimationEvent</a> <a href="#ref-for-eventdef-animationevent-animationend②">(2)</a>
     <li><a href="#ref-for-eventdef-animationevent-animationend③">5.3. Event
 handlers on elements, Document objects, and Window
@@ -2910,7 +2910,7 @@ objects</a>
   <aside class="dfn-panel" data-for="eventdef-animationevent-animationiteration">
    <b><a href="#eventdef-animationevent-animationiteration">#eventdef-animationevent-animationiteration</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventdef-animationevent-animationiteration">5.2. 
+    <li><a href="#ref-for-eventdef-animationevent-animationiteration">5.2.
 Types of AnimationEvent</a>
     <li><a href="#ref-for-eventdef-animationevent-animationiteration①">5.3. Event
 handlers on elements, Document objects, and Window
@@ -2920,7 +2920,7 @@ objects</a>
   <aside class="dfn-panel" data-for="eventdef-animationevent-animationcancel">
    <b><a href="#eventdef-animationevent-animationcancel">#eventdef-animationevent-animationcancel</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-eventdef-animationevent-animationcancel">5.2. 
+    <li><a href="#ref-for-eventdef-animationevent-animationcancel">5.2.
 Types of AnimationEvent</a>
     <li><a href="#ref-for-eventdef-animationevent-animationcancel①">5.3. Event
 handlers on elements, Document objects, and Window
@@ -2930,152 +2930,160 @@ objects</a>
   <aside class="dfn-panel" data-for="csskeyframerule">
    <b><a href="#csskeyframerule">#csskeyframerule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-csskeyframerule">6.2. 
+    <li><a href="#ref-for-csskeyframerule">6.2.
 The CSSKeyframeRule Interface</a>
-    <li><a href="#ref-for-csskeyframerule①">6.2.2. 
+    <li><a href="#ref-for-csskeyframerule①">6.2.2.
 Attributes</a>
-    <li><a href="#ref-for-csskeyframerule②">6.3.1. 
+    <li><a href="#ref-for-csskeyframerule②">6.3.1.
 IDL Definition</a>
-    <li><a href="#ref-for-csskeyframerule③">6.3.3. 
+    <li><a href="#ref-for-csskeyframerule③">6.3.3.
 The appendRule method</a>
-    <li><a href="#ref-for-csskeyframerule④">6.3.4. 
+    <li><a href="#ref-for-csskeyframerule④">6.3.4.
 The deleteRule method</a>
-    <li><a href="#ref-for-csskeyframerule⑤">6.3.5. 
+    <li><a href="#ref-for-csskeyframerule⑤">6.3.5.
 The findRule method</a> <a href="#ref-for-csskeyframerule⑥">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-csskeyframerule-keytext">
    <b><a href="#dom-csskeyframerule-keytext">#dom-csskeyframerule-keytext</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csskeyframerule-keytext">6.2.1. 
+    <li><a href="#ref-for-dom-csskeyframerule-keytext">6.2.1.
 IDL Definition</a>
-    <li><a href="#ref-for-dom-csskeyframerule-keytext①">6.2.2. 
+    <li><a href="#ref-for-dom-csskeyframerule-keytext①">6.2.2.
 Attributes</a> <a href="#ref-for-dom-csskeyframerule-keytext②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-csskeyframerule-style">
    <b><a href="#dom-csskeyframerule-style">#dom-csskeyframerule-style</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csskeyframerule-style">6.2.1. 
+    <li><a href="#ref-for-dom-csskeyframerule-style">6.2.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="csskeyframesrule">
    <b><a href="#csskeyframesrule">#csskeyframesrule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-csskeyframesrule">6.3. 
+    <li><a href="#ref-for-csskeyframesrule">6.3.
 The CSSKeyframesRule Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-csskeyframesrule-name">
    <b><a href="#dom-csskeyframesrule-name">#dom-csskeyframesrule-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csskeyframesrule-name">6.3.1. 
+    <li><a href="#ref-for-dom-csskeyframesrule-name">6.3.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-csskeyframesrule-cssrules">
    <b><a href="#dom-csskeyframesrule-cssrules">#dom-csskeyframesrule-cssrules</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csskeyframesrule-cssrules">6.3.1. 
+    <li><a href="#ref-for-dom-csskeyframesrule-cssrules">6.3.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-csskeyframesrule-appendrule">
    <b><a href="#dom-csskeyframesrule-appendrule">#dom-csskeyframesrule-appendrule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csskeyframesrule-appendrule">6.3.1. 
+    <li><a href="#ref-for-dom-csskeyframesrule-appendrule">6.3.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-csskeyframesrule-appendrule-rule-rule">
    <b><a href="#dom-csskeyframesrule-appendrule-rule-rule">#dom-csskeyframesrule-appendrule-rule-rule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csskeyframesrule-appendrule-rule-rule">6.3.1. 
+    <li><a href="#ref-for-dom-csskeyframesrule-appendrule-rule-rule">6.3.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-csskeyframesrule-deleterule">
    <b><a href="#dom-csskeyframesrule-deleterule">#dom-csskeyframesrule-deleterule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csskeyframesrule-deleterule">6.3.1. 
+    <li><a href="#ref-for-dom-csskeyframesrule-deleterule">6.3.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-csskeyframesrule-deleterule-select-select">
    <b><a href="#dom-csskeyframesrule-deleterule-select-select">#dom-csskeyframesrule-deleterule-select-select</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csskeyframesrule-deleterule-select-select">6.3.1. 
+    <li><a href="#ref-for-dom-csskeyframesrule-deleterule-select-select">6.3.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-csskeyframesrule-findrule">
    <b><a href="#dom-csskeyframesrule-findrule">#dom-csskeyframesrule-findrule</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csskeyframesrule-findrule">6.3.1. 
+    <li><a href="#ref-for-dom-csskeyframesrule-findrule">6.3.1.
 IDL Definition</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-csskeyframesrule-findrule-select-select">
    <b><a href="#dom-csskeyframesrule-findrule-select-select">#dom-csskeyframesrule-findrule-select-select</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-csskeyframesrule-findrule-select-select">6.3.1. 
+    <li><a href="#ref-for-dom-csskeyframesrule-findrule-select-select">6.3.1.
 IDL Definition</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

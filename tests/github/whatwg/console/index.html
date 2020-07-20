@@ -49,7 +49,7 @@
 </style>
  <body class="h-entry status-LS">
   <div class="head">
-    <a class="logo" href="https://whatwg.org/"> <img alt="WHATWG" crossorigin height="100" src="https://resources.whatwg.org/logo-console.svg"> </a> 
+    <a class="logo" href="https://whatwg.org/"> <img alt="WHATWG" crossorigin height="100" src="https://resources.whatwg.org/logo-console.svg"> </a>
    <hgroup>
     <h1 class="p-name no-ref" id="title">Console</h1>
     <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard — Last Updated <time class="dt-updated" datetime="1970-01-01">1 January 1970</time></span></h2>
@@ -400,7 +400,7 @@ output produced by calls to <a data-link-type="abstract-op" href="#printer" id="
    </ol>
    <div class="example" id="timelog-example">
     <a class="self-link" href="#timelog-example"></a> The <var>data</var> parameter in calls to <code class="idl"><a data-link-type="idl" href="#timelog" id="ref-for-timelog①">timeLog()</a></code> is included in the call to <a data-link-type="abstract-op" href="#logger" id="ref-for-logger⑨">Logger</a> to make it easier for users to supply intermediate timer logs with
-  some extra data throughout the life of a timer. For example: 
+  some extra data throughout the life of a timer. For example:
 <pre><code class="lang-javascript highlight">console<c- p>.</c->time<c- p>(</c-><c- u>"MyTimer"</c-><c- p>);</c->
 console<c- p>.</c->timeLog<c- p>(</c-><c- u>"MyTimer"</c-><c- p>,</c-> <c- u>"Starting application up…"</c-><c- p>);</c->
 <c- c1>// Perhaps some code runs to bootstrap a complex app</c->
@@ -453,7 +453,7 @@ describes how it processes format specifiers while doing so.</p>
      It’s important that the printing occurs before returning from the algorithm. Many developer
   consoles print the result of the last operation entered into them. In such consoles, when a
   developer enters <code>console.log("hello!")</code>, this will first print "hello!", then the
-  undefined return value from the console.log call. 
+  undefined return value from the console.log call.
     <p><img alt="Indicating that printing is done before return" crossorigin src="images/print-before-returning.png"></p>
    </div>
    <h3 class="heading settled dfn-paneled" data-dfn-type="abstract-op" data-export data-level="2.2" data-lt="Formatter" id="formatter"><span class="secno">2.2. </span><span class="content">Formatter(<var>args</var>)</span></h3>
@@ -574,30 +574,30 @@ their output similarly, in four broad categories. This table summarizes these co
     <tbody>
      <tr>
       <td>log
-      <td> <code class="idl"><a data-link-type="idl" href="#log" id="ref-for-log①">log()</a></code>, <code class="idl"><a data-link-type="idl" href="#trace" id="ref-for-trace①">trace()</a></code>, <code class="idl"><a data-link-type="idl" href="#dir" id="ref-for-dir①">dir()</a></code>, <code class="idl"><a data-link-type="idl" href="#dirxml" id="ref-for-dirxml①">dirxml()</a></code>, <code class="idl"><a data-link-type="idl" href="#group" id="ref-for-group①">group()</a></code>, <code class="idl"><a data-link-type="idl" href="#groupcollapsed" id="ref-for-groupcollapsed①">groupCollapsed()</a></code>, <code class="idl"><a data-link-type="idl" href="#debug" id="ref-for-debug①">debug()</a></code>, <code class="idl"><a data-link-type="idl" href="#timelog" id="ref-for-timelog③">timeLog()</a></code> 
-      <td> A generic log 
+      <td> <code class="idl"><a data-link-type="idl" href="#log" id="ref-for-log①">log()</a></code>, <code class="idl"><a data-link-type="idl" href="#trace" id="ref-for-trace①">trace()</a></code>, <code class="idl"><a data-link-type="idl" href="#dir" id="ref-for-dir①">dir()</a></code>, <code class="idl"><a data-link-type="idl" href="#dirxml" id="ref-for-dirxml①">dirxml()</a></code>, <code class="idl"><a data-link-type="idl" href="#group" id="ref-for-group①">group()</a></code>, <code class="idl"><a data-link-type="idl" href="#groupcollapsed" id="ref-for-groupcollapsed①">groupCollapsed()</a></code>, <code class="idl"><a data-link-type="idl" href="#debug" id="ref-for-debug①">debug()</a></code>, <code class="idl"><a data-link-type="idl" href="#timelog" id="ref-for-timelog③">timeLog()</a></code>
+      <td> A generic log
      <tr>
       <td>info
       <td><code class="idl"><a data-link-type="idl" href="#count" id="ref-for-count①">count()</a></code>, <code class="idl"><a data-link-type="idl" href="#info" id="ref-for-info①">info()</a></code>, <code class="idl"><a data-link-type="idl" href="#timeend" id="ref-for-timeend②">timeEnd()</a></code>
-      <td> An informative log 
+      <td> An informative log
      <tr>
       <td>warn
-      <td> <code class="idl"><a data-link-type="idl" href="#warn" id="ref-for-warn①">warn()</a></code>, <code class="idl"><a data-link-type="idl" href="#countreset" id="ref-for-countreset①">countReset()</a></code> 
-      <td> A log warning the user of something indicated by the message 
+      <td> <code class="idl"><a data-link-type="idl" href="#warn" id="ref-for-warn①">warn()</a></code>, <code class="idl"><a data-link-type="idl" href="#countreset" id="ref-for-countreset①">countReset()</a></code>
+      <td> A log warning the user of something indicated by the message
      <tr>
       <td>error
       <td><code class="idl"><a data-link-type="idl" href="#error" id="ref-for-error①">error()</a></code>, <code class="idl"><a data-link-type="idl" href="#assert" id="ref-for-assert①">assert()</a></code>
-      <td> A log indicating an error to the user 
+      <td> A log indicating an error to the user
    </table>
    <p>These groupings are meant to document common practices, and do not constrain implementations from
 providing special behavior for each function, as in the following examples:</p>
    <div class="example" id="timeEnd-formatting">
-    <a class="self-link" href="#timeEnd-formatting"></a> Here you can see one implementation chose to make output produced by calls to <code class="idl"><a data-link-type="idl" href="#timeend" id="ref-for-timeend③">timeEnd()</a></code> blue, while leaving <code class="idl"><a data-link-type="idl" href="#info" id="ref-for-info②">info()</a></code> a more neutral color. 
+    <a class="self-link" href="#timeEnd-formatting"></a> Here you can see one implementation chose to make output produced by calls to <code class="idl"><a data-link-type="idl" href="#timeend" id="ref-for-timeend③">timeEnd()</a></code> blue, while leaving <code class="idl"><a data-link-type="idl" href="#info" id="ref-for-info②">info()</a></code> a more neutral color.
     <p><img alt="A demonstration of timeEnd and info formatting differences" crossorigin src="images/timeEnd-formatting.png"></p>
    </div>
    <div class="example" id="count-output">
     <a class="self-link" href="#count-output"></a> Calls to <code class="idl"><a data-link-type="idl" href="#count" id="ref-for-count②">count()</a></code> might not always print new output, but instead could update
-  previously-output counts. 
+  previously-output counts.
     <p><img alt="A demonstration of count behavior" crossorigin src="images/edge-Count.png"></p>
    </div>
    <h4 class="heading settled" data-level="2.3.2" id="printer-ux-innovation"><span class="secno">2.3.2. </span><span class="content">Printer user experience innovation</span><a class="self-link" href="#printer-ux-innovation"></a></h4>
@@ -608,13 +608,13 @@ its implementations. The following is a non-exhaustive list of potential UX enha
      <p>De-duplication of identical output to prevent spam.</p>
      <div class="example" id="dedupe-example">
       <a class="self-link" href="#dedupe-example"></a> In this example, the implementation not only batches multiple identical messages, but also
-      provides the number of messages that have been batched together. 
+      provides the number of messages that have been batched together.
       <p><img alt="A demonstration of console message de-duplication" crossorigin src="images/dedupe.png"></p>
      </div>
     <li>
      <p>Extra UI off to the side allowing the user to filter messages by log level severity.</p>
      <div class="example" id="severity-filter-example"><a class="self-link" href="#severity-filter-example"></a> <img alt crossorigin src="images/severity-filter.png"> </div>
-    <li> Extra UI off to the side indicating the current state of the <a data-link-type="dfn" href="#timer-table" id="ref-for-timer-table⑤">timer table</a>, <a data-link-type="dfn" href="#group-stack" id="ref-for-group-stack⑦">group stack</a>, or other internally maintained data. 
+    <li> Extra UI off to the side indicating the current state of the <a data-link-type="dfn" href="#timer-table" id="ref-for-timer-table⑤">timer table</a>, <a data-link-type="dfn" href="#group-stack" id="ref-for-group-stack⑦">group stack</a>, or other internally maintained data.
     <li>Flashing portions of the console to alert the user of something important.
    </ul>
    <h4 class="heading settled" data-level="2.3.3" id="object-formats"><span class="secno">2.3.3. </span><span class="content">Common object formats</span><a class="self-link" href="#object-formats"></a></h4>
@@ -629,7 +629,7 @@ representation of an object judged to be maximally useful and informative.</p>
    <h4 class="heading settled" data-level="2.3.4" id="nodejs-printer"><span class="secno">2.3.4. </span><span class="content">Example printer in Node.js</span><a class="self-link" href="#nodejs-printer"></a></h4>
    <div class="example" id="nodejs-printer-example">
     <a class="self-link" href="#nodejs-printer-example"></a> The simplest way to implement the printer operation on the Node.js platform is to join the
-  previously formatted arguments separated by a space and write the output to <code>stdout</code> or <code>stderr</code>. 
+  previously formatted arguments separated by a space and write the output to <code>stdout</code> or <code>stderr</code>.
     <p>Example implementation in Node.js using <a data-link-type="biblio" href="#biblio-ecmascript">[ECMASCRIPT]</a>:</p>
 <pre><code class="lang-javascript highlight"><c- kr>const</c-> util <c- o>=</c-> require<c- p>(</c-><c- t>'util'</c-><c- p>);</c->
 
@@ -1260,57 +1260,65 @@ if ("serviceWorker" in navigator) {
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

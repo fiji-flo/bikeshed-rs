@@ -569,7 +569,7 @@ the computed value is the resolved absolute URL as described in <a data-link-typ
     <div class="example" id="example-57a63cfb">
      <a class="self-link" href="#example-57a63cfb"></a> Because URLs resolve against the base URL of the stylesheet they appear in, we can
 		end up with multiple relative URLs that resolve against different base URLs, even though
-		they appear in the same property. 
+		they appear in the same property.
      <p>For example, suppose <a class="property" data-link-type="propdesc">--url-foo</a> and <a class="property" data-link-type="propdesc">--url-bar</a> are registered
 		custom properties with <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-3/#url-value" id="ref-for-url-value">&lt;url></a> syntax, and that we have a stylesheet at <code>/style/foo/foo.css</code>:</p>
 <pre class="lang-css highlight"><c- f>div </c-><c- p>{</c->
@@ -653,7 +653,7 @@ by <span spec-section="#serialize-a-css-value">serializing</span> the computed v
 and <a href="https://www.w3.org/TR/css-syntax-3/#tokenization">tokenizing</a> the resulting string.</p>
    <div class="example" id="example-b86c332c">
     <a class="self-link" href="#example-b86c332c"></a> Suppose that <a class="property" data-link-type="propdesc">--x</a> is registered with <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value">&lt;length></a> syntax,
-	and that '--y’is an unregistered custom property. 
+	and that '--y’is an unregistered custom property.
 <pre class="lang-css highlight"><c- f>div </c-><c- p>{</c->
   <c- k>font-size</c-><c- p>:</c-> <c- m>10</c-><c- l>px</c-><c- p>;</c->
   <c- k>--x</c-><c- p>:</c-> <c- m>8</c-><c- l>em</c-><c- p>;</c->
@@ -694,7 +694,7 @@ add an edge between the property
 and the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-line-height" id="ref-for-propdef-line-height">line-height</a>' of the root element.</p>
    </ul>
    <div class="example" id="example-a47a7332">
-    <a class="self-link" href="#example-a47a7332"></a> For example, given this registration: 
+    <a class="self-link" href="#example-a47a7332"></a> For example, given this registration:
 <pre class="lang-javascript highlight">CSS<c- p>.</c->registerProperty<c- p>({</c->
   name<c- o>:</c-> <c- u>"--my-font-size"</c-><c- p>,</c->
   syntax<c- o>:</c-> <c- u>"&lt;length>"</c-><c- p>,</c->
@@ -749,13 +749,13 @@ becomes more consistently defined. <a href="https://github.com/w3c/css-houdini-d
       <td><dfn class="dfn-paneled css" data-dfn-for="@property" data-dfn-type="descriptor" data-export id="descdef-property-syntax">syntax</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="#at-ruledef-property" id="ref-for-at-ruledef-property①③">@property</a> 
+      <td><a class="css" data-link-type="at-rule" href="#at-ruledef-property" id="ref-for-at-ruledef-property①③">@property</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#string-value" id="ref-for-string-value">&lt;string></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#string-value" id="ref-for-string-value">&lt;string></a>
      <tr>
       <th>Initial:
-      <td>n/a (see prose) 
+      <td>n/a (see prose)
    </table>
    <p>Specifies the syntax of the <a data-link-type="dfn" href="#custom-property-registration" id="ref-for-custom-property-registration④">custom property registration</a> represented by the <a class="css" data-link-type="maybe" href="#at-ruledef-property" id="ref-for-at-ruledef-property①④">@property</a> rule,
 controlling how the property’s value is parsed at <a data-link-type="dfn" href="https://drafts.csswg.org/css-cascade-4/#computed-value" id="ref-for-computed-value⑥">computed value</a> time.</p>
@@ -771,13 +771,13 @@ the descriptor is invalid and must be ignored.</p>
       <td><dfn class="dfn-paneled css" data-dfn-for="@property" data-dfn-type="descriptor" data-export id="descdef-property-inherits">inherits</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="#at-ruledef-property" id="ref-for-at-ruledef-property①⑦">@property</a> 
+      <td><a class="css" data-link-type="at-rule" href="#at-ruledef-property" id="ref-for-at-ruledef-property①⑦">@property</a>
      <tr>
       <th>Value:
-      <td class="prod">true <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> false 
+      <td class="prod">true <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> false
      <tr>
       <th>Initial:
-      <td>n/a (see prose) 
+      <td>n/a (see prose)
    </table>
    <p>Specifies the inherit flag of the <a data-link-type="dfn" href="#custom-property-registration" id="ref-for-custom-property-registration⑤">custom property registration</a> represented by the <a class="css" data-link-type="maybe" href="#at-ruledef-property" id="ref-for-at-ruledef-property①⑧">@property</a> rule,
 controlling whether or not the property inherits by default.</p>
@@ -791,13 +791,13 @@ if it’s missing, the <a class="css" data-link-type="maybe" href="#at-ruledef-p
       <td><dfn class="dfn-paneled css" data-dfn-for="@property" data-dfn-type="descriptor" data-export id="descdef-property-initial-value">initial-value</dfn>
      <tr>
       <th>For:
-      <td><a class="css" data-link-type="at-rule" href="#at-ruledef-property" id="ref-for-at-ruledef-property②①">@property</a> 
+      <td><a class="css" data-link-type="at-rule" href="#at-ruledef-property" id="ref-for-at-ruledef-property②①">@property</a>
      <tr>
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-syntax-3/#typedef-declaration-value" id="ref-for-typedef-declaration-value">&lt;declaration-value></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-syntax-3/#typedef-declaration-value" id="ref-for-typedef-declaration-value">&lt;declaration-value></a>
      <tr>
       <th>Initial:
-      <td>the <a data-link-type="dfn">guaranteed-invalid value</a> (but see prose) 
+      <td>the <a data-link-type="dfn">guaranteed-invalid value</a> (but see prose)
    </table>
    <p>Specifies the initial value of the <a data-link-type="dfn" href="#custom-property-registration" id="ref-for-custom-property-registration⑥">custom property registration</a> represented by the <a class="css" data-link-type="maybe" href="#at-ruledef-property" id="ref-for-at-ruledef-property②②">@property</a> rule,
 controlling the property’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-cascade-4/#initial-value" id="ref-for-initial-value">initial value</a>.</p>
@@ -843,7 +843,7 @@ as arguments of the same names.</p>
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="register-a-custom-property">register a custom property</dfn> with <var>name</var> being a string,
 	and optionally <var>syntax</var> being a string, <var>inherits</var> being a boolean,
 	and <var>initialValue</var> being a string,
-	execute these steps: 
+	execute these steps:
     <ol>
      <li data-md>
       <p>Let <var>property set</var> be the value of the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-global-object" id="ref-for-current-global-object">current global object’s</a> <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/window-object.html#concept-document-window" id="ref-for-concept-document-window">associated <code>Document</code></a>’s <code class="idl"><a data-link-type="idl" href="#dom-window-registeredpropertyset-slot" id="ref-for-dom-window-registeredpropertyset-slot②">[[registeredPropertySet]]</a></code> slot.</p>
@@ -891,7 +891,7 @@ and "global" information that cannot be changed by CSS.</p>
 	Similarly, <span class="css">1in</span> is <a data-link-type="dfn" href="#computationally-independent" id="ref-for-computationally-independent③">computationally independent</a>,
 	as converting it into a computed value
 	relies only on the "global knowledge" that <span class="css">1in</span> is <span class="css">96px</span>,
-	which can’t be altered or adjusted by anything in CSS. 
+	which can’t be altered or adjusted by anything in CSS.
     <p>On the other hand, <span class="css">3em</span> is not <a data-link-type="dfn" href="#computationally-independent" id="ref-for-computationally-independent④">computationally independent</a>,
 	because it relies on the value of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size" id="ref-for-propdef-font-size①">font-size</a> on the element
 	(or the element’s parent).
@@ -912,7 +912,7 @@ however,
 the property becomes <a data-link-type="dfn" href="https://drafts.csswg.org/css-variables-1/#invalid-at-computed-value-time" id="ref-for-invalid-at-computed-value-time①">invalid at computed-value time</a> (and thus resets to the registered initial value).</p>
    <div class="example" id="example-07b45dff">
     <a class="self-link" href="#example-07b45dff"></a> By default, all custom property declarations that can be parsed as a sequence of tokens
-	are valid. Hence, the result of this stylesheet: 
+	are valid. Hence, the result of this stylesheet:
 <pre class="lang-css highlight"><c- f>.thing </c-><c- p>{</c->
   <c- k>--my-color</c-><c- p>:</c-> green<c- p>;</c->
   <c- k>--my-color</c-><c- p>:</c-> <c- nf>url</c-><c- p>(</c-><c- s>"not-a-color"</c-><c- p>);</c->
@@ -976,7 +976,7 @@ stream.</p>
    <p class="note" role="note"><span>Note:</span> Regardless of the syntax specified, all custom properties accept <a data-link-type="dfn" href="https://drafts.csswg.org/css-values-4/#css-wide-keywords" id="ref-for-css-wide-keywords①">CSS-wide keywords</a>, and process these values
 appropriately.</p>
    <div class="example" id="example-624a132d">
-    <a class="self-link" href="#example-624a132d"></a> For example, the following are all valid syntax strings. 
+    <a class="self-link" href="#example-624a132d"></a> For example, the following are all valid syntax strings.
     <dl>
      <dt data-md><code>"&lt;length>"</code>
      <dd data-md>
@@ -1078,7 +1078,7 @@ corresponding types accepted by the resulting <a data-link-type="dfn" href="#syn
      <p>Indicates a comma-separated list.</p>
    </dl>
    <div class="example" id="example-505ad8d9">
-    <a class="self-link" href="#example-505ad8d9"></a> 
+    <a class="self-link" href="#example-505ad8d9"></a>
     <dl>
      <dt data-md><code>"&lt;length>+"</code>
      <dd data-md>
@@ -1097,7 +1097,7 @@ to parse a CSS value, the syntax components are matched in the order specified.<
 matching the value <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-color-4/#valdef-color-red" id="ref-for-valdef-color-red③">red</a> against it will parse as an identifier,
 while matching the value <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-color-4/#valdef-color-blue" id="ref-for-valdef-color-blue">blue</a> will parse as a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color①" title="Expands to: aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | currentcolor | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | transparent | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen">&lt;color></a>.</p>
    <div class="example" id="example-0a8e6183">
-    <a class="self-link" href="#example-0a8e6183"></a> 
+    <a class="self-link" href="#example-0a8e6183"></a>
     <dl>
      <dt data-md><code>"&lt;length> | auto"</code>
      <dd data-md>
@@ -1133,7 +1133,7 @@ or a sequence that can produce a <a class="production css" data-link-type="type"
    <h4 class="heading settled" data-level="5.4.2" id="consume-syntax-definition"><span class="secno">5.4.2. </span><span class="content">Consume a Syntax Definition</span><a class="self-link" href="#consume-syntax-definition"></a></h4>
    <div class="algorithm" data-algorithm="consume a syntax definition">
      This section describes how to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="consume-a-syntax-definition">consume a syntax definition</dfn> from a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#string" id="ref-for-string①">string</a> <var>string</var>.
-	It either produces a <a data-link-type="dfn" href="#syntax-definition" id="ref-for-syntax-definition⑥">syntax definition</a> with a list of <a data-link-type="dfn" href="#syntax-component" id="ref-for-syntax-component⑦">syntax components</a>, or the <a data-link-type="dfn" href="#universal-syntax-definition" id="ref-for-universal-syntax-definition⑧">universal syntax definition</a>. 
+	It either produces a <a data-link-type="dfn" href="#syntax-definition" id="ref-for-syntax-definition⑥">syntax definition</a> with a list of <a data-link-type="dfn" href="#syntax-component" id="ref-for-syntax-component⑦">syntax components</a>, or the <a data-link-type="dfn" href="#universal-syntax-definition" id="ref-for-universal-syntax-definition⑧">universal syntax definition</a>.
     <ol>
      <li data-md>
       <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#strip-leading-and-trailing-ascii-whitespace" id="ref-for-strip-leading-and-trailing-ascii-whitespace">Strip leading and trailing ASCII whitespace</a> from <var>string</var>.</p>
@@ -1170,7 +1170,7 @@ otherwise, <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-app
    </div>
    <h4 class="heading settled" data-level="5.4.3" id="consume-syntax-component"><span class="secno">5.4.3. </span><span class="content">Consume a Syntax Component</span><a class="self-link" href="#consume-syntax-component"></a></h4>
    <div class="algorithm" data-algorithm="consume a syntax component">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="consume-a-syntax-component">consume a syntax component</dfn> from a stream of <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#code-point" id="ref-for-code-point④">code points</a> <var>stream</var>: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="consume-a-syntax-component">consume a syntax component</dfn> from a stream of <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#code-point" id="ref-for-code-point④">code points</a> <var>stream</var>:
     <p>Consume as much <a data-link-type="dfn" href="https://drafts.csswg.org/css-syntax-3/#whitespace" id="ref-for-whitespace①">whitespace</a> as possible from <var>stream</var>.</p>
     <p>Let <var>component</var> be a new <a data-link-type="dfn" href="#syntax-component" id="ref-for-syntax-component⑨">syntax component</a> with its <var>name</var> and <var>multiplier</var> initially
 	empty.</p>
@@ -1203,7 +1203,7 @@ return failure.</p>
    </div>
    <h4 class="heading settled" data-level="5.4.4" id="consume-data-type-name"><span class="secno">5.4.4. </span><span class="content">Consume a Data Type Name</span><a class="self-link" href="#consume-data-type-name"></a></h4>
    <div class="algorithm" data-algorithm="consume a data type name">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="consume-a-data-type-name">consume a data type name</dfn> from a stream of <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#code-point" id="ref-for-code-point⑤">code points</a>: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="consume-a-data-type-name">consume a data type name</dfn> from a stream of <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#code-point" id="ref-for-code-point⑤">code points</a>:
     <p class="note" role="note"><span>Note:</span> This algorithm assumes that a U+003C LESS-THAN SIGN (&lt;) <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#code-point" id="ref-for-code-point⑥">code point</a> has already been consumed from the stream.</p>
     <p>Let <var>name</var> initially be a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#string" id="ref-for-string③">string</a> containing a single U+003C LESS-THAN SIGN (&lt;) <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#code-point" id="ref-for-code-point⑦">code point</a>.</p>
     <p>Repeatedly consume the <a data-link-type="dfn" href="https://drafts.csswg.org/css-syntax-3/#next-input-code-point" id="ref-for-next-input-code-point④">next input code point</a>:</p>
@@ -1245,18 +1245,18 @@ Otherwise return failure.</p>
 </pre>
    <dl>
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSPropertyRule" data-dfn-type="attribute" data-export id="dom-csspropertyrule-name"><code>name</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring③">CSSOMString</a>, readonly</span>
-    <dd> The custom property name associated with the <a class="css" data-link-type="maybe" href="#at-ruledef-property" id="ref-for-at-ruledef-property②⑥">@property</a> rule. 
+    <dd> The custom property name associated with the <a class="css" data-link-type="maybe" href="#at-ruledef-property" id="ref-for-at-ruledef-property②⑥">@property</a> rule.
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSPropertyRule" data-dfn-type="attribute" data-export id="dom-csspropertyrule-syntax"><code>syntax</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring④">CSSOMString</a>, readonly</span>
-    <dd> The syntax associated with the <a class="css" data-link-type="maybe" href="#at-ruledef-property" id="ref-for-at-ruledef-property②⑦">@property</a>, exactly as specified. 
+    <dd> The syntax associated with the <a class="css" data-link-type="maybe" href="#at-ruledef-property" id="ref-for-at-ruledef-property②⑦">@property</a>, exactly as specified.
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSPropertyRule" data-dfn-type="attribute" data-export id="dom-csspropertyrule-inherits"><code>inherits</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-boolean" id="ref-for-idl-boolean③">boolean</a>, readonly</span>
-    <dd> The inherits descriptor associated with the <a class="css" data-link-type="maybe" href="#at-ruledef-property" id="ref-for-at-ruledef-property②⑧">@property</a> rule. 
+    <dd> The inherits descriptor associated with the <a class="css" data-link-type="maybe" href="#at-ruledef-property" id="ref-for-at-ruledef-property②⑧">@property</a> rule.
     <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSPropertyRule" data-dfn-type="attribute" data-export id="dom-csspropertyrule-initialvalue"><code>initialValue</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring⑤">CSSOMString</a>, readonly, nullable</span>
     <dd> The initial value associated with the <a class="css" data-link-type="maybe" href="#at-ruledef-property" id="ref-for-at-ruledef-property②⑨">@property</a> rule,
-		which may not be present. 
+		which may not be present.
    </dl>
    <h3 class="heading settled" data-level="6.3" id="css-style-value-reification"><span class="secno">6.3. </span><span class="content"><code class="idl"><a data-link-type="idl" href="https://drafts.css-houdini.org/css-typed-om-1/#cssstylevalue" id="ref-for-cssstylevalue">CSSStyleValue</a></code> Reification</span><a class="self-link" href="#css-style-value-reification"></a></h3>
    <div class="algorithm" data-algorithm="reify a registered custom property value">
-     To <dfn data-dfn-type="dfn" data-export id="reify-a-registered-custom-property-value">reify a registered custom property value<a class="self-link" href="#reify-a-registered-custom-property-value"></a></dfn> given a property <var>property</var> and <a data-link-type="dfn" href="#syntax-definition" id="ref-for-syntax-definition⑦">syntax definition</a> <var>syntax</var>, run these steps: 
+     To <dfn data-dfn-type="dfn" data-export id="reify-a-registered-custom-property-value">reify a registered custom property value<a class="self-link" href="#reify-a-registered-custom-property-value"></a></dfn> given a property <var>property</var> and <a data-link-type="dfn" href="#syntax-definition" id="ref-for-syntax-definition⑦">syntax definition</a> <var>syntax</var>, run these steps:
     <p>For specified values, <a data-link-type="dfn" href="https://drafts.css-houdini.org/css-typed-om-1/#reify-a-list-of-component-values" id="ref-for-reify-a-list-of-component-values">reify a list of component values</a> from the value,
 	and return the result.</p>
     <p>For computed values:</p>
@@ -1362,7 +1362,7 @@ registerPaint<c- p>(</c-><c- t>'circle'</c-><c- p>,</c-> <c- kr>class</c-> <c- p
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example.</p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -1375,14 +1375,14 @@ registerPaint<c- p>(</c-><c- t>'circle'</c-><c- p>,</c-> <c- kr>class</c-> <c- p
   <p>Conformance to this specification
     is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#style-sheet">CSS
-            style sheet</a>. 
-   <dt>renderer 
+            style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-            documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that writes a style sheet. 
+            documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
     if all of its statements that use syntax defined in this module are valid
@@ -1429,7 +1429,7 @@ registerPaint<c- p>(</c-><c- t>'circle'</c-><c- p>,</c-> <c- kr>class</c-> <c- p
   <p>
    Further information on submitting testcases and implementation reports
     can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-    Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+    Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -2670,58 +2670,66 @@ becomes more consistently defined. <a href="https://github.com/w3c/css-houdini-d
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

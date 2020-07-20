@@ -381,7 +381,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>This CSS3 module describes how font properties are specified and how font resources are loaded dynamically.  The contents of this specification are a consolidation of content previously divided into <a href="https://www.w3.org/TR/2002/WD-css3-fonts-20020802/">CSS3 Fonts</a> and <a href="https://www.w3.org/TR/2002/WD-css3-webfonts-20020802/">CSS3 Web Fonts</a> modules. The description of font load events was moved into the <a href="https://drafts.csswg.org/css-font-load-events/">CSS3 Font Load Events</a> module.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -725,7 +725,7 @@ of the fonts below, Futura would match but Futura Medium would not:</p>
    </div>
    <p>Consider the example below:</p>
    <div class="example" id="example-afcfd32d">
-    <a class="self-link" href="#example-afcfd32d"></a> 
+    <a class="self-link" href="#example-afcfd32d"></a>
 <pre>body {    font-family: Helvetica, Verdana, sans-serif;
 }</pre>
     <p>If Helvetica is available it will be used when rendering.  If
@@ -734,13 +734,13 @@ sans serif font will be used.</p>
    </div>
    <p>There are two types of font family names:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-family" data-dfn-type="value" data-export id="family-name-value"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-fonts-4/#family-name-value" id="ref-for-family-name-value①">&lt;family-name></a><a class="self-link" href="#family-name-value"></a></dfn> 
-    <dd>The name of a font family of choice such as Helvetica or Verdana in the previous example. 
-    <dt><dfn class="css" data-dfn-for="font-family" data-dfn-type="value" data-export id="generic-family-value"><a class="production css" data-link-type="type" href="#typedef-generic-family" id="ref-for-typedef-generic-family①" title="Expands to: cursive | fantasy | monospace | sans-serif | serif">&lt;generic-family></a><a class="self-link" href="#generic-family-value"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-family" data-dfn-type="value" data-export id="family-name-value"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-fonts-4/#family-name-value" id="ref-for-family-name-value①">&lt;family-name></a><a class="self-link" href="#family-name-value"></a></dfn>
+    <dd>The name of a font family of choice such as Helvetica or Verdana in the previous example.
+    <dt><dfn class="css" data-dfn-for="font-family" data-dfn-type="value" data-export id="generic-family-value"><a class="production css" data-link-type="type" href="#typedef-generic-family" id="ref-for-typedef-generic-family①" title="Expands to: cursive | fantasy | monospace | sans-serif | serif">&lt;generic-family></a><a class="self-link" href="#generic-family-value"></a></dfn>
     <dd> The following generic family keywords are defined: <a class="css" data-link-type="maybe" href="#valdef-generic-family-serif" id="ref-for-valdef-generic-family-serif">serif</a>, <a class="css" data-link-type="maybe" href="#valdef-generic-family-sans-serif" id="ref-for-valdef-generic-family-sans-serif">sans-serif</a>, <a class="css" data-link-type="maybe" href="#valdef-generic-family-cursive" id="ref-for-valdef-generic-family-cursive">cursive</a>, <a class="css" data-link-type="maybe" href="#valdef-generic-family-fantasy" id="ref-for-valdef-generic-family-fantasy">fantasy</a>, and <a class="css" data-link-type="maybe" href="#valdef-generic-family-monospace" id="ref-for-valdef-generic-family-monospace">monospace</a>. These keywords can be used as a general fallback mechanism
 		when an author’s desired font choices are not available.  As keywords, they must not
 		be quoted. Authors are encouraged to append a generic font family as a last alternative for
-		improved robustness. 
+		improved robustness.
    </dl>
    <p>Font family names other than generic families must either be given quoted as <a href="https://www.w3.org/TR/CSS21/syndata.html#strings">strings,</a> or unquoted as a sequence of one or more <a href="https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">identifiers.</a> This means most punctuation characters and digits at the start of
 each token must be escaped in unquoted font family names.</p>
@@ -886,11 +886,11 @@ to render samples of computer code.</p>
 their degree of blackness or stroke thickness.</p>
    <p>Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-100">100<a class="self-link" href="#valdef-font-weight-100"></a></dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-200">200<a class="self-link" href="#valdef-font-weight-200"></a></dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-300">300<a class="self-link" href="#valdef-font-weight-300"></a></dfn>, <dfn class="dfn-paneled css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-400">400</dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-500">500<a class="self-link" href="#valdef-font-weight-500"></a></dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-600">600<a class="self-link" href="#valdef-font-weight-600"></a></dfn>, <dfn class="dfn-paneled css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-700">700</dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-800">800<a class="self-link" href="#valdef-font-weight-800"></a></dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-900">900<a class="self-link" href="#valdef-font-weight-900"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-100">100<a class="self-link" href="#valdef-font-weight-100"></a></dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-200">200<a class="self-link" href="#valdef-font-weight-200"></a></dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-300">300<a class="self-link" href="#valdef-font-weight-300"></a></dfn>, <dfn class="dfn-paneled css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-400">400</dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-500">500<a class="self-link" href="#valdef-font-weight-500"></a></dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-600">600<a class="self-link" href="#valdef-font-weight-600"></a></dfn>, <dfn class="dfn-paneled css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-700">700</dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-800">800<a class="self-link" href="#valdef-font-weight-800"></a></dfn>, <dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-900">900<a class="self-link" href="#valdef-font-weight-900"></a></dfn>
     <dd>
       These values form an ordered sequence,
 		where each number indicates a weight that is at least as dark as its predecessor.
-		These roughly correspond to the commonly used weight names below: 
+		These roughly correspond to the commonly used weight names below:
      <ul>
       <li data-md>
        <p>100 - Thin</p>
@@ -911,14 +911,14 @@ their degree of blackness or stroke thickness.</p>
       <li data-md>
        <p>900 - Black (Heavy)</p>
      </ul>
-    <dt><dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-normal">normal<a class="self-link" href="#valdef-font-weight-normal"></a></dfn> 
-    <dd>Same as <a class="css" data-link-type="maybe" href="#valdef-font-weight-400" id="ref-for-valdef-font-weight-400">400</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-bold">bold</dfn> 
-    <dd>Same as <a class="css" data-link-type="maybe" href="#valdef-font-weight-700" id="ref-for-valdef-font-weight-700">700</a>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-bolder">bolder</dfn> 
-    <dd>Specifies a bolder weight than the inherited value. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-lighter">lighter</dfn> 
-    <dd>Specifies a lighter weight than the inherited value. 
+    <dt><dfn class="css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-normal">normal<a class="self-link" href="#valdef-font-weight-normal"></a></dfn>
+    <dd>Same as <a class="css" data-link-type="maybe" href="#valdef-font-weight-400" id="ref-for-valdef-font-weight-400">400</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-bold">bold</dfn>
+    <dd>Same as <a class="css" data-link-type="maybe" href="#valdef-font-weight-700" id="ref-for-valdef-font-weight-700">700</a>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-bolder">bolder</dfn>
+    <dd>Specifies a bolder weight than the inherited value.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-weight" data-dfn-type="value" data-export id="valdef-font-weight-lighter">lighter</dfn>
+    <dd>Specifies a lighter weight than the inherited value.
    </dl>
    <p>Font formats that use a scale other than a nine-step scale should map
 their scale onto the CSS scale so that <a class="css" data-link-type="maybe" href="#valdef-font-weight-400" id="ref-for-valdef-font-weight-400①">400</a> roughly corresponds with a
@@ -955,46 +955,46 @@ below.</p>
    <table class="data" id="bolderlighter" summary="Bolder/lighter mappings">
     <thead>
      <tr>
-      <th>Inherited value 
-      <th>bolder 
-      <th>lighter 
+      <th>Inherited value
+      <th>bolder
+      <th>lighter
     <tbody>
      <tr>
       <th>100
       <td>400
-      <td>100 
+      <td>100
      <tr>
       <th>200
       <td>400
-      <td>100 
+      <td>100
      <tr>
       <th>300
       <td>400
-      <td>100 
+      <td>100
      <tr>
       <th>400
       <td>700
-      <td>100 
+      <td>100
      <tr>
       <th>500
       <td>700
-      <td>100 
+      <td>100
      <tr>
       <th>600
       <td>900
-      <td>400 
+      <td>400
      <tr>
       <th>700
       <td>900
-      <td>400 
+      <td>400
      <tr>
       <th>800
       <td>900
-      <td>700 
+      <td>700
      <tr>
       <th>900
       <td>900
-      <td>700 
+      <td>700
    </table>
    <p>The table above is equivalent to selecting the next relative bolder or lighter face,
 given a font family containing normal and bold faces along with a thin and a heavy face.
@@ -1035,15 +1035,15 @@ may use numerical values instead of relative weights.</p>
 condensed, or expanded face from a font family. Absolute keyword values
 have the following ordering, from narrowest to widest:</p>
    <ul>
-    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-ultra-condensed">ultra-condensed<a class="self-link" href="#valdef-font-stretch-ultra-condensed"></a></dfn> 
-    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-extra-condensed">extra-condensed<a class="self-link" href="#valdef-font-stretch-extra-condensed"></a></dfn> 
-    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-condensed">condensed<a class="self-link" href="#valdef-font-stretch-condensed"></a></dfn> 
-    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export data-lt="semi-condensed" id="valdef-font-stretch-semi-condensed">semi-condensed <a class="self-link" href="#valdef-font-stretch-semi-condensed"></a></dfn> 
-    <li><dfn class="dfn-paneled css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-normal">normal</dfn> 
-    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-semi-expanded">semi-expanded<a class="self-link" href="#valdef-font-stretch-semi-expanded"></a></dfn> 
-    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-expanded">expanded<a class="self-link" href="#valdef-font-stretch-expanded"></a></dfn> 
-    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-extra-expanded">extra-expanded<a class="self-link" href="#valdef-font-stretch-extra-expanded"></a></dfn> 
-    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-ultra-expanded">ultra-expanded<a class="self-link" href="#valdef-font-stretch-ultra-expanded"></a></dfn> 
+    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-ultra-condensed">ultra-condensed<a class="self-link" href="#valdef-font-stretch-ultra-condensed"></a></dfn>
+    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-extra-condensed">extra-condensed<a class="self-link" href="#valdef-font-stretch-extra-condensed"></a></dfn>
+    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-condensed">condensed<a class="self-link" href="#valdef-font-stretch-condensed"></a></dfn>
+    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export data-lt="semi-condensed" id="valdef-font-stretch-semi-condensed">semi-condensed <a class="self-link" href="#valdef-font-stretch-semi-condensed"></a></dfn>
+    <li><dfn class="dfn-paneled css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-normal">normal</dfn>
+    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-semi-expanded">semi-expanded<a class="self-link" href="#valdef-font-stretch-semi-expanded"></a></dfn>
+    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-expanded">expanded<a class="self-link" href="#valdef-font-stretch-expanded"></a></dfn>
+    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-extra-expanded">extra-expanded<a class="self-link" href="#valdef-font-stretch-extra-expanded"></a></dfn>
+    <li><dfn class="css" data-dfn-for="font-stretch" data-dfn-type="value" data-export id="valdef-font-stretch-ultra-expanded">ultra-expanded<a class="self-link" href="#valdef-font-stretch-ultra-expanded"></a></dfn>
    </ul>
    <p>When a face does not exist
 for a given width, normal or condensed values map to a narrower face,
@@ -1103,12 +1103,12 @@ in grey with the actual italic versions:</p>
    </div>
    <p>Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-style" data-dfn-type="value" data-export id="valdef-font-style-normal">normal<a class="self-link" href="#valdef-font-style-normal"></a></dfn> 
-    <dd>selects a face that is classified as a normal face, one that is neither italic or obliqued 
-    <dt><dfn class="css" data-dfn-for="font-style" data-dfn-type="value" data-export id="valdef-font-style-italic">italic<a class="self-link" href="#valdef-font-style-italic"></a></dfn> 
-    <dd>selects a font that is labeled as an italic face, or an oblique face if one is not 
-    <dt><dfn class="css" data-dfn-for="font-style" data-dfn-type="value" data-export id="valdef-font-style-oblique">oblique<a class="self-link" href="#valdef-font-style-oblique"></a></dfn> 
-    <dd>selects a font that is labeled as an oblique face, or an italic face if one is not 
+    <dt><dfn class="css" data-dfn-for="font-style" data-dfn-type="value" data-export id="valdef-font-style-normal">normal<a class="self-link" href="#valdef-font-style-normal"></a></dfn>
+    <dd>selects a face that is classified as a normal face, one that is neither italic or obliqued
+    <dt><dfn class="css" data-dfn-for="font-style" data-dfn-type="value" data-export id="valdef-font-style-italic">italic<a class="self-link" href="#valdef-font-style-italic"></a></dfn>
+    <dd>selects a font that is labeled as an italic face, or an oblique face if one is not
+    <dt><dfn class="css" data-dfn-for="font-style" data-dfn-type="value" data-export id="valdef-font-style-oblique">oblique<a class="self-link" href="#valdef-font-style-oblique"></a></dfn>
+    <dd>selects a font that is labeled as an oblique face, or an italic face if one is not
    </dl>
    <p>If no italic or oblique face is available, oblique faces can be
 synthesized by rendering non-obliqued faces with an artificial
@@ -1165,18 +1165,18 @@ against the declared font-size of the font, using the same absolute coordinate
 space for both of the matched values.
 Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-size" data-dfn-type="type" data-export id="typedef-font-size-absolute-size">&lt;absolute-size></dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-size" data-dfn-type="type" data-export id="typedef-font-size-absolute-size">&lt;absolute-size></dfn>
     <dd>
       An <a class="production css" data-link-type="type" href="#typedef-font-size-absolute-size" id="ref-for-typedef-font-size-absolute-size①">&lt;absolute-size></a> keyword refers to an entry
 in a table of font sizes computed and kept by the user agent. Possible values
-are: 
+are:
 <pre class="prod"><a data-link-type="value">xx-small</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one②⑨">|</a> <a data-link-type="value">x-small</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③⓪">|</a> <a data-link-type="value">small</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③①">|</a> <a data-link-type="value">medium</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③②">|</a> <a data-link-type="value">large</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③③">|</a> <a data-link-type="value">x-large</a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③④">|</a> <a data-link-type="value">xx-large</a>
 </pre>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-size" data-dfn-type="type" data-export id="typedef-font-size-relative-size">&lt;relative-size></dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-size" data-dfn-type="type" data-export id="typedef-font-size-relative-size">&lt;relative-size></dfn>
     <dd>
       A <a class="production css" data-link-type="type" href="#typedef-font-size-relative-size" id="ref-for-typedef-font-size-relative-size①">&lt;relative-size></a> keyword is interpreted
 	relative to the table of font sizes and the computed <a class="property" data-link-type="propdesc" href="#propdef-font-size" id="ref-for-propdef-font-size①">font-size</a> of the
-	parent element. Possible values are: 
+	parent element. Possible values are:
 <pre class="prod"><dfn class="dfn-paneled" data-dfn-for="<relative-size> font-size" data-dfn-type="value" data-export id="valdef-relative-size-font-size-larger">larger</dfn> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one③⑤">|</a> <dfn data-dfn-for="<relative-size> font-size" data-dfn-type="value" data-export id="valdef-relative-size-font-size-smaller">smaller<a class="self-link" href="#valdef-relative-size-font-size-smaller"></a></dfn>
 </pre>
      <p>For example, if the parent element has a font size of <a class="css" data-link-type="maybe" href="#valdef-font-size-absolute-size-medium" id="ref-for-valdef-font-size-absolute-size-medium">medium</a>, a value of <a class="css" data-link-type="maybe" href="#valdef-relative-size-font-size-larger" id="ref-for-valdef-relative-size-font-size-larger">larger</a> will make the font size of the
@@ -1185,11 +1185,11 @@ are:
 	between table entries or round off to the closest one. The user
 	agent may have to extrapolate table values if the numerical value
 	goes beyond the keywords.</p>
-    <dt><dfn class="css" data-dfn-for="font-size" data-dfn-type="value" data-export id="valdef-font-size-length-percentage"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①">&lt;length-percentage></a><a class="self-link" href="#valdef-font-size-length-percentage"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-size" data-dfn-type="value" data-export id="valdef-font-size-length-percentage"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①">&lt;length-percentage></a><a class="self-link" href="#valdef-font-size-length-percentage"></a></dfn>
     <dd>
      A length value specifies an absolute font size
 			(independent of the user agent’s font table).
-			Negative lengths are illegal. 
+			Negative lengths are illegal.
      <p>A percentage value specifies an absolute font size relative
 			to the parent element’s font size. Use of percentage values, or
 	    values in <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#em" id="ref-for-em">em</a>s, leads to more robust and cascadable style sheets.</p>
@@ -1202,46 +1202,46 @@ fonts or different types of display devices.</p>
    <table class="data">
     <thead>
      <tr>
-      <th scope="row"><a class="production css" data-link-type="type" href="#typedef-font-size-absolute-size" id="ref-for-typedef-font-size-absolute-size②">&lt;absolute-size></a> 
-      <th scope="col"><dfn class="css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-xx-small">xx-small<a class="self-link" href="#valdef-font-size-absolute-size-xx-small"></a></dfn> 
-      <th scope="col"><dfn class="css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-x-small">x-small<a class="self-link" href="#valdef-font-size-absolute-size-x-small"></a></dfn> 
-      <th scope="col"><dfn class="css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-small">small<a class="self-link" href="#valdef-font-size-absolute-size-small"></a></dfn> 
-      <th scope="col"><dfn class="dfn-paneled css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-medium">medium</dfn> 
-      <th scope="col"><dfn class="dfn-paneled css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-large">large</dfn> 
-      <th scope="col"><dfn class="css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-x-large">x-large<a class="self-link" href="#valdef-font-size-absolute-size-x-large"></a></dfn> 
-      <th scope="col"><dfn class="css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-xx-large">xx-large<a class="self-link" href="#valdef-font-size-absolute-size-xx-large"></a></dfn> 
+      <th scope="row"><a class="production css" data-link-type="type" href="#typedef-font-size-absolute-size" id="ref-for-typedef-font-size-absolute-size②">&lt;absolute-size></a>
+      <th scope="col"><dfn class="css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-xx-small">xx-small<a class="self-link" href="#valdef-font-size-absolute-size-xx-small"></a></dfn>
+      <th scope="col"><dfn class="css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-x-small">x-small<a class="self-link" href="#valdef-font-size-absolute-size-x-small"></a></dfn>
+      <th scope="col"><dfn class="css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-small">small<a class="self-link" href="#valdef-font-size-absolute-size-small"></a></dfn>
+      <th scope="col"><dfn class="dfn-paneled css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-medium">medium</dfn>
+      <th scope="col"><dfn class="dfn-paneled css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-large">large</dfn>
+      <th scope="col"><dfn class="css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-x-large">x-large<a class="self-link" href="#valdef-font-size-absolute-size-x-large"></a></dfn>
+      <th scope="col"><dfn class="css" data-dfn-for="font-size <absolute-size>" data-dfn-type="value" data-export id="valdef-font-size-absolute-size-xx-large">xx-large<a class="self-link" href="#valdef-font-size-absolute-size-xx-large"></a></dfn>
       <th scope="col">
     <tbody>
      <tr>
-      <th scope="row">scaling factor 
-      <td>3/5 
-      <td>3/4 
-      <td>8/9 
-      <td>1 
-      <td>6/5 
-      <td>3/2 
-      <td>2/1 
-      <td>3/1 
+      <th scope="row">scaling factor
+      <td>3/5
+      <td>3/4
+      <td>8/9
+      <td>1
+      <td>6/5
+      <td>3/2
+      <td>2/1
+      <td>3/1
      <tr>
-      <th scope="row">HTML headings 
-      <td>h6 
+      <th scope="row">HTML headings
+      <td>h6
       <td>
-      <td>h5 
-      <td>h4 
-      <td>h3 
-      <td>h2 
-      <td>h1 
+      <td>h5
+      <td>h4
+      <td>h3
+      <td>h2
+      <td>h1
       <td>
      <tr>
-      <th scope="row">HTML font sizes 
-      <td>1 
+      <th scope="row">HTML font sizes
+      <td>1
       <td>
-      <td>2 
-      <td>3 
-      <td>4 
-      <td>5 
-      <td>6 
-      <td>7 
+      <td>2
+      <td>3
+      <td>4
+      <td>5
+      <td>6
+      <td>7
    </table>
    <p class="note" role="note"><span>Note:</span> To preserve readability, an UA applying
 these guidelines should nevertheless avoid creating font-size resulting
@@ -1258,7 +1258,7 @@ unavailability of certain font sizes.</p>
    <p>Child elements inherit the computed <a class="property" data-link-type="propdesc" href="#propdef-font-size" id="ref-for-propdef-font-size②">font-size</a> value (otherwise, the
 effect of <a class="property" data-link-type="propdesc" href="#propdef-font-size-adjust" id="ref-for-propdef-font-size-adjust①">font-size-adjust</a> would compound).</p>
    <div class="example" id="example-2fb359ce">
-    <a class="self-link" href="#example-2fb359ce"></a> Examples: 
+    <a class="self-link" href="#example-2fb359ce"></a> Examples:
 <pre>p { font-size: 12pt; }blockquote { font-size: larger }
 em { font-size: 150% }
 em { font-size: 1.5em }
@@ -1310,7 +1310,7 @@ this by adjusting the font-size so that the x-height is the same
 regardless of the font used.</p>
    <div class="example" id="example-b7b43abf">
     <a class="self-link" href="#example-b7b43abf"></a> The style defined below defines Verdana as the desired font family, but if Verdana is not available Futura or Times
-	will be used. 
+	will be used.
 <pre>p {
   font-family: Verdana, Futura, Times;
 }
@@ -1334,11 +1334,11 @@ to preserve the x-height across each row.  Note how small text remains relativel
 will effectively preserve the x-height of the first choice font, whether it is substituted
 or not. Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-size-adjust" data-dfn-type="value" data-export id="valdef-font-size-adjust-none">none<a class="self-link" href="#valdef-font-size-adjust-none"></a></dfn> 
-    <dd>Do not preserve the font’s x-height. 
-    <dt><dfn class="css" data-dfn-for="font-size-adjust" data-dfn-type="value" data-export id="valdef-font-size-adjust-number"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①">&lt;number></a><a class="self-link" href="#valdef-font-size-adjust-number"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-size-adjust" data-dfn-type="value" data-export id="valdef-font-size-adjust-none">none<a class="self-link" href="#valdef-font-size-adjust-none"></a></dfn>
+    <dd>Do not preserve the font’s x-height.
+    <dt><dfn class="css" data-dfn-for="font-size-adjust" data-dfn-type="value" data-export id="valdef-font-size-adjust-number"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①">&lt;number></a><a class="self-link" href="#valdef-font-size-adjust-number"></a></dfn>
     <dd>
-      Specifies the <a data-link-type="dfn" href="#font-aspect-value" id="ref-for-font-aspect-value①">aspect value</a> used in the calculation below to calculate the adjusted font size: 
+      Specifies the <a data-link-type="dfn" href="#font-aspect-value" id="ref-for-font-aspect-value①">aspect value</a> used in the calculation below to calculate the adjusted font size:
 <pre>c  =  ( a / a' ) s </pre>
      <p>where:</p>
 <pre>s  =  font-size value
@@ -1349,7 +1349,7 @@ c  =  adjusted font-size to use
      <p>
       This value applies to any font that is selected but in typical usage it should be based
 		on the <a data-link-type="dfn" href="#font-aspect-value" id="ref-for-font-aspect-value④">aspect value</a> of the first font in the font-family list.  If this is specified accurately,
-		the 
+		the
       <tt>(a/a')</tt>
        term in the formula above is effectively 1 for the first font and no adjustment occurs.
 		If the value is specified inaccurately, text rendered using the first font in the family
@@ -1368,7 +1368,7 @@ in this situation.</p>
 different <a class="property" data-link-type="propdesc" href="#propdef-font-size-adjust" id="ref-for-propdef-font-size-adjust①①">font-size-adjust</a> properties.  If the same font-size is used, the spans will match when the <span class="property" id="ref-for-propdef-font-size-adjust①②">font-size-adjust</span> value is accurate for the given font.</p>
    <div class="example" id="example-9273e0b1">
     <a class="self-link" href="#example-9273e0b1"></a> Two spans with borders are used to determine the <a data-link-type="dfn" href="#font-aspect-value" id="ref-for-font-aspect-value⑥">aspect value</a> of a font.  The <a class="property" data-link-type="propdesc" href="#propdef-font-size" id="ref-for-propdef-font-size⑦">font-size</a> is the same for both spans but the <a class="property" data-link-type="propdesc" href="#propdef-font-size-adjust" id="ref-for-propdef-font-size-adjust①③">font-size-adjust</a> property is specified only for the right span.  Starting with a value of 0.5, the aspect
-	 value can be adjusted until the borders around the two letters line up. 
+	 value can be adjusted until the borders around the two letters line up.
 <pre>p {
   font-family: Futura;
   font-size: 500px;
@@ -1436,7 +1436,7 @@ it merely resets these to their initial values.</p>
    <p>The syntax of this property is based on a traditional typographical
 shorthand notation to set multiple properties related to fonts.</p>
    <div class="example" id="example-ba41c74f">
-    <a class="self-link" href="#example-ba41c74f"></a> Examples: 
+    <a class="self-link" href="#example-ba41c74f"></a> Examples:
 <pre>p { font: 12pt/14pt sans-serif }
 p { font: 80% sans-serif }
 p { font: x-large/110% "new century schoolbook", serif }
@@ -1470,18 +1470,18 @@ older user agents:</strong></p>
 </pre>
    <p>The following values refer to system fonts:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-caption">caption</dfn> 
-    <dd>The font used for captioned controls (e.g., buttons, drop-downs, etc.). 
-    <dt><dfn class="css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-icon">icon<a class="self-link" href="#valdef-font-icon"></a></dfn> 
-    <dd>The font used to label icons. 
-    <dt><dfn class="css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-menu">menu<a class="self-link" href="#valdef-font-menu"></a></dfn> 
-    <dd>The font used in menus (e.g., dropdown menus and menu lists). 
-    <dt><dfn class="css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-message-box">message-box<a class="self-link" href="#valdef-font-message-box"></a></dfn> 
-    <dd>The font used in dialog boxes. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-small-caption">small-caption</dfn> 
-    <dd>The font used for labeling small controls. 
-    <dt><dfn class="css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-status-bar">status-bar<a class="self-link" href="#valdef-font-status-bar"></a></dfn> 
-    <dd>The font used in window status bars. 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-caption">caption</dfn>
+    <dd>The font used for captioned controls (e.g., buttons, drop-downs, etc.).
+    <dt><dfn class="css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-icon">icon<a class="self-link" href="#valdef-font-icon"></a></dfn>
+    <dd>The font used to label icons.
+    <dt><dfn class="css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-menu">menu<a class="self-link" href="#valdef-font-menu"></a></dfn>
+    <dd>The font used in menus (e.g., dropdown menus and menu lists).
+    <dt><dfn class="css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-message-box">message-box<a class="self-link" href="#valdef-font-message-box"></a></dfn>
+    <dd>The font used in dialog boxes.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-small-caption">small-caption</dfn>
+    <dd>The font used for labeling small controls.
+    <dt><dfn class="css" data-dfn-for="font" data-dfn-type="value" data-export id="valdef-font-status-bar">status-bar<a class="self-link" href="#valdef-font-status-bar"></a></dfn>
+    <dd>The font used in window status bars.
    </dl>
    <p>System fonts may only be set as a whole; that is, the font
 family, size, weight, style, etc. are all set at the same time.
@@ -1504,7 +1504,7 @@ name:</p>
 font: large menu;  /* use a font family named "menu" */
 </pre>
    <div class="example" id="example-de005a03">
-    <a class="self-link" href="#example-de005a03"></a> Examples: 
+    <a class="self-link" href="#example-de005a03"></a> Examples:
 <pre>button { font: 300 italic 1.3em/1.7em "FB Armada", sans-serif }
 button p { font: menu }
 button p em { font-weight: bolder }
@@ -1561,23 +1561,23 @@ button p em { font-weight: bolder }
    <p>This property controls whether user agents are allowed to synthesize bold or oblique font
 faces when a font family lacks bold or italic faces.</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-synthesis" data-dfn-type="value" data-export id="valdef-font-synthesis-weight">weight<a class="self-link" href="#valdef-font-synthesis-weight"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-synthesis" data-dfn-type="value" data-export id="valdef-font-synthesis-weight">weight<a class="self-link" href="#valdef-font-synthesis-weight"></a></dfn>
     <dd>
       If a <a class="property" data-link-type="propdesc" href="#descdef-font-face-font-weight" id="ref-for-descdef-font-face-font-weight⑨">font-weight</a> is requested that the font family does not contain,
-		the user agent may synthesize the requested weight from the weights that do exist in the font family. 
+		the user agent may synthesize the requested weight from the weights that do exist in the font family.
      <p>If this is not specified, the user agent must <em>not</em> synthesize missing weights.</p>
-    <dt><dfn class="css" data-dfn-for="font-synthesis" data-dfn-type="value" data-export id="valdef-font-synthesis-style">style<a class="self-link" href="#valdef-font-synthesis-style"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-synthesis" data-dfn-type="value" data-export id="valdef-font-synthesis-style">style<a class="self-link" href="#valdef-font-synthesis-style"></a></dfn>
     <dd>
       If a <a class="property" data-link-type="propdesc" href="#descdef-font-face-font-style" id="ref-for-descdef-font-face-font-style⑦">font-style</a> is requested that the font family does not contain,
-		the user agent may synthesize the requested style from the <a class="css" data-link-type="maybe" href="#valdef-font-face-font-style-normal" id="ref-for-valdef-font-face-font-style-normal①">normal</a> face in the font family. 
+		the user agent may synthesize the requested style from the <a class="css" data-link-type="maybe" href="#valdef-font-face-font-style-normal" id="ref-for-valdef-font-face-font-style-normal①">normal</a> face in the font family.
      <p>If this is not specified, the user agent must <em>not</em> synthesize missing styles.</p>
-    <dt><dfn class="css" data-dfn-for="font-synthesis" data-dfn-type="value" data-export id="valdef-font-synthesis-none">none<a class="self-link" href="#valdef-font-synthesis-none"></a></dfn> 
-    <dd> The user agent must not synthesize any missing faces. 
+    <dt><dfn class="css" data-dfn-for="font-synthesis" data-dfn-type="value" data-export id="valdef-font-synthesis-none">none<a class="self-link" href="#valdef-font-synthesis-none"></a></dfn>
+    <dd> The user agent must not synthesize any missing faces.
    </dl>
    <p class="note" role="note"><span>Note:</span> When a face is missing (and not synthesized),
 font fallback occurs.</p>
    <div class="example" id="example-074790a7">
-    <a class="self-link" href="#example-074790a7"></a> The style rule below disables the use of synthetically obliqued Arabic: 
+    <a class="self-link" href="#example-074790a7"></a> The style rule below disables the use of synthetically obliqued Arabic:
 <pre>*:lang(ar) { font-synthesis: none; }</pre>
    </div>
    <h2 class="heading settled" data-level="4" id="font-resources"><span class="secno">4. </span><span class="content">Font Resources</span><a class="self-link" href="#font-resources"></a></h2>
@@ -1619,7 +1619,7 @@ multiple times in a given <span class="css" id="ref-for-at-ruledef-font-face⑥"
 descriptor declaration is used and all prior declarations for that
 descriptor are ignored.</p>
    <div class="example" id="example-ff60a5cd">
-    <a class="self-link" href="#example-ff60a5cd"></a> To use a downloadable font called Gentium: 
+    <a class="self-link" href="#example-ff60a5cd"></a> To use a downloadable font called Gentium:
 <pre>@font-face {
   font-family: Gentium;
   src: url(http://example.com/fonts/Gentium.woff);
@@ -1736,30 +1736,30 @@ the user agent should download the font resource.</p>
    <table class="data" id="fontformats">
     <thead>
      <tr>
-      <th>String 
-      <th>Font Format 
-      <th>Common extensions 
+      <th>String
+      <th>Font Format
+      <th>Common extensions
     <tbody>
      <tr>
-      <th>"woff" 
-      <td><a href="https://www.w3.org/TR/WOFF/">WOFF (Web Open Font Format)</a> 
-      <td>.woff 
+      <th>"woff"
+      <td><a href="https://www.w3.org/TR/WOFF/">WOFF (Web Open Font Format)</a>
+      <td>.woff
      <tr>
-      <th>"truetype" 
-      <td><a href="http://www.microsoft.com/typography/otspec/default.htm">TrueType</a> 
-      <td>.ttf 
+      <th>"truetype"
+      <td><a href="http://www.microsoft.com/typography/otspec/default.htm">TrueType</a>
+      <td>.ttf
      <tr>
-      <th>"opentype" 
-      <td><a href="http://www.microsoft.com/typography/otspec/default.htm">OpenType</a> 
-      <td>.ttf, .otf 
+      <th>"opentype"
+      <td><a href="http://www.microsoft.com/typography/otspec/default.htm">OpenType</a>
+      <td>.ttf, .otf
      <tr>
-      <th>"embedded-opentype" 
-      <td><a href="http://www.w3.org/Submission/2008/SUBM-EOT-20080305/">Embedded OpenType</a> 
-      <td>.eot 
+      <th>"embedded-opentype"
+      <td><a href="http://www.w3.org/Submission/2008/SUBM-EOT-20080305/">Embedded OpenType</a>
+      <td>.eot
      <tr>
-      <th>"svg" 
-      <td><a href="https://www.w3.org/TR/SVG/fonts.html">SVG Font</a> 
-      <td>.svg, .svgz 
+      <th>"svg"
+      <td><a href="https://www.w3.org/TR/SVG/fonts.html">SVG Font</a>
+      <td>.svg, .svgz
    </table>
    <p>Given the overlap in common usage between TrueType and OpenType, the
 format hints "truetype" and "opentype" must be considered as synonymous;
@@ -1819,7 +1819,7 @@ style name (nameID = 2) are considered non-conformant.</p>
    <p>This also allows for referencing faces that belong to larger
 families that cannot otherwise be referenced.</p>
    <div class="example" id="example-be7a8c0c">
-    <a class="self-link" href="#example-be7a8c0c"></a> Use a local font or reference an SVG font in another document: 
+    <a class="self-link" href="#example-be7a8c0c"></a> Use a local font or reference an SVG font in another document:
 <pre>@font-face {
   font-family: Headline;
   src: local(Futura-Medium),
@@ -1924,7 +1924,7 @@ on the style attributes implied by the font data.</p>
    <div class="example" id="example-33e8e677">
     <a class="self-link" href="#example-33e8e677"></a> The font descriptors defined in this section are used for selecting a font
 	from within the set of fonts defined by <a class="css" data-link-type="maybe" href="#at-ruledef-font-face" id="ref-for-at-ruledef-font-face②③">@font-face</a> rules for
-	a given family. 
+	a given family.
     <p>Consider a family containing a single, regular face:</p>
 <pre>@font-face {
   font-family: BaskervilleSimple;
@@ -2008,19 +2008,19 @@ reverse order they were defined; the last rule defined is the first to
 be checked for a given character.</p>
    <p>Example ranges for specific languages or characters:</p>
    <dl>
-    <dt>unicode-range: U+A5; 
-    <dd>a single code point, the yen/yuan symbol 
-    <dt>unicode-range: U+0-7F; 
-    <dd>code range for basic ASCII characters 
-    <dt>unicode-range: U+590-5ff; 
-    <dd>code range for Hebrew characters 
-    <dt>unicode-range: U+A5, U+4E00-9FFF, U+30??, U+FF00-FF9F; 
-    <dd>code range for Japanese kanji, hiragana and katakana characters plus yen/yuan symbol 
+    <dt>unicode-range: U+A5;
+    <dd>a single code point, the yen/yuan symbol
+    <dt>unicode-range: U+0-7F;
+    <dd>code range for basic ASCII characters
+    <dt>unicode-range: U+590-5ff;
+    <dd>code range for Hebrew characters
+    <dt>unicode-range: U+A5, U+4E00-9FFF, U+30??, U+FF00-FF9F;
+    <dd>code range for Japanese kanji, hiragana and katakana characters plus yen/yuan symbol
    </dl>
    <div class="example" id="example-1c91e57a">
     <a class="self-link" href="#example-1c91e57a"></a> The BBC provides news services in a wide variety of languages, many
 	that are not well supported across all platforms. Using an <a class="css" data-link-type="maybe" href="#at-ruledef-font-face" id="ref-for-at-ruledef-font-face②⑨">@font-face</a> rule, the BBC could provide a font for any of these languages, as it
-	already does via a manual font download. 
+	already does via a manual font download.
 <pre>@font-face {
   font-family: BBCBengali;
   src: url(fonts/BBCBengali.woff) format("woff");
@@ -2033,7 +2033,7 @@ be checked for a given character.</p>
 	Fonts project is one project aimed at providing fonts to support a wide
 	range of technical typesetting in a standardized way.  The example below
 	shows the use of a font that provides glyphs for many of the
-	mathematical and technical symbol ranges within Unicode: 
+	mathematical and technical symbol ranges within Unicode:
 <pre>@font-face {
   font-family: STIXGeneral;
   src: local(STIXGeneral), url(/stixfonts/STIXGeneral.otf);
@@ -2046,7 +2046,7 @@ be checked for a given character.</p>
 	Latin characters in a Japanese font with glyphs from a different font.
 	The first rule specifies no range so it defaults to the entire range.
 	The range specified in the second rule overlaps but takes precedence
-	because it is defined later. 
+	because it is defined later.
 <pre>@font-face {
   font-family: JapaneseWithGentium;
   src: local(MSMincho);
@@ -2062,7 +2062,7 @@ be checked for a given character.</p>
    </div>
    <div class="example" id="example-cf27d555">
     <a class="self-link" href="#example-cf27d555"></a> Consider a family constructed to optimize bandwidth by separating out
-	Latin, Japanese and other characters into different font files: 
+	Latin, Japanese and other characters into different font files:
 <pre>/* fallback font - size: 4.5MB */
 @font-face {
   font-family: DroidSans;
@@ -2197,7 +2197,7 @@ cross-site loading of font data using the <code>Access-Control-Allow-Origin</cod
 cross-origin loading, beyond what is permitted by the <a href="https://www.w3.org/TR/html5/infrastructure.html#cors-enabled-fetch">potentially CORS-enabled fetch</a> method, is defined or required.</p>
    <div class="example" id="example-dc5b69de">
     <a class="self-link" href="#example-dc5b69de"></a> For the examples given below, assume that a document is located at <code>http://example.com/page.html</code> and all URL’s link to valid
-	font resources supported by the user agent. 
+	font resources supported by the user agent.
     <p>Fonts defined with the <a class="property" data-link-type="propdesc" href="#descdef-font-face-src" id="ref-for-descdef-font-face-src①">src</a> descriptor values below will be loaded:</p>
 <pre>/* same origin (i.e. domain, scheme, port match document) */
 src: url(fonts/simple.woff);
@@ -2516,7 +2516,7 @@ across user agent implementations.</p>
     <a class="self-link" href="#example-dee54679"></a> It’s useful to note that the CSS selector syntax  may be used to
 	create language-sensitive typography. For example, some Chinese and
 	Japanese characters are unified to have the same Unicode code point,
-	although the abstract glyphs are not the same in the two languages. 
+	although the abstract glyphs are not the same in the two languages.
 <pre>:lang(ja) { font: 900 14pt/16pt "Heisei Mincho W9", serif; }
 *:lang(zh-Hant-TW) { font: 800 14pt/16.5pt "Li Sung", serif; }
 </pre>
@@ -2626,12 +2626,12 @@ purpose.</p>
 property controls metric kerning, kerning that utilizes adjustment
 data contained in the font.</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-kerning" data-dfn-type="value" data-export id="valdef-font-kerning-auto">auto</dfn> 
-    <dd>Specifies that kerning is applied at the discretion of the user agent 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-kerning" data-dfn-type="value" data-export id="valdef-font-kerning-normal">normal</dfn> 
-    <dd>Specifies that kerning is applied 
-    <dt><dfn class="css" data-dfn-for="font-kerning" data-dfn-type="value" data-export id="valdef-font-kerning-none">none<a class="self-link" href="#valdef-font-kerning-none"></a></dfn> 
-    <dd>Specifies that kerning is not applied 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-kerning" data-dfn-type="value" data-export id="valdef-font-kerning-auto">auto</dfn>
+    <dd>Specifies that kerning is applied at the discretion of the user agent
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-kerning" data-dfn-type="value" data-export id="valdef-font-kerning-normal">normal</dfn>
+    <dd>Specifies that kerning is applied
+    <dt><dfn class="css" data-dfn-for="font-kerning" data-dfn-type="value" data-export id="valdef-font-kerning-none">none<a class="self-link" href="#valdef-font-kerning-none"></a></dfn>
+    <dd>Specifies that kerning is not applied
    </dl>
    <p>For fonts that do not include kerning data this property will have no
 visible effect.  When rendering with OpenType fonts, the <a data-link-type="biblio" href="#biblio-opentype">[OPENTYPE]</a> specification suggests that kerning be enabled by default.  When kerning is
@@ -2688,44 +2688,44 @@ large impact on text rendering speed.</p>
 </pre>
    <p>Individual values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-variant-ligatures" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-normal">normal<a class="self-link" href="#valdef-font-variant-ligatures-normal"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-ligatures" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-normal">normal<a class="self-link" href="#valdef-font-variant-ligatures-normal"></a></dfn>
     <dd> Specifies that common default features are enabled, as described in <a href="#font-feature-resolution">§ 7 Font Feature Resolution</a>.
 		For OpenType fonts, common ligatures and contextual forms are on by default,
-		discretionary and historical ligatures are not. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-ligatures" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-none">none</dfn> 
+		discretionary and historical ligatures are not.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-ligatures" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-none">none</dfn>
     <dd> Specifies that all types of ligatures and contextual forms covered by this property are
 		explicitly disabled.  In situations where ligatures are not considered necessary, this may
-		improve the speed of text rendering. 
-    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <common-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-common-lig-values-common-ligatures">common-ligatures<a class="self-link" href="#valdef-font-variant-ligatures-common-lig-values-common-ligatures"></a></dfn> 
+		improve the speed of text rendering.
+    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <common-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-common-lig-values-common-ligatures">common-ligatures<a class="self-link" href="#valdef-font-variant-ligatures-common-lig-values-common-ligatures"></a></dfn>
     <dd>
       Enables display of common ligatures (OpenType features: <code>liga</code>, <code>clig</code>).  For OpenType fonts,
-		common ligatures are enabled by default. 
+		common ligatures are enabled by default.
      <div class="featex"><img alt="common ligature example" src="liga.png"></div>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-ligatures <common-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-common-lig-values-no-common-ligatures">no-common-ligatures</dfn> 
-    <dd> Disables display of common ligatures (OpenType features: <code>liga</code>, <code>clig</code>). 
-    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <discretionary-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-discretionary-lig-values-discretionary-ligatures">discretionary-ligatures<a class="self-link" href="#valdef-font-variant-ligatures-discretionary-lig-values-discretionary-ligatures"></a></dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-ligatures <common-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-common-lig-values-no-common-ligatures">no-common-ligatures</dfn>
+    <dd> Disables display of common ligatures (OpenType features: <code>liga</code>, <code>clig</code>).
+    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <discretionary-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-discretionary-lig-values-discretionary-ligatures">discretionary-ligatures<a class="self-link" href="#valdef-font-variant-ligatures-discretionary-lig-values-discretionary-ligatures"></a></dfn>
     <dd>
       Enables display of discretionary ligatures (OpenType feature: <code>dlig</code>).  Which ligatures
 		are discretionary or optional is decided by the type designer, so authors will need to refer to
-		the documentation of a given font to understand which ligatures are considered discretionary. 
+		the documentation of a given font to understand which ligatures are considered discretionary.
      <div class="featex"><img alt="discretionary ligature example" src="dlig.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <discretionary-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-discretionary-lig-values-no-discretionary-ligatures">no-discretionary-ligatures<a class="self-link" href="#valdef-font-variant-ligatures-discretionary-lig-values-no-discretionary-ligatures"></a></dfn> 
-    <dd> Disables display of discretionary ligatures (OpenType feature: <code>dlig</code>). 
-    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <historical-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-historical-lig-values-historical-ligatures">historical-ligatures<a class="self-link" href="#valdef-font-variant-ligatures-historical-lig-values-historical-ligatures"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <discretionary-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-discretionary-lig-values-no-discretionary-ligatures">no-discretionary-ligatures<a class="self-link" href="#valdef-font-variant-ligatures-discretionary-lig-values-no-discretionary-ligatures"></a></dfn>
+    <dd> Disables display of discretionary ligatures (OpenType feature: <code>dlig</code>).
+    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <historical-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-historical-lig-values-historical-ligatures">historical-ligatures<a class="self-link" href="#valdef-font-variant-ligatures-historical-lig-values-historical-ligatures"></a></dfn>
     <dd>
-      Enables display of historical ligatures (OpenType feature: <code>hlig</code>). 
+      Enables display of historical ligatures (OpenType feature: <code>hlig</code>).
      <div class="featex"><img alt="historical ligature example" src="hlig.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <historical-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-historical-lig-values-no-historical-ligatures">no-historical-ligatures<a class="self-link" href="#valdef-font-variant-ligatures-historical-lig-values-no-historical-ligatures"></a></dfn> 
-    <dd> Disables display of historical ligatures (OpenType feature: <code>hlig</code>). 
-    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <contextual-alt-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-contextual-alt-values-contextual">contextual<a class="self-link" href="#valdef-font-variant-ligatures-contextual-alt-values-contextual"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <historical-lig-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-historical-lig-values-no-historical-ligatures">no-historical-ligatures<a class="self-link" href="#valdef-font-variant-ligatures-historical-lig-values-no-historical-ligatures"></a></dfn>
+    <dd> Disables display of historical ligatures (OpenType feature: <code>hlig</code>).
+    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <contextual-alt-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-contextual-alt-values-contextual">contextual<a class="self-link" href="#valdef-font-variant-ligatures-contextual-alt-values-contextual"></a></dfn>
     <dd>
       Enables display of contextual alternates (OpenType feature: <code>calt</code>).  Although
 		not strictly a ligature feature, like ligatures this feature is commonly used to harmonize
 		the shapes of glyphs with the surrounding context.  For OpenType fonts, this feature is
-		on by default. 
+		on by default.
      <div class="featex"><img alt="contextual alternate example" src="calt.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <contextual-alt-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-contextual-alt-values-no-contextual">no-contextual<a class="self-link" href="#valdef-font-variant-ligatures-contextual-alt-values-no-contextual"></a></dfn> 
-    <dd> Disables display of contextual alternates (OpenType feature: <code>calt</code>). 
+    <dt><dfn class="css" data-dfn-for="font-variant-ligatures <contextual-alt-values>" data-dfn-type="value" data-export id="valdef-font-variant-ligatures-contextual-alt-values-no-contextual">no-contextual<a class="self-link" href="#valdef-font-variant-ligatures-contextual-alt-values-no-contextual"></a></dfn>
+    <dd> Disables display of contextual alternates (OpenType feature: <code>calt</code>).
    </dl>
    <p>Required ligatures, needed for correctly rendering complex scripts, are
 not affected by the settings above, including <a class="css" data-link-type="maybe" href="#valdef-font-variant-ligatures-none" id="ref-for-valdef-font-variant-ligatures-none">none</a> (OpenType feature: <code>rlig</code>).</p>
@@ -2772,12 +2772,12 @@ the line height.</p>
    </div>
    <p>Individual values have the following meanings:</p>
    <dl>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-position" data-dfn-type="value" data-export id="valdef-font-variant-position-normal">normal</dfn> 
-    <dd>None of the features listed below are enabled. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-position" data-dfn-type="value" data-export id="valdef-font-variant-position-sub">sub</dfn> 
-    <dd>Enables display of subscript variants (OpenType feature: <code>subs</code>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-position" data-dfn-type="value" data-export id="valdef-font-variant-position-super">super</dfn> 
-    <dd>Enables display of superscript variants (OpenType feature: <code>sups</code>). 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-position" data-dfn-type="value" data-export id="valdef-font-variant-position-normal">normal</dfn>
+    <dd>None of the features listed below are enabled.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-position" data-dfn-type="value" data-export id="valdef-font-variant-position-sub">sub</dfn>
+    <dd>Enables display of subscript variants (OpenType feature: <code>subs</code>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-position" data-dfn-type="value" data-export id="valdef-font-variant-position-super">super</dfn>
+    <dd>Enables display of superscript variants (OpenType feature: <code>sups</code>).
    </dl>
    <p>Because of the semantic nature of subscripts and superscripts, when
 the value is either <a class="css" data-link-type="maybe" href="#valdef-font-variant-position-sub" id="ref-for-valdef-font-variant-position-sub">sub</a> or <a class="css" data-link-type="maybe" href="#valdef-font-variant-position-super" id="ref-for-valdef-font-variant-position-super">super</a> for a given contiguous run of
@@ -2827,7 +2827,7 @@ the inline box or alter the height of the linebox.  This makes superscript
 and subscript variants ideal for situations where it’s important that leading
 remain constant, such as in multi-column layout.</p>
    <div class="example" id="example-cb776798">
-    <a class="self-link" href="#example-cb776798"></a> A typical user agent default style for the <code>sub</code> element: 
+    <a class="self-link" href="#example-cb776798"></a> A typical user agent default style for the <code>sub</code> element:
 <pre>sub {
   vertical-align: sub;
   font-size: smaller;
@@ -2890,25 +2890,25 @@ the weight and readability which suffers when text is simply resized to
 fit this purpose.</p>
    <p>Individual values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-normal">normal<a class="self-link" href="#valdef-font-variant-caps-normal"></a></dfn> 
-    <dd> None of the features listed below are enabled. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-small-caps">small-caps</dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-normal">normal<a class="self-link" href="#valdef-font-variant-caps-normal"></a></dfn>
+    <dd> None of the features listed below are enabled.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-small-caps">small-caps</dfn>
     <dd>
       Enables display of small capitals (OpenType feature: <code>smcp</code>).
-		Small-caps glyphs typically use the form of uppercase letters but are reduced to the size of lowercase letters. 
+		Small-caps glyphs typically use the form of uppercase letters but are reduced to the size of lowercase letters.
      <div class="featex"><img alt="small-caps example" src="smcp.png"></div>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-all-small-caps">all-small-caps</dfn> 
-    <dd> Enables display of small capitals for both upper and lowercase letters (OpenType features: <code>c2sc</code>, <code>smcp</code>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-petite-caps">petite-caps</dfn> 
-    <dd> Enables display of petite capitals (OpenType feature: <code>pcap</code>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-all-petite-caps">all-petite-caps</dfn> 
-    <dd> Enables display of petite capitals for both upper and lowercase letters (OpenType features: <code>c2pc</code>, <code>pcap</code>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-unicase">unicase</dfn> 
-    <dd> Enables display of mixture of small capitals for uppercase letters with normal lowercase letters (OpenType feature: <code>unic</code>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-titling-caps">titling-caps</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-all-small-caps">all-small-caps</dfn>
+    <dd> Enables display of small capitals for both upper and lowercase letters (OpenType features: <code>c2sc</code>, <code>smcp</code>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-petite-caps">petite-caps</dfn>
+    <dd> Enables display of petite capitals (OpenType feature: <code>pcap</code>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-all-petite-caps">all-petite-caps</dfn>
+    <dd> Enables display of petite capitals for both upper and lowercase letters (OpenType features: <code>c2pc</code>, <code>pcap</code>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-unicase">unicase</dfn>
+    <dd> Enables display of mixture of small capitals for uppercase letters with normal lowercase letters (OpenType feature: <code>unic</code>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-caps" data-dfn-type="value" data-export id="valdef-font-variant-caps-titling-caps">titling-caps</dfn>
     <dd> Enables display of titling capitals (OpenType feature: <code>titl</code>).  Uppercase
 		letter glyphs are often designed for use with lowercase letters.  When used in all uppercase titling sequences
-		they can appear too strong.  Titling capitals are designed specifically for this situation. 
+		they can appear too strong.  Titling capitals are designed specifically for this situation.
    </dl>
    <p>The availability of these glyphs is based on whether a given
 feature is defined or not in the feature list of the font.  User
@@ -2951,7 +2951,7 @@ appears in all uppercase letters.</p>
     <p class="caption">Using small capitals to improve readability in acronym-laden text</p>
    </div>
    <div class="example" id="example-2f16c1b0">
-    <a class="self-link" href="#example-2f16c1b0"></a> Quotes rendered italicised, with small-caps on the first line: 
+    <a class="self-link" href="#example-2f16c1b0"></a> Quotes rendered italicised, with small-caps on the first line:
 <pre>blockquote            { font-style: italic; }
 blockquote:first-line { font-variant: small-caps; }
 
@@ -3005,38 +3005,38 @@ are used so that columns of numbers line up properly:</p>
 </pre>
    <p>Individual values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-variant-numeric" data-dfn-type="value" data-export id="valdef-font-variant-numeric-normal">normal<a class="self-link" href="#valdef-font-variant-numeric-normal"></a></dfn> 
-    <dd>None of the features listed below are enabled. 
-    <dt><dfn class="css" data-dfn-for="font-variant-numeric <numeric-figure-values>" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-figure-values-lining-nums">lining-nums<a class="self-link" href="#valdef-font-variant-numeric-numeric-figure-values-lining-nums"></a></dfn> 
-    <dd>Enables display of lining numerals (OpenType feature: <code>lnum</code>). 
-    <dt><dfn class="css" data-dfn-for="font-variant-numeric <numeric-figure-values" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-figure-values-oldstyle-nums">oldstyle-nums<a class="self-link" href="#valdef-font-variant-numeric-numeric-figure-values-oldstyle-nums"></a></dfn> 
-    <dd>Enables display of old-style numerals (OpenType feature: <code>onum</code>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-numeric <numeric-spacing-values>" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-spacing-values-proportional-nums">proportional-nums</dfn> 
-    <dd>Enables display of proportional numerals (OpenType feature: <code>pnum</code>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-numeric <numeric-spacing-values>" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-spacing-values-tabular-nums">tabular-nums</dfn> 
-    <dd>Enables display of tabular numerals (OpenType feature: <code>tnum</code>). 
-    <dt><dfn class="css" data-dfn-for="font-variant-numeric <numeric-fraction-values>" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-fraction-values-diagonal-fractions">diagonal-fractions<a class="self-link" href="#valdef-font-variant-numeric-numeric-fraction-values-diagonal-fractions"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-numeric" data-dfn-type="value" data-export id="valdef-font-variant-numeric-normal">normal<a class="self-link" href="#valdef-font-variant-numeric-normal"></a></dfn>
+    <dd>None of the features listed below are enabled.
+    <dt><dfn class="css" data-dfn-for="font-variant-numeric <numeric-figure-values>" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-figure-values-lining-nums">lining-nums<a class="self-link" href="#valdef-font-variant-numeric-numeric-figure-values-lining-nums"></a></dfn>
+    <dd>Enables display of lining numerals (OpenType feature: <code>lnum</code>).
+    <dt><dfn class="css" data-dfn-for="font-variant-numeric <numeric-figure-values" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-figure-values-oldstyle-nums">oldstyle-nums<a class="self-link" href="#valdef-font-variant-numeric-numeric-figure-values-oldstyle-nums"></a></dfn>
+    <dd>Enables display of old-style numerals (OpenType feature: <code>onum</code>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-numeric <numeric-spacing-values>" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-spacing-values-proportional-nums">proportional-nums</dfn>
+    <dd>Enables display of proportional numerals (OpenType feature: <code>pnum</code>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-numeric <numeric-spacing-values>" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-spacing-values-tabular-nums">tabular-nums</dfn>
+    <dd>Enables display of tabular numerals (OpenType feature: <code>tnum</code>).
+    <dt><dfn class="css" data-dfn-for="font-variant-numeric <numeric-fraction-values>" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-fraction-values-diagonal-fractions">diagonal-fractions<a class="self-link" href="#valdef-font-variant-numeric-numeric-fraction-values-diagonal-fractions"></a></dfn>
     <dd>
-     Enables display of lining diagonal fractions (OpenType feature: <code>frac</code>). 
+     Enables display of lining diagonal fractions (OpenType feature: <code>frac</code>).
      <div class="featex"><img alt="diagonal fraction example" src="frac.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-numeric <numeric-fraction-values>" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-fraction-values-stacked-fractions">stacked-fractions<a class="self-link" href="#valdef-font-variant-numeric-numeric-fraction-values-stacked-fractions"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-numeric <numeric-fraction-values>" data-dfn-type="value" data-export id="valdef-font-variant-numeric-numeric-fraction-values-stacked-fractions">stacked-fractions<a class="self-link" href="#valdef-font-variant-numeric-numeric-fraction-values-stacked-fractions"></a></dfn>
     <dd>
-     Enables display of lining stacked fractions (OpenType feature: <code>afrc</code>). 
+     Enables display of lining stacked fractions (OpenType feature: <code>afrc</code>).
      <div class="featex"><img alt="stacked fraction example" src="afrc.png"></div>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-numeric" data-dfn-type="value" data-export id="valdef-font-variant-numeric-ordinal">ordinal</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-numeric" data-dfn-type="value" data-export id="valdef-font-variant-numeric-ordinal">ordinal</dfn>
     <dd>
-     Enables display of letter forms used with ordinal numbers (OpenType feature: <code>ordn</code>). 
+     Enables display of letter forms used with ordinal numbers (OpenType feature: <code>ordn</code>).
      <div class="featex"><img alt="ordinals example" src="ordinals.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-numeric" data-dfn-type="value" data-export id="valdef-font-variant-numeric-slashed-zero">slashed-zero<a class="self-link" href="#valdef-font-variant-numeric-slashed-zero"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-numeric" data-dfn-type="value" data-export id="valdef-font-variant-numeric-slashed-zero">slashed-zero<a class="self-link" href="#valdef-font-variant-numeric-slashed-zero"></a></dfn>
     <dd>
-     Enables display of slashed zeros (OpenType feature: <code>zero</code>). 
+     Enables display of slashed zeros (OpenType feature: <code>zero</code>).
      <div class="featex"><img alt="slashed zero example" src="zero.png"></div>
    </dl>
    <div class="example" id="ordinal-example">
     <a class="self-link" href="#ordinal-example"></a> In the case of <a class="css" data-link-type="maybe" href="#valdef-font-variant-numeric-ordinal" id="ref-for-valdef-font-variant-numeric-ordinal">ordinal</a>, although ordinal forms
 	are often the same as superscript forms, they are marked up
 	differently.
-	For superscripts, the variant property is only applied to the sub-element containing the superscript: 
+	For superscripts, the variant property is only applied to the sub-element containing the superscript:
 <pre>sup { font-variant-position: super; }
 x&lt;sup>2&lt;/sup>
 </pre>
@@ -3052,7 +3052,7 @@ x&lt;sup>2&lt;/sup>
 	include an underline in the ordinal design.</p>
    </div>
    <div class="example" id="steak-marinade">
-    <a class="self-link" href="#steak-marinade"></a> A simple flank steak marinade recipe, rendered with automatic fractions and old-style numerals: 
+    <a class="self-link" href="#steak-marinade"></a> A simple flank steak marinade recipe, rendered with automatic fractions and old-style numerals:
 <pre>.amount { font-variant-numeric: oldstyle-nums diagonal-fractions; }
 
 &lt;h4>Steak marinade:&lt;/h4>
@@ -3138,37 +3138,37 @@ a given font, the value is ignored.  These values never apply to
 generic font families.</p>
    <p>Individual values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export id="valdef-font-variant-alternates-normal">normal<a class="self-link" href="#valdef-font-variant-alternates-normal"></a></dfn> 
-    <dd>None of the features listed below are enabled. 
-    <dt><dfn class="css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export id="valdef-font-variant-alternates-historical-forms">historical-forms<a class="self-link" href="#valdef-font-variant-alternates-historical-forms"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export id="valdef-font-variant-alternates-normal">normal<a class="self-link" href="#valdef-font-variant-alternates-normal"></a></dfn>
+    <dd>None of the features listed below are enabled.
+    <dt><dfn class="css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export id="valdef-font-variant-alternates-historical-forms">historical-forms<a class="self-link" href="#valdef-font-variant-alternates-historical-forms"></a></dfn>
     <dd>
-     Enables display of historical forms (OpenType feature: <code>hist</code>). 
+     Enables display of historical forms (OpenType feature: <code>hist</code>).
      <div class="featex"><img alt="historical form example" src="hist.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="stylistic()" id="valdef-font-variant-alternates-stylistic">stylistic(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name①⑤">&lt;feature-value-name></a>)<a class="self-link" href="#valdef-font-variant-alternates-stylistic"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="stylistic()" id="valdef-font-variant-alternates-stylistic">stylistic(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name①⑤">&lt;feature-value-name></a>)<a class="self-link" href="#valdef-font-variant-alternates-stylistic"></a></dfn>
     <dd>
-     Enables display of stylistic alternates (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific">font specific</a>, OpenType feature: <code>salt <a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index①">&lt;feature-index></a></code>). 
+     Enables display of stylistic alternates (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific">font specific</a>, OpenType feature: <code>salt <a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index①">&lt;feature-index></a></code>).
      <div class="featex"><img alt="stylistic alternate example" src="salt.png"></div>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="styleset()" id="valdef-font-variant-alternates-styleset">styleset(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name①⑥">&lt;feature-value-name></a>#)</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="styleset()" id="valdef-font-variant-alternates-styleset">styleset(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name①⑥">&lt;feature-value-name></a>#)</dfn>
     <dd>
-     Enables display with stylistic sets (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific①">font specific</a>, OpenType feature: <code>ss<a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index②">&lt;feature-index></a></code> OpenType currently defines <code>ss01</code> through <code>ss20</code>). 
+     Enables display with stylistic sets (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific①">font specific</a>, OpenType feature: <code>ss<a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index②">&lt;feature-index></a></code> OpenType currently defines <code>ss01</code> through <code>ss20</code>).
      <div class="featex"><img alt="styleset example" src="ssnn.png"></div>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="character-variant()" id="valdef-font-variant-alternates-character-variant">character-variant(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name①⑦">&lt;feature-value-name></a>#)</dfn> 
-    <dd>Enables display of specific character variants (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific②">font specific</a>, OpenType feature: <code>cv<a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index③">&lt;feature-index></a></code> OpenType currently defines <code>cv01</code> through <code>cv99</code>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="swash()" id="valdef-font-variant-alternates-swash">swash(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name①⑧">&lt;feature-value-name></a>)</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="character-variant()" id="valdef-font-variant-alternates-character-variant">character-variant(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name①⑦">&lt;feature-value-name></a>#)</dfn>
+    <dd>Enables display of specific character variants (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific②">font specific</a>, OpenType feature: <code>cv<a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index③">&lt;feature-index></a></code> OpenType currently defines <code>cv01</code> through <code>cv99</code>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="swash()" id="valdef-font-variant-alternates-swash">swash(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name①⑧">&lt;feature-value-name></a>)</dfn>
     <dd>
-     Enables display of swash glyphs (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific③">font specific</a>, OpenType feature: <code>swsh <a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index④">&lt;feature-index></a>, cswh <span class="production" id="ref-for-typedef-feature-index⑤">&lt;feature-index></span></code>). 
+     Enables display of swash glyphs (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific③">font specific</a>, OpenType feature: <code>swsh <a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index④">&lt;feature-index></a>, cswh <span class="production" id="ref-for-typedef-feature-index⑤">&lt;feature-index></span></code>).
      <div class="featex"><img alt="swash example" src="swsh.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="ornaments()" id="valdef-font-variant-alternates-ornaments">ornaments(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name①⑨">&lt;feature-value-name></a>)<a class="self-link" href="#valdef-font-variant-alternates-ornaments"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="ornaments()" id="valdef-font-variant-alternates-ornaments">ornaments(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name①⑨">&lt;feature-value-name></a>)<a class="self-link" href="#valdef-font-variant-alternates-ornaments"></a></dfn>
     <dd>
      Enables replacement of default glyphs with ornaments, if provided in the font (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific④">font specific</a>, OpenType feature: <code>ornm <a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index⑥">&lt;feature-index></a></code>).
 		Some fonts may offer ornament glyphs as alternates for a wide collection of characters; however, displaying arbitrary
 		characters (e.g., alphanumerics) as ornaments is poor practice as it distorts the semantics of the data. Font designers
 		are encouraged to encode all ornaments (except those explicitly encoded in the Unicode Dingbats blocks, etc.) as
-		alternates for the bullet character (U+2022) to allow authors to select the desired glyph using <span class="css">ornaments</span>. 
+		alternates for the bullet character (U+2022) to allow authors to select the desired glyph using <span class="css">ornaments</span>.
      <div class="featex"><img alt="ornaments example" src="ornm.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="annotation()" id="valdef-font-variant-alternates-annotation">annotation(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name②⓪">&lt;feature-value-name></a>)<a class="self-link" href="#valdef-font-variant-alternates-annotation"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-alternates" data-dfn-type="value" data-export data-lt="annotation()" id="valdef-font-variant-alternates-annotation">annotation(<a class="production css" data-link-type="type" href="#typedef-feature-value-name" id="ref-for-typedef-feature-value-name②⓪">&lt;feature-value-name></a>)<a class="self-link" href="#valdef-font-variant-alternates-annotation"></a></dfn>
     <dd>
-     Enables display of alternate annotation forms (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific⑤">font specific</a>, OpenType feature: <code>nalt <a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index⑦">&lt;feature-index></a></code>). 
+     Enables display of alternate annotation forms (<a data-link-type="dfn" href="#font-specific" id="ref-for-font-specific⑤">font specific</a>, OpenType feature: <code>nalt <a class="production css" data-link-type="type" href="#typedef-feature-index" id="ref-for-typedef-feature-index⑦">&lt;feature-index></a></code>).
      <div class="featex"><img alt="alternate annotation form example" src="nalt.png"></div>
    </dl>
    <h3 class="heading settled" data-level="6.9" id="font-feature-values"><span class="secno">6.9. </span><span class="content">Defining font specific alternates: the <dfn class="dfn-paneled css" data-dfn-type="at-rule" data-export id="at-ruledef-font-feature-values">@font-feature-values</dfn> rule</span><a class="self-link" href="#font-feature-values"></a></h3>
@@ -3182,7 +3182,7 @@ description of the interfaces used to modify these rules via the CSS
 Object Model.</p>
    <div class="example" id="example-cbc40bf9">
     <a class="self-link" href="#example-cbc40bf9"></a> In the case of the swash Q in the example shown above, the swash could
-	be specified using these style rules: 
+	be specified using these style rules:
 <pre>@font-feature-values Jupiter Sans {
   @swash {
     delicate: 1;
@@ -3268,7 +3268,7 @@ definition</a>, such as invalid identifiers or values, the entire <span id="ref-
 definition</span> must be omitted, just as syntax errors in
 style declarations are handled.  When the <a data-link-type="dfn" href="#feature_type" id="ref-for-feature_type⑤">feature type</a> is invalid, the entire associated <a data-link-type="dfn" href="#feature_value_block" id="ref-for-feature_value_block⑤">feature value block</a> must be ignored.</p>
    <div class="example" id="example-a4e868e2">
-    <a class="self-link" href="#example-a4e868e2"></a> Rules that are equivalent given syntax error handling: 
+    <a class="self-link" href="#example-a4e868e2"></a> Rules that are equivalent given syntax error handling:
 <pre>@font-feature-values Bongo {
   @swash { ornate: 1; }
   annotation { boxed: 4; } /* should be @annotation! */
@@ -3292,7 +3292,7 @@ definitions contained within these rules. This allows a set of named
 values to be defined for a given font family globally for a site and
 specific additions made per-page.</p>
    <div class="example" id="example-a442ca99">
-    <a class="self-link" href="#example-a442ca99"></a> Using both site-wide and per-page feature values: 
+    <a class="self-link" href="#example-a442ca99"></a> Using both site-wide and per-page feature values:
 <pre>site.css:
 
   @font-feature-values Mercury Serif {
@@ -3322,7 +3322,7 @@ page.css:
     <a class="self-link" href="#example-2fc80dc0"></a> Using a commonly named value allows authors to use a single style rule
 	to cover a set of fonts for which the underlying selector is different for
 	each font. If either font in the example below is found, a circled number
-	glyph will be used: 
+	glyph will be used:
 <pre>@font-feature-values Taisho Gothic {
   @annotation { boxed: 1; circled: 4; }
 }
@@ -3403,7 +3403,7 @@ p {
 }
 </pre>
    <div class="example" id="example-580d1e81">
-    <a class="self-link" href="#example-580d1e81"></a> 
+    <a class="self-link" href="#example-580d1e81"></a>
     <div class="figure">
      <img alt="Matching text on Byzantine seals using character variants" src="byzantineseal.png">
      <p class="caption">Byzantine seal text displayed with character variants</p>
@@ -3480,41 +3480,41 @@ span.alt-U {
 </pre>
    <p>Individual values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-variant-east-asian" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-normal">normal<a class="self-link" href="#valdef-font-variant-east-asian-normal"></a></dfn> 
-    <dd>None of the features listed below are enabled. 
-    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-jis78">jis78<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-variant-values-jis78"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-east-asian" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-normal">normal<a class="self-link" href="#valdef-font-variant-east-asian-normal"></a></dfn>
+    <dd>None of the features listed below are enabled.
+    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-jis78">jis78<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-variant-values-jis78"></a></dfn>
     <dd>
-     Enables rendering of JIS78 forms (OpenType feature: <code>jp78</code>). 
+     Enables rendering of JIS78 forms (OpenType feature: <code>jp78</code>).
      <div class="featex"><img alt="JIS78 form example" src="jp78.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-jis83">jis83<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-variant-values-jis83"></a></dfn> 
-    <dd>Enables rendering of JIS83 forms (OpenType feature: <code>jp83</code>). 
-    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-jis90">jis90<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-variant-values-jis90"></a></dfn> 
-    <dd>Enables rendering of JIS90 forms (OpenType feature: <code>jp90</code>). 
-    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-jis04">jis04<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-variant-values-jis04"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-jis83">jis83<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-variant-values-jis83"></a></dfn>
+    <dd>Enables rendering of JIS83 forms (OpenType feature: <code>jp83</code>).
+    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-jis90">jis90<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-variant-values-jis90"></a></dfn>
+    <dd>Enables rendering of JIS90 forms (OpenType feature: <code>jp90</code>).
+    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-jis04">jis04<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-variant-values-jis04"></a></dfn>
     <dd>
-     Enables rendering of JIS2004 forms (OpenType feature: <code>jp04</code>). 
+     Enables rendering of JIS2004 forms (OpenType feature: <code>jp04</code>).
      <p>The various JIS variants reflect the glyph forms defined in different
 		Japanese national standards. Fonts generally include glyphs defined by the
 		most recent national standard but it’s sometimes necessary to use older
 		variants, to match signage for example.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-simplified">simplified</dfn> 
-    <dd>Enables rendering of simplified forms (OpenType feature: <code>smpl</code>). 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-traditional">traditional</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-simplified">simplified</dfn>
+    <dd>Enables rendering of simplified forms (OpenType feature: <code>smpl</code>).
+    <dt><dfn class="dfn-paneled css" data-dfn-for="font-variant-east-asian <east-asian-variant-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-variant-values-traditional">traditional</dfn>
     <dd>
-     Enables rendering of traditional forms (OpenType feature: <code>trad</code>). 
+     Enables rendering of traditional forms (OpenType feature: <code>trad</code>).
      <p>The <a class="css" data-link-type="maybe" href="#valdef-font-variant-east-asian-east-asian-variant-values-simplified" id="ref-for-valdef-font-variant-east-asian-east-asian-variant-values-simplified">simplified</a> and <a class="css" data-link-type="maybe" href="#valdef-font-variant-east-asian-east-asian-variant-values-traditional" id="ref-for-valdef-font-variant-east-asian-east-asian-variant-values-traditional">traditional</a> values allow control over the
 		glyph forms for characters which have been simplified over time but
 		for which the older, traditional form is still used in some
 		contexts.  The exact set of characters and glyph forms will vary
 		to some degree by context for which a given font was designed.</p>
      <div class="featex"><img alt="tradtional form example" src="trad.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-width-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-width-values-full-width">full-width<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-width-values-full-width"></a></dfn> 
-    <dd>Enables rendering of full-width variants (OpenType feature: <code>fwid</code>). 
-    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-width-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-width-values-proportional-width">proportional-width<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-width-values-proportional-width"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-width-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-width-values-full-width">full-width<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-width-values-full-width"></a></dfn>
+    <dd>Enables rendering of full-width variants (OpenType feature: <code>fwid</code>).
+    <dt><dfn class="css" data-dfn-for="font-variant-east-asian <east-asian-width-values>" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-east-asian-width-values-proportional-width">proportional-width<a class="self-link" href="#valdef-font-variant-east-asian-east-asian-width-values-proportional-width"></a></dfn>
     <dd>
-     Enables rendering of proportionally-spaced variants (OpenType feature: <code>pwid</code>). 
+     Enables rendering of proportionally-spaced variants (OpenType feature: <code>pwid</code>).
      <div class="featex"><img alt="proportionally spaced Japanese example" src="pwid.png"></div>
-    <dt><dfn class="css" data-dfn-for="font-variant-east-asian" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-ruby">ruby<a class="self-link" href="#valdef-font-variant-east-asian-ruby"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-variant-east-asian" data-dfn-type="value" data-export id="valdef-font-variant-east-asian-ruby">ruby<a class="self-link" href="#valdef-font-variant-east-asian-ruby"></a></dfn>
     <dd>
      Enables display of ruby variant glyphs (OpenType feature: <code>ruby</code>).
 		Since ruby text is generally smaller than the associated body
@@ -3524,7 +3524,7 @@ span.alt-U {
 		associated font scaling or other change that affects line layout.
 		The red ruby text below is shown with default glyphs (top) and
 		with ruby variant glyphs (bottom).  Note the slight difference
-		in stroke thickness. 
+		in stroke thickness.
      <div class="featex"><img alt="ruby variant example" src="rubyshinkansen.png"></div>
    </dl>
    <h3 class="heading settled" data-level="6.11" id="font-variant-prop"><span class="secno">6.11. </span><span class="content">Overall shorthand for font rendering: the <a class="property" data-link-type="propdesc" href="#descdef-font-face-font-variant" id="ref-for-descdef-font-face-font-variant①①">font-variant</a> property</span><a class="self-link" href="#font-variant-prop"></a></h3>
@@ -3631,7 +3631,7 @@ of 1 or greater enables the feature and indicates the feature
 selection index. A value of <span class="css">on</span> is synonymous with 1 and <span class="css">off</span> is
 synonymous with 0. If the value is omitted, a value of 1 is assumed.</p>
    <div class="example" id="example-635f5201">
-    <a class="self-link" href="#example-635f5201"></a> Examples: 
+    <a class="self-link" href="#example-635f5201"></a> Examples:
 <pre>font-feature-settings: "dlig" 1;       /* dlig=1 enable discretionary ligatures */
 font-feature-settings: "smcp" on;      /* smcp=1 enable small caps */
 font-feature-settings: "c2sc";         /* c2sc=1 enable caps to small caps */
@@ -3656,7 +3656,7 @@ added in the future.  Where possible, features defined for other font
 formats should attempt to follow the pattern of registered OpenType
 tags.</p>
    <div class="example" id="example-b4ef3250">
-    <a class="self-link" href="#example-b4ef3250"></a> The Japanese text below will be rendered with half-width kana characters: 
+    <a class="self-link" href="#example-b4ef3250"></a> The Japanese text below will be rendered with half-width kana characters:
 <pre lang="ja">body { font-feature-settings: "hwid"; /* Half-width OpenType feature */ }
 
 &lt;p>毎日<a href="http://images.google.com/images?q=%E3%82%AB%E3%83%AC%E3%83%BC" style="text-decoration: none;">カレー</a>食べてるのに、飽きない&lt;/p>
@@ -3704,19 +3704,19 @@ typographic traditions.  The <a class="property" data-link-type="propdesc" href=
 the language system of the font, overriding the language system implied by the content language.</p>
    <p>Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="font-language-override" data-dfn-type="value" data-export id="valdef-font-language-override-normal">normal<a class="self-link" href="#valdef-font-language-override-normal"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="font-language-override" data-dfn-type="value" data-export id="valdef-font-language-override-normal">normal<a class="self-link" href="#valdef-font-language-override-normal"></a></dfn>
     <dd>specifies that when rendering with OpenType fonts,
-		the content language of the element is used to infer the OpenType language system 
-    <dt><dfn class="css" data-dfn-for="font-language-override" data-dfn-type="value" data-export id="valdef-font-language-override-string"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#string-value" id="ref-for-string-value④">&lt;string></a><a class="self-link" href="#valdef-font-language-override-string"></a></dfn> 
+		the content language of the element is used to infer the OpenType language system
+    <dt><dfn class="css" data-dfn-for="font-language-override" data-dfn-type="value" data-export id="valdef-font-language-override-string"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#string-value" id="ref-for-string-value④">&lt;string></a><a class="self-link" href="#valdef-font-language-override-string"></a></dfn>
     <dd>single three-letter case-sensitive OpenType <a href="http://www.microsoft.com/typography/otspec/languagetags.htm">language system tag</a>,
-		specifies the OpenType language system to be used instead of the language system implied by the language of the element 
+		specifies the OpenType language system to be used instead of the language system implied by the language of the element
    </dl>
    <p>Use of invalid OpenType language system tags must not generate a
 parse error but must be ignored when doing glyph selection and
 placement.</p>
    <div class="example" id="example-563ce785">
     <a class="self-link" href="#example-563ce785"></a> The <a href="http://www.un.org/en/documents/udhr/index.shtml">Universal Declaration of Human Rights</a> has
-	been translated into a wide variety of languages.  In Turkish, Article 9 of this document might be marked up as below: 
+	been translated into a wide variety of languages.  In Turkish, Article 9 of this document might be marked up as below:
 <pre lang="tr">&lt;body lang="tr">
 
 &lt;h4>Madde 9&lt;/h4>
@@ -3762,17 +3762,17 @@ resolved in the order below, in ascending order of precedence.  This ordering is
 used to construct a combined list of font features that affect a given
 text run.</p>
    <ol>
-    <li>Font features enabled by default, including features required for a given script. 
+    <li>Font features enabled by default, including features required for a given script.
     <li>If the font is defined via an <a class="css" data-link-type="maybe" href="#at-ruledef-font-face" id="ref-for-at-ruledef-font-face④⑦">@font-face</a> rule, the font features
-	implied by the font-variant descriptor in the <span class="css" id="ref-for-at-ruledef-font-face④⑧">@font-face</span> rule. 
+	implied by the font-variant descriptor in the <span class="css" id="ref-for-at-ruledef-font-face④⑧">@font-face</span> rule.
     <li>If the font is defined via an <a class="css" data-link-type="maybe" href="#at-ruledef-font-face" id="ref-for-at-ruledef-font-face④⑨">@font-face</a> rule, the font features
-	implied by the font-feature-settings descriptor in the <span class="css" id="ref-for-at-ruledef-font-face⑤⓪">@font-face</span> rule. 
+	implied by the font-feature-settings descriptor in the <span class="css" id="ref-for-at-ruledef-font-face⑤⓪">@font-face</span> rule.
     <li>Font features implied by the value of the <a class="property" data-link-type="propdesc" href="#descdef-font-face-font-variant" id="ref-for-descdef-font-face-font-variant①⑨">font-variant</a> property,
 	the related <span class="property" id="ref-for-descdef-font-face-font-variant②⓪">font-variant</span> subproperties and any other CSS property
-	that uses OpenType features (e.g. the <a class="property" data-link-type="propdesc" href="#propdef-font-kerning" id="ref-for-propdef-font-kerning③">font-kerning</a> property). 
+	that uses OpenType features (e.g. the <a class="property" data-link-type="propdesc" href="#propdef-font-kerning" id="ref-for-propdef-font-kerning③">font-kerning</a> property).
     <li>Feature settings determined by properties other than <a class="property" data-link-type="propdesc" href="#descdef-font-face-font-variant" id="ref-for-descdef-font-face-font-variant②①">font-variant</a> or <a class="property" data-link-type="propdesc" href="#descdef-font-face-font-feature-settings" id="ref-for-descdef-font-face-font-feature-settings⑤">font-feature-settings</a>.  For example, setting a
-	non-default value for the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-3/#propdef-letter-spacing" id="ref-for-propdef-letter-spacing①">letter-spacing</a> property disables optional ligatures. 
-    <li>Font features implied by the value of <a class="property" data-link-type="propdesc" href="#descdef-font-face-font-feature-settings" id="ref-for-descdef-font-face-font-feature-settings⑥">font-feature-settings</a> property. 
+	non-default value for the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-3/#propdef-letter-spacing" id="ref-for-propdef-letter-spacing①">letter-spacing</a> property disables optional ligatures.
+    <li>Font features implied by the value of <a class="property" data-link-type="propdesc" href="#descdef-font-face-font-feature-settings" id="ref-for-descdef-font-face-font-feature-settings⑥">font-feature-settings</a> property.
    </ol>
    <p>This ordering allows authors to set up a general set of defaults
 for fonts within their <a class="css" data-link-type="maybe" href="#at-ruledef-font-face" id="ref-for-at-ruledef-font-face⑤①">@font-face</a> rules, then override them with
@@ -3788,7 +3788,7 @@ feature except where explicitly defined for specific properties.</p>
    <h3 class="heading settled" data-level="7.3" id="feature-precedence-examples"><span class="secno">7.3. </span><span class="content">Feature precedence examples</span><a class="self-link" href="#feature-precedence-examples"></a></h3>
    <div class="example" id="example-e9170b84">
     <a class="self-link" href="#example-e9170b84"></a> With the styles below, numbers are rendered proportionally when used within
-	a paragraph but are shown in tabular form within tables of prices: 
+	a paragraph but are shown in tabular form within tables of prices:
 <pre>body {
   font-variant-numeric: proportional-nums;
 }
@@ -3801,7 +3801,7 @@ table.prices td {
    <div class="example" id="example-9611368d">
     <a class="self-link" href="#example-9611368d"></a> When the <span class="css">font-variant</span> descriptor
 	is used within an <a class="css" data-link-type="maybe" href="#at-ruledef-font-face" id="ref-for-at-ruledef-font-face⑤③">@font-face</a> rule, it only
-	applies to the font defined by that rule. 
+	applies to the font defined by that rule.
 <pre>@font-face {
   font-family: MainText;
   src: url(http://example.com/font.woff);
@@ -3823,7 +3823,7 @@ table.prices td {
    </div>
    <div class="example" id="example-ffef917e">
     <a class="self-link" href="#example-ffef917e"></a> The <a class="css" data-link-type="maybe" href="#at-ruledef-font-face" id="ref-for-at-ruledef-font-face⑤④">@font-face</a> rule can also be used to access font features in locally available
-	fonts via the use of <a class="css" data-link-type="maybe" href="#funcdef-font-face-src-local" id="ref-for-funcdef-font-face-src-local②">local()</a> in the <a class="property" data-link-type="propdesc" href="#descdef-font-face-src" id="ref-for-descdef-font-face-src③">src</a> descriptor of the <span class="css" id="ref-for-at-ruledef-font-face⑤⑤">@font-face</span> definition: 
+	fonts via the use of <a class="css" data-link-type="maybe" href="#funcdef-font-face-src-local" id="ref-for-funcdef-font-face-src-local②">local()</a> in the <a class="property" data-link-type="propdesc" href="#descdef-font-face-src" id="ref-for-descdef-font-face-src③">src</a> descriptor of the <span class="css" id="ref-for-at-ruledef-font-face⑤⑤">@font-face</span> definition:
 <pre>@font-face {
   font-family: BodyText;
   src: local("HiraMaruPro-W4");
@@ -3840,7 +3840,7 @@ body { font-family: BodyText, serif; }
    </div>
    <div class="example" id="example-1165dac3">
     <a class="self-link" href="#example-1165dac3"></a> In the example below, discretionary ligatures are enabled only for a downloadable font
-	but are disabled within spans of class "special": 
+	but are disabled within spans of class "special":
 <pre>@font-face {
   font-family: main;
   src: url(fonts/ffmeta.woff) format("woff");
@@ -3900,15 +3900,15 @@ the following extensions to the CSS Object Model.</p>
 };
 </pre>
    <dl>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-fontfamily"><code>fontFamily</code></dfn> <span> of type <a data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring①①">CSSOMString</a></span> 
-    <dd>The list of one or more font families for which a given set of feature values is defined. 
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-annotation"><code>annotation</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap⑥">CSSFontFeatureValuesMap</a>, readonly</span> 
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-ornaments"><code>ornaments</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap⑦">CSSFontFeatureValuesMap</a>, readonly</span> 
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-stylistic"><code>stylistic</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap⑧">CSSFontFeatureValuesMap</a>, readonly</span> 
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-swash"><code>swash</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap⑨">CSSFontFeatureValuesMap</a>, readonly</span> 
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-charactervariant"><code>characterVariant</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap①⓪">CSSFontFeatureValuesMap</a>, readonly</span> 
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-styleset"><code>styleset</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap①①">CSSFontFeatureValuesMap</a>, readonly</span> 
-    <dd>Maps of feature values associated with feature value names for a given <a class="property" data-link-type="propdesc" href="#propdef-font-variant-alternates" id="ref-for-propdef-font-variant-alternates④">font-variant-alternates</a> value type 
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-fontfamily"><code>fontFamily</code></dfn> <span> of type <a data-link-type="idl-name" href="https://drafts.csswg.org/cssom-1/#cssomstring" id="ref-for-cssomstring①①">CSSOMString</a></span>
+    <dd>The list of one or more font families for which a given set of feature values is defined.
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-annotation"><code>annotation</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap⑥">CSSFontFeatureValuesMap</a>, readonly</span>
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-ornaments"><code>ornaments</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap⑦">CSSFontFeatureValuesMap</a>, readonly</span>
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-stylistic"><code>stylistic</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap⑧">CSSFontFeatureValuesMap</a>, readonly</span>
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-swash"><code>swash</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap⑨">CSSFontFeatureValuesMap</a>, readonly</span>
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-charactervariant"><code>characterVariant</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap①⓪">CSSFontFeatureValuesMap</a>, readonly</span>
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="CSSFontFeatureValuesRule" data-dfn-type="attribute" data-export id="dom-cssfontfeaturevaluesrule-styleset"><code>styleset</code></dfn> <span> of type <a data-link-type="idl-name" href="#cssfontfeaturevaluesmap" id="ref-for-cssfontfeaturevaluesmap①①">CSSFontFeatureValuesMap</a>, readonly</span>
+    <dd>Maps of feature values associated with feature value names for a given <a class="property" data-link-type="propdesc" href="#propdef-font-variant-alternates" id="ref-for-propdef-font-variant-alternates④">font-variant-alternates</a> value type
    </dl>
    <p>Each value map attribute of <code class="idl"><a data-link-type="idl" href="#cssfontfeaturevaluesrule" id="ref-for-cssfontfeaturevaluesrule②">CSSFontFeatureValuesRule</a></code> reflects the values
 defined via a corresponding <a data-link-type="dfn" href="#feature_value_block" id="ref-for-feature_value_block⑥">feature value block</a>.
@@ -3994,14 +3994,14 @@ under Mac OS X.</p>
    <h2 class="no-num heading settled" id="ch-ch-ch-changes"><span class="content">Changes</span><a class="self-link" href="#ch-ch-ch-changes"></a></h2>
    <h3 class="no-num heading settled" id="recent-changes"><span class="content"> Changes from the <a href="https://www.w3.org/TR/2013/WD-css-fonts-3-20130711/">July 2013 CSS3 Fonts Last Call Working Draft</a></span><a class="self-link" href="#recent-changes"></a></h3>
    <ul>
-    <li>reorder feature precedence such that features implied by other CSS properties override <a class="property" data-link-type="propdesc" href="#descdef-font-face-font-variant" id="ref-for-descdef-font-face-font-variant②③">font-variant</a> settings 
-    <li>switched examples to use .woff files 
-    <li>revised wording of font fetching algorithm 
-    <li>drop <span class="css">auto</span> value for <a class="property" data-link-type="propdesc" href="#propdef-font-size-adjust" id="ref-for-propdef-font-size-adjust①⑤">font-size-adjust</a> 
-    <li>clarify effect of <a class="property" data-link-type="propdesc" href="#propdef-font-size-adjust" id="ref-for-propdef-font-size-adjust①⑥">font-size-adjust</a> on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-line-height" id="ref-for-propdef-line-height⑥">line-height</a> 
-    <li>allow user agents to synthesize OpenType <code>kern</code> feature 
-    <li>add example of ordinals and associated markup 
-    <li>minor editorial cleanups 
+    <li>reorder feature precedence such that features implied by other CSS properties override <a class="property" data-link-type="propdesc" href="#descdef-font-face-font-variant" id="ref-for-descdef-font-face-font-variant②③">font-variant</a> settings
+    <li>switched examples to use .woff files
+    <li>revised wording of font fetching algorithm
+    <li>drop <span class="css">auto</span> value for <a class="property" data-link-type="propdesc" href="#propdef-font-size-adjust" id="ref-for-propdef-font-size-adjust①⑤">font-size-adjust</a>
+    <li>clarify effect of <a class="property" data-link-type="propdesc" href="#propdef-font-size-adjust" id="ref-for-propdef-font-size-adjust①⑥">font-size-adjust</a> on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-line-height" id="ref-for-propdef-line-height⑥">line-height</a>
+    <li>allow user agents to synthesize OpenType <code>kern</code> feature
+    <li>add example of ordinals and associated markup
+    <li>minor editorial cleanups
    </ul>
    <h2 class="no-num heading settled" id="acknowledgments"><span class="content">Acknowledgments</span><a class="self-link" href="#acknowledgments"></a></h2>
    <p>I’d like to thank Tal Leming, Jonathan Kew and Christopher Slye for
@@ -4033,7 +4033,7 @@ that is <em>The Elements of Typographic Style</em>.</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -4046,14 +4046,14 @@ that is <em>The Elements of Typographic Style</em>.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -4104,7 +4104,7 @@ that is <em>The Elements of Typographic Style</em>.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -4511,7 +4511,7 @@ that is <em>The Elements of Typographic Style</em>.</p>
     <li><a href="#ref-for-comb-one③⑦">3.7. Shorthand font property: the font property</a> <a href="#ref-for-comb-one③⑧">(2)</a> <a href="#ref-for-comb-one③⑨">(3)</a> <a href="#ref-for-comb-one④⓪">(4)</a> <a href="#ref-for-comb-one④①">(5)</a> <a href="#ref-for-comb-one④②">(6)</a> <a href="#ref-for-comb-one④③">(7)</a>
     <li><a href="#ref-for-comb-one④④">3.8. Controlling synthetic faces: the font-synthesis property</a>
     <li><a href="#ref-for-comb-one④⑤">4.3. Font reference: the src descriptor</a>
-    <li><a href="#ref-for-comb-one④⑥">4.4. 
+    <li><a href="#ref-for-comb-one④⑥">4.4.
 Font property descriptors: the font-style, font-weight, font-stretch descriptors</a> <a href="#ref-for-comb-one④⑦">(2)</a> <a href="#ref-for-comb-one④⑧">(3)</a> <a href="#ref-for-comb-one④⑨">(4)</a> <a href="#ref-for-comb-one⑤⓪">(5)</a> <a href="#ref-for-comb-one⑤①">(6)</a> <a href="#ref-for-comb-one⑤②">(7)</a> <a href="#ref-for-comb-one⑤③">(8)</a> <a href="#ref-for-comb-one⑤④">(9)</a> <a href="#ref-for-comb-one⑤⑤">(10)</a> <a href="#ref-for-comb-one⑤⑥">(11)</a> <a href="#ref-for-comb-one⑤⑦">(12)</a> <a href="#ref-for-comb-one⑤⑧">(13)</a> <a href="#ref-for-comb-one⑤⑨">(14)</a> <a href="#ref-for-comb-one⑥⓪">(15)</a> <a href="#ref-for-comb-one⑥①">(16)</a> <a href="#ref-for-comb-one⑥②">(17)</a> <a href="#ref-for-comb-one⑥③">(18)</a> <a href="#ref-for-comb-one⑥④">(19)</a> <a href="#ref-for-comb-one⑥⑤">(20)</a>
     <li><a href="#ref-for-comb-one⑥⑥">4.7. Font features: the font-variant and font-feature-settings descriptors</a> <a href="#ref-for-comb-one⑥⑦">(2)</a> <a href="#ref-for-comb-one⑥⑧">(3)</a> <a href="#ref-for-comb-one⑥⑨">(4)</a> <a href="#ref-for-comb-one⑦⓪">(5)</a> <a href="#ref-for-comb-one⑦①">(6)</a> <a href="#ref-for-comb-one⑦②">(7)</a> <a href="#ref-for-comb-one⑦③">(8)</a>
     <li><a href="#ref-for-comb-one⑦④">6.3. Kerning: the font-kerning property</a> <a href="#ref-for-comb-one⑦⑤">(2)</a>
@@ -5108,7 +5108,7 @@ annotation(&lt;feature-value-name>) || [ small-caps | all-small-caps | petite-ca
    <b><a href="#valdef-font-weight-bolder">#valdef-font-weight-bolder</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-valdef-font-weight-bolder">3.2. Font weight: the font-weight property</a>
-    <li><a href="#ref-for-valdef-font-weight-bolder①">4.4. 
+    <li><a href="#ref-for-valdef-font-weight-bolder①">4.4.
 Font property descriptors: the font-style, font-weight, font-stretch descriptors</a>
    </ul>
   </aside>
@@ -5116,7 +5116,7 @@ Font property descriptors: the font-style, font-weight, font-stretch descriptors
    <b><a href="#valdef-font-weight-lighter">#valdef-font-weight-lighter</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-valdef-font-weight-lighter">3.2. Font weight: the font-weight property</a>
-    <li><a href="#ref-for-valdef-font-weight-lighter①">4.4. 
+    <li><a href="#ref-for-valdef-font-weight-lighter①">4.4.
 Font property descriptors: the font-style, font-weight, font-stretch descriptors</a>
    </ul>
   </aside>
@@ -5219,7 +5219,7 @@ Font property descriptors: the font-style, font-weight, font-stretch descriptors
     <li><a href="#ref-for-at-ruledef-font-face">4.1. The @font-face rule</a> <a href="#ref-for-at-ruledef-font-face①">(2)</a> <a href="#ref-for-at-ruledef-font-face②">(3)</a> <a href="#ref-for-at-ruledef-font-face③">(4)</a> <a href="#ref-for-at-ruledef-font-face④">(5)</a> <a href="#ref-for-at-ruledef-font-face⑤">(6)</a> <a href="#ref-for-at-ruledef-font-face⑥">(7)</a> <a href="#ref-for-at-ruledef-font-face⑦">(8)</a> <a href="#ref-for-at-ruledef-font-face⑧">(9)</a> <a href="#ref-for-at-ruledef-font-face⑨">(10)</a> <a href="#ref-for-at-ruledef-font-face①⓪">(11)</a>
     <li><a href="#ref-for-at-ruledef-font-face①①">4.2. Font family: the font-family descriptor</a> <a href="#ref-for-at-ruledef-font-face①②">(2)</a>
     <li><a href="#ref-for-at-ruledef-font-face①③">4.3. Font reference: the src descriptor</a> <a href="#ref-for-at-ruledef-font-face①④">(2)</a> <a href="#ref-for-at-ruledef-font-face①⑤">(3)</a> <a href="#ref-for-at-ruledef-font-face①⑥">(4)</a> <a href="#ref-for-at-ruledef-font-face①⑦">(5)</a> <a href="#ref-for-at-ruledef-font-face①⑧">(6)</a>
-    <li><a href="#ref-for-at-ruledef-font-face①⑨">4.4. 
+    <li><a href="#ref-for-at-ruledef-font-face①⑨">4.4.
 Font property descriptors: the font-style, font-weight, font-stretch descriptors</a> <a href="#ref-for-at-ruledef-font-face②⓪">(2)</a> <a href="#ref-for-at-ruledef-font-face②①">(3)</a> <a href="#ref-for-at-ruledef-font-face②②">(4)</a> <a href="#ref-for-at-ruledef-font-face②③">(5)</a> <a href="#ref-for-at-ruledef-font-face②④">(6)</a> <a href="#ref-for-at-ruledef-font-face②⑤">(7)</a>
     <li><a href="#ref-for-at-ruledef-font-face②⑥">4.5. Character range: the unicode-range descriptor</a>
     <li><a href="#ref-for-at-ruledef-font-face②⑦">4.6. Using character ranges to define composite fonts</a> <a href="#ref-for-at-ruledef-font-face②⑧">(2)</a> <a href="#ref-for-at-ruledef-font-face②⑨">(3)</a> <a href="#ref-for-at-ruledef-font-face③⓪">(4)</a>
@@ -5227,7 +5227,7 @@ Font property descriptors: the font-style, font-weight, font-stretch descriptors
     <li><a href="#ref-for-at-ruledef-font-face③④">4.8. Font loading guidelines</a> <a href="#ref-for-at-ruledef-font-face③⑤">(2)</a> <a href="#ref-for-at-ruledef-font-face③⑥">(3)</a>
     <li><a href="#ref-for-at-ruledef-font-face③⑦">5.1. Case sensitivity of font family names</a> <a href="#ref-for-at-ruledef-font-face③⑧">(2)</a>
     <li><a href="#ref-for-at-ruledef-font-face③⑨">5.2. Matching font styles</a> <a href="#ref-for-at-ruledef-font-face④⓪">(2)</a> <a href="#ref-for-at-ruledef-font-face④①">(3)</a> <a href="#ref-for-at-ruledef-font-face④②">(4)</a> <a href="#ref-for-at-ruledef-font-face④③">(5)</a> <a href="#ref-for-at-ruledef-font-face④④">(6)</a> <a href="#ref-for-at-ruledef-font-face④⑤">(7)</a>
-    <li><a href="#ref-for-at-ruledef-font-face④⑥">7. 
+    <li><a href="#ref-for-at-ruledef-font-face④⑥">7.
 Font Feature Resolution </a>
     <li><a href="#ref-for-at-ruledef-font-face④⑦">7.2. Feature precedence</a> <a href="#ref-for-at-ruledef-font-face④⑧">(2)</a> <a href="#ref-for-at-ruledef-font-face④⑨">(3)</a> <a href="#ref-for-at-ruledef-font-face⑤⓪">(4)</a> <a href="#ref-for-at-ruledef-font-face⑤①">(5)</a> <a href="#ref-for-at-ruledef-font-face⑤②">(6)</a>
     <li><a href="#ref-for-at-ruledef-font-face⑤③">7.3. Feature precedence examples</a> <a href="#ref-for-at-ruledef-font-face⑤④">(2)</a> <a href="#ref-for-at-ruledef-font-face⑤⑤">(3)</a>
@@ -5343,7 +5343,7 @@ Font Feature Resolution </a>
     <li><a href="#ref-for-descdef-font-face-font-variant①⓪">6.1. Glyph selection and positioning</a>
     <li><a href="#ref-for-descdef-font-face-font-variant①①">6.11. Overall shorthand for font rendering: the font-variant property</a> <a href="#ref-for-descdef-font-face-font-variant①②">(2)</a> <a href="#ref-for-descdef-font-face-font-variant①③">(3)</a> <a href="#ref-for-descdef-font-face-font-variant①④">(4)</a> <a href="#ref-for-descdef-font-face-font-variant①⑤">(5)</a>
     <li><a href="#ref-for-descdef-font-face-font-variant①⑥">6.12. Low-level font feature settings control: the font-feature-settings property</a>
-    <li><a href="#ref-for-descdef-font-face-font-variant①⑦">7. 
+    <li><a href="#ref-for-descdef-font-face-font-variant①⑦">7.
 Font Feature Resolution </a>
     <li><a href="#ref-for-descdef-font-face-font-variant①⑧">7.1. Default features</a>
     <li><a href="#ref-for-descdef-font-face-font-variant①⑨">7.2. Feature precedence</a> <a href="#ref-for-descdef-font-face-font-variant②⓪">(2)</a> <a href="#ref-for-descdef-font-face-font-variant②①">(3)</a> <a href="#ref-for-descdef-font-face-font-variant②②">(4)</a>
@@ -5357,7 +5357,7 @@ Font Feature Resolution </a>
     <li><a href="#ref-for-descdef-font-face-font-feature-settings">4.7. Font features: the font-variant and font-feature-settings descriptors</a>
     <li><a href="#ref-for-descdef-font-face-font-feature-settings①">6.11. Overall shorthand for font rendering: the font-variant property</a>
     <li><a href="#ref-for-descdef-font-face-font-feature-settings②">6.12. Low-level font feature settings control: the font-feature-settings property</a>
-    <li><a href="#ref-for-descdef-font-face-font-feature-settings③">7. 
+    <li><a href="#ref-for-descdef-font-face-font-feature-settings③">7.
 Font Feature Resolution </a>
     <li><a href="#ref-for-descdef-font-face-font-feature-settings④">7.1. Default features</a>
     <li><a href="#ref-for-descdef-font-face-font-feature-settings⑤">7.2. Feature precedence</a> <a href="#ref-for-descdef-font-face-font-feature-settings⑥">(2)</a>
@@ -5828,57 +5828,65 @@ Font Feature Resolution </a>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

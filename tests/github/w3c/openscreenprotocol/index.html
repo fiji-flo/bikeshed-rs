@@ -1866,10 +1866,10 @@ QUIC connection.</p>
       <td>One of the values listed above.
      <tr>
       <td>Issuer Name
-      <td>CN = The <code>model-name</code> from the <code>agent-info</code> message.<br> O = See note.<br> L = See note.<br> ST = See note.<br> C = See note.<br> 
+      <td>CN = The <code>model-name</code> from the <code>agent-info</code> message.<br> O = See note.<br> L = See note.<br> ST = See note.<br> C = See note.<br>
      <tr>
       <td>Subject Name
-      <td>CN = <code>&lt;fp></code>._openscreen._udp.local<br> O = See note.<br> 
+      <td>CN = <code>&lt;fp></code>._openscreen._udp.local<br> O = See note.<br>
      <tr>
       <td>Subject Public Key Algorithm
       <td>Elliptic Curve Public Key
@@ -2968,7 +2968,7 @@ sender and a media receiver.</p>
    <h3 class="heading settled" data-level="9.1" id="streaming-protocol-capabilities"><span class="secno">9.1. </span><span class="content">Streaming Protocol Capabilities</span><a class="self-link" href="#streaming-protocol-capabilities"></a></h3>
     If the advertiser is already authenticated, the requester has the ability to
 request additional information by sending an <a data-link-type="dfn">streaming-capabilities-request</a> message, and receive back a <a data-link-type="dfn">streaming-capabilities-response</a> message with the
-following fields: 
+following fields:
    <dl>
     <dt data-md>receive-audio (required)
     <dd data-md>
@@ -3828,7 +3828,7 @@ display names from DNS-SD.  A truncated display name should be verified as above
 before being shown in full as a <a data-link-type="dfn" href="#verified-display-name" id="ref-for-verified-display-name">verified display name</a>.</p>
    <div class="note" role="note">
      This means there are three categories of display names that agents should be
-capable of handling: 
+capable of handling:
     <ol>
      <li>Truncated and unverified DNS-SD Instance Names, which should not be shown to the user.
      <li>Complete but unverified DNS-SD Instance Names, which can be shown as
@@ -4358,57 +4358,65 @@ it to a message. <a href="https://github.com/w3c/presentation-api/issues/471">&l
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

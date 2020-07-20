@@ -1866,7 +1866,7 @@ tags and attributes that are known not to cause JavaScript
 execution. Any <code class="idl"><a data-link-type="idl" href="#trustedhtml" id="ref-for-trustedhtml">TrustedHTML</a></code> object created through this policy can then
 be safely used in the application, and e.g. passed to <code>innerHTML</code> setter - even if the input value was controlled by the attacker, the
 policy rules neutralized it to adhere to policy-specific
-contract. 
+contract.
 <pre class="highlight"><c- kr>const</c-> sanitizingPolicy <c- o>=</c-> trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- t>'sanitize-html'</c-><c- p>,</c-> <c- p>{</c->
   createHTML<c- o>:</c-> <c- p>(</c->input<c- p>)</c-> <c- p>=></c-> myTrustedSanitizer<c- p>(</c->input<c- p>,</c-> <c- p>{</c-> superSafe<c- o>:</c-> <c- t>'ok'</c-><c- p>}),</c->
 <c- p>});</c->
@@ -1885,7 +1885,7 @@ applications to define different rules for different parts of the
 codebase.</p>
    <div class="example" id="policy-reference">
     <a class="self-link" href="#policy-reference"></a> Library initialized with a policy allowing it to load additional scripts from
-a given host. 
+a given host.
 <pre class="highlight"><c- kr>const</c-> cdnScriptsPolicy <c- o>=</c-> trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- t>'cdn-scripts'</c-><c- p>,</c-> <c- p>{</c->
   createScriptURL<c- p>(</c->url<c- p>)</c-> <c- p>{</c->
     <c- kr>const</c-> parsed <c- o>=</c-> <c- k>new</c-> URL<c- p>(</c->url<c- p>,</c-> document<c- p>.</c->baseURI<c- p>);</c->
@@ -1923,7 +1923,7 @@ access to which can be controlled using JavaScript techniques
 (e.g. via closures, internal function variables, or modules).</p>
    <div class="example" id="policy-capability">
     <a class="self-link" href="#policy-capability"></a> Unsafe no-op policy reachable only from within a single code block to ascertain
-that it’s called only with no attacker-controlled values. 
+that it’s called only with no attacker-controlled values.
 <pre class="highlight"><c- p>(</c-><c- a>function</c-> renderFootnote<c- p>()</c-> <c- p>{</c->
   <c- kr>const</c-> unsafePolicy <c- o>=</c-> trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- t>'html'</c-><c- p>,</c-> <c- p>{</c->
     createHTML<c- o>:</c-> input <c- p>=></c-> input<c- p>,</c->
@@ -1975,7 +1975,7 @@ Also, if unique policy names are enforced (i.e. <code>'allow-duplicates'</code> 
 and <code>createPolicy</code> is called more than once with any given <code>policyName</code>,
 policy creation fails with a TypeError.</p>
       <div class="example" id="create-policy-example">
-       <a class="self-link" href="#create-policy-example"></a> 
+       <a class="self-link" href="#create-policy-example"></a>
 <pre class="highlight"><c- c1>// HTTP Response header: Content-Security-Policy: trusted-types foo</c->
 trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- u>"foo"</c-><c- p>,</c-> <c- p>{});</c-> <c- c1>// ok.</c->
 trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- u>"bar"</c-><c- p>,</c-> <c- p>{});</c-> <c- c1>// throws - name not on the whitelist.</c->
@@ -1988,14 +1988,14 @@ with the following arguments:</p>
        <dt>factory
        <dd><a data-link-type="dfn" href="https://dom.spec.whatwg.org/#context-object" id="ref-for-context-object">context object</a>
        <dt>policyName
-       <dd><var>policyName</var> 
+       <dd><var>policyName</var>
        <dt>options
        <dd><var>policyOptions</var>
        <dt>global
        <dd><a data-link-type="dfn" href="https://dom.spec.whatwg.org/#context-object" id="ref-for-context-object①">context object</a>'s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-relevant-global" id="ref-for-concept-relevant-global">relevant global object</a>
       </dl>
       <div class="example" id="create-and-used-unexposed-policy">
-       <a class="self-link" href="#create-and-used-unexposed-policy"></a> 
+       <a class="self-link" href="#create-and-used-unexposed-policy"></a>
 <pre class="highlight"><c- kr>const</c-> myPolicy <c- o>=</c-> trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- t>'myPolicy'</c-><c- p>,</c-> <c- p>{</c->
   <c- c1>// This security-critical code needs a security review;</c->
   <c- c1>// a flaw in this code could cause DOM XSS.</c->
@@ -2019,7 +2019,7 @@ scriptElement<c- p>.</c->src <c- o>=</c-> myPolicy<c- p>.</c->createScriptURL<c-
       <p>This function returns the names of all the policies that were already created.</p>
       <p>Returns a new list, comprising of all entries  of the <code>[[CreatedPolicyNames]]</code> slot.</p>
       <div class="example" id="get-policy-names-example">
-       <a class="self-link" href="#get-policy-names-example"></a> 
+       <a class="self-link" href="#get-policy-names-example"></a>
 <pre class="highlight">trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- t>'foo'</c-><c- p>,</c-> <c- p>...);</c->
 trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- t>'bar'</c-><c- p>,</c-> <c- p>...);</c->
 trustedTypes<c- p>.</c->getPolicyNames<c- p>();</c-> <c- c1>// ['foo', 'bar']</c->
@@ -2032,7 +2032,7 @@ trustedTypes<c- p>.</c->getPolicyNames<c- p>();</c-> <c- c1>// ['foo', 'bar']</c
 policies). This is to be able to detect a forgery of the objects via
 e.g. <a href="https://tc39.github.io/ecma262/#sec-object.create">Object.create</a> or prototype chains manipulation.</p>
       <div class="example" id="is-html-example">
-       <a class="self-link" href="#is-html-example"></a> 
+       <a class="self-link" href="#is-html-example"></a>
 <pre class="highlight"><c- kr>const</c-> html <c- o>=</c-> policy<c- p>.</c->createHTML<c- p>(</c-><c- t>'&lt;div>'</c-><c- p>);</c->
 trustedTypes<c- p>.</c->isHTML<c- p>(</c->html<c- p>);</c-> <c- c1>// true</c->
 
@@ -2068,7 +2068,7 @@ stringified <code class="idl"><a data-link-type="idl" href="#extendedattrdef-tru
         <p>Return null.</p>
       </ol>
       <div class="example" id="get-property-type-example">
-       <a class="self-link" href="#get-property-type-example"></a> 
+       <a class="self-link" href="#get-property-type-example"></a>
 <pre class="highlight">trustedTypes<c- p>.</c->getPropertyType<c- p>(</c-><c- t>'div'</c-><c- p>,</c-> <c- t>'innerHTML'</c-><c- p>);</c-> <c- c1>// "TrustedHTML"</c->
 trustedTypes<c- p>.</c->getPropertyType<c- p>(</c-><c- t>'foo'</c-><c- p>,</c-> <c- t>'bar'</c-><c- p>);</c-> <c- c1>// undefined</c->
 </pre>
@@ -2100,7 +2100,7 @@ stringified <code class="idl"><a data-link-type="idl" href="#extendedattrdef-tru
         <p>Return null.</p>
       </ol>
       <div class="example" id="get-attribute-type-example">
-       <a class="self-link" href="#get-attribute-type-example"></a> 
+       <a class="self-link" href="#get-attribute-type-example"></a>
 <pre class="highlight">trustedTypes<c- p>.</c->getAttributeType<c- p>(</c-><c- t>'script'</c-><c- p>,</c-> <c- t>'SRC'</c-><c- p>);</c-> <c- c1>// "TrustedScriptURL"</c->
 trustedTypes<c- p>.</c->getAttributeType<c- p>(</c-><c- t>'foo'</c-><c- p>,</c-> <c- t>'bar'</c-><c- p>);</c-> <c- c1>// undefined</c->
 </pre>
@@ -2114,7 +2114,7 @@ trustedTypes<c- p>.</c->getAttributeType<c- p>(</c-><c- t>'foo'</c-><c- p>,</c->
       <p>is a <code class="idl"><a data-link-type="idl" href="#trustedhtml" id="ref-for-trustedhtml④">TrustedHTML</a></code> object with its <code>[[Data]]</code> internal slot value set to an empty string.</p>
     </dl>
     <div class="example" id="empty-html-example">
-     <a class="self-link" href="#empty-html-example"></a> 
+     <a class="self-link" href="#empty-html-example"></a>
 <pre class="highlight">anElement<c- p>.</c->innerHTML <c- o>=</c-> trustedTypes<c- p>.</c->emptyHTML<c- p>;</c-> <c- c1>// no need to create a policy</c->
 </pre>
     </div>
@@ -2127,7 +2127,7 @@ trustedTypes<c- p>.</c->getAttributeType<c- p>(</c-><c- t>'foo'</c-><c- p>,</c->
 support <code>eval(TrustedScript)</code>, it is impossible for a polyfill to  emulate that, as
 eval(TrustedScript) will return its input without unwrapping and evaluating the code.</p>
     <div class="example" id="empty-script-example">
-     <a class="self-link" href="#empty-script-example"></a> 
+     <a class="self-link" href="#empty-script-example"></a>
 <pre class="highlight"><c- c1>// With native Trusted Types support eval(trustedTypes.emptyScript) will execute and return falsy undefined.</c->
 <c- c1>// Without it, eval(trustedTypes.emptyScript) will return a truthy Object.</c->
 <c- kr>const</c-> supportsTS <c- o>=</c-> <c- o>!</c->eval<c- p>(</c->trustedTypes<c- p>.</c->emptyScript<c- p>);</c->
@@ -2141,7 +2141,7 @@ eval<c- p>(</c->supportsTS <c- o>?</c-> myTrustedScriptObj <c- o>:</c-> myTruste
       <p>Returns the value of <code>[[DefaultPolicy]]</code> internal slot, or null if the slot is empty.</p>
     </dl>
     <div class="example" id="defaultpolicy-example">
-     <a class="self-link" href="#defaultpolicy-example"></a> 
+     <a class="self-link" href="#defaultpolicy-example"></a>
 <pre class="highlight">trustedTypes<c- p>.</c->defaultPolicy <c- o>===</c-> <c- kc>null</c-><c- p>;</c->  <c- c1>// true</c->
 <c- kr>const</c-> dp <c- o>=</c-> trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- t>'default'</c-><c- p>,</c-> <c- p>{});</c->
 trustedTypes<c- p>.</c->defaultPolicy <c- o>===</c-> dp<c- p>;</c->  <c- c1>// true</c->
@@ -2172,7 +2172,7 @@ result of executing the <a data-link-type="abstract-op" href="#abstract-opdef-cr
 following arguments:</p>
       <dl>
        <dt>policy
-       <dd><span spec-section="#context-object">context object</span> 
+       <dd><span spec-section="#context-object">context object</span>
        <dt>trustedTypeName
        <dd><code>"TrustedHTML"</code>
        <dt>value
@@ -2187,7 +2187,7 @@ result of executing the <a data-link-type="abstract-op" href="#abstract-opdef-cr
 following arguments:</p>
       <dl>
        <dt>policy
-       <dd><span spec-section="#context-object">context object</span> 
+       <dd><span spec-section="#context-object">context object</span>
        <dt>trustedTypeName
        <dd><code>"TrustedScript"</code>
        <dt>value
@@ -2202,7 +2202,7 @@ result of executing the <a data-link-type="abstract-op" href="#abstract-opdef-cr
 following arguments:</p>
       <dl>
        <dt>policy
-       <dd><span spec-section="#context-object">context object</span> 
+       <dd><span spec-section="#context-object">context object</span>
        <dt>trustedTypeName
        <dd><code>"TrustedScriptURL"</code>
        <dt>value
@@ -2253,7 +2253,7 @@ sinks unsafely and eventually phase out the usage of the default policy entirely
    <p class="note" role="note"><span>Note:</span> See <a href="#get-trusted-type-compliant-string-algorithm">§ 3.3 Get Trusted Type compliant string</a> for details on how
 the default policy is applied.</p>
    <div class="example" id="default-policy-example">
-    <a class="self-link" href="#default-policy-example"></a> 
+    <a class="self-link" href="#default-policy-example"></a>
 <pre class="highlight"><c- c1>// Content-Security-Policy: trusted-types default; require-trusted-types-for 'script'</c->
 
 trustedTypes<c- p>.</c->createPolicy<c- p>(</c-><c- t>'default'</c-><c- p>,</c-> <c- p>{</c->
@@ -2306,7 +2306,7 @@ Additionally, it must not appear on <a data-link-type="dfn" href="https://heycam
       <li data-md>
        <p>Set <var>sink</var> to the result of <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#string-concatenate" id="ref-for-string-concatenate">concatenating</a> the list « <var>objectName</var>, <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-attribute" id="ref-for-concept-attribute④">attribute</a> identifier. » with <code>"."</code> as <var>separator</var>.</p>
        <div class="example" id="extended-attribute-attribute-example">
-        <a class="self-link" href="#extended-attribute-attribute-example"></a> For example, the following annotation and JavaScript code: 
+        <a class="self-link" href="#extended-attribute-attribute-example"></a> For example, the following annotation and JavaScript code:
 <pre class="highlight"><c- b>partial</c-> <c- b>interface</c-> <c- b>mixin</c-> <c- g>HTMLScriptElement</c-> {
   [<c- g>CEReactions</c->, <c- g>TrustedTypes</c->=<c- n>TrustedScriptURL</c->] <c- b>attribute</c-> <c- n>ScriptURLString</c-> <c- g>src</c->;
 };
@@ -2349,7 +2349,7 @@ document<c- p>.</c->createElement<c- p>(</c-><c- t>'script'</c-><c- p>).</c->set
       <li data-md>
        <p>Set <var>sink</var> to the result of <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#string-concatenate" id="ref-for-string-concatenate①">concatenating</a> the list « <var>objectName</var>, <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-operation" id="ref-for-dfn-operation②">operation</a> identifier. » with <code>"."</code> as <var>separator</var>.</p>
        <div class="example" id="extended-attribute-operation-example">
-        <a class="self-link" href="#extended-attribute-operation-example"></a> For example, the following annotation and JavaScript code: 
+        <a class="self-link" href="#extended-attribute-operation-example"></a> For example, the following annotation and JavaScript code:
 <pre class="highlight"><c- b>partial</c-> <c- b>interface</c-> <c- g>Element</c-> {
   <c- b>void</c-> <c- g>insertAdjacentHTML</c->(<c- b>DOMString</c-> <c- g>position</c->, [<c- g>TrustedTypes</c->=<c- n>TrustedHTML</c->] <c- n>HTMLString</c-> <c- g>text</c->);
 };
@@ -2424,7 +2424,7 @@ based on the following table:</p>
       <tbody>
        <tr>
         <th>Function name
-        <th>Trusted Type name 
+        <th>Trusted Type name
        <tr>
         <td>"createHTML"
         <td>"TrustedHTML"
@@ -2643,7 +2643,7 @@ as in their original counterparts, apart from additional behavior triggered by t
      <ins>Execute the <a data-link-type="abstract-op" href="#abstract-opdef-prepare-the-script-url-and-text" id="ref-for-abstract-opdef-prepare-the-script-url-and-text">Prepare the script URL and text</a> algorithm upon the <code class="idl"><a data-link-type="idl" href="https://fetch.spec.whatwg.org/#dom-requestdestination-script" id="ref-for-dom-requestdestination-script②">script</a></code> element. If that algorithm threw an error, then return. The script is not executed. </ins>
     <li>
      <p>
-      Let <var>source text</var> be the element’s 
+      Let <var>source text</var> be the element’s
       <del><a data-x-internal="child-text-content" href="https://dom.spec.whatwg.org/#concept-child-text-content" id="script-processing-model:child-text-content">child text content</a></del>
       <ins><code>[[ScriptText]]</code> internal slot value</ins>
       .
@@ -2653,9 +2653,9 @@ as in their original counterparts, apart from additional behavior triggered by t
       <p>Let <var>src</var> be the element’s <code>[[ScriptURL]]</code> internal slot value.</p>
      </ins>
     <li id="script-processing-empty">
-     <a class="self-link" href="#script-processing-empty"></a> 
+     <a class="self-link" href="#script-processing-empty"></a>
      <p>
-      If 
+      If
       <del>the element has no <code id="script-processing-model:attr-script-src-3"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> attribute</del>
       <ins><var>src</var> is null</ins>
       , and <var>source
@@ -2665,7 +2665,7 @@ as in their original counterparts, apart from additional behavior triggered by t
      <p>If the element is not <a data-x-internal="connected" href="https://dom.spec.whatwg.org/#connected" id="script-processing-model:connected-3">connected</a>, then return. The script is not
    executed.</p>
     <li id="script-processing-prepare">
-     <a class="self-link" href="#script-processing-prepare"></a> 
+     <a class="self-link" href="#script-processing-prepare"></a>
      <p>If either:</p>
      <ul class="brief">
       <li>the <code id="script-processing-model:the-script-element-21"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has a <code id="script-processing-model:attr-script-type-2"><a href="https://html.spec.whatwg.org/#attr-script-type">type</a></code> attribute
@@ -2694,13 +2694,13 @@ as in their original counterparts, apart from additional behavior triggered by t
      <p>If <var>was-parser-inserted</var> is true, then flag the element as <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-5">"parser-inserted"</a> again, and set the element’s <a href="https://html.spec.whatwg.org/#non-blocking" id="script-processing-model:non-blocking-4">"non-blocking"</a> flag to
     false.</p>
     <li id="script-processing-start">
-     <a class="self-link" href="#script-processing-start"></a> 
+     <a class="self-link" href="#script-processing-start"></a>
      <p>Set the element’s <a href="https://html.spec.whatwg.org/#already-started" id="script-processing-model:already-started-2">"already started"</a> flag.</p>
     <li>
      <p>If the element is flagged as <a href="https://html.spec.whatwg.org/#parser-inserted" id="script-processing-model:parser-inserted-6">"parser-inserted"</a>, but the element’s <a data-x-internal="node-document" href="https://dom.spec.whatwg.org/#concept-node-document" id="script-processing-model:node-document-2">node document</a> is not the <code id="script-processing-model:document"><a href="https://html.spec.whatwg.org/#document">Document</a></code> of the parser that created the
     element, then return.</p>
     <li id="script-processing-noscript">
-     <a class="self-link" href="#script-processing-noscript"></a> 
+     <a class="self-link" href="#script-processing-noscript"></a>
      <p>If <a href="https://html.spec.whatwg.org/#concept-n-noscript" id="script-processing-model:concept-n-noscript">scripting is disabled</a> for the <code id="script-processing-model:the-script-element-28"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element, then return. The script is not executed.</p>
      <p class="note" role="note">The definition of <a href="https://html.spec.whatwg.org/#concept-n-noscript" id="script-processing-model:concept-n-noscript-2">scripting is disabled</a> means that, amongst others, the following scripts will not execute: scripts in <code id="script-processing-model:xmlhttprequest"><a data-x-internal="xmlhttprequest" href="https://xhr.spec.whatwg.org/#xmlhttprequest">XMLHttpRequest</a></code>’s <code id="script-processing-model:dom-xmlhttprequest-responsexml"><a data-x-internal="dom-xmlhttprequest-responsexml" href="https://xhr.spec.whatwg.org/#dom-xmlhttprequest-responsexml">responseXML</a></code> documents, scripts in <code id="script-processing-model:domparser"><a data-x-internal="domparser" href="https://w3c.github.io/DOM-Parsing/#the-domparser-interface">DOMParser</a></code>-created documents, scripts in documents created by <code id="script-processing-model:xsltprocessor"><a href="https://html.spec.whatwg.org/#xsltprocessor">XSLTProcessor</a></code>’s <code id="script-processing-model:dom-xsltprocessor-transformtodocument"><a href="https://html.spec.whatwg.org/#dom-xsltprocessor-transformtodocument">transformToDocument</a></code> feature, and scripts
     that are first inserted by a script into a <code id="script-processing-model:document-2"><a href="https://html.spec.whatwg.org/#document">Document</a></code> that was created using the <code id="script-processing-model:dom-domimplementation-createdocument"><a data-x-internal="dom-domimplementation-createdocument" href="https://dom.spec.whatwg.org/#dom-domimplementation-createdocument">createDocument()</a></code> API. <a href="https://html.spec.whatwg.org/#refsXHR">\[XHR\]</a> <a href="https://html.spec.whatwg.org/#refsDOMPARSING">\[DOMPARSING\]</a> <a href="https://html.spec.whatwg.org/#refsXSLTP">\[XSLTP\]</a> <a href="https://html.spec.whatwg.org/#refsDOM">\[DOM\]</a></p>
@@ -2710,14 +2710,14 @@ as in their original counterparts, apart from additional behavior triggered by t
     <li id="script-processing-csp">
      <a class="self-link" href="#script-processing-csp"></a>
      <p>
-      If 
+      If
       <del>the <code id="script-processing-model:the-script-element-30"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element does not have a <code id="script-processing-model:attr-script-src-4"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> content attribute</del>
       <ins><var>src</var> is null</ins>
       , and the <a data-x-internal="should-element’s-inline-behavior-be-blocked-by-content-security-policy" href="https://w3c.github.io/webappsec-csp/#should-block-inline" id="script-processing-model:should-element’s-inline-behavior-be-blocked-by-content-security-policy">Should element’s inline
    behavior be blocked by Content Security Policy?</a> algorithm returns "<code>Blocked</code>" when executed upon the <code id="script-processing-model:the-script-element-31"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element, "<code>script</code>", and <var>source text</var>, then return. The script is not executed. <a href="https://html.spec.whatwg.org/#refsCSP">\[CSP\]</a>
      </p>
     <li id="script-processing-for">
-     <a class="self-link" href="#script-processing-for"></a> 
+     <a class="self-link" href="#script-processing-for"></a>
      <p>If the <code id="script-processing-model:the-script-element-32"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has an <code id="script-processing-model:attr-script-event"><a href="https://html.spec.whatwg.org/#attr-script-event">event</a></code> attribute and a <code id="script-processing-model:attr-script-for"><a href="https://html.spec.whatwg.org/#attr-script-for">for</a></code> attribute, and <a href="https://html.spec.whatwg.org/#concept-script-type" id="script-processing-model:concept-script-type-5">the script’s type</a> is "<code>classic</code>",
     then:</p>
      <ol>
@@ -2735,7 +2735,7 @@ as in their original counterparts, apart from additional behavior triggered by t
      either the string "<code>onload</code>" or the string "<code>onload()</code>", then return. The script is not executed.</p>
      </ol>
     <li id="script-processing-encoding">
-     <a class="self-link" href="#script-processing-encoding"></a> 
+     <a class="self-link" href="#script-processing-encoding"></a>
      <p>If the <code id="script-processing-model:the-script-element-33"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element has a <code id="script-processing-model:attr-script-charset"><a href="https://html.spec.whatwg.org/#attr-script-charset">charset</a></code> attribute, then let <var>encoding</var> be the result of <a data-x-internal="getting-an-encoding" href="https://encoding.spec.whatwg.org/#concept-encoding-get" id="script-processing-model:getting-an-encoding">getting an encoding</a> from
     the value of the <code id="script-processing-model:attr-script-charset-2"><a href="https://html.spec.whatwg.org/#attr-script-charset">charset</a></code> attribute.</p>
      <p>If the <code id="script-processing-model:the-script-element-34"><a href="https://html.spec.whatwg.org/#the-script-element">script</a></code> element does not have a <code id="script-processing-model:attr-script-charset-3"><a href="https://html.spec.whatwg.org/#attr-script-charset">charset</a></code> attribute, or if <a data-x-internal="getting-an-encoding" href="https://encoding.spec.whatwg.org/#concept-encoding-get" id="script-processing-model:getting-an-encoding-2">getting an encoding</a> failed, let <var>encoding</var> be the same as <a data-x-internal="document’s-character-encoding" href="https://dom.spec.whatwg.org/#concept-document-encoding" id="script-processing-model:document’s-character-encoding">the
@@ -2767,9 +2767,9 @@ as in their original counterparts, apart from additional behavior triggered by t
     <li>
      <p>Let <var>settings object</var> be the element’s <a data-x-internal="node-document" href="https://dom.spec.whatwg.org/#concept-node-document" id="script-processing-model:node-document-4">node document</a>’s <a href="https://html.spec.whatwg.org/#relevant-settings-object" id="script-processing-model:relevant-settings-object">relevant settings object</a>.</p>
     <li id="script-processing-src-prepare">
-     <a class="self-link" href="#script-processing-src-prepare"></a> 
+     <a class="self-link" href="#script-processing-src-prepare"></a>
      <p>
-      If 
+      If
       <del>the element has a <code id="script-processing-model:attr-script-src-5"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> content attribute</del>
       <ins><var>src</var> is not null</ins>
       , then:
@@ -2810,9 +2810,9 @@ as in their original counterparts, apart from additional behavior triggered by t
       effectively wasted.</p>
      </ol>
     <li id="establish-script-block-source">
-     <a class="self-link" href="#establish-script-block-source"></a> 
+     <a class="self-link" href="#establish-script-block-source"></a>
      <p>
-      If 
+      If
       <del>the element does not have a <code id="script-processing-model:attr-script-src-9"><a href="https://html.spec.whatwg.org/#attr-script-src">src</a></code> content attribute</del>
       <ins><var>src</var> is null</ins>
       ,
@@ -2988,7 +2988,7 @@ also unconditionally accepts any <code class="idl"><a data-link-type="idl" href=
    </ol>
    <p class="note" role="note"><span>Note:</span> This also applies to events in <a href="https://www.w3.org/TR/svg2/interact.html#EventAttributes">SVG 2 §15.9 Event attributes</a>.</p>
    <div class="example" id="event-handlers-example">
-    <a class="self-link" href="#event-handlers-example"></a> 
+    <a class="self-link" href="#event-handlers-example"></a>
 <pre class="highlight"><c- c1>// Content-Security-Policy: require-trusted-types-for 'script'</c->
 
 <c- kr>const</c-> img <c- o>=</c-> document<c- p>.</c->createElement<c- p>(</c-><c- t>'img'</c-><c- p>);</c->
@@ -3017,17 +3017,17 @@ img<c- p>.</c->setAttribute<c- p>(</c-><c- t>'onerror'</c-><c- p>,</c-> <c- t>'a
    </ol>
    <p>Additionally, this document changes the <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-node-append" id="ref-for-concept-node-append">append</a> an attribute algorithm:</p>
    <p>
-    To <dfn data-dfn-type="dfn" data-export data-lt="append an attribute" id="concept-element-attributes-append">append<a class="self-link" href="#concept-element-attributes-append"></a></dfn> an <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-attribute" id="ref-for-concept-attribute⑤">attribute</a> <var>attribute</var> to an <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element" id="ref-for-concept-element①">element</a> <var>element</var> 
+    To <dfn data-dfn-type="dfn" data-export data-lt="append an attribute" id="concept-element-attributes-append">append<a class="self-link" href="#concept-element-attributes-append"></a></dfn> an <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-attribute" id="ref-for-concept-attribute⑤">attribute</a> <var>attribute</var> to an <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element" id="ref-for-concept-element①">element</a> <var>element</var>
     <ins>with a <var>value</var></ins>
-    , run these steps: 
+    , run these steps:
    </p>
    <ol>
     <li>
      <p>
-      <a data-link-type="dfn">Handle attribute changes</a> for <var>attribute</var> with <var>element</var>, null, and 
+      <a data-link-type="dfn">Handle attribute changes</a> for <var>attribute</var> with <var>element</var>, null, and
       <del><var>attribute</var>’s <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-attribute-value" id="ref-for-concept-attribute-value">value</a></del>
       <ins><var>value</var></ins>
-      . 
+      .
      </p>
     <li>
      <ins>
@@ -3074,7 +3074,7 @@ directive-value = <a data-link-type="dfn" href="#trusted-types-sink-group" id="r
 <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="trusted-types-sink-group">trusted-types-sink-group</dfn> = "'script'"
 </pre>
    <div class="example" id="require-tt-for-script-header">
-    <a class="self-link" href="#require-tt-for-script-header"></a> Enforce Trusted Types at the DOM XSS injection sinks. 
+    <a class="self-link" href="#require-tt-for-script-header"></a> Enforce Trusted Types at the DOM XSS injection sinks.
 <pre class="http">Content-Security-Policy: require-trusted-types-for 'script'
 </pre>
    </div>
@@ -3124,27 +3124,27 @@ directive-value = <a data-link-type="dfn" href="#serialized-tt-configuration" id
 <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="tt-keyword">tt-keyword</dfn> = "'allow-duplicates'"
 </pre>
    <div class="example" id="whitelist-of-policy-names-in-header">
-    <a class="self-link" href="#whitelist-of-policy-names-in-header"></a> Types are enforced at sinks, and only two policies may be created: “one” and “two”. 
+    <a class="self-link" href="#whitelist-of-policy-names-in-header"></a> Types are enforced at sinks, and only two policies may be created: “one” and “two”.
 <pre class="http">Content-Security-Policy: require-trusted-types-for 'script'; trusted-types one two
 </pre>
    </div>
    <div class="example" id="header-that-allows-no-policy-names">
     <a class="self-link" href="#header-that-allows-no-policy-names"></a> An empty <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directives" id="ref-for-directives">directive</a> <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#directive-value" id="ref-for-directive-value②">value</a> indicates policies may not be created,
 and sinks expect Trusted Type values, i.e. no DOM XSS <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink②③">injection sinks</a> can be used
-at all. 
+at all.
 <pre class="http">Content-Security-Policy: trusted-types; require-trusted-types-for 'script'
 </pre>
    </div>
    <p>Keyword <code>'allow-duplicates'</code> allows for creating policies with a name that was already used.</p>
    <div class="example" id="allow-duplicates-in-header">
-    <a class="self-link" href="#allow-duplicates-in-header"></a> 
+    <a class="self-link" href="#allow-duplicates-in-header"></a>
 <pre class="http">Content-Security-Policy: trusted-types foo bar 'allow-duplicates'
 </pre>
    </div>
    <p>If the policy named <code>default</code> is present in the list, it refers to the <a data-link-type="dfn" href="#default-policy" id="ref-for-default-policy①">default policy</a>. All strings passed to <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink②④">injection sinks</a> will be passed through it instead
 of being rejected outright.</p>
    <div class="example" id="default-in-header">
-    <a class="self-link" href="#default-in-header"></a> 
+    <a class="self-link" href="#default-in-header"></a>
 <pre class="http">Content-Security-Policy: trusted-types one two default
 </pre>
    </div>
@@ -3227,7 +3227,7 @@ which value is <var>policyName</var>, set <var>createViolation</var> to true.</p
    <p>This document modifies the <a href="https://www.w3.org/TR/CSP3/#can-compile-strings">EnsureCSPDoesNotBlockStringCompilation</a> which is reproduced in its entirety below with additions and deletions.</p>
    <p class="note" role="note"><span>Note:</span> See <a href="https://github.com/tc39/ecma262/issues/938">TC39/ecma262 issue #938</a> (adding the value to be compiled to algorithm parameters).</p>
    <div class="note" role="note">
-    Note: EcmaScript code may call <code>Function()</code> and <code>eval</code> cross realm. 
+    Note: EcmaScript code may call <code>Function()</code> and <code>eval</code> cross realm.
 <pre class="highlight"><c- a>let</c-> f <c- o>=</c-> <c- k>new</c-> self<c- p>.</c->top<c- p>.</c->Function<c- p>(</c->source<c- p>);</c->
 </pre>
     <p>In this case, the <var>callerRealm</var>’s Window is <code>self</code> and the <var>calleeRealm</var>’s Window is <code>self.top</code>.
@@ -3242,19 +3242,19 @@ self<c- p>.</c->top<c- p>.</c->body<c- p>.</c->innerHTML <c- o>=</c-> <c- t>'Hel
 the <var>calleeRealm</var> or <var>callerRealm</var>’s Content-Security-Policy rejects string compilation.</p>
    </div>
    <p>
-    Given two <a href="https://tc39.github.io/ecma262/#realm">realms</a> (<var>callerRealm</var> and <var>calleeRealm</var>), and a 
+    Given two <a href="https://tc39.github.io/ecma262/#realm">realms</a> (<var>callerRealm</var> and <var>calleeRealm</var>), and a
     <del>string</del>
     <ins>value</ins>
-     (<var>source</var>), this algorithm returns 
+     (<var>source</var>), this algorithm returns
     <del>normally</del>
    </p>
    <ins>the source string to compile</ins>
     if compilation is allowed, and
-throws an "<code>EvalError</code>" if not: 
+throws an "<code>EvalError</code>" if not:
    <ol>
     <li data-md>
      <ins>
-      Let <var>sourceString</var> be the result of executing the <a data-link-type="abstract-op" href="#abstract-opdef-get-trusted-type-compliant-string" id="ref-for-abstract-opdef-get-trusted-type-compliant-string⑦">Get Trusted Type compliant string</a> algorithm, with: 
+      Let <var>sourceString</var> be the result of executing the <a data-link-type="abstract-op" href="#abstract-opdef-get-trusted-type-compliant-string" id="ref-for-abstract-opdef-get-trusted-type-compliant-string⑦">Get Trusted Type compliant string</a> algorithm, with:
       <ul>
        <li data-md>
         <p><var>calleeRealm</var> as <var>global</var>,</p>
@@ -3299,7 +3299,7 @@ an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ascii-case-insen
            <p>
             If <var>source-list</var> <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-contain" id="ref-for-list-contain">contains</a> the expression
 "<a data-link-type="grammar" href="https://w3c.github.io/webappsec-csp/#grammardef-report-sample" id="ref-for-grammardef-report-sample"><code>'report-sample'</code></a>", then set <var>violation</var>’s <a data-link-type="dfn" href="https://w3c.github.io/webappsec-csp/#violation-sample" id="ref-for-violation-sample②">sample</a> to
-the substring of 
+the substring of
             <del><var>source</var></del>
             <ins><var>sourceString</var></ins>
              containing its first
@@ -3393,7 +3393,7 @@ to the <a data-link-type="dfn" href="#injection-sink" id="ref-for-injection-sink
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example.</p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -4730,57 +4730,65 @@ Is this a feature or a bug?<a href="#issue-649f8da4"> ↵ </a></div>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

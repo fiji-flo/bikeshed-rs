@@ -1641,14 +1641,14 @@ the following steps which return an <a data-link-type="dfn" href="#absolute-path
      <li data-md>
       <p>For each <var>segment</var> in <var>path segments</var>, switch on <var>segment</var>:</p>
       <dl class="switch">
-       <dt>empty string 
-       <dd>Continue. 
-       <dt>'.' (U+002E FULL STOP) 
-       <dd>Continue. 
-       <dt>'..' (U+002E FULL STOP, U+002E FULL STOP) 
-       <dd>Remove the last member of <var>abspath segments</var> unless it is the only member. 
-       <dt>Otherwise 
-       <dd>Append <var>segment</var> to <var>abspath segments</var>. 
+       <dt>empty string
+       <dd>Continue.
+       <dt>'.' (U+002E FULL STOP)
+       <dd>Continue.
+       <dt>'..' (U+002E FULL STOP, U+002E FULL STOP)
+       <dd>Remove the last member of <var>abspath segments</var> unless it is the only member.
+       <dt>Otherwise
+       <dd>Append <var>segment</var> to <var>abspath segments</var>.
       </dl>
     </ol>
     <ol start="5">
@@ -1671,16 +1671,16 @@ return a <a data-link-type="dfn" href="#file" id="ref-for-file③">file</a>, <a 
      <li data-md>
       <p>For each <var>segment</var> in <var>segments</var>, switch on <var>segment</var>:</p>
       <dl class="switch">
-       <dt>empty string 
-       <dd>Continue. 
-       <dt>'.' (U+002E FULL STOP) 
-       <dd>Continue. 
-       <dt>'..' (U+002E FULL STOP, U+002E FULL STOP) 
+       <dt>empty string
+       <dd>Continue.
+       <dt>'.' (U+002E FULL STOP)
+       <dd>Continue.
+       <dt>'..' (U+002E FULL STOP, U+002E FULL STOP)
        <dd>Let <var>directory</var> be <var>directory</var>’s <a data-link-type="dfn" href="#parent" id="ref-for-parent①">parent</a>,
-      or <var>directory</var> if none. 
-       <dt>Otherwise 
+      or <var>directory</var> if none.
+       <dt>Otherwise
        <dd>
-         Run these substeps: 
+         Run these substeps:
         <ol>
          <li data-md>
           <p>Let <var>item</var> be the member of <var>directory</var> with <a data-link-type="dfn" href="#name" id="ref-for-name⑥">name</a> equal to <var>segment</var>, or return <em>failure</em> if none.</p>
@@ -1722,7 +1722,7 @@ the selection of a directory is as if all files with that directory as
 an ancestor were selected. In addition, the <code class="idl"><a data-link-type="idl" href="#dom-file-webkitrelativepath" id="ref-for-dom-file-webkitrelativepath②">webkitRelativePath</a></code> property of each <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-file" id="ref-for-dfn-file③">File</a></code> is set to a <a data-link-type="dfn" href="#relative-path" id="ref-for-relative-path③">relative path</a> starting from (and including) the selected directory
 to the file.</p>
    <aside class="example" id="example-550348cb">
-    <a class="self-link" href="#example-550348cb"></a> Given the following directory structure: 
+    <a class="self-link" href="#example-550348cb"></a> Given the following directory structure:
 <pre>documents/
   to_upload/
     a/
@@ -1749,7 +1749,7 @@ to the file.</p>
   for the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/input.html#dom-input-accept" id="ref-for-dom-input-accept">accept</a></code> attribute. </aside>
    <aside class="example" id="example-d964aaf3">
     <a class="self-link" href="#example-d964aaf3"></a> Inspecting the <code class="idl"><a data-link-type="idl" href="#dom-file-webkitrelativepath" id="ref-for-dom-file-webkitrelativepath⑥">webkitRelativePath</a></code> properties after a
-directory is selected with an <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element" id="ref-for-the-input-element①">input</a></code> element: 
+directory is selected with an <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element" id="ref-for-the-input-element①">input</a></code> element:
 <pre class="language-html highlight">  <c- p>&lt;</c-><c- f>input</c-> <c- e>id</c-><c- o>=</c-><c- s>b</c-> <c- e>type</c-><c- o>=</c-><c- s>file</c-> <c- e>webkitdirectory</c-><c- p>></c->
 </pre>
 <pre class="language-js highlight">  document<c- p>.</c->querySelector<c- p>(</c-><c- t>'#b'</c-><c- p>).</c->addEventListener<c- p>(</c-><c- t>'change'</c-><c- p>,</c-> e <c- p>=></c-> <c- p>{</c->
@@ -1764,7 +1764,7 @@ attribute applies, it must return an array of <code class="idl"><a data-link-typ
 directories, if permitted). If the IDL attribute does not apply, then
 it must instead return null.</p>
    <aside class="example" id="example-e5cc7383">
-    <a class="self-link" href="#example-e5cc7383"></a> Enumerating entries using <code class="idl"><a data-link-type="idl" href="#dom-htmlinputelement-webkitentries" id="ref-for-dom-htmlinputelement-webkitentries①">webkitEntries</a></code>: 
+    <a class="self-link" href="#example-e5cc7383"></a> Enumerating entries using <code class="idl"><a data-link-type="idl" href="#dom-htmlinputelement-webkitentries" id="ref-for-dom-htmlinputelement-webkitentries①">webkitEntries</a></code>:
 <pre class="language-html highlight">  <c- p>&lt;</c-><c- f>input</c-> <c- e>id</c-><c- o>=</c-><c- s>a</c-> <c- e>type</c-><c- o>=</c-><c- s>file</c-> <c- e>multiple</c-><c- p>></c->
 </pre>
 <pre class="language-js highlight">  document<c- p>.</c->querySelector<c- p>(</c-><c- t>'#a'</c-><c- p>).</c->addEventListener<c- p>(</c-><c- t>'change'</c-><c- p>,</c-> e <c- p>=></c-> <c- p>{</c->
@@ -1813,7 +1813,7 @@ null and abort these steps.</p>
     </ol>
    </div>
    <aside class="example" id="example-9994479b">
-    <a class="self-link" href="#example-9994479b"></a> Handling drag and drop of files and directories: 
+    <a class="self-link" href="#example-9994479b"></a> Handling drag and drop of files and directories:
 <pre class="language-js highlight">elem<c- p>.</c->addEventListener<c- p>(</c-><c- t>'dragover'</c-><c- p>,</c-> e <c- p>=></c-> <c- p>{</c->
   <c- c1>// Prevent navigation.</c->
   e<c- p>.</c->preventDefault<c- p>();</c->
@@ -1888,7 +1888,7 @@ path</a>.</p>
    </div>
    <aside class="note"> An error is possible if files have been modified on disk since the <code class="idl"><a data-link-type="idl" href="#filesystementry" id="ref-for-filesystementry①①">FileSystemEntry</a></code> was created. </aside>
    <aside class="example" id="example-12cccfb6">
-    <a class="self-link" href="#example-12cccfb6"></a> Handling an entry: 
+    <a class="self-link" href="#example-12cccfb6"></a> Handling an entry:
 <pre class="language-js highlight"><c- a>function</c-> handleEntry<c- p>(</c->entry<c- p>)</c-> <c- p>{</c->
   console<c- p>.</c->log<c- p>(</c-><c- t>'name: '</c-> <c- o>+</c-> entry<c- p>.</c->name<c- p>);</c->
   console<c- p>.</c->log<c- p>(</c-><c- t>'path: '</c-> <c- o>+</c-> entry<c- p>.</c->fullPath<c- p>);</c->
@@ -1901,7 +1901,7 @@ path</a>.</p>
 </pre>
    </aside>
    <aside class="example" id="example-0f2eb1d5">
-    <a class="self-link" href="#example-0f2eb1d5"></a> Helper function to adapt <code class="idl"><a data-link-type="idl" href="#dom-filesystementry-getparent" id="ref-for-dom-filesystementry-getparent①">getParent()</a></code> for use with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects">Promises</a> <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>: 
+    <a class="self-link" href="#example-0f2eb1d5"></a> Helper function to adapt <code class="idl"><a data-link-type="idl" href="#dom-filesystementry-getparent" id="ref-for-dom-filesystementry-getparent①">getParent()</a></code> for use with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects">Promises</a> <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>:
 <pre class="language-js highlight"><c- a>function</c-> getParentAsPromise<c- p>(</c->entry<c- p>)</c-> <c- p>{</c->
   <c- k>return</c-> <c- k>new</c-> Promise<c- p>((</c->resolve<c- p>,</c-> reject<c- p>)</c-> <c- p>=></c-> <c- p>{</c->
     entry<c- p>.</c->getParent<c- p>(</c->resolve<c- p>,</c-> reject<c- p>);</c->
@@ -2014,7 +2014,7 @@ path</a>.</p>
    </div>
    <aside class="example" id="example-cfea322c">
     <a class="self-link" href="#example-cfea322c"></a> Helper functions to adapt <code class="idl"><a data-link-type="idl" href="#dom-filesystemdirectoryentry-getfile" id="ref-for-dom-filesystemdirectoryentry-getfile①">getFile()</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-filesystemdirectoryentry-getdirectory" id="ref-for-dom-filesystemdirectoryentry-getdirectory①">getDirectory()</a></code> for use
-with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects①">Promises</a> <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>: 
+with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects①">Promises</a> <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>:
 <pre class="language-js highlight"><c- a>function</c-> getFileAsPromise<c- p>(</c->entry<c- p>,</c-> path<c- p>)</c-> <c- p>{</c->
   <c- k>return</c-> <c- k>new</c-> Promise<c- p>((</c->resolve<c- p>,</c-> reject<c- p>)</c-> <c- p>=></c-> <c- p>{</c->
     entry<c- p>.</c->getFile<c- p>(</c->path<c- p>,</c-> <c- p>{},</c-> resolve<c- p>,</c-> reject<c- p>);</c->
@@ -2088,7 +2088,7 @@ flag</a>.</p>
     </ol>
    </div>
    <aside class="example" id="example-365d0f51">
-    <a class="self-link" href="#example-365d0f51"></a> Enumerating a directory: 
+    <a class="self-link" href="#example-365d0f51"></a> Enumerating a directory:
 <pre class="language-js highlight"><c- a>let</c-> reader <c- o>=</c-> dirEntry<c- p>.</c->createReader<c- p>();</c->
 <c- a>let</c-> doBatch <c- o>=</c-> <c- a>function</c-><c- p>()</c-> <c- p>{</c->
 
@@ -2114,7 +2114,7 @@ doBatch<c- p>();</c->
 </pre>
    </aside>
    <aside class="example" id="example-f498e3dc">
-    <a class="self-link" href="#example-f498e3dc"></a> Helper function to adapt <code class="idl"><a data-link-type="idl" href="#filesystemdirectoryreader" id="ref-for-filesystemdirectoryreader④">FileSystemDirectoryReader</a></code> for use with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects②">Promises</a> <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>: 
+    <a class="self-link" href="#example-f498e3dc"></a> Helper function to adapt <code class="idl"><a data-link-type="idl" href="#filesystemdirectoryreader" id="ref-for-filesystemdirectoryreader④">FileSystemDirectoryReader</a></code> for use with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects②">Promises</a> <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>:
 <pre class="language-js highlight"><c- a>function</c-> getEntriesAsPromise<c- p>(</c->dirEntry<c- p>)</c-> <c- p>{</c->
   <c- k>return</c-> <c- k>new</c-> Promise<c- p>((</c->resolve<c- p>,</c-> reject<c- p>)</c-> <c- p>=></c-> <c- p>{</c->
     <c- kr>const</c-> result <c- o>=</c-> <c- p>[];</c->
@@ -2135,7 +2135,7 @@ doBatch<c- p>();</c->
 </pre>
    </aside>
    <aside class="example" id="example-a4632681">
-    <a class="self-link" href="#example-a4632681"></a> Helper function to adapt <code class="idl"><a data-link-type="idl" href="#filesystemdirectoryreader" id="ref-for-filesystemdirectoryreader⑤">FileSystemDirectoryReader</a></code> for use with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-asynciterator-interface" id="ref-for-sec-asynciterator-interface">AsyncIterators</a> <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>: 
+    <a class="self-link" href="#example-a4632681"></a> Helper function to adapt <code class="idl"><a data-link-type="idl" href="#filesystemdirectoryreader" id="ref-for-filesystemdirectoryreader⑤">FileSystemDirectoryReader</a></code> for use with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-asynciterator-interface" id="ref-for-sec-asynciterator-interface">AsyncIterators</a> <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>:
 <pre class="language-js highlight">async <c- a>function</c-><c- o>*</c-> getEntriesAsAsyncIterator<c- p>(</c->dirEntry<c- p>)</c-> <c- p>{</c->
   <c- kr>const</c-> reader <c- o>=</c-> dirEntry<c- p>.</c->createReader<c- p>();</c->
   <c- kr>const</c-> getNextBatch <c- o>=</c-> <c- p>()</c-> <c- p>=></c-> <c- k>new</c-> Promise<c- p>((</c->resolve<c- p>,</c-> reject<c- p>)</c-> <c- p>=></c-> <c- p>{</c->
@@ -2191,7 +2191,7 @@ path</a>.</p>
     </ol>
    </div>
    <aside class="example" id="example-e1bb7fa1">
-    <a class="self-link" href="#example-e1bb7fa1"></a> Read the contents of a dropped file using <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-filereader" id="ref-for-dfn-filereader">FileReader</a></code>: 
+    <a class="self-link" href="#example-e1bb7fa1"></a> Read the contents of a dropped file using <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-filereader" id="ref-for-dfn-filereader">FileReader</a></code>:
 <pre class="language-js highlight"><c- a>function</c-> readFileEntry<c- p>(</c->entry<c- p>)</c-> <c- p>{</c->
   entry<c- p>.</c->file<c- p>(</c->file <c- p>=></c-> <c- p>{</c->
     <c- kr>const</c-> reader <c- o>=</c-> <c- k>new</c-> FileReader<c- p>();</c->
@@ -2206,7 +2206,7 @@ path</a>.</p>
    </aside>
    <aside class="example" id="example-b5fb1a1b">
     <a class="self-link" href="#example-b5fb1a1b"></a> Helper function to adapt <code class="idl"><a data-link-type="idl" href="#dom-filesystemfileentry-file" id="ref-for-dom-filesystemfileentry-file①">file()</a></code> for use
-with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects③">Promises</a> <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>: 
+with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects③">Promises</a> <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>:
 <pre class="language-js highlight"><c- a>function</c-> fileAsPromise<c- p>(</c->entry<c- p>)</c-> <c- p>{</c->
   <c- k>return</c-> <c- k>new</c-> Promise<c- p>((</c->resolve<c- p>,</c-> reject<c- p>)</c-> <c- p>=></c-> <c- p>{</c->
     entry<c- p>.</c->file<c- p>(</c->resolve<c- p>,</c-> reject<c- p>);</c->
@@ -3276,57 +3276,65 @@ for suggestions, reviews, and other feedback.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

@@ -349,7 +349,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 	The main extensions compared to "CSS Images Module Level 3" <span>[css3-images]</span> are several additions to the <span class="production" id="ref-for-typedef-image①">&lt;image></span> type, such as the <a class="css" data-link-type="maybe" href="#funcdef-image" id="ref-for-funcdef-image">image()</a> notation, the <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element">element()</a> notation, and conic gradients.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -525,12 +525,12 @@ on screen, on paper, etc.
 when referenced from an <a class="production css" data-link-type="type" href="#typedef-image" id="ref-for-typedef-image⑥">&lt;image></a> value,
 for all the properties in which using <span class="production" id="ref-for-typedef-image⑦">&lt;image></span> is valid:</p>
    <ul>
-    <li>PNG, as specified in <a data-link-type="biblio" href="#biblio-png">[PNG]</a> 
+    <li>PNG, as specified in <a data-link-type="biblio" href="#biblio-png">[PNG]</a>
     <li>SVG, as specified in <a data-link-type="biblio" href="#biblio-svg11">[SVG11]</a>,
-	using the <a href="https://www.w3.org/TR/svg-integration/#secure-static-mode">secure static mode</a> (See <a data-link-type="biblio" href="#biblio-svg-integration">[SVG-INTEGRATION]</a>) 
+	using the <a href="https://www.w3.org/TR/svg-integration/#secure-static-mode">secure static mode</a> (See <a data-link-type="biblio" href="#biblio-svg-integration">[SVG-INTEGRATION]</a>)
     <li>If the UA supports animated <a class="production css" data-link-type="type" href="#typedef-image" id="ref-for-typedef-image⑧">&lt;image></a>s,
 	SVG, as specified in <a data-link-type="biblio" href="#biblio-svg11">[SVG11]</a>,
-	using the <a href="https://www.w3.org/TR/svg-integration/#secure-animated-mode">secure animated mode</a> (See <a data-link-type="biblio" href="#biblio-svg-integration">[SVG-INTEGRATION]</a>) 
+	using the <a href="https://www.w3.org/TR/svg-integration/#secure-animated-mode">secure animated mode</a> (See <a data-link-type="biblio" href="#biblio-svg-integration">[SVG-INTEGRATION]</a>)
    </ul>
    <p>The UA may support other file formats as well.</p>
    <h3 class="heading settled" data-level="2.2" id="url-notation"><span class="secno">2.2. </span><span class="content">Image References: the <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#funcdef-url" id="ref-for-funcdef-url">url()</a> notation</span><a class="self-link" href="#url-notation"></a></h3>
@@ -580,7 +580,7 @@ for all the properties in which using <span class="production" id="ref-for-typed
 		a "normal" version,
 		a "high-res" version,
 		and an extra-high resolution version for use in high-quality printing
-		(as printers can have <em>extremely</em> high resolution): 
+		(as printers can have <em>extremely</em> high resolution):
 <pre>background-image: image-set( "foo.png" 1x,
                              "foo-2x.png" 2x,
                              "foo-print.png" 600dpi );
@@ -623,7 +623,7 @@ for all the properties in which using <span class="production" id="ref-for-typed
    <div class="example" id="example-33b17fe8">
     <a class="self-link" href="#example-33b17fe8"></a> The fallback color can be used to ensure that text is still readable
 		even when the image fails to load.
-		For example, the following legacy code works fine if the image is rectangular and has no transparency: 
+		For example, the following legacy code works fine if the image is rectangular and has no transparency:
 <pre class="lang-css highlight"><c- f>body      </c-><c- p>{</c-> <c- k>color</c-><c- p>:</c-> black<c- p>;</c-> <c- k>background</c-><c- p>:</c-> white<c- p>;</c-> <c- p>}</c->
 <c- f>p.special </c-><c- p>{</c-> <c- k>color</c-><c- p>:</c-> white<c- p>;</c-> <c- k>background</c-><c- p>:</c-> <c- nf>url</c-><c- p>(</c-><c- s>"dark.png"</c-><c- p>)</c-> black<c- p>;</c-> <c- p>}</c->
 </pre>
@@ -645,7 +645,7 @@ for all the properties in which using <span class="production" id="ref-for-typed
 	(e.g. by the use of <a href="https://www.w3.org/TR/media-frags/#naming-space">media fragment identifiers</a>)
 	that portion is clipped out of its context and used as a standalone image.</p>
    <div class="example" id="example-036516b1">
-    <a class="self-link" href="#example-036516b1"></a> For example, given the following image and CSS: 
+    <a class="self-link" href="#example-036516b1"></a> For example, given the following image and CSS:
     <p><a href="images/sprites.svg"> <img alt="[9 circles, with 0 to 8 eighths filled in]" height="20" src="images/sprites.svg" width="180"> </a></p>
 <pre class="lang-css highlight">background-image: image('sprites.svg#xywh=40,0,20,20')</pre>
     <p>...the background of the element will be the portion of the image that starts at (40px,0px) and is 20px wide and tall,
@@ -657,7 +657,7 @@ for all the properties in which using <span class="production" id="ref-for-typed
    <div class="example" id="example-3f0fa76f">
     <a class="self-link" href="#example-3f0fa76f"></a> Note that image fragments can also be used with the <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#funcdef-url" id="ref-for-funcdef-url①">url()</a> notation.
 		However, a legacy UA that doesn’t understand the media fragments notation
-		will ignore the fragment and simply display the entirety of the image. 
+		will ignore the fragment and simply display the entirety of the image.
     <p>Since the <a class="css" data-link-type="maybe" href="#funcdef-image" id="ref-for-funcdef-image①④">image()</a> notation requires UAs to support media fragments,
 		authors can take advantage of CSS’s forward-compatible parsing rules
 		to provide a fallback when using an image fragment URL:</p>
@@ -677,7 +677,7 @@ background-image: image('sprites.png#xywh=10,30,60,20'); <c- c>/* new UAs */</c-
    <div class="example" id="example-393a50db">
     <a class="self-link" href="#example-393a50db"></a> For example,
 		one can use this as a simple way to "tint" a background image,
-		by overlaying a partially-transparent color over the top of the other image: 
+		by overlaying a partially-transparent color over the top of the other image:
 <pre class="lang-css highlight">background-image: image(rgba(0,0,255,.5)), url("bg-image.png");</pre>
     <p><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-color" id="ref-for-propdef-background-color">background-color</a> does not work for this,
 		as the solid color it generates always lies <em>beneath</em> all the background images.</p>
@@ -697,7 +697,7 @@ background-image: image('sprites.png#xywh=10,30,60,20'); <c- c>/* new UAs */</c-
 		If the list can contain both LTR and RTL text,
 		though, the bullet may be on the left or the right,
 		and an image designed to point into the text on one side will point out of the text on the other side.
-		This can be fixed with code like: 
+		This can be fixed with code like:
 <pre class="lang-html highlight"><c- p>&lt;</c-><c- f>ul</c-> <c- e>style</c-><c- o>=</c-><c- s>"list-style-image: image(ltr 'arrow.png');"</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>li</c-> <c- e>dir</c-><c- o>=</c-><c- s>'ltr'</c-><c- p>></c->My bullet is on the left!<c- p>&lt;/</c-><c- f>li</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>li</c-> <c- e>dir</c-><c- o>=</c-><c- s>'rtl'</c-><c- p>></c->MY BULLET IS ON THE RIGHT!<c- p>&lt;/</c-><c- f>li</c-><c- p>></c->
@@ -741,7 +741,7 @@ background-image: image('sprites.png#xywh=10,30,60,20'); <c- c>/* new UAs */</c-
    <div class="note" role="note">
      While this is not reflected in the computed value,
 		when all the arguments’ percentages sum to greater than <span class="css">100%</span>,
-		the sizing/painting details effectively rescale them so that they sum to exactly <span class="css">100%</span>. 
+		the sizing/painting details effectively rescale them so that they sum to exactly <span class="css">100%</span>.
     <p>On the other hand,
 		when the sum is less than <span class="css">100%</span>,
 		the sizing/painting details effectively act like there’s an additional <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-color-4/#valdef-color-transparent" id="ref-for-valdef-color-transparent②">transparent</a> argument,
@@ -758,7 +758,7 @@ background-image: image('sprites.png#xywh=10,30,60,20'); <c- c>/* new UAs */</c-
 	the <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-color-3/#valuea-def-color" id="ref-for-valuea-def-color⑦" title="Expands to: aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | currentcolor | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | transparent | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen">&lt;color></a> arguments have no effect.
 	They are calculated as follows:</p>
    <div class="algorithm" data-algorithm="intrinsic dimensions of a cross-fade()">
-     To determine the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="intrinsic-dimensions-of-a-cross-fade">intrinsic dimensions of a cross-fade()</dfn>: 
+     To determine the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="intrinsic-dimensions-of-a-cross-fade">intrinsic dimensions of a cross-fade()</dfn>:
     <ol>
      <li data-md>
       <p>Let <var>images</var> be an empty list.</p>
@@ -801,7 +801,7 @@ and add the result to <var>final height</var>.</p>
    <p>The image represented by a <a class="css" data-link-type="maybe" href="#funcdef-cross-fade" id="ref-for-funcdef-cross-fade①⓪">cross-fade()</a> is a weighted average of the input arguments to the function,
 	calculated as follows:</p>
    <div class="algorithm" data-algorithm="appearance of a cross-fade()">
-     To determine the <dfn data-dfn-type="dfn" data-export id="appearance-of-a-cross-fade">appearance of a cross-fade()<a class="self-link" href="#appearance-of-a-cross-fade"></a></dfn>: 
+     To determine the <dfn data-dfn-type="dfn" data-export id="appearance-of-a-cross-fade">appearance of a cross-fade()<a class="self-link" href="#appearance-of-a-cross-fade"></a></dfn>:
     <ol>
      <li data-md>
       <p>Let <var>images</var> be an empty list.</p>
@@ -920,14 +920,14 @@ each pixel’s color must be in pre-multiplied sRGB.</p>
    <dl>
     <dt> an <a data-link-type="dfn" href="#element-not-rendered" id="ref-for-element-not-rendered">element that is rendered</a>,
 			is not a descendant of a replaced element,
-			and generates a <a data-link-type="dfn" href="https://drafts.csswg.org/css2/visuren.html#x43" id="ref-for-x43">stacking context</a> 
+			and generates a <a data-link-type="dfn" href="https://drafts.csswg.org/css2/visuren.html#x43" id="ref-for-x43">stacking context</a>
     <dd>
-      The function represents an image with its intrinsic size equal to the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="decorated-bounding-box">decorated bounding box</dfn> of the referenced element: 
+      The function represents an image with its intrinsic size equal to the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="decorated-bounding-box">decorated bounding box</dfn> of the referenced element:
      <ul>
       <li> for an element rendered using a CSS rendering model,
 					the <a data-link-type="dfn" href="#decorated-bounding-box" id="ref-for-decorated-bounding-box">decorated bounding box</a> is the smallest axis-aligned rectangle
-					that contains the <a href="https://www.w3.org/TR/2011/CR-css3-background-20110215/#border-image-area">border image areas</a> of all the fragments of the principal box 
-      <li> for an element rendered using the SVG rendering model, <a href="https://www.w3.org/TR/SVGTiny12/intro.html#TermDecoratedBoundingBox">the decorated bounding box is defined by SVG</a> 
+					that contains the <a href="https://www.w3.org/TR/2011/CR-css3-background-20110215/#border-image-area">border image areas</a> of all the fragments of the principal box
+      <li> for an element rendered using the SVG rendering model, <a href="https://www.w3.org/TR/SVGTiny12/intro.html#TermDecoratedBoundingBox">the decorated bounding box is defined by SVG</a>
      </ul>
      <p class="note" role="note"><span>Note:</span> Because images clip anything outside their bounds by default,
 			this means that decorations that extend outside the <a data-link-type="dfn" href="#decorated-bounding-box" id="ref-for-decorated-bounding-box①">decorated bounding box</a>,
@@ -953,7 +953,7 @@ each pixel’s color must be in pre-multiplied sRGB.</p>
 			That is, the image must look identical to the referenced element,
 			modulo rasterization quality.</p>
      <div class="example" id="example-bd4bbdd7">
-      <a class="self-link" href="#example-bd4bbdd7"></a> 
+      <a class="self-link" href="#example-bd4bbdd7"></a>
       <p>As a somewhat silly example, a <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element" id="ref-for-the-p-element">p</a></code> element can be reused as a background elsewhere in the document:</p>
 <pre class="lang-html highlight"><c- p>&lt;</c-><c- f>style</c-><c- p>></c->
 <c- p>#</c-><c- nn>src</c-> <c- p>{</c-> <c- k>color</c-><c- p>:</c-> <c- kc>white</c-><c- p>;</c-> <c- k>background</c-><c- p>:</c-> <c- kc>lime</c-><c- p>;</c-> <c- k>width</c-><c- p>:</c-> <c- mi>300</c-><c- b>px</c-><c- p>;</c-> <c- k>height</c-><c- p>:</c-> <c- mi>40</c-><c- b>px</c-><c- p>;</c-> <c- k>position</c-><c- p>:</c-> <c- kc>relative</c-><c- p>;</c-> <c- p>}</c->
@@ -964,12 +964,12 @@ each pixel’s color must be in pre-multiplied sRGB.</p>
 </pre>
       <p><img alt src="images/element-function.png"></p>
      </div>
-    <dt>an <a data-link-type="dfn" href="#element-not-rendered" id="ref-for-element-not-rendered①">element that is not rendered</a>, but which provides a <a data-link-type="dfn" href="#paint-source" id="ref-for-paint-source">paint source</a> 
+    <dt>an <a data-link-type="dfn" href="#element-not-rendered" id="ref-for-element-not-rendered①">element that is not rendered</a>, but which provides a <a data-link-type="dfn" href="#paint-source" id="ref-for-paint-source">paint source</a>
     <dd>
       The function represents an image with the intrinsic size and appearance of the <a data-link-type="dfn" href="#paint-source" id="ref-for-paint-source①">paint source</a>.
-			The host language defines the size and appearance of paint sources. 
+			The host language defines the size and appearance of paint sources.
      <div class="example" id="example-e5807cfa">
-      <a class="self-link" href="#example-e5807cfa"></a> For example, the <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element⑧">element()</a> function can reference an SVG <code>&lt;pattern></code> element in an HTML document: 
+      <a class="self-link" href="#example-e5807cfa"></a> For example, the <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element⑧">element()</a> function can reference an SVG <code>&lt;pattern></code> element in an HTML document:
 <pre class="lang-html highlight"><c- cp>&lt;!DOCTYPE html></c->
 <c- p>&lt;</c-><c- f>svg</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>defs</c-><c- p>></c->
@@ -1005,11 +1005,11 @@ each pixel’s color must be in pre-multiplied sRGB.</p>
 <c- p>&lt;/</c-><c- f>ul</c-><c- p>></c->
 </pre>
      </div>
-    <dt>anything else 
+    <dt>anything else
     <dd>
      <p>The function represents an <a data-link-type="dfn" href="#invalid-image" id="ref-for-invalid-image⑥">invalid image</a>.</p>
      <div class="example" id="example-c609cf01">
-      <a class="self-link" href="#example-c609cf01"></a> 
+      <a class="self-link" href="#example-c609cf01"></a>
       <p>For example, all of the following <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element⑨">element()</a> uses will result in a transparent background:</p>
 <pre class="lang-html highlight"><c- cp>&lt;!DOCTYPE html></c->
 <c- p>&lt;</c-><c- f>p</c-> <c- e>id</c-><c- o>=</c-><c- s>'one'</c-> <c- e>style</c-><c- o>=</c-><c- s>"display:none; position: relative;"</c-><c- p>></c->one<c- p>&lt;/</c-><c- f>p</c-><c- p>></c->
@@ -1040,7 +1040,7 @@ each pixel’s color must be in pre-multiplied sRGB.</p>
 	for example, in SVG,
 	any descendant of a <code>&lt;defs></code> element is considered to be not rendered.</p>
    <div class="example" id="example-b505442b">
-    <a class="self-link" href="#example-b505442b"></a> 
+    <a class="self-link" href="#example-b505442b"></a>
     <p>The <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element①⓪">element()</a> function can be put to many uses.
 		For example, it can be used to show a preview of the previous or next slide in a slideshow:</p>
 <pre class="lang-html highlight"><c- cp>&lt;!DOCTYPE html></c->
@@ -1087,13 +1087,13 @@ each pixel’s color must be in pre-multiplied sRGB.</p>
 		provide paint sources.</span> They are drawn as described in the spec,
 	with the coordinate systems defined as follows:</p>
    <dl>
-    <dt>objectBoundingBox 
+    <dt>objectBoundingBox
     <dd> The coordinate system has its origin at the top left corner of the rectangle defined by the <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size③">concrete object size</a> that it’s being drawn into,
 			and the same width and height as the <span id="ref-for-concrete-object-size④">concrete object size</span>.
-			A single <a href="https://www.w3.org/TR/SVG/coords.html#Units">user coordinate</a> is the width and height of the <span id="ref-for-concrete-object-size⑤">concrete object size</span>. 
-    <dt>userSpaceOnUse 
+			A single <a href="https://www.w3.org/TR/SVG/coords.html#Units">user coordinate</a> is the width and height of the <span id="ref-for-concrete-object-size⑤">concrete object size</span>.
+    <dt>userSpaceOnUse
     <dd> The coordinate system has its origin at the top left corner of the rectangle defined by the <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size⑥">concrete object size</a> that it’s being drawn into,
-			and the same width and height as the <span id="ref-for-concrete-object-size⑦">concrete object size</span>. <a href="https://www.w3.org/TR/SVG/coords.html#Units">User coordinates</a> are sized equivalently to the CSS <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#px" id="ref-for-px">px</a> unit. 
+			and the same width and height as the <span id="ref-for-concrete-object-size⑦">concrete object size</span>. <a href="https://www.w3.org/TR/SVG/coords.html#Units">User coordinates</a> are sized equivalently to the CSS <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#px" id="ref-for-px">px</a> unit.
    </dl>
    <p class="note" role="note"><span>Note:</span> It is expected that a future version of this module will define ways to refer to paint sources in external documents,
 	or ones that are created solely by script and never inserted into a document at all.</p>
@@ -1117,12 +1117,12 @@ each pixel’s color must be in pre-multiplied sRGB.</p>
    <ul>
     <li> If it’s found,
 			and the object associated with it provides a <a data-link-type="dfn" href="#paint-source" id="ref-for-paint-source④">paint source</a>,
-			the <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element①⑤">element()</a> function represents that paint source. 
+			the <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element①⑤">element()</a> function represents that paint source.
     <li> If it’s found,
 			but the object associated with it <em>doesn’t</em> provide a <a data-link-type="dfn" href="#paint-source" id="ref-for-paint-source⑤">paint source</a>,
-			the <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element①⑥">element()</a> function represent an <a data-link-type="dfn" href="#invalid-image" id="ref-for-invalid-image⑦">invalid image</a>. 
+			the <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element①⑥">element()</a> function represent an <a data-link-type="dfn" href="#invalid-image" id="ref-for-invalid-image⑦">invalid image</a>.
     <li> If the ID isn’t found in the map at all,
-			it’s then looked for in the document as normal. 
+			it’s then looked for in the document as normal.
    </ul>
    <p class="issue" id="issue-049385d0"><a class="self-link" href="#issue-049385d0"></a> This reuse of the ID selector matches Moz behavior.
 		I’m trying to avoid slapping a <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#identifier-value" id="ref-for-identifier-value">&lt;custom-ident></a> right in the beginning of the grammar,
@@ -1131,7 +1131,7 @@ each pixel’s color must be in pre-multiplied sRGB.</p>
 		like <span class="css">element(external fancy)</span> or something.
 		Naming suggestions welcome. </p>
    <div class="example" id="example-ee03d27a">
-    <a class="self-link" href="#example-ee03d27a"></a> For example, fancy animating backgrounds can be done with an external canvas: 
+    <a class="self-link" href="#example-ee03d27a"></a> For example, fancy animating backgrounds can be done with an external canvas:
 <pre class="lang-html highlight"><c- p>&lt;</c-><c- f>script</c-><c- p>></c->
 <c- a>var</c-> bg <c- o>=</c-> document<c- p>.</c->createElement<c- p>(</c-><c- t>'canvas'</c-><c- p>);</c->
 bg<c- p>.</c->height <c- o>=</c-> <c- mi>200</c-><c- p>;</c->
@@ -1159,13 +1159,13 @@ CSS<c- p>.</c->elementSources<c- p>.</c->set<c- p>(</c-><c- t>'fancy'</c-><c- p>
 	by keeping track of a dependency graph and using common cycle-detection algorithms.</p>
    <p>The dependency graph consists of edges such that:</p>
    <ul>
-    <li> every element depends on its children 
+    <li> every element depends on its children
     <li> for any element A with a property using the <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element①⑧">element()</a> function pointing to an element B,
-			A depends on B 
+			A depends on B
     <li> if a host language defines a way for elements to refer to the rendering of other elements,
 			the referencing element depends on the referenced element.
 			For example, in SVG,
-			a <code>&lt;use></code> element depends on the element it referenced. 
+			a <code>&lt;use></code> element depends on the element it referenced.
    </ul>
    <p>If the graph contains a cycle,
 	any <a class="css" data-link-type="maybe" href="#funcdef-element" id="ref-for-funcdef-element①⑨">element()</a> functions participating in the cycle are <a data-link-type="dfn" href="#invalid-image" id="ref-for-invalid-image⑧">invalid images</a>.</p>
@@ -1181,13 +1181,13 @@ CSS<c- p>.</c->elementSources<c- p>.</c->set<c- p>(</c-><c- t>'fancy'</c-><c- p>
   <a class="production" data-link-type="function" href="#funcdef-conic-gradient" id="ref-for-funcdef-conic-gradient">&lt;conic-gradient()></a>  <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①②">|</a> <a class="production" data-link-type="function" href="#funcdef-repeating-conic-gradient" id="ref-for-funcdef-repeating-conic-gradient">&lt;repeating-conic-gradient()></a> ]
 </pre>
    <div class="example" id="example-3bdc7fad">
-    <a class="self-link" href="#example-3bdc7fad"></a> 
+    <a class="self-link" href="#example-3bdc7fad"></a>
     <p>As with the other <a class="production css" data-link-type="type" href="#typedef-image" id="ref-for-typedef-image①⑥">&lt;image></a> types defined in this specification,
 		gradients can be used in any property that accepts images.
 		For example:</p>
     <ul class="lang-css">
-     <li><code class="highlight">background: linear-gradient(white, gray);</code> 
-     <li><code class="highlight">list-style-image: radial-gradient(circle, #006, #00a 90%, #0000af 100%, white 100%)</code> 
+     <li><code class="highlight">background: linear-gradient(white, gray);</code>
+     <li><code class="highlight">list-style-image: radial-gradient(circle, #006, #00a 90%, #0000af 100%, white 100%)</code>
     </ul>
    </div>
    <p>A gradient is drawn into a box with the dimensions of the <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size⑧">concrete object size</a>,
@@ -1229,9 +1229,9 @@ CSS<c- p>.</c->elementSources<c- p>.</c->set<c- p>(</c-><c- t>'fancy'</c-><c- p>
 	They are also known as "angle" gradients in some contexts,
 	since they are produced by varying the rotation angle of a ray.</p>
    <div class="example" id="example-0a9f6351">
-    <a class="self-link" href="#example-0a9f6351"></a> 
+    <a class="self-link" href="#example-0a9f6351"></a>
     <div style="overflow: hidden">
-      <img alt="[An image showing a box with a background shading gradually clockwise from white to black, starting from the top. A gradient circle is shown, and the colors at 0 and 216 degrees respectively.]" src="images/conic-diagram.png" style="float: right; margin-left: 1em;"> 
+      <img alt="[An image showing a box with a background shading gradually clockwise from white to black, starting from the top. A gradient circle is shown, and the colors at 0 and 216 degrees respectively.]" src="images/conic-diagram.png" style="float: right; margin-left: 1em;">
      <p>This example visually illustrates how <span class="css">conic-gradient(at 25% 30%, white, black 60%)</span> would be drawn. Note that since color stop positions always resolve to angles, the only effect of the <span class="css">at 25% 30%</span> is a 2D translation of the gradient, i.e. it does not affect how the gradient is drawn.</p>
     </div>
    </div>
@@ -1244,17 +1244,17 @@ CSS<c- p>.</c->elementSources<c- p>.</c->set<c- p>(</c-><c- t>'fancy'</c-><c- p>
 </pre>
    <p>The arguments are defined as follows:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="conic-gradient(), repeating-conic-gradient()" data-dfn-type="value" data-export id="valdef-conic-gradient-angle"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value②" title="Expands to: deg | grad | rad | turn">&lt;angle></a><a class="self-link" href="#valdef-conic-gradient-angle"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="conic-gradient(), repeating-conic-gradient()" data-dfn-type="value" data-export id="valdef-conic-gradient-angle"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value②" title="Expands to: deg | grad | rad | turn">&lt;angle></a><a class="self-link" href="#valdef-conic-gradient-angle"></a></dfn>
     <dd> The entire gradient is rotated by this angle.
 			If omitted, defaults to <span class="css">0deg</span>.
-			The unit identifier may be omitted if the <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value③" title="Expands to: deg | grad | rad | turn">&lt;angle></a> is zero. 
-    <dt><dfn class="css" data-dfn-for="conic-gradient(), repeating-conic-gradient()" data-dfn-type="value" data-export id="valdef-conic-gradient-position"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-position" id="ref-for-typedef-position①">&lt;position></a><a class="self-link" href="#valdef-conic-gradient-position"></a></dfn> 
+			The unit identifier may be omitted if the <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value③" title="Expands to: deg | grad | rad | turn">&lt;angle></a> is zero.
+    <dt><dfn class="css" data-dfn-for="conic-gradient(), repeating-conic-gradient()" data-dfn-type="value" data-export id="valdef-conic-gradient-position"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-position" id="ref-for-typedef-position①">&lt;position></a><a class="self-link" href="#valdef-conic-gradient-position"></a></dfn>
     <dd> Determines the <dfn class="dfn-paneled" data-dfn-for="conic-gradient(), repeating-conic-gradient()" data-dfn-type="dfn" data-export id="conic-gradient-gradient-center">gradient center</dfn> of the gradient.
 			The <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-position" id="ref-for-typedef-position②">&lt;position></a> value type (which is also used for <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-position" id="ref-for-propdef-background-position">background-position</a>)
 			is defined in <a data-link-type="biblio" href="#biblio-css-values-3">[css-values-3]</a>,
 			and is resolved using the center-point as the object area
 			and the <a data-link-type="dfn" href="#gradient-box" id="ref-for-gradient-box②">gradient box</a> as the positioning area.
-			If this argument is omitted, it defaults to <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-backgrounds-3/#valdef-background-position-center" id="ref-for-valdef-background-position-center">center</a>. 
+			If this argument is omitted, it defaults to <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-backgrounds-3/#valdef-background-position-center" id="ref-for-valdef-background-position-center">center</a>.
    </dl>
    <p class="issue" id="issue-c602e287"><a class="self-link" href="#issue-c602e287"></a> Usually in conic gradients the sharp transition at 0deg is undesirable, which is typically avoided by making sure the first and last color stops are the same color. Perhaps it would be useful to have a keyword for automatically achieving this. </p>
    <p class="issue" id="issue-e52a09ba"><a class="self-link" href="#issue-e52a09ba"></a> Would a radius (inner &amp; outer) for clipping the gradient be useful? If so, we could also support lengths in color stop positions, since we now have a specific radius. </p>
@@ -1281,7 +1281,7 @@ CSS<c- p>.</c->elementSources<c- p>.</c->set<c- p>(</c-><c- t>'fancy'</c-><c- p>
    <h4 class="no-toc heading settled" data-level="3.3.3" id="conic-gradient-examples"><span class="secno">3.3.3. </span><span class="content"> Conic Gradient Examples</span><a class="self-link" href="#conic-gradient-examples"></a></h4>
    <p>All of the following <a class="css" data-link-type="maybe" href="#funcdef-conic-gradient" id="ref-for-funcdef-conic-gradient③">conic-gradient()</a> examples are presumed to be applied to a box that is 300px wide and 200px tall, unless otherwise specified.</p>
    <div class="example" id="example-27baf37f">
-    <a class="self-link" href="#example-27baf37f"></a> Below are various ways of specifying the same basic conic gradient: 
+    <a class="self-link" href="#example-27baf37f"></a> Below are various ways of specifying the same basic conic gradient:
 <pre class="lang-css highlight">background: conic-gradient(#f06, gold);
 background: conic-gradient(at 50% 50%, #f06, gold);
 background: conic-gradient(from 0deg, #f06, gold);
@@ -1294,7 +1294,7 @@ background: conic-gradient(#f06 0deg, gold 1turn);
    <div class="example" id="example-5088fa5e">
     <a class="self-link" href="#example-5088fa5e"></a> Below are various ways of specifying the same basic conic gradient.
 		This demonstrates how even though color stops with angles outside [0deg, 360deg) are not directly painted,
-		they can still affect the color of the painted part of the gradient. 
+		they can still affect the color of the painted part of the gradient.
 <pre class="lang-css highlight">background: conic-gradient(white -50%, black 150%);
 background: conic-gradient(white -180deg, black 540deg);
 background: conic-gradient(hsl(0,0%,75%), hsl(0,0%,25%));
@@ -1302,7 +1302,7 @@ background: conic-gradient(hsl(0,0%,75%), hsl(0,0%,25%));
     <p><img alt src="images/conic2.png"></p>
    </div>
    <div class="example" id="example-34ff21bd">
-    <a class="self-link" href="#example-34ff21bd"></a> Below are two different ways of specifying the same rotated conic gradient, one with a rotation angle and one without: 
+    <a class="self-link" href="#example-34ff21bd"></a> Below are two different ways of specifying the same rotated conic gradient, one with a rotation angle and one without:
 <pre class="lang-css highlight">background: conic-gradient(from 45deg, white, black, white);
 background: conic-gradient(hsl(0,0%,75%), white 45deg, black 225deg, hsl(0,0%,75%));
 </pre>
@@ -1313,7 +1313,7 @@ background: conic-gradient(hsl(0,0%,75%), white 45deg, black 225deg, hsl(0,0%,75
     <p><img alt src="images/conic4.png"></p>
    </div>
    <div class="example" id="example-9b0946eb">
-    <a class="self-link" href="#example-9b0946eb"></a> A conic gradient with a radial gradient overlaid on it, to draw a hue &amp; saturation wheel: 
+    <a class="self-link" href="#example-9b0946eb"></a> A conic gradient with a radial gradient overlaid on it, to draw a hue &amp; saturation wheel:
 <pre class="lang-css highlight">background: radial-gradient(gray, transparent),
             conic-gradient(red, magenta, blue, aqua, lime, yellow, red);
 border-radius: 50%;
@@ -1325,7 +1325,7 @@ width: 200px; height: 200px;
     <a class="self-link" href="#example-7e5c09d0"></a> A conic gradient used to draw a simple pie chart.
 		The <span class="css">0deg</span> color stop positions will be fixed up to be equal to the position of the color stop before them.
 		This will produce infinitesimal (invisible) transitions between the color stops with different colors,
-		effectively producing solid color segments. 
+		effectively producing solid color segments.
 <pre class="lang-css highlight">background: conic-gradient(yellowgreen 40%, gold 0deg 75%, #f06 0deg);
 border-radius: 50%;
 width: 200px; height: 200px;
@@ -1340,12 +1340,12 @@ width: 200px; height: 200px;
 	and are interpreted the same
 	as their respective non-repeating siblings defined previously.</p>
    <div class="example" id="example-f09bb705">
-    <a class="self-link" href="#example-f09bb705"></a> Basic repeating conic gradient: 
+    <a class="self-link" href="#example-f09bb705"></a> Basic repeating conic gradient:
 <pre>background: repeating-conic-gradient(gold, #f06 20deg);</pre>
     <p><img alt src="images/repeating-conic1.png"></p>
    </div>
    <div class="example" id="example-d3c61f47">
-    <a class="self-link" href="#example-d3c61f47"></a> Repeating color stops with abrupt transitions creates a starburst-type background: 
+    <a class="self-link" href="#example-d3c61f47"></a> Repeating color stops with abrupt transitions creates a starburst-type background:
 <pre class="lang-css highlight">background: repeating-conic-gradient(
                 hsla(0,0%,100%,.2) 0deg 15deg,
                 hsla(0,0%,100%,0) 0deg 30deg
@@ -1354,7 +1354,7 @@ width: 200px; height: 200px;
     <p><img alt src="images/repeating-conic2.png"></p>
    </div>
    <div class="example" id="example-2de97f53">
-    <a class="self-link" href="#example-2de97f53"></a> Here repeating color stops with abrupt transitions are used to create a checkerboard: 
+    <a class="self-link" href="#example-2de97f53"></a> Here repeating color stops with abrupt transitions are used to create a checkerboard:
 <pre class="lang-css highlight">background: repeating-conic-gradient(black 0deg 25%, white 0deg 50%);
 background-size: 60px 60px;
 </pre>
@@ -1393,7 +1393,7 @@ background-size: 60px 60px;
    <div class="note" role="note">
      Note that <a class="production css" data-link-type="type" href="#typedef-color-stop-list" id="ref-for-typedef-color-stop-list">&lt;color-stop-list></a> and <a class="production css" data-link-type="type" href="#typedef-angular-color-stop-list" id="ref-for-typedef-angular-color-stop-list①">&lt;angular-color-stop-list></a> are exactly identical in structure,
 		they just differ on whether they accept <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value②" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>s or <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#angle-value" id="ref-for-angle-value④" title="Expands to: deg | grad | rad | turn">&lt;angle></a>s
-		for specifying the position of the stops and hints. 
+		for specifying the position of the stops and hints.
     <p>Visualized with a railroad diagram,
 		both of them follow this pattern:</p>
     <div class="railroad">
@@ -1524,15 +1524,15 @@ background-size: 60px 60px;
 				denoted as a number between 0 and 1,
 				where 0 indicates the hint is placed right on the first <span id="ref-for-color-stop①⑨">color stop</span>,
 				and 1 indicates the hint is placed right on the second <span id="ref-for-color-stop②⓪">color stop</span>.
-				Let this percentage be <var>H</var>. 
+				Let this percentage be <var>H</var>.
      <li> For any given point between the two color stops,
 				determine the point’s location as a percentage of the distance between the two <a data-link-type="dfn" href="#color-stop" id="ref-for-color-stop②①">color stops</a>,
 				in the same way as the previous step.
-				Let this percentage be <var>P</var>. 
+				Let this percentage be <var>P</var>.
      <li> Let <var>C</var>, the color weighting at that point,
-				be equal to <code><var>P</var><sup>log<sub><var>H</var></sub>(.5)</sup></code>. 
+				be equal to <code><var>P</var><sup>log<sub><var>H</var></sub>(.5)</sup></code>.
      <li> The color at that point is then a linear blend between the colors of the two <a data-link-type="dfn" href="#color-stop" id="ref-for-color-stop②②">color stops</a>,
-				blending <code>(1 - <var>C</var>)</code> of the first stop and <var>C</var> of the second stop. 
+				blending <code>(1 - <var>C</var>)</code> of the first stop and <var>C</var> of the second stop.
     </ol>
    </div>
    <p class="note" role="note"><span>Note:</span> The <a data-link-type="dfn" href="#color-transition-hint" id="ref-for-color-transition-hint⑤">transition hint</a> specifies where the “halfway color”—<wbr>the 50% blend between the colors of the two surrounding color stops—<wbr>should be placed.
@@ -1575,7 +1575,7 @@ background-size: 60px 60px;
 			and one transitioning (incorrectly) in non-premultiplied.
 			In both of these example,
 			the gradient is drawn over a white background.
-			Both gradients could be written with the following value: 
+			Both gradients could be written with the following value:
 <pre>linear-gradient(90deg, red, transparent, blue)</pre>
      <p>With premultiplied colors,
 			transitions to or from "transparent" always look nice:</p>
@@ -1597,16 +1597,16 @@ background-size: 60px 60px;
     <li> If the first <a data-link-type="dfn" href="#color-stop" id="ref-for-color-stop②⑤">color stop</a> does not have a position,
 			set its position to 0%.
 			If the last <span id="ref-for-color-stop②⑥">color stop</span> does not have a position,
-			set its position to 100%. 
+			set its position to 100%.
     <li> If a <a data-link-type="dfn" href="#color-stop" id="ref-for-color-stop②⑦">color stop</a> or <a data-link-type="dfn" href="#color-transition-hint" id="ref-for-color-transition-hint⑥">transition hint</a> has a position
 			that is less than the specified position
 			of any <span id="ref-for-color-stop②⑧">color stop</span> or <span id="ref-for-color-transition-hint⑦">transition hint</span> before it in the list,
 			set its position to be equal to the largest specified position
-			of any <span id="ref-for-color-stop②⑨">color stop</span> or <span id="ref-for-color-transition-hint⑧">transition hint</span> before it. 
+			of any <span id="ref-for-color-stop②⑨">color stop</span> or <span id="ref-for-color-transition-hint⑧">transition hint</span> before it.
     <li> If any <a data-link-type="dfn" href="#color-stop" id="ref-for-color-stop③⓪">color stop</a> still does not have a position,
 			then, for each run of adjacent <span id="ref-for-color-stop③①">color stops</span> without positions,
 			set their positions so that they are evenly spaced
-			between the preceding and following <span id="ref-for-color-stop③②">color stops</span> with positions. 
+			between the preceding and following <span id="ref-for-color-stop③②">color stops</span> with positions.
    </ol>
    <p>After applying these rules,
 	all <a data-link-type="dfn" href="#color-stop" id="ref-for-color-stop③③">color stops</a> and <a data-link-type="dfn" href="#color-transition-hint" id="ref-for-color-transition-hint⑨">transition hints</a> will have a definite position and color
@@ -1628,7 +1628,7 @@ background-size: 60px 60px;
     <a class="self-link" href="#example-996853e0"></a> Below are several pairs of gradients.
 		The latter of each pair is a manually “fixed-up” version of the former,
 		obtained by applying the above rules.
-		For each pair, both gradients will render identically. <span class="note">The numbers in each arrow specify which fixup steps are invoked in the transformation.</span> 
+		For each pair, both gradients will render identically. <span class="note">The numbers in each arrow specify which fixup steps are invoked in the transformation.</span>
 <pre>1. linear-gradient(red, white 20%, blue)
    =1=>
    linear-gradient(red 0%, white 20%, blue 100%)
@@ -1671,59 +1671,59 @@ background-size: 60px 60px;
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-object-fit">object-fit</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">fill <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①④">|</a> none <span id="ref-for-comb-one①⑤">|</span> [contain <span id="ref-for-comb-one①⑥">|</span> cover] <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> scale-down 
+      <td class="prod">fill <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one①④">|</a> none <span id="ref-for-comb-one①⑤">|</span> [contain <span id="ref-for-comb-one①⑥">|</span> cover] <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> scale-down
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>fill 
+      <td>fill
      <tr>
       <th>Applies to:
-      <td>replaced elements 
+      <td>replaced elements
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword(s) 
+      <td>specified keyword(s)
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-object-fit" id="ref-for-propdef-object-fit①">object-fit</a> property specifies how the contents of a replaced element
 	should be fitted to the box established by its used height and width.</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="object-fit" data-dfn-type="value" data-export id="valdef-object-fit-fill">fill<a class="self-link" href="#valdef-object-fit-fill"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="object-fit" data-dfn-type="value" data-export id="valdef-object-fit-fill">fill<a class="self-link" href="#valdef-object-fit-fill"></a></dfn>
     <dd> The replaced content is sized to fill the element’s content box:
-			the object’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size⑨">concrete object size</a> is the element’s used width and height. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="object-fit" data-dfn-type="value" data-export id="valdef-object-fit-none">none</dfn> 
+			the object’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size⑨">concrete object size</a> is the element’s used width and height.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="object-fit" data-dfn-type="value" data-export id="valdef-object-fit-none">none</dfn>
     <dd> The replaced content is not resized to fit inside the element’s content box:
 			determine the object’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size①⓪">concrete object size</a> using the <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#default-sizing-algorithm" id="ref-for-default-sizing-algorithm">default sizing algorithm</a> with no specified size,
-			and a <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#default-object-size" id="ref-for-default-object-size①">default object size</a> equal to the replaced element’s used width and height. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="object-fit" data-dfn-type="value" data-export id="valdef-object-fit-contain">contain</dfn> 
+			and a <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#default-object-size" id="ref-for-default-object-size①">default object size</a> equal to the replaced element’s used width and height.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="object-fit" data-dfn-type="value" data-export id="valdef-object-fit-contain">contain</dfn>
     <dd>
       The replaced content is sized to maintain its aspect ratio
 			while fitting within the element’s content box:
-			its <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size①①">concrete object size</a> is resolved as a <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#contain-constraint" id="ref-for-contain-constraint">contain constraint</a> against the element’s used width and height. 
+			its <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size①①">concrete object size</a> is resolved as a <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#contain-constraint" id="ref-for-contain-constraint">contain constraint</a> against the element’s used width and height.
      <p>If the <a class="css" data-link-type="maybe" href="#valdef-object-fit-scale-down" id="ref-for-valdef-object-fit-scale-down">scale-down</a> flag is used, size the content as if <a class="css" data-link-type="maybe" href="#valdef-object-fit-none" id="ref-for-valdef-object-fit-none">none</a> or <a class="css" data-link-type="maybe" href="#valdef-object-fit-contain" id="ref-for-valdef-object-fit-contain">contain</a> were specified,
 			whichever would result in a smaller <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size①②">concrete object size</a>.</p>
      <p class="note" role="note"><span>Note:</span> Both <a class="css" data-link-type="maybe" href="#valdef-object-fit-none" id="ref-for-valdef-object-fit-none①">none</a> and <a class="css" data-link-type="maybe" href="#valdef-object-fit-contain" id="ref-for-valdef-object-fit-contain①">contain</a> respect the content’s intrinsic aspect ratio,
 			so the concept of "smaller" is well-defined.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="object-fit" data-dfn-type="value" data-export id="valdef-object-fit-cover">cover</dfn> 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="object-fit" data-dfn-type="value" data-export id="valdef-object-fit-cover">cover</dfn>
     <dd>
       The replaced content is sized to maintain its aspect ratio
 			while filling the element’s entire content box:
-			its <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size①③">concrete object size</a> is resolved as a <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#cover-constraint" id="ref-for-cover-constraint">cover constraint</a> against the element’s used width and height. 
+			its <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size①③">concrete object size</a> is resolved as a <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#cover-constraint" id="ref-for-cover-constraint">cover constraint</a> against the element’s used width and height.
      <p>If the <a class="css" data-link-type="maybe" href="#valdef-object-fit-scale-down" id="ref-for-valdef-object-fit-scale-down①">scale-down</a> flag is used, size the content as if <a class="css" data-link-type="maybe" href="#valdef-object-fit-none" id="ref-for-valdef-object-fit-none②">none</a> or <a class="css" data-link-type="maybe" href="#valdef-object-fit-cover" id="ref-for-valdef-object-fit-cover">cover</a> were specified,
 			whichever would result in a smaller <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#concrete-object-size" id="ref-for-concrete-object-size①④">concrete object size</a>.</p>
      <p class="note" role="note"><span>Note:</span> Both <a class="css" data-link-type="maybe" href="#valdef-object-fit-none" id="ref-for-valdef-object-fit-none③">none</a> and <a class="css" data-link-type="maybe" href="#valdef-object-fit-cover" id="ref-for-valdef-object-fit-cover①">cover</a> respect the content’s intrinsic aspect ratio,
 			so the concept of "smaller" is well-defined.</p>
-    <dt><dfn class="dfn-paneled css" data-dfn-for="object-fit" data-dfn-type="value" data-export id="valdef-object-fit-scale-down">scale-down</dfn> 
-    <dd> Equivalent to <span class="css">contain scale-down</span>. 
+    <dt><dfn class="dfn-paneled css" data-dfn-for="object-fit" data-dfn-type="value" data-export id="valdef-object-fit-scale-down">scale-down</dfn>
+    <dd> Equivalent to <span class="css">contain scale-down</span>.
    </dl>
    <p>If the content does not completely fill the replaced element’s content box,
 	the unfilled space shows the replaced element’s background.
@@ -1731,7 +1731,7 @@ background-size: 60px 60px;
 	the content will never overflow.
 	See the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-images-3/#propdef-object-position" id="ref-for-propdef-object-position">object-position</a> property for positioning the object with respect to the content box.</p>
    <figure>
-     <img alt src="images/img_scale.png" style="border: thin solid black;"> 
+     <img alt src="images/img_scale.png" style="border: thin solid black;">
     <figcaption> An example showing how four of the values of <a class="property" data-link-type="propdesc" href="#propdef-object-fit" id="ref-for-propdef-object-fit②">object-fit</a> cause the replaced element (blue figure)
 			to be scaled to fit its height/width box (shown with a green background),
 			using the initial value for <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-images-3/#propdef-object-position" id="ref-for-propdef-object-position①">object-position</a>.
@@ -1768,28 +1768,28 @@ background-size: 60px 60px;
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-image-resolution">image-resolution</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">[ from-image <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any①">||</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value②" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a> ] <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-all" id="ref-for-comb-all③">&amp;&amp;</a> snap<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt①⓪">?</a> 
+      <td class="prod">[ from-image <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any①">||</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value②" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a> ] <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-all" id="ref-for-comb-all③">&amp;&amp;</a> snap<a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#mult-opt" id="ref-for-mult-opt①⓪">?</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>1dppx 
+      <td>1dppx
      <tr>
       <th>Applies to:
-      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a> 
+      <td><a href="https://www.w3.org/TR/css-pseudo/#generated-content" title="Includes ::before and ::after pseudo-elements.">all elements</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>yes 
+      <td>yes
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword(s) and/or <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value③" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a> (possibly adjusted for <a class="css" data-link-type="maybe" href="#valdef-image-resolution-snap" id="ref-for-valdef-image-resolution-snap">snap</a>, see below) 
+      <td>specified keyword(s) and/or <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value③" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a> (possibly adjusted for <a class="css" data-link-type="maybe" href="#valdef-image-resolution-snap" id="ref-for-valdef-image-resolution-snap">snap</a>, see below)
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p class="issue" id="issue-8ce643a0"><a class="self-link" href="#issue-8ce643a0"></a> The <a class="css" data-link-type="maybe" href="#funcdef-image-set" id="ref-for-funcdef-image-set①⓪">image-set()</a> notation can alter the intrinsic resolution of an image,
 	which ideally would be automatically honored without having to set this property.
@@ -1805,21 +1805,21 @@ background-size: 60px 60px;
 	The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="intrinsic-resolution">intrinsic resolution</dfn> of an image is used to determine the image’s <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#intrinsic-dimensions" id="ref-for-intrinsic-dimensions②">intrinsic dimensions</a>.
 	Values have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="image-resolution" data-dfn-type="value" data-export id="valdef-image-resolution-resolution"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value④" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a><a class="self-link" href="#valdef-image-resolution-resolution"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="image-resolution" data-dfn-type="value" data-export id="valdef-image-resolution-resolution"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value④" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a><a class="self-link" href="#valdef-image-resolution-resolution"></a></dfn>
     <dd> Specifies the intrinsic resolution explicitly.
-			A "dot" in this case corresponds to a single image pixel. 
-    <dt><dfn class="css" data-dfn-for="image-resolution" data-dfn-type="value" data-export id="valdef-image-resolution-from-image">from-image<a class="self-link" href="#valdef-image-resolution-from-image"></a></dfn> 
+			A "dot" in this case corresponds to a single image pixel.
+    <dt><dfn class="css" data-dfn-for="image-resolution" data-dfn-type="value" data-export id="valdef-image-resolution-from-image">from-image<a class="self-link" href="#valdef-image-resolution-from-image"></a></dfn>
     <dd> The image’s intrinsic resolution is taken as that specified by the image format.
 			If the image does not specify its own resolution,
 			the explicitly specified resolution is used (if given),
-			else it defaults to <span class="css">1dppx</span>. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="image-resolution" data-dfn-type="value" data-export id="valdef-image-resolution-snap">snap</dfn> 
+			else it defaults to <span class="css">1dppx</span>.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="image-resolution" data-dfn-type="value" data-export id="valdef-image-resolution-snap">snap</dfn>
     <dd> If the "snap" keyword is provided,
 			the computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#resolution-value" id="ref-for-resolution-value⑤" title="Expands to: dpcm | dpi | dppx | x">&lt;resolution></a> (if any)
 			is the specified resolution rounded to the nearest value
 			that would map one image pixel to an integer number of device pixels.
 			If the resolution is taken from the image,
-			then the used intrinsic resolution is the image’s native resolution similarly adjusted. 
+			then the used intrinsic resolution is the image’s native resolution similarly adjusted.
    </dl>
    <p>As vector formats such as SVG do not have an intrinsic resolution,
 	this property has no effect on vector images.</p>
@@ -1828,7 +1828,7 @@ background-size: 60px 60px;
 		due to this, an image that looks fine on the screen may look pixellated when printed out.
 		The <a class="property" data-link-type="propdesc" href="#propdef-image-resolution" id="ref-for-propdef-image-resolution③">image-resolution</a> property can be used to embed a high-resolution image into the document
 		and maintain an appropriate size,
-		ensuring attractive display both on screen and on paper: 
+		ensuring attractive display both on screen and on paper:
 <pre class="lang-css highlight"><c- f>img.high-res </c-><c- p>{</c->
   <c- k>image-resolution</c-><c- p>:</c-> <c- m>300</c-><c- l>dpi</c-><c- p>;</c->
 <c- p>}</c->
@@ -1843,7 +1843,7 @@ background-size: 60px 60px;
    <div class="example" id="example-ae06389c">
     <a class="self-link" href="#example-ae06389c"></a> Some image formats can encode the image resolution into the image data.
 		This rule specifies that the UA should use the image resolution found in the image itself,
-		falling back to 1 image pixel per CSS <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#px" id="ref-for-px②">px</a> unit. 
+		falling back to 1 image pixel per CSS <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-values-4/#px" id="ref-for-px②">px</a> unit.
 <pre class="lang-css highlight"><c- f>img </c-><c- p>{</c-> <c- k>image-resolution</c-><c- p>:</c-> from-image <c- p>}</c-></pre>
     <p>These rules both specify that the UA should use the image resolution found in the image itself,
 		but if the image has no resolution,
@@ -1854,7 +1854,7 @@ background-size: 60px 60px;
    </div>
    <div class="example" id="example-3b1f0fe1">
     <a class="self-link" href="#example-3b1f0fe1"></a> Using this rule, the image resolution is set to 300dpi.
-		(The resolution in the image, if any, is ignored.) 
+		(The resolution in the image, if any, is ignored.)
 <pre class="lang-css highlight"><c- f>img </c-><c- p>{</c-> <c- k>image-resolution</c-><c- p>:</c-> <c- m>300</c-><c- l>dpi</c-> <c- p>}</c-></pre>
     <p>This rule, on the other hand,
 		if used when the screen’s resolution is 96dpi,
@@ -1995,7 +1995,7 @@ interpolate the position and color independently.</p>
    <p>For <a class="css" data-link-type="maybe" href="#funcdef-cross-fade" id="ref-for-funcdef-cross-fade①⑧">cross-fade()</a>,
 	always serialize the <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#percentage-value" id="ref-for-percentage-value⑤">&lt;percentage></a>.</p>
    <div class="example" id="example-33854bc0">
-    <a class="self-link" href="#example-33854bc0"></a> For example, a gradient specified as: 
+    <a class="self-link" href="#example-33854bc0"></a> For example, a gradient specified as:
 <pre>Linear-Gradient( to bottom, red 0%,yellow,black 100px)</pre>
     <p>must serialize as:</p>
 <pre>linear-gradient(red, yellow, black 100px)</pre>
@@ -2043,7 +2043,7 @@ interpolate the position and color independently.</p>
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -2056,14 +2056,14 @@ interpolate the position and color independently.</p>
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -2114,7 +2114,7 @@ interpolate the position and color independently.</p>
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <aside class="caniuse-status" data-deco data-dfn-id="funcdef-image-set">
@@ -2203,7 +2203,7 @@ interpolate the position and color independently.</p>
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-image">https://drafts.csswg.org/css-backgrounds-3/#propdef-background-image</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-background-image">2. 2D Image Values: the &lt;image> type</a>
-    <li><a href="#ref-for-propdef-background-image①">3.5.3. 
+    <li><a href="#ref-for-propdef-background-image①">3.5.3.
 Color Stop “Fixup”</a>
     <li><a href="#ref-for-propdef-background-image②">6.1. Overriding Image Resolutions: the image-resolution property</a>
    </ul>
@@ -2211,21 +2211,21 @@ Color Stop “Fixup”</a>
   <aside class="dfn-panel" data-for="term-for-propdef-background-position">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-position">https://drafts.csswg.org/css-backgrounds-3/#propdef-background-position</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-background-position">3.3.1. 
+    <li><a href="#ref-for-propdef-background-position">3.3.1.
 conic-gradient() Syntax</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-background-size">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-background-size">https://drafts.csswg.org/css-backgrounds-3/#propdef-background-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-background-size">3. 
+    <li><a href="#ref-for-propdef-background-size">3.
 Gradients</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-background-position-center">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#valdef-background-position-center">https://drafts.csswg.org/css-backgrounds-3/#valdef-background-position-center</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-background-position-center">3.3.1. 
+    <li><a href="#ref-for-valdef-background-position-center">3.3.1.
 conic-gradient() Syntax</a>
    </ul>
   </aside>
@@ -2244,7 +2244,7 @@ conic-gradient() Syntax</a>
   <aside class="dfn-panel" data-for="term-for-used-value">
    <a href="https://drafts.csswg.org/css-cascade-4/#used-value">https://drafts.csswg.org/css-cascade-4/#used-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-used-value">3.5.3. 
+    <li><a href="#ref-for-used-value">3.5.3.
 Color Stop “Fixup”</a>
    </ul>
   </aside>
@@ -2259,7 +2259,7 @@ Color Stop “Fixup”</a>
     <li><a href="#ref-for-valuea-def-color⑦">2.5.1. cross-fade() Sizing</a>
     <li><a href="#ref-for-valuea-def-color⑧">2.5.2. cross-fade() Painting</a> <a href="#ref-for-valuea-def-color⑨">(2)</a>
     <li><a href="#ref-for-valuea-def-color①⓪">3.5. Defining Gradient Color</a>
-    <li><a href="#ref-for-valuea-def-color①①">3.5.1. 
+    <li><a href="#ref-for-valuea-def-color①①">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-valuea-def-color①②">(2)</a>
    </ul>
   </aside>
@@ -2275,7 +2275,7 @@ Color Stop Lists</a> <a href="#ref-for-valuea-def-color①②">(2)</a>
    <a href="https://drafts.csswg.org/css-lists-3/#propdef-list-style-image">https://drafts.csswg.org/css-lists-3/#propdef-list-style-image</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-list-style-image">2. 2D Image Values: the &lt;image> type</a> <a href="#ref-for-propdef-list-style-image①">(2)</a>
-    <li><a href="#ref-for-propdef-list-style-image②">3. 
+    <li><a href="#ref-for-propdef-list-style-image②">3.
 Gradients</a>
    </ul>
   </aside>
@@ -2300,11 +2300,11 @@ Gradients</a>
   <aside class="dfn-panel" data-for="term-for-angle-value">
    <a href="https://drafts.csswg.org/css-values-3/#angle-value">https://drafts.csswg.org/css-values-3/#angle-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-angle-value">3.3. 
+    <li><a href="#ref-for-angle-value">3.3.
 Conic Gradients: the conic-gradient() notation</a>
-    <li><a href="#ref-for-angle-value①">3.3.1. 
+    <li><a href="#ref-for-angle-value①">3.3.1.
 conic-gradient() Syntax</a> <a href="#ref-for-angle-value②">(2)</a> <a href="#ref-for-angle-value③">(3)</a>
-    <li><a href="#ref-for-angle-value④">3.5.1. 
+    <li><a href="#ref-for-angle-value④">3.5.1.
 Color Stop Lists</a>
     <li><a href="#ref-for-angle-value⑤">7.3. Interpolating &lt;gradient></a> <a href="#ref-for-angle-value⑥">(2)</a>
    </ul>
@@ -2313,9 +2313,9 @@ Color Stop Lists</a>
    <a href="https://drafts.csswg.org/css-values-3/#length-value">https://drafts.csswg.org/css-values-3/#length-value</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-length-value">2. 2D Image Values: the &lt;image> type</a>
-    <li><a href="#ref-for-length-value①">3.3. 
+    <li><a href="#ref-for-length-value①">3.3.
 Conic Gradients: the conic-gradient() notation</a>
-    <li><a href="#ref-for-length-value②">3.5.1. 
+    <li><a href="#ref-for-length-value②">3.5.1.
 Color Stop Lists</a>
     <li><a href="#ref-for-length-value③">7.3. Interpolating &lt;gradient></a> <a href="#ref-for-length-value④">(2)</a> <a href="#ref-for-length-value⑤">(3)</a>
    </ul>
@@ -2361,7 +2361,7 @@ Color Stop Lists</a>
    <ul>
     <li><a href="#ref-for-mult-comma">2.3. Resolution Negotiation: the image-set() notation</a>
     <li><a href="#ref-for-mult-comma①">2.5. Combining images: the cross-fade() notation</a>
-    <li><a href="#ref-for-mult-comma②">3.5.1. 
+    <li><a href="#ref-for-mult-comma②">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-mult-comma③">(2)</a>
    </ul>
   </aside>
@@ -2369,7 +2369,7 @@ Color Stop Lists</a> <a href="#ref-for-mult-comma③">(2)</a>
    <a href="https://drafts.csswg.org/css-values-4/#comb-all">https://drafts.csswg.org/css-values-4/#comb-all</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-comb-all">2.5. Combining images: the cross-fade() notation</a>
-    <li><a href="#ref-for-comb-all①">3.5.1. 
+    <li><a href="#ref-for-comb-all①">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-comb-all②">(2)</a>
     <li><a href="#ref-for-comb-all③">6.1. Overriding Image Resolutions: the image-resolution property</a>
    </ul>
@@ -2378,37 +2378,37 @@ Color Stop Lists</a> <a href="#ref-for-comb-all②">(2)</a>
    <a href="https://drafts.csswg.org/css-values-4/#comb-comma">https://drafts.csswg.org/css-values-4/#comb-comma</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-comb-comma">2.4. Image Fallbacks and Annotations: the image() notation</a>
-    <li><a href="#ref-for-comb-comma①">3.3.1. 
+    <li><a href="#ref-for-comb-comma①">3.3.1.
 conic-gradient() Syntax</a>
-    <li><a href="#ref-for-comb-comma②">3.5.1. 
+    <li><a href="#ref-for-comb-comma②">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-comb-comma③">(2)</a> <a href="#ref-for-comb-comma④">(3)</a> <a href="#ref-for-comb-comma⑤">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-angle-percentage">
    <a href="https://drafts.csswg.org/css-values-4/#typedef-angle-percentage">https://drafts.csswg.org/css-values-4/#typedef-angle-percentage</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-angle-percentage">3.5.1. 
+    <li><a href="#ref-for-typedef-angle-percentage">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-typedef-angle-percentage①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-identifier-value">
    <a href="https://drafts.csswg.org/css-values-4/#identifier-value">https://drafts.csswg.org/css-values-4/#identifier-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-identifier-value">2.6.2. 
+    <li><a href="#ref-for-identifier-value">2.6.2.
 Using Out-Of-Document Sources: the ElementSources interface</a> <a href="#ref-for-identifier-value①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-length-percentage">
    <a href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage">https://drafts.csswg.org/css-values-4/#typedef-length-percentage</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-length-percentage">3.5.1. 
+    <li><a href="#ref-for-typedef-length-percentage">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-typedef-length-percentage①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-position">
    <a href="https://drafts.csswg.org/css-values-4/#typedef-position">https://drafts.csswg.org/css-values-4/#typedef-position</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-position">3.3.1. 
+    <li><a href="#ref-for-typedef-position">3.3.1.
 conic-gradient() Syntax</a> <a href="#ref-for-typedef-position①">(2)</a> <a href="#ref-for-typedef-position②">(3)</a>
    </ul>
   </aside>
@@ -2417,9 +2417,9 @@ conic-gradient() Syntax</a> <a href="#ref-for-typedef-position①">(2)</a> <a hr
    <ul>
     <li><a href="#ref-for-mult-opt">2.4. Image Fallbacks and Annotations: the image() notation</a> <a href="#ref-for-mult-opt①">(2)</a> <a href="#ref-for-mult-opt②">(3)</a>
     <li><a href="#ref-for-mult-opt③">2.5. Combining images: the cross-fade() notation</a>
-    <li><a href="#ref-for-mult-opt④">3.3.1. 
+    <li><a href="#ref-for-mult-opt④">3.3.1.
 conic-gradient() Syntax</a> <a href="#ref-for-mult-opt⑤">(2)</a>
-    <li><a href="#ref-for-mult-opt⑥">3.5.1. 
+    <li><a href="#ref-for-mult-opt⑥">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-mult-opt⑦">(2)</a> <a href="#ref-for-mult-opt⑧">(3)</a> <a href="#ref-for-mult-opt⑨">(4)</a>
     <li><a href="#ref-for-mult-opt①⓪">6.1. Overriding Image Resolutions: the image-resolution property</a>
    </ul>
@@ -2427,7 +2427,7 @@ Color Stop Lists</a> <a href="#ref-for-mult-opt⑦">(2)</a> <a href="#ref-for-mu
   <aside class="dfn-panel" data-for="term-for-px">
    <a href="https://drafts.csswg.org/css-values-4/#px">https://drafts.csswg.org/css-values-4/#px</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-px">2.6.1. 
+    <li><a href="#ref-for-px">2.6.1.
 Paint Sources</a>
     <li><a href="#ref-for-px①">6.1. Overriding Image Resolutions: the image-resolution property</a> <a href="#ref-for-px②">(2)</a>
    </ul>
@@ -2442,7 +2442,7 @@ Paint Sources</a>
   <aside class="dfn-panel" data-for="term-for-mult-num-range">
    <a href="https://drafts.csswg.org/css-values-4/#mult-num-range">https://drafts.csswg.org/css-values-4/#mult-num-range</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-num-range">3.5.1. 
+    <li><a href="#ref-for-mult-num-range">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-mult-num-range①">(2)</a>
    </ul>
   </aside>
@@ -2453,9 +2453,9 @@ Color Stop Lists</a> <a href="#ref-for-mult-num-range①">(2)</a>
     <li><a href="#ref-for-comb-one④">2.3. Resolution Negotiation: the image-set() notation</a>
     <li><a href="#ref-for-comb-one⑤">2.4. Image Fallbacks and Annotations: the image() notation</a> <a href="#ref-for-comb-one⑥">(2)</a>
     <li><a href="#ref-for-comb-one⑦">2.5. Combining images: the cross-fade() notation</a>
-    <li><a href="#ref-for-comb-one⑧">3. 
+    <li><a href="#ref-for-comb-one⑧">3.
 Gradients</a> <a href="#ref-for-comb-one⑨">(2)</a> <a href="#ref-for-comb-one①⓪">(3)</a> <a href="#ref-for-comb-one①①">(4)</a> <a href="#ref-for-comb-one①②">(5)</a>
-    <li><a href="#ref-for-comb-one①③">3.5.1. 
+    <li><a href="#ref-for-comb-one①③">3.5.1.
 Color Stop Lists</a>
     <li><a href="#ref-for-comb-one①④">5.1. Sizing Objects: the object-fit property</a> <a href="#ref-for-comb-one①⑤">(2)</a> <a href="#ref-for-comb-one①⑥">(3)</a>
    </ul>
@@ -2484,9 +2484,9 @@ Color Stop Lists</a>
    <ul>
     <li><a href="#ref-for-concrete-object-size">2.5.1. cross-fade() Sizing</a>
     <li><a href="#ref-for-concrete-object-size①">2.5.2. cross-fade() Painting</a>
-    <li><a href="#ref-for-concrete-object-size②">2.6.1. 
+    <li><a href="#ref-for-concrete-object-size②">2.6.1.
 Paint Sources</a> <a href="#ref-for-concrete-object-size③">(2)</a> <a href="#ref-for-concrete-object-size④">(3)</a> <a href="#ref-for-concrete-object-size⑤">(4)</a> <a href="#ref-for-concrete-object-size⑥">(5)</a> <a href="#ref-for-concrete-object-size⑦">(6)</a>
-    <li><a href="#ref-for-concrete-object-size⑧">3. 
+    <li><a href="#ref-for-concrete-object-size⑧">3.
 Gradients</a>
     <li><a href="#ref-for-concrete-object-size⑨">5.1. Sizing Objects: the object-fit property</a> <a href="#ref-for-concrete-object-size①⓪">(2)</a> <a href="#ref-for-concrete-object-size①①">(3)</a> <a href="#ref-for-concrete-object-size①②">(4)</a> <a href="#ref-for-concrete-object-size①③">(5)</a> <a href="#ref-for-concrete-object-size①④">(6)</a> <a href="#ref-for-concrete-object-size①⑤">(7)</a>
    </ul>
@@ -2506,7 +2506,7 @@ Gradients</a>
   <aside class="dfn-panel" data-for="term-for-default-object-size">
    <a href="https://drafts.csswg.org/css-images-3/#default-object-size">https://drafts.csswg.org/css-images-3/#default-object-size</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-default-object-size">3. 
+    <li><a href="#ref-for-default-object-size">3.
 Gradients</a>
     <li><a href="#ref-for-default-object-size①">5.1. Sizing Objects: the object-fit property</a>
    </ul>
@@ -2527,7 +2527,7 @@ Gradients</a>
    <a href="https://drafts.csswg.org/css-images-3/#intrinsic-dimensions">https://drafts.csswg.org/css-images-3/#intrinsic-dimensions</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-intrinsic-dimensions">2. 2D Image Values: the &lt;image> type</a>
-    <li><a href="#ref-for-intrinsic-dimensions①">3. 
+    <li><a href="#ref-for-intrinsic-dimensions①">3.
 Gradients</a>
     <li><a href="#ref-for-intrinsic-dimensions②">6.1. Overriding Image Resolutions: the image-resolution property</a>
    </ul>
@@ -2535,10 +2535,10 @@ Gradients</a>
   <aside class="dfn-panel" data-for="term-for-funcdef-linear-gradient">
    <a href="https://drafts.csswg.org/css-images-3/#funcdef-linear-gradient">https://drafts.csswg.org/css-images-3/#funcdef-linear-gradient</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-linear-gradient">3. 
+    <li><a href="#ref-for-funcdef-linear-gradient">3.
 Gradients</a>
     <li><a href="#ref-for-funcdef-linear-gradient①">3.1. Linear Gradients: the linear-gradient() notation</a>
-    <li><a href="#ref-for-funcdef-linear-gradient②">3.4. 
+    <li><a href="#ref-for-funcdef-linear-gradient②">3.4.
 Repeating Gradients: the repeating-linear-gradient(), repeating-radial-gradient(), and repeating-conic-gradient() notations</a>
     <li><a href="#ref-for-funcdef-linear-gradient③">7.3. Interpolating &lt;gradient></a> <a href="#ref-for-funcdef-linear-gradient④">(2)</a> <a href="#ref-for-funcdef-linear-gradient⑤">(3)</a>
    </ul>
@@ -2559,10 +2559,10 @@ Repeating Gradients: the repeating-linear-gradient(), repeating-radial-gradient(
   <aside class="dfn-panel" data-for="term-for-funcdef-radial-gradient">
    <a href="https://drafts.csswg.org/css-images-3/#funcdef-radial-gradient">https://drafts.csswg.org/css-images-3/#funcdef-radial-gradient</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-radial-gradient">3. 
+    <li><a href="#ref-for-funcdef-radial-gradient">3.
 Gradients</a>
     <li><a href="#ref-for-funcdef-radial-gradient①">3.2. Radial Gradients: the radial-gradient() notation</a>
-    <li><a href="#ref-for-funcdef-radial-gradient②">3.4. 
+    <li><a href="#ref-for-funcdef-radial-gradient②">3.4.
 Repeating Gradients: the repeating-linear-gradient(), repeating-radial-gradient(), and repeating-conic-gradient() notations</a>
     <li><a href="#ref-for-funcdef-radial-gradient③">7.3. Interpolating &lt;gradient></a>
    </ul>
@@ -2570,7 +2570,7 @@ Repeating Gradients: the repeating-linear-gradient(), repeating-radial-gradient(
   <aside class="dfn-panel" data-for="term-for-namespacedef-css">
    <a href="https://drafts.csswg.org/cssom-1/#namespacedef-css">https://drafts.csswg.org/cssom-1/#namespacedef-css</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-namespacedef-css">2.6.2. 
+    <li><a href="#ref-for-namespacedef-css">2.6.2.
 Using Out-Of-Document Sources: the ElementSources interface</a>
    </ul>
   </aside>
@@ -2578,9 +2578,9 @@ Using Out-Of-Document Sources: the ElementSources interface</a>
    <a href="https://html.spec.whatwg.org/multipage/canvas.html#canvas">https://html.spec.whatwg.org/multipage/canvas.html#canvas</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-canvas">2.6. Using Elements as Images: the element() notation</a>
-    <li><a href="#ref-for-canvas①">2.6.1. 
+    <li><a href="#ref-for-canvas①">2.6.1.
 Paint Sources</a>
-    <li><a href="#ref-for-canvas②">2.6.2. 
+    <li><a href="#ref-for-canvas②">2.6.2.
 Using Out-Of-Document Sources: the ElementSources interface</a>
    </ul>
   </aside>
@@ -2588,7 +2588,7 @@ Using Out-Of-Document Sources: the ElementSources interface</a>
    <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element">https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-the-img-element">2.6. Using Elements as Images: the element() notation</a>
-    <li><a href="#ref-for-the-img-element①">2.6.1. 
+    <li><a href="#ref-for-the-img-element①">2.6.1.
 Paint Sources</a>
    </ul>
   </aside>
@@ -2608,7 +2608,7 @@ Paint Sources</a>
    <a href="https://html.spec.whatwg.org/multipage/media.html#video">https://html.spec.whatwg.org/multipage/media.html#video</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-video">2.6. Using Elements as Images: the element() notation</a>
-    <li><a href="#ref-for-video①">2.6.1. 
+    <li><a href="#ref-for-video①">2.6.1.
 Paint Sources</a>
    </ul>
   </aside>
@@ -2637,14 +2637,14 @@ Paint Sources</a>
    <a href="https://drafts.csswg.org/selectors-4/#typedef-id-selector">https://drafts.csswg.org/selectors-4/#typedef-id-selector</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-typedef-id-selector">2.6. Using Elements as Images: the element() notation</a> <a href="#ref-for-typedef-id-selector①">(2)</a>
-    <li><a href="#ref-for-typedef-id-selector②">2.6.2. 
+    <li><a href="#ref-for-typedef-id-selector②">2.6.2.
 Using Out-Of-Document Sources: the ElementSources interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-SameObject">
    <a href="https://heycam.github.io/webidl/#SameObject">https://heycam.github.io/webidl/#SameObject</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-SameObject">2.6.2. 
+    <li><a href="#ref-for-SameObject">2.6.2.
 Using Out-Of-Document Sources: the ElementSources interface</a>
    </ul>
   </aside>
@@ -2934,7 +2934,7 @@ Using Out-Of-Document Sources: the ElementSources interface</a>
     <li><a href="#ref-for-typedef-image①①">2.5. Combining images: the cross-fade() notation</a>
     <li><a href="#ref-for-typedef-image①②">2.5.1. cross-fade() Sizing</a> <a href="#ref-for-typedef-image①③">(2)</a> <a href="#ref-for-typedef-image①④">(3)</a>
     <li><a href="#ref-for-typedef-image①⑤">2.5.2. cross-fade() Painting</a>
-    <li><a href="#ref-for-typedef-image①⑥">3. 
+    <li><a href="#ref-for-typedef-image①⑥">3.
 Gradients</a>
     <li><a href="#ref-for-typedef-image①⑦">7.1. Interpolating &lt;image></a>
    </ul>
@@ -2946,9 +2946,9 @@ Gradients</a>
     <li><a href="#ref-for-invalid-image③">2.4.1. Image Fallbacks</a> <a href="#ref-for-invalid-image④">(2)</a>
     <li><a href="#ref-for-invalid-image⑤">2.4.2. Image Fragments</a>
     <li><a href="#ref-for-invalid-image⑥">2.6. Using Elements as Images: the element() notation</a>
-    <li><a href="#ref-for-invalid-image⑦">2.6.2. 
+    <li><a href="#ref-for-invalid-image⑦">2.6.2.
 Using Out-Of-Document Sources: the ElementSources interface</a>
-    <li><a href="#ref-for-invalid-image⑧">2.6.3. 
+    <li><a href="#ref-for-invalid-image⑧">2.6.3.
 Cycle Detection</a>
    </ul>
   </aside>
@@ -3025,9 +3025,9 @@ Cycle Detection</a>
    <b><a href="#funcdef-element">#funcdef-element</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-funcdef-element①">2.6. Using Elements as Images: the element() notation</a> <a href="#ref-for-funcdef-element②">(2)</a> <a href="#ref-for-funcdef-element③">(3)</a> <a href="#ref-for-funcdef-element④">(4)</a> <a href="#ref-for-funcdef-element⑤">(5)</a> <a href="#ref-for-funcdef-element⑥">(6)</a> <a href="#ref-for-funcdef-element⑦">(7)</a> <a href="#ref-for-funcdef-element⑧">(8)</a> <a href="#ref-for-funcdef-element⑨">(9)</a> <a href="#ref-for-funcdef-element①⓪">(10)</a> <a href="#ref-for-funcdef-element①①">(11)</a>
-    <li><a href="#ref-for-funcdef-element①②">2.6.2. 
+    <li><a href="#ref-for-funcdef-element①②">2.6.2.
 Using Out-Of-Document Sources: the ElementSources interface</a> <a href="#ref-for-funcdef-element①③">(2)</a> <a href="#ref-for-funcdef-element①④">(3)</a> <a href="#ref-for-funcdef-element①⑤">(4)</a> <a href="#ref-for-funcdef-element①⑥">(5)</a>
-    <li><a href="#ref-for-funcdef-element①⑦">2.6.3. 
+    <li><a href="#ref-for-funcdef-element①⑦">2.6.3.
 Cycle Detection</a> <a href="#ref-for-funcdef-element①⑧">(2)</a> <a href="#ref-for-funcdef-element①⑨">(3)</a>
     <li><a href="#ref-for-funcdef-element②⓪"> Changes Since Level 3</a>
    </ul>
@@ -3042,7 +3042,7 @@ Cycle Detection</a> <a href="#ref-for-funcdef-element①⑧">(2)</a> <a href="#r
    <b><a href="#element-not-rendered">#element-not-rendered</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-element-not-rendered">2.6. Using Elements as Images: the element() notation</a> <a href="#ref-for-element-not-rendered①">(2)</a>
-    <li><a href="#ref-for-element-not-rendered②">2.6.1. 
+    <li><a href="#ref-for-element-not-rendered②">2.6.1.
 Paint Sources</a>
    </ul>
   </aside>
@@ -3050,7 +3050,7 @@ Paint Sources</a>
    <b><a href="#paint-source">#paint-source</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-paint-source">2.6. Using Elements as Images: the element() notation</a> <a href="#ref-for-paint-source①">(2)</a>
-    <li><a href="#ref-for-paint-source②">2.6.2. 
+    <li><a href="#ref-for-paint-source②">2.6.2.
 Using Out-Of-Document Sources: the ElementSources interface</a> <a href="#ref-for-paint-source③">(2)</a> <a href="#ref-for-paint-source④">(3)</a> <a href="#ref-for-paint-source⑤">(4)</a>
    </ul>
   </aside>
@@ -3058,7 +3058,7 @@ Using Out-Of-Document Sources: the ElementSources interface</a> <a href="#ref-fo
    <b><a href="#dom-css-elementsources">#dom-css-elementsources</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-dom-css-elementsources">2.6. Using Elements as Images: the element() notation</a>
-    <li><a href="#ref-for-dom-css-elementsources①">2.6.2. 
+    <li><a href="#ref-for-dom-css-elementsources①">2.6.2.
 Using Out-Of-Document Sources: the ElementSources interface</a> <a href="#ref-for-dom-css-elementsources②">(2)</a> <a href="#ref-for-dom-css-elementsources③">(3)</a> <a href="#ref-for-dom-css-elementsources④">(4)</a> <a href="#ref-for-dom-css-elementsources⑤">(5)</a>
    </ul>
   </aside>
@@ -3072,7 +3072,7 @@ Using Out-Of-Document Sources: the ElementSources interface</a> <a href="#ref-fo
    <b><a href="#typedef-gradient">#typedef-gradient</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-typedef-gradient">2. 2D Image Values: the &lt;image> type</a>
-    <li><a href="#ref-for-typedef-gradient①">3. 
+    <li><a href="#ref-for-typedef-gradient①">3.
 Gradients</a>
     <li><a href="#ref-for-typedef-gradient②">7.3. Interpolating &lt;gradient></a>
    </ul>
@@ -3080,9 +3080,9 @@ Gradients</a>
   <aside class="dfn-panel" data-for="gradient-box">
    <b><a href="#gradient-box">#gradient-box</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-gradient-box">3. 
+    <li><a href="#ref-for-gradient-box">3.
 Gradients</a> <a href="#ref-for-gradient-box①">(2)</a>
-    <li><a href="#ref-for-gradient-box②">3.3.1. 
+    <li><a href="#ref-for-gradient-box②">3.3.1.
 conic-gradient() Syntax</a>
    </ul>
   </aside>
@@ -3090,7 +3090,7 @@ conic-gradient() Syntax</a>
    <b><a href="#starting-point">#starting-point</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-starting-point">3.5. Defining Gradient Color</a>
-    <li><a href="#ref-for-starting-point①">3.5.1. 
+    <li><a href="#ref-for-starting-point①">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-starting-point②">(2)</a> <a href="#ref-for-starting-point③">(3)</a> <a href="#ref-for-starting-point④">(4)</a>
    </ul>
   </aside>
@@ -3098,52 +3098,52 @@ Color Stop Lists</a> <a href="#ref-for-starting-point②">(2)</a> <a href="#ref-
    <b><a href="#ending-point">#ending-point</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-ending-point">3.5. Defining Gradient Color</a>
-    <li><a href="#ref-for-ending-point①">3.5.1. 
+    <li><a href="#ref-for-ending-point①">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-ending-point②">(2)</a> <a href="#ref-for-ending-point③">(3)</a> <a href="#ref-for-ending-point④">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="gradient-line">
    <b><a href="#gradient-line">#gradient-line</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-gradient-line">3. 
+    <li><a href="#ref-for-gradient-line">3.
 Gradients</a>
-    <li><a href="#ref-for-gradient-line①">3.3.2. 
+    <li><a href="#ref-for-gradient-line①">3.3.2.
 Placing Color Stops</a> <a href="#ref-for-gradient-line②">(2)</a>
     <li><a href="#ref-for-gradient-line③">3.5. Defining Gradient Color</a> <a href="#ref-for-gradient-line④">(2)</a> <a href="#ref-for-gradient-line⑤">(3)</a>
-    <li><a href="#ref-for-gradient-line⑥">3.5.1. 
+    <li><a href="#ref-for-gradient-line⑥">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-gradient-line⑦">(2)</a> <a href="#ref-for-gradient-line⑧">(3)</a> <a href="#ref-for-gradient-line⑨">(4)</a>
-    <li><a href="#ref-for-gradient-line①⓪">3.5.2. 
+    <li><a href="#ref-for-gradient-line①⓪">3.5.2.
 Coloring the Gradient Line</a> <a href="#ref-for-gradient-line①①">(2)</a> <a href="#ref-for-gradient-line①②">(3)</a> <a href="#ref-for-gradient-line①③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="funcdef-conic-gradient">
    <b><a href="#funcdef-conic-gradient">#funcdef-conic-gradient</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-conic-gradient">3. 
+    <li><a href="#ref-for-funcdef-conic-gradient">3.
 Gradients</a>
-    <li><a href="#ref-for-funcdef-conic-gradient①">3.3. 
+    <li><a href="#ref-for-funcdef-conic-gradient①">3.3.
 Conic Gradients: the conic-gradient() notation</a>
-    <li><a href="#ref-for-funcdef-conic-gradient②">3.3.1. 
+    <li><a href="#ref-for-funcdef-conic-gradient②">3.3.1.
 conic-gradient() Syntax</a>
-    <li><a href="#ref-for-funcdef-conic-gradient③">3.3.3. 
+    <li><a href="#ref-for-funcdef-conic-gradient③">3.3.3.
 Conic Gradient Examples</a>
-    <li><a href="#ref-for-funcdef-conic-gradient④">3.4. 
+    <li><a href="#ref-for-funcdef-conic-gradient④">3.4.
 Repeating Gradients: the repeating-linear-gradient(), repeating-radial-gradient(), and repeating-conic-gradient() notations</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="conic-gradient-gradient-center">
    <b><a href="#conic-gradient-gradient-center">#conic-gradient-gradient-center</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-conic-gradient-gradient-center">3.3.2. 
+    <li><a href="#ref-for-conic-gradient-gradient-center">3.3.2.
 Placing Color Stops</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="funcdef-repeating-linear-gradient">
    <b><a href="#funcdef-repeating-linear-gradient">#funcdef-repeating-linear-gradient</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-repeating-linear-gradient">3. 
+    <li><a href="#ref-for-funcdef-repeating-linear-gradient">3.
 Gradients</a>
-    <li><a href="#ref-for-funcdef-repeating-linear-gradient①">3.4. 
+    <li><a href="#ref-for-funcdef-repeating-linear-gradient①">3.4.
 Repeating Gradients: the repeating-linear-gradient(), repeating-radial-gradient(), and repeating-conic-gradient() notations</a>
     <li><a href="#ref-for-funcdef-repeating-linear-gradient②">7.3. Interpolating &lt;gradient></a>
    </ul>
@@ -3151,18 +3151,18 @@ Repeating Gradients: the repeating-linear-gradient(), repeating-radial-gradient(
   <aside class="dfn-panel" data-for="funcdef-repeating-radial-gradient">
    <b><a href="#funcdef-repeating-radial-gradient">#funcdef-repeating-radial-gradient</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-repeating-radial-gradient">3. 
+    <li><a href="#ref-for-funcdef-repeating-radial-gradient">3.
 Gradients</a>
-    <li><a href="#ref-for-funcdef-repeating-radial-gradient①">3.4. 
+    <li><a href="#ref-for-funcdef-repeating-radial-gradient①">3.4.
 Repeating Gradients: the repeating-linear-gradient(), repeating-radial-gradient(), and repeating-conic-gradient() notations</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="funcdef-repeating-conic-gradient">
    <b><a href="#funcdef-repeating-conic-gradient">#funcdef-repeating-conic-gradient</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-repeating-conic-gradient">3. 
+    <li><a href="#ref-for-funcdef-repeating-conic-gradient">3.
 Gradients</a>
-    <li><a href="#ref-for-funcdef-repeating-conic-gradient①">3.4. 
+    <li><a href="#ref-for-funcdef-repeating-conic-gradient①">3.4.
 Repeating Gradients: the repeating-linear-gradient(), repeating-radial-gradient(), and repeating-conic-gradient() notations</a>
    </ul>
   </aside>
@@ -3170,87 +3170,87 @@ Repeating Gradients: the repeating-linear-gradient(), repeating-radial-gradient(
    <b><a href="#color-stop">#color-stop</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-color-stop">3.5. Defining Gradient Color</a>
-    <li><a href="#ref-for-color-stop①">3.5.1. 
+    <li><a href="#ref-for-color-stop①">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-color-stop②">(2)</a> <a href="#ref-for-color-stop③">(3)</a> <a href="#ref-for-color-stop④">(4)</a> <a href="#ref-for-color-stop⑤">(5)</a> <a href="#ref-for-color-stop⑥">(6)</a> <a href="#ref-for-color-stop⑦">(7)</a>
-    <li><a href="#ref-for-color-stop⑧">3.5.2. 
+    <li><a href="#ref-for-color-stop⑧">3.5.2.
 Coloring the Gradient Line</a> <a href="#ref-for-color-stop⑨">(2)</a> <a href="#ref-for-color-stop①⓪">(3)</a> <a href="#ref-for-color-stop①①">(4)</a> <a href="#ref-for-color-stop①②">(5)</a> <a href="#ref-for-color-stop①③">(6)</a> <a href="#ref-for-color-stop①④">(7)</a> <a href="#ref-for-color-stop①⑤">(8)</a> <a href="#ref-for-color-stop①⑥">(9)</a> <a href="#ref-for-color-stop①⑦">(10)</a> <a href="#ref-for-color-stop①⑧">(11)</a> <a href="#ref-for-color-stop①⑨">(12)</a> <a href="#ref-for-color-stop②⓪">(13)</a> <a href="#ref-for-color-stop②①">(14)</a> <a href="#ref-for-color-stop②②">(15)</a> <a href="#ref-for-color-stop②③">(16)</a>
-    <li><a href="#ref-for-color-stop②④">3.5.3. 
+    <li><a href="#ref-for-color-stop②④">3.5.3.
 Color Stop “Fixup”</a> <a href="#ref-for-color-stop②⑤">(2)</a> <a href="#ref-for-color-stop②⑥">(3)</a> <a href="#ref-for-color-stop②⑦">(4)</a> <a href="#ref-for-color-stop②⑧">(5)</a> <a href="#ref-for-color-stop②⑨">(6)</a> <a href="#ref-for-color-stop③⓪">(7)</a> <a href="#ref-for-color-stop③①">(8)</a> <a href="#ref-for-color-stop③②">(9)</a> <a href="#ref-for-color-stop③③">(10)</a> <a href="#ref-for-color-stop③④">(11)</a> <a href="#ref-for-color-stop③⑤">(12)</a> <a href="#ref-for-color-stop③⑥">(13)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="color-transition-hint">
    <b><a href="#color-transition-hint">#color-transition-hint</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-color-transition-hint">3.5.1. 
+    <li><a href="#ref-for-color-transition-hint">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-color-transition-hint①">(2)</a> <a href="#ref-for-color-transition-hint②">(3)</a>
-    <li><a href="#ref-for-color-transition-hint③">3.5.2. 
+    <li><a href="#ref-for-color-transition-hint③">3.5.2.
 Coloring the Gradient Line</a> <a href="#ref-for-color-transition-hint④">(2)</a> <a href="#ref-for-color-transition-hint⑤">(3)</a>
-    <li><a href="#ref-for-color-transition-hint⑥">3.5.3. 
+    <li><a href="#ref-for-color-transition-hint⑥">3.5.3.
 Color Stop “Fixup”</a> <a href="#ref-for-color-transition-hint⑦">(2)</a> <a href="#ref-for-color-transition-hint⑧">(3)</a> <a href="#ref-for-color-transition-hint⑨">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="color-stop-list">
    <b><a href="#color-stop-list">#color-stop-list</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-color-stop-list">3.5.1. 
+    <li><a href="#ref-for-color-stop-list">3.5.1.
 Color Stop Lists</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-color-stop-list">
    <b><a href="#typedef-color-stop-list">#typedef-color-stop-list</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-color-stop-list">3.5.1. 
+    <li><a href="#ref-for-typedef-color-stop-list">3.5.1.
 Color Stop Lists</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-linear-color-stop">
    <b><a href="#typedef-linear-color-stop">#typedef-linear-color-stop</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-linear-color-stop">3.5.1. 
+    <li><a href="#ref-for-typedef-linear-color-stop">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-typedef-linear-color-stop①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-linear-color-hint">
    <b><a href="#typedef-linear-color-hint">#typedef-linear-color-hint</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-linear-color-hint">3.5.1. 
+    <li><a href="#ref-for-typedef-linear-color-hint">3.5.1.
 Color Stop Lists</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-color-stop-length">
    <b><a href="#typedef-color-stop-length">#typedef-color-stop-length</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-color-stop-length">3.5.1. 
+    <li><a href="#ref-for-typedef-color-stop-length">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-typedef-color-stop-length①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-angular-color-stop-list">
    <b><a href="#typedef-angular-color-stop-list">#typedef-angular-color-stop-list</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-angular-color-stop-list">3.3.1. 
+    <li><a href="#ref-for-typedef-angular-color-stop-list">3.3.1.
 conic-gradient() Syntax</a>
-    <li><a href="#ref-for-typedef-angular-color-stop-list①">3.5.1. 
+    <li><a href="#ref-for-typedef-angular-color-stop-list①">3.5.1.
 Color Stop Lists</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-angular-color-stop">
    <b><a href="#typedef-angular-color-stop">#typedef-angular-color-stop</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-angular-color-stop">3.5.1. 
+    <li><a href="#ref-for-typedef-angular-color-stop">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-typedef-angular-color-stop①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-angular-color-hint">
    <b><a href="#typedef-angular-color-hint">#typedef-angular-color-hint</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-angular-color-hint">3.5.1. 
+    <li><a href="#ref-for-typedef-angular-color-hint">3.5.1.
 Color Stop Lists</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-color-stop-angle">
    <b><a href="#typedef-color-stop-angle">#typedef-color-stop-angle</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-color-stop-angle">3.5.1. 
+    <li><a href="#ref-for-typedef-color-stop-angle">3.5.1.
 Color Stop Lists</a> <a href="#ref-for-typedef-color-stop-angle①">(2)</a>
    </ul>
   </aside>
@@ -3327,58 +3327,66 @@ Color Stop Lists</a> <a href="#ref-for-typedef-color-stop-angle①">(2)</a>
             });</script>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

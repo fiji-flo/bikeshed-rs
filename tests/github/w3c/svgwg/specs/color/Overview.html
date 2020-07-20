@@ -357,7 +357,7 @@ ICC-based color specification is provided, but this can be changed (see <a data-
     <p class="prop-value"><a href="#color">&lt;color></a></p>
     <p>Example (these all represent the same color):</p>
     <div class="example" id="example-a7a4c930">
-     <a class="self-link" href="#example-a7a4c930"></a> 
+     <a class="self-link" href="#example-a7a4c930"></a>
 <pre>&lt;circle fill="rgb(205,133,63)"/>
 &lt;circle fill="peru"/>
 &lt;circle fill="rgb(80.392%, 52.157%, 24.706%)"/>
@@ -376,7 +376,7 @@ ICC-based color specification is provided, but this can be changed (see <a data-
       where color management is optional.</p>
     <div class="requirement" id="assert_render_sRGB">
      <p> When an sRGB color is used - because it is the sole color specification, or in a
-        permitted fallback situation - a conformant SVG 2 User Agent 
+        permitted fallback situation - a conformant SVG 2 User Agent
         shall render it in conformance with the ICC profile for sRGB, to obtain the
         desired color appearance. </p>
     </div>
@@ -385,7 +385,7 @@ ICC-based color specification is provided, but this can be changed (see <a data-
     <p class="prop-value"><a href="#color">rgba(r, g, b, a)</a></p>
     <p>Example </p>
     <div class="example" id="example-41892b56">
-     <a class="self-link" href="#example-41892b56"></a> 
+     <a class="self-link" href="#example-41892b56"></a>
 <pre>&lt;circle fill="rgba(205,133,63, 0.5)"/></pre>
     </div>
     <p class="note" role="note"> New in SVG 2, added from  [<a href="refs.html#ref-CSS3COLOR">CSS3COLOR</a>].</p>
@@ -394,14 +394,14 @@ ICC-based color specification is provided, but this can be changed (see <a data-
     </div>
     <p>Example (these render as the same color)</p>
     <div class="example" id="example-5364b3ce">
-     <a class="self-link" href="#example-5364b3ce"></a> 
+     <a class="self-link" href="#example-5364b3ce"></a>
 <pre>&lt;circle fill="rgba(205,133,63, 0.25)"/>
 &lt;circle fill="rgba(205,133,63, 1.0)" fill-opacity="0.25"/>
 &lt;circle fill="rgba(205,133,63, 0.5)" fill-opacity="0.5"/></pre>
     </div>
     <div class="requirement" id="assert_render_sRGB_alpha">
      <p> When an sRGB color with alpha is used - because it is the sole color specification, or in a
-        permitted fallback situation - a conformant SVG 2 User Agent 
+        permitted fallback situation - a conformant SVG 2 User Agent
         shall render it in conformance with the ICC profile for sRGB, to obtain the
         desired color appearance. </p>
     </div>
@@ -411,7 +411,7 @@ ICC-based color specification is provided, but this can be changed (see <a data-
     be translated from EBNF to CSS Value syntax.</p>
     <p>Example:</p>
     <div class="example" id="example-eacf9a49">
-     <a class="self-link" href="#example-eacf9a49"></a> 
+     <a class="self-link" href="#example-eacf9a49"></a>
 <pre>&lt;style>
 @color-profile {
   name: acmecmyk;
@@ -445,16 +445,16 @@ ICC-based color specification is provided, but this can be changed (see <a data-
     <p class="note" role="note"> New in SVG 2.</p>
     <p class="prop-value"><a href="#fallback">&lt;fallback></a> <a href="#cielabcolor">cielab(&lt;Lightness>, &lt;a> &lt;b>)</a> | <br> <a href="#fallback">&lt;fallback></a> <a href="#cielchabcolor">cielchab(&lt;Lightness> &lt;Chroma>, &lt;Hue> )</a> </p>
     <div class="example" id="example-be4111ac">
-     <a class="self-link" href="#example-be4111ac"></a> 
+     <a class="self-link" href="#example-be4111ac"></a>
 <pre>&lt;circle fill="#CD853F cielab(62.253188, 23.950124, 48.410653)"/>
 &lt;circle fill="#CD853F cielch(62.253188, 54.011108, 63.677091)"/>
 </pre>
     </div>
     <p>An SVG 2 User Agent directly uses the CIE LAB or CIE LCHab values, where the comma-separated list
       (with optional white space) of <strong>&lt;icccolorvalue></strong>’s is a set
-      of Lightness, a and b or Lightness, Hue and Chroma values, expressed as <a class="css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①">&lt;number></a>s. A color profile is not referenced in the SVG, although profile-based implementations may 
+      of Lightness, a and b or Lightness, Hue and Chroma values, expressed as <a class="css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value" id="ref-for-number-value①">&lt;number></a>s. A color profile is not referenced in the SVG, although profile-based implementations may
     choose to implement this by providing and using an LAB profile.</p>
-    <p>The white point  is D50, which is the whitepoint defined by the CIE for CIELab profile connection space and the 
+    <p>The white point  is D50, which is the whitepoint defined by the CIE for CIELab profile connection space and the
             whitepoint used for image editors that provide LAB functionality.
           LAB measurements relative to a different whitepoint should be adapted to D50 to be used in SVG 2; the linear Bradford chromatic adaptation transform [<a href="refs.html#ref-BRADFORD">BRADFORD</a>] is suggested for this.</p>
     <div class="requirement" id="assert_LABColorPrecedence">
@@ -470,7 +470,7 @@ ICC-based color specification is provided, but this can be changed (see <a data-
     <p class="prop-value"><a href="#fallback">&lt;fallback></a> <a href="#iccnamedcolor">icc-named-color(&lt;name>, &lt;namedColor>)</a></p>
     <p>Example:</p>
     <div class="example" id="example-a6f69baf">
-     <a class="self-link" href="#example-a6f69baf"></a> 
+     <a class="self-link" href="#example-a6f69baf"></a>
 <pre>&lt;style>
 @color-profile {
   name: FooColors;
@@ -489,13 +489,13 @@ ICC-based color specification is provided, but this can be changed (see <a data-
     <p>ICC named color profiles provide a platform- and implementation-neutral way
     to share a swatch of colors, or to use user-created names for colors.</p>
     <div class="requirement" id="assert_ICCNamedColorPrecedence">
-     <p> If ICC-based named colors are provided, a conformant SVG 2 User Agent 
+     <p> If ICC-based named colors are provided, a conformant SVG 2 User Agent
         MUST use the ICC-based named color in preference to the sRGB fallback
         color, unless the ICC named color profile is unavailable, malformed, or uses a profile
         connection space other than CIE XYZ or CIE LAB.</p>
     </div>
     <div class="requirement" id="assert_useICCNamed">
-     <p> When an ICC named color is used, a conformant SVG 2 User Agent 
+     <p> When an ICC named color is used, a conformant SVG 2 User Agent
         shall render it in conformance with the specified ICC profile to obtain the
         desired color appearance.</p>
     </div>
@@ -504,17 +504,17 @@ ICC-based color specification is provided, but this can be changed (see <a data-
     <h2 class="heading settled" data-level="4" id="Unmanaged"><span class="secno">4. </span><span class="content">Unmanaged colors</span><a class="self-link" href="#Unmanaged"></a></h2>
     <h3 class="heading settled" data-level="4.1" id="device"><span class="secno">4.1. </span><span class="content"> Uncalibrated device color</span><a class="self-link" href="#device"></a></h3>
     <p class="note" role="note"> New in SVG 2.</p>
-    <p class="prop-value"><a href="#fallback">&lt;fallback></a> <a href="#devicegray">device-gray(&lt;gray>)</a> | <br> <a href="#fallback">&lt;fallback></a> <a href="#devicergb">device-rgb(&lt;red> &lt;green> &lt;blue>)</a> | <br> <a href="#fallback">&lt;fallback></a> <a href="#devicecmyk">device-cmyk(&lt;cyan> &lt;magenta> &lt;yellow> 
+    <p class="prop-value"><a href="#fallback">&lt;fallback></a> <a href="#devicegray">device-gray(&lt;gray>)</a> | <br> <a href="#fallback">&lt;fallback></a> <a href="#devicergb">device-rgb(&lt;red> &lt;green> &lt;blue>)</a> | <br> <a href="#fallback">&lt;fallback></a> <a href="#devicecmyk">device-cmyk(&lt;cyan> &lt;magenta> &lt;yellow>
       &lt;black>)</a> | <br> <a href="#fallback">&lt;fallback></a> <a href="#devicegray">device-nchannel(&lt;number>+)</a> | </p>
     <div class="example" id="example-a984e37e">
-     <a class="self-link" href="#example-a984e37e"></a> 
+     <a class="self-link" href="#example-a984e37e"></a>
 <pre>&lt;circle fill="#CD853F device-cmyk(0.11, 0.48, 0.83, 0.00)"/></pre>
     </div>
     <p> SVG 2  introduces a method of specifying uncalibrated device colors. This
-    is sometimes useful in print workflows, for example to produce patches of known 
+    is sometimes useful in print workflows, for example to produce patches of known
     ink density used for quality control purposes. </p>
     <p>An SVG 2 User Agent which supports the indicated class of output device
-    will pass the values through without color management. If the class of output device 
+    will pass the values through without color management. If the class of output device
     (for example, cmyk) is not supported, then the fallback
     sRGB color is used. </p>
     <p> As these are uncalibrated, any interpolation or compositing occurs using the fallback
@@ -528,7 +528,7 @@ definition of <a data-link-type="dfn"><a class="property" data-link-type="propde
     <p>The <a data-link-type="dfn"><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-4/#propdef-color" id="ref-for-propdef-color②">color</a></a> property is used to provide a potential indirect value, <span class="prop-value">currentColor</span>, for the <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-headers-fill" id="ref-for-concept-headers-fill"><a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-fill" id="ref-for-propdef-fill">fill</a></a>, <a data-link-type="dfn" href="https://svgwg.org/svg2-draft/painting.html#TermStroke" id="ref-for-TermStroke"><a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/fill-stroke-3/#propdef-stroke" id="ref-for-propdef-stroke">stroke</a></a>, <a data-link-type="dfn"><a class="property" data-link-type="propdesc">solid-color</a></a>, <a data-link-type="dfn"><a class="property" data-link-type="propdesc" href="https://svgwg.org/svg2-draft/pservers.html#StopColorProperty" id="ref-for-StopColorProperty">stop-color</a></a>, <a data-link-type="dfn"><a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/filter-effects-1/#propdef-flood-color" id="ref-for-propdef-flood-color">flood-color</a></a> and <a data-link-type="dfn"><a class="property" data-link-type="propdesc" href="https://drafts.fxtf.org/filter-effects-1/#propdef-lighting-color" id="ref-for-propdef-lighting-color">lighting-color</a></a> properties.  The property has no other effect
 on SVG elements.</p>
     <div class="example" id="example-39699348">
-     <a class="self-link" href="#example-39699348"></a> 
+     <a class="self-link" href="#example-39699348"></a>
      <p>The following example shows how the inherited value of the <a data-link-type="dfn"><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-4/#propdef-color" id="ref-for-propdef-color③">color</a></a> property from an HTML document can be used to
   set the color of SVG text in an inline SVG fragment.</p>
 <pre>&lt;!DOCTYPE html>
@@ -695,7 +695,7 @@ target rendering device:</p>
     <dt><span class="prop-value">auto</span>
     <dd>
      This is the default behavior. The user agent
-  determines the best intent based on the content type. 
+  determines the best intent based on the content type.
      <div class="requirement" id="assert_renderingIntentAuto"> For image content containing an embedded profile, the User Agent MUST use the intent
       specified within the profile. Otherwise, the user agent MUST use the current profile
       and force the intent, overriding any intent that might be stored in the profile
@@ -737,7 +737,7 @@ target rendering device:</p>
       but fall just inside the gamut. </div>
     <dt><span class="prop-value">relative-colorimetric</span>
     <dd>
-     <p>Media-relative colorimetric 
+     <p>Media-relative colorimetric
     is required to leave source colors that fall inside the destination
     medium gamut unchanged relative to the respective media white points.
     Source colors that are out of the destination medium gamut are mapped to
@@ -748,7 +748,7 @@ target rendering device:</p>
      <div class="requirement" id="assert_renderingIntentRelativeColorimetric"> This method MUST map the source white point to the desination white point.
       If black point compensation is in use, the source black point MUST also be mapped to the destination black point.
       Adaptation algorithms SHOULD be used to adjust for the change in white point. Relative relationships of colors inside
-      both source and destination gamuts SHOULD be preserved. 
+      both source and destination gamuts SHOULD be preserved.
       Relative relationships of colors outside the destination gamut MAY be changed. </div>
     <dt><span class="prop-value">absolute-colorimetric</span>
     <dd>
@@ -764,7 +764,7 @@ target rendering device:</p>
     that need exact color matching and where highlight clipping is not a
     concern. </p>
      <div class="requirement" id="assert_renderingIntentAbsoluteColorimetric"> This method MUST disable white point matching and black point matching when converting colors. </div>
-      In general, this option is not recommended. 
+      In general, this option is not recommended.
    </dl>
    <p class="issue" id="issue-4512ce83"><a class="self-link" href="#issue-4512ce83"></a>Fallback behaviour needs to be specified, for when the
 requested rendering intent does not have a corresponding table in the profile;
@@ -772,144 +772,144 @@ or when all rendering-intents are provided using the same table.</p>
    <div class="ready-for-wider-review">
     <h2 class="heading settled" data-level="7" id="syntax"><span class="secno">7. </span><span class="content">Color syntax</span><a class="self-link" href="#syntax"></a></h2>
     <p>The EBNF grammar syntax is as described in <a href="types.html#syntax">Syntax</a>.</p>
-<pre><span id="DataTypeICCColor"><span id="icccolor">icccolor</span></span> ::= 
-  ~"icc-color(" <a href="#name">name</a> (<a data-link-type="dfn">comma-wsp</a> <a href="#number">number</a>)+ ")" 
-  
-<span id="iccnamedcolor">iccnamedcolor</span> ::= 
-  ~"icc-named-color(" <a href="#name">name</a> <a data-link-type="dfn">comma-wsp</a> <a href="#namedColor">namedColor</a> ")" 
-  
+<pre><span id="DataTypeICCColor"><span id="icccolor">icccolor</span></span> ::=
+  ~"icc-color(" <a href="#name">name</a> (<a data-link-type="dfn">comma-wsp</a> <a href="#number">number</a>)+ ")"
+
+<span id="iccnamedcolor">iccnamedcolor</span> ::=
+  ~"icc-named-color(" <a href="#name">name</a> <a data-link-type="dfn">comma-wsp</a> <a href="#namedColor">namedColor</a> ")"
+
 <span id="cielabcolor">cielabcolor</span> ::=
-  ~"cielab(" <a href="#lightness">lightness</a> <a data-link-type="dfn">comma-wsp</a> <a href="#a-value">a-value</a> <a data-link-type="dfn">comma-wsp</a> <a href="#b-value">b-value</a> ")" 
-  
+  ~"cielab(" <a href="#lightness">lightness</a> <a data-link-type="dfn">comma-wsp</a> <a href="#a-value">a-value</a> <a data-link-type="dfn">comma-wsp</a> <a href="#b-value">b-value</a> ")"
+
 <span id="cielchabcolor">cielchabcolor</span> ::=
-  ~"cielchab(" <a href="#lightness">lightness</a> <a data-link-type="dfn">comma-wsp</a> <a href="#chroma">chroma</a> <a data-link-type="dfn">comma-wsp</a> <a href="#hue">hue</a> ")" 
-  
+  ~"cielchab(" <a href="#lightness">lightness</a> <a data-link-type="dfn">comma-wsp</a> <a href="#chroma">chroma</a> <a data-link-type="dfn">comma-wsp</a> <a href="#hue">hue</a> ")"
+
 <span id="devicecolor">devicecolor</span> ::=
   <a href="#devicegray">device-gray</a> | <a href="#devicergb">devicergb</a> | <a href="#devicecmyk">devicecmyk</a> | <a href="#devicenchannel">devicenchannel</a>
-  
+
 <span id="devicegray">devicegray</span> ::=
   ~"device-gray(" <a href="#gray">gray</a> ")"
-  
+
 <span id="devicergb">devicergb</span> ::=
   ~"device-rgb(" <a href="#red">red</a> <a href="#green">green</a> <a href="#blue">blue</a> ")"
-  
+
 <span id="devicecmyk">devicecmyk</span> ::=
   ~"device-cmyk(" <a href="#cyan">cyan</a> <a href="#magenta">magenta</a> <a href="#yellow">yellow</a> <a href="#black">black</a> ")"
-  
+
 <span id="devicenchannel">devicenchannel</span> ::=
   ~"device-nchannel(" <a href="#number">number</a>+ ")"
-  
+
 <span id="name">name</span> ::=
   <a href="#namestartchar">namestartchar</a> (<a href="#namechar">namechar</a>)*
-  
+
 <span id="lightness">lightness</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="a-value">a-value</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="b-value">b-value</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="chroma">chroma</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="hue">hue</span> ::=
   <a href="#number">number</a>
-  
-  
+
+
 <span id="gray">gray</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="red">red</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="green">green</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="blue">blue</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="cyan">cyan</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="magenta">magenta</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="yellow">yellow</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="black">black</span> ::=
   <a href="#number">number</a>
-  
+
 <span id="namedColor">namedColor</span> ::=
   <a href="#name">name</a>
-  
+
 <span id="fallback">fallback</span> ::=
   <a href="#color">color</a>
-  
-<span id="color">color</span>  ::= 
+
+<span id="color">color</span>  ::=
   "#" <a href="#hexdigit">hexdigit</a> <a href="#hexdigit">hexdigit</a> <a href="#hexdigit">hexdigit</a> (<a href="#hexdigit">hexdigit</a> <a href="#hexdigit">hexdigit</a> <a href="#hexdigit">hexdigit</a>)?
   | ~"rgb(" <a data-link-type="dfn">wsp</a>* <a href="#integer">integer</a> <a href="#comma">comma</a> <a href="#integer">integer</a> <a href="#comma">comma</a> <a href="#integer">integer</a> <a data-link-type="dfn">wsp</a>* ")"
   | ~"rgb(" <a data-link-type="dfn">wsp</a>* <a href="#integer">integer</a> "%" <a href="#comma">comma</a> <a href="#integer">integer</a> "%" <a href="#comma">comma</a> <a href="#integer">integer</a> "%" <a data-link-type="dfn">wsp</a>* ")"
   | ~"hsl(" <a data-link-type="dfn">wsp</a>* <a href="#integer">integer</a> <a href="#comma">comma</a> <a href="#integer">integer</a> <a href="#comma">comma</a> <a href="#integer">integer</a> <a data-link-type="dfn">wsp</a>* ")"
   | ~"hsla(" <a data-link-type="dfn">wsp</a>* <a href="#integer">integer</a> <a href="#comma">comma</a> <a href="#integer">integer</a> <a href="#comma">comma</a> <a href="#integer">integer</a> <a href="#comma">comma</a> <a href="#integer">integer</a> <a data-link-type="dfn">wsp</a>* ")"
   | <a href="#color-keyword">color-keyword</a>
-  
-<span id="hexdigit">hexdigit</span> ::= 
+
+<span id="hexdigit">hexdigit</span> ::=
   [0-9A-Fa-f]
-  
-<span id="number">number</span> ::= 
+
+<span id="number">number</span> ::=
   <a href="#sign">sign</a>? <a href="#digit-sequence">digit-sequence</a>? "." <a href="#digit-sequence">digit-sequence</a>
-  
+
 <span id="sign">sign</span>::=
   "+" | "-"
-  
+
 <span id="integer">integer</span> ::=
   <a href="#digit-sequence">digit-sequence</a>
-  
+
 <span id="digit-sequence">digit-sequence</span> ::=
   [0-9]+
-  
+
 <span id="namestartchar">namestartchar</span> ::=
   ":" | [A-Z] | "_" | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [
   #xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] |
   [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] |
   [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
-   
+
 <span id="namechar">namechar</span> ::=
   <a href="#namestartchar">namestartchar</a> | "-" | "." | [0-9] | #xB7 | [#x0300-#x036F] |
   [#x203F-#x2040]
-  
+
 <span id="comma">comma</span> ::=
   ","
-  
+
 <span id="color-keyword">color-keyword</span> ::=
-  ~"aliceblue" | ~"antiquewhite" | ~"aqua" | ~"aquamarine" | ~"azure" | ~"beige" | 
-  ~"bisque" | ~"black" | ~"blanchedalmond" | ~"blue" | ~"blueviolet" | ~"brown" | 
+  ~"aliceblue" | ~"antiquewhite" | ~"aqua" | ~"aquamarine" | ~"azure" | ~"beige" |
+  ~"bisque" | ~"black" | ~"blanchedalmond" | ~"blue" | ~"blueviolet" | ~"brown" |
   ~"burlywood" |~"cadetblue" | ~"chartreuse" | ~"chocolate" | ~"coral" | ~"cornflowerblue" |
-  ~"cornsilk" | ~"crimson" | ~"cyan" | ~"darkblue" | ~"darkcyan" | ~"darkgoldenrod" | 
-  ~"darkgray" | ~"darkgreen" | ~"darkgrey" | ~"darkkhaki" | ~"darkmagenta" | ~"darkolivegreen" | 
-  ~"darkorange" | ~"darkorchid" | ~"darkred" | ~"darksalmon" | ~"darkseagreen" | ~"darkslateblue" | 
-  ~"darkslategray" | ~"darkslategrey" | ~"darkturquoise" | ~"darkviolet" | ~"deeppink" | ~"deepskyblue" | 
-  ~"dimgray" | ~"dimgrey" | ~"dodgerblue" | ~"firebrick" | ~"floralwhite" | ~"forestgreen" | 
-  ~"fuchsia" | ~"gainsboro" | ~"ghostwhite" | ~"gold" | ~"goldenrod" | ~"gray" | 
-  ~"grey" | ~"green" | ~"greenyellow" | ~"honeydew" | ~"hotpink" | ~"indianred" | 
-  ~"indigo" | ~"ivory" | ~"khaki" | ~"lavender" | ~"lavenderblush" | ~"lawngreen" | 
-  ~"lemonchiffon" | ~"lightblue" | ~"lightcoral" | ~"lightcyan" | ~"lightgoldenrodyellow" | ~"lightgray" | 
-  ~"lightgreen" | ~"lightgrey" | ~"lightpink" | ~"lightsalmon" | ~"lightseagreen" | ~"lightskyblue" | 
-  ~"lightslategray" | ~"lightslategrey" | ~"lightsteelblue" | ~"lightyellow" | ~"lime" | 
-  ~"limegreen" | ~"linen" | ~"magenta" | ~"maroon" | ~"mediumaquamarine" | ~"mediumblue" | 
+  ~"cornsilk" | ~"crimson" | ~"cyan" | ~"darkblue" | ~"darkcyan" | ~"darkgoldenrod" |
+  ~"darkgray" | ~"darkgreen" | ~"darkgrey" | ~"darkkhaki" | ~"darkmagenta" | ~"darkolivegreen" |
+  ~"darkorange" | ~"darkorchid" | ~"darkred" | ~"darksalmon" | ~"darkseagreen" | ~"darkslateblue" |
+  ~"darkslategray" | ~"darkslategrey" | ~"darkturquoise" | ~"darkviolet" | ~"deeppink" | ~"deepskyblue" |
+  ~"dimgray" | ~"dimgrey" | ~"dodgerblue" | ~"firebrick" | ~"floralwhite" | ~"forestgreen" |
+  ~"fuchsia" | ~"gainsboro" | ~"ghostwhite" | ~"gold" | ~"goldenrod" | ~"gray" |
+  ~"grey" | ~"green" | ~"greenyellow" | ~"honeydew" | ~"hotpink" | ~"indianred" |
+  ~"indigo" | ~"ivory" | ~"khaki" | ~"lavender" | ~"lavenderblush" | ~"lawngreen" |
+  ~"lemonchiffon" | ~"lightblue" | ~"lightcoral" | ~"lightcyan" | ~"lightgoldenrodyellow" | ~"lightgray" |
+  ~"lightgreen" | ~"lightgrey" | ~"lightpink" | ~"lightsalmon" | ~"lightseagreen" | ~"lightskyblue" |
+  ~"lightslategray" | ~"lightslategrey" | ~"lightsteelblue" | ~"lightyellow" | ~"lime" |
+  ~"limegreen" | ~"linen" | ~"magenta" | ~"maroon" | ~"mediumaquamarine" | ~"mediumblue" |
   ~"mediumorchid" | ~"mediumpurple" | ~"mediumseagreen" | ~"mediumslateblue" | ~"mediumspringgreen" |
   ~"mediumturquoise" | ~"mediumvioletred" | ~"midnightblue" | ~"mintcream" | ~"mistyrose" |
-  ~"moccasin" | ~"navajowhite" | ~"navy" | ~"oldlace" | ~"olive" | ~"olivedrab" | ~"orange" | ~"orangered" | 
-  ~"orchid" | ~"palegoldenrod" | ~"palegreen" | ~"paleturquoise" | ~"palevioletred" | ~"papayawhip" | 
-  ~"peachpuff" | ~"peru" | ~"pink" | ~"plum" | ~"powderblue" | ~"purple" | 
-  ~"red" | ~"rosybrown" | ~"royalblue" | ~"saddlebrown" | ~"salmon" | ~"sandybrown" | 
-  ~"seagreen" | ~"seashell" | ~"sienna" | ~"silver" | ~"skyblue" | ~"slateblue" | 
-  ~"slategray" | ~"slategrey" | ~"snow" | ~"springgreen" | ~"steelblue" | ~"tan" | 
-  ~"teal" | ~"thistle" | ~"tomato" | ~"turquoise" | ~"violet" | ~"wheat" | 
-  ~"white" | ~"whitesmoke" | ~"yellow" | ~"yellowgreen" 
+  ~"moccasin" | ~"navajowhite" | ~"navy" | ~"oldlace" | ~"olive" | ~"olivedrab" | ~"orange" | ~"orangered" |
+  ~"orchid" | ~"palegoldenrod" | ~"palegreen" | ~"paleturquoise" | ~"palevioletred" | ~"papayawhip" |
+  ~"peachpuff" | ~"peru" | ~"pink" | ~"plum" | ~"powderblue" | ~"purple" |
+  ~"red" | ~"rosybrown" | ~"royalblue" | ~"saddlebrown" | ~"salmon" | ~"sandybrown" |
+  ~"seagreen" | ~"seashell" | ~"sienna" | ~"silver" | ~"skyblue" | ~"slateblue" |
+  ~"slategray" | ~"slategrey" | ~"snow" | ~"springgreen" | ~"steelblue" | ~"tan" |
+  ~"teal" | ~"thistle" | ~"tomato" | ~"turquoise" | ~"violet" | ~"wheat" |
+  ~"white" | ~"whitesmoke" | ~"yellow" | ~"yellowgreen"
 </pre>
    </div>
   </main>
@@ -928,7 +928,7 @@ or when all rendering-intents are provided using the same table.</p>
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example.</p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -941,14 +941,14 @@ or when all rendering-intents are provided using the same table.</p>
   <p>Conformance to this specification
     is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#style-sheet">CSS
-            style sheet</a>. 
-   <dt>renderer 
+            style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-            documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that writes a style sheet. 
+            documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS21/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
     if all of its statements that use syntax defined in this module are valid
@@ -995,7 +995,7 @@ or when all rendering-intents are provided using the same table.</p>
   <p>
    Further information on submitting testcases and implementation reports
     can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-    Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+    Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1020,7 +1020,7 @@ or when all rendering-intents are provided using the same table.</p>
   <aside class="dfn-panel" data-for="term-for-number-value">
    <a href="https://drafts.csswg.org/css-values-3/#number-value">https://drafts.csswg.org/css-values-3/#number-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-number-value">3.3. 
+    <li><a href="#ref-for-number-value">3.3.
       ICC colors</a>
     <li><a href="#ref-for-number-value①">3.4. LAB color</a>
    </ul>
@@ -1166,57 +1166,65 @@ or when all rendering-intents are provided using the same table.<a href="#issue-
   </div>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

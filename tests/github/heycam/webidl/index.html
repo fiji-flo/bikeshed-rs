@@ -854,7 +854,7 @@ in <a href="#es-extended-attributes">§ 3.3 ECMAScript-specific extended attri
     IncludesStatement
 </pre>
    <div class="example" id="example-400c3788">
-    <a class="self-link" href="#example-400c3788"></a> 
+    <a class="self-link" href="#example-400c3788"></a>
     <p>The following is an example of an <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment③">IDL fragment</a>.</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Paint</c-> { };
@@ -1014,7 +1014,7 @@ to a <a data-link-type="dfn" href="#dfn-definition" id="ref-for-dfn-definition�
 the declaration of the referenced definition.  References can also be made
 across <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment⑥">IDL fragments</a>.</p>
    <div class="example" id="example-aac424bf">
-    <a class="self-link" href="#example-aac424bf"></a> 
+    <a class="self-link" href="#example-aac424bf"></a>
     <p>Therefore, the following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment⑦">IDL fragment</a> is valid:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>B</c-> : <c- n>A</c-> {
@@ -1029,7 +1029,7 @@ across <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-frag
 </pre>
    </div>
    <div class="example" id="example-1192ff1f">
-    <a class="self-link" href="#example-1192ff1f"></a> 
+    <a class="self-link" href="#example-1192ff1f"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment⑧">IDL fragment</a> demonstrates how <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier⑥">identifiers</a> are given to definitions and <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member">interface members</a>.</p>
 <pre class="highlight">// Typedef identifier: "number"
 <c- b>typedef</c-> <c- b>double</c-> <c- g>number</c->;
@@ -1100,7 +1100,7 @@ interface will expose the member on the derived interface.  It is
 language binding specific whether the overridden member can be
 accessed on the object.</p>
    <div class="example" id="example-ae483c2d">
-    <a class="self-link" href="#example-ae483c2d"></a> 
+    <a class="self-link" href="#example-ae483c2d"></a>
     <p>Consider the following two interfaces.</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>A</c-> {
@@ -1134,7 +1134,7 @@ includes the interface <var>B</var> that <var>A</var> <a data-link-type="dfn" hr
 its inheritance hierarchy has a cycle.  That is, an interface <var>A</var> cannot inherit from itself, nor can it inherit from another
 interface <var>B</var> that inherits from <var>A</var>, and so on.</p>
    <div class="algorithm" data-algorithm="inclusive inherited interfaces" data-algorithm-for="interface">
-     The <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list">list</a> of <dfn class="dfn-paneled" data-dfn-for="interface" data-dfn-type="dfn" data-noexport id="interface-inclusive-inherited-interfaces">inclusive inherited interfaces</dfn> of an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface⑦">interface</a> <var>I</var> is defined as follows: 
+     The <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list">list</a> of <dfn class="dfn-paneled" data-dfn-for="interface" data-dfn-type="dfn" data-noexport id="interface-inclusive-inherited-interfaces">inclusive inherited interfaces</dfn> of an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface⑦">interface</a> <var>I</var> is defined as follows:
     <ol>
      <li data-md>
       <p>Let <var>result</var> be « ».</p>
@@ -1284,7 +1284,7 @@ separator <span class="char">U+002E FULL STOP (".")</span>.</p>
     ε
 </pre>
    <div class="example" id="example-0f0ea08a">
-    <a class="self-link" href="#example-0f0ea08a"></a> 
+    <a class="self-link" href="#example-0f0ea08a"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment①⓪">IDL fragment</a> demonstrates the definition of two mutually referential <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①④">interfaces</a>.
     Both <code class="idl">Human</code> and <code class="idl">Dog</code> inherit from <code class="idl">Animal</code>.  Objects that implement
     either of those two interfaces will thus have a <code>name</code> attribute.</p>
@@ -1305,7 +1305,7 @@ separator <span class="char">U+002E FULL STOP (".")</span>.</p>
 </pre>
    </div>
    <div class="example" id="example-b4c4c67d">
-    <a class="self-link" href="#example-b4c4c67d"></a> 
+    <a class="self-link" href="#example-b4c4c67d"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment①①">IDL fragment</a> defines
     simplified versions of a DOM <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑤">interfaces</a> and a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface④">callback interface</a>.</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
@@ -1416,7 +1416,7 @@ in particular when <a data-link-type="dfn" href="#interface-mixin" id="ref-for-i
 It is discussed in <a href="https://github.com/heycam/webidl/issues/432">issue #432</a>.</p>
    <p>No <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute⑦">extended attributes</a> defined in this specification are applicable to <a data-link-type="dfn" href="#includes-statement" id="ref-for-includes-statement③">includes statements</a>.</p>
    <div class="example" id="example-mixin">
-    <a class="self-link" href="#example-mixin"></a> 
+    <a class="self-link" href="#example-mixin"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment①②">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface②⑦">interface</a>, <code class="idl">Entry</code>,
     and an <a data-link-type="dfn" href="#interface-mixin" id="ref-for-interface-mixin②⓪">interface mixin</a>, <code class="idl">Observable</code>.
     The <a data-link-type="dfn" href="#includes-statement" id="ref-for-includes-statement④">includes statement</a> specifies that <code class="idl">Observable</code>’s <a data-link-type="dfn" href="#interface-mixin-member" id="ref-for-interface-mixin-member⑦">members</a> are always included on objects implementing <code class="idl">Entry</code>.</p>
@@ -1681,7 +1681,7 @@ lie outside the valid range of values for its type, as given in <a href="#idl-ty
      The value of a <emu-t class="regex"><a href="#prod-decimal">decimal</a></emu-t> token is
     either an IEEE 754 single-precision floating point number or an IEEE 754
     double-precision floating point number, depending on the type of the
-    constant, dictionary member or optional argument it is being used as the value for, determined as follows: 
+    constant, dictionary member or optional argument it is being used as the value for, determined as follows:
     <ol>
      <li data-md>
       <p>Let <var>S</var> be the sequence of characters matched by the <emu-t class="regex"><a href="#prod-decimal">decimal</a></emu-t> token.</p>
@@ -1776,7 +1776,7 @@ particular instances of the <a data-link-type="dfn" href="#dfn-interface" id="re
     identifier
 </pre>
    <div class="example" id="example-221dba30">
-    <a class="self-link" href="#example-221dba30"></a> 
+    <a class="self-link" href="#example-221dba30"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment①③">IDL fragment</a> demonstrates how <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant①⑥">constants</a> of the above types can be defined.</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Util</c-> {
@@ -1913,7 +1913,7 @@ interface will be stringified to the value of the attribute.  See <a href="#idl-
     ε
 </pre>
    <div class="example" id="example-ca172334">
-    <a class="self-link" href="#example-ca172334"></a> 
+    <a class="self-link" href="#example-ca172334"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment①④">IDL fragment</a> demonstrates how <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute①②">attributes</a> can be declared on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface④④">interface</a>:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Animal</c-> {
@@ -2020,7 +2020,7 @@ language bindings.</p>
 };
 </pre>
    <div class="example" id="example-7ca35e7d">
-    <a class="self-link" href="#example-7ca35e7d"></a> 
+    <a class="self-link" href="#example-7ca35e7d"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment①⑤">IDL fragment</a> demonstrates how <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation①⓪">regular operations</a> can be declared on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface⑤⓪">interface</a>:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Dimensions</c-> {
@@ -2056,7 +2056,7 @@ is the final argument in the operation’s argument list.</p>
    <p><a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute①③">Extended attributes</a> that <a data-link-type="dfn" href="#dfn-xattr-argument-list" id="ref-for-dfn-xattr-argument-list">take an argument list</a> ([<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor①">NamedConstructor</a></code>], of those
 defined in this specification) and <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function①⓪">callback functions</a> are also considered to be <a data-link-type="dfn" href="#dfn-variadic" id="ref-for-dfn-variadic">variadic</a> when the <emu-t>...</emu-t> token is used in their argument lists.</p>
    <div class="example" id="example-ad79e8ac">
-    <a class="self-link" href="#example-ad79e8ac"></a> 
+    <a class="self-link" href="#example-ad79e8ac"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment①⑥">IDL fragment</a> defines an interface that has
     two variadic operations:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
@@ -2120,7 +2120,7 @@ an <emu-t class="regex"><a href="#prod-integer">integer</a></emu-t> token, a <em
 the three special floating point literal values (<emu-t>Infinity</emu-t>, <emu-t>-Infinity</emu-t> or <emu-t>NaN</emu-t>) is used as the <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value③">default value</a>,
 it is interpreted in the same way as for a <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant①⑧">constant</a>.</p>
    <div class="algorithm" data-algorithm="value of string literal tokens" id="string-literal">
-     Optional argument default values can also be specified using a <emu-t class="regex"><a href="#prod-string">string</a></emu-t> token, whose <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="value of string literal tokens" data-noexport id="value-of-string-literal-tokens">value</dfn> is a <a data-link-type="dfn" href="#dfn-string-type" id="ref-for-dfn-string-type">string type</a> determined as follows: 
+     Optional argument default values can also be specified using a <emu-t class="regex"><a href="#prod-string">string</a></emu-t> token, whose <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="value of string literal tokens" data-noexport id="value-of-string-literal-tokens">value</dfn> is a <a data-link-type="dfn" href="#dfn-string-type" id="ref-for-dfn-string-type">string type</a> determined as follows:
     <ol>
      <li data-md>
       <p>Let <var>S</var> be the sequence of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value" id="ref-for-unicode_scalar_value">Unicode scalar values</a> matched by
@@ -2160,7 +2160,7 @@ of this value is the same as the type of the optional argument it is being used
 as the default value of.  That type must be a <a data-link-type="dfn" href="#idl-dictionary" id="ref-for-idl-dictionary④">dictionary type</a>, or a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type④">union
 type</a> that has a <a data-link-type="dfn" href="#idl-dictionary" id="ref-for-idl-dictionary⑤">dictionary type</a> in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types④">flattened member types</a>.</p>
    <div class="example" id="example-6c1a4d6e">
-    <a class="self-link" href="#example-6c1a4d6e"></a> 
+    <a class="self-link" href="#example-6c1a4d6e"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment①⑦">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface⑤①">interface</a> with a single <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation⑦">operation</a> that can be invoked with two different argument list lengths:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>ColorCreator</c-> {
@@ -2176,7 +2176,7 @@ type</a> that has a <a data-link-type="dfn" href="#idl-dictionary" id="ref-for-i
 </pre>
    </div>
    <div class="example" id="example-6acab27b">
-    <a class="self-link" href="#example-6acab27b"></a> 
+    <a class="self-link" href="#example-6acab27b"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment①⑧">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface⑤③">interface</a> with an operation that takes a dictionary argument:</p>
 <pre class="highlight"><c- b>dictionary</c-> <c- g>LookupOptions</c-> {
   <c- b>boolean</c-> <c- g>caseSensitive</c-> = <c- b>false</c->;
@@ -2307,7 +2307,7 @@ Additionally, in the ECMAScript language binding,
 the <code>toJSON</code> operation can take a [<code class="idl"><a data-link-type="idl" href="#Default" id="ref-for-Default①">Default</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute①④">extended attribute</a>,
 in which case the <a data-link-type="dfn" href="#default-tojson-operation" id="ref-for-default-tojson-operation">default toJSON operation</a> is exposed instead.</p>
    <div class="example" id="tojson-example">
-    <a class="self-link" href="#tojson-example"></a> 
+    <a class="self-link" href="#tojson-example"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment①⑨">IDL fragment</a> defines an interface <code class="idl">Transaction</code> that has a <code>toJSON</code> method defined in prose:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Transaction</c-> {
@@ -2372,7 +2372,7 @@ construct an instance by passing the specified arguments.</p>
    <p>The prose definition of a <a data-link-type="dfn" href="#idl-constructors" id="ref-for-idl-constructors⑤">constructor operation</a> must either initialize the value passed as <b><a data-link-type="dfn" href="#this" id="ref-for-this①">this</a></b>, or throw an exception.</p>
    <p>See <a href="#interface-object">§ 3.6.1 Interface object</a> for details on how a <a data-link-type="dfn" href="#idl-constructors" id="ref-for-idl-constructors⑥">constructor operation</a> is to be implemented.</p>
    <div class="example" id="example-94745458">
-    <a class="self-link" href="#example-94745458"></a> 
+    <a class="self-link" href="#example-94745458"></a>
     <p>The following IDL defines two interfaces. The second has <a data-link-type="dfn" href="#idl-constructors" id="ref-for-idl-constructors⑦">constructor operations</a>, while the
     first does not.</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
@@ -2457,7 +2457,7 @@ operations with no identifier, then in language bindings that do
 not support the particular kind of special operations there simply
 will not be such functionality.</p>
    <div class="example" id="example-42cb8c80">
-    <a class="self-link" href="#example-42cb8c80"></a> 
+    <a class="self-link" href="#example-42cb8c80"></a>
     <p>The following IDL fragment defines an interface with a getter and a setter:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Dictionary</c-> {
@@ -2475,7 +2475,7 @@ will not be such functionality.</p>
 declaration without an identifier.  This approach is allowed to
 simplify prose descriptions of an interface’s operations.</p>
    <div class="example" id="example-c990dd71">
-    <a class="self-link" href="#example-c990dd71"></a> 
+    <a class="self-link" href="#example-c990dd71"></a>
     <p>The following two interfaces are equivalent:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Dictionary</c-> {
@@ -2542,7 +2542,7 @@ argument list can be omitted.</p>
 };
 </pre>
    <div class="example" id="example-1878c5ff">
-    <a class="self-link" href="#example-1878c5ff"></a> 
+    <a class="self-link" href="#example-1878c5ff"></a>
     <p>The following two interfaces are equivalent:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>A</c-> {
@@ -2576,7 +2576,7 @@ a <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-at
     ";"
 </pre>
    <div class="example" id="example-77d3089a">
-    <a class="self-link" href="#example-77d3089a"></a> 
+    <a class="self-link" href="#example-77d3089a"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment②⓪">IDL fragment</a> defines an interface that will stringify to the value of its <code class="idl">name</code> attribute:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Student</c-> {
@@ -2687,7 +2687,7 @@ a<c- p>[</c-><c- mi>5</c-><c- p>];</c->         <c- c1>// Evaluates to undefined
 </pre>
    </div>
    <div class="example" id="example-f4fc5976">
-    <a class="self-link" href="#example-f4fc5976"></a> 
+    <a class="self-link" href="#example-f4fc5976"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment②②">IDL fragment</a> defines an interface <code class="idl">OrderedMap</code> which allows
     retrieving and setting values by name or by index number:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
@@ -2823,7 +2823,7 @@ to an instance of the interface.</p>
     RegularOperation
 </pre>
    <div class="example" id="example-639bc49b">
-    <a class="self-link" href="#example-639bc49b"></a> 
+    <a class="self-link" href="#example-639bc49b"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment②③">IDL fragment</a> defines an interface <code class="idl">Circle</code> that has a static
     operation declared on it:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
@@ -2948,7 +2948,7 @@ and constructors, there may be multiple items in an <a data-link-type="dfn" href
 the same operation or constructor.</p>
    <div class="algorithm" data-algorithm="compute the effective overload set">
      The algorithm below describes how to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="compute-the-effective-overload-set">compute the effective overload set</dfn>.
-    The following input variables are used, if they are required: 
+    The following input variables are used, if they are required:
     <ul>
      <li data-md>
       <p>the identifier of the operation or named constructor is <var>A</var></p>
@@ -3076,7 +3076,7 @@ a final, variadic argument), then <a data-link-type="dfn" href="https://infra.sp
     </ol>
    </div>
    <div class="example" id="example-fc073073">
-    <a class="self-link" href="#example-fc073073"></a> 
+    <a class="self-link" href="#example-fc073073"></a>
     <p>For the following interface:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>A</c-> {
@@ -3110,14 +3110,14 @@ is a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type�
 is a <a data-link-type="dfn" href="#idl-dictionary" id="ref-for-idl-dictionary⑧">dictionary type</a>,
 return <i>false</i>.</p>
      <div class="example" id="example-distinguishability-nullable">
-      <a class="self-link" href="#example-distinguishability-nullable"></a> None of the following pairs are distinguishable: 
+      <a class="self-link" href="#example-distinguishability-nullable"></a> None of the following pairs are distinguishable:
       <ul>
-       <li> <code><code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double②">double</a></code>?</code> and <code>Dictionary1</code> 
-       <li> <code>(Interface1 or <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long">long</a></code>)?</code> and <code>(Interface2 or <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString⑦">DOMString</a></code>)?</code> 
-       <li> <code>(Interface1 or <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long①">long</a></code>?)</code> and <code>(Interface2 or <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString⑧">DOMString</a></code>)?</code> 
-       <li> <code>(Interface1 or <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long②">long</a></code>?)</code> and <code>(Interface2 or <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString⑨">DOMString</a></code>?)</code> 
-       <li> <code>(Dictionary1 or <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long③">long</a></code>)</code> and <code>(Interface2 or <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString①⓪">DOMString</a></code>)?</code> 
-       <li> <code>(Dictionary1 or <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long④">long</a></code>)</code> and <code>(Interface2 or <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString①①">DOMString</a></code>?)</code> 
+       <li> <code><code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double②">double</a></code>?</code> and <code>Dictionary1</code>
+       <li> <code>(Interface1 or <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long">long</a></code>)?</code> and <code>(Interface2 or <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString⑦">DOMString</a></code>)?</code>
+       <li> <code>(Interface1 or <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long①">long</a></code>?)</code> and <code>(Interface2 or <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString⑧">DOMString</a></code>)?</code>
+       <li> <code>(Interface1 or <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long②">long</a></code>?)</code> and <code>(Interface2 or <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString⑨">DOMString</a></code>?)</code>
+       <li> <code>(Dictionary1 or <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long③">long</a></code>)</code> and <code>(Interface2 or <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString①⓪">DOMString</a></code>)?</code>
+       <li> <code>(Dictionary1 or <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long④">long</a></code>)</code> and <code>(Interface2 or <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString①①">DOMString</a></code>?)</code>
       </ul>
      </div>
     <li data-md>
@@ -3299,7 +3299,7 @@ interface-like types.</p>
      <div class="example" id="example-distinguishability-same-category"><a class="self-link" href="#example-distinguishability-same-category"></a> <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double④">double</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long⑤">long</a></code> are not distinguishable because they are both <a data-link-type="dfn" href="#dfn-numeric-type" id="ref-for-dfn-numeric-type②">numeric types</a>,
     and there is no ● or letter at the intersection of <a data-link-type="dfn" href="#dfn-numeric-type" id="ref-for-dfn-numeric-type③">numeric types</a> with <a data-link-type="dfn" href="#dfn-numeric-type" id="ref-for-dfn-numeric-type④">numeric types</a>. </div>
      <div class="example" id="example-distinguishability-callback-interfaces">
-      <a class="self-link" href="#example-distinguishability-callback-interfaces"></a> Given: 
+      <a class="self-link" href="#example-distinguishability-callback-interfaces"></a> Given:
 <pre class="highlight"><c- b>callback</c-> <c- b>interface</c-> <c- g>CBIface</c-> {
     <c- b>void</c-> <c- g>handle</c->();
 };
@@ -3324,7 +3324,7 @@ then for those items there must be an index <var>i</var> such that
 for each pair of items the types at index <var>i</var> are <a data-link-type="dfn" href="#dfn-distinguishable" id="ref-for-dfn-distinguishable">distinguishable</a>.
 The lowest such index is termed the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="dfn-distinguishing-argument-index">distinguishing argument index</dfn> for the items of the <a data-link-type="dfn" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set⑧">effective overload set</a> with the given type list size.</p>
    <div class="example" id="example-eb01cf06">
-    <a class="self-link" href="#example-eb01cf06"></a> 
+    <a class="self-link" href="#example-eb01cf06"></a>
     <p>Consider the <a data-link-type="dfn" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set⑨">effective overload set</a> shown in the previous example.
     There are multiple items in the set with type lists 2, 3 and 4.
     For each of these type list size, the <a data-link-type="dfn" href="#dfn-distinguishing-argument-index" id="ref-for-dfn-distinguishing-argument-index">distinguishing argument index</a> is 0, since <code class="idl">Node</code> and <code class="idl">Event</code> are <a data-link-type="dfn" href="#dfn-distinguishable" id="ref-for-dfn-distinguishable①">distinguishable</a>.</p>
@@ -3342,7 +3342,7 @@ all of the items’ type lists must be the same,
 and the <a data-link-type="dfn" href="#dfn-optionality-value" id="ref-for-dfn-optionality-value">optionality values</a> at index <var>j</var> in all of the items’ optionality lists must
 be the same.</p>
    <div class="example" id="example-7d32b80c">
-    <a class="self-link" href="#example-7d32b80c"></a> 
+    <a class="self-link" href="#example-7d32b80c"></a>
     <p>The following is invalid:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>B</c-> {
@@ -3597,7 +3597,7 @@ have any <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-in
 "<code>keys</code>", or "<code>values</code>",
 or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces③">inherited interfaces</a> that have <a data-link-type="dfn" href="#dfn-member" id="ref-for-dfn-member⑨">members</a> with these names.</p>
    <div class="example" id="example-68f1a1bb">
-    <a class="self-link" href="#example-68f1a1bb"></a> 
+    <a class="self-link" href="#example-68f1a1bb"></a>
     <p>Consider the following interface <code class="idl">SessionManager</code>, which allows access to
     a number of <code class="idl">Session</code> objects keyed by username:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
@@ -3701,7 +3701,7 @@ iterator object.</p>
    <p><a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface⑧④">Interfaces</a> with an <a data-link-type="dfn" href="#dfn-async-iterable-declaration" id="ref-for-dfn-async-iterable-declaration④">asynchronously iterable declaration</a> must not have any <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member⑧">interface members</a> named "<code>entries</code>", "<code>keys</code>", or "<code>values</code>",
 or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces⑥">inherited interfaces</a> that have <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member⑨">interface members</a> with these names.</p>
    <div class="example" id="example-5a64312a">
-    <a class="self-link" href="#example-5a64312a"></a> 
+    <a class="self-link" href="#example-5a64312a"></a>
     <p>Consider the following interface <code class="idl">SessionManager</code>, which allows access
     to a number of <code class="idl">Session</code> objects keyed by username:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
@@ -3946,7 +3946,7 @@ documents.</p>
     "readonly" AttributeRest
 </pre>
    <div class="example" id="example-namespace">
-    <a class="self-link" href="#example-namespace"></a> 
+    <a class="self-link" href="#example-namespace"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment②④">IDL fragment</a> defines a <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace①⓪">namespace</a>.</p>
 <pre class="highlight"><c- b>namespace</c-> <c- g>VectorUtils</c-> {
   <c- b>readonly</c-> <c- b>attribute</c-> <c- n>Vector</c-> <c- g>unit</c->;
@@ -4007,7 +4007,7 @@ specific dictionary <var>D</var> if all of its <a data-link-type="dfn" href="htt
 correct order and with the correct types, and with appropriate <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#map-entry" id="ref-for-map-entry②">entries</a> for any required
 dictionary members.</p>
    <div class="example" id="example-ba8998ea">
-    <a class="self-link" href="#example-ba8998ea"></a> 
+    <a class="self-link" href="#example-ba8998ea"></a>
 <pre class="highlight"><c- b>dictionary</c-> <c- g>Descriptor</c-> {
   <c- b>DOMString</c-> <c- g>name</c->;
   <c- b>sequence</c->&lt;<c- b>unsigned</c-> <c- b>long</c->> <c- g>serviceIdentifiers</c->;
@@ -4184,7 +4184,7 @@ on that dictionary’s <a data-link-type="dfn" href="#dfn-inherited-dictionaries
    <div data-fill-with="grammar-DefaultValue"></div>
    <div data-fill-with="grammar-Inheritance"></div>
    <div class="example" id="example-70f59402">
-    <a class="self-link" href="#example-70f59402"></a> 
+    <a class="self-link" href="#example-70f59402"></a>
     <p>One use of dictionary types is to allow a number of optional arguments to
     an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation②①">operation</a> without being
     constrained as to the order they are specified at the call site.  For example,
@@ -4269,7 +4269,7 @@ same details required to <a data-link-type="dfn" href="#dfn-create-exception" id
    <p class="note" role="note"><span>Note:</span> See <a href="#es-creating-throwing-exceptions">§ 3.12.3 Creating and throwing exceptions</a> for details on what creating and throwing an exception
 entails in the ECMAScript language binding.</p>
    <div class="example" id="example-56ad390c">
-    <a class="self-link" href="#example-56ad390c"></a> 
+    <a class="self-link" href="#example-56ad390c"></a>
     <p>Here is are some examples of wording to use to create and throw exceptions.
     To throw a new <a data-link-type="dfn" href="#dfn-simple-exception" id="ref-for-dfn-simple-exception③">simple exception</a> named <code class="idl"><a data-link-type="idl" href="#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror②">TypeError</a></code>:</p>
     <blockquote> <a data-link-type="dfn" href="#dfn-throw" id="ref-for-dfn-throw">Throw</a> a <code class="idl"><a data-link-type="idl" href="#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror③">TypeError</a></code>. </blockquote>
@@ -4358,7 +4358,7 @@ over just using <code class="idl"><a class="idl-code" data-link-type="exception"
       <td>"<dfn class="idl-code" data-dfn-type="exception" data-export id="invalidaccesserror"><code>InvalidAccessError</code><a class="self-link" href="#invalidaccesserror"></a></dfn>"
       <td> <strong>Deprecated.</strong> Use <code class="idl"><a data-link-type="idl" href="#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror④">TypeError</a></code> for invalid arguments,
                 "<code class="idl"><a class="idl-code" data-link-type="exception" href="#notsupportederror" id="ref-for-notsupportederror">NotSupportedError</a></code>" <code class="idl"><a data-link-type="idl" href="#idl-DOMException" id="ref-for-idl-DOMException①⑦">DOMException</a></code> for unsupported operations, and
-                "<code class="idl"><a class="idl-code" data-link-type="exception" href="#notallowederror" id="ref-for-notallowederror②">NotAllowedError</a></code>" <code class="idl"><a data-link-type="idl" href="#idl-DOMException" id="ref-for-idl-DOMException①⑧">DOMException</a></code> for denied requests instead. 
+                "<code class="idl"><a class="idl-code" data-link-type="exception" href="#notallowederror" id="ref-for-notallowederror②">NotAllowedError</a></code>" <code class="idl"><a data-link-type="idl" href="#idl-DOMException" id="ref-for-idl-DOMException①⑧">DOMException</a></code> for denied requests instead.
       <td><dfn class="dfn-paneled idl-code" data-dfn-for="DOMException" data-dfn-type="const" data-export id="dom-domexception-invalid_access_err"><code>INVALID_ACCESS_ERR</code></dfn> (15)
      <tr class="deprecated">
       <td>"<dfn class="idl-code" data-dfn-type="exception" data-export id="validationerror"><code>ValidationError</code><a class="self-link" href="#validationerror"></a></dfn>"
@@ -4481,7 +4481,7 @@ results in an exception being thrown.</p>
     ε
 </pre>
    <div class="example" id="example-6eb27118">
-    <a class="self-link" href="#example-6eb27118"></a> 
+    <a class="self-link" href="#example-6eb27118"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment②⑥">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration①①">enumeration</a> that is used as the type of an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute②⑤">attribute</a> and an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation②⑥">operation</a> argument:</p>
 <pre class="highlight"><c- b>enum</c-> <c- g>MealType</c-> { <c- s>"rice"</c->, <c- s>"noodles"</c->, <c- s>"other"</c-> };
 
@@ -4530,7 +4530,7 @@ be used as the type of a <a data-link-type="dfn" href="#dfn-constant" id="ref-fo
     identifier "=" ReturnType "(" ArgumentList ")" ";"
 </pre>
    <div class="example" id="example-66b689d8">
-    <a class="self-link" href="#example-66b689d8"></a> 
+    <a class="self-link" href="#example-66b689d8"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment②⑦">IDL fragment</a> defines
     a <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function①⑤">callback function</a> used for an API that
     invokes a user-defined function when an operation is complete.</p>
@@ -4565,7 +4565,7 @@ be the identifier of the same or another <a data-link-type="dfn" href="#dfn-type
     "typedef" TypeWithExtendedAttributes identifier ";"
 </pre>
    <div class="example" id="example-1aa575d3">
-    <a class="self-link" href="#example-1aa575d3"></a> 
+    <a class="self-link" href="#example-1aa575d3"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment②⑧">IDL fragment</a> demonstrates the use of <a data-link-type="dfn" href="#dfn-typedef" id="ref-for-dfn-typedef①④">typedefs</a> to allow the use of a short <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier④④">identifier</a> instead of a long <a data-link-type="dfn" href="#sequence-type" id="ref-for-sequence-type⑦">sequence type</a>.</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Point</c-> {
@@ -5004,7 +5004,7 @@ constant values of their <a data-link-type="dfn" href="#dfn-inner-type" id="ref-
 is the concatenation of the type name of the <a data-link-type="dfn" href="#dfn-inner-type" id="ref-for-dfn-inner-type⑨">inner type</a> <var>T</var> and
 the string "<code>OrNull</code>".</p>
    <div class="example" id="example-5167cae3">
-    <a class="self-link" href="#example-5167cae3"></a> 
+    <a class="self-link" href="#example-5167cae3"></a>
     <p>For example, a type that allows the values <emu-val>true</emu-val>, <emu-val>false</emu-val> and <emu-val>null</emu-val> is written as <code class="idl">boolean?</code>:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>NetworkFetcher</c-> {
@@ -5188,14 +5188,14 @@ annotate are called <dfn class="dfn-paneled" data-dfn-for="annotated types" data
 [<code class="idl"><a data-link-type="idl" href="#EnforceRange" id="ref-for-EnforceRange">EnforceRange</a></code>], and
 [<code class="idl"><a data-link-type="idl" href="#TreatNullAs" id="ref-for-TreatNullAs">TreatNullAs</a></code>].</p>
    <div class="algorithm" data-algorithm="extended attribute associated with" data-algorithm-for="IDL type">
-     The <dfn class="dfn-paneled" data-dfn-for="IDL type" data-dfn-type="dfn" data-lt="extended attribute associated with|extended attributes associated with" data-noexport id="idl-type-extended-attribute-associated-with">extended attributes associated with</dfn> an IDL type <var>type</var> are determined as follows: 
+     The <dfn class="dfn-paneled" data-dfn-for="IDL type" data-dfn-type="dfn" data-lt="extended attribute associated with|extended attributes associated with" data-noexport id="idl-type-extended-attribute-associated-with">extended attributes associated with</dfn> an IDL type <var>type</var> are determined as follows:
     <ol>
      <li data-md>
       <p>Let <var>extended attributes</var> be a new empty <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ordered-set" id="ref-for-ordered-set②">set</a>.</p>
      <li data-md>
       <p>If <var>type</var> appears as part of a <emu-nt><a href="#prod-TypeWithExtendedAttributes">TypeWithExtendedAttributes</a></emu-nt> production, <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#set-append" id="ref-for-set-append③">append</a> each of the <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute②⑧">extended attributes</a> present in the production’s <emu-nt><a href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></emu-nt> to <var>extended attributes</var>.</p>
       <div class="example" id="example-aa81a4ee">
-       <a class="self-link" href="#example-aa81a4ee"></a> 
+       <a class="self-link" href="#example-aa81a4ee"></a>
 <pre class="idl highlight def">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>I</c-> {
     <c- b>attribute</c-> [<c- g>XAttr</c->] <c- b>long</c-> <c- g>attrib</c->;
@@ -5213,7 +5213,7 @@ annotate are called <dfn class="dfn-paneled" data-dfn-for="annotated types" data
      <li data-md>
       <p>If <var>type</var> is a <a data-link-type="dfn" href="#dfn-union-member-type" id="ref-for-dfn-union-member-type①⓪">member type</a> of a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type③⑤">union type</a> <var>U</var>, <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#set-append" id="ref-for-set-append④">append</a> each of the <a data-link-type="dfn" href="#idl-type-extended-attribute-associated-with" id="ref-for-idl-type-extended-attribute-associated-with">extended attributes associated with</a> <var>U</var> to <var>extended attributes</var>.</p>
       <div class="example" id="example-2017de6a">
-       <a class="self-link" href="#example-2017de6a"></a> 
+       <a class="self-link" href="#example-2017de6a"></a>
 <pre class="idl highlight def">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>I</c-> {
     <c- b>attribute</c-> [<c- g>XAttr</c->] (<c- b>long</c-> <c- b>or</c-> <c- n>Node</c->) <c- g>attrib</c->;
@@ -5225,7 +5225,7 @@ annotate are called <dfn class="dfn-paneled" data-dfn-for="annotated types" data
 directly within an <emu-nt><a href="#prod-Argument">Argument</a></emu-nt> production, <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#set-append" id="ref-for-set-append⑤">append</a> to <var>extended attributes</var> all of the <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute②⑨">extended attributes</a> present in the
 production’s <emu-nt><a href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></emu-nt> that are <a data-link-type="dfn" href="#extended-attributes-applicable-to-types" id="ref-for-extended-attributes-applicable-to-types">applicable to types</a>.</p>
       <div class="example" id="example-97c0c232">
-       <a class="self-link" href="#example-97c0c232"></a> 
+       <a class="self-link" href="#example-97c0c232"></a>
 <pre class="idl highlight def">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>I</c-> {
     <c- b>void</c-> <c- g>f</c->([<c- g>XAttr</c->] <c- b>long</c-> <c- g>attrib</c->);
@@ -5238,7 +5238,7 @@ production’s <emu-nt><a href="#prod-ExtendedAttributeList">ExtendedAttributeLi
       <p>If <var>type</var> appears as part of a <emu-nt><a href="#prod-Type">Type</a></emu-nt> production
 directly within an <emu-nt><a href="#prod-DictionaryMember">DictionaryMember</a></emu-nt> production, <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#set-append" id="ref-for-set-append⑥">append</a> to <var>extended attributes</var> all of the <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute③⓪">extended attributes</a> present in the production’s <emu-nt><a href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></emu-nt> that are <a data-link-type="dfn" href="#extended-attributes-applicable-to-types" id="ref-for-extended-attributes-applicable-to-types②">applicable to types</a>.</p>
       <div class="example" id="example-916df766">
-       <a class="self-link" href="#example-916df766"></a> 
+       <a class="self-link" href="#example-916df766"></a>
 <pre class="idl highlight def"><c- b>dictionary</c-> <c- g>D</c-> {
     [<c- g>XAttr</c->] <c- b>long</c-> <c- g>member</c->;
 };
@@ -5249,7 +5249,7 @@ directly within an <emu-nt><a href="#prod-DictionaryMember">DictionaryMember</a>
      <li data-md>
       <p>If <var>type</var> is a <a data-link-type="dfn" href="#dfn-typedef" id="ref-for-dfn-typedef①⑤">typedef</a>, <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#set-append" id="ref-for-set-append⑦">append</a> the <a data-link-type="dfn" href="#idl-type-extended-attribute-associated-with" id="ref-for-idl-type-extended-attribute-associated-with①">extended attributes associated with</a> the <a data-link-type="dfn" href="#type-being-given-a-new-name" id="ref-for-type-being-given-a-new-name①">type being given a new name</a> to <var>extended attributes</var>.</p>
       <div class="example" id="example-ee0b958b">
-       <a class="self-link" href="#example-ee0b958b"></a> 
+       <a class="self-link" href="#example-ee0b958b"></a>
 <pre class="idl highlight def"><c- b>typedef</c-> [<c- g>XAttr</c->] <c- b>long</c-> <c- g>xlong</c->;
 </pre>
       </div>
@@ -5359,25 +5359,25 @@ which form (or forms) it is in:</p>
       <th>Form
       <th>Example
      <tr>
-      <td> <emu-nt><a href="#prod-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a></emu-nt> 
-      <td> <dfn class="dfn-paneled" data-dfn-for="extended attribute" data-dfn-type="dfn" data-export id="dfn-xattr-no-arguments">takes no arguments</dfn> 
-      <td> <code>[Replaceable]</code> 
+      <td> <emu-nt><a href="#prod-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a></emu-nt>
+      <td> <dfn class="dfn-paneled" data-dfn-for="extended attribute" data-dfn-type="dfn" data-export id="dfn-xattr-no-arguments">takes no arguments</dfn>
+      <td> <code>[Replaceable]</code>
      <tr>
-      <td> <emu-nt><a href="#prod-ExtendedAttributeArgList">ExtendedAttributeArgList</a></emu-nt> 
-      <td> <dfn class="dfn-paneled" data-dfn-for="extended attribute" data-dfn-type="dfn" data-export id="dfn-xattr-argument-list">takes an argument list</dfn> 
-      <td> Not currently used; previously used by <code>[Constructor(double x, double y)]</code> 
+      <td> <emu-nt><a href="#prod-ExtendedAttributeArgList">ExtendedAttributeArgList</a></emu-nt>
+      <td> <dfn class="dfn-paneled" data-dfn-for="extended attribute" data-dfn-type="dfn" data-export id="dfn-xattr-argument-list">takes an argument list</dfn>
+      <td> Not currently used; previously used by <code>[Constructor(double x, double y)]</code>
      <tr>
-      <td> <emu-nt><a href="#prod-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a></emu-nt> 
-      <td> <dfn class="dfn-paneled" data-dfn-for="extended attribute" data-dfn-type="dfn" data-export id="dfn-xattr-named-argument-list">takes a named argument list</dfn> 
-      <td> <code>[NamedConstructor=Image(DOMString src)]</code> 
+      <td> <emu-nt><a href="#prod-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a></emu-nt>
+      <td> <dfn class="dfn-paneled" data-dfn-for="extended attribute" data-dfn-type="dfn" data-export id="dfn-xattr-named-argument-list">takes a named argument list</dfn>
+      <td> <code>[NamedConstructor=Image(DOMString src)]</code>
      <tr>
-      <td> <emu-nt><a href="#prod-ExtendedAttributeIdent">ExtendedAttributeIdent</a></emu-nt> 
-      <td> <dfn class="dfn-paneled" data-dfn-for="extended attribute" data-dfn-type="dfn" data-export id="dfn-xattr-identifier">takes an identifier</dfn> 
-      <td> <code>[PutForwards=name]</code> 
+      <td> <emu-nt><a href="#prod-ExtendedAttributeIdent">ExtendedAttributeIdent</a></emu-nt>
+      <td> <dfn class="dfn-paneled" data-dfn-for="extended attribute" data-dfn-type="dfn" data-export id="dfn-xattr-identifier">takes an identifier</dfn>
+      <td> <code>[PutForwards=name]</code>
      <tr>
-      <td> <emu-nt><a href="#prod-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a></emu-nt> 
-      <td> <dfn class="dfn-paneled" data-dfn-for="extended attribute" data-dfn-type="dfn" data-export id="dfn-xattr-identifier-list">takes an identifier list</dfn> 
-      <td> <code>[Exposed=(Window,Worker)]</code> 
+      <td> <emu-nt><a href="#prod-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a></emu-nt>
+      <td> <dfn class="dfn-paneled" data-dfn-for="extended attribute" data-dfn-type="dfn" data-export id="dfn-xattr-identifier-list">takes an identifier list</dfn>
+      <td> <code>[Exposed=(Window,Worker)]</code>
    </table>
    <p>This specification defines a number of extended attributes that
 are applicable to the ECMAScript language binding, which are described in <a href="#es-extended-attributes">§ 3.3 ECMAScript-specific extended attributes</a>.
@@ -5517,7 +5517,7 @@ is thrown by an algorithm or abstract operation and it is not explicitly
 handled by the caller, then it is taken to end the algorithm and propagate out
 to its caller, and so on.</p>
    <div class="example" id="example-18239b52">
-    <a class="self-link" href="#example-18239b52"></a> 
+    <a class="self-link" href="#example-18239b52"></a>
     <div class="algorithm" data-algorithm="example algorithm">
      <p>Consider the following algorithm:</p>
      <ol>
@@ -5573,7 +5573,7 @@ Realm, but after the <a data-link-type="dfn" href="https://html.spec.whatwg.org/
 of all initial objects in a given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②">Realm</a> must come from
 that same <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm③">Realm</a>.</p>
    <div class="example" id="example-9af59e92">
-    <a class="self-link" href="#example-9af59e92"></a> 
+    <a class="self-link" href="#example-9af59e92"></a>
     <p>In an HTML user agent, multiple <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm④">Realms</a> can exist when
     multiple frames or windows are created.  Each frame or window will have
     its own set of <a data-link-type="dfn" href="#dfn-initial-object" id="ref-for-dfn-initial-object①">initial objects</a>,
@@ -6072,7 +6072,7 @@ the value of the corresponding element of <var>x</var>.</p>
    <p>IDL <code class="idl"><a data-link-type="idl" href="#idl-symbol" id="ref-for-idl-symbol④">symbol</a></code> values are represented by ECMAScript Symbol values.</p>
    <div class="algorithm" data-algorithm="convert an ECMAScript value to a symbol" id="es-to-symbol">
      An ECMAScript value <var>V</var> is <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value②⓪">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-symbol" id="ref-for-idl-symbol⑤">symbol</a></code> value
-    by running the following algorithm: 
+    by running the following algorithm:
     <ol>
      <li data-md>
       <p>If <a data-link-type="abstract-op" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values" id="ref-for-sec-ecmascript-data-types-and-values⑥">Type</a>(<var>V</var>) is not Symbol, then <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw⑦">throw</a> a <code class="idl"><a data-link-type="idl" href="https://tc39.github.io/ecma262/#sec-native-error-types-used-in-this-standard-typeerror" id="ref-for-sec-native-error-types-used-in-this-standard-typeerror⑦">TypeError</a></code>.</p>
@@ -6342,7 +6342,7 @@ at index <var>j</var> is <var>S</var><sub><var>j</var></sub>.</p>
     </ol>
    </div>
    <div class="example" id="example-133c8773">
-    <a class="self-link" href="#example-133c8773"></a> 
+    <a class="self-link" href="#example-133c8773"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface⑨⑨">interface</a> defines
     an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute③③">attribute</a> of a sequence
     type as well as an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation③①">operation</a> with an argument of a sequence type.</p>
@@ -6467,7 +6467,7 @@ object.</p>
     </ol>
    </div>
    <div class="example" id="example-es-record">
-    <a class="self-link" href="#example-es-record"></a> 
+    <a class="self-link" href="#example-es-record"></a>
     <p>Passing the ECMAScript value <code>{b: 3, a: 4}</code> as a <code><a data-link-type="dfn" href="#idl-record" id="ref-for-idl-record⑥">record</a>&lt;DOMString, double></code> argument
     would result in the IDL value «[ "<code>b</code>" → 3, "<code>a</code>" → 4 ]».</p>
     <p>Records only consider <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-own-property" id="ref-for-sec-own-property">own</a> <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-property-attributes" id="ref-for-sec-property-attributes">enumerable</a> properties, so given an IDL operation <code>record&lt;DOMString, double>
@@ -6758,7 +6758,7 @@ another promise from them, in the same way that <code class="idl"><a data-link-t
 JavaScript code.</p>
    <h5 class="heading settled" data-level="3.2.22.2" id="es-promise-examples"><span class="secno">3.2.22.2. </span><span class="content">Examples</span><a class="self-link" href="#es-promise-examples"></a></h5>
    <div class="example" id="promise-example-delay">
-    <a class="self-link" href="#promise-example-delay"></a> 
+    <a class="self-link" href="#promise-example-delay"></a>
     <p><code>delay</code> is an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation③②">operation</a> that returns a promise that will be fulfilled in a
     number of milliseconds.
     It illustrates how simply you can resolve a promise, with one line of prose.</p>
@@ -6789,7 +6789,7 @@ JavaScript code.</p>
     </div>
    </div>
    <div class="example" id="promise-example-validatedDelay">
-    <a class="self-link" href="#promise-example-validatedDelay"></a> 
+    <a class="self-link" href="#promise-example-validatedDelay"></a>
     <p>The <code>validatedDelay</code> <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation③③">operation</a> is much like <a href="#promise-example-delay">the <code>delay</code> function</a>, except it will validate its arguments.
     This shows how to use rejected promises to signal immediate failure before even starting any
     asynchronous operations.</p>
@@ -6822,7 +6822,7 @@ JavaScript code.</p>
     </div>
    </div>
    <div class="example" id="promise-example-addDelay">
-    <a class="self-link" href="#promise-example-addDelay"></a> 
+    <a class="self-link" href="#promise-example-addDelay"></a>
     <p><code>addDelay</code> is an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation③④">operation</a> that adds an extra number of milliseconds of delay
     between <var>promise</var> settling and the returned promise settling.</p>
 <pre class="highlight"><c- b>interface</c-> <c- g>I</c-> {
@@ -6882,7 +6882,7 @@ JavaScript code.</p>
     </div>
    </div>
    <div class="example" id="promise-example-environment-ready">
-    <a class="self-link" href="#promise-example-environment-ready"></a> 
+    <a class="self-link" href="#promise-example-environment-ready"></a>
     <p><code>environment.ready</code> is an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute③④">attribute</a> that signals when some part of some
     environment, e.g. a DOM document, becomes "ready".
     It illustrates how to encode environmental asynchronicity.</p>
@@ -6923,7 +6923,7 @@ JavaScript code.</p>
     </div>
    </div>
    <div class="example" id="promise-example-addBookmark">
-    <a class="self-link" href="#promise-example-addBookmark"></a> 
+    <a class="self-link" href="#promise-example-addBookmark"></a>
     <p><code>addBookmark</code> is an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation③⑤">operation</a> that requests that the user add the current web
     page as a bookmark.
     It’s drawn from <a href="https://github.com/domenic/promises-unwrapping/issues/85">some
@@ -6965,7 +6965,7 @@ press a "cancel" button), <a data-link-type="dfn" href="#reject" id="ref-for-rej
     </div>
    </div>
    <div class="example" id="promise-example-batchRequest">
-    <a class="self-link" href="#promise-example-batchRequest"></a> 
+    <a class="self-link" href="#promise-example-batchRequest"></a>
     <p>Several places in <a data-link-type="biblio" href="#biblio-service-workers">[SERVICE-WORKERS]</a> use <a data-link-type="dfn" href="#waiting-for-all-promise" id="ref-for-waiting-for-all-promise">get a promise to wait for all</a>. <code>batchRequest</code> illustrates a simplified version of one of their uses.
     It takes as input a <a data-link-type="dfn" href="#idl-sequence" id="ref-for-idl-sequence">sequence</a> of URLs, and returns a promise for a <a data-link-type="dfn" href="#idl-sequence" id="ref-for-idl-sequence①">sequence</a> of <code class="idl"><a data-link-type="idl" href="https://fetch.spec.whatwg.org/#response" id="ref-for-response">Response</a></code> objects created by fetching the corresponding URL.
     If any of the fetches fail, it will return <a data-link-type="dfn" href="#a-promise-rejected-with" id="ref-for-a-promise-rejected-with④">a promise rejected with</a> that failure.</p>
@@ -7264,7 +7264,7 @@ creates a new IDL type that allows the buffer source type to be backed by an ECM
    <p>See the rules for converting ECMAScript values to IDL <a data-link-type="dfn" href="#dfn-buffer-source-type" id="ref-for-dfn-buffer-source-type⑥">buffer source types</a> in <a href="#es-buffer-source-types">§ 3.2.24 Buffer source types</a> for the specific requirements that the use of [<code class="idl"><a data-link-type="idl" href="#AllowShared" id="ref-for-AllowShared⑧">AllowShared</a></code>] entails.</p>
    <div class="example" id="example-9e7a7cc5">
     <a class="self-link" href="#example-9e7a7cc5"></a> In the following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment③③">IDL fragment</a>, one operation’s argument uses the [<code class="idl"><a data-link-type="idl" href="#AllowShared" id="ref-for-AllowShared⑨">AllowShared</a></code>] extended
-    attribute, while the other does not: 
+    attribute, while the other does not:
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>RenderingContext</c-> {
   <c- b>void</c-> <c- g>readPixels</c->(<c- b>long</c-> <c- g>width</c->, <c- b>long</c-> <c- g>height</c->, <c- n>BufferSource</c-> <c- g>pixels</c->);
@@ -7288,7 +7288,7 @@ not be <a data-link-type="dfn" href="#idl-type-extended-attribute-associated-wit
 types in <a href="#es-integer-types">§ 3.2.4 Integer types</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#Clamp" id="ref-for-Clamp⑨">Clamp</a></code>] entails.</p>
    <div class="example" id="example-215d6ab3">
-    <a class="self-link" href="#example-215d6ab3"></a> 
+    <a class="self-link" href="#example-215d6ab3"></a>
     <p>In the following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment③④">IDL fragment</a>,
     two <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation③⑥">operations</a> are declared that
     take three <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet⑨">octet</a></code> arguments; one uses
@@ -7320,7 +7320,7 @@ then it indicates that steps described in the <a data-link-type="dfn" href="#cor
    <p>The [<code class="idl"><a data-link-type="idl" href="#Default" id="ref-for-Default④">Default</a></code>] extended attribute must not
 be used on anything other than a <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation②①">regular operation</a> for which a <a data-link-type="dfn" href="#corresponding-default-operation" id="ref-for-corresponding-default-operation①">corresponding default operation</a> has been defined.</p>
    <div class="example" id="example-tojson-default">
-    <a class="self-link" href="#example-tojson-default"></a> 
+    <a class="self-link" href="#example-tojson-default"></a>
     <p>As an example, the [<code class="idl"><a data-link-type="idl" href="#Default" id="ref-for-Default⑤">Default</a></code>] extended attribute is suitable
     for use on <code>toJSON</code> <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation②②">regular operations</a>:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
@@ -7385,7 +7385,7 @@ extended attribute must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" i
 types in <a href="#es-type-mapping">§ 3.2 ECMAScript type mapping</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#EnforceRange" id="ref-for-EnforceRange⑨">EnforceRange</a></code>] entails.</p>
    <div class="example" id="example-9049fbcd">
-    <a class="self-link" href="#example-9049fbcd"></a> 
+    <a class="self-link" href="#example-9049fbcd"></a>
     <p>In the following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment③⑤">IDL fragment</a>,
     two <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation③⑦">operations</a> are declared that
     take three <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet①①">octet</a></code> arguments; one uses
@@ -7503,7 +7503,7 @@ then the <a data-link-type="dfn" href="#interface-mixin-member" id="ref-for-inte
 Otherwise, it is the <a data-link-type="dfn" href="#host-interfaces" id="ref-for-host-interfaces③">host interface</a>'s <a data-link-type="dfn" href="#dfn-exposure-set" id="ref-for-dfn-exposure-set①①">exposure set</a>.</p>
    <div class="algorithm" data-algorithm="exposed">
      An <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⓪⑨">interface</a>, <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface③⓪">callback interface</a>, <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace①⑧">namespace</a>, or <a data-link-type="dfn" href="#dfn-member" id="ref-for-dfn-member①⑤">member</a> <var>construct</var> is <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="dfn-exposed">exposed</dfn> in a given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm①③">Realm</a> <var>realm</var> if the following steps
-    return true: 
+    return true:
     <ol>
      <li data-md>
       <p>If <var>realm</var>.[[GlobalObject]] does not implement an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①①⓪">interface</a> that is in <var>construct</var>’s <a data-link-type="dfn" href="#dfn-exposure-set" id="ref-for-dfn-exposure-set①②">exposure set</a>, then return false.</p>
@@ -7523,7 +7523,7 @@ can be made once, at the time the <a data-link-type="dfn" href="#dfn-initial-obj
    <p>See <a href="#es-interfaces">§ 3.6 Interfaces</a>, <a href="#es-constants">§ 3.6.5 Constants</a>, <a href="#es-attributes">§ 3.6.6 Attributes</a>, <a href="#es-operations">§ 3.6.7 Operations</a>, and <a href="#es-iterators">§ 3.6.8 Common iterator behavior</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed②⑦">Exposed</a></code>] entails.</p>
    <div class="example" id="example-63aa0cec">
-    <a class="self-link" href="#example-63aa0cec"></a> 
+    <a class="self-link" href="#example-63aa0cec"></a>
     <p>[<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed②⑧">Exposed</a></code>] is intended to be used to control whether <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①①①">interfaces</a>, <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface③①">callback interfaces</a>, <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace①⑨">namespaces</a>, or individual <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member①⑧">interface</a>, <a data-link-type="dfn" href="#interface-mixin-member" id="ref-for-interface-mixin-member①⑨">mixin</a> or <a data-link-type="dfn" href="#dfn-namespace-member" id="ref-for-dfn-namespace-member①⓪">namespace members</a> are available for use in workers, <code class="idl"><a data-link-type="idl" href="https://drafts.css-houdini.org/worklets/#worklet" id="ref-for-worklet">Worklet</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/window-object.html#window" id="ref-for-window①">Window</a></code>, or any combination of the above.</p>
     <p>The following IDL fragment shows how that might be achieved:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->, <c- g>Global</c->=<c- n>Window</c->]
@@ -7674,7 +7674,7 @@ that the use of [<code class="idl"><a data-link-type="idl" href="#Global" id="re
 and <a href="#es-constants">§ 3.6.5 Constants</a>, <a href="#es-attributes">§ 3.6.6 Attributes</a> and <a href="#es-operations">§ 3.6.7 Operations</a> for the requirements relating to the location of properties
 corresponding to <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member②①">interface members</a>.</p>
    <div class="example" id="example-2e291568">
-    <a class="self-link" href="#example-2e291568"></a> 
+    <a class="self-link" href="#example-2e291568"></a>
     <p>The <code class="idl">Window</code> interface exposes frames as properties on the <code class="idl">Window</code> object.  Since the <code class="idl">Window</code> object also serves as the
     ECMAScript global object, variable declarations or assignments to the named properties
     will result in them being replaced by the new value.  Variable declarations for
@@ -7736,7 +7736,7 @@ extended attributes must not be specified on the same interface.</p>
    <p>See <a href="#namespace-object">§ 3.11.1 Namespace object</a> for details on how an interface is exposed on a namespace.</p>
    <div class="example" id="example-194971b0">
     <a class="self-link" href="#example-194971b0"></a> The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment③⑥">IDL fragment</a> defines a <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace②①">namespace</a> and an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①①⑦">interface</a> which
-    uses [<code class="idl"><a data-link-type="idl" href="#LegacyNamespace" id="ref-for-LegacyNamespace⑥">LegacyNamespace</a></code>] to be defined inside of it. 
+    uses [<code class="idl"><a data-link-type="idl" href="#LegacyNamespace" id="ref-for-LegacyNamespace⑥">LegacyNamespace</a></code>] to be defined inside of it.
 <pre class="highlight"><c- b>namespace</c-> <c- g>Foo</c-> { };
 
 [<c- g>LegacyNamespace</c->=<c- n>Foo</c->]
@@ -7807,7 +7807,7 @@ on an interface that does not include the <code class="idl"><a data-link-type="i
    <p>See <a href="#es-interfaces">§ 3.6 Interfaces</a> for details on how legacy window aliases
 are to be implemented.</p>
    <div class="example" id="example-758340c7">
-    <a class="self-link" href="#example-758340c7"></a> 
+    <a class="self-link" href="#example-758340c7"></a>
     <p>The following IDL defines an interface that uses the
     [<code class="idl"><a data-link-type="idl" href="#LegacyWindowAlias" id="ref-for-LegacyWindowAlias①②">LegacyWindowAlias</a></code>] extended attribute.</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->,
@@ -7862,7 +7862,7 @@ or [<code class="idl"><a data-link-type="idl" href="#Replaceable" id="ref-for-Re
    <p>See the <a href="#es-attributes">Attributes</a> section for how
 [<code class="idl"><a data-link-type="idl" href="#LenientSetter" id="ref-for-LenientSetter⑨">LenientSetter</a></code>] is to be implemented.</p>
    <div class="example" id="example-013acc78">
-    <a class="self-link" href="#example-013acc78"></a> 
+    <a class="self-link" href="#example-013acc78"></a>
     <p>The following IDL fragment defines an interface that uses the
     [<code class="idl"><a data-link-type="idl" href="#LenientSetter" id="ref-for-LenientSetter①⓪">LenientSetter</a></code>] extended
     attribute.</p>
@@ -7907,7 +7907,7 @@ It must not be used on a <a data-link-type="dfn" href="#dfn-static-attribute" id
 [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis⑥">LenientThis</a></code>]
 is to be implemented.</p>
    <div class="example" id="example-27fc77a8">
-    <a class="self-link" href="#example-27fc77a8"></a> 
+    <a class="self-link" href="#example-27fc77a8"></a>
     <p>The following IDL fragment defines an interface that uses the
     [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis⑦">LenientThis</a></code>] extended
     attribute.</p>
@@ -7973,7 +7973,7 @@ same <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①�
    <p>See <a href="#named-constructors">§ 3.6.2 Named constructors</a> for details on how named constructors
 are to be implemented.</p>
    <div class="example" id="example-02aba4c3">
-    <a class="self-link" href="#example-02aba4c3"></a> 
+    <a class="self-link" href="#example-02aba4c3"></a>
     <p>The following IDL defines an interface that uses the
     [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor①⑥">NamedConstructor</a></code>] extended
     attribute.</p>
@@ -8008,7 +8008,7 @@ extended attribute must not
 be used on anything other than a <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation②④">regular</a> or <a data-link-type="dfn" href="#dfn-static-operation" id="ref-for-dfn-static-operation⑨">static</a> <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation④⓪">operation</a> whose <a data-link-type="dfn" href="#dfn-return-type" id="ref-for-dfn-return-type③">return type</a> is an <a data-link-type="dfn" href="#idl-interface" id="ref-for-idl-interface①①">interface type</a> or
 a <a data-link-type="dfn" href="#dfn-promise-type" id="ref-for-dfn-promise-type⑦">promise type</a>.</p>
    <div class="example" id="example-5b56e2ba">
-    <a class="self-link" href="#example-5b56e2ba"></a> 
+    <a class="self-link" href="#example-5b56e2ba"></a>
     <p>As an example, this extended attribute is suitable for use on
     the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#dom-document-createelement" id="ref-for-dom-document-createelement">createElement()</a></code> operation on the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document②">Document</a></code> interface,
     since a new object should always be returned when
@@ -8030,7 +8030,7 @@ a <a data-link-type="dfn" href="#dfn-promise-type" id="ref-for-dfn-promise-type�
     Editors who wish to use this feature are strongly advised to discuss this
     by <a href="https://github.com/heycam/webidl/issues/new?title=Intent%20to%20use%20[NoInterfaceObject]">filing an issue</a> before proceeding.</p>
     <p><small class="non-normative"> The [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject⑤">NoInterfaceObject</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute⑦⑧">extended attribute</a> appears on the following <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①②⑧">interfaces</a>:</small></p>
-    <small class="non-normative"> <p><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/geolocation-API/#geolocation" id="ref-for-geolocation">Geolocation</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/geolocation-API/#coordinates" id="ref-for-coordinates">Coordinates</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/geolocation-API/#position" id="ref-for-position">Position</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/geolocation-API/#position-error" id="ref-for-position-error">PositionError</a></code>, <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/deviceorientation/spec-source-orientation.html#device_acceleration" id="ref-for-device_acceleration">DeviceAcceleration</a></code>, <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/deviceorientation/spec-source-orientation.html#device_rotation_rate" id="ref-for-device_rotation_rate">DeviceRotationRate</a></code>, <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/mediacapture-main/#dom-constrainablepattern" id="ref-for-dom-constrainablepattern">ConstrainablePattern</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_astc/#webgl_compressed_texture_astc" id="ref-for-webgl_compressed_texture_astc">WEBGL_compressed_texture_astc</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_s3tc_srgb/#webgl_compressed_texture_s3tc_srgb" id="ref-for-webgl_compressed_texture_s3tc_srgb">WEBGL_compressed_texture_s3tc_srgb</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers/#webgl_draw_buffers" id="ref-for-webgl_draw_buffers">WEBGL_draw_buffers</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/WEBGL_lose_context/#webgl_lose_context" id="ref-for-webgl_lose_context">WEBGL_lose_context</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/#angle_instanced_arrays" id="ref-for-angle_instanced_arrays">ANGLE_instanced_arrays</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/EXT_blend_minmax/#ext_blend_minmax" id="ref-for-ext_blend_minmax">EXT_blend_minmax</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/EXT_color_buffer_float/#ext_color_buffer_float" id="ref-for-ext_color_buffer_float">EXT_color_buffer_float</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query/#ext_disjoint_timer_query" id="ref-for-ext_disjoint_timer_query">EXT_disjoint_timer_query</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives/#oes_standard_derivatives" id="ref-for-oes_standard_derivatives">OES_standard_derivatives</a></code>, and <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/#oes_vertex_array_object" id="ref-for-oes_vertex_array_object">OES_vertex_array_object</a></code>. <a data-link-type="biblio" href="#biblio-geolocation-api">[GEOLOCATION-API]</a> <a data-link-type="biblio" href="#biblio-orientation-event">[ORIENTATION-EVENT]</a> <a data-link-type="biblio" href="#biblio-mediacapture-streams">[MEDIACAPTURE-STREAMS]</a> (various <a data-link-type="biblio" href="#biblio-webgl">[WEBGL]</a> extension specifications)</p> </small> 
+    <small class="non-normative"> <p><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/geolocation-API/#geolocation" id="ref-for-geolocation">Geolocation</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/geolocation-API/#coordinates" id="ref-for-coordinates">Coordinates</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/geolocation-API/#position" id="ref-for-position">Position</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/geolocation-API/#position-error" id="ref-for-position-error">PositionError</a></code>, <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/deviceorientation/spec-source-orientation.html#device_acceleration" id="ref-for-device_acceleration">DeviceAcceleration</a></code>, <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/deviceorientation/spec-source-orientation.html#device_rotation_rate" id="ref-for-device_rotation_rate">DeviceRotationRate</a></code>, <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/mediacapture-main/#dom-constrainablepattern" id="ref-for-dom-constrainablepattern">ConstrainablePattern</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_astc/#webgl_compressed_texture_astc" id="ref-for-webgl_compressed_texture_astc">WEBGL_compressed_texture_astc</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_s3tc_srgb/#webgl_compressed_texture_s3tc_srgb" id="ref-for-webgl_compressed_texture_s3tc_srgb">WEBGL_compressed_texture_s3tc_srgb</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers/#webgl_draw_buffers" id="ref-for-webgl_draw_buffers">WEBGL_draw_buffers</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/WEBGL_lose_context/#webgl_lose_context" id="ref-for-webgl_lose_context">WEBGL_lose_context</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/#angle_instanced_arrays" id="ref-for-angle_instanced_arrays">ANGLE_instanced_arrays</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/EXT_blend_minmax/#ext_blend_minmax" id="ref-for-ext_blend_minmax">EXT_blend_minmax</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/EXT_color_buffer_float/#ext_color_buffer_float" id="ref-for-ext_color_buffer_float">EXT_color_buffer_float</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query/#ext_disjoint_timer_query" id="ref-for-ext_disjoint_timer_query">EXT_disjoint_timer_query</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives/#oes_standard_derivatives" id="ref-for-oes_standard_derivatives">OES_standard_derivatives</a></code>, and <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/#oes_vertex_array_object" id="ref-for-oes_vertex_array_object">OES_vertex_array_object</a></code>. <a data-link-type="biblio" href="#biblio-geolocation-api">[GEOLOCATION-API]</a> <a data-link-type="biblio" href="#biblio-orientation-event">[ORIENTATION-EVENT]</a> <a data-link-type="biblio" href="#biblio-mediacapture-streams">[MEDIACAPTURE-STREAMS]</a> (various <a data-link-type="biblio" href="#biblio-webgl">[WEBGL]</a> extension specifications)</p> </small>
     <p class="note" role="note"><span>Note:</span> Previously, the [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject⑥">NoInterfaceObject</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute⑦⑨">extended attribute</a> could also be used
     to annotate <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①②⑨">interfaces</a>, which other <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①③⓪">interfaces</a> could then implement
     (using the defunct "implements statement") as if they were mixins.
@@ -8055,7 +8055,7 @@ attribute specified.</p>
    <p>See <a href="#es-interfaces">§ 3.6 Interfaces</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject①④">NoInterfaceObject</a></code>] entails.</p>
    <div class="example" id="example-739ab498">
-    <a class="self-link" href="#example-739ab498"></a> 
+    <a class="self-link" href="#example-739ab498"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment③⑦">IDL fragment</a> defines two interfaces, one whose interface object
     is exposed on the ECMAScript global object, and one whose isn’t:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
@@ -8117,7 +8117,7 @@ the <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-na
    <p>See <a href="#es-legacy-platform-objects">§ 3.8 Legacy platform objects</a> and <a href="#legacy-platform-object-defineownproperty">§ 3.8.3 [[DefineOwnProperty]]</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins⑨">OverrideBuiltins</a></code>] entails.</p>
    <div class="example" id="example-229c37e2">
-    <a class="self-link" href="#example-229c37e2"></a> 
+    <a class="self-link" href="#example-229c37e2"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment③⑧">IDL fragment</a> defines two <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①③⑤">interfaces</a>,
     one that has a <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter⑧">named property getter</a> and one that does not.</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
@@ -8213,7 +8213,7 @@ a <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace②④"
 [<code class="idl"><a data-link-type="idl" href="#PutForwards" id="ref-for-PutForwards①②">PutForwards</a></code>]
 is to be implemented.</p>
    <div class="example" id="example-dc4da779">
-    <a class="self-link" href="#example-dc4da779"></a> 
+    <a class="self-link" href="#example-dc4da779"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment③⑨">IDL fragment</a> defines interfaces for names and people.
     The [<code class="idl"><a data-link-type="idl" href="#PutForwards" id="ref-for-PutForwards①③">PutForwards</a></code>] extended
     attribute is used on the <code class="idl">name</code> attribute
@@ -8264,7 +8264,7 @@ a <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace②⑤"
    <p>See <a href="#es-attributes">§ 3.6.6 Attributes</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#Replaceable" id="ref-for-Replaceable①⓪">Replaceable</a></code>] entails.</p>
    <div class="example" id="example-17858ef9">
-    <a class="self-link" href="#example-17858ef9"></a> 
+    <a class="self-link" href="#example-17858ef9"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment④⓪">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①③⑧">interface</a> with an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation④①">operation</a> that increments a counter, and an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute④③">attribute</a> that exposes the counter’s value, which is initially 0:</p>
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Counter</c-> {
@@ -8307,7 +8307,7 @@ extended attribute must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" i
 extended attribute must not
 be used on anything other than a <a data-link-type="dfn" href="#dfn-read-only" id="ref-for-dfn-read-only①⑥">read only</a> <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute④⑥">attribute</a> whose type is an <a data-link-type="dfn" href="#idl-interface" id="ref-for-idl-interface①④">interface type</a> or <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object②②">object</a></code>.</p>
    <div class="example" id="example-4032028d">
-    <a class="self-link" href="#example-4032028d"></a> 
+    <a class="self-link" href="#example-4032028d"></a>
     <p>As an example, this extended attribute is suitable for use on
     the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#dom-document-implementation" id="ref-for-dom-document-implementation">implementation</a></code> attribute on the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document④">Document</a></code> interface
     since the same object is always returned for a given <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document⑤">Document</a></code> object. <a data-link-type="biblio" href="#biblio-dom">[DOM]</a></p>
@@ -8387,7 +8387,7 @@ its containing definition is also annotated with the [<code class="idl"><a data-
    <p>An <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①④⑤">interface</a> without the [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext②①">SecureContext</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute⑨⑧">extended attribute</a> must not <a data-link-type="dfn" href="#dfn-inherit" id="ref-for-dfn-inherit⑨">inherit</a> from another interface
 that does specify [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext②②">SecureContext</a></code>].</p>
    <div class="example" id="example-92ad4c70">
-    <a class="self-link" href="#example-92ad4c70"></a> 
+    <a class="self-link" href="#example-92ad4c70"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment④①">IDL fragment</a> defines an interface
     with one <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation④③">operation</a> that is executable from all
     contexts, and two which are executable only from secure contexts.</p>
@@ -8452,7 +8452,7 @@ the <emu-val>null</emu-val> value.</p>
    <p>See <a href="#es-nullable-type">§ 3.2.19 Nullable types — T?</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull⑦">TreatNonObjectAsNull</a></code>] entails.</p>
    <div class="example" id="example-3be1ee40">
-    <a class="self-link" href="#example-3be1ee40"></a> 
+    <a class="self-link" href="#example-3be1ee40"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment④②">IDL fragment</a> defines an interface that has one
     attribute whose type is a [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull⑧">TreatNonObjectAsNull</a></code>]-annotated <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function②④">callback function</a> and another whose type is a <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function②⑤">callback function</a> without the <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute①⓪②">extended attribute</a>:</p>
 <pre class="highlight"><c- b>callback</c-> <c- g>OccurrenceHandler</c-> = <c- b>void</c-> (<c- b>DOMString</c-> <c- g>details</c->);
@@ -8505,7 +8505,7 @@ will be handled differently from its default handling. Instead of being stringif
    <p>See <a href="#es-DOMString">§ 3.2.9 DOMString</a> for the specific requirements that the use of [<code class="idl"><a data-link-type="idl" href="#TreatNullAs" id="ref-for-TreatNullAs⑦">TreatNullAs</a></code>] entails.</p>
    <div class="example" id="example-7007b061">
     <a class="self-link" href="#example-7007b061"></a> The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment④③">IDL fragment</a> defines an interface that has one attribute whose type has the
-    extended attribute, and one operation whose argument’s type has the extended attribute: 
+    extended attribute, and one operation whose argument’s type has the extended attribute:
 <pre class="highlight">[<c- g>Exposed</c->=<c- n>Window</c->]
 <c- b>interface</c-> <c- g>Dog</c-> {
   <c- b>attribute</c-> <c- b>DOMString</c-> <c- g>name</c->;
@@ -8575,7 +8575,7 @@ then <var>B</var> must not have a <a data-link-type="dfn" href="#dfn-regular-att
    <p>See <a href="#es-attributes">§ 3.6.6 Attributes</a>, <a href="#es-operations">§ 3.6.7 Operations</a>, <a href="#es-platform-objects">§ 3.7 Platform objects implementing interfaces</a>, <a href="#es-legacy-platform-objects">§ 3.8 Legacy platform objects</a> and <a href="#legacy-platform-object-defineownproperty">§ 3.8.3 [[DefineOwnProperty]]</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#Unforgeable" id="ref-for-Unforgeable⑦">Unforgeable</a></code>] entails.</p>
    <div class="example" id="example-fce61cf3">
-    <a class="self-link" href="#example-fce61cf3"></a> 
+    <a class="self-link" href="#example-fce61cf3"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment④④">IDL fragment</a> defines
     an interface that has two <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute④⑧">attributes</a>,
     one of which is designated as [<code class="idl"><a data-link-type="idl" href="#Unforgeable" id="ref-for-Unforgeable⑧">Unforgeable</a></code>]:</p>
@@ -9350,7 +9350,7 @@ the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①�
 there will exist an object known as the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="dfn-named-properties-object">named properties object</dfn> for that interface on which named properties are exposed.</p>
    <div class="algorithm" data-algorithm="create a named properties object">
      The <a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object③">named properties object</a> for a given <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑥⑨">interface</a> <var>interface</var> and <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②①">Realm</a> <var>realm</var>,
-    is <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="create a named properties object" data-noexport id="create-a-named-properties-object">created</dfn> as follows: 
+    is <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="create a named properties object" data-noexport id="create-a-named-properties-object">created</dfn> as follows:
     <ol>
      <li data-md>
       <p>Let <var>proto</var> be null.</p>
@@ -9460,7 +9460,7 @@ otherwise set it to <emu-val>true</emu-val>.</p>
 on the single object that <a data-link-type="dfn" href="#implements" id="ref-for-implements①⑤">implements</a> the interface,
 when an interface is declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global①⑨">Global</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute①②⑤">extended attribute</a>.</p>
    <div class="algorithm" data-algorithm="define the constants">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-constants">define the constants</dfn> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑦②">interface</a> or <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface③⑤">callback interface</a> <var>definition</var> on <var>target</var>, given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②②">Realm</a> <var>realm</var>, run the following steps: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-constants">define the constants</dfn> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑦②">interface</a> or <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface③⑤">callback interface</a> <var>definition</var> on <var>target</var>, given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②②">Realm</a> <var>realm</var>, run the following steps:
     <ol>
      <li data-md>
       <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-iterate" id="ref-for-list-iterate①①">For each</a> <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant③⓪">constant</a> <var>const</var> that is a <a data-link-type="dfn" href="#dfn-member" id="ref-for-dfn-member②②">member</a> of <var>definition</var>:</p>
@@ -9487,7 +9487,7 @@ if the interface was declared with the [<code class="idl"><a data-link-type="idl
 in which case they are exposed on every object that <a data-link-type="dfn" href="#implements" id="ref-for-implements①⑥">implements</a> the interface.</p>
    <div class="algorithm" data-algorithm="define the regular attributes">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-regular-attributes">define the regular attributes</dfn> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑦③">interface</a> or <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace③④">namespace</a> <var>definition</var> on <var>target</var>,
-    given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②③">Realm</a> <var>realm</var>, run the following steps: 
+    given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②③">Realm</a> <var>realm</var>, run the following steps:
     <ol>
      <li data-md>
       <p>Let <var>attributes</var> be the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list①②">list</a> of <a data-link-type="dfn" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute②②">regular attributes</a> that are <a data-link-type="dfn" href="#dfn-member" id="ref-for-dfn-member②③">members</a> of <var>definition</var>.</p>
@@ -9499,7 +9499,7 @@ in which case they are exposed on every object that <a data-link-type="dfn" href
    </div>
    <div class="algorithm" data-algorithm="define the static attributes">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-static-attributes">define the static attributes</dfn> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑦④">interface</a> or <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace③⑤">namespace</a> <var>definition</var> on <var>target</var>,
-    given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②④">Realm</a> <var>realm</var>, run the following steps: 
+    given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②④">Realm</a> <var>realm</var>, run the following steps:
     <ol>
      <li data-md>
       <p>Let <var>attributes</var> be the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list①③">list</a> of <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-attribute①⓪">static attributes</a> that are <a data-link-type="dfn" href="#dfn-member" id="ref-for-dfn-member②④">members</a> of <var>definition</var>.</p>
@@ -9509,7 +9509,7 @@ in which case they are exposed on every object that <a data-link-type="dfn" href
    </div>
    <div class="algorithm" data-algorithm="define the unforgeable regular attributes">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-unforgeable-regular-attributes">define the unforgeable regular attributes</dfn> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑦⑤">interface</a> or <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace③⑥">namespace</a> <var>definition</var> on <var>target</var>,
-    given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②⑤">Realm</a> <var>realm</var>, run the following steps: 
+    given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②⑤">Realm</a> <var>realm</var>, run the following steps:
     <ol>
      <li data-md>
       <p>Let <var>attributes</var> be the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list①④">list</a> of <a data-link-type="dfn" href="#dfn-unforgeable-on-an-interface" id="ref-for-dfn-unforgeable-on-an-interface③">unforgeable</a> <a data-link-type="dfn" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute②③">regular attributes</a> that are <a data-link-type="dfn" href="#dfn-member" id="ref-for-dfn-member②⑤">members</a> of <var>definition</var>.</p>
@@ -9518,7 +9518,7 @@ in which case they are exposed on every object that <a data-link-type="dfn" href
     </ol>
    </div>
    <div class="algorithm" data-algorithm="define the attributes">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-attributes">define the attributes</dfn> <var>attributes</var> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑦⑥">interface</a> or <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace③⑦">namespace</a> <var>definition</var> on <var>target</var> given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②⑥">Realm</a> <var>realm</var>, run the following steps: 
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-attributes">define the attributes</dfn> <var>attributes</var> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑦⑥">interface</a> or <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace③⑦">namespace</a> <var>definition</var> on <var>target</var> given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②⑥">Realm</a> <var>realm</var>, run the following steps:
     <ol>
      <li data-md>
       <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-iterate" id="ref-for-list-iterate①②">For each</a> <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute⑤①">attribute</a> <var>attr</var> of <var>attributes</var>:</p>
@@ -9691,7 +9691,7 @@ return <emu-val>undefined</emu-val>.</p>
           </ol>
          <dt>Otherwise
          <dd> <var>idlValue</var> is the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value⑤⑧">converting</a> <var>V</var> to an
-        IDL value of <var>attribute</var>’s type. 
+        IDL value of <var>attribute</var>’s type.
         </dl>
        <li data-md>
         <p>Perform the actions listed in the description of <var>attribute</var> that occur on setting,
@@ -9724,7 +9724,7 @@ the interface was declared with the [<code class="idl"><a data-link-type="idl" h
 in which case they are exposed on every object that <a data-link-type="dfn" href="#implements" id="ref-for-implements①⑨">implements</a> the interface.</p>
    <div class="algorithm" data-algorithm="define the regular operations">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-regular-operations">define the regular operations</dfn> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑧①">interface</a> or <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace④①">namespace</a> <var>definition</var> on <var>target</var>, given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm②⑨">Realm</a> <var>realm</var>,
-    run the following steps: 
+    run the following steps:
     <ol>
      <li data-md>
       <p>Let <var>operations</var> be the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list①⑤">list</a> of <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation②⑨">regular operations</a> that are <a data-link-type="dfn" href="#dfn-member" id="ref-for-dfn-member②⑥">members</a> of <var>definition</var>.</p>
@@ -9736,7 +9736,7 @@ in which case they are exposed on every object that <a data-link-type="dfn" href
    </div>
    <div class="algorithm" data-algorithm="define the static operations">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-static-operations">define the static operations</dfn> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑧②">interface</a> or <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace④②">namespace</a> <var>definition</var> on <var>target</var>, given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm③⓪">Realm</a> <var>realm</var>,
-    run the following steps: 
+    run the following steps:
     <ol>
      <li data-md>
       <p>Let <var>operations</var> be the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list①⑥">list</a> of <a data-link-type="dfn" href="#dfn-static-operation" id="ref-for-dfn-static-operation①⑥">static operations</a> that are <a data-link-type="dfn" href="#dfn-member" id="ref-for-dfn-member②⑦">members</a> of <var>definition</var>.</p>
@@ -9746,7 +9746,7 @@ in which case they are exposed on every object that <a data-link-type="dfn" href
    </div>
    <div class="algorithm" data-algorithm="define the unforgeable regular operations">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-unforgeable-regular-operations">define the unforgeable regular operations</dfn> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑧③">interface</a> or <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace④③">namespace</a> <var>definition</var> on <var>target</var>, given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm③①">Realm</a> <var>realm</var>,
-    run the following steps: 
+    run the following steps:
     <ol>
      <li data-md>
       <p>Let <var>operations</var> be the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list①⑦">list</a> of <a data-link-type="dfn" href="#dfn-unforgeable-on-an-interface" id="ref-for-dfn-unforgeable-on-an-interface⑦">unforgeable</a> <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation③⓪">regular operations</a> that are <a data-link-type="dfn" href="#dfn-member" id="ref-for-dfn-member②⑧">members</a> of <var>definition</var>.</p>
@@ -9756,7 +9756,7 @@ in which case they are exposed on every object that <a data-link-type="dfn" href
    </div>
    <div class="algorithm" data-algorithm="define the operations">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-operations">define the operations</dfn> <var>operations</var> of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑧④">interface</a> or <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace④④">namespace</a> <var>definition</var> on <var>target</var>,
-    given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm③②">Realm</a> <var>realm</var>, run the following steps: 
+    given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm③②">Realm</a> <var>realm</var>, run the following steps:
     <ol>
      <li data-md>
       <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-iterate" id="ref-for-list-iterate①③">For each</a> <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation⑤③">operation</a> <var>op</var> of <var>operations</var>:</p>
@@ -9780,7 +9780,7 @@ in which case they are exposed on every object that <a data-link-type="dfn" href
    </div>
    <div class="algorithm" data-algorithm="creating an operation function">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="creating an operation function" data-noexport id="dfn-create-operation-function">create an operation function</dfn>,
-    given an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation⑤④">operation</a> <var>op</var>, a <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace④⑤">namespace</a> or <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑧⑤">interface</a> <var>target</var>, and a <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm③③">Realm</a> <var>realm</var>: 
+    given an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation⑤④">operation</a> <var>op</var>, a <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace④⑤">namespace</a> or <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑧⑤">interface</a> <var>target</var>, and a <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm③③">Realm</a> <var>realm</var>:
     <ol>
      <li data-md>
       <p>Let <var>id</var> be <var>op</var>’s <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier⑧③">identifier</a>.</p>
@@ -9953,7 +9953,7 @@ passing it <var>stack</var> and <var>map</var> as arguments.</p>
     </ol>
    </div>
    <div class="example" id="example-tojson-default-inheritance-and-mixins">
-    <a class="self-link" href="#example-tojson-default-inheritance-and-mixins"></a> 
+    <a class="self-link" href="#example-tojson-default-inheritance-and-mixins"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment④⑤">IDL fragment</a> defines a number of <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface①⑨③">interfaces</a>,
     which are <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces②①">inherited interfaces</a> of <code class="idl">A</code>,
     and <a data-link-type="dfn" href="#interface-mixin" id="ref-for-interface-mixin⑤⓪">interface mixins</a>, which are <a data-link-type="dfn" href="#include" id="ref-for-include①②">included</a> by <code class="idl">A</code> or
@@ -10542,7 +10542,7 @@ prototype for <a data-link-type="dfn" href="#dfn-default-iterator-object" id="re
    <p>The [[Prototype]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots" id="ref-for-sec-object-internal-methods-and-internal-slots②③">internal slot</a> of an <a data-link-type="dfn" href="#dfn-iterator-prototype-object" id="ref-for-dfn-iterator-prototype-object③">iterator prototype object</a> must be <code class="idl"><a data-link-type="idl" href="https://tc39.github.io/ecma262/#sec-%iteratorprototype%-object" id="ref-for-sec-%iteratorprototype%-object">%IteratorPrototype%</a></code>.</p>
    <div class="algorithm" data-algorithm="iterator result">
      The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="iterator-result">iterator result</dfn> for a <a data-link-type="dfn" href="#value-pair" id="ref-for-value-pair⑤">value pair</a> <var>pair</var> and a kind <var>kind</var> is given by the
-  following steps: 
+  following steps:
     <ol>
      <li data-md>
       <p>Let <var>result</var> be a value determined by the value of <var>kind</var>:</p>
@@ -11313,7 +11313,7 @@ must exist on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prot
    <div class="algorithm" data-algorithm="is a platform object"> An ECMAScript value <var>value</var> <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="is-a-platform-object">is a platform object</dfn> if <a data-link-type="abstract-op" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values" id="ref-for-sec-ecmascript-data-types-and-values③①">Type</a>(<var>value</var>) is Object and
     if <var>value</var> has a [[PrimaryInterface]] internal slot. </div>
    <div class="algorithm" data-algorithm="implements">
-     An ECMAScript value <var>value</var> <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="implements">implements</dfn> an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface②③③">interface</a> <var>interface</var> if <var>value</var> <a data-link-type="dfn" href="#is-a-platform-object" id="ref-for-is-a-platform-object②⑥">is a platform object</a> and the <a data-link-type="dfn" href="#interface-inclusive-inherited-interfaces" id="ref-for-interface-inclusive-inherited-interfaces">inclusive inherited interfaces</a> of <var>value</var>.[[PrimaryInterface]] <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-contain" id="ref-for-list-contain">contains</a> <var>interface</var>. 
+     An ECMAScript value <var>value</var> <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="implements">implements</dfn> an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface②③③">interface</a> <var>interface</var> if <var>value</var> <a data-link-type="dfn" href="#is-a-platform-object" id="ref-for-is-a-platform-object②⑥">is a platform object</a> and the <a data-link-type="dfn" href="#interface-inclusive-inherited-interfaces" id="ref-for-interface-inclusive-inherited-interfaces">inclusive inherited interfaces</a> of <var>value</var>.[[PrimaryInterface]] <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-contain" id="ref-for-list-contain">contains</a> <var>interface</var>.
     <p>Specifications may reference the concept "<var>object</var> implements <var>interface</var>"
     in various ways, including "<var>object</var> is an <var>interface</var> object".</p>
    </div>
@@ -11327,7 +11327,7 @@ In particular, the algorithms below associate the new <a data-link-type="dfn" hr
 the Realm given as an argument.</p>
    <div class="algorithm" data-algorithm="new">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="new" id="new">create a new object implementing the interface</dfn> <var>interface</var>, with a
-  Realm <var>realm</var>, perform the following steps: 
+  Realm <var>realm</var>, perform the following steps:
     <ol>
      <li data-md>
       <p>Return the result of <a data-link-type="dfn" href="#internally-create-a-new-object-implementing-the-interface" id="ref-for-internally-create-a-new-object-implementing-the-interface②">internally creating a new object implementing</a> <var>interface</var>, with <var>realm</var> and <emu-val>undefined</emu-val>.</p>
@@ -11335,7 +11335,7 @@ the Realm given as an argument.</p>
    </div>
    <div class="algorithm" data-algorithm="internally create a new object implementing the interface">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="internally-create-a-new-object-implementing-the-interface">internally create a new object implementing the interface</dfn> <var>interface</var>, with a
-  Realm <var>realm</var> and a JavaScript value <var>newTarget</var>, perform the following steps: 
+  Realm <var>realm</var> and a JavaScript value <var>newTarget</var>, perform the following steps:
     <ol>
      <li data-md>
       <p class="assertion">Assert: <var>interface</var> is <a data-link-type="dfn" href="#dfn-exposed" id="ref-for-dfn-exposed①⑤">exposed</a> in <var>realm</var>.</p>
@@ -11426,7 +11426,7 @@ object</a> of <var>ancestor interface</var> in <var>realm</var>.</p>
    </div>
    <div class="algorithm" data-algorithm="define the global property references">
      To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="define-the-global-property-references">define the global property references</dfn> on <var>target</var>, given <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#realm" id="ref-for-realm③⑤">Realm</a> <var>realm</var>,
-  perform the following steps: 
+  perform the following steps:
     <ol>
      <li data-md>
       <p>Let <var>interfaces</var> be a <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list②⓪">list</a> that contains every <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface②③⑥">interface</a> that is <a data-link-type="dfn" href="#dfn-exposed" id="ref-for-dfn-exposed①⑥">exposed</a> in <var>realm</var>.</p>
@@ -11500,7 +11500,7 @@ a named constructor</a> with <var>id</var> for <var>interface</var> in <var>real
    </div>
    <div class="note" role="note">
      The set of interfaces that a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object②⓪">platform object</a> <a data-link-type="dfn" href="#implements" id="ref-for-implements④⑧">implements</a> does not change over
-  the lifetime of the object. 
+  the lifetime of the object.
     <p>Multiple <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object②①">platform objects</a> with different <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-global" id="ref-for-concept-realm-global⑦">global objects</a> will share
   a reference to the same <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface②③⑧">interface</a> in their [[PrimaryInterface]] internal
   slots. For example, a page may contain a same-origin iframe, with the iframe’s
@@ -11979,7 +11979,7 @@ the special value “missing”, which represents a missing optional argument.</
    <div class="algorithm" data-algorithm="converting" data-algorithm-for="Web IDL arguments list">
      To <dfn class="dfn-paneled" data-dfn-for="Web IDL arguments list" data-dfn-type="dfn" data-lt="converting" data-noexport id="web-idl-arguments-list-converting">convert a Web IDL arguments list to an
     ECMAScript arguments list</dfn>, given a <a data-link-type="dfn" href="#web-idl-arguments-list" id="ref-for-web-idl-arguments-list">Web IDL arguments list</a> <var>args</var>, perform the
-    following steps: 
+    following steps:
     <ol>
      <li data-md>
       <p>Let <var>esArgs</var> be an empty <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list" id="ref-for-list③①">list</a>.</p>
@@ -12350,7 +12350,7 @@ not caught there, to its caller, and so on.</p>
    <p>Per <a href="#conventions">Document conventions</a>, an algorithm specified in this document may intercept thrown exceptions, either by specifying
 the exact steps to take if <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="an-exception-was-thrown">an exception was thrown</dfn>, or by explicitly handling <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-completion-record-specification-type" id="ref-for-sec-completion-record-specification-type⑥">abrupt completions</a>.</p>
    <div class="example" id="example-17059fd2">
-    <a class="self-link" href="#example-17059fd2"></a> 
+    <a class="self-link" href="#example-17059fd2"></a>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment④⑥">IDL fragment</a> defines two <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface②⑤⓪">interfaces</a> and an <a data-link-type="dfn" href="#dfn-exception" id="ref-for-dfn-exception">exception</a>.
     The <code>valueOf</code> attribute on <code class="idl">ExceptionThrower</code> is defined to throw an exception whenever an attempt is made
     to get its value.</p>
@@ -12417,27 +12417,27 @@ Each of these fields is initially set in <a data-link-type="abstract-op" href="#
     <caption>Additional Fields of Synthetic Module Records</caption>
     <thead>
      <tr>
-      <th>Field Name 
-      <th>Value Type 
-      <th>Meaning 
+      <th>Field Name
+      <th>Value Type
+      <th>Meaning
     <tbody>
      <tr>
-      <td>[[ExportNames]] 
-      <td>List of String 
-      <td>A List of all names that are exported. 
+      <td>[[ExportNames]]
+      <td>List of String
+      <td>A List of all names that are exported.
      <tr>
-      <td>[[EvaluationSteps]] 
-      <td>An abstract operation 
+      <td>[[EvaluationSteps]]
+      <td>An abstract operation
       <td>An abstract operation that will be performed upon evaluation of the module, taking the <a data-link-type="dfn" href="#synthetic-module-record" id="ref-for-synthetic-module-record②">Synthetic Module Record</a> as its sole argument.
         These will usually set up the exported values, by using <a data-link-type="abstract-op" href="#abstract-opdef-setsyntheticmoduleexport" id="ref-for-abstract-opdef-setsyntheticmoduleexport①">SetSyntheticModuleExport</a>.
         They must not modify [[ExportNames]].
-        They may return an abrupt completion. 
+        They may return an abrupt completion.
    </table>
    <h4 class="heading settled" data-level="3.13.1" id="createsyntheticmodule"><span class="secno">3.13.1. </span><span class="content">CreateSyntheticModule</span><a class="self-link" href="#createsyntheticmodule"></a></h4>
    <div class="algorithm" data-algorithm="CreateSyntheticModule">
      The abstract operation <dfn class="dfn-paneled" data-dfn-type="abstract-op" data-export id="abstract-opdef-createsyntheticmodule">CreateSyntheticModule</dfn>(<var>exportNames</var>, <var>evaluationSteps</var>, <var>realm</var>, <var>hostDefined</var>) creates a <a data-link-type="dfn" href="#synthetic-module-record" id="ref-for-synthetic-module-record③">Synthetic Module Record</a> based upon
 the given exported names and evaluation steps.
-It performs the following steps: 
+It performs the following steps:
     <ol>
      <li data-md>
       <p>Return <a data-link-type="dfn" href="#synthetic-module-record" id="ref-for-synthetic-module-record④">Synthetic Module Record</a> {
@@ -12456,7 +12456,7 @@ but there is no observable difference.</p>
    <div class="algorithm" data-algorithm="SetSyntheticModuleExport">
      The abstract operation <dfn class="dfn-paneled" data-dfn-type="abstract-op" data-export id="abstract-opdef-setsyntheticmoduleexport">SetSyntheticModuleExport</dfn>(<var>module</var>, <var>exportName</var>, <var>exportValue</var>) can be used to set or change the exported value for a pre-established export of a
 Synthetic Module Record.
-It performs the following steps: 
+It performs the following steps:
     <ol>
      <li data-md>
       <p>Let <var>envRec</var> be <var>module</var>.[[Environment]]'s <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-lexical-environments" id="ref-for-sec-lexical-environments">EnvironmentRecord</a>.</p>
@@ -12470,7 +12470,7 @@ corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-
    <h5 class="heading settled" data-level="3.13.3.1" id="smr-getexportednames"><span class="secno">3.13.3.1. </span><span class="content">GetExportedNames</span><a class="self-link" href="#smr-getexportednames"></a></h5>
    <div class="algorithm" data-algorithm="GetExportedNames" data-algorithm-for="Synthetic Module Record">
      The <dfn data-dfn-for="Synthetic Module Record" data-dfn-type="abstract-op" data-export id="abstract-opdef-synthetic-module-record-getexportednames">GetExportedNames<a class="self-link" href="#abstract-opdef-synthetic-module-record-getexportednames"></a></dfn>(<var>exportStarSet</var>) concrete method of a <a data-link-type="dfn" href="#synthetic-module-record" id="ref-for-synthetic-module-record⑥">Synthetic Module Record</a> implements the
-corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-abstract-module-records" id="ref-for-sec-abstract-module-records①">Module Record</a> abstract method. 
+corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-abstract-module-records" id="ref-for-sec-abstract-module-records①">Module Record</a> abstract method.
     <p>It performs the following steps:</p>
     <ol>
      <li data-md>
@@ -12482,7 +12482,7 @@ corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-
    <h5 class="heading settled" data-level="3.13.3.2" id="smr-resolveexport"><span class="secno">3.13.3.2. </span><span class="content">ResolveExport</span><a class="self-link" href="#smr-resolveexport"></a></h5>
    <div class="algorithm" data-algorithm="ResolveExport" data-algorithm-for="Synthetic Module Record">
      The <dfn data-dfn-for="Synthetic Module Record" data-dfn-type="abstract-op" data-export id="abstract-opdef-synthetic-module-record-resolveexport">ResolveExport<a class="self-link" href="#abstract-opdef-synthetic-module-record-resolveexport"></a></dfn>(<var>exportName</var>, <var>resolveSet</var>) concrete method of a <a data-link-type="dfn" href="#synthetic-module-record" id="ref-for-synthetic-module-record⑧">Synthetic Module Record</a> implements the
-corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-abstract-module-records" id="ref-for-sec-abstract-module-records②">Module Record</a> abstract method. 
+corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-abstract-module-records" id="ref-for-sec-abstract-module-records②">Module Record</a> abstract method.
     <p>It performs the following steps:</p>
     <ol>
      <li data-md>
@@ -12495,7 +12495,7 @@ corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-
    </div>
    <h5 class="heading settled" data-level="3.13.3.3" id="smr-Link"><span class="secno">3.13.3.3. </span><span class="content">Link</span><a class="self-link" href="#smr-Link"></a></h5>
    <div class="algorithm" data-algorithm="Link" data-algorithm-for="Synthetic Module Record">
-     The <dfn class="dfn-paneled" data-dfn-for="Synthetic Module Record" data-dfn-type="abstract-op" data-export id="abstract-opdef-synthetic-module-record-link">Link</dfn>() concrete method of a <a data-link-type="dfn" href="#synthetic-module-record" id="ref-for-synthetic-module-record①⓪">Synthetic Module Record</a> implements the corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-abstract-module-records" id="ref-for-sec-abstract-module-records③">Module Record</a> abstract method. 
+     The <dfn class="dfn-paneled" data-dfn-for="Synthetic Module Record" data-dfn-type="abstract-op" data-export id="abstract-opdef-synthetic-module-record-link">Link</dfn>() concrete method of a <a data-link-type="dfn" href="#synthetic-module-record" id="ref-for-synthetic-module-record①⓪">Synthetic Module Record</a> implements the corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-abstract-module-records" id="ref-for-sec-abstract-module-records③">Module Record</a> abstract method.
     <p>It performs the following steps:</p>
     <ol>
      <li data-md>
@@ -12524,7 +12524,7 @@ corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-
    </div>
    <h5 class="heading settled" data-level="3.13.3.4" id="smr-evaluate"><span class="secno">3.13.3.4. </span><span class="content">Evaluate</span><a class="self-link" href="#smr-evaluate"></a></h5>
    <div class="algorithm" data-algorithm="Evaluate" data-algorithm-for="Synthetic Module Record">
-     The <dfn data-dfn-for="Synthetic Module Record" data-dfn-type="abstract-op" data-export id="abstract-opdef-synthetic-module-record-evaluate">Evaluate<a class="self-link" href="#abstract-opdef-synthetic-module-record-evaluate"></a></dfn>() concrete method of a <a data-link-type="dfn" href="#synthetic-module-record" id="ref-for-synthetic-module-record①②">Synthetic Module Record</a> implements the corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-abstract-module-records" id="ref-for-sec-abstract-module-records④">Module Record</a> abstract method. 
+     The <dfn data-dfn-for="Synthetic Module Record" data-dfn-type="abstract-op" data-export id="abstract-opdef-synthetic-module-record-evaluate">Evaluate<a class="self-link" href="#abstract-opdef-synthetic-module-record-evaluate"></a></dfn>() concrete method of a <a data-link-type="dfn" href="#synthetic-module-record" id="ref-for-synthetic-module-record①②">Synthetic Module Record</a> implements the corresponding <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-abstract-module-records" id="ref-for-sec-abstract-module-records④">Module Record</a> abstract method.
     <p>It performs the following steps:</p>
     <ol>
      <li data-md>
@@ -13130,7 +13130,7 @@ language binding.</p>
 </script>
   </main>
   <p id="back-to-top" role="navigation"><a href="#toc"><abbr title="Back to top">↑</abbr></a></p>
-  . 
+  .
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
@@ -19779,58 +19779,66 @@ language binding.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
 <script>/* script-var-click-highlighting */

@@ -245,7 +245,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    <p>This draft contains the features of CSS relating to wrapping content around and inside shapes. It (implicitly for now) includes and extends the functionality of CSS Shapes Level 1 <a data-link-type="biblio" href="#biblio-css-shapes">[CSS-SHAPES]</a>. The main points of extension compared to level 1 include additional ways of defining shapes, defining an exclusion area using a shape, and restricting an element’s content area using a shape.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -359,7 +359,7 @@ on screen, on paper, etc.
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="content-area">Content area</dfn></p>
    <p>The <a data-link-type="dfn" href="#content-area" id="ref-for-content-area">content area</a> is normally used for layout of the inline flow content of a box.</p>
    <div class="issue-marker" data-bug_id="15089" data-bug_status="NEW">
-     <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=15089">Issue-15089</a> 
+     <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=15089">Issue-15089</a>
     <div class="issue-details">
      <p class="short-desc">shrink-to-fit circle / shape</p>
     </div>
@@ -387,19 +387,19 @@ on screen, on paper, etc.
 					See <a href="https://www.w3.org/TR/SVG/painting.html#FillRuleProperty">fill-rule</a> property
 					in SVG for details.
 					Possible values are <dfn class="dfn-paneled css" data-dfn-for="path()" data-dfn-type="value" data-export id="valdef-path-nonzero"><a class="css" data-link-type="maybe" href="#valdef-path-nonzero" id="ref-for-valdef-path-nonzero">nonzero</a></dfn> or <dfn class="dfn-paneled css" data-dfn-for="path()" data-dfn-type="value" data-export id="valdef-path-evenodd"><a class="css" data-link-type="maybe" href="#valdef-path-evenodd" id="ref-for-valdef-path-evenodd">evenodd</a></dfn>.
-					Default value when omitted is <a class="css" data-link-type="maybe" href="#valdef-path-nonzero" id="ref-for-valdef-path-nonzero①">nonzero</a>. 
+					Default value when omitted is <a class="css" data-link-type="maybe" href="#valdef-path-nonzero" id="ref-for-valdef-path-nonzero①">nonzero</a>.
       <li> The <dfn class="css" data-dfn-for="path()" data-dfn-type="value" data-export id="valdef-path-string"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#string-value" id="ref-for-string-value①">&lt;string></a><a class="self-link" href="#valdef-path-string"></a></dfn> represents an <a href="https://www.w3.org/TR/SVG11/paths.html#PathData">SVG Path data string</a>.
 					The path data string must be conform
 					to the grammar and parsing rules of SVG 1.1.
 					The initial position is defined
 					by the first “move to” argument
 					in the path string.
-					For the initial direction follow SVG 1.1. 
+					For the initial direction follow SVG 1.1.
      </ul>
    </dl>
    <div class="issue-marker wrapper">
     <div class="issue-marker" data-bug_id="16448" data-bug_status="ASSIGNED">
-      <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=16448">Issue-16448</a> 
+      <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=16448">Issue-16448</a>
      <div class="issue-details">
       <p class="short-desc">Should we revisit the decision to not allow SVG path syntax in the shape-inside, shape-outside properties</p>
      </div>
@@ -410,7 +410,7 @@ on screen, on paper, etc.
 	The shape can be any
 	of the <a href="https://www.w3.org/TR/SVG/shapes.html">SVG basic shapes</a> or a <a href="https://www.w3.org/TR/SVG/paths.html">path element</a>.</p>
    <div class="example" id="example-3b616eff">
-    <a class="self-link" href="#example-3b616eff"></a> 
+    <a class="self-link" href="#example-3b616eff"></a>
     <div style="float:right"> <img alt="results of referencing SVG shapes" src="images/svg-shape-reference.png"> </div>
      <code class="html"><pre>&lt;style>
 div {
@@ -434,7 +434,7 @@ div {
 
 <p>&lt;div class="around-a-circle">...&lt;/div>
 &lt;div class="around-a-path">...&lt;/div></p>
-</pre></code> 
+</pre></code>
    </div>
    <h2 class="heading settled" data-level="6" id="shapes-from-image"><span class="secno">6. </span><span class="content"> Shapes from Image</span><a class="self-link" href="#shapes-from-image"></a></h2>
    <p>Add the final <a href="https://www.w3.org/TR/css-shapes/#shapes-from-image">level 1</a> section.</p>
@@ -465,7 +465,7 @@ div {
 	The <span class="property" id="ref-for-propdef-shape-inside④">shape-inside</span> property applies
 	to all block-level elements.</p>
    <div class="example" id="example-c8f2dc07">
-    <a class="self-link" href="#example-c8f2dc07"></a> 
+    <a class="self-link" href="#example-c8f2dc07"></a>
     <p>The red box illustrates
 		an exclusion element’s content box,
 		which is unmodified and subject
@@ -518,44 +518,44 @@ Lorem ipsum dolor sit amet...
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-shape-inside">shape-inside</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> outside-shape <span id="ref-for-comb-one①">|</span> [ <a class="production css" data-link-type="type" href="#typedef-basic-shape" id="ref-for-typedef-basic-shape">&lt;basic-shape></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> shape-box ] <span id="ref-for-comb-one②">|</span> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-images-3/#typedef-image" id="ref-for-typedef-image">&lt;image></a> <span id="ref-for-comb-one③">|</span> display 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> outside-shape <span id="ref-for-comb-one①">|</span> [ <a class="production css" data-link-type="type" href="#typedef-basic-shape" id="ref-for-typedef-basic-shape">&lt;basic-shape></a> <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-any" id="ref-for-comb-any">||</a> shape-box ] <span id="ref-for-comb-one②">|</span> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-images-3/#typedef-image" id="ref-for-typedef-image">&lt;image></a> <span id="ref-for-comb-one③">|</span> display
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>block-level elements 
+      <td>block-level elements
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
       <td>computed lengths for <a class="production css" data-link-type="type" href="#typedef-basic-shape" id="ref-for-typedef-basic-shape①">&lt;basic-shape></a>, the absolute URI for <a class="production css" data-link-type="type" href="#typedef-uri" id="ref-for-typedef-uri">&lt;uri></a>, otherwise as specified
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>as defined for <a class="production css" data-link-type="type" href="#typedef-basic-shape" id="ref-for-typedef-basic-shape②">&lt;basic-shape></a>, otherwise discrete 
+      <td>as defined for <a class="production css" data-link-type="type" href="#typedef-basic-shape" id="ref-for-typedef-basic-shape②">&lt;basic-shape></a>, otherwise discrete
    </table>
    <p>The values of this property have the following meanings:</p>
    <dl>
     <dt><dfn class="dfn-paneled css" data-dfn-for="shape-inside" data-dfn-type="value" data-export id="valdef-shape-inside-auto"><a class="css" data-link-type="maybe" href="#valdef-shape-inside-auto" id="ref-for-valdef-shape-inside-auto">auto</a></dfn>
-    <dd> The shape is computed based on the content box of the element. 
+    <dd> The shape is computed based on the content box of the element.
    </dl>
    <dl>
     <dt><dfn class="dfn-paneled css" data-dfn-for="shape-inside" data-dfn-type="value" data-export id="valdef-shape-inside-outside-shape"><a class="css" data-link-type="maybe" href="#valdef-shape-inside-outside-shape" id="ref-for-valdef-shape-inside-outside-shape">outside-shape</a></dfn>
     <dd> The shape is computed based on
 			the shape defined by the shape-outside
-			and shape-margin properties. 
+			and shape-margin properties.
    </dl>
    <dl>
     <dt><dfn class="dfn-paneled css" data-dfn-type="type" data-export id="typedef-basic-shape">&lt;basic-shape></dfn>
     <dd> The shape is computed based
-			on the values of one of <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-shapes-1/#funcdef-inset" id="ref-for-funcdef-inset">inset()</a>, <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-shapes-1/#funcdef-circle" id="ref-for-funcdef-circle">circle()</a>, <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-shapes-1/#funcdef-ellipse" id="ref-for-funcdef-ellipse">ellipse()</a> or <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-shapes-1/#funcdef-polygon" id="ref-for-funcdef-polygon">polygon()</a>. 
+			on the values of one of <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-shapes-1/#funcdef-inset" id="ref-for-funcdef-inset">inset()</a>, <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-shapes-1/#funcdef-circle" id="ref-for-funcdef-circle">circle()</a>, <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-shapes-1/#funcdef-ellipse" id="ref-for-funcdef-ellipse">ellipse()</a> or <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-shapes-1/#funcdef-polygon" id="ref-for-funcdef-polygon">polygon()</a>.
    </dl>
    <dl>
     <dt><dfn class="dfn-paneled css" data-dfn-type="type" data-export id="typedef-uri">&lt;uri></dfn>
@@ -565,7 +565,7 @@ Lorem ipsum dolor sit amet...
 			Otherwise, if the &lt;uri> references an image,
 			the shape is extracted and computed
 			based on the alpha channel
-			of the specified image. 
+			of the specified image.
      <p>If the &lt;uri> does not reference
 			an SVG shape element or an image,
 			the effect is as if the value <a class="css" data-link-type="maybe" href="#valdef-shape-inside-auto" id="ref-for-valdef-shape-inside-auto①">auto</a> had been specified.</p>
@@ -573,13 +573,13 @@ Lorem ipsum dolor sit amet...
    <dl>
     <dt><dfn class="dfn-paneled css" data-dfn-for="shape-inside" data-dfn-type="value" data-export id="valdef-shape-inside-display"><a class="css" data-link-type="maybe" href="#valdef-shape-inside-display" id="ref-for-valdef-shape-inside-display">display</a></dfn>
     <dd> The shape is computed based on the shape of the display
-			as described in <a href="https://drafts.csswg.org/css-round-display">css-round-display</a>. 
+			as described in <a href="https://drafts.csswg.org/css-round-display">css-round-display</a>.
    </dl>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-shape-inside" id="ref-for-propdef-shape-inside⑦">shape-inside</a> property applies to floats.</p>
    <p>The <a class="property" data-link-type="propdesc" href="#propdef-shape-inside" id="ref-for-propdef-shape-inside⑧">shape-inside</a> property may not apply on some elements
 	such as elements with a computed <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display">display</a> value of <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-display-3/#valdef-display-table" id="ref-for-valdef-display-table">table</a>.</p>
    <div class="figure">
-     <img alt="Content flowing with and without a shape-inside" src="images/shape-inside-content.png"> 
+     <img alt="Content flowing with and without a shape-inside" src="images/shape-inside-content.png">
     <p class="caption">Effect of shape-inside on inline content.</p>
    </div>
    <p>Overflow content avoids
@@ -591,7 +591,7 @@ Lorem ipsum dolor sit amet...
 	the rectangular bounds of the element.</p>
    <p></p>
    <div class="figure">
-     <img alt="Overflow interacting with rounded rect" src="images/rounded-rect-overflow.png" style="display:inline-block;vertical-align:top"> <img alt="Overflow interacting with ellipse" src="images/ellipse-overflow.png" style="display:inline-block;vertical-align:top"> 
+     <img alt="Overflow interacting with rounded rect" src="images/rounded-rect-overflow.png" style="display:inline-block;vertical-align:top"> <img alt="Overflow interacting with ellipse" src="images/ellipse-overflow.png" style="display:inline-block;vertical-align:top">
     <p class="caption"> Overflow interacting with exclusion areas defined
 			by <a class="property" data-link-type="propdesc" href="#propdef-shape-inside" id="ref-for-propdef-shape-inside①⓪">shape-inside</a> and <a class="property" data-link-type="propdesc" href="#propdef-shape-padding" id="ref-for-propdef-shape-padding③">shape-padding</a>. </p>
    </div>
@@ -626,38 +626,38 @@ Lorem ipsum dolor sit amet...
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-shape-padding">shape-padding</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a> 
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value" id="ref-for-length-value" title="Expands to: advance measure | cap | ch | cm | em | ex | ic | in | lh | mm | pc | pt | px | q | rem | rlh | vb | vh | vi | vmax | vmin | vw">&lt;length></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>none 
+      <td>none
      <tr>
       <th>Applies to:
-      <td>block-level elements 
+      <td>block-level elements
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>n/a 
+      <td>n/a
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the absolute length 
+      <td>the absolute length
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value 
+      <td>by computed value
    </table>
    <div class="example" id="example-a3dacae1">
-    <a class="self-link" href="#example-a3dacae1"></a> 
+    <a class="self-link" href="#example-a3dacae1"></a>
     <p>A <a class="property" data-link-type="propdesc" href="#propdef-shape-padding" id="ref-for-propdef-shape-padding⑥">shape-padding</a> creating an offset
 			from a circlular shape-inside.
 			The light blue rectangles represent
 			inline content affected
 			by the shape created
 			by the padding.</p>
-     <img alt="Example of a shape-padding offset" src="images/shape-padding.png"> 
+     <img alt="Example of a shape-padding offset" src="images/shape-padding.png">
    </div>
    <p class="note" role="note"><span>Note:</span> The <a class="property" data-link-type="propdesc" href="#propdef-shape-padding" id="ref-for-propdef-shape-padding⑦">shape-padding</a> property
 	only affects layout of content
@@ -681,7 +681,7 @@ Lorem ipsum dolor sit amet...
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -694,14 +694,14 @@ Lorem ipsum dolor sit amet...
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -752,7 +752,7 @@ Lorem ipsum dolor sit amet...
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -777,134 +777,134 @@ Lorem ipsum dolor sit amet...
   <aside class="dfn-panel" data-for="term-for-border-box">
    <a href="https://drafts.csswg.org/css-box-3/#border-box">https://drafts.csswg.org/css-box-3/#border-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-border-box">2. 
+    <li><a href="#ref-for-border-box">2.
 Terminology</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-margin-box">
    <a href="https://drafts.csswg.org/css-box-3/#margin-box">https://drafts.csswg.org/css-box-3/#margin-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-margin-box">2. 
+    <li><a href="#ref-for-margin-box">2.
 Terminology</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-display">
    <a href="https://drafts.csswg.org/css-display-3/#propdef-display">https://drafts.csswg.org/css-display-3/#propdef-display</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-display">8.2. 
+    <li><a href="#ref-for-propdef-display">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-table">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-table">https://drafts.csswg.org/css-display-3/#valdef-display-table</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-table">8.2. 
+    <li><a href="#ref-for-valdef-display-table">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-fill-rule">
    <a href="https://drafts.csswg.org/css-shapes-1/#typedef-fill-rule">https://drafts.csswg.org/css-shapes-1/#typedef-fill-rule</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-fill-rule">4.1. 
+    <li><a href="#ref-for-typedef-fill-rule">4.1.
 Supported Shapes</a> <a href="#ref-for-typedef-fill-rule①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-funcdef-circle">
    <a href="https://drafts.csswg.org/css-shapes-1/#funcdef-circle">https://drafts.csswg.org/css-shapes-1/#funcdef-circle</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-circle">8.2. 
+    <li><a href="#ref-for-funcdef-circle">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-funcdef-ellipse">
    <a href="https://drafts.csswg.org/css-shapes-1/#funcdef-ellipse">https://drafts.csswg.org/css-shapes-1/#funcdef-ellipse</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-ellipse">8.2. 
+    <li><a href="#ref-for-funcdef-ellipse">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-funcdef-inset">
    <a href="https://drafts.csswg.org/css-shapes-1/#funcdef-inset">https://drafts.csswg.org/css-shapes-1/#funcdef-inset</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-inset">8.2. 
+    <li><a href="#ref-for-funcdef-inset">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-funcdef-polygon">
    <a href="https://drafts.csswg.org/css-shapes-1/#funcdef-polygon">https://drafts.csswg.org/css-shapes-1/#funcdef-polygon</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-polygon">8.2. 
+    <li><a href="#ref-for-funcdef-polygon">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-shape-margin">
    <a href="https://drafts.csswg.org/css-shapes-1/#propdef-shape-margin">https://drafts.csswg.org/css-shapes-1/#propdef-shape-margin</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-shape-margin">8. 
+    <li><a href="#ref-for-propdef-shape-margin">8.
 Declaring Shapes</a> <a href="#ref-for-propdef-shape-margin①">(2)</a>
-    <li><a href="#ref-for-propdef-shape-margin②">8.5. 
+    <li><a href="#ref-for-propdef-shape-margin②">8.5.
 The shape-margin property</a>
-    <li><a href="#ref-for-propdef-shape-margin③">8.6. 
+    <li><a href="#ref-for-propdef-shape-margin③">8.6.
 The shape-padding Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-shape-outside">
    <a href="https://drafts.csswg.org/css-shapes-1/#propdef-shape-outside">https://drafts.csswg.org/css-shapes-1/#propdef-shape-outside</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-shape-outside">2. 
+    <li><a href="#ref-for-propdef-shape-outside">2.
 Terminology</a> <a href="#ref-for-propdef-shape-outside①">(2)</a>
-    <li><a href="#ref-for-propdef-shape-outside②">8. 
+    <li><a href="#ref-for-propdef-shape-outside②">8.
 Declaring Shapes</a> <a href="#ref-for-propdef-shape-outside③">(2)</a>
-    <li><a href="#ref-for-propdef-shape-outside④">8.1. 
+    <li><a href="#ref-for-propdef-shape-outside④">8.1.
 The shape-outside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-length-value">
    <a href="https://drafts.csswg.org/css-values-3/#length-value">https://drafts.csswg.org/css-values-3/#length-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-length-value">8.6. 
+    <li><a href="#ref-for-length-value">8.6.
 The shape-padding Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-string-value">
    <a href="https://drafts.csswg.org/css-values-3/#string-value">https://drafts.csswg.org/css-values-3/#string-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-string-value">4.1. 
+    <li><a href="#ref-for-string-value">4.1.
 Supported Shapes</a> <a href="#ref-for-string-value①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-comma">
    <a href="https://drafts.csswg.org/css-values-4/#comb-comma">https://drafts.csswg.org/css-values-4/#comb-comma</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-comma">4.1. 
+    <li><a href="#ref-for-comb-comma">4.1.
 Supported Shapes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-opt">
    <a href="https://drafts.csswg.org/css-values-4/#mult-opt">https://drafts.csswg.org/css-values-4/#mult-opt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-opt">4.1. 
+    <li><a href="#ref-for-mult-opt">4.1.
 Supported Shapes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">8.2. 
+    <li><a href="#ref-for-comb-one">8.2.
 The shape-inside Property</a> <a href="#ref-for-comb-one①">(2)</a> <a href="#ref-for-comb-one②">(3)</a> <a href="#ref-for-comb-one③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-any">
    <a href="https://drafts.csswg.org/css-values-4/#comb-any">https://drafts.csswg.org/css-values-4/#comb-any</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-any">8.2. 
+    <li><a href="#ref-for-comb-any">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-image">
    <a href="https://drafts.csswg.org/css-images-3/#typedef-image">https://drafts.csswg.org/css-images-3/#typedef-image</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-image">8.2. 
+    <li><a href="#ref-for-typedef-image">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
@@ -1021,136 +1021,144 @@ The shape-inside Property</a>
   <aside class="dfn-panel" data-for="content-area">
    <b><a href="#content-area">#content-area</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-content-area">2. 
+    <li><a href="#ref-for-content-area">2.
 Terminology</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-path-nonzero">
    <b><a href="#valdef-path-nonzero">#valdef-path-nonzero</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-path-nonzero">4.1. 
+    <li><a href="#ref-for-valdef-path-nonzero">4.1.
 Supported Shapes</a> <a href="#ref-for-valdef-path-nonzero①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-path-evenodd">
    <b><a href="#valdef-path-evenodd">#valdef-path-evenodd</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-path-evenodd">4.1. 
+    <li><a href="#ref-for-valdef-path-evenodd">4.1.
 Supported Shapes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-shape-inside">
    <b><a href="#propdef-shape-inside">#propdef-shape-inside</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-shape-inside">1. 
+    <li><a href="#ref-for-propdef-shape-inside">1.
 Introduction</a>
-    <li><a href="#ref-for-propdef-shape-inside①">2. 
+    <li><a href="#ref-for-propdef-shape-inside①">2.
 Terminology</a>
-    <li><a href="#ref-for-propdef-shape-inside②">8. 
+    <li><a href="#ref-for-propdef-shape-inside②">8.
 Declaring Shapes</a> <a href="#ref-for-propdef-shape-inside③">(2)</a> <a href="#ref-for-propdef-shape-inside④">(3)</a>
-    <li><a href="#ref-for-propdef-shape-inside⑤">8.2. 
+    <li><a href="#ref-for-propdef-shape-inside⑤">8.2.
 The shape-inside Property</a> <a href="#ref-for-propdef-shape-inside⑥">(2)</a> <a href="#ref-for-propdef-shape-inside⑦">(3)</a> <a href="#ref-for-propdef-shape-inside⑧">(4)</a> <a href="#ref-for-propdef-shape-inside⑨">(5)</a> <a href="#ref-for-propdef-shape-inside①⓪">(6)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-shape-inside-auto">
    <b><a href="#valdef-shape-inside-auto">#valdef-shape-inside-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-shape-inside-auto">8.2. 
+    <li><a href="#ref-for-valdef-shape-inside-auto">8.2.
 The shape-inside Property</a> <a href="#ref-for-valdef-shape-inside-auto①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-shape-inside-outside-shape">
    <b><a href="#valdef-shape-inside-outside-shape">#valdef-shape-inside-outside-shape</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-shape-inside-outside-shape">8.2. 
+    <li><a href="#ref-for-valdef-shape-inside-outside-shape">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-basic-shape">
    <b><a href="#typedef-basic-shape">#typedef-basic-shape</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-basic-shape">8.2. 
+    <li><a href="#ref-for-typedef-basic-shape">8.2.
 The shape-inside Property</a> <a href="#ref-for-typedef-basic-shape①">(2)</a> <a href="#ref-for-typedef-basic-shape②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-uri">
    <b><a href="#typedef-uri">#typedef-uri</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-uri">8.2. 
+    <li><a href="#ref-for-typedef-uri">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-shape-inside-display">
    <b><a href="#valdef-shape-inside-display">#valdef-shape-inside-display</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-shape-inside-display">8.2. 
+    <li><a href="#ref-for-valdef-shape-inside-display">8.2.
 The shape-inside Property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-shape-padding">
    <b><a href="#propdef-shape-padding">#propdef-shape-padding</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-shape-padding">8. 
+    <li><a href="#ref-for-propdef-shape-padding">8.
 Declaring Shapes</a> <a href="#ref-for-propdef-shape-padding①">(2)</a>
-    <li><a href="#ref-for-propdef-shape-padding②">8.2. 
+    <li><a href="#ref-for-propdef-shape-padding②">8.2.
 The shape-inside Property</a> <a href="#ref-for-propdef-shape-padding③">(2)</a>
-    <li><a href="#ref-for-propdef-shape-padding④">8.6. 
+    <li><a href="#ref-for-propdef-shape-padding④">8.6.
 The shape-padding Property</a> <a href="#ref-for-propdef-shape-padding⑤">(2)</a> <a href="#ref-for-propdef-shape-padding⑥">(3)</a> <a href="#ref-for-propdef-shape-padding⑦">(4)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

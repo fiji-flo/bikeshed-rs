@@ -1896,7 +1896,7 @@ algorithms in step 11:</p>
          <a data-link-type="dfn" href="#should-response-to-request-be-blocked-due-to-document-policy" id="ref-for-should-response-to-request-be-blocked-due-to-document-policy①"> </a>
        </ul>
      </ul>
-     <a data-link-type="dfn" href="#should-response-to-request-be-blocked-due-to-document-policy" id="ref-for-should-response-to-request-be-blocked-due-to-document-policy②"> <var>internalResponse</var> to <var>request</var> be blocked due to document policy</a> 
+     <a data-link-type="dfn" href="#should-response-to-request-be-blocked-due-to-document-policy" id="ref-for-should-response-to-request-be-blocked-due-to-document-policy②"> <var>internalResponse</var> to <var>request</var> be blocked due to document policy</a>
      <ul>
       <li data-md>
        <p>Add the following algorithm to <a href="https://fetch.spec.whatwg.org/#terminology-headers">Fetch Standard §2.2.2 Headers</a>:</p>
@@ -2213,7 +2213,7 @@ name, with the single parameter <var>param</var>, to <var>list</var>.</p>
      <dt>Author/Change controller
      <dd>W3C
      <dt>Specification document
-     <dd> <a href>Document Policy API</a> 
+     <dd> <a href>Document Policy API</a>
     </dl>
     <dl>
      <dt>Header field name
@@ -2225,7 +2225,7 @@ name, with the single parameter <var>param</var>, to <var>list</var>.</p>
      <dt>Author/Change controller
      <dd>W3C
      <dt>Specification document
-     <dd> <a href>Document Policy API</a> 
+     <dd> <a href>Document Policy API</a>
     </dl>
     <dl>
      <dt>Header field name
@@ -2237,7 +2237,7 @@ name, with the single parameter <var>param</var>, to <var>list</var>.</p>
      <dt>Author/Change controller
      <dd>W3C
      <dt>Specification document
-     <dd> <a href>Document Policy API</a> 
+     <dd> <a href>Document Policy API</a>
     </dl>
    </section>
    <section class="informative" id="privacy">
@@ -2317,7 +2317,7 @@ effects cannot be seen across origin boundaries.</p>
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example.</p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -2656,57 +2656,65 @@ effects cannot be seen across origin boundaries.</p>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

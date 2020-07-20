@@ -1581,7 +1581,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
 reference across the web. For example, Wikipedia references could link to the
 exact text they are quoting from a page. Similarly, search engines can serve
 URLs that direct the user to the answer they are looking for in the page rather
-than linking to the top of the page. 
+than linking to the top of the page.
    <h4 class="heading settled" data-level="1.1.2" id="user-sharing"><span class="secno">1.1.2. </span><span class="content">User sharing</span><a class="self-link" href="#user-sharing"></a></h4>
     With scroll to text, browsers may implement an option to 'Copy URL to here'
 when the user opens the context menu on a text selection. The browser can
@@ -1589,7 +1589,7 @@ then generate a URL with the text selection appropriately specified, and the
 recipient of the URL will have the text scrolled into view and visually
 indicated.  Without scroll to text, if a user wants to share a passage of text
 from a page, they would likely just copy and paste the passage, in which case
-the receiver loses the context of the page. 
+the receiver loses the context of the page.
    <h2 class="heading settled" data-level="2" id="description"><span class="secno">2. </span><span class="content">Description</span><a class="self-link" href="#description"></a></h2>
    <h3 class="heading settled" data-level="2.1" id="syntax"><span class="secno">2.1. </span><span class="content">Syntax</span><a class="self-link" href="#syntax"></a></h3>
    <div class="note" role="note">This section is non-normative</div>
@@ -1638,7 +1638,7 @@ example" in "here is an example text". </div>
 introduces the <a data-link-type="dfn" href="#fragment-directive" id="ref-for-fragment-directive①">fragment directive</a>. The <a data-link-type="dfn" href="#fragment-directive" id="ref-for-fragment-directive②">fragment directive</a> is a portion
 of the URL fragment delimited by the code sequence <code>:~:</code>. It is
 reserved for UA instructions, such as text=, and is stripped from the URL
-during loading so that author scripts can’t directly interact with it. 
+during loading so that author scripts can’t directly interact with it.
    <p>The <a data-link-type="dfn" href="#fragment-directive" id="ref-for-fragment-directive③">fragment directive</a> is a mechanism for URLs to specify instructions meant
 for the UA rather than the document. It’s meant to avoid direct interaction with
 author script so that future UA instructions can be added without fear of
@@ -1704,7 +1704,7 @@ the fragment is the string "test" and the <a data-link-type="dfn" href="#fragmen
 "text=foo". </div>
    <h4 class="heading settled" data-level="2.2.2" id="fragment-directive-grammar"><span class="secno">2.2.2. </span><span class="content">Fragment directive grammar</span><a class="self-link" href="#fragment-directive-grammar"></a></h4>
     A <dfn data-dfn-type="dfn" data-noexport id="valid-fragment-directive">valid fragment directive<a class="self-link" href="#valid-fragment-directive"></a></dfn> is a sequence of characters that appears
-in the <a data-link-type="dfn" href="#fragment-directive" id="ref-for-fragment-directive①⓪">fragment directive</a> that matches the production: 
+in the <a data-link-type="dfn" href="#fragment-directive" id="ref-for-fragment-directive①⓪">fragment directive</a> that matches the production:
    <dl> <code><dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="fragmentdirective">FragmentDirective</dfn> ::=</dt> <dd>(<a data-link-type="dfn" href="#textdirective" id="ref-for-textdirective">TextDirective</a> | <a data-link-type="dfn" href="#unknowndirective" id="ref-for-unknowndirective">UnknownDirective</a>) ("&amp;" <a data-link-type="dfn" href="#fragmentdirective" id="ref-for-fragmentdirective">FragmentDirective</a>)?</dd></code> <code><dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="unknowndirective">UnknownDirective</dfn> ::=</dt> <dd><a data-link-type="dfn" href="#characterstring" id="ref-for-characterstring">CharacterString</a></dd></code> </dl>
    <div class="note" role="note"> The <a data-link-type="dfn" href="#fragmentdirective" id="ref-for-fragmentdirective②">FragmentDirective</a> may contain multiple directives split by the "&amp;"
 character. Currently this means we allow multiple text directives to enable
@@ -1714,7 +1714,7 @@ parse if an unknown directive is in the &amp;-separated list of directives. </di
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="text-fragment-directive">text fragment directive</dfn> is one such <a data-link-type="dfn" href="#fragment-directive" id="ref-for-fragment-directive①①">fragment directive</a> that
 enables specifying a piece of text on the page, that matches the production:</p>
    <dl>
-     <code><dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="textdirective">TextDirective</dfn> ::=</dt><dd>"text=" <a data-link-type="dfn" href="#textdirectiveparameters" id="ref-for-textdirectiveparameters">TextDirectiveParameters</a></dd></code> 
+     <code><dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="textdirective">TextDirective</dfn> ::=</dt><dd>"text=" <a data-link-type="dfn" href="#textdirectiveparameters" id="ref-for-textdirectiveparameters">TextDirectiveParameters</a></dd></code>
     <p><code></code></p>
     <dt><code><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="textdirectiveparameters">TextDirectiveParameters</dfn> ::=</code>
     <dd><code> (<a data-link-type="dfn" href="#textdirectiveprefix" id="ref-for-textdirectiveprefix">TextDirectivePrefix</a> ",")? <a data-link-type="dfn" href="#characterstring" id="ref-for-characterstring①">CharacterString</a> ("," <a data-link-type="dfn" href="#characterstring" id="ref-for-characterstring②">CharacterString</a>)?
@@ -1741,7 +1741,7 @@ enables specifying a piece of text on the page, that matches the production:</p>
     <div class="note" role="note"> A <a data-link-type="dfn" href="#explicitchar" id="ref-for-explicitchar①">ExplicitChar</a> may be any <a href="https://url.spec.whatwg.org/#url-code-points">URL code point</a> that
 is not explicitly used in the <a data-link-type="dfn" href="#textdirective" id="ref-for-textdirective①">TextDirective</a> syntax, that is "&amp;", "-", and
 ",", which must be percent-encoded. </div>
-     <code><dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="percentencodedchar">PercentEncodedChar</dfn> ::=</dt><dd>"%" [a-zA-Z0-9]+</dd></code> 
+     <code><dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="percentencodedchar">PercentEncodedChar</dfn> ::=</dt><dd>"%" [a-zA-Z0-9]+</dd></code>
    </dl>
    <h3 class="heading settled" data-level="2.3" id="security-and-privacy"><span class="secno">2.3. </span><span class="content">Security and Privacy</span><a class="self-link" href="#security-and-privacy"></a></h3>
    <h4 class="heading settled" data-level="2.3.1" id="motivation"><span class="secno">2.3.1. </span><span class="content">Motivation</span><a class="self-link" href="#motivation"></a></h4>
@@ -1907,7 +1907,7 @@ is not revealed to script, which is left as UA-defined behavior. </div>
      </ol>
    </ol>
    <h4 class="heading settled" data-level="2.4.1" id="scroll-rect-into-view"><span class="secno">2.4.1. </span><span class="content">Scroll a DOMRect into view</span><a class="self-link" href="#scroll-rect-into-view"></a></h4>
-   <div class="note" role="note"> This section describes a refactoring of the CSSOMVIEW’s <span spec-section="#scroll-an-element-into-view">scroll an element into view</span> algorithm 
+   <div class="note" role="note"> This section describes a refactoring of the CSSOMVIEW’s <span spec-section="#scroll-an-element-into-view">scroll an element into view</span> algorithm
 to separate the steps for scrolling a DOMRect into view, so it can be used to
 scroll a Range into view. </div>
    <p>Move the <span spec-section="#scroll-an-element-into-view">scroll an element into
@@ -2227,7 +2227,7 @@ that if the destination page is removed or changed, the intended destination can
 still be derived from the URL itself.</p>
    <div class="example" id="example-53e82e58">
     <a class="self-link" href="#example-53e82e58"></a> Suppose we wish to craft a URL to
-  https://en.wikipedia.org/wiki/History_of_computing quoting the sentence: 
+  https://en.wikipedia.org/wiki/History_of_computing quoting the sentence:
 <pre>The first recorded idea of using digital electronics for computing was the
 1931 paper "The Use of Thyratrons for High Speed Automatic Counting of
 Physical Phenomena" by C. E. Wynn-Williams.
@@ -2258,7 +2258,7 @@ context will therefore exist in an adjacent element. Changes to the page
 structure could invalidate the <a data-link-type="dfn" href="#text-fragment-directive" id="ref-for-text-fragment-directive①⓪">text fragment directive</a> since the context and
 match text may no longer appear to be adjacent.</p>
    <div class="example" id="example-735b40dc">
-    <a class="self-link" href="#example-735b40dc"></a> Suppose we wish to craft a URL for the following text: 
+    <a class="self-link" href="#example-735b40dc"></a> Suppose we wish to craft a URL for the following text:
 <pre>&lt;div class="section">HEADER&lt;/div>
 &lt;div class="content">Text to quote&lt;/div>
 </pre>
@@ -2285,7 +2285,7 @@ exists and the text fragment isn’t found.</p>
 changes, invalidating the <a data-link-type="dfn" href="#text-fragment-directive" id="ref-for-text-fragment-directive①③">text fragment directive</a>.</p>
    <div class="example" id="example-5990805b">
     <a class="self-link" href="#example-5990805b"></a> Suppose we wish to craft a URL to
-  https://en.wikipedia.org/wiki/History_of_computing quoting the sentence: 
+  https://en.wikipedia.org/wiki/History_of_computing quoting the sentence:
 <pre>The earliest known tool for use in computation is the Sumerian abacus
 </pre>
     <p>By specifying the section that the text appears in, we ensure that, if the
@@ -2299,7 +2299,7 @@ correct one:</p>
     <a class="self-link" href="#example-0ae51dec"></a> Suppose the user navigates to
   https://en.wikipedia.org/wiki/History_of_computing#Early_computation. They
   now scroll down to the Symbolic Computations section. There, they select a
-  text snippet and choose to create a URL to it: 
+  text snippet and choose to create a URL to it:
 <pre>By the late 1960s, computer systems could perform symbolic algebraic
 manipulations
 </pre>
@@ -2612,57 +2612,65 @@ manipulations
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

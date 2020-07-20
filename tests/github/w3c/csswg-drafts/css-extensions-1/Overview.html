@@ -227,7 +227,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    <p>This specification defines methods for authors to extend and enhance various CSS features.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -327,7 +327,7 @@ on screen, on paper, etc.
    <p>Where there must be no whitespace
 	between <code>:</code> and <a class="production css" data-link-type="type" href="#typedef-extension-name" id="ref-for-typedef-extension-name②">&lt;extension-name></a> or between <code>$</code> and <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-syntax-3/#typedef-ident-token" id="ref-for-typedef-ident-token①">&lt;ident-token></a> in the above definitions.</p>
    <div class="issue" id="issue-4726afee">
-    <a class="self-link" href="#issue-4726afee"></a> Simple things are easy: 
+    <a class="self-link" href="#issue-4726afee"></a> Simple things are easy:
 <pre>@custom-selector :--heading {
   expansion: h1, h2, h3, h4, h5, h6;
 }
@@ -348,7 +348,7 @@ on screen, on paper, etc.
 	and represents a <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/selectors-4/#selectordef-matches" id="ref-for-selectordef-matches">:matches()</a> selector using the provided <a class="production css" data-link-type="type" href="https://drafts.csswg.org/selectors-4/#typedef-selector-list" id="ref-for-typedef-selector-list①">&lt;selector-list></a> as its argument.</p>
    <div class="example" id="example-c8fe672b">
     <a class="self-link" href="#example-c8fe672b"></a> For example, if an author wanted to easily refer to all heading elements in their HTML document,
-		they could create an alias: 
+		they could create an alias:
 <pre>@custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :--heading { /* styles for all headings */ }
@@ -361,7 +361,7 @@ on screen, on paper, etc.
     <a class="self-link" href="#issue-9e18175f"></a> This one’s more complicated than MQs.
 		Brian Kardell came up with a good proposal for evaluating selectors as JS functions that return a boolean,
 		which had decent performance characteristics by specifying the qualities of the element it was based on
-		(which determined when it would be called). 
+		(which determined when it would be called).
 <pre>&lt;script>
 CSS.customSelector.set("_foo",
                      {"predicate": function(el){...},
@@ -387,7 +387,7 @@ CSS.customSelector.set("_foo",
    <h2 class="heading settled" data-level="4" id="custom-property"><span class="secno">4. </span><span class="content"> Custom Properties</span><a class="self-link" href="#custom-property"></a></h2>
    <div class="issue" id="issue-c207e118">
     <a class="self-link" href="#issue-c207e118"></a> Need to more fully support Custom Properties
-		(and eventually remove them from the variable spec entirely, since they’ll be defined here). 
+		(and eventually remove them from the variable spec entirely, since they’ll be defined here).
     <p>By default, custom properties are optimized for use as <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-variables-1/#funcdef-var" id="ref-for-funcdef-var">var()</a> values—<wbr>they inherit,
 		have an empty initial value,
 		don’t do any syntax checking,
@@ -424,16 +424,16 @@ CSS.customSelector.set("_foo",
     <a class="self-link" href="#issue-d6d2d4d8"></a> Interesting possibilities here.
 		Definitely need some way to define custom functions in CSS.
 		This would, for example, let people define whatever color function they want,
-		such as implementing the <a href="http://www.boronine.com/husl/">HUSL</a> color space. 
+		such as implementing the <a href="http://www.boronine.com/husl/">HUSL</a> color space.
     <p>Definitely need a JS interface.
 		What options are needed?</p>
     <p>Call time/frequency:</p>
     <ul>
      <li> Default should probably treat the function as a preprocessor,
 				calling the JS function once per instance in the stylesheet
-				and substituting in the returned value. 
+				and substituting in the returned value.
      <li> Should probably have an option to allow calling per element/instance combo, too.
-				Gets called more as match results change. 
+				Gets called more as match results change.
     </ul>
     <p>We can take some cues from my thoughts on a random() function.
 		It needs per-instance,
@@ -460,7 +460,7 @@ CSS.customSelector.set("_foo",
     <a class="self-link" href="#issue-9061f103"></a> Selectors are made of two pieces:
 		simple selectors,
 		and combinators.
-		We should allow custom combinators too. 
+		We should allow custom combinators too.
     <p>This is JS-only, because it’s transforming elements, not filtering them,
 		and you can’t express any useful transformations in pure CSS.</p>
     <p>You provide a function which,
@@ -509,7 +509,7 @@ CSS.customSelector.set("_foo",
    <div class="issue" id="issue-329c3458">
     <a class="self-link" href="#issue-329c3458"></a> This one’s even less developed,
 		but it would be interesting to allow custom at-rules as well.
-		It’s definitely pure-JS as well. 
+		It’s definitely pure-JS as well.
     <p>Unsure exactly what’s best here.
 		Possibly register a callback per rule,
 		which is called with the prelude/contents of the at-rule?</p>
@@ -537,7 +537,7 @@ CSS.customSelector.set("_foo",
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -550,14 +550,14 @@ CSS.customSelector.set("_foo",
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -608,7 +608,7 @@ CSS.customSelector.set("_foo",
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -624,86 +624,86 @@ CSS.customSelector.set("_foo",
   <aside class="dfn-panel" data-for="term-for-valuea-def-color">
    <a href="https://drafts.csswg.org/css-color-3/#valuea-def-color">https://drafts.csswg.org/css-color-3/#valuea-def-color</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valuea-def-color">4. 
+    <li><a href="#ref-for-valuea-def-color">4.
 Custom Properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-declaration-value">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-declaration-value">https://drafts.csswg.org/css-syntax-3/#typedef-declaration-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-declaration-value">4. 
+    <li><a href="#ref-for-typedef-declaration-value">4.
 Custom Properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-ident-token">
    <a href="https://drafts.csswg.org/css-syntax-3/#typedef-ident-token">https://drafts.csswg.org/css-syntax-3/#typedef-ident-token</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-ident-token">3. 
+    <li><a href="#ref-for-typedef-ident-token">3.
 Custom Selectors</a> <a href="#ref-for-typedef-ident-token①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-length-value">
    <a href="https://drafts.csswg.org/css-values-3/#length-value">https://drafts.csswg.org/css-values-3/#length-value</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-length-value">4. 
+    <li><a href="#ref-for-length-value">4.
 Custom Properties</a> <a href="#ref-for-length-value①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-identifier">
    <a href="https://drafts.csswg.org/css-values-3/#css-identifier">https://drafts.csswg.org/css-values-3/#css-identifier</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-identifier">2. 
+    <li><a href="#ref-for-css-identifier">2.
 Extension Names</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-comma">
    <a href="https://drafts.csswg.org/css-values-4/#mult-comma">https://drafts.csswg.org/css-values-4/#mult-comma</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-comma">3. 
+    <li><a href="#ref-for-mult-comma">3.
 Custom Selectors</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-one-plus">
    <a href="https://drafts.csswg.org/css-values-4/#mult-one-plus">https://drafts.csswg.org/css-values-4/#mult-one-plus</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-one-plus">3. 
+    <li><a href="#ref-for-mult-one-plus">3.
 Custom Selectors</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mult-opt">
    <a href="https://drafts.csswg.org/css-values-4/#mult-opt">https://drafts.csswg.org/css-values-4/#mult-opt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mult-opt">3. 
+    <li><a href="#ref-for-mult-opt">3.
 Custom Selectors</a> <a href="#ref-for-mult-opt①">(2)</a> <a href="#ref-for-mult-opt②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-funcdef-var">
    <a href="https://drafts.csswg.org/css-variables-1/#funcdef-var">https://drafts.csswg.org/css-variables-1/#funcdef-var</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-funcdef-var">4. 
+    <li><a href="#ref-for-funcdef-var">4.
 Custom Properties</a>
-    <li><a href="#ref-for-funcdef-var①">5. 
+    <li><a href="#ref-for-funcdef-var①">5.
 Custom Functions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-selectordef-matches">
    <a href="https://drafts.csswg.org/selectors-4/#selectordef-matches">https://drafts.csswg.org/selectors-4/#selectordef-matches</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-selectordef-matches">3. 
+    <li><a href="#ref-for-selectordef-matches">3.
 Custom Selectors</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-selector-list">
    <a href="https://drafts.csswg.org/selectors-4/#typedef-selector-list">https://drafts.csswg.org/selectors-4/#typedef-selector-list</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-selector-list">3. 
+    <li><a href="#ref-for-typedef-selector-list">3.
 Custom Selectors</a> <a href="#ref-for-typedef-selector-list①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-pseudo-class">
    <a href="https://drafts.csswg.org/selectors-4/#pseudo-class">https://drafts.csswg.org/selectors-4/#pseudo-class</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-pseudo-class">3. 
+    <li><a href="#ref-for-pseudo-class">3.
 Custom Selectors</a>
    </ul>
   </aside>
@@ -767,7 +767,7 @@ Custom Selectors</a>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
    <div class="issue">
-     Simple things are easy: 
+     Simple things are easy:
 <pre>@custom-selector :--heading {
   expansion: h1, h2, h3, h4, h5, h6;
 }
@@ -789,7 +789,7 @@ Custom Selectors</a>
      This one’s more complicated than MQs.
 		Brian Kardell came up with a good proposal for evaluating selectors as JS functions that return a boolean,
 		which had decent performance characteristics by specifying the qualities of the element it was based on
-		(which determined when it would be called). 
+		(which determined when it would be called).
 <pre>&lt;script>
 CSS.customSelector.set("_foo",
                      {"predicate": function(el){...},
@@ -814,7 +814,7 @@ CSS.customSelector.set("_foo",
    <div class="issue"> Fill in. <a href="#issue-cb6e966f"> ↵ </a></div>
    <div class="issue">
      Need to more fully support Custom Properties
-		(and eventually remove them from the variable spec entirely, since they’ll be defined here). 
+		(and eventually remove them from the variable spec entirely, since they’ll be defined here).
     <p>By default, custom properties are optimized for use as <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-variables-1/#funcdef-var">var()</a> values—<wbr>they inherit,
 		have an empty initial value,
 		don’t do any syntax checking,
@@ -851,16 +851,16 @@ CSS.customSelector.set("_foo",
      Interesting possibilities here.
 		Definitely need some way to define custom functions in CSS.
 		This would, for example, let people define whatever color function they want,
-		such as implementing the <a href="http://www.boronine.com/husl/">HUSL</a> color space. 
+		such as implementing the <a href="http://www.boronine.com/husl/">HUSL</a> color space.
     <p>Definitely need a JS interface.
 		What options are needed?</p>
     <p>Call time/frequency:</p>
     <ul>
      <li> Default should probably treat the function as a preprocessor,
 				calling the JS function once per instance in the stylesheet
-				and substituting in the returned value. 
+				and substituting in the returned value.
      <li> Should probably have an option to allow calling per element/instance combo, too.
-				Gets called more as match results change. 
+				Gets called more as match results change.
     </ul>
     <p>We can take some cues from my thoughts on a random() function.
 		It needs per-instance,
@@ -887,7 +887,7 @@ CSS.customSelector.set("_foo",
      Selectors are made of two pieces:
 		simple selectors,
 		and combinators.
-		We should allow custom combinators too. 
+		We should allow custom combinators too.
     <p>This is JS-only, because it’s transforming elements, not filtering them,
 		and you can’t express any useful transformations in pure CSS.</p>
     <p>You provide a function which,
@@ -936,7 +936,7 @@ CSS.customSelector.set("_foo",
    <div class="issue">
      This one’s even less developed,
 		but it would be interesting to allow custom at-rules as well.
-		It’s definitely pure-JS as well. 
+		It’s definitely pure-JS as well.
     <p>Unsure exactly what’s best here.
 		Possibly register a callback per rule,
 		which is called with the prelude/contents of the at-rule?</p>
@@ -953,93 +953,101 @@ CSS.customSelector.set("_foo",
   <aside class="dfn-panel" data-for="typedef-extension-name">
    <b><a href="#typedef-extension-name">#typedef-extension-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-extension-name">2. 
+    <li><a href="#ref-for-typedef-extension-name">2.
 Extension Names</a>
-    <li><a href="#ref-for-typedef-extension-name①">3. 
+    <li><a href="#ref-for-typedef-extension-name①">3.
 Custom Selectors</a> <a href="#ref-for-typedef-extension-name②">(2)</a> <a href="#ref-for-typedef-extension-name③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="custom-selector">
    <b><a href="#custom-selector">#custom-selector</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-custom-selector">3. 
+    <li><a href="#ref-for-custom-selector">3.
 Custom Selectors</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="at-ruledef-custom-selector">
    <b><a href="#at-ruledef-custom-selector">#at-ruledef-custom-selector</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-at-ruledef-custom-selector">3. 
+    <li><a href="#ref-for-at-ruledef-custom-selector">3.
 Custom Selectors</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-custom-selector">
    <b><a href="#typedef-custom-selector">#typedef-custom-selector</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-custom-selector">3. 
+    <li><a href="#ref-for-typedef-custom-selector">3.
 Custom Selectors</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-custom-arg">
    <b><a href="#typedef-custom-arg">#typedef-custom-arg</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-custom-arg">3. 
+    <li><a href="#ref-for-typedef-custom-arg">3.
 Custom Selectors</a> <a href="#ref-for-typedef-custom-arg①">(2)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

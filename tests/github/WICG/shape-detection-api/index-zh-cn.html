@@ -1624,7 +1624,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
    </dl>
    <div class="example" id="example-6b30fc23"><a class="self-link" href="#example-6b30fc23"></a> 人脸识别的实现案例有：<a href="https://developer.android.com/reference/android/media/FaceDetector.html">Android FaceDetector</a>, <a href="https://developer.apple.com/reference/coreimage/cifacefeature?language=objc">Apple’s CIFaceFeature</a> 或者 <a href="https://msdn.microsoft.com/library/windows/apps/windows.media.faceanalysis.facedetector.aspx">Windows 10 FaceDetector</a>。 </div>
    <div class="note" role="note">
-     Consider adding attributes such as, e.g.: 
+     Consider adding attributes such as, e.g.:
 <pre>[SameObject] readonly attribute unsigned long id;
 [SameObject] readonly attribute FrozenArray&lt;Landmark>? landmarks;
 </pre>
@@ -1688,7 +1688,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
    <h3 class="heading settled" data-level="3.1" id="platform-support-for-a-given-detector"><span class="secno">3.1. </span><span class="content">图形识别器的平台支持</span><a class="self-link" href="#platform-support-for-a-given-detector"></a></h3>
    <div class="note" role="note"> 以下的示例同样可以在<a href="https://codepen.io/miguelao/pen/PbYpMv?editors=0010">这个codepen</a>中找到微调的版本。 </div>
    <div class="example" id="example-ab8de879">
-    <a class="self-link" href="#example-ab8de879"></a> 
+    <a class="self-link" href="#example-ab8de879"></a>
 <pre class="highlight"><c- k>if</c-> <c- p>(</c->window<c- p>.</c->FaceDetector <c- o>==</c-> <c- kc>undefined</c-><c- p>)</c-> <c- p>{</c->
   console<c- p>.</c->error<c- p>(</c-><c- t>'Face Detection not supported on this platform'</c-><c- p>);</c->
 <c- p>}</c->
@@ -1703,7 +1703,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
    <h3 class="heading settled" data-level="3.2" id="face-detection"><span class="secno">3.2. </span><span class="content">人脸识别</span><a class="self-link" href="#face-detection"></a></h3>
    <div class="note" role="note"> 以下的示例同样可以在<a href="https://codepen.io/miguelao/pen/YGrYAm?editors=0010">这个codepen</a>(或者<a href="https://codepen.io/miguelao/pen/ORYbbm?editors=0010">这个有边界框覆盖的图像示例中</a>)找到。 </div>
    <div class="example" id="example-0c908620">
-    <a class="self-link" href="#example-0c908620"></a> 
+    <a class="self-link" href="#example-0c908620"></a>
 <pre class="highlight"><c- a>let</c-> faceDetector <c- o>=</c-> <c- k>new</c-> FaceDetector<c- p>({</c->fastMode<c- o>:</c-> <c- kc>true</c-><c- p>,</c-> maxDetectedFaces<c- o>:</c-> <c- mi>1</c-><c- p>});</c->
 <c- c1>// Assuming |theImage| is e.g. a &lt;img> content, or a Blob.</c->
 
@@ -1721,7 +1721,7 @@ faceDetector<c- p>.</c->detect<c- p>(</c->theImage<c- p>)</c->
    <h3 class="heading settled" data-level="3.3" id="barcode-detection"><span class="secno">3.3. </span><span class="content">条形码识别</span><a class="self-link" href="#barcode-detection"></a></h3>
    <div class="note" role="note"> 以下的示例同样可以在这个<a href="https://codepen.io/miguelao/pen/ZBBxOM?editors=0010">这个codepen</a>(或者<a href="https://codepen.io/miguelao/pen/bBWOzM?editors=0010">这个覆盖了边界框的图像示例中</a>)找到。 </div>
    <div class="example" id="example-0be05266">
-    <a class="self-link" href="#example-0be05266"></a> 
+    <a class="self-link" href="#example-0be05266"></a>
 <pre class="highlight"><c- a>let</c-> barcodeDetector <c- o>=</c-> <c- k>new</c-> BarcodeDetector<c- p>();</c->
 <c- c1>// Assuming |theImage| is e.g. a &lt;img> content, or a Blob.</c->
 
@@ -1740,7 +1740,7 @@ barcodeDetector<c- p>.</c->detect<c- p>(</c->theImage<c- p>)</c->
    <h3 class="heading settled" data-level="3.4" id="text-detection"><span class="secno">3.4. </span><span class="content">文本识别</span><a class="self-link" href="#text-detection"></a></h3>
    <div class="note" role="note"> 以下的示例同样可以在<a href="http://s.codepen.io/xianglu_google/debug/pNGBKv">这个codepen</a> (或者<a href="https://codepen.io/miguelao/pen/VPMxrj">这个集成了视频捕捉功能的示例</a>)找到。 </div>
    <div class="example" id="example-4b69a955">
-    <a class="self-link" href="#example-4b69a955"></a> 
+    <a class="self-link" href="#example-4b69a955"></a>
 <pre class="highlight"><c- a>let</c-> textDetector <c- o>=</c-> <c- k>new</c-> TextDetector<c- p>();</c->
 <c- c1>// Assuming |theImage| is e.g. a &lt;img> content, or a Blob.</c->
 
@@ -2226,57 +2226,65 @@ textDetector<c- p>.</c->detect<c- p>(</c->theImage<c- p>)</c->
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>

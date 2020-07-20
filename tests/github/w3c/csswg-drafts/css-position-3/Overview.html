@@ -380,7 +380,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>Other kinds of layout, such as tables, "floating" boxes, ruby annotations, grid layouts, columns and basic handling of normal "flow" content, are described in other modules. Also, the layout of text inside each line is defined elsewhere.</p>
     <a href="https://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, etc. 
+on screen, on paper, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -500,7 +500,7 @@ on screen, on paper, etc.
   </nav>
   <main>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content"> Introduction</span><a class="self-link" href="#intro"></a></h2>
-    <em>This section is not normative.</em> 
+    <em>This section is not normative.</em>
    <p>CSS assumes the document layout is modeled as a tree of elements. The unique
   element that has no parent is called the root element. This module describes
   how any of the elements from the tree of elements can be arranged independent
@@ -512,31 +512,31 @@ on screen, on paper, etc.
   module further explains and extends the positioning scheme. The layout of
   these boxes is governed by:</p>
    <ul>
-    <li> <a href="https://www.w3.org/TR/CSS2/box.html#box-dimensions">box dimensions</a> and <a href="https://www.w3.org/TR/CSS2/visuren.html#box-gen">type</a>. 
-    <li> positioning scheme (<a data-link-type="dfn" href="#normal-flow" id="ref-for-normal-flow">normal flow</a>, float, and absolute positioning). 
-    <li> relationships between elements in the <a href="https://www.w3.org/TR/CSS2/conform.html#doctree">document tree</a>. 
-    <li> external information (e.g., viewport size, intrinsic dimensions of images, etc.). 
+    <li> <a href="https://www.w3.org/TR/CSS2/box.html#box-dimensions">box dimensions</a> and <a href="https://www.w3.org/TR/CSS2/visuren.html#box-gen">type</a>.
+    <li> positioning scheme (<a data-link-type="dfn" href="#normal-flow" id="ref-for-normal-flow">normal flow</a>, float, and absolute positioning).
+    <li> relationships between elements in the <a href="https://www.w3.org/TR/CSS2/conform.html#doctree">document tree</a>.
+    <li> external information (e.g., viewport size, intrinsic dimensions of images, etc.).
    </ul>
    <p>The properties defined in this module apply to both continuous media and paged
   media.</p>
    <h3 class="heading settled" data-level="1.1" id="placement"><span class="secno">1.1. </span><span class="content"> Module Interactions</span><a class="self-link" href="#placement"></a></h3>
    <p>This module replaced and extends the positioning scheme features defined in <a data-link-type="biblio" href="#biblio-css2">[CSS2]</a> sections:</p>
    <ul>
-    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#viewport">9.1.1 The viewport</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#containing-block">9.1.2 Containing blocks</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#positioning-scheme">9.3 Positioning schemes</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#relative-positioning">9.4.3 Relative positioning</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#absolute-positioning">9.6 Absolute positioning</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#dis-pos-flo">9.7 Relationships between display, position, and float</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#comparison">9.8 Comparison of normal flow, floats, and absolute positioning</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#layers">9.9 Layered presentation</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#containing-block-details">10.1 Definition of "containing block"</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#abs-non-replaced-width">10.3.7 Absolutely positioned, non-replaced elements</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#abs-replaced-width">10.3.8 Absolutely positioned, replaced elements</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#abs-non-replaced-height">10.6.4 Absolutely positioned, non-replaced elements</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#abs-replaced-height">10.6.5 Absolutely positioned replaced elements</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#root-height">10.6.7 Auto heights for block formatting context roots</a> 
-    <li> <a href="https://www.w3.org/TR/CSS2/zindex.html">Appendix E. Elaborate description of Stacking Contexts</a> 
+    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#viewport">9.1.1 The viewport</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#containing-block">9.1.2 Containing blocks</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#positioning-scheme">9.3 Positioning schemes</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#relative-positioning">9.4.3 Relative positioning</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#absolute-positioning">9.6 Absolute positioning</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#dis-pos-flo">9.7 Relationships between display, position, and float</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#comparison">9.8 Comparison of normal flow, floats, and absolute positioning</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visuren.html#layers">9.9 Layered presentation</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#containing-block-details">10.1 Definition of "containing block"</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#abs-non-replaced-width">10.3.7 Absolutely positioned, non-replaced elements</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#abs-replaced-width">10.3.8 Absolutely positioned, replaced elements</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#abs-non-replaced-height">10.6.4 Absolutely positioned, non-replaced elements</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#abs-replaced-height">10.6.5 Absolutely positioned replaced elements</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/visudet.html#root-height">10.6.7 Auto heights for block formatting context roots</a>
+    <li> <a href="https://www.w3.org/TR/CSS2/zindex.html">Appendix E. Elaborate description of Stacking Contexts</a>
    </ul>
    <h3 class="heading settled" data-level="1.2" id="values"><span class="secno">1.2. </span><span class="content"> Values</span><a class="self-link" href="#values"></a></h3>
    <p>This specification follows the <a href="https://www.w3.org/TR/CSS21/about.html#property-defs">CSS property definition conventions</a> from <a data-link-type="biblio" href="#biblio-css2">[CSS2]</a>.
@@ -572,32 +572,32 @@ on screen, on paper, etc.
   in the Box Model <a data-link-type="biblio" href="#biblio-css3box">[CSS3BOX]</a>. The containing block of a <a class="css" data-link-type="maybe" href="#valdef-position-sticky" id="ref-for-valdef-position-sticky">sticky</a> element is the same as for a <span class="css" id="ref-for-valdef-position-relative①">relative</span> element. For <a class="css" data-link-type="maybe" href="#valdef-position-fixed" id="ref-for-valdef-position-fixed">fixed</a> and <a class="css" data-link-type="maybe" href="#valdef-position-absolute" id="ref-for-valdef-position-absolute">absolute</a>, it is defined as follows:</p>
    <ol>
     <li> If the element has <a class="css" data-link-type="propdesc" href="#propdef-position" id="ref-for-propdef-position">position: fixed</a>, the containing block is established by the <a data-link-type="dfn" href="#viewport" id="ref-for-viewport">viewport</a> in the case of continuous media or the page area in
-    the case of paged media. 
+    the case of paged media.
     <li>
       If the element has <a class="css" data-link-type="propdesc" href="#propdef-position" id="ref-for-propdef-position①">position: absolute</a>,
-    the containing block is established by the nearest ancestor with a <span class="property" id="ref-for-propdef-position②">position</span> other than <a class="css" data-link-type="maybe" href="#valdef-position-static" id="ref-for-valdef-position-static①">static</a>, in the following way: 
+    the containing block is established by the nearest ancestor with a <span class="property" id="ref-for-propdef-position②">position</span> other than <a class="css" data-link-type="maybe" href="#valdef-position-static" id="ref-for-valdef-position-static①">static</a>, in the following way:
      <ol>
       <li> In the case that the ancestor is block-level, the containing block is formed
-      by the padding edge of the ancestor. 
+      by the padding edge of the ancestor.
       <li>
         In the case that the ancestor is inline-level, the containing block depends
-      on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction">direction</a> property of the ancestor: 
+      on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction">direction</a> property of the ancestor:
        <ol>
         <li> If the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction①">direction</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr" id="ref-for-valdef-direction-ltr">ltr</a>, the top and left of the containing
           block are the top and left content edges of the first box generated
           by the ancestor, and the bottom and right are the bottom and right
-          content edges of the last box of the ancestor. 
+          content edges of the last box of the ancestor.
         <li>
           If the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction②">direction</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl" id="ref-for-valdef-direction-rtl">rtl</a>, the top and right are the
         top and right edges of the first box generated by the ancestor, and
         the bottom and left are the bottom and left content edges of the
-        last box of the ancestor. 
+        last box of the ancestor.
          <p class="note" role="note"> Note, in some cases when a line wraps it may seem as if the left
           and right positions are swapped. </p>
        </ol>
      </ol>
     <li> If there is no such ancestor, the containing block is the <a data-link-type="dfn" href="https://drafts.csswg.org/css-display-3/#initial-containing-block" id="ref-for-initial-containing-block">initial
-    containing block</a>. 
+    containing block</a>.
    </ol>
    <p>In paged media, an absolutely positioned element is positioned relative to its
   containing block ignoring any page breaks (as if the document were continuous). The
@@ -613,7 +613,7 @@ on screen, on paper, etc.
    <p class="note" role="note"> Note, a block-level element that is split over several pages may have a different width
   on each page and that there may be device-specific limits. </p>
    <div class="example" id="example-7f074eae">
-    <a class="self-link" href="#example-7f074eae"></a> 
+    <a class="self-link" href="#example-7f074eae"></a>
     <p>With no positioning, the containing blocks (C.B.) in the following document:</p>
 <pre><code class="html">&lt;!DOCTYPE html>
 &lt;html>
@@ -633,7 +633,7 @@ on screen, on paper, etc.
     <table class="cb-example-table">
      <tbody>
       <tr>
-       <th>For box generated by 
+       <th>For box generated by
        <th>C.B. is established by
       <tr>
        <td>html
@@ -710,13 +710,13 @@ on screen, on paper, etc.
    <p>In CSS, a box may be laid out according to three positioning schemes:</p>
    <ol>
     <li> Normal flow<br> In CSS, <a data-link-type="dfn" href="#normal-flow" id="ref-for-normal-flow①">normal flow</a> includes <a href="https://www.w3.org/TR/CSS2/visuren.html#block-formatting">block formatting</a> of block-level boxes, <a href="https://www.w3.org/TR/CSS2/visuren.html#inline-formatting">inline formatting</a> of inline-level boxes,
-    and <a data-link-type="dfn" href="https://drafts.csswg.org/css2/visuren.html#x34" id="ref-for-x34">relative</a> and <a data-link-type="dfn" href="#sticky-position" id="ref-for-sticky-position">sticky</a> positioning of block-level and inline-level boxes. 
+    and <a data-link-type="dfn" href="https://drafts.csswg.org/css2/visuren.html#x34" id="ref-for-x34">relative</a> and <a data-link-type="dfn" href="#sticky-position" id="ref-for-sticky-position">sticky</a> positioning of block-level and inline-level boxes.
     <li> Floats<br> In the <a data-link-type="dfn" href="#float" id="ref-for-float">float</a> model, a box is first laid out according to the <a data-link-type="dfn" href="#normal-flow" id="ref-for-normal-flow②">normal flow</a>, then taken
     out of the flow and positioned, typically to the left or right. Content may flow
-    along the side of a <span id="ref-for-float①">float</span>. 
+    along the side of a <span id="ref-for-float①">float</span>.
     <li> Absolute positioning<br> In the absolute positioning model, a box is removed from the <span>normal
     flow</span> entirely (it has no impact on later siblings) and assigned a
-     position with respect to a <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block">containing block</a>. 
+     position with respect to a <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block">containing block</a>.
    </ol>
    <p>An element is called <em>out-of-flow</em> if it is <a data-link-type="dfn" href="#float" id="ref-for-float②">floated</a>, absolutely positioned, or is the root element. An element is called <em>in-flow</em> if it is not out-of-flow. The <em>flow of an element</em> A is the set consisting of A and all in-flow elements whose nearest
   out-of-flow ancestor is A.</p>
@@ -749,7 +749,7 @@ on screen, on paper, etc.
   If <span class="property" id="ref-for-propdef-direction④">direction</span> of the containing block is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl" id="ref-for-valdef-direction-rtl①">rtl</a>, <span class="property" id="ref-for-propdef-right⑨">right</span> wins and <span class="property" id="ref-for-propdef-left⑨">left</span> is
   ignored.</p>
    <div class="example" id="example-db1cdd72">
-    <a class="self-link" href="#example-db1cdd72"></a> 
+    <a class="self-link" href="#example-db1cdd72"></a>
     <p>The following three rules are equivalent:</p>
 <pre><code class="css">div.a8 { position: relative; direction: ltr; left: -1em; right: auto }
 div.a8 { position: relative; direction: ltr; left: auto; right: 1em }
@@ -801,27 +801,27 @@ div.a8 { position: relative; direction: ltr; left: -1em; right: 5em }
       A rectangle is computed relative to the containing block of the stickily
   positioned element, by insetting its flow box rectangle on each side by offsets
   computed from the <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left①②">left</a>, <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right①②">right</a>, <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top⑨">top</a> and <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom①⓪">bottom</a> properties of the stickily
-  positioned element. 
+  positioned element.
      <p class="issue" id="issue-6be9cee7"><a class="self-link" href="#issue-6be9cee7"></a> Say what happens if this rectangle is empty </p>
     <li> The intersection is taken between the resulting rectangle, and the containing
   block of the stickily positioned element. The result, termed the the <em>sticky-constraint rectangle</em>, is a rectangle used to constrain the
-  location of the stickily positioned element. 
+  location of the stickily positioned element.
     <li> If the stickily positioned element’s <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top①⓪">top</a> style is not <span class="css">auto</span>, and the stickily
   positioned element projects above the top of the <em>sticky-constraint
   rectangle</em>, the stickily positioned element is moved down until it is fully
-  contained in the <em>sticky-constraint rectangle</em>. 
+  contained in the <em>sticky-constraint rectangle</em>.
     <li> If the stickily positioned element’s <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom①①">bottom</a> style is not <span class="css">auto</span>, and the stickily
   positioned element projects below the bottom of the <em>sticky-constraint
   rectangle</em>, the stickily positioned element is moved up until it is fully
-  contained in the <em>sticky-constraint rectangle</em>. 
+  contained in the <em>sticky-constraint rectangle</em>.
     <li> If the stickily positioned element’s <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left①③">left</a> style is not <span class="css">auto</span>, and the stickily
   positioned element projects outside the left of the <em>sticky-constraint
   rectangle</em>, the stickily positioned element is moved right until it is fully
-  contained in the <em>sticky-constraint rectangle</em>. 
+  contained in the <em>sticky-constraint rectangle</em>.
     <li> If the stickily positioned element’s <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right①③">right</a> style is not <span class="css">auto</span>, and the stickily
   positioned element projects outside the right of the <em>sticky-constraint
   rectangle</em>, the stickily positioned element is moved left until it is fully
-  contained in the <em>sticky-constraint rectangle</em>. 
+  contained in the <em>sticky-constraint rectangle</em>.
    </ol>
    <p>When computing containment of the stickily positioned element within its
   containing block, margins on the stickily positioned element are taken into
@@ -874,10 +874,10 @@ div.a8 { position: relative; direction: ltr; left: -1em; right: 5em }
   fixed position box that are not visible in the <span>initial containing
   block</span> will not print.</p>
    <div class="example" id="example-d19e4e00">
-    <a class="self-link" href="#example-d19e4e00"></a> 
+    <a class="self-link" href="#example-d19e4e00"></a>
     <p>Authors may use fixed positioning to create the following presentation:</p>
     <figure>
-      <img alt="Example of frame layout" src="images/frame.png"> 
+      <img alt="Example of frame layout" src="images/frame.png">
      <figcaption> A page layout with a static header and footer at the top and bottom,
       a sidebar to one side,
       and main content filling the remaining center space. </figcaption>
@@ -946,36 +946,36 @@ div.a8 { position: relative; direction: ltr; left: -1em; right: 5em }
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-position">position</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">static <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> relative <span id="ref-for-comb-one①">|</span> absolute <span id="ref-for-comb-one②">|</span> sticky <span id="ref-for-comb-one③">|</span> fixed 
+      <td class="prod">static <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> relative <span id="ref-for-comb-one①">|</span> absolute <span id="ref-for-comb-one②">|</span> sticky <span id="ref-for-comb-one③">|</span> fixed
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>static 
+      <td>static
      <tr>
       <th>Applies to:
-      <td>all elements except table-column-group and table-column 
+      <td>all elements except table-column-group and table-column
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>specified keyword 
+      <td>specified keyword
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>discrete 
+      <td>discrete
    </table>
    <p>The values of this property have the following meanings:</p>
    <dl>
     <dt><dfn class="dfn-paneled css" data-dfn-for="position" data-dfn-type="value" data-export id="valdef-position-static">static</dfn>
-    <dd> The box is a normal box, laid out according to the <a data-link-type="dfn" href="#normal-flow" id="ref-for-normal-flow⑨">normal flow</a>. The <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top①②">top</a>, <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right①④">right</a>, <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom①③">bottom</a>, and <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left①④">left</a> properties do not apply. 
+    <dd> The box is a normal box, laid out according to the <a data-link-type="dfn" href="#normal-flow" id="ref-for-normal-flow⑨">normal flow</a>. The <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top①②">top</a>, <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right①④">right</a>, <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom①③">bottom</a>, and <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left①④">left</a> properties do not apply.
     <dt><dfn class="dfn-paneled css" data-dfn-for="position" data-dfn-type="value" data-export id="valdef-position-relative">relative</dfn>
     <dd>
       The box’s position is calculated according to the <a data-link-type="dfn" href="#normal-flow" id="ref-for-normal-flow①⓪">normal flow</a> (this
@@ -983,31 +983,31 @@ div.a8 { position: relative; direction: ltr; left: -1em; right: 5em }
     to its normal position and in all cases, including table elements, does not affect
     the position of any following boxes. When a box B is relatively positioned, the
     position of the following box is calculated as though B were not offset. The effect
-    of <a class="css" data-link-type="propdesc" href="#propdef-position" id="ref-for-propdef-position⑥">position: relative</a> on table elements is defined as follows: 
+    of <a class="css" data-link-type="propdesc" href="#propdef-position" id="ref-for-propdef-position⑥">position: relative</a> on table elements is defined as follows:
      <ul>
       <li> table-row-group, table-header-group, table-footer-group and table-row offset
       relative to its normal position within the table. If table-cells span
       multiple rows, only the cells originating in the <a data-link-type="dfn" href="#relative-position" id="ref-for-relative-position①">relative positioned</a> row are
-      offset. 
+      offset.
       <li> table-column-group, table-column do not offset the respective column and has
-      no visual affect when <a class="property" data-link-type="propdesc" href="#propdef-position" id="ref-for-propdef-position⑦">position</a>: <a class="css" data-link-type="maybe" href="#valdef-position-relative" id="ref-for-valdef-position-relative②">relative</a> is applied. 
+      no visual affect when <a class="property" data-link-type="propdesc" href="#propdef-position" id="ref-for-propdef-position⑦">position</a>: <a class="css" data-link-type="maybe" href="#valdef-position-relative" id="ref-for-valdef-position-relative②">relative</a> is applied.
       <li> table-caption and table-cell offset relative to its normal position within
       the table. If a table cell spans multiple columns or rows the full spanned
-      cell is offset. 
+      cell is offset.
      </ul>
     <dt><dfn class="dfn-paneled css" data-dfn-for="position" data-dfn-type="value" data-export id="valdef-position-absolute">absolute</dfn>
     <dd> The box’s position (and possibly size) is specified with the <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top①③">top</a>, <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right①⑤">right</a>, <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom①④">bottom</a>, and <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left①⑤">left</a> properties. These properties specify offsets with respect
     to the box’s <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block①①">containing block</a>. Absolutely positioned boxes
     are taken out of the normal flow. This means they have no impact on the layout
     of later siblings. Though absolutely positioned boxes may have margins, those
-    margins do not <a href="https://www.w3.org/TR/CSS2/box.html#collapsing-margins"> collapse</a> with any other margins. 
+    margins do not <a href="https://www.w3.org/TR/CSS2/box.html#collapsing-margins"> collapse</a> with any other margins.
     <dt><dfn class="dfn-paneled css" data-dfn-for="position" data-dfn-type="value" data-export id="valdef-position-sticky">sticky</dfn>
     <dd> The box’s position is calculated according to the <a data-link-type="dfn" href="#normal-flow" id="ref-for-normal-flow①②">normal flow</a> (this is called the position in <span id="ref-for-normal-flow①③">normal flow</span>). Then the box is offset
     relative to its flow root and containing block and in all cases, including
     table elements, does not affect the position of any following boxes. When a
     box B is stickily positioned, the position of the following box is calculated
     as though B were not offset. The effect of <a class="property" data-link-type="propdesc" href="#propdef-position" id="ref-for-propdef-position⑧">position</a>: <a class="css" data-link-type="maybe" href="#valdef-position-sticky" id="ref-for-valdef-position-sticky①">sticky</a> on table
-    elements is the same as for <span class="property" id="ref-for-propdef-position⑨">position</span>: <a class="css" data-link-type="maybe" href="#valdef-position-relative" id="ref-for-valdef-position-relative③">relative</a> 
+    elements is the same as for <span class="property" id="ref-for-propdef-position⑨">position</span>: <a class="css" data-link-type="maybe" href="#valdef-position-relative" id="ref-for-valdef-position-relative③">relative</a>
     <dt><dfn class="dfn-paneled css" data-dfn-for="position" data-dfn-type="value" data-export id="valdef-position-fixed">fixed</dfn>
     <dd>
       The box’s position is calculated according to the "absolute" model, but
@@ -1019,9 +1019,9 @@ div.a8 { position: relative; direction: ltr; left: -1em; right: 5em }
     is fixed with respect to the page box, even if the page is seen through a <span id="ref-for-viewport③">viewport</span> (in the case of a print-preview, for example). For other media
     types, the presentation is undefined. Authors may wish to specify <a class="css" data-link-type="maybe" href="#valdef-position-fixed" id="ref-for-valdef-position-fixed②">fixed</a> in a media-dependent way. For instance, an author may want a box to remain at
     the top of the <span id="ref-for-viewport④">viewport</span> on the screen, but not at the top of each printed
-    page. The two specifications may be separated by using an <a href="https://www.w3.org/TR/CSS2/media.html#at-media-rule">'@media'</a> rule, as in: 
+    page. The two specifications may be separated by using an <a href="https://www.w3.org/TR/CSS2/media.html#at-media-rule">'@media'</a> rule, as in:
      <div class="example" id="example-c2d4a79f">
-      <a class="self-link" href="#example-c2d4a79f"></a> 
+      <a class="self-link" href="#example-c2d4a79f"></a>
 <pre><code class="css">@media screen {
     h1#first { position: fixed }
 }
@@ -1030,7 +1030,7 @@ div.a8 { position: relative; direction: ltr; left: -1em; right: 5em }
 }
 </code></pre>
      </div>
-      User agents must not paginate the content of fixed boxes. 
+      User agents must not paginate the content of fixed boxes.
      <p class="note" role="note"> Note that user agents may print invisible content in other ways. See <a href="https://www.w3.org/TR/CSS2/page.html#outside-page-box">"Content outside the page box"</a>. </p>
    </dl>
    <p>In previous versions of CSS user agents may treat position <a class="css" data-link-type="maybe" href="#valdef-position-fixed" id="ref-for-valdef-position-fixed③">fixed</a> as <a class="css" data-link-type="maybe" href="#valdef-position-static" id="ref-for-valdef-position-static②">static</a> on the root element. This specification removes that option and it is now required
@@ -1047,29 +1047,29 @@ div.a8 { position: relative; direction: ltr; left: -1em; right: 5em }
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-top">top</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one④">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage">&lt;length-percentage></a> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one④">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage">&lt;length-percentage></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>positioned elements 
+      <td>positioned elements
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>refer to height of <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block①②">containing block</a> 
+      <td>refer to height of <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block①②">containing block</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto">auto</a> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①">&lt;length-percentage></a> value 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto">auto</a> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage①">&lt;length-percentage></a> value
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>length or percentage
-by computed value type 
+by computed value type
    </table>
    <p>This property specifies how far an absolutely positioned box’s top margin
   edge is offset below the top edge of the box’s <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block①③">containing block</a>.</p>
@@ -1088,29 +1088,29 @@ by computed value type
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-right">right</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑤">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage②">&lt;length-percentage></a> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑤">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage②">&lt;length-percentage></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>positioned elements 
+      <td>positioned elements
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>refer to height of <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block①⑤">containing block</a> 
+      <td>refer to height of <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block①⑤">containing block</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①">auto</a> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage③">&lt;length-percentage></a> value 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①">auto</a> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage③">&lt;length-percentage></a> value
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>length or percentage
-by computed value type 
+by computed value type
    </table>
    <p>Similar to <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top①⑤">top</a>, but specifies how far a box’s right margin edge is offset
   to the left of the right edge of the box’s <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block①⑥">containing block</a>.</p>
@@ -1129,29 +1129,29 @@ by computed value type
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-bottom">bottom</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage④">&lt;length-percentage></a> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑥">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage④">&lt;length-percentage></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>positioned elements 
+      <td>positioned elements
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>refer to height of <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block①⑧">containing block</a> 
+      <td>refer to height of <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block①⑧">containing block</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto②">auto</a> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑤">&lt;length-percentage></a> value 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto②">auto</a> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑤">&lt;length-percentage></a> value
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>length or percentage
-by computed value type 
+by computed value type
    </table>
    <p>Similar to <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top①⑥">top</a>, but specifies how far a box’s bottom margin edge is offset
   above the bottom edge of the box’s <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block①⑨">containing block</a>.</p>
@@ -1170,29 +1170,29 @@ by computed value type
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-left">left</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑦">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑥">&lt;length-percentage></a> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑦">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑥">&lt;length-percentage></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>positioned elements 
+      <td>positioned elements
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>refer to height of <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block②①">containing block</a> 
+      <td>refer to height of <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block②①">containing block</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto③">auto</a> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑦">&lt;length-percentage></a> value 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto③">auto</a> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑦">&lt;length-percentage></a> value
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>length or percentage
-by computed value type 
+by computed value type
    </table>
    <p>Similar to <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top①⑦">top</a>, but specifies how far a box’s left margin edge is offset
   to the right of the left edge of the box’s <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block②②">containing block</a>.</p>
@@ -1206,20 +1206,20 @@ by computed value type
   the padding edge of that element.</p>
    <p>The values for the four properties have the following meanings:</p>
    <dl>
-    <dt><dfn class="css" data-dfn-for="top,right,bottom,left, offset-start, offset-end, offset-before, offset-after" data-dfn-type="value" data-export id="valdef-top-length">&lt;length><a class="self-link" href="#valdef-top-length"></a></dfn> 
+    <dt><dfn class="css" data-dfn-for="top,right,bottom,left, offset-start, offset-end, offset-before, offset-after" data-dfn-type="value" data-export id="valdef-top-length">&lt;length><a class="self-link" href="#valdef-top-length"></a></dfn>
     <dd> The offset is a fixed distance from the reference edge. Negative values are
-    allowed. 
-    <dt><dfn class="css" data-dfn-for="top,right,bottom,left, offset-start, offset-end, offset-before, offset-after" data-dfn-type="value" data-export id="valdef-top-percentage">&lt;percentage><a class="self-link" href="#valdef-top-percentage"></a></dfn> 
+    allowed.
+    <dt><dfn class="css" data-dfn-for="top,right,bottom,left, offset-start, offset-end, offset-before, offset-after" data-dfn-type="value" data-export id="valdef-top-percentage">&lt;percentage><a class="self-link" href="#valdef-top-percentage"></a></dfn>
     <dd> The offset is a percentage of the <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block②④">containing block’s</a> width (for <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left①⑦">left</a> or <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right①⑦">right</a>)
     or height (for <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top①⑧">top</a> and <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom①⑥">bottom</a>).
     For stickily positioned elements, the offset is a percentage of the flow root’s
     width (for <span class="property" id="ref-for-propdef-left①⑧">left</span> or <span class="property" id="ref-for-propdef-right①⑧">right</span>) or height (for <span class="property" id="ref-for-propdef-top①⑨">top</span> or <span class="property" id="ref-for-propdef-bottom①⑦">bottom</span>).
-    Negative values are allowed. 
+    Negative values are allowed.
     <dt><dfn class="dfn-paneled css" data-dfn-for="top,right,bottom,left, offset-start, offset-end, offset-before, offset-after" data-dfn-type="value" data-export id="valdef-top-auto">auto</dfn>
     <dd> For non-replaced elements, the effect of this value depends on which of related
     properties have the value <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto④">auto</a> as well. See the sections on the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width">width</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height">height</a> of absolutely positioned, non-replaced elements for details.
     For replaced elements, the effect of this value depends only on the intrinsic
-    dimensions of the replaced content. See the sections on the <span class="property" id="ref-for-propdef-width①">width</span> and <span class="property" id="ref-for-propdef-height①">height</span> of absolutely positioned, replaced elements for details. 
+    dimensions of the replaced content. See the sections on the <span class="property" id="ref-for-propdef-width①">width</span> and <span class="property" id="ref-for-propdef-height①">height</span> of absolutely positioned, replaced elements for details.
    </dl>
    <p class="note" role="note"> Note, for fixed positioned elements using large values or
     negative values may easily move elements outside the <a data-link-type="dfn" href="#viewport" id="ref-for-viewport⑤">viewport</a> and make the
@@ -1241,29 +1241,29 @@ by computed value type
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-inset-before">inset-before</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-inset-after">inset-after</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-inset-start">inset-start</dfn>, <dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-inset-end">inset-end</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑧">&lt;length-percentage></a> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑧">|</a> <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑧">&lt;length-percentage></a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>positioned elements 
+      <td>positioned elements
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>refer to height of <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block②⑥">containing block</a> 
+      <td>refer to height of <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block②⑥">containing block</a>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <span class="css">auto</span> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑨">&lt;length-percentage></a> value 
+      <td>the keyword <span class="css">auto</span> or a computed <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage" id="ref-for-typedef-length-percentage⑨">&lt;length-percentage></a> value
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
       <td>length or percentage
-by computed value type 
+by computed value type
    </table>
    <p>For an absolutely positioned box this property specifies how far the corresponding
   margin edge is offset from the corresponding physical reference edge of the box’s <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block②⑦">containing block</a>.</p>
@@ -1357,15 +1357,15 @@ by computed value type
   one of the following six rules that apply.</p>
    <ol>
     <li> If <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left②③">left</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width④">width</a> are <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto⑦">auto</a> and <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right②③">right</a> is not <span class="css" id="ref-for-valdef-top-auto⑧">auto</span>, then the width is
-    shrink-to-fit. Then solve for <span class="property" id="ref-for-propdef-left②④">left</span>. 
+    shrink-to-fit. Then solve for <span class="property" id="ref-for-propdef-left②④">left</span>.
     <li> If <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left②⑤">left</a> and <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right②④">right</a> are <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto⑨">auto</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑤">width</a> is not <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto" id="ref-for-valdef-width-auto">auto</a>, then if the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction①⑥">direction</a> property of the element establishing the static-position <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block③①">containing block</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr" id="ref-for-valdef-direction-ltr⑤">ltr</a> set <span class="property" id="ref-for-propdef-left②⑥">left</span> to the static-position,
     otherwise set <span class="property" id="ref-for-propdef-right②⑤">right</span> to the static-position. Then solve for <span class="property" id="ref-for-propdef-left②⑦">left</span> (if 'direction
-    is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl" id="ref-for-valdef-direction-rtl④">rtl</a>) or <span class="property" id="ref-for-propdef-right②⑥">right</span> (if <span class="property" id="ref-for-propdef-direction①⑦">direction</span> is <span class="css" id="ref-for-valdef-direction-ltr⑥">ltr</span>). 
+    is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl" id="ref-for-valdef-direction-rtl④">rtl</a>) or <span class="property" id="ref-for-propdef-right②⑥">right</span> (if <span class="property" id="ref-for-propdef-direction①⑦">direction</span> is <span class="css" id="ref-for-valdef-direction-ltr⑥">ltr</span>).
     <li> If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑥">width</a> and <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right②⑦">right</a> are <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto" id="ref-for-valdef-width-auto①">auto</a> and <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left②⑧">left</a> is not <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①⓪">auto</a>, then the width is
-    shrink-to-fit. Then solve for <span class="property" id="ref-for-propdef-right②⑧">right</span>. 
-    <li> If <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left②⑨">left</a> is <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①①">auto</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑦">width</a> and <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right②⑨">right</a> are not <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto" id="ref-for-valdef-width-auto②">auto</a>, then solve for <span class="property" id="ref-for-propdef-left③⓪">left</span>. 
-    <li> If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑧">width</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto" id="ref-for-valdef-width-auto③">auto</a>, <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③①">left</a> and <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③⓪">right</a> are not <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①②">auto</a>, then solve for <span class="property" id="ref-for-propdef-width⑨">width</span>. 
-    <li> If <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③①">right</a> is <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①③">auto</a>, <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③②">left</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①⓪">width</a> are not <span class="css" id="ref-for-valdef-top-auto①④">auto</span>, then solve for <span class="property" id="ref-for-propdef-right③②">right</span>. 
+    shrink-to-fit. Then solve for <span class="property" id="ref-for-propdef-right②⑧">right</span>.
+    <li> If <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left②⑨">left</a> is <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①①">auto</a>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑦">width</a> and <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right②⑨">right</a> are not <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto" id="ref-for-valdef-width-auto②">auto</a>, then solve for <span class="property" id="ref-for-propdef-left③⓪">left</span>.
+    <li> If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width⑧">width</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto" id="ref-for-valdef-width-auto③">auto</a>, <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③①">left</a> and <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③⓪">right</a> are not <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①②">auto</a>, then solve for <span class="property" id="ref-for-propdef-width⑨">width</span>.
+    <li> If <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③①">right</a> is <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①③">auto</a>, <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③②">left</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①⓪">width</a> are not <span class="css" id="ref-for-valdef-top-auto①④">auto</span>, then solve for <span class="property" id="ref-for-propdef-right③②">right</span>.
    </ol>
    <table class="data" id="abspos-auto">
     <caption> Summary of rules for <code>dir=ltr</code> in horizontal writing modes </caption>
@@ -1373,103 +1373,103 @@ by computed value type
     <colgroup span="1">
     <thead>
      <tr>
-      <th colspan="5">Is auto? 
-      <th rowspan="2">Result 
+      <th colspan="5">Is auto?
+      <th rowspan="2">Result
      <tr>
-      <th><a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③③">left</a> 
-      <th><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①①">width</a> 
-      <th><a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③③">right</a> 
-      <th><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-left" id="ref-for-propdef-margin-left⑦">margin-left</a> 
-      <th><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-right" id="ref-for-propdef-margin-right⑦">margin-right</a> 
+      <th><a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③③">left</a>
+      <th><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①①">width</a>
+      <th><a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③③">right</a>
+      <th><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-left" id="ref-for-propdef-margin-left⑦">margin-left</a>
+      <th><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-right" id="ref-for-propdef-margin-right⑦">margin-right</a>
     <tbody>
      <tr>
-      <td>✔ 
-      <td>✔ 
-      <td>✔ 
-      <td colspan="2">any 
+      <td>✔
+      <td>✔
+      <td>✔
+      <td colspan="2">any
       <td>
        <ul>
-        <li>auto margins → zero 
-        <li>left → static pos 
-        <li>width → shrink-to-fit 
-        <li>right → solve 
+        <li>auto margins → zero
+        <li>left → static pos
+        <li>width → shrink-to-fit
+        <li>right → solve
        </ul>
      <tr>
-      <td rowspan="4">✘ 
-      <td rowspan="4">✘ 
-      <td rowspan="4">✘ 
-      <td>✔ 
-      <td>✘ 
-      <td rowspan="2"> auto margin → free space 
+      <td rowspan="4">✘
+      <td rowspan="4">✘
+      <td rowspan="4">✘
+      <td>✔
+      <td>✘
+      <td rowspan="2"> auto margin → free space
      <tr>
-      <td>✘ 
-      <td>✔ 
+      <td>✘
+      <td>✔
      <tr>
-      <td>✔ 
-      <td>✔ 
+      <td>✔
+      <td>✔
       <td>
        <ul>
-        <li>margins split positive free space 
-        <li>right margin gets negative free space 
+        <li>margins split positive free space
+        <li>right margin gets negative free space
        </ul>
      <tr>
-      <td>✘ 
-      <td>✘ 
-      <td> treat <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③④">right</a> as <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①⑤">auto</a> 
+      <td>✘
+      <td>✘
+      <td> treat <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③④">right</a> as <a class="css" data-link-type="maybe" href="#valdef-top-auto" id="ref-for-valdef-top-auto①⑤">auto</a>
      <tr>
-      <td>✔ 
-      <td>✘ 
-      <td>✔ 
-      <td colspan="2">any 
+      <td>✔
+      <td>✘
+      <td>✔
+      <td colspan="2">any
       <td>
        <ul>
-        <li>auto margins → zero 
-        <li>left → static pos 
-        <li>width → as specified 
-        <li>right → solve 
+        <li>auto margins → zero
+        <li>left → static pos
+        <li>width → as specified
+        <li>right → solve
        </ul>
      <tr>
-      <td>✔ 
-      <td>✔ 
-      <td>✘ 
-      <td colspan="2">any 
+      <td>✔
+      <td>✔
+      <td>✘
+      <td colspan="2">any
       <td>
        <ul>
-        <li>auto margins → zero 
-        <li>left → solve 
-        <li>width → shrink-to-fit 
-        <li>right → as specified 
+        <li>auto margins → zero
+        <li>left → solve
+        <li>width → shrink-to-fit
+        <li>right → as specified
        </ul>
      <tr>
-      <td>✘ 
-      <td>✔ 
-      <td>✔ 
-      <td colspan="2">any 
+      <td>✘
+      <td>✔
+      <td>✔
+      <td colspan="2">any
       <td>
        <ul>
-        <li>auto margins → zero 
-        <li>left → as specified 
-        <li>width → shrink-to-fit 
-        <li>right → solve 
+        <li>auto margins → zero
+        <li>left → as specified
+        <li>width → shrink-to-fit
+        <li>right → solve
        </ul>
      <tr>
-      <td>✔ 
-      <td>✘ 
-      <td>✘ 
-      <td colspan="2" rowspan="3">any 
+      <td>✔
+      <td>✘
+      <td>✘
+      <td colspan="2" rowspan="3">any
       <td rowspan="3">
        <ul>
-        <li>auto margins → zero 
-        <li>solve for auto 
+        <li>auto margins → zero
+        <li>solve for auto
        </ul>
      <tr>
-      <td>✘ 
-      <td>✘ 
-      <td>✔ 
+      <td>✘
+      <td>✘
+      <td>✔
      <tr>
-      <td>✘ 
-      <td>✔ 
-      <td>✘ 
+      <td>✘
+      <td>✔
+      <td>✘
    </table>
    <h3 class="heading settled" data-level="8.2" id="abs-replaced-width"><span class="secno">8.2. </span><span class="content"> The width of absolute or fixed positioned, replaced elements</span><a class="self-link" href="#abs-replaced-width"></a></h3>
    <p>If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height②">height</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width①②">width</a> both have computed values of <span class="css">auto</span> and the element also has an
@@ -1492,15 +1492,15 @@ by computed value type
   following rules as appropriate.</p>
    <ol>
     <li> If both <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③④">left</a> and <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③⑤">right</a> have the value <span class="css">auto</span>, and if the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction①⑧">direction</a> property
-    of the element establishing the static-position <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block③③">containing block</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr" id="ref-for-valdef-direction-ltr⑦">ltr</a>, set <span class="property" id="ref-for-propdef-left③⑤">left</span> to the static position and solve for <span class="property" id="ref-for-propdef-right③⑥">right</span>; else if <span class="property" id="ref-for-propdef-direction①⑨">direction</span> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl" id="ref-for-valdef-direction-rtl⑤">rtl</a>, set <span class="property" id="ref-for-propdef-right③⑦">right</span> to the static position and solve for <span class="property" id="ref-for-propdef-left③⑥">left</span>. 
-    <li> If <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③⑦">left</a> is <span class="css">auto</span> and <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③⑧">right</a> is not <span class="css">auto</span>, replace any <span class="css">auto</span> on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-left" id="ref-for-propdef-margin-left⑧">margin-left</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-right" id="ref-for-propdef-margin-right⑧">margin-right</a> with <span class="css">0</span>, then solve for <span class="property" id="ref-for-propdef-left③⑧">left</span>. 
-    <li> If <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③⑨">right</a> is <span class="css">auto</span> and <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③⑨">left</a> is not <span class="css">auto</span>, replace any <span class="css">auto</span> on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-left" id="ref-for-propdef-margin-left⑨">margin-left</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-right" id="ref-for-propdef-margin-right⑨">margin-right</a> with <span class="css">0</span>, then solve for <span class="property" id="ref-for-propdef-right④⓪">right</span>. 
+    of the element establishing the static-position <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block③③">containing block</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr" id="ref-for-valdef-direction-ltr⑦">ltr</a>, set <span class="property" id="ref-for-propdef-left③⑤">left</span> to the static position and solve for <span class="property" id="ref-for-propdef-right③⑥">right</span>; else if <span class="property" id="ref-for-propdef-direction①⑨">direction</span> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl" id="ref-for-valdef-direction-rtl⑤">rtl</a>, set <span class="property" id="ref-for-propdef-right③⑦">right</span> to the static position and solve for <span class="property" id="ref-for-propdef-left③⑥">left</span>.
+    <li> If <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③⑦">left</a> is <span class="css">auto</span> and <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③⑧">right</a> is not <span class="css">auto</span>, replace any <span class="css">auto</span> on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-left" id="ref-for-propdef-margin-left⑧">margin-left</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-right" id="ref-for-propdef-margin-right⑧">margin-right</a> with <span class="css">0</span>, then solve for <span class="property" id="ref-for-propdef-left③⑧">left</span>.
+    <li> If <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right③⑨">right</a> is <span class="css">auto</span> and <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left③⑨">left</a> is not <span class="css">auto</span>, replace any <span class="css">auto</span> on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-left" id="ref-for-propdef-margin-left⑨">margin-left</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-right" id="ref-for-propdef-margin-right⑨">margin-right</a> with <span class="css">0</span>, then solve for <span class="property" id="ref-for-propdef-right④⓪">right</span>.
     <li> If at this point both <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-left" id="ref-for-propdef-margin-left①⓪">margin-left</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-right" id="ref-for-propdef-margin-right①⓪">margin-right</a> are still <span class="css">auto</span>, solve the
     equation under the extra constraint that the two margins must get equal values,
-    unless this would make them negative, in which case when the direction of the <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block③④">containing block</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr" id="ref-for-valdef-direction-ltr⑧">ltr</a> (<a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl" id="ref-for-valdef-direction-rtl⑥">rtl</a>), set <span class="property" id="ref-for-propdef-margin-left①①">margin-left</span> (<span class="property" id="ref-for-propdef-margin-right①①">margin-right</span>) to <span class="css">0</span> and solve for <span class="property" id="ref-for-propdef-margin-right①②">margin-right</span> (<span class="property" id="ref-for-propdef-margin-left①②">margin-left</span>). 
-    <li> If at this point there is an <span class="css">auto</span> remaining, solve the equation for that value. 
+    unless this would make them negative, in which case when the direction of the <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block③④">containing block</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr" id="ref-for-valdef-direction-ltr⑧">ltr</a> (<a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl" id="ref-for-valdef-direction-rtl⑥">rtl</a>), set <span class="property" id="ref-for-propdef-margin-left①①">margin-left</span> (<span class="property" id="ref-for-propdef-margin-right①①">margin-right</span>) to <span class="css">0</span> and solve for <span class="property" id="ref-for-propdef-margin-right①②">margin-right</span> (<span class="property" id="ref-for-propdef-margin-left①②">margin-left</span>).
+    <li> If at this point there is an <span class="css">auto</span> remaining, solve the equation for that value.
     <li> If at this point the values are over-constrained, ignore the value for either <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left④⓪">left</a> (in case the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction" id="ref-for-propdef-direction②⓪">direction</a> property of the <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block③⑤">containing block</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl" id="ref-for-valdef-direction-rtl⑦">rtl</a>)
-    or <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right④①">right</a> (in case <span class="property" id="ref-for-propdef-direction②①">direction</span> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr" id="ref-for-valdef-direction-ltr⑨">ltr</a>) and solve for that value. 
+    or <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right④①">right</a> (in case <span class="property" id="ref-for-propdef-direction②①">direction</span> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr" id="ref-for-valdef-direction-ltr⑨">ltr</a>) and solve for that value.
    </ol>
    <h3 class="heading settled" data-level="8.3" id="abs-non-replaced-height"><span class="secno">8.3. </span><span class="content"> The height of absolute or fixed positioned, non-replaced elements</span><a class="self-link" href="#abs-non-replaced-height"></a></h3>
    <p>For absolutely positioned elements, the used values of the vertical dimensions must
@@ -1517,15 +1517,15 @@ by computed value type
    <ol>
     <li> If <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top②③">top</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height⑧">height</a> are <span class="css">auto</span> and <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom②①">bottom</a> is not <span class="css">auto</span>, then the height is
     based on the <a href="#root-height">Auto heights for block formatting context
-    roots</a>, and solve for <span class="property" id="ref-for-propdef-top②④">top</span>. 
+    roots</a>, and solve for <span class="property" id="ref-for-propdef-top②④">top</span>.
     <li> If <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top②⑤">top</a> and <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom②②">bottom</a> are <span class="css">auto</span> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height⑨">height</a> is not <span class="css">auto</span>, then set <span class="property" id="ref-for-propdef-top②⑥">top</span> to
-    the static position, then solve for <span class="property" id="ref-for-propdef-bottom②③">bottom</span>. 
+    the static position, then solve for <span class="property" id="ref-for-propdef-bottom②③">bottom</span>.
     <li> If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height①⓪">height</a> and <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom②④">bottom</a> are <span class="css">auto</span> and <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top②⑦">top</a> is not <span class="css">auto</span>, then the height is
     based on the <a href="#root-height">Auto heights for block formatting context
-    roots</a>, and solve for <span class="property" id="ref-for-propdef-bottom②⑤">bottom</span>. 
-    <li> If <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top②⑧">top</a> is <span class="css">auto</span>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height①①">height</a> and <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom②⑥">bottom</a> are not <span class="css">auto</span>, then solve for <span class="property" id="ref-for-propdef-top②⑨">top</span>. 
-    <li> If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height①②">height</a> is <span class="css">auto</span>, <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top③⓪">top</a> and <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom②⑦">bottom</a> are not <span class="css">auto</span>, then solve for <span class="property" id="ref-for-propdef-height①③">height</span>. 
-    <li> If <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom②⑧">bottom</a> is <span class="css">auto</span>, <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top③①">top</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height①④">height</a> are not <span class="css">auto</span>, then solve for <span class="property" id="ref-for-propdef-bottom②⑨">bottom</span>. 
+    roots</a>, and solve for <span class="property" id="ref-for-propdef-bottom②⑤">bottom</span>.
+    <li> If <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top②⑧">top</a> is <span class="css">auto</span>, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height①①">height</a> and <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom②⑥">bottom</a> are not <span class="css">auto</span>, then solve for <span class="property" id="ref-for-propdef-top②⑨">top</span>.
+    <li> If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height①②">height</a> is <span class="css">auto</span>, <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top③⓪">top</a> and <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom②⑦">bottom</a> are not <span class="css">auto</span>, then solve for <span class="property" id="ref-for-propdef-height①③">height</span>.
+    <li> If <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom②⑧">bottom</a> is <span class="css">auto</span>, <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top③①">top</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height①④">height</a> are not <span class="css">auto</span>, then solve for <span class="property" id="ref-for-propdef-bottom②⑨">bottom</span>.
    </ol>
    <h3 class="heading settled" data-level="8.4" id="abs-replaced-height"><span class="secno">8.4. </span><span class="content"> The height of absolute or fixed positioned, replaced elements</span><a class="self-link" href="#abs-replaced-height"></a></h3>
    <p>If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-height" id="ref-for-propdef-height①⑤">height</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visudet.html#propdef-width" id="ref-for-propdef-width②④">width</a> both have computed values of <span class="css">auto</span> and the element also has an
@@ -1544,14 +1544,14 @@ by computed value type
   following rules as appropriate.</p>
    <ol>
     <li> If both <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top③②">top</a> and <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom③⓪">bottom</a> have the value <span class="css">auto</span>, replace <span class="property" id="ref-for-propdef-top③③">top</span> with the
-    element’s static position. 
-    <li> If <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom③①">bottom</a> is <span class="css">auto</span>, replace any <span class="css">auto</span> on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-top" id="ref-for-propdef-margin-top⑤">margin-top</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-bottom" id="ref-for-propdef-margin-bottom⑤">margin-bottom</a> with <span class="css">0</span>. 
+    element’s static position.
+    <li> If <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom③①">bottom</a> is <span class="css">auto</span>, replace any <span class="css">auto</span> on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-top" id="ref-for-propdef-margin-top⑤">margin-top</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-bottom" id="ref-for-propdef-margin-bottom⑤">margin-bottom</a> with <span class="css">0</span>.
     <li> If at this point both <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-top" id="ref-for-propdef-margin-top⑥">margin-top</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-box-3/#propdef-margin-bottom" id="ref-for-propdef-margin-bottom⑥">margin-bottom</a> are still <span class="css">auto</span>,
     solve the equation under the extra constraint that the two margins must get
-    equal values. 
+    equal values.
     <li> If at this point there is only one <span class="css">auto</span> remaining, solve the equation
-    for that value. 
-    <li> If at this point the values are over-constrained, ignore the value for <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom③②">bottom</a> and solve for that value. 
+    for that value.
+    <li> If at this point the values are over-constrained, ignore the value for <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom③②">bottom</a> and solve for that value.
    </ol>
    <h3 class="heading settled" data-level="8.5" id="root-height"><span class="secno">8.5. </span><span class="content"> Auto heights for block formatting context roots</span><a class="self-link" href="#root-height"></a></h3>
    <p>In certain cases (see, e.g., <a href="#abs-non-replaced-height">The height of
@@ -1573,16 +1573,16 @@ by computed value type
    <p>The three properties that affect box generation and layout — <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display①">display</a>, <a class="property" data-link-type="propdesc" href="#propdef-position" id="ref-for-propdef-position①②">position</a>, and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-float" id="ref-for-propdef-float①">float</a> — interact as follows:</p>
    <ol>
     <li> If <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display②">display</a> has the value <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-display-3/#valdef-display-none" id="ref-for-valdef-display-none">none</a>, then <a class="property" data-link-type="propdesc" href="#propdef-position" id="ref-for-propdef-position①③">position</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-float" id="ref-for-propdef-float②">float</a> do not apply.
-    In this case, the element generates no box. 
+    In this case, the element generates no box.
     <li> Otherwise, if <a class="property" data-link-type="propdesc" href="#propdef-position" id="ref-for-propdef-position①④">position</a> has the value <a class="css" data-link-type="maybe" href="#valdef-position-absolute" id="ref-for-valdef-position-absolute②">absolute</a> or <a class="css" data-link-type="maybe" href="#valdef-position-fixed" id="ref-for-valdef-position-fixed⑤">fixed</a>,
     and the value of <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-float" id="ref-for-propdef-float③">float</a> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-page-floats-3/#valdef-float-left" id="ref-for-valdef-float-left">left</a> or <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-page-floats-3/#valdef-float-right" id="ref-for-valdef-float-right">right</a>, the box is absolutely
     positioned and the computed value of <span class="property" id="ref-for-propdef-float④">float</span> is <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-page-floats-3/#valdef-float-none" id="ref-for-valdef-float-none">none</a>. The <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display③">display</a> is
     set according to the table below. Positioning of the box will determined by
-    the <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top③④">top</a>, <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right④②">right</a>, <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom③③">bottom</a> and <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left④①">left</a> properties and the box’s <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block③⑥">containing block</a>. 
-    <li> Otherwise, if <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-float" id="ref-for-propdef-float⑤">float</a> is other than <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-page-floats-3/#valdef-float-none" id="ref-for-valdef-float-none①">none</a>, the box is <a data-link-type="dfn" href="#float" id="ref-for-float⑨">floated</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display④">display</a> is set according to the table below. 
+    the <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top③④">top</a>, <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right④②">right</a>, <a class="property" data-link-type="propdesc" href="#propdef-bottom" id="ref-for-propdef-bottom③③">bottom</a> and <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left④①">left</a> properties and the box’s <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block③⑥">containing block</a>.
+    <li> Otherwise, if <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-float" id="ref-for-propdef-float⑤">float</a> is other than <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-page-floats-3/#valdef-float-none" id="ref-for-valdef-float-none①">none</a>, the box is <a data-link-type="dfn" href="#float" id="ref-for-float⑨">floated</a> and <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display④">display</a> is set according to the table below.
     <li> Otherwise, if the element is the root element, <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display⑤">display</a> is set according to the
-    table below. 
-    <li> Otherwise, the remaining <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display⑥">display</a> property values apply as specified. 
+    table below.
+    <li> Otherwise, the remaining <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display⑥">display</a> property values apply as specified.
    </ol>
    <table class="relationship-table">
     <tbody>
@@ -1593,10 +1593,10 @@ by computed value type
       <td>inline-table
       <td>table
      <tr>
-      <td> inline, <span>table-row-group</span>, <span>table-column</span>, <span>table-column-group</span>, <span>table-header-group</span>, <span>table-footer-group</span>, <span>table-row</span>, <span>table-cell</span>, <span>table-caption</span>, <span>inline-block</span> 
+      <td> inline, <span>table-row-group</span>, <span>table-column</span>, <span>table-column-group</span>, <span>table-header-group</span>, <span>table-footer-group</span>, <span>table-row</span>, <span>table-cell</span>, <span>table-caption</span>, <span>inline-block</span>
       <td>block
      <tr>
-      <td>others 
+      <td>others
       <td><span>same as specified</span>
    </table>
    <p class="note" role="note"> For new values defined for the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display" id="ref-for-propdef-display⑦">display</a> property, the respective modules that define a
@@ -1606,7 +1606,7 @@ by computed value type
    <p>To illustrate the differences between <a data-link-type="dfn" href="#normal-flow" id="ref-for-normal-flow②⓪">normal flow</a>, <a data-link-type="dfn" href="#relative-position" id="ref-for-relative-position②">relative positioning</a>, <a data-link-type="dfn" href="#float" id="ref-for-float①⓪">floats</a>,
   and absolute positioning, we provide a series of examples based on the following HTML:</p>
    <div class="example" id="example-5752760c">
-    <a class="self-link" href="#example-5752760c"></a> 
+    <a class="self-link" href="#example-5752760c"></a>
 <pre class="lang-html highlight"><c- cp>&lt;!DOCTYPE html></c->
 <c- p>&lt;</c-><c- f>html</c-><c- p>></c->
     <c- p>&lt;</c-><c- f>head</c-><c- p>></c->
@@ -1640,7 +1640,7 @@ by computed value type
    <h3 class="heading settled" data-level="10.1" id="comp-normal-flow"><span class="secno">10.1. </span><span class="content"> Normal flow</span><a class="self-link" href="#comp-normal-flow"></a></h3>
    <p>Consider the following CSS declarations for <em>outer</em> and <em>inner</em> that do not alter the <a data-link-type="dfn" href="#normal-flow" id="ref-for-normal-flow②②">normal flow</a> of boxes:</p>
    <div class="example" id="example-d045d8f9">
-    <a class="self-link" href="#example-d045d8f9"></a> 
+    <a class="self-link" href="#example-d045d8f9"></a>
 <pre class="lang-css highlight"><c- f>#outer </c-><c- p>{</c-> <c- k>color</c-><c- p>:</c-> red <c- p>}</c->
 <c- f>#inner </c-><c- p>{</c-> <c- k>color</c-><c- p>:</c-> blue <c- p>}</c->
 </pre>
@@ -1650,7 +1650,7 @@ by computed value type
   formatting context, within a <a data-link-type="dfn" href="#containing-block" id="ref-for-containing-block③⑦">containing block</a> established by the P element, producing
   something like:</p>
    <figure>
-     <img alt="Image illustrating the normal flow of text between parent and sibling boxes." src="images/flow-generic.png"> 
+     <img alt="Image illustrating the normal flow of text between parent and sibling boxes." src="images/flow-generic.png">
     <figcaption> All of the text within the P’s containing block flows together as continuous text,
     even though it’s located in separated nested elements. </figcaption>
    </figure>
@@ -1658,7 +1658,7 @@ by computed value type
    <p>To see the effect of <a data-link-type="dfn" href="#relative-position" id="ref-for-relative-position③">relative positioning</a>,
   we specify:</p>
    <div class="example" id="example-bf500659">
-    <a class="self-link" href="#example-bf500659"></a> 
+    <a class="self-link" href="#example-bf500659"></a>
 <pre class="lang-css highlight"><c- f>#outer </c-><c- p>{</c-> <c- k>position</c-><c- p>:</c-> relative<c- p>;</c-> <c- k>top</c-><c- p>:</c-> <c- m>-12</c-><c- l>px</c-><c- p>;</c-> <c- k>color</c-><c- p>:</c-> red <c- p>}</c->
 <c- f>#inner </c-><c- p>{</c-> <c- k>position</c-><c- p>:</c-> relative<c- p>;</c-> <c- k>top</c-><c- p>:</c-> <c- m>12</c-><c- l>px</c-><c- p>;</c-> <c- k>color</c-><c- p>:</c-> blue <c- p>}</c->
 </pre>
@@ -1672,7 +1672,7 @@ by computed value type
    <p class="note" role="note"> Note that the content following <em>outer</em> is not affected by the relative
     positioning of <em>outer</em>. </p>
    <figure>
-     <img src="images/flow-relative.png"> 
+     <img src="images/flow-relative.png">
     <figcaption> The result is identical to normal flow,
       except that the "outer" text is shifted 12px upward,
       without affecting the flow of the "body" or "inner" text. </figcaption>
@@ -1682,7 +1682,7 @@ by computed value type
    <p>Now consider the effect of <a href="https://www.w3.org/TR/CSS2/visuren.html#floats"> floating</a> the <em>inner</em> element’s text to the right by means of the
   following rules:</p>
    <div class="example" id="example-7c19fd19">
-    <a class="self-link" href="#example-7c19fd19"></a> 
+    <a class="self-link" href="#example-7c19fd19"></a>
 <pre class="lang-css highlight"><c- f>#outer </c-><c- p>{</c-> <c- k>color</c-><c- p>:</c-> red <c- p>}</c->
 <c- f>#inner </c-><c- p>{</c-> <c- k>float</c-><c- p>:</c-> right<c- p>;</c-> <c- k>width</c-><c- p>:</c-> <c- m>130</c-><c- l>px</c-><c- p>;</c-> <c- k>color</c-><c- p>:</c-> blue <c- p>}</c->
 </pre>
@@ -1692,14 +1692,14 @@ by computed value type
   assigned explicitly). Line boxes to the left of the float are shortened, and the
   document’s remaining text flows into them.</p>
    <figure>
-     <img alt="Image illustrating the effects of floating a box." src="images/flow-float.png"> 
+     <img alt="Image illustrating the effects of floating a box." src="images/flow-float.png">
     <figcaption> The "inner" text lays out in an independent box on the right,
     causing the remaining "body" and "outer" text to flow around it. </figcaption>
    </figure>
    <p>To show the effect of the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-clear" id="ref-for-propdef-clear①">clear</a> property, we add a <em>sibling</em> element to the
   example:</p>
    <div class="example" id="example-e3784dd4">
-    <a class="self-link" href="#example-e3784dd4"></a> 
+    <a class="self-link" href="#example-e3784dd4"></a>
 <pre class="lang-html highlight"><c- cp>&lt;!DOCTYPE html></c->
 <c- p>&lt;</c-><c- f>html</c-><c- p>></c->
     <c- p>&lt;</c-><c- f>head</c-><c- p>></c->
@@ -1725,7 +1725,7 @@ by computed value type
    <p>These styles cause the <em>inner</em> box to float to the right, as before,
   and the document’s remaining text to flow into the vacated space:</p>
    <figure>
-     <img alt="Image illustrating the effects of floating a box without setting the clear property to control the flow of text around the box." src="images/flow-clear.png"> 
+     <img alt="Image illustrating the effects of floating a box without setting the clear property to control the flow of text around the box." src="images/flow-clear.png">
     <figcaption> Identical to the previous example,
       save that there is now "sibling" text
       flowing with the "body" and "outer" text. </figcaption>
@@ -1733,13 +1733,13 @@ by computed value type
    <p>However, if the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visuren.html#propdef-clear" id="ref-for-propdef-clear②">clear</a> property on the <em>sibling</em> element is set to <a class="property" data-link-type="propdesc" href="#propdef-right" id="ref-for-propdef-right④③">right</a> (i.e., the generated <em>sibling</em> box will not accept a position next to <a data-link-type="dfn" href="#float" id="ref-for-float①②">floating</a> boxes to its right), the <em>sibling</em> content begins to flow below the
   float:</p>
    <div class="example" id="example-54c91152">
-    <a class="self-link" href="#example-54c91152"></a> 
+    <a class="self-link" href="#example-54c91152"></a>
 <pre class="lang-css highlight"><c- f>#inner </c-><c- p>{</c-> <c- k>float</c-><c- p>:</c-> right<c- p>;</c-> <c- k>width</c-><c- p>:</c-> <c- m>130</c-><c- l>px</c-><c- p>;</c-> <c- k>color</c-><c- p>:</c-> blue <c- p>}</c->
 <c- f>#sibling </c-><c- p>{</c-> <c- k>clear</c-><c- p>:</c-> right<c- p>;</c-> <c- k>color</c-><c- p>:</c-> red <c- p>}</c->
 </pre>
    </div>
    <figure>
-     <img alt="Image illustrating the effects of floating an element with setting the clear property to control the flow of text around the element." src="images/flow-clear2.png"> 
+     <img alt="Image illustrating the effects of floating an element with setting the clear property to control the flow of text around the element." src="images/flow-clear2.png">
     <figcaption> Now the "sibling" text moves down to below the "inner" text’s box,
       leaving blank space behind.
       The text following the "sibling" text flows after it as normal. </figcaption>
@@ -1748,7 +1748,7 @@ by computed value type
    <p>Next, we consider the effect of absolute positioning. Consider the following CSS
   declarations for <em>outer</em> and <em>inner</em>:</p>
    <div class="example" id="example-90defcbb">
-    <a class="self-link" href="#example-90defcbb"></a> 
+    <a class="self-link" href="#example-90defcbb"></a>
 <pre class="lang-css highlight"><c- f>#outer </c-><c- p>{</c->
     <c- k>position</c-><c- p>:</c-> absolute<c- p>;</c->
     <c- k>top</c-><c- p>:</c-> <c- m>200</c-><c- l>px</c-><c- p>;</c-> <c- k>left</c-><c- p>:</c-> <c- m>200</c-><c- l>px</c-><c- p>;</c->
@@ -1762,7 +1762,7 @@ by computed value type
   nearest positioned ancestor (or, if none exists, the <span>initial containing block</span>, as in
   our example). The top side of the <em>outer</em> box is <span class="css">200px</span> below the top of the <span id="ref-for-containing-block④⓪">containing block</span> and the left side is <span class="css">200px</span> from the left side. The child box of <em>outer</em> is flowed normally with respect to its parent.</p>
    <figure>
-     <img alt="Image illustrating the effects of absolutely positioning a box." src="images/flow-absolute.png"> 
+     <img alt="Image illustrating the effects of absolutely positioning a box." src="images/flow-absolute.png">
     <figcaption> All of the text within #outer (the "outer" and "inner" text)
       moves down to an independent box in the lower right corner.
       The two halves of "body" text flow together. </figcaption>
@@ -1774,7 +1774,7 @@ by computed value type
   split across several lines, the first inline box’s top and left edges (depicted by thick
   dashed lines in the illustration below) serve as references for <a class="property" data-link-type="propdesc" href="#propdef-top" id="ref-for-propdef-top③⑤">top</a> and <a class="property" data-link-type="propdesc" href="#propdef-left" id="ref-for-propdef-left④②">left</a> offsets.</p>
    <div class="example" id="example-f34c6317">
-    <a class="self-link" href="#example-f34c6317"></a> 
+    <a class="self-link" href="#example-f34c6317"></a>
 <pre class="lang-css highlight"><c- f>#outer </c-><c- p>{</c->
     <c- k>position</c-><c- p>:</c-> relative<c- p>;</c->
     <c- k>color</c-><c- p>:</c-> red
@@ -1789,13 +1789,13 @@ by computed value type
    </div>
    <p>This results in something like the following:</p>
    <figure>
-     <img alt="Image illustrating the effects of absolutely positioning a box with respect to a containing block." src="images/flow-abs-rel.png"> 
+     <img alt="Image illustrating the effects of absolutely positioning a box with respect to a containing block." src="images/flow-abs-rel.png">
     <figcaption> The "inner" text is positioned in an independent box,
       relative to the top-left corner of the start of the "outer" text. </figcaption>
    </figure>
    <p>If we do not position the <em>outer</em> box:</p>
    <div class="example" id="example-100563b8">
-    <a class="self-link" href="#example-100563b8"></a> 
+    <a class="self-link" href="#example-100563b8"></a>
 <pre class="lang-css highlight"><c- f>#outer </c-><c- p>{</c-> <c- k>color</c-><c- p>:</c-> red <c- p>}</c->
 <c- f>#inner </c-><c- p>{</c->
     <c- k>position</c-><c- p>:</c-> absolute<c- p>;</c->
@@ -1809,14 +1809,14 @@ by computed value type
   containing block</span> (in our example). The following illustration shows where
   the <em>inner</em> box would end up in this case.</p>
    <figure>
-     <img alt="Image illustrating the effects of absolutely positioning a box with respect to a containing block established by a normally positioned parent." src="images/flow-static.png"> 
+     <img alt="Image illustrating the effects of absolutely positioning a box with respect to a containing block established by a normally positioned parent." src="images/flow-static.png">
     <figcaption> Same as before,
       except now the "inner text" is positioned relative to the top-left corner of the page itself. </figcaption>
    </figure>
    <p>Relative and absolute positioning may be used to implement change bars, as shown
   in the following example. The following fragment:</p>
    <div class="example" id="example-3b789003">
-    <a class="self-link" href="#example-3b789003"></a> 
+    <a class="self-link" href="#example-3b789003"></a>
 <pre class="lang-html highlight"><c- p>&lt;</c-><c- f>p</c-> <c- e>style</c-><c- o>=</c-><c- s>"position: relative; margin-right: 10px; left: 10px;"</c-><c- p>></c->
   I used two red hyphens to serve as a change bar. They
   will "float" to the left of the line containing THIS
@@ -1827,7 +1827,7 @@ by computed value type
    </div>
    <p>might result in something like:</p>
    <figure>
-     <img alt="Image illustrating the use of floats to create a changebar effect." src="images/changebar.png"> 
+     <img alt="Image illustrating the use of floats to create a changebar effect." src="images/changebar.png">
     <figcaption> The two red hyphens, indicating a change,
       sit in the left margin of the page
       on the line containing the word "THIS",
@@ -1869,51 +1869,51 @@ by computed value type
       <td><dfn class="dfn-paneled css" data-dfn-type="property" data-export id="propdef-z-index">z-index</dfn>
      <tr class="value">
       <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
-      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑨">|</a> &lt;integer> 
+      <td class="prod">auto <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one⑨">|</a> &lt;integer>
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
-      <td>auto 
+      <td>auto
      <tr>
       <th>Applies to:
-      <td>positioned elements 
+      <td>positioned elements
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
-      <td>no 
+      <td>no
      <tr>
       <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
-      <td>N/A 
+      <td>N/A
      <tr>
       <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
-      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-z-index-auto" id="ref-for-valdef-z-index-auto">auto</a> or an integer 
+      <td>the keyword <a class="css" data-link-type="maybe" href="#valdef-z-index-auto" id="ref-for-valdef-z-index-auto">auto</a> or an integer
      <tr>
       <th>Canonical order:
-      <td>per grammar 
+      <td>per grammar
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animatable:</a>
-      <td>&lt;integer> 
+      <td>&lt;integer>
      <tr>
       <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
-      <td>by computed value 
+      <td>by computed value
    </table>
    <p>For a positioned box, the <a class="property" data-link-type="propdesc" href="#propdef-z-index" id="ref-for-propdef-z-index②">z-index</a> property specifies:</p>
    <ol>
-    <li> The stack level of the box in the current stacking context. 
-    <li> Whether the box establishes a stacking context. 
+    <li> The stack level of the box in the current stacking context.
+    <li> Whether the box establishes a stacking context.
    </ol>
    <p>Values have the following meanings:</p>
    <dl>
     <dt><dfn class="css" data-dfn-for="z-index" data-dfn-type="value" data-export id="valdef-z-index-integer">&lt;integer><a class="self-link" href="#valdef-z-index-integer"></a></dfn>
     <dd> This integer is the stack level of the generated box in the current stacking
-      context. The box also establishes a new stacking context. 
+      context. The box also establishes a new stacking context.
     <dt><dfn class="dfn-paneled css" data-dfn-for="z-index" data-dfn-type="value" data-export id="valdef-z-index-auto">auto</dfn>
     <dd> The stack level of the generated box in the current stacking context is 0.
-      If the box has 'position: fixed' or if it is the root, it also establishes a new stacking context. 
+      If the box has 'position: fixed' or if it is the root, it also establishes a new stacking context.
    </dl>
    <p>In the following example, the stack levels of the boxes (named with their "id"
   attributes) are: "text2"=0, "image"=1, "text3"=2, and "text1"=3. The "text2" stack level
   is inherited from the root box. The others are specified with the <a class="property" data-link-type="propdesc" href="#propdef-z-index" id="ref-for-propdef-z-index③">z-index</a> property.</p>
    <div class="example" id="example-1ec246e1">
-    <a class="self-link" href="#example-1ec246e1"></a> 
+    <a class="self-link" href="#example-1ec246e1"></a>
 <pre class="lang-html highlight"><c- cp>&lt;!DOCTYPE html></c->
 <c- p>&lt;</c-><c- f>html</c-><c- p>></c->
     <c- p>&lt;</c-><c- f>head</c-><c- p>></c->
@@ -1958,19 +1958,19 @@ by computed value type
     <dt>Tree Order
     <dd> The preorder depth-first traversal of the <em>rendering</em> tree, in logical (not
       visual) order for bidirectional content, after taking into account properties
-      that move boxes around. 
+      that move boxes around.
     <dt>Element
     <dd> In this description, "element" refers to actual elements, pseudo-elements, and
       anonymous boxes. Pseudo-elements and anonymous boxes are treated as descendants
       in the appropriate places. For example, an outside list marker comes before an
       adjoining '::before' box in the line box, which comes before the content of the
-      box, and so forth. 
+      box, and so forth.
    </dl>
    <h3 class="heading settled" data-level="12.2" id="painting-order"><span class="secno">12.2. </span><span class="content"> Painting order</span><a class="self-link" href="#painting-order"></a></h3>
    <p>The bottom of the stack is the furthest from the user, the top of the stack is the
   nearest to the user:</p>
    <figure>
-     <img alt="A stacking context with four layers" src="images/stack.png"> 
+     <img alt="A stacking context with four layers" src="images/stack.png">
     <figcaption>Schematic diagram of a stacking context with four layers.</figcaption>
    </figure>
    <p>The stacking context background and most negative positioned stacking contexts
@@ -1984,21 +1984,21 @@ by computed value type
   context (see the <a class="property" data-link-type="propdesc" href="#propdef-z-index" id="ref-for-propdef-z-index④">z-index</a> property) is:</p>
    <ol>
     <li>
-     If the element is a root element: 
+     If the element is a root element:
      <ol>
       <li>background color of element over the entire canvas.
       <li> background image of element, over the entire canvas, anchored at the origin
-          that would be used if it was painted for the root element. 
+          that would be used if it was painted for the root element.
      </ol>
     <li>
-      If the element is a block, list-item, or other block equivalent: 
+      If the element is a block, list-item, or other block equivalent:
      <ol>
       <li>background color of element unless it is the root element.
       <li>background image of element unless it is the root element.
       <li>column rule of the element.
       <li>border of element.
      </ol>
-      Otherwise, if the element is a block-level table: 
+      Otherwise, if the element is a block-level table:
      <ol>
       <li>table backgrounds (color then image) unless it is the root element.
       <li>column group backgrounds (color then image).
@@ -2010,17 +2010,17 @@ by computed value type
       <li>all table borders (in tree order for separated borders).
      </ol>
     <li> Stacking contexts formed by positioned descendants with negative z-indices
-      (excluding 0) in z-index order (most negative first) then tree order. 
+      (excluding 0) in z-index order (most negative first) then tree order.
     <li>
       For all its in-flow, non-positioned, block-level descendants in tree order: If the
-      element is a block, list-item, or other block equivalent: 
+      element is a block, list-item, or other block equivalent:
      <ol>
       <li>background color of element.
       <li>background image of element.
       <li>column rule of the element.
       <li>border of element.
      </ol>
-      Otherwise, the element is a table: 
+      Otherwise, the element is a table:
      <ol>
       <li>table backgrounds (color then image).
       <li>column group backgrounds (color then image).
@@ -2035,45 +2035,45 @@ by computed value type
       order. For each one of these, treat the element as if it created a new stacking
       context, but any positioned descendants and descendants which actually create
       a new stacking context are considered part of the parent stacking context,
-      not this new one. 
+      not this new one.
     <li>
-     If the element is an inline element that generates a stacking context, then: 
+     If the element is an inline element that generates a stacking context, then:
      <ol>
       <li>
-       For each line box that the element is in: 
+       For each line box that the element is in:
        <ol>
         <li> Jump to <a href="#each-box">7.2.1</a> for the box(es) of the element
-              in that line box (in tree order). 
+              in that line box (in tree order).
        </ol>
      </ol>
     <li>
       Otherwise: first for the element, then for all its in-flow, non-positioned,
-        block-level descendants in tree order: 
+        block-level descendants in tree order:
      <ol>
       <li> If the element is a block-level replaced element, then: the replaced
-            content, atomically. 
+            content, atomically.
       <li>
-       Otherwise, for each line box of that element: 
+       Otherwise, for each line box of that element:
        <ol>
         <li id="each-box">
          <a class="self-link" href="#each-box"></a> For each box that is a child of that element, in that line box, in
-                tree order: 
+                tree order:
          <ol>
           <li>background color of element.
           <li>background image of element.
           <li>column rule of the element.
           <li>border of element.
           <li>
-           For inline elements: 
+           For inline elements:
            <ol>
             <li>
               For all the elements in-flow, non-positioned,
                         inline-level children that are in this line box, and
                         all runs of text inside the element that is on this
-                        line box, in tree order: 
+                        line box, in tree order:
              <ol>
               <li>
-               If this is a run of text, then: 
+               If this is a run of text, then:
                <ol>
                 <li> any underlining affecting the text
                                 of the element, in tree order of the
@@ -2082,7 +2082,7 @@ by computed value type
                                 underlining, if any, is painted
                                 topmost and the root element’s
                                 underlining, if any, is drawn
-                                bottommost). 
+                                bottommost).
                 <li> any overlining affecting the text of
                                 the element, in tree order of the
                                 elements applying the overlining
@@ -2090,7 +2090,7 @@ by computed value type
                                 overlining, if any, is painted
                                 topmost and the root element’s
                                 overlining, if any, is drawn
-                                bottommost). 
+                                bottommost).
                 <li>the text
                 <li> any line-through affecting the text
                                 of the element, in tree order of the
@@ -2099,54 +2099,54 @@ by computed value type
                                 line-through, if any, is painted
                                 topmost and the root element’s
                                 line-through, if any, is drawn
-                                bottommost). 
+                                bottommost).
                </ol>
-              <li> Otherwise, jump to <a href="#each-box">7.2.1</a> for that element 
+              <li> Otherwise, jump to <a href="#each-box">7.2.1</a> for that element
              </ol>
            </ol>
           <li>
-           For inline-block and inline-table elements: 
+           For inline-block and inline-table elements:
            <ol>
             <li> For each one of these, treat the element as if it
                         created a new stacking context, but any positioned
                         descendants and descendants which actually create a
                         new stacking context are considered part of the
-                        parent stacking context, not this new one. 
+                        parent stacking context, not this new one.
            </ol>
           <li>
-           For inline-level replaced elements: 
+           For inline-level replaced elements:
            <ol>
             <li>the replaced content, atomically.
            </ol>
-          <li> Optionally, the outline of the element (see <a href="#stack-order-step-ten">10 below</a>). 
+          <li> Optionally, the outline of the element (see <a href="#stack-order-step-ten">10 below</a>).
          </ol>
          <p class="note" role="note"> Note, some of the boxes may have been generated by line
                   splitting or the Unicode bidirectional algorithm. </p>
        </ol>
       <li> Optionally, if the element is block-level, the outline of the element
-            (see <a href="#stack-order-step-ten">10 below</a>). 
+            (see <a href="#stack-order-step-ten">10 below</a>).
      </ol>
     <li>
       All positioned, opacity or transform descendants, in tree order that fall
-      into the following categories: 
+      into the following categories:
      <ol>
       <li>
-        All positioned descendants with 'z-index: auto' or 'z-index: 0', in tree order. 
+        All positioned descendants with 'z-index: auto' or 'z-index: 0', in tree order.
        <p>For those with 'z-index: auto', treat the element as if it created a new
           stacking context, but any positioned descendants and descendants which actually
           create a new stacking context should be considered part of the parent stacking
           context, not this new one.</p>
        <p>For those with 'z-index: 0' treat the stacking context generated atomically.</p>
       <li> All opacity descendants with <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-color-4/#propdef-opacity" id="ref-for-propdef-opacity">opacity</a> less than <span class="css">1</span>, in tree order, create a
-          stacking context generated atomically. 
+          stacking context generated atomically.
       <li> All transform descendants with <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-transforms-1/#propdef-transform" id="ref-for-propdef-transform">transform</a> other than <span class="css">none</span>, in tree order, create
-          a stacking context generated atomically. 
+          a stacking context generated atomically.
      </ol>
     <li> Stacking contexts formed by positioned descendants with z-indices greater than or
-    equal to 1 in z-index order (smallest first) then tree order. 
+    equal to 1 in z-index order (smallest first) then tree order.
     <li id="stack-order-step-ten"><a class="self-link" href="#stack-order-step-ten"></a> Finally, implementations that do not draw outlines in steps above must draw outlines
     from this stacking context at this stage. (It is recommended to draw outlines in
-    this step and not in the steps above.) 
+    this step and not in the steps above.)
    </ol>
    <h3 class="heading settled" data-level="12.3" id="stacking-notes"><span class="secno">12.3. </span><span class="content"> Notes</span><a class="self-link" href="#stacking-notes"></a></h3>
    <p>The background of the root element is only painted once, over the whole canvas.</p>
@@ -2162,10 +2162,10 @@ by computed value type
    <h3 class="heading settled" id="changes-201502"><span class="content"> Changes since the 3 February 2015 WD</span><a class="self-link" href="#changes-201502"></a></h3>
    <p>The following significant changes were made since the <a href="https://www.w3.org/TR/2015/WD-css3-positioning-20150203/">5 February 2015 Working Draft</a></p>
    <ul>
-    <li>Added informative table to clarify positioning calculations. 
+    <li>Added informative table to clarify positioning calculations.
     <li>Removed “page” and “center” positioning schemes,
     which had not in fact been approved by the CSSWG
-    and should not have been published in the first place. 
+    and should not have been published in the first place.
    </ul>
   </main>
   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -2183,7 +2183,7 @@ by computed value type
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-ae2b6bc0">
-   <a class="self-link" href="#example-ae2b6bc0"></a> 
+   <a class="self-link" href="#example-ae2b6bc0"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -2196,14 +2196,14 @@ by computed value type
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -2254,7 +2254,7 @@ by computed value type
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -2305,306 +2305,306 @@ by computed value type
   <aside class="dfn-panel" data-for="term-for-propdef-border-bottom-width">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-bottom-width">https://drafts.csswg.org/css-backgrounds-3/#propdef-border-bottom-width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-border-bottom-width">8.3. 
+    <li><a href="#ref-for-propdef-border-bottom-width">8.3.
 The height of absolute or fixed positioned, non-replaced elements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-border-left-width">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-left-width">https://drafts.csswg.org/css-backgrounds-3/#propdef-border-left-width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-border-left-width">8.1. 
+    <li><a href="#ref-for-propdef-border-left-width">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-border-right-width">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-right-width">https://drafts.csswg.org/css-backgrounds-3/#propdef-border-right-width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-border-right-width">8.1. 
+    <li><a href="#ref-for-propdef-border-right-width">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-border-top-width">
    <a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-top-width">https://drafts.csswg.org/css-backgrounds-3/#propdef-border-top-width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-border-top-width">8.3. 
+    <li><a href="#ref-for-propdef-border-top-width">8.3.
 The height of absolute or fixed positioned, non-replaced elements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-opacity">
    <a href="https://drafts.csswg.org/css-color-4/#propdef-opacity">https://drafts.csswg.org/css-color-4/#propdef-opacity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-opacity">12.2. 
+    <li><a href="#ref-for-propdef-opacity">12.2.
 Painting order</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-display">
    <a href="https://drafts.csswg.org/css-display-3/#propdef-display">https://drafts.csswg.org/css-display-3/#propdef-display</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-display">9. 
+    <li><a href="#ref-for-propdef-display">9.
 Relationships between display, position, and float</a> <a href="#ref-for-propdef-display①">(2)</a> <a href="#ref-for-propdef-display②">(3)</a> <a href="#ref-for-propdef-display③">(4)</a> <a href="#ref-for-propdef-display④">(5)</a> <a href="#ref-for-propdef-display⑤">(6)</a> <a href="#ref-for-propdef-display⑥">(7)</a> <a href="#ref-for-propdef-display⑦">(8)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-initial-containing-block">
    <a href="https://drafts.csswg.org/css-display-3/#initial-containing-block">https://drafts.csswg.org/css-display-3/#initial-containing-block</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-initial-containing-block">3.1. 
+    <li><a href="#ref-for-initial-containing-block">3.1.
 Definition of containing block</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-display-none">
    <a href="https://drafts.csswg.org/css-display-3/#valdef-display-none">https://drafts.csswg.org/css-display-3/#valdef-display-none</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-display-none">9. 
+    <li><a href="#ref-for-valdef-display-none">9.
 Relationships between display, position, and float</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-overflow">
    <a href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow">https://drafts.csswg.org/css-overflow-3/#propdef-overflow</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-overflow">6.1. 
+    <li><a href="#ref-for-propdef-overflow">6.1.
 Relative positioning</a> <a href="#ref-for-propdef-overflow①">(2)</a>
-    <li><a href="#ref-for-propdef-overflow②">6.2. 
+    <li><a href="#ref-for-propdef-overflow②">6.2.
 Sticky positioning</a> <a href="#ref-for-propdef-overflow③">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-float-left">
    <a href="https://drafts.csswg.org/css-page-floats-3/#valdef-float-left">https://drafts.csswg.org/css-page-floats-3/#valdef-float-left</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-float-left">9. 
+    <li><a href="#ref-for-valdef-float-left">9.
 Relationships between display, position, and float</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-float-none">
    <a href="https://drafts.csswg.org/css-page-floats-3/#valdef-float-none">https://drafts.csswg.org/css-page-floats-3/#valdef-float-none</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-float-none">9. 
+    <li><a href="#ref-for-valdef-float-none">9.
 Relationships between display, position, and float</a> <a href="#ref-for-valdef-float-none①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-float-right">
    <a href="https://drafts.csswg.org/css-page-floats-3/#valdef-float-right">https://drafts.csswg.org/css-page-floats-3/#valdef-float-right</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-float-right">9. 
+    <li><a href="#ref-for-valdef-float-right">9.
 Relationships between display, position, and float</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-width-auto">
    <a href="https://drafts.csswg.org/css-sizing-3/#valdef-width-auto">https://drafts.csswg.org/css-sizing-3/#valdef-width-auto</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-width-auto">8.1. 
+    <li><a href="#ref-for-valdef-width-auto">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-valdef-width-auto①">(2)</a> <a href="#ref-for-valdef-width-auto②">(3)</a> <a href="#ref-for-valdef-width-auto③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-transform">
    <a href="https://drafts.csswg.org/css-transforms-1/#propdef-transform">https://drafts.csswg.org/css-transforms-1/#propdef-transform</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-transform">12.2. 
+    <li><a href="#ref-for-propdef-transform">12.2.
 Painting order</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-typedef-length-percentage">
    <a href="https://drafts.csswg.org/css-values-4/#typedef-length-percentage">https://drafts.csswg.org/css-values-4/#typedef-length-percentage</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typedef-length-percentage">6.6. 
+    <li><a href="#ref-for-typedef-length-percentage">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-typedef-length-percentage①">(2)</a> <a href="#ref-for-typedef-length-percentage②">(3)</a> <a href="#ref-for-typedef-length-percentage③">(4)</a> <a href="#ref-for-typedef-length-percentage④">(5)</a> <a href="#ref-for-typedef-length-percentage⑤">(6)</a> <a href="#ref-for-typedef-length-percentage⑥">(7)</a> <a href="#ref-for-typedef-length-percentage⑦">(8)</a>
-    <li><a href="#ref-for-typedef-length-percentage⑧">6.7. 
+    <li><a href="#ref-for-typedef-length-percentage⑧">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a> <a href="#ref-for-typedef-length-percentage⑨">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-css-wide-keywords">
    <a href="https://drafts.csswg.org/css-values-4/#css-wide-keywords">https://drafts.csswg.org/css-values-4/#css-wide-keywords</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-css-wide-keywords">1.2. 
+    <li><a href="#ref-for-css-wide-keywords">1.2.
 Values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-comb-one">
    <a href="https://drafts.csswg.org/css-values-4/#comb-one">https://drafts.csswg.org/css-values-4/#comb-one</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-comb-one">6.5. 
+    <li><a href="#ref-for-comb-one">6.5.
 Choosing a positioning scheme: position property</a> <a href="#ref-for-comb-one①">(2)</a> <a href="#ref-for-comb-one②">(3)</a> <a href="#ref-for-comb-one③">(4)</a>
-    <li><a href="#ref-for-comb-one④">6.6. 
+    <li><a href="#ref-for-comb-one④">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-comb-one⑤">(2)</a> <a href="#ref-for-comb-one⑥">(3)</a> <a href="#ref-for-comb-one⑦">(4)</a>
-    <li><a href="#ref-for-comb-one⑧">6.7. 
+    <li><a href="#ref-for-comb-one⑧">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a>
-    <li><a href="#ref-for-comb-one⑨">11. 
+    <li><a href="#ref-for-comb-one⑨">11.
 Layered presentation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-direction">
    <a href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction">https://drafts.csswg.org/css-writing-modes-3/#propdef-direction</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-direction">3.1. 
+    <li><a href="#ref-for-propdef-direction">3.1.
 Definition of containing block</a> <a href="#ref-for-propdef-direction①">(2)</a> <a href="#ref-for-propdef-direction②">(3)</a>
-    <li><a href="#ref-for-propdef-direction③">6.1. 
+    <li><a href="#ref-for-propdef-direction③">6.1.
 Relative positioning</a> <a href="#ref-for-propdef-direction④">(2)</a>
-    <li><a href="#ref-for-propdef-direction⑤">6.7. 
+    <li><a href="#ref-for-propdef-direction⑤">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a> <a href="#ref-for-propdef-direction⑥">(2)</a> <a href="#ref-for-propdef-direction⑦">(3)</a> <a href="#ref-for-propdef-direction⑧">(4)</a> <a href="#ref-for-propdef-direction⑨">(5)</a> <a href="#ref-for-propdef-direction①⓪">(6)</a> <a href="#ref-for-propdef-direction①①">(7)</a> <a href="#ref-for-propdef-direction①②">(8)</a>
-    <li><a href="#ref-for-propdef-direction①③">8.1. 
+    <li><a href="#ref-for-propdef-direction①③">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-direction①④">(2)</a> <a href="#ref-for-propdef-direction①⑤">(3)</a> <a href="#ref-for-propdef-direction①⑥">(4)</a> <a href="#ref-for-propdef-direction①⑦">(5)</a>
-    <li><a href="#ref-for-propdef-direction①⑧">8.2. 
+    <li><a href="#ref-for-propdef-direction①⑧">8.2.
 The width of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-direction①⑨">(2)</a> <a href="#ref-for-propdef-direction②⓪">(3)</a> <a href="#ref-for-propdef-direction②①">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-direction-ltr">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr">https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-ltr</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-direction-ltr">3.1. 
+    <li><a href="#ref-for-valdef-direction-ltr">3.1.
 Definition of containing block</a>
-    <li><a href="#ref-for-valdef-direction-ltr①">6.1. 
+    <li><a href="#ref-for-valdef-direction-ltr①">6.1.
 Relative positioning</a>
-    <li><a href="#ref-for-valdef-direction-ltr②">8.1. 
+    <li><a href="#ref-for-valdef-direction-ltr②">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-valdef-direction-ltr③">(2)</a> <a href="#ref-for-valdef-direction-ltr④">(3)</a> <a href="#ref-for-valdef-direction-ltr⑤">(4)</a> <a href="#ref-for-valdef-direction-ltr⑥">(5)</a>
-    <li><a href="#ref-for-valdef-direction-ltr⑦">8.2. 
+    <li><a href="#ref-for-valdef-direction-ltr⑦">8.2.
 The width of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-valdef-direction-ltr⑧">(2)</a> <a href="#ref-for-valdef-direction-ltr⑨">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-valdef-direction-rtl">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl">https://drafts.csswg.org/css-writing-modes-4/#valdef-direction-rtl</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-direction-rtl">3.1. 
+    <li><a href="#ref-for-valdef-direction-rtl">3.1.
 Definition of containing block</a>
-    <li><a href="#ref-for-valdef-direction-rtl①">6.1. 
+    <li><a href="#ref-for-valdef-direction-rtl①">6.1.
 Relative positioning</a>
-    <li><a href="#ref-for-valdef-direction-rtl②">8.1. 
+    <li><a href="#ref-for-valdef-direction-rtl②">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-valdef-direction-rtl③">(2)</a> <a href="#ref-for-valdef-direction-rtl④">(3)</a>
-    <li><a href="#ref-for-valdef-direction-rtl⑤">8.2. 
+    <li><a href="#ref-for-valdef-direction-rtl⑤">8.2.
 The width of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-valdef-direction-rtl⑥">(2)</a> <a href="#ref-for-valdef-direction-rtl⑦">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-writing-mode">
    <a href="https://drafts.csswg.org/css-writing-modes-4/#propdef-writing-mode">https://drafts.csswg.org/css-writing-modes-4/#propdef-writing-mode</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-writing-mode">6.7. 
+    <li><a href="#ref-for-propdef-writing-mode">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a> <a href="#ref-for-propdef-writing-mode①">(2)</a> <a href="#ref-for-propdef-writing-mode②">(3)</a> <a href="#ref-for-propdef-writing-mode③">(4)</a> <a href="#ref-for-propdef-writing-mode④">(5)</a> <a href="#ref-for-propdef-writing-mode⑤">(6)</a> <a href="#ref-for-propdef-writing-mode⑥">(7)</a> <a href="#ref-for-propdef-writing-mode⑦">(8)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-clear">
    <a href="https://drafts.csswg.org/css2/visuren.html#propdef-clear">https://drafts.csswg.org/css2/visuren.html#propdef-clear</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-clear">5. 
+    <li><a href="#ref-for-propdef-clear">5.
 Floats</a>
-    <li><a href="#ref-for-propdef-clear①">10.3. 
+    <li><a href="#ref-for-propdef-clear①">10.3.
 Floating a box</a> <a href="#ref-for-propdef-clear②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-float">
    <a href="https://drafts.csswg.org/css2/visuren.html#propdef-float">https://drafts.csswg.org/css2/visuren.html#propdef-float</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-float">9. 
+    <li><a href="#ref-for-propdef-float">9.
 Relationships between display, position, and float</a> <a href="#ref-for-propdef-float①">(2)</a> <a href="#ref-for-propdef-float②">(3)</a> <a href="#ref-for-propdef-float③">(4)</a> <a href="#ref-for-propdef-float④">(5)</a> <a href="#ref-for-propdef-float⑤">(6)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-height">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-height">https://drafts.csswg.org/css2/visudet.html#propdef-height</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-height">6.6. 
+    <li><a href="#ref-for-propdef-height">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-propdef-height①">(2)</a>
-    <li><a href="#ref-for-propdef-height②">8.2. 
+    <li><a href="#ref-for-propdef-height②">8.2.
 The width of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-height③">(2)</a> <a href="#ref-for-propdef-height④">(3)</a> <a href="#ref-for-propdef-height⑤">(4)</a>
-    <li><a href="#ref-for-propdef-height⑥">8.3. 
+    <li><a href="#ref-for-propdef-height⑥">8.3.
 The height of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-height⑦">(2)</a> <a href="#ref-for-propdef-height⑧">(3)</a> <a href="#ref-for-propdef-height⑨">(4)</a> <a href="#ref-for-propdef-height①⓪">(5)</a> <a href="#ref-for-propdef-height①①">(6)</a> <a href="#ref-for-propdef-height①②">(7)</a> <a href="#ref-for-propdef-height①③">(8)</a> <a href="#ref-for-propdef-height①④">(9)</a>
-    <li><a href="#ref-for-propdef-height①⑤">8.4. 
+    <li><a href="#ref-for-propdef-height①⑤">8.4.
 The height of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-height①⑥">(2)</a> <a href="#ref-for-propdef-height①⑦">(3)</a> <a href="#ref-for-propdef-height①⑧">(4)</a> <a href="#ref-for-propdef-height①⑨">(5)</a> <a href="#ref-for-propdef-height②⓪">(6)</a> <a href="#ref-for-propdef-height②①">(7)</a> <a href="#ref-for-propdef-height②②">(8)</a> <a href="#ref-for-propdef-height②③">(9)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-x34">
    <a href="https://drafts.csswg.org/css2/visuren.html#x34">https://drafts.csswg.org/css2/visuren.html#x34</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-x34">6. 
+    <li><a href="#ref-for-x34">6.
 Positioning schemes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-width">
    <a href="https://drafts.csswg.org/css2/visudet.html#propdef-width">https://drafts.csswg.org/css2/visudet.html#propdef-width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-width">6.6. 
+    <li><a href="#ref-for-propdef-width">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-propdef-width①">(2)</a>
-    <li><a href="#ref-for-propdef-width②">8.1. 
+    <li><a href="#ref-for-propdef-width②">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-width③">(2)</a> <a href="#ref-for-propdef-width④">(3)</a> <a href="#ref-for-propdef-width⑤">(4)</a> <a href="#ref-for-propdef-width⑥">(5)</a> <a href="#ref-for-propdef-width⑦">(6)</a> <a href="#ref-for-propdef-width⑧">(7)</a> <a href="#ref-for-propdef-width⑨">(8)</a> <a href="#ref-for-propdef-width①⓪">(9)</a> <a href="#ref-for-propdef-width①①">(10)</a>
-    <li><a href="#ref-for-propdef-width①②">8.2. 
+    <li><a href="#ref-for-propdef-width①②">8.2.
 The width of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-width①③">(2)</a> <a href="#ref-for-propdef-width①④">(3)</a> <a href="#ref-for-propdef-width①⑤">(4)</a> <a href="#ref-for-propdef-width①⑥">(5)</a> <a href="#ref-for-propdef-width①⑦">(6)</a> <a href="#ref-for-propdef-width①⑧">(7)</a> <a href="#ref-for-propdef-width①⑨">(8)</a> <a href="#ref-for-propdef-width②⓪">(9)</a> <a href="#ref-for-propdef-width②①">(10)</a> <a href="#ref-for-propdef-width②②">(11)</a> <a href="#ref-for-propdef-width②③">(12)</a>
-    <li><a href="#ref-for-propdef-width②④">8.4. 
+    <li><a href="#ref-for-propdef-width②④">8.4.
 The height of absolute or fixed positioned, replaced elements</a>
-    <li><a href="#ref-for-propdef-width②⑤">10.3. 
+    <li><a href="#ref-for-propdef-width②⑤">10.3.
 Floating a box</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-margin-bottom">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-margin-bottom">https://drafts.csswg.org/css-box-3/#propdef-margin-bottom</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-margin-bottom">8.3. 
+    <li><a href="#ref-for-propdef-margin-bottom">8.3.
 The height of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-margin-bottom①">(2)</a> <a href="#ref-for-propdef-margin-bottom②">(3)</a> <a href="#ref-for-propdef-margin-bottom③">(4)</a> <a href="#ref-for-propdef-margin-bottom④">(5)</a>
-    <li><a href="#ref-for-propdef-margin-bottom⑤">8.4. 
+    <li><a href="#ref-for-propdef-margin-bottom⑤">8.4.
 The height of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-margin-bottom⑥">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-margin-left">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-margin-left">https://drafts.csswg.org/css-box-3/#propdef-margin-left</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-margin-left">8.1. 
+    <li><a href="#ref-for-propdef-margin-left">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-margin-left①">(2)</a> <a href="#ref-for-propdef-margin-left②">(3)</a> <a href="#ref-for-propdef-margin-left③">(4)</a> <a href="#ref-for-propdef-margin-left④">(5)</a> <a href="#ref-for-propdef-margin-left⑤">(6)</a> <a href="#ref-for-propdef-margin-left⑥">(7)</a> <a href="#ref-for-propdef-margin-left⑦">(8)</a>
-    <li><a href="#ref-for-propdef-margin-left⑧">8.2. 
+    <li><a href="#ref-for-propdef-margin-left⑧">8.2.
 The width of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-margin-left⑨">(2)</a> <a href="#ref-for-propdef-margin-left①⓪">(3)</a> <a href="#ref-for-propdef-margin-left①①">(4)</a> <a href="#ref-for-propdef-margin-left①②">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-margin-right">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-margin-right">https://drafts.csswg.org/css-box-3/#propdef-margin-right</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-margin-right">8.1. 
+    <li><a href="#ref-for-propdef-margin-right">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-margin-right①">(2)</a> <a href="#ref-for-propdef-margin-right②">(3)</a> <a href="#ref-for-propdef-margin-right③">(4)</a> <a href="#ref-for-propdef-margin-right④">(5)</a> <a href="#ref-for-propdef-margin-right⑤">(6)</a> <a href="#ref-for-propdef-margin-right⑥">(7)</a> <a href="#ref-for-propdef-margin-right⑦">(8)</a>
-    <li><a href="#ref-for-propdef-margin-right⑧">8.2. 
+    <li><a href="#ref-for-propdef-margin-right⑧">8.2.
 The width of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-margin-right⑨">(2)</a> <a href="#ref-for-propdef-margin-right①⓪">(3)</a> <a href="#ref-for-propdef-margin-right①①">(4)</a> <a href="#ref-for-propdef-margin-right①②">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-margin-top">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-margin-top">https://drafts.csswg.org/css-box-3/#propdef-margin-top</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-margin-top">8.3. 
+    <li><a href="#ref-for-propdef-margin-top">8.3.
 The height of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-margin-top①">(2)</a> <a href="#ref-for-propdef-margin-top②">(3)</a> <a href="#ref-for-propdef-margin-top③">(4)</a> <a href="#ref-for-propdef-margin-top④">(5)</a>
-    <li><a href="#ref-for-propdef-margin-top⑤">8.4. 
+    <li><a href="#ref-for-propdef-margin-top⑤">8.4.
 The height of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-margin-top⑥">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-padding-bottom">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-padding-bottom">https://drafts.csswg.org/css-box-3/#propdef-padding-bottom</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-padding-bottom">8.3. 
+    <li><a href="#ref-for-propdef-padding-bottom">8.3.
 The height of absolute or fixed positioned, non-replaced elements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-padding-left">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-padding-left">https://drafts.csswg.org/css-box-3/#propdef-padding-left</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-padding-left">8.1. 
+    <li><a href="#ref-for-propdef-padding-left">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-padding-right">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-padding-right">https://drafts.csswg.org/css-box-3/#propdef-padding-right</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-padding-right">8.1. 
+    <li><a href="#ref-for-propdef-padding-right">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propdef-padding-top">
    <a href="https://drafts.csswg.org/css-box-3/#propdef-padding-top">https://drafts.csswg.org/css-box-3/#propdef-padding-top</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-padding-top">8.3. 
+    <li><a href="#ref-for-propdef-padding-top">8.3.
 The height of absolute or fixed positioned, non-replaced elements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-scrolling-box">
    <a href="https://drafts.csswg.org/cssom-view-1/#scrolling-box">https://drafts.csswg.org/cssom-view-1/#scrolling-box</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-scrolling-box">6.2. 
+    <li><a href="#ref-for-scrolling-box">6.2.
 Sticky positioning</a> <a href="#ref-for-scrolling-box①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-concept-range-bp-position">
    <a href="https://dom.spec.whatwg.org/#concept-range-bp-position">https://dom.spec.whatwg.org/#concept-range-bp-position</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-concept-range-bp-position">6.6. 
+    <li><a href="#ref-for-concept-range-bp-position">6.6.
 Box offsets: top, right, bottom, left</a>
    </ul>
   </aside>
@@ -2910,388 +2910,396 @@ by computed value type
   <aside class="dfn-panel" data-for="viewport">
    <b><a href="#viewport">#viewport</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-viewport">3.1. 
+    <li><a href="#ref-for-viewport">3.1.
 Definition of containing block</a>
-    <li><a href="#ref-for-viewport①">6.4. 
+    <li><a href="#ref-for-viewport①">6.4.
 Fixed positioning</a>
-    <li><a href="#ref-for-viewport②">6.5. 
+    <li><a href="#ref-for-viewport②">6.5.
 Choosing a positioning scheme: position property</a> <a href="#ref-for-viewport③">(2)</a> <a href="#ref-for-viewport④">(3)</a>
-    <li><a href="#ref-for-viewport⑤">6.6. 
+    <li><a href="#ref-for-viewport⑤">6.6.
 Box offsets: top, right, bottom, left</a>
-    <li><a href="#ref-for-viewport⑥">6.7. 
+    <li><a href="#ref-for-viewport⑥">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a>
-    <li><a href="#ref-for-viewport⑦">12.2. 
+    <li><a href="#ref-for-viewport⑦">12.2.
 Painting order</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="containing-block">
    <b><a href="#containing-block">#containing-block</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-containing-block">6. 
+    <li><a href="#ref-for-containing-block">6.
 Positioning schemes</a>
-    <li><a href="#ref-for-containing-block①">6.1. 
+    <li><a href="#ref-for-containing-block①">6.1.
 Relative positioning</a> <a href="#ref-for-containing-block②">(2)</a> <a href="#ref-for-containing-block③">(3)</a> <a href="#ref-for-containing-block④">(4)</a>
-    <li><a href="#ref-for-containing-block⑤">6.2. 
+    <li><a href="#ref-for-containing-block⑤">6.2.
 Sticky positioning</a> <a href="#ref-for-containing-block⑥">(2)</a> <a href="#ref-for-containing-block⑦">(3)</a>
-    <li><a href="#ref-for-containing-block⑧">6.3. 
+    <li><a href="#ref-for-containing-block⑧">6.3.
 Absolute positioning</a> <a href="#ref-for-containing-block⑨">(2)</a>
-    <li><a href="#ref-for-containing-block①⓪">6.4. 
+    <li><a href="#ref-for-containing-block①⓪">6.4.
 Fixed positioning</a>
-    <li><a href="#ref-for-containing-block①①">6.5. 
+    <li><a href="#ref-for-containing-block①①">6.5.
 Choosing a positioning scheme: position property</a>
-    <li><a href="#ref-for-containing-block①②">6.6. 
+    <li><a href="#ref-for-containing-block①②">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-containing-block①③">(2)</a> <a href="#ref-for-containing-block①④">(3)</a> <a href="#ref-for-containing-block①⑤">(4)</a> <a href="#ref-for-containing-block①⑥">(5)</a> <a href="#ref-for-containing-block①⑦">(6)</a> <a href="#ref-for-containing-block①⑧">(7)</a> <a href="#ref-for-containing-block①⑨">(8)</a> <a href="#ref-for-containing-block②⓪">(9)</a> <a href="#ref-for-containing-block②①">(10)</a> <a href="#ref-for-containing-block②②">(11)</a> <a href="#ref-for-containing-block②③">(12)</a> <a href="#ref-for-containing-block②④">(13)</a>
-    <li><a href="#ref-for-containing-block②⑤">6.7. 
+    <li><a href="#ref-for-containing-block②⑤">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a> <a href="#ref-for-containing-block②⑥">(2)</a> <a href="#ref-for-containing-block②⑦">(3)</a> <a href="#ref-for-containing-block②⑧">(4)</a>
-    <li><a href="#ref-for-containing-block②⑨">8.1. 
+    <li><a href="#ref-for-containing-block②⑨">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-containing-block③⓪">(2)</a> <a href="#ref-for-containing-block③①">(3)</a>
-    <li><a href="#ref-for-containing-block③②">8.2. 
+    <li><a href="#ref-for-containing-block③②">8.2.
 The width of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-containing-block③③">(2)</a> <a href="#ref-for-containing-block③④">(3)</a> <a href="#ref-for-containing-block③⑤">(4)</a>
-    <li><a href="#ref-for-containing-block③⑥">9. 
+    <li><a href="#ref-for-containing-block③⑥">9.
 Relationships between display, position, and float</a>
-    <li><a href="#ref-for-containing-block③⑦">10.1. 
+    <li><a href="#ref-for-containing-block③⑦">10.1.
 Normal flow</a>
-    <li><a href="#ref-for-containing-block③⑧">10.4. 
+    <li><a href="#ref-for-containing-block③⑧">10.4.
 Absolute positioning</a> <a href="#ref-for-containing-block③⑨">(2)</a> <a href="#ref-for-containing-block④⓪">(3)</a> <a href="#ref-for-containing-block④①">(4)</a> <a href="#ref-for-containing-block④②">(5)</a> <a href="#ref-for-containing-block④③">(6)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="normal-flow">
    <b><a href="#normal-flow">#normal-flow</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-normal-flow">1. 
+    <li><a href="#ref-for-normal-flow">1.
 Introduction</a>
-    <li><a href="#ref-for-normal-flow①">6. 
+    <li><a href="#ref-for-normal-flow①">6.
 Positioning schemes</a> <a href="#ref-for-normal-flow②">(2)</a>
-    <li><a href="#ref-for-normal-flow③">6.1. 
+    <li><a href="#ref-for-normal-flow③">6.1.
 Relative positioning</a> <a href="#ref-for-normal-flow④">(2)</a> <a href="#ref-for-normal-flow⑤">(3)</a>
-    <li><a href="#ref-for-normal-flow⑥">6.2. 
+    <li><a href="#ref-for-normal-flow⑥">6.2.
 Sticky positioning</a> <a href="#ref-for-normal-flow⑦">(2)</a>
-    <li><a href="#ref-for-normal-flow⑧">6.3. 
+    <li><a href="#ref-for-normal-flow⑧">6.3.
 Absolute positioning</a>
-    <li><a href="#ref-for-normal-flow⑨">6.5. 
+    <li><a href="#ref-for-normal-flow⑨">6.5.
 Choosing a positioning scheme: position property</a> <a href="#ref-for-normal-flow①⓪">(2)</a> <a href="#ref-for-normal-flow①①">(3)</a> <a href="#ref-for-normal-flow①②">(4)</a> <a href="#ref-for-normal-flow①③">(5)</a>
-    <li><a href="#ref-for-normal-flow①④">6.6. 
+    <li><a href="#ref-for-normal-flow①④">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-normal-flow①⑤">(2)</a> <a href="#ref-for-normal-flow①⑥">(3)</a> <a href="#ref-for-normal-flow①⑦">(4)</a>
-    <li><a href="#ref-for-normal-flow①⑧">6.7. 
+    <li><a href="#ref-for-normal-flow①⑧">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a>
-    <li><a href="#ref-for-normal-flow①⑨">8.2. 
+    <li><a href="#ref-for-normal-flow①⑨">8.2.
 The width of absolute or fixed positioned, replaced elements</a>
-    <li><a href="#ref-for-normal-flow②⓪">10. 
+    <li><a href="#ref-for-normal-flow②⓪">10.
 Comparison of normal flow, floats, and positioning</a> <a href="#ref-for-normal-flow②①">(2)</a>
-    <li><a href="#ref-for-normal-flow②②">10.1. 
+    <li><a href="#ref-for-normal-flow②②">10.1.
 Normal flow</a>
-    <li><a href="#ref-for-normal-flow②③">10.2. 
+    <li><a href="#ref-for-normal-flow②③">10.2.
 Relative positioning</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="float">
    <b><a href="#float">#float</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-float">6. 
+    <li><a href="#ref-for-float">6.
 Positioning schemes</a> <a href="#ref-for-float①">(2)</a> <a href="#ref-for-float②">(3)</a>
-    <li><a href="#ref-for-float③">6.1. 
+    <li><a href="#ref-for-float③">6.1.
 Relative positioning</a> <a href="#ref-for-float④">(2)</a>
-    <li><a href="#ref-for-float⑤">6.2. 
+    <li><a href="#ref-for-float⑤">6.2.
 Sticky positioning</a>
-    <li><a href="#ref-for-float⑥">8.5. 
+    <li><a href="#ref-for-float⑥">8.5.
 Auto heights for block formatting context roots</a> <a href="#ref-for-float⑦">(2)</a> <a href="#ref-for-float⑧">(3)</a>
-    <li><a href="#ref-for-float⑨">9. 
+    <li><a href="#ref-for-float⑨">9.
 Relationships between display, position, and float</a>
-    <li><a href="#ref-for-float①⓪">10. 
+    <li><a href="#ref-for-float①⓪">10.
 Comparison of normal flow, floats, and positioning</a>
-    <li><a href="#ref-for-float①①">10.3. 
+    <li><a href="#ref-for-float①①">10.3.
 Floating a box</a> <a href="#ref-for-float①②">(2)</a>
-    <li><a href="#ref-for-float①③">12.2. 
+    <li><a href="#ref-for-float①③">12.2.
 Painting order</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="positioning-schemes">
    <b><a href="#positioning-schemes">#positioning-schemes</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-positioning-schemes">10. 
+    <li><a href="#ref-for-positioning-schemes">10.
 Comparison of normal flow, floats, and positioning</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="relative-position">
    <b><a href="#relative-position">#relative-position</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-relative-position">6.2. 
+    <li><a href="#ref-for-relative-position">6.2.
 Sticky positioning</a>
-    <li><a href="#ref-for-relative-position①">6.5. 
+    <li><a href="#ref-for-relative-position①">6.5.
 Choosing a positioning scheme: position property</a>
-    <li><a href="#ref-for-relative-position②">10. 
+    <li><a href="#ref-for-relative-position②">10.
 Comparison of normal flow, floats, and positioning</a>
-    <li><a href="#ref-for-relative-position③">10.2. 
+    <li><a href="#ref-for-relative-position③">10.2.
 Relative positioning</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="sticky-position">
    <b><a href="#sticky-position">#sticky-position</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-sticky-position">6. 
+    <li><a href="#ref-for-sticky-position">6.
 Positioning schemes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-position">
    <b><a href="#propdef-position">#propdef-position</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-position">3.1. 
+    <li><a href="#ref-for-propdef-position">3.1.
 Definition of containing block</a> <a href="#ref-for-propdef-position①">(2)</a> <a href="#ref-for-propdef-position②">(3)</a>
-    <li><a href="#ref-for-propdef-position③">6.3. 
+    <li><a href="#ref-for-propdef-position③">6.3.
 Absolute positioning</a>
-    <li><a href="#ref-for-propdef-position④">6.5. 
+    <li><a href="#ref-for-propdef-position④">6.5.
 Choosing a positioning scheme: position property</a> <a href="#ref-for-propdef-position⑤">(2)</a> <a href="#ref-for-propdef-position⑥">(3)</a> <a href="#ref-for-propdef-position⑦">(4)</a> <a href="#ref-for-propdef-position⑧">(5)</a> <a href="#ref-for-propdef-position⑨">(6)</a>
-    <li><a href="#ref-for-propdef-position①⓪">6.6. 
+    <li><a href="#ref-for-propdef-position①⓪">6.6.
 Box offsets: top, right, bottom, left</a>
-    <li><a href="#ref-for-propdef-position①①">9. 
+    <li><a href="#ref-for-propdef-position①①">9.
 Relationships between display, position, and float</a> <a href="#ref-for-propdef-position①②">(2)</a> <a href="#ref-for-propdef-position①③">(3)</a> <a href="#ref-for-propdef-position①④">(4)</a>
-    <li><a href="#ref-for-propdef-position①⑤">10.4. 
+    <li><a href="#ref-for-propdef-position①⑤">10.4.
 Absolute positioning</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-position-static">
    <b><a href="#valdef-position-static">#valdef-position-static</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-position-static">3.1. 
+    <li><a href="#ref-for-valdef-position-static">3.1.
 Definition of containing block</a> <a href="#ref-for-valdef-position-static①">(2)</a>
-    <li><a href="#ref-for-valdef-position-static②">6.5. 
+    <li><a href="#ref-for-valdef-position-static②">6.5.
 Choosing a positioning scheme: position property</a>
-    <li><a href="#ref-for-valdef-position-static③">6.6. 
+    <li><a href="#ref-for-valdef-position-static③">6.6.
 Box offsets: top, right, bottom, left</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-position-relative">
    <b><a href="#valdef-position-relative">#valdef-position-relative</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-position-relative">3.1. 
+    <li><a href="#ref-for-valdef-position-relative">3.1.
 Definition of containing block</a> <a href="#ref-for-valdef-position-relative①">(2)</a>
-    <li><a href="#ref-for-valdef-position-relative②">6.5. 
+    <li><a href="#ref-for-valdef-position-relative②">6.5.
 Choosing a positioning scheme: position property</a> <a href="#ref-for-valdef-position-relative③">(2)</a>
-    <li><a href="#ref-for-valdef-position-relative④">10.4. 
+    <li><a href="#ref-for-valdef-position-relative④">10.4.
 Absolute positioning</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-position-absolute">
    <b><a href="#valdef-position-absolute">#valdef-position-absolute</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-position-absolute">3.1. 
+    <li><a href="#ref-for-valdef-position-absolute">3.1.
 Definition of containing block</a>
-    <li><a href="#ref-for-valdef-position-absolute①">6.3. 
+    <li><a href="#ref-for-valdef-position-absolute①">6.3.
 Absolute positioning</a>
-    <li><a href="#ref-for-valdef-position-absolute②">9. 
+    <li><a href="#ref-for-valdef-position-absolute②">9.
 Relationships between display, position, and float</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-position-sticky">
    <b><a href="#valdef-position-sticky">#valdef-position-sticky</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-position-sticky">3.1. 
+    <li><a href="#ref-for-valdef-position-sticky">3.1.
 Definition of containing block</a>
-    <li><a href="#ref-for-valdef-position-sticky①">6.5. 
+    <li><a href="#ref-for-valdef-position-sticky①">6.5.
 Choosing a positioning scheme: position property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-position-fixed">
    <b><a href="#valdef-position-fixed">#valdef-position-fixed</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-position-fixed">3.1. 
+    <li><a href="#ref-for-valdef-position-fixed">3.1.
 Definition of containing block</a>
-    <li><a href="#ref-for-valdef-position-fixed①">6.3. 
+    <li><a href="#ref-for-valdef-position-fixed①">6.3.
 Absolute positioning</a>
-    <li><a href="#ref-for-valdef-position-fixed②">6.5. 
+    <li><a href="#ref-for-valdef-position-fixed②">6.5.
 Choosing a positioning scheme: position property</a> <a href="#ref-for-valdef-position-fixed③">(2)</a> <a href="#ref-for-valdef-position-fixed④">(3)</a>
-    <li><a href="#ref-for-valdef-position-fixed⑤">9. 
+    <li><a href="#ref-for-valdef-position-fixed⑤">9.
 Relationships between display, position, and float</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-top">
    <b><a href="#propdef-top">#propdef-top</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-top">6.1. 
+    <li><a href="#ref-for-propdef-top">6.1.
 Relative positioning</a> <a href="#ref-for-propdef-top①">(2)</a> <a href="#ref-for-propdef-top②">(3)</a> <a href="#ref-for-propdef-top③">(4)</a> <a href="#ref-for-propdef-top④">(5)</a> <a href="#ref-for-propdef-top⑤">(6)</a> <a href="#ref-for-propdef-top⑥">(7)</a>
-    <li><a href="#ref-for-propdef-top⑦">6.2. 
+    <li><a href="#ref-for-propdef-top⑦">6.2.
 Sticky positioning</a> <a href="#ref-for-propdef-top⑧">(2)</a> <a href="#ref-for-propdef-top⑨">(3)</a> <a href="#ref-for-propdef-top①⓪">(4)</a> <a href="#ref-for-propdef-top①①">(5)</a>
-    <li><a href="#ref-for-propdef-top①②">6.5. 
+    <li><a href="#ref-for-propdef-top①②">6.5.
 Choosing a positioning scheme: position property</a> <a href="#ref-for-propdef-top①③">(2)</a>
-    <li><a href="#ref-for-propdef-top①④">6.6. 
+    <li><a href="#ref-for-propdef-top①④">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-propdef-top①⑤">(2)</a> <a href="#ref-for-propdef-top①⑥">(3)</a> <a href="#ref-for-propdef-top①⑦">(4)</a> <a href="#ref-for-propdef-top①⑧">(5)</a> <a href="#ref-for-propdef-top①⑨">(6)</a>
-    <li><a href="#ref-for-propdef-top②⓪">8.3. 
+    <li><a href="#ref-for-propdef-top②⓪">8.3.
 The height of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-top②①">(2)</a> <a href="#ref-for-propdef-top②②">(3)</a> <a href="#ref-for-propdef-top②③">(4)</a> <a href="#ref-for-propdef-top②④">(5)</a> <a href="#ref-for-propdef-top②⑤">(6)</a> <a href="#ref-for-propdef-top②⑥">(7)</a> <a href="#ref-for-propdef-top②⑦">(8)</a> <a href="#ref-for-propdef-top②⑧">(9)</a> <a href="#ref-for-propdef-top②⑨">(10)</a> <a href="#ref-for-propdef-top③⓪">(11)</a> <a href="#ref-for-propdef-top③①">(12)</a>
-    <li><a href="#ref-for-propdef-top③②">8.4. 
+    <li><a href="#ref-for-propdef-top③②">8.4.
 The height of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-top③③">(2)</a>
-    <li><a href="#ref-for-propdef-top③④">9. 
+    <li><a href="#ref-for-propdef-top③④">9.
 Relationships between display, position, and float</a>
-    <li><a href="#ref-for-propdef-top③⑤">10.4. 
+    <li><a href="#ref-for-propdef-top③⑤">10.4.
 Absolute positioning</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-right">
    <b><a href="#propdef-right">#propdef-right</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-right">6.1. 
+    <li><a href="#ref-for-propdef-right">6.1.
 Relative positioning</a> <a href="#ref-for-propdef-right①">(2)</a> <a href="#ref-for-propdef-right②">(3)</a> <a href="#ref-for-propdef-right③">(4)</a> <a href="#ref-for-propdef-right④">(5)</a> <a href="#ref-for-propdef-right⑤">(6)</a> <a href="#ref-for-propdef-right⑥">(7)</a> <a href="#ref-for-propdef-right⑦">(8)</a> <a href="#ref-for-propdef-right⑧">(9)</a> <a href="#ref-for-propdef-right⑨">(10)</a>
-    <li><a href="#ref-for-propdef-right①⓪">6.2. 
+    <li><a href="#ref-for-propdef-right①⓪">6.2.
 Sticky positioning</a> <a href="#ref-for-propdef-right①①">(2)</a> <a href="#ref-for-propdef-right①②">(3)</a> <a href="#ref-for-propdef-right①③">(4)</a>
-    <li><a href="#ref-for-propdef-right①④">6.5. 
+    <li><a href="#ref-for-propdef-right①④">6.5.
 Choosing a positioning scheme: position property</a> <a href="#ref-for-propdef-right①⑤">(2)</a>
-    <li><a href="#ref-for-propdef-right①⑥">6.6. 
+    <li><a href="#ref-for-propdef-right①⑥">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-propdef-right①⑦">(2)</a> <a href="#ref-for-propdef-right①⑧">(3)</a>
-    <li><a href="#ref-for-propdef-right①⑨">8.1. 
+    <li><a href="#ref-for-propdef-right①⑨">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-right②⓪">(2)</a> <a href="#ref-for-propdef-right②①">(3)</a> <a href="#ref-for-propdef-right②②">(4)</a> <a href="#ref-for-propdef-right②③">(5)</a> <a href="#ref-for-propdef-right②④">(6)</a> <a href="#ref-for-propdef-right②⑤">(7)</a> <a href="#ref-for-propdef-right②⑥">(8)</a> <a href="#ref-for-propdef-right②⑦">(9)</a> <a href="#ref-for-propdef-right②⑧">(10)</a> <a href="#ref-for-propdef-right②⑨">(11)</a> <a href="#ref-for-propdef-right③⓪">(12)</a> <a href="#ref-for-propdef-right③①">(13)</a> <a href="#ref-for-propdef-right③②">(14)</a> <a href="#ref-for-propdef-right③③">(15)</a> <a href="#ref-for-propdef-right③④">(16)</a>
-    <li><a href="#ref-for-propdef-right③⑤">8.2. 
+    <li><a href="#ref-for-propdef-right③⑤">8.2.
 The width of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-right③⑥">(2)</a> <a href="#ref-for-propdef-right③⑦">(3)</a> <a href="#ref-for-propdef-right③⑧">(4)</a> <a href="#ref-for-propdef-right③⑨">(5)</a> <a href="#ref-for-propdef-right④⓪">(6)</a> <a href="#ref-for-propdef-right④①">(7)</a>
-    <li><a href="#ref-for-propdef-right④②">9. 
+    <li><a href="#ref-for-propdef-right④②">9.
 Relationships between display, position, and float</a>
-    <li><a href="#ref-for-propdef-right④③">10.3. 
+    <li><a href="#ref-for-propdef-right④③">10.3.
 Floating a box</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-bottom">
    <b><a href="#propdef-bottom">#propdef-bottom</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-bottom">6.1. 
+    <li><a href="#ref-for-propdef-bottom">6.1.
 Relative positioning</a> <a href="#ref-for-propdef-bottom①">(2)</a> <a href="#ref-for-propdef-bottom②">(3)</a> <a href="#ref-for-propdef-bottom③">(4)</a> <a href="#ref-for-propdef-bottom④">(5)</a> <a href="#ref-for-propdef-bottom⑤">(6)</a> <a href="#ref-for-propdef-bottom⑥">(7)</a> <a href="#ref-for-propdef-bottom⑦">(8)</a>
-    <li><a href="#ref-for-propdef-bottom⑧">6.2. 
+    <li><a href="#ref-for-propdef-bottom⑧">6.2.
 Sticky positioning</a> <a href="#ref-for-propdef-bottom⑨">(2)</a> <a href="#ref-for-propdef-bottom①⓪">(3)</a> <a href="#ref-for-propdef-bottom①①">(4)</a> <a href="#ref-for-propdef-bottom①②">(5)</a>
-    <li><a href="#ref-for-propdef-bottom①③">6.5. 
+    <li><a href="#ref-for-propdef-bottom①③">6.5.
 Choosing a positioning scheme: position property</a> <a href="#ref-for-propdef-bottom①④">(2)</a>
-    <li><a href="#ref-for-propdef-bottom①⑤">6.6. 
+    <li><a href="#ref-for-propdef-bottom①⑤">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-propdef-bottom①⑥">(2)</a> <a href="#ref-for-propdef-bottom①⑦">(3)</a>
-    <li><a href="#ref-for-propdef-bottom①⑧">8.3. 
+    <li><a href="#ref-for-propdef-bottom①⑧">8.3.
 The height of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-bottom①⑨">(2)</a> <a href="#ref-for-propdef-bottom②⓪">(3)</a> <a href="#ref-for-propdef-bottom②①">(4)</a> <a href="#ref-for-propdef-bottom②②">(5)</a> <a href="#ref-for-propdef-bottom②③">(6)</a> <a href="#ref-for-propdef-bottom②④">(7)</a> <a href="#ref-for-propdef-bottom②⑤">(8)</a> <a href="#ref-for-propdef-bottom②⑥">(9)</a> <a href="#ref-for-propdef-bottom②⑦">(10)</a> <a href="#ref-for-propdef-bottom②⑧">(11)</a> <a href="#ref-for-propdef-bottom②⑨">(12)</a>
-    <li><a href="#ref-for-propdef-bottom③⓪">8.4. 
+    <li><a href="#ref-for-propdef-bottom③⓪">8.4.
 The height of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-bottom③①">(2)</a> <a href="#ref-for-propdef-bottom③②">(3)</a>
-    <li><a href="#ref-for-propdef-bottom③③">9. 
+    <li><a href="#ref-for-propdef-bottom③③">9.
 Relationships between display, position, and float</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-left">
    <b><a href="#propdef-left">#propdef-left</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-left">6.1. 
+    <li><a href="#ref-for-propdef-left">6.1.
 Relative positioning</a> <a href="#ref-for-propdef-left①">(2)</a> <a href="#ref-for-propdef-left②">(3)</a> <a href="#ref-for-propdef-left③">(4)</a> <a href="#ref-for-propdef-left④">(5)</a> <a href="#ref-for-propdef-left⑤">(6)</a> <a href="#ref-for-propdef-left⑥">(7)</a> <a href="#ref-for-propdef-left⑦">(8)</a> <a href="#ref-for-propdef-left⑧">(9)</a> <a href="#ref-for-propdef-left⑨">(10)</a>
-    <li><a href="#ref-for-propdef-left①⓪">6.2. 
+    <li><a href="#ref-for-propdef-left①⓪">6.2.
 Sticky positioning</a> <a href="#ref-for-propdef-left①①">(2)</a> <a href="#ref-for-propdef-left①②">(3)</a> <a href="#ref-for-propdef-left①③">(4)</a>
-    <li><a href="#ref-for-propdef-left①④">6.5. 
+    <li><a href="#ref-for-propdef-left①④">6.5.
 Choosing a positioning scheme: position property</a> <a href="#ref-for-propdef-left①⑤">(2)</a>
-    <li><a href="#ref-for-propdef-left①⑥">6.6. 
+    <li><a href="#ref-for-propdef-left①⑥">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-propdef-left①⑦">(2)</a> <a href="#ref-for-propdef-left①⑧">(3)</a>
-    <li><a href="#ref-for-propdef-left①⑨">8.1. 
+    <li><a href="#ref-for-propdef-left①⑨">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-propdef-left②⓪">(2)</a> <a href="#ref-for-propdef-left②①">(3)</a> <a href="#ref-for-propdef-left②②">(4)</a> <a href="#ref-for-propdef-left②③">(5)</a> <a href="#ref-for-propdef-left②④">(6)</a> <a href="#ref-for-propdef-left②⑤">(7)</a> <a href="#ref-for-propdef-left②⑥">(8)</a> <a href="#ref-for-propdef-left②⑦">(9)</a> <a href="#ref-for-propdef-left②⑧">(10)</a> <a href="#ref-for-propdef-left②⑨">(11)</a> <a href="#ref-for-propdef-left③⓪">(12)</a> <a href="#ref-for-propdef-left③①">(13)</a> <a href="#ref-for-propdef-left③②">(14)</a> <a href="#ref-for-propdef-left③③">(15)</a>
-    <li><a href="#ref-for-propdef-left③④">8.2. 
+    <li><a href="#ref-for-propdef-left③④">8.2.
 The width of absolute or fixed positioned, replaced elements</a> <a href="#ref-for-propdef-left③⑤">(2)</a> <a href="#ref-for-propdef-left③⑥">(3)</a> <a href="#ref-for-propdef-left③⑦">(4)</a> <a href="#ref-for-propdef-left③⑧">(5)</a> <a href="#ref-for-propdef-left③⑨">(6)</a> <a href="#ref-for-propdef-left④⓪">(7)</a>
-    <li><a href="#ref-for-propdef-left④①">9. 
+    <li><a href="#ref-for-propdef-left④①">9.
 Relationships between display, position, and float</a>
-    <li><a href="#ref-for-propdef-left④②">10.4. 
+    <li><a href="#ref-for-propdef-left④②">10.4.
 Absolute positioning</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-top-auto">
    <b><a href="#valdef-top-auto">#valdef-top-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-top-auto">6.6. 
+    <li><a href="#ref-for-valdef-top-auto">6.6.
 Box offsets: top, right, bottom, left</a> <a href="#ref-for-valdef-top-auto①">(2)</a> <a href="#ref-for-valdef-top-auto②">(3)</a> <a href="#ref-for-valdef-top-auto③">(4)</a> <a href="#ref-for-valdef-top-auto④">(5)</a>
-    <li><a href="#ref-for-valdef-top-auto⑤">8.1. 
+    <li><a href="#ref-for-valdef-top-auto⑤">8.1.
 The width of absolute or fixed positioned, non-replaced elements</a> <a href="#ref-for-valdef-top-auto⑥">(2)</a> <a href="#ref-for-valdef-top-auto⑦">(3)</a> <a href="#ref-for-valdef-top-auto⑧">(4)</a> <a href="#ref-for-valdef-top-auto⑨">(5)</a> <a href="#ref-for-valdef-top-auto①⓪">(6)</a> <a href="#ref-for-valdef-top-auto①①">(7)</a> <a href="#ref-for-valdef-top-auto①②">(8)</a> <a href="#ref-for-valdef-top-auto①③">(9)</a> <a href="#ref-for-valdef-top-auto①④">(10)</a> <a href="#ref-for-valdef-top-auto①⑤">(11)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-inset-before">
    <b><a href="#propdef-inset-before">#propdef-inset-before</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-inset-before">6.7. 
+    <li><a href="#ref-for-propdef-inset-before">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-inset-after">
    <b><a href="#propdef-inset-after">#propdef-inset-after</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-inset-after">6.7. 
+    <li><a href="#ref-for-propdef-inset-after">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-inset-start">
    <b><a href="#propdef-inset-start">#propdef-inset-start</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-inset-start">6.7. 
+    <li><a href="#ref-for-propdef-inset-start">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-inset-end">
    <b><a href="#propdef-inset-end">#propdef-inset-end</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-inset-end">6.7. 
+    <li><a href="#ref-for-propdef-inset-end">6.7.
 Logical box insets: inset-before, inset-end, inset-after and inset-start</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-z-index">
    <b><a href="#propdef-z-index">#propdef-z-index</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-z-index">11. 
+    <li><a href="#ref-for-propdef-z-index">11.
 Layered presentation</a> <a href="#ref-for-propdef-z-index①">(2)</a> <a href="#ref-for-propdef-z-index②">(3)</a> <a href="#ref-for-propdef-z-index③">(4)</a>
-    <li><a href="#ref-for-propdef-z-index④">12.2. 
+    <li><a href="#ref-for-propdef-z-index④">12.2.
 Painting order</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-z-index-auto">
    <b><a href="#valdef-z-index-auto">#valdef-z-index-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-z-index-auto">11. 
+    <li><a href="#ref-for-valdef-z-index-auto">11.
 Layered presentation</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
 
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+document.body.addEventListener("click", (event) => {
+  const queryAll = (sel) => [].slice.call(document.querySelectorAll(sel));
+
+  // Find the dfn element or panel, if any, that was clicked on.
+  let el = event.target;
+  let target;
+  let hitALink = false;
+
+  while (el.parentElement) {
+    if (el.tagName === "A") {
+      // Clicking on a link in a <dfn> shouldn't summon the panel.
+      hitALink = true;
     }
 
+    if (el.classList.contains("dfn-paneled")) {
+      target = "dfn";
+      break;
+    }
+
+    if (el.classList.contains("dfn-panel")) {
+      target = "dfn-panel";
+      break;
+    }
+
+    el = el.parentElement;
+  }
+
+  if (target !== "dfn-panel") {
+    // Turn off any currently "on" or "activated" panels.
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach((el) => {
+      el.classList.remove("on");
+      el.classList.remove("activated");
+    });
+  }
+
+  if (target === "dfn" && !hitALink) {
+    // Open the panel.
+    const dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+
+    if (dfnPanel) {
+      dfnPanel.classList.add("on");
+      const rect = el.getBoundingClientRect();
+      dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+      dfnPanel.style.top = window.scrollY + rect.top + "px";
+      const panelRect = dfnPanel.getBoundingClientRect();
+      const panelWidth = panelRect.right - panelRect.left;
+
+      if (panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+        // Reposition, because the panel is overflowing.
+        dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+      }
+    } else {
+      console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+    }
+  } else if (target === "dfn-panel") {
+    // Switch it to "activated" state, which pins it.
+    el.classList.add("activated");
+    el.style.left = null;
+    el.style.top = null;
+  }
 });
 </script>
