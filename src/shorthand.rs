@@ -1,3 +1,5 @@
+#![allow(clippy::trivial_regex)]
+
 use kuchiki::NodeRef;
 use regex::{Captures, Regex};
 

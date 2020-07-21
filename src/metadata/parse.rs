@@ -27,9 +27,9 @@ pub fn parse_boilerplate(val: &str) -> Result<BoolSet<String>, &'static str> {
 
     let mut boilerplate = BoolSet::<String>::new_with_default(true);
 
-    for item in val.split(",").map(|item| item.trim()) {
+    for item in val.split(',').map(|item| item.trim()) {
         let pieces = item
-            .split(" ")
+            .split(' ')
             .map(|piece| piece.trim().to_lowercase())
             .collect::<Vec<String>>();
 
@@ -109,7 +109,7 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
 
     // TODO: unescape pieces
     let mut pieces = val
-        .split(",")
+        .split(',')
         .map(|piece| piece.trim())
         .collect::<Vec<&str>>();
 
@@ -174,13 +174,13 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
         } else {
             org = Some(pieces[0].to_owned());
         }
-    } else if pieces.len() != 0 {
+    } else if !pieces.is_empty() {
         return Err("wrong editor format");
     }
 
     // check if the org ends with an email or a link
     if let Some(org) = org {
-        if org.contains(" ") {
+        if org.contains(' ') {
             let org_pieces = org.rsplitn(2, ' ').collect::<Vec<&str>>();
             let left_part = org_pieces[1];
             let last_piece = org_pieces[0];
@@ -229,7 +229,7 @@ pub fn parse_editor_term(val: &str) -> Result<EditorTerm, &'static str> {
     // <editor-term> := <singular-term> "," <plural-term>
 
     let pieces = val
-        .split(",")
+        .split(',')
         .map(|piece| piece.trim())
         .collect::<Vec<&str>>();
 
@@ -254,9 +254,9 @@ pub fn parse_markup_shorthands(val: &str) -> Result<BoolSet<String>, &'static st
 
     let mut markup_shorthands = BoolSet::<String>::new_with_default(false);
 
-    for item in val.split(",").map(|item| item.trim()) {
+    for item in val.split(',').map(|item| item.trim()) {
         let pieces = item
-            .split(" ")
+            .split(' ')
             .map(|piece| piece.trim().to_lowercase())
             .collect::<Vec<String>>();
 

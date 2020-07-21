@@ -5,8 +5,6 @@ use crate::util;
 
 pub fn generate_name(text: &str) -> String {
     lazy_static! {
-        // regex for parenthesis pair
-        static ref PAR_PAIR_REG: Regex = Regex::new(r"\(\)").unwrap();
         // regex for dashable chars
         static ref DASHABLE_REG: Regex = Regex::new(r"[\s/(,]+").unwrap();
         // regex for useless chars
@@ -14,7 +12,7 @@ pub fn generate_name(text: &str) -> String {
     }
 
     let mut text = text.to_lowercase();
-    text = util::regex::replace_all(&PAR_PAIR_REG, &text, |_: &Captures| "".to_owned());
+    text = text.replace("()", "");
     text = util::regex::replace_all(&DASHABLE_REG, &text, |_: &Captures| "-".to_owned());
     text = util::regex::replace_all(&USELESS_REG, &text, |_: &Captures| "".to_owned());
     text

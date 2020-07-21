@@ -6,8 +6,8 @@ macro_rules! die {
     });
 
     ($($x:expr),+; $line:expr) => ({
-        if $line.is_some() {
-            eprint!("[Line {}] ", $line.unwrap());
+        if let Some(line) = $line {
+            eprint!("[Line {}] ",line);
         }
         eprintln!($($x),+);
         std::process::exit(1);

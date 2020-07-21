@@ -94,7 +94,7 @@ impl Metadata {
             key = titlecase(&key);
         }
 
-        if key.starts_with("!") {
+        if key.starts_with('!') {
             let key = &key[1..];
             self.custom_md
                 .entry(key.to_owned())
@@ -347,10 +347,7 @@ impl Metadata {
         if let Some(ref raw_status) = self.raw_status {
             macros.insert(
                 "longstatus",
-                SHORT_TO_LONG_STATUS
-                    .get(raw_status.as_str())
-                    .unwrap()
-                    .to_string(),
+                (*(SHORT_TO_LONG_STATUS.get(raw_status.as_str()).unwrap())).to_string(),
             );
         }
         // date

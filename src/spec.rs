@@ -56,7 +56,7 @@ impl<'a> Spec<'a> {
                 if let Ok(text) = src_line {
                     lines.push(Line {
                         index: 1 + (index as u32),
-                        text: text,
+                        text,
                     });
                 }
             }
