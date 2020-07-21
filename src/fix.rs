@@ -98,7 +98,7 @@ impl CodeSpanManager {
             .text_pieces
             .iter()
             .map(|piece| map_fn(&piece))
-            .collect::<VecDeque<String>>();
+            .collect();
     }
 
     pub fn extract(&mut self) -> String {

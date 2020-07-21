@@ -47,15 +47,15 @@ fn add_level(heading_els: &[NodeRef]) {
     fn increment_level(heading_levels: &mut [u32], level: usize) {
         heading_levels[level - 2] += 1;
 
-        for i in (level - 1)..5 {
-            heading_levels[i] = 0;
+        for heading_level in heading_levels.iter_mut().take(5).skip(level - 1) {
+            *heading_level = 0;
         }
     };
 
     fn levels_to_string(heading_levels: &[u32]) -> String {
         heading_levels
             .iter()
-            .filter(|l| l.to_owned() > &0)
+            .filter(|&l| l > &0)
             .map(|l| l.to_string())
             .collect::<Vec<String>>()
             .join(".")

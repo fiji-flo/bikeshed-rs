@@ -141,7 +141,7 @@ fn editor_to_dd_node(editor: &Editor) -> NodeRef {
 
     if let Some(ref w3c_id) = editor.w3c_id {
         if let NodeData::Element(dd_el_data) = dd_el.data() {
-            let ref mut attributes = dd_el_data.attributes.borrow_mut();
+            let attributes = &mut dd_el_data.attributes.borrow_mut();
             attributes.insert(LocalName::from("data-editor-id"), w3c_id.to_owned());
         }
     }
@@ -436,19 +436,15 @@ pub fn fill_toc_section(doc: &mut Spec) {
     }
 
     // Remove empty <ol> nodes.
-    loop {
-        if let Ok(ol_els) = container.select("ol:empty") {
-            let ol_els = ol_els.collect::<Vec<NodeDataRef<_>>>();
+    while let Ok(ol_els) = container.select("ol:empty") {
+        let ol_els = ol_els.collect::<Vec<NodeDataRef<_>>>();
 
-            if ol_els.len() == 0 {
-                break;
-            }
-
-            for ol_el in ol_els {
-                ol_el.as_node().detach();
-            }
-        } else {
+        if ol_els.is_empty() {
             break;
+        }
+
+        for ol_el in ol_els {
+            ol_el.as_node().detach();
         }
     }
 }
