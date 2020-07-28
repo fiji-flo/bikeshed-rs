@@ -98,6 +98,17 @@ fn get_container_or_head(doc: &Spec, tag: &str) -> Option<NodeRef> {
         .or_else(|| Some(doc.head().clone()))
 }
 
+fn get_container_or_body(doc: &Spec, tag: &str) -> Option<NodeRef> {
+    if !doc.md.boilerplate.get(tag) {
+        return None;
+    }
+
+    doc.containers
+        .get(tag)
+        .cloned()
+        .or_else(|| Some(doc.body().clone()))
+}
+
 pub fn add_header_footer(doc: &mut Spec) {
     let header = retrieve_boilerplate(doc, "header");
     let footer = retrieve_boilerplate(doc, "footer");
@@ -244,7 +255,7 @@ pub fn fill_spec_metadata_section(doc: &mut Spec) {
     // <dt> and <dd> nodes that would be appended to <dl> node
     let mut md_list = Vec::new();
 
-    // insert version
+    // Insert version.
     if let Some(version) = macros.get("version") {
         md_list.push(key_to_dt_node("This version"));
         md_list.push(wrap_in_dd_node(html::new_a(
@@ -256,7 +267,7 @@ pub fn fill_spec_metadata_section(doc: &mut Spec) {
         )));
     }
 
-    // insert latest published version
+    // Insert latest published version.
     if let Some(ref tr) = doc.md.tr {
         md_list.push(key_to_dt_node("Latest published version"));
         md_list.push(wrap_in_dd_node(html::new_a(
@@ -267,13 +278,13 @@ pub fn fill_spec_metadata_section(doc: &mut Spec) {
         )));
     }
 
-    // insert editors
+    // Insert editors.
     if !doc.md.editors.is_empty() {
         md_list.push(key_to_dt_node("Editor"));
         md_list.extend(doc.md.editors.iter().map(editor_to_dd_node));
     }
 
-    // insert custom metadata
+    // Insert custom metadata.
     for (key, vals) in &doc.md.custom_md {
         md_list.push(key_to_dt_node(key));
         md_list.extend(vals.iter().map(|val| wrap_in_dd_node(html::new_text(val))));
@@ -319,6 +330,62 @@ pub fn fill_abstract_section(doc: &mut Spec) {
         for child in body.as_node().children() {
             container.append(child);
         }
+    }
+}
+
+pub fn add_references_section(doc: &mut Spec) {
+    if doc.link_texts.is_empty() {
+        return;
+    }
+
+    let container = match get_container_or_body(doc, "references") {
+        Some(container) => container,
+        None => return,
+    };
+
+    let h2_el = html::new_element(
+        "h2",
+        btreemap! {
+            "class" => "no-num no-ref",
+            "id" => "references",
+
+        },
+    );
+    h2_el.append(html::new_text("References"));
+    container.append(h2_el);
+
+    if !doc.link_texts.is_empty() {
+        let h3_el = html::new_element(
+            "h3",
+            btreemap! {
+                "class" => "no-num no-ref",
+                "id" => "normative",
+
+            },
+        );
+        container.append(h3_el);
+
+        let dl_el = html::new_element("dl", None::<Attr>);
+
+        for link_text in &doc.link_texts {
+            let id = format!("biblio-{}", link_text);
+
+            let id_dt_el = html::new_element(
+                "dt",
+                btreemap! {
+                    "id" => id,
+                },
+            );
+            id_dt_el.append(html::new_text(format!("[{}]", link_text)));
+
+            let detail_dd_el = html::new_element("dd", None::<Attr>);
+            detail_dd_el.append(html::new_text("[TODO: FILL ME]"));
+
+            dl_el.append(id_dt_el);
+            dl_el.append(detail_dd_el);
+        }
+
+        container.append(dl_el);
     }
 }
 
@@ -402,7 +469,7 @@ pub fn fill_toc_section(doc: &mut Spec) {
                         },
                     );
                     span_el.append(html::new_text(
-                        html::get_attr(&heading_el, "data-level").unwrap(),
+                        html::get_attr(&heading_el, "data-level").unwrap_or_else(|| "".to_owned()),
                     ));
                     a_el.append(span_el);
 

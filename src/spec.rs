@@ -9,6 +9,7 @@ use crate::config::SOURCE_FILE_EXTENSIONS;
 use crate::fix::{self, CodeSpanManager};
 use crate::heading;
 use crate::line::Line;
+use crate::link;
 use crate::markdown;
 use crate::metadata::{self, Metadata};
 use crate::shorthand;
@@ -27,6 +28,8 @@ pub struct Spec<'a> {
     body: Option<NodeRef>,
     pub extra_styles: BTreeMap<&'a str, &'a str>,
     pub containers: BTreeMap<String, NodeRef>,
+    // TODO: Implement biblio entry.
+    pub link_texts: Vec<String>,
 }
 
 impl<'a> Spec<'a> {
@@ -120,14 +123,23 @@ impl<'a> Spec<'a> {
 
     fn process_document(&mut self) {
         boilerplate::load_containers(self);
+
+        // Fill in sections.
         boilerplate::add_canonical_url(self);
         boilerplate::fill_spec_metadata_section(self);
         boilerplate::fill_copyright_section(self);
         boilerplate::fill_abstract_section(self);
         shorthand::transform_shortcuts(self);
         boilerplate::add_styles(self);
+
+        // Handle links.
+        link::process_auto_links(self);
+        boilerplate::add_references_section(self);
         heading::process_headings(self);
         boilerplate::fill_toc_section(self);
+        link::add_self_links(self);
+
+        // Clean the DOM before serialization.
         clean::clean_dom(self.dom());
     }
 
