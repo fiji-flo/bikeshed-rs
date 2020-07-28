@@ -15,6 +15,7 @@ mod fix;
 mod heading;
 mod html;
 mod line;
+mod link;
 mod markdown;
 mod metadata;
 mod shorthand;

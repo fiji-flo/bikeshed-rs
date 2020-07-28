@@ -45,6 +45,6 @@ pub fn run() {
         .get_matches();
 
     if let Some("spec") = matches.subcommand_name() {
-        handle_spec(matches)
+        handle_spec(matches);
     }
 }

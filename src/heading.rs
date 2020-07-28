@@ -23,7 +23,7 @@ pub fn process_headings(doc: &mut Spec) {
 
     add_level(&heading_els);
     add_default_id(&heading_els);
-    add_secno_and_self_link(&heading_els);
+    add_secno(&heading_els);
 }
 
 // Wrap the content of heading into a <span class="content"> element.
@@ -70,12 +70,12 @@ fn add_level(heading_els: &[NodeRef]) {
         let level = heading_tag.chars().last().unwrap().to_digit(10).unwrap();
 
         if html::has_class(heading_el, "no-num") {
-            // ignore headings with "no-num" class
+            // Ignore headings with "no-num" class.
             skip_level = cmp::min(skip_level, level);
             continue;
         }
 
-        // skip headings that are in the same section with the ignored headings
+        // Skip headings that are in the same section with the ignored headings.
         if level > skip_level {
             continue;
         }
@@ -94,7 +94,7 @@ fn add_default_id(heading_els: &[NodeRef]) {
             continue;
         }
 
-        // generate id from content
+        // Generate id from content.
         if let Ok(content_el) = heading_el.select_first(".content") {
             let content = html::get_text_content(content_el.as_node());
             html::insert_attr(heading_el, "id", config::generate_name(&content))
@@ -102,12 +102,11 @@ fn add_default_id(heading_els: &[NodeRef]) {
     }
 }
 
-// Prepend a <span class="secno"> element to each heading element,
-// and append an <a class="self-link"> element to each heading element.
-fn add_secno_and_self_link(heading_els: &[NodeRef]) {
+// Prepend a <span class="secno"> element to each heading element.
+fn add_secno(heading_els: &[NodeRef]) {
     for heading_el in heading_els {
         if let Some(data_level) = html::get_attr(heading_el, "data-level") {
-            // prepend secno
+            // Prepend secno.
             let span_el = html::new_element(
                 "span",
                 btreemap! {
@@ -116,18 +115,6 @@ fn add_secno_and_self_link(heading_els: &[NodeRef]) {
             );
             span_el.append(html::new_text(format!("{}. ", data_level)));
             heading_el.prepend(span_el);
-
-            // append self-link
-            if let Some(id) = html::get_attr(heading_el, "id") {
-                let a_el = html::new_a(
-                    btreemap! {
-                        "class" => "self-link".to_owned(),
-                        "href" => format!("#{}", id),
-                    },
-                    "",
-                );
-                heading_el.append(a_el);
-            }
         }
     }
 }
