@@ -333,6 +333,51 @@ pub fn fill_abstract_section(doc: &mut Spec) {
     }
 }
 
+pub fn add_index_section(doc: &mut Spec) {
+    let mut dfn_els = match doc.dom().select("dfn") {
+        Ok(dfn_els) => dfn_els,
+        _ => return,
+    };
+
+    if dfn_els.next().is_none() {
+        return;
+    }
+
+    let container = match get_container_or_body(doc, "index") {
+        Some(container) => container,
+        None => return,
+    };
+
+    let h2_el = html::new_element(
+        "h2",
+        btreemap! {
+            "class" => "no-num no-ref",
+            "id" => "index",
+        },
+    );
+    h2_el.append(html::new_text("Index"));
+    container.append(h2_el);
+
+    // TODO: Add index of locally defined terms.
+    let h3_el = html::new_element(
+        "h3",
+        btreemap! {
+            "class" => "no-num no-ref",
+            "id" => "index-defined-here",
+        },
+    );
+    h3_el.append(html::new_text("Terms defined by this specification"));
+    container.append(h3_el);
+
+    let ul_el = html::new_element(
+        "ul",
+        btreemap! {
+            "class" => "index",
+        },
+    );
+    container.append(ul_el);
+}
+
 pub fn add_references_section(doc: &mut Spec) {
     if doc.link_texts.is_empty() {
         return;
@@ -363,6 +408,7 @@ pub fn add_references_section(doc: &mut Spec) {
 
             },
         );
+        h3_el.append(html::new_text("Normative References"));
         container.append(h3_el);
 
         let dl_el = html::new_element("dl", None::<Attr>);

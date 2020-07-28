@@ -134,6 +134,7 @@ impl<'a> Spec<'a> {
 
         // Handle links.
         link::process_auto_links(self);
+        boilerplate::add_index_section(self);
         boilerplate::add_references_section(self);
         heading::process_headings(self);
         boilerplate::fill_toc_section(self);
