@@ -85,8 +85,10 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
     for dfn_el in dfn_els {
         let id = match html::get_attr(dfn_el, "id") {
             Some(id) => id,
-            None => continue,
+            None => "prodef".to_owned(),
         };
+
+        html::add_class(dfn_el, "dfn-paneled");
 
         // Insert a self-link.
         let a_el = html::new_a(
@@ -97,5 +99,17 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
             "",
         );
         dfn_el.append(a_el);
+
+        // Insert panel.
+        let aside_el = html::new_element(
+            "aside",
+            btreemap! {
+                "class" => "dfn-panel",
+                "data-for" => &id,
+            },
+        );
+
+        // TODO: Fill panel.
+        doc.body().append(aside_el);
     }
 }
