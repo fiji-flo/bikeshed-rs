@@ -79,34 +79,28 @@ pub fn load_containers(doc: &mut Spec) {
     }
 }
 
-fn get_container(doc: &Spec, tag: &str) -> Option<NodeRef> {
+fn get_container<'a>(doc: &'a Spec, tag: &str) -> Option<&'a NodeRef> {
     if !doc.md.boilerplate.get(tag) {
         return None;
     }
 
-    doc.containers.get(tag).cloned()
+    doc.containers.get(tag)
 }
 
-fn get_container_or_head(doc: &Spec, tag: &str) -> Option<NodeRef> {
+fn get_container_or_head<'a>(doc: &'a Spec, tag: &str) -> Option<&'a NodeRef> {
     if !doc.md.boilerplate.get(tag) {
         return None;
     }
 
-    doc.containers
-        .get(tag)
-        .cloned()
-        .or_else(|| Some(doc.head().clone()))
+    doc.containers.get(tag).or_else(|| Some(doc.head()))
 }
 
-fn get_container_or_body(doc: &Spec, tag: &str) -> Option<NodeRef> {
+fn get_container_or_body<'a>(doc: &'a Spec, tag: &str) -> Option<&'a NodeRef> {
     if !doc.md.boilerplate.get(tag) {
         return None;
     }
 
-    doc.containers
-        .get(tag)
-        .cloned()
-        .or_else(|| Some(doc.body().clone()))
+    doc.containers.get(tag).or_else(|| Some(doc.body()))
 }
 
 pub fn add_header_footer(doc: &mut Spec) {
@@ -393,7 +387,6 @@ pub fn add_references_section(doc: &mut Spec) {
         btreemap! {
             "class" => "no-num no-ref",
             "id" => "references",
-
         },
     );
     h2_el.append(html::new_text("References"));
@@ -405,7 +398,6 @@ pub fn add_references_section(doc: &mut Spec) {
             btreemap! {
                 "class" => "no-num no-ref",
                 "id" => "normative",
-
             },
         );
         h3_el.append(html::new_text("Normative References"));
@@ -515,7 +507,7 @@ pub fn fill_toc_section(doc: &mut Spec) {
                         },
                     );
                     span_el.append(html::new_text(
-                        html::get_attr(&heading_el, "data-level").unwrap_or_else(|| "".to_owned()),
+                        html::get_attr(&heading_el, "data-level").unwrap_or_default(),
                     ));
                     a_el.append(span_el);
 
