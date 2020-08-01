@@ -110,18 +110,6 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
             "",
         );
         dfn_el.append(a_el);
-
-        // Insert panel.
-        let aside_el = html::new_element(
-            "aside",
-            btreemap! {
-                "class" => "dfn-panel",
-                "data-for" => &id,
-            },
-        );
-
-        // TODO: Fill panel.
-        doc.body().append(aside_el);
     }
 
     if !dfn_els.is_empty() {
