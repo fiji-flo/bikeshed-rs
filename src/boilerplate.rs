@@ -1,5 +1,5 @@
 use kuchiki::traits::*;
-use kuchiki::{NodeData, NodeDataRef, NodeRef};
+use kuchiki::{NodeData, NodeRef};
 use markup5ever::LocalName;
 use std::collections::HashMap;
 use std::fs;
@@ -71,13 +71,11 @@ pub fn retrieve_boilerplate_with_info(
 }
 
 pub fn load_containers(doc: &mut Spec) {
-    if let Ok(container_els) = doc.dom().select("[data-fill-with]") {
-        for container_el in container_els {
-            doc.containers.insert(
-                html::get_attr(container_el.as_node(), "data-fill-with").unwrap(),
-                container_el.as_node().clone(),
-            );
-        }
+    for container_el in html::select(doc.dom(), "[data-fill-with]") {
+        doc.containers.insert(
+            html::get_attr(&container_el, "data-fill-with").unwrap(),
+            container_el,
+        );
     }
 }
 
@@ -318,8 +316,8 @@ pub fn fill_copyright_section(doc: &mut Spec) {
     copyright = doc.fix_text(&copyright);
     let copyright_dom = kuchiki::parse_html().one(copyright);
 
-    if let Ok(body) = copyright_dom.select_first("body") {
-        for child in body.as_node().children() {
+    if let Some(body) = html::select_first(&copyright_dom, "body") {
+        for child in body.children() {
             container.append(child);
         }
     }
@@ -335,18 +333,15 @@ pub fn fill_abstract_section(doc: &mut Spec) {
     abs = doc.fix_text(&abs);
     let abs_dom = kuchiki::parse_html().one(abs);
 
-    if let Ok(body) = abs_dom.select_first("body") {
-        for child in body.as_node().children() {
+    if let Some(body) = html::select_first(&abs_dom, "body") {
+        for child in body.children() {
             container.append(child);
         }
     }
 }
 
 pub fn add_index_section(doc: &mut Spec) {
-    let mut dfn_els = match doc.dom().select("dfn") {
-        Ok(dfn_els) => dfn_els,
-        _ => return,
-    };
+    let mut dfn_els = html::select(doc.dom(), "dfn");
 
     if dfn_els.next().is_none() {
         return;
@@ -420,20 +415,18 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
     // link text => index item
     let mut index_items = HashMap::new();
 
-    if let Ok(dfn_els) = doc.dom().select("dfn") {
-        for dfn_el in dfn_els {
-            let link_text = html::get_text_content(dfn_el.as_node());
-            let id = html::get_attr(dfn_el.as_node(), "id").unwrap();
-            let heading_level = "Unnumbered section";
+    for dfn_el in html::select(doc.dom(), "dfn") {
+        let link_text = html::get_text_content(&dfn_el);
+        let id = html::get_attr(&dfn_el, "id").unwrap();
+        let heading_level = "Unnumbered section";
 
-            index_items.insert(
-                link_text,
-                IndexTerm {
-                    url: format!("#{}", id),
-                    label: format!("§{}", heading_level),
-                },
-            );
-        }
+        index_items.insert(
+            link_text,
+            IndexTerm {
+                url: format!("#{}", id),
+                label: format!("§{}", heading_level),
+            },
+        );
     }
 
     container.append(index_items_to_node(&index_items));
@@ -661,95 +654,89 @@ pub fn fill_toc_section(doc: &mut Spec) {
 
     let mut previous_level = 1;
 
-    if let Ok(heading_els) = doc.dom().select("h2, h3, h4, h5, h6") {
-        let heading_els = heading_els
-            .map(|el| el.as_node().clone())
-            .collect::<Vec<NodeRef>>();
+    for heading_el in html::select(doc.dom(), "h2, h3, h4, h5, h6") {
+        let heading_tag = html::get_tag(&heading_el).unwrap();
+        let curr_level = heading_tag.chars().last().unwrap().to_digit(10).unwrap() as usize;
 
-        for heading_el in heading_els {
-            let heading_tag = html::get_tag(&heading_el).unwrap();
-            let curr_level = heading_tag.chars().last().unwrap().to_digit(10).unwrap() as usize;
+        if curr_level > previous_level + 1 {
+            die!(
+                "Heading level jumps more than one level, from h{} to h{}",
+                previous_level,
+                curr_level
+            )
+        }
 
-            if curr_level > previous_level + 1 {
-                die!(
-                    "Heading level jumps more than one level, from h{} to h{}",
-                    previous_level,
-                    curr_level
-                )
-            }
+        let curr_ol_el = if let Some(ref curr_ol_el) = ol_cells[curr_level - 2] {
+            curr_ol_el
+        } else {
+            die!(
+                "Saw an <h{}> without seeing an <h{}> first. Please order your headings properly.",
+                curr_level,
+                curr_level - 1
+            )
+        };
 
-            let curr_ol_el = if let Some(ref curr_ol_el) = ol_cells[curr_level - 2] {
-                curr_ol_el
-            } else {
-                die!(
-                    "Saw an <h{}> without seeing an <h{}> first. Please order your headings properly.",
-                    curr_level,
-                    curr_level - 1
-                )
-            };
-
-            if html::has_class(&heading_el, "no-toc") {
-                ol_cells[curr_level - 1] = None;
-            } else {
-                // Add a <li> node to current <ol> node.
-                let a_el = {
-                    let a_el = html::new_a(
-                        btreemap! {
-                            "href" => format!("#{}", html::get_attr(&heading_el, "id").unwrap())
-                        },
-                        "",
-                    );
-
-                    let span_el = html::new_element(
-                        "span",
-                        btreemap! {
-                            "class"=>"secno"
-                        },
-                    );
-                    span_el.append(html::new_text(
-                        html::get_attr(&heading_el, "data-level").unwrap_or_default(),
-                    ));
-                    a_el.append(span_el);
-
-                    a_el.append(html::new_text(" "));
-
-                    if let Ok(content_el) = heading_el.select_first(".content") {
-                        a_el.append(html::deep_clone(content_el.as_node()));
-                    }
-
-                    a_el
-                };
-
-                let li_el = html::new_element("li", None::<Attr>);
-                li_el.append(a_el);
-
-                let inner_ol_el = html::new_element(
-                    "ol",
+        if html::has_class(&heading_el, "no-toc") {
+            ol_cells[curr_level - 1] = None;
+        } else {
+            // Add a <li> node to current <ol> node.
+            let a_el = {
+                let a_el = html::new_a(
                     btreemap! {
-                        "class" => "toc",
+                        "href" => format!("#{}", html::get_attr(&heading_el, "id").unwrap())
+                    },
+                    "",
+                );
+
+                let span_el = html::new_element(
+                    "span",
+                    btreemap! {
+                        "class"=>"secno"
                     },
                 );
-                li_el.append(inner_ol_el.clone());
+                span_el.append(html::new_text(
+                    html::get_attr(&heading_el, "data-level").unwrap_or_default(),
+                ));
+                a_el.append(span_el);
 
-                curr_ol_el.append(li_el);
+                a_el.append(html::new_text(" "));
 
-                ol_cells[curr_level - 1] = Some(inner_ol_el);
-            }
+                if let Some(content_el) = html::select_first(&heading_el, ".content") {
+                    a_el.append(html::deep_clone(&content_el));
+                }
 
-            previous_level = curr_level;
+                a_el
+            };
+
+            let li_el = html::new_element("li", None::<Attr>);
+            li_el.append(a_el);
+
+            let inner_ol_el = html::new_element(
+                "ol",
+                btreemap! {
+                    "class" => "toc",
+                },
+            );
+            li_el.append(inner_ol_el.clone());
+
+            curr_ol_el.append(li_el);
+
+            ol_cells[curr_level - 1] = Some(inner_ol_el);
         }
+
+        previous_level = curr_level;
     }
 
     // Remove empty <ol> nodes.
-    while let Ok(ol_els) = container.select("ol:empty") {
-        let ol_els = ol_els.collect::<Vec<NodeDataRef<_>>>();
+    loop {
+        let ol_els = html::select(container, "ol:empty").collect::<Vec<NodeRef>>();
 
         if ol_els.is_empty() {
             break;
         }
 
         for ol_el in ol_els {
-            ol_el.as_node().detach();
+            ol_el.detach();
         }
     }
 }
