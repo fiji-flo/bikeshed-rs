@@ -546,7 +546,7 @@ fn add_external_terms(doc: &Spec, container: &NodeRef) {
 }
 
 pub fn add_references_section(doc: &mut Spec) {
-    if doc.link_texts.is_empty() {
+    if doc.external_references_used.is_empty() {
         return;
     }
 
@@ -565,54 +565,52 @@ pub fn add_references_section(doc: &mut Spec) {
     h2_el.append(html::new_text("References"));
     container.append(h2_el);
 
-    if !doc.link_texts.is_empty() {
-        let h3_el = html::new_element(
-            "h3",
-            btreemap! {
-                "class" => "no-num no-ref",
-                "id" => "normative",
-            },
-        );
-        h3_el.append(html::new_text("Normative References"));
-        container.append(h3_el);
+    let h3_el = html::new_element(
+        "h3",
+        btreemap! {
+            "class" => "no-num no-ref",
+            "id" => "normative",
+        },
+    );
+    h3_el.append(html::new_text("Normative References"));
+    container.append(h3_el);
 
-        let dl_el = html::new_element("dl", None::<Attr>);
+    let dl_el = html::new_element("dl", None::<Attr>);
 
-        // TODO: Avoid hard-coding here.
-        let id = "biblio-css-flexbox-1";
+    // TODO: Avoid hard-coding here.
+    let id = "biblio-css-flexbox-1";
 
-        let id_dt_el = html::new_element(
-            "dt",
-            btreemap! {
-                "id" => id,
-            },
-        );
-        id_dt_el.append(html::new_text("[CSS-FLEXBOX-1]"));
+    let id_dt_el = html::new_element(
+        "dt",
+        btreemap! {
+            "id" => id,
+        },
+    );
+    id_dt_el.append(html::new_text("[CSS-FLEXBOX-1]"));
 
-        let detail_dd_el = html::new_element("dd", None::<Attr>);
-        detail_dd_el.append(html::new_text("Tab Atkins Jr.; et al. "));
+    let detail_dd_el = html::new_element("dd", None::<Attr>);
+    detail_dd_el.append(html::new_text("Tab Atkins Jr.; et al. "));
 
-        detail_dd_el.append(html::new_a(
-            btreemap! {
-                "href" => "https://www.w3.org/TR/css-flexbox-1/",
-            },
-            "CSS Flexible Box Layout Module Level 1",
-        ));
+    detail_dd_el.append(html::new_a(
+        btreemap! {
+            "href" => "https://www.w3.org/TR/css-flexbox-1/",
+        },
+        "CSS Flexible Box Layout Module Level 1",
+    ));
 
-        detail_dd_el.append(html::new_text(". 19 November 2018. CR. URL: "));
+    detail_dd_el.append(html::new_text(". 19 November 2018. CR. URL: "));
 
-        detail_dd_el.append(html::new_a(
-            btreemap! {
-                "href" => "https://www.w3.org/TR/css-flexbox-1/",
-            },
-            "https://www.w3.org/TR/css-flexbox-1/",
-        ));
+    detail_dd_el.append(html::new_a(
+        btreemap! {
+            "href" => "https://www.w3.org/TR/css-flexbox-1/",
+        },
+        "https://www.w3.org/TR/css-flexbox-1/",
+    ));
 
-        dl_el.append(id_dt_el);
-        dl_el.append(detail_dd_el);
+    dl_el.append(id_dt_el);
+    dl_el.append(detail_dd_el);
 
-        container.append(dl_el);
-    }
+    container.append(dl_el);
 }
 
 pub fn fill_toc_section(doc: &mut Spec) {

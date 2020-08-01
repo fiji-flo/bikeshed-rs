@@ -25,9 +25,6 @@ pub fn process_auto_links(doc: &mut Spec) {
 
         html::insert_attr(&auto_link_el, "href", &reference.url);
         html::insert_attr(&auto_link_el, "id", format!("ref-for-{}", name));
-
-        let link_text = html::get_text_content(&auto_link_el);
-        doc.link_texts.push(link_text);
     }
 }
 
