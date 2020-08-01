@@ -6,6 +6,7 @@ use std::fs;
 use crate::boilerplate::{self, retrieve_boilerplate_with_info};
 use crate::clean;
 use crate::config::SOURCE_FILE_EXTENSIONS;
+use crate::dfn;
 use crate::fix::{self, CodeSpanManager};
 use crate::heading;
 use crate::line::Line;
@@ -133,6 +134,7 @@ impl<'a> Spec<'a> {
         shorthand::transform_shortcuts(self);
 
         // Handle links.
+        dfn::process_dfns(self);
         link::process_auto_links(self);
         boilerplate::add_index_section(self);
         boilerplate::add_references_section(self);
