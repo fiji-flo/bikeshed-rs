@@ -5,6 +5,7 @@ use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
 
+use crate::config;
 use crate::html::{self, Attr};
 use crate::metadata::parse::Editor;
 use crate::spec::Spec;
@@ -367,6 +368,7 @@ pub fn add_index_section(doc: &mut Spec) {
     container.append(h2_el);
 
     add_local_terms(doc, container);
+    add_panels(doc, container);
     add_external_terms(container);
 }
 
@@ -435,6 +437,60 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
     }
 
     container.append(index_items_to_node(&index_items));
+}
+
+fn add_panels(doc: &Spec, container: &NodeRef) {
+    if let Ok(dfn_els) = doc.dom().select("dfn") {
+        for dfn_el in dfn_els {
+            // TODO: Implement biblio entry.
+            let link_text = html::get_text_content(dfn_el.as_node());
+            let name = config::generate_name(&link_text);
+            let term_id = format!("term-for-{}", name);
+
+            let aside_el = html::new_element(
+                "aside",
+                btreemap! {
+                    "class" => "dfn-panel",
+                    "data-for" => &term_id,
+                },
+            );
+
+            // TODO: Remove this when the biblio entry is implemented.
+            let url = format!("https://drafts.csswg.org/css-flexbox-1/#{}", name);
+            let a_el = html::new_a(
+                btreemap! {
+                    "href" => &url
+                },
+                &url,
+            );
+            aside_el.append(a_el);
+
+            let b_el = html::new_element("b", None::<Attr>);
+            b_el.append(html::new_text("Referenced in:"));
+            aside_el.append(b_el);
+
+            let ul_el = {
+                let ul_el = html::new_element("ul", None::<Attr>);
+
+                let li_el = html::new_element("li", None::<Attr>);
+                let a_el = html::new_a(
+                    btreemap! {
+                        "href" => format!("#ref-for-{}", name),
+                    },
+                    "Unnamed section",
+                );
+                li_el.append(a_el);
+
+                ul_el.append(li_el);
+
+                ul_el
+            };
+
+            aside_el.append(ul_el);
+
+            container.append(aside_el);
+        }
+    }
 }
 
 fn add_external_terms(container: &NodeRef) {
