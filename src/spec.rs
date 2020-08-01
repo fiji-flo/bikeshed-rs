@@ -125,6 +125,7 @@ impl<'a> Spec<'a> {
         boilerplate::fill_copyright_section(self);
         boilerplate::fill_abstract_section(self);
         shorthand::transform_shortcuts(self);
+        fix::canonicalize_shortcuts(self);
 
         // Handle links.
         dfn::process_dfns(self);
