@@ -11,7 +11,6 @@ mod boilerplate;
 mod clean;
 mod client;
 mod config;
-mod dfn;
 mod fix;
 mod heading;
 mod html;
