@@ -4,6 +4,7 @@ mod token;
 
 use regex::Regex;
 
+use crate::config::INLINE_ELEMENT_TAGS;
 use crate::html;
 use indent::*;
 use token::*;
@@ -79,7 +80,7 @@ lazy_static! {
     // regex for quote block
     static ref QUOTE_BLOCK_REG: Regex = Regex::new(r"^\s*>\s?(?P<text>.*)").unwrap();
     // regex for markup block
-    static ref MARKUP_BLOCK_REG: Regex = Regex::new(r"^\s*</?([\w-]+)").unwrap();
+    static ref MARKUP_BLOCK_REG: Regex = Regex::new(r"^\s*</?(?P<tag>[\w-]+)").unwrap();
 }
 
 fn is_single_line_heading(line: &str) -> bool {
@@ -105,6 +106,12 @@ fn extract_def_token_kind(line: &str) -> Option<TokenKind> {
     } else {
         Some(TokenKind::Dd)
     }
+}
+
+fn starts_with_inline_element(line: &str) -> bool {
+    let caps = MARKUP_BLOCK_REG.captures(line).unwrap();
+    let tag = &caps["tag"];
+    INLINE_ELEMENT_TAGS.contains(tag)
 }
 
 // Turn lines of text into block tokens, which'll be turned into MD blocks later.
@@ -179,8 +186,13 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
             // quote block
             make_token(TokenKind::QuoteBlock, &line)
         } else if MARKUP_BLOCK_REG.is_match(&line) {
-            // markup block
-            make_token(TokenKind::MarkupBlock, &line)
+            if starts_with_inline_element(&line) {
+                // text
+                make_token(TokenKind::Text, &line)
+            } else {
+                // markup block
+                make_token(TokenKind::MarkupBlock, &line)
+            }
         } else {
             // text
             make_token(TokenKind::Text, &line)
