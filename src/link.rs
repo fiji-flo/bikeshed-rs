@@ -1,6 +1,7 @@
 use kuchiki::NodeRef;
 use std::collections::HashMap;
 
+use crate::config;
 use crate::html;
 use crate::spec::Spec;
 
@@ -16,8 +17,16 @@ pub fn process_auto_links(doc: &mut Spec) {
     for auto_link_el in auto_link_els {
         html::insert_attr(&auto_link_el, "data-link-type", "dfn");
 
+        let content = html::get_text_content(&auto_link_el);
+        let name = config::generate_name(&content);
+        html::insert_attr(
+            &auto_link_el,
+            "href",
+            format!("https://drafts.csswg.org/css-flexbox-1/#{}", name),
+        );
+        html::insert_attr(&auto_link_el, "id", format!("ref-for-{}", name));
+
         let link_text = html::get_text_content(&auto_link_el);
-        html::insert_attr(&auto_link_el, "data-lt", &link_text);
         doc.link_texts.push(link_text);
     }
 }
