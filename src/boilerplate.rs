@@ -5,8 +5,8 @@ use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
 
-use crate::config;
 use crate::html::{self, Attr};
+use crate::link::reference::Reference;
 use crate::metadata::parse::Editor;
 use crate::spec::Spec;
 
@@ -363,7 +363,6 @@ pub fn add_index_section(doc: &mut Spec) {
     container.append(h2_el);
 
     add_local_terms(doc, container);
-    add_panels(doc, container);
     add_external_terms(doc, container);
 }
 
@@ -432,58 +431,107 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
     container.append(index_items_to_node(&index_items));
 }
 
-fn add_panels(doc: &Spec, container: &NodeRef) {
-    for link_text in &doc.link_texts {
-        // TODO: Implement biblio entry.
-        let name = config::generate_name(&link_text);
-        let term_id = format!("term-for-{}", name);
+fn make_panel(reference: &Reference, name: &str, term_id: &str) -> NodeRef {
+    let aside_el = html::new_element(
+        "aside",
+        btreemap! {
+            "class" => "dfn-panel",
+            "data-for" => term_id,
+        },
+    );
 
-        let aside_el = html::new_element(
-            "aside",
-            btreemap! {
-                "class" => "dfn-panel",
-                "data-for" => &term_id,
-            },
-        );
+    let a_el = html::new_a(
+        btreemap! {
+            "href" => &reference.url
+        },
+        &reference.url,
+    );
+    aside_el.append(a_el);
 
-        // TODO: Remove this when the biblio entry is implemented.
-        let url = format!("https://drafts.csswg.org/css-flexbox-1/#{}", name);
+    let b_el = html::new_element("b", None::<Attr>);
+    b_el.append(html::new_text("Referenced in:"));
+    aside_el.append(b_el);
+
+    let ul_el = {
+        let ul_el = html::new_element("ul", None::<Attr>);
+
+        let li_el = html::new_element("li", None::<Attr>);
         let a_el = html::new_a(
             btreemap! {
-                "href" => &url
+                "href" => format!("#ref-for-{}", name),
             },
-            &url,
+            "Unnamed section",
         );
-        aside_el.append(a_el);
+        li_el.append(a_el);
 
-        let b_el = html::new_element("b", None::<Attr>);
-        b_el.append(html::new_text("Referenced in:"));
-        aside_el.append(b_el);
+        ul_el.append(li_el);
 
-        let ul_el = {
-            let ul_el = html::new_element("ul", None::<Attr>);
+        ul_el
+    };
 
-            let li_el = html::new_element("li", None::<Attr>);
-            let a_el = html::new_a(
-                btreemap! {
-                    "href" => format!("#ref-for-{}", name),
-                },
-                "Unnamed section",
-            );
-            li_el.append(a_el);
+    aside_el.append(ul_el);
 
-            ul_el.append(li_el);
-
-            ul_el
-        };
-
-        aside_el.append(ul_el);
-
-        container.append(aside_el);
-    }
+    aside_el
 }
 
 fn add_external_terms(doc: &Spec, container: &NodeRef) {
+    let ul_el = html::new_element(
+        "ul",
+        btreemap! {
+            "class" => "index",
+        },
+    );
+
+    for (spec, references) in &doc.external_references_used {
+        for (link_text, reference) in references {
+            let name = reference.url.rsplitn(2, '#').next().unwrap();
+            let term_id = format!("term-for-{}", name);
+
+            let aside_el = make_panel(reference, name, &term_id);
+            container.append(aside_el);
+
+            let li_el = {
+                let li_el = html::new_element("li", None::<Attr>);
+
+                let a_el = html::new_a(
+                    btreemap! {
+                        "data-link-type" => "biblio"
+                    },
+                    format!("[{}]", spec),
+                );
+                li_el.append(a_el);
+
+                li_el.append(html::new_text(" defines the following terms:"));
+
+                let ul_el = {
+                    let ul_el = html::new_element("ul", None::<Attr>);
+
+                    let li_el = html::new_element("li", None::<Attr>);
+
+                    let span_el = html::new_element(
+                        "span",
+                        btreemap! {
+                            "class" => "dfn-paneled",
+                            "id" => &term_id,
+                            "style" => "color:initial",
+                        },
+                    );
+                    span_el.append(html::new_text(link_text));
+                    li_el.append(span_el);
+
+                    ul_el.append(li_el);
+
+                    ul_el
+                };
+                li_el.append(ul_el);
+
+                li_el
+            };
+
+            ul_el.append(li_el);
+        }
+    }
+
     let h3_el = html::new_element(
         "h3",
         btreemap! {
@@ -493,59 +541,6 @@ fn add_external_terms(doc: &Spec, container: &NodeRef) {
     );
     h3_el.append(html::new_text("Terms defined by reference"));
     container.append(h3_el);
-
-    let ul_el = html::new_element(
-        "ul",
-        btreemap! {
-            "class" => "index",
-        },
-    );
-
-    for link_text in &doc.link_texts {
-        let li_el = {
-            let li_el = html::new_element("li", None::<Attr>);
-
-            let a_el = html::new_a(
-                btreemap! {
-                    "data-link-type" => "biblio"
-                },
-                "[css-flexbox-1]",
-            );
-            li_el.append(a_el);
-
-            li_el.append(html::new_text(" defines the following terms:"));
-
-            let ul_el = {
-                let ul_el = html::new_element("ul", None::<Attr>);
-
-                let li_el = html::new_element("li", None::<Attr>);
-
-                // TODO: Implement biblio entry.
-                let name = config::generate_name(&link_text);
-                let term_id = format!("term-for-{}", name);
-
-                let span_el = html::new_element(
-                    "span",
-                    btreemap! {
-                        "class" => "dfn-paneled",
-                        "id" => &term_id,
-                        "style" => "color:initial",
-                    },
-                );
-                span_el.append(html::new_text(link_text));
-                li_el.append(span_el);
-
-                ul_el.append(li_el);
-
-                ul_el
-            };
-            li_el.append(ul_el);
-
-            li_el
-        };
-
-        ul_el.append(li_el);
-    }
 
     container.append(ul_el);
 }
