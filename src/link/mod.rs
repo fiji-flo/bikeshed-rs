@@ -1,4 +1,5 @@
 pub mod dfn;
+pub mod reference;
 
 use kuchiki::NodeRef;
 use std::collections::HashMap;
