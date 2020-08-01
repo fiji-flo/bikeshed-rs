@@ -142,6 +142,8 @@ fn test_spec() {
         "markdown011",
         "markdown012",
         "markdown013",
+        // links
+        "links001",
     ];
 
     for name in names.iter() {

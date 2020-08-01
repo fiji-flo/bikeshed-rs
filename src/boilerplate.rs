@@ -590,23 +590,38 @@ pub fn add_references_section(doc: &mut Spec) {
 
         let dl_el = html::new_element("dl", None::<Attr>);
 
-        for link_text in &doc.link_texts {
-            let id = format!("biblio-{}", link_text);
+        // TODO: Avoid hard-coding here.
+        let id = "biblio-css-flexbox-1";
 
-            let id_dt_el = html::new_element(
-                "dt",
-                btreemap! {
-                    "id" => id,
-                },
-            );
-            id_dt_el.append(html::new_text(format!("[{}]", link_text)));
+        let id_dt_el = html::new_element(
+            "dt",
+            btreemap! {
+                "id" => id,
+            },
+        );
+        id_dt_el.append(html::new_text("[CSS-FLEXBOX-1]"));
 
-            let detail_dd_el = html::new_element("dd", None::<Attr>);
-            detail_dd_el.append(html::new_text("[TODO: FILL ME]"));
+        let detail_dd_el = html::new_element("dd", None::<Attr>);
+        detail_dd_el.append(html::new_text("Tab Atkins Jr.; et al. "));
 
-            dl_el.append(id_dt_el);
-            dl_el.append(detail_dd_el);
-        }
+        detail_dd_el.append(html::new_a(
+            btreemap! {
+                "href" => "https://www.w3.org/TR/css-flexbox-1/",
+            },
+            "CSS Flexible Box Layout Module Level 1",
+        ));
+
+        detail_dd_el.append(html::new_text(". 19 November 2018. CR. URL: "));
+
+        detail_dd_el.append(html::new_a(
+            btreemap! {
+                "href" => "https://www.w3.org/TR/css-flexbox-1/",
+            },
+            "https://www.w3.org/TR/css-flexbox-1/",
+        ));
+
+        dl_el.append(id_dt_el);
+        dl_el.append(detail_dd_el);
 
         container.append(dl_el);
     }
