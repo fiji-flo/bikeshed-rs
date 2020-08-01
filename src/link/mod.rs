@@ -1,3 +1,5 @@
+pub mod dfn;
+
 use kuchiki::NodeRef;
 use std::collections::HashMap;
 
@@ -95,8 +97,8 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
 
     if !dfn_els.is_empty() {
         doc.extra_styles
-            .insert("dfn-panel", include_str!("style/dfn-panel.css"));
+            .insert("dfn-panel", include_str!("../style/dfn-panel.css"));
         doc.extra_scripts
-            .insert("dfn-panel", include_str!("script/dfn-panel.js"));
+            .insert("dfn-panel", include_str!("../script/dfn-panel.js"));
     }
 }
