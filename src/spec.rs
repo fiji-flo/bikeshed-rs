@@ -34,8 +34,6 @@ pub struct Spec<'a> {
     pub reference_manager: ReferenceManager,
     // spec => (text => reference)
     pub external_references_used: HashMap<String, HashMap<String, Reference>>,
-    // TODO: Implement biblio entry.
-    pub link_texts: Vec<String>,
 }
 
 impl<'a> Spec<'a> {
