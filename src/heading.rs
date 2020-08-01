@@ -10,10 +10,7 @@ pub fn process_headings(doc: &mut Spec) {
     // 1. [all] or [doc-only]?
     // 2. [settled] or not?
 
-    let heading_els = match doc.dom().select("h2, h3, h4, h5, h6") {
-        Ok(els) => els.map(|el| el.as_node().clone()).collect::<Vec<NodeRef>>(),
-        _ => return,
-    };
+    let heading_els = html::select(doc.dom(), "h2, h3, h4, h5, h6").collect::<Vec<NodeRef>>();
 
     for heading_el in &heading_els {
         html::add_class(heading_el, "heading");
@@ -95,8 +92,8 @@ fn add_default_id(heading_els: &[NodeRef]) {
         }
 
         // Generate id from content.
-        if let Ok(content_el) = heading_el.select_first(".content") {
-            let content = html::get_text_content(content_el.as_node());
+        if let Some(content_el) = html::select_first(heading_el, ".content") {
+            let content = html::get_text_content(&content_el);
             html::insert_attr(heading_el, "id", config::generate_name(&content))
         }
     }

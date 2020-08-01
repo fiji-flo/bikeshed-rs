@@ -5,11 +5,7 @@ use crate::html;
 use crate::spec::Spec;
 
 pub fn process_dfns(doc: &mut Spec) {
-    let dfn_els = match doc.dom().select("dfn") {
-        Ok(els) => els.map(|el| el.as_node().clone()).collect::<Vec<NodeRef>>(),
-        _ => Vec::new(),
-    };
-
+    let dfn_els = html::select(doc.dom(), "dfn").collect::<Vec<NodeRef>>();
     classify_dfns(&dfn_els);
 }
 

@@ -208,3 +208,16 @@ pub fn deep_clone(el: &NodeRef) -> NodeRef {
 pub fn escape_html<T: Into<String>>(text: T) -> String {
     text.into().replace("&", "&amp;").replace("<", "&lt;")
 }
+
+pub fn select_first(el: &NodeRef, selectors: &str) -> Option<NodeRef> {
+    match el.select_first(selectors) {
+        Ok(el_data) => Some(el_data.as_node().clone()),
+        _ => None,
+    }
+}
+
+pub fn select(el: &NodeRef, selectors: &str) -> impl Iterator<Item = NodeRef> {
+    el.select(selectors)
+        .unwrap()
+        .map(|el_data| el_data.as_node().clone())
+}
