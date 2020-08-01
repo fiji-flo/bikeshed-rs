@@ -1,6 +1,7 @@
 use kuchiki::traits::*;
 use kuchiki::{NodeData, NodeDataRef, NodeRef};
 use markup5ever::LocalName;
+use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
 
@@ -365,12 +366,45 @@ pub fn add_index_section(doc: &mut Spec) {
     h2_el.append(html::new_text("Index"));
     container.append(h2_el);
 
-    add_local_terms(container);
+    add_local_terms(doc, container);
     add_external_terms(container);
 }
 
-fn add_local_terms(container: &NodeRef) {
-    // TODO: Add index of locally defined terms.
+struct IndexTerm {
+    url: String,
+    label: String,
+}
+
+fn index_items_to_node(index_items: &HashMap<String, IndexTerm>) -> NodeRef {
+    let ul_el = html::new_element(
+        "ul",
+        btreemap! {
+            "class" => "index",
+        },
+    );
+
+    for (link_text, index_item) in index_items {
+        let li_el = html::new_element("li", None::<Attr>);
+
+        let a_el = html::new_a(
+            btreemap! {
+                "href" => &index_item.url,
+            },
+            link_text,
+        );
+        li_el.append(a_el);
+
+        let span_el = html::new_element("span", None::<Attr>);
+        span_el.append(html::new_text(format!(", in {}", index_item.label)));
+        li_el.append(span_el);
+
+        ul_el.append(li_el);
+    }
+
+    ul_el
+}
+
+fn add_local_terms(doc: &Spec, container: &NodeRef) {
     let h3_el = html::new_element(
         "h3",
         btreemap! {
@@ -381,13 +415,26 @@ fn add_local_terms(container: &NodeRef) {
     h3_el.append(html::new_text("Terms defined by this specification"));
     container.append(h3_el);
 
-    let ul_el = html::new_element(
-        "ul",
-        btreemap! {
-            "class" => "index",
-        },
-    );
-    container.append(ul_el);
+    // link text => index item
+    let mut index_items = HashMap::new();
+
+    if let Ok(dfn_els) = doc.dom().select("dfn") {
+        for dfn_el in dfn_els {
+            let link_text = html::get_text_content(dfn_el.as_node());
+            let id = html::get_attr(dfn_el.as_node(), "id").unwrap();
+            let heading_level = "Unnumbered section";
+
+            index_items.insert(
+                link_text,
+                IndexTerm {
+                    url: format!("#{}", id),
+                    label: format!("§{}", heading_level),
+                },
+            );
+        }
+    }
+
+    container.append(index_items_to_node(&index_items));
 }
 
 fn add_external_terms(container: &NodeRef) {
