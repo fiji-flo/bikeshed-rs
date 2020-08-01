@@ -85,10 +85,12 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
     for dfn_el in dfn_els {
         let id = match html::get_attr(dfn_el, "id") {
             Some(id) => id,
-            None => "prodef".to_owned(),
+            None => continue,
         };
 
-        html::add_class(dfn_el, "dfn-paneled");
+        html::add_class(dfn_el, "css");
+        html::insert_attr(dfn_el, "data-export", "");
+        html::remove_attr(dfn_el, "property");
 
         // Insert a self-link.
         let a_el = html::new_a(
