@@ -123,6 +123,19 @@ pub fn add_styles(doc: &mut Spec) {
     }
 }
 
+pub fn add_scripts(doc: &mut Spec) {
+    let container = match get_container_or_body(doc, "bs-scripts") {
+        Some(container) => container,
+        None => return,
+    };
+
+    for (key, val) in doc.extra_scripts.iter() {
+        if doc.md.boilerplate.get(*key) {
+            container.append(html::new_script(format!("/* script-{} */\n\n{}", key, val)));
+        }
+    }
+}
+
 pub fn add_canonical_url(doc: &mut Spec) {
     if let Some(ref canonical_url) = doc.md.canonical_url {
         doc.head().append(html::new_element(

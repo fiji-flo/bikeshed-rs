@@ -31,6 +31,12 @@ pub fn new_style<T: Into<String>>(text: T) -> NodeRef {
     el
 }
 
+pub fn new_script<T: Into<String>>(text: T) -> NodeRef {
+    let el = new_element("script", None::<Attr>);
+    el.append(NodeRef::new_text(text));
+    el
+}
+
 pub fn new_a<'a, I, V, T>(attributes: I, text: T) -> NodeRef
 where
     I: IntoIterator<Item = (&'a str, V)>,

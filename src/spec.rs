@@ -26,8 +26,9 @@ pub struct Spec<'a> {
     dom: Option<NodeRef>,
     head: Option<NodeRef>,
     body: Option<NodeRef>,
-    pub extra_styles: BTreeMap<&'a str, &'a str>,
     pub containers: BTreeMap<String, NodeRef>,
+    pub extra_styles: BTreeMap<&'a str, &'a str>,
+    pub extra_scripts: BTreeMap<&'a str, &'a str>,
     // TODO: Implement biblio entry.
     pub link_texts: Vec<String>,
 }
@@ -130,7 +131,6 @@ impl<'a> Spec<'a> {
         boilerplate::fill_copyright_section(self);
         boilerplate::fill_abstract_section(self);
         shorthand::transform_shortcuts(self);
-        boilerplate::add_styles(self);
 
         // Handle links.
         link::process_auto_links(self);
@@ -139,6 +139,9 @@ impl<'a> Spec<'a> {
         boilerplate::fill_toc_section(self);
         link::add_self_links(self);
         boilerplate::add_references_section(self);
+
+        boilerplate::add_styles(self);
+        boilerplate::add_scripts(self);
 
         // Clean the DOM before serialization.
         clean::clean_dom(self.dom());

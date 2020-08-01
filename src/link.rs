@@ -112,4 +112,11 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
         // TODO: Fill panel.
         doc.body().append(aside_el);
     }
+
+    if !dfn_els.is_empty() {
+        doc.extra_styles
+            .insert("dfn-panel", include_str!("style/dfn-panel.css"));
+        doc.extra_scripts
+            .insert("dfn-panel", include_str!("script/dfn-panel.js"));
+    }
 }
