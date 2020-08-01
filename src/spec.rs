@@ -10,7 +10,7 @@ use crate::fix::{self, CodeSpanManager};
 use crate::heading;
 use crate::html;
 use crate::line::Line;
-use crate::link::{self, dfn};
+use crate::link::{self, dfn, reference::ReferenceManager};
 use crate::markdown;
 use crate::metadata::{self, Metadata};
 use crate::shorthand;
@@ -30,6 +30,7 @@ pub struct Spec<'a> {
     pub containers: BTreeMap<String, NodeRef>,
     pub extra_styles: BTreeMap<&'a str, &'a str>,
     pub extra_scripts: BTreeMap<&'a str, &'a str>,
+    pub reference_manager: ReferenceManager,
     // TODO: Implement biblio entry.
     pub link_texts: Vec<String>,
 }

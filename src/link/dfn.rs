@@ -7,6 +7,7 @@ use crate::spec::Spec;
 pub fn process_dfns(doc: &mut Spec) {
     let dfn_els = html::select(doc.dom(), "dfn").collect::<Vec<NodeRef>>();
     classify_dfns(&dfn_els);
+    doc.reference_manager.add_local_dfns(&dfn_els);
 }
 
 fn determine_dfn_type(dfn_el: &NodeRef) -> String {
@@ -30,9 +31,9 @@ fn classify_dfns(dfn_els: &[NodeRef]) {
 
         // Fill in id if necessary.
         if dfn_type != "dfn" && !html::has_attr(dfn_el, "id") {
-            let content = html::get_text_content(dfn_el);
-            let name = config::generate_name(&content);
             let dfn_class = DFN_TYPE_TO_CLASS.get(dfn_type.as_str()).unwrap();
+            let dfn_text = html::get_text_content(dfn_el);
+            let name = config::generate_name(&dfn_text);
             html::insert_attr(dfn_el, "id", format!("{}-{}", dfn_class, name));
         }
     }

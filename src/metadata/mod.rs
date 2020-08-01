@@ -98,7 +98,7 @@ impl Metadata {
             let key = &key[1..];
             self.custom_md
                 .entry(key.to_owned())
-                .or_insert(Vec::new())
+                .or_insert_with(Vec::new)
                 .push(val.to_owned());
             return;
         }
