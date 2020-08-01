@@ -1,7 +1,9 @@
 use regex::{Captures, Regex};
 use std::collections::{HashMap, VecDeque};
 
+use crate::config::DFN_TYPES;
 use crate::html;
+use crate::spec::Spec;
 use crate::util;
 
 // Code span manager would protect code spans from map functions.
@@ -156,4 +158,18 @@ pub fn fix_typography(text: &str) -> String {
     };
 
     util::regex::replace_all(&REG, text, replacer)
+}
+
+pub fn canonicalize_shortcuts(doc: &Spec) {
+    for dfn_el in html::select(doc.dom(), "dfn") {
+        for dfn_type in DFN_TYPES.iter() {
+            if let Some(attr_val) = html::get_attr(&dfn_el, dfn_type) {
+                if attr_val.is_empty() {
+                    html::remove_attr(&dfn_el, dfn_type);
+                    html::insert_attr(&dfn_el, "data-dfn-type", dfn_type.to_owned());
+                    break;
+                }
+            }
+        }
+    }
 }

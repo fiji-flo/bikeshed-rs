@@ -29,6 +29,30 @@ lazy_static! {
             "br", "wbr", "img", "meter", "progress", "css", "l",
         }
     };
+    pub static ref DFN_CLASS_TO_TYPE: HashMap<&'static str, &'static str> = {
+        hashmap! {
+            "propdef" => "property",
+            "descdef" => "descriptor",
+        }
+    };
+    pub static ref DFN_TYPE_TO_CLASS: HashMap<&'static str, &'static str> = {
+        let mut dfn_type_to_class: HashMap<&'static str, &'static str> = HashMap::new();
+
+        for (key, val) in DFN_CLASS_TO_TYPE.iter() {
+            dfn_type_to_class.insert(val, key);
+        }
+
+        dfn_type_to_class
+    };
+    pub static ref DFN_TYPES: HashSet<&'static str> = {
+        let mut dfn_types: HashSet<&'static str> = hashset! {"dfn"};
+
+        for val in DFN_CLASS_TO_TYPE.values() {
+            dfn_types.insert(val);
+        }
+
+        dfn_types
+    };
     pub static ref SHORT_TO_LONG_STATUS: HashMap<&'static str, &'static str> = {
         hashmap! {
             "DREAM" => "A Collection of Interesting Ideas",
