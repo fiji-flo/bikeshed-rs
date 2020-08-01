@@ -352,6 +352,11 @@ pub fn add_index_section(doc: &mut Spec) {
     h2_el.append(html::new_text("Index"));
     container.append(h2_el);
 
+    add_local_terms(container);
+    add_external_terms(container);
+}
+
+fn add_local_terms(container: &NodeRef) {
     // TODO: Add index of locally defined terms.
     let h3_el = html::new_element(
         "h3",
@@ -361,6 +366,27 @@ pub fn add_index_section(doc: &mut Spec) {
         },
     );
     h3_el.append(html::new_text("Terms defined by this specification"));
+    container.append(h3_el);
+
+    let ul_el = html::new_element(
+        "ul",
+        btreemap! {
+            "class" => "index",
+        },
+    );
+    container.append(ul_el);
+}
+
+fn add_external_terms(container: &NodeRef) {
+    // TODO: Add index of externally defined terms.
+    let h3_el = html::new_element(
+        "h3",
+        btreemap! {
+            "class" => "no-num no-ref",
+            "id" => "index-defined-elsewhere",
+        },
+    );
+    h3_el.append(html::new_text("Terms defined by reference"));
     container.append(h3_el);
 
     let ul_el = html::new_element(
