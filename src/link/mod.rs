@@ -10,15 +10,20 @@ use crate::spec::Spec;
 
 pub fn process_auto_links(doc: &mut Spec) {
     for auto_link_el in html::select(doc.dom(), "a:not([href]):not([data-link-type='biblio'])") {
-        html::insert_attr(&auto_link_el, "data-link-type", "dfn");
+        let link_type = "dfn";
+        html::insert_attr(&auto_link_el, "data-link-type", link_type);
 
-        let content = html::get_text_content(&auto_link_el);
-        let name = config::generate_name(&content);
-        html::insert_attr(
-            &auto_link_el,
-            "href",
-            format!("https://drafts.csswg.org/css-flexbox-1/#{}", name),
-        );
+        let link_text = html::get_text_content(&auto_link_el);
+        let name = config::generate_name(&link_text);
+
+        let reference = doc.reference_manager.get_reference(&link_text);
+
+        doc.external_references_used
+            .entry(reference.spec.to_owned())
+            .or_default()
+            .insert(link_text, reference.to_owned());
+
+        html::insert_attr(&auto_link_el, "href", &reference.url);
         html::insert_attr(&auto_link_el, "id", format!("ref-for-{}", name));
 
         let link_text = html::get_text_content(&auto_link_el);
@@ -68,9 +73,7 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
             continue;
         }
 
-        let refs = all_refs
-            .entry(href[1..].to_owned())
-            .or_insert_with(Vec::new);
+        let refs = all_refs.entry(href[1..].to_owned()).or_default();
 
         refs.push(a_el.to_owned());
     }
