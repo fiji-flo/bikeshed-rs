@@ -22,6 +22,13 @@ lazy_static! {
     pub static ref SOURCE_FILE_EXTENSIONS: HashSet<&'static str> = {
         hashset! {".bs", ".src.html"}
     };
+    pub static ref INLINE_ELEMENT_TAGS: HashSet<&'static str> = {
+        hashset! {
+            "a", "em", "strong", "small", "s", "cite", "q", "dfn", "abbr", "data", "time", "code",
+            "var", "samp", "kbd", "sub", "sup", "i", "b", "u", "mark", "ruby", "bdi", "bdo", "span",
+            "br", "wbr", "img", "meter", "progress", "css", "l",
+        }
+    };
     pub static ref SHORT_TO_LONG_STATUS: HashMap<&'static str, &'static str> = {
         hashmap! {
             "DREAM" => "A Collection of Interesting Ideas",
