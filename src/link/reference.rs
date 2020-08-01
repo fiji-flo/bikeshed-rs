@@ -1,6 +1,7 @@
 use kuchiki::NodeRef;
 use std::collections::HashMap;
 
+use super::biblio::BiblioEntry;
 use crate::config;
 use crate::html;
 
@@ -35,5 +36,13 @@ impl ReferenceManager {
 
     pub fn get_reference(&self, link_text: &str) -> &Reference {
         &self.local_references.get(link_text).unwrap()[0]
+    }
+
+    pub fn get_biblio_entry(&self, spec: &str) -> BiblioEntry {
+        BiblioEntry {
+            link_text: spec.to_owned(),
+            title: "CSS Flexible Box Layout Module Level 1".to_owned(),
+            url: format!("https://www.w3.org/TR/{}/", spec),
+        }
     }
 }

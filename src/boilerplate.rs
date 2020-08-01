@@ -1,6 +1,7 @@
 use kuchiki::traits::*;
 use kuchiki::{NodeData, NodeRef};
 use markup5ever::LocalName;
+use std::char;
 use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
@@ -546,7 +547,18 @@ fn add_external_terms(doc: &Spec, container: &NodeRef) {
 }
 
 pub fn add_references_section(doc: &mut Spec) {
-    if doc.external_references_used.is_empty() {
+    fn format_biblio_term(link_text: &str) -> String {
+        if link_text
+            .chars()
+            .all(|ch| !char::is_alphabetic(ch) || char::is_lowercase(ch))
+        {
+            link_text.to_uppercase()
+        } else {
+            link_text.to_owned()
+        }
+    }
+
+    if doc.normative_biblio_entries.is_empty() {
         return;
     }
 
@@ -577,38 +589,23 @@ pub fn add_references_section(doc: &mut Spec) {
 
     let dl_el = html::new_element("dl", None::<Attr>);
 
-    // TODO: Avoid hard-coding here.
-    let id = "biblio-css-flexbox-1";
+    for normative_biblio_entry in doc.normative_biblio_entries.values() {
+        let id = format!("biblio-{}", normative_biblio_entry.link_text);
 
-    let id_dt_el = html::new_element(
-        "dt",
-        btreemap! {
-            "id" => id,
-        },
-    );
-    id_dt_el.append(html::new_text("[CSS-FLEXBOX-1]"));
+        let dt_el = html::new_element(
+            "dt",
+            btreemap! {
+                "id" => id,
+            },
+        );
+        dt_el.append(html::new_text(format!(
+            "[{}]",
+            format_biblio_term(&normative_biblio_entry.link_text)
+        )));
 
-    let detail_dd_el = html::new_element("dd", None::<Attr>);
-    detail_dd_el.append(html::new_text("Tab Atkins Jr.; et al. "));
-
-    detail_dd_el.append(html::new_a(
-        btreemap! {
-            "href" => "https://www.w3.org/TR/css-flexbox-1/",
-        },
-        "CSS Flexible Box Layout Module Level 1",
-    ));
-
-    detail_dd_el.append(html::new_text(". 19 November 2018. CR. URL: "));
-
-    detail_dd_el.append(html::new_a(
-        btreemap! {
-            "href" => "https://www.w3.org/TR/css-flexbox-1/",
-        },
-        "https://www.w3.org/TR/css-flexbox-1/",
-    ));
-
-    dl_el.append(id_dt_el);
-    dl_el.append(detail_dd_el);
+        dl_el.append(dt_el);
+        dl_el.append(normative_biblio_entry.to_node());
+    }
 
     container.append(dl_el);
 }
