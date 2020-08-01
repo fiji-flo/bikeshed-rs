@@ -1,3 +1,4 @@
+pub mod biblio;
 pub mod dfn;
 pub mod reference;
 
@@ -22,6 +23,10 @@ pub fn process_auto_links(doc: &mut Spec) {
             .entry(reference.spec.to_owned())
             .or_default()
             .insert(link_text, reference.to_owned());
+
+        let biblio_entry = doc.reference_manager.get_biblio_entry(&reference.spec);
+        doc.normative_biblio_entries
+            .insert(biblio_entry.link_text.to_owned(), biblio_entry);
 
         html::insert_attr(&auto_link_el, "href", &reference.url);
         html::insert_attr(&auto_link_el, "id", format!("ref-for-{}", name));
@@ -83,7 +88,6 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
 
         html::add_class(dfn_el, "css");
         html::insert_attr(dfn_el, "data-export", "");
-        html::remove_attr(dfn_el, "property");
 
         // Insert a self-link.
         let a_el = html::new_a(

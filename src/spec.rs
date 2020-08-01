@@ -10,8 +10,8 @@ use crate::fix::{self, CodeSpanManager};
 use crate::heading;
 use crate::html;
 use crate::line::Line;
-use crate::link::reference::Reference;
-use crate::link::{self, dfn, reference::ReferenceManager};
+use crate::link::reference::{Reference, ReferenceManager};
+use crate::link::{self, biblio::BiblioEntry, dfn};
 use crate::markdown;
 use crate::metadata::{self, Metadata};
 use crate::shorthand;
@@ -34,6 +34,8 @@ pub struct Spec<'a> {
     pub reference_manager: ReferenceManager,
     // spec => (text => reference)
     pub external_references_used: HashMap<String, HashMap<String, Reference>>,
+    // text => normative biblio entries
+    pub normative_biblio_entries: HashMap<String, BiblioEntry>,
 }
 
 impl<'a> Spec<'a> {
