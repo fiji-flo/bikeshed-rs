@@ -18,6 +18,30 @@ pub fn generate_name(text: &str) -> String {
     text
 }
 
+// Generate a safe group name from a key.
+pub fn generate_group_name(key: &str) -> String {
+    let safe_chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+    let group_length = 2;
+
+    let mut group = String::with_capacity(group_length);
+
+    for ch in key.to_lowercase().chars() {
+        if group.len() == group_length {
+            break;
+        }
+
+        if safe_chars.contains(ch) {
+            group.push(ch);
+        }
+    }
+
+    if group.len() < group_length {
+        group.push_str(&"_".repeat(group_length - group.len()));
+    }
+
+    group
+}
+
 lazy_static! {
     pub static ref SOURCE_FILE_EXTENSIONS: HashSet<&'static str> = {
         hashset! {".bs", ".src.html"}

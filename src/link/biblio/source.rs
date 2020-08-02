@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::path::Path;
 
 use super::BiblioEntry;
+use crate::config;
 use crate::util::reader;
 
 #[derive(Debug, Default)]
@@ -86,8 +87,8 @@ impl BiblioEntrySource {
             return biblio_entry.to_owned();
         }
 
-        let group = &key[..2];
-        self.load(group);
+        let group = config::generate_group_name(key);
+        self.load(&group);
 
         self.biblio_entries.get(key).unwrap().to_owned()
     }
