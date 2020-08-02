@@ -10,6 +10,7 @@ use crate::fix::{self, CodeSpanManager};
 use crate::heading;
 use crate::html;
 use crate::line::Line;
+use crate::link::biblio::BiblioEntryManager;
 use crate::link::reference::{Reference, ReferenceManager};
 use crate::link::{self, biblio::BiblioEntry, dfn};
 use crate::markdown;
@@ -32,6 +33,7 @@ pub struct Spec<'a> {
     pub extra_styles: BTreeMap<&'a str, &'a str>,
     pub extra_scripts: BTreeMap<&'a str, &'a str>,
     pub reference_manager: ReferenceManager,
+    pub biblio_entry_manager: BiblioEntryManager,
     // spec => (text => reference)
     pub external_references_used: HashMap<String, HashMap<String, Reference>>,
     // text => normative biblio entries
@@ -54,6 +56,8 @@ impl<'a> Spec<'a> {
             lines,
             md_cli,
             extra_styles,
+            reference_manager: ReferenceManager::new(),
+            biblio_entry_manager: BiblioEntryManager::new(),
             ..Default::default()
         }
     }
