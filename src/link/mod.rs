@@ -1,7 +1,6 @@
 pub mod biblio;
 pub mod dfn;
 pub mod reference;
-mod source;
 
 use kuchiki::NodeRef;
 use std::collections::HashMap;
