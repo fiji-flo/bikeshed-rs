@@ -1,11 +1,5 @@
 use super::source::ReferenceSource;
-
-#[derive(Debug, Default, Clone)]
-pub struct Reference {
-    pub link_type: String,
-    pub spec: String,
-    pub url: String,
-}
+use super::Reference;
 
 #[derive(Debug, Default)]
 pub struct ReferenceManager {
