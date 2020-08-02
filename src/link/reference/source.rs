@@ -35,8 +35,9 @@ impl ReferenceSource {
             let _ = lines.next().unwrap().unwrap();
 
             loop {
-                let curr_line = lines.next().unwrap().unwrap();
-                if curr_line == "-" {
+                let line = lines.next().unwrap().unwrap();
+
+                if line == "-" {
                     break;
                 }
             }
