@@ -21,7 +21,14 @@ impl BiblioEntrySource {
 
     fn load(&mut self, group: &str) {
         let data_path = Path::new(&self.base_path).join(format!("biblio-{}.data", group));
-        let mut lines = reader::read_lines(data_path).unwrap();
+
+        let mut lines = match reader::read_lines(&data_path) {
+            Ok(lines) => lines,
+            _ => die!(
+                "Fail to load biblio data file: \"{}\".",
+                data_path.to_str().unwrap()
+            ),
+        };
 
         while let Some(full_key) = lines.next() {
             let full_key = full_key.unwrap();
