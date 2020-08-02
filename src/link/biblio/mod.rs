@@ -12,12 +12,21 @@ pub struct BiblioEntry {
     pub status: String,
     pub title: String,
     pub url: String,
+    pub authors: Vec<String>,
 }
 
 impl BiblioEntry {
     pub fn to_node(&self) -> NodeRef {
         let dd_el = html::new_element("dd", None::<Attr>);
-        dd_el.append(html::new_text("Tab Atkins Jr.; et al. "));
+
+        let authors_text = if self.authors.len() == 1 {
+            format!("{}. ", self.authors[0])
+        } else if self.authors.len() < 4 {
+            format!("{}. ", self.authors.join("; "))
+        } else {
+            format!("{}; et al. ", self.authors[0])
+        };
+        dd_el.append(html::new_text(authors_text));
 
         dd_el.append(html::new_a(
             btreemap! {

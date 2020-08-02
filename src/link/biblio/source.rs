@@ -40,6 +40,18 @@ impl BiblioEntrySource {
                     let _ = lines.next().unwrap().unwrap();
                     let _ = lines.next().unwrap().unwrap();
 
+                    let mut authors = Vec::new();
+
+                    loop {
+                        let line = lines.next().unwrap().unwrap();
+
+                        if line == "-" {
+                            break;
+                        }
+
+                        authors.push(line);
+                    }
+
                     self.biblio_entries.insert(
                         key.to_owned(),
                         BiblioEntry {
@@ -48,15 +60,9 @@ impl BiblioEntrySource {
                             status,
                             title,
                             url,
+                            authors,
                         },
                     );
-
-                    loop {
-                        let curr_line = lines.next().unwrap().unwrap();
-                        if curr_line == "-" {
-                            break;
-                        }
-                    }
                 }
                 "a" | "s" => {
                     let _ = lines.next().unwrap().unwrap();
