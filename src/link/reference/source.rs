@@ -21,7 +21,14 @@ impl ReferenceSource {
 
     fn load(&mut self, group: &str) {
         let data_path = Path::new(&self.base_path).join(format!("anchors-{}.data", group));
-        let mut lines = reader::read_lines(data_path).unwrap();
+
+        let mut lines = match reader::read_lines(&data_path) {
+            Ok(lines) => lines,
+            _ => die!(
+                "Fail to load reference data file: \"{}\".",
+                data_path.to_str().unwrap()
+            ),
+        };
 
         while let Some(key) = lines.next() {
             let key = key.unwrap();
