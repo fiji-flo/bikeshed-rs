@@ -8,6 +8,7 @@ use crate::html::{self, Attr};
 #[derive(Debug, Default, Clone)]
 pub struct BiblioEntry {
     pub link_text: String,
+    pub date: String,
     pub title: String,
     pub url: String,
 }
@@ -24,7 +25,7 @@ impl BiblioEntry {
             &self.title,
         ));
 
-        dd_el.append(html::new_text(". 19 November 2018. CR. URL: "));
+        dd_el.append(html::new_text(format!(". {}. CR. URL: ", self.date)));
 
         dd_el.append(html::new_a(
             btreemap! {
