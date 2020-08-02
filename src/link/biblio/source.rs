@@ -32,7 +32,7 @@ impl BiblioEntrySource {
                 "d" => {
                     let link_text = lines.next().unwrap().unwrap();
                     let date = lines.next().unwrap().unwrap();
-                    let _ = lines.next().unwrap().unwrap();
+                    let status = lines.next().unwrap().unwrap();
                     let title = lines.next().unwrap().unwrap();
                     let url = lines.next().unwrap().unwrap();
                     let _ = lines.next().unwrap().unwrap();
@@ -45,6 +45,7 @@ impl BiblioEntrySource {
                         BiblioEntry {
                             link_text,
                             date,
+                            status,
                             title,
                             url,
                         },
