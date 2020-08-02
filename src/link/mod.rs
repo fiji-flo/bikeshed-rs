@@ -1,6 +1,7 @@
 pub mod biblio;
 pub mod dfn;
 pub mod reference;
+mod source;
 
 use kuchiki::NodeRef;
 use std::collections::HashMap;
@@ -24,7 +25,7 @@ pub fn process_auto_links(doc: &mut Spec) {
             .or_default()
             .insert(link_text, reference.to_owned());
 
-        let biblio_entry = doc.reference_manager.get_biblio_entry(&reference.spec);
+        let biblio_entry = doc.biblio_entry_manager.get_biblio_entry(&reference.spec);
         doc.normative_biblio_entries
             .insert(biblio_entry.link_text.to_owned(), biblio_entry);
 
