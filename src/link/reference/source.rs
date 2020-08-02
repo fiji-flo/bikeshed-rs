@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::path::Path;
 
 use super::Reference;
+use crate::config;
 use crate::util::reader;
 
 #[derive(Debug, Default)]
@@ -65,8 +66,8 @@ impl ReferenceSource {
             return reference.to_owned();
         }
 
-        let group = &key[..2];
-        self.load(group);
+        let group = config::generate_group_name(key);
+        self.load(&group);
 
         self.references.get(key).unwrap().to_owned()
     }
