@@ -441,7 +441,7 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
 
     for line in lines {
         if !in_metadata && BEGIN_TAG_REG.is_match(&line.text) {
-            // handle begin tag
+            // Handle begin tag.
             in_metadata = true;
             md.has_keys = true;
             if line.text.starts_with("<pre") {
@@ -450,33 +450,33 @@ pub fn parse_metadata(lines: &[Line]) -> (Metadata, Vec<Line>) {
                 end_tag_reg = Some(&XMP_END_TAG_REG);
             }
         } else if in_metadata && end_tag_reg.unwrap().is_match(&line.text) {
-            // handle end tag
+            // Handle end tag.
             in_metadata = false;
         } else if in_metadata {
             if last_key.is_some()
                 && (line.text.trim().is_empty() || START_WITH_SPACES_REG.is_match(&line.text))
             {
-                // if the line is empty or starts with 1+ spaces, continue the previous key
+                // If the line is empty or starts with 1+ spaces, continue the previous key.
                 md.add_data(last_key.as_ref().unwrap(), &line.text, Some(line.index));
             } else if let Some(caps) = PAIR_REG.captures(&line.text) {
-                // handle key-val pair
+                // Handle key-val pair.
                 let key = &caps["key"];
                 let val = &caps["val"];
-                md.add_data(&key, val, Some(line.index));
+                md.add_data(key, val, Some(line.index));
                 last_key = Some(key.to_owned());
             } else {
-                // wrong key-val pair
+                // Meet wrong key-val pair.
                 die!("Incorrectly formatted metadata."; Some(line.index));
             }
         } else if let Some(caps) = TITLE_REG.captures(&line.text) {
-            // handle title
+            // Handle title.
             if md.title.is_none() {
                 let title = &caps["title"];
                 md.add_data("Title", title, Some(line.index));
             }
             new_lines.push(line.clone());
         } else {
-            // handle lines that do not contain metadata
+            // Handle lines that do not contain metadata.
             new_lines.push(line.clone());
         }
     }

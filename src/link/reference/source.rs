@@ -9,7 +9,7 @@ use crate::util::reader;
 pub struct ReferenceSource {
     base_path: String,
     // text => reference
-    references: HashMap<String, Reference>,
+    pub references: HashMap<String, Reference>,
 }
 
 impl ReferenceSource {

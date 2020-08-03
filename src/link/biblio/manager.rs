@@ -13,7 +13,7 @@ impl BiblioEntryManager {
         }
     }
 
-    pub fn get_biblio_entry(&mut self, spec: &str) -> BiblioEntry {
+    pub fn get_biblio_entry(&mut self, spec: &str) -> Option<BiblioEntry> {
         self.biblio_entry_source.fetch_biblio_entry(spec)
     }
 }
