@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::path::Path;
 
 use super::BiblioEntry;
@@ -8,6 +8,7 @@ use crate::util::reader;
 #[derive(Debug, Default)]
 pub struct BiblioEntrySource {
     base_path: String,
+    loaded_groups: HashSet<String>,
     // text => biblio entry
     biblio_entries: HashMap<String, BiblioEntry>,
 }
@@ -88,7 +89,13 @@ impl BiblioEntrySource {
         }
 
         let group = config::generate_group_name(key);
+
+        if self.loaded_groups.contains(group.as_str()) {
+            return None;
+        }
+
         self.load(&group);
+        self.loaded_groups.insert(group);
 
         self.biblio_entries.get(key).map(ToOwned::to_owned)
     }
