@@ -82,14 +82,14 @@ impl BiblioEntrySource {
         }
     }
 
-    pub fn fetch_biblio_entry(&mut self, key: &str) -> BiblioEntry {
+    pub fn fetch_biblio_entry(&mut self, key: &str) -> Option<BiblioEntry> {
         if let Some(biblio_entry) = self.biblio_entries.get(key) {
-            return biblio_entry.to_owned();
+            return Some(biblio_entry.to_owned());
         }
 
         let group = config::generate_group_name(key);
         self.load(&group);
 
-        self.biblio_entries.get(key).unwrap().to_owned()
+        self.biblio_entries.get(key).map(ToOwned::to_owned)
     }
 }

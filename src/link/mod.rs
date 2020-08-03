@@ -24,9 +24,10 @@ pub fn process_auto_links(doc: &mut Spec) {
             .or_default()
             .insert(link_text, reference.to_owned());
 
-        let biblio_entry = doc.biblio_entry_manager.get_biblio_entry(&reference.spec);
-        doc.normative_biblio_entries
-            .insert(biblio_entry.link_text.to_owned(), biblio_entry);
+        if let Some(biblio_entry) = doc.biblio_entry_manager.get_biblio_entry(&reference.spec) {
+            doc.normative_biblio_entries
+                .insert(biblio_entry.link_text.to_owned(), biblio_entry);
+        }
 
         html::insert_attr(&auto_link_el, "href", &reference.url);
         html::insert_attr(&auto_link_el, "id", format!("ref-for-{}", name));

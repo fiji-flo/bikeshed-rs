@@ -6,6 +6,7 @@ use std::fs;
 use crate::boilerplate::{self, retrieve_boilerplate_with_info};
 use crate::clean;
 use crate::config::SOURCE_FILE_EXTENSIONS;
+use crate::datablock;
 use crate::fix::{self, CodeSpanManager};
 use crate::heading;
 use crate::html;
@@ -84,7 +85,8 @@ impl<'a> Spec<'a> {
     }
 
     fn assemble_document(&mut self) {
-        self.lines = markdown::comment::remove_comments(&self.lines);
+        let lines = markdown::comment::remove_comments(&self.lines);
+        self.lines = datablock::transform_data_blocks(self, &lines);
 
         let (md_doc, lines) = metadata::parse_metadata(&self.lines);
         self.lines = lines;

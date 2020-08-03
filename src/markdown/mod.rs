@@ -1,12 +1,11 @@
 pub mod comment;
-mod indent;
 mod token;
 
 use regex::Regex;
 
 use crate::config::INLINE_ELEMENT_TAGS;
 use crate::html;
-use indent::*;
+use crate::util;
 use token::*;
 
 // Get HTML lines.
@@ -121,7 +120,7 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
             TokenKind::Blank => Token::new_blank(),
             TokenKind::End => Token::new_end(),
             _ => {
-                let indent_level = get_indent_level(&line, tab_size);
+                let indent_level = util::indent::get_indent_level(&line, tab_size);
                 Token::new(kind, line, indent_level)
             }
         }
@@ -399,7 +398,7 @@ fn parse_list(stream: &mut TokenStream) -> Vec<String> {
 
             stream.advance();
 
-            lines.push(trim_indent(
+            lines.push(util::indent::trim_indent(
                 &stream.curr().line,
                 top_indent_level + 1,
                 stream.tab_size(),

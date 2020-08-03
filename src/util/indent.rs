@@ -41,7 +41,7 @@ pub fn trim_indent(text: &str, indent_level: u32, tab_size: u32) -> String {
         {
             offset += tab_size;
         } else {
-            die!("[Markdown] \"{}\" isn't indented enough.", text);
+            die!("\"{}\" isn't indented enough.", text);
         }
     }
 
