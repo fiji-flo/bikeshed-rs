@@ -41,7 +41,7 @@ pub fn transform_data_blocks(doc: &mut Spec, lines: &[Line]) -> Vec<Line> {
 }
 
 fn transform_anchors(doc: &mut Spec, lines: &[Line]) {
-    let anchors = parse_info_tree(lines);
+    let anchors = parse_info_tree(lines, doc.md.indent());
     process_anchors(doc, &anchors);
 }
 
@@ -78,7 +78,7 @@ fn process_anchors(doc: &mut Spec, anchors: &[HashMap<String, Vec<String>>]) {
 }
 
 // Parse sets of info, which can be arranged into trees.
-fn parse_info_tree(lines: &[Line]) -> Vec<HashMap<String, Vec<String>>> {
+fn parse_info_tree(lines: &[Line], tab_size: u32) -> Vec<HashMap<String, Vec<String>>> {
     // Each info is a set of key-value pairs, semicolon-separated:
     // key1: val1; key2: val2; key3: val3
 
@@ -100,8 +100,6 @@ fn parse_info_tree(lines: &[Line]) -> Vec<HashMap<String, Vec<String>>> {
         // regex for key-value pair
         static ref PAIR_REG: Regex = Regex::new(r"(?P<key>[^:]+):\s*(?P<val>.*)").unwrap();
     }
-
-    let tab_size = 4;
 
     // key => values
     let mut info_pairs: Vec<HashMap<String, Vec<String>>> = Vec::new();
