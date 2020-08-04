@@ -9,7 +9,7 @@ pub struct BiblioEntryManager {
 impl BiblioEntryManager {
     pub fn new() -> Self {
         BiblioEntryManager {
-            biblio_entry_source: BiblioEntrySource::new("spec-data"),
+            biblio_entry_source: BiblioEntrySource::new("biblio"),
         }
     }
 

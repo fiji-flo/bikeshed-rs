@@ -21,7 +21,9 @@ impl ReferenceSource {
     }
 
     fn load(&mut self, group: &str) {
-        let data_path = Path::new(&self.base_path).join(format!("anchors-{}.data", group));
+        let data_path = Path::new("spec-data")
+            .join(&self.base_path)
+            .join(format!("anchors-{}.data", group));
 
         let mut lines = match reader::read_lines(&data_path) {
             Ok(lines) => lines,
