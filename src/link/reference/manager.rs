@@ -9,7 +9,7 @@ pub struct ReferenceManager {
 impl ReferenceManager {
     pub fn new() -> Self {
         ReferenceManager {
-            reference_source: ReferenceSource::new("spec-data"),
+            reference_source: ReferenceSource::new("anchors"),
         }
     }
 
