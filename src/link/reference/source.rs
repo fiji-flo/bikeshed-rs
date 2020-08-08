@@ -56,7 +56,7 @@ impl ReferenceSource {
                 key,
                 Reference {
                     link_type,
-                    spec,
+                    spec: Some(spec),
                     url,
                 },
             );
