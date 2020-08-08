@@ -11,13 +11,13 @@ use crate::spec::Spec;
 
 pub fn process_auto_links(doc: &mut Spec) {
     for auto_link_el in html::select(doc.dom(), "a:not([href]):not([data-link-type='biblio'])") {
-        let link_type = "dfn";
-        html::insert_attr(&auto_link_el, "data-link-type", link_type);
+        let link_type = determine_link_type(&auto_link_el);
+        html::insert_attr(&auto_link_el, "data-link-type", &link_type);
 
         let link_text = html::get_text_content(&auto_link_el);
         let name = config::generate_name(&link_text);
 
-        let reference = doc.reference_manager.get_reference(link_type, &link_text);
+        let reference = doc.reference_manager.get_reference(&link_type, &link_text);
 
         if let Some(ref doc_spec) = doc.reference_manager.spec {
             if reference.spec.to_lowercase() != doc_spec.to_lowercase() {
@@ -35,6 +35,13 @@ pub fn process_auto_links(doc: &mut Spec) {
 
         html::insert_attr(&auto_link_el, "href", &reference.url);
         html::insert_attr(&auto_link_el, "id", format!("ref-for-{}", name));
+    }
+}
+
+fn determine_link_type(link_el: &NodeRef) -> String {
+    match html::get_attr(link_el, "data-link-type") {
+        Some(link_type) => link_type,
+        None => "dfn".to_owned(),
     }
 }
 

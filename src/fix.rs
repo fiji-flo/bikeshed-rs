@@ -1,7 +1,7 @@
 use regex::{Captures, Regex};
 use std::collections::{HashMap, VecDeque};
 
-use crate::config::DFN_TYPES;
+use crate::config::{DFN_TYPES, LINK_TYPES};
 use crate::html;
 use crate::spec::Spec;
 use crate::util;
@@ -161,12 +161,26 @@ pub fn fix_typography(text: &str) -> String {
 }
 
 pub fn canonicalize_shortcuts(doc: &Spec) {
+    // Process dfn type.
     for dfn_el in html::select(doc.dom(), "dfn") {
         for dfn_type in DFN_TYPES.iter() {
             if let Some(attr_val) = html::get_attr(&dfn_el, dfn_type) {
                 if attr_val.is_empty() {
                     html::remove_attr(&dfn_el, dfn_type);
                     html::insert_attr(&dfn_el, "data-dfn-type", dfn_type.to_owned());
+                    break;
+                }
+            }
+        }
+    }
+
+    // Process link type.
+    for a_el in html::select(doc.dom(), "a") {
+        for link_type in LINK_TYPES.iter() {
+            if let Some(attr_val) = html::get_attr(&a_el, link_type) {
+                if attr_val.is_empty() {
+                    html::remove_attr(&a_el, link_type);
+                    html::insert_attr(&a_el, "data-link-type", link_type.to_owned());
                     break;
                 }
             }

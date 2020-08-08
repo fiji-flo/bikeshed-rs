@@ -476,6 +476,10 @@ fn make_panel(reference: &Reference, name: &str, term_id: &str) -> NodeRef {
 }
 
 fn add_external_terms(doc: &Spec, container: &NodeRef) {
+    if doc.external_references_used.is_empty() {
+        return;
+    }
+
     let ul_el = html::new_element(
         "ul",
         btreemap! {
