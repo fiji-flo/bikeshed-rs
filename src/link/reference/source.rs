@@ -63,14 +63,18 @@ impl ReferenceSource {
         }
     }
 
-    pub fn fetch_reference(&mut self, key: &str) -> Reference {
-        if let Some(reference) = self.references.get(key) {
-            return reference.to_owned();
+    pub fn fetch_reference(&mut self, link_type: &str, link_text: &str) -> Reference {
+        if let Some(reference) = self.references.get(link_text) {
+            if link_type == reference.link_type {
+                return reference.to_owned();
+            }
         }
 
-        let group = config::generate_group_name(key);
+        let group = config::generate_group_name(link_text);
         self.load(&group);
 
-        self.references.get(key).unwrap().to_owned()
+        let reference = self.references.get(link_text).unwrap().to_owned();
+        assert_eq!(link_type, reference.link_type);
+        reference
     }
 }

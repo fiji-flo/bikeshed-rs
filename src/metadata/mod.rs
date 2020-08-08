@@ -335,13 +335,7 @@ impl Metadata {
         // shortname & vshortname
         if let Some(ref shortname) = self.shortname {
             macros.insert("shortname", shortname.clone());
-
-            let vshortname = if let Some(ref level) = self.level {
-                format!("{}-{}", shortname, level)
-            } else {
-                shortname.clone()
-            };
-            macros.insert("vshortname", vshortname);
+            macros.insert("vshortname", self.vshortname());
         }
         // longstatus
         if let Some(ref raw_status) = self.raw_status {
@@ -388,6 +382,14 @@ impl Metadata {
     pub fn validate(&self) {
         if !self.has_keys {
             die!("No metadata provided.");
+        }
+    }
+
+    pub fn vshortname(&self) -> String {
+        if let Some(ref level) = self.level {
+            format!("{}-{}", self.shortname.to_owned().unwrap(), level)
+        } else {
+            self.shortname.to_owned().unwrap()
         }
     }
 

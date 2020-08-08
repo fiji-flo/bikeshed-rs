@@ -107,6 +107,8 @@ impl<'a> Spec<'a> {
         md.validate();
         self.md = md;
 
+        self.reference_manager.set_data(&self.md);
+
         let lines = markdown::parse(
             &self
                 .lines

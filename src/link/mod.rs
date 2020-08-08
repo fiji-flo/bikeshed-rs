@@ -17,12 +17,16 @@ pub fn process_auto_links(doc: &mut Spec) {
         let link_text = html::get_text_content(&auto_link_el);
         let name = config::generate_name(&link_text);
 
-        let reference = doc.reference_manager.get_reference(&link_text);
+        let reference = doc.reference_manager.get_reference(link_type, &link_text);
 
-        doc.external_references_used
-            .entry(reference.spec.to_owned())
-            .or_default()
-            .insert(link_text, reference.to_owned());
+        if let Some(ref doc_spec) = doc.reference_manager.spec {
+            if reference.spec.to_lowercase() != doc_spec.to_lowercase() {
+                doc.external_references_used
+                    .entry(reference.spec.to_owned())
+                    .or_default()
+                    .insert(link_text, reference.to_owned());
+            }
+        }
 
         if let Some(biblio_entry) = doc.biblio_entry_manager.get_biblio_entry(&reference.spec) {
             doc.normative_biblio_entries
