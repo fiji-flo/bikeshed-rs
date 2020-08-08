@@ -9,6 +9,7 @@ pub fn process_dfns(doc: &mut Spec) {
     let dfn_els = html::select(doc.dom(), "dfn").collect::<Vec<NodeRef>>();
     classify_dfns(&dfn_els);
     dedup_ids(doc.dom());
+    doc.reference_manager.add_local_dfns(&dfn_els);
 }
 
 fn determine_dfn_type(dfn_el: &NodeRef) -> String {
