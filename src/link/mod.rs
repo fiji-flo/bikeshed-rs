@@ -89,9 +89,10 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
             continue;
         }
 
-        let refs = all_refs.entry(href[1..].to_owned()).or_default();
-
-        refs.push(a_el.to_owned());
+        all_refs
+            .entry(href[1..].to_owned())
+            .or_default()
+            .push(a_el.to_owned());
     }
 
     for dfn_el in dfn_els {

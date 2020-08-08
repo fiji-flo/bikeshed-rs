@@ -77,7 +77,7 @@ lazy_static! {
 
         dfn_types
     };
-    pub static ref LINK_TYPES: HashSet<&'static str> = { DFN_TYPES.clone() };
+    pub static ref LINK_TYPES: HashSet<&'static str> = DFN_TYPES.clone();
     pub static ref SHORT_TO_LONG_STATUS: HashMap<&'static str, &'static str> = {
         hashmap! {
             "DREAM" => "A Collection of Interesting Ideas",
