@@ -9,7 +9,7 @@ use crate::metadata::Metadata;
 #[derive(Debug, Default)]
 pub struct ReferenceManager {
     pub reference_source: ReferenceSource,
-    local_references: HashMap<String, Reference>,
+    pub local_references: HashMap<String, Reference>,
     pub spec: Option<String>,
 }
 
@@ -46,7 +46,7 @@ impl ReferenceManager {
 
             let reference = Reference {
                 link_type,
-                spec: self.spec.to_owned().unwrap(),
+                spec: self.spec.to_owned(),
                 url: format!("#{}", html::get_attr(&dfn_el, "id").unwrap()),
             };
 

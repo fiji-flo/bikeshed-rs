@@ -19,18 +19,20 @@ pub fn process_auto_links(doc: &mut Spec) {
 
         let reference = doc.reference_manager.get_reference(&link_type, &link_text);
 
-        if let Some(ref doc_spec) = doc.reference_manager.spec {
-            if reference.spec.to_lowercase() != doc_spec.to_lowercase() {
-                doc.external_references_used
-                    .entry(reference.spec.to_owned())
-                    .or_default()
-                    .insert(link_text, reference.to_owned());
+        if let Some(ref reference_spec) = reference.spec {
+            if let Some(ref doc_spec) = doc.reference_manager.spec {
+                if reference_spec.to_lowercase() != doc_spec.to_lowercase() {
+                    doc.external_references_used
+                        .entry(reference_spec.to_owned())
+                        .or_default()
+                        .insert(link_text, reference.to_owned());
+                }
             }
-        }
 
-        if let Some(biblio_entry) = doc.biblio_entry_manager.get_biblio_entry(&reference.spec) {
-            doc.normative_biblio_entries
-                .insert(biblio_entry.link_text.to_owned(), biblio_entry);
+            if let Some(biblio_entry) = doc.biblio_entry_manager.get_biblio_entry(&reference_spec) {
+                doc.normative_biblio_entries
+                    .insert(biblio_entry.link_text.to_owned(), biblio_entry);
+            }
         }
 
         html::insert_attr(&auto_link_el, "href", &reference.url);

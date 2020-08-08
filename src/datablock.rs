@@ -46,15 +46,26 @@ fn transform_anchors(doc: &mut Spec, lines: &[Line]) {
 }
 
 fn process_anchors(doc: &mut Spec, anchors: &[HashMap<String, Vec<String>>]) {
+    // anchors:
+    // [
+    //     {
+    //         "type" => ...,
+    //         "text" => ...,
+    //         ...
+    //     }
+    //     {
+    //         "type" => ...,
+    //         "text" => ...,
+    //         ...
+    //     }
+    // ]
+
     for anchor in anchors {
         let link_type_vals = anchor.get("type").unwrap();
         let link_type = link_type_vals[0].to_owned();
 
         let link_text_vals = anchor.get("text").unwrap();
         let link_text = link_text_vals[0].to_owned();
-
-        // default spec
-        let spec = "respimg-usecases-1".to_owned();
 
         let url_prefix = if let Some(url_prefix_vals) = anchor.get("urlPrefix") {
             url_prefix_vals.join("")
@@ -66,13 +77,12 @@ fn process_anchors(doc: &mut Spec, anchors: &[HashMap<String, Vec<String>>]) {
 
         let reference = Reference {
             link_type,
-            spec,
+            spec: None,
             url: format!("{}#{}", url_prefix, name),
         };
 
         doc.reference_manager
-            .reference_source
-            .references
+            .local_references
             .insert(link_text, reference);
     }
 }
