@@ -23,9 +23,11 @@ fn classify_dfns(dfn_els: &[NodeRef]) {
     for dfn_el in dfn_els {
         let dfn_type = determine_dfn_type(dfn_el);
 
-        if !DFN_TYPES.contains(dfn_type.as_str()) {
-            die!("Unknown dfn type: {}.", dfn_type);
-        }
+        assert!(
+            DFN_TYPES.contains(dfn_type.as_str()),
+            "Unknown dfn type: {}.",
+            dfn_type
+        );
 
         if !html::has_attr(dfn_el, "data-dfn-type") {
             html::insert_attr(dfn_el, "data-dfn-type", &dfn_type);
