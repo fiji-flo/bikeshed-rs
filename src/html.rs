@@ -237,10 +237,8 @@ where
 fn relevant_heading(el: &NodeRef) -> Option<NodeRef> {
     lazy_static! {
         // heading level tags
-        static ref HEADING_LEVEL_TAGS: HashSet<&'static str> = {
-            hashset! {
-                "h1", "h2", "h3", "h4", "h5", "h6"
-            }
+        static ref HEADING_LEVEL_TAGS: HashSet<&'static str> = hashset! {
+            "h1", "h2", "h3", "h4", "h5", "h6"
         };
     }
 
