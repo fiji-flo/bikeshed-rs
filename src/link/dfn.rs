@@ -75,7 +75,6 @@ fn dedup_ids(root: &NodeRef) {
         }
 
         for (i, el) in els.iter().enumerate().skip(1) {
-            to_circled_digits(i);
             let new_id = format!("{}{}", id, to_circled_digits(i));
             html::insert_attr(el, "id", new_id);
         }
