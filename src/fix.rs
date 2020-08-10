@@ -1,6 +1,7 @@
 use regex::{Captures, Regex};
 use std::collections::{HashMap, VecDeque};
 
+use crate::config::DFN_SELECTOR;
 use crate::config::{DFN_TYPES, LINK_TYPES};
 use crate::html;
 use crate::spec::Spec;
@@ -162,7 +163,7 @@ pub fn fix_typography(text: &str) -> String {
 
 pub fn canonicalize_shortcuts(doc: &Spec) {
     // Process dfn type.
-    for dfn_el in html::select(doc.dom(), "dfn") {
+    for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         for dfn_type in DFN_TYPES.iter() {
             if let Some(attr_val) = html::get_attr(&dfn_el, dfn_type) {
                 if attr_val.is_empty() {

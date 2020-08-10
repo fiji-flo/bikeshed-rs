@@ -62,6 +62,15 @@ lazy_static! {
 
         dfn_type_to_class
     };
+    pub static ref DFN_SELECTOR: String = [
+        "dfn",
+        "h2[data-dfn-type]",
+        "h3[data-dfn-type]",
+        "h4[data-dfn-type]",
+        "h5[data-dfn-type]",
+        "h6[data-dfn-type]",
+    ]
+    .join(", ");
     pub static ref DFN_TYPES: HashSet<&'static str> = {
         let mut dfn_types: HashSet<&'static str> = hashset! {"dfn"};
 

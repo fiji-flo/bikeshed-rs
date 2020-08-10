@@ -6,6 +6,7 @@ use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
 
+use crate::config::DFN_SELECTOR;
 use crate::html::{self, Attr};
 use crate::link::reference::Reference;
 use crate::metadata::parse::Editor;
@@ -342,7 +343,7 @@ pub fn fill_abstract_section(doc: &mut Spec) {
 }
 
 pub fn add_index_section(doc: &mut Spec) {
-    let mut dfn_els = html::select(doc.dom(), "dfn");
+    let mut dfn_els = html::select(doc.dom(), &DFN_SELECTOR);
 
     if dfn_els.next().is_none() {
         return;
@@ -415,7 +416,7 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
     // link text => index item
     let mut index_items = HashMap::new();
 
-    for dfn_el in html::select(doc.dom(), "dfn") {
+    for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         let link_text = html::get_text_content(&dfn_el);
         let id = html::get_attr(&dfn_el, "id").unwrap();
         let heading_level = "Unnumbered section";
