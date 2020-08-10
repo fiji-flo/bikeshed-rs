@@ -1,12 +1,13 @@
 use kuchiki::NodeRef;
 use std::collections::HashMap;
 
+use crate::config::DFN_SELECTOR;
 use crate::config::{self, DFN_TYPES, DFN_TYPE_TO_CLASS};
 use crate::html;
 use crate::spec::Spec;
 
 pub fn process_dfns(doc: &mut Spec) {
-    let dfn_els = html::select(doc.dom(), "dfn").collect::<Vec<NodeRef>>();
+    let dfn_els = html::select(doc.dom(), &DFN_SELECTOR).collect::<Vec<NodeRef>>();
     classify_dfns(&dfn_els);
     dedup_ids(doc.dom());
     doc.reference_manager.add_local_dfns(&dfn_els);

@@ -6,6 +6,7 @@ use kuchiki::NodeRef;
 use std::collections::HashMap;
 
 use crate::config;
+use crate::config::DFN_SELECTOR;
 use crate::html;
 use crate::spec::Spec;
 
@@ -48,7 +49,7 @@ fn determine_link_type(link_el: &NodeRef) -> String {
 }
 
 pub fn add_self_links(doc: &mut Spec) {
-    let dfn_els = html::select(doc.dom(), "dfn").collect::<Vec<NodeRef>>();
+    let dfn_els = html::select(doc.dom(), &DFN_SELECTOR).collect::<Vec<NodeRef>>();
 
     let mut found_first_numbered_section = false;
 
