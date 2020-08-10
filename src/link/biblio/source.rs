@@ -46,10 +46,10 @@ impl BiblioEntrySource {
                     let status = lines.next().unwrap().unwrap();
                     let title = lines.next().unwrap().unwrap();
                     let url = lines.next().unwrap().unwrap();
-                    let _ = lines.next().unwrap().unwrap();
-                    let _ = lines.next().unwrap().unwrap();
-                    let _ = lines.next().unwrap().unwrap();
-                    let _ = lines.next().unwrap().unwrap();
+                    lines.next(); // current url
+                    lines.next(); // obsoleted by
+                    lines.next(); // other
+                    lines.next(); // el at or not
 
                     let mut authors = Vec::new();
 
@@ -76,9 +76,9 @@ impl BiblioEntrySource {
                     );
                 }
                 "a" | "s" => {
-                    let _ = lines.next().unwrap().unwrap();
-                    let _ = lines.next().unwrap().unwrap();
-                    let _ = lines.next().unwrap().unwrap();
+                    lines.next(); // link text
+                    lines.next(); // alias of
+                    lines.next(); // useless
                 }
                 _ => die!("Unknown biblio prefix: {}.", prefix),
             }

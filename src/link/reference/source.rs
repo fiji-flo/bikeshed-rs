@@ -37,12 +37,12 @@ impl ReferenceSource {
             let key = key.unwrap();
             let link_type = lines.next().unwrap().unwrap();
             let spec = lines.next().unwrap().unwrap();
-            let _ = lines.next().unwrap().unwrap();
-            let _ = lines.next().unwrap().unwrap();
-            let _ = lines.next().unwrap().unwrap();
+            lines.next(); // shortname
+            lines.next(); // level
+            lines.next(); // status
             let url = lines.next().unwrap().unwrap();
-            let _ = lines.next().unwrap().unwrap();
-            let _ = lines.next().unwrap().unwrap();
+            lines.next(); // export
+            lines.next(); // normative
 
             loop {
                 let line = lines.next().unwrap().unwrap();
