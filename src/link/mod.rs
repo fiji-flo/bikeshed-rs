@@ -77,7 +77,7 @@ pub fn add_self_links(doc: &mut Spec) {
 
 fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
     // id => <a> elements with this id
-    let mut all_refs: HashMap<String, Vec<NodeRef>> = HashMap::new();
+    let mut all_links_els: HashMap<String, Vec<NodeRef>> = HashMap::new();
 
     for a_el in html::select(doc.dom(), "a") {
         let href = match html::get_attr(&a_el, "href") {
@@ -89,11 +89,13 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
             continue;
         }
 
-        all_refs
+        all_links_els
             .entry(href[1..].to_owned())
             .or_default()
             .push(a_el.to_owned());
     }
+
+    let mut at_least_one_panel = false;
 
     for dfn_el in dfn_els {
         let id = match html::get_attr(dfn_el, "id") {
@@ -101,21 +103,39 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
             None => continue,
         };
 
+        // section name => <a> elements
+        let mut section_els: HashMap<String, Vec<NodeRef>> = HashMap::new();
+
+        if let Some(links_els) = all_links_els.get(&id) {
+            for link_el in links_els {
+                if let Some(section) = html::get_section(link_el) {
+                    section_els
+                        .entry(section)
+                        .or_default()
+                        .push(link_el.to_owned());
+                }
+            }
+        }
+
         html::add_class(dfn_el, "css");
         html::insert_attr(dfn_el, "data-export", "");
 
-        // Insert a self-link.
-        let a_el = html::new_a(
-            btreemap! {
-                "class" => "self-link".to_owned(),
-                "href" => format!("#{}", id),
-            },
-            "",
-        );
-        dfn_el.append(a_el);
+        at_least_one_panel = true;
+
+        if section_els.is_empty() {
+            // Insert a self-link.
+            let a_el = html::new_a(
+                btreemap! {
+                    "class" => "self-link".to_owned(),
+                    "href" => format!("#{}", id),
+                },
+                "",
+            );
+            dfn_el.append(a_el);
+        }
     }
 
-    if !dfn_els.is_empty() {
+    if at_least_one_panel {
         doc.extra_styles
             .insert("dfn-panel", include_str!("../style/dfn-panel.css"));
         doc.extra_scripts

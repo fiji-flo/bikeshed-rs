@@ -1,5 +1,6 @@
 use kuchiki::{Attribute, ExpandedName, NodeData, NodeRef};
 use markup5ever::{LocalName, QualName};
+use std::collections::HashSet;
 
 pub type Attr = (&'static str, &'static str);
 
@@ -220,4 +221,46 @@ pub fn select(el: &NodeRef, selectors: &str) -> impl Iterator<Item = NodeRef> {
     el.select(selectors)
         .unwrap()
         .map(|el_data| el_data.as_node().clone())
+}
+
+fn scoping_nodes<F>(el: &NodeRef, filter_fn: F) -> impl Iterator<Item = NodeRef>
+where
+    F: Copy + Fn(&NodeRef) -> bool,
+{
+    el.inclusive_preceding_siblings().filter(filter_fn).chain(
+        el.ancestors().flat_map(move |ancestor_el| {
+            ancestor_el.inclusive_preceding_siblings().filter(filter_fn)
+        }),
+    )
+}
+
+fn relevant_heading(el: &NodeRef) -> Option<NodeRef> {
+    lazy_static! {
+        // heading level tags
+        static ref HEADING_LEVEL_TAGS: HashSet<&'static str> = {
+            hashset! {
+                "h1", "h2", "h3", "h4", "h5", "h6"
+            }
+        };
+    }
+
+    scoping_nodes(el, |scope_el| match get_tag(scope_el) {
+        Some(tag) => HEADING_LEVEL_TAGS.contains(tag.as_str()),
+        None => false,
+    })
+    .next()
+}
+
+// Get the name of the nearest section to the node.
+pub fn get_section(el: &NodeRef) -> Option<String> {
+    match relevant_heading(el) {
+        Some(heading_el) => {
+            if has_class(&heading_el, "no-ref") {
+                None
+            } else {
+                Some(get_text_content(&heading_el))
+            }
+        }
+        None => Some("Unnamed section".to_owned()),
+    }
 }
