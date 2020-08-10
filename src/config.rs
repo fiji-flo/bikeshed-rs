@@ -25,7 +25,7 @@ pub fn generate_group_name(key: &str) -> String {
 
     let mut group = String::with_capacity(group_length);
 
-    for ch in key.to_lowercase().chars() {
+    for ch in key.chars().flat_map(char::to_lowercase) {
         if group.len() == group_length {
             break;
         }
