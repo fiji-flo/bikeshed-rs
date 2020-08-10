@@ -219,7 +219,7 @@ pub fn select_first(el: &NodeRef, selectors: &str) -> Option<NodeRef> {
 
 pub fn select(el: &NodeRef, selectors: &str) -> impl Iterator<Item = NodeRef> {
     el.select(selectors)
-        .unwrap()
+        .expect("selectors should be valid")
         .map(|el_data| el_data.as_node().clone())
 }
 
