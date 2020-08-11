@@ -1,8 +1,9 @@
+use indexmap::map::IndexMap;
 use kuchiki::traits::*;
 use kuchiki::{NodeData, NodeRef};
 use markup5ever::LocalName;
 use std::char;
-use std::collections::HashMap;
+use std::cmp::Ordering;
 use std::fs;
 use std::path::Path;
 
@@ -350,7 +351,7 @@ pub fn add_index_section(doc: &mut Spec) {
     }
 
     let container = match get_container_or_body(doc, "index") {
-        Some(container) => container,
+        Some(container) => container.to_owned(),
         None => return,
     };
 
@@ -364,16 +365,18 @@ pub fn add_index_section(doc: &mut Spec) {
     h2_el.append(html::new_text("Index"));
     container.append(h2_el);
 
-    add_local_terms(doc, container);
-    add_external_terms(doc, container);
+    add_local_terms(doc, &container);
+    add_external_terms(doc, &container);
 }
 
+#[derive(Debug, Clone)]
 struct IndexTerm {
     url: String,
     label: String,
+    disambiguator: String,
 }
 
-fn index_items_to_node(index_items: &HashMap<String, IndexTerm>) -> NodeRef {
+fn index_items_to_node(index_items: IndexMap<String, IndexTerm>) -> NodeRef {
     let ul_el = html::new_element(
         "ul",
         btreemap! {
@@ -381,7 +384,15 @@ fn index_items_to_node(index_items: &HashMap<String, IndexTerm>) -> NodeRef {
         },
     );
 
-    for (link_text, index_item) in index_items {
+    for (link_text, index_item) in index_items.sorted_by(|_, index_item1, _, index_item2| {
+        if index_item1.disambiguator < index_item2.disambiguator {
+            return Ordering::Less;
+        }
+        if index_item1.disambiguator == index_item2.disambiguator {
+            return Ordering::Equal;
+        }
+        Ordering::Greater
+    }) {
         let li_el = html::new_element("li", None::<Attr>);
 
         let a_el = html::new_a(
@@ -414,23 +425,30 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
     container.append(h3_el);
 
     // link text => index item
-    let mut index_items = HashMap::new();
+    let mut index_items = IndexMap::new();
 
     for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         let link_text = html::get_text_content(&dfn_el);
         let id = html::get_attr(&dfn_el, "id").unwrap();
         let heading_level = "Unnumbered section";
 
+        let dfn_type = html::get_attr(&dfn_el, "data-dfn-type").unwrap();
+        let disambiguator = match dfn_type.as_str() {
+            "dfn" => "definition of".to_owned(),
+            _ => dfn_type,
+        };
+
         index_items.insert(
             link_text,
             IndexTerm {
                 url: format!("#{}", id),
                 label: format!("§{}", heading_level),
+                disambiguator,
             },
         );
     }
 
-    container.append(index_items_to_node(&index_items));
+    container.append(index_items_to_node(index_items));
 }
 
 fn make_panel(reference: &Reference, name: &str, term_id: &str) -> NodeRef {
@@ -476,7 +494,7 @@ fn make_panel(reference: &Reference, name: &str, term_id: &str) -> NodeRef {
     aside_el
 }
 
-fn add_external_terms(doc: &Spec, container: &NodeRef) {
+fn add_external_terms(doc: &mut Spec, container: &NodeRef) {
     if doc.external_references_used.is_empty() {
         return;
     }
@@ -488,6 +506,8 @@ fn add_external_terms(doc: &Spec, container: &NodeRef) {
         },
     );
 
+    let mut at_least_one_panel = false;
+
     for (spec, references) in &doc.external_references_used {
         for (link_text, reference) in references {
             let name = reference.url.rsplitn(2, '#').next().unwrap();
@@ -496,8 +516,8 @@ fn add_external_terms(doc: &Spec, container: &NodeRef) {
             let aside_el = make_panel(reference, name, &term_id);
             container.append(aside_el);
 
-            let li_el = {
-                let li_el = html::new_element("li", None::<Attr>);
+            let spec_li_el = {
+                let spec_li_el = html::new_element("li", None::<Attr>);
 
                 let a_el = html::new_a(
                     btreemap! {
@@ -505,11 +525,11 @@ fn add_external_terms(doc: &Spec, container: &NodeRef) {
                     },
                     format!("[{}]", spec),
                 );
-                li_el.append(a_el);
+                spec_li_el.append(a_el);
 
-                li_el.append(html::new_text(" defines the following terms:"));
+                spec_li_el.append(html::new_text(" defines the following terms:"));
 
-                let ul_el = {
+                let terms_ul_el = {
                     let ul_el = html::new_element("ul", None::<Attr>);
 
                     let li_el = html::new_element("li", None::<Attr>);
@@ -529,13 +549,22 @@ fn add_external_terms(doc: &Spec, container: &NodeRef) {
 
                     ul_el
                 };
-                li_el.append(ul_el);
+                spec_li_el.append(terms_ul_el);
 
-                li_el
+                spec_li_el
             };
 
-            ul_el.append(li_el);
+            ul_el.append(spec_li_el);
+
+            at_least_one_panel = true;
         }
+    }
+
+    if at_least_one_panel {
+        doc.extra_styles
+            .insert("dfn-panel", include_str!("style/dfn-panel.css"));
+        doc.extra_scripts
+            .insert("dfn-panel", include_str!("script/dfn-panel.js"));
     }
 
     let h3_el = html::new_element(
