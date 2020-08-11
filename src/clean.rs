@@ -1,5 +1,6 @@
 use kuchiki::NodeRef;
 
+use crate::config::DFN_SELECTOR;
 use crate::html;
 
 // If an <h1> was provided manually, use that element rather than whatever the boilerplate contains.
@@ -52,5 +53,47 @@ pub fn clean_dom(dom: &NodeRef) {
         }
 
         html::remove_attr(&list_el, "data-md");
+    }
+
+    for dfn_el in html::select(dom, &DFN_SELECTOR) {
+        // Check dfn type.
+        match html::get_attr(&dfn_el, "data-dfn-type") {
+            Some(dfn_type) => {
+                if dfn_type != "property" {
+                    continue;
+                }
+            }
+            None => continue,
+        };
+
+        if !html::has_ancestor(&dfn_el, |el| match html::get_tag(el) {
+            Some(tag) => tag == "pre",
+            None => false,
+        }) {
+            html::add_class(&dfn_el, "css")
+        }
+
+        html::add_class(&dfn_el, "css");
+    }
+
+    for a_el in html::select(dom, "a") {
+        // Check link type.
+        match html::get_attr(&a_el, "data-link-type") {
+            Some(dfn_type) => {
+                if dfn_type != "property" {
+                    continue;
+                }
+            }
+            None => continue,
+        };
+
+        if !html::has_ancestor(&a_el, |el| match html::get_tag(el) {
+            Some(tag) => tag == "pre",
+            None => false,
+        }) {
+            html::add_class(&a_el, "css")
+        }
+
+        html::add_class(&a_el, "css");
     }
 }

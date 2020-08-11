@@ -1,8 +1,9 @@
 use kuchiki::{Attribute, ExpandedName, NodeData, NodeRef};
 use markup5ever::{LocalName, QualName};
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 
-pub type Attr = (&'static str, &'static str);
+// (attr name, attr value)
+pub type Attr<'a> = (&'a str, String);
 
 pub fn new_element<'a, I, V>(name: &str, attributes: I) -> NodeRef
 where
@@ -260,5 +261,52 @@ pub fn get_section(el: &NodeRef) -> Option<String> {
             }
         }
         None => Some("Unnamed section".to_owned()),
+    }
+}
+
+pub fn get_closest_attr<'a>(el: &NodeRef, attr_names: &[&'a str]) -> Option<Attr<'a>> {
+    for ancestor_el in el.inclusive_ancestors() {
+        for attr_name in attr_names {
+            if let Some(attr_val) = get_attr(&ancestor_el, attr_name) {
+                return Some((attr_name, attr_val));
+            }
+        }
+    }
+    None
+}
+
+pub fn has_ancestor(el: &NodeRef, filter_fn: impl Fn(&NodeRef) -> bool) -> bool {
+    el.ancestors().any(|ancestor_el| filter_fn(&ancestor_el))
+}
+
+pub fn dedup_ids(root: &NodeRef) {
+    fn to_circled_digits(num: usize) -> String {
+        let digits = vec!["⓪", "①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨"];
+
+        // TODO: Work on num directly.
+        num.to_string()
+            .chars()
+            .map(|ch| digits[ch.to_digit(10).unwrap() as usize])
+            .collect::<Vec<&str>>()
+            .join("")
+    }
+
+    // id => nodes
+    let mut ids: HashMap<String, Vec<NodeRef>> = HashMap::new();
+
+    for el in select(root, "[id]") {
+        let id = get_attr(&el, "id").unwrap();
+        ids.entry(id).or_default().push(el);
+    }
+
+    for (id, els) in ids {
+        if els.len() <= 1 {
+            continue;
+        }
+
+        for (i, el) in els.iter().enumerate().skip(1) {
+            let new_id = format!("{}{}", id, to_circled_digits(i));
+            insert_attr(el, "id", new_id);
+        }
     }
 }

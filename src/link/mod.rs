@@ -5,9 +5,8 @@ pub mod reference;
 use kuchiki::NodeRef;
 use std::collections::HashMap;
 
-use crate::config;
 use crate::config::DFN_SELECTOR;
-use crate::html;
+use crate::html::{self, Attr};
 use crate::spec::Spec;
 
 pub fn process_auto_links(doc: &mut Spec) {
@@ -16,7 +15,6 @@ pub fn process_auto_links(doc: &mut Spec) {
         html::insert_attr(&auto_link_el, "data-link-type", &link_type);
 
         let link_text = html::get_text_content(&auto_link_el);
-        let name = config::generate_name(&link_text);
 
         let reference = doc.reference_manager.get_reference(&link_type, &link_text);
 
@@ -36,9 +34,13 @@ pub fn process_auto_links(doc: &mut Spec) {
             }
         }
 
+        // Decorate auto-link.
         html::insert_attr(&auto_link_el, "href", &reference.url);
+        let name = reference.url.rsplitn(2, '#').next().unwrap();
         html::insert_attr(&auto_link_el, "id", format!("ref-for-{}", name));
     }
+
+    html::dedup_ids(doc.dom());
 }
 
 fn determine_link_type(link_el: &NodeRef) -> String {
@@ -118,11 +120,6 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
             }
         }
 
-        html::add_class(dfn_el, "css");
-        html::insert_attr(dfn_el, "data-export", "");
-
-        at_least_one_panel = true;
-
         if section_els.is_empty() {
             // Insert a self-link.
             let a_el = html::new_a(
@@ -133,7 +130,65 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
                 "",
             );
             dfn_el.append(a_el);
+
+            continue;
         }
+
+        at_least_one_panel = true;
+
+        html::add_class(dfn_el, "dfn-paneled");
+
+        let aside_el = html::new_element(
+            "aside",
+            btreemap! {
+                "class" => "dfn-panel",
+                "data-for" => &id,
+            },
+        );
+
+        aside_el.append({
+            let b_el = html::new_element("b", None::<Attr>);
+            b_el.append(html::new_a(
+                btreemap! {
+                    "href" => format!("#{}", id)
+                },
+                format!("#{}", id),
+            ));
+            b_el
+        });
+
+        aside_el.append({
+            let b_el = html::new_element("b", None::<Attr>);
+            b_el.append(html::new_text("Referenced in:"));
+            b_el
+        });
+
+        let ul_el = html::new_element("ul", None::<Attr>);
+
+        for (section, section_els) in section_els {
+            let li_el = html::new_element("li", None::<Attr>);
+
+            for section_el in section_els {
+                let section_id = match html::get_attr(&section_el, "id") {
+                    Some(section_id) => section_id,
+                    None => format!("ref-for-{}", id),
+                };
+
+                let a_el = html::new_a(
+                    btreemap! {
+                        "href" => format!("#{}", section_id)
+                    },
+                    &section,
+                );
+                li_el.append(a_el);
+            }
+
+            ul_el.append(li_el);
+        }
+
+        aside_el.append(ul_el);
+
+        doc.body().append(aside_el);
     }
 
     if at_least_one_panel {

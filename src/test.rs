@@ -145,6 +145,7 @@ fn test_spec() {
         // links
         "links001",
         "links002",
+        "links003",
     ];
 
     for name in names.iter() {
