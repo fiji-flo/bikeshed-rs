@@ -102,7 +102,7 @@ fn add_default_id(heading_els: &[NodeRef]) {
 // Prepend a <span class="secno"> element to each heading element.
 fn add_secno(heading_els: &[NodeRef]) {
     for heading_el in heading_els {
-        if let Some(data_level) = html::get_attr(heading_el, "data-level") {
+        if let Some(data_level) = html::get_attr_val(heading_el, "data-level") {
             // Prepend secno.
             let span_el = html::new_element(
                 "span",
