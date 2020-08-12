@@ -76,7 +76,7 @@ pub fn retrieve_boilerplate_with_info(
 pub fn load_containers(doc: &mut Spec) {
     for container_el in html::select(doc.dom(), "[data-fill-with]") {
         doc.containers.insert(
-            html::get_attr(&container_el, "data-fill-with").unwrap(),
+            html::get_attr_val(&container_el, "data-fill-with").unwrap(),
             container_el,
         );
     }
@@ -420,10 +420,10 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
 
     for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         let link_text = html::get_text_content(&dfn_el);
-        let id = html::get_attr(&dfn_el, "id").unwrap();
+        let id = html::get_attr_val(&dfn_el, "id").unwrap();
         let heading_level = "Unnumbered section";
 
-        let dfn_type = html::get_attr(&dfn_el, "data-dfn-type").unwrap();
+        let dfn_type = html::get_attr_val(&dfn_el, "data-dfn-type").unwrap();
         let disambiguator = match dfn_type.as_str() {
             "dfn" => "definition of".to_owned(),
             _ => dfn_type,
@@ -698,7 +698,7 @@ pub fn fill_toc_section(doc: &mut Spec) {
             let a_el = {
                 let a_el = html::new_a(
                     btreemap! {
-                        "href" => format!("#{}", html::get_attr(&heading_el, "id").unwrap())
+                        "href" => format!("#{}", html::get_attr_val(&heading_el, "id").unwrap())
                     },
                     "",
                 );
@@ -710,7 +710,7 @@ pub fn fill_toc_section(doc: &mut Spec) {
                     },
                 );
                 span_el.append(html::new_text(
-                    html::get_attr(&heading_el, "data-level").unwrap_or_default(),
+                    html::get_attr_val(&heading_el, "data-level").unwrap_or_default(),
                 ));
                 a_el.append(span_el);
 

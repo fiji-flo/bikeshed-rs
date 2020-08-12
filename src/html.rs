@@ -81,7 +81,7 @@ pub fn has_attr(el: &NodeRef, attr_name: &str) -> bool {
     attributes.get(LocalName::from(attr_name)).is_some()
 }
 
-pub fn get_attr(el: &NodeRef, attr_name: &str) -> Option<String> {
+pub fn get_attr_val(el: &NodeRef, attr_name: &str) -> Option<String> {
     let data = match el.data() {
         NodeData::Element(data) => data,
         _ => return None,
@@ -92,6 +92,17 @@ pub fn get_attr(el: &NodeRef, attr_name: &str) -> Option<String> {
     attributes
         .get(LocalName::from(attr_name))
         .map(ToOwned::to_owned)
+}
+
+pub fn find_attr_name_bottom_up<'a>(el: &NodeRef, attr_names: &[&'a str]) -> Option<&'a str> {
+    for ancestor_el in el.inclusive_ancestors() {
+        for attr_name in attr_names {
+            if has_attr(&ancestor_el, attr_name) {
+                return Some(attr_name);
+            }
+        }
+    }
+    None
 }
 
 pub fn insert_attr<T: Into<String>>(el: &NodeRef, attr_name: &str, attr_val: T) {
@@ -264,17 +275,6 @@ pub fn get_section(el: &NodeRef) -> Option<String> {
     }
 }
 
-pub fn get_closest_attr<'a>(el: &NodeRef, attr_names: &[&'a str]) -> Option<Attr<'a>> {
-    for ancestor_el in el.inclusive_ancestors() {
-        for attr_name in attr_names {
-            if let Some(attr_val) = get_attr(&ancestor_el, attr_name) {
-                return Some((attr_name, attr_val));
-            }
-        }
-    }
-    None
-}
-
 pub fn has_ancestor(el: &NodeRef, filter_fn: impl Fn(&NodeRef) -> bool) -> bool {
     el.ancestors().any(|ancestor_el| filter_fn(&ancestor_el))
 }
@@ -295,7 +295,7 @@ pub fn dedup_ids(root: &NodeRef) {
     let mut ids: HashMap<String, Vec<NodeRef>> = HashMap::new();
 
     for el in select(root, "[id]") {
-        let id = get_attr(&el, "id").unwrap();
+        let id = get_attr_val(&el, "id").unwrap();
         ids.entry(id).or_default().push(el);
     }
 
