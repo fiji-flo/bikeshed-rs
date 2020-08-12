@@ -2,6 +2,7 @@ use kuchiki::NodeRef;
 
 use crate::config::DFN_SELECTOR;
 use crate::html;
+use crate::spec::Spec;
 
 // If an <h1> was provided manually, use that element rather than whatever the boilerplate contains.
 pub fn correct_h1(dom: &NodeRef) {
@@ -13,11 +14,11 @@ pub fn correct_h1(dom: &NodeRef) {
 }
 
 // Clean the DOM before serialization.
-pub fn clean_dom(dom: &NodeRef) {
+pub fn clean_dom(doc: &Spec) {
     // TODO: Traverse the DOM only once?
 
     // If a <dt> contains only a single paragraph, extract its content.
-    for dt_el in html::select(dom, "dt[data-md]") {
+    for dt_el in html::select(doc.dom(), "dt[data-md]") {
         let child = match html::get_only_child(&dt_el) {
             Some(child) => child,
             None => continue,
@@ -34,7 +35,7 @@ pub fn clean_dom(dom: &NodeRef) {
     }
 
     // Allow Markdown-generated list to be surrounded by HTML list container.
-    for list_el in html::select(dom, "ol, ul, dl") {
+    for list_el in html::select(doc.dom(), "ol, ul, dl") {
         let child_el = match html::get_only_child(&list_el) {
             Some(only_child) => only_child,
             None => {
@@ -55,7 +56,7 @@ pub fn clean_dom(dom: &NodeRef) {
         html::remove_attr(&list_el, "data-md");
     }
 
-    for dfn_el in html::select(dom, &DFN_SELECTOR) {
+    for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         // Check dfn type.
         match html::get_attr(&dfn_el, "data-dfn-type") {
             Some(dfn_type) => {
@@ -76,7 +77,7 @@ pub fn clean_dom(dom: &NodeRef) {
         html::add_class(&dfn_el, "css");
     }
 
-    for a_el in html::select(dom, "a") {
+    for a_el in html::select(doc.dom(), "a") {
         // Check link type.
         match html::get_attr(&a_el, "data-link-type") {
             Some(dfn_type) => {
@@ -95,5 +96,10 @@ pub fn clean_dom(dom: &NodeRef) {
         }
 
         html::add_class(&a_el, "css");
+    }
+
+    // Move <style> elements into the <head>.
+    for style_el in html::select(doc.body(), "style") {
+        doc.head().append(style_el);
     }
 }

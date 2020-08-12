@@ -90,14 +90,6 @@ fn get_container<'a>(doc: &'a Spec, tag: &str) -> Option<&'a NodeRef> {
     doc.containers.get(tag)
 }
 
-fn get_container_or_head<'a>(doc: &'a Spec, tag: &str) -> Option<&'a NodeRef> {
-    if !doc.md.boilerplate.get(tag) {
-        return None;
-    }
-
-    doc.containers.get(tag).or_else(|| Some(doc.head()))
-}
-
 fn get_container_or_body<'a>(doc: &'a Spec, tag: &str) -> Option<&'a NodeRef> {
     if !doc.md.boilerplate.get(tag) {
         return None;
@@ -113,8 +105,7 @@ pub fn add_header_footer(doc: &mut Spec) {
 }
 
 pub fn add_styles(doc: &mut Spec) {
-    // TODO: Insert <style> nodes to body and move them to head later.
-    let container = match get_container_or_head(doc, "bs-styles") {
+    let container = match get_container_or_body(doc, "bs-styles") {
         Some(container) => container,
         None => return,
     };
