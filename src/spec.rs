@@ -153,7 +153,7 @@ impl<'a> Spec<'a> {
         boilerplate::add_scripts(self);
 
         // Clean the DOM before serialization.
-        clean::clean_dom(self.dom());
+        clean::clean_dom(self);
     }
 
     pub fn finish(&mut self, outfile: Option<&str>) {
