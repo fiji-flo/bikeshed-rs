@@ -13,7 +13,7 @@ pub fn process_dfns(doc: &mut Spec) {
 }
 
 fn determine_dfn_type(dfn_el: &NodeRef) -> String {
-    match html::get_attr_val(dfn_el, "data-dfn-type") {
+    match html::get_attr(dfn_el, "data-dfn-type") {
         Some(dfn_type) => dfn_type,
         None => "dfn".to_owned(),
     }
@@ -33,9 +33,13 @@ fn classify_dfns(dfn_els: &[NodeRef]) {
             html::insert_attr(dfn_el, "data-dfn-type", &dfn_type);
         }
 
+        if let Some(dfn_for) = html::closest_attr_in(&dfn_el, "data-dfn-for") {
+            html::insert_attr(&dfn_el, "data-dfn-for", dfn_for);
+        }
+
         // export or noexport
         if !html::has_attr(dfn_el, "data-export") && !html::has_attr(dfn_el, "data-noexport") {
-            match html::find_attr_name_bottom_up(dfn_el, &["data-export", "data-noexport"]) {
+            match html::closest_attr_name_in(dfn_el, &["data-export", "data-noexport"]) {
                 Some(attr_name) => html::insert_attr(dfn_el, attr_name, ""),
                 None => {
                     if dfn_type == "dfn" {

@@ -164,7 +164,7 @@ pub fn canonicalize_shortcuts(doc: &Spec) {
     // Process dfn type.
     for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         for dfn_type in DFN_TYPES.iter() {
-            if let Some(attr_val) = html::get_attr_val(&dfn_el, dfn_type) {
+            if let Some(attr_val) = html::get_attr(&dfn_el, dfn_type) {
                 if attr_val.is_empty() {
                     html::remove_attr(&dfn_el, dfn_type);
                     html::insert_attr(&dfn_el, "data-dfn-type", dfn_type.to_owned());
@@ -177,7 +177,7 @@ pub fn canonicalize_shortcuts(doc: &Spec) {
     // Process link type.
     for a_el in html::select(doc.dom(), "a") {
         for link_type in LINK_TYPES.iter() {
-            if let Some(attr_val) = html::get_attr_val(&a_el, link_type) {
+            if let Some(attr_val) = html::get_attr(&a_el, link_type) {
                 if attr_val.is_empty() {
                     html::remove_attr(&a_el, link_type);
                     html::insert_attr(&a_el, "data-link-type", link_type.to_owned());
@@ -189,7 +189,7 @@ pub fn canonicalize_shortcuts(doc: &Spec) {
 
     // Process "for" values.
     for el in html::select(doc.dom(), &format!("{}, a", DFN_SELECTOR.as_str())) {
-        let for_val = match html::get_attr_val(&el, "for") {
+        let for_val = match html::get_attr(&el, "for") {
             Some(for_val) => for_val,
             None => continue,
         };
