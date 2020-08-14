@@ -44,7 +44,7 @@ pub fn process_auto_links(doc: &mut Spec) {
 }
 
 fn determine_link_type(link_el: &NodeRef) -> String {
-    match html::get_attr_val(link_el, "data-link-type") {
+    match html::get_attr(link_el, "data-link-type") {
         Some(link_type) => link_type,
         None => "dfn".to_owned(),
     }
@@ -56,14 +56,14 @@ pub fn add_self_links(doc: &mut Spec) {
     let mut found_first_numbered_section = false;
 
     for heading_el in html::select(doc.dom(), "h2, h3, h4, h5, h6") {
-        found_first_numbered_section |= html::get_attr_val(&heading_el, "data-level").is_some();
+        found_first_numbered_section |= html::get_attr(&heading_el, "data-level").is_some();
 
         if dfn_els.contains(&heading_el) || !found_first_numbered_section {
             continue;
         }
 
         // Append self-link.
-        if let Some(id) = html::get_attr_val(&heading_el, "id") {
+        if let Some(id) = html::get_attr(&heading_el, "id") {
             let a_el = html::new_a(
                 btreemap! {
                     "class" => "self-link".to_owned(),
@@ -83,7 +83,7 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
     let mut all_links_els: HashMap<String, Vec<NodeRef>> = HashMap::new();
 
     for a_el in html::select(doc.dom(), "a") {
-        let href = match html::get_attr_val(&a_el, "href") {
+        let href = match html::get_attr(&a_el, "href") {
             Some(href) => href,
             None => continue,
         };
@@ -101,7 +101,7 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
     let mut at_least_one_panel = false;
 
     for dfn_el in dfn_els {
-        let id = match html::get_attr_val(dfn_el, "id") {
+        let id = match html::get_attr(dfn_el, "id") {
             Some(id) => id,
             None => continue,
         };
@@ -169,7 +169,7 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
             let li_el = html::new_element("li", None::<Attr>);
 
             for section_el in section_els {
-                let section_id = match html::get_attr_val(&section_el, "id") {
+                let section_id = match html::get_attr(&section_el, "id") {
                     Some(section_id) => section_id,
                     None => format!("ref-for-{}", id),
                 };

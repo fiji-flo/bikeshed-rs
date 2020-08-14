@@ -58,7 +58,7 @@ pub fn clean_dom(doc: &Spec) {
 
     for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         // Check dfn type.
-        match html::get_attr_val(&dfn_el, "data-dfn-type") {
+        match html::get_attr(&dfn_el, "data-dfn-type") {
             Some(dfn_type) => {
                 if dfn_type != "property" {
                     continue;
@@ -79,7 +79,7 @@ pub fn clean_dom(doc: &Spec) {
 
     for a_el in html::select(doc.dom(), "a") {
         // Check link type.
-        match html::get_attr_val(&a_el, "data-link-type") {
+        match html::get_attr(&a_el, "data-link-type") {
             Some(dfn_type) => {
                 if dfn_type != "property" {
                     continue;
@@ -98,6 +98,7 @@ pub fn clean_dom(doc: &Spec) {
         html::add_class(&a_el, "css");
     }
 
+    // TODO: Do this only in testing.
     // Move <style> elements into the <head>.
     for style_el in html::select(doc.body(), "style") {
         doc.head().append(style_el);
