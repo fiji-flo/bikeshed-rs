@@ -1,6 +1,7 @@
 use std::collections::{HashMap, HashSet};
 use std::path::Path;
 
+use super::query::Query;
 use super::Reference;
 use crate::config;
 use crate::util::reader;
@@ -24,13 +25,6 @@ pub struct ReferenceSource {
     loaded_groups: HashSet<String>,
     // text => references
     references: HashMap<String, Vec<Reference>>,
-}
-
-#[derive(Debug)]
-pub struct Query<'a> {
-    pub link_type: &'a str,
-    pub link_text: &'a str,
-    pub status: Option<&'a str>,
 }
 
 #[derive(Debug)]

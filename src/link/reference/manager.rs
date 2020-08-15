@@ -1,6 +1,7 @@
 use kuchiki::NodeRef;
 
-use super::source::{Query, ReferenceSource, SourceKind};
+use super::query::Query;
+use super::source::{ReferenceSource, SourceKind};
 use super::Reference;
 use crate::config;
 use crate::html;
@@ -28,7 +29,10 @@ impl ReferenceManager {
         self.spec = Some(md.vshortname());
     }
 
-    pub fn get_reference(&mut self, link_type: &str, link_text: &str) -> Reference {
+    pub fn get_reference(&mut self, query: Query) -> Reference {
+        let link_type = query.link_type;
+        let link_text = query.link_text;
+
         // Load local references.
         if let Ok(local_references) = self.local_reference_source.query_references(Query {
             link_type,
