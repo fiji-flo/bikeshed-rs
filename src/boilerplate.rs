@@ -1,9 +1,7 @@
-use indexmap::map::IndexMap;
 use kuchiki::traits::*;
 use kuchiki::{NodeData, NodeRef};
 use markup5ever::LocalName;
 use std::char;
-use std::cmp::Ordering;
 use std::fs;
 use std::path::Path;
 
@@ -362,12 +360,14 @@ pub fn add_index_section(doc: &mut Spec) {
 
 #[derive(Debug, Clone)]
 struct IndexTerm {
+    link_text: String,
     url: String,
     label: String,
+    // When there's more than one index term, we use this field to sort index terms.
     disambiguator: String,
 }
 
-fn index_items_to_node(index_items: IndexMap<String, IndexTerm>) -> NodeRef {
+fn index_items_to_node(index_items: &mut [IndexTerm]) -> NodeRef {
     let ul_el = html::new_element(
         "ul",
         btreemap! {
@@ -375,22 +375,18 @@ fn index_items_to_node(index_items: IndexMap<String, IndexTerm>) -> NodeRef {
         },
     );
 
-    for (link_text, index_item) in index_items.sorted_by(|_, index_item1, _, index_item2| {
-        if index_item1.disambiguator < index_item2.disambiguator {
-            return Ordering::Less;
-        }
-        if index_item1.disambiguator == index_item2.disambiguator {
-            return Ordering::Equal;
-        }
-        Ordering::Greater
-    }) {
+    index_items.sort_by(|index_item1, index_item2| {
+        index_item1.disambiguator.cmp(&index_item2.disambiguator)
+    });
+
+    for index_item in index_items {
         let li_el = html::new_element("li", None::<Attr>);
 
         let a_el = html::new_a(
             btreemap! {
                 "href" => &index_item.url,
             },
-            link_text,
+            &index_item.link_text,
         );
         li_el.append(a_el);
 
@@ -416,7 +412,7 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
     container.append(h3_el);
 
     // link text => index item
-    let mut index_items = IndexMap::new();
+    let mut index_items = Vec::new();
 
     for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         let link_text = html::get_text_content(&dfn_el);
@@ -429,17 +425,15 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
             _ => dfn_type,
         };
 
-        index_items.insert(
+        index_items.push(IndexTerm {
             link_text,
-            IndexTerm {
-                url: format!("#{}", id),
-                label: format!("§{}", heading_level),
-                disambiguator,
-            },
-        );
+            url: format!("#{}", id),
+            label: format!("§{}", heading_level),
+            disambiguator,
+        });
     }
 
-    container.append(index_items_to_node(index_items));
+    container.append(index_items_to_node(&mut index_items));
 }
 
 fn make_panel(reference: &Reference, name: &str, term_id: &str) -> NodeRef {
