@@ -42,6 +42,10 @@ pub fn generate_group_name(key: &str) -> String {
     group
 }
 
+pub fn split_for_vals(text: &str) -> Vec<String> {
+    text.split(',').map(|val| val.trim().to_owned()).collect()
+}
+
 lazy_static! {
     pub static ref SOURCE_FILE_EXTENSIONS: HashSet<&'static str> = hashset! {".bs", ".src.html"};
     pub static ref INLINE_ELEMENT_TAGS: HashSet<&'static str> = hashset! {

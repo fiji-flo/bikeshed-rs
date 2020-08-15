@@ -3,6 +3,7 @@ use std::collections::HashMap;
 
 use super::source::ReferenceSource;
 use super::Reference;
+use crate::config;
 use crate::html;
 use crate::metadata::Metadata;
 
@@ -42,12 +43,18 @@ impl ReferenceManager {
     pub fn add_local_dfns(&mut self, dfn_els: &[NodeRef]) {
         for dfn_el in dfn_els {
             let link_text = html::get_text_content(&dfn_el);
-            let link_type = html::get_attr(&dfn_el, "data-dfn-type").unwrap();
+            let link_type = html::closest_attr_in(&dfn_el, "data-dfn-type").unwrap();
+
+            let link_fors = match html::closest_attr_in(&dfn_el, "data-dfn-for") {
+                Some(dfn_for) => config::split_for_vals(&dfn_for),
+                None => Vec::new(),
+            };
 
             let reference = Reference {
                 link_type,
                 spec: self.spec.to_owned(),
                 url: format!("#{}", html::get_attr(&dfn_el, "id").unwrap()),
+                link_fors,
             };
 
             self.local_references.insert(link_text, reference);

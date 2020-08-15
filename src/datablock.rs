@@ -79,6 +79,8 @@ fn process_anchors(doc: &mut Spec, anchors: &[HashMap<String, Vec<String>>]) {
             link_type,
             spec: None,
             url: format!("{}#{}", url_prefix, name),
+            // TODO: fill link fors here.
+            link_fors: Vec::new(),
         };
 
         doc.reference_manager
