@@ -44,12 +44,16 @@ impl ReferenceSource {
             lines.next(); // export
             lines.next(); // normative
 
+            let mut link_fors = Vec::new();
+
             loop {
                 let line = lines.next().unwrap().unwrap();
 
                 if line == "-" {
                     break;
                 }
+
+                link_fors.push(line);
             }
 
             self.references.insert(
@@ -58,6 +62,7 @@ impl ReferenceSource {
                     link_type,
                     spec: Some(spec),
                     url,
+                    link_fors,
                 },
             );
         }
