@@ -2,6 +2,7 @@ use std::collections::{HashMap, HashSet};
 use std::path::Path;
 
 use super::query::Query;
+use super::util;
 use super::Reference;
 use crate::config;
 use crate::util::reader;
@@ -28,6 +29,12 @@ pub struct ReferenceSource {
 }
 
 #[derive(Debug)]
+pub enum QueryMode {
+    Exact,
+    Inexact,
+}
+
+#[derive(Debug)]
 pub enum QueryError {
     Text,
     LinkType,
@@ -43,9 +50,38 @@ impl ReferenceSource {
         }
     }
 
-    pub fn query_references(&mut self, query: Query) -> Result<Vec<Reference>, QueryError> {
+    pub fn query_references(
+        &mut self,
+        query: Query,
+        query_mode: QueryMode,
+    ) -> Result<Vec<Reference>, QueryError> {
+        match query_mode {
+            QueryMode::Exact => self.query_references_by_mode(&query, QueryMode::Exact),
+            QueryMode::Inexact => match self.query_references_by_mode(&query, QueryMode::Exact) {
+                Ok(references) => Ok(references),
+                Err(_) => self.query_references_by_mode(&query, QueryMode::Inexact),
+            },
+        }
+    }
+
+    fn query_references_by_mode(
+        &mut self,
+        query: &Query,
+        query_mode: QueryMode,
+    ) -> Result<Vec<Reference>, QueryError> {
         // Filter references by link text.
-        let mut references = self.fetch_references(query.link_text);
+        let mut references = match query_mode {
+            QueryMode::Exact => self.fetch_references(query.link_text),
+            QueryMode::Inexact => {
+                let mut references = Vec::new();
+
+                for text in util::link_text_variations(query.link_type, query.link_text) {
+                    references.extend(self.fetch_references(&text));
+                }
+
+                references
+            }
+        };
 
         if references.is_empty() {
             return Err(QueryError::Text);

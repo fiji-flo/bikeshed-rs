@@ -1,7 +1,7 @@
 use kuchiki::NodeRef;
 
 use super::query::Query;
-use super::source::{ReferenceSource, SourceKind};
+use super::source::{QueryMode, ReferenceSource, SourceKind};
 use super::Reference;
 use crate::config;
 use crate::html;
@@ -35,36 +35,43 @@ impl ReferenceManager {
         let link_fors = query.link_fors;
 
         // Load local references.
-        if let Ok(local_references) = self.local_reference_source.query_references(Query {
-            link_type,
-            link_text,
-            status: None,
-            link_fors,
-        }) {
-            return local_references[0].to_owned();
-        }
-
-        // Load anchor block references.
-        if let Ok(anchor_block_references) =
-            self.anchor_block_reference_source.query_references(Query {
+        if let Ok(local_references) = self.local_reference_source.query_references(
+            Query {
                 link_type,
                 link_text,
                 status: None,
                 link_fors,
-            })
-        {
+            },
+            QueryMode::Inexact,
+        ) {
+            return local_references[0].to_owned();
+        }
+
+        // Load anchor block references.
+        if let Ok(anchor_block_references) = self.anchor_block_reference_source.query_references(
+            Query {
+                link_type,
+                link_text,
+                status: None,
+                link_fors,
+            },
+            QueryMode::Inexact,
+        ) {
             return anchor_block_references[0].to_owned();
         }
 
         // Load external references.
         let external_references = self
             .external_reference_source
-            .query_references(Query {
-                link_type,
-                link_text,
-                status: Some("current"),
-                link_fors,
-            })
+            .query_references(
+                Query {
+                    link_type,
+                    link_text,
+                    status: Some("current"),
+                    link_fors,
+                },
+                QueryMode::Exact,
+            )
             .unwrap();
 
         external_references[0].to_owned()
