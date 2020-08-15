@@ -80,7 +80,7 @@ fn process_anchors(doc: &mut Spec, anchors: &[HashMap<String, Vec<String>>]) {
             spec: None,
             status: "anchor-block".to_owned(),
             url: format!("{}#{}", url_prefix, name),
-            // TODO: fill link fors here.
+            // TODO: Fill link fors here.
             link_fors: Vec::new(),
         };
 

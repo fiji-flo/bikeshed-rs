@@ -107,7 +107,7 @@ pub fn parse_editor(val: &str) -> Result<Editor, &'static str> {
         return Err("invalid editor");
     }
 
-    // TODO: unescape pieces
+    // TODO: Unescape pieces.
     let mut pieces = val
         .split(',')
         .map(|piece| piece.trim())

@@ -73,11 +73,12 @@ pub fn clean_dom(doc: &Spec) {
         }) {
             html::add_class(&dfn_el, "css")
         }
-
-        html::add_class(&dfn_el, "css");
     }
 
     for a_el in html::select(doc.dom(), "a") {
+        // TODO: Remove attributes elsewhere.
+        html::remove_attr(&a_el, "data-link-for");
+
         // Check link type.
         match html::get_attr(&a_el, "data-link-type") {
             Some(dfn_type) => {
@@ -94,8 +95,6 @@ pub fn clean_dom(doc: &Spec) {
         }) {
             html::add_class(&a_el, "css")
         }
-
-        html::add_class(&a_el, "css");
     }
 
     // TODO: Do this only in testing.

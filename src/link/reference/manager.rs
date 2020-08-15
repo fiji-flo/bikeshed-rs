@@ -32,12 +32,14 @@ impl ReferenceManager {
     pub fn get_reference(&mut self, query: Query) -> Reference {
         let link_type = query.link_type;
         let link_text = query.link_text;
+        let link_fors = query.link_fors;
 
         // Load local references.
         if let Ok(local_references) = self.local_reference_source.query_references(Query {
             link_type,
             link_text,
             status: None,
+            link_fors,
         }) {
             return local_references[0].to_owned();
         }
@@ -48,6 +50,7 @@ impl ReferenceManager {
                 link_type,
                 link_text,
                 status: None,
+                link_fors,
             })
         {
             return anchor_block_references[0].to_owned();
@@ -60,6 +63,7 @@ impl ReferenceManager {
                 link_type,
                 link_text,
                 status: Some("current"),
+                link_fors,
             })
             .unwrap();
 

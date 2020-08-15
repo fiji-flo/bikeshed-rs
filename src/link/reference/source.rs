@@ -32,6 +32,7 @@ pub enum QueryError {
     Text,
     LinkType,
     Status,
+    For,
 }
 
 impl ReferenceSource {
@@ -43,12 +44,14 @@ impl ReferenceSource {
     }
 
     pub fn query_references(&mut self, query: Query) -> Result<Vec<Reference>, QueryError> {
+        // Filter references by link text.
         let mut references = self.fetch_references(query.link_text);
 
         if references.is_empty() {
             return Err(QueryError::Text);
         }
 
+        // Filter references by link type.
         references = references
             .iter()
             .filter(|reference| reference.link_type == query.link_type)
@@ -59,6 +62,7 @@ impl ReferenceSource {
             return Err(QueryError::LinkType);
         }
 
+        // Filter references by status.
         if let Some(status) = query.status {
             references = references
                 .iter()
@@ -69,6 +73,36 @@ impl ReferenceSource {
             if references.is_empty() {
                 return Err(QueryError::Status);
             }
+        }
+
+        // Filter references by link for values.
+        fn match_link_fors(target_link_fors: &[String], test_link_fors: &[String]) -> bool {
+            if test_link_fors.len() == 1 && test_link_fors[0] == "/" {
+                target_link_fors.is_empty()
+            } else {
+                test_link_fors
+                    .iter()
+                    .any(|test_link_for| target_link_fors.contains(test_link_for))
+            }
+        }
+
+        fn filter_by_for_vals(
+            references: &[Reference],
+            test_link_fors: &[String],
+        ) -> Vec<Reference> {
+            references
+                .iter()
+                .filter(|reference| match_link_fors(&reference.link_fors, test_link_fors))
+                .map(ToOwned::to_owned)
+                .collect()
+        }
+
+        if let Some(link_fors) = query.link_fors {
+            references = filter_by_for_vals(&references, link_fors);
+        }
+
+        if references.is_empty() {
+            return Err(QueryError::For);
         }
 
         Ok(references)
