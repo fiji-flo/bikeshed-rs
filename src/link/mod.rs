@@ -8,6 +8,7 @@ use std::collections::HashMap;
 use crate::config::DFN_SELECTOR;
 use crate::html::{self, Attr};
 use crate::spec::Spec;
+use reference::query::Query;
 
 pub fn process_auto_links(doc: &mut Spec) {
     for auto_link_el in html::select(doc.dom(), "a:not([href]):not([data-link-type='biblio'])") {
@@ -16,7 +17,11 @@ pub fn process_auto_links(doc: &mut Spec) {
 
         let link_text = html::get_text_content(&auto_link_el);
 
-        let reference = doc.reference_manager.get_reference(&link_type, &link_text);
+        let reference = doc.reference_manager.get_reference(Query {
+            link_type: &link_type,
+            link_text: &link_text,
+            status: None,
+        });
 
         if let Some(ref reference_spec) = reference.spec {
             if let Some(ref doc_spec) = doc.reference_manager.spec {

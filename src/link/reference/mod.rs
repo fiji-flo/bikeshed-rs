@@ -1,4 +1,5 @@
 pub mod manager;
+pub mod query;
 mod source;
 
 #[derive(Debug, Default, Clone)]
