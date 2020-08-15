@@ -26,6 +26,13 @@ pub struct ReferenceSource {
 }
 
 #[derive(Debug)]
+pub struct Query<'a> {
+    pub link_type: &'a str,
+    pub link_text: &'a str,
+    pub status: Option<&'a str>,
+}
+
+#[derive(Debug)]
 pub enum QueryError {
     Text,
     LinkType,
@@ -40,13 +47,8 @@ impl ReferenceSource {
         }
     }
 
-    pub fn query_reference(
-        &mut self,
-        link_type: &str,
-        link_text: &str,
-        status: Option<&str>,
-    ) -> Result<Vec<Reference>, QueryError> {
-        let mut references = self.fetch_references(link_text);
+    pub fn query_references(&mut self, query: Query) -> Result<Vec<Reference>, QueryError> {
+        let mut references = self.fetch_references(query.link_text);
 
         if references.is_empty() {
             return Err(QueryError::Text);
@@ -54,7 +56,7 @@ impl ReferenceSource {
 
         references = references
             .iter()
-            .filter(|reference| reference.link_type == link_type)
+            .filter(|reference| reference.link_type == query.link_type)
             .map(ToOwned::to_owned)
             .collect();
 
@@ -62,7 +64,7 @@ impl ReferenceSource {
             return Err(QueryError::LinkType);
         }
 
-        if let Some(status) = status {
+        if let Some(status) = query.status {
             references = references
                 .iter()
                 .filter(|reference| reference.status == status)
