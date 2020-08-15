@@ -5,22 +5,99 @@ use super::Reference;
 use crate::config;
 use crate::util::reader;
 
+#[derive(Debug, PartialEq)]
+pub enum SourceKind {
+    Local,
+    AnchorBlock,
+    External,
+}
+
+impl Default for SourceKind {
+    fn default() -> Self {
+        SourceKind::Local
+    }
+}
+
 #[derive(Debug, Default)]
 pub struct ReferenceSource {
+    source_kind: SourceKind,
     base_path: String,
-    // text => reference
-    pub references: HashMap<String, Reference>,
+    // text => references
+    pub references: HashMap<String, Vec<Reference>>,
+}
+
+#[derive(Debug)]
+pub enum QueryError {
+    Text,
+    LinkType,
+    Status,
 }
 
 impl ReferenceSource {
-    pub fn new(base_path: &str) -> Self {
+    pub fn new(source_kind: SourceKind, base_path: &str) -> Self {
         ReferenceSource {
+            source_kind,
             base_path: base_path.to_owned(),
             ..Default::default()
         }
     }
 
-    fn load(&mut self, group: &str) {
+    pub fn query_reference(
+        &mut self,
+        link_type: &str,
+        link_text: &str,
+        status: Option<&str>,
+    ) -> Result<Vec<Reference>, QueryError> {
+        let mut references = self.fetch_references(link_text);
+
+        if references.is_empty() {
+            return Err(QueryError::Text);
+        }
+
+        references = references
+            .iter()
+            .filter(|reference| reference.link_type == link_type)
+            .map(ToOwned::to_owned)
+            .collect();
+
+        if references.is_empty() {
+            return Err(QueryError::LinkType);
+        }
+
+        if let Some(status) = status {
+            references = references
+                .iter()
+                .filter(|reference| reference.status == status)
+                .map(ToOwned::to_owned)
+                .collect();
+
+            if references.is_empty() {
+                return Err(QueryError::Status);
+            }
+        }
+
+        Ok(references)
+    }
+
+    fn fetch_references(&mut self, link_text: &str) -> Vec<Reference> {
+        if let Some(references) = self.references.get(link_text) {
+            return references.to_owned();
+        }
+
+        if self.source_kind != SourceKind::External {
+            return Vec::new();
+        }
+
+        let group = config::generate_group_name(link_text);
+        self.load_spec_data(&group);
+
+        match self.references.get(link_text) {
+            Some(references) => references.to_owned(),
+            None => Vec::new(),
+        }
+    }
+
+    fn load_spec_data(&mut self, group: &str) {
         let data_path = Path::new("spec-data")
             .join(&self.base_path)
             .join(format!("anchors-{}.data", group));
@@ -39,7 +116,7 @@ impl ReferenceSource {
             let spec = lines.next().unwrap().unwrap();
             lines.next(); // shortname
             lines.next(); // level
-            lines.next(); // status
+            let status = lines.next().unwrap().unwrap();
             let url = lines.next().unwrap().unwrap();
             lines.next(); // export
             lines.next(); // normative
@@ -56,30 +133,13 @@ impl ReferenceSource {
                 link_fors.push(line);
             }
 
-            self.references.insert(
-                key,
-                Reference {
-                    link_type,
-                    spec: Some(spec),
-                    url,
-                    link_fors,
-                },
-            );
+            self.references.entry(key).or_default().push(Reference {
+                link_type,
+                spec: Some(spec),
+                status,
+                url,
+                link_fors,
+            });
         }
-    }
-
-    pub fn fetch_reference(&mut self, link_type: &str, link_text: &str) -> Reference {
-        if let Some(reference) = self.references.get(link_text) {
-            if link_type == reference.link_type {
-                return reference.to_owned();
-            }
-        }
-
-        let group = config::generate_group_name(link_text);
-        self.load(&group);
-
-        let reference = self.references.get(link_text).unwrap().to_owned();
-        assert_eq!(link_type, reference.link_type);
-        reference
     }
 }

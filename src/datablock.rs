@@ -78,14 +78,18 @@ fn process_anchors(doc: &mut Spec, anchors: &[HashMap<String, Vec<String>>]) {
         let reference = Reference {
             link_type,
             spec: None,
+            status: "anchor-block".to_owned(),
             url: format!("{}#{}", url_prefix, name),
             // TODO: fill link fors here.
             link_fors: Vec::new(),
         };
 
         doc.reference_manager
-            .local_references
-            .insert(link_text, reference);
+            .anchor_block_reference_source
+            .references
+            .entry(link_text)
+            .or_default()
+            .push(reference);
     }
 }
 

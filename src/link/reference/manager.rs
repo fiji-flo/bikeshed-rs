@@ -1,7 +1,6 @@
 use kuchiki::NodeRef;
-use std::collections::HashMap;
 
-use super::source::ReferenceSource;
+use super::source::{ReferenceSource, SourceKind};
 use super::Reference;
 use crate::config;
 use crate::html;
@@ -9,15 +8,18 @@ use crate::metadata::Metadata;
 
 #[derive(Debug, Default)]
 pub struct ReferenceManager {
-    pub reference_source: ReferenceSource,
-    pub local_references: HashMap<String, Reference>,
+    pub local_reference_source: ReferenceSource,
+    pub anchor_block_reference_source: ReferenceSource,
+    pub external_reference_source: ReferenceSource,
     pub spec: Option<String>,
 }
 
 impl ReferenceManager {
     pub fn new() -> Self {
         ReferenceManager {
-            reference_source: ReferenceSource::new("anchors"),
+            local_reference_source: ReferenceSource::new(SourceKind::Local, "anchors"),
+            anchor_block_reference_source: ReferenceSource::new(SourceKind::AnchorBlock, "anchors"),
+            external_reference_source: ReferenceSource::new(SourceKind::External, "anchors"),
             ..Default::default()
         }
     }
@@ -27,17 +29,29 @@ impl ReferenceManager {
     }
 
     pub fn get_reference(&mut self, link_type: &str, link_text: &str) -> Reference {
-        match self.fetch_local_reference(link_type, link_text) {
-            Some(local_reference) => local_reference,
-            None => self.reference_source.fetch_reference(link_type, link_text),
+        // Load local references.
+        if let Ok(local_references) = self
+            .local_reference_source
+            .query_reference(link_type, link_text, None)
+        {
+            return local_references[0].to_owned();
         }
-    }
 
-    fn fetch_local_reference(&self, link_type: &str, link_text: &str) -> Option<Reference> {
-        self.local_references
-            .get(link_text)
-            .filter(|reference| link_type == reference.link_type)
-            .map(ToOwned::to_owned)
+        // Load anchor block references.
+        if let Ok(anchor_block_references) = self
+            .anchor_block_reference_source
+            .query_reference(link_type, link_text, None)
+        {
+            return anchor_block_references[0].to_owned();
+        }
+
+        // Load external references.
+        let external_references = self
+            .external_reference_source
+            .query_reference(link_type, link_text, Some("current"))
+            .unwrap();
+
+        return external_references[0].to_owned();
     }
 
     pub fn add_local_dfns(&mut self, dfn_els: &[NodeRef]) {
@@ -53,11 +67,16 @@ impl ReferenceManager {
             let reference = Reference {
                 link_type,
                 spec: self.spec.to_owned(),
+                status: "local".to_owned(),
                 url: format!("#{}", html::get_attr(&dfn_el, "id").unwrap()),
                 link_fors,
             };
 
-            self.local_references.insert(link_text, reference);
+            self.local_reference_source
+                .references
+                .entry(link_text)
+                .or_default()
+                .push(reference);
         }
     }
 }
