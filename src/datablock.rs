@@ -86,10 +86,7 @@ fn process_anchors(doc: &mut Spec, anchors: &[HashMap<String, Vec<String>>]) {
 
         doc.reference_manager
             .anchor_block_reference_source
-            .references
-            .entry(link_text)
-            .or_default()
-            .push(reference);
+            .add_reference(link_text, reference);
     }
 }
 

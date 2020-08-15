@@ -21,9 +21,8 @@ impl Default for SourceKind {
 #[derive(Debug, Default)]
 pub struct ReferenceSource {
     source_kind: SourceKind,
-    base_path: String,
     // text => references
-    pub references: HashMap<String, Vec<Reference>>,
+    references: HashMap<String, Vec<Reference>>,
 }
 
 #[derive(Debug)]
@@ -34,10 +33,9 @@ pub enum QueryError {
 }
 
 impl ReferenceSource {
-    pub fn new(source_kind: SourceKind, base_path: &str) -> Self {
+    pub fn new(source_kind: SourceKind) -> Self {
         ReferenceSource {
             source_kind,
-            base_path: base_path.to_owned(),
             ..Default::default()
         }
     }
@@ -79,6 +77,13 @@ impl ReferenceSource {
         Ok(references)
     }
 
+    pub fn add_reference(&mut self, link_text: String, reference: Reference) {
+        self.references
+            .entry(link_text)
+            .or_default()
+            .push(reference);
+    }
+
     fn fetch_references(&mut self, link_text: &str) -> Vec<Reference> {
         if let Some(references) = self.references.get(link_text) {
             return references.to_owned();
@@ -99,7 +104,7 @@ impl ReferenceSource {
 
     fn load_spec_data(&mut self, group: &str) {
         let data_path = Path::new("spec-data")
-            .join(&self.base_path)
+            .join("anchors")
             .join(format!("anchors-{}.data", group));
 
         let mut lines = match reader::read_lines(&data_path) {
@@ -133,13 +138,15 @@ impl ReferenceSource {
                 link_fors.push(line);
             }
 
-            self.references.entry(key).or_default().push(Reference {
+            let reference = Reference {
                 link_type,
                 spec: Some(spec),
                 status,
                 url,
                 link_fors,
-            });
+            };
+
+            self.add_reference(key, reference);
         }
     }
 }
