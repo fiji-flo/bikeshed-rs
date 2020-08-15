@@ -17,9 +17,9 @@ pub struct ReferenceManager {
 impl ReferenceManager {
     pub fn new() -> Self {
         ReferenceManager {
-            local_reference_source: ReferenceSource::new(SourceKind::Local, "anchors"),
-            anchor_block_reference_source: ReferenceSource::new(SourceKind::AnchorBlock, "anchors"),
-            external_reference_source: ReferenceSource::new(SourceKind::External, "anchors"),
+            local_reference_source: ReferenceSource::new(SourceKind::Local),
+            anchor_block_reference_source: ReferenceSource::new(SourceKind::AnchorBlock),
+            external_reference_source: ReferenceSource::new(SourceKind::External),
             ..Default::default()
         }
     }
@@ -51,7 +51,7 @@ impl ReferenceManager {
             .query_reference(link_type, link_text, Some("current"))
             .unwrap();
 
-        return external_references[0].to_owned();
+        external_references[0].to_owned()
     }
 
     pub fn add_local_dfns(&mut self, dfn_els: &[NodeRef]) {
@@ -73,10 +73,7 @@ impl ReferenceManager {
             };
 
             self.local_reference_source
-                .references
-                .entry(link_text)
-                .or_default()
-                .push(reference);
+                .add_reference(link_text, reference);
         }
     }
 }
