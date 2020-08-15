@@ -1,6 +1,6 @@
 use kuchiki::NodeRef;
 
-use super::source::{ReferenceSource, SourceKind};
+use super::source::{Query, ReferenceSource, SourceKind};
 use super::Reference;
 use crate::config;
 use crate::html;
@@ -30,17 +30,21 @@ impl ReferenceManager {
 
     pub fn get_reference(&mut self, link_type: &str, link_text: &str) -> Reference {
         // Load local references.
-        if let Ok(local_references) = self
-            .local_reference_source
-            .query_reference(link_type, link_text, None)
-        {
+        if let Ok(local_references) = self.local_reference_source.query_references(Query {
+            link_type,
+            link_text,
+            status: None,
+        }) {
             return local_references[0].to_owned();
         }
 
         // Load anchor block references.
-        if let Ok(anchor_block_references) = self
-            .anchor_block_reference_source
-            .query_reference(link_type, link_text, None)
+        if let Ok(anchor_block_references) =
+            self.anchor_block_reference_source.query_references(Query {
+                link_type,
+                link_text,
+                status: None,
+            })
         {
             return anchor_block_references[0].to_owned();
         }
@@ -48,7 +52,11 @@ impl ReferenceManager {
         // Load external references.
         let external_references = self
             .external_reference_source
-            .query_reference(link_type, link_text, Some("current"))
+            .query_references(Query {
+                link_type,
+                link_text,
+                status: Some("current"),
+            })
             .unwrap();
 
         external_references[0].to_owned()
