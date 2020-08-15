@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::path::Path;
 
 use super::Reference;
@@ -21,6 +21,7 @@ impl Default for SourceKind {
 #[derive(Debug, Default)]
 pub struct ReferenceSource {
     source_kind: SourceKind,
+    loaded_groups: HashSet<String>,
     // text => references
     references: HashMap<String, Vec<Reference>>,
 }
@@ -96,7 +97,13 @@ impl ReferenceSource {
         }
 
         let group = config::generate_group_name(link_text);
+
+        if self.loaded_groups.contains(&group) {
+            return Vec::new();
+        }
+
         self.load_spec_data(&group);
+        self.loaded_groups.insert(group);
 
         match self.references.get(link_text) {
             Some(references) => references.to_owned(),
