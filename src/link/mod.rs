@@ -5,7 +5,7 @@ pub mod reference;
 use kuchiki::NodeRef;
 use std::collections::HashMap;
 
-use crate::config::DFN_SELECTOR;
+use crate::config::{self, DFN_SELECTOR};
 use crate::html::{self, Attr};
 use crate::spec::Spec;
 use reference::query::Query;
@@ -17,10 +17,16 @@ pub fn process_auto_links(doc: &mut Spec) {
 
         let link_text = html::get_text_content(&auto_link_el);
 
+        let link_fors = match html::get_attr(&auto_link_el, "data-link-for") {
+            Some(link_for) => Some(config::split_for_vals(&link_for)),
+            None => None,
+        };
+
         let reference = doc.reference_manager.get_reference(Query {
             link_type: &link_type,
             link_text: &link_text,
             status: None,
+            link_fors: &link_fors,
         });
 
         if let Some(ref reference_spec) = reference.spec {

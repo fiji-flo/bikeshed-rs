@@ -1,3 +1,4 @@
+use indexmap::map::IndexMap;
 use kuchiki::traits::*;
 use kuchiki::{NodeData, NodeRef};
 use markup5ever::LocalName;
@@ -5,6 +6,7 @@ use std::char;
 use std::fs;
 use std::path::Path;
 
+use crate::config;
 use crate::config::DFN_SELECTOR;
 use crate::html::{self, Attr};
 use crate::link::reference::Reference;
@@ -360,44 +362,79 @@ pub fn add_index_section(doc: &mut Spec) {
 
 #[derive(Debug, Clone)]
 struct IndexTerm {
-    link_text: String,
     url: String,
     label: String,
     // When there's more than one index term, we use this field to sort index terms.
     disambiguator: String,
 }
 
-fn index_items_to_node(index_items: &mut [IndexTerm]) -> NodeRef {
-    let ul_el = html::new_element(
+fn index_items_to_node(index_entries: &mut IndexMap<String, Vec<IndexTerm>>) -> NodeRef {
+    let top_ul_el = html::new_element(
         "ul",
         btreemap! {
             "class" => "index",
         },
     );
 
-    index_items.sort_by(|index_item1, index_item2| {
-        index_item1.disambiguator.cmp(&index_item2.disambiguator)
-    });
+    index_entries.sort_keys();
 
-    for index_item in index_items {
-        let li_el = html::new_element("li", None::<Attr>);
+    for (link_text, index_items) in index_entries {
+        if index_items.len() == 1 {
+            let index_item = &index_items[0];
 
-        let a_el = html::new_a(
-            btreemap! {
-                "href" => &index_item.url,
-            },
-            &index_item.link_text,
-        );
-        li_el.append(a_el);
+            let li_el = html::new_element("li", None::<Attr>);
 
-        let span_el = html::new_element("span", None::<Attr>);
-        span_el.append(html::new_text(format!(", in {}", index_item.label)));
-        li_el.append(span_el);
+            let a_el = html::new_a(
+                btreemap! {
+                    "href" => &index_item.url,
+                },
+                link_text,
+            );
+            li_el.append(a_el);
 
-        ul_el.append(li_el);
+            let span_el = html::new_element("span", None::<Attr>);
+            span_el.append(html::new_text(format!(", in {}", index_item.label)));
+            li_el.append(span_el);
+
+            top_ul_el.append(li_el);
+        } else {
+            let li_el = html::new_element("li", None::<Attr>);
+
+            li_el.append(html::new_text(link_text));
+
+            li_el.append({
+                let ul_el = html::new_element("ul", None::<Attr>);
+
+                index_items.sort_by(|index_item1, index_item2| {
+                    index_item1.disambiguator.cmp(&index_item2.disambiguator)
+                });
+
+                for index_item in index_items {
+                    let li_el = html::new_element("li", None::<Attr>);
+
+                    let a_el = html::new_a(
+                        btreemap! {
+                            "href" => &index_item.url,
+                        },
+                        &index_item.disambiguator,
+                    );
+                    li_el.append(a_el);
+
+                    let span_el = html::new_element("span", None::<Attr>);
+                    span_el.append(html::new_text(format!(", in {}", index_item.label)));
+                    li_el.append(span_el);
+
+                    ul_el.append(li_el);
+                }
+
+                ul_el
+            });
+
+            top_ul_el.append(li_el);
+        }
     }
 
-    ul_el
+    top_ul_el
 }
 
 fn add_local_terms(doc: &Spec, container: &NodeRef) {
@@ -411,8 +448,8 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
     h3_el.append(html::new_text("Terms defined by this specification"));
     container.append(h3_el);
 
-    // link text => index item
-    let mut index_items = Vec::new();
+    // link text => index items
+    let mut index_entries: IndexMap<String, Vec<IndexTerm>> = IndexMap::new();
 
     for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         let link_text = html::get_text_content(&dfn_el);
@@ -420,20 +457,26 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
         let heading_level = "Unnumbered section";
 
         let dfn_type = html::get_attr(&dfn_el, "data-dfn-type").unwrap();
-        let disambiguator = match dfn_type.as_str() {
-            "dfn" => "definition of".to_owned(),
-            _ => dfn_type,
+        let disambiguator = match html::get_attr(&dfn_el, "data-dfn-for") {
+            Some(dfn_for) => format!(
+                "{} for {}",
+                dfn_type,
+                config::split_for_vals(&dfn_for).join(", ")
+            ),
+            None => match dfn_type.as_str() {
+                "dfn" => "definition of".to_owned(),
+                _ => dfn_type,
+            },
         };
 
-        index_items.push(IndexTerm {
-            link_text,
+        index_entries.entry(link_text).or_default().push(IndexTerm {
             url: format!("#{}", id),
             label: format!("§{}", heading_level),
             disambiguator,
         });
     }
 
-    container.append(index_items_to_node(&mut index_items));
+    container.append(index_items_to_node(&mut index_entries));
 }
 
 fn make_panel(reference: &Reference, name: &str, term_id: &str) -> NodeRef {
