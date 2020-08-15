@@ -53,9 +53,8 @@ impl ReferenceSource {
 
         // Filter references by link type.
         references = references
-            .iter()
+            .into_iter()
             .filter(|reference| reference.link_type == query.link_type)
-            .map(ToOwned::to_owned)
             .collect();
 
         if references.is_empty() {
@@ -65,9 +64,8 @@ impl ReferenceSource {
         // Filter references by status.
         if let Some(status) = query.status {
             references = references
-                .iter()
+                .into_iter()
                 .filter(|reference| reference.status == status)
-                .map(ToOwned::to_owned)
                 .collect();
 
             if references.is_empty() {
@@ -86,19 +84,11 @@ impl ReferenceSource {
             }
         }
 
-        fn filter_by_for_vals(
-            references: &[Reference],
-            test_link_fors: &[String],
-        ) -> Vec<Reference> {
-            references
-                .iter()
-                .filter(|reference| match_link_fors(&reference.link_fors, test_link_fors))
-                .map(ToOwned::to_owned)
-                .collect()
-        }
-
         if let Some(link_fors) = query.link_fors {
-            references = filter_by_for_vals(&references, link_fors);
+            references = references
+                .into_iter()
+                .filter(|reference| match_link_fors(&reference.link_fors, link_fors))
+                .collect();
         }
 
         if references.is_empty() {
