@@ -255,7 +255,33 @@ where
     )
 }
 
-fn relevant_heading(el: &NodeRef) -> Option<NodeRef> {
+fn relevant_headings(el: &NodeRef, heading_level_tags: &HashSet<&str>) -> Vec<NodeRef> {
+    let mut heading_els = Vec::new();
+
+    let mut curr_heading_level = usize::max_value();
+
+    for heading_el in scoping_nodes(el, |scope_el| match get_tag(scope_el) {
+        Some(tag) => heading_level_tags.contains(tag.as_str()),
+        None => false,
+    }) {
+        let heading_tag = get_tag(&heading_el).unwrap();
+        let heading_level = heading_tag.chars().last().unwrap().to_digit(10).unwrap() as usize;
+
+        if heading_level < curr_heading_level {
+            heading_els.push(heading_el);
+            curr_heading_level = heading_level;
+        }
+
+        if heading_level == 2 {
+            break;
+        }
+    }
+
+    heading_els
+}
+
+// Get the name of the nearest section to the node.
+pub fn get_section(el: &NodeRef) -> Option<String> {
     lazy_static! {
         // heading level tags
         static ref HEADING_LEVEL_TAGS: HashSet<&'static str> = hashset! {
@@ -263,25 +289,34 @@ fn relevant_heading(el: &NodeRef) -> Option<NodeRef> {
         };
     }
 
-    scoping_nodes(el, |scope_el| match get_tag(scope_el) {
-        Some(tag) => HEADING_LEVEL_TAGS.contains(tag.as_str()),
-        None => false,
-    })
-    .next()
+    let heading_els = relevant_headings(el, &HEADING_LEVEL_TAGS);
+
+    if heading_els.is_empty() {
+        return Some("Unnamed section".to_owned());
+    }
+
+    if has_class(&heading_els[0], "no-ref") {
+        None
+    } else {
+        Some(get_text_content(&heading_els[0]))
+    }
 }
 
-// Get the name of the nearest section to the node.
-pub fn get_section(el: &NodeRef) -> Option<String> {
-    match relevant_heading(el) {
-        Some(heading_el) => {
-            if has_class(&heading_el, "no-ref") {
-                None
-            } else {
-                Some(get_text_content(&heading_el))
-            }
-        }
-        None => Some("Unnamed section".to_owned()),
+pub fn get_relevant_heading_level(el: &NodeRef) -> Option<String> {
+    lazy_static! {
+        // heading level tags
+        static ref HEADING_LEVEL_TAGS: HashSet<&'static str> = hashset! {
+            "h2", "h3", "h4", "h5", "h6"
+        };
     }
+
+    for heading_el in relevant_headings(el, &HEADING_LEVEL_TAGS) {
+        if let Some(level) = get_attr(&heading_el, "data-level") {
+            return Some(level);
+        }
+    }
+
+    None
 }
 
 pub fn has_ancestor(el: &NodeRef, filter_fn: impl Fn(&NodeRef) -> bool) -> bool {

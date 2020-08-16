@@ -356,8 +356,8 @@ pub fn add_index_section(doc: &mut Spec) {
     h2_el.append(html::new_text("Index"));
     container.append(h2_el);
 
-    add_local_terms(doc, &container);
-    add_external_terms(doc, &container);
+    add_index_of_local_terms(doc, &container);
+    add_index_of_external_terms(doc, &container);
 }
 
 #[derive(Debug, Clone)]
@@ -437,7 +437,7 @@ fn index_items_to_node(index_entries: &mut IndexMap<String, Vec<IndexTerm>>) -> 
     top_ul_el
 }
 
-fn add_local_terms(doc: &Spec, container: &NodeRef) {
+fn add_index_of_local_terms(doc: &Spec, container: &NodeRef) {
     let h3_el = html::new_element(
         "h3",
         btreemap! {
@@ -454,7 +454,10 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
     for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         let link_text = html::get_text_content(&dfn_el);
         let id = html::get_attr(&dfn_el, "id").unwrap();
-        let heading_level = "Unnumbered section";
+        let heading_level = match html::get_relevant_heading_level(&dfn_el) {
+            Some(heading_level) => heading_level,
+            None => "Unnumbered section".to_owned(),
+        };
 
         let dfn_type = html::get_attr(&dfn_el, "data-dfn-type").unwrap();
         let disambiguator = match html::get_attr(&dfn_el, "data-dfn-for") {
@@ -479,7 +482,7 @@ fn add_local_terms(doc: &Spec, container: &NodeRef) {
     container.append(index_items_to_node(&mut index_entries));
 }
 
-fn make_panel(reference: &Reference, name: &str, term_id: &str) -> NodeRef {
+fn make_external_panel(reference: &Reference, name: &str, term_id: &str) -> NodeRef {
     let aside_el = html::new_element(
         "aside",
         btreemap! {
@@ -522,7 +525,7 @@ fn make_panel(reference: &Reference, name: &str, term_id: &str) -> NodeRef {
     aside_el
 }
 
-fn add_external_terms(doc: &mut Spec, container: &NodeRef) {
+fn add_index_of_external_terms(doc: &mut Spec, container: &NodeRef) {
     if doc.external_references_used.is_empty() {
         return;
     }
@@ -541,7 +544,7 @@ fn add_external_terms(doc: &mut Spec, container: &NodeRef) {
             let name = reference.url.rsplitn(2, '#').next().unwrap();
             let term_id = format!("term-for-{}", name);
 
-            let aside_el = make_panel(reference, name, &term_id);
+            let aside_el = make_external_panel(reference, name, &term_id);
             container.append(aside_el);
 
             let spec_li_el = {
