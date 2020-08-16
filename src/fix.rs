@@ -126,21 +126,49 @@ pub fn replace_macros<'a>(text: &str, macros: &HashMap<&'a str, String>) -> Stri
     lazy_static! {
         static ref REG: Regex = Regex::new(
             r"(?x)
-            \[
-            (?P<inner_text>[A-Z0-9-]+)
-            \]"
+            (\\|\[)?
+            \[(?P<inner_text>[A-Z0-9-]+)
+            (?P<optional>\??)\]"
         )
         .unwrap();
     }
 
     let replacer = |caps: &Captures| -> String {
+        let full_text = &caps[0];
         let inner_text = caps["inner_text"].to_lowercase();
 
-        if let Some(new_val) = macros.get(inner_text.as_str()) {
-            new_val.to_owned()
-        } else {
-            caps["inner_text"].to_owned()
+        // Fail to find a matching macro:
+        // [FOO?] => replace it with nothing
+        // [FOO] => throw a fatal error
+        let optional = match caps.name("optional") {
+            Some(m) => m.as_str() == "?",
+            None => false,
+        };
+
+        if full_text.starts_with('\\') {
+            // Escaped.
+            return full_text[1..].to_owned();
         }
+
+        if full_text.starts_with("[[") {
+            // Ignore biblio link.
+            return full_text.to_owned();
+        }
+
+        if inner_text.chars().all(char::is_numeric) {
+            // Ignore all-digits text.
+            return full_text.to_owned();
+        }
+
+        if let Some(new_val) = macros.get(inner_text.as_str()) {
+            return new_val.to_owned();
+        }
+
+        if !optional {
+            die!("Found unmatched text macro {}.", full_text);
+        }
+
+        "".to_owned()
     };
 
     util::regex::replace_all(&REG, text, replacer)
