@@ -82,7 +82,7 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> Result<(), CompareError> {
         .iter()
         .map(trim_text_node)
         .filter(is_valid_node)
-        .collect::<Vec<NodeRef>>();
+        .collect();
 
     let mut rhs_children = rhs.children().collect::<Vec<NodeRef>>();
     rhs_children = preprocess_text_nodes(&rhs_children);
@@ -90,7 +90,7 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> Result<(), CompareError> {
         .iter()
         .map(trim_text_node)
         .filter(is_valid_node)
-        .collect::<Vec<NodeRef>>();
+        .collect();
 
     if lhs_children.len() != rhs_children.len() {
         return Err(CompareError::Number(NodePair {
@@ -147,6 +147,7 @@ fn test_spec() {
         "links002",
         "links003",
         "links004",
+        "links006",
     ];
 
     for name in names.iter() {

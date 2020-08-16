@@ -91,7 +91,7 @@ pub fn add_self_links(doc: &mut Spec) {
 
 fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
     // id => <a> elements with this id
-    let mut all_links_els: HashMap<String, Vec<NodeRef>> = HashMap::new();
+    let mut all_link_els: HashMap<String, Vec<NodeRef>> = HashMap::new();
 
     for a_el in html::select(doc.dom(), "a") {
         let href = match html::get_attr(&a_el, "href") {
@@ -103,7 +103,7 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
             continue;
         }
 
-        all_links_els
+        all_link_els
             .entry(href[1..].to_owned())
             .or_default()
             .push(a_el.to_owned());
@@ -120,7 +120,7 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
         // section name => <a> elements
         let mut section_els: HashMap<String, Vec<NodeRef>> = HashMap::new();
 
-        if let Some(links_els) = all_links_els.get(&id) {
+        if let Some(links_els) = all_link_els.get(&id) {
             for link_el in links_els {
                 if let Some(section) = html::get_section(link_el) {
                     section_els
@@ -179,18 +179,30 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
         for (section, section_els) in section_els {
             let li_el = html::new_element("li", None::<Attr>);
 
-            for section_el in section_els {
-                let section_id = match html::get_attr(&section_el, "id") {
-                    Some(section_id) => section_id,
-                    None => format!("ref-for-{}", id),
+            for (i, section_el) in section_els.iter().enumerate() {
+                let section_el_id = match html::get_attr(&section_el, "id") {
+                    Some(section_el_id) => section_el_id,
+                    None => {
+                        let id = format!("ref-for-{}", id);
+                        html::insert_attr(&section_el, "id", &id);
+                        id
+                    }
                 };
 
-                let a_el = html::new_a(
-                    btreemap! {
-                        "href" => format!("#{}", section_id)
-                    },
-                    &section,
-                );
+                let a_el = match i {
+                    0 => html::new_a(
+                        btreemap! {
+                            "href" => format!("#{}", section_el_id)
+                        },
+                        &section,
+                    ),
+                    _ => html::new_a(
+                        btreemap! {
+                            "href" => format!("#{}", section_el_id)
+                        },
+                        format!("({})", i + 1),
+                    ),
+                };
                 li_el.append(a_el);
             }
 
