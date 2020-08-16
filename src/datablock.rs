@@ -67,10 +67,9 @@ fn process_anchors(doc: &mut Spec, anchors: &[HashMap<String, Vec<String>>]) {
         let link_text_vals = anchor.get("text").unwrap();
         let link_text = link_text_vals[0].to_owned();
 
-        let url_prefix = if let Some(url_prefix_vals) = anchor.get("urlPrefix") {
-            url_prefix_vals.join("")
-        } else {
-            "".to_owned()
+        let url_prefix = match anchor.get("urlPrefix") {
+            Some(url_prefix_vals) => url_prefix_vals.join(""),
+            None => "".to_owned(),
         };
 
         let name = config::generate_name(&link_text);
