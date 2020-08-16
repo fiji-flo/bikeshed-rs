@@ -88,7 +88,7 @@ fn var_replacer(caps: &Captures) -> Vec<NodeRef> {
     let var_el = html::new_element("var", None::<Attr>);
     var_el.append(html::new_text(&caps["inner_text"]));
 
-    return vec![var_el];
+    vec![var_el]
 }
 
 fn inline_link_replacer(caps: &Captures) -> Vec<NodeRef> {

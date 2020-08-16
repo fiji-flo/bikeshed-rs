@@ -161,6 +161,45 @@ pub fn fix_typography(text: &str) -> String {
 }
 
 pub fn canonicalize_shortcuts(doc: &Spec) {
+    // invaild attribute name => valid attribute name
+    let attr_names = hashmap! {
+        "export" => "data-export",
+        "noexport" => "data-noexport",
+        "link-spec" => "data-link-spec",
+        "spec" => "data-link-spec",
+        "link-status" => "data-link-status",
+        "status" => "data-link-status",
+        "dfn-for" => "data-dfn-for",
+        "link-for" => "data-link-for",
+        "link-for-hint" => "data-link-for-hint",
+        "dfn-type" => "data-dfn-type",
+        "link-type" => "data-link-type",
+        "dfn-force" => "data-dfn-force",
+        "force" => "data-dfn-force",
+        "section" => "data-section",
+        "attribute-info" => "data-attribute-info",
+        "dict-member-info" => "data-dict-member-info",
+        "lt" => "data-lt",
+        "local-lt" => "data-local-lt",
+        "algorithm" => "data-algorithm",
+        "ignore" => "data-var-ignore",
+    };
+
+    let invaild_attrs_selector = attr_names
+        .keys()
+        .map(|name| format!("[{}]", name))
+        .collect::<Vec<String>>()
+        .join(",");
+
+    for el in html::select(doc.dom(), &invaild_attrs_selector) {
+        for (invaild_name, valid_name) in &attr_names {
+            if let Some(attr) = html::get_attr(&el, invaild_name) {
+                html::insert_attr(&el, valid_name, attr);
+                html::remove_attr(&el, invaild_name)
+            }
+        }
+    }
+
     // Process dfn type.
     for dfn_el in html::select(doc.dom(), &DFN_SELECTOR) {
         for dfn_type in DFN_TYPES.iter() {
