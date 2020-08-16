@@ -45,7 +45,16 @@ impl Metadata {
     pub fn new() -> Self {
         Metadata {
             boilerplate: BoolSet::new_with_default(true),
-            markup_shorthands: BoolSet::new_with_default(false),
+            markup_shorthands: {
+                let mut bs = BoolSet::new_with_default(false);
+                bs.insert("css".to_owned(), true);
+                bs.insert("dfn".to_owned(), true);
+                bs.insert("biblio".to_owned(), true);
+                bs.insert("markup".to_owned(), true);
+                bs.insert("idl".to_owned(), true);
+                bs.insert("algorithm".to_owned(), true);
+                bs
+            },
             ..Default::default()
         }
     }

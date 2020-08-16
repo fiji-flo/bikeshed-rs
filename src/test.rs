@@ -148,6 +148,8 @@ fn test_spec() {
         "links003",
         "links004",
         "links006",
+        // var
+        "var001",
     ];
 
     for name in names.iter() {

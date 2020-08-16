@@ -34,6 +34,15 @@ fn transform_node(el: &NodeRef, markup_shorthands: &BoolSet<String>) {
 
 // Life would be easier if the look-around syntax was supported by the regex library.
 lazy_static! {
+    // regex for var
+    static ref VAR_REG: Regex = Regex::new(concat!(
+        r"(?x)
+        (?P<escape>\\)?
+        \|
+        (?P<inner_text>\w(?:[\w\s-]*\w)?)
+        \|"
+    ))
+    .unwrap();
     // regex for inline link
     static ref INLINE_LINK_REG: Regex = Regex::new(concat!(
         r"(?x)
@@ -69,6 +78,17 @@ lazy_static! {
     .unwrap();
     // regex for escaped asterisk
     static ref ESCAPED_ASTERISK_REG: Regex = Regex::new(r"\\\*").unwrap();
+}
+
+fn var_replacer(caps: &Captures) -> Vec<NodeRef> {
+    if caps.name("escape").is_some() {
+        return vec![html::new_text(&caps[0][1..])];
+    }
+
+    let var_el = html::new_element("var", None::<Attr>);
+    var_el.append(html::new_text(&caps["inner_text"]));
+
+    return vec![var_el];
 }
 
 fn inline_link_replacer(caps: &Captures) -> Vec<NodeRef> {
@@ -132,6 +152,10 @@ fn escaped_asterisk_replacer(_: &Captures) -> Vec<NodeRef> {
 
 fn transform_text_node(text_el: &NodeRef, markup_shorthands: &BoolSet<String>) -> Vec<NodeRef> {
     let mut text_els = vec![text_el.clone()];
+
+    if markup_shorthands.get("algorithm") {
+        text_els = process_text_nodes(&text_els, &VAR_REG, var_replacer);
+    }
 
     if markup_shorthands.get("markdown") {
         text_els = process_text_nodes(&text_els, &INLINE_LINK_REG, inline_link_replacer);
