@@ -133,3 +133,49 @@ lazy_static! {
 pub fn escaped_asterisk_replacer(_: &Captures) -> Vec<NodeRef> {
     vec![html::new_text("*")]
 }
+
+lazy_static! {
+    // regex for biblio link
+    pub static ref BIBLIO_LINK_REG: Regex = Regex::new(
+        r"(?x)
+        (?P<escape>\\)?
+        \[\[
+        (?P<bang>!)?
+        (?P<term>[\w.+-]+)
+        (\s+(?P<status>current|snapshot))?
+        (\|(?P<link_text>[^\]]+))?
+        \]\]"
+    )
+    .unwrap();
+}
+
+pub fn biblio_link_replacer(caps: &Captures) -> Vec<NodeRef> {
+    if caps.name("escape").is_some() {
+        return vec![html::new_text(&caps[0][1..])];
+    }
+
+    let biblio_type = if caps.name("bang").is_some() {
+        "normative"
+    } else {
+        "informative"
+    };
+
+    let term = &caps["term"];
+
+    let link_text = match caps.name("link_text") {
+        Some(m) => m.as_str().to_owned(),
+        None => format!("[{}]", term),
+    };
+
+    let mut attrs = btreemap! {
+        "data-lt" => term,
+        "data-link-type" => "biblio",
+        "data-biblio-type" => biblio_type,
+    };
+
+    if let Some(m) = caps.name("status") {
+        attrs.insert("data-biblio-status", m.as_str());
+    }
+
+    vec![html::new_a(attrs, link_text)]
+}

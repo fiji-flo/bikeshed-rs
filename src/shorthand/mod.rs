@@ -36,6 +36,10 @@ fn transform_node(el: &NodeRef, markup_shorthands: &BoolSet<String>) {
 fn transform_text_node(text_el: &NodeRef, markup_shorthands: &BoolSet<String>) -> Vec<NodeRef> {
     let mut text_els = vec![text_el.clone()];
 
+    if markup_shorthands.get("biblio") {
+        text_els = process_text_nodes(&text_els, &BIBLIO_LINK_REG, biblio_link_replacer);
+    }
+
     if markup_shorthands.get("algorithm") {
         text_els = process_text_nodes(&text_els, &VAR_REG, var_replacer);
     }
