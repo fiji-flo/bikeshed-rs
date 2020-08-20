@@ -78,6 +78,8 @@ pub fn clean_dom(doc: &Spec) {
     for a_el in html::select(doc.dom(), "a") {
         // TODO: Remove attributes elsewhere.
         html::remove_attr(&a_el, "data-link-for");
+        html::remove_attr(&a_el, "data-biblio-type");
+        html::remove_attr(&a_el, "data-lt");
 
         // Check link type.
         match html::get_attr(&a_el, "data-link-type") {

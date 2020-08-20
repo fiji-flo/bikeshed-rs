@@ -40,6 +40,8 @@ pub struct Spec<'a> {
     pub external_references_used: HashMap<String, HashMap<String, Reference>>,
     // text => normative biblio entries
     pub normative_biblio_entries: HashMap<String, BiblioEntry>,
+    // text => informative biblio entries
+    pub informative_biblio_entries: HashMap<String, BiblioEntry>,
 }
 
 impl<'a> Spec<'a> {
@@ -141,6 +143,7 @@ impl<'a> Spec<'a> {
         fix::canonicalize_shortcuts(self);
 
         // Handle links.
+        link::process_biblio_links(self);
         dfn::process_dfns(self);
         link::process_auto_links(self);
         boilerplate::add_index_section(self);

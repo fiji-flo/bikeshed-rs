@@ -4,15 +4,19 @@ mod source;
 use kuchiki::NodeRef;
 
 use crate::html::{self, Attr};
+use source::BiblioFormat;
 
 #[derive(Debug, Default, Clone)]
 pub struct BiblioEntry {
+    pub biblio_format: BiblioFormat,
     pub link_text: String,
-    pub date: String,
-    pub status: String,
-    pub title: String,
-    pub url: String,
+    pub date: Option<String>,
+    pub status: Option<String>,
+    pub title: Option<String>,
+    pub url: Option<String>,
     pub authors: Vec<String>,
+    pub data: Option<String>,
+    pub alias_of: Option<String>,
 }
 
 impl BiblioEntry {
@@ -28,24 +32,34 @@ impl BiblioEntry {
         };
         dd_el.append(html::new_text(authors_text));
 
-        dd_el.append(html::new_a(
-            btreemap! {
-                "href" => &self.url,
-            },
-            &self.title,
-        ));
+        match &self.url {
+            Some(url) => dd_el.append(html::new_a(
+                btreemap! {
+                    "href" => url,
+                },
+                self.title.as_ref().unwrap(),
+            )),
+            None => dd_el.append(html::new_text(self.title.as_ref().unwrap())),
+        };
 
-        dd_el.append(html::new_text(format!(
-            ". {}. {}. URL: ",
-            self.date, self.status
-        )));
+        if let Some(ref date) = self.date {
+            dd_el.append(html::new_text(format!(". {}", date)));
+        }
 
-        dd_el.append(html::new_a(
-            btreemap! {
-                "href" => &self.url,
-            },
-            &self.url,
-        ));
+        if let Some(ref status) = self.status {
+            dd_el.append(html::new_text(format!(". {}", status)));
+        }
+
+        if let Some(ref url) = self.url {
+            dd_el.append(html::new_text(". URL: "));
+
+            dd_el.append(html::new_a(
+                btreemap! {
+                    "href" => url,
+                },
+                url,
+            ));
+        }
 
         dd_el
     }

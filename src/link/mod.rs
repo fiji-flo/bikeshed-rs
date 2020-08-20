@@ -10,6 +10,38 @@ use crate::html::{self, Attr};
 use crate::spec::Spec;
 use reference::query::Query;
 
+pub fn process_biblio_links(doc: &mut Spec) {
+    for biblio_link_el in html::select(doc.dom(), "a[data-link-type='biblio']") {
+        let biblio_type = html::get_attr(&biblio_link_el, "data-biblio-type").unwrap();
+
+        let mut link_text = html::get_text_content(&biblio_link_el);
+
+        if !link_text.is_empty()
+            && &link_text[0..=0] == "["
+            && &link_text[link_text.len() - 1..link_text.len()] == "]"
+        {
+            link_text = link_text[1..link_text.len() - 1].to_owned();
+        }
+
+        let mut biblio = doc.biblio_entry_manager.get_biblio_entry(&link_text);
+
+        if let Some(ref mut biblio) = biblio {
+            let name = config::generate_name(&link_text);
+            html::insert_attr(&biblio_link_el, "href", format!("#biblio-{}", name));
+
+            biblio.link_text = link_text;
+
+            let storage = match biblio_type.as_str() {
+                "normative" => &mut doc.normative_biblio_entries,
+                "informative" => &mut doc.informative_biblio_entries,
+                _ => die!("Unknown biblio type: {}.", biblio_type),
+            };
+
+            storage.insert(biblio.link_text.to_owned(), biblio.to_owned());
+        }
+    }
+}
+
 pub fn process_auto_links(doc: &mut Spec) {
     for auto_link_el in html::select(doc.dom(), "a:not([href]):not([data-link-type='biblio'])") {
         let link_type = determine_link_type(&auto_link_el);

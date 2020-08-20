@@ -5,6 +5,19 @@ use super::BiblioEntry;
 use crate::config;
 use crate::util::reader;
 
+#[derive(Debug, Clone, PartialEq)]
+pub enum BiblioFormat {
+    Dict,
+    Str,
+    Alias,
+}
+
+impl Default for BiblioFormat {
+    fn default() -> Self {
+        BiblioFormat::Dict
+    }
+}
+
 #[derive(Debug, Default)]
 pub struct BiblioEntrySource {
     base_path: String,
@@ -39,7 +52,7 @@ impl BiblioEntrySource {
             let prefix = &full_key[0..1];
             let key = full_key[2..].trim_end();
 
-            match prefix {
+            let biblio_entry = match prefix {
                 "d" => {
                     let link_text = lines.next().unwrap().unwrap();
                     let date = lines.next().unwrap().unwrap();
@@ -63,25 +76,45 @@ impl BiblioEntrySource {
                         authors.push(line);
                     }
 
-                    self.biblio_entries.insert(
-                        key.to_owned(),
-                        BiblioEntry {
-                            link_text,
-                            date,
-                            status,
-                            title,
-                            url,
-                            authors,
-                        },
-                    );
+                    BiblioEntry {
+                        biblio_format: BiblioFormat::Dict,
+                        link_text,
+                        date: Some(date),
+                        status: Some(status),
+                        title: Some(title),
+                        url: Some(url),
+                        authors,
+                        ..Default::default()
+                    }
                 }
-                "a" | "s" => {
-                    lines.next(); // link text
-                    lines.next(); // alias of
-                    lines.next(); // useless
+                "s" => {
+                    let link_text = lines.next().unwrap().unwrap();
+                    let data = lines.next().unwrap().unwrap();
+                    lines.next();
+
+                    BiblioEntry {
+                        biblio_format: BiblioFormat::Str,
+                        link_text,
+                        data: Some(data),
+                        ..Default::default()
+                    }
+                }
+                "a" => {
+                    let link_text = lines.next().unwrap().unwrap();
+                    let alias_of = lines.next().unwrap().unwrap();
+                    lines.next();
+
+                    BiblioEntry {
+                        biblio_format: BiblioFormat::Alias,
+                        link_text,
+                        alias_of: Some(alias_of),
+                        ..Default::default()
+                    }
                 }
                 _ => die!("Unknown biblio prefix: {}.", prefix),
-            }
+            };
+
+            self.biblio_entries.insert(key.to_owned(), biblio_entry);
         }
     }
 

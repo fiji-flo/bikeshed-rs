@@ -134,6 +134,7 @@ fn test_spec() {
         "markdown002",
         "markdown003",
         "markdown004",
+        "markdown005",
         "markdown006",
         "markdown007",
         "markdown008",

@@ -623,7 +623,7 @@ pub fn add_references_section(doc: &mut Spec) {
         }
     }
 
-    if doc.normative_biblio_entries.is_empty() {
+    if doc.normative_biblio_entries.is_empty() && doc.informative_biblio_entries.is_empty() {
         return;
     }
 
@@ -642,37 +642,79 @@ pub fn add_references_section(doc: &mut Spec) {
     h2_el.append(html::new_text("References"));
     container.append(h2_el);
 
-    let h3_el = html::new_element(
-        "h3",
-        btreemap! {
-            "class" => "no-num no-ref",
-            "id" => "normative",
-        },
-    );
-    h3_el.append(html::new_text("Normative References"));
-    container.append(h3_el);
-
-    let dl_el = html::new_element("dl", None::<Attr>);
-
-    for normative_biblio_entry in doc.normative_biblio_entries.values() {
-        let id = format!("biblio-{}", normative_biblio_entry.link_text);
-
-        let dt_el = html::new_element(
-            "dt",
+    if !doc.normative_biblio_entries.is_empty() {
+        let h3_el = html::new_element(
+            "h3",
             btreemap! {
-                "id" => id,
+                "class" => "no-num no-ref",
+                "id" => "normative",
             },
         );
-        dt_el.append(html::new_text(format!(
-            "[{}]",
-            format_biblio_term(&normative_biblio_entry.link_text)
-        )));
+        h3_el.append(html::new_text("Normative References"));
+        container.append(h3_el);
 
-        dl_el.append(dt_el);
-        dl_el.append(normative_biblio_entry.to_node());
+        let dl_el = html::new_element("dl", None::<Attr>);
+
+        for normative_biblio_entry in doc.normative_biblio_entries.values() {
+            let id = format!(
+                "biblio-{}",
+                config::generate_name(&normative_biblio_entry.link_text)
+            );
+
+            let dt_el = html::new_element(
+                "dt",
+                btreemap! {
+                    "id" => id,
+                },
+            );
+            dt_el.append(html::new_text(format!(
+                "[{}]",
+                format_biblio_term(&normative_biblio_entry.link_text)
+            )));
+
+            dl_el.append(dt_el);
+            dl_el.append(normative_biblio_entry.to_node());
+        }
+
+        container.append(dl_el);
     }
 
-    container.append(dl_el);
+    if !doc.informative_biblio_entries.is_empty() {
+        let h3_el = html::new_element(
+            "h3",
+            btreemap! {
+                "class" => "no-num no-ref",
+                "id" => "informative",
+            },
+        );
+        h3_el.append(html::new_text("Informative References"));
+        container.append(h3_el);
+
+        let dl_el = html::new_element("dl", None::<Attr>);
+
+        for informative_biblio_entry in doc.informative_biblio_entries.values() {
+            let id = format!(
+                "biblio-{}",
+                config::generate_name(&informative_biblio_entry.link_text)
+            );
+
+            let dt_el = html::new_element(
+                "dt",
+                btreemap! {
+                    "id" => id,
+                },
+            );
+            dt_el.append(html::new_text(format!(
+                "[{}]",
+                format_biblio_term(&informative_biblio_entry.link_text)
+            )));
+
+            dl_el.append(dt_el);
+            dl_el.append(informative_biblio_entry.to_node());
+        }
+
+        container.append(dl_el);
+    }
 }
 
 pub fn fill_toc_section(doc: &mut Spec) {
