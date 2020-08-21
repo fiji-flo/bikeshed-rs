@@ -112,6 +112,8 @@ fn is_equal(lhs: &NodeRef, rhs: &NodeRef) -> Result<(), CompareError> {
 fn test_spec() {
     // TODO: Use all files.
     let names = [
+        // basic
+        "basic001",
         // metadata
         "metadata001",
         "metadata002",
