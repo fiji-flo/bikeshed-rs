@@ -120,12 +120,24 @@ impl ReferenceSource {
             }
         }
 
-        if let Some(link_fors) = query.link_fors {
-            references = references
-                .into_iter()
-                .filter(|reference| match_link_fors(&reference.link_fors, link_fors))
-                .collect();
-        }
+        match query.link_fors {
+            Some(link_fors) => {
+                references = references
+                    .into_iter()
+                    .filter(|reference| match_link_fors(&reference.link_fors, link_fors))
+                    .collect();
+            }
+            None => {
+                if query.explicit_for {
+                    references = references
+                        .into_iter()
+                        .filter(|reference| {
+                            match_link_fors(&reference.link_fors, &["/".to_owned()])
+                        })
+                        .collect();
+                }
+            }
+        };
 
         if references.is_empty() {
             return Err(QueryError::For);

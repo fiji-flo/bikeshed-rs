@@ -24,6 +24,7 @@ pub struct Metadata {
     pub shortname: Option<String>,
     pub raw_status: Option<String>,
     // optional metadata
+    pub assume_explicit_for: bool,
     pub boilerplate: BoolSet<String>,
     pub canonical_url: Option<String>,
     pub date: Date,
@@ -116,6 +117,15 @@ impl Metadata {
             "Abstract" => {
                 let val = val.to_owned();
                 self.abs.push(val);
+            }
+            "Assume Explicit For" => {
+                let val = match parse::parse_bool(val) {
+                    Ok(val) => val,
+                    Err(_) => {
+                        die!("The \"Assume Explicit For\" field must be boolish. Got: {}.", val; line_num)
+                    }
+                };
+                self.assume_explicit_for = val;
             }
             "ED" => {
                 let val = val.to_owned();

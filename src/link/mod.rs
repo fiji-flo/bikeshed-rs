@@ -59,6 +59,7 @@ pub fn process_auto_links(doc: &mut Spec) {
             link_text: &link_text,
             status: None,
             link_fors: &link_fors,
+            explicit_for: doc.md.assume_explicit_for,
         });
 
         if let Some(ref reference_spec) = reference.spec {
