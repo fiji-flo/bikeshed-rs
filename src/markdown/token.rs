@@ -1,3 +1,15 @@
+#[derive(Debug, PartialEq)]
+pub enum RawTokenKind {
+    Element,
+    Fenced,
+}
+
+pub struct RawToken {
+    pub kind: RawTokenKind,
+    pub tag: String,
+    pub is_nest: bool,
+}
+
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub enum TokenKind {
     Blank,

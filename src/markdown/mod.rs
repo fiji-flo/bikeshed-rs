@@ -4,7 +4,6 @@ mod token;
 use regex::Regex;
 
 use crate::config::INLINE_ELEMENT_TAGS;
-use crate::html;
 use crate::util;
 use token::*;
 
@@ -127,39 +126,51 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
     };
 
     let mut tokens = Vec::new();
-    let mut frenced_tag_stack: Vec<String> = Vec::new();
-    let mut in_pre_block = false;
+    let mut raw_token_stack: Vec<RawToken> = Vec::new();
 
     for line in lines.iter() {
-        let line = if in_pre_block {
-            html::escape_html(line)
-        } else {
-            line.to_owned()
-        };
+        // Three kinds of "raw" elements, which prevent markdown processing inside of them.
+        // 1. <pre>, which can contain markup and so can nest.
+        // 2. <xmp>, <script>, and <style>, which contain raw text, can't nest.
+        // 3. Markdown code blocks, which contain raw text, can't nest.
 
-        if let Some(top) = frenced_tag_stack.last() {
-            if FENCED_LINE_REG.is_match(&line) && line[0..1] == top[0..1] && line.len() >= top.len()
+        if let Some(top_raw_token) = raw_token_stack.last() {
+            if top_raw_token.kind == RawTokenKind::Fenced
+                && FENCED_LINE_REG.is_match(&line)
+                && line[0..1] == top_raw_token.tag[0..1]
+                && line.len() >= top_raw_token.tag.len()
             {
                 // end fenced line
-                frenced_tag_stack.pop();
+                raw_token_stack.pop();
                 tokens.push(Token::new_raw("</pre>"));
-                in_pre_block = false;
-            } else {
-                // text in fenced block
-                tokens.push(Token::new_raw(line));
+                continue;
             }
+
+            if !top_raw_token.is_nest {
+                // an internal line (but for the no-nesting elements)
+                tokens.push(Token::new_raw(line));
+                continue;
+            }
+        }
+
+        // Handle fenced line.
+        if let Some(caps) = FENCED_LINE_REG.captures(&line) {
+            let frenced_tag = &caps["tag"];
+
+            raw_token_stack.push(RawToken {
+                kind: RawTokenKind::Fenced,
+                tag: frenced_tag.to_owned(),
+                is_nest: false,
+            });
+
+            tokens.push(make_token(TokenKind::Raw, "<pre>"));
             continue;
         }
 
+        // Handle other tokens.
         let token = if line.is_empty() {
             // blank
             make_token(TokenKind::Blank, &line)
-        } else if let Some(caps) = FENCED_LINE_REG.captures(&line) {
-            // start fenced line
-            let frenced_tag = caps["tag"].to_owned();
-            frenced_tag_stack.push(frenced_tag);
-            in_pre_block = true;
-            make_token(TokenKind::Raw, "<pre>")
         } else if EQUALS_LINE_REG.is_match(&line) {
             // equals line
             make_token(TokenKind::EqualsLine, &line)
