@@ -41,6 +41,7 @@ impl ReferenceManager {
                 link_text,
                 status: None,
                 link_fors,
+                explicit_for: query.explicit_for,
             },
             QueryMode::Inexact,
         ) {
@@ -54,6 +55,7 @@ impl ReferenceManager {
                 link_text,
                 status: None,
                 link_fors,
+                explicit_for: query.explicit_for,
             },
             QueryMode::Inexact,
         ) {
@@ -69,6 +71,7 @@ impl ReferenceManager {
                     link_text,
                     status: Some("current"),
                     link_fors,
+                    explicit_for: query.explicit_for,
                 },
                 QueryMode::Exact,
             )
