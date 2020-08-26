@@ -237,6 +237,10 @@ impl Metadata {
                 let val = val.to_owned();
                 self.tr = Some(val);
             }
+            "URL" => {
+                let val = val.to_owned();
+                self.ed = Some(val);
+            }
             "Work Status" => {
                 let val = match parse::parse_work_status(val) {
                     Ok(val) => val,

@@ -9,9 +9,9 @@ pub fn link_text_variations(link_type: &str, link_text: &str) -> HashSet<String>
     let text = link_text;
     let len = text.len();
 
-    let last1 = || -> &str { &text[len - 1..] };
-    let last2 = || -> &str { &text[len - 2..] };
-    let last3 = || -> &str { &text[len - 3..] };
+    let last1 = || &text[len - 1..];
+    let last2 = || &text[len - 2..];
+    let last3 = || &text[len - 3..];
 
     // Example: Berries <-> Berry
     if len >= 3 && last3() == "ies" {
