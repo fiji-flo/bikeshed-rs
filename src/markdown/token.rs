@@ -4,10 +4,11 @@ pub enum RawTokenKind {
     Fenced,
 }
 
+#[derive(Debug)]
 pub struct RawToken {
     pub kind: RawTokenKind,
     pub tag: String,
-    pub is_nest: bool,
+    pub is_nestable: bool,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq)]

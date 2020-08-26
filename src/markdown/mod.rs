@@ -14,6 +14,8 @@ pub fn parse(lines: &[String], tab_size: u32) -> Vec<String> {
 }
 
 lazy_static! {
+    // regex for opaque element
+    static ref OPAQUE_REG: Regex = Regex::new(r"^\s*<(?P<tag>pre|xmp|script|style)[ >]").unwrap();
     // regex for fenced line
     static ref FENCED_LINE_REG: Regex = Regex::new(
         r"(?x)
@@ -135,6 +137,13 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
         // 3. Markdown code blocks, which contain raw text, can't nest.
 
         if let Some(top_raw_token) = raw_token_stack.last() {
+            if top_raw_token.kind == RawTokenKind::Element && line.contains(&top_raw_token.tag) {
+                // opaque element
+                raw_token_stack.pop();
+                tokens.push(Token::new_raw(line));
+                continue;
+            }
+
             if top_raw_token.kind == RawTokenKind::Fenced
                 && FENCED_LINE_REG.is_match(&line)
                 && line[0..1] == top_raw_token.tag[0..1]
@@ -146,24 +155,54 @@ fn tokenize_lines(lines: &[String], tab_size: u32) -> Vec<Token> {
                 continue;
             }
 
-            if !top_raw_token.is_nest {
+            if !top_raw_token.is_nestable {
                 // an internal line (but for the no-nesting elements)
                 tokens.push(Token::new_raw(line));
                 continue;
             }
         }
 
+        // Handle opaque elements.
+        if let Some(caps) = OPAQUE_REG.captures(&line) {
+            tokens.push(make_token(TokenKind::Raw, line));
+
+            let element_tag = &caps["tag"];
+
+            if !line.contains(&format!("</{}>", element_tag)) {
+                // The start tag and the end tag are not in the same line.
+                let is_nestable = match element_tag {
+                    "pre" => true,
+                    "xmp" | "script" | "style" => false,
+                    _ => die!("Unknown opaque element tag: {}.", element_tag),
+                };
+
+                raw_token_stack.push(RawToken {
+                    kind: RawTokenKind::Element,
+                    tag: element_tag.to_owned(),
+                    is_nestable,
+                });
+            }
+
+            continue;
+        }
+
         // Handle fenced line.
         if let Some(caps) = FENCED_LINE_REG.captures(&line) {
+            tokens.push(make_token(TokenKind::Raw, "<pre>"));
+
             let frenced_tag = &caps["tag"];
 
             raw_token_stack.push(RawToken {
                 kind: RawTokenKind::Fenced,
                 tag: frenced_tag.to_owned(),
-                is_nest: false,
+                is_nestable: false,
             });
 
-            tokens.push(make_token(TokenKind::Raw, "<pre>"));
+            continue;
+        }
+
+        if !raw_token_stack.is_empty() {
+            tokens.push(make_token(TokenKind::Raw, line));
             continue;
         }
 
