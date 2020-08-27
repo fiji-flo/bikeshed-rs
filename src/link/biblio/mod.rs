@@ -7,7 +7,7 @@ use crate::html::{self, Attr};
 use source::BiblioFormat;
 
 #[derive(Debug, Default, Clone)]
-pub struct BiblioEntry {
+pub struct Biblio {
     pub biblio_format: BiblioFormat,
     pub link_text: String,
     pub date: Option<String>,
@@ -19,7 +19,7 @@ pub struct BiblioEntry {
     pub alias_of: Option<String>,
 }
 
-impl BiblioEntry {
+impl Biblio {
     pub fn to_node(&self) -> NodeRef {
         let dd_el = html::new_element("dd", None::<Attr>);
 

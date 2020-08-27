@@ -1,7 +1,7 @@
 use std::collections::{HashMap, HashSet};
 use std::path::Path;
 
-use super::BiblioEntry;
+use super::Biblio;
 use crate::config;
 use crate::util::reader;
 
@@ -19,16 +19,16 @@ impl Default for BiblioFormat {
 }
 
 #[derive(Debug, Default)]
-pub struct BiblioEntrySource {
+pub struct BiblioSource {
     base_path: String,
     loaded_groups: HashSet<String>,
-    // text => biblio entry
-    biblio_entries: HashMap<String, BiblioEntry>,
+    // text => biblios
+    biblios: HashMap<String, Biblio>,
 }
 
-impl BiblioEntrySource {
+impl BiblioSource {
     pub fn new(base_path: &str) -> Self {
-        BiblioEntrySource {
+        BiblioSource {
             base_path: base_path.to_owned(),
             ..Default::default()
         }
@@ -52,7 +52,7 @@ impl BiblioEntrySource {
             let prefix = &full_key[0..1];
             let key = full_key[2..].trim_end();
 
-            let biblio_entry = match prefix {
+            let biblio = match prefix {
                 "d" => {
                     let link_text = lines.next().unwrap().unwrap();
                     let date = lines.next().unwrap().unwrap();
@@ -76,7 +76,7 @@ impl BiblioEntrySource {
                         authors.push(line);
                     }
 
-                    BiblioEntry {
+                    Biblio {
                         biblio_format: BiblioFormat::Dict,
                         link_text,
                         date: Some(date),
@@ -92,7 +92,7 @@ impl BiblioEntrySource {
                     let data = lines.next().unwrap().unwrap();
                     lines.next();
 
-                    BiblioEntry {
+                    Biblio {
                         biblio_format: BiblioFormat::Str,
                         link_text,
                         data: Some(data),
@@ -104,7 +104,7 @@ impl BiblioEntrySource {
                     let alias_of = lines.next().unwrap().unwrap();
                     lines.next();
 
-                    BiblioEntry {
+                    Biblio {
                         biblio_format: BiblioFormat::Alias,
                         link_text,
                         alias_of: Some(alias_of),
@@ -114,13 +114,13 @@ impl BiblioEntrySource {
                 _ => die!("Unknown biblio prefix: {}.", prefix),
             };
 
-            self.biblio_entries.insert(key.to_owned(), biblio_entry);
+            self.biblios.insert(key.to_owned(), biblio);
         }
     }
 
-    pub fn fetch_biblio_entry(&mut self, key: &str) -> Option<BiblioEntry> {
-        if let Some(biblio_entry) = self.biblio_entries.get(key) {
-            return Some(biblio_entry.to_owned());
+    pub fn fetch_biblio(&mut self, key: &str) -> Option<Biblio> {
+        if let Some(biblio) = self.biblios.get(key) {
+            return Some(biblio.to_owned());
         }
 
         let group = config::generate_group_name(key);
@@ -132,6 +132,6 @@ impl BiblioEntrySource {
         self.load(&group);
         self.loaded_groups.insert(group);
 
-        self.biblio_entries.get(key).map(ToOwned::to_owned)
+        self.biblios.get(key).map(ToOwned::to_owned)
     }
 }
