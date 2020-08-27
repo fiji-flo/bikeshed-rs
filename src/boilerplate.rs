@@ -623,7 +623,7 @@ pub fn add_references_section(doc: &mut Spec) {
         }
     }
 
-    if doc.normative_biblio_entries.is_empty() && doc.informative_biblio_entries.is_empty() {
+    if doc.normative_biblios.is_empty() && doc.informative_biblios.is_empty() {
         return;
     }
 
@@ -642,7 +642,7 @@ pub fn add_references_section(doc: &mut Spec) {
     h2_el.append(html::new_text("References"));
     container.append(h2_el);
 
-    if !doc.normative_biblio_entries.is_empty() {
+    if !doc.normative_biblios.is_empty() {
         let h3_el = html::new_element(
             "h3",
             btreemap! {
@@ -655,10 +655,10 @@ pub fn add_references_section(doc: &mut Spec) {
 
         let dl_el = html::new_element("dl", None::<Attr>);
 
-        for normative_biblio_entry in doc.normative_biblio_entries.values() {
+        for normative_biblio in doc.normative_biblios.values() {
             let id = format!(
                 "biblio-{}",
-                config::generate_name(&normative_biblio_entry.link_text)
+                config::generate_name(&normative_biblio.link_text)
             );
 
             let dt_el = html::new_element(
@@ -669,17 +669,17 @@ pub fn add_references_section(doc: &mut Spec) {
             );
             dt_el.append(html::new_text(format!(
                 "[{}]",
-                format_biblio_term(&normative_biblio_entry.link_text)
+                format_biblio_term(&normative_biblio.link_text)
             )));
 
             dl_el.append(dt_el);
-            dl_el.append(normative_biblio_entry.to_node());
+            dl_el.append(normative_biblio.to_node());
         }
 
         container.append(dl_el);
     }
 
-    if !doc.informative_biblio_entries.is_empty() {
+    if !doc.informative_biblios.is_empty() {
         let h3_el = html::new_element(
             "h3",
             btreemap! {
@@ -692,10 +692,10 @@ pub fn add_references_section(doc: &mut Spec) {
 
         let dl_el = html::new_element("dl", None::<Attr>);
 
-        for informative_biblio_entry in doc.informative_biblio_entries.values() {
+        for informative_biblio in doc.informative_biblios.values() {
             let id = format!(
                 "biblio-{}",
-                config::generate_name(&informative_biblio_entry.link_text)
+                config::generate_name(&informative_biblio.link_text)
             );
 
             let dt_el = html::new_element(
@@ -706,11 +706,11 @@ pub fn add_references_section(doc: &mut Spec) {
             );
             dt_el.append(html::new_text(format!(
                 "[{}]",
-                format_biblio_term(&informative_biblio_entry.link_text)
+                format_biblio_term(&informative_biblio.link_text)
             )));
 
             dl_el.append(dt_el);
-            dl_el.append(informative_biblio_entry.to_node());
+            dl_el.append(informative_biblio.to_node());
         }
 
         container.append(dl_el);

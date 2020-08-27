@@ -23,7 +23,7 @@ pub fn process_biblio_links(doc: &mut Spec) {
             link_text = link_text[1..link_text.len() - 1].to_owned();
         }
 
-        let mut biblio = doc.biblio_entry_manager.get_biblio_entry(&link_text);
+        let mut biblio = doc.biblio_manager.get_biblio(&link_text);
 
         if let Some(ref mut biblio) = biblio {
             let name = config::generate_name(&link_text);
@@ -32,8 +32,8 @@ pub fn process_biblio_links(doc: &mut Spec) {
             biblio.link_text = link_text;
 
             let storage = match biblio_type.as_str() {
-                "normative" => &mut doc.normative_biblio_entries,
-                "informative" => &mut doc.informative_biblio_entries,
+                "normative" => &mut doc.normative_biblios,
+                "informative" => &mut doc.informative_biblios,
                 _ => die!("Unknown biblio type: {}.", biblio_type),
             };
 
@@ -72,9 +72,9 @@ pub fn process_auto_links(doc: &mut Spec) {
                 }
             }
 
-            if let Some(biblio_entry) = doc.biblio_entry_manager.get_biblio_entry(&reference_spec) {
-                doc.normative_biblio_entries
-                    .insert(biblio_entry.link_text.to_owned(), biblio_entry);
+            if let Some(biblio) = doc.biblio_manager.get_biblio(&reference_spec) {
+                doc.normative_biblios
+                    .insert(biblio.link_text.to_owned(), biblio);
             }
         }
 

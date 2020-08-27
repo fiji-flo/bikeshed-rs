@@ -1,28 +1,26 @@
-use super::source::{BiblioEntrySource, BiblioFormat};
-use super::BiblioEntry;
+use super::source::{BiblioFormat, BiblioSource};
+use super::Biblio;
 
 #[derive(Debug, Default)]
-pub struct BiblioEntryManager {
-    pub biblio_entry_source: BiblioEntrySource,
+pub struct BiblioManager {
+    pub biblio_source: BiblioSource,
 }
 
-impl BiblioEntryManager {
+impl BiblioManager {
     pub fn new() -> Self {
-        BiblioEntryManager {
-            biblio_entry_source: BiblioEntrySource::new("biblio"),
+        BiblioManager {
+            biblio_source: BiblioSource::new("biblio"),
         }
     }
 
-    pub fn get_biblio_entry(&mut self, link_text: &str) -> Option<BiblioEntry> {
+    pub fn get_biblio(&mut self, link_text: &str) -> Option<Biblio> {
         let link_text = link_text.to_lowercase();
 
-        if let Some(biblio_entry) = self.biblio_entry_source.fetch_biblio_entry(&link_text) {
-            if biblio_entry.biblio_format == BiblioFormat::Alias {}
-            match biblio_entry.biblio_format {
-                BiblioFormat::Alias => {
-                    return self.get_biblio_entry(biblio_entry.alias_of.as_ref().unwrap())
-                }
-                _ => return Some(biblio_entry),
+        if let Some(biblio) = self.biblio_source.fetch_biblio(&link_text) {
+            if biblio.biblio_format == BiblioFormat::Alias {}
+            match biblio.biblio_format {
+                BiblioFormat::Alias => return self.get_biblio(biblio.alias_of.as_ref().unwrap()),
+                _ => return Some(biblio),
             }
         }
 

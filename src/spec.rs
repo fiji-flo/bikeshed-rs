@@ -11,10 +11,10 @@ use crate::fix::{self, CodeSpanManager};
 use crate::heading;
 use crate::html;
 use crate::line::Line;
-use crate::link::biblio::manager::BiblioEntryManager;
+use crate::link::biblio::manager::BiblioManager;
 use crate::link::reference::manager::ReferenceManager;
 use crate::link::reference::Reference;
-use crate::link::{self, biblio::BiblioEntry, dfn};
+use crate::link::{self, biblio::Biblio, dfn};
 use crate::markdown;
 use crate::metadata::{self, Metadata};
 use crate::shorthand;
@@ -35,13 +35,13 @@ pub struct Spec<'a> {
     pub extra_styles: BTreeMap<&'a str, &'a str>,
     pub extra_scripts: BTreeMap<&'a str, &'a str>,
     pub reference_manager: ReferenceManager,
-    pub biblio_entry_manager: BiblioEntryManager,
+    pub biblio_manager: BiblioManager,
     // spec => (text => reference)
     pub external_references_used: HashMap<String, HashMap<String, Reference>>,
-    // text => normative biblio entries
-    pub normative_biblio_entries: HashMap<String, BiblioEntry>,
-    // text => informative biblio entries
-    pub informative_biblio_entries: HashMap<String, BiblioEntry>,
+    // text => normative biblios
+    pub normative_biblios: HashMap<String, Biblio>,
+    // text => informative biblios
+    pub informative_biblios: HashMap<String, Biblio>,
 }
 
 impl<'a> Spec<'a> {
@@ -61,7 +61,7 @@ impl<'a> Spec<'a> {
             md_cli,
             extra_styles,
             reference_manager: ReferenceManager::new(),
-            biblio_entry_manager: BiblioEntryManager::new(),
+            biblio_manager: BiblioManager::new(),
             ..Default::default()
         }
     }
