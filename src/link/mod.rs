@@ -153,8 +153,8 @@ fn add_dfn_panels(doc: &mut Spec, dfn_els: &[NodeRef]) {
         // section name => <a> elements
         let mut section_els: HashMap<String, Vec<NodeRef>> = HashMap::new();
 
-        if let Some(links_els) = all_link_els.get(&id) {
-            for link_el in links_els {
+        if let Some(link_els) = all_link_els.get(&id) {
+            for link_el in link_els {
                 if let Some(section) = html::get_section(link_el) {
                     section_els
                         .entry(section)
